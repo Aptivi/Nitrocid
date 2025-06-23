@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -38,16 +38,16 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
         {
             var feed = RSSShellCommon.RSSFeedInstance ??
                 throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED"));
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE") + " ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(feed.FeedTitle, true, ThemeColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK") + " ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(feed.FeedUrl, true, ThemeColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC") + " ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(feed.FeedDescription, true, ThemeColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE") + " ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(feed.FeedType.ToString(), true, ThemeColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT") + " ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(feed.FeedArticles.Length.ToString(), true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(feed.FeedTitle, true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(feed.FeedUrl, true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(feed.FeedDescription, true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(feed.FeedType.ToString(), true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(feed.FeedArticles.Length.ToString(), true, ThemeColorType.ListValue);
             return 0;
         }
 

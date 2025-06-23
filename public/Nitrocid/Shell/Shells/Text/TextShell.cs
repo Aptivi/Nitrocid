@@ -20,7 +20,7 @@
 using System;
 using System.Threading;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -52,13 +52,13 @@ namespace Nitrocid.Shell.Shells.Text
                 FilePath = Convert.ToString(ShellArgs[0]) ?? "";
                 if (string.IsNullOrEmpty(FilePath))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_NEEDSFILE"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_NEEDSFILE"), true, ThemeColorType.Error);
                     Bail = true;
                 }
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_NEEDSFILE"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_NEEDSFILE"), true, ThemeColorType.Error);
                 Bail = true;
             }
 
@@ -68,7 +68,7 @@ namespace Nitrocid.Shell.Shells.Text
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
                 if (!TextEditTools.OpenTextFile(FilePath))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_CANTOPEN"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEXTEXT_CANTOPEN"), true, ThemeColorType.Error);
                     Bail = true;
                 }
                 TextEditShellCommon.AutoSave.Start();
@@ -90,7 +90,7 @@ namespace Nitrocid.Shell.Shells.Text
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ERRORINSHELL") + CharManager.NewLine + "Error {0}: {1}", true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ERRORINSHELL") + CharManager.NewLine + "Error {0}: {1}", true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                     continue;
                 }
             }

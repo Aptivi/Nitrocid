@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Scripting;
 
@@ -37,8 +37,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             foreach (string VarName in MESHVariables.Variables.Keys)
             {
-                TextWriters.Write($"- {VarName}: ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(MESHVariables.Variables[VarName], true, ThemeColorType.ListValue);
+                TextWriterColor.Write($"- {VarName}: ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(MESHVariables.Variables[VarName], true, ThemeColorType.ListValue);
             }
             return 0;
         }

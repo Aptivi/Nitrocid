@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.ColorConvert.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -42,22 +42,22 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             int fourth = 0;
             if (!int.TryParse(parameters.ArgumentsList[2], out int first))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_FIRSTLEVELNUMERIC"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_FIRSTLEVELNUMERIC"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (!int.TryParse(parameters.ArgumentsList[3], out int second))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_SECONDLEVELNUMERIC"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_SECONDLEVELNUMERIC"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (!int.TryParse(parameters.ArgumentsList[4], out int third))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_THIRDLEVELNUMERIC"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_THIRDLEVELNUMERIC"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             if (parameters.ArgumentsList.Length > 5 && !int.TryParse(parameters.ArgumentsList[3], out fourth))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_FOURTHLEVELNUMERIC"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_FOURTHLEVELNUMERIC"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
 
@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             var modelConvert = ColorConvertTools.GetConvertFuncFromModel(source, target);
             if (modelConvert is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_INVALIDMODEL"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_INVALIDMODEL"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             var modelConverted = modelConvert.Invoke(first, second, third, fourth);
@@ -104,7 +104,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
                     finalSequence = ((Xyz)modelConverted).ToString();
                     break;
             }
-            TextWriters.Write(finalSequence, ThemeColorType.NeutralText);
+            TextWriterColor.Write(finalSequence, ThemeColorType.NeutralText);
             variableValue = finalSequence;
             return 0;
         }

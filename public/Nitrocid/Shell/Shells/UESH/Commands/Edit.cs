@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (FilesystemTools.FileExists(path))
                 FilesystemTools.OpenEditor(path, forceText, forceJson, forceHex, forceSql);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_EDIT_NOTFOUND"), true, ThemeColorType.Error, path);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_EDIT_NOTFOUND"), true, ThemeColorType.Error, path);
             return 0;
         }
 

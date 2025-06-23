@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -45,18 +45,18 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                 if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count)
                 {
                     TextEditTools.DeleteChar(Convert.ToInt32(parameters.ArgumentsList[0]), Convert.ToInt32(parameters.ArgumentsList[1]));
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS"), true, ThemeColorType.Success);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS"), true, ThemeColorType.Success);
                     return 0;
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                 }
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_NUMINVALID"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELCHARNUM_NUMINVALID"), true, ThemeColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", vars: [parameters.ArgumentsList[0], parameters.ArgumentsList[1]]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
             }

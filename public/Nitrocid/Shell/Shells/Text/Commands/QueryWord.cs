@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Kernel.Exceptions;
@@ -49,7 +48,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                     {
                         int LineIndex = Convert.ToInt32(parameters.ArgumentsList[1]);
                         var QueriedChars = TextEditTools.QueryWord(parameters.ArgumentsList[0], LineIndex);
-                        TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex);
+                        TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex);
 
                         // Process the output
                         string text = TextEditShellCommon.FileLines[LineIndex - 1];
@@ -57,14 +56,14 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                         for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                         {
                             string word = Words[wordIndex];
-                            TextWriters.Write($"{(QueriedChars.Contains(wordIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground : "")}{word} ", false, ThemeColorType.ListValue);
+                            TextWriterColor.Write($"{(QueriedChars.Contains(wordIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground : "")}{word} ", false, ThemeColorType.ListValue);
                         }
                         TextWriterRaw.Write();
                         return 0;
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }
@@ -75,7 +74,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                     {
                         int LineIndex = QueriedWord.Item1;
                         var QueriedChars = TextEditTools.QueryWord(parameters.ArgumentsList[0], LineIndex + 1);
-                        TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex + 1);
+                        TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex + 1);
 
                         // Process the output
                         string text = TextEditShellCommon.FileLines[LineIndex];
@@ -83,7 +82,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                         for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                         {
                             string word = Words[wordIndex];
-                            TextWriters.Write($"{(QueriedChars.Contains(wordIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground : "")}{word} ", false, ThemeColorType.ListValue);
+                            TextWriterColor.Write($"{(QueriedChars.Contains(wordIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground : "")}{word} ", false, ThemeColorType.ListValue);
                         }
                         TextWriterRaw.Write();
                     }
@@ -103,7 +102,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                         {
                             var QueriedChars = TextEditTools.QueryWord(parameters.ArgumentsList[0], LineNumber);
                             int LineIndex = LineNumber - 1;
-                            TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex);
+                            TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineIndex);
 
                             // Process the output
                             string text = TextEditShellCommon.FileLines[LineIndex];
@@ -111,7 +110,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                             for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                             {
                                 string word = Words[wordIndex];
-                                TextWriters.Write($"{(QueriedChars.Contains(wordIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground : "")}{word} ", false, ThemeColorType.ListValue);
+                                TextWriterColor.Write($"{(QueriedChars.Contains(wordIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground : "")}{word} ", false, ThemeColorType.ListValue);
                             }
                             TextWriterRaw.Write();
                         }
@@ -119,7 +118,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }

@@ -25,7 +25,6 @@ using Terminaux.Shell.Prompts;
 using Terminaux.Shell.Arguments;
 using Nitrocid.Shell.Shells.Admin.Commands;
 using Nitrocid.Shell.Shells.Admin.Presets;
-using Nitrocid.Languages;
 
 namespace Nitrocid.Shell.Shells.Admin
 {

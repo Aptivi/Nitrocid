@@ -19,7 +19,7 @@
 
 using FluentFTP;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -45,8 +45,8 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
                 client.Config.DownloadDataType = FtpDataType.ASCII;
                 client.Config.ListingDataType = FtpDataType.ASCII;
                 client.Config.UploadDataType = FtpDataType.ASCII;
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_ASCII"), true, ThemeColorType.Success);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING"), true, ThemeColorType.Warning);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_ASCII"), true, ThemeColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING"), true, ThemeColorType.Warning);
                 return 0;
             }
             else if (parameters.ArgumentsList[0].Equals("b", System.StringComparison.OrdinalIgnoreCase))
@@ -54,12 +54,12 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
                 client.Config.DownloadDataType = FtpDataType.Binary;
                 client.Config.ListingDataType = FtpDataType.Binary;
                 client.Config.UploadDataType = FtpDataType.Binary;
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_BINARY"), true, ThemeColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_BINARY"), true, ThemeColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_INVALID"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_TYPE_INVALID"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPFilesystem);
             }
         }

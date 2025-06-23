@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.ColorConvert.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             var modelConvert = ColorConvertTools.GetConvertFuncFromSingleModel(source);
             if (modelConvert is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_INVALIDMODEL"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_INVALIDMODEL"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             var modelConverted = modelConvert.Invoke(specifier);
@@ -54,94 +54,94 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             {
                 case "rgb":
                     var rgb = (RedGreenBlue)modelConverted;
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_REDCOLOR") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{rgb.R}", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_GREENCOLOR") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{rgb.G}", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_BLUECOLOR") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{rgb.B}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_REDCOLOR") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{rgb.R}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_GREENCOLOR") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{rgb.G}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_BLUECOLOR") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{rgb.B}", true, ThemeColorType.ListValue);
                     variableValue = rgb.ToString();
                     break;
                 case "ryb":
                     var ryb = (RedYellowBlue)modelConverted;
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_REDCOLOR") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{ryb.R}", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_YELLOWCOLOR") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{ryb.Y}", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_BLUECOLOR") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{ryb.B}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_REDCOLOR") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{ryb.R}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_YELLOWCOLOR") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{ryb.Y}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_BLUECOLOR") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{ryb.B}", true, ThemeColorType.ListValue);
                     variableValue = ryb.ToString();
                     break;
                 case "cmy":
                     var cmy = (CyanMagentaYellow)modelConverted;
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_CYANCOLOR") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{cmy.CWhole} [{cmy.C:0.00}]", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_MAGENTACOLOR") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{cmy.MWhole} [{cmy.M:0.00}]", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_YELLOWCOLOR") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{cmy.YWhole} [{cmy.Y:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_CYANCOLOR") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{cmy.CWhole} [{cmy.C:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_MAGENTACOLOR") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{cmy.MWhole} [{cmy.M:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_YELLOWCOLOR") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{cmy.YWhole} [{cmy.Y:0.00}]", true, ThemeColorType.ListValue);
                     variableValue = cmy.ToString();
                     break;
                 case "cmyk":
                     var cmyk = (CyanMagentaYellowKey)modelConverted;
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_CYANCOLOR") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{cmyk.CMY.CWhole} [{cmyk.CMY.C:0.00}]", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_MAGENTACOLOR") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{cmyk.CMY.MWhole} [{cmyk.CMY.M:0.00}]", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_YELLOWCOLOR") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{cmyk.CMY.YWhole} [{cmyk.CMY.Y:0.00}]", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_BLACKKEY") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{cmyk.KWhole} [{cmyk.K:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_CYANCOLOR") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{cmyk.CMY.CWhole} [{cmyk.CMY.C:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_MAGENTACOLOR") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{cmyk.CMY.MWhole} [{cmyk.CMY.M:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_YELLOWCOLOR") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{cmyk.CMY.YWhole} [{cmyk.CMY.Y:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_BLACKKEY") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{cmyk.KWhole} [{cmyk.K:0.00}]", true, ThemeColorType.ListValue);
                     variableValue = cmyk.ToString();
                     break;
                 case "hsv":
                     var hsv = (HueSaturationValue)modelConverted;
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_HUE") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{hsv.HueWhole} [{hsv.Hue:0.00}]", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_SATURATION") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{hsv.SaturationWhole} [{hsv.Saturation:0.00}]", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_VALUE") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{hsv.ValueWhole} [{hsv.Value:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_HUE") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{hsv.HueWhole} [{hsv.Hue:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_SATURATION") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{hsv.SaturationWhole} [{hsv.Saturation:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_VALUE") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{hsv.ValueWhole} [{hsv.Value:0.00}]", true, ThemeColorType.ListValue);
                     variableValue = hsv.ToString();
                     break;
                 case "hsl":
                     var hsl = (HueSaturationLightness)modelConverted;
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_HUE") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{hsl.HueWhole} [{hsl.Hue:0.00}]", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_SATURATION") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{hsl.SaturationWhole} [{hsl.Saturation:0.00}]", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_LUMINANCE") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{hsl.LightnessWhole} [{hsl.Lightness:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_HUE") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{hsl.HueWhole} [{hsl.Hue:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_SATURATION") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{hsl.SaturationWhole} [{hsl.Saturation:0.00}]", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_LUMINANCE") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{hsl.LightnessWhole} [{hsl.Lightness:0.00}]", true, ThemeColorType.ListValue);
                     variableValue = hsl.ToString();
                     break;
                 case "yiq":
                     var yiq = (LumaInPhaseQuadrature)modelConverted;
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_LUMA") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{yiq.Luma}", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_INPHASE") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{yiq.InPhase}", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_QUADRATURE") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{yiq.Quadrature}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_LUMA") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{yiq.Luma}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_INPHASE") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{yiq.InPhase}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_QUADRATURE") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{yiq.Quadrature}", true, ThemeColorType.ListValue);
                     variableValue = yiq.ToString();
                     break;
                 case "yuv":
                     var yuv = (LumaChromaUv)modelConverted;
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_LUMA") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{yuv.Luma}", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_UCHROMA") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{yuv.ChromaU}", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_VCHROMA") + " ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{yuv.ChromaV}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_LUMA") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{yuv.Luma}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_UCHROMA") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{yuv.ChromaU}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_COLORCONVERT_VCHROMA") + " ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{yuv.ChromaV}", true, ThemeColorType.ListValue);
                     variableValue = yuv.ToString();
                     break;
                 case "xyz":
                     var xyz = (Xyz)modelConverted;
-                    TextWriters.Write("- X: ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{xyz.X:0.##}", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- Y: ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{xyz.Y:0.##}", true, ThemeColorType.ListValue);
-                    TextWriters.Write("- Z: ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{xyz.Z:0.##}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- X: ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{xyz.X:0.##}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- Y: ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{xyz.Y:0.##}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- Z: ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{xyz.Z:0.##}", true, ThemeColorType.ListValue);
                     variableValue = xyz.ToString();
                     break;
             }

@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Shell.Commands;
@@ -48,7 +47,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
@@ -59,7 +58,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             var cultures = CultureManager.GetCultureCodes();
             if (!cultures.Contains(culture))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERCULTURE_FAILURE") + $" {culture}", true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERCULTURE_FAILURE") + $" {culture}", true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
             }
 

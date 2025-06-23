@@ -18,12 +18,11 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
 using System.Linq;
-using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -45,10 +44,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 if (handler is null)
                     continue;
                 SeparatorWriterColor.WriteSeparatorColor($"{i + 1}/{handlers.Count}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION") + ": ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(handler.Extension, ThemeColorType.ListValue);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER") + ": ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(handler.Implementer, ThemeColorType.ListValue);
+                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION") + ": ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(handler.Extension, ThemeColorType.ListValue);
+                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_DEFAULTHANDLER") + ": ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(handler.Implementer, ThemeColorType.ListValue);
             }
             variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Value))}]";
             return 0;

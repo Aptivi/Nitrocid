@@ -18,7 +18,6 @@
 //
 
 using System.IO;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Kernel.Threading;

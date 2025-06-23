@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encoding;
 using Nitrocid.Drivers.EncodingAsymmetric;
@@ -54,9 +54,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 // Now, encode the text
                 var encoded = driver.GetEncodedString(orig);
                 string decomposed = driver.DecomposeBytesFromString(encoded);
-                TextWriters.Write(decomposed, true, ThemeColorType.Success);
+                TextWriterColor.Write(decomposed, true, ThemeColorType.Success);
                 if (driver.TryRepresentAsText(encoded, out string? strEncoded))
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODETEXT_SUCCESS") + $": {strEncoded}", true, ThemeColorType.Success);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODETEXT_SUCCESS") + $": {strEncoded}", true, ThemeColorType.Success);
             }
             else
             {
@@ -77,17 +77,17 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     encoded = driver.GetEncodedString(orig, key, iv);
                 }
                 string decomposed = driver.DecomposeBytesFromString(encoded);
-                TextWriters.Write(decomposed, true, ThemeColorType.Success);
+                TextWriterColor.Write(decomposed, true, ThemeColorType.Success);
                 if (driver.TryRepresentAsText(encoded, out string? strEncoded))
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODETEXT_SUCCESS") + $": {strEncoded}", true, ThemeColorType.Success);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODETEXT_SUCCESS") + $": {strEncoded}", true, ThemeColorType.Success);
 
                 // Now, print out the key and the IV used
                 string keyDecomposed = driver.DecomposeBytesFromString(key);
                 string ivDecomposed = driver.DecomposeBytesFromString(iv);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_KEYUSED") + ": ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(keyDecomposed, true, ThemeColorType.ListValue);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_IVUSED") + ": ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(ivDecomposed, true, ThemeColorType.ListValue);
+                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_KEYUSED") + ": ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(keyDecomposed, true, ThemeColorType.ListValue);
+                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ENCODEFILE_IVUSED") + ": ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(ivDecomposed, true, ThemeColorType.ListValue);
             }
             return 0;
         }

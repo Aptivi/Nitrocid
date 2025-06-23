@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools.Directory;
 using Terminaux.Shell.Commands;
 
@@ -35,7 +35,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriters.Write(MailDirectory.MailRenderListDirectories(), false, ThemeColorType.NeutralText);
+            TextWriterColor.Write(MailDirectory.MailRenderListDirectories(), false, ThemeColorType.NeutralText);
             return 0;
         }
     }

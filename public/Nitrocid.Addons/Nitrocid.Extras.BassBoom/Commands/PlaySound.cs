@@ -21,7 +21,7 @@ using BassBoom.Basolia.File;
 using BassBoom.Basolia.Format;
 using BassBoom.Basolia.Playback;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -50,17 +50,17 @@ namespace Nitrocid.Extras.BassBoom.Commands
             path = FilesystemTools.NeutralizePath(path);
             if (!FilesystemTools.FileExists(path))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_NOSOUNDFILE"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_NOSOUNDFILE"), ThemeColorType.Error);
                 return 29;
             }
             try
             {
                 FileTools.OpenFile(media, path);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_OPENEDSOUNDFILE"), ThemeColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_OPENEDSOUNDFILE"), ThemeColorType.Success);
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_CANTOPENSOUNDFILE") + $" {ex.Message}", ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_CANTOPENSOUNDFILE") + $" {ex.Message}", ThemeColorType.Error);
                 return ex.HResult;
             }
             if (FileTools.IsOpened(media))
@@ -75,7 +75,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                     PlaybackTools.PlayAsync(media);
                     if (!SpinWait.SpinUntil(() => PlaybackTools.GetState(media) == PlaybackState.Playing, 15000))
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_TIMEOUT"), ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_TIMEOUT"), ThemeColorType.Error);
                         return 30;
                     }
 
@@ -96,13 +96,13 @@ namespace Nitrocid.Extras.BassBoom.Commands
                     string duration = totalSpan.ToString();
 
                     // Write the entries
-                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_NAME"), musicName);
-                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_ARTIST"), musicArtist);
-                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_GENRE"), musicGenre);
-                    TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_DURATION"), duration);
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_NAME"), musicName);
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_ARTIST"), musicArtist);
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_GENRE"), musicGenre);
+                    ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_BASSBOOM_DURATION"), duration);
 
                     // Wait until the song stops or the user bails
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_STOPPLAYING"), ThemeColorType.Tip);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_STOPPLAYING"), ThemeColorType.Tip);
                     while (PlaybackTools.GetState(media) == PlaybackState.Playing)
                     {
                         if (ConsoleWrapper.KeyAvailable)
@@ -115,7 +115,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_CANTPLAY") + $" {ex.Message}", ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_CANTPLAY") + $" {ex.Message}", ThemeColorType.Error);
                     return ex.HResult;
                 }
                 finally

@@ -19,7 +19,7 @@
 
 using Newtonsoft.Json.Linq;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Stocks.Interactives;
 using Nitrocid.Languages;
 using Nitrocid.Network.Transfer;
@@ -44,15 +44,15 @@ namespace Nitrocid.Extras.Stocks.Commands
             {
                 apiKey = TermReader.Read(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYPROMPT") + ": ");
                 if (string.IsNullOrWhiteSpace(apiKey))
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYNEEDED"), ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYNEEDED"), ThemeColorType.Error);
                 if (apiKey == "demo")
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYISDEMO"), ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYISDEMO"), ThemeColorType.Error);
                     apiKey = "";
                 }
                 if (apiKey.Length != 16)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYINVALIDLENGTH"), ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIKEYINVALIDLENGTH"), ThemeColorType.Error);
                     apiKey = "";
                 }
             }
@@ -63,8 +63,8 @@ namespace Nitrocid.Extras.Stocks.Commands
             var stocksIntervalToken = stocksToken["Time Series (60min)"];
             if (stocksIntervalToken is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIFAILED") + ":", ThemeColorType.Error);
-                TextWriters.Write(stocksJson, ThemeColorType.NeutralText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_STOCKS_AVAPIFAILED") + ":", ThemeColorType.Error);
+                TextWriterColor.Write(stocksJson, ThemeColorType.NeutralText);
                 return 40;
             }
             string? ianaTimeZone = (string?)stocksToken?["Meta Data"]?["6. Time Zone"];

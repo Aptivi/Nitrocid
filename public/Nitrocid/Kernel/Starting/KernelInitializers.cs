@@ -29,7 +29,6 @@ using Terminaux.Shell.Shells;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Kernel.Threading;
-using Terminaux.Shell.Aliases;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Reflection;

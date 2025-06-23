@@ -27,7 +27,6 @@ using MailKit.Net.Smtp;
 using MimeKit.Cryptography;
 using Nettify.MailAddress;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel;
@@ -70,9 +69,9 @@ namespace Nitrocid.ShellPacks.Tools
         {
             // Username or mail address
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailUserPromptStyle))
-                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailUserPromptStyle), false, ThemeColorType.Input);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailUserPromptStyle), false, ThemeColorType.Input);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ADDRESSPROMPT"), false, ThemeColorType.Input);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_ADDRESSPROMPT"), false, ThemeColorType.Input);
 
             // Try to get the username or e-mail address from the input
             string InputMailAddress = InputTools.ReadLine();
@@ -90,11 +89,11 @@ namespace Nitrocid.ShellPacks.Tools
             Authentication.UserName = Username;
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailPassPromptStyle))
             {
-                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailPassPromptStyle), false, ThemeColorType.Input);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailPassPromptStyle), false, ThemeColorType.Input);
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PASSWORDPROMPT"), false, ThemeColorType.Input);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PASSWORDPROMPT"), false, ThemeColorType.Input);
             }
             Authentication.Password = InputTools.ReadLineNoInput();
 
@@ -118,17 +117,17 @@ namespace Nitrocid.ShellPacks.Tools
 
             // IMAP server address and port
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailIMAPPromptStyle))
-                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailIMAPPromptStyle), false, ThemeColorType.Input);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailIMAPPromptStyle), false, ThemeColorType.Input);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT"), false, ThemeColorType.Input);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT"), false, ThemeColorType.Input);
             IMAP_Address = InputTools.ReadLine();
             DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", vars: [IMAP_Address]);
 
             // SMTP server address and port
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailSMTPPromptStyle))
-                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailSMTPPromptStyle), false, ThemeColorType.Input);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailSMTPPromptStyle), false, ThemeColorType.Input);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT"), false, ThemeColorType.Input);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT"), false, ThemeColorType.Input);
             string SMTP_Address = InputTools.ReadLine();
             SMTP_Port = 587;
             DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", vars: [SMTP_Address]);
@@ -253,7 +252,7 @@ namespace Nitrocid.ShellPacks.Tools
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTIONFAILED"), true, ThemeColorType.Error, Address, ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_CONNECTIONFAILED"), true, ThemeColorType.Error, Address, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 IMAP_Client.Disconnect(true);
                 SMTP_Client.Disconnect(true);

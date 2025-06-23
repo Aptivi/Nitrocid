@@ -20,7 +20,6 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
 using Terminaux.Shell.Commands;

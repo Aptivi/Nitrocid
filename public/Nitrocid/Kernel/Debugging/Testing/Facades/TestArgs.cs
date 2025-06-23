@@ -19,8 +19,7 @@
 
 using Nitrocid.Languages;
 using Terminaux.Shell.Arguments;
-using Terminaux.Shell.Shells;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -32,7 +31,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         {
             string command = "help shutdown";
             string[] ListArgsOnly = ArgumentsParser.ParseShellCommandArguments(command, "Shell").total[0].ArgumentsList;
-            TextWriters.WriteList(ListArgsOnly);
+            ListWriterColor.WriteList(ListArgsOnly);
         }
     }
 }

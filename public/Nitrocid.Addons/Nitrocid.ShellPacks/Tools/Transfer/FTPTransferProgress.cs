@@ -20,7 +20,7 @@
 using System;
 using FluentFTP;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 
@@ -57,7 +57,7 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
                 FTPTransfer.ConsoleOriginalPositionTop = ConsoleWrapper.CursorTop;
                 if (FTPTransfer.progressFlag & Percentage.Progress != 100d)
                 {
-                    TextWriters.Write(" {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", false, ThemeColorType.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString());
+                    TextWriterColor.Write(" {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", false, ThemeColorType.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString());
                     ConsoleClearing.ClearLineToRight();
                 }
                 ConsoleWrapper.SetCursorPosition(FTPTransfer.ConsoleOriginalPositionLeft, FTPTransfer.ConsoleOriginalPositionTop);
@@ -80,8 +80,8 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
                 FTPTransfer.ConsoleOriginalPositionTop = ConsoleWrapper.CursorTop;
                 if (FTPTransfer.progressFlag & Percentage.Progress != 100d)
                 {
-                    TextWriters.Write("- [{0}/{1}] {2}: ", false, ThemeColorType.ListEntry, Percentage.FileIndex + 1, Percentage.FileCount, Percentage.RemotePath);
-                    TextWriters.Write("{0}% (ETA: {1}d {2}:{3}:{4} @ {5})", false, ThemeColorType.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString());
+                    TextWriterColor.Write("- [{0}/{1}] {2}: ", false, ThemeColorType.ListEntry, Percentage.FileIndex + 1, Percentage.FileCount, Percentage.RemotePath);
+                    TextWriterColor.Write("{0}% (ETA: {1}d {2}:{3}:{4} @ {5})", false, ThemeColorType.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString());
                     ConsoleClearing.ClearLineToRight();
                 }
                 ConsoleWrapper.SetCursorPosition(FTPTransfer.ConsoleOriginalPositionLeft, FTPTransfer.ConsoleOriginalPositionTop);

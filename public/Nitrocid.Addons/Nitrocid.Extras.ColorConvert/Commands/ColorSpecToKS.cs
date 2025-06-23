@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.ColorConvert.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             var modelConvert = ColorConvertTools.GetConvertFuncFromSingleModel(source);
             if (modelConvert is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_INVALIDMODEL"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COLORCONVERT_INVALIDMODEL"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Color);
             }
             var modelConverted = modelConvert.Invoke(specifier);
@@ -81,7 +81,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
                     finalSequence = ((Xyz)modelConverted).ToString();
                     break;
             }
-            TextWriters.Write(finalSequence, ThemeColorType.NeutralText);
+            TextWriterColor.Write(finalSequence, ThemeColorType.NeutralText);
             variableValue = finalSequence;
             return 0;
         }

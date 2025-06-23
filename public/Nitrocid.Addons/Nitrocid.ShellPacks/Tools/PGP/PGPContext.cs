@@ -20,7 +20,7 @@
 using MimeKit.Cryptography;
 using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Textify.Tools.Placeholder;
 using Org.BouncyCastle.Bcpg.OpenPgp;
@@ -41,9 +41,9 @@ namespace Nitrocid.ShellPacks.Tools.PGP
         protected override string GetPasswordForKey(PgpSecretKey key)
         {
             if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.MailGPGPromptStyle))
-                TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailGPGPromptStyle), false, ThemeColorType.Input, key.KeyId);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.MailGPGPromptStyle), false, ThemeColorType.Input, key.KeyId);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD") + ": ", false, ThemeColorType.Input, key.KeyId);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD") + ": ", false, ThemeColorType.Input, key.KeyId);
             string Password = InputTools.ReadLineNoInput();
             return Password;
         }

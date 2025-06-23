@@ -23,11 +23,10 @@ using System.Linq;
 using HwProber = SpecProbe.HardwareProber;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Terminaux.Colors.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Users.Windows;
 using SpecProbe.Parts;
 
@@ -144,7 +143,7 @@ namespace Nitrocid.Drivers.HardwareProber
             if (hardDrives is not null && hardDrives.Length == 0 || hardDrives is null)
             {
                 // SpecProbe may have failed to parse hard disks due to insufficient permissions.
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_STORAGEFAILED"), true, ThemeColorType.Warning);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_STORAGEFAILED"), true, ThemeColorType.Warning);
                 return "";
             }
             for (int i = 0; i < hardDrives.Length; i++)
@@ -266,16 +265,16 @@ namespace Nitrocid.Drivers.HardwareProber
                         {
                             foreach (var processor in hardwareList)
                             {
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_LISTING_CPUNAME"), false, ThemeColorType.ListEntry);
-                                TextWriters.Write($" {processor.Name}", true, ThemeColorType.ListValue);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PROCESSORVENDOR"), false, ThemeColorType.ListEntry);
-                                TextWriters.Write($" {processor.Vendor} [CPUID: {processor.CpuidVendor}]", true, ThemeColorType.ListValue);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2"), false, ThemeColorType.ListEntry);
-                                TextWriters.Write($" {processor.Speed} MHz", true, ThemeColorType.ListValue);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALCORES"), false, ThemeColorType.ListEntry);
-                                TextWriters.Write($" {processor.LogicalCores} ({processor.ProcessorCores} x{processor.Cores})", true, ThemeColorType.ListValue);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_CACHEDSIZES"), false, ThemeColorType.ListEntry);
-                                TextWriters.Write($" {processor.L1CacheSize.SizeString()} L1, {processor.L2CacheSize.SizeString()} L2, {processor.L3CacheSize.SizeString()} L3", true, ThemeColorType.ListValue);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_LISTING_CPUNAME"), false, ThemeColorType.ListEntry);
+                                TextWriterColor.Write($" {processor.Name}", true, ThemeColorType.ListValue);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PROCESSORVENDOR"), false, ThemeColorType.ListEntry);
+                                TextWriterColor.Write($" {processor.Vendor} [CPUID: {processor.CpuidVendor}]", true, ThemeColorType.ListValue);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_CLOCKSPEED2"), false, ThemeColorType.ListEntry);
+                                TextWriterColor.Write($" {processor.Speed} MHz", true, ThemeColorType.ListValue);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALCORES"), false, ThemeColorType.ListEntry);
+                                TextWriterColor.Write($" {processor.LogicalCores} ({processor.ProcessorCores} x{processor.Cores})", true, ThemeColorType.ListValue);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_CACHEDSIZES"), false, ThemeColorType.ListEntry);
+                                TextWriterColor.Write($" {processor.L1CacheSize.SizeString()} L1, {processor.L2CacheSize.SizeString()} L2, {processor.L3CacheSize.SizeString()} L3", true, ThemeColorType.ListValue);
                             }
                         }
                         break;
@@ -287,12 +286,12 @@ namespace Nitrocid.Drivers.HardwareProber
                         {
                             foreach (var ram in hardwareList)
                             {
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALUSABLEMEMORY"), false, ThemeColorType.ListEntry);
-                                TextWriters.Write($" {ram.TotalMemory.SizeString()}", true, ThemeColorType.ListValue);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALMEMORY"), false, ThemeColorType.ListEntry);
-                                TextWriters.Write($" {ram.TotalPhysicalMemory.SizeString()}", true, ThemeColorType.ListValue);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALRESERVEDMEMORY"), false, ThemeColorType.ListEntry);
-                                TextWriters.Write($" {ram.SystemReservedMemory.SizeString()}", true, ThemeColorType.ListValue);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALUSABLEMEMORY"), false, ThemeColorType.ListEntry);
+                                TextWriterColor.Write($" {ram.TotalMemory.SizeString()}", true, ThemeColorType.ListValue);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALMEMORY"), false, ThemeColorType.ListEntry);
+                                TextWriterColor.Write($" {ram.TotalPhysicalMemory.SizeString()}", true, ThemeColorType.ListValue);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TOTALRESERVEDMEMORY"), false, ThemeColorType.ListEntry);
+                                TextWriterColor.Write($" {ram.SystemReservedMemory.SizeString()}", true, ThemeColorType.ListValue);
                             }
                         }
                         break;
@@ -304,18 +303,18 @@ namespace Nitrocid.Drivers.HardwareProber
                         {
                             foreach (var hdd in hardwareList)
                             {
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_DISKNUM"), false, ThemeColorType.ListEntry);
-                                TextWriters.Write($" {hdd.HardDiskNumber}", true, ThemeColorType.ListValue);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_DISKSIZE"), false, ThemeColorType.ListEntry);
-                                TextWriters.Write($" {hdd.HardDiskSize.SizeString()}", true, ThemeColorType.ListValue);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PARTITIONS"), false, ThemeColorType.ListEntry);
-                                TextWriters.Write($" {hdd.PartitionCount}", true, ThemeColorType.ListValue);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_DISKNUM"), false, ThemeColorType.ListEntry);
+                                TextWriterColor.Write($" {hdd.HardDiskNumber}", true, ThemeColorType.ListValue);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_DISKSIZE"), false, ThemeColorType.ListEntry);
+                                TextWriterColor.Write($" {hdd.HardDiskSize.SizeString()}", true, ThemeColorType.ListValue);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PARTITIONS"), false, ThemeColorType.ListEntry);
+                                TextWriterColor.Write($" {hdd.PartitionCount}", true, ThemeColorType.ListValue);
                                 foreach (var part in hdd.Partitions)
                                 {
-                                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PARTITIONNUM"), false, ThemeColorType.ListEntry);
-                                    TextWriters.Write($" {part.PartitionNumber}", true, ThemeColorType.ListValue);
-                                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_LISTING_PARTITIONSIZE"), false, ThemeColorType.ListEntry);
-                                    TextWriters.Write($" {part.PartitionSize.SizeString()}", true, ThemeColorType.ListValue);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_PARTITIONNUM"), false, ThemeColorType.ListEntry);
+                                    TextWriterColor.Write($" {part.PartitionNumber}", true, ThemeColorType.ListValue);
+                                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_LISTING_PARTITIONSIZE"), false, ThemeColorType.ListEntry);
+                                    TextWriterColor.Write($" {part.PartitionSize.SizeString()}", true, ThemeColorType.ListValue);
                                 }
                             }
                         }
@@ -328,14 +327,14 @@ namespace Nitrocid.Drivers.HardwareProber
                         {
                             foreach (var gpu in hardwareList)
                             {
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_GFXCARDNAME"), false, ThemeColorType.ListEntry);
-                                TextWriters.Write($" {gpu.VideoCardName}", true, ThemeColorType.ListValue);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_GFXCARDNAME"), false, ThemeColorType.ListEntry);
+                                TextWriterColor.Write($" {gpu.VideoCardName}", true, ThemeColorType.ListValue);
                             }
                         }
                         break;
                     }
                 default:
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TYPENOTFOUND"), true, ThemeColorType.Error, hardwareType);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_TYPENOTFOUND"), true, ThemeColorType.Error, hardwareType);
                     break;
             }
         }

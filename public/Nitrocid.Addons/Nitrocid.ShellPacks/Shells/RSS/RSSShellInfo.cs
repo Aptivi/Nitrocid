@@ -25,7 +25,6 @@ using Nitrocid.ShellPacks.Shells.RSS.Commands;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Prompts;
-using Nitrocid.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.RSS
 {

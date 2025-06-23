@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools.Transfer;
 using Nitrocid.Kernel.Exceptions;
@@ -45,18 +44,18 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
         {
             string LocalFolder = parameters.ArgumentsList[0];
             string RemoteFolder = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);
             bool Result = !string.IsNullOrWhiteSpace(LocalFolder) ? FTPTransfer.FTPUploadFolder(RemoteFolder, LocalFolder) : FTPTransfer.FTPUploadFolder(RemoteFolder);
             if (Result)
             {
                 TextWriterRaw.Write();
-                TextWriters.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADED"), true, ThemeColorType.Success, parameters.ArgumentsList[0]);
+                TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADED"), true, ThemeColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
                 TextWriterRaw.Write();
-                TextWriters.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PUT_FAILED"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
+                TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PUT_FAILED"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPFilesystem);
             }
         }

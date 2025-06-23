@@ -20,10 +20,9 @@
 using System;
 using Terminaux.Shell.Commands;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Colors.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -50,12 +49,12 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
                     // Write the property name and its value
                     SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_TITLE") + $" {type.Name}::{propertyName}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_VALUE") + $": ", false, ThemeColorType.ListEntry);
-                    TextWriters.Write($"{property.GetValue(null)}", ThemeColorType.ListValue);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_VALUE") + $": ", false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($"{property.GetValue(null)}", ThemeColorType.ListValue);
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}::{propertyName}: {ex.Message}", ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}::{propertyName}: {ex.Message}", ThemeColorType.Error);
                 }
             }
             return 0;

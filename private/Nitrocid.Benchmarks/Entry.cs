@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Benchmarks
 {
@@ -28,7 +28,7 @@ namespace Nitrocid.Benchmarks
         {
             if (args.Length == 0)
             {
-                TextWriters.Write("Specify a benchmark to run.", ThemeColorType.Error);
+                TextWriterColor.Write("Specify a benchmark to run.", ThemeColorType.Error);
                 return;
             }
             string benchName = args[0];

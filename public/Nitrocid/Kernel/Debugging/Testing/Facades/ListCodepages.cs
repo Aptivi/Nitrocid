@@ -20,7 +20,7 @@
 using Nitrocid.Languages;
 using System.Linq;
 using System.Text;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -31,7 +31,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             string[] Encodings = Encoding.GetEncodings().Select((ei) => $"[{ei.CodePage}] {ei.Name}: {ei.DisplayName}").ToArray();
-            TextWriters.WriteList(Encodings);
+            ListWriterColor.WriteList(Encodings);
         }
     }
 }

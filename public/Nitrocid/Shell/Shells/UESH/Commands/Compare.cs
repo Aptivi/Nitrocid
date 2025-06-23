@@ -20,7 +20,6 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Files;
@@ -43,26 +42,26 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
             if (!FilesystemTools.FileExists(pathOne))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_SOURCENOTFOUND"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_SOURCENOTFOUND"), ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             if (!FilesystemTools.FileExists(pathTwo))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_TARGETNOTFOUND"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_TARGETNOTFOUND"), ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             var compared = FilesystemTools.Compare(pathOne, pathTwo);
             if (compared.Length == 0)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_IDENTICAL"), ThemeColorType.Warning);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_IDENTICAL"), ThemeColorType.Warning);
                 return 0;
             }
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_DIFFERENT"));
             foreach (var (line, one, two) in compared)
             {
-                TextWriters.WriteListEntry($"[{line}]", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_DETAILS_DIFFERENT"), ThemeColorType.ListEntry, ThemeColorType.ListValue);
-                TextWriters.WriteListEntry("[-]", one, ThemeColorType.ListEntry, ThemeColorType.ListValue, 1);
-                TextWriters.WriteListEntry("[+]", two, ThemeColorType.ListEntry, ThemeColorType.ListValue, 1);
+                ListEntryWriterColor.WriteListEntry($"[{line}]", LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_COMPARE_DETAILS_DIFFERENT"), ThemeColorType.ListEntry, ThemeColorType.ListValue);
+                ListEntryWriterColor.WriteListEntry("[-]", one, ThemeColorType.ListEntry, ThemeColorType.ListValue, 1);
+                ListEntryWriterColor.WriteListEntry("[+]", two, ThemeColorType.ListEntry, ThemeColorType.ListValue, 1);
             }
             return 0;
         }

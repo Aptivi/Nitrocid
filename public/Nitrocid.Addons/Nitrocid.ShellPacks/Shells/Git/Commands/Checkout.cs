@@ -21,7 +21,7 @@ using LibGit2Sharp;
 using GitCommand = LibGit2Sharp.Commands;
 using System.Linq;
 using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Colors.Themes.Colors;
 
@@ -43,7 +43,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             // Check to see if the repo has been modified
             if (status.IsDirty)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSSAVING"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSSAVING"), true, ThemeColorType.Error);
                 return 9;
             }
 
@@ -56,7 +56,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             string requestedBranch = parameters.ArgumentsList[0];
             if (!branchFriendlyNames.Contains(requestedBranch) && !branchCanonNames.Contains(requestedBranch))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NOBRANCH") + $" {requestedBranch}", true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NOBRANCH") + $" {requestedBranch}", true, ThemeColorType.Error);
                 return 10;
             }
 

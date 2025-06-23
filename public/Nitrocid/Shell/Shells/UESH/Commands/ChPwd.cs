@@ -19,7 +19,7 @@
 
 using System;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -50,7 +50,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
@@ -58,7 +58,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (parameters.ArgumentsList[3].Contains(' '))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                 }
                 else if (parameters.ArgumentsList[3] == parameters.ArgumentsList[2])
@@ -68,13 +68,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else if (parameters.ArgumentsList[3] != parameters.ArgumentsList[2])
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_MISMATCH"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_MISMATCH"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                 }
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_FAILURE"), true, ThemeColorType.Error, ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHPWD_FAILURE"), true, ThemeColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return ex.GetHashCode();
             }

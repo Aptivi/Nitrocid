@@ -19,10 +19,10 @@
 
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Power;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Arguments.Base;
 using Terminaux.Shell.Arguments.Base.Help;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {
@@ -31,7 +31,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
 
         public override void Execute(ArgumentParameters parameters)
         {
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_HELP_LISTING"), true, ThemeColorType.ListTitle);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_HELP_LISTING"), true, ThemeColorType.ListTitle);
             ArgumentHelpPrint.ShowArgsHelp(KernelArguments.AvailableCMDLineArgs);
             PowerManager.hardShutdown = true;
             PowerManager.KernelShutdown = true;

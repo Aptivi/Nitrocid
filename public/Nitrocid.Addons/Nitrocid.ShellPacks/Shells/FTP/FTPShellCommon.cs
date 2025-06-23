@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using FluentFTP;
 using Nitrocid.Network.Connections;
 using Terminaux.Shell.Commands;
 

@@ -19,7 +19,7 @@
 
 using Microsoft.Data.Sqlite;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -56,14 +56,14 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
             string[] replies = [];
             if (SqlEditTools.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, [.. sqlParameters]))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDSUCCESS"), true, ThemeColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDSUCCESS"), true, ThemeColorType.Success);
                 foreach (string reply in replies)
-                    TextWriters.Write(reply, true, ThemeColorType.Success);
+                    TextWriterColor.Write(reply, true, ThemeColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDFAILURE"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDFAILURE"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.SqlEditor);
             }
         }

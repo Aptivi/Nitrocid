@@ -18,12 +18,11 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
 using System.Linq;
-using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -40,7 +39,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (!ExtensionHandlerTools.IsHandlerRegistered(parameters.ArgumentsList[0]))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_NOEXT"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_NOEXT"), ThemeColorType.Error);
                 return 22;
             }
             var handlers = ExtensionHandlerTools.GetExtensionHandlers(parameters.ArgumentsList[0]);
@@ -48,10 +47,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 ExtensionHandler handler = handlers[i];
                 SeparatorWriterColor.WriteSeparatorColor($"{i + 1}/{handlers.Length}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION") + ": ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(handler.Extension, ThemeColorType.ListValue);
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSIONHANDLER") + ": ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(handler.Implementer, ThemeColorType.ListValue);
+                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSION") + ": ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(handler.Extension, ThemeColorType.ListValue);
+                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETALLEXTHANDLERS_EXTENSIONHANDLER") + ": ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(handler.Implementer, ThemeColorType.ListValue);
             }
             variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Implementer))}]";
             return 0;

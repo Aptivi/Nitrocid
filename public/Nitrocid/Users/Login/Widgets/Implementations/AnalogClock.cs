@@ -23,8 +23,6 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
 using System;
 using System.Text;
-using Terminaux.Base;
-using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;

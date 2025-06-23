@@ -47,7 +47,6 @@ using BassBoom.Basolia;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using Nitrocid.Misc.Screensaver;
 using System.Linq;
 using Terminaux.Colors;

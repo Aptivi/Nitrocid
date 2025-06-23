@@ -19,7 +19,7 @@
 
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
@@ -422,7 +422,7 @@ namespace Nitrocid.Kernel.Exceptions
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_DUMPFAILED") + " {0}: {1}", true, ThemeColorType.Error, Exc?.GetType()?.FullName ?? "<null>", ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_DUMPFAILED") + " {0}: {1}", true, ThemeColorType.Error, Exc?.GetType()?.FullName ?? "<null>", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }

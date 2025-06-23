@@ -24,7 +24,6 @@ using Terminaux.Shell.Prompts;
 using Terminaux.Shell.Arguments;
 using Nitrocid.Shell.Shells.Text.Commands;
 using Nitrocid.Shell.Shells.Text.Presets;
-using Nitrocid.Languages;
 
 namespace Nitrocid.Shell.Shells.Text
 {

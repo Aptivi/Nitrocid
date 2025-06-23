@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -38,12 +38,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (!ExtensionHandlerTools.IsHandlerRegistered(parameters.ArgumentsList[0]))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_NOEXT"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETDEFAULTEXTHANDLER_NOEXT"), ThemeColorType.Error);
                 return 23;
             }
             if (!ExtensionHandlerTools.IsHandlerRegisteredSpecific(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSIMPLEMENTER"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EXTENSIONS_EXCEPTION_NEEDSIMPLEMENTER"), ThemeColorType.Error);
                 return 24;
             }
             ExtensionHandlerTools.SetExtensionHandler(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);

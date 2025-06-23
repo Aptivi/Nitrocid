@@ -20,7 +20,7 @@
 using Nettify.Rss.Instance;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Interactive;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Shells.RSS.Interactive;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Exceptions;
@@ -53,7 +53,7 @@ namespace Nitrocid.ShellPacks.Commands
                     string address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDURLPROMPT") + ": ", Config.MainConfig.RssHeadlineUrl);
                     if (string.IsNullOrEmpty(address) || !Uri.TryCreate(address, UriKind.Absolute, out Uri? uri))
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE"), ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE"), ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSNetwork);
                     }
                     tui.rssConnection = EstablishRssConnection(address);

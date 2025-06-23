@@ -20,7 +20,7 @@
 using System;
 using System.Threading;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -51,13 +51,13 @@ namespace Nitrocid.ShellPacks.Shells.Git
                 RepoPath = Convert.ToString(ShellArgs[0]) ?? "";
                 if (string.IsNullOrEmpty(RepoPath))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSREPO"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSREPO"), true, ThemeColorType.Error);
                     Bail = true;
                 }
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSREPO"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_NEEDSREPO"), true, ThemeColorType.Error);
                 Bail = true;
             }
 
@@ -67,7 +67,7 @@ namespace Nitrocid.ShellPacks.Shells.Git
                 DebugWriter.WriteDebug(DebugLevel.W, "Repo not open yet. Trying to open {0}...", vars: [RepoPath]);
                 if (!GitShellCommon.OpenRepository(RepoPath))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_REPOFAILED"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_REPOFAILED"), true, ThemeColorType.Error);
                     Bail = true;
                 }
             }
@@ -88,7 +88,7 @@ namespace Nitrocid.ShellPacks.Shells.Git
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + CharManager.NewLine + "Error {0}: {1}", true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + CharManager.NewLine + "Error {0}: {1}", true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                     continue;
                 }
             }

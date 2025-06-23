@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -39,7 +39,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
         {
             if (!ArchiveTools.ChangeWorkingArchiveDirectory(parameters.ArgumentsList[0]))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Archive);
             }
             return 0;

@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Editors.HexEdit;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -47,18 +47,18 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                 if (Convert.ToInt32(parameters.ArgumentsList[0]) <= FileBytes.LongLength)
                 {
                     HexEditTools.DeleteByte(Convert.ToInt64(parameters.ArgumentsList[0]));
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTE_SUCCESS"), true, ThemeColorType.Success);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_DELBYTE_SUCCESS"), true, ThemeColorType.Success);
                     return 0;
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_BYTENUMTOOLARGE"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                 }
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMON_NOTNUMERIC"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_HEX_COMMON_NOTNUMERIC"), true, ThemeColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
             }

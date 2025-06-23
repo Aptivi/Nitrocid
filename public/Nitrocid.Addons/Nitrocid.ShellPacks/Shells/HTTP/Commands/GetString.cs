@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Languages;
@@ -39,7 +38,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_GETTING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_GETTING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0]);
 
             try
             {
@@ -51,20 +50,20 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
             }
             catch (AggregateException aex)
             {
-                TextWriters.Write(aex.Message + ":", true, ThemeColorType.Error);
+                TextWriterColor.Write(aex.Message + ":", true, ThemeColorType.Error);
                 foreach (Exception InnerException in aex.InnerExceptions)
                 {
-                    TextWriters.Write("- " + InnerException.Message, true, ThemeColorType.Error);
+                    TextWriterColor.Write("- " + InnerException.Message, true, ThemeColorType.Error);
                     if (InnerException.InnerException is not null)
                     {
-                        TextWriters.Write("- " + InnerException.InnerException.Message, true, ThemeColorType.Error);
+                        TextWriterColor.Write("- " + InnerException.InnerException.Message, true, ThemeColorType.Error);
                     }
                 }
                 return aex.GetHashCode();
             }
             catch (Exception ex)
             {
-                TextWriters.Write(ex.Message, true, ThemeColorType.Error);
+                TextWriterColor.Write(ex.Message, true, ThemeColorType.Error);
                 return ex.GetHashCode();
             }
         }

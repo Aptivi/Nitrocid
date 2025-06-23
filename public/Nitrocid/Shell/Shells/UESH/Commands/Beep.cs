@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -45,12 +45,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (!int.TryParse(parameters.ArgumentsList[0], out var freq))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_BEEP_INVALIDFREQ"), ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_BEEP_INVALIDFREQ"), ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                 }
                 if (!int.TryParse(parameters.ArgumentsList[1], out var ms))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_BEEP_INVALIDDURATION"), ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_BEEP_INVALIDDURATION"), ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                 }
                 ConsoleWrapper.Beep(freq, ms);

@@ -20,7 +20,7 @@
 using System;
 using System.Linq;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
@@ -72,7 +72,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(ex.Message, true, ThemeColorType.Error);
+                TextWriterColor.Write(ex.Message, true, ThemeColorType.Error);
                 return ex.GetHashCode();
             }
         }

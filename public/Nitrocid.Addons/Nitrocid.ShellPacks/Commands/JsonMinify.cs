@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
@@ -60,7 +59,7 @@ namespace Nitrocid.ShellPacks.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND"), true, ThemeColorType.Error, JsonFile);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND"), true, ThemeColorType.Error, JsonFile);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
         }

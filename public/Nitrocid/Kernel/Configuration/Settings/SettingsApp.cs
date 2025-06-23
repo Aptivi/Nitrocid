@@ -23,7 +23,7 @@ using System.Linq;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -64,7 +64,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             // Verify that we actually have the type
             if (settingsType is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_TYPENOTFOUND"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_TYPENOTFOUND"), true, ThemeColorType.Error);
                 return;
             }
 
@@ -99,7 +99,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
             SettingsEntry[]? SettingsEntries = settingsType.SettingsEntries;
             if (SettingsEntries is null || SettingsEntries.Length == 0)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ENTRIESNOTFOUND"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ENTRIESNOTFOUND"), true, ThemeColorType.Error);
                 return;
             }
             int MaxSections = SettingsEntries.Length;
@@ -302,8 +302,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_OPTIONINVALID"), true, ThemeColorType.Error, Answer);
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_OPTIONINVALID"), true, ThemeColorType.Error, Answer);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, ThemeColorType.Error);
                         Input.ReadKey();
                     }
                 }

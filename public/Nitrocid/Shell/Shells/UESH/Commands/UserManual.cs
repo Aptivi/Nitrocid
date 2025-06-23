@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Nitrocid.Languages;
@@ -36,14 +35,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_MAINLINK"));
-            TextWriters.Write(
+            TextWriterColor.Write(
                 KernelPlatform.IsOnUnix() ?
                 $"    {CharManager.GetEsc()}]8;;https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/{CharManager.GetEsc()}\\Manual page{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
                 "    https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/",
                 true, ThemeColorType.Tip
             );
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_APILINK"));
-            TextWriters.Write(
+            TextWriterColor.Write(
                 KernelPlatform.IsOnUnix() ?
                 $"    {CharManager.GetEsc()}]8;;https://aptivi.github.io/Nitrocid{CharManager.GetEsc()}\\API documentation{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
                 "    https://aptivi.github.io/Nitrocid",
@@ -54,9 +53,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_MAINLINK"));
-            TextWriters.Write("    https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/", true, ThemeColorType.Tip);
+            TextWriterColor.Write("    https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/", true, ThemeColorType.Tip);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_APILINK"));
-            TextWriters.Write("    https://aptivi.github.io/Nitrocid", true, ThemeColorType.Tip);
+            TextWriterColor.Write("    https://aptivi.github.io/Nitrocid", true, ThemeColorType.Tip);
             return 0;
         }
 

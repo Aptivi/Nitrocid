@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             // Bail if there are addons already installed
             if (AddonTools.ListAddons().Count > 0 && !SwitchManager.ContainsSwitch(parameters.SwitchesList, "-reinstall"))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_ALREADYINSTALLED"), ThemeColorType.Progress);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_ALREADYINSTALLED"), ThemeColorType.Progress);
                 return 0;
             }
 
@@ -55,14 +55,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             KernelUpdate? addonsPackage;
             try
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_FETCHING"), ThemeColorType.Progress);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_FETCHING"), ThemeColorType.Progress);
                 addonsPackage = UpdateManager.FetchAddonPack();
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to fetch the addon package: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_FETCHFAILED") + $": {ex.Message}", ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_FETCHFAILED") + $": {ex.Message}", ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.AddonManagement);
             }
 
@@ -71,28 +71,28 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (addonsPackage is null)
                     throw new KernelException(KernelExceptionType.Unknown, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_OBTAINFAILED"));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_DOWNLOADING"), ThemeColorType.Progress);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_DOWNLOADING"), ThemeColorType.Progress);
                 NetworkTransfer.DownloadFile(addonsPackage.UpdateURL.ToString(), PathsManagement.AppDataPath + "/addons.zip");
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to download the addon package: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_DOWNLOADFAILED") + $": {ex.Message}", ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_DOWNLOADFAILED") + $": {ex.Message}", ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.AddonManagement);
             }
 
             // Finally, try to install the addons package
             try
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_INSTALLING"), ThemeColorType.Progress);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_INSTALLING"), ThemeColorType.Progress);
                 ZipFile.ExtractToDirectory(PathsManagement.AppDataPath + "/addons.zip", PathsManagement.AddonsPath, true);
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to install the addon package: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_INSTALLFAILED") + $": {ex.Message}", ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_INSTALLFAILED") + $": {ex.Message}", ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.AddonManagement);
             }
             return 0;

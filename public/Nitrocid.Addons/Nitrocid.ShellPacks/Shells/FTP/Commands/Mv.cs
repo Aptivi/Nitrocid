@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools.Filesystem;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -40,15 +40,15 @@ namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_MOVING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_MOVING"), true, ThemeColorType.Progress, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             if (FTPFilesystem.FTPMoveItem(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))
             {
-                TextWriters.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_MOVED"), true, ThemeColorType.Success);
+                TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_MOVED"), true, ThemeColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriters.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_MOVEFAILED"), true, ThemeColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+                TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_MOVEFAILED"), true, ThemeColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPFilesystem);
             }
         }

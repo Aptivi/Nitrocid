@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Textify.General;
@@ -131,7 +130,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             }
 
             // Enter the loop until the user presses ESC
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SPEEDPRESS_ESC") + CharManager.NewLine, true, ThemeColorType.Tip);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SPEEDPRESS_ESC") + CharManager.NewLine, true, ThemeColorType.Tip);
             while (WrittenChar.Key != ConsoleKey.Escape)
             {
                 // Select a random character
@@ -139,7 +138,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
                 // Prompt user for character
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SPEEDPRESS_CURRENTCHAR") + " {0}", SelectedChar);
-                TextWriters.Write("> ", false, ThemeColorType.Input);
+                TextWriterColor.Write("> ", false, ThemeColorType.Input);
                 var (result, provided) = Input.ReadKeyTimeout(TimeSpan.FromMilliseconds(SpeedTimeout));
                 WrittenChar = result;
                 TextWriterRaw.Write();
@@ -149,17 +148,17 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 {
                     if (WrittenChar.KeyChar == SelectedChar)
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SPEEDPRESS_CORRECT"), true, ThemeColorType.Success);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SPEEDPRESS_CORRECT"), true, ThemeColorType.Success);
                     }
                     else if (WrittenChar.Key != ConsoleKey.Escape)
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SPEEDPRESS_INCORRECT"), true, ThemeColorType.Warning);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SPEEDPRESS_INCORRECT"), true, ThemeColorType.Warning);
                     }
                 }
                 else
                 {
                     TextWriterRaw.Write();
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SPEEDPRESS_NOTONTIME"), true, ThemeColorType.Warning);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_SPEEDPRESS_NOTONTIME"), true, ThemeColorType.Warning);
                 }
             }
         }

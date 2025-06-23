@@ -24,7 +24,6 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Prompts;
 using Terminaux.Shell.Arguments;
-using Nitrocid.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP
 {

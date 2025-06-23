@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
 
@@ -38,7 +38,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             GitShellCommon.email = parameters.ArgumentsList[0];
             GitShellCommon.name = parameters.ArgumentsList[1];
             GitShellCommon.isIdentified = true;
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_SETID_SUCCESS") + $": {GitShellCommon.name} <{GitShellCommon.email}>", true, ThemeColorType.Success);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_SETID_SUCCESS") + $": {GitShellCommon.name} <{GitShellCommon.email}>", true, ThemeColorType.Success);
             return 0;
         }
 

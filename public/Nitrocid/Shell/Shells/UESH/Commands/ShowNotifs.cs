@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
@@ -48,11 +47,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 {
                     foreach (Notification Notif in NotificationManager.NotifRecents)
                     {
-                        TextWriters.Write($"[{Count}/{NotificationManager.NotifRecents.Count}] {Notif.Title}: ", false, ThemeColorType.ListEntry);
-                        TextWriters.Write(Notif.Desc, false, ThemeColorType.ListValue);
+                        TextWriterColor.Write($"[{Count}/{NotificationManager.NotifRecents.Count}] {Notif.Title}: ", false, ThemeColorType.ListEntry);
+                        TextWriterColor.Write(Notif.Desc, false, ThemeColorType.ListValue);
                         if (Notif.Type == NotificationType.Progress)
                         {
-                            TextWriters.Write($" ({Notif.Progress}%)", false, Notif.ProgressState == NotificationProgressState.Failure ? ThemeColorType.Error : ThemeColorType.Success);
+                            TextWriterColor.Write($" ({Notif.Progress}%)", false, Notif.ProgressState == NotificationProgressState.Failure ? ThemeColorType.Error : ThemeColorType.Success);
                         }
                         TextWriterRaw.Write();
                         Count += 1;

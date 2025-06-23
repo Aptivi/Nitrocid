@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Starting;
@@ -37,7 +37,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string tip = WelcomeMessage.GetRandomTip();
-            TextWriters.Write(
+            TextWriterColor.Write(
                 "* " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_TIPS_PREFIX") + " " + tip, true, ThemeColorType.Tip);
             return 0;
         }

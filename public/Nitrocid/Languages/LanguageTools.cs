@@ -18,7 +18,6 @@
 //
 
 using LocaleStation.Tools;
-using Nitrocid.Kernel.Configuration;
 using Nitrocid.Localized;
 
 namespace Nitrocid.Languages

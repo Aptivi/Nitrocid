@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using Newtonsoft.Json;
 using Textify.Versioning;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;

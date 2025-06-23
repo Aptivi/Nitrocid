@@ -27,9 +27,8 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Converters;
-using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Extras.Calendar.Calendar
@@ -85,7 +84,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
 
             // Populate the calendar data
             ThemeColorsTools.LoadBackground();
-            TextWriters.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), 1, true, ThemeColorType.TableTitle);
+            TextWriterWhereColor.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), 1, true, ThemeColorType.TableTitle);
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
                 var CurrentDate = new DateTime(year, month, CurrentDay);

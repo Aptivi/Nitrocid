@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 
 // using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Languages;
@@ -34,7 +34,7 @@ namespace Nitrocid.ShellPacks.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Implement on 0.1.1.
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING"), ThemeColorType.Warning);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING"), ThemeColorType.Warning);
             // NetworkConnectionTools.OpenConnectionForShell("MailShell", EstablishMailConnection, (_, connection) =>
             // EstablishMailConnectionSpeedDial(connection), parameters.ArgumentsText);
             return 0;

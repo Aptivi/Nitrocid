@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
@@ -39,8 +39,8 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             var tags = GitShellCommon.Repository.Tags;
             foreach (var tag in tags)
             {
-                TextWriters.Write($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, ThemeColorType.ListEntry);
-                TextWriters.Write($"  {tag.Target.Sha}", true, ThemeColorType.ListValue);
+                TextWriterColor.Write($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, ThemeColorType.ListEntry);
+                TextWriterColor.Write($"  {tag.Target.Sha}", true, ThemeColorType.ListValue);
             }
             return 0;
         }

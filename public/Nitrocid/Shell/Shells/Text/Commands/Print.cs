@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -56,19 +56,19 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                         {
                             string Line = TextEditShellCommon.FileLines[LineNumber - 1];
                             DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", vars: [LineNumber, Line]);
-                            TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, LineNumber);
-                            TextWriters.Write(Line, true, ThemeColorType.ListValue);
+                            TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineNumber);
+                            TextWriterColor.Write(Line, true, ThemeColorType.ListValue);
                             return 0;
                         }
                         else
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, ThemeColorType.Error);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, ThemeColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                         }
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
@@ -90,20 +90,20 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                             {
                                 string Line = TextEditShellCommon.FileLines[LineNumber - 1];
                                 DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", vars: [LineNumber, Line]);
-                                TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, LineNumber);
-                                TextWriters.Write(Line, true, ThemeColorType.ListValue);
+                                TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineNumber);
+                                TextWriterColor.Write(Line, true, ThemeColorType.ListValue);
                             }
                             return 0;
                         }
                         else
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, ThemeColorType.Error);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM"), true, ThemeColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                         }
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_DELLINE_NUMINVALID"), true, ThemeColorType.Error, parameters.ArgumentsList[0]);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
@@ -114,8 +114,8 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                 foreach (string Line in TextEditShellCommon.FileLines)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", vars: [LineNumber, Line]);
-                    TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, LineNumber);
-                    TextWriters.Write(Line, true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, LineNumber);
+                    TextWriterColor.Write(Line, true, ThemeColorType.ListValue);
                     LineNumber += 1;
                 }
                 return 0;

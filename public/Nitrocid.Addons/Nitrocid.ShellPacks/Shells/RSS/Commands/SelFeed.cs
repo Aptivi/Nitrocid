@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;
 using Textify.General;
@@ -41,8 +40,8 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
             var foundFeeds = SearcherTools.GetRssFeeds(parameters.ArgumentsList[0]);
             foreach (var feed in foundFeeds)
             {
-                TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, feed.Title);
-                TextWriters.Write(feed.FeedId, true, ThemeColorType.ListValue);
+                TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, feed.Title);
+                TextWriterColor.Write(feed.FeedId, true, ThemeColorType.ListValue);
                 TextWriterColor.Write("    {0}", feed.Description.SplitNewLines()[0].Truncate(200));
             }
             return 0;

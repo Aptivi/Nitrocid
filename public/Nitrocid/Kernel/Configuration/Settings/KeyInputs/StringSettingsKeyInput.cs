@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration.Instances;
@@ -41,7 +41,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string keyName = key.Name;
             string keyDesc = key.Description;
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriters.Write(finalSection + "\n", true, ThemeColorType.Question);
+            TextWriterColor.Write(finalSection + "\n", true, ThemeColorType.Question);
 
             // Write the prompt
             var settings = new InfoBoxSettings()

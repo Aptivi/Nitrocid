@@ -20,7 +20,6 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Collections.Generic;
-using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -33,9 +32,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var NormalIntegerDict = new Dictionary<string, int>() { { "One", 1 }, { "Two", 2 }, { "Three", 3 } };
             var ArrayIntegerDict = new Dictionary<string, int[]>() { { "One", new int[] { 1, 2, 3 } }, { "Two", new int[] { 1, 2, 3 } }, { "Three", new int[] { 1, 2, 3 } } };
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_NORMALLIST"));
-            TextWriters.WriteList(NormalIntegerDict);
+            ListWriterColor.WriteList(NormalIntegerDict);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERINT_ARRAYLIST"));
-            TextWriters.WriteList(ArrayIntegerDict);
+            ListWriterColor.WriteList(ArrayIntegerDict);
         }
     }
 }

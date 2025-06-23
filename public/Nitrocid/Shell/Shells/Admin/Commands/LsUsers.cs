@@ -20,7 +20,6 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Users;
-using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
 {
@@ -29,7 +28,7 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var users = UserManagement.ListAllUsers();
-            TextWriters.WriteList(users);
+            ListWriterColor.WriteList(users);
             variableValue = string.Join('\n', users);
             return 0;
         }

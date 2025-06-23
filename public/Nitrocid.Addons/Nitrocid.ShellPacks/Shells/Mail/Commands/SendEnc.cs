@@ -22,11 +22,10 @@ using Nitrocid.ShellPacks.Tools.Transfer;
 using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Colors.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Nitrocid.ConsoleBase.Inputs;
 
@@ -68,7 +67,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
             var Body = new BodyBuilder();
 
             // Prompt for receiver e-mail address
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT") + " ", false, ThemeColorType.Input);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT") + " ", false, ThemeColorType.Input);
             Receiver = InputTools.ReadLine();
             DebugWriter.WriteDebug(DebugLevel.I, "Recipient: {0}", vars: [Receiver]);
 
@@ -78,12 +77,12 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
                 DebugWriter.WriteDebug(DebugLevel.I, "Mail format satisfied. Contains \"@\" and contains \".\" in the second part after the \"@\" symbol.");
 
                 // Prompt for subject
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT") + " ", false, ThemeColorType.Input);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT") + " ", false, ThemeColorType.Input);
                 Subject = InputTools.ReadLine();
                 DebugWriter.WriteDebug(DebugLevel.I, "Subject: {0} ({1} chars)", vars: [Subject, Subject.Length]);
 
                 // Prompt for body
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT"), true, ThemeColorType.Input);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT"), true, ThemeColorType.Input);
                 string BodyLine = "";
                 while (!BodyLine.Equals("EOF", System.StringComparison.OrdinalIgnoreCase))
                 {
@@ -100,7 +99,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
                 string PathLine = " ";
                 while (!string.IsNullOrEmpty(PathLine))
                 {
-                    TextWriters.Write("> ", false, ThemeColorType.Input);
+                    TextWriterColor.Write("> ", false, ThemeColorType.Input);
                     PathLine = InputTools.ReadLine();
                     if (!string.IsNullOrEmpty(PathLine))
                     {
@@ -114,24 +113,24 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
                 }
 
                 // Send the message
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_SENDING"), true, ThemeColorType.Progress);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_SENDING"), true, ThemeColorType.Progress);
                 if (MailTransfer.MailSendEncryptedMessage(Receiver, Subject, Body.ToMessageBody()))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Message sent.");
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_SENT"), true, ThemeColorType.Success);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_SENT"), true, ThemeColorType.Success);
                     return 0;
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "See debug output to find what's wrong.");
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING"), true, ThemeColorType.Error);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Mail);
                 }
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mail format unsatisfied." + Receiver);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL") + " john.s@example.com", true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL") + " john.s@example.com", true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Mail);
             }
         }

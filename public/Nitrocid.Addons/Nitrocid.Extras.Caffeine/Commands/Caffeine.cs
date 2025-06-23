@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time.Alarm;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.Caffeine.Commands
             {
                 if (!AlarmTools.IsAlarmRegistered("Caffeine"))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_NOALERTS"), ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_NOALERTS"), ThemeColorType.Error);
                     return 32;
                 }
                 var id = AlarmTools.alarms.Keys.Last((alarm) => alarm.Contains("Caffeine"));
@@ -64,9 +64,9 @@ namespace Nitrocid.Extras.Caffeine.Commands
                 {
                     if (!Caffeines.TryGetValue(secsOrName, out var alarmSpecifier))
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_INVALIDSECONDS"), ThemeColorType.Error);
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_INVALIDSECONDSTIP"), ThemeColorType.Tip);
-                        TextWriters.WriteList(Caffeines);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_INVALIDSECONDS"), ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CAFFEINE_INVALIDSECONDSTIP"), ThemeColorType.Tip);
+                        ListWriterColor.WriteList(Caffeines);
                         return 26;
                     }
                     alarmSeconds = alarmSpecifier.Item2;

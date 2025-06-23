@@ -19,7 +19,7 @@
 
 using System;
 using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Colors.Themes.Colors;
@@ -42,15 +42,15 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
             if (!Enum.TryParse(exceptionStr, out KernelExceptionType type))
             {
                 // There is no such exception number being requested
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_EXCINFO_NOTYPE") + $" {exceptionStr}", true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_EXCINFO_NOTYPE") + $" {exceptionStr}", true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
             // Get the exception type and its message
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_EXCINFO_TYPENAME") + ": ", false, ThemeColorType.ListEntry);
-            TextWriters.Write($"{type} [{(int)type}]", true, ThemeColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_EXCINFO_MESSAGE") + ": ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(KernelExceptionMessages.GetMessageFromType(type), true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_EXCINFO_TYPENAME") + ": ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write($"{type} [{(int)type}]", true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_EXCINFO_MESSAGE") + ": ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(KernelExceptionMessages.GetMessageFromType(type), true, ThemeColorType.ListValue);
             return 0;
         }
 

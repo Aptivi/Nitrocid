@@ -21,7 +21,7 @@ using Newtonsoft.Json.Linq;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Inputs.Styles.Selection;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
@@ -91,7 +91,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             if (finalLangs.Length == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "No languages!");
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_NOLANGSPECIFIED"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_LANGUAGESTUDIO_APP_NOLANGSPECIFIED"), true, ThemeColorType.Error);
                 return;
             }
 

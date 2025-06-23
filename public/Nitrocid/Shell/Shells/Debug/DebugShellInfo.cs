@@ -28,7 +28,6 @@ using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Switches;
 using Nitrocid.Shell.Shells.Debug.Presets;
 using System.Linq;
-using Nitrocid.Languages;
 
 namespace Nitrocid.Shell.Shells.Debug
 {

@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -49,12 +49,12 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
             }
             catch (KernelException kex)
             {
-                TextWriters.Write(kex.Message, ThemeColorType.Error);
+                TextWriterColor.Write(kex.Message, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_SETITEMFAILED") + $" {ex.Message}", ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_SETITEMFAILED") + $" {ex.Message}", ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.JsonEditor);
             }
             return 0;

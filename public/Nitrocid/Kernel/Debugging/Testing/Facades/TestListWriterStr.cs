@@ -20,7 +20,6 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Collections.Generic;
-using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -33,9 +32,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var NormalStringList = new List<string>() { "String 1", "String 2", "String 3" };
             var ArrayStringList = new List<string[]>() { { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } } };
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_NORMALLIST"));
-            TextWriters.WriteList(NormalStringList);
+            ListWriterColor.WriteList(NormalStringList);
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_TESTLISTWRITERSTR_ARRAYLIST"));
-            TextWriters.WriteList(ArrayStringList);
+            ListWriterColor.WriteList(ArrayStringList);
         }
     }
 }

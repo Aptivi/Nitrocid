@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -51,7 +50,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                 !customContext || Enum.TryParse(contextName, out context);
             if (!contextValid)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_PREVIEWSPLASH_CONTEXTINVALID"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_PREVIEWSPLASH_CONTEXTINVALID"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Splash);
             }
 
@@ -66,7 +65,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
         {
             var splashes = SplashManager.GetNamesOfSplashes();
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_PREVIEWSPLASH_HELPER"));
-            TextWriters.WriteList(splashes);
+            ListWriterColor.WriteList(splashes);
         }
 
     }

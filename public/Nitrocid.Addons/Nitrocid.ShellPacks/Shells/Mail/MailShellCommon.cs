@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using MailKit;
-using MimeKit.Text;
 using Nitrocid.ShellPacks.Tools.Transfer;
 using Nitrocid.Network.Connections;
 

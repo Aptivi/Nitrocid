@@ -22,7 +22,7 @@ using GitCommand = LibGit2Sharp.Commands;
 using System.Linq;
 using System;
 using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Colors.Themes.Colors;
 
@@ -44,7 +44,7 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             // Check to see if the repo has been modified
             if (!status.IsDirty)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STAGE_NOCHANGES"), true, ThemeColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STAGE_NOCHANGES"), true, ThemeColorType.Success);
                 return 0;
             }
 
@@ -53,11 +53,11 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             try
             {
                 GitCommand.Stage(GitShellCommon.Repository, modified.FilePath);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STAGE_SUCCESS"), true, ThemeColorType.Success, modified.FilePath);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STAGE_SUCCESS"), true, ThemeColorType.Success, modified.FilePath);
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STAGE_FAILURE") + "{1}", true, ThemeColorType.Error, modified.FilePath, ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_STAGE_FAILURE") + "{1}", true, ThemeColorType.Error, modified.FilePath, ex.Message);
             }
             return 0;
         }

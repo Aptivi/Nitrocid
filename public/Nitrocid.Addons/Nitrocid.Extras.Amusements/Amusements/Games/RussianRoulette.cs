@@ -19,7 +19,6 @@
 
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Choice;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Languages;
@@ -44,9 +43,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Finally, check if the user is lucky or not
             if (unlucky)
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_ROULETTE_UNLUCKY"), true, ThemeColorType.Warning);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_ROULETTE_UNLUCKY"), true, ThemeColorType.Warning);
             else
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_ROULETTE_LUCKY"), true, ThemeColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_AMUSEMENTS_ROULETTE_LUCKY"), true, ThemeColorType.Success);
         }
     }
 }

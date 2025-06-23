@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
 
@@ -38,19 +38,19 @@ namespace Nitrocid.ShellPacks.Shells.Sql.Commands
             var connection = SqlShellCommon.sqliteConnection;
             if (connection is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION"), ThemeColorType.Error);
                 return 41;
             }
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_PATH") + " ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(connection.DataSource, true, ThemeColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_VERSION") + " ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(connection.ServerVersion, true, ThemeColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_STATE") + " ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(connection.State.ToString(), true, ThemeColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_STRING") + " ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(connection.ConnectionString, true, ThemeColorType.ListValue);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_NAME") + " ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(connection.Database, true, ThemeColorType.ListValue);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_PATH") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(connection.DataSource, true, ThemeColorType.ListValue);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_VERSION") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(connection.ServerVersion, true, ThemeColorType.ListValue);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_STATE") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(connection.State.ToString(), true, ThemeColorType.ListValue);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_STRING") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(connection.ConnectionString, true, ThemeColorType.ListValue);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_DBINFO_NAME") + " ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(connection.Database, true, ThemeColorType.ListValue);
             return 0;
         }
     }

@@ -32,7 +32,6 @@ using Nitrocid.Kernel.Exceptions;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Base.Buffered;
 using Nitrocid.Kernel.Extensions;
-using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Users.Login.Widgets;

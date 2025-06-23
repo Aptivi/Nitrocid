@@ -20,11 +20,10 @@
 using System;
 using Terminaux.Shell.Commands;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
 using Terminaux.Colors.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -49,13 +48,13 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                     {
                         // Write the field names and their values
                         SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_LSFIELDS_TITLE") + $" {type.Name}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                        TextWriters.WriteList(fields);
+                        ListWriterColor.WriteList(fields);
                     }
                 }
                 catch (Exception ex)
                 {
                     if (!SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppress"))
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_FAILED") + $" {type.Name}: {ex.Message}", ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_FAILED") + $" {type.Name}: {ex.Message}", ThemeColorType.Error);
                 }
             }
             return 0;
@@ -80,7 +79,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                 catch (Exception ex)
                 {
                     if (!SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppress"))
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_FAILED") + $" {type.Name}: {ex.Message}", ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETFIELDVALUE_FAILED") + $" {type.Name}: {ex.Message}", ThemeColorType.Error);
                 }
             }
             return 0;

@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Configuration.Settings;
@@ -93,7 +93,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
 
@@ -115,7 +115,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         typeFinal = "ExtraSaversConfig";
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_ADDIITONALSAVERS"), true, ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_ADDIITONALSAVERS"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
@@ -127,7 +127,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         typeFinal = "ExtraSplashesConfig";
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_ADDIITONALSPLASHES"), true, ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_ADDIITONALSPLASHES"), true, ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Config);
                     }
                 }
@@ -140,11 +140,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_TYPELISTING") + ": ", true, ThemeColorType.Tip);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_BASE") + ": ", true, ThemeColorType.ListTitle);
-            TextWriters.WriteList(Config.baseConfigurations.Keys);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_CUSTOM") + ": ", true, ThemeColorType.ListTitle);
-            TextWriters.WriteList(Config.customConfigurations.Keys);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_TYPELISTING") + ": ", true, ThemeColorType.Tip);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_BASE") + ": ", true, ThemeColorType.ListTitle);
+            ListWriterColor.WriteList(Config.baseConfigurations.Keys);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SETTINGS_CUSTOM") + ": ", true, ThemeColorType.ListTitle);
+            ListWriterColor.WriteList(Config.customConfigurations.Keys);
         }
 
     }

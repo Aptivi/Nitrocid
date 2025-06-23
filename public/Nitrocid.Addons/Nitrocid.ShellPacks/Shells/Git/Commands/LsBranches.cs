@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
@@ -39,8 +39,8 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             var branches = GitShellCommon.Repository.Branches;
             foreach (var branch in branches)
             {
-                TextWriters.Write($"- [{(branch.IsRemote ? "R" : " ")}-{(branch.IsTracking ? "T" : " ")}-{(branch.IsCurrentRepositoryHead ? "H" : " ")}] {branch.CanonicalName} [{branch.FriendlyName}]", true, ThemeColorType.ListEntry);
-                TextWriters.Write($"  {branch.Tip.Sha[..7]}: {branch.Tip.MessageShort}", true, ThemeColorType.ListValue);
+                TextWriterColor.Write($"- [{(branch.IsRemote ? "R" : " ")}-{(branch.IsTracking ? "T" : " ")}-{(branch.IsCurrentRepositoryHead ? "H" : " ")}] {branch.CanonicalName} [{branch.FriendlyName}]", true, ThemeColorType.ListEntry);
+                TextWriterColor.Write($"  {branch.Tip.Sha[..7]}: {branch.Tip.MessageShort}", true, ThemeColorType.ListValue);
             }
             return 0;
         }

@@ -21,11 +21,10 @@ using System;
 using System.Net.NetworkInformation;
 using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
 using Terminaux.Colors.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Nitrocid.Network;
 
@@ -70,19 +69,19 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             }
                             else
                             {
-                                TextWriters.Write("[{2}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_FAILED"), true, ThemeColorType.Error, PingedAddress, PingReplied.Status, CurrentTime);
+                                TextWriterColor.Write("[{2}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_FAILED"), true, ThemeColorType.Error, PingedAddress, PingReplied.Status, CurrentTime);
                             }
                         }
                         catch (Exception ex)
                         {
-                            TextWriters.Write("[{2}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_FAILED"), true, ThemeColorType.Error, PingedAddress, ex.Message, CurrentTime);
+                            TextWriterColor.Write("[{2}] " + LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_FAILED"), true, ThemeColorType.Error, PingedAddress, ex.Message, CurrentTime);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR"), true, ThemeColorType.Error);
                 }
             }
             return 0;

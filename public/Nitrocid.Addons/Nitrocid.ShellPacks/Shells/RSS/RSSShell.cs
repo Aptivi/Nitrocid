@@ -23,7 +23,7 @@ using Nettify.Rss.Instance;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Colors.Themes.Colors;
 using Textify.General;
@@ -82,7 +82,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + CharManager.NewLine + "Error {0}: {1}", true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + CharManager.NewLine + "Error {0}: {1}", true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
                     continue;
                 }
 
