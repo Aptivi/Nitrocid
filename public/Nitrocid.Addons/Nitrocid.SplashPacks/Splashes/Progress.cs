@@ -36,6 +36,7 @@ namespace Nitrocid.SplashPacks.Splashes
 {
     class SplashProgress : BaseSplash, ISplash
     {
+        private SimpleProgress progress = new(0, 100);
 
         // Standalone splash information
         public override string SplashName => "Progress";
@@ -121,14 +122,12 @@ namespace Nitrocid.SplashPacks.Splashes
                 ColorTools.TryParseColor(SplashPackInit.SplashConfig.ProgressProgressColor) ?
                 SplashPackInit.SplashConfig.ProgressProgressColor :
                 ThemeColorsTools.GetColor(ThemeColorType.Progress);
-            var progress = new SimpleProgress(Progress, 100)
-            {
-                Width = ConsoleWrapper.WindowWidth - 8,
-                ProgressActiveForegroundColor = progressColor,
-                ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor),
-                ProgressBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background),
-            };
-            PresetStringBuilder.Append(RendererTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 4)));
+            progress.Position = Progress;
+            progress.Width = ConsoleWrapper.WindowWidth - 6;
+            progress.ProgressActiveForegroundColor = progressColor;
+            progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor);
+            progress.ProgressBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
+            PresetStringBuilder.Append(RendererTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 2)));
             return PresetStringBuilder.ToString();
         }
 
