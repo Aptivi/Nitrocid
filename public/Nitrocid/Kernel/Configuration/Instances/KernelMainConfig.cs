@@ -275,7 +275,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string UserNameShellColor
         {
             get => ThemeColorsTools.GetColor("UserNameShellColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("UserNameShell", new Color(value));
+            set => ThemeColorsTools.SetColor("UserNameShellColor", new Color(value));
         }
         /// <summary>
         /// Host Name Shell Color
@@ -283,7 +283,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string HostNameShellColor
         {
             get => ThemeColorsTools.GetColor("HostNameShellColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("HostNameShell", new Color(value));
+            set => ThemeColorsTools.SetColor("HostNameShellColor", new Color(value));
         }
         /// <summary>
         /// Continuable Kernel Error Color
@@ -291,7 +291,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string ContinuableKernelErrorColor
         {
             get => ThemeColorsTools.GetColor("ContKernelErrorColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("ContKernelError", new Color(value));
+            set => ThemeColorsTools.SetColor("ContKernelErrorColor", new Color(value));
         }
         /// <summary>
         /// Uncontinuable Kernel Error Color
@@ -299,7 +299,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string UncontinuableKernelErrorColor
         {
             get => ThemeColorsTools.GetColor("UncontKernelErrorColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("UncontKernelError", new Color(value));
+            set => ThemeColorsTools.SetColor("UncontKernelErrorColor", new Color(value));
         }
         /// <summary>
         /// Text Color
@@ -415,7 +415,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string NotificationTitleColor
         {
             get => ThemeColorsTools.GetColor("NotificationTitleColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("NotificationTitle", new Color(value));
+            set => ThemeColorsTools.SetColor("NotificationTitleColor", new Color(value));
         }
         /// <summary>
         /// Notification Description Color
@@ -423,7 +423,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string NotificationDescriptionColor
         {
             get => ThemeColorsTools.GetColor("NotificationDescriptionColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("NotificationDescription", new Color(value));
+            set => ThemeColorsTools.SetColor("NotificationDescriptionColor", new Color(value));
         }
         /// <summary>
         /// Notification Progress Color
@@ -431,7 +431,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string NotificationProgressColor
         {
             get => ThemeColorsTools.GetColor("NotificationProgressColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("NotificationProgress", new Color(value));
+            set => ThemeColorsTools.SetColor("NotificationProgressColor", new Color(value));
         }
         /// <summary>
         /// Notification Failure Color
@@ -439,7 +439,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string NotificationFailureColor
         {
             get => ThemeColorsTools.GetColor("NotificationFailureColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("NotificationFailure", new Color(value));
+            set => ThemeColorsTools.SetColor("NotificationFailureColor", new Color(value));
         }
         /// <summary>
         /// Question Color
@@ -513,7 +513,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string DevelopmentWarningColor
         {
             get => ThemeColorsTools.GetColor("DevelopmentWarningColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("DevelopmentWarning", new Color(value));
+            set => ThemeColorsTools.SetColor("DevelopmentWarningColor", new Color(value));
         }
         /// <summary>
         /// Stage Time Color
@@ -521,7 +521,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string StageTimeColor
         {
             get => ThemeColorsTools.GetColor("StageTimeColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("StageTime", new Color(value));
+            set => ThemeColorsTools.SetColor("StageTimeColor", new Color(value));
         }
         /// <summary>
         /// Progress Color
@@ -545,7 +545,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string LowPriorityBorderColor
         {
             get => ThemeColorsTools.GetColor("LowPriorityBorderColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("LowPriorityBorder", new Color(value));
+            set => ThemeColorsTools.SetColor("LowPriorityBorderColor", new Color(value));
         }
         /// <summary>
         /// Medium Priority Border Color
@@ -553,7 +553,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string MediumPriorityBorderColor
         {
             get => ThemeColorsTools.GetColor("MediumPriorityBorderColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("MediumPriorityBorder", new Color(value));
+            set => ThemeColorsTools.SetColor("MediumPriorityBorderColor", new Color(value));
         }
         /// <summary>
         /// High Priority Border Color
@@ -561,7 +561,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string HighPriorityBorderColor
         {
             get => ThemeColorsTools.GetColor("HighPriorityBorderColor").PlainSequence;
-            set => ThemeColorsTools.SetColor("HighPriorityBorder", new Color(value));
+            set => ThemeColorsTools.SetColor("HighPriorityBorderColor", new Color(value));
         }
         /// <summary>
         /// Table Separator Color
