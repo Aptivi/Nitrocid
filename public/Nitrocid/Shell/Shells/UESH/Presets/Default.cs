@@ -136,7 +136,5 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
-
     }
 }

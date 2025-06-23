@@ -98,7 +98,5 @@ namespace Nitrocid.ShellPacks.Shells.Json.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
-
     }
 }

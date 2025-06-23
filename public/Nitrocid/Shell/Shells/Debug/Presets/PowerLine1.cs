@@ -93,11 +93,5 @@ namespace Nitrocid.Shell.Shells.Debug.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() =>
-            PresetPromptBuilder();
-
-        string IPromptPreset.PresetPromptCompletionBuilder() =>
-            PresetPromptCompletionBuilder();
-
     }
 }

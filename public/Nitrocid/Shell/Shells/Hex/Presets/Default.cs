@@ -98,7 +98,5 @@ namespace Nitrocid.Shell.Shells.Hex.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
-
     }
 }
