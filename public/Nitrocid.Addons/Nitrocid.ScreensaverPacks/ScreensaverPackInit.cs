@@ -138,6 +138,9 @@ namespace Nitrocid.ScreensaverPacks
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonScreensaverPacks);
 
+        string IAddon.AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonScreensaverPacks);
+
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
 
         internal static ExtraSaversConfig SaversConfig =>

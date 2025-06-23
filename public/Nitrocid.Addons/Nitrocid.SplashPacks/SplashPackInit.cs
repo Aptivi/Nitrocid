@@ -49,6 +49,9 @@ namespace Nitrocid.SplashPacks
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonSplashPacks);
 
+        string IAddon.AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonSplashPacks);
+
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
 
         internal static ExtraSplashesConfig SplashConfig =>

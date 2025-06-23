@@ -94,6 +94,9 @@ namespace Nitrocid.Extras.Forecast
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasForecast);
 
+        string IAddon.AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasForecast);
+
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static ForecastConfig ForecastConfig =>
