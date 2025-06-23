@@ -54,6 +54,7 @@ using Nitrocid.Kernel.Starting;
 using Terminaux.Reader;
 using Nitrocid.Misc.Audio;
 using System.Linq;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -155,7 +156,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <summary>
         /// If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.
         /// </summary>
-        public bool ConsoleSupportsTrueColor { get; set; } = true;
+        public bool ConsoleSupportsTrueColor
+        {
+            get => ColorTools.ConsoleSupportsTrueColor;
+            set => ColorTools.ConsoleSupportsTrueColor = value;
+        }
         /// <summary>
         /// Development notice acknowledged
         /// </summary>
@@ -844,6 +849,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         #endregion
 
         #region Shell
+        private string pathsToLookup = Environment.GetEnvironmentVariable("PATH") ?? "";
+
         /// <summary>
         /// Simplified help command for all the shells
         /// </summary>
@@ -858,7 +865,10 @@ namespace Nitrocid.Kernel.Configuration.Instances
             {
                 value = FilesystemTools.NeutralizePath(value);
                 if (FilesystemTools.FolderExists(value))
+                {
                     FilesystemTools._CurrentDirectory = value;
+                    ConsoleFilesystem.CurrentDir = value;
+                }
                 else
                     throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2"), value);
             }
@@ -866,7 +876,15 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <summary>
         /// Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing directory.
         /// </summary>
-        public string PathsToLookup { get; set; } = Environment.GetEnvironmentVariable("PATH") ?? "";
+        public string PathsToLookup
+        {
+            get => pathsToLookup;
+            set
+            {
+                pathsToLookup = value;
+                ConsoleFilesystem.LookupPaths = value;
+            }
+        }
         /// <summary>
         /// Default choice output type
         /// </summary>
