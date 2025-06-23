@@ -216,7 +216,7 @@ namespace Nitrocid.Misc.Splash
                 }
 
                 // Set the progress text
-                _ProgressText = Text;
+                _ProgressText = Text.FormatString(Vars);
 
                 // Report it
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)
