@@ -105,11 +105,6 @@ namespace Nitrocid
                     {
                         EnvironmentTools.ExecuteEnvironment();
                     }
-                    catch (KernelException icde) when (icde.ExceptionType == KernelExceptionType.InsaneConsoleDetected)
-                    {
-                        ConsoleWrapper.WriteLine(icde.Message);
-                        PowerManager.KernelShutdown = true;
-                    }
                     catch (KernelErrorException kee)
                     {
                         DebugWriter.WriteDebugStackTrace(kee);

@@ -25,6 +25,7 @@ using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Scripting;
 using System;
+using Terminaux.Base;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -41,12 +42,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 variableValue = "1";
                 return 0;
             }
-            catch (KernelException kex) when (kex.ExceptionType == KernelExceptionType.UESHScript)
+            catch (TerminauxException tex)
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED"), true, ThemeColorType.Error);
-                TextWriterColor.Write(kex.Message, true, ThemeColorType.Error);
+                TextWriterColor.Write(tex.Message, true, ThemeColorType.Error);
                 variableValue = "0";
-                return KernelExceptionTools.GetErrorCode(kex.ExceptionType);
+                return tex.GetHashCode();
             }
             catch (Exception ex)
             {

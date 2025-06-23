@@ -45,18 +45,6 @@ namespace Nitrocid.Kernel.Events
         /// </summary>
         LoginError,
         /// <summary>
-        /// When the shell is initialized
-        /// </summary>
-        ShellInitialized,
-        /// <summary>
-        /// Fired before command execution
-        /// </summary>
-        PreExecuteCommand,
-        /// <summary>
-        /// Fired after command execution
-        /// </summary>
-        PostExecuteCommand,
-        /// <summary>
         /// Fired on kernel error
         /// </summary>
         KernelError,
@@ -216,18 +204,6 @@ namespace Nitrocid.Kernel.Events
         /// Fired on SSH error
         /// </summary>
         SSHError,
-        /// <summary>
-        /// Fired before UESH script execution
-        /// </summary>
-        UESHPreExecute,
-        /// <summary>
-        /// Fired after UESH script execution
-        /// </summary>
-        UESHPostExecute,
-        /// <summary>
-        /// Fired on UESH error
-        /// </summary>
-        UESHError,
         /// <summary>
         /// Fired on notification being sent
         /// </summary>

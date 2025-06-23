@@ -1377,7 +1377,7 @@ namespace Nitrocid.Drivers.Filesystem
                     throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FILEINFONEEDED"));
                 if (finalDirInfo.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    if (finalDirInfo.Name.EndsWith(".uesh"))
+                    if (finalDirInfo.Name.EndsWith(".mesh"))
                     {
                         TextWriterColor.Write("- " + finalDirInfo.Name, false, ThemeColorType.Stage);
                         if (ShowFileDetails)
