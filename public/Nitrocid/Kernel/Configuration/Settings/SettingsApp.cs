@@ -440,8 +440,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     (!string.IsNullOrEmpty(notes) ? CharManager.NewLine + notes : "");
             else
                 // User prefers the modern style
-                return "\n  * " + title + CharManager.NewLine + CharManager.NewLine +
-                    description +
+                return title + ": " + description +
                     (!string.IsNullOrEmpty(notes) ? CharManager.NewLine + notes : "");
         }
 

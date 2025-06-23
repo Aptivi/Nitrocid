@@ -36,8 +36,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             ConsoleWrapper.Clear();
 
             // Make an introductory banner
-            string keyName = key.Name;
-            string keyDesc = key.Description;
+            string keyName = LanguageTools.GetLocalized(key.Name);
+            string keyDesc = LanguageTools.GetLocalized(key.Description);
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
             TextWriterColor.Write(finalSection + "\n", true, ThemeColorType.Question);
 
