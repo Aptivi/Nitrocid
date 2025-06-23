@@ -31,6 +31,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Textify.General;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -108,12 +109,12 @@ namespace Nitrocid.SplashPacks.Splashes
                 ProgressErrored ? "[X] " :
                 ProgressWarning ? "[!] " :
                 "    ";
-            string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
+            string RenderedText = ProgressReport.FormatString(Vars).Truncate(ConsoleWrapper.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
             PresetStringBuilder.Append(
                 ThemeColorsTools.GetColor(ThemeColorType.Progress).VTSequenceForeground +
                 TextWriterWhereColor.RenderWhere("{0:000}%", ProgressWritePositionX, ProgressWritePositionY, true, vars: Progress) +
                 finalColor.VTSequenceForeground +
-                TextWriterWhereColor.RenderWhere($"{indicator}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, Vars) +
+                TextWriterWhereColor.RenderWhere($"{indicator}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false) +
                 ConsoleClearing.GetClearLineToRightSequence()
             );
 
