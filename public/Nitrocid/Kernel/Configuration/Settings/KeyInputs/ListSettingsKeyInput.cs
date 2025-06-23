@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;

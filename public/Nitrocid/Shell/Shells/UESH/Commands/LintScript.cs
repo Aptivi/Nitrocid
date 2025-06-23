@@ -20,7 +20,6 @@
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
-using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Scripting;
