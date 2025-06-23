@@ -28,6 +28,7 @@ using Terminaux.Base;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Inputs.Styles.Infobox;
+using Nitrocid.Misc.Reflection;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -89,7 +90,13 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             }
 
             // Set the value
-            SettingsAppTools.SetPropertyValue(key.Variable, value is char ? finalValue : finalValue.ToString(), configType);
+            var property = PropertyManager.GetProperty(key.Variable, configType.GetType());
+            if (property is null)
+                return;
+            if (property.PropertyType == typeof(char))
+                SettingsAppTools.SetPropertyValue(key.Variable, finalValue, configType);
+            else
+                SettingsAppTools.SetPropertyValue(key.Variable, finalValue.ToString(), configType);
         }
 
     }
