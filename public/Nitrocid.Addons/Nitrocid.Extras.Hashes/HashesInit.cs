@@ -35,18 +35,18 @@ namespace Nitrocid.Extras.Hashes
         private readonly SHA384Enhanced singletonSha384E = new();
         private readonly SHA512Enhanced singletonSha512E = new();
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasHashes);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasHashes);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+        public ModLoadPriority AddonType => ModLoadPriority.Optional;
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
             DriverHandler.RegisterBaseDriver<IEncryptionDriver>(singletonCrc32);
             DriverHandler.RegisterBaseDriver<IEncryptionDriver>(singletonCrc32C);
@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.Hashes
             DriverHandler.RegisterBaseDriver<IEncryptionDriver>(singletonSha512E);
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
             DriverHandler.UnregisterBaseDriver<IEncryptionDriver>(singletonCrc32.DriverName);
             DriverHandler.UnregisterBaseDriver<IEncryptionDriver>(singletonCrc32C.DriverName);

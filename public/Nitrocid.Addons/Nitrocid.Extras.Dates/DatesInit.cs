@@ -83,28 +83,28 @@ namespace Nitrocid.Extras.Dates
             new CommandInfo("pomodoro", /* Localizable */ "NKS_DATES_COMMAND_POMODORO_DESC", new PomodoroCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDates);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasDates);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+        public ModLoadPriority AddonType => ModLoadPriority.Optional;
 
         internal static DatesConfig DatesConfig =>
             (DatesConfig)Config.baseConfigurations[nameof(DatesConfig)];
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
-            LanguageTools.AddCustomAction("Nitrocid.Extras.Dates", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new DatesConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
-            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Dates");
+            LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(DatesConfig));
             HomepageTools.UnregisterBuiltinAction("NKS_DATES_HOMEPAGE_TIMER");
@@ -112,7 +112,7 @@ namespace Nitrocid.Extras.Dates
             HomepageTools.UnregisterBuiltinAction("NKS_DATES_HOMEPAGE_POMODORO");
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
             // Add homepage entries
             HomepageTools.RegisterBuiltinAction("NKS_DATES_HOMEPAGE_TIMER", TimerScreen.OpenTimer);

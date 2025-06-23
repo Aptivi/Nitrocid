@@ -19,7 +19,9 @@
 
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
+using Nitrocid.Languages;
 using Nitrocid.Misc.Splash;
+using Nitrocid.SplashPacks.Localized;
 using Nitrocid.SplashPacks.Settings;
 using Nitrocid.SplashPacks.Splashes;
 
@@ -46,19 +48,21 @@ namespace Nitrocid.SplashPacks
             new SplashInfo("SquareCorner", new SplashSquareCorner()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonSplashPacks);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonSplashPacks);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
+        public ModLoadPriority AddonType => ModLoadPriority.Important;
 
         internal static ExtraSplashesConfig SplashConfig =>
             (ExtraSplashesConfig)Config.baseConfigurations[nameof(ExtraSplashesConfig)];
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+
             // First, initialize splashes
             foreach (var splash in Splashes)
                 SplashManager.builtinSplashes.Add(splash);
@@ -68,8 +72,11 @@ namespace Nitrocid.SplashPacks
             ConfigTools.RegisterBaseSetting(splashesConfig);
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
+            LanguageTools.RemoveCustomAction(AddonName);
+
+            // First, unload splashes
             foreach (var splash in Splashes)
                 SplashManager.builtinSplashes.Remove(splash);
 
@@ -77,7 +84,7 @@ namespace Nitrocid.SplashPacks
             ConfigTools.UnregisterBaseSetting(nameof(ExtraSplashesConfig));
         }
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         { }
     }
 }

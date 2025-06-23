@@ -233,18 +233,18 @@ namespace Nitrocid.Extras.Calendar
                 ], new CalendarCommand()),
         ];
 
-        string IAddon.AddonName =>
+        public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalendar);
 
-        string IAddon.AddonTranslatedName =>
+        public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasCalendar);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
+        public ModLoadPriority AddonType => ModLoadPriority.Optional;
 
         internal static CalendarConfig CalendarConfig =>
             (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)];
 
-        void IAddon.FinalizeAddon()
+        public void FinalizeAddon()
         {
             // Initialize events and reminders
             if (!ReminderManager.ReminderThread.IsAlive)
@@ -259,18 +259,18 @@ namespace Nitrocid.Extras.Calendar
             HomepageTools.RegisterBuiltinAction("NKS_CALENDAR_HOMEPAGE_CALENDAR", CalendarTui.OpenInteractive);
         }
 
-        void IAddon.StartAddon()
+        public void StartAddon()
         {
-            LanguageTools.AddCustomAction("Nitrocid.Extras.Calendar", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
             var config = new CalendarConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("calendar", new CalendarDisplay());
         }
 
-        void IAddon.StopAddon()
+        public void StopAddon()
         {
-            LanguageTools.RemoveCustomAction("Nitrocid.Extras.Calendar");
+            LanguageTools.RemoveCustomAction(AddonName);
             ReminderManager.Reminders.Clear();
             EventManager.CalendarEvents.Clear();
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
