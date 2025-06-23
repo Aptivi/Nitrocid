@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Terminaux.Colors;
 
@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
         {
             // Do the job
             var color = new Color(parameters.ArgumentsList[0]).ToString();
-            TextWriters.Write(color, ThemeColorType.NeutralText);
+            TextWriterColor.Write(color, ThemeColorType.NeutralText);
             variableValue = color;
             return 0;
         }

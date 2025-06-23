@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Progress;
 using System.Threading;
@@ -32,10 +32,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         {
             int progress = 0;
             var handler = new ProgressHandler((num, text) =>
-                TextWriters.Write($"{num}% {text}", ThemeColorType.Progress)
+                TextWriterColor.Write($"{num}% {text}", ThemeColorType.Progress)
             , "General");
             var handler2 = new ProgressHandler((num, text) =>
-                TextWriters.Write($"{num}% {text}", ThemeColorType.NeutralText)
+                TextWriterColor.Write($"{num}% {text}", ThemeColorType.NeutralText)
             , "Nongeneral");
             ProgressManager.RegisterProgressHandler(handler);
             ProgressManager.RegisterProgressHandler(handler2);

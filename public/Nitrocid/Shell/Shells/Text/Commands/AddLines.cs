@@ -20,7 +20,6 @@
 using System.Collections.Generic;
 using Terminaux.Colors.Themes.Colors;
 using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Languages;
@@ -46,7 +45,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT"));
             while (FinalLine != "EOF")
             {
-                TextWriters.Write(">> ", false, ThemeColorType.Input);
+                TextWriterColor.Write(">> ", false, ThemeColorType.Input);
                 FinalLine = InputTools.ReadLine();
                 if (FinalLine != "EOF")
                 {

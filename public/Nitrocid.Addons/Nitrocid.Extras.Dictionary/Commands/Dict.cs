@@ -21,7 +21,6 @@ using Nettify.EnglishDictionary;
 using Terminaux.Shell.Commands;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.Extras.Dictionary.Commands
@@ -51,59 +50,59 @@ namespace Nitrocid.Extras.Dictionary.Commands
 
                 // Now, we can write the word information
                 SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_DICTIONARY_WORDINFO") + $" {parameters.ArgumentsList[0]}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DICTIONARY_WORD"), false, ThemeColorType.ListEntry);
-                TextWriters.Write($" {Word.Word}", true, ThemeColorType.ListValue);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DICTIONARY_WORD"), false, ThemeColorType.ListEntry);
+                TextWriterColor.Write($" {Word.Word}", true, ThemeColorType.ListValue);
 
                 // Meanings...
                 SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_DICTIONARY_MEAININGS") + $" {parameters.ArgumentsList[0]}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                 foreach (DictionaryWord.Meaning MeaningBase in Word.Meanings ?? [])
                 {
                     // Base part of speech
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DICTIONARY_PARTOFSPEECH"), false, ThemeColorType.ListEntry);
-                    TextWriters.Write($" {MeaningBase.PartOfSpeech}", true, ThemeColorType.ListValue);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DICTIONARY_PARTOFSPEECH"), false, ThemeColorType.ListEntry);
+                    TextWriterColor.Write($" {MeaningBase.PartOfSpeech}", true, ThemeColorType.ListValue);
 
                     // Get the definitions
                     foreach (DictionaryWord.DefinitionType DefinitionBase in MeaningBase.Definitions ?? [])
                     {
                         // Write definition and, if applicable, example
-                        TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_DEF"), false, ThemeColorType.ListEntry);
-                        TextWriters.Write($" {DefinitionBase.Definition}", true, ThemeColorType.ListValue);
-                        TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_EXAMPLE"), false, ThemeColorType.ListEntry);
-                        TextWriters.Write($" {DefinitionBase.Example}", true, ThemeColorType.ListValue);
+                        TextWriterColor.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_DEF"), false, ThemeColorType.ListEntry);
+                        TextWriterColor.Write($" {DefinitionBase.Definition}", true, ThemeColorType.ListValue);
+                        TextWriterColor.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_EXAMPLE"), false, ThemeColorType.ListEntry);
+                        TextWriterColor.Write($" {DefinitionBase.Example}", true, ThemeColorType.ListValue);
 
                         // Now, write the specific synonyms (usually blank)
                         if (DefinitionBase.Synonyms is not null && DefinitionBase.Synonyms.Length != 0)
                         {
-                            TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_SYNONYMS"), true, ThemeColorType.ListEntry);
-                            TextWriters.WriteList(DefinitionBase.Synonyms);
+                            TextWriterColor.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_SYNONYMS"), true, ThemeColorType.ListEntry);
+                            ListWriterColor.WriteList(DefinitionBase.Synonyms);
                         }
 
                         // ...and the specific antonyms (usually blank)
                         if (DefinitionBase.Antonyms is not null && DefinitionBase.Antonyms.Length != 0)
                         {
-                            TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_ANTONYMS"), true, ThemeColorType.ListEntry);
-                            TextWriters.WriteList(DefinitionBase.Antonyms);
+                            TextWriterColor.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_ANTONYMS"), true, ThemeColorType.ListEntry);
+                            ListWriterColor.WriteList(DefinitionBase.Antonyms);
                         }
                     }
 
                     // Now, write the base synonyms (usually blank)
                     if (MeaningBase.Synonyms is not null && MeaningBase.Synonyms.Length != 0)
                     {
-                        TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_SYNONYMS"), true, ThemeColorType.ListEntry);
-                        TextWriters.WriteList(MeaningBase.Synonyms);
+                        TextWriterColor.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_SYNONYMS"), true, ThemeColorType.ListEntry);
+                        ListWriterColor.WriteList(MeaningBase.Synonyms);
                     }
 
                     // ...and the base antonyms (usually blank)
                     if (MeaningBase.Antonyms is not null && MeaningBase.Antonyms.Length != 0)
                     {
-                        TextWriters.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_ANTONYMS"), true, ThemeColorType.ListEntry);
-                        TextWriters.WriteList(MeaningBase.Antonyms);
+                        TextWriterColor.Write("  - " + LanguageTools.GetLocalized("NKS_DICTIONARY_ANTONYMS"), true, ThemeColorType.ListEntry);
+                        ListWriterColor.WriteList(MeaningBase.Antonyms);
                     }
                 }
 
                 // Sources...
                 SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_DICTIONARY_SOURCES") + $" {parameters.ArgumentsList[0]}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                TextWriters.WriteList(Word.SourceUrls ?? []);
+                ListWriterColor.WriteList(Word.SourceUrls ?? []);
             }
             return 0;
         }

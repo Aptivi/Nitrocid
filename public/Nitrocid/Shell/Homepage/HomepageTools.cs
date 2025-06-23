@@ -53,7 +53,6 @@ using Terminaux.Writer.CyclicWriters.Renderer;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Audio;
 using Terminaux.Inputs.Styles.Infobox.Tools;
-using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Shell.Homepage
 {

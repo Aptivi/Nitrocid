@@ -21,7 +21,7 @@ using Terminaux.Shell.Shells;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Arguments;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Starting;
@@ -31,7 +31,6 @@ using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Users.Login.Handlers;
 using Textify.Tools.Placeholder;
 using Terminaux.Colors.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
 using Terminaux.Base.Checks;
 using Nitrocid.Users.Login.Motd;
@@ -184,7 +183,7 @@ namespace Nitrocid.Kernel
                     BaseLoginHandler.ShowMOTDOnceFlag = true;
                     if (Config.MainConfig.ShowMAL)
                     {
-                        TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, ThemeColorType.Banner);
+                        TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, ThemeColorType.Banner);
                         MalParse.ProcessDynamicMal();
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
@@ -203,7 +202,7 @@ namespace Nitrocid.Kernel
                         WelcomeMessage.ShowRandomTip();
 
                     // Show a tip telling users to see license information
-                    TextWriters.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_LICENSEINFO"), ThemeColorType.Tip);
+                    TextWriterColor.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_LICENSEINFO"), ThemeColorType.Tip);
 
                     // Show another tip for release window
                     KernelReleaseInfo.NotifyReleaseSupportWindow();

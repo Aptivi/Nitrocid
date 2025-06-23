@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Exceptions;
@@ -44,7 +43,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             // Check to see if we're running on Windows 8.1 or later
             if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DIAG_W8LOWER"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DIAG_W8LOWER"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
@@ -54,8 +53,8 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             {
                 string threadAddress = trace.Key;
                 string[] threadTrace = trace.Value;
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DIAG_TRACEINFO") + "\n", true, ThemeColorType.ListTitle, threadAddress);
-                TextWriters.WriteList(threadTrace);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DIAG_TRACEINFO") + "\n", true, ThemeColorType.ListTitle, threadAddress);
+                ListWriterColor.WriteList(threadTrace);
             }
             return 0;
         }
@@ -65,7 +64,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             // Check to see if we're running on Windows 8.1 or later
             if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DIAG_W8LOWER"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DIAG_W8LOWER"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
             }
 
@@ -75,7 +74,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             {
                 string threadAddress = trace.Key;
                 string[] threadTrace = trace.Value;
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DIAG_TRACEINFO") + "\n", true, ThemeColorType.ListTitle, threadAddress);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DIAG_TRACEINFO") + "\n", true, ThemeColorType.ListTitle, threadAddress);
                 foreach (string threadTraceStr in threadTrace)
                     TextWriterColor.Write(threadTraceStr);
                 TextWriterRaw.Write();

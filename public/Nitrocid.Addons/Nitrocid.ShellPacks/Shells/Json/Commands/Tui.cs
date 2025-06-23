@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools;
 using Nitrocid.Files;
 using Nitrocid.Languages;
@@ -41,7 +41,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
         {
             if (JsonShellCommon.FileStream is null)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_STREAMNOTOPEN"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_STREAMNOTOPEN"), ThemeColorType.Error);
                 return 42;
             }
             string path = JsonShellCommon.FileStream.Name;

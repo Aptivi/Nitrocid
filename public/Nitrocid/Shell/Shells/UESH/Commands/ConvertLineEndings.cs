@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Files.LineEndings;
 using Nitrocid.Languages;
@@ -76,7 +76,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             // Convert the line endings
             if (FilesystemTools.IsBinaryFile(TargetTextFile) && !force)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CONVERTLINEENDINGS_BINARYFILE"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CONVERTLINEENDINGS_BINARYFILE"), true, ThemeColorType.Error);
                 return 7;
             }
             FilesystemTools.ConvertLineEndings(TargetTextFile, TargetLineEnding, force);

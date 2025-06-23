@@ -29,7 +29,6 @@ using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Screensaver;
-using Terminaux.Shell.Shells;
 using Nitrocid.Misc.Splash;
 using System.Linq;
 using Nitrocid.Shell.Homepage;

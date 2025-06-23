@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
 using System.Linq;
@@ -36,7 +36,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var Results = ConfigTools.CheckConfigVariables();
             bool failed = Results.Any((res) => !res);
             if (failed)
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSETTINGSENTRIES_FAILED"), true, ThemeColorType.Warning);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSETTINGSENTRIES_FAILED"), true, ThemeColorType.Warning);
             TestActualValue = failed;
         }
     }

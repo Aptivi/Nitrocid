@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools;
 using Terminaux.Shell.Commands;
 
@@ -35,8 +35,8 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Commands
             var headers = HttpTools.HttpListHeaders();
             foreach (var header in headers)
             {
-                TextWriters.Write("  - {0}: ", false, ThemeColorType.ListEntry, header.Item1);
-                TextWriters.Write("{0}", true, ThemeColorType.ListValue, header.Item2);
+                TextWriterColor.Write("  - {0}: ", false, ThemeColorType.ListEntry, header.Item1);
+                TextWriterColor.Write("{0}", true, ThemeColorType.ListValue, header.Item2);
             }
             return 0;
         }

@@ -21,7 +21,6 @@ using System;
 using System.Data;
 using System.Linq;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -58,8 +57,8 @@ namespace Nitrocid.Extras.UnitConv.Commands
                 var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
                 var InitialUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}");
                 var ConvertedUnit = InitialUnit.ToUnit(TargetUnitInstance);
-                TextWriters.Write("- {0} => ", false, ThemeColorType.ListEntry, InitialUnit.ToString(CultureManager.CurrentCulture.NumberFormat));
-                TextWriters.Write(ConvertedUnit.ToString(CultureManager.CurrentCulture.NumberFormat), true, ThemeColorType.ListValue);
+                TextWriterColor.Write("- {0} => ", false, ThemeColorType.ListEntry, InitialUnit.ToString(CultureManager.CurrentCulture.NumberFormat));
+                TextWriterColor.Write(ConvertedUnit.ToString(CultureManager.CurrentCulture.NumberFormat), true, ThemeColorType.ListValue);
             }
             return 0;
         }
@@ -70,11 +69,11 @@ namespace Nitrocid.Extras.UnitConv.Commands
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_UNITCONV_LISTUNITS_AVAILABLETYPESUNITS"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
             {
-                TextWriters.Write("- {0}:", true, ThemeColorType.ListEntry, QuantityInfo.Name);
+                TextWriterColor.Write("- {0}:", true, ThemeColorType.ListEntry, QuantityInfo.Name);
                 foreach (Enum UnitValues in QuantityInfo.UnitInfos.Select(x => x.Value))
                 {
-                    TextWriters.Write("  - {0}: ", false, ThemeColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
-                    TextWriters.Write(UnitValues.ToString(), true, ThemeColorType.ListValue);
+                    TextWriterColor.Write("  - {0}: ", false, ThemeColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
+                    TextWriterColor.Write(UnitValues.ToString(), true, ThemeColorType.ListValue);
                 }
             }
         }

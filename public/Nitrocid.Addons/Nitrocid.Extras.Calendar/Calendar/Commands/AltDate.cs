@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time.Calendars;
 using Nitrocid.Kernel.Time.Renderers;
@@ -57,7 +56,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
             string culture = parameters.ArgumentsList[0];
             if (!Enum.TryParse(culture, out CalendarTypes calendarType))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CALENDAR_NOCULTURE") + $" {culture}", true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CALENDAR_NOCULTURE") + $" {culture}", true, ThemeColorType.Error);
                 return 16;
             }
             var cultureInstance = CalendarTools.GetCalendar(calendarType);

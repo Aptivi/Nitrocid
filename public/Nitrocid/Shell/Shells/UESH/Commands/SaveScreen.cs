@@ -27,7 +27,6 @@ using Nitrocid.Misc.Interactives;
 using Terminaux.Inputs.Pointer;
 using System;
 using Terminaux.Inputs;
-using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -64,7 +63,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             var screensavers = ScreensaverManager.GetScreensaverNames();
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SAVESCREEN_LISTING"));
-            TextWriters.WriteList(screensavers);
+            ListWriterColor.WriteList(screensavers);
         }
 
         private void PressAndBailHelper()

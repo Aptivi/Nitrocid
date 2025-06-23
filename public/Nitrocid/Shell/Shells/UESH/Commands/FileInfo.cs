@@ -23,12 +23,11 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Files.Extensions;
-using Terminaux.Writer.ConsoleWriters;
 using Magico.Files;
 using Nitrocid.Kernel.Exceptions;
 
@@ -99,7 +98,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_FILENOTFOUND"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_FILEINFO_FILENOTFOUND"), true, ThemeColorType.Error);
                 }
             }
             return 0;

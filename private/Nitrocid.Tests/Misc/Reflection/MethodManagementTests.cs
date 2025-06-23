@@ -19,12 +19,10 @@
 
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Terminaux.Shell.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Globalization;
 using Nitrocid.Tests.Misc.Reflection.Data;
-using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.Tests.Misc.Reflection
 {

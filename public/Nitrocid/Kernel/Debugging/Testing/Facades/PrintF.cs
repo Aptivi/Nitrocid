@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             string rendered = "Hi, {0}!";
-            TextWriters.Write(rendered, true, ThemeColorType.Success, "Nitrocid KS");
+            TextWriterColor.Write(rendered, true, ThemeColorType.Success, "Nitrocid KS");
         }
     }
 }

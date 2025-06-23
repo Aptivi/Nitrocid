@@ -24,7 +24,6 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Languages;

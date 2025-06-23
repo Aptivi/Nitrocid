@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.BeepSynth.Tools;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
@@ -42,35 +42,35 @@ namespace Nitrocid.Extras.BeepSynth.Commands
             string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             if (!FilesystemTools.FileExists(path))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_FILENOTFOUND"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_FILENOTFOUND"), ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
             }    
             var synthInfo = SynthTools.GetSynthInfoFromFile(path);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_NOWPLAYING") + ": ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(synthInfo.Name, ThemeColorType.ListValue);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_NOWPLAYING") + ": ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(synthInfo.Name, ThemeColorType.ListValue);
             for (int i = 0; i < synthInfo.Chapters.Length; i++)
             {
                 SynthInfo.Chapter chapter = synthInfo.Chapters[i];
-                TextWriters.Write($"- [{i + 1}/{synthInfo.Chapters.Length}] ", false, ThemeColorType.NeutralText);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_CHAPTERNAME") + ": ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(chapter.Name, ThemeColorType.ListValue);
+                TextWriterColor.Write($"- [{i + 1}/{synthInfo.Chapters.Length}] ", false, ThemeColorType.NeutralText);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_CHAPTERNAME") + ": ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(chapter.Name, ThemeColorType.ListValue);
                 for (int j = 0; j < chapter.Synths.Length; j++)
                 {
                     string synth = chapter.Synths[j];
                     var split = synth.Split(' ');
                     if (split.Length != 2)
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_INVALIDSYNTH") + $" [{i + 1}.{j + 1}]", ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_INVALIDSYNTH") + $" [{i + 1}.{j + 1}]", ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                     }
                     if (!int.TryParse(split[0], out int freq))
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_INVALIDFREQ") + $" [{i + 1}.{j + 1}]", ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_INVALIDFREQ") + $" [{i + 1}.{j + 1}]", ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                     }
                     if (!int.TryParse(split[1], out int ms))
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_INVALIDDURATION") + $" [{i + 1}.{j + 1}]", ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BEEPSYNTH_INVALIDDURATION") + $" [{i + 1}.{j + 1}]", ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Console);
                     }
                     if (freq == 0)

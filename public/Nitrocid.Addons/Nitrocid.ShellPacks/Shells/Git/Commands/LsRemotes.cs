@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
@@ -39,9 +39,9 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             var remotes = GitShellCommon.Repository.Network.Remotes;
             foreach (var remote in remotes)
             {
-                TextWriters.Write($"- {remote.Name}:", true, ThemeColorType.ListEntry);
-                TextWriters.Write($"  - R: {remote.Url}", true, ThemeColorType.ListValue);
-                TextWriters.Write($"  - P: {remote.PushUrl}", true, ThemeColorType.ListValue);
+                TextWriterColor.Write($"- {remote.Name}:", true, ThemeColorType.ListEntry);
+                TextWriterColor.Write($"  - R: {remote.Url}", true, ThemeColorType.ListValue);
+                TextWriterColor.Write($"  - P: {remote.PushUrl}", true, ThemeColorType.ListValue);
             }
             return 0;
         }

@@ -19,7 +19,7 @@
 
 using FluentFTP.Helpers;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Notes.Management;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.Notes.Commands
                 NoteManagement.RemoveNote(Convert.ToInt32(parameters.ArgumentsList[0]) - 1);
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_NOTES_NOTEIDNOTNUMERIC"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_NOTES_NOTEIDNOTNUMERIC"), true, ThemeColorType.Error);
                 return 8;
             }
             return 0;

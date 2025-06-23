@@ -27,7 +27,6 @@ using Nitrocid.Users;
 using Terminaux.Shell.Arguments;
 using Nitrocid.Drivers.Encoding;
 using Terminaux.Shell.Switches;
-using Nitrocid.Languages;
 using Nitrocid.Drivers.Encryption;
 using Terminaux.Shell.Prompts;
 using Nitrocid.Files.Extensions;

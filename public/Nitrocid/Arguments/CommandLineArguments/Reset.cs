@@ -19,7 +19,7 @@
 
 using System.IO;
 using System;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Shell.Arguments.Base;
@@ -69,7 +69,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_WIPEFAILED") + $" {PathName}: {ex.Message}", true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_WIPEFAILED") + $" {PathName}: {ex.Message}", true, ThemeColorType.Error);
                 }
             }
 
@@ -84,7 +84,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
                 }
                 catch (Exception ex)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_WIPEDUMPFAILED") + $" {dump}: {ex.Message}", true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_WIPEDUMPFAILED") + $" {dump}: {ex.Message}", true, ThemeColorType.Error);
                 }
             }
 
@@ -95,15 +95,15 @@ namespace Nitrocid.Arguments.CommandLineArguments
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_WIPEDEBUGFAILED") + $": {ex.Message}", true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_WIPEDEBUGFAILED") + $": {ex.Message}", true, ThemeColorType.Error);
             }
 
             // Inform user that the wipe was not complete if there are files.
             string[] files = FilesystemTools.GetFilesystemEntries(PathsManagement.AppDataPath);
             if (files.Length > 0)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_LEFTOVERSLISTING"), true, ThemeColorType.Warning);
-                TextWriters.WriteList(files);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_LEFTOVERSLISTING"), true, ThemeColorType.Warning);
+                ListWriterColor.WriteList(files);
                 string answer = ChoiceStyle.PromptChoice(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_LEFTOVERSPROMPT"), [("y", "Yes"), ("n", "No")]);
                 if (answer == "y")
                 {
@@ -115,7 +115,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
                         }
                         catch (Exception ex)
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_WIPEMISCFAILED") + $" {file}: {ex.Message}", true, ThemeColorType.Error);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_ARGUMENTS_RESET_WIPEMISCFAILED") + $" {file}: {ex.Message}", true, ThemeColorType.Error);
                         }
                     }
                 }

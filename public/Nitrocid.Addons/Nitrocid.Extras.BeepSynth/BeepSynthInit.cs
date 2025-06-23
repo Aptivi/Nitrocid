@@ -21,7 +21,6 @@ using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Extras.BeepSynth.Commands;
 using Nitrocid.Extras.BeepSynth.Localized;

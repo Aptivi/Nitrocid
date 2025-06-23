@@ -31,7 +31,6 @@ using System.Reflection;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using Nitrocid.Analyzers.Common;
-using System.Diagnostics;
 
 namespace Nitrocid.LocaleChecker.Localization
 {

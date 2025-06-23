@@ -19,8 +19,7 @@
 
 using Nitrocid.Languages;
 using Terminaux.Shell.Arguments;
-using Terminaux.Shell.Shells;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -32,7 +31,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         {
             string command = "help -r";
             string[] ListSwitchesOnly = ArgumentsParser.ParseShellCommandArguments(command, "Shell").total[0].SwitchesList;
-            TextWriters.WriteList(ListSwitchesOnly);
+            ListWriterColor.WriteList(ListSwitchesOnly);
         }
     }
 }

@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;

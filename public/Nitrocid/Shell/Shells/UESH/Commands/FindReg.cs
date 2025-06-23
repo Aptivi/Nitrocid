@@ -18,13 +18,12 @@
 //
 
 using Nitrocid.Files;
-using Nitrocid.Kernel.Threading;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 using System.Linq;
 using Textify.General;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -59,7 +58,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
             }
             else
-                TextWriters.WriteList(AllFileEntries);
+                ListWriterColor.WriteList(AllFileEntries);
             variableValue = string.Join('\n', AllFileEntries);
             return 0;
         }

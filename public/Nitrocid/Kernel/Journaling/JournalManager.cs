@@ -19,7 +19,7 @@
 
 using Newtonsoft.Json;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
@@ -160,8 +160,8 @@ namespace Nitrocid.Kernel.Journaling
                     Status == JournalStatus.Error ? ThemeColorType.Error :
                     Status == JournalStatus.Warning ? ThemeColorType.Warning :
                     ThemeColorType.NeutralText;
-                TextWriters.Write($"[{Date} {Time}] [{i + 1}] [{Status}] : ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(Message, true, finalColor);
+                TextWriterColor.Write($"[{Date} {Time}] [{i + 1}] [{Status}] : ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(Message, true, finalColor);
             }
         }
 

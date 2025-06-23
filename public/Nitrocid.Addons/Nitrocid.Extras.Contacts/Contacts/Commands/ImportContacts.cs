@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System;
 using Terminaux.Colors.Themes.Colors;
@@ -46,7 +46,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDEMPTY"), ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MECARDEMPTY"), ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
                     }
                 }
@@ -61,7 +61,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_FILENOTFOUND"), ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_FILENOTFOUND"), ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
                     }
                 }
@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CANTIMPORTCONTACTS") + ex.Message, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CANTIMPORTCONTACTS") + ex.Message, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Contacts);
             }
         }

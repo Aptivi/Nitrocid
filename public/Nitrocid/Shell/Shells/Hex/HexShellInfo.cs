@@ -24,7 +24,6 @@ using Terminaux.Shell.Prompts;
 using Terminaux.Shell.Arguments;
 using Nitrocid.Shell.Shells.Hex.Commands;
 using Nitrocid.Shell.Shells.Hex.Presets;
-using Nitrocid.Languages;
 
 namespace Nitrocid.Shell.Shells.Hex
 {

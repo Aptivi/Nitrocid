@@ -20,7 +20,6 @@
 using System;
 using System.IO;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
@@ -103,13 +102,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR"), true, ThemeColorType.Error, parameters.ArgumentsList[2]);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR"), true, ThemeColorType.Error, parameters.ArgumentsList[2]);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
                 }
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_FILENOTFOUND"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_FILENOTFOUND"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             return 0;
@@ -118,14 +117,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_LIST"));
-            TextWriters.Write("- Normal: ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_NORMAL"), true, ThemeColorType.ListValue);                   // Normal   = 128
-            TextWriters.Write("- ReadOnly: ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_READONLY"), true, ThemeColorType.ListValue);              // ReadOnly = 1
-            TextWriters.Write("- Hidden: ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_HIDDEN"), true, ThemeColorType.ListValue);                   // Hidden   = 2
-            TextWriters.Write("- Archive: ", false, ThemeColorType.ListEntry);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_ARCHIVE"), true, ThemeColorType.ListValue);  // Archive  = 32
+            TextWriterColor.Write("- Normal: ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_NORMAL"), true, ThemeColorType.ListValue);                   // Normal   = 128
+            TextWriterColor.Write("- ReadOnly: ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_READONLY"), true, ThemeColorType.ListValue);              // ReadOnly = 1
+            TextWriterColor.Write("- Hidden: ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_HIDDEN"), true, ThemeColorType.ListValue);                   // Hidden   = 2
+            TextWriterColor.Write("- Archive: ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_CHATTR_ATTRIBUTES_ARCHIVE"), true, ThemeColorType.ListValue);  // Archive  = 32
         }
 
     }

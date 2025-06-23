@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -119,7 +118,7 @@ namespace Nitrocid.Kernel.Time.Renderers
             {
                 DebugWriter.WriteDebug(DebugLevel.E, $"Can't show time of day with {nameof(ShowCurrentTimes)}(): {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_TIME_RENDERERS_TIMESHOWFAILED") + $" {ex.Message}", ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_TIME_RENDERERS_TIMESHOWFAILED") + $" {ex.Message}", ThemeColorType.Error);
             }
         }
     }

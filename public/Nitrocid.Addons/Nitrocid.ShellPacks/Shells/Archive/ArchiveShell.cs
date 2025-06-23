@@ -30,7 +30,7 @@ using SharpCompress.Archives.Tar;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Kernel.Debugging;
 using Textify.General;
@@ -62,13 +62,13 @@ namespace Nitrocid.ShellPacks.Shells.Archive
                 ArchiveFile = Convert.ToString(ShellArgs[0]) ?? "";
                 if (string.IsNullOrEmpty(ArchiveFile))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE"), true, ThemeColorType.Error);
                     Bail = true;
                 }
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE"), true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FILESHELLS_NEEDSFILE"), true, ThemeColorType.Error);
                 Bail = true;
             }
 
@@ -95,7 +95,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive
                     ArchiveShellCommon.Archive ??= TarArchive.Open(ArchiveShellCommon.FileStream);
                     break;
                 default:
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED") + $" {type}", true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED") + $" {type}", true, ThemeColorType.Error);
                     Bail = true;
                     break;
             }
@@ -115,7 +115,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + CharManager.NewLine + "Error {0}: {1}", true, ThemeColorType.Error, ex.GetType()?.FullName ?? "<null>", ex.Message);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + CharManager.NewLine + "Error {0}: {1}", true, ThemeColorType.Error, ex.GetType()?.FullName ?? "<null>", ex.Message);
                     continue;
                 }
             }

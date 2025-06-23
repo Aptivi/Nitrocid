@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Inputs.Interactive;
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.Mods.Commands
             string modName = parameters.ArgumentsList[0];
             if (!ModManager.Mods.TryGetValue(modName, out ModInfo? mod))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND"), true, ThemeColorType.Error, modName);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND"), true, ThemeColorType.Error, modName);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchMod);
             }
 

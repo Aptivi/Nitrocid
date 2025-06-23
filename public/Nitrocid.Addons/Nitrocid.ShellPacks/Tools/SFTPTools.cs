@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -58,15 +57,15 @@ namespace Nitrocid.ShellPacks.Tools
                 bool portParsed = int.TryParse(SftpHost == SftpPortString ? "22" : SftpPortString, out int SftpPort);
                 if (!portParsed)
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED"), true, ThemeColorType.Error);
                     return null;
                 }
 
                 // Prompt for username
                 if (!string.IsNullOrWhiteSpace(ShellsInit.ShellsConfig.SFTPUserPromptStyle))
-                    TextWriters.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.SFTPUserPromptStyle), false, ThemeColorType.Input, address);
+                    TextWriterColor.Write(PlaceParse.ProbePlaces(ShellsInit.ShellsConfig.SFTPUserPromptStyle), false, ThemeColorType.Input, address);
                 else
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME"), false, ThemeColorType.Input, address);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME"), false, ThemeColorType.Input, address);
                 SFTPShellCommon.SFTPUser = InputTools.ReadLine();
                 if (string.IsNullOrEmpty(SFTPShellCommon.SFTPUser))
                 {
@@ -84,7 +83,7 @@ namespace Nitrocid.ShellPacks.Tools
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", vars: [address, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING"), true, ThemeColorType.Error, address, ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING"), true, ThemeColorType.Error, address, ex.Message);
                 return null;
             }
         }
@@ -104,10 +103,10 @@ namespace Nitrocid.ShellPacks.Tools
             while (true)
             {
                 // Ask for authentication method
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD") + CharManager.NewLine, true, ThemeColorType.Question);
-                TextWriters.Write("1) " + LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY"), true, ThemeColorType.Option);
-                TextWriters.Write("2) " + LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD") + CharManager.NewLine, true, ThemeColorType.Option);
-                TextWriters.Write(">> ", false, ThemeColorType.Input);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD") + CharManager.NewLine, true, ThemeColorType.Question);
+                TextWriterColor.Write("1) " + LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY"), true, ThemeColorType.Option);
+                TextWriterColor.Write("2) " + LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD") + CharManager.NewLine, true, ThemeColorType.Option);
+                TextWriterColor.Write(">> ", false, ThemeColorType.Input);
                 if (int.TryParse(InputTools.ReadLine(), out Answer))
                 {
                     // Check for answer
@@ -120,8 +119,8 @@ namespace Nitrocid.ShellPacks.Tools
                             break;
                         default:
                             DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION"), true, ThemeColorType.Error, Answer);
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK"), true, ThemeColorType.Error);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION"), true, ThemeColorType.Error, Answer);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK"), true, ThemeColorType.Error);
                             Input.ReadKey();
                             break;
                     }
@@ -132,8 +131,8 @@ namespace Nitrocid.ShellPacks.Tools
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC"), true, ThemeColorType.Error);
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK"), true, ThemeColorType.Error);
                     Input.ReadKey();
                 }
             }
@@ -151,13 +150,13 @@ namespace Nitrocid.ShellPacks.Tools
                         PrivateKeyFile PrivateKeyAuth;
 
                         // Ask for location
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT"), false, ThemeColorType.Input, Username);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT"), false, ThemeColorType.Input, Username);
                         PrivateKeyFile = InputTools.ReadLine();
                         PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
                         if (FilesystemTools.FileExists(PrivateKeyFile))
                         {
                             // Ask for passphrase
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE"), false, ThemeColorType.Input, PrivateKeyFile);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE"), false, ThemeColorType.Input, PrivateKeyFile);
                             PrivateKeyPassphrase = InputTools.ReadLineNoInput();
 
                             // Add authentication method
@@ -173,13 +172,13 @@ namespace Nitrocid.ShellPacks.Tools
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
                                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", vars: [ex.Message]);
-                                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED") + " {0}", true, ThemeColorType.Error, ex.Message);
                             }
                         }
                         else if (PrivateKeyFile.EndsWith("/q"))
                             break;
                         else
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND"), true, ThemeColorType.Error, PrivateKeyFile);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND"), true, ThemeColorType.Error, PrivateKeyFile);
                     }
 
                     // Add authentication method
@@ -190,7 +189,7 @@ namespace Nitrocid.ShellPacks.Tools
                     string Pass;
 
                     // Ask for password
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_PASSWORDPROMPT"), false, ThemeColorType.Input, Username);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_PASSWORDPROMPT"), false, ThemeColorType.Input, Username);
                     Pass = InputTools.ReadLineNoInput();
 
                     // Add authentication method

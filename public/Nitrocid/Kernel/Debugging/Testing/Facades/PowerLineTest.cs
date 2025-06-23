@@ -19,10 +19,9 @@
 
 using System;
 using Terminaux.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Colors.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Data;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
@@ -35,7 +34,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             char TransitionChar = Convert.ToChar(0xE0B0);
             char PadlockChar = Convert.ToChar(0xE0A2);
             char GitBranchChar = Convert.ToChar(0xE0A0);
-            TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_POWERLINETEST_WARNING") + " Cascadia Code/Mono PL", true, ThemeColorType.Warning);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_POWERLINETEST_WARNING") + " Cascadia Code/Mono PL", true, ThemeColorType.Warning);
             TextWriterColor.WriteColorBack(" One ", false, new Color(ConsoleColors.Black), new Color(85, 255, 255));
             TextWriterColor.WriteColorBack(Convert.ToString(TransitionChar), false, new Color(85, 255, 255), new Color(255, 85, 255));
             TextWriterColor.WriteColorBack(" Two ", false, new Color(ConsoleColors.Black), new Color(255, 85, 255));

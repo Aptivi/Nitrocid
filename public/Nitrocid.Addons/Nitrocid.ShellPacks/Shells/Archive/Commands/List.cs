@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using SharpCompress.Archives;
 using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Misc.Reflection;
@@ -53,10 +52,10 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
             }
             foreach (IArchiveEntry Entry in Entries)
             {
-                TextWriters.Write("- {0}: ", false, ThemeColorType.ListEntry, Entry.Key ?? "");
+                TextWriterColor.Write("- {0}: ", false, ThemeColorType.ListEntry, Entry.Key ?? "");
                 if (!Entry.IsDirectory) // Entry is a file
                 {
-                    TextWriters.Write("{0} ({1})", true, ThemeColorType.ListValue, Entry.CompressedSize.SizeString(), Entry.Size.SizeString());
+                    TextWriterColor.Write("{0} ({1})", true, ThemeColorType.ListValue, Entry.CompressedSize.SizeString(), Entry.Size.SizeString());
                 }
                 else
                 {

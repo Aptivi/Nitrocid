@@ -22,14 +22,13 @@ using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Kernel.Events;
 using Terminaux.Colors.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Security.Permissions;
 using Terminaux.Inputs.Styles.Infobox;
@@ -109,7 +108,7 @@ namespace Nitrocid.Users.Login
                         // Cancel shutdown and reboot attempts
                         PowerManager.RebootRequested = false;
                         PowerManager.KernelShutdown = false;
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_USERNOTFOUND"), true, ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_USERNOTFOUND"), true, ThemeColorType.Error);
                         continue;
                     }
 
@@ -122,7 +121,7 @@ namespace Nitrocid.Users.Login
                         // Cancel shutdown and reboot attempts
                         PowerManager.RebootRequested = false;
                         PowerManager.KernelShutdown = false;
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, ThemeColorType.Error);
                     }
                     else if (!PermissionsTools.IsPermissionGranted(user, PermissionTypes.ManagePower) && (PowerManager.RebootRequested || PowerManager.KernelShutdown))
                     {
@@ -180,7 +179,7 @@ namespace Nitrocid.Users.Login
                         return true;
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, ThemeColorType.Error);
                         if (!KernelEntry.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)
@@ -264,7 +263,7 @@ namespace Nitrocid.Users.Login
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE_INCORRECT"), 3 - (tries + 1), true, ThemeColorType.Error);
                         if (tries == 2)
                         {
-                            TextWriters.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE_OUTOFCHANCES"), true, ThemeColorType.Error);
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE_OUTOFCHANCES"), true, ThemeColorType.Error);
                             PowerManager.PowerManage(PowerMode.Reboot);
                         }
                     }

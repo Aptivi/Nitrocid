@@ -30,7 +30,6 @@ using Terminaux.Base;
 using Terminaux.Inputs;
 using System;
 using Terminaux.Inputs.Styles;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Starting
@@ -68,7 +67,7 @@ namespace Nitrocid.Kernel.Starting
                 if (Config.MainConfig.StartScroll)
                     TextWriterSlowColor.WriteSlowlyColor(MessageWrite, true, 10d, ThemeColorsTools.GetColor(ThemeColorType.Banner), KernelMain.VersionFullStr);
                 else
-                    TextWriters.Write(MessageWrite, true, ThemeColorType.Banner, KernelMain.VersionFullStr);
+                    TextWriterColor.Write(MessageWrite, true, ThemeColorType.Banner, KernelMain.VersionFullStr);
 
                 string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelMain.VersionFullStr}", Config.MainConfig.DefaultFigletFontName);
                 TextWriterColor.Write(CharManager.NewLine + FigletRenderedBanner + CharManager.NewLine);
@@ -79,7 +78,7 @@ namespace Nitrocid.Kernel.Starting
         internal static void WriteLicense()
         {
             SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Stage));
-            TextWriters.Write(GetLicenseString(), true, ThemeColorType.License);
+            TextWriterColor.Write(GetLicenseString(), true, ThemeColorType.License);
         }
 
         internal static string GetLicenseString() =>
@@ -174,8 +173,8 @@ namespace Nitrocid.Kernel.Starting
             }
             else
             {
-                TextWriters.Write($"* {message}", true, ThemeColorType.Warning);
-                TextWriters.Write($"* {message2}", true, ThemeColorType.Warning);
+                TextWriterColor.Write($"* {message}", true, ThemeColorType.Warning);
+                TextWriterColor.Write($"* {message2}", true, ThemeColorType.Warning);
             }
         }
 
@@ -194,7 +193,7 @@ namespace Nitrocid.Kernel.Starting
         internal static void ShowRandomTip()
         {
             // Get a random tip and print it
-            TextWriters.Write(
+            TextWriterColor.Write(
                 "* " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_TIPS_PREFIX") + " " + GetRandomTip(), true, ThemeColorType.Tip);
         }
     }

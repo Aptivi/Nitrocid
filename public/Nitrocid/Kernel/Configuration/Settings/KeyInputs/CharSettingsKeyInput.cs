@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -39,11 +39,11 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string keyName = key.Name;
             string keyDesc = key.Description;
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriters.Write(finalSection + "\n", true, ThemeColorType.Question);
+            TextWriterColor.Write(finalSection + "\n", true, ThemeColorType.Question);
 
             // Write the prompt
-            TextWriters.Write($"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER")}\n", ThemeColorType.Tip);
-            TextWriters.Write("[{0}] ", false, ThemeColorType.Input, KeyDefaultValue ?? ' ');
+            TextWriterColor.Write($"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER")}\n", ThemeColorType.Tip);
+            TextWriterColor.Write("[{0}] ", false, ThemeColorType.Input, KeyDefaultValue ?? ' ');
             var keypressTerm = Input.ReadKey();
             var keypress = keypressTerm.KeyChar;
             keypress =

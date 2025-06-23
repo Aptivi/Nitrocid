@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Docking.Dock;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.Docking.Commands
             // Check the dock screen for existence
             if (!DockTools.DoesDockScreenExist(parameters.ArgumentsList[0], out BaseWidget? dock))
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN1"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DOCKING_NODOCKSCREEN1"), ThemeColorType.Error);
                 return 34;
             }
 

@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Misc.Splash;
 using Terminaux.Shell.Commands;
 
@@ -42,8 +42,8 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                     line.Severity == SplashReportSeverity.Error ? ThemeColorType.Error :
                     line.Severity == SplashReportSeverity.Warning ? ThemeColorType.Warning :
                     ThemeColorType.NeutralText;
-                TextWriters.Write($"[{line.Time}] [{line.Progress}%] [{line.Severity}] : ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(line.RenderedMessage, true, finalColor);
+                TextWriterColor.Write($"[{line.Time}] [{line.Progress}%] [{line.Severity}] : ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(line.RenderedMessage, true, finalColor);
             }
             return 0;
         }

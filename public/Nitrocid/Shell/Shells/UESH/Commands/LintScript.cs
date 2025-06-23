@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -37,20 +37,20 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 string pathToScript = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
                 MESHParse.Execute(pathToScript, "", true);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS"), true, ThemeColorType.Success);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS"), true, ThemeColorType.Success);
                 variableValue = "1";
                 return 0;
             }
             catch (KernelException kex) when (kex.ExceptionType == KernelExceptionType.UESHScript)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED"), true, ThemeColorType.Error);
-                TextWriters.Write(kex.Message, true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED"), true, ThemeColorType.Error);
+                TextWriterColor.Write(kex.Message, true, ThemeColorType.Error);
                 variableValue = "0";
                 return KernelExceptionTools.GetErrorCode(kex.ExceptionType);
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR") + $" {ex.Message}", true, ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR") + $" {ex.Message}", true, ThemeColorType.Error);
                 variableValue = "0";
                 return ex.GetHashCode();
             }

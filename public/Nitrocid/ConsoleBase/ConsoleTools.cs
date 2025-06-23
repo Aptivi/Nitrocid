@@ -32,8 +32,6 @@ using Terminaux.Base.Buffered;
 using Terminaux.Sequences.Builder;
 using Nitrocid.Languages;
 using Terminaux.Base.Extensions;
-using System.Text.RegularExpressions;
-using Terminaux.Sequences;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Graphical;
 

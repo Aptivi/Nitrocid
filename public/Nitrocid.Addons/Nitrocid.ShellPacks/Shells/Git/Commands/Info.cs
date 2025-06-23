@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
 
@@ -38,20 +38,20 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             if (GitShellCommon.Repository is null)
                 return 43;
             var info = GitShellCommon.Repository.Info;
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_BARE") + ": ", false, ThemeColorType.ListEntry);
-            TextWriters.Write($"{info.IsBare}", true, ThemeColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_DETACHED") + ": ", false, ThemeColorType.ListEntry);
-            TextWriters.Write($"{info.IsHeadDetached}", true, ThemeColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_NOREF") + ": ", false, ThemeColorType.ListEntry);
-            TextWriters.Write($"{info.IsHeadUnborn}", true, ThemeColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_SHALLOW") + ": ", false, ThemeColorType.ListEntry);
-            TextWriters.Write($"{info.IsShallow}", true, ThemeColorType.ListValue);
-            TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT") + ": ", false, ThemeColorType.ListEntry);
-            TextWriters.Write($"{info.Path}", true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_BARE") + ": ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write($"{info.IsBare}", true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_DETACHED") + ": ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write($"{info.IsHeadDetached}", true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_NOREF") + ": ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write($"{info.IsHeadUnborn}", true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_SHALLOW") + ": ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write($"{info.IsShallow}", true, ThemeColorType.ListValue);
+            TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT") + ": ", false, ThemeColorType.ListEntry);
+            TextWriterColor.Write($"{info.Path}", true, ThemeColorType.ListValue);
             if (!info.IsBare)
             {
-                TextWriters.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR") + ": ", false, ThemeColorType.ListEntry);
-                TextWriters.Write($"{info.WorkingDirectory}", true, ThemeColorType.ListValue);
+                TextWriterColor.Write("- " + LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR") + ": ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write($"{info.WorkingDirectory}", true, ThemeColorType.ListValue);
             }
             return 0;
         }

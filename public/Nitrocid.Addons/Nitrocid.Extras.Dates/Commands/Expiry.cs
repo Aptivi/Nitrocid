@@ -18,13 +18,12 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Dates.Tools;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
 using System;
-using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Dates.Commands
 {
@@ -47,7 +46,7 @@ namespace Nitrocid.Extras.Dates.Commands
                 // Parse the production date
                 if (!DateTimeOffset.TryParse(parameters.ArgumentsList[0], out var production))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODDATEINVALID"), ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODDATEINVALID"), ThemeColorType.Error);
                     return 45;
                 }
 
@@ -56,7 +55,7 @@ namespace Nitrocid.Extras.Dates.Commands
                 {
                     if (!TimeSpan.TryParse(parameters.ArgumentsList[1], out expirySpan))
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPTIMEINVALID"), ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPTIMEINVALID"), ThemeColorType.Error);
                         return 45;
                     }
                 }
@@ -64,17 +63,17 @@ namespace Nitrocid.Extras.Dates.Commands
                     expirySpan = expiryDate - production;
                 else
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPDATEINVALID"), ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPDATEINVALID"), ThemeColorType.Error);
                     return 45;
                 }
 
                 // Make the expiry info instance to print info
                 var expiryInfo = new ProductExpiryInfo(production, expirySpan);
                 var productHealth = expiryInfo.GetProductHealth();
-                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODDATE"), $"{expiryInfo.ProductionDate}");
-                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPDATE"), $"{expiryInfo.ExpiryDate}");
-                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPTIME"), $"{expiryInfo.ExpirySpan}");
-                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODHEALTH"), $"{productHealth}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODDATE"), $"{expiryInfo.ProductionDate}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPDATE"), $"{expiryInfo.ExpiryDate}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_EXPTIME"), $"{expiryInfo.ExpirySpan}");
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODHEALTH"), $"{productHealth}");
 
                 // Write the status
                 string status =
@@ -89,12 +88,12 @@ namespace Nitrocid.Extras.Dates.Commands
                     productHealth <= 25 ? ThemeColorType.Error :
                     productHealth <= 50 ? ThemeColorType.Warning : ThemeColorType.Success;
                 TextWriterRaw.Write();
-                TextWriters.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODSTATUS"), status, ThemeColorType.ListEntry, statusColor);
+                ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_PRODSTATUS"), status, ThemeColorType.ListEntry, statusColor);
                 return 0;
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_NOEXPIRYINFO") + $": {ex.Message}", ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DATES_EXPIRY_NOEXPIRYINFO") + $": {ex.Message}", ThemeColorType.Error);
                 return 45;
             }
         }

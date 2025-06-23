@@ -19,7 +19,7 @@
 
 using Nitrocid.ConsoleBase;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -39,7 +39,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
         {
             if (KernelPlatform.IsOnWindows())
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_SHOWMAINBUFFER_WINDOWS"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_SHOWMAINBUFFER_WINDOWS"), ThemeColorType.Error);
                 return 33;
             }
             ConsoleTools.PreviewMainBuffer();

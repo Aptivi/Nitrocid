@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
@@ -42,8 +41,8 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE") + $" {GitShellCommon.BranchName}:");
             foreach (var commit in commits)
             {
-                TextWriters.Write($"- {commit.Sha[..7]}, {commit.Committer.Name} <{commit.Committer.Email}>", true, ThemeColorType.ListEntry);
-                TextWriters.Write($"  - {commit.MessageShort}", true, ThemeColorType.ListValue);
+                TextWriterColor.Write($"- {commit.Sha[..7]}, {commit.Committer.Name} <{commit.Committer.Email}>", true, ThemeColorType.ListEntry);
+                TextWriterColor.Write($"  - {commit.MessageShort}", true, ThemeColorType.ListValue);
             }
             return 0;
         }

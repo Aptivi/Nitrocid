@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -63,7 +62,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", vars: [lookup, fileName]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SEARCH_FAILED") + " {2}", true, ThemeColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1], ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SEARCH_FAILED") + " {2}", true, ThemeColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1], ex.Message);
                 return ex.GetHashCode();
             }
         }

@@ -27,7 +27,7 @@ using Textify.Versioning;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Debugging.RemoteDebug.Command;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Events;
@@ -197,7 +197,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                     }
                     else
                     {
-                        TextWriters.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CONNECTIONERROR") + ": {0}", true, ThemeColorType.Error, ex.Message);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CONNECTIONERROR") + ": {0}", true, ThemeColorType.Error, ex.Message);
                     }
                     DebugWriter.WriteDebugStackTrace(ex);
                 }

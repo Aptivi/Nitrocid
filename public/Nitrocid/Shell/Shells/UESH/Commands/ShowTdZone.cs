@@ -19,7 +19,7 @@
 
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Interactive;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time.Timezones;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Interactives;
@@ -71,7 +71,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 if (ShowAll)
                     TimeZoneRenderers.ShowAllTimeZones();
                 else if (!TimeZoneRenderers.ShowTimeZones(parameters.ArgumentsList[0]))
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SHOWTDZONE_INCORRECT"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SHOWTDZONE_INCORRECT"), true, ThemeColorType.Error);
             }
             return 0;
         }

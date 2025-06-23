@@ -19,7 +19,7 @@
 
 using Terminaux.Base.Buffered;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Journaling;
@@ -241,7 +241,7 @@ namespace Nitrocid.Misc.Splash
                     else if (!KernelEntry.QuietKernel)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Kernel not booted and not quiet. Reporting {0}...", vars: [Text]);
-                        TextWriters.Write($"[{_Progress}%] {Text}", true, finalColor, Vars);
+                        TextWriterColor.Write($"[{_Progress}%] {Text}", true, finalColor, Vars);
                     }
                 }
 
@@ -252,7 +252,7 @@ namespace Nitrocid.Misc.Splash
             else if (KernelBooted && !KernelEntry.QuietKernel && (Config.MainConfig.EnableSplash && !InSplash || !Config.MainConfig.EnableSplash))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted or not in splash. Reporting {0}...", vars: [Text]);
-                TextWriters.Write(Text, true, finalColor, Vars);
+                TextWriterColor.Write(Text, true, finalColor, Vars);
             }
             JournalManager.WriteJournal(Text, Vars);
         }

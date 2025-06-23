@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Base;
 
@@ -30,8 +30,8 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            TextWriters.Write("Hello world!\nHow's your day going?\nShould be directly after this:", false, ThemeColorType.Success);
-            TextWriters.Write(" [{0}, {1}] ", true, ThemeColorType.NeutralText, ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+            TextWriterColor.Write("Hello world!\nHow's your day going?\nShould be directly after this:", false, ThemeColorType.Success);
+            TextWriterColor.Write(" [{0}, {1}] ", true, ThemeColorType.NeutralText, ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
         }
     }
 }

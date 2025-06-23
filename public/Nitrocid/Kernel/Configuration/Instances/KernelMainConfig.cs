@@ -23,7 +23,6 @@ using Terminaux.Colors;
 using Textify.Data.Figlet;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Shell.Shells.Text;
-using Terminaux.Shell.Shells;
 using Nitrocid.Files;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Shell.Shells.Hex;

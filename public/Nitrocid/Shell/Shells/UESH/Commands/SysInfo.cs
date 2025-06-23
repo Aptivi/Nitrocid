@@ -22,7 +22,6 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Hardware;
 using Nitrocid.Users;
@@ -69,14 +68,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 // Kernel section
                 SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Separator));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_VERSION") + " ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(KernelMain.Version?.ToString() ?? "0.0.0.0", true, ThemeColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_DEBUG") + " ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(KernelEntry.DebugMode.ToString(), true, ThemeColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_USUAL") + " ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(KernelPlatform.IsOnUsualEnvironment().ToString(), true, ThemeColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_SAFE") + " ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(KernelEntry.SafeMode.ToString(), true, ThemeColorType.ListValue);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_VERSION") + " ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(KernelMain.Version?.ToString() ?? "0.0.0.0", true, ThemeColorType.ListValue);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_DEBUG") + " ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(KernelEntry.DebugMode.ToString(), true, ThemeColorType.ListValue);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_USUAL") + " ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(KernelPlatform.IsOnUsualEnvironment().ToString(), true, ThemeColorType.ListValue);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_KERNEL_SAFE") + " ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(KernelEntry.SafeMode.ToString(), true, ThemeColorType.ListValue);
                 TextWriterRaw.Write();
             }
 
@@ -87,9 +86,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 HardwareList.ListHardware();
 
                 if (!WindowsUserTools.IsAdministrator())
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_NEEDSELEVATION"), true, ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_HARDWARE_BASE_NEEDSELEVATION"), true, ThemeColorType.Error);
                 else
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP"), true, ThemeColorType.Tip);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP"), true, ThemeColorType.Tip);
                 TextWriterRaw.Write();
             }
 
@@ -97,12 +96,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 // User section
                 SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE"), ThemeColorsTools.GetColor(ThemeColorType.Separator));
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_USERNAME") + " ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(UserManagement.CurrentUser.Username, true, ThemeColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_HOSTNAME") + " ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(Config.MainConfig.HostName, true, ThemeColorType.ListValue);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_LISTING") + " ", false, ThemeColorType.ListEntry);
-                TextWriters.Write(string.Join(", ", UserManagement.ListAllUsers()), true, ThemeColorType.ListValue);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_USERNAME") + " ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(UserManagement.CurrentUser.Username, true, ThemeColorType.ListValue);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_HOSTNAME") + " ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(Config.MainConfig.HostName, true, ThemeColorType.ListValue);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SYSINFO_USER_LISTING") + " ", false, ThemeColorType.ListEntry);
+                TextWriterColor.Write(string.Join(", ", UserManagement.ListAllUsers()), true, ThemeColorType.ListValue);
                 TextWriterRaw.Write();
             }
 
@@ -110,7 +109,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 // Show MOTD
                 SeparatorWriterColor.WriteSeparatorColor("MOTD", ThemeColorsTools.GetColor(ThemeColorType.Separator));
-                TextWriters.Write(PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, ThemeColorType.NeutralText);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, ThemeColorType.NeutralText);
                 TextWriterRaw.Write();
             }
 
@@ -118,7 +117,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 // Show MAL
                 SeparatorWriterColor.WriteSeparatorColor("MAL", ThemeColorsTools.GetColor(ThemeColorType.Separator));
-                TextWriters.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, ThemeColorType.NeutralText);
+                TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MalMessage), true, ThemeColorType.NeutralText);
             }
             return 0;
         }

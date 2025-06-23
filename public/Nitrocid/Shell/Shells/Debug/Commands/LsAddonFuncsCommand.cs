@@ -22,7 +22,6 @@ using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -41,7 +40,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
             // List all the available addons
             var list = InterAddonTools.ListAvailableFunctions(parameters.ArgumentsList[0], parameters.ArgumentsList[1]).Keys;
-            TextWriters.WriteList(list);
+            ListWriterColor.WriteList(list);
             return 0;
         }
 

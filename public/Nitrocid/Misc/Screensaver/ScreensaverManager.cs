@@ -27,10 +27,9 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Drivers;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
@@ -176,7 +175,7 @@ namespace Nitrocid.Misc.Screensaver
                 DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", vars: [saver]);
                 if (!IsScreensaverRegistered(saver))
                 {
-                    TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_NOTFOUND"), true, ThemeColorType.Error, saver);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_NOTFOUND"), true, ThemeColorType.Error, saver);
                     DebugWriter.WriteDebug(DebugLevel.I, "Screensaver {0} not found in the dictionary.", vars: [saver]);
                     return;
                 }
@@ -208,7 +207,7 @@ namespace Nitrocid.Misc.Screensaver
             }
             catch (Exception ex)
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_CANNOTSTART") + " {0}", true, ThemeColorType.Error, ex.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_CANNOTSTART") + " {0}", true, ThemeColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -382,7 +381,7 @@ namespace Nitrocid.Misc.Screensaver
                 DebugWriter.WriteDebug(DebugLevel.W, "Screensaver experienced an error: {0}.", vars: [Exception.Message]);
                 DebugWriter.WriteDebugStackTrace(Exception);
                 HandleSaverCancel(initialVisible);
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_CRASH"), true, ThemeColorType.Error, Exception.Message);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_CRASH"), true, ThemeColorType.Error, Exception.Message);
             }
         }
 

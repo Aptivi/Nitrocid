@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encoding;
 using Terminaux.Shell.Commands;
@@ -54,7 +54,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 byte[] iv = driver.ComposeBytesFromString(ivValue);
                 decoded = driver.GetDecodedString(composed, key, iv);
             }
-            TextWriters.Write(decoded, true, ThemeColorType.Success);
+            TextWriterColor.Write(decoded, true, ThemeColorType.Success);
             return 0;
         }
     }

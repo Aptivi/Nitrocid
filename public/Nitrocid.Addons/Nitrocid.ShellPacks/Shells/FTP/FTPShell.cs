@@ -25,7 +25,7 @@ using FluentFTP;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
@@ -64,9 +64,9 @@ namespace Nitrocid.ShellPacks.Shells.FTP
             if (ShellsInit.ShellsConfig.FtpShowMotd)
             {
                 if (clientFTP.FileExists("welcome.msg"))
-                    TextWriters.Write(FTPTransfer.FTPDownloadToString("welcome.msg"), true, ThemeColorType.Banner);
+                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString("welcome.msg"), true, ThemeColorType.Banner);
                 else if (clientFTP.FileExists(".message"))
-                    TextWriters.Write(FTPTransfer.FTPDownloadToString(".message"), true, ThemeColorType.Banner);
+                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString(".message"), true, ThemeColorType.Banner);
             }
 
             // Prepare to print current FTP directory

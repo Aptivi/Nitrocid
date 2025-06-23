@@ -25,7 +25,6 @@ using Terminaux.Shell.Shells;
 using Terminaux.Shell.Prompts;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Switches;
-using Nitrocid.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.FTP
 {

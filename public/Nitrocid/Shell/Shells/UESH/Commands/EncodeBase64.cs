@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Textify.General;
 
@@ -37,7 +37,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             string orig = parameters.ArgumentsList[0];
             string encoded = orig.GetBase64Encoded();
-            TextWriters.Write(encoded, true, ThemeColorType.Success);
+            TextWriterColor.Write(encoded, true, ThemeColorType.Success);
             return 0;
         }
     }

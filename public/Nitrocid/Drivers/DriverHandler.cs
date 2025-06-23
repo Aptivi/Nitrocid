@@ -43,7 +43,6 @@ using Nitrocid.Drivers.Encoding.Bases;
 using Nitrocid.Drivers.HardwareProber.Bases;
 using Nitrocid.Drivers.Sorting.Bases;
 using Nitrocid.Drivers.Input.Bases;
-using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Drivers.EncodingAsymmetric.Bases;
 using Nitrocid.Drivers.EncodingAsymmetric;
 

@@ -21,7 +21,7 @@ using System;
 using System.Net.Http;
 using System.Threading;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Configuration;
@@ -226,9 +226,9 @@ namespace Nitrocid.Network.Transfer
                         else
                         {
                             if (!string.IsNullOrWhiteSpace(Config.MainConfig.DownloadPercentagePrint))
-                                TextWriters.WriteWhere(PlaceParse.ProbePlaces(Config.MainConfig.DownloadPercentagePrint), 0, ConsoleWrapper.CursorTop, false, ThemeColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
+                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(Config.MainConfig.DownloadPercentagePrint), 0, ConsoleWrapper.CursorTop, false, ThemeColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
                             else
-                                TextWriters.WriteWhere(" {2:000.00}% | " + indicator, 0, ConsoleWrapper.CursorTop, false, ThemeColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
+                                TextWriterWhereColor.WriteWhere(" {2:000.00}% | " + indicator, 0, ConsoleWrapper.CursorTop, false, ThemeColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
                             ConsoleClearing.ClearLineToRight();
                         }
                     }

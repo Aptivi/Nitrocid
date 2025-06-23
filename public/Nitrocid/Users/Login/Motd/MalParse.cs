@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Writers;
+using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration;
@@ -136,7 +136,7 @@ namespace Nitrocid.Users.Login.Motd
                 foreach (var malDynamic in malDynamics)
                 {
                     string result = malDynamic();
-                    TextWriters.Write(result, ThemeColorType.Banner);
+                    TextWriterColor.Write(result, ThemeColorType.Banner);
                 }
             }
             catch (Exception ex)
