@@ -44,11 +44,11 @@ namespace Nitrocid.Kernel.Threading.Performance
 
         private static void HandleCpuUsagePrint()
         {
-            var currentProcess = Process.GetCurrentProcess();
             var threadsUsages = new List<(int, DateTime, TimeSpan)>();
             while (!PowerManager.KernelShutdown && usageUpdateEnabled)
             {
                 // First, get the CPU usage
+                var currentProcess = Process.GetCurrentProcess();
                 var oldDate = previousDate;
                 var oldCpuTime = previousProcessorTime;
                 var newDate = TimeDateTools.KernelDateTimeUtc;
