@@ -85,48 +85,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Writers.TextDynamicWriters.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Writers.TextDynamicWriters.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Writers.TextDynamicWriters",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ConsoleBase.Writers.TextDynamicWriters.yml\" sourcestartlinenumber=\"1\">Dynamic writers with kernel color support</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Writers.TextWriters.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Writers.TextWriters.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Writers.TextWriters",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ConsoleBase.Writers.TextWriters.yml\" sourcestartlinenumber=\"1\">Text writer wrapper for writing with <xref href=\"Terminaux.Colors.Themes.Colors.ThemeColorType\" data-throw-if-not-resolved=\"false\"></xref> (<xref href=\"Terminaux.Writer.ConsoleWriters\" data-throw-if-not-resolved=\"false\"></xref>)</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ConsoleBase.Writers.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ConsoleBase.Writers.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ConsoleBase.Writers",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.ConsoleBase.yml",
       "output": {
         ".html": {
