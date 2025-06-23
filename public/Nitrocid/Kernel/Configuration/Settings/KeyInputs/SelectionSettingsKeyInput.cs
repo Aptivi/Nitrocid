@@ -32,6 +32,8 @@ using System.Reflection;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Kernel.Exceptions;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -73,10 +75,10 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Prompt user and check for input
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
-            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            int Answer = SelectionStyle.PromptSelection(finalSection,
-                InputChoiceTools.GetInputChoices([.. items]),
-                InputChoiceTools.GetInputChoices([.. altItems]));
+            int Answer = InfoBoxSelectionColor.WriteInfoBoxSelection(InputChoiceTools.GetInputChoices([.. items, .. altItems]), keyDesc, new InfoBoxSettings()
+            {
+                Title = keyName,
+            });
             bail = true;
             return Answer;
         }
@@ -90,7 +92,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             if (string.IsNullOrEmpty(value))
                 return 0;
             if (int.TryParse(value, out int answer))
-                return answer > 0 && answer <= SelectFrom.Count() ? answer : 0;
+                return answer > 0 && answer < SelectFrom.Count() ? answer : 0;
             return 0;
         }
 
@@ -103,7 +105,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             if (string.IsNullOrEmpty(value))
                 return (int?)KeyDefaultValue;
             if (int.TryParse(value, out int answer))
-                return answer > 0 && answer <= SelectFrom.Count() ? answer : (int?)KeyDefaultValue;
+                return answer > 0 && answer < SelectFrom.Count() ? answer : (int?)KeyDefaultValue;
             return (int?)KeyDefaultValue;
         }
 
@@ -123,8 +125,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 
             // Now, check for input
             int MaxKeyOptions = SelectFrom.Count();
-            int AnswerIndex = AnswerInt - 1;
-            if (AnswerInt == MaxKeyOptions + 1 || AnswerInt == -1) // Go Back...
+            if (AnswerInt == MaxKeyOptions || AnswerInt == -1) // Go Back...
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
                 return;
@@ -133,12 +134,12 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             {
                 if (Selections is IEnumerable<object> selectionsArray)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to item index {1}...", vars: [key.Variable, AnswerInt]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to item number {1}...", vars: [key.Variable, AnswerInt]);
 
                     // Now, set the value
-                    SettingsAppTools.SetPropertyValue(key.Variable, selectionsArray.ToArray()[AnswerIndex], configType);
+                    SettingsAppTools.SetPropertyValue(key.Variable, selectionsArray.ToArray()[AnswerInt], configType);
                 }
-                else if (AnswerInt <= MaxKeyOptions)
+                else if (AnswerInt < MaxKeyOptions)
                 {
                     object? FinalValue;
                     DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", vars: [key.Variable, AnswerInt]);
@@ -152,23 +153,20 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not valid.");
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION"), true, ThemeColorType.Error);
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, ThemeColorType.Error);
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION"));
                     Input.ReadKey();
                 }
             }
             else if (AnswerInt == 0 & !SelectionEnumZeroBased)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Zero is not allowed.");
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO"), true, ThemeColorType.Error);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, ThemeColorType.Error);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO"));
                 Input.ReadKey();
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE"), true, ThemeColorType.Error);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, ThemeColorType.Error);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE"));
                 Input.ReadKey();
             }
         }

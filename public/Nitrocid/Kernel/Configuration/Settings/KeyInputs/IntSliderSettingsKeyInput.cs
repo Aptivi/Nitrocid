@@ -42,13 +42,11 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Make an introductory banner
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
-            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriterColor.Write(finalSection, true, ThemeColorType.Question);
             while (PressedKey.Key != ConsoleKey.Enter)
             {
                 // Show the current value
                 double slider = 100d * (CurrentValue / (double)key.MaximumValue);
-                InfoBoxProgressColor.WriteInfoBoxProgress(slider, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE") + " {0} / {1} - {2}", new InfoBoxSettings()
+                InfoBoxProgressColor.WriteInfoBoxProgress(slider, $"{keyDesc}\n\n" + LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE") + " {0} / {1} - {2}", new InfoBoxSettings()
                 {
                     Title = keyName,
                 }, CurrentValue, key.MinimumValue, key.MaximumValue);

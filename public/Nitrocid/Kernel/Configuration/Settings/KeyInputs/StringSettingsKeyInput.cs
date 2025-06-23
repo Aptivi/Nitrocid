@@ -37,11 +37,9 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         {
             ConsoleWrapper.Clear();
 
-            // Make an introductory banner
+            // Translate the key name and description
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
-            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriterColor.Write(finalSection + "\n", true, ThemeColorType.Question);
 
             // Write the prompt
             var settings = new InfoBoxSettings()
@@ -50,8 +48,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             };
             string? AnswerString =
                 key.Masked ?
-                InfoBoxInputColor.WriteInfoBoxInputPassword($"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")}", settings) :
-                InfoBoxInputColor.WriteInfoBoxInput($"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")} [{KeyDefaultValue}]", settings);
+                InfoBoxInputColor.WriteInfoBoxInputPassword($"{keyDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")}", settings) :
+                InfoBoxInputColor.WriteInfoBoxInput($"{keyDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")} [{KeyDefaultValue}]", settings);
 
             // Neutralize path if required with the assumption that the keytype is not list
             AnswerString = (string?)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);
