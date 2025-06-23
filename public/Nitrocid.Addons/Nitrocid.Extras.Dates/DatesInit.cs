@@ -86,6 +86,9 @@ namespace Nitrocid.Extras.Dates
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDates);
 
+        string IAddon.AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasDates);
+
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static DatesConfig DatesConfig =>

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Languages;
 using System.Diagnostics;
 
 namespace Nitrocid.Kernel.Extensions
@@ -26,9 +25,11 @@ namespace Nitrocid.Kernel.Extensions
     internal class AddonInfo
     {
         internal string AddonName =>
-            Addon is not null ?
-            LanguageTools.GetLocalized(Addon.AddonName) :
-            "";
+            Addon is not null ? Addon.AddonName : "";
+
+        internal string AddonDisplayName =>
+            Addon is not null ? Addon.AddonTranslatedName : "";
+
         internal IAddon Addon { get; }
 
         internal AddonInfo(IAddon addon)

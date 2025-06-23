@@ -201,6 +201,9 @@ namespace Nitrocid.ShellPacks
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonShellPacks);
 
+        string IAddon.AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonShellPacks);
+
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static ShellsConfig ShellsConfig =>

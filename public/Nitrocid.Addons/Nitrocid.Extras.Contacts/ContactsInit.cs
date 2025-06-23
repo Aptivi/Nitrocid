@@ -81,6 +81,9 @@ namespace Nitrocid.Extras.Contacts
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasContacts);
 
+        string IAddon.AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasContacts);
+
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         internal static ContactsConfig ContactsConfig =>

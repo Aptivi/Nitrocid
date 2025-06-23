@@ -159,7 +159,7 @@ namespace Nitrocid.Kernel.Extensions
                     // Call the start function
                     try
                     {
-                        SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTING") + " {0}...", addonInstance.AddonName);
+                        SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTING") + " {0}...", addonInstance.AddonTranslatedName);
                         addonInstance.StartAddon();
                         DebugWriter.WriteDebug(DebugLevel.I, "Started!");
 
@@ -168,11 +168,11 @@ namespace Nitrocid.Kernel.Extensions
                         if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
                             addons.Add(info);
                         DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
-                        SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTED") + " {0}!", 1, addonInstance.AddonName);
+                        SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTED") + " {0}!", 1, addonInstance.AddonTranslatedName);
                     }
                     catch (Exception ex)
                     {
-                        SplashReport.ReportProgressError($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTFAILED") + " {0}.", addonInstance.AddonName);
+                        SplashReport.ReportProgressError($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTFAILED") + " {0}.", addonInstance.AddonTranslatedName);
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to start addon {0}. {1}", vars: [addon, ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                     }

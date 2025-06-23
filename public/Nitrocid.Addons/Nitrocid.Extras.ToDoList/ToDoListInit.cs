@@ -62,6 +62,9 @@ namespace Nitrocid.Extras.ToDoList
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasToDoList);
 
+        string IAddon.AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasToDoList);
+
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         void IAddon.FinalizeAddon()

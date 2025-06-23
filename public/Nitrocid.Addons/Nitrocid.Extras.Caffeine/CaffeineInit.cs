@@ -54,6 +54,9 @@ namespace Nitrocid.Extras.Caffeine
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCaffeine);
 
+        string IAddon.AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasCaffeine);
+
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         void IAddon.StartAddon()

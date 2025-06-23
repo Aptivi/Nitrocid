@@ -38,6 +38,9 @@ namespace Nitrocid.Extras.Hashes
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasHashes);
 
+        string IAddon.AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasHashes);
+
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         void IAddon.FinalizeAddon()

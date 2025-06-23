@@ -64,6 +64,9 @@ namespace Nitrocid.Extras.Calculators
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalculators);
 
+        string IAddon.AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasCalculators);
+
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         void IAddon.StartAddon()

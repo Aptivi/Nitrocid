@@ -34,6 +34,9 @@ namespace Nitrocid.ThemePacks
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonThemePacks);
 
+        string IAddon.AddonTranslatedName =>
+            InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonThemePacks);
+
         ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
 
         void IAddon.StartAddon()
