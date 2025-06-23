@@ -89,7 +89,5 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
-
     }
 }
