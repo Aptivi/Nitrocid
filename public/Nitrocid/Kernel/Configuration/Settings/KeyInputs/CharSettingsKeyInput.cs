@@ -26,6 +26,8 @@ using System;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -35,27 +37,24 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         {
             ConsoleWrapper.Clear();
 
-            // Make an introductory banner
+            // Translate the key name and description
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
-            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriterColor.Write(finalSection + "\n", true, ThemeColorType.Question);
 
             // Write the prompt
-            TextWriterColor.Write($"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER")}\n", ThemeColorType.Tip);
-            TextWriterColor.Write("[{0}] ", false, ThemeColorType.Input, KeyDefaultValue ?? ' ');
-            var keypressTerm = Input.ReadKey();
-            var keypress = keypressTerm.KeyChar;
-            keypress =
-                CharManager.IsControlChar(keypress) ? '\0' :
-                keypressTerm.Key == ConsoleKey.Enter ? '\0' :
-                keypress;
-            string AnswerString = Convert.ToString(keypress);
+            var settings = new InfoBoxSettings()
+            {
+                Title = keyName,
+            };
+            string? AnswerString = InfoBoxInputColor.WriteInfoBoxInputChar($"{keyDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")} [{KeyDefaultValue}]", settings);
 
             // Neutralize path if required with the assumption that the keytype is not list
-            DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", vars: [keypress]);
+            DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", vars: [AnswerString]);
             bail = !string.IsNullOrEmpty(AnswerString);
-            return keypress;
+            char character = string.IsNullOrEmpty(AnswerString) ? '\0' : AnswerString[0];
+            if (CharManager.IsControlChar(character))
+                character = '\0';
+            return character;
         }
 
         public object? TranslateStringValue(SettingsKey key, string value)

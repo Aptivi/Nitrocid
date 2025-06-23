@@ -38,11 +38,9 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Make an introductory banner
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
-            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriterColor.Write(finalSection + "\n", true, ThemeColorType.Question);
 
             // Write the prompt
-            string AnswerString = InfoBoxInputColor.WriteInfoBoxInput($"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM")}: 0.0 [{KeyDefaultValue}]", new InfoBoxSettings()
+            string AnswerString = InfoBoxInputColor.WriteInfoBoxInput($"{keyDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM")}: 0.0 [{KeyDefaultValue}]", new InfoBoxSettings()
             {
                 Title = keyName,
             });
@@ -88,8 +86,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE"), true, ThemeColorType.Error);
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COMMON_GOBACK"), true, ThemeColorType.Error);
+                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE"));
                 Input.ReadKey();
             }
         }

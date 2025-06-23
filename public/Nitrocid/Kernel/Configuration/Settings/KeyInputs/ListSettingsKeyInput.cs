@@ -28,6 +28,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -40,7 +41,6 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Make an introductory banner
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
-            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
 
             // Write the prompt
             var arguments = SettingsAppTools.ParseParameters(key);
@@ -71,13 +71,15 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 ];
 
                 // Wait for an answer and handle it
-                int selectionAnswer = SelectionStyle.PromptSelection(finalSection, [.. choices], [.. altChoices], true);
-                if (selectionAnswer == choices.Count + 1)
+                int selectionAnswer = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices, .. altChoices], keyDesc, new InfoBoxSettings()
+                {
+                    Title = keyName,
+                });
+                if (selectionAnswer == choices.Count || selectionAnswer == -1)
                     promptBail = true;
                 else
                 {
                     // Tell the user to choose between adding, removing, or exiting
-                    int selectedItemIdx = selectionAnswer - 1;
                     int result = InfoBoxButtonsColor.WriteInfoBoxButtons(
                         [
                             new InputChoiceInfo("keep", LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LIST_KEEP")),
@@ -94,7 +96,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                         if (result == 2)
                         {
                             // Removing item
-                            TargetList.RemoveAt(selectedItemIdx);
+                            TargetList.RemoveAt(selectionAnswer);
                         }
                         else if (result == 3)
                         {
