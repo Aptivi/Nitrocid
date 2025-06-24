@@ -28,7 +28,6 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Network;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Languages;

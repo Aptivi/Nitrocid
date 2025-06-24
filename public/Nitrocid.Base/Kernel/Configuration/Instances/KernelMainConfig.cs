@@ -30,7 +30,6 @@ using Terminaux.Inputs;
 using Terminaux.Reader;
 using System.Linq;
 using Terminaux.Base.Extensions;
-using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.ConsoleBase;
 using Nitrocid.Base.Network;

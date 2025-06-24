@@ -19,7 +19,6 @@
 
 using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Editor;
-using Nitrocid.Base.Shell.Shells.Text;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Commands
 {

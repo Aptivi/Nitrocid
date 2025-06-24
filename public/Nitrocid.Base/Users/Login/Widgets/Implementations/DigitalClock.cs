@@ -21,7 +21,6 @@ using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Renderers;
-using Nitrocid.Base.Users.Login.Widgets;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;

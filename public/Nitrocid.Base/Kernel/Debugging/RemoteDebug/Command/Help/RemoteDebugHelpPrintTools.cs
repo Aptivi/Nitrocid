@@ -22,11 +22,8 @@ using Terminaux.Writer.ConsoleWriters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
-using Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command;
 
 namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command.Help
 {

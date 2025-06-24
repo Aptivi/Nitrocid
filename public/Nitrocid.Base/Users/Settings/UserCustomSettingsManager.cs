@@ -19,7 +19,6 @@
 
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
 
 namespace Nitrocid.Base.Users.Settings
 {

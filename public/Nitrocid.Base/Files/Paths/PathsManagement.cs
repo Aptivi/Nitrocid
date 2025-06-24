@@ -24,7 +24,6 @@ using System.Linq;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files;
 
 namespace Nitrocid.Base.Files.Paths
 {

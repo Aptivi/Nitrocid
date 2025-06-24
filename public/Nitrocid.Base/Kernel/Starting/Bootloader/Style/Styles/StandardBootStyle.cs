@@ -20,7 +20,6 @@
 extern alias TextifyDep;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Starting.Bootloader.Apps;
-using Nitrocid.Base.Kernel.Starting.Bootloader.Style;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using System;

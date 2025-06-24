@@ -18,7 +18,6 @@
 //
 
 using Magico.Enumeration;
-using Nitrocid.Base.Drivers;
 using System.Numerics;
 
 namespace Nitrocid.Base.Drivers.Sorting

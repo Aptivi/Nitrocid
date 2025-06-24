@@ -20,7 +20,6 @@
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Power;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Languages;
 using System;
 using System.Collections.Generic;

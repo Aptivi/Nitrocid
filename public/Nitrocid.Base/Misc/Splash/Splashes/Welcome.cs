@@ -35,7 +35,6 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Splash;
 
 namespace Nitrocid.Base.Misc.Splash.Splashes
 {

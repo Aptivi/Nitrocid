@@ -19,7 +19,6 @@
 
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Starting.Bootloader;
 using Nitrocid.Base.Kernel.Starting.Bootloader.Style.Styles;
 using System.Collections.Generic;
 using System.Text;

@@ -23,10 +23,7 @@ using System.Threading;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command.BaseCommands;
 using Textify.General;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
-using Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command.Help;
 

@@ -25,7 +25,6 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Users.Login.Motd;
 using Nitrocid.Base.ConsoleBase.Inputs;

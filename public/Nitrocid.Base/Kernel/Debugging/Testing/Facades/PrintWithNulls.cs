@@ -20,7 +20,6 @@
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
-using Nitrocid.Base.Kernel.Debugging.Testing;
 using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades

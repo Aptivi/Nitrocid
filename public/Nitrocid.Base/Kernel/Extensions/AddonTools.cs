@@ -19,7 +19,6 @@
 
 using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;

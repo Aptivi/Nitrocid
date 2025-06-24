@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Debugging.Testing;
 using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades

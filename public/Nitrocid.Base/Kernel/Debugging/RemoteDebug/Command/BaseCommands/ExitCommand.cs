@@ -17,9 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
-using Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command;
-
 namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
     internal class ExitCommand : RemoteDebugBaseCommand

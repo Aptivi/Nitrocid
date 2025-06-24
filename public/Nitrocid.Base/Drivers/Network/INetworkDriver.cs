@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Drivers;
 using System.Net;
 using System.Net.NetworkInformation;
 using FS = Nitrocid.Base.Files.FilesystemTools;

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Shell.Shells.Hex;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands

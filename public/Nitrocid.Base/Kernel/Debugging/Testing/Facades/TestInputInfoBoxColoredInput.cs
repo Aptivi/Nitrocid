@@ -21,7 +21,6 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox.Tools;
-using Nitrocid.Base.Kernel.Debugging.Testing;
 using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades

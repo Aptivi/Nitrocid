@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Kernel.Debugging;
 
 namespace Nitrocid.Base.Drivers.DebugLogger

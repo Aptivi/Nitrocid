@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Base.Kernel.Configuration.Instances;
-using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Shell.Prompts;
 

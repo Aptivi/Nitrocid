@@ -30,7 +30,6 @@ using Terminaux.Colors.Themes.Colors;
 using TextifyDep::Textify.Tools;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Misc.Notifications;

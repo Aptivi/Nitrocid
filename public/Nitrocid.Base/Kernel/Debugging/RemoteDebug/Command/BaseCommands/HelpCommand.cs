@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
-using Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command.Help;
 
 namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command.BaseCommands

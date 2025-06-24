@@ -19,7 +19,6 @@
 
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files;
 using System.Diagnostics;
 using System.IO;
 

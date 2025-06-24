@@ -25,7 +25,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Starting.Bootloader.Style;
 using Nitrocid.Base.Kernel.Starting.Bootloader.Apps;
 
 namespace Nitrocid.Base.Kernel.Starting.Bootloader.Style.Styles

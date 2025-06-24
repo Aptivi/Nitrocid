@@ -24,7 +24,6 @@ using System.Threading;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Kernel.Exceptions;

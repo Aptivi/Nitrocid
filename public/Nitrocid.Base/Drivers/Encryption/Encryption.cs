@@ -18,7 +18,6 @@
 //
 
 using System.IO;
-using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Kernel.Debugging;
 using FS = Nitrocid.Base.Files.FilesystemTools;
 

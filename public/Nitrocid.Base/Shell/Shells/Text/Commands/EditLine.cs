@@ -24,7 +24,6 @@ using Terminaux.Shell.Commands;
 using Textify.General;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Shell.Shells.Text;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.ConsoleBase.Inputs;
 
