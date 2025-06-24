@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Inputs.Interactive;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using System.Collections.Generic;
 using System;
 using System.Linq;

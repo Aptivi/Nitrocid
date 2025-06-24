@@ -20,7 +20,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Linq;
-using Nitrocid.Misc.Reflection;
+using Nitrocid.Base.Misc.Reflection;
 
 namespace Nitrocid.Tests.Drivers
 {

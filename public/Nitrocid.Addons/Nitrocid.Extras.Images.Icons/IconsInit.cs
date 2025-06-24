@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 
 namespace Nitrocid.Extras.Images.Icons
 {

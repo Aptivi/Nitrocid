@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Files;
+using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Editor;
 

@@ -25,14 +25,14 @@ using Nitrocid.Extras.BassBoom.Localized;
 using System;
 using System.Collections.Generic;
 using BassBoom.Basolia;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Shell.Commands;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Misc.Screensaver;
 using System.Linq;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.BassBoom
 {

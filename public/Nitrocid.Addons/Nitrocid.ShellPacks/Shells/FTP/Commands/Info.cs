@@ -20,9 +20,9 @@
 using FluentFTP;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands
 {

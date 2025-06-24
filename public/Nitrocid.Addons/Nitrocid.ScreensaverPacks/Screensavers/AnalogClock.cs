@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Misc.Screensaver;
-using Nitrocid.Users.Login.Widgets;
-using Nitrocid.Users.Login.Widgets.Implementations;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.Base.Users.Login.Widgets;
+using Nitrocid.Base.Users.Login.Widgets.Implementations;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 

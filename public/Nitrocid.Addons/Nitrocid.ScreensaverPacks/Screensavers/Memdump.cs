@@ -19,9 +19,9 @@
 
 using System;
 using Terminaux.Colors;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Drivers.RNG;
+using Nitrocid.Base.Drivers.RNG;
 using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters.Graphical;
 

@@ -20,11 +20,11 @@
 using GitCommand = LibGit2Sharp.Commands;
 using LibGit2Sharp;
 using Terminaux.Shell.Commands;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.Kernel.Time;
-using Nitrocid.Kernel.Time.Timezones;
+using Nitrocid.Base.Kernel.Time;
+using Nitrocid.Base.Kernel.Time.Timezones;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {

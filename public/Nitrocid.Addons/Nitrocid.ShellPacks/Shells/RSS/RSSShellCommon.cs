@@ -21,8 +21,8 @@ using System;
 using System.Net.Http;
 using Nettify.Rss.Instance;
 using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.Network.Connections;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Network.Connections;
 
 namespace Nitrocid.ShellPacks.Shells.RSS
 {

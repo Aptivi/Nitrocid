@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration;
 
 namespace Nitrocid.Tests.Languages
 {

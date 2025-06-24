@@ -20,9 +20,9 @@
 using LibGit2Sharp;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Time;
-using Nitrocid.Kernel.Time.Timezones;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Time;
+using Nitrocid.Base.Kernel.Time.Timezones;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands

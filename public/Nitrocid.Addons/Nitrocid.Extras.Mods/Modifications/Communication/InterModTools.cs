@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Reflection;
-using Nitrocid.Security.Permissions;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
+using Nitrocid.Base.Security.Permissions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

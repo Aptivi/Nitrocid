@@ -95,7 +95,7 @@ namespace Nitrocid.Analyzers.Test.Kernel.Time.Timezones
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using Nitrocid.Kernel.Time.Timezones;
+                using Nitrocid.Base.Kernel.Time.Timezones;
 
                 namespace ConsoleApplication1
                 {

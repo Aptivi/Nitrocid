@@ -23,9 +23,9 @@ using System.Linq;
 using System.Text;
 using MailKit;
 using MailKit.Net.Imap;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.Mail;
 
 namespace Nitrocid.ShellPacks.Tools.Directory

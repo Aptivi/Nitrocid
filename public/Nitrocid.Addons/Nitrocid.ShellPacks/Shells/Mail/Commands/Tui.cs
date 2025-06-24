@@ -19,7 +19,7 @@
 
 using Terminaux.Inputs.Interactive;
 using Terminaux.Shell.Commands;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using System;
 using Nitrocid.ShellPacks.Shells.Mail.Interactive;
 using MailKit;

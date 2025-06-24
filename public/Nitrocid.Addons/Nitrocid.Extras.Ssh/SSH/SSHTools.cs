@@ -23,21 +23,21 @@ using System.IO;
 using Renci.SshNet;
 using Renci.SshNet.Common;
 using Terminaux.Shell.Commands;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files;
-using Nitrocid.Kernel.Events;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.Kernel;
+using Nitrocid.Base.Kernel;
 using Textify.General;
 using Terminaux.Base;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.Network.Connections;
+using Nitrocid.Base.ConsoleBase.Inputs;
+using Nitrocid.Base.Network.Connections;
 using Terminaux.Inputs;
 using System.Reflection;
-using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.Extras.Ssh.SSH
 {

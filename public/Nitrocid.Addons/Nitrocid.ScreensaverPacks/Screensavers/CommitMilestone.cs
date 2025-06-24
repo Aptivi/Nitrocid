@@ -18,11 +18,11 @@
 //
 
 using Textify.Data.Figlet;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Screensaver;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Writer.ConsoleWriters;

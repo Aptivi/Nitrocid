@@ -21,7 +21,7 @@ using ChemiStar;
 using ChemiStar.Data;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.Chemistry.Commands

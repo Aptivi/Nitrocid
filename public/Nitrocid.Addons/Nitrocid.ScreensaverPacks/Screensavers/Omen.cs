@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Threading;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;

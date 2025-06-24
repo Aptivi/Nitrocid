@@ -20,8 +20,8 @@
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Languages;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Languages;
 using System;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games

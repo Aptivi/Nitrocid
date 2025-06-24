@@ -18,11 +18,11 @@
 //
 
 using System;
-using Nitrocid.Files;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Events;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.SFTP;
 using Renci.SshNet;
 

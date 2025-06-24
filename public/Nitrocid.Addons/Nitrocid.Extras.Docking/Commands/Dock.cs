@@ -20,9 +20,9 @@
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Docking.Dock;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Nitrocid.Users.Login.Widgets;
+using Nitrocid.Base.Users.Login.Widgets;
 
 namespace Nitrocid.Extras.Docking.Commands
 {

@@ -19,14 +19,14 @@
 
 using System;
 using System.Collections.Generic;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Textify.General;
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Files;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Files;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

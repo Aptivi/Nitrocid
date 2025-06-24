@@ -20,12 +20,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Shells.RSS;
-using Nitrocid.Users;
-using Nitrocid.Users.Settings;
+using Nitrocid.Base.Users;
+using Nitrocid.Base.Users.Settings;
 
 namespace Nitrocid.ShellPacks.Tools
 {

@@ -21,7 +21,7 @@ using System;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Commands

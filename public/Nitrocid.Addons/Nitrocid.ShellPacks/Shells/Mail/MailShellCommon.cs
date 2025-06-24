@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using MailKit;
 using Nitrocid.ShellPacks.Tools.Transfer;
-using Nitrocid.Network.Connections;
+using Nitrocid.Base.Network.Connections;
 
 namespace Nitrocid.ShellPacks.Shells.Mail
 {

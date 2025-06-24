@@ -23,18 +23,18 @@ using Nitrocid.Extras.Calendar.Calendar.Commands;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Settings;
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
 using Nitrocid.Extras.Calendar.Calendar;
-using Nitrocid.Shell.Homepage;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Shell.Homepage;
+using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Extras.Calendar.Calendar.Screensavers;
 using Nitrocid.Extras.Calendar.Localized;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Calendar
 {

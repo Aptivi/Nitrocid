@@ -20,10 +20,10 @@
 using System;
 using Textify.Data.Figlet;
 using Terminaux.Colors;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Time.Timezones;
-using Nitrocid.Drivers.RNG;
+using Nitrocid.Base.Kernel.Time.Timezones;
+using Nitrocid.Base.Drivers.RNG;
 using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;

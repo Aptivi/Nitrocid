@@ -20,10 +20,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Inputs.Interactive;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Newtonsoft.Json.Linq;
 using System.Text;
-using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.Extras.Stocks.Interactives
 {

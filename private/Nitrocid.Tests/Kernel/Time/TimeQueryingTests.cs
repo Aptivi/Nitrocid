@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Time.Renderers;
-using Nitrocid.Kernel.Time.Timezones;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Kernel.Time.Timezones;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;

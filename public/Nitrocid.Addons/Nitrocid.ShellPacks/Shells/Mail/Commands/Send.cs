@@ -21,13 +21,13 @@ using MimeKit;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools.Transfer;
-using Nitrocid.Files;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Textify.General;
-using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {

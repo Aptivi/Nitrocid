@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers;
-using Nitrocid.Drivers.Encryption;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Kernel.Debugging;
 using System.IO;
 using System.Text.RegularExpressions;
 using Encryptor = System.Security.Cryptography.SHA384;
-using FS = Nitrocid.Files.FilesystemTools;
+using FS = Nitrocid.Base.Files.FilesystemTools;
 using TextEncoding = System.Text.Encoding;
 
 namespace Nitrocid.Extras.Hashes.Drivers

@@ -19,8 +19,8 @@
 
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files;
-using Nitrocid.Languages;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System.Linq;
 using System.Text;

@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Time.Calendars;
-using Nitrocid.Kernel.Time.Converters;
+using Nitrocid.Base.Kernel.Time.Calendars;
+using Nitrocid.Base.Kernel.Time.Converters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;

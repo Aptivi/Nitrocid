@@ -90,7 +90,7 @@ namespace Nitrocid.Analyzers.Kernel.Time.Timezones
                     var name = SyntaxFactory.QualifiedName(
                         SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(
-                                SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
+                                SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName(AnalysisTools.firstRootNameSpace), SyntaxFactory.IdentifierName("Base")),
                                 SyntaxFactory.IdentifierName("Kernel")),
                             SyntaxFactory.IdentifierName("Time")),
                         SyntaxFactory.IdentifierName("Timezones"));

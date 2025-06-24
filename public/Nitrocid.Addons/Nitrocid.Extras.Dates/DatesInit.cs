@@ -20,16 +20,16 @@
 using Nitrocid.Extras.Dates.Commands;
 using Nitrocid.Extras.Dates.Localized;
 using Nitrocid.Extras.Dates.Settings;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
-using Nitrocid.Shell.Homepage;
+using Nitrocid.Base.Shell.Homepage;
 using Nitrocid.Extras.Dates.Timers;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Switches;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Dates
 {

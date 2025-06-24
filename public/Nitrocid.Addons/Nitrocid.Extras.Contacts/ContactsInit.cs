@@ -20,20 +20,20 @@
 using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Contacts.Contacts;
 using Nitrocid.Extras.Contacts.Contacts.Commands;
-using Nitrocid.Files.Extensions;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Files.Extensions;
+using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
 using Terminaux.Shell.Switches;
-using Nitrocid.Shell.Homepage;
+using Nitrocid.Base.Shell.Homepage;
 using Nitrocid.Extras.Contacts.Settings;
 using Nitrocid.Extras.Contacts.Localized;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration;
 using VisualCard.Common.Diagnostics;
-using Nitrocid.Kernel;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Contacts
 {

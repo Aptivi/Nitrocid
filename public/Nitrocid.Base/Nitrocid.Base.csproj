@@ -32,6 +32,63 @@
   </PropertyGroup>
   <!-- KS General Information End -->
 
+  <!-- KS Dependencies Information -->
+  <ItemGroup>
+    <PackageReference Include="Aptivestigate.Serilog" Version="1.2.2" PrivateAssets="all" />
+    <PackageReference Include="Magico" Version="1.4.1" PrivateAssets="all" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" PrivateAssets="all" />
+    <PackageReference Include="SpecProbe" Version="3.5.1" PrivateAssets="all" />
+    <PackageReference Include="LocaleStation" Version="1.3.2" PrivateAssets="all" />
+  </ItemGroup>
+  <!-- KS Dependencies Information End -->
+
+  <!-- KS Non-private Dependencies Information -->
+  <ItemGroup>
+    <PackageReference Include="Terminaux" Version="7.0.0-beta4-20250623183945" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux.Images" Version="7.0.0-beta4-20250623183945" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Textify.Offline" Version="2.12.0.2" PrivateAssets="contentfiles;analyzers;build;runtime">
+      <Aliases>global,TextifyDep</Aliases>
+    </PackageReference>
+    <PackageReference Include="Textify.Offline.Data" Version="2.12.0.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Nettify" Version="1.5.5.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.6" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+  </ItemGroup>
+  <!-- KS Non-private Dependencies Information End -->
+
+  <!-- KS Manifest -->
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Settings\*.json" />
+  </ItemGroup>
+  <!-- KS Manifest End -->
+
+  <!-- KS Localizations -->
+  <ItemGroup>
+    <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
+  </ItemGroup>
+  <!-- KS Localizations End -->
+
+  <!-- KS Audio Themes -->
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Audio\**\*.mp3" />
+  </ItemGroup>
+  <!-- KS Audio Themes -->
+
+  <!-- KS Release Changelogs -->
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\vnd\changes.chg">
+      <LogicalName>Nitrocid.Resources.changes.chg</LogicalName>
+      <Visible>false</Visible>
+    </EmbeddedResource>
+  </ItemGroup>
+  <!-- KS Release Changelogs -->
+
+  <!-- KS Generators -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Nitrocid.Generators.KnownAddons.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <!-- KS Generators End -->
+
   <!-- KS Package Files -->
   <ItemGroup>
     <None Include="..\Nitrocid\OfficialAppIcon-NitrocidKS-512.png" Pack="true" PackagePath="\" />

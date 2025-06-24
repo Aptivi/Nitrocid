@@ -18,8 +18,8 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations;
 using Terminaux.Base;
 

@@ -20,11 +20,11 @@
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
 using Nitrocid.Extras.BeepSynth.Commands;
 using Nitrocid.Extras.BeepSynth.Localized;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.BeepSynth
 {

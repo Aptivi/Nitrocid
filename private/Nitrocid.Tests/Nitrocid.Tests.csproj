@@ -53,10 +53,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\public\Nitrocid\Nitrocid.csproj">
-      <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
-      <Name>Nitrocid</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\..\public\Nitrocid.Base\Nitrocid.Base.csproj" />
   </ItemGroup>
   
   <!--

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Misc.Screensaver;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 

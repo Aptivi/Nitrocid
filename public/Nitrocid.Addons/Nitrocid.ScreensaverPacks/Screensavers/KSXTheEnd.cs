@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
 using System;
 using Textify.Data.Figlet;
 using Nitrocid.ScreensaverPacks.Animations.Glitch;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Time.Renderers;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;

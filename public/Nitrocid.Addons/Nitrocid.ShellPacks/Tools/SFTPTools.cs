@@ -20,15 +20,15 @@
 using System;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Languages;
 using Textify.Tools.Placeholder;
 using Renci.SshNet;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.Network.Connections;
+using Nitrocid.Base.ConsoleBase.Inputs;
+using Nitrocid.Base.Network.Connections;
 using System.Collections.Generic;
 using Textify.General;
-using Nitrocid.Files;
+using Nitrocid.Base.Files;
 using Terminaux.Inputs;
 using Nitrocid.ShellPacks.Shells.SFTP;
 

@@ -83,7 +83,7 @@ namespace Nitrocid.Analyzers.Kernel
             if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Kernel") == false)
             {
                 var name = SyntaxFactory.QualifiedName(
-                    SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
+                    SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName(AnalysisTools.firstRootNameSpace), SyntaxFactory.IdentifierName("Base")),
                     SyntaxFactory.IdentifierName("Kernel"));
                 compilation = compilation
                     .AddUsings(SyntaxFactory.UsingDirective(name));

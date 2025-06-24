@@ -19,8 +19,8 @@
 
 using System;
 using Newtonsoft.Json;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Notifications;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Notifications;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Reminders
 {

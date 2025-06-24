@@ -18,8 +18,8 @@
 //
 
 using Microsoft.Diagnostics.Runtime;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;

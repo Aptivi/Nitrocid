@@ -18,7 +18,7 @@
 //
 
 using System.IO;
-using Nitrocid.Drivers.Encryption;
+using Nitrocid.Base.Drivers.Encryption;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using SpecProbe.Software.Platform;

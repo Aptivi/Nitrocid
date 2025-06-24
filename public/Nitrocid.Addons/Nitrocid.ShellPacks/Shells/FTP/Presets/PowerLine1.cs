@@ -21,7 +21,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Terminaux.Colors;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Colors.Themes.Colors;

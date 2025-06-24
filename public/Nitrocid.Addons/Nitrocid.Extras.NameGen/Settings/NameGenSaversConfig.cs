@@ -18,12 +18,12 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Kernel.Configuration.Instances;
-using Nitrocid.Kernel.Configuration.Settings;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Reflection.Internal;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration.Instances;
+using Nitrocid.Base.Kernel.Configuration.Settings;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection.Internal;
 
 namespace Nitrocid.Extras.NameGen.Settings
 {

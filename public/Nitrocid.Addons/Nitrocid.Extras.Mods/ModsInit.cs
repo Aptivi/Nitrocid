@@ -20,9 +20,9 @@
 using Nitrocid.Extras.Mods.Commands;
 using Nitrocid.Extras.Mods.Localized;
 using Nitrocid.Extras.Mods.Settings;
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;

@@ -22,8 +22,8 @@ using FluentFTP;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools.Filesystem;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.FTP.Commands

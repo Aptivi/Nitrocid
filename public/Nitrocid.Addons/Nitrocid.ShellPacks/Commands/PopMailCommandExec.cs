@@ -21,9 +21,9 @@ using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 // using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Languages;
-// using Nitrocid.Network.Connections;
-// using Nitrocid.Network.SpeedDial;
+using Nitrocid.Base.Languages;
+// using Nitrocid.Base.Network.Connections;
+// using Nitrocid.Base.Network.SpeedDial;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Commands

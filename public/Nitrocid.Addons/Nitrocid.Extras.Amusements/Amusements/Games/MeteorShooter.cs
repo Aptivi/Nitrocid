@@ -23,14 +23,14 @@ using System.Threading;
 using Terminaux.Colors;
 using System.Text;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.Languages;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games

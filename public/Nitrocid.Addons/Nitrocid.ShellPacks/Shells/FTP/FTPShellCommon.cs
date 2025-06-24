@@ -18,7 +18,7 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Network.Connections;
+using Nitrocid.Base.Network.Connections;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.FTP

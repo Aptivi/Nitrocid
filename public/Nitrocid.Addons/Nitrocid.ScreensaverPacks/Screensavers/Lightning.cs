@@ -18,8 +18,8 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Misc.Screensaver;
 using System;
 using System.Text;
 using Terminaux.Colors;

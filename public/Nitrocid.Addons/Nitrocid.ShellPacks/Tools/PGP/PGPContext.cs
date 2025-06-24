@@ -19,9 +19,9 @@
 
 using MimeKit.Cryptography;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Base.ConsoleBase.Inputs;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Textify.Tools.Placeholder;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 

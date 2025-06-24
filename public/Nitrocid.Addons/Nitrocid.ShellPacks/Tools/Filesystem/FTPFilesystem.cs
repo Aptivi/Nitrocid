@@ -26,12 +26,12 @@ using System.Text;
 using FluentFTP;
 using FluentFTP.Helpers;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.Files;
-using Nitrocid.Files.Paths;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Reflection;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.ShellPacks.Shells.FTP;
 
 namespace Nitrocid.ShellPacks.Tools.Filesystem

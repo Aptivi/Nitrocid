@@ -24,7 +24,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Colors.Themes;
-using Nitrocid.Files;
+using Nitrocid.Base.Files;
 using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio

@@ -19,11 +19,11 @@
 
 using Terminaux.Colors;
 using System;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 

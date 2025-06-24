@@ -19,12 +19,12 @@
 
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using System;
 using System.Text;
 using VisualCard;
 using VisualCard.Parts.Enums;
-using Nitrocid.Files;
+using Nitrocid.Base.Files;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Extras.Contacts.Contacts

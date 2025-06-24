@@ -19,9 +19,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Mods.Modifications.ManPages
 {

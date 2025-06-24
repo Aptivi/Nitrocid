@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Paths;
+using Nitrocid.Base.Files.Paths;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using System.IO;
-using Nitrocid.Kernel;
-using Nitrocid.Files;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Files;
 
 namespace Nitrocid.Tests.Files
 {

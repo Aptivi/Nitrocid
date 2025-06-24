@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Misc.Screensaver;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;

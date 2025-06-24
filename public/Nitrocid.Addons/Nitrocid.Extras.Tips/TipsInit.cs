@@ -19,10 +19,10 @@
 
 using Nitrocid.Extras.Tips.Localized;
 using Nitrocid.Extras.Tips.Settings;
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Kernel.Starting;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Starting;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Tips
 {

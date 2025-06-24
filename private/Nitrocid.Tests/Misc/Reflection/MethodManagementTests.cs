@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Languages;
-using Nitrocid.Misc.Reflection;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Globalization;

@@ -19,9 +19,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.Files;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Languages;
 using Terminaux.Colors;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles;

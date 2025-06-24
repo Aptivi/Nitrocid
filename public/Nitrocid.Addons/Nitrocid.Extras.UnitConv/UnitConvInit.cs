@@ -25,10 +25,10 @@ using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using System.Linq;
 using UnitsNet;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Extras.UnitConv.Tools;
-using Nitrocid.Shell.Homepage;
-using Nitrocid.Languages;
+using Nitrocid.Base.Shell.Homepage;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.UnitConv
 {

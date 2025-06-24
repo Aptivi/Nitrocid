@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers.Encryption;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Security.Permissions;
-using Nitrocid.Users;
+using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Linq;

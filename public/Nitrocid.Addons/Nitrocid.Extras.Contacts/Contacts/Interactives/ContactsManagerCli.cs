@@ -21,11 +21,11 @@ using System;
 using System.Collections.Generic;
 using VisualCard.Parts;
 using System.Text;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Text.Probers.Regexp;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Text.Probers.Regexp;
 using Textify.General;
 using VisualCard.Parts.Implementations;
 using Terminaux.Images;
@@ -34,7 +34,7 @@ using System.IO;
 using Terminaux.Base;
 using Terminaux.Colors.Themes.Colors;
 using VisualCard.Parts.Enums;
-using Nitrocid.Files;
+using Nitrocid.Base.Files;
 using System.Linq;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives

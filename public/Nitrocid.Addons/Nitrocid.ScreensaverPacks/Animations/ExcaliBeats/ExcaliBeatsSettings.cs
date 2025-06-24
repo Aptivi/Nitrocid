@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel;
+using Nitrocid.Base.Kernel;
 using System.Runtime.Versioning;
 using Terminaux.Colors;
 

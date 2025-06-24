@@ -19,9 +19,9 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Nitrocid.Files;
-using Nitrocid.Files.Paths;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Extensions;
 using System.Collections.Generic;
 
 namespace Nitrocid.Tests.Modifications

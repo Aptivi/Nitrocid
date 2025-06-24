@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files;
+using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
 using Nitrocid.ShellPacks.Tools;

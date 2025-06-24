@@ -18,8 +18,8 @@
 //
 
 using System.IO;
-using Nitrocid.Files.Editors.TextEdit;
-using Nitrocid.Shell.Shells.Text;
+using Nitrocid.Base.Files.Editors.TextEdit;
+using Nitrocid.Base.Shell.Shells.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 

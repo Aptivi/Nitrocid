@@ -20,8 +20,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Text.RegularExpressions;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Misc.Text.Probers.Regexp;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Misc.Text.Probers.Regexp;
 
 namespace Nitrocid.Tests.Drivers
 {

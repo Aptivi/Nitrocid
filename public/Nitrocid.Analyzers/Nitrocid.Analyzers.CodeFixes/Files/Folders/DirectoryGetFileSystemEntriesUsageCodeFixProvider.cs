@@ -86,7 +86,7 @@ namespace Nitrocid.Analyzers.Files.Folders
                 if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Files") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
+                        SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName(AnalysisTools.firstRootNameSpace), SyntaxFactory.IdentifierName("Base")),
                         SyntaxFactory.IdentifierName("Files"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));

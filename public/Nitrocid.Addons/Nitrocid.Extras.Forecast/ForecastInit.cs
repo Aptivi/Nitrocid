@@ -22,12 +22,12 @@ using Terminaux.Shell.Switches;
 using Nitrocid.Extras.Forecast.Forecast.Commands;
 using Nitrocid.Extras.Forecast.Localized;
 using Nitrocid.Extras.Forecast.Settings;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Forecast
 {

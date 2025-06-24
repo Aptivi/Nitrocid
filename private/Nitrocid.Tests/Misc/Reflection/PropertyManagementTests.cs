@@ -18,9 +18,9 @@
 //
 
 using System;
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Kernel.Configuration.Instances;
-using Nitrocid.Misc.Reflection;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration.Instances;
+using Nitrocid.Base.Misc.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Terminaux.Colors.Data;

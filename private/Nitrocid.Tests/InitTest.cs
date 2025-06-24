@@ -20,22 +20,23 @@
 using System;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nitrocid.Kernel;
-using Nitrocid.Files;
-using Nitrocid.Files.Paths;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Base.Checks;
 using System.Reflection;
 using Terminaux.Shell.Shells;
-using Nitrocid.Shell.Shells.UESH;
-using Nitrocid.Shell.Shells.Text;
-using Nitrocid.Shell.Shells.Hex;
-using Nitrocid.Shell.Shells.Admin;
-using Nitrocid.Shell.Shells.Debug;
-using Nitrocid.Kernel.Starting;
+using Nitrocid.Base.Shell.Shells.UESH;
+using Nitrocid.Base.Shell.Shells.Text;
+using Nitrocid.Base.Shell.Shells.Hex;
+using Nitrocid.Base.Shell.Shells.Admin;
+using Nitrocid.Base.Shell.Shells.Debug;
+using Nitrocid.Base.Kernel.Starting;
 using Textify.Tools.Placeholder;
+using Terminaux.Colors.Themes.Colors;
 
 [assembly: ClassCleanupExecution(ClassCleanupBehavior.EndOfClass)]
 

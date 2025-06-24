@@ -23,13 +23,13 @@ using Nitrocid.Extras.NameGen.Commands;
 using Nitrocid.Extras.NameGen.Localized;
 using Nitrocid.Extras.NameGen.Screensavers;
 using Nitrocid.Extras.NameGen.Settings;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Misc.Screensaver;
 using System.Linq;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.NameGen
 {

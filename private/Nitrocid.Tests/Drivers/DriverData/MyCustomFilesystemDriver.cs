@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers.Filesystem;
+using Nitrocid.Base.Drivers.Filesystem;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {

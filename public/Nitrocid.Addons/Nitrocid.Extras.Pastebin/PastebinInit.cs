@@ -19,8 +19,8 @@
 
 using Nitrocid.Extras.Pastebin.Commands;
 using Nitrocid.Extras.Pastebin.Localized;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;

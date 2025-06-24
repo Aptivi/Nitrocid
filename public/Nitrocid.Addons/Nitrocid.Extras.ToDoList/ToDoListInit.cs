@@ -21,12 +21,12 @@ using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.ToDoList.ToDoList;
 using Nitrocid.Extras.ToDoList.Localized;
 using Nitrocid.Extras.ToDoList.ToDoList.Commands;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.ToDoList
 {

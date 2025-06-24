@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Threading;
+using Nitrocid.Base.Kernel.Threading;
 using System;
 using System.Threading;
 

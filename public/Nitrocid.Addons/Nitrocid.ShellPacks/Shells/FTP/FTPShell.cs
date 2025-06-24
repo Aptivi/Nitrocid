@@ -24,14 +24,14 @@ using Nitrocid.ShellPacks.Tools.Transfer;
 using FluentFTP;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Files.Paths;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Files.Paths;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.Network.SpeedDial;
-using Nitrocid.Network.Connections;
+using Nitrocid.Base.Network.SpeedDial;
+using Nitrocid.Base.Network.Connections;
 
 namespace Nitrocid.ShellPacks.Shells.FTP
 {

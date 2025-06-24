@@ -19,7 +19,7 @@
 
 using Nettify.EnglishDictionary;
 using Terminaux.Shell.Commands;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;
 

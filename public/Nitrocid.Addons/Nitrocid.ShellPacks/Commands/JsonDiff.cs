@@ -21,7 +21,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files;
+using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
 using Textify.Tools;
 

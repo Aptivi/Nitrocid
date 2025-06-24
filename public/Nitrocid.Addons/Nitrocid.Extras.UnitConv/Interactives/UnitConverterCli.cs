@@ -25,7 +25,7 @@ using UnitsNet;
 using FluentFTP.Helpers;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Magico.Enumeration;
 
 namespace Nitrocid.Extras.UnitConv.Interactives

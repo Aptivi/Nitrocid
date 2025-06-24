@@ -20,13 +20,13 @@
 using Nitrocid.Extras.Chemistry.Commands;
 using Nitrocid.Extras.Chemistry.Screensavers;
 using Nitrocid.Extras.Chemistry.Localized;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Chemistry
 {

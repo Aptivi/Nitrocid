@@ -24,15 +24,15 @@ using System.Threading;
 using Newtonsoft.Json;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files;
-using Nitrocid.Files.Paths;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Kernel.Power;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.Kernel.Time.Renderers;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Notifications;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Power;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Notifications;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Reminders
 {

@@ -20,7 +20,7 @@
 using System.IO;
 using Newtonsoft.Json.Linq;
 using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Kernel.Threading;
+using Nitrocid.Base.Kernel.Threading;
 
 namespace Nitrocid.ShellPacks.Shells.Json
 {

@@ -21,12 +21,12 @@ using Microsoft.Data.Sqlite;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Textify.General;
-using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.Sql.Commands
 {

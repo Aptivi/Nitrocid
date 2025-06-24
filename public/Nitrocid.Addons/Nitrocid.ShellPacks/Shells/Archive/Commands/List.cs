@@ -20,10 +20,10 @@
 using System.Collections.Generic;
 using SharpCompress.Archives;
 using Terminaux.Shell.Commands;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.Misc.Reflection;
+using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.ShellPacks.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands

@@ -22,7 +22,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Switches;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {

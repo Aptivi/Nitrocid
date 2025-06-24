@@ -18,8 +18,8 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Files;
-using Nitrocid.Languages;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 
