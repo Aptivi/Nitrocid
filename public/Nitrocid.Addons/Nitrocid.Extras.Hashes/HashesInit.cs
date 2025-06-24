@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers;
-using Nitrocid.Drivers.Encryption;
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Extras.Hashes.Drivers;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 
 namespace Nitrocid.Extras.Hashes
 {

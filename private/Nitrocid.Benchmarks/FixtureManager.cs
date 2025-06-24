@@ -18,6 +18,7 @@
 //
 
 using BenchmarkDotNet.Running;
+using Nitrocid.Base.Kernel;
 
 namespace Nitrocid.Benchmarks
 {
@@ -26,7 +27,7 @@ namespace Nitrocid.Benchmarks
         internal static void RunBenchmark(string fixture)
         {
             // Get the benchmark fixture and run it
-            var fixtureType = Type.GetType($"{KernelMain.rootNameSpace}.Benchmarks.Fixtures.{fixture}") ??
+            var fixtureType = Type.GetType($"{KernelReleaseInfo.rootNameSpace}.Benchmarks.Fixtures.{fixture}") ??
                 throw new Exception($"No fixture type called {fixture}.");
             BenchmarkRunner.Run(fixtureType);
         }

@@ -20,9 +20,9 @@
 using System;
 using System.Threading;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Splash;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Splash;
 using Terminaux.Colors.Themes.Colors;
 
 namespace Nitrocid.SplashPacks.Splashes

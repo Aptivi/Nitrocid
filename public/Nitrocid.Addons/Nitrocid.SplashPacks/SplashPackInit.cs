@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Splash;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Splash;
 using Nitrocid.SplashPacks.Localized;
 using Nitrocid.SplashPacks.Settings;
 using Nitrocid.SplashPacks.Splashes;

@@ -18,7 +18,7 @@
 //
 
 using FluentFTP;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Debugging;
 
 namespace Nitrocid.ShellPacks.Tools
 {

@@ -25,12 +25,12 @@ using Nitrocid.ShellPacks.Tools;
 using Nitrocid.ShellPacks.Tools.Transfer;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.Network.SpeedDial;
-using Nitrocid.Network.Connections;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Network.SpeedDial;
+using Nitrocid.Base.Network.Connections;
 
 namespace Nitrocid.ShellPacks.Shells.Mail
 {

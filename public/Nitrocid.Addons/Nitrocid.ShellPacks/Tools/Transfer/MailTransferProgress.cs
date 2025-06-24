@@ -20,9 +20,9 @@
 using MailKit;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Reflection;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
 using Textify.Tools.Placeholder;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;

@@ -22,14 +22,14 @@ using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Shells.RSS.Interactive;
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
 using System;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.Network.Connections;
+using Nitrocid.Base.ConsoleBase.Inputs;
+using Nitrocid.Base.Network.Connections;
 
 namespace Nitrocid.ShellPacks.Commands
 {

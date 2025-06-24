@@ -18,7 +18,7 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

@@ -24,16 +24,16 @@ using Nitrocid.Extras.Amusements.Localized;
 using Nitrocid.Extras.Amusements.Screensavers;
 using Nitrocid.Extras.Amusements.Settings;
 using Nitrocid.Extras.Amusements.Splashes;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Misc.Screensaver;
-using Nitrocid.Misc.Splash;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.Base.Misc.Splash;
 using System.Linq;
-using Nitrocid.Shell.Homepage;
+using Nitrocid.Base.Shell.Homepage;
 using Nitrocid.Extras.Amusements.Amusements.Games;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Amusements
 {

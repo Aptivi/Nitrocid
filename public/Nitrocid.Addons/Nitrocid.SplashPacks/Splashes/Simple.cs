@@ -22,9 +22,9 @@ using System.Text;
 using System.Threading;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Splash;
-using Nitrocid.Misc.Text;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Misc.Splash;
+using Nitrocid.Base.Misc.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 

@@ -18,9 +18,9 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Drivers.RNG;
+using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Extras.Amusements.Amusements.Quotes;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Misc.Screensaver;
 using System.Linq;
 using Terminaux.Colors;
 using Textify.General;

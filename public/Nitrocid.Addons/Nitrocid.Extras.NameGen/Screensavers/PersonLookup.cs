@@ -19,10 +19,10 @@
 
 using System;
 using Textify.Data.NameGen;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Kernel.Time.Renderers;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox.Tools;

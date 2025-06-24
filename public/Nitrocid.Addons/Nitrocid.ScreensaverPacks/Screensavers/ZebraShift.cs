@@ -18,15 +18,15 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Misc.Screensaver;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

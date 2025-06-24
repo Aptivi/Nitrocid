@@ -18,9 +18,9 @@
 //
 
 using BenchmarkDotNet.Attributes;
-using Nitrocid.Drivers;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Drivers.Sorting;
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Drivers.Sorting;
 
 namespace Nitrocid.Benchmarks.Fixtures
 {

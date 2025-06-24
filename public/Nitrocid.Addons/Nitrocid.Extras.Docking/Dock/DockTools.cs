@@ -19,15 +19,15 @@
 
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Screensaver;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Nitrocid.Users.Login.Widgets;
-using Nitrocid.Users.Login.Widgets.Implementations;
+using Nitrocid.Base.Users.Login.Widgets;
+using Nitrocid.Base.Users.Login.Widgets.Implementations;
 using Terminaux.Base;
 using System.Threading;
 using Terminaux.Writer.ConsoleWriters;

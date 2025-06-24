@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Extras.UnitConv.Interactives;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using System;
 using Terminaux.Inputs.Interactive;
 

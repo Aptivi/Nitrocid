@@ -21,9 +21,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Screensaver;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
 

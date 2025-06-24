@@ -18,13 +18,13 @@
 //
 
 using Force.Crc32;
-using FS = Nitrocid.Files.FilesystemTools;
+using FS = Nitrocid.Base.Files.FilesystemTools;
 using System.IO;
 using System.Text.RegularExpressions;
 using TextEncoding = System.Text.Encoding;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Drivers;
-using Nitrocid.Drivers.Encryption;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Drivers.Encryption;
 
 namespace Nitrocid.Extras.Hashes.Drivers
 {

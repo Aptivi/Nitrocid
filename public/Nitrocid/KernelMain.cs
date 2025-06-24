@@ -22,24 +22,24 @@ using System;
 using System.Diagnostics;
 using System.Reflection;
 using Textify.Versioning;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.ConsoleBase;
-using Nitrocid.Arguments;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Kernel.Starting;
-using Nitrocid.Kernel.Starting.Environment;
-using Nitrocid.Users.Windows;
+using Nitrocid.Base.ConsoleBase;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Kernel.Starting;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.Kernel.Power;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Nitrocid.Kernel.Configuration;
 using Aptivestigate.CrashHandler;
 using Terminaux.Inputs.Styles.Infobox.Tools;
-using Nitrocid.Kernel;
 using Terminaux.Shell.Arguments.Base;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Arguments;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Starting.Environment;
+using Nitrocid.Base.Users.Windows;
+using Nitrocid.Base.Kernel.Power;
 
 namespace Nitrocid
 {
@@ -48,38 +48,6 @@ namespace Nitrocid
     /// </summary>
     public static class KernelMain
     {
-        internal static readonly string rootNameSpace =
-            (typeof(KernelMain).Namespace?.Split('.')[0]) ?? "";
-        private static readonly Version? kernelVersion =
-            Assembly.GetExecutingAssembly().GetName().Version;
-        private static readonly SemVer? kernelVersionFull =
-            SemVer.ParseWithRev($"{kernelVersion}");
-
-        // Refer to NitrocidModAPIVersion in the project file.
-        private static readonly Version kernelApiVersion =
-            new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion ?? "0.0.0.0");
-
-        /// <summary>
-        /// Kernel version
-        /// </summary>
-        public static Version? Version =>
-            kernelVersion;
-        /// <summary>
-        /// Kernel API version
-        /// </summary>
-        public static Version ApiVersion =>
-            kernelApiVersion;
-        /// <summary>
-        /// Kernel version (full)
-        /// </summary>
-        public static SemVer? VersionFull =>
-            kernelVersionFull;
-        /// <summary>
-        /// Kernel version (full)
-        /// </summary>
-        public static string VersionFullStr =>
-            kernelVersionFull?.ToString() ?? "0.0.0.0";
-
         /// <summary>
         /// Entry point
         /// </summary>

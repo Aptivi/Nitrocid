@@ -22,9 +22,9 @@ using Nitrocid.Extras.Dictionary.Commands;
 using Nitrocid.Extras.Dictionary.Localized;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Dictionary
 {

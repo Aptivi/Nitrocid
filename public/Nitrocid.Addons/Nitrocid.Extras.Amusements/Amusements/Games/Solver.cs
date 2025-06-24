@@ -22,10 +22,10 @@ using System.Data;
 using System.Linq;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

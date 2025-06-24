@@ -24,7 +24,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Presets
 {

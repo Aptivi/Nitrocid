@@ -19,10 +19,10 @@
 
 using System;
 using System.Threading;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.Misc.Splash;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Misc.Splash;
 using Terminaux.Base;
 using Terminaux.Colors;
 

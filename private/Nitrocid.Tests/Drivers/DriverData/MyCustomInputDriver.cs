@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers.Input;
+using Nitrocid.Base.Drivers.Input;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {

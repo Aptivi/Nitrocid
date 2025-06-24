@@ -23,18 +23,18 @@ using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Colors.Themes;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Events;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Languages;
 using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Base;
-using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Base.ConsoleBase.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Interactive;
 using System;
-using Nitrocid.Files;
+using Nitrocid.Base.Files;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {

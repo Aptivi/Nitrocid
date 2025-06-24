@@ -19,7 +19,7 @@
 
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Notes.Management;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using System.Collections.Generic;
 using Textify.General;
 using System.Linq;

@@ -47,8 +47,7 @@ namespace Nitrocid.Analyzers.Test.Files
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using Nitrocid.Misc.Text;
-                using Nitrocid.Files.Paths;
+                using Nitrocid.Base.Files.Paths;
 
                 namespace ConsoleApplication1
                 {
@@ -76,7 +75,7 @@ namespace Nitrocid.Analyzers.Test.Files
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using Nitrocid.Files.Paths;
+                using Nitrocid.Base.Files.Paths;
 
                 namespace ConsoleApplication1
                 {
@@ -98,8 +97,8 @@ namespace Nitrocid.Analyzers.Test.Files
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using Nitrocid.Files.Paths;
-                using Nitrocid.Files;
+                using Nitrocid.Base.Files.Paths;
+                using Nitrocid.Base.Files;
 
                 namespace ConsoleApplication1
                 {

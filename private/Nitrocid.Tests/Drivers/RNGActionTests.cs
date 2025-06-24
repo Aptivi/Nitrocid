@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers.RNG;
+using Nitrocid.Base.Drivers.RNG;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 

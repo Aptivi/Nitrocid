@@ -21,7 +21,7 @@ using System;
 using Nitrocid.ShellPacks.Tools.Filesystem;
 using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Choice;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;
 using Textify.General;

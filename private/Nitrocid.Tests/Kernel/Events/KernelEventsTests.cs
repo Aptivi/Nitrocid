@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Events;
+using Nitrocid.Base.Kernel.Events;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;

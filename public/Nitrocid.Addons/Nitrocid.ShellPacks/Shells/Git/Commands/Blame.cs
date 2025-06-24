@@ -21,7 +21,7 @@ using LibGit2Sharp;
 using System.IO;
 using System.Linq;
 using Terminaux.Shell.Commands;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;
 

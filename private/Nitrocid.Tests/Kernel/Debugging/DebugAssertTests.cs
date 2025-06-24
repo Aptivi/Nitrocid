@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using Nitrocid.Tests.Drivers.DriverData;
-using Nitrocid.Drivers.Encoding;
+using Nitrocid.Base.Drivers.Encoding;
 
 namespace Nitrocid.Tests.Kernel.Debugging
 {

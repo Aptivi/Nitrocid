@@ -19,17 +19,17 @@
 
 using System;
 using Terminaux.Colors;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Tools.Placeholder;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.Kernel.Time;
-using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Base.Kernel.Time;
+using Nitrocid.Base.Kernel.Time.Renderers;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

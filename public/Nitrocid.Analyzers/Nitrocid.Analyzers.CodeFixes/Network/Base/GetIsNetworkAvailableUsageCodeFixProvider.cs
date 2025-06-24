@@ -88,7 +88,7 @@ namespace Nitrocid.Analyzers.Network.Base
                 if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Network") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
+                        SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName(AnalysisTools.firstRootNameSpace), SyntaxFactory.IdentifierName("Base")),
                         SyntaxFactory.IdentifierName("Network"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));

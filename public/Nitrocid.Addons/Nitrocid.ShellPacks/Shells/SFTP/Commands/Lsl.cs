@@ -19,8 +19,8 @@
 
 using System;
 using System.Linq;
-using Nitrocid.Files;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Commands

@@ -20,14 +20,14 @@
 using Nettify.Rss.Instance;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Interactive;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Textify.General;
-using Nitrocid.Network.Connections;
+using Nitrocid.Base.Network.Connections;
 using SpecProbe.Software.Platform;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Interactive

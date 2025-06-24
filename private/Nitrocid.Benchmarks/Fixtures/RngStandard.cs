@@ -18,8 +18,8 @@
 //
 
 using BenchmarkDotNet.Attributes;
-using Nitrocid.Drivers;
-using Nitrocid.Drivers.RNG;
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Drivers.RNG;
 
 namespace Nitrocid.Benchmarks.Fixtures
 {

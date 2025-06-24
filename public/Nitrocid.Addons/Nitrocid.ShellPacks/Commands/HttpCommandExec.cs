@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.Languages;
-using Nitrocid.Network.Connections;
+using Nitrocid.Base.ConsoleBase.Inputs;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Network.Connections;
 using Terminaux.Shell.Commands;
 using System.Net.Http;
 

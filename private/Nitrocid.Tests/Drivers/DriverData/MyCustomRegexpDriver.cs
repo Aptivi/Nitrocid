@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers.Regexp;
+using Nitrocid.Base.Drivers.Regexp;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {

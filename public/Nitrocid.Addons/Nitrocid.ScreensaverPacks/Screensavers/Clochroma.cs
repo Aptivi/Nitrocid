@@ -18,11 +18,11 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Time.Renderers;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Nitrocid.Kernel.Time;
+using Nitrocid.Base.Kernel.Time;
 using Terminaux.Colors.Transformation;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

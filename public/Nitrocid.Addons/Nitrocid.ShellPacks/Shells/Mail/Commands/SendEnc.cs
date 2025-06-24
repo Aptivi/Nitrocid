@@ -20,14 +20,14 @@
 using MimeKit;
 using Nitrocid.ShellPacks.Tools.Transfer;
 using Terminaux.Shell.Commands;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Files;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Colors.Themes.Colors;
 using Textify.General;
-using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {

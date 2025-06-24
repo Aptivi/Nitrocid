@@ -19,10 +19,10 @@
 
 using System;
 using Newtonsoft.Json;
-using Nitrocid.Kernel.Time;
-using Nitrocid.Kernel.Time.Calendars;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Notifications;
+using Nitrocid.Base.Kernel.Time;
+using Nitrocid.Base.Kernel.Time.Calendars;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Notifications;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Events
 {

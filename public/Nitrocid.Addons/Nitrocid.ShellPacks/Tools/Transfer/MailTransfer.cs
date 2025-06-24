@@ -33,9 +33,9 @@ using MimeKit.Text;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools.PGP;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Time.Renderers;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Tools.Directory;
 using Nitrocid.ShellPacks.Shells.Mail;
 

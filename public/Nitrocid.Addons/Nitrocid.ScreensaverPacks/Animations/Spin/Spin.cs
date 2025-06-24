@@ -22,7 +22,7 @@ using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Misc.Screensaver;
 
 namespace Nitrocid.ScreensaverPacks.Animations.Spin
 {

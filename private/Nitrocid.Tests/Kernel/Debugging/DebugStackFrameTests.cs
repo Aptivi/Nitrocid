@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Debugging.Trace;
+using Nitrocid.Base.Kernel.Debugging.Trace;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 

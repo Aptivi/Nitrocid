@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Network;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Network;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 

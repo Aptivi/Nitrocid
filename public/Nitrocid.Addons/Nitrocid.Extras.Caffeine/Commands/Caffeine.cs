@@ -19,8 +19,8 @@
 
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Time.Alarm;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Time.Alarm;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
 using System.Collections.Generic;

@@ -22,9 +22,9 @@ using System.Linq;
 using Nettify.Weather;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {

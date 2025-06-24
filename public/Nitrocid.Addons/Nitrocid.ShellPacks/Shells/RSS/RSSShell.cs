@@ -22,14 +22,14 @@ using System.Threading;
 using Nettify.Rss.Instance;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Colors.Themes.Colors;
 using Textify.General;
-using Nitrocid.Network.SpeedDial;
-using Nitrocid.Network.Connections;
-using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Base.Network.SpeedDial;
+using Nitrocid.Base.Network.Connections;
+using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.ShellPacks.Shells.RSS
 {

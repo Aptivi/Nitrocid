@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers.Encoding;
+using Nitrocid.Base.Drivers.Encoding;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {

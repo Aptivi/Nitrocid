@@ -22,10 +22,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Nettify.Rss.Instance;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
-using Nitrocid.Misc.Notifications;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.ShellPacks.Shells.RSS;
 
 namespace Nitrocid.ShellPacks.Tools

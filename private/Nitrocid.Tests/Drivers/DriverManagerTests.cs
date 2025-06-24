@@ -21,17 +21,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Collections.Generic;
 using Nitrocid.Tests.Drivers.DriverData;
-using Nitrocid.Drivers;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Drivers.Filesystem;
-using Nitrocid.Drivers.Encoding;
-using Nitrocid.Drivers.HardwareProber;
-using Nitrocid.Drivers.Network;
-using Nitrocid.Drivers.Sorting;
-using Nitrocid.Drivers.Regexp;
-using Nitrocid.Drivers.Input;
-using Nitrocid.Drivers.Encryption;
-using Nitrocid.Drivers.DebugLogger;
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Drivers.Filesystem;
+using Nitrocid.Base.Drivers.Encoding;
+using Nitrocid.Base.Drivers.HardwareProber;
+using Nitrocid.Base.Drivers.Network;
+using Nitrocid.Base.Drivers.Sorting;
+using Nitrocid.Base.Drivers.Regexp;
+using Nitrocid.Base.Drivers.Input;
+using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Drivers.DebugLogger;
 
 namespace Nitrocid.Tests.Drivers
 {

@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Time;
-using Nitrocid.Kernel.Time.Converters;
+using Nitrocid.Base.Kernel.Time;
+using Nitrocid.Base.Kernel.Time.Converters;
 using System;
 
 namespace Nitrocid.Extras.Dates.Tools

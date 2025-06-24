@@ -28,14 +28,14 @@ using MimeKit.Cryptography;
 using Nettify.MailAddress;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Paths;
-using Nitrocid.Kernel;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Languages;
 using Textify.Tools.Placeholder;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.Network.Connections;
-using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Base.ConsoleBase.Inputs;
+using Nitrocid.Base.Network.Connections;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.ShellPacks.Tools.PGP;
 
 namespace Nitrocid.ShellPacks.Tools

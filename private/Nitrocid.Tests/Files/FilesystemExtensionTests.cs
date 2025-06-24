@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Extensions;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Files.Extensions;
+using Nitrocid.Base.Kernel.Debugging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 

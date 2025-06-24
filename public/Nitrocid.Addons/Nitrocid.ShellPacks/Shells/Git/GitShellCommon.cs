@@ -18,7 +18,7 @@
 //
 
 using LibGit2Sharp;
-using Nitrocid.Files;
+using Nitrocid.Base.Files;
 using System.IO;
 
 namespace Nitrocid.ShellPacks.Shells.Git

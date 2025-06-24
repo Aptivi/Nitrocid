@@ -19,10 +19,10 @@
 
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System;
 using System.Collections.Generic;

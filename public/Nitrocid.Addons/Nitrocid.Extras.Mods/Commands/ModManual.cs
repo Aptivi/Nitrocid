@@ -19,12 +19,12 @@
 
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Colors.Themes.Colors;
-using Nitrocid.Files;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Debugging;
 using System.IO;
 using System;
 using Nitrocid.Extras.Mods.Modifications;

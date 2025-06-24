@@ -19,8 +19,8 @@
 
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files;
-using Nitrocid.Languages;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
 using System;
@@ -29,6 +29,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Web;
+using Nitrocid.Base.Kernel;
 
 namespace Nitrocid.Extras.Pastebin.Commands
 {
@@ -114,7 +115,7 @@ namespace Nitrocid.Extras.Pastebin.Commands
 
                 // Open the HTTP client and choose how to post
                 var client = new HttpClient();
-                client.DefaultRequestHeaders.Add("User-Agent", $"Nitrocid v{KernelMain.Version}");
+                client.DefaultRequestHeaders.Add("User-Agent", $"Nitrocid v{KernelReleaseInfo.Version}");
 
                 // Now, post and return the response.
                 var response = client.PostAsync(uri, new StringContent($"{field}={encoded}{(parameters.ArgumentsList.Length > 1 ? $"&{parameters.ArgumentsList[1]}" : "")}", Encoding.UTF8, format == "json" ? "text/json" : "application/x-www-form-urlencoded")).Result;

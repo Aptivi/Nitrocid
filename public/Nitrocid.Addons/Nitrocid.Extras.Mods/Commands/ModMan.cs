@@ -18,22 +18,22 @@
 //
 
 using System.IO;
-using Nitrocid.Kernel;
+using Nitrocid.Base.Kernel;
 using Terminaux.Shell.Help;
 using Terminaux.Shell.Commands;
-using Nitrocid.Files;
+using Nitrocid.Base.Files;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Security.Permissions;
-using Nitrocid.Files.Paths;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Files.Paths;
 using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Extras.Mods.Modifications;
 using Nitrocid.Extras.Mods.Modifications.Interactive;
 using Terminaux.Inputs.Interactive;
 using System;
-using Nitrocid.Users;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Users;
+using Nitrocid.Base.Kernel.Debugging;
 
 namespace Nitrocid.Extras.Mods.Commands
 {

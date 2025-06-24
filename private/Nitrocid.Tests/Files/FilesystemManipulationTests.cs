@@ -19,10 +19,10 @@
 
 using System.IO;
 using System.Text.RegularExpressions;
-using Nitrocid.Files;
-using Nitrocid.Files.Paths;
-using Nitrocid.Kernel;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Shouldly.ShouldlyExtensionMethods;

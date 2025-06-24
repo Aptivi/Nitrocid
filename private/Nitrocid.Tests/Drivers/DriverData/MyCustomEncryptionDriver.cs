@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers.Encryption;
+using Nitrocid.Base.Drivers.Encryption;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {

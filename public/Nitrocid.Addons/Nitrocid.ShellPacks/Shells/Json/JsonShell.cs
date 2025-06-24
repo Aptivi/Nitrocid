@@ -21,8 +21,8 @@ using System;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Shells;
 
 namespace Nitrocid.ShellPacks.Shells.Json

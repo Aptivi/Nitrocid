@@ -19,8 +19,8 @@
 
 using Terminaux.Inputs.Interactive;
 using Terminaux.Shell.Commands;
-using Nitrocid.Files.Instances;
-using Nitrocid.Languages;
+using Nitrocid.Base.Files.Instances;
+using Nitrocid.Base.Languages;
 using System;
 using Nitrocid.ShellPacks.Shells.FTP.Interactive;
 using FluentFTP;

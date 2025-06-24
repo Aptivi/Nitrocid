@@ -19,9 +19,9 @@
 
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Time.Calendars;
-using Nitrocid.Kernel.Time.Renderers;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Time.Calendars;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System;
 using System.Linq;

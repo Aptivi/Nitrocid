@@ -18,8 +18,8 @@
 //
 
 using Newtonsoft.Json.Linq;
-using Nitrocid.Languages;
-using Nitrocid.Network.Transfer;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Network.Transfer;
 using System.Text;
 using Textify.General;
 

@@ -23,17 +23,17 @@ using VisualCard;
 using System;
 using System.Linq;
 using System.IO;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Files.Paths;
-using Nitrocid.Languages;
-using Nitrocid.Drivers.Encryption;
-using Nitrocid.Misc.Text.Probers.Regexp;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Misc.Text.Probers.Regexp;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Contacts.Contacts.Interactives;
 using VisualCard.Extras.Converters;
 using VisualCard.Parts.Enums;
-using Nitrocid.Files;
+using Nitrocid.Base.Files;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {

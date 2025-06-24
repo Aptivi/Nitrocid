@@ -18,9 +18,9 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.Files;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.BeepSynth.Tools
 {

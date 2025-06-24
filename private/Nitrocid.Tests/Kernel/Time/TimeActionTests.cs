@@ -21,9 +21,9 @@ using System.Globalization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
-using Nitrocid.Kernel.Time.Calendars;
-using Nitrocid.Kernel.Time.Renderers;
-using Nitrocid.Kernel.Time;
+using Nitrocid.Base.Kernel.Time.Calendars;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Kernel.Time;
 
 namespace Nitrocid.Tests.Kernel.Time
 {

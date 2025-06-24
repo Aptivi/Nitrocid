@@ -23,17 +23,18 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using Textify.Versioning;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files;
-using Nitrocid.Misc.Reflection;
-using Nitrocid.Misc.Splash;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Files.Paths;
-using Nitrocid.Kernel.Events;
-using Nitrocid.Security.Signing;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Misc.Reflection;
+using Nitrocid.Base.Misc.Splash;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Security.Signing;
+using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Extras.Mods.Modifications.Dependencies;
+using Nitrocid.Base.Kernel;
 
 namespace Nitrocid.Extras.Mods.Modifications
 {
@@ -160,10 +161,10 @@ namespace Nitrocid.Extras.Mods.Modifications
                     // Check the API version defined by mod to ensure that we don't load mods that are API incompatible
                     try
                     {
-                        if (KernelMain.ApiVersion != script.MinimumSupportedApiVersion)
+                        if (KernelReleaseInfo.ApiVersion != script.MinimumSupportedApiVersion)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", vars: [modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString()]);
-                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSAPIEXACT"), modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString());
+                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", vars: [modFile, script.MinimumSupportedApiVersion.ToString(), KernelReleaseInfo.ApiVersion.ToString()]);
+                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSAPIEXACT"), modFile, script.MinimumSupportedApiVersion.ToString(), KernelReleaseInfo.ApiVersion.ToString());
                             return;
                         }
                     }

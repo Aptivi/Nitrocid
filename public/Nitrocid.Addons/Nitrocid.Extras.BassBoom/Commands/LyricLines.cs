@@ -20,9 +20,9 @@
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.BassBoom.Animations.Lyrics;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Nitrocid.Files;
+using Nitrocid.Base.Files;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {

@@ -18,16 +18,16 @@
 //
 
 using Terminaux.Inputs.Interactive;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using System.Collections.Generic;
 using Textify.General;
 using Terminaux.Writer.ConsoleWriters;
 using System;
 using Terminaux.Inputs.Styles.Infobox;
 using System.IO;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Files;
-using Nitrocid.Files.Paths;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
 
 namespace Nitrocid.Extras.Mods.Modifications.Interactive
 {

@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Network.Connections;
-using Nitrocid.Network.SpeedDial;
+using Nitrocid.Base.Network.Connections;
+using Nitrocid.Base.Network.SpeedDial;
 using Terminaux.Shell.Commands;
 using Nitrocid.ShellPacks.Tools;
 

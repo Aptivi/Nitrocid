@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Misc.Screensaver;
+using Nitrocid.Base.Misc.Screensaver;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;

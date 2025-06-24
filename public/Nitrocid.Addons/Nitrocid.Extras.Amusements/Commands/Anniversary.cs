@@ -20,7 +20,7 @@
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Presentation;
 using Terminaux.Inputs.Presentation.Elements;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;

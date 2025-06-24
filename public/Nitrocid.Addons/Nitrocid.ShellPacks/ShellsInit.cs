@@ -18,11 +18,11 @@
 //
 
 using LibGit2Sharp;
-using Nitrocid.Files.Paths;
-using Nitrocid.Kernel;
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Languages;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;

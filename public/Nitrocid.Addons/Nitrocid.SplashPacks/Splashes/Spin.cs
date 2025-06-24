@@ -19,9 +19,9 @@
 
 using System.Text;
 using System.Threading;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.Misc.Splash;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Misc.Splash;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;

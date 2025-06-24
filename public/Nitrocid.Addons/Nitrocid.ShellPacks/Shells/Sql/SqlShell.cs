@@ -22,9 +22,9 @@ using System.Threading;
 using Nitrocid.ShellPacks.Tools;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
-using Nitrocid.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 using Terminaux.Colors.Themes.Colors;
 using Textify.General;
 

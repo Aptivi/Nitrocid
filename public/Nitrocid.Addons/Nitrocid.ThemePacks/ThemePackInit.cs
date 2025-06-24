@@ -19,12 +19,12 @@
 
 using Terminaux.Colors.Themes;
 using Newtonsoft.Json.Linq;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Misc.Reflection.Internal;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Misc.Reflection.Internal;
 using Textify.General;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.ThemePacks.Localized;
 
 namespace Nitrocid.ThemePacks

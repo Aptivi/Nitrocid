@@ -18,15 +18,15 @@
 //
 
 using Terminaux.Shell.Arguments;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
 using Nitrocid.Extras.Ssh.Settings;
 using Nitrocid.Extras.Ssh.Localized;
 using Nitrocid.Extras.Ssh.Commands;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Ssh
 {

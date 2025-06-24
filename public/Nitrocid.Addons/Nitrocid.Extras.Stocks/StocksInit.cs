@@ -20,15 +20,15 @@
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using Nitrocid.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
 using Nitrocid.Extras.Stocks.Settings;
-using Nitrocid.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Extras.Stocks.Commands;
 using Nitrocid.Extras.Stocks.Localized;
-using Nitrocid.Users.Login.Widgets;
+using Nitrocid.Base.Users.Login.Widgets;
 using Nitrocid.Extras.Stocks.Widgets;
-using Nitrocid.Languages;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Stocks
 {

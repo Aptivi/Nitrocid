@@ -18,9 +18,9 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.Files;
-using Nitrocid.Files.Paths;
-using Nitrocid.Languages;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;

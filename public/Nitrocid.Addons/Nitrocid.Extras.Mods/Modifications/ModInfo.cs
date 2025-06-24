@@ -18,9 +18,9 @@
 //
 
 using System.Diagnostics;
-using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Kernel.Extensions;
-using Nitrocid.Languages;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Extras.Mods.Modifications
 {

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers.EncodingAsymmetric;
+using Nitrocid.Base.Drivers.EncodingAsymmetric;
 
 namespace Nitrocid.Tests.Drivers.DriverData
 {
