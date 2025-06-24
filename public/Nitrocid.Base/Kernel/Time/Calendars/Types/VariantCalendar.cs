@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Time.Calendars;
 using Nitrocid.Base.Languages;
 using System.Globalization;
 

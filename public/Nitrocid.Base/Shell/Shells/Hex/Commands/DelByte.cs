@@ -24,7 +24,6 @@ using System;
 using Textify.General;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Shell.Shells.Hex;
 using Nitrocid.Base.Files.Editors.HexEdit;
 using Nitrocid.Base.Kernel.Exceptions;
 

@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Drivers.RNG;
 using System.Security.Cryptography;
 
 namespace Nitrocid.Base.Drivers.RNG.Bases

@@ -29,7 +29,6 @@ using TextifyDep::Textify.General;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Starting.Bootloader.Style;
 using Nitrocid.Base.Kernel.Starting.Bootloader.Apps;
 
 namespace Nitrocid.Base.Kernel.Starting.Bootloader.Style.Styles

@@ -26,7 +26,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;
 using SpecProbe.Parts;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Users.Windows;

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Shell.Shells.Text;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Commands

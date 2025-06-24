@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 

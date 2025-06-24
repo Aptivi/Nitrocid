@@ -17,9 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Configuration.Instances;
-using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Languages;
 using System.Linq;
 using Terminaux.Inputs.Styles;

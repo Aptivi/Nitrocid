@@ -21,7 +21,6 @@
 extern alias TextifyDep;
 
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Users.Groups;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;

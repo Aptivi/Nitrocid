@@ -25,7 +25,6 @@ using Terminaux.Base;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Kernel.Configuration.Instances;

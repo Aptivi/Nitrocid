@@ -18,8 +18,6 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Kernel.Debugging.Testing;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Power;
 

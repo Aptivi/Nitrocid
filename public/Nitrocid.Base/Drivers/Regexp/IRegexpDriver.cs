@@ -21,7 +21,6 @@ extern alias TextifyDep;
 
 using TextifyDep::System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
-using Nitrocid.Base.Drivers;
 
 namespace Nitrocid.Base.Drivers.Regexp
 {

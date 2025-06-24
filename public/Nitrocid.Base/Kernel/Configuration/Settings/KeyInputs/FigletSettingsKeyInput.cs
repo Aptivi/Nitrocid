@@ -19,8 +19,6 @@
 
 using Textify.Data.Figlet;
 using Terminaux.Inputs.Styles;
-using Nitrocid.Base.Kernel.Configuration.Settings;
-using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 
 namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs

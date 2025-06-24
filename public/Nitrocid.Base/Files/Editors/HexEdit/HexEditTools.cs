@@ -29,7 +29,6 @@ using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Shell.Shells.Hex;
-using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.Base.Files.Editors.HexEdit

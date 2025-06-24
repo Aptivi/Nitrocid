@@ -20,7 +20,6 @@
 using Magico.Files;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files;
 using System.Collections.Generic;
 
 namespace Nitrocid.Base.Files.Extensions

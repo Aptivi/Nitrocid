@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Base.Kernel.Starting.Bootloader.Apps;
-using Nitrocid.Base.Kernel.Starting.Bootloader.Style;
 using Nitrocid.Base.Languages;
 using System;
 using System.Collections.Generic;

@@ -19,7 +19,6 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using System.Collections.Generic;
-using Nitrocid.Base.Kernel.Debugging.Testing;
 using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades

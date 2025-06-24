@@ -22,7 +22,6 @@ using System.Text;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
-using Nitrocid.Base.Shell.Shells.Hex;
 using Nitrocid.Base.Files.Editors.HexEdit;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Presets

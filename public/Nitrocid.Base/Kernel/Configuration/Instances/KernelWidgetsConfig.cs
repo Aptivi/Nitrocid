@@ -18,7 +18,6 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Extensions;

@@ -19,9 +19,7 @@
 
 using System.IO;
 using FS = Nitrocid.Base.Files.FilesystemTools;
-using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.Base.Drivers.Encryption

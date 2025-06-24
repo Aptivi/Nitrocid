@@ -22,8 +22,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Time;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time.Converters;

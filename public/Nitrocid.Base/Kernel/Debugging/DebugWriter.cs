@@ -26,7 +26,6 @@ using Aptivestigate.Logging;
 using Aptivestigate.Serilog;
 using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug.RemoteChat;

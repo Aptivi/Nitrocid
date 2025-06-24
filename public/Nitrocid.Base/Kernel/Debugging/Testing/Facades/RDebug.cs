@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
-using Nitrocid.Base.Kernel.Debugging.Testing;
 using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades

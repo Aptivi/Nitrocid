@@ -22,7 +22,6 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Files.LineEndings;
 

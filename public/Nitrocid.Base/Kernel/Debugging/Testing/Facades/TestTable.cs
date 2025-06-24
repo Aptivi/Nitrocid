@@ -23,7 +23,6 @@ using Terminaux.Colors.Data;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
-using Nitrocid.Base.Kernel.Debugging.Testing;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Renderers;
 

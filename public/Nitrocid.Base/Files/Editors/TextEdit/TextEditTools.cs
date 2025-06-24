@@ -29,7 +29,6 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Shell.Shells.Text;
-using Nitrocid.Base.Files;
 using Textify.General;
 
 namespace Nitrocid.Base.Files.Editors.TextEdit

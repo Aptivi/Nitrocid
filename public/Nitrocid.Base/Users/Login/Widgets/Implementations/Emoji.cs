@@ -23,7 +23,6 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users.Login.Widgets;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Extensions;
 

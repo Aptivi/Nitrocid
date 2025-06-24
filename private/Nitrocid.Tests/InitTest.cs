@@ -36,7 +36,6 @@ using Nitrocid.Base.Shell.Shells.Admin;
 using Nitrocid.Base.Shell.Shells.Debug;
 using Nitrocid.Base.Kernel.Starting;
 using Textify.Tools.Placeholder;
-using Terminaux.Colors.Themes.Colors;
 
 [assembly: ClassCleanupExecution(ClassCleanupBehavior.EndOfClass)]
 

@@ -23,7 +23,6 @@ using System.Linq;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles;
-using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 

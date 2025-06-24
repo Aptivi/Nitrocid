@@ -20,7 +20,6 @@
 using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Editor;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Shell.Shells.Hex;
 using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Commands

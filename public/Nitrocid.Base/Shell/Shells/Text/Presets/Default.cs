@@ -23,7 +23,6 @@ using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
 using Nitrocid.Base.Files.Editors.TextEdit;
-using Nitrocid.Base.Shell.Shells.Text;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Presets
 {

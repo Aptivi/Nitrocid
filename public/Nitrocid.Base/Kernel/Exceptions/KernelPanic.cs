@@ -31,7 +31,6 @@ using Terminaux.Inputs;
 using Nitrocid.Base.Files;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Misc.Reflection;

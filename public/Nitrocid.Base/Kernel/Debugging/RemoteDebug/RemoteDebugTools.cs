@@ -24,7 +24,6 @@ using System.Net.Sockets;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using Nitrocid.Base.Files;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Files.Paths;

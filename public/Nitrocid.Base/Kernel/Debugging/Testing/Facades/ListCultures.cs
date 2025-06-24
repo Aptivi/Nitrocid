@@ -19,7 +19,6 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using System.Globalization;
-using Nitrocid.Base.Kernel.Debugging.Testing;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.ConsoleBase.Inputs;
 

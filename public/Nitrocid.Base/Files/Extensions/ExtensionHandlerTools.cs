@@ -23,7 +23,6 @@ using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Files;
 using System;
 using System.Collections.Generic;
 using System.Linq;

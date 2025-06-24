@@ -22,7 +22,6 @@ using Terminaux.Shell.Arguments.Base;
 using Terminaux.Shell.Arguments.Base.Help;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Arguments;
 using Nitrocid.Base.Kernel.Power;
 
 namespace Nitrocid.Base.Arguments.CommandLineArguments

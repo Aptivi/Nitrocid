@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Base.Kernel.Configuration.Instances;
-using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Languages;
 using Terminaux.Inputs.Styles.Infobox;

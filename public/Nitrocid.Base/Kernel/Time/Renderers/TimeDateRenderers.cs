@@ -20,7 +20,6 @@
 using System;
 using System.Globalization;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Calendars;
 using Nitrocid.Base.Languages;
 

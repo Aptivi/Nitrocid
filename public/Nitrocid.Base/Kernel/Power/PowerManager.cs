@@ -27,7 +27,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Users.Login;

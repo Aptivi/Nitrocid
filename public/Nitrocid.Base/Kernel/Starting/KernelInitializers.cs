@@ -40,7 +40,6 @@ using TextifyDep::Textify.Tools.Placeholder;
 using Terminaux.Colors;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.ConsoleBase;

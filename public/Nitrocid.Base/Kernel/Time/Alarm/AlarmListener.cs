@@ -20,7 +20,6 @@
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Kernel.Threading;
-using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
 using System;

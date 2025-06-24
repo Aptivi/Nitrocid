@@ -19,9 +19,6 @@
 
 using System.Threading;
 using System;
-using System.Diagnostics;
-using System.Reflection;
-using Textify.Versioning;
 using Nitrocid.Base.ConsoleBase;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Starting;

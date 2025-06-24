@@ -19,7 +19,6 @@
 
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Base.Kernel.Debugging.Testing.Facades.FacadeData;
-using Nitrocid.Base.Kernel.Debugging.Testing;
 using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
