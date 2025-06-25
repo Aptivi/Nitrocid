@@ -162,10 +162,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
             set => ColorTools.ConsoleSupportsTrueColor = value;
         }
         /// <summary>
-        /// Development notice acknowledged
-        /// </summary>
-        public bool DevNoticeConsented { get; set; }
-        /// <summary>
         /// Whether to use the operating system time zone or to use the kernel-wide time zone
         /// </summary>
         public bool UseSystemTimeZone

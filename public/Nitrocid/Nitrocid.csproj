@@ -21,8 +21,8 @@
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="7.0.0-beta4-20250625093629" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Terminaux.Images" Version="7.0.0-beta4-20250625093629" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux" Version="7.0.0-beta4-20250625122002" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux.Images" Version="7.0.0-beta4-20250625122002" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
     <PackageReference Include="Textify.Offline" Version="2.12.0.2" PrivateAssets="contentfiles;analyzers;build;runtime">
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
@@ -65,4 +65,10 @@
     <ProjectReference Include="..\Nitrocid.Base\Nitrocid.Base.csproj" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Base projects End -->
+
+  <!-- KS Locale Checker -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <!-- KS Locale Checker End -->
 </Project>

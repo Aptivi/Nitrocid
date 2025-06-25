@@ -6,6 +6,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Press any key to continue..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "Invalid colour template {0}"
     },

@@ -7,6 +7,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "jaaree rakhane ke lie koee bhee kunjee dabaen..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "amaany rang tempalet {0}"
     },

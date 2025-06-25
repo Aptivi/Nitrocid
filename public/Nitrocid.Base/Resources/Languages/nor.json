@@ -11,6 +11,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Trykk på en hvilken som helst tast for å fortsette..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "Ugyldig fargemal {0}"
     },

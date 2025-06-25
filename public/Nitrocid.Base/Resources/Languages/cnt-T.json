@@ -10,6 +10,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "按任意鍵繼續..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "無效的顏色模板 {0}"
     },

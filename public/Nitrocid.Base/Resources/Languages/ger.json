@@ -16,6 +16,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Drücken Sie eine beliebige Taste, um fortzufahren ..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "Ungültige Farbvorlage {0}"
     },

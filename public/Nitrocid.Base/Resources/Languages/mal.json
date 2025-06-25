@@ -10,6 +10,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Tekan sebarang kekunci untuk meneruskan..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "Templat warna tidak sah {0}"
     },

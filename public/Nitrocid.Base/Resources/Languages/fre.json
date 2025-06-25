@@ -53,6 +53,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Appuyez sur n'importe quelle touche pour continuer..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "Modèle de couleur non valide {0}"
     },

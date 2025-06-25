@@ -7,6 +7,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Натисніть будь-яку клавішу, щоб продовжити..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "Недійсний кольоровий шаблон {0}"
     },

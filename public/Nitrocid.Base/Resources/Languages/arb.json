@@ -33,6 +33,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "adghat ealaa 'ayi miftah lilmutabaeati..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "qalib 'alwan ghayr salih {0}"
     },

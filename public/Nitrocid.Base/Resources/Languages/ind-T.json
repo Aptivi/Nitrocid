@@ -7,6 +7,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "जारी रखने के लिए किसी भी कुंजी को दबाएं..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "अमान्य रंग टेम्पलेट {0}"
     },

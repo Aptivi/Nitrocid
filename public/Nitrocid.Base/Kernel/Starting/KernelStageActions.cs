@@ -49,14 +49,6 @@ namespace Nitrocid.Base.Kernel.Starting
     {
         internal static void Stage01SystemInitialization()
         {
-            // If running on development version and not consented, interrupt boot and show developer disclaimer.
-            if (!Config.MainConfig.DevNoticeConsented)
-            {
-                SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
-                WelcomeMessage.ShowDevelopmentDisclaimer();
-                SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
-            }
-
             // If running on unusual environment, interrupt boot and show a message.
             if (!KernelPlatform.IsOnUsualEnvironment())
             {
