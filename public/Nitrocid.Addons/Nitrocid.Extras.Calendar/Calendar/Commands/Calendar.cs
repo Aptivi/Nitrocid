@@ -25,7 +25,7 @@ using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Time.Calendars;
+using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
