@@ -205,7 +205,7 @@ namespace Nitrocid.ShellPacks
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonShellPacks);
 
         internal static ShellsConfig ShellsConfig =>
-            (ShellsConfig)Config.baseConfigurations[nameof(ShellsConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(ShellsConfig)) ? (ShellsConfig)Config.baseConfigurations[nameof(ShellsConfig)] : Config.GetFallbackKernelConfig<ShellsConfig>();
 
         public void FinalizeAddon()
         {

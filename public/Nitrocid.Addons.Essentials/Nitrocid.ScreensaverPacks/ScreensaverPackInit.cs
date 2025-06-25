@@ -144,7 +144,7 @@ namespace Nitrocid.ScreensaverPacks
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.AddonScreensaverPacks);
 
         internal static ExtraSaversConfig SaversConfig =>
-            (ExtraSaversConfig)Config.baseConfigurations[nameof(ExtraSaversConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(ExtraSaversConfig)) ? (ExtraSaversConfig)Config.baseConfigurations[nameof(ExtraSaversConfig)] : Config.GetFallbackKernelConfig<ExtraSaversConfig>();
 
         public void StartAddon()
         {

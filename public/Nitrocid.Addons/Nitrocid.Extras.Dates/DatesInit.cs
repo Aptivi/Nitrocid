@@ -90,7 +90,7 @@ namespace Nitrocid.Extras.Dates
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasDates);
 
         internal static DatesConfig DatesConfig =>
-            (DatesConfig)Config.baseConfigurations[nameof(DatesConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(DatesConfig)) ? (DatesConfig)Config.baseConfigurations[nameof(DatesConfig)] : Config.GetFallbackKernelConfig<DatesConfig>();
 
         public void StartAddon()
         {
