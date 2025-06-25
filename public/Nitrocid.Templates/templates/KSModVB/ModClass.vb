@@ -1,4 +1,4 @@
-﻿Imports Nitrocid.Modifications
+﻿Imports Nitrocid.Base.Kernel.Extensions
 
 Namespace KSModVB
     Public Class ModClass
