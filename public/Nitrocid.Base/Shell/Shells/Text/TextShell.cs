@@ -27,6 +27,7 @@ using Textify.General;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Files.Editors.TextEdit;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid.Base.Shell.Shells.Text
 {
@@ -89,9 +90,11 @@ namespace Nitrocid.Base.Shell.Shells.Text
                 }
                 catch (Exception ex)
                 {
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ERRORINSHELL") + " {0}", true, ThemeColorType.Error, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ERRORINSHELL") + CharManager.NewLine + "Error {0}: {1}", true, ThemeColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
-                    continue;
+                    InputTools.DetectKeypress();
+                    Bail = true;
                 }
             }
 

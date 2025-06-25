@@ -28,6 +28,9 @@ using Nitrocid.Base.Network.SpeedDial;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Renci.SshNet;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Colors.Themes.Colors;
+using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP
 {
@@ -82,8 +85,11 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
                 }
                 catch (Exception ex)
                 {
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR") + " {0}", true, ThemeColorType.Error, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.SFTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR") + " {0}", ex, ex.Message);
+                    InputTools.DetectKeypress();
+                    Bail = true;
                 }
 
                 // Check if the shell is going to exit
