@@ -21,7 +21,7 @@ using System.Globalization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
-using Nitrocid.Base.Kernel.Time.Calendars;
+using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Kernel.Time;
 

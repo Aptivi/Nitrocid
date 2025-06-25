@@ -20,7 +20,7 @@
 using System;
 using Newtonsoft.Json;
 using Nitrocid.Base.Kernel.Time;
-using Nitrocid.Base.Kernel.Time.Calendars;
+using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
 
