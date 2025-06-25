@@ -239,8 +239,6 @@ namespace Nitrocid.Extras.Calendar
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasCalendar);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Optional;
-
         internal static CalendarConfig CalendarConfig =>
             (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)];
 

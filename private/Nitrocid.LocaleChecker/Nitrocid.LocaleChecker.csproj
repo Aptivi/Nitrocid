@@ -31,12 +31,17 @@
     <EmbeddedResource Update="Resources\AnalyzerResources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="AnalyzerResources.Designer.cs">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    
     <EmbeddedResource Include="..\..\public\Nitrocid.Base\Resources\Languages\eng.json" Visible="false">
       <LogicalName>Nitrocid.Langs eng.json</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\**\Resources\Languages\eng.json" Visible="false">
       <LogicalName>Nitrocid.Langs.Addons %(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\**\Resources\Languages\eng.json" Visible="false">
+      <LogicalName>Nitrocid.Langs.Addons.Essentials %(EmbeddedResource.FullPath)</LogicalName>
+    </EmbeddedResource>
+    
     <EmbeddedResource Include="..\..\public\Nitrocid.Base\Resources\Settings\*.json" Visible="false">
       <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
@@ -47,6 +52,12 @@
       <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\Nitrocid.ThemePacks\Resources\Themes\*.json" Visible="false">
+      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\**\Resources\*Settings.json" Visible="false">
+      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\Nitrocid.ThemePacks\Resources\Themes\*.json" Visible="false">
       <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Resources\KnownAddons.json" Visible="false">

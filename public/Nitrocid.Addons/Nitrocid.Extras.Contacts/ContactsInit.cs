@@ -84,8 +84,6 @@ namespace Nitrocid.Extras.Contacts
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasContacts);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Optional;
-
         internal static ContactsConfig ContactsConfig =>
             (ContactsConfig)Config.baseConfigurations[nameof(ContactsConfig)];
 

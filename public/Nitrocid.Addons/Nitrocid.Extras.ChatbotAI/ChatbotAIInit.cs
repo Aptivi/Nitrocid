@@ -29,8 +29,6 @@ namespace Nitrocid.Extras.ChatbotAI
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasChatbotAI);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Optional;
-
         public void FinalizeAddon()
         { }
 

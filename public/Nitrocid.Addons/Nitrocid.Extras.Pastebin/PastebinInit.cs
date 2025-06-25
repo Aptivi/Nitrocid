@@ -82,8 +82,6 @@ namespace Nitrocid.Extras.Pastebin
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasPastebin);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Optional;
-
         public void FinalizeAddon()
         { }
 

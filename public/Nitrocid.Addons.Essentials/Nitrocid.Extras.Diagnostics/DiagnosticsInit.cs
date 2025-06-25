@@ -40,8 +40,6 @@ namespace Nitrocid.Extras.Diagnostics
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasDiagnostics);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Important;
-
         public void FinalizeAddon()
         { }
 

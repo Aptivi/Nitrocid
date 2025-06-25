@@ -69,9 +69,11 @@
   -->
   <ItemGroup>
     <AddonsFolders Include="..\..\public\Nitrocid\KSBuild\$(TargetFramework)\Addons\**\*.*" />
+    <AddonsEssentialsFolders Include="..\..\public\Nitrocid\KSBuild\$(TargetFramework)\Addons.Essentials\**\*.*" />
   </ItemGroup>
   <Target Name="CopyAddon" AfterTargets="Compile">
     <Copy SourceFiles="@(AddonsFolders)" DestinationFiles="@(AddonsFolders->'KSTest\$(TargetFramework)\Addons\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(AddonsEssentialsFolders)" DestinationFiles="@(AddonsEssentialsFolders->'KSTest\$(TargetFramework)\Addons.Essentials\%(RecursiveDir)%(Filename)%(Extension)')" />
   </Target>
 
   <Target Name="WipeBuild" AfterTargets="Clean">

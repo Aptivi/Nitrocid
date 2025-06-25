@@ -99,8 +99,6 @@ namespace Nitrocid.Extras.BassBoom
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasBassBoom);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Optional;
-
         internal static BassBoomSaversConfig SaversConfig =>
             (BassBoomSaversConfig)Config.baseConfigurations[nameof(BassBoomSaversConfig)];
 
