@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.Stocks
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasStocks);
 
         internal static StocksConfig StocksConfig =>
-            (StocksConfig)Config.baseConfigurations[nameof(StocksConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(StocksConfig)) ? (StocksConfig)Config.baseConfigurations[nameof(StocksConfig)] : Config.GetFallbackKernelConfig<StocksConfig>();
 
         public void StartAddon()
         {

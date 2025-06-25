@@ -76,7 +76,7 @@ namespace Nitrocid.Extras.Ssh
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasSsh);
 
         internal static SshConfig SshConfig =>
-            (SshConfig)Config.baseConfigurations[nameof(SshConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(SshConfig)) ? (SshConfig)Config.baseConfigurations[nameof(SshConfig)] : Config.GetFallbackKernelConfig<SshConfig>();
 
         public void FinalizeAddon()
         {

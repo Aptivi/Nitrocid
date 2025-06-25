@@ -85,7 +85,7 @@ namespace Nitrocid.Extras.Contacts
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasContacts);
 
         internal static ContactsConfig ContactsConfig =>
-            (ContactsConfig)Config.baseConfigurations[nameof(ContactsConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(ContactsConfig)) ? (ContactsConfig)Config.baseConfigurations[nameof(ContactsConfig)] : Config.GetFallbackKernelConfig<ContactsConfig>();
 
         public void FinalizeAddon()
         {
