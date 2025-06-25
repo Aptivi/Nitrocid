@@ -31,6 +31,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -39,16 +40,16 @@ namespace Nitrocid.Extras.Calendar.Calendar
     /// </summary>
     public class FullCalendar : GraphicalCyclicWriter
     {
-        internal const int calendarWidth = 4 + (6 * 6);
+        internal const int calendarWidth = 5 + (6 * 6);
         internal const int calendarHeight = 13;
         private int year = 0;
         private int month = 0;
         private CultureInfo culture = new("en-US");
-        private Color headerColor = ColorTools.CurrentForegroundColor;
-        private Color weekendColor = ColorTools.CurrentForegroundColor;
-        private Color todayColor = ColorTools.CurrentForegroundColor;
-        private Color foregroundColor = ColorTools.CurrentForegroundColor;
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color headerColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color weekendColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color todayColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+        private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
         private BorderSettings borderSettings = new();
         private bool useColors = true;
 
@@ -182,6 +183,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
         {
             var calendarRendered = new StringBuilder();
             var calendarDays = culture.DateTimeFormat.DayNames;
+            var calendarAbbreviatedDays = culture.DateTimeFormat.AbbreviatedDayNames;
             var calendarMonths = culture.DateTimeFormat.MonthNames;
             var calendarWeek = culture.DateTimeFormat.FirstDayOfWeek;
             var maxDate = Calendar.GetDaysInMonth(year, month);
@@ -240,7 +242,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     dayPosY += 2;
                 }
                 int currentDay = mappedDays[CurrentDate.DayOfWeek] + 1;
-                dayPosX = boxLeft + 1 + 6 * (currentDay - 1);
+                dayPosX = boxLeft + 1 + (6 * (currentDay - 1));
                 string CurrentDayMark;
 
                 // Some flags
@@ -303,8 +305,9 @@ namespace Nitrocid.Extras.Calendar.Calendar
             int dayIndicatorPosY = boxTop + 1;
             for (int i = 0; i < mappedDays.Count; i++)
             {
-                string dayName = $"{calendarDays[(int)mappedDays.Keys.ElementAt(i)]}";
-                char dayChar = char.ToUpper(dayName[0]);
+                string dayName = $"{calendarAbbreviatedDays[(int)mappedDays.Keys.ElementAt(i)]}".Truncate(3, false);
+                if (Culture.EnglishName.Contains("Chinese"))
+                    dayName = $"{calendarAbbreviatedDays[(int)mappedDays.Keys.ElementAt(i)]}";
                 if (useColors)
                 {
                     calendarRendered.Append(
@@ -313,8 +316,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     );
                 }
                 calendarRendered.Append(
-                    CsiSequences.GenerateCsiCursorPosition(dayIndicatorPosX + 6 * i + 2, dayIndicatorPosY + 1) +
-                    dayChar
+                    CsiSequences.GenerateCsiCursorPosition(dayIndicatorPosX + (6 * i) + 2, dayIndicatorPosY + 1) +
+                    dayName
                 );
             }
 
