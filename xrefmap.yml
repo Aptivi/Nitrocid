@@ -1715,21 +1715,21 @@ references:
   commentId: M:Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar
   fullName: Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar()
   nameWithType: CalendarPrint.PrintCalendar()
-- uid: Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(Nitrocid.Base.Kernel.Time.Calendars.CalendarTypes)
-  name: PrintCalendar(CalendarTypes)
-  href: api/Nitrocid.Extras.Calendar.Calendar.CalendarPrint.html#Nitrocid_Extras_Calendar_Calendar_CalendarPrint_PrintCalendar_Nitrocid_Base_Kernel_Time_Calendars_CalendarTypes_
-  commentId: M:Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(Nitrocid.Base.Kernel.Time.Calendars.CalendarTypes)
-  fullName: Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(Nitrocid.Base.Kernel.Time.Calendars.CalendarTypes)
-  nameWithType: CalendarPrint.PrintCalendar(CalendarTypes)
-- uid: Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(System.Int32,System.Int32,Nitrocid.Base.Kernel.Time.Calendars.CalendarTypes)
+- uid: Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(System.Int32,System.Int32,Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTypes)
   name: PrintCalendar(int, int, CalendarTypes)
-  href: api/Nitrocid.Extras.Calendar.Calendar.CalendarPrint.html#Nitrocid_Extras_Calendar_Calendar_CalendarPrint_PrintCalendar_System_Int32_System_Int32_Nitrocid_Base_Kernel_Time_Calendars_CalendarTypes_
-  commentId: M:Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(System.Int32,System.Int32,Nitrocid.Base.Kernel.Time.Calendars.CalendarTypes)
+  href: api/Nitrocid.Extras.Calendar.Calendar.CalendarPrint.html#Nitrocid_Extras_Calendar_Calendar_CalendarPrint_PrintCalendar_System_Int32_System_Int32_Terminaux_Writer_CyclicWriters_Graphical_Calendaring_CalendarTypes_
+  commentId: M:Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(System.Int32,System.Int32,Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTypes)
   name.vb: PrintCalendar(Integer, Integer, CalendarTypes)
-  fullName: Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(int, int, Nitrocid.Base.Kernel.Time.Calendars.CalendarTypes)
-  fullName.vb: Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(Integer, Integer, Nitrocid.Base.Kernel.Time.Calendars.CalendarTypes)
+  fullName: Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(int, int, Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTypes)
+  fullName.vb: Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(Integer, Integer, Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTypes)
   nameWithType: CalendarPrint.PrintCalendar(int, int, CalendarTypes)
   nameWithType.vb: CalendarPrint.PrintCalendar(Integer, Integer, CalendarTypes)
+- uid: Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTypes)
+  name: PrintCalendar(CalendarTypes)
+  href: api/Nitrocid.Extras.Calendar.Calendar.CalendarPrint.html#Nitrocid_Extras_Calendar_Calendar_CalendarPrint_PrintCalendar_Terminaux_Writer_CyclicWriters_Graphical_Calendaring_CalendarTypes_
+  commentId: M:Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTypes)
+  fullName: Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar(Terminaux.Writer.CyclicWriters.Graphical.Calendaring.CalendarTypes)
+  nameWithType: CalendarPrint.PrintCalendar(CalendarTypes)
 - uid: Nitrocid.Extras.Calendar.Calendar.CalendarPrint.PrintCalendar*
   name: PrintCalendar
   href: api/Nitrocid.Extras.Calendar.Calendar.CalendarPrint.html#Nitrocid_Extras_Calendar_Calendar_CalendarPrint_PrintCalendar_
