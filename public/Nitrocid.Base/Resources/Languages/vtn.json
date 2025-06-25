@@ -7,6 +7,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Nhấn phím bất kỳ để tiếp tục..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "Mẫu màu không hợp lệ {0}"
     },

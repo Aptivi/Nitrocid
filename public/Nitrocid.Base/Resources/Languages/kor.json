@@ -8,6 +8,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "gyesoghalyeomyeon amu kina nuleuseyo..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "jalmosdoen saegsang tempeullis {0}"
     },

@@ -8,6 +8,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "계속하려면 아무 키나 누르세요..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "잘못된 색상 템플릿 {0}"
     },

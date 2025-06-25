@@ -37,6 +37,8 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Starting.Environment;
 using Nitrocid.Base.Users.Windows;
 using Nitrocid.Base.Kernel.Power;
+using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid
 {
@@ -60,6 +62,31 @@ namespace Nitrocid
 
                 // Show help / version prior to starting the kernel if help / version is passed
                 ArgumentParse.ParseArguments(Args, KernelArguments.outArgs);
+
+                // Show development notice
+                if (!PowerManager.KernelShutdown)
+                {
+                    string devMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVMESSAGE");
+                    string rcMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_RCMESSAGE");
+                    string unsupportedMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_UNSUPPORTED");
+                    string anyKey = LanguageTools.GetLocalized("NKS_COMMON_ANYKEY");
+
+                    // Show the message
+#if !SPECIFIERREL
+                    string message =
+#if SPECIFIERDEV
+                        devMessage
+#elif SPECIFIERRC
+                        rcMessage
+#else
+                        unsupportedMessage
+#endif
+                    ;
+                    TextWriterColor.Write(message, true, ThemeColorType.Warning);
+                    TextWriterColor.Write(anyKey, true, ThemeColorType.Warning);
+                    InputTools.DetectKeypress();
+#endif
+                }
 
                 // This is a kernel entry point
                 EnvironmentTools.kernelArguments = Args;

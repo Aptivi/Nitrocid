@@ -8,6 +8,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Brúigh aon eochair le leanúint ar aghaidh..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "Teimpléad datha neamhbhailí {0}"
     },

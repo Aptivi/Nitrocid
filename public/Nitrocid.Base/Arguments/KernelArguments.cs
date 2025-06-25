@@ -52,6 +52,16 @@ namespace Nitrocid.Base.Arguments
                         new CommandArgumentInfo()
                     ], new ApiVersionArgument())
             },
+
+            { "lang",
+                new ArgumentInfo("lang", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_LANG_DESC",
+                    [
+                        new CommandArgumentInfo(
+                        [
+                            new CommandArgumentPart(true, "lang")
+                        ])
+                    ], new LangArgument())
+            },
         };
 
         private readonly static Dictionary<string, ArgumentInfo> args = new()
@@ -110,16 +120,6 @@ namespace Nitrocid.Base.Arguments
                     [
                         new CommandArgumentInfo()
                     ], new NoAltBufferArgument())
-            },
-
-            { "lang",
-                new ArgumentInfo("lang", /* Localizable */ "NKS_ARGUMENTS_ARGUMENT_LANG_DESC",
-                    [
-                        new CommandArgumentInfo(
-                        [
-                            new CommandArgumentPart(true, "lang")
-                        ])
-                    ], new LangArgument())
             },
 
             { "attach",

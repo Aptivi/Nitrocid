@@ -94,63 +94,6 @@ namespace Nitrocid.Base.Kernel.Starting
             * {LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE2")} http://www.gnu.org/licenses/
             """;
 
-        internal static void ShowDevelopmentDisclaimer()
-        {
-            // See UpdateManager.CheckKernelUpdates() comment for more info.
-            string devMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVMESSAGE");
-            string rcMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_RCMESSAGE");
-            string unsupportedMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_UNSUPPORTED");
-            string devNoticeTitle = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISS_TITLE");
-            string devNoticeMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISSTIP");
-            string devNoticeOk = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISS_OK");
-            string devNoticeAck = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISS_ACKED");
-            string devNoticeClassic = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC");
-
-            // Actual code
-#if SPECIFIERREL
-            // no-op
-            return;
-#else
-            string message =
-#if SPECIFIERDEV
-                devMessage
-#elif SPECIFIERRC
-                rcMessage
-#elif SPECIFIERREL == false
-                unsupportedMessage
-#endif
-            ;
-
-            // Show development disclaimer
-            if (Config.MainConfig.EnableSplash)
-            {
-                InputChoiceInfo[] answers = [
-                    new InputChoiceInfo("ok", devNoticeOk),
-                    new InputChoiceInfo("acknowledged", devNoticeAck),
-                ];
-                int answer = InfoBoxButtonsColor.WriteInfoBoxButtons(
-                    answers,
-                    $"{message}\n\n" +
-                    $"{devNoticeMessage}", new InfoBoxSettings()
-                    {
-                        Title = devNoticeTitle,
-                        ForegroundColor = ThemeColorsTools.GetColor("DevelopmentWarningColor")
-                    }
-                );
-                if (answer == 1)
-                    Config.MainConfig.DevNoticeConsented = true;
-            }
-            else
-            {
-                TextWriterColor.WriteColor($"  * {message}", true, ThemeColorsTools.GetColor("DevelopmentWarningColor"));
-                TextWriterColor.WriteColor($"  * {devNoticeClassic}", true, ThemeColorsTools.GetColor("DevelopmentWarningColor"));
-                var key = Input.ReadKey();
-                if (key.Key == ConsoleKey.Enter)
-                    Config.MainConfig.DevNoticeConsented = true;
-            }
-#endif
-        }
-
         internal static void ShowUnusualEnvironmentWarning()
         {
             string message = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_UNUSUALENV");

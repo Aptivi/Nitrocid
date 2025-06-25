@@ -10,6 +10,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Àn rènyì jiàn jìxù…"
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "Wúxiào de yánsè múbǎn {0}"
     },

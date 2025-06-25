@@ -8,6 +8,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Πατήστε οποιοδήποτε πλήκτρο για να συνεχίσετε..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "Μη έγκυρο χρωματικό πρότυπο {0}"
     },

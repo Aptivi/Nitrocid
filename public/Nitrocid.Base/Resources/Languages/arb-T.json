@@ -33,6 +33,10 @@
   ],
   "locs": [
     {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "اضغط على أي مفتاح للاستمرار..."
+    },
+    {
       "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
       "text": "قالب ألوان غير صالح {0}"
     },
