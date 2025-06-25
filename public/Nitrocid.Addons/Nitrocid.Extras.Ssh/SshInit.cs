@@ -75,8 +75,6 @@ namespace Nitrocid.Extras.Ssh
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasSsh);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Optional;
-
         internal static SshConfig SshConfig =>
             (SshConfig)Config.baseConfigurations[nameof(SshConfig)];
 

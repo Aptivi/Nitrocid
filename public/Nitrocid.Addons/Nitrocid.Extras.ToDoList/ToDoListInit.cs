@@ -65,8 +65,6 @@ namespace Nitrocid.Extras.ToDoList
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasToDoList);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Optional;
-
         public void FinalizeAddon()
         {
             // Initialize to-do tasks

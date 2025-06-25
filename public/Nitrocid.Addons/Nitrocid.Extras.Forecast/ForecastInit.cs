@@ -97,8 +97,6 @@ namespace Nitrocid.Extras.Forecast
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasForecast);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Optional;
-
         internal static ForecastConfig ForecastConfig =>
             (ForecastConfig)Config.baseConfigurations[nameof(ForecastConfig)];
 

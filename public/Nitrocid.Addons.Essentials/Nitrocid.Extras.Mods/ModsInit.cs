@@ -76,8 +76,6 @@ namespace Nitrocid.Extras.Mods
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasMods);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Important;
-
         internal static ModsConfig ModsConfig =>
             (ModsConfig)Config.baseConfigurations[nameof(ModsConfig)];
 

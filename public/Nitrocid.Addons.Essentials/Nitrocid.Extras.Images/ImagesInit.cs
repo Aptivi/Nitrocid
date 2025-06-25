@@ -50,8 +50,6 @@ namespace Nitrocid.Extras.Images
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasImages);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Important;
-
         public void FinalizeAddon()
         { }
 

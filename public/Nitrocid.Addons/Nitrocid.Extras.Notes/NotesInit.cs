@@ -89,8 +89,6 @@ namespace Nitrocid.Extras.Notes
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasNotes);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Optional;
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));

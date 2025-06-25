@@ -83,7 +83,87 @@
         Declare victory!
     -->
     <Message Importance="high" Text="No obsolete addons!" Condition=" '@(ExcludedAddons)' == '' " />
-    <Message Importance="high" Text="Pruning done!" Condition=" '@(ExcludedAddons)' != '' " />
+    <Message Importance="high" Text="Pruning addons done!" Condition=" '@(ExcludedAddons)' != '' " />
+    
+    <!--
+        Clean up
+    -->
+    <ItemGroup Condition=" '@(NitrocidAddonsNames)' != '' ">
+      <NitrocidAddonsNames Remove="@(NitrocidAddonsNames)" />
+      <NitrocidAddonsOutputs Remove="@(NitrocidAddonsOutputs)" />
+      <OutputAddonsNames Remove="@(OutputAddonsNames)" />
+      <ExcludedAddons Remove="@(ExcludedAddons)" />
+      <FullPathsToPrune Remove="@(FullPathsToPrune)" />
+      <AddonSources Remove="@(AddonSources)" />
+      <InvalidAddonSources Remove="@(InvalidAddonSources)" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="PruneEssentialAddons" BeforeTargets="Build" Condition="Exists('$(RootPath)/public/Nitrocid/KSBuild/net8.0/Addons.Essentials')">
+    <Message Importance="high" Text="Pruning essential addons..." />
+    
+    <!--
+        See above for more info
+    -->
+    <ItemGroup>
+      <NitrocidAddonsNames Include="$([System.IO.Directory]::GetDirectories('$(RootPath)/public/Nitrocid.Addons.Essentials'))" />
+      <NitrocidAddonsNames>
+        <AddonProjectName>$([System.IO.Path]::GetFileName('%(Identity)'))</AddonProjectName>
+      </NitrocidAddonsNames>
+    </ItemGroup>
+
+    <ItemGroup>
+      <NitrocidAddonsOutputs Include="%(NitrocidAddonsNames.AddonProjectName)" />
+      <NitrocidAddonsOutputs>
+        <AddonOutputName>$([System.String]::Copy('%(Identity)').Replace('Nitrocid.',''))</AddonOutputName>
+      </NitrocidAddonsOutputs>
+    </ItemGroup>
+
+    <ItemGroup>
+      <OutputAddonsNames Include="$([System.IO.Directory]::GetDirectories('$(RootPath)/public/Nitrocid/KSBuild/net8.0/Addons.Essentials'))" />
+      <OutputAddonsNames>
+        <AddonOutputName>$([System.IO.Path]::GetFileName('%(Identity)'))</AddonOutputName>
+      </OutputAddonsNames>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ExcludedAddons Include="@(OutputAddonsNames->'%(AddonOutputName)'->Distinct())" />
+      <ExcludedAddons Remove="@(NitrocidAddonsOutputs->'%(AddonOutputName)')" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <FullPathsToPrune Include="$(RootPath)/public/Nitrocid/KSBuild/net8.0/Addons.Essentials/%(ExcludedAddons.Identity)" Condition=" '@(ExcludedAddons)' != '' "/>
+    </ItemGroup>
+    <Message Importance="high" Text="Pruning essential addon: %(FullPathsToPrune.Identity)" Condition=" '@(ExcludedAddons)' != '' " />
+    <RemoveDir Directories="@(FullPathsToPrune)" ContinueOnError="true" Condition=" '@(ExcludedAddons)' != '' " />
+
+    <ItemGroup>
+      <AddonSources Include="@(NitrocidAddonsNames)">
+        <AddonProjectName>$([System.IO.Path]::GetFileName('%(Identity)'))</AddonProjectName>
+        <FullAddonSourcePaths>$(RootPath)/public/Nitrocid.Addons.Essentials/%(AddonProjectName)</FullAddonSourcePaths>
+        <FullAddonSourceProjectPaths>$(RootPath)/public/Nitrocid.Addons.Essentials/%(AddonProjectName)/%(AddonProjectName).csproj</FullAddonSourceProjectPaths>
+      </AddonSources>
+    </ItemGroup>
+    <CreateItem Include="%(AddonSources.FullAddonSourcePaths)"
+                Condition="!$([System.IO.File]::Exists('%(AddonSources.FullAddonSourceProjectPaths)'))">
+      <Output TaskParameter="Include" ItemName="InvalidAddonSources"/>
+    </CreateItem>
+
+    <Message Importance="high" Text="Pruning essential addon source: %(InvalidAddonSources.Identity)" Condition=" '@(InvalidAddonSources)' != '' " />
+    <RemoveDir Directories="@(InvalidAddonSources)" ContinueOnError="true" Condition=" '@(InvalidAddonSources)' != '' " />
+
+    <Message Importance="high" Text="No obsolete essential addons!" Condition=" '@(ExcludedAddons)' == '' " />
+    <Message Importance="high" Text="Pruning essentials done!" Condition=" '@(ExcludedAddons)' != '' " />
+
+    <ItemGroup Condition=" '@(NitrocidAddonsNames)' != '' ">
+      <NitrocidAddonsNames Remove="@(NitrocidAddonsNames)" />
+      <NitrocidAddonsOutputs Remove="@(NitrocidAddonsOutputs)" />
+      <OutputAddonsNames Remove="@(OutputAddonsNames)" />
+      <ExcludedAddons Remove="@(ExcludedAddons)" />
+      <FullPathsToPrune Remove="@(FullPathsToPrune)" />
+      <AddonSources Remove="@(AddonSources)" />
+      <InvalidAddonSources Remove="@(InvalidAddonSources)" />
+    </ItemGroup>
   </Target>
 
 </Project>

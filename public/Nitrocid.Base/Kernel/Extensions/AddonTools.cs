@@ -55,7 +55,7 @@ namespace Nitrocid.Base.Kernel.Extensions
 
         internal static void ProcessAddons(ModLoadPriority type)
         {
-            var addonFolder = PathsManagement.AddonsPath;
+            var addonFolder = type == ModLoadPriority.Important ? PathsManagement.AddonsEssentialsPath : PathsManagement.AddonsPath;
             if (!FilesystemTools.FolderExists(addonFolder))
                 return;
             var addonFolders = FilesystemTools.GetFilesystemEntries(addonFolder);
@@ -63,13 +63,13 @@ namespace Nitrocid.Base.Kernel.Extensions
             for (int i = 0; i < addonFolders.Length; i++)
             {
                 string addon = addonFolders[i];
-                ProcessAddon(addon, type, i + 1, addonFolders.Length);
+                ProcessAddon(addon, i + 1, addonFolders.Length);
             }
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded all addons!");
             probedAddons.Clear();
         }
 
-        internal static void ProcessAddon(string addon, ModLoadPriority type, int current = 1, int length = 1)
+        internal static void ProcessAddon(string addon, int current = 1, int length = 1)
         {
             try
             {
@@ -153,29 +153,25 @@ namespace Nitrocid.Base.Kernel.Extensions
                 else
                     addonInstance = addonInstances[addonPath];
 
-                // Check to see if the types match
-                if (addonInstance.AddonType == type)
+                // Call the start function
+                try
                 {
-                    // Call the start function
-                    try
-                    {
-                        SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTING") + " {0}...", addonInstance.AddonTranslatedName);
-                        addonInstance.StartAddon();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Started!");
+                    SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTING") + " {0}...", addonInstance.AddonTranslatedName);
+                    addonInstance.StartAddon();
+                    DebugWriter.WriteDebug(DebugLevel.I, "Started!");
 
-                        // Add the addon
-                        AddonInfo info = new(addonInstance);
-                        if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
-                            addons.Add(info);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
-                        SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTED") + " {0}!", 1, addonInstance.AddonTranslatedName);
-                    }
-                    catch (Exception ex)
-                    {
-                        SplashReport.ReportProgressError($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTFAILED") + " {0}.", addonInstance.AddonTranslatedName);
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to start addon {0}. {1}", vars: [addon, ex.Message]);
-                        DebugWriter.WriteDebugStackTrace(ex);
-                    }
+                    // Add the addon
+                    AddonInfo info = new(addonInstance);
+                    if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
+                        addons.Add(info);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
+                    SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTED") + " {0}!", 1, addonInstance.AddonTranslatedName);
+                }
+                catch (Exception ex)
+                {
+                    SplashReport.ReportProgressError($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTFAILED") + " {0}.", addonInstance.AddonTranslatedName);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to start addon {0}. {1}", vars: [addon, ex.Message]);
+                    DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             catch (Exception ex)

@@ -52,8 +52,6 @@ namespace Nitrocid.Extras.Docking
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasDocking);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Optional;
-
         public void FinalizeAddon()
         { }
 

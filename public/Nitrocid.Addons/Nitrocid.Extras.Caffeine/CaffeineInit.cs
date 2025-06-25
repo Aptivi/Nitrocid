@@ -57,8 +57,6 @@ namespace Nitrocid.Extras.Caffeine
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasCaffeine);
 
-        public ModLoadPriority AddonType => ModLoadPriority.Optional;
-
         public void StartAddon()
         {
             LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
