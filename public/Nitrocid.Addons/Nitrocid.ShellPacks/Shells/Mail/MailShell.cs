@@ -31,6 +31,9 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.Base.Network.Connections;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Colors.Themes.Colors;
+using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.Mail
 {
@@ -87,8 +90,11 @@ namespace Nitrocid.ShellPacks.Shells.Mail
                 }
                 catch (Exception ex)
                 {
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SHELL_ERROR") + " {0}", true, ThemeColorType.Error, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR") + " {0}", ex, ex.Message);
+                    InputTools.DetectKeypress();
+                    Bail = true;
                 }
 
                 // Exiting, so reset the site

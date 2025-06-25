@@ -20,13 +20,16 @@
 using System;
 using System.Net.Http;
 using System.Threading;
+using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Network.SpeedDial;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP
 {
@@ -69,8 +72,11 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
                 }
                 catch (Exception ex)
                 {
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR") + " {0}", true, ThemeColorType.Error, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.HTTPShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR") + " {0}", ex, ex.Message);
+                    InputTools.DetectKeypress();
+                    Bail = true;
                 }
 
                 // Exiting, so reset the site
