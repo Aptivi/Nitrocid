@@ -35,7 +35,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
             var PressedKey = default(ConsoleKeyInfo);
             int CurrentValue = Convert.ToInt32(KeyDefaultValue);
             ConsoleWrapper.CursorVisible = false;
-            ConsoleWrapper.Clear();
 
             // Make an introductory banner
             string keyName = LanguageTools.GetLocalized(key.Name);

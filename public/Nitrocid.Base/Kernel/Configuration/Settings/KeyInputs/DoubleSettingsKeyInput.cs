@@ -31,8 +31,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
     {
         public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
-            ConsoleWrapper.Clear();
-
             // Make an introductory banner
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
