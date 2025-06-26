@@ -47,7 +47,7 @@ namespace Nitrocid.SplashPacks.Splashes
             SplashPackInit.SplashConfig.ProgressProgressTextLocation switch
             {
                 (int)TextLocation.Top => 1,
-                (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 6,
+                (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 4,
                 _ => 1,
             };
 
@@ -57,7 +57,7 @@ namespace Nitrocid.SplashPacks.Splashes
             SplashPackInit.SplashConfig.ProgressProgressTextLocation switch
             {
                 (int)TextLocation.Top => 1,
-                (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 6,
+                (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 4,
                 _ => 1,
             };
 
@@ -130,7 +130,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor),
                 ProgressBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
             };
-            PresetStringBuilder.Append(ContainerTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 4)));
+            PresetStringBuilder.Append(ContainerTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 2)));
             return PresetStringBuilder.ToString();
         }
 
