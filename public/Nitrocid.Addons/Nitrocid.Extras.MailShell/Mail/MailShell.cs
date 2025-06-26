@@ -31,6 +31,9 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Network.Connections;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.MailShell.Mail
 {
@@ -87,8 +90,11 @@ namespace Nitrocid.Extras.MailShell.Mail
                 }
                 catch (Exception ex)
                 {
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + " {0}", true, KernelColorType.Error, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("There was an error in the HTTP shell:") + " {0}", ex, ex.Message);
+                    InputTools.DetectKeypress();
+                    Bail = true;
                 }
 
                 // Exiting, so reset the site

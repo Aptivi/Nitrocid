@@ -19,6 +19,9 @@
 
 using System;
 using System.Threading;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -82,8 +85,11 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 }
                 catch (Exception ex)
                 {
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the SFTP shell:") + " {0}", true, KernelColorType.Error, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("There was an error in the SFTP shell:") + " {0}", ex, ex.Message);
+                    InputTools.DetectKeypress();
+                    Bail = true;
                 }
 
                 // Check if the shell is going to exit

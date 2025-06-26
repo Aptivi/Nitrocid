@@ -20,6 +20,8 @@
 using System;
 using System.Net.Http;
 using System.Threading;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -69,8 +71,11 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 }
                 catch (Exception ex)
                 {
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the HTTP shell:") + " {0}", true, KernelColorType.Error, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("There was an error in the HTTP shell:") + " {0}", ex, ex.Message);
+                    InputTools.DetectKeypress();
+                    Bail = true;
                 }
 
                 // Exiting, so reset the site

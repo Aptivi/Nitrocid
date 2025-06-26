@@ -30,6 +30,7 @@ using Textify.General;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Network.Connections;
 using Nitrocid.Kernel.Exceptions;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.RssShell.RSS
 {
@@ -81,9 +82,11 @@ namespace Nitrocid.Extras.RssShell.RSS
                 }
                 catch (Exception ex)
                 {
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + " {0}", true, KernelColorType.Error, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
-                    continue;
+                    InputTools.DetectKeypress();
+                    Bail = true;
                 }
 
                 // Exiting, so reset the site

@@ -27,6 +27,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Textify.General;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.SqlShell.Sql
 {
@@ -83,9 +84,11 @@ namespace Nitrocid.Extras.SqlShell.Sql
                 }
                 catch (Exception ex)
                 {
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + " {0}", true, KernelColorType.Error, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
-                    continue;
+                    InputTools.DetectKeypress();
+                    Bail = true;
                 }
             }
 

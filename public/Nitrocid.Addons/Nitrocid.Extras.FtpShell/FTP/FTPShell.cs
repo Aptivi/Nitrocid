@@ -32,6 +32,7 @@ using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Network.Connections;
+using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.FtpShell.FTP
 {
@@ -103,8 +104,11 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 }
                 catch (Exception ex)
                 {
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the FTP shell:") + " {0}", true, KernelColorType.Error, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There was an error in the FTP shell:") + " {0}", ex, ex.Message);
+                    InputTools.DetectKeypress();
+                    Bail = true;
                 }
 
                 // Check if the shell is going to exit
