@@ -126,7 +126,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
                 return;
             }
-            else if (AnswerInt > 0)
+            else if (AnswerInt >= 0)
             {
                 if (Selections is IEnumerable<object> selectionsArray)
                 {
@@ -139,7 +139,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 {
                     object? FinalValue;
                     DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", vars: [key.Variable, AnswerInt]);
-                    FinalValue = SelectFrom.ElementAtOrDefault(AnswerInt - 1);
+                    FinalValue = SelectFrom.ElementAtOrDefault(AnswerInt);
                     if (SelectionEnum && SelectionEnumType is not null)
                         FinalValue = Enum.Parse(SelectionEnumType, FinalValue?.ToString() ?? "");
 
@@ -150,20 +150,12 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not valid.");
                     InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The answer may not exceed the entries shown."));
-                    Input.ReadKey();
                 }
-            }
-            else if (AnswerInt == 0 & !SelectionEnumZeroBased)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Zero is not allowed.");
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The answer may not be zero."));
-                Input.ReadKey();
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
                 InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The answer may not be negative."));
-                Input.ReadKey();
             }
         }
 
