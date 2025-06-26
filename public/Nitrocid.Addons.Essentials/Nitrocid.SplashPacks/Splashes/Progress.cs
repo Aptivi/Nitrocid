@@ -48,7 +48,7 @@ namespace Nitrocid.SplashPacks.Splashes
             SplashPackInit.SplashConfig.ProgressProgressTextLocation switch
             {
                 (int)TextLocation.Top => 1,
-                (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 6,
+                (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 4,
                 _ => 1,
             };
 
@@ -58,7 +58,7 @@ namespace Nitrocid.SplashPacks.Splashes
             SplashPackInit.SplashConfig.ProgressProgressTextLocation switch
             {
                 (int)TextLocation.Top => 1,
-                (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 6,
+                (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 4,
                 _ => 1,
             };
 
