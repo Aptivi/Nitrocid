@@ -45,8 +45,6 @@ namespace Nitrocid.Extras.Diagnostics
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDiagnostics);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
-
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
             { nameof(DiagnosticsTools.GetThreadBacktraces), DiagnosticsTools.GetThreadBacktraces }

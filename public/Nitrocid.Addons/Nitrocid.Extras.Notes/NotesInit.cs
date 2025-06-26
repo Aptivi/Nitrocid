@@ -89,8 +89,6 @@ namespace Nitrocid.Extras.Notes
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNotes);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 
         ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;

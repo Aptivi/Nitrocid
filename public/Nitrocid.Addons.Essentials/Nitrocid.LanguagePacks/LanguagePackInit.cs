@@ -38,8 +38,6 @@ namespace Nitrocid.LanguagePacks
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonLanguagePacks);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
-
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 
         ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;

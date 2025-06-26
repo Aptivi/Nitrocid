@@ -1,7 +1,7 @@
-﻿<Project>
+<Project>
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
-  <!-- Extras.Diagnostics addon General Information -->
+  <!-- SplashPacks addon General Information -->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,18 +9,17 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - Diagnostics</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Diagnostics</AssemblyTitle>
+    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons.Essentials\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
+    <Description>Nitrocid KS Splash Packs</Description>
+    <AssemblyTitle>Nitrocid KS Splash Packs</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
-  <!-- Extras.Diagnostics addon General Information End -->
+  <!-- SplashPacks addon General Information End -->
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
   <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 
-  <!-- Extras.Diagnostics addon Platform Information -->
+  <!-- SplashPacks addon Platform Information -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DefineDebug>true</DefineDebug>
   </PropertyGroup>
@@ -32,10 +31,9 @@
     <ProjectReference Include="..\..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
   </ItemGroup>
-  <!-- Extras.Diagnostics addon Platform Information End -->
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.1.512801" />
+    <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
+  <!-- ThemePacks addon Platform Information End -->
 
 </Project>

@@ -34,8 +34,6 @@ namespace Nitrocid.Extras.Sha384
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSha384);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 
         ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;

@@ -33,8 +33,6 @@ namespace Nitrocid.Extras.Tips
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTips);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static TipsConfig TipsConfig =>
             (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)];
 

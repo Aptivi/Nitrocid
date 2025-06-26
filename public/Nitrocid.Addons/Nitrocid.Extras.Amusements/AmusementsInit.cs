@@ -175,8 +175,6 @@ namespace Nitrocid.Extras.Amusements
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasAmusements);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static AmusementsSaversConfig SaversConfig =>
             (AmusementsSaversConfig)Config.baseConfigurations[nameof(AmusementsSaversConfig)];
 

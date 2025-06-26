@@ -53,8 +53,6 @@ namespace Nitrocid.Extras.Docking
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDocking);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
             { nameof(DockTools.DockScreen), new Action<string>(DockTools.DockScreen) },

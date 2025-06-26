@@ -49,8 +49,6 @@ namespace Nitrocid.Extras.HttpShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasHttpShell);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static HttpConfig HttpConfig =>
             (HttpConfig)Config.baseConfigurations[nameof(HttpConfig)];
 

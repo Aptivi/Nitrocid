@@ -65,8 +65,6 @@ namespace Nitrocid.Extras.ToDoList
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasToDoList);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
             { nameof(ToDoManager.AddTask), new Action<string>(ToDoManager.AddTask) },

@@ -54,8 +54,6 @@ namespace Nitrocid.Extras.ThemeStudio
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasThemeStudio);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 
         ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;

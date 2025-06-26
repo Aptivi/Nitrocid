@@ -37,8 +37,6 @@ namespace Nitrocid.Extras.SqlShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSqlShell);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static SqlConfig SqlConfig =>
             (SqlConfig)Config.baseConfigurations[nameof(SqlConfig)];
 

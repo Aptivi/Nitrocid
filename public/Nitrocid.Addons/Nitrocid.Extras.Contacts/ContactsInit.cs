@@ -92,8 +92,6 @@ namespace Nitrocid.Extras.Contacts
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasContacts);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
             { nameof(ContactsManager.GetContacts), new Func<Card[]>(ContactsManager.GetContacts) },

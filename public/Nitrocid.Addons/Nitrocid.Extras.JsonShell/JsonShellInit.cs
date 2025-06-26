@@ -90,8 +90,6 @@ namespace Nitrocid.Extras.JsonShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasJsonShell);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static JsonConfig JsonConfig =>
             (JsonConfig)Config.baseConfigurations[nameof(JsonConfig)];
 

@@ -55,8 +55,6 @@ namespace Nitrocid.Extras.ArchiveShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasArchiveShell);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static ArchiveConfig ArchiveConfig =>
             (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)];
 

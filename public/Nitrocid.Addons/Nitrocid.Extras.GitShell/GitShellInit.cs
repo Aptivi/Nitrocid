@@ -56,8 +56,6 @@ namespace Nitrocid.Extras.GitShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasGitShell);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static GitConfig GitConfig =>
             (GitConfig)Config.baseConfigurations[nameof(GitConfig)];
 

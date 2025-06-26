@@ -152,8 +152,6 @@ namespace Nitrocid.Extras.NameGen
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNameGen);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static NameGenSaversConfig SaversConfig =>
             (NameGenSaversConfig)Config.baseConfigurations[nameof(NameGenSaversConfig)];
 
