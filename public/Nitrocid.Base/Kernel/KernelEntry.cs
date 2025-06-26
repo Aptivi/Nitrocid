@@ -54,6 +54,7 @@ namespace Nitrocid.Base.Kernel
         internal static bool QuietKernel;
         internal static bool TalkativePreboot;
         internal static bool PrebootSplash = true;
+        internal static bool UseAltBuffer = true;
 
         internal static void EntryPoint(string[]? args)
         {
