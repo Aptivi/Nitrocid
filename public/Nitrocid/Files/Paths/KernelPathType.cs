@@ -120,5 +120,9 @@ namespace Nitrocid.Files.Paths
         /// Widget configuration file.
         /// </summary>
         WidgetConfiguration,
+        /// <summary>
+        /// Essential addons folder
+        /// </summary>
+        AddonsEssentials,
     }
 }
