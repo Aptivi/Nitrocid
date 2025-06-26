@@ -27,7 +27,7 @@ REM This script replaces old version with new version.
 echo Replacing...
 
 REM Change the below files
-set "releaseFiles=%ROOTDIR%\PKGBUILD-REL %ROOTDIR%\.github\workflows\build-ppa-package-with-lintian.yml %ROOTDIR%\.github\workflows\build-ppa-package.yml %ROOTDIR%\.github\workflows\pushamend.yml %ROOTDIR%\.github\workflows\pushppa.yml %ROOTDIR%\public\Nitrocid.Installers\Nitrocid.Installer\Package.wxs %ROOTDIR%\public\Nitrocid.Installers\Nitrocid.InstallerBundle\Bundle.wxs %ROOTDIR%\public\Nitrocid.Templates\templates\KSMod\KSMod.csproj %ROOTDIR%\public\Nitrocid.Templates\templates\KSModVB\KSModVB.vbproj %ROOTDIR%\Directory.Build.props %ROOTDIR%\CHANGES.TITLE"
+set "releaseFiles=%ROOTDIR%\PKGBUILD-REL %ROOTDIR%\PKGBUILD-REL-LITE %ROOTDIR%\.github\workflows\build-ppa-package-with-lintian.yml %ROOTDIR%\.github\workflows\build-ppa-package.yml %ROOTDIR%\.github\workflows\pushamend.yml %ROOTDIR%\.github\workflows\pushppa.yml %ROOTDIR%\public\Nitrocid.Installers\Nitrocid.Installer\Package.wxs %ROOTDIR%\public\Nitrocid.Installers\Nitrocid.InstallerBundle\Bundle.wxs %ROOTDIR%\public\Nitrocid.Templates\templates\KSMod\KSMod.csproj %ROOTDIR%\public\Nitrocid.Templates\templates\KSModVB\KSModVB.vbproj %ROOTDIR%\Directory.Build.props %ROOTDIR%\CHANGES.TITLE"
 for %%f in (%releaseFiles%) do (
     echo Processing %%f...
     powershell %ROOTDIR%\vnd\eng\incrementor.ps1 "%%f" "%oldVer%" "%newVer%" "%oldApiVer%" "%newApiVer%"
