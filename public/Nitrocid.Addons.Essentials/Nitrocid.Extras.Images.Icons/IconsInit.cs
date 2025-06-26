@@ -26,8 +26,6 @@ namespace Nitrocid.Extras.Images.Icons
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
-
         void IAddon.FinalizeAddon()
         { }
 

@@ -30,8 +30,6 @@ namespace Nitrocid.Extras.Sha384Enhanced
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSha384Enhanced);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         void IAddon.FinalizeAddon()
         { }
 

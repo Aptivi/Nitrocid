@@ -30,8 +30,6 @@ namespace Nitrocid.Extras.Sha256Enhanced
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSha256Enhanced);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         void IAddon.FinalizeAddon()
         { }
 

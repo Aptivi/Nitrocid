@@ -83,8 +83,6 @@ namespace Nitrocid.Extras.UnitConv
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasUnitConv);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 

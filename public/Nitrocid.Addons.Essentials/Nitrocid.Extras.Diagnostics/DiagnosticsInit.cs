@@ -17,44 +17,32 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Nitrocid.Extras.Diagnostics.Commands;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
-using Nitrocid.Extras.Images.Commands;
 
-namespace Nitrocid.Extras.Images
+namespace Nitrocid.Extras.Diagnostics
 {
-    internal class ImagesInit : IAddon
+    internal class DiagnosticsInit : IAddon
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("preview", /* Localizable */ "Previews an image",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "imageFile", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "Path to image file"
-                        }),
-                    ])
-                ], new PreviewCommand()),
+            new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads", new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
         ];
 
         string IAddon.AddonName =>
-            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImages);
-
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDiagnostics);
 
         void IAddon.FinalizeAddon()
         { }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterAddonCommands(ShellType.DebugShell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterAddonCommands(ShellType.DebugShell, [.. addonCommands.Select((ci) => ci.Command)]);
     }
 }

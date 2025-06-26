@@ -48,8 +48,6 @@ namespace Nitrocid.Extras.FtpShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasFtpShell);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static FtpConfig FtpConfig =>
             (FtpConfig)Config.baseConfigurations[nameof(FtpConfig)];
 

@@ -58,8 +58,6 @@ namespace Nitrocid.Extras.MailShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMailShell);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static MailConfig MailConfig =>
             (MailConfig)Config.baseConfigurations[nameof(MailConfig)];
 

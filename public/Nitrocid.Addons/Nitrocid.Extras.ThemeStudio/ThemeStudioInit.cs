@@ -50,8 +50,6 @@ namespace Nitrocid.Extras.ThemeStudio
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasThemeStudio);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 

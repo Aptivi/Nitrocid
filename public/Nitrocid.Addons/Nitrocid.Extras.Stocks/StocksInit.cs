@@ -50,8 +50,6 @@ namespace Nitrocid.Extras.Stocks
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasStocks);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static StocksConfig StocksConfig =>
             (StocksConfig)Config.baseConfigurations[nameof(StocksConfig)];
 

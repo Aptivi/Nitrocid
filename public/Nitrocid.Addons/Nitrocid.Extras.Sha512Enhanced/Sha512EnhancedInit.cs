@@ -30,8 +30,6 @@ namespace Nitrocid.Extras.Sha512Enhanced
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSha512Enhanced);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         void IAddon.FinalizeAddon()
         { }
 

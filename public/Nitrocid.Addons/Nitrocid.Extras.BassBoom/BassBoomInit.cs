@@ -114,8 +114,6 @@ namespace Nitrocid.Extras.BassBoom
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasBassBoom);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static BassBoomSaversConfig SaversConfig =>
             (BassBoomSaversConfig)Config.baseConfigurations[nameof(BassBoomSaversConfig)];
 

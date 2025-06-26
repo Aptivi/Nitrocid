@@ -30,8 +30,6 @@ namespace Nitrocid.Extras.Md5
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMd5);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         void IAddon.FinalizeAddon()
         { }
 

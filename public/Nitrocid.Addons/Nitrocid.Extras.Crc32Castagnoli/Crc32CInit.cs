@@ -30,8 +30,6 @@ namespace Nitrocid.Extras.Crc32Castagnoli
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCrc32C);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         void IAddon.FinalizeAddon()
         { }
 

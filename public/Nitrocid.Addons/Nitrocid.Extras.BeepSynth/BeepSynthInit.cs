@@ -46,8 +46,6 @@ namespace Nitrocid.Extras.BeepSynth
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasBeepSynth);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 

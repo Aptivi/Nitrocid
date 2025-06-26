@@ -49,8 +49,6 @@ namespace Nitrocid.Extras.SftpShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSftpShell);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static SftpConfig SftpConfig =>
             (SftpConfig)Config.baseConfigurations[nameof(SftpConfig)];
 

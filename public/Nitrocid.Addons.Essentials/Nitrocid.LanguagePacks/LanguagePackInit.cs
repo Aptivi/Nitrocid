@@ -34,8 +34,6 @@ namespace Nitrocid.LanguagePacks
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonLanguagePacks);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
-
         void IAddon.StartAddon()
         {
             // Add them all!

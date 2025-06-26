@@ -1,7 +1,7 @@
-﻿<Project>
+<Project>
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
-  <!-- Extras.Images.Icons addon General Information -->
+  <!-- LanguagePacks addon General Information -->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,18 +9,17 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
-    <Description>Nitrocid KS Extras - Icons</Description>
-    <AssemblyTitle>Nitrocid KS Extras - Icons</AssemblyTitle>
+    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons.Essentials\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
+    <Description>Nitrocid KS Language Packs</Description>
+    <AssemblyTitle>Nitrocid KS Language Packs</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
-  <!-- Extras.Images.Icons addon General Information End -->
+  <!-- LanguagePacks addon General Information End -->
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
   <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 
-  <!-- Extras.Images.Icons addon Platform Information -->
+  <!-- LanguagePacks addon Platform Information -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DefineDebug>true</DefineDebug>
   </PropertyGroup>
@@ -32,10 +31,17 @@
     <ProjectReference Include="..\..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
   </ItemGroup>
-  <!-- Extras.Images.Icons addon Platform Information End -->
+  <!-- LanguagePacks addon Platform Information End -->
 
+  <!-- LanguagePacks addon metadata -->
   <ItemGroup>
-    <PackageReference Include="Terminaux.Images.Icons" Version="6.1.16" />
+    <EmbeddedResource Include="Resources\Languages\*" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Resources\Languages\Metadata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <!-- LanguagePacks addon metadata End -->
 
 </Project>

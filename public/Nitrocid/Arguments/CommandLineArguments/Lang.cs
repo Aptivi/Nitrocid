@@ -29,10 +29,10 @@ namespace Nitrocid.Arguments.CommandLineArguments
 
         public override void Execute(ArgumentParameters parameters)
         {
-            string langPacksAddonPath = PathsManagement.AddonsPath + "/LanguagePacks";
+            string langPacksAddonPath = PathsManagement.AddonsEssentialsPath + "/LanguagePacks";
             if (FilesystemTools.FolderExists(langPacksAddonPath))
             {
-                AddonTools.ProcessAddon(langPacksAddonPath, ModLoadPriority.Important);
+                AddonTools.ProcessAddon(langPacksAddonPath);
                 LanguageManager.SetLangDry(parameters.ArgumentsList[0]);
                 AddonTools.probedAddons.Clear();
             }

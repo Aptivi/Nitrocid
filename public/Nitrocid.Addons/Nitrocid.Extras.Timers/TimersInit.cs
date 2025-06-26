@@ -44,8 +44,6 @@ namespace Nitrocid.Extras.Timers
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTimers);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static TimersConfig TimersConfig =>
             (TimersConfig)Config.baseConfigurations[nameof(TimersConfig)];
 

@@ -17,34 +17,42 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Extras.Diagnostics.Commands;
+using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.ShellBase.Shells;
 using System.Linq;
+using Nitrocid.Extras.Images.Commands;
 
-namespace Nitrocid.Extras.Diagnostics
+namespace Nitrocid.Extras.Images
 {
-    internal class DiagnosticsInit : IAddon
+    internal class ImagesInit : IAddon
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads", new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            new CommandInfo("preview", /* Localizable */ "Previews an image",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "imageFile", new CommandArgumentPartOptions()
+                        {
+                            ArgumentDescription = /* Localizable */ "Path to image file"
+                        }),
+                    ])
+                ], new PreviewCommand()),
         ];
 
         string IAddon.AddonName =>
-            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDiagnostics);
-
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Important;
+            InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImages);
 
         void IAddon.FinalizeAddon()
         { }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.DebugShell, [.. addonCommands]);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.DebugShell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
     }
 }

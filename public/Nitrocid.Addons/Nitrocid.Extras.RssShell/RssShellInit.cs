@@ -52,8 +52,6 @@ namespace Nitrocid.Extras.RssShell
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasRssShell);
 
-        ModLoadPriority IAddon.AddonType => ModLoadPriority.Optional;
-
         internal static RssConfig RssConfig =>
             (RssConfig)Config.baseConfigurations[nameof(RssConfig)];
 
