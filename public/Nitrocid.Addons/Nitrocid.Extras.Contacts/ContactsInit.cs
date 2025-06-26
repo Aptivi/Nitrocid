@@ -113,7 +113,7 @@ namespace Nitrocid.Extras.Contacts
         ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         internal static ContactsConfig ContactsConfig =>
-            (ContactsConfig)Config.baseConfigurations[nameof(ContactsConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(ContactsConfig)) ? (ContactsConfig)Config.baseConfigurations[nameof(ContactsConfig)] : new ContactsConfig();
 
         void IAddon.FinalizeAddon()
         {

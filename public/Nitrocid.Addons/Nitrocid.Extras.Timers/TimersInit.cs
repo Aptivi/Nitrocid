@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.Timers
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTimers);
 
         internal static TimersConfig TimersConfig =>
-            (TimersConfig)Config.baseConfigurations[nameof(TimersConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(TimersConfig)) ? (TimersConfig)Config.baseConfigurations[nameof(TimersConfig)] : new TimersConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 

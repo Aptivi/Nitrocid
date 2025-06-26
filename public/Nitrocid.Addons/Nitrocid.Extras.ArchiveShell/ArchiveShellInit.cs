@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.ArchiveShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasArchiveShell);
 
         internal static ArchiveConfig ArchiveConfig =>
-            (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(ArchiveConfig)) ? (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)] : new ArchiveConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {

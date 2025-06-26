@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.Tips
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTips);
 
         internal static TipsConfig TipsConfig =>
-            (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(TipsConfig)) ? (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)] : new TipsConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 

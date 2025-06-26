@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.SqlShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSqlShell);
 
         internal static SqlConfig SqlConfig =>
-            (SqlConfig)Config.baseConfigurations[nameof(SqlConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(SqlConfig)) ? (SqlConfig)Config.baseConfigurations[nameof(SqlConfig)] : new SqlConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {

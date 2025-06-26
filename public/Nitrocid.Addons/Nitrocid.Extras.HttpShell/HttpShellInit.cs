@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.HttpShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasHttpShell);
 
         internal static HttpConfig HttpConfig =>
-            (HttpConfig)Config.baseConfigurations[nameof(HttpConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(HttpConfig)) ? (HttpConfig)Config.baseConfigurations[nameof(HttpConfig)] : new HttpConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {

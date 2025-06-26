@@ -176,13 +176,13 @@ namespace Nitrocid.Extras.Amusements
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasAmusements);
 
         internal static AmusementsSaversConfig SaversConfig =>
-            (AmusementsSaversConfig)Config.baseConfigurations[nameof(AmusementsSaversConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(AmusementsSaversConfig)) ? (AmusementsSaversConfig)Config.baseConfigurations[nameof(AmusementsSaversConfig)] : new AmusementsSaversConfig();
 
         internal static AmusementsSplashesConfig SplashConfig =>
-            (AmusementsSplashesConfig)Config.baseConfigurations[nameof(AmusementsSplashesConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(AmusementsSplashesConfig)) ? (AmusementsSplashesConfig)Config.baseConfigurations[nameof(AmusementsSplashesConfig)] : new AmusementsSplashesConfig();
 
         internal static AmusementsConfig AmusementsConfig =>
-            (AmusementsConfig)Config.baseConfigurations[nameof(AmusementsConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(AmusementsConfig)) ? (AmusementsConfig)Config.baseConfigurations[nameof(AmusementsConfig)] : new AmusementsConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 

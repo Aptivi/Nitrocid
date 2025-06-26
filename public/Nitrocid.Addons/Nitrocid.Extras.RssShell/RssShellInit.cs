@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.RssShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasRssShell);
 
         internal static RssConfig RssConfig =>
-            (RssConfig)Config.baseConfigurations[nameof(RssConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(RssConfig)) ? (RssConfig)Config.baseConfigurations[nameof(RssConfig)] : new RssConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions =>
             new(new Dictionary<string, Delegate>()

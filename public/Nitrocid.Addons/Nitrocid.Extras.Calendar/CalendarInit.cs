@@ -242,7 +242,7 @@ namespace Nitrocid.Extras.Calendar
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalendar);
 
         internal static CalendarConfig CalendarConfig =>
-            (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(CalendarConfig)) ? (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)] : new CalendarConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {

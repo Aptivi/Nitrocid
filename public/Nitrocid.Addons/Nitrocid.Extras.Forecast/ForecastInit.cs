@@ -100,7 +100,7 @@ namespace Nitrocid.Extras.Forecast
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasForecast);
 
         internal static ForecastConfig ForecastConfig =>
-            (ForecastConfig)Config.baseConfigurations[nameof(ForecastConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(ForecastConfig)) ? (ForecastConfig)Config.baseConfigurations[nameof(ForecastConfig)] : new ForecastConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {

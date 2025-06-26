@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.FtpShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasFtpShell);
 
         internal static FtpConfig FtpConfig =>
-            (FtpConfig)Config.baseConfigurations[nameof(FtpConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(FtpConfig)) ? (FtpConfig)Config.baseConfigurations[nameof(FtpConfig)] : new FtpConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {

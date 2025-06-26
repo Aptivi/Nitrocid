@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.GitShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasGitShell);
 
         internal static GitConfig GitConfig =>
-            (GitConfig)Config.baseConfigurations[nameof(GitConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(GitConfig)) ? (GitConfig)Config.baseConfigurations[nameof(GitConfig)] : new GitConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 

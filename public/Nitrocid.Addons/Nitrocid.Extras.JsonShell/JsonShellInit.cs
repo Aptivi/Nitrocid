@@ -91,7 +91,7 @@ namespace Nitrocid.Extras.JsonShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasJsonShell);
 
         internal static JsonConfig JsonConfig =>
-            (JsonConfig)Config.baseConfigurations[nameof(JsonConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(JsonConfig)) ? (JsonConfig)Config.baseConfigurations[nameof(JsonConfig)] : new JsonConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {

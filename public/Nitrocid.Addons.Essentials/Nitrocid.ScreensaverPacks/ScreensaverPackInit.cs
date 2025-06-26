@@ -143,7 +143,7 @@ namespace Nitrocid.ScreensaverPacks
             InterAddonTranslations.GetAddonName(KnownAddons.AddonScreensaverPacks);
 
         internal static ExtraSaversConfig SaversConfig =>
-            (ExtraSaversConfig)Config.baseConfigurations[nameof(ExtraSaversConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(ExtraSaversConfig)) ? (ExtraSaversConfig)Config.baseConfigurations[nameof(ExtraSaversConfig)] : new ExtraSaversConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
 

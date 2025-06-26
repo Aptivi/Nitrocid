@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.SftpShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSftpShell);
 
         internal static SftpConfig SftpConfig =>
-            (SftpConfig)Config.baseConfigurations[nameof(SftpConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(SftpConfig)) ? (SftpConfig)Config.baseConfigurations[nameof(SftpConfig)] : new SftpConfig();
 
         ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
         {
