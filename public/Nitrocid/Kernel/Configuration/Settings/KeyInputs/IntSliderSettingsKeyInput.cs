@@ -33,75 +33,15 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
     {
         public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
-            var PressedKey = default(ConsoleKeyInfo);
             int CurrentValue = Convert.ToInt32(KeyDefaultValue);
 
             // Make an introductory banner
             string keyName = key.Name;
             string keyDesc = key.Description;
-            while (PressedKey.Key != ConsoleKey.Enter)
-            {
-                // Show the current value
-                double slider = 100d * (CurrentValue / (double)key.MaximumValue);
-                InfoBoxProgressColor.WriteInfoBoxProgress(keyName, slider, $"{keyDesc}\n\n" + Translate.DoTranslation("Current value:") + " {0} / {1} - {2}", CurrentValue, key.MinimumValue, key.MaximumValue);
 
-                // Parse the user input
-                PressedKey = Input.ReadKey();
-                switch (PressedKey.Key)
-                {
-                    case ConsoleKey.Home:
-                        CurrentValue = key.MinimumValue;
-                        break;
-                    case ConsoleKey.End:
-                        CurrentValue = key.MaximumValue;
-                        break;
-                    case ConsoleKey.PageUp:
-                        if (CurrentValue > key.MinimumValue)
-                        {
-                            CurrentValue -=
-                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) ? 100000 :
-                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Control) ? 10000 : 1000;
-                            if (CurrentValue < key.MinimumValue)
-                                CurrentValue = key.MinimumValue;
-                        }
-                        break;
-                    case ConsoleKey.PageDown:
-                        if (CurrentValue < key.MaximumValue)
-                        {
-                            CurrentValue +=
-                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) ? 100000 :
-                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Control) ? 10000 : 1000;
-                            if (CurrentValue > key.MaximumValue)
-                                CurrentValue = key.MaximumValue;
-                        }
-                        break;
-                    case ConsoleKey.LeftArrow:
-                        if (CurrentValue > key.MinimumValue)
-                        {
-                            CurrentValue -=
-                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) ? 100 :
-                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Control) ? 10 : 1;
-                            if (CurrentValue < key.MinimumValue)
-                                CurrentValue = key.MinimumValue;
-                        }
-                        break;
-                    case ConsoleKey.RightArrow:
-                        if (CurrentValue < key.MaximumValue)
-                        {
-                            CurrentValue +=
-                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) ? 100 :
-                                PressedKey.Modifiers.HasFlag(ConsoleModifiers.Control) ? 10 : 1;
-                            if (CurrentValue > key.MaximumValue)
-                                CurrentValue = key.MaximumValue;
-                        }
-                        break;
-                    case ConsoleKey.Enter:
-                        ConsoleWrapper.CursorVisible = true;
-                        break;
-                }
-            }
+            CurrentValue = InfoBoxSliderColor.WriteInfoBoxSlider(keyName, CurrentValue, key.MaximumValue, keyDesc, key.MinimumValue);
 
-            // Neutralize path if required with the assumption that the keytype is not list
+            // Bail and use selected value
             bail = true;
             return CurrentValue;
         }
