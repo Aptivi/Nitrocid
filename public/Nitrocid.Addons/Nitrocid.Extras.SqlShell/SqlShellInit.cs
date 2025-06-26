@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.SqlShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSqlShell);
 
         internal static SqlConfig SqlConfig =>
-            (SqlConfig)Config.baseConfigurations[nameof(SqlConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(SqlConfig)) ? (SqlConfig)Config.baseConfigurations[nameof(SqlConfig)] : Config.GetFallbackKernelConfig<SqlConfig>();
 
         void IAddon.FinalizeAddon()
         {

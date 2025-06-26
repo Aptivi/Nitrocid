@@ -115,10 +115,10 @@ namespace Nitrocid.Extras.BassBoom
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasBassBoom);
 
         internal static BassBoomSaversConfig SaversConfig =>
-            (BassBoomSaversConfig)Config.baseConfigurations[nameof(BassBoomSaversConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(BassBoomSaversConfig)) ? (BassBoomSaversConfig)Config.baseConfigurations[nameof(BassBoomSaversConfig)] : Config.GetFallbackKernelConfig<BassBoomSaversConfig>();
 
         internal static BassBoomConfig BassBoomConfig =>
-            (BassBoomConfig)Config.baseConfigurations[nameof(BassBoomConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(BassBoomConfig)) ? (BassBoomConfig)Config.baseConfigurations[nameof(BassBoomConfig)] : Config.GetFallbackKernelConfig<BassBoomConfig>();
 
         void IAddon.StartAddon()
         {

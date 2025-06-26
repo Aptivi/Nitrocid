@@ -236,7 +236,7 @@ namespace Nitrocid.Extras.Calendar
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalendar);
 
         internal static CalendarConfig CalendarConfig =>
-            (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(CalendarConfig)) ? (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)] : Config.GetFallbackKernelConfig<CalendarConfig>();
 
         void IAddon.FinalizeAddon()
         {

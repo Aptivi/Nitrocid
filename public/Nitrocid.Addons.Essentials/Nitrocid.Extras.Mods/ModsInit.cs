@@ -73,7 +73,7 @@ namespace Nitrocid.Extras.Mods
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods);
 
         internal static ModsConfig ModsConfig =>
-            (ModsConfig)Config.baseConfigurations[nameof(ModsConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(ModsConfig)) ? (ModsConfig)Config.baseConfigurations[nameof(ModsConfig)] : Config.GetFallbackKernelConfig<ModsConfig>();
 
         void IAddon.FinalizeAddon()
         { }

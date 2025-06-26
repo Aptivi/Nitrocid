@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.HttpShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasHttpShell);
 
         internal static HttpConfig HttpConfig =>
-            (HttpConfig)Config.baseConfigurations[nameof(HttpConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(HttpConfig)) ? (HttpConfig)Config.baseConfigurations[nameof(HttpConfig)] : Config.GetFallbackKernelConfig<HttpConfig>();
 
         void IAddon.FinalizeAddon()
         {

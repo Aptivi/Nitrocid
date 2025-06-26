@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.FtpShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasFtpShell);
 
         internal static FtpConfig FtpConfig =>
-            (FtpConfig)Config.baseConfigurations[nameof(FtpConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(FtpConfig)) ? (FtpConfig)Config.baseConfigurations[nameof(FtpConfig)] : Config.GetFallbackKernelConfig<FtpConfig>();
 
         void IAddon.FinalizeAddon()
         {

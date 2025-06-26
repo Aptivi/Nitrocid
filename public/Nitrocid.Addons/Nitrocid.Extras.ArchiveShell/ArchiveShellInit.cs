@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.ArchiveShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasArchiveShell);
 
         internal static ArchiveConfig ArchiveConfig =>
-            (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(ArchiveConfig)) ? (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)] : Config.GetFallbackKernelConfig<ArchiveConfig>();
 
         void IAddon.FinalizeAddon()
         {

@@ -84,7 +84,7 @@ namespace Nitrocid.Extras.JsonShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasJsonShell);
 
         internal static JsonConfig JsonConfig =>
-            (JsonConfig)Config.baseConfigurations[nameof(JsonConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(JsonConfig)) ? (JsonConfig)Config.baseConfigurations[nameof(JsonConfig)] : Config.GetFallbackKernelConfig<JsonConfig>();
 
         void IAddon.FinalizeAddon()
         {

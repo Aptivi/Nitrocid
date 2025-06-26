@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Tips
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTips);
 
         internal static TipsConfig TipsConfig =>
-            (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(TipsConfig)) ? (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)] : Config.GetFallbackKernelConfig<TipsConfig>();
 
         void IAddon.FinalizeAddon() =>
             WelcomeMessage.tips = TipsList.tips;

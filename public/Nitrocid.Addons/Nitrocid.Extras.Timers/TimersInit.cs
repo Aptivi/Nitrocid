@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.Timers
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTimers);
 
         internal static TimersConfig TimersConfig =>
-            (TimersConfig)Config.baseConfigurations[nameof(TimersConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(TimersConfig)) ? (TimersConfig)Config.baseConfigurations[nameof(TimersConfig)] : Config.GetFallbackKernelConfig<TimersConfig>();
 
         void IAddon.StartAddon()
         {

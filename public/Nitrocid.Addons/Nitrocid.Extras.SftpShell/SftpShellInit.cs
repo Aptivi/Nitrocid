@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.SftpShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSftpShell);
 
         internal static SftpConfig SftpConfig =>
-            (SftpConfig)Config.baseConfigurations[nameof(SftpConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(SftpConfig)) ? (SftpConfig)Config.baseConfigurations[nameof(SftpConfig)] : Config.GetFallbackKernelConfig<SftpConfig>();
 
         void IAddon.FinalizeAddon()
         {

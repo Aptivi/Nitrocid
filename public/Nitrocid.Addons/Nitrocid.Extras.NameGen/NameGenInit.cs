@@ -149,7 +149,7 @@ namespace Nitrocid.Extras.NameGen
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNameGen);
 
         internal static NameGenSaversConfig SaversConfig =>
-            (NameGenSaversConfig)Config.baseConfigurations[nameof(NameGenSaversConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(NameGenSaversConfig)) ? (NameGenSaversConfig)Config.baseConfigurations[nameof(NameGenSaversConfig)] : Config.GetFallbackKernelConfig<NameGenSaversConfig>();
 
         void IAddon.StartAddon()
         {

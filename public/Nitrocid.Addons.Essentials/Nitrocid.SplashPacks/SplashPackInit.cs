@@ -50,7 +50,7 @@ namespace Nitrocid.SplashPacks
             InterAddonTranslations.GetAddonName(KnownAddons.AddonSplashPacks);
 
         internal static ExtraSplashesConfig SplashConfig =>
-            (ExtraSplashesConfig)Config.baseConfigurations[nameof(ExtraSplashesConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(ExtraSplashesConfig)) ? (ExtraSplashesConfig)Config.baseConfigurations[nameof(ExtraSplashesConfig)] : Config.GetFallbackKernelConfig<ExtraSplashesConfig>();
 
         void IAddon.StartAddon()
         {

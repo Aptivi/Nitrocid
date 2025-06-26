@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.MailShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMailShell);
 
         internal static MailConfig MailConfig =>
-            (MailConfig)Config.baseConfigurations[nameof(MailConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(MailConfig)) ? (MailConfig)Config.baseConfigurations[nameof(MailConfig)] : Config.GetFallbackKernelConfig<MailConfig>();
 
         void IAddon.FinalizeAddon()
         {

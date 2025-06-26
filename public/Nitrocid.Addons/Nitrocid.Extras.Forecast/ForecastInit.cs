@@ -94,7 +94,7 @@ namespace Nitrocid.Extras.Forecast
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasForecast);
 
         internal static ForecastConfig ForecastConfig =>
-            (ForecastConfig)Config.baseConfigurations[nameof(ForecastConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(ForecastConfig)) ? (ForecastConfig)Config.baseConfigurations[nameof(ForecastConfig)] : Config.GetFallbackKernelConfig<ForecastConfig>();
 
         void IAddon.FinalizeAddon()
         { }

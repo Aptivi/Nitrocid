@@ -142,13 +142,13 @@ namespace Nitrocid.Extras.Amusements
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasAmusements);
 
         internal static AmusementsSaversConfig SaversConfig =>
-            (AmusementsSaversConfig)Config.baseConfigurations[nameof(AmusementsSaversConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(AmusementsSaversConfig)) ? (AmusementsSaversConfig)Config.baseConfigurations[nameof(AmusementsSaversConfig)] : Config.GetFallbackKernelConfig<AmusementsSaversConfig>();
 
         internal static AmusementsSplashesConfig SplashConfig =>
-            (AmusementsSplashesConfig)Config.baseConfigurations[nameof(AmusementsSplashesConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(AmusementsSplashesConfig)) ? (AmusementsSplashesConfig)Config.baseConfigurations[nameof(AmusementsSplashesConfig)] : Config.GetFallbackKernelConfig<AmusementsSplashesConfig>();
 
         internal static AmusementsConfig AmusementsConfig =>
-            (AmusementsConfig)Config.baseConfigurations[nameof(AmusementsConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(AmusementsConfig)) ? (AmusementsConfig)Config.baseConfigurations[nameof(AmusementsConfig)] : Config.GetFallbackKernelConfig<AmusementsConfig>();
 
         private readonly SplashInfo quote = new("Quote", new SplashQuote(), false);
 

@@ -53,7 +53,7 @@ namespace Nitrocid.Extras.RssShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasRssShell);
 
         internal static RssConfig RssConfig =>
-            (RssConfig)Config.baseConfigurations[nameof(RssConfig)];
+            ConfigTools.IsCustomSettingBuiltin(nameof(RssConfig)) ? (RssConfig)Config.baseConfigurations[nameof(RssConfig)] : Config.GetFallbackKernelConfig<RssConfig>();
 
         void IAddon.FinalizeAddon()
         {
