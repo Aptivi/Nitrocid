@@ -153,7 +153,7 @@ namespace Nitrocid.Base.Kernel.Starting
             try
             {
                 // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
-                if (!KernelPlatform.IsOnWindows() && ConsoleTools.UseAltBuffer)
+                if (!KernelPlatform.IsOnWindows() && KernelEntry.UseAltBuffer)
                 {
                     ConsoleMisc.ShowAltBuffer();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
@@ -325,7 +325,7 @@ namespace Nitrocid.Base.Kernel.Starting
 
                 // Show first-time color calibration for first-time run
                 if (KernelEntry.FirstTime)
-                    ConsoleTools.ShowColorRampAndSet();
+                    ColorTools.DetermineTrueColorFromUser();
 
                 // Check for errors
                 if (exceptions.Count > 0)
