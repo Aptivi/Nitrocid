@@ -22,7 +22,6 @@ namespace Nitrocid.Kernel.Extensions
     internal interface IAddon
     {
         internal string AddonName { get; }
-        internal ModLoadPriority AddonType { get; }
         internal void StartAddon();
         internal void FinalizeAddon();
         internal void StopAddon();

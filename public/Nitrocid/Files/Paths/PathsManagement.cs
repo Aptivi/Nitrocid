@@ -61,6 +61,7 @@ namespace Nitrocid.Files.Paths
             { $"{KernelPathType.ExtensionHandlers}",   (() => ExtensionHandlersPath, true) },
             { $"{KernelPathType.NotificationRecents}", (() => NotificationRecentsPath, true) },
             { $"{KernelPathType.WidgetConfiguration}", (() => WidgetConfigurationPath, true) },
+            { $"{KernelPathType.AddonsEssentials}",    (() => AddonsEssentialsPath, false) },
         };
 
         /// <summary>
@@ -129,6 +130,12 @@ namespace Nitrocid.Files.Paths
         /// </summary>
         public static string AddonsPath =>
             FilesystemTools.NeutralizePath(ExecPath + "/Addons");
+
+        /// <summary>
+        /// Path to KS essential addons folder
+        /// </summary>
+        public static string AddonsEssentialsPath =>
+            FilesystemTools.NeutralizePath(ExecPath + "/Addons.Essentials");
 
         /// <summary>
         /// Mods path
