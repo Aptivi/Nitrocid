@@ -20,6 +20,7 @@
 using System;
 using System.Threading;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Editors.HexEdit;
 using Nitrocid.Kernel.Debugging;
@@ -93,9 +94,11 @@ namespace Nitrocid.Shell.Shells.Hex
                 }
                 catch (Exception ex)
                 {
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + " {0}", true, KernelColorType.Error, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName ?? "<null>", ex.Message);
-                    continue;
+                    InputTools.DetectKeypress();
+                    Bail = true;
                 }
             }
 

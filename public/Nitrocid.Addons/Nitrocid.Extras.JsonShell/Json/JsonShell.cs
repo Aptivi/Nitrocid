@@ -18,11 +18,14 @@
 //
 
 using System;
+using System.Threading;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.JsonShell.Tools;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
+using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
 
 namespace Nitrocid.Extras.JsonShell.Json
@@ -73,8 +76,23 @@ namespace Nitrocid.Extras.JsonShell.Json
 
             while (!Bail)
             {
-                // Prompt for the command
-                ShellManager.GetLine();
+                try
+                {
+                    ShellManager.GetLine();
+                }
+                catch (ThreadInterruptedException)
+                {
+                    CancellationHandlers.CancelRequested = false;
+                    Bail = true;
+                }
+                catch (Exception ex)
+                {
+                    TextWriters.Write(Translate.DoTranslation("There was an error in the shell.") + " {0}", true, KernelColorType.Error, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Shell will have to exit: {0}", vars: [ex.Message]);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    InputTools.DetectKeypress();
+                    Bail = true;
+                }
             }
 
             // Close file
