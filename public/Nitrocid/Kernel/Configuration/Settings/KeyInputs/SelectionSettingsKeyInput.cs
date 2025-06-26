@@ -32,6 +32,7 @@ using System.Reflection;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Kernel.Exceptions;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -73,10 +74,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Prompt user and check for input
             string keyName = key.Name;
             string keyDesc = key.Description;
-            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            int Answer = SelectionStyle.PromptSelection(finalSection,
-                InputChoiceTools.GetInputChoices([.. items]),
-                InputChoiceTools.GetInputChoices([.. altItems]));
+            int Answer = InfoBoxSelectionColor.WriteInfoBoxSelection(keyName, InputChoiceTools.GetInputChoices([.. items, .. altItems]), keyDesc);
             bail = true;
             return Answer;
         }
@@ -90,7 +88,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             if (string.IsNullOrEmpty(value))
                 return 0;
             if (int.TryParse(value, out int answer))
-                return answer > 0 && answer <= SelectFrom.Count() ? answer : 0;
+                return answer > 0 && answer < SelectFrom.Count() ? answer : 0;
             return 0;
         }
 
@@ -103,7 +101,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             if (string.IsNullOrEmpty(value))
                 return (int?)KeyDefaultValue;
             if (int.TryParse(value, out int answer))
-                return answer > 0 && answer <= SelectFrom.Count() ? answer : (int?)KeyDefaultValue;
+                return answer > 0 && answer < SelectFrom.Count() ? answer : (int?)KeyDefaultValue;
             return (int?)KeyDefaultValue;
         }
 
@@ -123,8 +121,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 
             // Now, check for input
             int MaxKeyOptions = SelectFrom.Count();
-            int AnswerIndex = AnswerInt - 1;
-            if (AnswerInt == MaxKeyOptions + 1 || AnswerInt == -1) // Go Back...
+            if (AnswerInt == MaxKeyOptions || AnswerInt == -1) // Go Back...
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "User requested exit. Returning...");
                 return;
@@ -133,12 +130,12 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             {
                 if (Selections is IEnumerable<object> selectionsArray)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to item index {1}...", vars: [key.Variable, AnswerInt]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to item number {1}...", vars: [key.Variable, AnswerInt]);
 
                     // Now, set the value
-                    SettingsAppTools.SetPropertyValue(key.Variable, selectionsArray.ToArray()[AnswerIndex], configType);
+                    SettingsAppTools.SetPropertyValue(key.Variable, selectionsArray.ToArray()[AnswerInt], configType);
                 }
-                else if (AnswerInt <= MaxKeyOptions)
+                else if (AnswerInt < MaxKeyOptions)
                 {
                     object? FinalValue;
                     DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", vars: [key.Variable, AnswerInt]);
@@ -152,23 +149,20 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not valid.");
-                    TextWriters.Write(Translate.DoTranslation("The answer may not exceed the entries shown."), true, KernelColorType.Error);
-                    TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The answer may not exceed the entries shown."));
                     Input.ReadKey();
                 }
             }
             else if (AnswerInt == 0 & !SelectionEnumZeroBased)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Zero is not allowed.");
-                TextWriters.Write(Translate.DoTranslation("The answer may not be zero."), true, KernelColorType.Error);
-                TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The answer may not be zero."));
                 Input.ReadKey();
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
-                TextWriters.Write(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
-                TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The answer may not be negative."));
                 Input.ReadKey();
             }
         }

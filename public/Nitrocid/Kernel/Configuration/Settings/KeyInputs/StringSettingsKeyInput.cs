@@ -36,17 +36,15 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         {
             ConsoleWrapper.Clear();
 
-            // Make an introductory banner
+            // Translate the key name and description
             string keyName = key.Name;
             string keyDesc = key.Description;
-            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
             string? AnswerString =
                 key.Masked ?
-                InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(keyName, $"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}") :
-                InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]");
+                InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(keyName, $"{keyDesc}\n\n{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}") :
+                InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{keyDesc}\n\n{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]");
 
             // Neutralize path if required with the assumption that the keytype is not list
             AnswerString = (string?)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);

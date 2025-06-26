@@ -32,16 +32,12 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
     {
         public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
-            ConsoleWrapper.Clear();
-
             // Make an introductory banner
             string keyName = key.Name;
             string keyDesc = key.Description;
-            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriters.Write(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
-            string AnswerString = InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{Translate.DoTranslation("Write a floating-point number in the below prompt. Make sure that this number is of this format")}: 0.0 [{KeyDefaultValue}]");
+            string AnswerString = InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{keyDesc}\n\n{Translate.DoTranslation("Write a floating-point number in the below prompt. Make sure that this number is of this format")}: 0.0 [{KeyDefaultValue}]");
 
             // Neutralize path if required with the assumption that the keytype is not list
             double answer = 0;
@@ -84,8 +80,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
-                TextWriters.Write(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
-                TextWriters.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The answer may not be negative."));
                 Input.ReadKey();
             }
         }

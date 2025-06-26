@@ -35,19 +35,15 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         {
             var PressedKey = default(ConsoleKeyInfo);
             int CurrentValue = Convert.ToInt32(KeyDefaultValue);
-            ConsoleWrapper.CursorVisible = false;
-            ConsoleWrapper.Clear();
 
             // Make an introductory banner
             string keyName = key.Name;
             string keyDesc = key.Description;
-            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
-            TextWriters.Write(finalSection, true, KernelColorType.Question);
             while (PressedKey.Key != ConsoleKey.Enter)
             {
                 // Show the current value
                 double slider = 100d * (CurrentValue / (double)key.MaximumValue);
-                InfoBoxProgressColor.WriteInfoBoxProgress(keyName, slider, Translate.DoTranslation("Current value:") + " {0} / {1} - {2}", CurrentValue, key.MinimumValue, key.MaximumValue);
+                InfoBoxProgressColor.WriteInfoBoxProgress(keyName, slider, $"{keyDesc}\n\n" + Translate.DoTranslation("Current value:") + " {0} / {1} - {2}", CurrentValue, key.MinimumValue, key.MaximumValue);
 
                 // Parse the user input
                 PressedKey = Input.ReadKey();

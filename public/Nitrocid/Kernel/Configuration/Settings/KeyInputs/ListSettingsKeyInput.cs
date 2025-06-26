@@ -35,12 +35,9 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
     {
         public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
-            ConsoleWrapper.Clear();
-
             // Make an introductory banner
             string keyName = key.Name;
             string keyDesc = key.Description;
-            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
 
             // Write the prompt
             var arguments = SettingsAppTools.ParseParameters(key);
@@ -71,13 +68,12 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 ];
 
                 // Wait for an answer and handle it
-                int selectionAnswer = SelectionStyle.PromptSelection(finalSection, [.. choices], [.. altChoices], true);
-                if (selectionAnswer == choices.Count + 1)
+                int selectionAnswer = InfoBoxSelectionColor.WriteInfoBoxSelection(keyName, [.. choices, .. altChoices], keyDesc);
+                if (selectionAnswer == choices.Count || selectionAnswer == -1)
                     promptBail = true;
                 else
                 {
                     // Tell the user to choose between adding, removing, or exiting
-                    int selectedItemIdx = selectionAnswer - 1;
                     int result = InfoBoxButtonsColor.WriteInfoBoxButtons(
                         [
                             new InputChoiceInfo("keep", Translate.DoTranslation("Keep it")),
@@ -94,7 +90,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                         if (result == 2)
                         {
                             // Removing item
-                            TargetList.RemoveAt(selectedItemIdx);
+                            TargetList.RemoveAt(selectionAnswer);
                         }
                         else if (result == 3)
                         {
