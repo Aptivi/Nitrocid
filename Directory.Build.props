@@ -65,6 +65,7 @@
         <NitrocidReleaseSpecifier>REL</NitrocidReleaseSpecifier>
         <NitrocidReleaseSpecifier Condition="'$(Configuration)' == 'Debug'">DEV</NitrocidReleaseSpecifier>
         <DefineConstants>SPECIFIER$(NitrocidReleaseSpecifier);$(NitrocidFlags.Replace(",",";"))</DefineConstants>
+        <NoWarn>$(NoWarn);NU1605</NoWarn>
     </PropertyGroup>
     <!-- KS Platform Information End -->
 

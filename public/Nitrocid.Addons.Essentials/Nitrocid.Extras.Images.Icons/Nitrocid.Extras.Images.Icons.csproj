@@ -8,7 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Terminaux.Images.Icons" Version="7.0.0-beta4-20250626121840" />
+    <PackageReference Include="Terminaux.Images.Icons" Version="7.0.0-20250626125827" />
+    
+    <!--
+        TODO: Remove those once Terminaux 7.0 migration finishes with the official Terminaux 7.0
+        release on August 10th.
+    -->
+    <PackageReference Include="Terminaux.Images" Version="7.0.0-20250626125827" />
+    <PackageReference Include="Terminaux" Version="7.0.0-20250626125827" />
+    
     <PackageReference Update="LocaleStation" Version="1.3.2" />
   </ItemGroup>
 
