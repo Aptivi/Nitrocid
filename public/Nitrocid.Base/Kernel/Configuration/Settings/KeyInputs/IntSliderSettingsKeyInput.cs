@@ -43,7 +43,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
                 Title = keyName,
             }, key.MinimumValue);
 
-            // Neutralize path if required with the assumption that the keytype is not list
+            // Bail and use selected value
             bail = true;
             return CurrentValue;
         }
