@@ -86,7 +86,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             try
             {
                 TextWriters.Write(Translate.DoTranslation("Installing the addons package..."), KernelColorType.Progress);
-                ZipFile.ExtractToDirectory(PathsManagement.AppDataPath + "/addons.zip", PathsManagement.AddonsPath, true);
+                ZipFile.ExtractToDirectory(PathsManagement.AppDataPath + "/addons.zip", PathsManagement.ExecPath, true);
             }
             catch (Exception ex)
             {
