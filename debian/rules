@@ -26,4 +26,4 @@ override_dh_auto_build:
 override_dh_auto_install:
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
 	find $(CURDIR)/debian/tmp/usr -mindepth 1 -type f -exec sh -c 'printf "%s" "$$(realpath --relative-to . "$$0")" ; printf " usr/" ; dirname $$(realpath --relative-to $(CURDIR)/debian/tmp/usr "$$0")' "{}" \; | tee $(CURDIR)/debian/nitrocid-27.install
-	find $(CURDIR)/debian/tmp/usr -type d -name Addons -prune -o -name Addons.Essentials -prune -o -type f -exec sh -c 'printf "%s" "$$(realpath --relative-to . "$$0")" ; printf " usr/" ; dirname $$(realpath --relative-to $(CURDIR)/debian/tmp/usr "$$0")' "{}" \; | tee $(CURDIR)/debian/nitrocid-28-lite.install
+	find $(CURDIR)/debian/tmp/usr -type d -name Addons -prune -o -name Addons.Essentials -prune -o -type f -exec sh -c 'printf "%s" "$$(realpath --relative-to . "$$0")" ; printf " usr/" ; dirname $$(realpath --relative-to $(CURDIR)/debian/tmp/usr "$$0")' "{}" \; | tee $(CURDIR)/debian/nitrocid-27-lite.install
