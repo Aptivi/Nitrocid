@@ -1,4 +1,4 @@
-﻿using Nitrocid.Modifications;
+using Nitrocid.Modifications;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;

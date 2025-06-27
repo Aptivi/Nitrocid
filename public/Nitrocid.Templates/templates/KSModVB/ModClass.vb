@@ -1,4 +1,4 @@
-﻿Imports Nitrocid.Modifications
+Imports Nitrocid.Modifications
 Imports System.Collections.ObjectModel
 Imports System.Reflection
 
