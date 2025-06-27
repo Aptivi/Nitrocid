@@ -86,7 +86,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             try
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_INSTALLING"), ThemeColorType.Progress);
-                ZipFile.ExtractToDirectory(PathsManagement.AppDataPath + "/addons.zip", PathsManagement.AddonsPath, true);
+                ZipFile.ExtractToDirectory(PathsManagement.AppDataPath + "/addons.zip", PathsManagement.ExecPath, true);
             }
             catch (Exception ex)
             {
