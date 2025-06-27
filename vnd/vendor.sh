@@ -112,9 +112,9 @@ packall() {
     echo Packing binary...
     cd "$ROOTDIR/public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$version-bin.zip . && cd -
     checkerror $? "Failed to pack"
-    cd "$ROOTDIR/public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$version-bin-lite.zip . -x "./Addons/*" && cd -
+    cd "$ROOTDIR/public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$version-bin-lite.zip . -x "./Addons/*" -x "./Addons.Essentials/*" && cd -
     checkerror $? "Failed to pack"
-    cd "$ROOTDIR/public/Nitrocid/KSBuild/net8.0/Addons/" && "$zippath" -r /tmp/$version-addons.zip . && cd -
+    cd "$ROOTDIR/public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$version-addons.zip Addons Addons.Essentials && cd -
     checkerror $? "Failed to pack"
     cd "$ROOTDIR/public/Nitrocid/KSAnalyzer/netstandard2.0/" && "$zippath" -r /tmp/$version-analyzers.zip . && cd -
     checkerror $? "Failed to pack"
