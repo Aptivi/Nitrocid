@@ -1,4 +1,4 @@
-﻿using Nitrocid.Kernel.Extensions;
+using Nitrocid.Kernel.Extensions;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
