@@ -15,10 +15,6 @@
       "text": "{0} v{1} đã bắt đầu"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Ngôn ngữ không hợp lệ"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Không được phép phân tích cú pháp mod ở chế độ an toàn."
     },
@@ -143,10 +139,6 @@
       "text": "Gỡ cài đặt không thành công cho"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Thông tin siêu dữ liệu cần thiết để cài đặt ngôn ngữ tùy chỉnh không cung cấp các bản địa hóa cần thiết."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Hiển thị số lệnh mod trên trợ giúp"
     },
@@ -157,10 +149,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Trang hướng dẫn không có tiêu đề"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "Không có thông tin siêu dữ liệu cần thiết để cài đặt ngôn ngữ tùy chỉnh."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -295,10 +283,6 @@
       "text": "Ngoại lệ trình tải không xác định"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Không thể tải bản địa hóa mod"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Không lấy được mục cài đặt."
     },
@@ -361,10 +345,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Lớp này không phải là lớp mod"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Ngôn ngữ"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

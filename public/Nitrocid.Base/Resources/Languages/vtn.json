@@ -7,14 +7,6 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "Nhấn phím bất kỳ để tiếp tục..."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "Mẫu màu không hợp lệ {0}"
-    },
-    {
       "loc": "NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE",
       "text": "Nhập mật khẩu quản trị viên để bảo trì."
     },
@@ -83,10 +75,6 @@
       "text": "Mật khẩu sai."
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PARSEERROR",
-      "text": "Lỗi khi cố gắng phân tích các chỗ giữ chỗ. {0}"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_ADDERROR",
       "text": "Có lỗi khi cố gắng thêm tên người dùng."
     },
@@ -127,28 +115,8 @@
       "text": "Không tìm thấy trình bảo vệ màn hình {0} trong cơ sở dữ liệu. Kiểm tra tên và thử lại."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NODEFINITION",
-      "text": "Không có định nghĩa cho lệnh {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_DEFINEDBY",
-      "text": "Lệnh được xác định bởi"
-    },
-    {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1",
       "text": "Không tìm thấy thư mục {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASCOMMANDSAMENAME",
-      "text": "Biệt danh không thể giống với tên của lệnh."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_COMMANDNOTFOUND",
-      "text": "Không tìm thấy lệnh để đặt bí danh cho {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_REMOVE",
-      "text": "Không tìm thấy biệt danh {0} để xóa."
     },
     {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2",
@@ -195,10 +163,6 @@
       "text": "Cấu hình đã được tải lại. Bạn có thể cần khởi động lại kernel để một số thay đổi có hiệu lực."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_COLORINVALID",
-      "text": "Một hoặc nhiều màu không hợp lệ."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND",
       "text": "Không tìm thấy trình bảo vệ màn hình {0}."
     },
@@ -213,10 +177,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
       "text": "Thay đổi mật khẩu cho người dùng hiện tại"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC",
-      "text": "Xóa màn hình"
     },
     {
       "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
@@ -279,14 +239,6 @@
       "text": "Thông báo shell: Lệnh được yêu cầu {0} không được phép chạy ở chế độ bảo trì."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMANDNOTFOUND",
-      "text": "Thông báo Shell: Không tìm thấy lệnh được yêu cầu {0}. Xem 'trợ giúp' để biết các lệnh khả dụng."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ERROREXECUTE2",
-      "text": "Có lỗi khi thực hiện lệnh."
-    },
-    {
       "loc": "NKS_KERNEL_TIME_TIMEZONES_LISTENTRY",
       "text": "- Thời gian của {0}: {1}"
     },
@@ -297,10 +249,6 @@
     {
       "loc": "NKS_FILES_UNAUTHORIZED",
       "text": "Bạn không được phép lấy thông tin cho {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_OBSOLETECMD",
-      "text": "Lệnh này đã lỗi thời và sẽ bị xóa trong bản phát hành trong tương lai."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN",
@@ -349,10 +297,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTED",
       "text": "Gỡ lỗi khi lắng nghe tất cả các địa chỉ bằng cổng {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_ALIASALREADYEXISTS",
-      "text": "Biệt danh đã tìm thấy: {0}"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_CDBGLOG_SUCCESS",
@@ -447,10 +391,6 @@
       "text": "Thực hiện lệnh từ xa tới máy tính từ xa"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "Kiểu {0} không hợp lệ."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ENTRYSIZE",
       "text": "Kích thước: {0}"
     },
@@ -489,26 +429,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILED",
       "text": "Gỡ lỗi từ xa không khởi động được: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CANTEXECUTE",
-      "text": "Lỗi khi cố gắng thực thi tập lệnh: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC",
-      "text": "Viết văn bản vào bảng điều khiển"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC",
-      "text": "Đưa ra lựa chọn cho người dùng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHOICE_HELPER",
-      "text": "trong đó <câu trả lời> là các câu trả lời một chữ cái của câu hỏi được phân tách bằng dấu gạch chéo"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC",
-      "text": "Cho phép người dùng nhập dữ liệu đầu vào"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_DESC",
@@ -687,10 +607,6 @@
       "text": "Thêm người dùng"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC",
-      "text": "Thêm bí danh vào lệnh"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC",
       "text": "Thay đổi tên máy chủ"
     },
@@ -713,10 +629,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC",
       "text": "Xóa người dùng khỏi danh sách"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_REMOVALSUCCESS",
-      "text": "Đã xóa bí danh {0} thành công."
     },
     {
       "loc": "NKS_KERNEL_UPDATES_CHECKFAILED",
@@ -1007,10 +919,6 @@
       "text": "Mở một shell thử nghiệm"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDSTARTFAILED",
-      "text": "Không thể khởi động \"{0}\": {1}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC",
       "text": "Xóa tệp văn bản"
     },
@@ -1095,14 +1003,6 @@
       "text": "Mục nhập đã tồn tại."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
-      "text": "Bao bọc đầu ra của giao diện điều khiển"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAPUNWRAPPABLE",
-      "text": "Lệnh này không thể gói được. Các lệnh sau có thể gói được:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
       "text": "Trích xuất một tệp ZIP"
     },
@@ -1131,10 +1031,6 @@
       "text": "{0} đã ping bạn."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC",
-      "text": "Đặt một biến thành một giá trị trong một tập lệnh"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME",
       "text": "Hiển thị biểu ngữ SSH"
     },
@@ -1155,32 +1051,12 @@
       "text": "Lệnh chung:"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_MODLISTING",
-      "text": "Lệnh mod:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ALIASLISTING",
-      "text": "Lệnh bí danh:"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
       "text": "Chế độ bảo trì"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME",
       "text": "Tra cứu thư mục"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOMODLISTING",
-      "text": "Không có lệnh mod."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOALIASLISTING",
-      "text": "Không có lệnh bí danh."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "Không tìm thấy lệnh wrappable."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC",
@@ -1411,14 +1287,6 @@
       "text": "Trình bảo vệ màn hình gặp lỗi khi hiển thị: {0}. Nhấn phím bất kỳ để thoát."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_THEMESHOWCASE",
-      "text": "Chủ đề của bạn sẽ trông như thế này:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "Các lệnh có thể gói gọn:"
-    },
-    {
       "loc": "NKS_FILES_LISTFOLDEREMPTY",
       "text": "Thư mục trống."
     },
@@ -1433,10 +1301,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME",
       "text": "Biểu ngữ khởi động tùy chỉnh"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO",
-      "text": "Câu trả lời có thể không phải là số không."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION",
@@ -1457,10 +1321,6 @@
     {
       "loc": "NKS_ARGUMENTS_HELP_LISTING",
       "text": "Các đối số hạt nhân có sẵn:"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNRECOVERABLEERROR",
-      "text": "Lỗi không thể phục hồi trong lập luận:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA512_DESC",
@@ -1903,16 +1763,8 @@
       "text": "Giống như chế độ an toàn, nhưng cũng vô hiệu hóa chế độ nhiều người dùng và một số tùy chỉnh"
     },
     {
-      "loc": "NKS_ARGUMENTS_NOTENOUGHARGS",
-      "text": "Không có đủ lý lẽ."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
       "text": "Màu sắc không cần phải khởi động lại, nhưng hầu hết các cài đặt đều yêu cầu phải khởi động lại."
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELP",
-      "text": "Không có trợ giúp cho đối số \"{0}\"."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -1951,10 +1803,6 @@
       "text": "Không tìm thấy tệp {0}"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC",
-      "text": "Tạo một mảng biến với các giá trị được cung cấp"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC",
       "text": "Kiểm tra tất cả các số dòng văn bản bản địa hóa để xem chúng có bằng nhau không"
     },
@@ -1985,10 +1833,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC",
       "text": "Sắp xếp danh sách hệ thống tập tin một cách chuyên nghiệp."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC",
-      "text": "Cung cấp một lựa chọn lựa chọn"
     },
     {
       "loc": "NKS_SHELL_BASE_HELP_NOLISTING",
@@ -2075,10 +1919,6 @@
       "text": "Bạn đã cập nhật rồi!"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_SWITCHLISTING",
-      "text": "Lệnh này có các công tắc bên dưới để thay đổi cách thức hoạt động:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC",
       "text": "Hiển thị chi tiết tệp trong danh sách"
     },
@@ -2119,76 +1959,8 @@
       "text": "Cho phép gỡ lỗi cho hệ thống sự kiện hạt nhân"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGFAILED",
-      "text": "Không cài đặt được ngôn ngữ tùy chỉnh {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_METADATAHASNOLOCS",
-      "text": "Thông tin siêu dữ liệu cần thiết để cài đặt ngôn ngữ tùy chỉnh không cung cấp các bản địa hóa cần thiết."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED1",
-      "text": "Không thể gỡ cài đặt ngôn ngữ tùy chỉnh {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT",
-      "text": "Độ dài của ngôn ngữ tiếng Anh không khớp với độ dài của mã thông báo ngôn ngữ được cung cấp."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOOVERWRITE",
-      "text": "Ngôn ngữ này đã tồn tại và không thể bị ghi đè."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED2",
-      "text": "Không thể gỡ cài đặt ngôn ngữ tùy chỉnh. Rất có thể ngôn ngữ này không tồn tại."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGSFAILED",
-      "text": "Không cài đặt được ngôn ngữ tùy chỉnh."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED1",
-      "text": "Không thể gỡ cài đặt ngôn ngữ tùy chỉnh."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED2",
-      "text": "Không thể gỡ cài đặt ngôn ngữ tùy chỉnh. Xem ngoại lệ bên trong để biết thêm thông tin."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE",
       "text": "Thông tin giấy phép"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC",
-      "text": "Quản lý ngôn ngữ của bạn"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_LANGNOTFOUND",
-      "text": "Không tìm thấy ngôn ngữ hoặc tệp có ký tự không hợp lệ."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_NOLANG",
-      "text": "Ngôn ngữ không được chỉ định."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SAFEMODE",
-      "text": "Quản lý ngôn ngữ bị vô hiệu hóa ở chế độ an toàn."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SHORTNAME",
-      "text": "Tên viết tắt của ngôn ngữ:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_FULLNAME",
-      "text": "Tên đầy đủ của ngôn ngữ:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_TRANSLITERABLE",
-      "text": "Ngôn ngữ có thể chuyển ngữ:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_CUSTOM",
-      "text": "Ngôn ngữ tùy chỉnh:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME",
@@ -2247,40 +2019,12 @@
       "text": "Hiển thị số lượng bí danh trên trợ giúp"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC",
-      "text": "Thực hiện lệnh sau khi các biểu thức UESH được thỏa mãn"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "Không tìm thấy điều kiện trong biểu thức."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "Điều kiện {0} yêu cầu {1} đối số. Đã nhận được {2}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "Lỗi khi phân tích biểu thức do lỗi cú pháp."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE",
-      "text": "Không đáp ứng được điều kiện. Xem thêm thông tin tại đây:"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME",
       "text": "Ký tự mặt nạ mật khẩu"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC",
       "text": "Một ký tự che giấu mật khẩu. Để trống để bảo mật hơn."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC",
-      "text": "Thoát khỏi shell nếu đang chạy trên subshell"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_KILLINGMOTHERSHELL",
-      "text": "Không thể giết được vỏ mẹ!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL",
@@ -2305,10 +2049,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
       "text": "Bật chế độ gỡ lỗi"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE",
-      "text": "Giá trị hiện tại:"
     },
     {
       "loc": "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC",
@@ -2431,10 +2171,6 @@
       "text": "Bật hoặc tắt tính năng tự động lưu của trình soạn thảo hex."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "Tập lệnh bị lỗi. Kiểm tra tập lệnh và giải quyết bất kỳ lỗi nào: {0}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC",
       "text": "Sử dụng đường dẫn tương đối thay vì đường dẫn tuyệt đối"
     },
@@ -2445,10 +2181,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC",
       "text": "Lịch sử nhập liệu có được bật hay không. Nếu được bật, bạn có thể truy cập các lệnh đã nhập gần đây bằng phím mũi tên lên hoặc xuống."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "Bây giờ bạn có thể tắt máy tính một cách an toàn."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME",
@@ -2467,14 +2199,6 @@
       "text": "Hãy đảm bảo sử dụng phông chữ console hỗ trợ ký tự PowerLine, nếu không đầu ra có thể không hiển thị đúng. Chúng tôi khuyên bạn nên"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC",
-      "text": "Mở thư viện cài đặt sẵn của shell"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_EXCEPTION_PRESETNOTFOUND",
-      "text": "Không tìm thấy cài đặt trước được chỉ định {0}."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_ALREADYBLOCKED",
       "text": "Thiết bị đã tồn tại trong danh sách chặn."
     },
@@ -2485,10 +2209,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC",
       "text": "Kiểm tra điểm nhập lắp ráp thực hiện"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_SELECT",
-      "text": "Chọn cài đặt trước cho {0}:"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
@@ -2513,22 +2233,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
       "text": "Ẩn màn hình khởi động trước khi cấu hình được tải"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNKNOWNARGUMENT",
-      "text": "Đối số chưa biết"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING",
-      "text": "Bạn phải chạy ConEmu hoặc dấu nhắc lệnh Windows 10 có bật xử lý VT."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO",
-      "text": "Thiết bị đầu cuối của bạn là {0} trên {1}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION",
-      "text": "Những đoạn đường dốc này có phù hợp với bạn không? Chúng phải chuyển tiếp một cách trơn tru."
     },
     {
       "loc": "NKS_DRIVERS_EXCEPTION_NOFALLBACKS",
@@ -2635,22 +2339,6 @@
       "text": "Dù sao thì bạn cũng có thể nhấn phím bất kỳ để khởi động shell, nhưng lưu ý rằng bạn có thể phải tạo người dùng mới theo cách thủ công."
     },
     {
-      "loc": "NKS_KERNEL_ENVERROR",
-      "text": "Lỗi môi trường hạt nhân:"
-    },
-    {
-      "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Nitrocid KS đã phát hiện ra sự cố và đã dừng hoạt động."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_INSTALL",
-      "text": "Không có thông tin siêu dữ liệu cần thiết để cài đặt ngôn ngữ tùy chỉnh."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_UNINSTALL",
-      "text": "Không tồn tại thông tin siêu dữ liệu cần thiết để gỡ cài đặt ngôn ngữ tùy chỉnh."
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "Đang cố gắng sửa đổi tài khoản hiện tại khi nó bị khóa"
     },
@@ -2697,26 +2385,6 @@
     {
       "loc": "NKS_ARGUMENTS_RESET_WIPEMISCFAILED",
       "text": "Không thể xóa các tập tin hỗn tạp"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELPDESC",
-      "text": "Không có mô tả trợ giúp tranh luận"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "Máy chơi game của bạn phải hỗ trợ màu sắc trung thực để sử dụng chủ đề này."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXITPREVIEW_DESC",
-      "text": "Thoát khỏi bản xem trước"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "Chủ đề {0} kỷ niệm một sự kiện, nhưng bạn có thể đến quá sớm hoặc quá muộn để tham dự. Mỗi năm, chủ đề này có thể truy cập từ {1}/{2} đến {3}/{4}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "Chủ đề {0} cần hỗ trợ màu sắc thực nhưng máy chơi game của bạn không hỗ trợ."
     },
     {
       "loc": "NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT",
@@ -3087,10 +2755,6 @@
       "text": "Đã xảy ra lỗi shell HTTP chung."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLEDETECTED",
-      "text": "Đã phát hiện bảng điều khiển Insane. Nitrocid KS không thể tiếp tục chạy vì bảng điều khiển của bạn không tương thích với yêu cầu của chúng tôi."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHALGORITHM",
       "text": "Thuật toán băm không hợp lệ. Nếu bạn đang sử dụng trình điều khiển tổng băm tùy chỉnh, hãy kiểm tra để đảm bảo trình điều khiển đã được tải."
     },
@@ -3183,10 +2847,6 @@
       "text": "Không có shell nào được cài đặt sẵn theo tên này."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",
-      "text": "Không có chủ đề nào có tên này."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NULLUSERS",
       "text": "Không có người dùng nào trong toàn bộ kernel. Chúng tôi đã đạt đến một tình huống cực kỳ hiếm gặp. Kernel không thể tiếp tục."
     },
@@ -3231,14 +2891,6 @@
       "text": "Đã xảy ra lỗi shell SFTP chung."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONPARSE",
-      "text": "Phân tích điều kiện không thành công. Vui lòng kiểm tra cú pháp của bạn để đáp ứng thiết kế mong đợi của toán tử."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHSCRIPT",
-      "text": "Đã xảy ra lỗi khi cố gắng phân tích cú pháp tệp tập lệnh UESH. Kiểm tra tệp tập lệnh của bạn để tìm lỗi và sửa lỗi."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_USERCREATION",
       "text": "Đã xảy ra lỗi khi tạo người dùng."
     },
@@ -3249,10 +2901,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK",
       "text": "Đã xảy ra lỗi mạng chung. Nếu bạn đang cố gắng kết nối đến một điểm cuối từ xa, hãy đảm bảo rằng bạn đã kết nối với Internet hoặc mạng cục bộ của mình."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UNSUPPORTEDCONSOLE",
-      "text": "Đã phát hiện một bảng điều khiển không được hỗ trợ."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE",
@@ -3323,20 +2971,12 @@
       "text": "Đã xảy ra lỗi trình quản lý danh bạ khi cố gắng thực hiện thao tác được yêu cầu. Đảm bảo rằng tệp danh bạ nằm trong đúng thư mục và đó là tệp danh bạ vCard 2.1, 3.0 hoặc 4.0 hợp lệ."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
-      "text": "Hệ thống điều kiện UESH bị lỗi khi thực hiện thao tác được yêu cầu. Xem thông báo lỗi bên dưới để biết thêm chi tiết."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR",
       "text": "Một thao tác soạn thảo SQL không hợp lệ đang được thực hiện."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP",
       "text": "Nhóm không tồn tại. Kiểm tra để đảm bảo rằng bạn đã viết đúng tên nhóm."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INTERACTIVETUI",
-      "text": "Đã xảy ra lỗi trong quá trình triển khai Interactive TUI."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS",
@@ -3385,10 +3025,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_REFLECTION",
       "text": "Đã xảy ra lỗi trong hệ thống phản ánh."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_THEMEMANAGEMENT",
-      "text": "Đã xảy ra lỗi khi thực hiện thao tác quản lý chủ đề."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_EVENTMANAGEMENT",
@@ -3759,10 +3395,6 @@
       "text": "Bắt đầu sử dụng Nitrocid..."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_CUSTOMLANGS",
-      "text": "Đang tải ngôn ngữ tùy chỉnh..."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_IMPORTANTADDONS",
       "text": "Đang tải các tiện ích bổ sung quan trọng cho kernel..."
     },
@@ -3793,10 +3425,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_GENERALVARSRESET",
       "text": "Biến chung thiết lập lại"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_HISTORIESSAVED",
-      "text": "Đã lưu lịch sử lệnh shell."
     },
     {
       "loc": "NKS_KERNEL_STARTING_CONFIGSAVED",
@@ -4411,32 +4039,12 @@
       "text": "Chương trình này được cấp phép theo Giấy phép Công cộng GNU 3.0 hoặc phiên bản mới hơn."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "Bạn đang chạy phiên bản phát triển của hạt nhân. Mặc dù bạn có thể trải nghiệm các tính năng sắp ra mắt có thể có trong bản phát hành cuối cùng, bạn có thể gặp phải lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định, nếu có thể."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "Bạn đang chạy phiên bản ứng viên phát hành của hạt nhân. Mặc dù bạn có thể trải nghiệm những bước hoàn thiện cuối cùng, bạn có thể gặp phải lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định nếu có thể."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "Chúng tôi khuyên bạn không nên chạy phiên bản kernel này vì nó không được hỗ trợ. Nếu bạn đã tải xuống kernel này từ các nguồn không xác định, thông báo này có thể xuất hiện. Vui lòng tải xuống từ trang tải xuống chính thức của chúng tôi."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP",
-      "text": "Để đóng vĩnh viễn, hãy nhấn ENTER vào nút \"Đã xác nhận\" tại đây bằng cách tô sáng nút đó bằng mũi tên trái trên bàn phím hoặc bật \"Thông báo phát triển đã xác nhận\" trong cài đặt hạt nhân."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_OK",
       "text": "ĐƯỢC RỒI"
     },
     {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_ACKED",
       "text": "Đã xác nhận"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISS_TITLE",
-      "text": "Thông báo phát triển"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
@@ -4763,228 +4371,12 @@
       "text": "Để có thể nhận được tin tức mới nhất, bạn phải cài đặt tiện ích bổ sung RSS Shell Extras. Bạn có thể sử dụng lệnh 'getaddons' để nhận tất cả các tiện ích bổ sung!"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_QUERY",
-      "text": "Không tìm thấy biệt danh {0} để truy vấn."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Đặt giá trị của đầu ra cho biến UESH đã chọn"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_LISTING",
-      "text": "Không cung cấp các đối số bắt buộc cho tất cả các cách sử dụng dưới đây:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGS",
-      "text": "Không cung cấp các đối số bắt buộc."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHES",
-      "text": "Không cung cấp công tắc bắt buộc."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHVALUE",
-      "text": "Một trong các công tắc yêu cầu giá trị không được cung cấp."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_UNKNOWNSWITCH",
-      "text": "Các công tắc được liệt kê dưới đây không phải là công tắc chưa biết."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_CONFLICTSWITCH",
-      "text": "Các công tắc được liệt kê bên dưới sẽ xung đột với nhau."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNOVALUE",
-      "text": "Các công tắc bên dưới không chấp nhận giá trị."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGNUMVALUE",
-      "text": "Một hoặc nhiều đối số mong đợi một giá trị số, nhưng bạn đã cung cấp một số không hợp lệ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGEXACTWORD",
-      "text": "Một hoặc nhiều đối số yêu cầu một từ ngữ chính xác, nhưng bạn đã cung cấp một từ không hợp lệ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNUMVALUE",
-      "text": "Một hoặc nhiều công tắc mong muốn giá trị số, nhưng bạn đã cung cấp số không hợp lệ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ABORTED",
-      "text": "Lệnh đã bị hủy bỏ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "Bạn không được thực hiện trực tiếp lệnh này ở chế độ được gói."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "Đã xảy ra lỗi khi cố gắng gói lệnh đầu ra"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_COMMANDABORTED",
-      "text": "Lệnh bị hủy vì lý do sau:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDPATTERNINVALID",
-      "text": "Cung cấp mẫu lệnh không hợp lệ."
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Không tìm thấy lệnh."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND",
-      "text": "Kiểu shell {0} không tồn tại."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED",
-      "text": "Bạn phải cung cấp cơ sở chỉ huy."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED",
-      "text": "Bạn phải cung cấp lệnh."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS",
-      "text": "Lệnh được chỉ định đã được thêm vào! Có thể bạn có các bản mod xung đột."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_UNDEFINED",
-      "text": "Lệnh không được xác định"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_CUSTOM",
-      "text": "Một số lệnh tùy chỉnh không thể tải được."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_CUSTOM",
-      "text": "Không tìm thấy lệnh tùy chỉnh được chỉ định."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_CUSTOM",
-      "text": "Một số lệnh tùy chỉnh không thể được dỡ bỏ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS_CUSTOM",
-      "text": "Lệnh được chỉ định đã được thêm vào! Có thể bạn có các tiện ích bổ sung xung đột."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_ADDON",
-      "text": "Một số lệnh bổ sung không thể tải được."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_ADDON",
-      "text": "Không tìm thấy lệnh bổ trợ được chỉ định."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_ADDON",
-      "text": "Một số lệnh bổ sung không thể được dỡ bỏ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NEEDSSLASH",
-      "text": "Shell này sử dụng lệnh gạch chéo để thực thi lệnh. Vui lòng thêm ký hiệu gạch chéo '/' vào đầu lệnh để bắt đầu. Ví dụ:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDLISTING",
-      "text": "Các lệnh có sẵn:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ADDONLISTING",
-      "text": "Lệnh bổ sung hạt nhân:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOADDONLISTING",
-      "text": "Không có lệnh bổ sung kernel."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_UNIFIEDLISTING",
-      "text": "Các lệnh thống nhất:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOUNIFIEDLISTING",
-      "text": "Các lệnh thống nhất chưa được triển khai!!!"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_COMMAND",
-      "text": "Yêu cầu:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "Bạn không thể khai báo khối mới trước khi đặt các biểu thức hỗ trợ việc tạo, như điều kiện hoặc vòng lặp. Số ngăn xếp là {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "Khi bắt đầu một khối mới, hãy đảm bảo rằng bạn đã thụt lề ngăn xếp đúng cách. Số ngăn xếp là {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Tập lệnh bị lỗi. Kiểm tra tập lệnh và giải quyết bất kỳ lỗi nào."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "Nhắc nhở về lệnh slash"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
-      "text": "Thực hiện một tiến trình bên ngoài"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC",
-      "text": "Thực hiện quy trình mà không làm gián đoạn luồng shell. Một cửa sổ riêng sẽ được tạo."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
-      "text": "Tìm các lệnh có sẵn trong loại shell hiện tại"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC",
-      "text": "Hiển thị lệnh mod"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC",
-      "text": "Hiển thị các lệnh có bí danh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC",
-      "text": "Hiển thị các lệnh thống nhất"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC",
-      "text": "Hiển thị lệnh bổ sung kernel"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC",
-      "text": "Hiển thị tất cả các lệnh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC",
-      "text": "Sử dụng trợ giúp đơn giản hóa"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC",
-      "text": "Tải lịch sử shell"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
-      "text": "Lặp lại hành động cuối cùng hoặc lệnh đã chỉ định"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC",
-      "text": "Lưu lịch sử shell"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
       "text": "Hiển thị một đầu hạt nhân ngẫu nhiên"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTSTARTWITHOUTMOTHERSHELL",
-      "text": "Shell không thể khởi động nếu shell mẹ chưa khởi động."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTINITSHELL",
-      "text": "Không khởi tạo được shell"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -5159,26 +4551,6 @@
       "text": "Thay đổi ngôn ngữ người dùng thay vì ngôn ngữ hệ thống"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC",
-      "text": "Kiểu lựa chọn một dòng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC",
-      "text": "Kiểu lựa chọn hai dòng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC",
-      "text": "Phong cách lựa chọn hiện đại"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "Đầu ra chỉ có thể là một ký tự"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "Đầu ra có thể dài hơn một ký tự"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
       "text": "Kết hợp hai hoặc nhiều tệp văn bản vào bảng điều khiển."
     },
@@ -5201,18 +4573,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC",
       "text": "Buộc chuyển đổi kết thúc dòng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
-      "text": "Chỉ hiển thị ngày"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
-      "text": "Chỉ hiển thị thời gian"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
-      "text": "Sử dụng UTC thay vì địa phương"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC",
@@ -5245,10 +4605,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN",
       "text": "Quản lý trình điều khiển của bạn"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "In văn bản nguyên trạng mà không cần phân tích cú pháp giữ chỗ"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
@@ -5295,10 +4651,6 @@
       "text": "Tìm một tệp trong thư mục được chỉ định hoặc trong thư mục hiện tại bằng cách sử dụng biểu thức chính quy"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC",
-      "text": "Phân nhánh shell UESH để tạo một phiên bản khác"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC",
       "text": "Chỉ định đường dẫn đầu ra"
     },
@@ -5341,10 +4693,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC",
       "text": "Trình quản lý tập tin lưu trữ hệ thống tương tác"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC",
-      "text": "Cho phép người dùng nhập dữ liệu đầu vào dưới dạng mật khẩu"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
@@ -5495,10 +4843,6 @@
       "text": "Mở một TUI tương tác trong đó bạn có thể xem đồng hồ thế giới theo thời gian thực"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
-      "text": "Ngủ trong một số mili giây được chỉ định"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
       "text": "Chạy lệnh với tư cách là người dùng root"
     },
@@ -5549,14 +4893,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC",
       "text": "Ngay lập tức thiết lập chủ đề khi lựa chọn"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC",
-      "text": "Xóa một biến khỏi danh sách biến UESH"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "Chỉ xóa giá trị biến mà không xóa nó"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
@@ -5625,10 +4961,6 @@
     {
       "loc": "NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD",
       "text": "Tin nhắn trong ngày không được để trống."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER",
-      "text": "Nhấn bất kỳ chữ cái nào trên bàn phím để cài đặt thành ký tự đó."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM",
@@ -5975,50 +5307,6 @@
       "text": "Kiểm tra công tắc"
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL",
-      "text": "Trình giữ chỗ không được để trống"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERACTIONNULL",
-      "text": "Hành động giữ chỗ không được để trống"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED",
-      "text": "Chỗ giữ chỗ chưa được đăng ký"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT",
-      "text": "Trình giữ chỗ phải đáp ứng định dạng này"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "Điều kiện cần phải được đặt ở phần cuối."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "Không thể đăng ký một tình trạng đã tồn tại."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "Không thể đăng ký điều kiện trống."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "Không thể hủy đăng ký một điều kiện không tồn tại."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_FINDCMDS_NOTFOUND",
-      "text": "Không tìm thấy lệnh nào."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "Số lần không hợp lệ."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "Không thể lặp lại chính mình."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
       "text": "Số phiên không hợp lệ."
     },
@@ -6149,10 +5437,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS",
       "text": "Đang thêm người dùng {0} vào nhóm {1}..."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_SUCCESS",
-      "text": "Bây giờ bạn có thể chạy '{0}' dưới dạng '{1}'!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED",
@@ -6443,10 +5727,6 @@
       "text": "Không tìm thấy {0} cho {1}."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
-      "text": "Bạn phải truyền lệnh -set vào biến mà bạn muốn đặt giá trị này."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING",
       "text": "nơi người tiết kiệm sẽ ở"
     },
@@ -6607,14 +5887,6 @@
       "text": "Không có mô tả lệnh gỡ lỗi từ xa"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "Kiểu dữ liệu {0} được chỉ định là không hợp lệ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "Nền tảng {0} được chỉ định là không hợp lệ."
-    },
-    {
       "loc": "NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT",
       "text": "Không thể phát âm thanh vì hết thời gian."
     },
@@ -6677,22 +5949,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC",
       "text": "Nếu bạn chắc chắn rằng bảng điều khiển hỗ trợ màu thực hoặc nếu bạn muốn thay đổi thiết bị đầu cuối của mình thành thiết bị đầu cuối hỗ trợ màu thực, hãy thay đổi giá trị này."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
-      "text": "Đặt mã trang"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
-      "text": "Thiết lập bảng mã ngôn ngữ khi chuyển đổi ngôn ngữ."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME",
-      "text": "Thông báo phát triển đã được xác nhận"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC",
-      "text": "Nếu đặt thành true, kernel sẽ không hiển thị thông báo phát triển mỗi khi bạn khởi động kernel trong các phiên bản phát triển."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME",
@@ -7531,10 +6787,6 @@
       "text": "Kiểm tra nhật ký gỡ lỗi để biết thêm thông tin về lỗi."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC",
-      "text": "Để thoát vĩnh viễn, hãy nhấn ENTER trên bàn phím hoặc bật \"Thông báo phát triển đã được xác nhận\" trong cài đặt hạt nhân. Bất kỳ phím nào khác sẽ tiếp tục mà không cần xác nhận."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
       "text": "Bạn đang chạy Nitrocid KS trên một môi trường bất thường. Vui lòng xác minh rằng bạn đã khởi động kernel trực tiếp. Nếu bạn chắc chắn rằng mình đã khởi động kernel theo cách thông thường, có thể là do bạn đang chạy phiên bản Nitrocid KS không được hỗ trợ."
     },
@@ -7589,18 +6841,6 @@
     {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "Ngày và giờ báo thức không được nằm trong quá khứ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_TIP",
-      "text": "Tham khảo mục trợ giúp cho lệnh này để biết thêm thông tin"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGLISTING",
-      "text": "Lệnh này có các đối số bên dưới để thay đổi cách thức hoạt động:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGNODESC",
-      "text": "Mô tả đối số không xác định"
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC",
@@ -7959,18 +7199,6 @@
       "text": "Sắp xếp danh sách theo chữ cái nếu được bật hoặc theo chữ cái nếu bị tắt."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "Không thể điền chủ đề mặc định"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "Không có siêu dữ liệu chủ đề nào được xác định."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "Không thể hủy tuần tự hóa siêu dữ liệu."
-    },
-    {
       "loc": "NKS_DRIVERS_ENCODING_BASE_EXCEPTION_NEEDSINIT",
       "text": "Mã hóa này cần được khởi tạo."
     },
@@ -8247,34 +7475,6 @@
       "text": "Không thể tạo lại chủ đề"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED",
-      "text": "Không tải được tài nguyên ngôn ngữ cho"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LOCALIZED",
-      "text": "Không thể lấy được văn bản bản địa hóa"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS",
-      "text": "Không thể có bản địa hóa tiếng Anh"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOC",
-      "text": "Không thể lấy được văn bản tiếng Anh"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN",
-      "text": "Mã thông báo ngôn ngữ phải được chỉ định"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA",
-      "text": "Không thể lấy siêu dữ liệu ngôn ngữ"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATAARRAY",
-      "text": "Không thể lấy được mảng siêu dữ liệu ngôn ngữ"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",
       "text": "Siêu dữ liệu MIME (mở rộng)"
     },
@@ -8387,30 +7587,6 @@
       "text": "Bản quyền (C) 2018-2025 Aptivi - Bảo lưu mọi quyền"
     },
     {
-      "loc": "NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO",
-      "text": "Không thể lấy thông tin đối số cho lệnh hoặc đối số"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_COMMANDEXECUTION",
-      "text": "Các tham số của luồng không được chỉ định."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "Không thể lấy tham số luồng để thực thi quy trình."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_INTERNALFIELDENVVARS",
-      "text": "Không thể lấy được trường bên trong cho các biến môi trường"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_NOEXECUTOR",
-      "text": "Không thể lấy được shell executor cho"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC",
-      "text": "Hiển thị các lệnh chung (mặc định)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC",
       "text": "Thay đổi tên đầy đủ của người dùng (tên hiển thị)"
     },
@@ -8473,18 +7649,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC",
       "text": "Khoảng thời gian chờ tối thiểu để khởi chạy trình bảo vệ màn hình. Đơn vị có định dạng khoảng thời gian (HH:MM:SS)."
-    },
-    {
-      "loc": "NKS_THEMES_DEFAULT_DESC",
-      "text": "Chủ đề mặc định cho hạt nhân"
-    },
-    {
-      "loc": "NKS_THEMES_DYNAMIC_DESC",
-      "text": "Giọng điệu ở khắp mọi nơi!"
-    },
-    {
-      "loc": "NKS_THEMES_NITRICACID_DESC",
-      "text": "Chất lỏng không màu, bốc khói và có tính ăn mòn cao"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
@@ -8579,10 +7743,6 @@
       "text": "Phiên bản Nitrocid KS này không còn được hỗ trợ."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES",
-      "text": "Không tải được ngôn ngữ tùy chỉnh"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
       "text": "Không tải được các tiện ích bổ sung quan trọng của kernel"
     },
@@ -8615,10 +7775,6 @@
       "text": "Không tải được trình xử lý hủy"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES",
-      "text": "Không tải được bí danh"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL",
       "text": "Không tải được mục quay số nhanh"
     },
@@ -8639,10 +7795,6 @@
       "text": "Không tải được MOTD và MAL"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES",
-      "text": "Không tải được lịch sử lệnh shell"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS",
       "text": "Không tải được trình xử lý mở rộng"
     },
@@ -8661,10 +7813,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_RESET_VARS",
       "text": "Không thể thiết lập lại các biến chung"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES",
-      "text": "Không lưu được lịch sử lệnh shell"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_CONSENTS",
@@ -8765,58 +7913,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR",
       "text": "Kết nối mạng có thể chưa được thiết lập đúng cách do lỗi."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "Không thể đệm lệnh không được thiết lập là có thể gói lại."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDSWITCHNODESC",
-      "text": "Mô tả công tắc không xác định"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC",
-      "text": "Đường dẫn đến một quá trình"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "Các đối số để truyền cho một quá trình"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "Lệnh hiển thị mục trợ giúp"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
-      "text": "Chuyển lệnh đầu ra sang lệnh khác dưới dạng tham số"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "Lệnh nguồn để chuyển đầu ra của nó đến lệnh đích như tham số cuối cùng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Lệnh mục tiêu để thực thi khi xây dựng đối số dựa trên đầu ra của lệnh nguồn"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC",
-      "text": "Có nên truyền đầu ra của lệnh nguồn dưới dạng một đối số được trích dẫn hay không được trích dẫn"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "Lệnh để gói đầu ra của nó"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "Không thực hiện được lệnh nguồn."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "Thực hiện lệnh mục tiêu không thành công. Nội dung có thể chưa được điền đúng. Lệnh đã được thực hiện"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_FAILED",
-      "text": "Đường ống bị vỡ."
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC",
@@ -9007,18 +8103,6 @@
       "text": "Một biểu thức chính quy để khớp với các cụm từ cần được thay thế"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDCOUNTRY",
-      "text": "Quốc gia không hợp lệ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_CHOOSELANGFORCOUNTRY",
-      "text": "Chọn ngôn ngữ cho quốc gia"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDLANG",
-      "text": "Lựa chọn ngôn ngữ không hợp lệ cho"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_YES",
       "text": "Đúng"
     },
@@ -9065,26 +8149,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC",
       "text": "Liệt kê các cảnh báo"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "Thêm một bí danh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "Loại shell để lấy lệnh từ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "Tên bí danh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "Lệnh được sử dụng như một phím tắt"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC",
-      "text": "Xóa một bí danh"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC",
@@ -9147,28 +8211,8 @@
       "text": "ID ngôn ngữ"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC",
-      "text": "Thay đổi ngôn ngữ bằng cách sử dụng quốc gia (bạn có thể được nhắc chọn ngôn ngữ)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC",
       "text": "Tin nhắn mới để sử dụng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Trả lời để chia tách bằng dấu gạch chéo"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Câu hỏi in ra màn hình"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Tiêu đề câu trả lời đầu tiên"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Tiêu đề câu trả lời thứ hai, v.v..."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
@@ -9271,10 +8315,6 @@
       "text": "Liệt kê các loại trình điều khiển"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "Chuỗi để in"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC",
       "text": "Tệp để mã hóa"
     },
@@ -9311,32 +8351,12 @@
       "text": "Loại phần cứng"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Biểu thức UESH để kiểm tra"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC",
-      "text": "Lệnh thực hiện khi đánh giá thành công"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC",
       "text": "Đường dẫn đến thư mục cho khung bên trái"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "Đường dẫn đến thư mục cho khung bên phải"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC",
-      "text": "Tải lại, tải hoặc dỡ bỏ một ngôn ngữ tùy chỉnh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC",
-      "text": "Tên ngôn ngữ tùy chỉnh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC",
-      "text": "Liệt kê hoặc tải lại tất cả các ngôn ngữ tùy chỉnh"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
@@ -9455,10 +8475,6 @@
       "text": "Mở cài đặt màn hình bổ sung"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC",
-      "text": "Giá trị để thiết lập"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC",
       "text": "Tên biến cấu hình"
     },
@@ -9467,24 +8483,8 @@
       "text": "Tên người thực hiện"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "Giá trị đầu tiên"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "Giá trị thứ hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "Giá trị thứ ba, v.v..."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC",
       "text": "Tên múi giờ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC",
-      "text": "Khoảng thời gian ngủ"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC",
@@ -9521,10 +8521,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC",
       "text": "Địa chỉ IP để bỏ chặn"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "Tên biến"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC",
@@ -9931,10 +8927,6 @@
       "text": "Không thể chọn cấu hình"
     },
     {
-      "loc": "NKS_KNOWNADDONS_PACKS_LANGUAGES",
-      "text": "Gói ngôn ngữ bổ sung"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_PACKS_SCREENSAVERS",
       "text": "Gói bảo vệ màn hình bổ sung"
     },
@@ -10103,22 +9095,6 @@
       "text": "Phần bổ sung - AI của Chatbot"
     },
     {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED1",
-      "text": "Không tải được siêu dữ liệu ngôn ngữ"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE1",
-      "text": "Không thể hủy tuần tự hóa siêu dữ liệu ngôn ngữ"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED2",
-      "text": "Không tải được siêu dữ liệu ngôn ngữ cho"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
-      "text": "Không thể hủy tuần tự hóa siêu dữ liệu ngôn ngữ cho"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
       "text": "Không thể hủy tuần tự hóa cấu hình cơ sở {0}"
     },
@@ -10129,14 +9105,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_DESC",
       "text": "Phần này liệt kê các thiết lập trình điều khiển."
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
-      "text": "Trình điều khiển bảng điều khiển hiện tại"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
-      "text": "Bạn muốn sử dụng trình điều khiển bảng điều khiển nào?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",

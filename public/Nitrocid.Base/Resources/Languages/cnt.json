@@ -10,14 +10,6 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "Àn rènyì jiàn jìxù…"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "Wúxiào de yánsè múbǎn {0}"
-    },
-    {
       "loc": "NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE",
       "text": "Shūrù guǎnlǐ yuán mìmǎ jìnxíng wéihù."
     },
@@ -86,10 +78,6 @@
       "text": "Mìmǎ cuòwù."
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PARSEERROR",
-      "text": "Chángshì jiěxī zhàn wèi fú shí chūcuò. {0}"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_ADDERROR",
       "text": "Chángshì tiānjiā yònghù míng shí chūcuò."
     },
@@ -130,28 +118,8 @@
       "text": "Zài shùjùkù zhōng zhǎo bù dào píngmù bǎohù chéngxù {0}. Jiǎnchá míngchēng bìng chóng shì."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NODEFINITION",
-      "text": "mìnglìng {0} méiyǒu dìngyì."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_DEFINEDBY",
-      "text": "Dìngyì de mìnglìng"
-    },
-    {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1",
       "text": "Wèi zhǎodào mùlù {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASCOMMANDSAMENAME",
-      "text": "Biémíng bùnéng yǔ mìnglìng tóngmíng."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_COMMANDNOTFOUND",
-      "text": "Zhǎo bù dào biémíng wèi {0} de mìnglìng."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_REMOVE",
-      "text": "Wèi fāxiàn yào shānchú biémíng {0}."
     },
     {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2",
@@ -198,10 +166,6 @@
       "text": "Pèizhì chóngxīn jiāzài. Nín kěnéng xūyào chóngxīn qǐdòng nèihé yǐ shǐ mǒu xiē gēnggǎi shēngxiào."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_COLORINVALID",
-      "text": "Yīzhǒng huò duōzhǒng yánsè wúxiào."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND",
       "text": "Wèi zhǎodào píngmù bǎohù chéngxù {0}."
     },
@@ -216,10 +180,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
       "text": "gēnggǎi dāngqián yònghù de mìmǎ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC",
-      "text": "qīngchú píngmù"
     },
     {
       "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
@@ -282,14 +242,6 @@
       "text": "Shell xiāoxī: Qǐngqiú de mìnglìng {0} bù yǔnxǔ zài wéihù móshì xià yùnxíng."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMANDNOTFOUND",
-      "text": "Shell xiāoxī: Wèi zhǎodào qǐngqiú de mìnglìng {0}. Yǒuguān kěyòng mìnglìng, qǐng cānyuè “bāngzhù”."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ERROREXECUTE2",
-      "text": "Chángshì zhíxíng mìnglìng shí chūcuò."
-    },
-    {
       "loc": "NKS_KERNEL_TIME_TIMEZONES_LISTENTRY",
       "text": "- {0} De shíjiān:{1}"
     },
@@ -300,10 +252,6 @@
     {
       "loc": "NKS_FILES_UNAUTHORIZED",
       "text": "nín wú quán huòqǔ {0} de xìnxī."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_OBSOLETECMD",
-      "text": "Cǐ mìnglìng yǐ guòshí, jiàng zài wèilái bǎnběn zhōng shānchú."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN",
@@ -352,10 +300,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTED",
       "text": "Shǐyòng duānkǒu {0} tiáoshì zhēn tīng suǒyǒu dìzhǐ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_ALIASALREADYEXISTS",
-      "text": "yǐ zhǎodào biémíng:{0}"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_CDBGLOG_SUCCESS",
@@ -450,10 +394,6 @@
       "text": "yuǎnchéng zhíxíng mìnglìng dào yuǎnchéng PC"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "Wúxiào de lèixíng {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ENTRYSIZE",
       "text": "Chǐcùn:{0}"
     },
@@ -492,26 +432,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILED",
       "text": "Yuǎnchéng tiáoshì qǐdòng shībài:{0}"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CANTEXECUTE",
-      "text": "chángshì zhíxíng jiǎoběn shí chūcuò:{0}"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC",
-      "text": "Jiāng wénběn xiě rù kòngzhì tái"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC",
-      "text": "zuò chū yònghù xuǎnzé"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHOICE_HELPER",
-      "text": "Qízhōng <answers> shì wèntí de dān zìmǔ dá'àn, yǐ xiéxiàn fēngé"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC",
-      "text": "Yǔnxǔ yònghù shūrù"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_DESC",
@@ -690,10 +610,6 @@
       "text": "Tiānjiā yònghù"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC",
-      "text": "wéi mìnglìng tiānjiā biémíng"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC",
       "text": "gēnggǎi zhǔjī míng"
     },
@@ -716,10 +632,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC",
       "text": "cóng lièbiǎo zhōng shānchú yònghù"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_REMOVALSUCCESS",
-      "text": "chénggōng shānchú biémíng {0}."
     },
     {
       "loc": "NKS_KERNEL_UPDATES_CHECKFAILED",
@@ -1010,10 +922,6 @@
       "text": "dǎkāi yīgè cèshì wàiké"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDSTARTFAILED",
-      "text": "Wèi néng qǐdòng “{0}”:{1}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC",
       "text": "Qīngchú wénběn wénjiàn"
     },
@@ -1098,14 +1006,6 @@
       "text": "Tiáomù yǐ cúnzài."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
-      "text": "Bāozhuāng kòngzhì tái shūchū"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAPUNWRAPPABLE",
-      "text": "gāi mìnglìng bùkě bāozhuāng. Zhèxiē mìnglìng shì kě bāozhuāng de:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
       "text": "Tíqǔ ZIP cúndàng"
     },
@@ -1134,10 +1034,6 @@
       "text": "{0} Gěi nǐ fāle ping."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC",
-      "text": "Jiāng biàn liáng shèzhì wèi jiǎoběn zhōng de zhí"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME",
       "text": "Xiǎnshì SSH héngfú"
     },
@@ -1158,32 +1054,12 @@
       "text": "Yībān mìnglìng:"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_MODLISTING",
-      "text": "Mó zǔ zhǐlìng:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ALIASLISTING",
-      "text": "Biémíng mìnglìng:"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
       "text": "Wéihù móshì"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME",
       "text": "cházhǎo mùlù"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOMODLISTING",
-      "text": "Méiyǒu mod mìnglìng."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOALIASLISTING",
-      "text": "Méiyǒu biémíng mìnglìng."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "Zhǎo bù dào kě bāozhuāng mìnglìng."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC",
@@ -1414,14 +1290,6 @@
       "text": "píngmù bǎohù chéngxù zài xiǎnshì:{0} Shí yù dào cuòwù. Àn rènhé yīgè jiàn tuìchū."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_THEMESHOWCASE",
-      "text": "Yǐxià shì nín de zhǔtí de wàiguān:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "Kě bāozhuāng mìnglìng:"
-    },
-    {
       "loc": "NKS_FILES_LISTFOLDEREMPTY",
       "text": "wénjiàn jiā wèi kōng."
     },
@@ -1436,10 +1304,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME",
       "text": "Zì dìngyì qǐdòng héngfú"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO",
-      "text": "dá'àn kěnéng bùshì líng."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION",
@@ -1460,10 +1324,6 @@
     {
       "loc": "NKS_ARGUMENTS_HELP_LISTING",
       "text": "Kěyòng de nèihé cānshù:"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNRECOVERABLEERROR",
-      "text": "Cānshù zhōng de bùkě huīfù cuòwù:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA512_DESC",
@@ -1906,16 +1766,8 @@
       "text": "xǐhuān ānquán móshì, dàn yě jìnyòng duō yònghù hé yīxiē zì dìngyì"
     },
     {
-      "loc": "NKS_ARGUMENTS_NOTENOUGHARGS",
-      "text": "méiyǒu zúgòu dì lùnjù."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
       "text": "yánsè bù xūyào chóngxīn qǐdòng, dàn dà duōshù shèzhì dōu xūyào chóngxīn qǐdòng."
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELP",
-      "text": "Cānshù “{0}” méiyǒu bāngzhù."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -1954,10 +1806,6 @@
       "text": "Wèi zhǎodào wénjiàn {0}"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC",
-      "text": "shǐyòng tígōng de zhí chuàngjiàn yīgè biànliàng shùzǔ"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC",
       "text": "Jiǎnchá suǒyǒu běndì huà wénběn háng hào yǐ chákàn tāmen shìfǒu dōu xiāngděng"
     },
@@ -1988,10 +1836,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC",
       "text": "zhuānyè dì duì wénjiàn xìtǒng lièbiǎo jìn háng páixù."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC",
-      "text": "Tígōng xuǎnzé xuǎnxiàng"
     },
     {
       "loc": "NKS_SHELL_BASE_HELP_NOLISTING",
@@ -2078,10 +1922,6 @@
       "text": "Nǐ shì zuìxīn de!"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_SWITCHLISTING",
-      "text": "Cǐ mìnglìng jùyǒu yǐxià kāiguān, kě gēnggǎi qí gōngzuò fāngshì:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC",
       "text": "zài lièbiǎo zhōng xiǎnshì wénjiàn xiángxì xìnxī"
     },
@@ -2122,76 +1962,8 @@
       "text": "qǐyòng nèihé shìjiàn xìtǒng de tiáoshì"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGFAILED",
-      "text": "wèi néng ānzhuāng zì dìngyì yǔyán {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_METADATAHASNOLOCS",
-      "text": "Ānzhuāng zì dìngyì yǔyán suǒ xū de yuán shùjù xìnxī bù tígōng suǒ xū de bìyào běndì huà."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED1",
-      "text": "Wèi néng xièzài zì dìngyì yǔyán {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT",
-      "text": "Yīngyǔ yǔyán de chángdù yǔ tígōng de yǔyán biāojì de chángdù bù pǐpèi."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOOVERWRITE",
-      "text": "Gāi yǔyán yǐ cúnzài qiě wúfǎ fùgài."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED2",
-      "text": "Wúfǎ xièzài zì dìngyì yǔyán. Tā hěn kěnéng bù cúnzài."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGSFAILED",
-      "text": "Wúfǎ ānzhuāng zì dìngyì yǔyán."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED1",
-      "text": "Wúfǎ xièzài zì dìngyì yǔyán."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED2",
-      "text": "Wúfǎ xièzài zì dìngyì yǔyán. Yǒuguān gèng duō xìnxī, qǐng cānyuè nèibù yìcháng."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE",
       "text": "Xǔkě zhèng xìnxī"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC",
-      "text": "guǎnlǐ nín de yǔyán"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_LANGNOTFOUND",
-      "text": "zhǎo bù dào yǔyán huò wénjiàn bāohán wúxiào zìfú."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_NOLANG",
-      "text": "Wèi zhǐdìng yǔyán."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SAFEMODE",
-      "text": "Zài ānquán móshì xià jìnyòng yǔyán guǎnlǐ."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SHORTNAME",
-      "text": "Yǔyán jiǎnchēng:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_FULLNAME",
-      "text": "Yǔyán quánchēng:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_TRANSLITERABLE",
-      "text": "Yǔyán kě yì:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_CUSTOM",
-      "text": "Zì dìngyì yǔyán:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME",
@@ -2250,40 +2022,12 @@
       "text": "xiǎnshì biémíng yīkào bāngzhù"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC",
-      "text": "Yīdàn mǎnzú UESH biǎodá shì, jiù zhíxíng mìnglìng"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "zài biǎodá shì zhōng zhǎo bù dào tiáojiàn."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "Tiáojiàn {0} xūyào {1} gè cānshù. Dédào {2}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "Yóuyú yǔfǎ cuòwù, jiěxī biǎodá shì shí chūcuò."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE",
-      "text": "Wèi néng mǎnzú tiáojiàn. Gèng duō xìnxī zài zhèlǐ:"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME",
       "text": "Mìmǎ yǎn mǎ zìfú"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC",
       "text": "yǎngài mìmǎ de zìfú. Liú kōng yǐ huòdé gèng gāo de ānquán xìng."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC",
-      "text": "Rúguǒ zài zi shell shàng yùnxíng, zé tuìchū shell"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_KILLINGMOTHERSHELL",
-      "text": "bùnéng shā mǔ ké!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL",
@@ -2308,10 +2052,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
       "text": "Qǐyòng tiáoshì móshì"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE",
-      "text": "Dāngqián zhí:"
     },
     {
       "loc": "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC",
@@ -2434,10 +2174,6 @@
       "text": "dǎkāi huò guānbì shíliù jìn zhì biānjí qì zìdòng bǎocún gōngnéng."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "jiǎoběn géshì bù zhèngquè. Jiǎnchá jiǎoběn bìng jiějué suǒyǒu cuòwù:{0}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC",
       "text": "Shǐyòng xiāngduì lùjìng ér bùshì juéduì lùjìng"
     },
@@ -2448,10 +2184,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC",
       "text": "shūrù lìshǐ jìlù shìfǒu qǐyòng. Rúguǒ qǐyòng, nín kěyǐ shǐyòng xiàngshàng huò xiàng xià jiàntóu jiàn fǎngwèn zuìjìn jiànrù de mìnglìng."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "Xiànzài kěyǐ ānquán de guānbì jìsuànjīle."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME",
@@ -2470,14 +2202,6 @@
       "text": "qǐng wùbì shǐyòng zhīchí PowerLine zìxíng de kòngzhì tái zìtǐ, fǒuzé shūchū kěnéng wúfǎ zhèngquè chéngxiàn. Wǒmen tuījiàn"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC",
-      "text": "dǎkāi wàiké yù shè kù"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_EXCEPTION_PRESETNOTFOUND",
-      "text": "wèi zhǎodào zhǐdìng de yù shè {0}."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_ALREADYBLOCKED",
       "text": "shèbèi yǐ cúnzài yú zǔzhǐ lièbiǎo zhōng."
     },
@@ -2488,10 +2212,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC",
       "text": "Cèshì chéngxù jí rùkǒu diǎn zhíxíng"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_SELECT",
-      "text": "wèi {0} xuǎnzé yù shè:"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
@@ -2516,22 +2236,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
       "text": "zài jiā zài pèi zhì zhī qián yǐn cáng yù yǐn dǎo qǐ dòng huà miàn"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNKNOWNARGUMENT",
-      "text": "wèi zhī de lùn diǎn"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING",
-      "text": "nín bì xū yùn xíng ConEmu huò Windows 10 mìng líng tí shì fú bìng qǐ yòng VT chǔ lǐ 。"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO",
-      "text": "nín de zhōng duān wèi yú {1} de {0}。"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION",
-      "text": "zhè xiē pō dào shì hé nín má ？ tā mén yīng gāi shùn lì guò dù 。"
     },
     {
       "loc": "NKS_DRIVERS_EXCEPTION_NOFALLBACKS",
@@ -2638,22 +2342,6 @@
       "text": "wú lùn rú hé ， àn rèn yì jiàn qǐ dòng shell， dàn qǐng zhù yì ， nín kě néng bì xū shǒu dòng chuàng jiàn xīn yòng hù 。"
     },
     {
-      "loc": "NKS_KERNEL_ENVERROR",
-      "text": "nèi hé huán jìng cuò wù ："
-    },
-    {
-      "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Nitrocid KS yǐ jiǎn cè dào wèn tí bìng yǐ guān bì 。"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_INSTALL",
-      "text": "ān zhuāng zì dìng yì yǔ yán suǒ xū de yuán shù jù xìn xī bù cún zài 。"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_UNINSTALL",
-      "text": "xiè zài zì dìng yì yǔ yán suǒ xū de yuán shù jù xìn xī bù cún zài 。"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "cháng shì zài suǒ dìng shí xiū gǎi xiàn yǒu zhàng hù"
     },
@@ -2700,26 +2388,6 @@
     {
       "loc": "NKS_ARGUMENTS_RESET_WIPEMISCFAILED",
       "text": "wú fǎ cā chú zá xiàng wén jiàn"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELPDESC",
-      "text": "wú cān shù bāng zhù shuō míng"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "nín de kòng zhì tái bì xū zhī chí zhēn cǎi sè cái néng shǐ yòng cǐ zhǔ tí 。"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXITPREVIEW_DESC",
-      "text": "tuì chū yù lǎn"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "zhǔ tí “{0}” qìng zhù yī xiàng huó dòng ， dàn nín yào me tài zǎo ， yào me tài wǎn ， wú fǎ cān jiā 。 měi nián ， cǐ zhǔ tí de fǎng wèn shí jiān wéi {1}/{2} zhì {3}/{4}。"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "zhǔ tí {0} xū yào zhēn cǎi sè zhī chí ， dàn nín de kòng zhì tái bù zhī chí 。"
     },
     {
       "loc": "NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT",
@@ -3090,10 +2758,6 @@
       "text": "fā shēng yī bān HTTP shell cuò wù 。"
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLEDETECTED",
-      "text": "yǐ jiǎn cè dào fēng kuáng kòng zhì tái 。Nitrocid KS wú fǎ jì xù yùn xíng ， yīn wéi nín de kòng zhì tái yǔ wǒ mén de yào qiú bù jiān róng 。"
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHALGORITHM",
       "text": "hā xī suàn fǎ wú xiào 。 rú guǒ nín shǐ yòng zì dìng yì hā xī hé qū dòng chéng xù ， qǐng jiǎn chá yǐ què bǎo qū dòng chéng xù yǐ jiā zài 。"
     },
@@ -3186,10 +2850,6 @@
       "text": "méi yǒu yǐ cǐ míng chēng yù shè de shell。"
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",
-      "text": "méi yǒu cǐ míng chēng de zhǔ tí 。"
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NULLUSERS",
       "text": "zhěng gè nèi hé zhōng de yòng hù shù wéi líng 。 wǒ mén yǐ jīng yù dào liǎo jí qí hǎn jiàn de qíng kuàng 。 nèi hé wú fǎ jì xù 。"
     },
@@ -3234,14 +2894,6 @@
       "text": "fā shēng yī bān SFTP shell cuò wù 。"
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONPARSE",
-      "text": "tiáo jiàn jiě xī shī bài 。 qǐng jiǎn chá nín de yǔ fǎ shì fǒu fú hé cāo zuò yuán de yù qī shè jì 。"
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHSCRIPT",
-      "text": "cháng shì jiě xī UESH jiǎo běn wén jiàn shí fā shēng cuò wù 。 jiǎn chá jiǎo běn wén jiàn shì fǒu yǒu cuò wù bìng gēng zhèng tā mén 。"
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_USERCREATION",
       "text": "fā shēng yòng hù chuàng jiàn cuò wù 。"
     },
@@ -3252,10 +2904,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK",
       "text": "fā shēng yī bān wǎng luò cuò wù 。 rú guǒ nín cháng shì lián jiē dào yuǎn chéng duān ， qǐng què bǎo nín yǐ lián jiē dào Internet huò běn dì wǎng luò 。"
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UNSUPPORTEDCONSOLE",
-      "text": "jiǎn cè dào bù zhī chí de kòng zhì tái 。"
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE",
@@ -3326,20 +2974,12 @@
       "text": "cháng shì zhí xíng qǐng qiú de cāo zuò shí fā shēng lián xì rén guǎn lǐ qì cuò wù 。 què bǎo lián xì rén wén jiàn cún zài yú zhèng què de wén jiàn jiā zhōng ， bìng qiě shì yǒu xiào de vCard 2.1、3.0 huò 4.0 lián xì rén wén jiàn 。"
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
-      "text": "UESH tiáo jiàn xì tǒng zài zhí xíng qǐng qiú de cāo zuò shí shī bài 。 yǒu guān gēng duō xiáng xì xìn xī ， qǐng cān yuè xià miàn de cuò wù xiāo xī 。"
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR",
       "text": "zhèng zài zhí xíng wú xiào de SQL biān jí qì cāo zuò 。"
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP",
       "text": "qún zǔ bù cún zài 。 jiǎn chá bìng què bǎo nín suǒ xiě de zǔ míng chēng zhèng què 。"
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INTERACTIVETUI",
-      "text": "jiāo hù shì TUI shí shī zhōng fā shēng cuò wù 。"
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS",
@@ -3388,10 +3028,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_REFLECTION",
       "text": "fǎn shè xì tǒng chū xiàn cuò wù 。"
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_THEMEMANAGEMENT",
-      "text": "cháng shì zhí xíng zhǔ tí guǎn lǐ cāo zuò shí chū cuò 。"
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_EVENTMANAGEMENT",
@@ -3762,10 +3398,6 @@
       "text": "kāi shǐ xiāo huà ..."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_CUSTOMLANGS",
-      "text": "zhèng zài jiā zài zì dìng yì yǔ yán ..."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_IMPORTANTADDONS",
       "text": "zhèng zài jiā zài zhòng yào de nèi hé chā jiàn ..."
     },
@@ -3796,10 +3428,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_GENERALVARSRESET",
       "text": "yī bān biàn liáng zhòng zhì"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_HISTORIESSAVED",
-      "text": "bǎo cún de shell mìng líng lì shǐ jì lù 。"
     },
     {
       "loc": "NKS_KERNEL_STARTING_CONFIGSAVED",
@@ -4414,32 +4042,12 @@
       "text": "gāi chéng xù gēn jù GNU tōng yòng gōng gòng xǔ kě zhèng 3.0 huò gēng gāo bǎn běn huò dé xǔ kě 。"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "nín zhèng zài yùn xíng nèi hé de kāi fā bǎn běn 。 suī rán nín kě yǐ tǐ yàn zuì zhōng bǎn běn zhōng kě néng cún zài de jí jiāng tuī chū de gōng néng ， dàn nín kě néng huì yù dào cuò wù 、 bù wěn dìng shèn zhì shù jù diū shī 。 rú guǒ kě néng de huà ， wǒ mén jiàn yì shǐ yòng wěn dìng bǎn běn 。"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "nín zhèng zài yùn xíng nèi hé de hòu xuǎn bǎn běn 。 suī rán nín kě yǐ tǐ yàn zuì hòu de rùn sè ， dàn nín kě néng huì yù dào cuò wù 、 bù wěn dìng ， shèn zhì shù jù diū shī 。 rú guǒ kě néng de huà ， wǒ mén jiàn yì shǐ yòng wěn dìng bǎn běn 。"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "wǒ mén jiàn yì bù yào yùn xíng cǐ bǎn běn de nèi hé ， yīn wéi tā bù shòu zhī chí 。 rú guǒ nín cóng wèi zhī lái yuán xià zài liǎo cǐ nèi hé ， zé kě néng huì chū xiàn cǐ xiāo xī 。 qǐng cóng wǒ mén de guān fāng xià zài yè miàn xià zài 。"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP",
-      "text": "yào yǒng jiǔ guān bì ， qǐng shǐ yòng jiàn pán shàng de xiàng zuǒ jiàn tóu tū chū xiǎn shì cǐ chǔ de “ yǐ què rèn ” àn niǔ ， huò zài nèi hé shè zhì zhōng qǐ yòng “ yǐ què rèn kāi fā tōng zhī ”。"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_OK",
       "text": "hǎo de"
     },
     {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_ACKED",
       "text": "yǐ què rèn"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISS_TITLE",
-      "text": "kāi fā tōng zhī"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
@@ -4766,228 +4374,12 @@
       "text": "wéi liǎo néng gòu huò qǔ zuì xīn xīn wén ， nín bì xū ān zhuāng RSS Shell Extras chā jiàn 。 nín kě yǐ shǐ yòng “getaddons” mìng líng lái huò qǔ suǒ yǒu chā jiàn ！"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_QUERY",
-      "text": "wèi fā xiàn yào chá xún de bié míng {0}。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "jiāng shū chū zhí shè zhì wéi xuǎn dìng de UESH biàn liáng"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_LISTING",
-      "text": "wèi wéi yǐ xià suǒ yǒu yòng fǎ tí gōng bì xū de cān shù ："
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGS",
-      "text": "wèi tí gōng bì xū de cān shù 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHES",
-      "text": "wèi tí gōng suǒ xū de kāi guān 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHVALUE",
-      "text": "qí zhōng yī gè kāi guān xū yào yī gè wèi tí gōng de zhí 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_UNKNOWNSWITCH",
-      "text": "xià miàn liè chū de kāi guān wèi zhī 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_CONFLICTSWITCH",
-      "text": "xià miàn liè chū de kāi guān xiāng hù chōng tū 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNOVALUE",
-      "text": "yǐ xià kāi guān bù jiē shòu zhí 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGNUMVALUE",
-      "text": "yī gè huò duō gè cān shù xū yào yī gè shù zhí ， dàn nín tí gōng de shù zì wú xiào 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGEXACTWORD",
-      "text": "yī gè huò duō gè cān shù xū yào zhǔn què de cuò cí ， dàn nín tí gōng liǎo wú xiào de dān cí 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNUMVALUE",
-      "text": "yī gè huò duō gè kāi guān xū yào yī gè shù zhí ， dàn nín tí gōng de shù zì wú xiào 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ABORTED",
-      "text": "mìng líng yǐ zhōng zhǐ 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "nín bù dé zài bāo zhuāng mó shì xià zhí jiē zhí xíng cǐ mìng líng 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "cháng shì bāo zhuāng mìng líng shū chū shí fā shēng cuò wù"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_COMMANDABORTED",
-      "text": "mìng líng yóu yú yǐ xià yuán yīn ér zhōng zhǐ ："
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDPATTERNINVALID",
-      "text": "tí gōng de mìng líng mó shì wú xiào 。"
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "zhǎo bù dào mìng líng 。"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND",
-      "text": "wài ké lèi xíng {0} bù cún zài 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED",
-      "text": "nín bì xū tí gōng mìng líng kù 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED",
-      "text": "nín bì xū tí gōng gāi mìng líng 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS",
-      "text": "zhǐ dìng de mìng líng yǐ tiān jiā ！ nín de mó zǔ kě néng cún zài chōng tū 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_UNDEFINED",
-      "text": "mìng líng wèi dìng yì"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_CUSTOM",
-      "text": "mǒu xiē zì dìng yì mìng líng wú fǎ jiā zài 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_CUSTOM",
-      "text": "wèi zhǎo dào zhǐ dìng de zì dìng yì mìng líng 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_CUSTOM",
-      "text": "mǒu xiē zì dìng yì mìng líng wú fǎ xiè zài 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS_CUSTOM",
-      "text": "zhǐ dìng de mìng líng yǐ tiān jiā ！ nín de chā jiàn kě néng yǒu chōng tū 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_ADDON",
-      "text": "mǒu xiē chā jiàn mìng líng wú fǎ jiā zài 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_ADDON",
-      "text": "zhǎo bù dào zhǐ dìng de chā jiàn mìng líng 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_ADDON",
-      "text": "mǒu xiē chā jiàn mìng líng wú fǎ xiè zài 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NEEDSSLASH",
-      "text": "gāi shell shǐ yòng xié gàng mìng líng lái zhí xíng mìng líng 。 qǐng jiāng xié gàng fú hào “/” fù jiā dào mìng líng de kāi tóu yǐ kāi shǐ shǐ yòng 。 lì rú ："
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDLISTING",
-      "text": "kě yòng mìng líng ："
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ADDONLISTING",
-      "text": "nèi hé chā jiàn mìng líng ："
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOADDONLISTING",
-      "text": "méi yǒu nèi hé chā jiàn mìng líng 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_UNIFIEDLISTING",
-      "text": "tǒng yī mìng líng ："
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOUNIFIEDLISTING",
-      "text": "tǒng yī mìng líng wèi shí shī ！"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_COMMAND",
-      "text": "mìng líng ："
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "zài fàng zhì zhī chí chuàng jiàn de biǎo dá shì （ lì rú tiáo jiàn huò xún huán ） zhī qián ， nín wú fǎ shēng míng xīn kuài 。 duī zhàn biān hào wéi {0}。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "kāi shǐ xīn kuài shí ， qǐng què bǎo duī zhàn suō jìn zhèng què 。 duī zhàn biān hào wéi {0}。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "jiǎo běn gé shì cuò wù 。 jiǎn chá jiǎo běn bìng jiě jué suǒ yǒu cuò wù 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "xié gàng mìng líng de tí xǐng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
-      "text": "zhí xíng wài bù jìn chéng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC",
-      "text": "zhí xíng jìn chéng ér bù zhōng duàn shell xiàn chéng 。 jiāng chuàng jiàn yī gè dān dú de chuāng kǒu 。"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
-      "text": "chá zhǎo dāng qián shell lèi xíng zhōng kě yòng de mìng líng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC",
-      "text": "xiǎn shì mod mìng líng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC",
-      "text": "xiǎn shì bié míng mìng líng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC",
-      "text": "xiǎn shì tǒng yī mìng líng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC",
-      "text": "xiǎn shì nèi hé chā jiàn mìng líng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC",
-      "text": "xiǎn shì suǒ yǒu mìng líng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC",
-      "text": "shǐ yòng jiǎn huà de bāng zhù"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC",
-      "text": "jiā zài shell lì shǐ jì lù"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
-      "text": "zhòng fù shàng yī gè cāo zuò huò zhǐ dìng de mìng líng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC",
-      "text": "bǎo cún shell lì shǐ jì lù"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
       "text": "xiǎn shì suí jī nèi hé tí shì"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTSTARTWITHOUTMOTHERSHELL",
-      "text": "chú fēi mǔ shell yǐ qǐ dòng ， fǒu zé shell wú fǎ qǐ dòng 。"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTINITSHELL",
-      "text": "cháng shì chū shǐ huà shell shī bài"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -5162,26 +4554,6 @@
       "text": "gēng gǎi yòng hù yǔ yán ér bù shì xì tǒng yǔ yán"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC",
-      "text": "yī xíng xuǎn zé yàng shì"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC",
-      "text": "liǎng xíng xuǎn zé yàng shì"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC",
-      "text": "xiàn dài xuǎn zé fēng gé"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "shū chū zhī néng shì yī gè zì fú"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "shū chū kě yǐ chāo guò yī gè zì fú"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
       "text": "jiāng liǎng gè huò gēng duō wén běn wén jiàn hé bìng dào kòng zhì tái zhōng 。"
     },
@@ -5204,18 +4576,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC",
       "text": "qiáng zhì xíng jié shù zhuǎn huàn"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
-      "text": "jǐn xiǎn shì rì qī"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
-      "text": "jǐn xiǎn shì shí jiān"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
-      "text": "shǐ yòng UTC ér bù shì běn dì"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC",
@@ -5248,10 +4608,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN",
       "text": "guǎn lǐ nín de sī jī"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "àn yuán yàng dǎ yìn wén běn ， bù jìn xíng zhān wèi fú jiě xī"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
@@ -5298,10 +4654,6 @@
       "text": "shǐ yòng zhèng zé biǎo dá shì chá zhǎo zhǐ dìng mù lù huò dāng qián mù lù zhōng de wén jiàn"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC",
-      "text": "fēn chā UESH shell yǐ chuàng jiàn lìng yī gè shí lì"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC",
       "text": "zhǐ dìng shū chū lù jìng"
     },
@@ -5344,10 +4696,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC",
       "text": "jiāo hù shì xì tǒng zhǔ jī wén jiàn guǎn lǐ qì"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC",
-      "text": "yǔn xǔ yòng hù shū rù mì mǎ"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
@@ -5498,10 +4846,6 @@
       "text": "dǎ kāi jiāo hù shì TUI， nín kě yǐ zài qí zhōng shí shí chá kàn shì jiè shí zhōng"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
-      "text": "xiū mián zhǐ dìng háo miǎo"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
       "text": "yǐ root yòng hù shēn fèn yùn xíng mìng líng"
     },
@@ -5552,14 +4896,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC",
       "text": "lì jí shè zhì xuǎn zé de zhǔ tí"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC",
-      "text": "cóng UESH biàn liáng liè biǎo zhōng shān chú biàn liáng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "zhī shì cā chú biàn liáng zhí ér bù shān chú tā"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
@@ -5628,10 +4964,6 @@
     {
       "loc": "NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD",
       "text": "dāng tiān de xiāo xī kě néng bù wéi kōng 。"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER",
-      "text": "àn jiàn pán shàng de rèn yì zì mǔ jí kě jiāng qí shè zhì wéi gāi zì fú 。"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM",
@@ -5978,50 +5310,6 @@
       "text": "cè shì kāi guān"
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL",
-      "text": "zhān wèi fú bù néng wéi kōng"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERACTIONNULL",
-      "text": "zhān wèi fú cāo zuò bù néng wéi kōng"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED",
-      "text": "zhān wèi fú wèi zhù cè"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT",
-      "text": "zhān wèi fú bì xū mǎn zú cǐ gé shì"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "tiáo jiàn xū yào fàng zài zuì hòu 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "wú fǎ zhù cè yǐ cún zài de tiáo jiàn 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "wú fǎ zhù cè kōng tiáo jiàn 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "wú fǎ qǔ xiāo zhù cè bù cún zài de tiáo jiàn 。"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_FINDCMDS_NOTFOUND",
-      "text": "méi yǒu zhǎo dào mìng líng 。"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "cì shù wú xiào 。"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "wú fǎ zhòng fù zì jǐ 。"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
       "text": "huì huà hào wú xiào 。"
     },
@@ -6152,10 +5440,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS",
       "text": "jiāng yòng hù {0} tiān jiā dào zǔ {1}..."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_SUCCESS",
-      "text": "nín xiàn zài kě yǐ jiāng “{0}” zuò wéi “{1}” yùn xíng ！"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED",
@@ -6446,10 +5730,6 @@
       "text": "zài {0} zhōng sōu suǒ {1} shī bài 。"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
-      "text": "nín bì xū jiāng -set kāi guān yǔ yào shè zhì gāi zhí de biàn liáng yī qǐ chuán dì 。"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING",
       "text": "bǎo cún zhě jiāng zài nǎ lǐ"
     },
@@ -6610,14 +5890,6 @@
       "text": "wú yuǎn chéng diào shì mìng líng shuō míng"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "zhǐ dìng de shù jù lèi xíng {0} wú xiào 。"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "zhǐ dìng de píng tái {0} wú xiào 。"
-    },
-    {
       "loc": "NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT",
       "text": "yóu yú chāo shí ér wú fǎ bō fàng shēng yīn 。"
     },
@@ -6680,22 +5952,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC",
       "text": "rú guǒ nín què dìng kòng zhì tái zhī chí zhēn cǎi sè ， huò zhě nín xiǎng jiāng zhōng duān gēng gǎi wéi zhī chí zhēn cǎi sè de zhōng duān ， qǐng gēng gǎi cǐ zhí 。"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
-      "text": "shè zhì dài mǎ yè"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
-      "text": "shè zhì qiē huàn yǔ yán shí de yǔ yán dài mǎ yè 。"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME",
-      "text": "kāi fā tōng zhī yǐ huò què rèn"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC",
-      "text": "rú guǒ shè zhì wéi true， zé měi cì nín zài kāi fā bǎn běn zhōng qǐ dòng nèi hé shí ， nèi hé jiāng bù huì xiàng nín xiǎn shì kāi fā tōng zhī 。"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME",
@@ -7534,10 +6790,6 @@
       "text": "Yánjiū tiáoshì rìzhì yǐ huòqǔ yǒuguān cuòwù de gèng duō zīxùn."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC",
-      "text": "Ruò yào yǒngjiǔ guānbì, qǐng àn xià jiànpán shàng de ENTER jiàn, huò zài héxīn shèdìng zhōng qǐyòng `yǐ quèrèn kāifā tōngzhī'. Rènhé qítā ànjiàn dūhuì jìxù zhíxíng ér wúxū quèrèn."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
       "text": "Nín zài bù xúncháng de huánjìng zhōng zhíxíng Nitrocid KS. Qǐng yànzhèng nín shìfǒu zhíjiē qǐdòngle héxīn. Rúguǒ nín quèdìng yǐ yǐ chángguī fāngshì qǐdòng nèihé, kěnéng shì yīnwèi nín zhèngzài zhíxíng bù shòu zhīyuán de Nitrocid KS bǎnběn."
     },
@@ -7592,18 +6844,6 @@
     {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "nàozhōng rìqí hé shíjiān kěnéng bùshì guòqù de rìqí hé shíjiān."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_TIP",
-      "text": "Yǒuguān xiángxì xìnxī, qǐng cānyuè cǐ mìnglìng de bāngzhù tiáomù"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGLISTING",
-      "text": "gāi mìnglìng jùyǒu yǐxià cānshù, kěyǐ gēnggǎi qí gōngzuò fāngshì:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGNODESC",
-      "text": "Wèi zhǐdìng de cānshù miáoshù"
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC",
@@ -7962,18 +7202,6 @@
       "text": "rúguǒ qǐyòng, zé àn zìmǔ shùzì shùnxù duì qīngdān jìn háng páixù; rúguǒ yǐ tíng yòng, zé àn zìmǔ shùnxù duì qīngdān jìn háng páixù."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "Wúfǎ tián rù yù shè zhǔtí"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "méiyǒu dìngyì zhǔtí yuán zīliào."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "Wúfǎ fǎn xùliè huà yuán zīliào."
-    },
-    {
       "loc": "NKS_DRIVERS_ENCODING_BASE_EXCEPTION_NEEDSINIT",
       "text": "Yīng chūshǐhuà cǐ biānmǎ."
     },
@@ -8250,34 +7478,6 @@
       "text": "Xiànchéng wúfǎ chóngxīn shēngchéng"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED",
-      "text": "Wúfǎ zài rù yǔyán zīyuán"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LOCALIZED",
-      "text": "wúfǎ qǔdé běndì huà wénběn"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS",
-      "text": "wúfǎ huòdé yīngwén běndì huà"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOC",
-      "text": "wúfǎ qǔdé yīngwén wén běn"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN",
-      "text": "bìxū zhǐdìng yǔyán biāojì"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA",
-      "text": "wúfǎ qǔdé yǔyán yuán shùjù"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATAARRAY",
-      "text": "wúfǎ qǔdé yǔyán yuán zīliào shùzǔ"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",
       "text": "MIME yuán zīliào (kuòchōng)"
     },
@@ -8390,30 +7590,6 @@
       "text": "bǎnquán suǒyǒu (C) 2018-2025 Aptivi - bǎoliú suǒyǒu quánlì"
     },
     {
-      "loc": "NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO",
-      "text": "wúfǎ qǔdé mìnglìng huò cān shǔ de cānshù xùnxí"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_COMMANDEXECUTION",
-      "text": "wèi zhǐdìng xiànchéng cānshù."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "Wúfǎ qǔdé jìnchéng zhíxíng de zhíxíng xù cānshù."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_INTERNALFIELDENVVARS",
-      "text": "Wúfǎ qǔdé huánjìng biàn shǔ de nèibù zìduàn"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_NOEXECUTOR",
-      "text": "wúfǎ qǔdé shell zhíxíng qì"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC",
-      "text": "xiǎnshì tōngyòng mìnglìng (yù shè)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC",
       "text": "Gēnggǎi shǐyòng zhě de quán míng (xiǎnshì míngchēng)"
     },
@@ -8476,18 +7652,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC",
       "text": "qǐdòng yíngmù bǎohù chéngshì de zuìxiǎo kòngxián jiàngé. Dānwèi cǎiyòng shíjiān kuàdù géshì (HH:MM:SS)."
-    },
-    {
-      "loc": "NKS_THEMES_DEFAULT_DESC",
-      "text": "Nèihé de yù shè zhǔtí"
-    },
-    {
-      "loc": "NKS_THEMES_DYNAMIC_DESC",
-      "text": "dàochù dōu shì kǒuyīn!"
-    },
-    {
-      "loc": "NKS_THEMES_NITRICACID_DESC",
-      "text": "Wúsè, fā yān, gāo fǔshí xìng yètǐ"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
@@ -8582,10 +7746,6 @@
       "text": "Cǐ bǎnběn de Nitrocid KS bù zài shòu zhīyuán."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES",
-      "text": "Wúfǎ zài rù zì dìng yǔyán"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
       "text": "wúfǎ zài rù zhòngyào de héxīn chājiàn"
     },
@@ -8618,10 +7778,6 @@
       "text": "wúfǎ zài rù qǔxiāo chǔlǐ chéngxù"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES",
-      "text": "zài rù biémíng shībài"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL",
       "text": "wúfǎ zài rù kuàisù bōhào tiáomù"
     },
@@ -8642,10 +7798,6 @@
       "text": "wúfǎ zài rù MOTD hé MAL"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES",
-      "text": "wúfǎ zài rù shell mìnglìng lìshǐ jìlù"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS",
       "text": "wúfǎ zài rù kuòchōng chǔlǐ chéngxù"
     },
@@ -8664,10 +7816,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_RESET_VARS",
       "text": "Wúfǎ chóng zhì tōngyòng biànshù"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES",
-      "text": "wúfǎ bǎocún shell zhǐlìng lìshǐ jìlù"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_CONSENTS",
@@ -8768,58 +7916,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR",
       "text": "Yóuyú cuòwù, wǎng lù lián xiàn kěnéng wèi zhèngquè jiànlì."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "Wúfǎ huǎnchōng wèi shèdìng wèi kě bāozhuāng de mìnglìng."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDSWITCHNODESC",
-      "text": "Wèi zhǐdìng de kāiguān miáoshù"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC",
-      "text": "liúchéng lùjìng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "chuándì gěi jìnchéng de cānshù"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "xiǎnshì bāngzhù tiáomù dì mìnglìng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
-      "text": "jiāng mìnglìng shūchū zuòwéi cānshù tòuguò guǎndào chuánsòng gěi lìng yīgè mìnglìng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "láiyuán mìnglìng jiāng qí shūchū zuòwéi zuìhòu yīgè cānshù chuándì gěi mùbiāo mìnglìng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "gēnjù láiyuán mìnglìng shūchū jiàn zhì cānshù hòu zhíxíng de mùbiāo mìnglìng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC",
-      "text": "shìfǒu jiāng láiyuán mìnglìng de shūchū zuòwéi yīgè dài yǐnhào de cānshù huò bù dài yǐnhào de cānshù chuándì"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "bāozhuāng qí shūchū de mìnglìng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "yuán mìnglìng zhíxíng shībài."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "Mùbiāo mìnglìng zhíxíng shībài. Nèiróng kěnéng wèi zhèngquè tiánchōng. Zhíxíng de mìnglìng shì"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_FAILED",
-      "text": "guǎnzǐ pòle."
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC",
@@ -9010,18 +8106,6 @@
       "text": "yòng yú pǐpèi yào tìhuàn de duǎn yǔ de zhèngguī biǎoshì shì"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDCOUNTRY",
-      "text": "guójiā wúxiào"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_CHOOSELANGFORCOUNTRY",
-      "text": "xuǎnzé guójiā de yǔyán"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDLANG",
-      "text": "yǔyán xuǎnzé wúxiào"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_YES",
       "text": "shì de"
     },
@@ -9068,26 +8152,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC",
       "text": "liè chū jǐngbào"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "xīn zēng biémíng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "cóngzhōng qǔdé mìnglìng de Shell lèixíng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "biémíng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "yòng zuò kuàijié fāngshì de mìnglìng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC",
-      "text": "shānchú biémíng"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC",
@@ -9150,28 +8214,8 @@
       "text": "yǔyán shìbié"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC",
-      "text": "shǐyòng guójiā/dìqū biàngēng yǔyán (xìtǒng kěnéng huì tíshì nín xuǎnzé yǔyán)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC",
       "text": "yào shǐyòng de xīn xùnxí"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "yòng xiéxiàn fēngē de dá'àn"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "liè yìn dào yíngmù shàng de wèntí"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "dì yī gè dá'àn biāotí"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "dì èr gè dá'àn biāotí, děng děng......"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
@@ -9274,10 +8318,6 @@
       "text": "liè chū qūdòng chéngshì lèixíng"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "yào liè yìn de zì chuàn"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC",
       "text": "yào biānmǎ de wénjiàn"
     },
@@ -9314,32 +8354,12 @@
       "text": "yìng tǐ lèixíng"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "UESH biǎodá cèshì"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC",
-      "text": "pínggū chénggōng hòu zhíxíng de mìnglìng"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC",
       "text": "zuǒ chuāng gé de mùlù lùjìng"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "yòu chuāng gé de mùlù lùjìng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC",
-      "text": "chóngxīn zài rù, zài rù huò xièzài zì dìng yǔyán"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC",
-      "text": "zì dìng yǔyán míngchēng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC",
-      "text": "liè chū huò chóngxīn zài rù suǒyǒu zì dìng yǔyán"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
@@ -9458,10 +8478,6 @@
       "text": "kāiqǐ chājiàn qǐdòng huàmiàn shèdìng"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC",
-      "text": "yào shèdìng de zhí"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC",
       "text": "pèizhì biàn shǔ míngchēng"
     },
@@ -9470,24 +8486,8 @@
       "text": "shíshī zhě míngchēng"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "dì yī gè zhí"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "dì èr gè zhí"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "dì sān gè zhí, yī cǐ lèituī......"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC",
       "text": "Shíqū míngchēng"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC",
-      "text": "shuìmián jiàngé"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC",
@@ -9524,10 +8524,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC",
       "text": "yào jiěchú fēngsuǒ de IP wèi zhǐ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "biàn shǔ míng"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC",
@@ -9934,10 +8930,6 @@
       "text": "Wúfǎ xuǎnzé pèizhì"
     },
     {
-      "loc": "NKS_KNOWNADDONS_PACKS_LANGUAGES",
-      "text": "é wài yǔ yán bāo"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_PACKS_SCREENSAVERS",
       "text": "é wài de píng mù bǎo hù chéng xù bāo"
     },
@@ -10106,22 +9098,6 @@
       "text": "éwài nèiróng - liáotiān jīqìrén AI"
     },
     {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED1",
-      "text": "Wúfǎ zài rù yǔyán yuán shùjù"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE1",
-      "text": "wúfǎ fǎn xùliè huà yǔyán yuán shùjù"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED2",
-      "text": "wúfǎ zài rù yǔyán yuán shùjù"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
-      "text": "wúfǎ fǎn xùliè huà yǔyán yuán shùjù"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
       "text": "Wúfǎ fǎn xùliè huà jīběn pèizhì {0}"
     },
@@ -10132,14 +9108,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_DESC",
       "text": "Běn bùfèn liè chūle qūdòng chéngshì shèdìng."
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
-      "text": "Mùqián kòngzhì tái qūdòng chéngshì"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
-      "text": "nín xiǎng shǐyòng nǎge kòngzhì tái qūdòng chéngshì?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",

@@ -18,10 +18,6 @@
       "text": "{0} v{1} bermula"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Bahasa tidak sah"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Menghuraikan mod tidak dibenarkan pada mod selamat."
     },
@@ -146,10 +142,6 @@
       "text": "Penyahpasangan gagal untuk"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Maklumat metadata yang diperlukan untuk memasang bahasa tersuai tidak menyediakan penyetempatan yang diperlukan."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Tunjukkan arahan mod bergantung pada bantuan"
     },
@@ -160,10 +152,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Halaman manual tanpa tajuk"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "Maklumat metadata yang diperlukan untuk memasang bahasa tersuai tidak wujud."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -298,10 +286,6 @@
       "text": "Pengecualian pemuat tidak diketahui"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Tidak dapat memuatkan penyetempatan mod"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Gagal mendapatkan entri tetapan."
     },
@@ -364,10 +348,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Kelas ini bukan kelas mod"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Bahasa"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

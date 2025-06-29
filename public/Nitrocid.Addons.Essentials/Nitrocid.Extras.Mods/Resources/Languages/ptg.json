@@ -25,10 +25,6 @@
       "text": "{0} v {1} iniciado"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Idioma inválido"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Mods de análise não permitidos no modo de segurança."
     },
@@ -153,10 +149,6 @@
       "text": "Falha na desinstalação para"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "As informações de metadados necessárias para instalar o idioma personalizado não fornecem as localizações necessárias."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Mostrar os comandos mod contam com ajuda"
     },
@@ -167,10 +159,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Página de manual sem título"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "As informações de metadados necessárias para instalar o idioma personalizado não existem."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -305,10 +293,6 @@
       "text": "Exceção carregadora desconhecida"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Não é possível carregar localizações de mod"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Falha à obtenção de entradas de definições."
     },
@@ -371,10 +355,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Esta classe não é uma classe mod"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Idiomas"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

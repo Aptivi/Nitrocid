@@ -1,0 +1,38 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Preme quamlibet clavem ut pergas..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "Nunc tutum est ut computatrum tuum averte."
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "Kernel ambitus erroris;"
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "Nitrocid KS problema deprehendit et clausa est."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "Progressio nuclei versionem curris. Dum experiri potes features venturas quae in ultima emissione possunt existere, in cimices, instabilitates, vel etiam damnum notitiarum incurrere potes. Commendamus utendo versione stabili, si fieri potest."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "Remissionis candidatum nuclei versionem curris. Dum experiri potes ultimum tactum, incurras in cimices, instabilitates, vel etiam damna data. Commendamus utendo versione stabili, si fieri potest."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "Commendamus contra currendum hanc versionem nuclei, quia sine suffragio est. Si hoc granum ex ignotis fontibus deiecisti, haec epistula potest apparere. Please download from our official downloads page."
+    }
+  ]
+}

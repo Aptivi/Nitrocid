@@ -1,0 +1,38 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Nhấn phím bất kỳ để tiếp tục..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "Bây giờ bạn có thể tắt máy tính một cách an toàn."
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "Lỗi môi trường hạt nhân:"
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "Nitrocid KS đã phát hiện ra sự cố và đã dừng hoạt động."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "Bạn đang chạy phiên bản phát triển của hạt nhân. Mặc dù bạn có thể trải nghiệm các tính năng sắp ra mắt có thể có trong bản phát hành cuối cùng, bạn có thể gặp phải lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định, nếu có thể."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "Bạn đang chạy phiên bản ứng viên phát hành của hạt nhân. Mặc dù bạn có thể trải nghiệm những bước hoàn thiện cuối cùng, bạn có thể gặp phải lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định nếu có thể."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "Chúng tôi khuyên bạn không nên chạy phiên bản kernel này vì nó không được hỗ trợ. Nếu bạn đã tải xuống kernel này từ các nguồn không xác định, thông báo này có thể xuất hiện. Vui lòng tải xuống từ trang tải xuống chính thức của chúng tôi."
+    }
+  ]
+}

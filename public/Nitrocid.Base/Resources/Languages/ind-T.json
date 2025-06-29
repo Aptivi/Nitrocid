@@ -7,14 +7,6 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "जारी रखने के लिए किसी भी कुंजी को दबाएं..."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "अमान्य रंग टेम्पलेट {0}"
-    },
-    {
       "loc": "NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE",
       "text": "रखरखाव के लिए व्यवस्थापक पासवर्ड दर्ज करें।"
     },
@@ -83,10 +75,6 @@
       "text": "गलत पासवर्ड।"
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PARSEERROR",
-      "text": "प्लेसहोल्डर्स को पार्स करने में त्रुटि हुई। {0}"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_ADDERROR",
       "text": "उपयोगकर्ता नाम जोड़ने का प्रयास करने में त्रुटि।"
     },
@@ -127,28 +115,8 @@
       "text": "स्क्रीनसेवर {0} डेटाबेस में नहीं मिला। नाम की जाँच करें और पुनः प्रयास करें।"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NODEFINITION",
-      "text": "कमांड {0} के लिए कोई परिभाषा नहीं।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_DEFINEDBY",
-      "text": "द्वारा परिभाषित कमान"
-    },
-    {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1",
       "text": "निर्देशिका {0} नहीं मिली।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASCOMMANDSAMENAME",
-      "text": "उपनाम एक कमांड के रूप में एक ही नाम नहीं हो सकता है।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_COMMANDNOTFOUND",
-      "text": "{0} को उपनाम नहीं मिला।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_REMOVE",
-      "text": "उपनाम {0} को हटाया नहीं गया है।"
     },
     {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2",
@@ -195,10 +163,6 @@
       "text": "कॉन्फ़िगरेशन पुनः लोड किया गया। प्रभावी होने के लिए आपको कुछ बदलावों के लिए कर्नेल को रिबूट करना पड़ सकता है।"
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_COLORINVALID",
-      "text": "एक या अधिक रंग अमान्य हैं।"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND",
       "text": "स्क्रीनसेवर {0} नहीं मिला।"
     },
@@ -213,10 +177,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
       "text": "वर्तमान उपयोगकर्ता के लिए पासवर्ड बदलता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC",
-      "text": "स्क्रीन को साफ करता है"
     },
     {
       "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
@@ -279,14 +239,6 @@
       "text": "शेल संदेश: अनुरोधित आदेश {0} को रखरखाव मोड में चलाने की अनुमति नहीं है।"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMANDNOTFOUND",
-      "text": "शेल संदेश: अनुरोधित आदेश {0} नहीं मिला है। उपलब्ध आदेशों के लिए 'सहायता' देखें।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ERROREXECUTE2",
-      "text": "कमांड निष्पादित करने में त्रुटि।"
-    },
-    {
       "loc": "NKS_KERNEL_TIME_TIMEZONES_LISTENTRY",
       "text": "- {0} का समय: {1}"
     },
@@ -297,10 +249,6 @@
     {
       "loc": "NKS_FILES_UNAUTHORIZED",
       "text": "आप {0} के लिए जानकारी प्राप्त करने के लिए अधिकृत नहीं हैं।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_OBSOLETECMD",
-      "text": "यह कमांड अप्रचलित है और भविष्य के रिलीज़ में हटा दी जाएगी।"
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN",
@@ -349,10 +297,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTED",
       "text": "पोर्ट {0} का उपयोग करके सभी पते पर डिबग सुनना।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_ALIASALREADYEXISTS",
-      "text": "पहले से ही पाया गया उपनाम: {0}"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_CDBGLOG_SUCCESS",
@@ -447,10 +391,6 @@
       "text": "दूरस्थ पीसी पर दूरस्थ रूप से एक कमांड निष्पादित करता है"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "अमान्य प्रकार {0}।"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ENTRYSIZE",
       "text": "आकार: {0}"
     },
@@ -489,26 +429,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILED",
       "text": "दूरस्थ डीबग प्रारंभ करने में विफल: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CANTEXECUTE",
-      "text": "स्क्रिप्ट निष्पादित करने में त्रुटि: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC",
-      "text": "कंसोल में टेक्स्ट लिखता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC",
-      "text": "उपयोगकर्ता की पसंद बनाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHOICE_HELPER",
-      "text": "जहाँ <उत्तर> प्रश्न के एक-अक्षर वाले उत्तर को स्लैश में अलग किया जाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC",
-      "text": "उपयोगकर्ता को इनपुट दर्ज करने की अनुमति देता है"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_DESC",
@@ -687,10 +607,6 @@
       "text": "उपयोगकर्ताओं को जोड़ता है"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC",
-      "text": "उपनामों को आज्ञाओं में जोड़ता है"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC",
       "text": "होस्ट नाम बदलता है"
     },
@@ -713,10 +629,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC",
       "text": "उपयोगकर्ता को सूची से निकालता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_REMOVALSUCCESS",
-      "text": "सफलतापूर्वक निकाला गया उपनाम {0}।"
     },
     {
       "loc": "NKS_KERNEL_UPDATES_CHECKFAILED",
@@ -1007,10 +919,6 @@
       "text": "एक परीक्षण खोल खोलता है"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDSTARTFAILED",
-      "text": "\"{0}\" शुरू करने में विफल: {1}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC",
       "text": "पाठ फ़ाइल को साफ़ करता है"
     },
@@ -1095,14 +1003,6 @@
       "text": "प्रवेश पहले से मौजूद है।"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
-      "text": "कंसोल आउटपुट को लपेटता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAPUNWRAPPABLE",
-      "text": "आदेश लपेटने योग्य नहीं है। ये आदेश लपेटने योग्य हैं:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
       "text": "एक ज़िप संग्रह निकालता है"
     },
@@ -1131,10 +1031,6 @@
       "text": "{0} ने आपको पिंग किया।"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC",
-      "text": "एक चर को एक स्क्रिप्ट में एक मान पर सेट करता है"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME",
       "text": "SSH बैनर दिखाएं"
     },
@@ -1155,32 +1051,12 @@
       "text": "सामान्य आदेश:"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_MODLISTING",
-      "text": "मॉड कमांड:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ALIASLISTING",
-      "text": "उपनाम आदेश:"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
       "text": "रखरखाव मोड"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME",
       "text": "लुकअप निर्देशिका"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOMODLISTING",
-      "text": "कोई मॉड कमांड नहीं।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOALIASLISTING",
-      "text": "कोई उपनाम आदेश नहीं।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "लपेटने योग्य आदेश नहीं मिला है।"
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC",
@@ -1411,14 +1287,6 @@
       "text": "स्क्रीनसेवर को प्रदर्शित करते समय एक त्रुटि का अनुभव हुआ: {0}. बाहर निकलने के लिए कोई भी कुंजी दबाएँ।"
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_THEMESHOWCASE",
-      "text": "यहां बताया गया है कि आपकी थीम कैसी दिखेगी:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "लपेटने योग्य आदेश:"
-    },
-    {
       "loc": "NKS_FILES_LISTFOLDEREMPTY",
       "text": "फ़ोल्डर खाली है।"
     },
@@ -1433,10 +1301,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME",
       "text": "कस्टम स्टार्टअप बैनर"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO",
-      "text": "उत्तर शून्य नहीं हो सकता।"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION",
@@ -1457,10 +1321,6 @@
     {
       "loc": "NKS_ARGUMENTS_HELP_LISTING",
       "text": "उपलब्ध कर्नेल तर्क:"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNRECOVERABLEERROR",
-      "text": "तर्क में अप्राप्य त्रुटि:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA512_DESC",
@@ -1903,16 +1763,8 @@
       "text": "सुरक्षित मोड की तरह, लेकिन बहु-उपयोगकर्ता और कुछ अनुकूलन को भी अक्षम करता है"
     },
     {
-      "loc": "NKS_ARGUMENTS_NOTENOUGHARGS",
-      "text": "पर्याप्त तर्क नहीं थे।"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
       "text": "रंगों को पुनरारंभ करने की आवश्यकता नहीं है, लेकिन अधिकांश सेटिंग्स को पुनरारंभ करने की आवश्यकता होती है।"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELP",
-      "text": "तर्क \"{0}\" के लिए कोई मदद नहीं।"
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -1951,10 +1803,6 @@
       "text": "फ़ाइल {0} नहीं मिली"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC",
-      "text": "प्रदान किए गए मानों के साथ एक चर सरणी बनाता है"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC",
       "text": "यह देखने के लिए कि क्या वे सभी समान हैं, सभी स्थानीयकरण टेक्स्ट लाइन नंबरों की जांच करता है"
     },
@@ -1985,10 +1833,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC",
       "text": "फाइल सिस्टम सूची को पेशेवर रूप से क्रमबद्ध करता है।"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC",
-      "text": "एक चयन विकल्प प्रदान करता है"
     },
     {
       "loc": "NKS_SHELL_BASE_HELP_NOLISTING",
@@ -2075,10 +1919,6 @@
       "text": "आप अप टू डेट हैं!"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_SWITCHLISTING",
-      "text": "इस कमांड में नीचे दिए गए स्विच हैं जो यह बदलते हैं कि यह कैसे काम करता है:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC",
       "text": "सूची में फ़ाइल विवरण दिखाता है"
     },
@@ -2119,76 +1959,8 @@
       "text": "कर्नेल इवेंट सिस्टम के लिए डिबगिंग सक्षम करता है"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGFAILED",
-      "text": "कस्टम भाषा {0} स्थापित करने में विफल."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_METADATAHASNOLOCS",
-      "text": "कस्टम भाषा को स्थापित करने के लिए आवश्यक मेटाडेटा जानकारी आवश्यक स्थानीयकरण प्रदान नहीं करती है।"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED1",
-      "text": "कस्टम भाषा {0} की स्थापना रद्द करने में विफल."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT",
-      "text": "अंग्रेजी भाषा की लंबाई प्रदान की गई भाषा टोकन की लंबाई से मेल नहीं खाती।"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOOVERWRITE",
-      "text": "भाषा पहले से मौजूद है और इसे अधिलेखित नहीं किया जा सकता है।"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED2",
-      "text": "कस्टम भाषा की स्थापना रद्द करने में विफल. सबसे अधिक संभावना है कि यह मौजूद नहीं है।"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGSFAILED",
-      "text": "पसंद के मुताबिक भाषाएं इंस्टॉल करने में विफल."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED1",
-      "text": "पसंद के मुताबिक भाषाएं अनइंस्टॉल करने में विफल."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED2",
-      "text": "पसंद के मुताबिक भाषाएं अनइंस्टॉल करने में विफल. अधिक जानकारी के लिए आंतरिक अपवाद देखें।"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE",
       "text": "लाइसेंस जानकारी"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC",
-      "text": "अपनी भाषाएं प्रबंधित करें"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_LANGNOTFOUND",
-      "text": "भाषा नहीं मिली या फ़ाइल में अमान्य वर्ण हैं।"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_NOLANG",
-      "text": "भाषा निर्दिष्ट नहीं है।"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SAFEMODE",
-      "text": "सुरक्षित मोड में भाषा प्रबंधन अक्षम है।"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SHORTNAME",
-      "text": "भाषा संक्षिप्त नाम:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_FULLNAME",
-      "text": "भाषा का पूरा नाम:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_TRANSLITERABLE",
-      "text": "भाषा लिप्यंतरण योग्य:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_CUSTOM",
-      "text": "कस्टम भाषा:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME",
@@ -2247,40 +2019,12 @@
       "text": "उपनाम दिखाएं मदद पर भरोसा करें"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC",
-      "text": "एक बार UESH के भाव संतुष्ट होने के बाद कमांड निष्पादित करता है"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "अभिव्यक्ति में स्थिति नहीं पाई गई।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "शर्त {0} के लिए {1} तर्कों की आवश्यकता है। {2} मिल गया।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "सिंटैक्स त्रुटि के कारण अभिव्यक्ति को पार्स करने में त्रुटि।"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE",
-      "text": "शर्त को पूरा करने में विफल. अधिक जानकारी यहाँ:"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME",
       "text": "पासवर्ड मास्क कैरेक्टर"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC",
       "text": "एक चरित्र जो पासवर्ड को मास्क करता है। अधिक सुरक्षा के लिए खाली छोड़ दें।"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC",
-      "text": "सबशेल पर चलने पर शेल से बाहर निकलता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_KILLINGMOTHERSHELL",
-      "text": "मां के खोल को नहीं मार सकते!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL",
@@ -2305,10 +2049,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
       "text": "डिबग मोड सक्षम करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE",
-      "text": "वर्तमान मूल्य:"
     },
     {
       "loc": "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC",
@@ -2431,10 +2171,6 @@
       "text": "हेक्स संपादक स्वत: सहेजना सुविधा को चालू या बंद करता है।"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "स्क्रिप्ट विकृत है। स्क्रिप्ट की जाँच करें और किसी भी त्रुटि का समाधान करें: {0}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC",
       "text": "निरपेक्ष के बजाय सापेक्ष पथ का उपयोग करता है"
     },
@@ -2445,10 +2181,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC",
       "text": "इनपुट इतिहास सक्षम है या नहीं। यदि सक्षम है, तो आप ऊपर या नीचे तीर कुंजियों का उपयोग करके हाल ही में टाइप किए गए आदेशों तक पहुंच सकते हैं।"
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "अपने कंप्यूटर को बंद करना अब सुरक्षित है।"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME",
@@ -2467,14 +2199,6 @@
       "text": "PowerLine ग्लिफ़ का समर्थन करने वाले कंसोल फ़ॉन्ट का उपयोग करना सुनिश्चित करें, या आउटपुट ठीक से प्रस्तुत नहीं हो सकता है। हम अनुशंसा करते हैं"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC",
-      "text": "शेल प्रीसेट लाइब्रेरी खोलता है"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_EXCEPTION_PRESETNOTFOUND",
-      "text": "निर्दिष्ट प्रीसेट {0} नहीं मिला।"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_ALREADYBLOCKED",
       "text": "डिवाइस पहले से ब्लॉक सूची में मौजूद है।"
     },
@@ -2485,10 +2209,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC",
       "text": "टेस्ट असेंबली एंट्री पॉइंट निष्पादन"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_SELECT",
-      "text": "{0} के लिए प्रीसेट चुनें:"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
@@ -2513,22 +2233,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
       "text": "कॉन्फ़िगरेशन लोड होने से पहले प्री-बूट स्प्लैश छुपाता है"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNKNOWNARGUMENT",
-      "text": "अज्ञात तर्क"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING",
-      "text": "आपको VT प्रोसेसिंग सक्षम होने के साथ ConEmu या Windows 10 कमांड प्रॉम्प्ट चलाना होगा।"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO",
-      "text": "आपका टर्मिनल {1} पर {0} है।"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION",
-      "text": "क्या ये रैंप आपको सही लगते हैं? उन्हें सुचारू रूप से परिवर्तन करना चाहिए।"
     },
     {
       "loc": "NKS_DRIVERS_EXCEPTION_NOFALLBACKS",
@@ -2635,22 +2339,6 @@
       "text": "शेल को प्रारंभ करने के लिए किसी भी कुंजी को दबाएं, लेकिन कृपया ध्यान दें कि आपको अपना नया उपयोगकर्ता मैन्युअल रूप से बनाना पड़ सकता है।"
     },
     {
-      "loc": "NKS_KERNEL_ENVERROR",
-      "text": "कर्नेल पर्यावरण त्रुटि:"
-    },
-    {
-      "loc": "NKS_KERNEL_FATALERROR",
-      "text": "नाइट्रोसिड केएस ने एक समस्या का पता लगाया है और इसे बंद कर दिया गया है।"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_INSTALL",
-      "text": "कस्टम भाषा स्थापित करने के लिए आवश्यक मेटाडेटा जानकारी मौजूद नहीं है।"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_UNINSTALL",
-      "text": "कस्टम भाषा को अनइंस्टॉल करने के लिए आवश्यक मेटाडेटा जानकारी मौजूद नहीं है।"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "मौजूदा खाता लॉक होने पर उसे संशोधित करने का प्रयास किया जा रहा है"
     },
@@ -2697,26 +2385,6 @@
     {
       "loc": "NKS_ARGUMENTS_RESET_WIPEMISCFAILED",
       "text": "विविध फ़ाइल को मिटाया नहीं जा सकता"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELPDESC",
-      "text": "कोई तर्क सहायता विवरण नहीं"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "इस थीम का उपयोग करने के लिए आपके कंसोल को सही रंग का समर्थन करना चाहिए।"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXITPREVIEW_DESC",
-      "text": "पूर्वावलोकन से बाहर निकलें"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "थीम {0} एक कार्यक्रम का जश्न मनाती है, लेकिन आप इसमें भाग लेने के लिए या तो बहुत जल्दी हैं या बहुत देर से हैं। प्रत्येक वर्ष, यह थीम {1}/{2} से {3}/{4} तक पहुंच योग्य है।"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "थीम {0} को वास्तविक रंग समर्थन की आवश्यकता है, लेकिन आपका कंसोल इसका समर्थन नहीं करता है।"
     },
     {
       "loc": "NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT",
@@ -3087,10 +2755,6 @@
       "text": "एक सामान्य HTTP शेल त्रुटि उत्पन्न हुई."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLEDETECTED",
-      "text": "पागल कंसोल का पता चला है. नाइट्रोसिड केएस चलना जारी नहीं रख सकता, क्योंकि आपका कंसोल हमारी आवश्यकताओं के साथ असंगत है।"
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHALGORITHM",
       "text": "अमान्य हैश एल्गोरिथम. यदि आप कस्टम हैश सम ड्राइवर का उपयोग कर रहे हैं, तो यह सुनिश्चित करने के लिए जांचें कि ड्राइवर लोड है।"
     },
@@ -3183,10 +2847,6 @@
       "text": "इस नाम से कोई शेल प्रीसेट नहीं है."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",
-      "text": "इस नाम की कोई थीम नहीं है."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NULLUSERS",
       "text": "संपूर्ण कर्नेल में शून्य उपयोगकर्ता हैं. हम एक अत्यंत दुर्लभ स्थिति में पहुँच गए हैं। कर्नेल जारी नहीं रह सकता."
     },
@@ -3231,14 +2891,6 @@
       "text": "एक सामान्य SFTP शेल त्रुटि उत्पन्न हुई."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONPARSE",
-      "text": "स्थिति पार्सिंग विफल रही. कृपया ऑपरेटर के अपेक्षित डिज़ाइन को पूरा करने के लिए अपने सिंटैक्स की जाँच करें।"
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHSCRIPT",
-      "text": "यूईएसएच स्क्रिप्ट फ़ाइल को पार्स करने का प्रयास करते समय एक त्रुटि उत्पन्न हुई। त्रुटियों के लिए अपनी स्क्रिप्ट फ़ाइल की जाँच करें और उन्हें ठीक करें।"
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_USERCREATION",
       "text": "एक उपयोगकर्ता निर्माण त्रुटि उत्पन्न हुई."
     },
@@ -3249,10 +2901,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK",
       "text": "एक सामान्य नेटवर्क त्रुटि उत्पन्न हुई. यदि आप किसी दूरस्थ छोर से कनेक्ट करने का प्रयास कर रहे हैं, तो सुनिश्चित करें कि आप इंटरनेट या अपने स्थानीय नेटवर्क से कनेक्ट हैं।"
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UNSUPPORTEDCONSOLE",
-      "text": "एक असमर्थित कंसोल का पता चला है."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE",
@@ -3323,20 +2971,12 @@
       "text": "अनुरोधित कार्रवाई करने का प्रयास करते समय एक संपर्क प्रबंधक त्रुटि उत्पन्न हुई। सुनिश्चित करें कि संपर्क फ़ाइल सही फ़ोल्डर में मौजूद है और यह एक वैध vCard 2.1, 3.0, या 4.0 संपर्क फ़ाइल है।"
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
-      "text": "अनुरोधित ऑपरेशन निष्पादित करते समय एक यूईएसएच स्थिति प्रणाली विफल हो गई। अधिक विवरण के लिए नीचे त्रुटि संदेश देखें।"
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR",
       "text": "एक अमान्य SQL संपादक कार्रवाई निष्पादित की जा रही है."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP",
       "text": "समूह मौजूद नहीं है. यह सुनिश्चित करने के लिए जांचें कि आपने समूह का नाम सही ढंग से लिखा है।"
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INTERACTIVETUI",
-      "text": "इंटरएक्टिव टीयूआई कार्यान्वयन में एक त्रुटि उत्पन्न हुई।"
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS",
@@ -3385,10 +3025,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_REFLECTION",
       "text": "परावर्तन प्रणाली में कोई त्रुटि थी."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_THEMEMANAGEMENT",
-      "text": "थीम प्रबंधन के लिए कोई कार्रवाई करने का प्रयास करते समय एक त्रुटि हुई."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_EVENTMANAGEMENT",
@@ -3759,10 +3395,6 @@
       "text": "नाइट्रोसिड शुरू हो रहा है..."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_CUSTOMLANGS",
-      "text": "कस्टम भाषाएँ लोड हो रही हैं..."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_IMPORTANTADDONS",
       "text": "महत्वपूर्ण कर्नेल ऐडऑन लोड हो रहे हैं..."
     },
@@ -3793,10 +3425,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_GENERALVARSRESET",
       "text": "सामान्य चर रीसेट"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_HISTORIESSAVED",
-      "text": "सहेजे गए शेल कमांड इतिहास।"
     },
     {
       "loc": "NKS_KERNEL_STARTING_CONFIGSAVED",
@@ -4411,32 +4039,12 @@
       "text": "यह प्रोग्राम GNU जनरल पब्लिक लाइसेंस 3.0 या उसके बाद के संस्करण के तहत लाइसेंस प्राप्त है।"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "आप कर्नेल का विकास संस्करण चला रहे हैं. हालाँकि आप आगामी सुविधाओं का अनुभव कर सकते हैं जो अंतिम रिलीज़ में मौजूद हो सकती हैं, आपको बग, अस्थिरता या यहाँ तक कि डेटा हानि का भी सामना करना पड़ सकता है। यदि संभव हो तो हम स्थिर संस्करण का उपयोग करने की सलाह देते हैं।"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "आप कर्नेल का रिलीज़ कैंडिडेट संस्करण चला रहे हैं। जब आप अंतिम स्पर्श का अनुभव कर सकते हैं, तो आपको बग, अस्थिरता या यहां तक कि डेटा हानि का सामना करना पड़ सकता है। यदि संभव हो तो हम स्थिर संस्करण का उपयोग करने की सलाह देते हैं।"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "हम कर्नेल के इस संस्करण को न चलाने की अनुशंसा करते हैं, क्योंकि यह असमर्थित है। यदि आपने इस कर्नेल को अज्ञात स्रोतों से डाउनलोड किया है, तो यह संदेश दिखाई दे सकता है। कृपया हमारे आधिकारिक डाउनलोड पृष्ठ से डाउनलोड करें।"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP",
-      "text": "हमेशा के लिए खारिज करने के लिए, या तो अपने कीबोर्ड पर बाएँ तीर का उपयोग करके इसे हाइलाइट करके \"स्वीकृत\" बटन पर ENTER दबाएँ, या कर्नेल सेटिंग्स में \"विकास सूचना स्वीकृत\" सक्षम करें।"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_OK",
       "text": "ठीक है"
     },
     {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_ACKED",
       "text": "स्वीकार किया"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISS_TITLE",
-      "text": "विकास सूचना"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
@@ -4763,228 +4371,12 @@
       "text": "नवीनतम समाचार प्राप्त करने में सक्षम होने के लिए, आपको RSS शेल एक्स्ट्राज़ ऐडऑन इंस्टॉल करना होगा। आप सभी ऐडऑन प्राप्त करने के लिए 'गेटएडऑन' कमांड का उपयोग कर सकते हैं!"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_QUERY",
-      "text": "उपनाम {0} से पूछताछ नहीं की गई है।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "आउटपुट का मान चयनित UESH वेरिएबल पर सेट करता है"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_LISTING",
-      "text": "नीचे सभी उपयोगों के लिए आवश्यक तर्क प्रदान नहीं किए गए हैं:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGS",
-      "text": "आवश्यक तर्क उपलब्ध नहीं कराए गए हैं."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHES",
-      "text": "आवश्यक स्विच उपलब्ध नहीं कराए गए हैं."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHVALUE",
-      "text": "स्विचों में से एक के लिए एक मान की आवश्यकता होती है जो प्रदान नहीं किया गया है।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_UNKNOWNSWITCH",
-      "text": "नीचे सूचीबद्ध स्विच अज्ञात हैं।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_CONFLICTSWITCH",
-      "text": "नीचे सूचीबद्ध स्विच एक दूसरे के साथ विरोध करते हैं।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNOVALUE",
-      "text": "नीचे दिए गए स्विच मान स्वीकार नहीं करते हैं."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGNUMVALUE",
-      "text": "एक या अधिक तर्क संख्यात्मक मान की अपेक्षा करते हैं, लेकिन आपने एक अमान्य संख्या प्रदान की है।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGEXACTWORD",
-      "text": "एक या अधिक तर्क सटीक शब्दों की अपेक्षा करते हैं, लेकिन आपने एक अमान्य शब्द प्रदान किया है।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNUMVALUE",
-      "text": "एक या अधिक स्विच एक संख्यात्मक मान की अपेक्षा करते हैं, लेकिन आपने एक अमान्य संख्या प्रदान की है।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ABORTED",
-      "text": "आदेश निरस्त कर दिया गया है."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "आपको इस कमांड को रैप्ड मोड में सीधे निष्पादित नहीं करना चाहिए।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "कमांड आउटपुट को लपेटने का प्रयास करते समय एक त्रुटि उत्पन्न हुई"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_COMMANDABORTED",
-      "text": "निम्नलिखित कारण से आदेश निरस्त किया गया:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDPATTERNINVALID",
-      "text": "अमान्य आदेश पैटर्न प्रदान किया गया."
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "यह कमांड नहीं मिला।"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND",
-      "text": "शेल प्रकार {0} मौजूद नहीं है."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED",
-      "text": "आपको कमांड बेस प्रदान करना होगा."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED",
-      "text": "आपको आदेश प्रदान करना होगा."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS",
-      "text": "निर्दिष्ट आदेश पहले ही जोड़ा जा चुका है! यह संभव है कि आपके पास परस्पर विरोधी मॉड हों।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_UNDEFINED",
-      "text": "आदेश परिभाषित नहीं है"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_CUSTOM",
-      "text": "कुछ कस्टम कमांड लोड नहीं किए जा सकते."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_CUSTOM",
-      "text": "निर्दिष्ट कस्टम कमांड नहीं मिला."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_CUSTOM",
-      "text": "कुछ कस्टम कमांड अनलोड नहीं किए जा सकते."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS_CUSTOM",
-      "text": "निर्दिष्ट आदेश पहले ही जोड़ा जा चुका है! यह संभव है कि आपके पास परस्पर विरोधी ऐडऑन हों।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_ADDON",
-      "text": "कुछ ऐडऑन कमांड लोड नहीं किए जा सकते."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_ADDON",
-      "text": "निर्दिष्ट ऐडऑन कमांड नहीं मिला।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_ADDON",
-      "text": "कुछ ऐडऑन कमांड अनलोड नहीं किए जा सकते."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NEEDSSLASH",
-      "text": "यह शेल कमांड को निष्पादित करने के लिए स्लैश कमांड का उपयोग करता है। आरंभ करने के लिए कृपया कमांड की शुरुआत में स्लैश प्रतीक '/' जोड़ें। उदाहरण के लिए:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDLISTING",
-      "text": "उपलब्ध आदेश:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ADDONLISTING",
-      "text": "कर्नेल ऐडऑन कमांड:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOADDONLISTING",
-      "text": "कोई कर्नेल ऐडऑन आदेश नहीं."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_UNIFIEDLISTING",
-      "text": "एकीकृत आदेश:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOUNIFIEDLISTING",
-      "text": "एकीकृत आदेश लागू नहीं किये गये!!!"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_COMMAND",
-      "text": "आज्ञा:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "आप शर्तों या लूप जैसे निर्माण का समर्थन करने वाले भाव डालने से पहले नए ब्लॉक की घोषणा नहीं कर सकते। स्टैक संख्या {0} है."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "नया ब्लॉक शुरू करते समय, सुनिश्चित करें कि आपने स्टैक को सही ढंग से इंडेंट किया है। स्टैक संख्या {0} है."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "स्क्रिप्ट ख़राब है. स्क्रिप्ट की जाँच करें और किसी भी त्रुटि का समाधान करें।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "स्लैश कमांड के लिए अनुस्मारक"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
-      "text": "एक बाहरी प्रक्रिया निष्पादित करता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC",
-      "text": "शेल थ्रेड को बाधित किए बिना प्रक्रिया निष्पादित करता है। एक अलग विंडो बनाई जाएगी."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
-      "text": "वर्तमान शेल प्रकार में उपलब्ध कमांड ढूँढता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC",
-      "text": "मॉड कमांड दिखाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC",
-      "text": "उपनामित आदेश दिखाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC",
-      "text": "एकीकृत आदेश दिखाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC",
-      "text": "कर्नेल ऐडऑन कमांड दिखाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC",
-      "text": "सभी आदेश दिखाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC",
-      "text": "सरलीकृत सहायता का उपयोग करता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC",
-      "text": "शैल इतिहास लोड करता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
-      "text": "अंतिम क्रिया या निर्दिष्ट आदेश को दोहराता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC",
-      "text": "शेल इतिहास सहेजता है"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
       "text": "एक यादृच्छिक कर्नेल टिप दिखाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTSTARTWITHOUTMOTHERSHELL",
-      "text": "शैल तब तक प्रारंभ नहीं हो सकते जब तक कि मातृ शैल प्रारंभ न हो जाए।"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTINITSHELL",
-      "text": "शेल प्रारंभ करने का प्रयास विफल रहा"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -5159,26 +4551,6 @@
       "text": "सिस्टम भाषा के बजाय उपयोगकर्ता भाषा को बदलता है"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC",
-      "text": "एक पंक्ति चयन शैली"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC",
-      "text": "दो पंक्तियों की पसंद शैली"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC",
-      "text": "आधुनिक पसंद शैली"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "आउटपुट केवल एक अक्षर का हो सकता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "आउटपुट एक कैरेक्टर से अधिक हो सकता है"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
       "text": "कंसोल में दो या अधिक टेक्स्ट फ़ाइलों को संयोजित करता है।"
     },
@@ -5201,18 +4573,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC",
       "text": "रूपांतरण समाप्त करने वाली रेखा को बाध्य करता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
-      "text": "सिर्फ तारीख दिखाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
-      "text": "सिर्फ समय दिखाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
-      "text": "स्थानीय के बजाय यूटीसी का उपयोग करता है"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC",
@@ -5245,10 +4605,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN",
       "text": "अपने ड्राइवरों को प्रबंधित करें"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "बिना किसी प्लेसहोल्डर पार्सिंग के टेक्स्ट को वैसे ही प्रिंट करता है जैसे वह है"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
@@ -5295,10 +4651,6 @@
       "text": "रेगुलर एक्सप्रेशन का उपयोग करके निर्दिष्ट निर्देशिका में या वर्तमान निर्देशिका में एक फ़ाइल ढूँढता है"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC",
-      "text": "एक और उदाहरण बनाने के लिए यूईएसएच शेल को फोर्क करता है"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC",
       "text": "आउटपुट पथ निर्दिष्ट करता है"
     },
@@ -5341,10 +4693,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC",
       "text": "इंटरएक्टिव सिस्टम होस्ट फ़ाइल प्रबंधक"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC",
-      "text": "उपयोगकर्ता को पासवर्ड के रूप में इनपुट दर्ज करने की अनुमति देता है"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
@@ -5495,10 +4843,6 @@
       "text": "एक इंटरैक्टिव टीयूआई खोलता है जिसमें आप वास्तविक समय में विश्व घड़ी देख पाएंगे"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
-      "text": "निर्दिष्ट मिलीसेकेंड के लिए सोता है"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
       "text": "कमांड को रूट यूजर के रूप में चलाता है"
     },
@@ -5549,14 +4893,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC",
       "text": "चयन पर तुरंत थीम सेट करें"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC",
-      "text": "UESH वेरिएबल सूची से एक वेरिएबल हटाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "वैरिएबल मान को हटाए बिना बस उसे मिटा देता है"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
@@ -5625,10 +4961,6 @@
     {
       "loc": "NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD",
       "text": "दिन का संदेश शून्य नहीं हो सकता."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER",
-      "text": "अपने कीबोर्ड पर किसी भी अक्षर को उस अक्षर पर सेट करने के लिए दबाएँ।"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM",
@@ -5975,50 +5307,6 @@
       "text": "परीक्षण स्विच"
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL",
-      "text": "प्लेसहोल्डर शून्य नहीं हो सकता"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERACTIONNULL",
-      "text": "प्लेसहोल्डर कार्रवाई शून्य नहीं हो सकती"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED",
-      "text": "प्लेसहोल्डर पंजीकृत नहीं है"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT",
-      "text": "प्लेसहोल्डर को इस प्रारूप को पूरा करना होगा"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "शर्त अंत में रखनी होगी."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "पहले से मौजूद किसी शर्त को पंजीकृत नहीं किया जा सकता."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "खाली स्थिति दर्ज नहीं की जा सकती."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "ऐसी शर्त को अपंजीकृत नहीं किया जा सकता जो अस्तित्व में ही नहीं है।"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_FINDCMDS_NOTFOUND",
-      "text": "कोई आदेश नहीं मिला."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "कई बार अमान्य संख्या."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "स्वयं को दोहरा नहीं सकते."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
       "text": "सत्र क्रमांक अमान्य है."
     },
@@ -6149,10 +5437,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS",
       "text": "उपयोगकर्ता {0} को समूह {1} में जोड़ा जा रहा है..."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_SUCCESS",
-      "text": "अब आप '{0}' को '{1}' के रूप में चला सकते हैं!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED",
@@ -6443,10 +5727,6 @@
       "text": "{1} के लिए {0} की खोज विफल रही।"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
-      "text": "आपको उस वेरिएबल के साथ -सेट स्विच पास करना होगा जिस पर आप यह मान सेट करना चाहते हैं।"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING",
       "text": "जहां सेवर होगा"
     },
@@ -6607,14 +5887,6 @@
       "text": "कोई दूरस्थ डिबग कमांड विवरण नहीं"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "निर्दिष्ट डेटा प्रकार {0} अमान्य है."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "निर्दिष्ट प्लेटफ़ॉर्म {0} अमान्य है."
-    },
-    {
       "loc": "NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT",
       "text": "समय समाप्त होने के कारण ध्वनि नहीं बजाई जा सकती."
     },
@@ -6677,22 +5949,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC",
       "text": "यदि आप आश्वस्त हैं कि कंसोल सही रंग का समर्थन करता है, या यदि आप अपने टर्मिनल को ऐसे टर्मिनल में बदलना चाहते हैं जो सही रंग का समर्थन करता है, तो इस मान को बदलें।"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
-      "text": "कोडपेज सेट करें"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
-      "text": "भाषाएँ बदलने पर भाषा कोडपेज सेट करें।"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME",
-      "text": "विकास सूचना स्वीकार की गई"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC",
-      "text": "यदि सही पर सेट किया जाता है, तो हर बार जब आप विकास संस्करणों में कर्नेल को बूट करते हैं तो कर्नेल आपको विकास सूचना नहीं दिखाएगा।"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME",
@@ -7531,10 +6787,6 @@
       "text": "त्रुटि के बारे में अधिक जानकारी के लिए डीबग लॉग की जांच करें."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC",
-      "text": "हमेशा के लिए खारिज करने के लिए, या तो अपने कीबोर्ड पर ENTER दबाएँ, या कर्नेल सेटिंग्स में \"विकास नोटिस स्वीकार किया गया\" सक्षम करें। कोई भी अन्य कुंजी बिना स्वीकृति के आगे बढ़ती है।"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
       "text": "आप Nitrocid KS को असामान्य वातावरण पर चला रहे हैं। कृपया सत्यापित करें कि आपने कर्नेल को सीधे शुरू किया है। यदि आप सुनिश्चित हैं कि आपने कर्नेल को सामान्य तरीके से शुरू किया है, तो ऐसा इसलिए हो सकता है क्योंकि आप Nitrocid KS का असमर्थित संस्करण चला रहे हैं।"
     },
@@ -7589,18 +6841,6 @@
     {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "अलार्म की तारीख और समय अतीत में नहीं हो सकता है।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_TIP",
-      "text": "अधिक जानकारी के लिए इस कमांड की सहायता प्रविष्टि देखें"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGLISTING",
-      "text": "इस कमांड में निम्नलिखित तर्क हैं जो इसके कार्य करने के तरीके को बदलते हैं:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGNODESC",
-      "text": "अनिर्दिष्ट तर्क विवरण"
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC",
@@ -7959,18 +7199,6 @@
       "text": "सक्षम होने पर सूची को अल्फ़ान्यूमेरिक रूप से या अक्षम होने पर वर्णानुक्रम में क्रमबद्ध करता है।"
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "डिफ़ॉल्ट थीम पॉप्युलेट करने में विफल"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "कोई थीम मेटाडेटा परिभाषित नहीं है."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "मेटाडेटा को डीसेरीलाइज़ नहीं किया जा सकता."
-    },
-    {
       "loc": "NKS_DRIVERS_ENCODING_BASE_EXCEPTION_NEEDSINIT",
       "text": "इस एनकोडिंग को आरंभीकृत किया जाना चाहिए।"
     },
@@ -8247,34 +7475,6 @@
       "text": "थ्रेड को पुनः उत्पन्न नहीं किया जा सकता"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED",
-      "text": "के लिए भाषा संसाधन लोड करने में विफल"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LOCALIZED",
-      "text": "स्थानीयकृत पाठ प्राप्त नहीं किया जा सका"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS",
-      "text": "अंग्रेजी स्थानीयकरण नहीं मिल पा रहा"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOC",
-      "text": "अंग्रेजी पाठ नहीं मिल पा रहा"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN",
-      "text": "भाषा टोकन निर्दिष्ट किया जाना चाहिए"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA",
-      "text": "भाषा मेटाडेटा प्राप्त नहीं किया जा सका"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATAARRAY",
-      "text": "भाषा मेटाडेटा सरणी प्राप्त नहीं की जा सकी"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",
       "text": "MIME मेटाडेटा (विस्तारित)"
     },
@@ -8387,30 +7587,6 @@
       "text": "कॉपीराइट (C) 2018-2025 अप्टिवी - सभी अधिकार सुरक्षित"
     },
     {
-      "loc": "NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO",
-      "text": "आदेश या तर्क के लिए तर्क जानकारी प्राप्त नहीं की जा सकती"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_COMMANDEXECUTION",
-      "text": "थ्रेड पैरामीटर निर्दिष्ट नहीं हैं."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "प्रक्रिया निष्पादन के लिए थ्रेड पैरामीटर प्राप्त नहीं किया जा सकता."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_INTERNALFIELDENVVARS",
-      "text": "पर्यावरण चर के लिए आंतरिक फ़ील्ड प्राप्त नहीं किया जा सकता"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_NOEXECUTOR",
-      "text": "के लिए शेल निष्पादक नहीं मिल सकता"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC",
-      "text": "सामान्य आदेश दिखाता है (डिफ़ॉल्ट)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC",
       "text": "उपयोगकर्ता का पूरा नाम (प्रदर्शन नाम) बदलता है"
     },
@@ -8473,18 +7649,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC",
       "text": "स्क्रीनसेवर लॉन्च करने के लिए न्यूनतम निष्क्रिय अंतराल। इकाई समय अवधि प्रारूप (HH:MM:SS) में है।"
-    },
-    {
-      "loc": "NKS_THEMES_DEFAULT_DESC",
-      "text": "कर्नेल के लिए डिफ़ॉल्ट थीम"
-    },
-    {
-      "loc": "NKS_THEMES_DYNAMIC_DESC",
-      "text": "हर जगह उच्चारण!"
-    },
-    {
-      "loc": "NKS_THEMES_NITRICACID_DESC",
-      "text": "रंगहीन, धुआँदार और अत्यधिक संक्षारक तरल"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
@@ -8579,10 +7743,6 @@
       "text": "नाइट्रोसिड KS का यह संस्करण अब समर्थित नहीं है।"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES",
-      "text": "कस्टम भाषाएँ लोड करने में विफल"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
       "text": "महत्वपूर्ण कर्नेल ऐडऑन लोड करने में विफल"
     },
@@ -8615,10 +7775,6 @@
       "text": "रद्दीकरण हैंडलर लोड करने में विफल"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES",
-      "text": "उपनाम लोड करने में विफल"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL",
       "text": "स्पीड डायल प्रविष्टियाँ लोड करने में विफल"
     },
@@ -8639,10 +7795,6 @@
       "text": "MOTD और MAL लोड करने में विफल"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES",
-      "text": "शेल कमांड इतिहास लोड करने में विफल"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS",
       "text": "एक्सटेंशन हैंडलर लोड करने में विफल"
     },
@@ -8661,10 +7813,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_RESET_VARS",
       "text": "सामान्य चर रीसेट करने में विफल"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES",
-      "text": "शेल कमांड इतिहास सहेजने में विफल"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_CONSENTS",
@@ -8765,58 +7913,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR",
       "text": "किसी त्रुटि के कारण नेटवर्क कनेक्शन ठीक से स्थापित नहीं हो पाया होगा।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "उस कमांड को बफर नहीं किया जा सकता जो रैप करने योग्य के रूप में सेट नहीं है।"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDSWITCHNODESC",
-      "text": "अनिर्दिष्ट स्विच विवरण"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC",
-      "text": "प्रक्रिया का मार्ग"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "प्रक्रिया में पास करने के लिए तर्क"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "सहायता प्रविष्टि दिखाने के लिए आदेश"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
-      "text": "कमांड आउटपुट को पैरामीटर के रूप में दूसरे कमांड में पाइप करता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "स्रोत कमांड अपने आउटपुट को अंतिम पैरामीटर के रूप में लक्ष्य कमांड तक पहुंचाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "स्रोत कमांड आउटपुट के आधार पर बिल्डिंग तर्क पर निष्पादित करने के लिए लक्ष्य कमांड"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC",
-      "text": "स्रोत कमांड के आउटपुट को एक उद्धृत तर्क या गैर-उद्धृत तर्क के रूप में पास करना है या नहीं"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "इसके आउटपुट को रैप करने का कमांड"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "स्रोत आदेश निष्पादन विफल हुआ."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "लक्ष्य कमांड निष्पादन विफल रहा। संभवतः सामग्री ठीक से पॉप्युलेट नहीं हुई है। कमांड निष्पादित किया गया"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_FAILED",
-      "text": "पाइप टूट गया है."
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC",
@@ -9007,18 +8103,6 @@
       "text": "प्रतिस्थापित किए जाने वाले वाक्यांशों से मिलान करने के लिए एक नियमित अभिव्यक्ति"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDCOUNTRY",
-      "text": "अमान्य देश"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_CHOOSELANGFORCOUNTRY",
-      "text": "देश के लिए भाषा चुनें"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDLANG",
-      "text": "के लिए अमान्य भाषा चयन"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_YES",
       "text": "हाँ"
     },
@@ -9065,26 +8149,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC",
       "text": "अलार्म की सूची"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "उपनाम जोड़ता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "कमांड प्राप्त करने के लिए शैल प्रकार"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "उपनाम नाम"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "शॉर्टकट के रूप में उपयोग किया जाने वाला कमांड"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC",
-      "text": "उपनाम हटाता है"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC",
@@ -9147,28 +8211,8 @@
       "text": "भाषा आईडी"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC",
-      "text": "किसी देश का उपयोग करके भाषा बदलता है (आपको भाषा चुनने के लिए कहा जा सकता है)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC",
       "text": "उपयोग हेतु नया संदेश"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "स्लैश से विभाजित करने के उत्तर"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "स्क्रीन पर प्रिंट करने के लिए प्रश्न"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "प्रथम उत्तर शीर्षक"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "दूसरा उत्तर शीर्षक, और इसी तरह..."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
@@ -9271,10 +8315,6 @@
       "text": "ड्राइवर प्रकारों की सूची बनाएं"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "प्रिंट करने के लिए स्ट्रिंग"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC",
       "text": "एनकोड करने के लिए फ़ाइल"
     },
@@ -9311,32 +8351,12 @@
       "text": "हार्डवेयर प्रकार"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "परीक्षण हेतु UESH अभिव्यक्ति"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC",
-      "text": "सफल मूल्यांकन के बाद निष्पादित करने का आदेश"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC",
       "text": "बाएँ फलक के लिए निर्देशिका का पथ"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "दाएँ फलक के लिए निर्देशिका का पथ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC",
-      "text": "कस्टम भाषा को पुनः लोड, लोड या अनलोड करता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC",
-      "text": "कस्टम भाषा का नाम"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC",
-      "text": "सभी कस्टम भाषाओं को सूचीबद्ध या पुनः लोड करता है"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
@@ -9455,10 +8475,6 @@
       "text": "ऐडऑन स्प्लैश सेटिंग्स खोलता है"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC",
-      "text": "निर्धारित करने हेतु मान"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC",
       "text": "कॉन्फ़िगरेशन चर नाम"
     },
@@ -9467,24 +8483,8 @@
       "text": "कार्यान्वयनकर्ता का नाम"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "पहला मान"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "दूसरा मान"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "तीसरा मान, और इसी प्रकार..."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC",
       "text": "समय क्षेत्र का नाम"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC",
-      "text": "सोने का अंतराल"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC",
@@ -9521,10 +8521,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC",
       "text": "अनब्लॉक करने के लिए IP पता"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "चर का नाम"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC",
@@ -9931,10 +8927,6 @@
       "text": "कॉन्फ़िगरेशन का चयन नहीं किया जा सकता"
     },
     {
-      "loc": "NKS_KNOWNADDONS_PACKS_LANGUAGES",
-      "text": "अतिरिक्त भाषा पैक"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_PACKS_SCREENSAVERS",
       "text": "अतिरिक्त स्क्रीनसेवर पैक"
     },
@@ -10103,22 +9095,6 @@
       "text": "अतिरिक्त - चैटबॉट AI"
     },
     {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED1",
-      "text": "भाषा मेटाडेटा लोड करने में विफल"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE1",
-      "text": "भाषा मेटाडेटा को डीसेरीलाइज़ करने में विफल"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED2",
-      "text": "के लिए भाषा मेटाडेटा लोड करने में विफल"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
-      "text": "के लिए भाषा मेटाडेटा को डीसेरिएलाइज़ करने में विफल रहा"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
       "text": "बेस कॉन्फ़िगरेशन {0} को डिसेरिएलाइज़ नहीं किया जा सकता"
     },
@@ -10129,14 +9105,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_DESC",
       "text": "यह अनुभाग ड्राइवर सेटिंग्स को सूचीबद्ध करता है।"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
-      "text": "वर्तमान कंसोल ड्राइवर"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
-      "text": "आप किस कंसोल ड्राइवर का उपयोग करना चाहेंगे?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",

@@ -16,10 +16,6 @@
       "text": "Thosaigh {0} v{1}"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Teanga neamhbhailí"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Ní cheadaítear mods a pharsáil i mód sábháilte."
     },
@@ -144,10 +140,6 @@
       "text": "Theip ar an díshuiteáil le haghaidh"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Ní sholáthraíonn an fhaisnéis meiteashonraí atá riachtanach chun an teanga shaincheaptha na logánuithe riachtanacha a theastaíonn a shuiteáil."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Taispeáin na horduithe mod ag brath ar chabhair"
     },
@@ -158,10 +150,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Leathanach láimhe gan teideal"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "Níl an fhaisnéis meiteashonraí a theastaíonn chun an teanga shaincheaptha a shuiteáil ann."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -296,10 +284,6 @@
       "text": "Eisceacht lódóra anaithnid"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Ní féidir logánuithe mod a lódáil"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Theip ar na hiontrálacha socruithe a fháil."
     },
@@ -362,10 +346,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Ní rang mod é an rang seo"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Teangacha"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

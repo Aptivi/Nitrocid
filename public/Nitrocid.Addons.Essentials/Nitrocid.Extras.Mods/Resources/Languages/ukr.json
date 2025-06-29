@@ -15,10 +15,6 @@
       "text": "{0} v{1} розпочато"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Недійсна мова"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Розбір модів заборонений у безпечному режимі."
     },
@@ -143,10 +139,6 @@
       "text": "Не вдалося видалити для"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Інформація метаданих, необхідна для встановлення спеціальної мови, не забезпечує необхідні локалізації."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Показати кількість команд мода в довідці"
     },
@@ -157,10 +149,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Сторінка посібника без назви"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "Інформація метаданих, необхідна для встановлення спеціальної мови, не існує."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -295,10 +283,6 @@
       "text": "Невідомий виняток завантажувача"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Не вдається завантажити локалізацію мода"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Не вдалося отримати записи налаштувань."
     },
@@ -361,10 +345,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Цей клас не є модним класом"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Мови"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

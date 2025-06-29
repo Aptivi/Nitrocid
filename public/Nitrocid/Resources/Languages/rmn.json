@@ -1,0 +1,39 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Apăsați orice tastă pentru a continua..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "Acum puteți opri computerul în siguranță."
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "Eroare de mediu kernel:"
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "Nitrocid KS a detectat o problemă și a fost oprit."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "Executați versiunea de dezvoltare a nucleului. Deși puteți experimenta funcții viitoare care pot exista în versiunea finală, este posibil să întâlniți erori, instabilități sau chiar pierderi de date. Vă recomandăm să utilizați versiunea stabilă, dacă este posibil."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "Executați versiunea candidată pentru lansare a nucleului. În timp ce puteți experimenta ultimele atingeri, este posibil să întâlniți erori, instabilități sau chiar pierderi de date. Vă recomandăm să utilizați versiunea stabilă, dacă este posibil."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "Vă recomandăm să nu rulați această versiune a nucleului, deoarece nu este acceptată. Dacă ați descărcat acest nucleu din surse necunoscute, este posibil să apară acest mesaj. Vă rugăm să descărcați de pe pagina noastră oficială de descărcări."
+    }
+  ]
+}

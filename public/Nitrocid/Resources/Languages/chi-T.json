@@ -1,0 +1,46 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "按任意键继续..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "现在可以安全地关闭计算机。"
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "内核环境错误："
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "Nitrocid KS 已检测到问题并已关闭。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "您正在运行内核的开发版本。虽然您可以体验最终版本中可能存在的即将推出的功能，但您可能会遇到错误、不稳定甚至数据丢失。如果可能的话，我们建议使用稳定版本。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "您正在运行内核的候选版本。虽然您可以体验最后的润色，但您可能会遇到错误、不稳定，甚至数据丢失。如果可能的话，我们建议使用稳定版本。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "我们建议不要运行此版本的内核，因为它不受支持。如果您从未知来源下载了此内核，则可能会出现此消息。请从我们的官方下载页面下载。"
+    }
+  ]
+}

@@ -8,14 +8,6 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "Brúigh aon eochair le leanúint ar aghaidh..."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "Teimpléad datha neamhbhailí {0}"
-    },
-    {
       "loc": "NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE",
       "text": "Cuir isteach an pasfhocal admin le haghaidh cothabhála."
     },
@@ -84,10 +76,6 @@
       "text": "Focal faire mícheart."
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PARSEERROR",
-      "text": "Tharla earráid agus na sealbhóirí áite a pharsáil. {0}"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_ADDERROR",
       "text": "Earráid agus iarracht á déanamh ainm úsáideora a chur leis."
     },
@@ -128,28 +116,8 @@
       "text": "Níor aimsíodh spárálaíscáileáin {0} sa bhunachar sonraí. Seiceáil an t-ainm agus bain triail eile as."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NODEFINITION",
-      "text": "Níl aon sainmhíniú ar ordú {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_DEFINEDBY",
-      "text": "Ordú sainithe ag"
-    },
-    {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1",
       "text": "Eolaire {0} gan aimsiú."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASCOMMANDSAMENAME",
-      "text": "Ní féidir an t-ainm céanna a bheith ar ailias agus ar ordú."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_COMMANDNOTFOUND",
-      "text": "Níor aimsíodh an t-ordú chuig an ailias go {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_REMOVE",
-      "text": "Ní bhfuarthas an t-ailias {0} a bhaint."
     },
     {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2",
@@ -196,10 +164,6 @@
       "text": "Athlódáil an chumraíocht. Seans go mbeidh ort an t-eithne a atosú le go dtiocfaidh roinnt athruithe i bhfeidhm."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_COLORINVALID",
-      "text": "Tá ceann amháin nó níos mó de na dathanna neamhbhailí."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND",
       "text": "Níor aimsíodh spárálaíscáileáin {0}."
     },
@@ -214,10 +178,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
       "text": "Athraíonn pasfhocal don úsáideoir reatha"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC",
-      "text": "Glanann an scáileán"
     },
     {
       "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
@@ -280,14 +240,6 @@
       "text": "Teachtaireacht bhlaosc: Ní cheadaítear an t-ordú iarrtha {0} a rith sa mhód cothabhála."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMANDNOTFOUND",
-      "text": "Teachtaireacht bhlaosc: Níor aimsíodh an t-ordú iarrtha {0}. Féach 'cabhair' le haghaidh orduithe atá ar fáil."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ERROREXECUTE2",
-      "text": "Earráid agus iarracht á déanamh an t-ordú a rith."
-    },
-    {
       "loc": "NKS_KERNEL_TIME_TIMEZONES_LISTENTRY",
       "text": "- Am {0}: {1}"
     },
@@ -298,10 +250,6 @@
     {
       "loc": "NKS_FILES_UNAUTHORIZED",
       "text": "Níl tú údaraithe faisnéis a fháil le haghaidh {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_OBSOLETECMD",
-      "text": "Tá an t-ordú seo imithe i léig agus bainfear é i scaoileadh amach anseo."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN",
@@ -350,10 +298,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTED",
       "text": "Éisteacht dífhabhtaithe ar gach seoladh ag baint úsáid as port {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_ALIASALREADYEXISTS",
-      "text": "Ailias aimsithe cheana: {0}"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_CDBGLOG_SUCCESS",
@@ -448,10 +392,6 @@
       "text": "Feidhmíonn sé ordú go cianda ríomhaire"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "Cineál neamhbhailí {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ENTRYSIZE",
       "text": "Méid: {0}"
     },
@@ -490,26 +430,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILED",
       "text": "Theip ar an dífhabhtú cianda a thosú: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CANTEXECUTE",
-      "text": "Earráid agus an script a rith: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC",
-      "text": "Scríobhann sé téacs isteach sa chonsól"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC",
-      "text": "Déanann sé roghanna úsáideora"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHOICE_HELPER",
-      "text": "áit a bhfuil <freagraí> freagraí aonlitreacha ar an gceist scartha i slais"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC",
-      "text": "Ligeann sé don úsáideoir ionchur a chur isteach"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_DESC",
@@ -688,10 +608,6 @@
       "text": "Cuireann úsáideoirí leis"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC",
-      "text": "Cuireann ailiasanna le horduithe"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC",
       "text": "Athraítear ainm an óstaigh"
     },
@@ -714,10 +630,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC",
       "text": "Baintear úsáideoir den liosta"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_REMOVALSUCCESS",
-      "text": "Baineadh ailias {0} go rathúil."
     },
     {
       "loc": "NKS_KERNEL_UPDATES_CHECKFAILED",
@@ -1008,10 +920,6 @@
       "text": "Osclaíonn sé blaosc tástála"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDSTARTFAILED",
-      "text": "Theip ar \"{0}\" a thosú: {1}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC",
       "text": "Glanann an téacschomhad"
     },
@@ -1096,14 +1004,6 @@
       "text": "Tá iontráil ann cheana féin."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
-      "text": "Wraps an t-aschur consól"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAPUNWRAPPABLE",
-      "text": "Níl an t-ordú fillte. Tá na horduithe seo infhillte:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
       "text": "Baintear cartlann ZIP as"
     },
@@ -1132,10 +1032,6 @@
       "text": "Chuir {0} pingin ort."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC",
-      "text": "Socraíonn sé athróg ar luach i script"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME",
       "text": "Taispeáin bratach SSH"
     },
@@ -1156,32 +1052,12 @@
       "text": "Orduithe ginearálta:"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_MODLISTING",
-      "text": "Orduithe mod:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ALIASLISTING",
-      "text": "Orduithe Alias:"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
       "text": "Mód Cothabhála"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME",
       "text": "Cuardach Eolaire"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOMODLISTING",
-      "text": "Uimh orduithe mod."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOALIASLISTING",
-      "text": "Uimh orduithe ailias."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "Ní bhfuarthas an t-ordú infhillte."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC",
@@ -1412,14 +1288,6 @@
       "text": "Tharla earráid agus an méid seo a leanas á thaispeáint ag spárálaíscáileáin: {0}. Brúigh eochair ar bith chun imeacht."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_THEMESHOWCASE",
-      "text": "Seo mar a bheidh do théama cosúil:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "Orduithe infhillte:"
-    },
-    {
       "loc": "NKS_FILES_LISTFOLDEREMPTY",
       "text": "Tá an fillteán folamh."
     },
@@ -1434,10 +1302,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME",
       "text": "Meirge Tosaithe Saincheaptha"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO",
-      "text": "Ní fhéadfaidh an freagra a bheith nialas."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION",
@@ -1458,10 +1322,6 @@
     {
       "loc": "NKS_ARGUMENTS_HELP_LISTING",
       "text": "Argóintí eithne ar fáil:"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNRECOVERABLEERROR",
-      "text": "Earráid nach féidir a aisghabháil san argóint:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA512_DESC",
@@ -1904,16 +1764,8 @@
       "text": "Cosúil le modh sábháilte, ach freisin díchumasaigh il-úsáideoir agus roinnt saincheaptha"
     },
     {
-      "loc": "NKS_ARGUMENTS_NOTENOUGHARGS",
-      "text": "Ní raibh go leor argóintí ann."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
       "text": "Ní gá dathanna a atosú, ach teastaíonn atosú ón gcuid is mó de na socruithe."
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELP",
-      "text": "Níl aon chabhair don argóint \"{0}\"."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -1952,10 +1804,6 @@
       "text": "Comhad {0} gan aimsiú"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC",
-      "text": "Cruthaítear eagar athraitheach leis na luachanna a chuirtear ar fáil"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC",
       "text": "Seiceálann sé na huimhreacha línte téacs logánaithe go léir féachaint an bhfuil siad ar fad cothrom"
     },
@@ -1986,10 +1834,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC",
       "text": "Sórtáil sé liosta an chórais comhad go gairmiúil."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC",
-      "text": "Soláthraíonn rogha rogha"
     },
     {
       "loc": "NKS_SHELL_BASE_HELP_NOLISTING",
@@ -2076,10 +1920,6 @@
       "text": "Tá tú suas chun dáta!"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_SWITCHLISTING",
-      "text": "Tá na lasca thíos ag an ordú seo a athraíonn an chaoi a n-oibríonn sé:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC",
       "text": "Taispeánann sé sonraí an chomhaid sa liosta"
     },
@@ -2120,76 +1960,8 @@
       "text": "Cumasaítear dífhabhtú don chóras teagmhais eithne"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGFAILED",
-      "text": "Theip ar shuiteáil teanga shaincheaptha {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_METADATAHASNOLOCS",
-      "text": "Ní sholáthraíonn an fhaisnéis meiteashonraí atá riachtanach chun an teanga shaincheaptha na logánuithe riachtanacha a theastaíonn a shuiteáil."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED1",
-      "text": "Theip ar dhíshuiteáil teanga shaincheaptha {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT",
-      "text": "Ní hionann fad an Bhéarla agus fad an chomhartha teanga a chuirtear ar fáil."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOOVERWRITE",
-      "text": "Tá an teanga ann cheana agus ní féidir í a fhorscríobh."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED2",
-      "text": "Theip ar dhíshuiteáil teanga shaincheaptha. Is dócha nach bhfuil sé ann."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGSFAILED",
-      "text": "Theip ar shuiteáil teangacha saincheaptha."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED1",
-      "text": "Theip ar dhíshuiteáil teangacha saincheaptha."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED2",
-      "text": "Theip ar dhíshuiteáil teangacha saincheaptha. Féach ar an eisceacht inmheánach le haghaidh tuilleadh faisnéise."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE",
       "text": "Eolas ceadúnais"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC",
-      "text": "Bainistigh do theangacha"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_LANGNOTFOUND",
-      "text": "Níor aimsíodh an teanga nó tá carachtair neamhbhailí sa chomhad."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_NOLANG",
-      "text": "Ní shonraítear teanga."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SAFEMODE",
-      "text": "Díchumasaítear bainistíocht teanga i mód sábháilte."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SHORTNAME",
-      "text": "Ainm gearr teanga:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_FULLNAME",
-      "text": "Ainm iomlán na teanga:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_TRANSLITERABLE",
-      "text": "Teanga inaistrithe:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_CUSTOM",
-      "text": "Teanga shaincheaptha:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME",
@@ -2248,40 +2020,12 @@
       "text": "Taispeáin na hailiasanna ag brath ar chabhair"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC",
-      "text": "Feidhmíonn sé orduithe a luaithe a shásaítear na habairtí UESH"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "Níor aimsíodh an riocht san abairt."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "Éilíonn riocht {0} {1} argóint. Fuair {2}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "Earráid agus slonn á pharsáil mar gheall ar earráid chomhréire."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE",
-      "text": "Theip ar an gcoinníoll a shásamh. Tuilleadh eolais anseo:"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME",
       "text": "Carachtar masc pasfhocal"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC",
       "text": "Carachtar a chumhdaíonn an focal faire. Fág bán le haghaidh tuilleadh slándála."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC",
-      "text": "Scoir an sceall má tá sé ag rith ar fhobhlaosc"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_KILLINGMOTHERSHELL",
-      "text": "Ní féidir a mharú an bhlaosc mháthair!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL",
@@ -2306,10 +2050,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
       "text": "Cumasaíonn sé mód dífhabhtaithe"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE",
-      "text": "Luach reatha:"
     },
     {
       "loc": "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC",
@@ -2432,10 +2172,6 @@
       "text": "Cuireann sé an ghné uathshábháil an eagarthóra heics ar siúl nó as."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "Tá an script míchumtha. Seiceáil an script agus réitigh aon earráidí: {0}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC",
       "text": "Úsáideann sé cosán coibhneasta in ionad absalóideach"
     },
@@ -2446,10 +2182,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC",
       "text": "Cibé an bhfuil an stair ionchuir cumasaithe nó nach bhfuil. Má tá tú cumasaithe, is féidir leat rochtain a fháil ar orduithe clóscríofa le déanaí ag baint úsáide as na heochracha saigheada suas nó síos."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "Tá sé sábháilte anois do ríomhaire a mhúchadh."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME",
@@ -2468,14 +2200,6 @@
       "text": "Bí cinnte go n-úsáidfidh tú cló consóil a thacaíonn le glyphs PowerLine, nó seans nach mbeidh an t-aschur le déanamh i gceart. Molaimid"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC",
-      "text": "Osclaíonn sé an leabharlann réamhshocraithe bhlaosc"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_EXCEPTION_PRESETNOTFOUND",
-      "text": "Níl an réamhshocrú sonraithe {0} aimsithe."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_ALREADYBLOCKED",
       "text": "Tá gléas sa liosta bloc cheana féin."
     },
@@ -2486,10 +2210,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC",
       "text": "Déanann sé tástáil ar fhorghníomhú pointe iontrála cóimeála"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_SELECT",
-      "text": "Roghnaigh réamhshocrú le haghaidh {0}:"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
@@ -2514,22 +2234,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
       "text": "Folaigh an splancscáileán réamhthosaithe sula lódáiltear an chumraíocht"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNKNOWNARGUMENT",
-      "text": "Argóint anaithnid"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING",
-      "text": "Ní mór duit a bheith ag rith ConEmu nó ordú Windows 10 leid le próiseáil VT cumasaithe."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO",
-      "text": "Tá do teirminéal {0} ar {1}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION",
-      "text": "An bhfeiceann na rampaí seo ceart duitse? Ba chóir dóibh aistriú go réidh."
     },
     {
       "loc": "NKS_DRIVERS_EXCEPTION_NOFALLBACKS",
@@ -2636,22 +2340,6 @@
       "text": "Brúigh eochair ar bith chun an bhlaosc a thosú ar aon nós, ach tabhair faoi deara go mb'fhéidir go mbeidh ort d'úsáideoir nua a chruthú de láimh."
     },
     {
-      "loc": "NKS_KERNEL_ENVERROR",
-      "text": "Earráid timpeallachta eithne:"
-    },
-    {
-      "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Tá fadhb aimsithe ag Nitrocid KS agus tá sé múchta."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_INSTALL",
-      "text": "Níl an fhaisnéis meiteashonraí a theastaíonn chun an teanga shaincheaptha a shuiteáil ann."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_UNINSTALL",
-      "text": "Níl an fhaisnéis meiteashonraí a theastaíonn chun an teanga shaincheaptha a dhíshuiteáil ann."
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "Ag iarraidh an cuntas reatha a mhodhnú agus é faoi ghlas"
     },
@@ -2698,26 +2386,6 @@
     {
       "loc": "NKS_ARGUMENTS_RESET_WIPEMISCFAILED",
       "text": "Ní féidir an comhad ilghnéitheach a scriosadh"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELPDESC",
-      "text": "Níl aon chur síos cabhrach argóint"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "Caithfidh do chonsól tacú le fíor dhath chun an téama seo a úsáid."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXITPREVIEW_DESC",
-      "text": "Scoir an réamhamharc"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "Déanann an téama {0} ceiliúradh ar imeacht, ach tá tú ró-luath nó ró-dhéanach le bheith i láthair. Gach bliain, tá an téama seo inrochtana ó {1}/{2} go {3}/{4}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "Teastaíonn tacaíocht fíor dhathanna don téama {0}, ach ní thacaíonn do chonsól leis."
     },
     {
       "loc": "NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT",
@@ -3088,10 +2756,6 @@
       "text": "Tharla earráid ghinearálta blaosc HTTP."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLEDETECTED",
-      "text": "Braitheadh consól gealtach. Ní féidir le Nitrocid KS leanúint ar aghaidh ag rith, toisc go bhfuil do chonsól ar neamhréir lenár riachtanais."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHALGORITHM",
       "text": "Algartam hash neamhbhailí. Má tá tiománaí hash sum saincheaptha á úsáid agat, seiceáil chun a chinntiú go bhfuil an tiománaí luchtaithe."
     },
@@ -3184,10 +2848,6 @@
       "text": "Níl aon bhlaosc réamhshocraithe leis an ainm seo."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",
-      "text": "Níl aon téama leis an ainm seo."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NULLUSERS",
       "text": "Tá náid úsáideoirí san eithne ar fad. Tá cás fíor-annamh bainte amach againn. Ní féidir leis an eithne leanúint ar aghaidh."
     },
@@ -3232,14 +2892,6 @@
       "text": "Tharla earráid ghinearálta maidir le sliogán SFTP."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONPARSE",
-      "text": "Theip ar pharsáil an choinníll. Seiceáil do chomhréir le dearadh ionchais an oibreora a chomhlíonadh."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHSCRIPT",
-      "text": "Tharla earráid agus iarracht á déanamh an comhad script UESH a pharsáil. Seiceáil do chomhad scripte le haghaidh earráidí agus ceartaigh iad."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_USERCREATION",
       "text": "Tharla earráid cruthaithe úsáideora."
     },
@@ -3250,10 +2902,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK",
       "text": "Tharla earráid líonra ghinearálta. Má tá tú ag iarraidh nascadh le foirceann cianda, cinntigh go bhfuil tú nasctha leis an Idirlíon nó le do líonra áitiúil."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UNSUPPORTEDCONSOLE",
-      "text": "Braitheadh consól nach dtacaítear leis."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE",
@@ -3324,20 +2972,12 @@
       "text": "Tharla earráid le bainisteoir teagmhálaithe agus iarracht á déanamh an oibríocht iarrtha a dhéanamh. Cinntigh go bhfuil an comhad teagmhála san fhillteán ceart agus gur comhad teagmhála vCard 2.1, 3.0 nó 4.0 bailí é."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
-      "text": "Theip ar chóras riochtaí UESH agus an oibríocht iarrtha á déanamh. Féach ar an teachtaireacht earráide thíos le haghaidh tuilleadh sonraí."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR",
       "text": "Tá oibríocht eagarthóra SQL neamhbhailí á déanamh."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP",
       "text": "Níl an grúpa ann. Déan cinnte go bhfuil ainm an ghrúpa scríofa agat i gceart."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INTERACTIVETUI",
-      "text": "Tharla earráid i gcur i bhfeidhm an TUI Idirghníomhach."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS",
@@ -3386,10 +3026,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_REFLECTION",
       "text": "Tharla earráid sa chóras machnaimh."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_THEMEMANAGEMENT",
-      "text": "Tharla earráid agus iarracht á déanamh oibríocht bainistíochta téama a dhéanamh."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_EVENTMANAGEMENT",
@@ -3760,10 +3396,6 @@
       "text": "Nitrocid á thosú..."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_CUSTOMLANGS",
-      "text": "Teangacha saincheaptha á lódáil..."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_IMPORTANTADDONS",
       "text": "Breiseáin eithne tábhachtacha á lódáil..."
     },
@@ -3794,10 +3426,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_GENERALVARSRESET",
       "text": "Athróga ginearálta a athshocrú"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_HISTORIESSAVED",
-      "text": "Stair na n-orduithe sliogán a shábháil."
     },
     {
       "loc": "NKS_KERNEL_STARTING_CONFIGSAVED",
@@ -4412,32 +4040,12 @@
       "text": "Tá an clár seo ceadúnaithe faoi GNU General Public License 3.0 nó níos déanaí."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "Tá an leagan forbartha den eithne á rith agat. Cé gur féidir leat taithí a fháil ar ghnéithe atá le teacht a d’fhéadfadh a bheith sa scaoileadh deiridh, d’fhéadfadh fabhtanna, éagobhsaíocht nó fiú caillteanas sonraí a bheith agat. Molaimid an leagan cobhsaí a úsáid, más féidir."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "Tá leagan iarrthóra an eithne á rith agat. Cé gur féidir leat taithí a fháil ar na baint deiridh, féadfaidh tú fabhtanna, éagobhsaíocht, nó fiú cailliúint sonraí. Molaimid an leagan cobhsaí a úsáid, más féidir."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "Molaimid gan an leagan seo den eithne a rith, toisc nach dtacaítear leis. Má d’íoslódáil tú an t-eithne seo ó fhoinsí anaithnide, seans go dtaispeánfar an teachtaireacht seo. Le do thoil a íoslódáil ónár leathanach íoslódálacha oifigiúil."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP",
-      "text": "Chun é a dhífhostú go deo, brúigh ENTER ar an gcnaipe \"Aitheanta\" anseo agus é a aibhsiú ag baint úsáide as an tsaighead chlé ar do mhéarchlár, nó \"admhaíodh fógra forbartha\" a chumasú sna socruithe eithne."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_OK",
       "text": "ceart go leor"
     },
     {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_ACKED",
       "text": "Admhaítear"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISS_TITLE",
-      "text": "Fógra forbartha"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
@@ -4764,228 +4372,12 @@
       "text": "Chun an nuacht is déanaí a fháil, ní mór duit an breiseán RSS Shell Extras a shuiteáil. Is féidir leat an t-ordú 'getaddons' a úsáid chun na breiseáin go léir a fháil!"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_QUERY",
-      "text": "Ní bhfuarthas aon cheist faoi ailias {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Socraíonn sé luach an aschuir chuig an athróg UESH roghnaithe"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_LISTING",
-      "text": "Ní thugtar argóintí riachtanacha do gach úsáid thíos:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGS",
-      "text": "Ní chuirtear argóintí riachtanacha ar fáil."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHES",
-      "text": "Ní chuirtear lasca riachtanacha ar fáil."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHVALUE",
-      "text": "Éilíonn ceann de na lasca luach nach gcuirtear ar fáil."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_UNKNOWNSWITCH",
-      "text": "Ní fios na lasca atá liostaithe thíos."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_CONFLICTSWITCH",
-      "text": "Téann lasca atá liostaithe thíos i gcoimhlint lena chéile."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNOVALUE",
-      "text": "Ní ghlacann na lasca thíos le luachanna."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGNUMVALUE",
-      "text": "Tá ceann amháin nó níos mó de na hargóintí ag súil le luach uimhriúil, ach sholáthair tú uimhir neamhbhailí."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGEXACTWORD",
-      "text": "Tá ceann amháin nó níos mó de na hargóintí ag súil le foclaíocht bheacht, ach sholáthair tú focal neamhbhailí."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNUMVALUE",
-      "text": "Tá ceann amháin nó níos mó de na lasca ag súil le luach uimhriúil, ach sholáthair tú uimhir neamhbhailí."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ABORTED",
-      "text": "Cuireadh deireadh leis an ordú."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "Níl cead agat an t-ordú seo a fhorghníomhú go díreach i mód fillte."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "Tharla earráid agus iarracht á déanamh aschur ordaithe a fhilleadh"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_COMMANDABORTED",
-      "text": "Cuireadh deireadh leis an ordú ar an gcúis seo a leanas:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDPATTERNINVALID",
-      "text": "Cuireadh patrún ordaithe neamhbhailí ar fáil."
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Níor aimsíodh an t-ordú."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND",
-      "text": "Níl an cineál bhlaosc {0} ann."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED",
-      "text": "Ní mór duit an bonn ordaithe a sholáthar."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED",
-      "text": "Caithfidh tú an t-ordú a sholáthar."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS",
-      "text": "Tá an t-ordú sonraithe curtha leis cheana féin! D’fhéadfadh go mbeadh mods contrártha agat."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_UNDEFINED",
-      "text": "Ordú gan sainmhíniú"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_CUSTOM",
-      "text": "Ní féidir cuid de na horduithe saincheaptha a luchtú."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_CUSTOM",
-      "text": "Ní bhfuarthas an t-ordú saincheaptha sonraithe."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_CUSTOM",
-      "text": "Ní féidir cuid de na horduithe saincheaptha a dhíluchtú."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS_CUSTOM",
-      "text": "Tá an t-ordú sonraithe curtha leis cheana féin! D’fhéadfadh go mbeadh addons contrártha agat."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_ADDON",
-      "text": "Ní féidir cuid de na horduithe addon a luchtú."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_ADDON",
-      "text": "Ní bhfuarthas an t-ordú addon sonraithe."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_ADDON",
-      "text": "Ní féidir cuid de na horduithe addon a dhíluchtú."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NEEDSSLASH",
-      "text": "Úsáideann an bhlaosc seo na horduithe slais chun na horduithe a fhorghníomhú. Cuir an tsiombail slais '/' i gceangal le tús an ordaithe le do thoil chun tús a chur leis. Mar shampla:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDLISTING",
-      "text": "Orduithe ar fáil:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ADDONLISTING",
-      "text": "Orduithe addon eithne:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOADDONLISTING",
-      "text": "Níl aon orduithe addon eithne."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_UNIFIEDLISTING",
-      "text": "Orduithe aontaithe:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOUNIFIEDLISTING",
-      "text": "Níor cuireadh orduithe aontaithe i bhfeidhm!!!"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_COMMAND",
-      "text": "Ordú:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "Ní féidir leat an bloc nua a dhearbhú sula gcuireann tú slonn a thacaíonn leis an gcruthú, amhail coinníollacha nó lúba. Is é {0} uimhir an chairn."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "Agus bloc nua á thosú agat, cinntigh go bhfuil an chruach eangaithe i gceart agat. Is é {0} uimhir an chairn."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Tá an script míchumtha. Seiceáil an script agus réitigh aon earráidí."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "Meabhrúchán do na horduithe slais"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
-      "text": "Déanann sé próiseas seachtrach"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC",
-      "text": "Déanann sé an próiseas gan cur isteach ar an snáithe bhlaosc. Cruthófar fuinneog ar leith."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
-      "text": "Faightear na horduithe atá ar fáil sa chineál blaosc reatha"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC",
-      "text": "Taispeáin orduithe mod"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC",
-      "text": "Taispeáin orduithe ailiasaithe"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC",
-      "text": "Taispeáin orduithe aontaithe"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC",
-      "text": "Taispeáin orduithe addon eithne"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC",
-      "text": "Taispeáin gach ordú"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC",
-      "text": "Úsáideann sé cúnamh simplithe"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC",
-      "text": "Íoslódáil an stair de na sliogáin"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
-      "text": "Athdhéantar seo an gníomh deireanach nó an t-ordú sonraithe"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC",
-      "text": "Sábhálann sé stair bhlaosc"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
       "text": "Taispeáin tip eithne randamach"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTSTARTWITHOUTMOTHERSHELL",
-      "text": "Ní féidir le sliogáin tosú mura bhfuil an máthair-bhlaosc tosaithe."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTINITSHELL",
-      "text": "Theip ar iarracht an bhlaosc a thúsú"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -5160,26 +4552,6 @@
       "text": "Athraítear teanga an úsáideora seachas teanga an chórais"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC",
-      "text": "Stíl rogha líne amháin"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC",
-      "text": "Stíl rogha dhá líne"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC",
-      "text": "Stíl rogha nua-aimseartha"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "Ní féidir leis an aschur a bheith ach carachtar amháin"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "Is féidir leis an aschur a bheith níos mó ná carachtar"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
       "text": "Comhcheanglaíonn sé an dá chomhad téacs nó níos mó isteach sa chonsól."
     },
@@ -5202,18 +4574,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC",
       "text": "Fórsaí an chomhshó dar críoch líne"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
-      "text": "Taispeáin ach an dáta"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
-      "text": "Léiríonn díreach an t-am"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
-      "text": "Úsáideann sé UTC in ionad áitiúil"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC",
@@ -5246,10 +4606,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN",
       "text": "Bainistigh do thiománaithe"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "Priontaí an téacs mar atá sé gan aon pharsáil sealbhóra áite"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
@@ -5296,10 +4652,6 @@
       "text": "Faightear comhad san eolaire sonraithe nó san eolaire reatha ag baint úsáide as nathanna rialta"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC",
-      "text": "Forks an bhlaosc UESH chun sampla eile a chruthú"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC",
       "text": "Sonraíonn an cosán aschuir"
     },
@@ -5342,10 +4694,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC",
       "text": "Bainisteoir comhad óstach córais idirghníomhach"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC",
-      "text": "Ligeann sé don úsáideoir ionchur a chur isteach mar phasfhocal"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
@@ -5496,10 +4844,6 @@
       "text": "Osclaíonn sé TUI idirghníomhach ina mbeidh tú in ann clog an domhain a fheiceáil i bhfíor-am"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
-      "text": "Codlaíonn sé ar feadh milleasoicindí sonraithe"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
       "text": "Ritheann an t-ordú mar an t-úsáideoir fréimhe"
     },
@@ -5550,14 +4894,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC",
       "text": "Socraigh an téama ar an roghnú láithreach"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC",
-      "text": "Baineann sé athróg ó liosta athróg UESH"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "Just a wipes an luach athraitheach gan é a bhaint"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
@@ -5626,10 +4962,6 @@
     {
       "loc": "NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD",
       "text": "Seans nach bhfuil teachtaireacht an lae ar neamhní."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER",
-      "text": "Brúigh aon litir ar do mhéarchlár chun í a shocrú don charachtar sin."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM",
@@ -5976,50 +5308,6 @@
       "text": "Tástálacha lasca"
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL",
-      "text": "Ní fhéadfaidh an sealbhóir áitribh a bheith ar neamhní"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERACTIONNULL",
-      "text": "Ní fhéadfaidh gníomh sealbhóirí áitribh a bheith ar neamhní"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED",
-      "text": "Níl an sealbhóir áitrithe cláraithe"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT",
-      "text": "Ní mór don sealbhóir an leagan amach seo a shásamh"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "Is gá an coinníoll a chur sa deireadh."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "Ní féidir coinníoll atá ann cheana a chlárú."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "Ní féidir riocht folamh a chlárú."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "Ní féidir coinníoll nach ann a dhíchlárú."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_FINDCMDS_NOTFOUND",
-      "text": "Níor aimsíodh aon orduithe."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "Líon neamhbhailí uaireanta."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "Ní féidir é féin a athdhéanamh."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
       "text": "Tá uimhir an tseisiúin neamhbhailí."
     },
@@ -6150,10 +5438,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS",
       "text": "Úsáideoir {0} á chur leis an ngrúpa {1}…"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_SUCCESS",
-      "text": "Is féidir leat '{0}' a rith mar '{1}' anois!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED",
@@ -6444,10 +5728,6 @@
       "text": "Theip ar chuardach {0} le haghaidh {1}."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
-      "text": "Caithfidh tú an lasc -set a chur ar aghaidh leis an athróg a dteastaíonn uait an luach seo a shocrú dó."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING",
       "text": "áit a mbeidh spárálaíscáileáin"
     },
@@ -6608,14 +5888,6 @@
       "text": "Níl aon chur síos ar an gcianordú dífhabhtaithe"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "Tá an cineál sonraí {0} sonraithe neamhbhailí."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "Tá an t-ardán sonraithe {0} neamhbhailí."
-    },
-    {
       "loc": "NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT",
       "text": "Ní féidir fuaim a sheinm mar gheall ar am istigh."
     },
@@ -6678,22 +5950,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC",
       "text": "Má tá tú cinnte go dtacaíonn an consól le dath fíor, nó más mian leat do chríochfort a athrú go teirminéal a thacaíonn le fíor-dath, athraigh an luach seo."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
-      "text": "Socraigh leathanach cód"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
-      "text": "Socraigh an leathanach cód teanga nuair a aistrítear teangacha."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME",
-      "text": "Admhaíodh fógra forbartha"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC",
-      "text": "Más fíor é, ní thaispeánfaidh an t-eithne an fógra forbartha duit gach uair a thosaíonn tú ar an eithne i leaganacha forbartha."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME",
@@ -7532,10 +6788,6 @@
       "text": "Déan iniúchadh ar na logaí dífhabhtaithe chun tuilleadh eolais a fháil faoin earráid."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC",
-      "text": "Chun é a dhífhostú go deo, brúigh ENTER ar do mhéarchlár, nó cumasaigh \"Admhaíodh fógra forbartha\" sna socruithe eithne. Téann eochair ar bith eile ar aghaidh gan admháil."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
       "text": "Tá tú ag rith Nitrocid KS ar thimpeallacht neamhghnách. Cinntigh gur thosaigh tú ar an eithne go díreach. Má tá tú cinnte go bhfuil tú tosaithe ar an eithne ar an ngnáthbhealach, b'fhéidir gurb é an fáth go bhfuil tú ag rith leagan de Nitrocid KS nach dtacaítear leis."
     },
@@ -7590,18 +6842,6 @@
     {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "Seans nach bhfuil dáta agus am aláraim san am atá caite."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_TIP",
-      "text": "Féach ar an iontráil cabhrach don ordú seo le haghaidh tuilleadh faisnéise"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGLISTING",
-      "text": "Tá na hargóintí thíos ag an ordú seo a athraíonn conas a oibríonn sé:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGNODESC",
-      "text": "Cur síos ar argóint neamhshonraithe"
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC",
@@ -7960,18 +7200,6 @@
       "text": "Sórtáil an liosta go alfa-uimhriúil má tá sé cumasaithe nó in ord aibítre má tá sé díchumasaithe."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "Theip ar an téama réamhshocraithe a líonadh"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "Níl aon meiteashonraí téama sainithe."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "Ní féidir meiteashonraí a dhíshraithiú."
-    },
-    {
       "loc": "NKS_DRIVERS_ENCODING_BASE_EXCEPTION_NEEDSINIT",
       "text": "Ba cheart an t-ionchódú seo a thúsú."
     },
@@ -8248,34 +7476,6 @@
       "text": "Ní féidir an snáithe a athghiniúint"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED",
-      "text": "Theip ar lódáil acmhainn teanga le haghaidh"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LOCALIZED",
-      "text": "Ní féidir téacs logánta a fháil"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS",
-      "text": "Ní féidir logánú Béarla a fháil"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOC",
-      "text": "Ní féidir téacs Béarla a fháil"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN",
-      "text": "Ní mór comhartha teanga a shonrú"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA",
-      "text": "Ní féidir meiteashonraí teanga a fháil"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATAARRAY",
-      "text": "Ní féidir eagar meiteashonraí teanga a fháil"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",
       "text": "meiteashonraí MIME (sínte)"
     },
@@ -8388,30 +7588,6 @@
       "text": "Cóipcheart (C) 2018-2025 Aptivi - Gach ceart ar cosaint"
     },
     {
-      "loc": "NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO",
-      "text": "Ní féidir faisnéis argóinte a fháil le haghaidh ordú nó argóint"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_COMMANDEXECUTION",
-      "text": "Ní shonraítear paraiméadair snáithe."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "Ní féidir paraiméadair snáithe a fháil chun an próiseas a chur i gcrích."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_INTERNALFIELDENVVARS",
-      "text": "Ní féidir an réimse inmheánach d'athróga timpeallachta a fháil"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_NOEXECUTOR",
-      "text": "Ní féidir seiceadóir bhlaosc a fháil le haghaidh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC",
-      "text": "Taispeáin orduithe ginearálta (réamhshocraithe)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC",
       "text": "Athraítear ainm iomlán an úsáideora (ainm taispeána)"
     },
@@ -8474,18 +7650,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC",
       "text": "Íostréimhse réchasta chun spárálaíscáileáin a sheoladh. Tá an t-aonad i bhformáid réise ama (HH:MM:SS)."
-    },
-    {
-      "loc": "NKS_THEMES_DEFAULT_DESC",
-      "text": "An téama réamhshocraithe don eithne"
-    },
-    {
-      "loc": "NKS_THEMES_DYNAMIC_DESC",
-      "text": "Accents i ngach áit!"
-    },
-    {
-      "loc": "NKS_THEMES_NITRICACID_DESC",
-      "text": "Leacht gan dath, fuming, agus an-chreimneach"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
@@ -8580,10 +7744,6 @@
       "text": "Ní thacaítear leis an leagan seo de Nitrocid KS a thuilleadh."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES",
-      "text": "Theip ar lódáil teangacha saincheaptha"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
       "text": "Theip ar bhreiseáin eithne tábhachtacha a luchtú"
     },
@@ -8616,10 +7776,6 @@
       "text": "Theip ar an láimhseálaí cealaithe a lódáil"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES",
-      "text": "Theip ar lódáil ailiasanna"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL",
       "text": "Theip ar lódáil iontrálacha diailithe luais"
     },
@@ -8640,10 +7796,6 @@
       "text": "Theip ar lódáil MOTD agus MAL"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES",
-      "text": "Theip ar lódáil stair na n-orduithe sliogán"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS",
       "text": "Theip ar láimhseálaithe na síntí a lódáil"
     },
@@ -8662,10 +7814,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_RESET_VARS",
       "text": "Theip ar athróga ginearálta a athshocrú"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES",
-      "text": "Theip ar shábháil stair na n-orduithe sliogán"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_CONSENTS",
@@ -8766,58 +7914,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR",
       "text": "Seans nár bunaíodh an nasc líonra i gceart de bharr earráide."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "Ní féidir ordú a mhaolánú nach bhfuil socraithe mar infhillte."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDSWITCHNODESC",
-      "text": "Cur síos lasc neamhshonraithe"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC",
-      "text": "Conair chuig próiseas"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "Argóintí le cur ar aghaidh chuig próiseas"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "Ordú chun iontráil cabhrach a thaispeáint"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
-      "text": "Píopaí an t-aschur ordaithe chuig ordú eile mar pharaiméadair"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "Ordú foinse chun a aschur a phíobáil go dtí an sprioc-ordú mar an paraiméadar deiridh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Sprioc-ordú a fhorghníomhú ar argóint tógála bunaithe ar an aschur ordú foinse"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC",
-      "text": "Cibé ar cheart aschur an bhunordaithe a chur ar aghaidh mar argóint luaite amháin nó argóint neamhluaite"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "Ordú chun a aschur a fhilleadh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "Theip ar fhorghníomhú an ordaithe foinse."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "Theip ar fheidhmiú an ordaithe sprice. Seans nach bhfuil an t-ábhar líonta i gceart. Ba é an t-ordú a cuireadh chun báis"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_FAILED",
-      "text": "Tá píopa briste."
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC",
@@ -9008,18 +8104,6 @@
       "text": "Sloinn rialta chun frásaí atá le hathchur a mheaitseáil"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDCOUNTRY",
-      "text": "Tír neamhbhailí"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_CHOOSELANGFORCOUNTRY",
-      "text": "Roghnaigh teanga don tír"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDLANG",
-      "text": "Roghnú teanga neamhbhailí le haghaidh"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_YES",
       "text": "Tá"
     },
@@ -9066,26 +8150,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC",
       "text": "Liostaíonn na haláraim"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "Cuireann ailias leis"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "Cineál bhlaosc chun orduithe a fháil uaidh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "Ainm ailias"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "Ordú le húsáid mar aicearra"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC",
-      "text": "Baineann sé ailias"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC",
@@ -9148,28 +8212,8 @@
       "text": "Aitheantas teanga"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC",
-      "text": "Athraíonn sé an teanga ag baint úsáide as tír (b'fhéidir go dtabharfar leid duit teanga a roghnú)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC",
       "text": "Teachtaireacht nua le húsáid"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Freagraí ar scoilt le slais"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ceist le priontáil ar an scáileán"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Teideal an chéad fhreagra"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Teideal an dara freagra, agus mar sin de..."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
@@ -9272,10 +8316,6 @@
       "text": "Liosta de na cineálacha tiománaithe"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "Teaghrán le priontáil"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC",
       "text": "Comhad le ionchódú"
     },
@@ -9312,32 +8352,12 @@
       "text": "Cineál crua-earraí"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Slonn UESH le tástáil"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC",
-      "text": "Ordú a fhorghníomhú ar mheastóireacht rathúil"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC",
       "text": "Conair chuig an eolaire don phána ar chlé"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "Conair chuig an eolaire don phána ceart"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC",
-      "text": "Athlódáil, lódálann nó díluchtaítear teanga shaincheaptha"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC",
-      "text": "Ainm teanga saincheaptha"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC",
-      "text": "Liostaíonn nó athlódálann sé gach teanga saincheaptha"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
@@ -9456,10 +8476,6 @@
       "text": "Osclaíonn sé na socruithe splancscáileán addon"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC",
-      "text": "Luach a shocrú"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC",
       "text": "Ainm athróg cumraíochta"
     },
@@ -9468,24 +8484,8 @@
       "text": "Ainm an fheidhmeora"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "An chéad luach"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "An dara luach"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "An tríú luach, agus mar sin de ..."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC",
       "text": "Ainm crios ama"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC",
-      "text": "Eatramh chun codlata"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC",
@@ -9522,10 +8522,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC",
       "text": "Seoladh IP le díbhlocáil"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "Ainm athróg"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC",
@@ -9932,10 +8928,6 @@
       "text": "Ní féidir cumraíocht a roghnú"
     },
     {
-      "loc": "NKS_KNOWNADDONS_PACKS_LANGUAGES",
-      "text": "Pacáiste Teangacha Breise"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_PACKS_SCREENSAVERS",
       "text": "Pacáiste breise spárálaíscáileáin"
     },
@@ -10104,22 +9096,6 @@
       "text": "Extras - Chatbot AI"
     },
     {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED1",
-      "text": "Theip ar lódáil meiteashonraí teanga"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE1",
-      "text": "Theip ar dhíshraithiú meiteashonraí teanga"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED2",
-      "text": "Theip ar lódáil meiteashonraí teanga le haghaidh"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
-      "text": "Theip ar dhíshraithiú meiteashonraí teanga le haghaidh"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
       "text": "Ní féidir an bhunchumraíocht {0} a dhíshriail"
     },
@@ -10130,14 +9106,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_DESC",
       "text": "Liostaíonn an chuid seo na socruithe tiománaí."
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
-      "text": "Tiománaí consól reatha"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
-      "text": "Cén tiománaí consól ar mhaith leat a úsáid?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",

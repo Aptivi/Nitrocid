@@ -19,10 +19,6 @@
       "text": "{0} v{1} startet"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Ugyldig språk"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Parsing mods er ikke tillatt i sikker modus."
     },
@@ -147,10 +143,6 @@
       "text": "Avinstallering mislyktes for"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Metadatainformasjonen som trengs for å installere det tilpassede språket, gir ikke de nødvendige lokaliseringene som trengs."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Vis mod-kommandoene stole på hjelp"
     },
@@ -161,10 +153,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Unavngitt manualside"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "Metadatainformasjonen som trengs for å installere det tilpassede språket, eksisterer ikke."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -299,10 +287,6 @@
       "text": "Ukjent lasterunntak"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Kan ikke laste inn mod-lokaliseringer"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Kunne ikke hente innstillingsoppføringer."
     },
@@ -365,10 +349,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Denne klassen er ikke en mod-klasse"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Språk"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

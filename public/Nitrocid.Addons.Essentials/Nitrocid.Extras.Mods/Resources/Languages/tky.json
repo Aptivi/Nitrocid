@@ -16,10 +16,6 @@
       "text": "{0} v{1} başladı"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Geçersiz dil"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Güvenli modda modların ayrıştırılmasına izin verilmez."
     },
@@ -144,10 +140,6 @@
       "text": "Kaldırma işlemi başarısız oldu"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Özel dili yüklemek için gereken meta veri bilgileri, ihtiyaç duyulan yerelleştirmeleri sağlamıyor."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Mod komutlarının yardıma olan sayısını göster"
     },
@@ -158,10 +150,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Başlıksız kılavuz sayfası"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "Özel dili yüklemek için gereken meta veri bilgisi mevcut değil."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -296,10 +284,6 @@
       "text": "Bilinmeyen yükleyici istisnası"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Mod yerelleştirmeleri yüklenemiyor"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Ayar girişleri alınamadı."
     },
@@ -362,10 +346,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Bu sınıf bir mod sınıfı değildir"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Diller"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",
