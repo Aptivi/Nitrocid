@@ -15,10 +15,6 @@
       "text": "{0} v {1}が開始しました"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "無効な言語"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "modの解析はセーフモードでは許可されていません。"
     },
@@ -143,10 +139,6 @@
       "text": "のアンインストールに失敗しました"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "カスタム言語をインストールするために必要なメタデータ情報は、必要なローカリゼーションを提供しません。"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "ヘルプにmodコマンドの数を表示する"
     },
@@ -157,10 +149,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "無題のマニュアルページ"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "カスタム言語のインストールに必要なメタデータ情報が存在しません。"
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -295,10 +283,6 @@
       "text": "不明なローダー例外"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "MODのローカリゼーションを読み込めません"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "設定エントリを取得できませんでした。"
     },
@@ -361,10 +345,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "このクラスはmodクラスではありません"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "言語"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

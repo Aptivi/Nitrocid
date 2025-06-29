@@ -32,14 +32,6 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "Presione cualquier tecla para continuar..."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "Plantilla de color no válida {0}"
-    },
-    {
       "loc": "NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE",
       "text": "Introduzca la contraseña de administrador para el mantenimiento."
     },
@@ -108,10 +100,6 @@
       "text": "Contraseña incorrecta."
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PARSEERROR",
-      "text": "Error al intentar analizar los marcadores de posición. {0}"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_ADDERROR",
       "text": "Error al intentar agregar el nombre de usuario."
     },
@@ -152,28 +140,8 @@
       "text": "No se encontró el protector de pantalla {0} en la base de datos. Verifique el nombre e intente nuevamente."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NODEFINITION",
-      "text": "No hay definición para el comando {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_DEFINEDBY",
-      "text": "Comando definido por "
-    },
-    {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1",
       "text": "Directorio {0} no encontrado."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASCOMMANDSAMENAME",
-      "text": "Alias no puede ser el mismo nombre que un comando."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_COMMANDNOTFOUND",
-      "text": "Comando no encontrado alias a {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_REMOVE",
-      "text": "El alias {0} no se encuentra eliminado."
     },
     {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2",
@@ -220,10 +188,6 @@
       "text": "Configuración recargada. Es posible que deba reiniciar el kernel para que algunos cambios surtan efecto."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_COLORINVALID",
-      "text": "Uno o más de los colores no son válidos."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND",
       "text": "Protector de pantalla {0} no encontrado."
     },
@@ -238,10 +202,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
       "text": "Cambia la contraseña para el usuario actual"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC",
-      "text": "Borra la pantalla"
     },
     {
       "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
@@ -304,14 +264,6 @@
       "text": "Mensaje de shell: el comando solicitado {0} no se puede ejecutar en modo de mantenimiento."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMANDNOTFOUND",
-      "text": "Mensaje de shell: el comando solicitado {0} no se encuentra. Ver 'ayuda' para los comandos disponibles."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ERROREXECUTE2",
-      "text": "Error al intentar ejecutar el comando."
-    },
-    {
       "loc": "NKS_KERNEL_TIME_TIMEZONES_LISTENTRY",
       "text": "- Tiempo de {0}: {1}"
     },
@@ -322,10 +274,6 @@
     {
       "loc": "NKS_FILES_UNAUTHORIZED",
       "text": "No estás autorizado para obtener información para {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_OBSOLETECMD",
-      "text": "Este comando está obsoleto y se eliminará en una versión futura."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN",
@@ -374,10 +322,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTED",
       "text": "Depure la escucha en todas las direcciones utilizando el puerto {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_ALIASALREADYEXISTS",
-      "text": "Alias ya encontrado: {0}"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_CDBGLOG_SUCCESS",
@@ -472,10 +416,6 @@
       "text": "Ejecuta un comando de forma remota en una PC remota"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "Tipo no válido {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ENTRYSIZE",
       "text": "Tamaño: {0}"
     },
@@ -514,26 +454,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILED",
       "text": "Error al iniciar la depuración remota: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CANTEXECUTE",
-      "text": "Error al intentar ejecutar el script: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC",
-      "text": "Escribe texto en la consola"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC",
-      "text": "Hace elecciones de usuario"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHOICE_HELPER",
-      "text": "donde <answers> son respuestas con una letra de la pregunta separadas en barras"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC",
-      "text": "Permite al usuario ingresar la entrada"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_DESC",
@@ -712,10 +632,6 @@
       "text": "Agrega usuarios"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC",
-      "text": "Agrega alias a los comandos"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC",
       "text": "Cambia el nombre de host"
     },
@@ -738,10 +654,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC",
       "text": "Elimina un usuario de la lista."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_REMOVALSUCCESS",
-      "text": "Se eliminó el alias {0} correctamente."
     },
     {
       "loc": "NKS_KERNEL_UPDATES_CHECKFAILED",
@@ -1032,10 +944,6 @@
       "text": "Abre una carcasa de prueba"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDSTARTFAILED",
-      "text": "No se pudo iniciar \"{0}\": {1}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC",
       "text": "Borra el archivo de texto"
     },
@@ -1120,14 +1028,6 @@
       "text": "La entrada ya existe."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
-      "text": "Envuelve la salida de la consola"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAPUNWRAPPABLE",
-      "text": "El comando no se puede envolver. Estos comandos se pueden envolver:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
       "text": "Extrae un archivo ZIP"
     },
@@ -1156,10 +1056,6 @@
       "text": "{0} te hizo ping."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC",
-      "text": "Establece una variable en un valor en un script"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME",
       "text": "Mostrar banner SSH"
     },
@@ -1180,32 +1076,12 @@
       "text": "Comandos generales:"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_MODLISTING",
-      "text": "Comandos de mod:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ALIASLISTING",
-      "text": "Comandos de alias:"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
       "text": "Modo de mantenimiento"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME",
       "text": "Directorios de búsqueda"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOMODLISTING",
-      "text": "Sin comandos de modificación."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOALIASLISTING",
-      "text": "Sin comandos de alias."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "No se encuentra el comando wrappable."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC",
@@ -1436,14 +1312,6 @@
       "text": "El protector de pantalla experimentó un error al mostrar: {0}. Presiona cualquier tecla para salir."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_THEMESHOWCASE",
-      "text": "Así es como se verá su tema:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "Comandos envolventes:"
-    },
-    {
       "loc": "NKS_FILES_LISTFOLDEREMPTY",
       "text": "La carpeta está vacía."
     },
@@ -1458,10 +1326,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME",
       "text": "Banner de inicio personalizado"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO",
-      "text": "Puede que la respuesta no sea cero."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION",
@@ -1482,10 +1346,6 @@
     {
       "loc": "NKS_ARGUMENTS_HELP_LISTING",
       "text": "Argumentos del kernel disponibles:"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNRECOVERABLEERROR",
-      "text": "Error irrecuperable en el argumento:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA512_DESC",
@@ -1928,16 +1788,8 @@
       "text": "Me gusta el modo seguro, pero también deshabilita el modo multiusuario y algunas personalizaciones"
     },
     {
-      "loc": "NKS_ARGUMENTS_NOTENOUGHARGS",
-      "text": "No hubo suficientes argumentos."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
       "text": "Los colores no requieren un reinicio, pero la mayoría de las configuraciones requieren un reinicio."
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELP",
-      "text": "No hay ayuda para el argumento \"{0}\"."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -1976,10 +1828,6 @@
       "text": "Archivo {0} no encontrado"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC",
-      "text": "Crea una matriz de variables con los valores proporcionados."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC",
       "text": "Comprueba todos los números de línea de texto de localización para ver si todos son iguales"
     },
@@ -2010,10 +1858,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC",
       "text": "Ordena la lista de sistemas de archivos profesionalmente."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC",
-      "text": "Proporciona una opción de selección"
     },
     {
       "loc": "NKS_SHELL_BASE_HELP_NOLISTING",
@@ -2100,10 +1944,6 @@
       "text": "¡Estás al día!"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_SWITCHLISTING",
-      "text": "Este comando tiene los siguientes interruptores que cambian su funcionamiento:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC",
       "text": "Muestra los detalles del archivo en la lista."
     },
@@ -2144,76 +1984,8 @@
       "text": "Habilita la depuración para el sistema de eventos del kernel."
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGFAILED",
-      "text": "No se pudo instalar el idioma personalizado {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_METADATAHASNOLOCS",
-      "text": "La información de metadatos necesaria para instalar el idioma personalizado no proporciona las localizaciones necesarias."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED1",
-      "text": "No se pudo desinstalar el idioma personalizado {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT",
-      "text": "La longitud del idioma inglés no coincide con la longitud del token de idioma proporcionado."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOOVERWRITE",
-      "text": "El idioma ya existe y no se puede sobrescribir."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED2",
-      "text": "No se pudo desinstalar el idioma personalizado. Lo más probable es que no exista."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGSFAILED",
-      "text": "Error al instalar idiomas personalizados."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED1",
-      "text": "No se pudieron desinstalar los idiomas personalizados."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED2",
-      "text": "No se pudieron desinstalar los idiomas personalizados. Consulte la excepción interna para obtener más información."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE",
       "text": "Información de licencia"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC",
-      "text": "Administra tus idiomas"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_LANGNOTFOUND",
-      "text": "No se encontró el idioma o el archivo tiene caracteres no válidos."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_NOLANG",
-      "text": "No se especifica el idioma."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SAFEMODE",
-      "text": "La gestión de idiomas está deshabilitada en modo seguro."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SHORTNAME",
-      "text": "Nombre corto del idioma:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_FULLNAME",
-      "text": "Idioma nombre completo:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_TRANSLITERABLE",
-      "text": "Idioma transliterable:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_CUSTOM",
-      "text": "Idioma personalizado:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME",
@@ -2272,40 +2044,12 @@
       "text": "Mostrar los alias contar con ayuda"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC",
-      "text": "Ejecuta comandos una vez que se cumplen las expresiones UESH"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "La condición no se encontró en la expresión."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "La condición {0} requiere {1} argumentos. Tengo {2}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "Error al analizar la expresión debido a un error de sintaxis."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE",
-      "text": "No se pudo satisfacer la condición. Más información aquí:"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME",
       "text": "Carácter de máscara de contraseña"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC",
       "text": "Un carácter que enmascara la contraseña. Dejar en blanco para mayor seguridad."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC",
-      "text": "Sale del shell si se ejecuta en subshell"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_KILLINGMOTHERSHELL",
-      "text": "¡No se puede matar a la concha madre!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL",
@@ -2330,10 +2074,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
       "text": "Habilita el modo de depuración"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE",
-      "text": "Valor actual:"
     },
     {
       "loc": "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC",
@@ -2456,10 +2196,6 @@
       "text": "Activa o desactiva la función de guardado automático del editor hexadecimal."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "El guión está mal formado. Verifique el script y resuelva cualquier error: {0}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC",
       "text": "Utiliza ruta relativa en lugar de absoluta"
     },
@@ -2470,10 +2206,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC",
       "text": "Si el historial de entrada está habilitado o no. Si está habilitado, puede acceder a los comandos escritos recientemente usando las teclas de flecha hacia arriba o hacia abajo."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "Ahora es seguro apagar su computadora."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME",
@@ -2492,14 +2224,6 @@
       "text": "Asegúrese de utilizar una fuente de consola compatible con los glifos PowerLine, o es posible que la salida no se reproduzca correctamente. Nosotros recomendamos"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC",
-      "text": "Abre la biblioteca de ajustes preestablecidos de shell"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_EXCEPTION_PRESETNOTFOUND",
-      "text": "No se encuentra el preajuste especificado {0}."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_ALREADYBLOCKED",
       "text": "El dispositivo ya existe en la lista de bloqueo."
     },
@@ -2510,10 +2234,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC",
       "text": "Prueba la ejecución del punto de entrada del ensamblaje"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_SELECT",
-      "text": "Seleccione preestablecido para {0}:"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
@@ -2538,22 +2258,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
       "text": "Oculta la presentación previa al arranque antes de cargar la configuración."
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNKNOWNARGUMENT",
-      "text": "Argumento desconocido"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING",
-      "text": "Debe ejecutar ConEmu o un símbolo del sistema de Windows 10 con el procesamiento VT habilitado."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO",
-      "text": "Su terminal está {0} en {1}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION",
-      "text": "¿Te parecen bien estas rampas? Deberían realizar una transición sin problemas."
     },
     {
       "loc": "NKS_DRIVERS_EXCEPTION_NOFALLBACKS",
@@ -2660,22 +2364,6 @@
       "text": "Presione cualquier tecla para iniciar el shell de todos modos, pero tenga en cuenta que es posible que deba crear su nuevo usuario manualmente."
     },
     {
-      "loc": "NKS_KERNEL_ENVERROR",
-      "text": "Error del entorno del kernel:"
-    },
-    {
-      "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Nitrocid KS ha detectado un problema y se ha cerrado."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_INSTALL",
-      "text": "La información de metadatos necesaria para instalar el idioma personalizado no existe."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_UNINSTALL",
-      "text": "La información de metadatos necesaria para desinstalar el idioma personalizado no existe."
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "Intentando modificar una cuenta existente mientras está bloqueada"
     },
@@ -2722,26 +2410,6 @@
     {
       "loc": "NKS_ARGUMENTS_RESET_WIPEMISCFAILED",
       "text": "No se pueden borrar archivos varios"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELPDESC",
-      "text": "Descripción de ayuda sin argumentos"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "Su consola debe admitir colores verdaderos para usar este tema."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXITPREVIEW_DESC",
-      "text": "Salir de la vista previa"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "El tema {0} celebra un evento, pero es demasiado temprano o demasiado tarde para asistir. Cada año, se puede acceder a este tema desde el {1}/{2} hasta el {3}/{4}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "El tema {0} necesita compatibilidad con colores reales, pero tu consola no lo admite."
     },
     {
       "loc": "NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT",
@@ -3112,10 +2780,6 @@
       "text": "Se produjo un error general de shell HTTP."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLEDETECTED",
-      "text": "Se ha detectado una consola loca. Nitrocid KS no puede continuar ejecutándose porque su consola no es compatible con nuestros requisitos."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHALGORITHM",
       "text": "Algoritmo hash no válido. Si está utilizando un controlador de suma hash personalizado, verifique que el controlador esté cargado."
     },
@@ -3208,10 +2872,6 @@
       "text": "No hay ningún shell preestablecido con este nombre."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",
-      "text": "No hay ningún tema con este nombre."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NULLUSERS",
       "text": "No hay usuarios en todo el kernel. Hemos llegado a una situación extremadamente rara. El kernel no puede continuar."
     },
@@ -3256,14 +2916,6 @@
       "text": "Se produjo un error general del shell SFTP."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONPARSE",
-      "text": "Error al analizar la condición. Verifique su sintaxis para cumplir con el diseño esperado del operador."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHSCRIPT",
-      "text": "Se produjo un error al intentar analizar el archivo de script UESH. Verifique su archivo de script en busca de errores y corríjalos."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_USERCREATION",
       "text": "Se produjo un error de creación de usuario."
     },
@@ -3274,10 +2926,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK",
       "text": "Se produjo un error general de red. Si intenta conectarse a un extremo remoto, asegúrese de estar conectado a Internet o a su red local."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UNSUPPORTEDCONSOLE",
-      "text": "Se ha detectado una consola no compatible."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE",
@@ -3348,20 +2996,12 @@
       "text": "Se produjo un error en el administrador de contactos al intentar realizar la operación solicitada. Asegúrese de que el archivo de contacto exista en la carpeta correcta y que sea un archivo de contacto vCard 2.1, 3.0 o 4.0 válido."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
-      "text": "Un sistema de condición UESH falló al realizar la operación solicitada. Consulte el mensaje de error a continuación para obtener más detalles."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR",
       "text": "Se está realizando una operación del editor SQL no válida."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP",
       "text": "El grupo no existe. Asegúrate de haber escrito el nombre del grupo correctamente."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INTERACTIVETUI",
-      "text": "Se produjo un error en la implementación de la TUI interactiva."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS",
@@ -3410,10 +3050,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_REFLECTION",
       "text": "Hubo un error en el sistema de reflexión."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_THEMEMANAGEMENT",
-      "text": "Se produjo un error al intentar realizar una operación para la gestión de temas."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_EVENTMANAGEMENT",
@@ -3784,10 +3420,6 @@
       "text": "Iniciando nitrocida..."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_CUSTOMLANGS",
-      "text": "Cargando idiomas personalizados..."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_IMPORTANTADDONS",
       "text": "Cargando complementos importantes del kernel..."
     },
@@ -3818,10 +3450,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_GENERALVARSRESET",
       "text": "Restablecimiento de variables generales"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_HISTORIESSAVED",
-      "text": "Historiales de comandos de shell guardados."
     },
     {
       "loc": "NKS_KERNEL_STARTING_CONFIGSAVED",
@@ -4436,32 +4064,12 @@
       "text": "Este programa tiene la licencia GNU General Public License 3.0 o posterior."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "Estás ejecutando la versión de desarrollo del kernel. Si bien puede experimentar las próximas funciones que pueden existir en la versión final, es posible que se encuentre con errores, inestabilidades o incluso pérdida de datos. Recomendamos utilizar la versión estable, si es posible."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "Estás ejecutando la versión candidata a lanzamiento del kernel. Si bien puedes experimentar los toques finales, es posible que te encuentres con errores, inestabilidades o incluso pérdida de datos. Recomendamos utilizar la versión estable, si es posible."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "Recomendamos no ejecutar esta versión del kernel porque no es compatible. Si ha descargado este kernel de fuentes desconocidas, puede aparecer este mensaje. Descárguelo desde nuestra página de descargas oficial."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP",
-      "text": "Para descartar para siempre, presione ENTER en el botón \"Reconocido\" aquí resaltándolo usando la flecha izquierda en su teclado, o habilite \"Aviso de desarrollo reconocido\" en la configuración del kernel."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_OK",
       "text": "DE ACUERDO"
     },
     {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_ACKED",
       "text": "Admitido"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISS_TITLE",
-      "text": "aviso de desarrollo"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
@@ -4788,228 +4396,12 @@
       "text": "Para poder obtener las últimas noticias, debe instalar el complemento RSS Shell Extras. ¡Puedes usar el comando 'getaddons' para obtener todos los complementos!"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_QUERY",
-      "text": "El alias {0} no se encuentra consultado."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Establece el valor de la salida a la variable UESH seleccionada"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_LISTING",
-      "text": "Los argumentos obligatorios no se proporcionan para todos los usos siguientes:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGS",
-      "text": "No se proporcionan los argumentos requeridos."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHES",
-      "text": "No se proporcionan los interruptores necesarios."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHVALUE",
-      "text": "Uno de los interruptores requiere un valor que no se proporciona."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_UNKNOWNSWITCH",
-      "text": "Los interruptores que se enumeran a continuación son desconocidos."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_CONFLICTSWITCH",
-      "text": "Los conmutadores que se enumeran a continuación entran en conflicto entre sí."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNOVALUE",
-      "text": "Los siguientes modificadores no aceptan valores."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGNUMVALUE",
-      "text": "Uno o más argumentos esperan un valor numérico, pero usted proporcionó un número no válido."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGEXACTWORD",
-      "text": "Uno o más argumentos esperan una redacción exacta, pero usted proporcionó una palabra no válida."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNUMVALUE",
-      "text": "Uno o más de los modificadores esperan un valor numérico, pero usted proporcionó un número no válido."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ABORTED",
-      "text": "El comando ha sido cancelado."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "No debe ejecutar este comando directamente en modo empaquetado."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "Se produjo un error al intentar ajustar la salida de un comando"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_COMMANDABORTED",
-      "text": "Comando cancelado por el siguiente motivo:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDPATTERNINVALID",
-      "text": "Se proporcionó un patrón de comando no válido."
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Comando no encontrado."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND",
-      "text": "El tipo de shell {0} no existe."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED",
-      "text": "Debes proporcionar la base de mando."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED",
-      "text": "Debes proporcionar el comando."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS",
-      "text": "¡El comando especificado ya está agregado! Es posible que tengas modificaciones conflictivas."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_UNDEFINED",
-      "text": "Comando no definido"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_CUSTOM",
-      "text": "Algunos de los comandos personalizados no se pueden cargar."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_CUSTOM",
-      "text": "No se encuentra el comando personalizado especificado."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_CUSTOM",
-      "text": "Algunos de los comandos personalizados no se pueden descargar."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS_CUSTOM",
-      "text": "¡El comando especificado ya está agregado! Es posible que tengas complementos conflictivos."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_ADDON",
-      "text": "Algunos de los comandos complementarios no se pueden cargar."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_ADDON",
-      "text": "No se encuentra el comando adicional especificado."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_ADDON",
-      "text": "Algunos de los comandos complementarios no se pueden descargar."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NEEDSSLASH",
-      "text": "Este shell utiliza los comandos de barra diagonal para ejecutar los comandos. Agregue el símbolo de barra diagonal '/' al comienzo del comando para comenzar. Por ejemplo:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDLISTING",
-      "text": "Comandos disponibles:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ADDONLISTING",
-      "text": "Comandos del complemento del kernel:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOADDONLISTING",
-      "text": "Sin comandos complementarios del kernel."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_UNIFIEDLISTING",
-      "text": "Comandos unificados:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOUNIFIEDLISTING",
-      "text": "¡¡¡Comandos unificados no implementados!!!"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_COMMAND",
-      "text": "Dominio:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "No puede declarar el nuevo bloque antes de colocar expresiones que admitan la creación, como condiciones o bucles. El número de pila es {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "Al comenzar un nuevo bloque, asegúrese de haber sangrado la pila correctamente. El número de pila es {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "El guión está mal formado. Verifique el script y resuelva cualquier error."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "Recordatorio para los comandos de barra diagonal"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
-      "text": "Ejecuta un proceso externo."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC",
-      "text": "Ejecuta el proceso sin interrumpir el hilo del shell. Se creará una ventana separada."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
-      "text": "Encuentra los comandos disponibles en el tipo de shell actual"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC",
-      "text": "Muestra comandos mod."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC",
-      "text": "Muestra comandos con alias"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC",
-      "text": "Muestra comandos unificados"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC",
-      "text": "Muestra comandos de complementos del kernel"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC",
-      "text": "Muestra todos los comandos"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC",
-      "text": "Utiliza ayuda simplificada"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC",
-      "text": "Carga historiales de shell"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
-      "text": "Repite la última acción o el comando especificado."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC",
-      "text": "Guarda historiales de shell"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
       "text": "Muestra una punta de kernel aleatoria"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTSTARTWITHOUTMOTHERSHELL",
-      "text": "Los shells no pueden iniciarse a menos que se haya iniciado el shell madre."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTINITSHELL",
-      "text": "No se pudo intentar inicializar el shell"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -5184,26 +4576,6 @@
       "text": "Cambia el idioma del usuario en lugar del idioma del sistema."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC",
-      "text": "Estilo de elección de una línea"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC",
-      "text": "Estilo de elección de dos líneas."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC",
-      "text": "Estilo de elección moderno"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "La salida puede ser solo un carácter."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "La salida puede ser más que un carácter."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
       "text": "Combina los dos archivos de texto o más en la consola."
     },
@@ -5226,18 +4598,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC",
       "text": "Fuerza la conversión del final de línea."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
-      "text": "Muestra solo la fecha"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
-      "text": "Muestra justo el tiempo"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
-      "text": "Utiliza UTC en lugar de local"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC",
@@ -5270,10 +4630,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN",
       "text": "Gestiona tus conductores"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "Imprime el texto tal como está sin análisis de marcadores de posición."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
@@ -5320,10 +4676,6 @@
       "text": "Encuentra un archivo en el directorio especificado o en el directorio actual usando expresiones regulares"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC",
-      "text": "Bifurca el shell UESH para crear otra instancia"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC",
       "text": "Especifica la ruta de salida."
     },
@@ -5366,10 +4718,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC",
       "text": "Administrador de archivos del host del sistema interactivo"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC",
-      "text": "Permite al usuario ingresar datos como contraseña"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
@@ -5520,10 +4868,6 @@
       "text": "Abre una TUI interactiva en la que podrás ver el reloj mundial en tiempo real"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
-      "text": "Duerme durante milisegundos específicos"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
       "text": "Ejecuta el comando como usuario root."
     },
@@ -5574,14 +4918,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC",
       "text": "Establecer inmediatamente el tema en la selección."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC",
-      "text": "Elimina una variable de la lista de variables UESH"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "Simplemente borra el valor de la variable sin eliminarlo."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
@@ -5650,10 +4986,6 @@
     {
       "loc": "NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD",
       "text": "El mensaje del día no podrá ser nulo."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER",
-      "text": "Presione cualquier letra en su teclado para configurarla en ese carácter."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM",
@@ -6000,50 +5332,6 @@
       "text": "Interruptores de prueba"
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL",
-      "text": "El marcador de posición no puede ser nulo"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERACTIONNULL",
-      "text": "La acción del marcador de posición no puede ser nula"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED",
-      "text": "El marcador de posición no está registrado"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT",
-      "text": "El marcador de posición debe cumplir este formato."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "La condición debe ponerse al final."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "No se puede registrar una condición que ya existe."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "No se puede registrar una condición vacía."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "No se puede cancelar el registro de una condición que no existe."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_FINDCMDS_NOTFOUND",
-      "text": "No se encontraron comandos."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "Número de veces no válido."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "No puedo repetirme."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
       "text": "El número de sesión no es válido."
     },
@@ -6174,10 +5462,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS",
       "text": "Agregando usuario {0} al grupo {1}...."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_SUCCESS",
-      "text": "¡Ahora puedes ejecutar '{0}' como '{1}'!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED",
@@ -6468,10 +5752,6 @@
       "text": "Error al buscar {0} para {1}."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
-      "text": "Debe pasar el modificador -set con la variable a la que desea establecer este valor."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING",
       "text": "donde estará el ahorrador"
     },
@@ -6632,14 +5912,6 @@
       "text": "Sin descripción del comando de depuración remota"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "El tipo de datos {0} especificado no es válido."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "La plataforma {0} especificada no es válida."
-    },
-    {
       "loc": "NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT",
       "text": "No se puede reproducir sonido debido al tiempo de espera."
     },
@@ -6702,22 +5974,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC",
       "text": "Si está seguro de que la consola admite color verdadero, o si desea cambiar su terminal a un terminal que admita color verdadero, cambie este valor."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
-      "text": "Establecer página de códigos"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
-      "text": "Configure la página de códigos de idioma al cambiar de idioma."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME",
-      "text": "Aviso de desarrollo reconocido"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC",
-      "text": "Si se establece en verdadero, el kernel no le mostrará el aviso de desarrollo cada vez que inicie el kernel en las versiones de desarrollo."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME",
@@ -7556,10 +6812,6 @@
       "text": "Investigue los registros de depuración para obtener más información sobre el error."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC",
-      "text": "Para descartar para siempre, presione ENTER en su teclado o habilite \"Aviso de desarrollo reconocido\" en la configuración del kernel. Cualquier otra clave sigue adelante sin reconocimiento."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
       "text": "Está ejecutando Nitrocid KS en un entorno inusual. Verifique que haya iniciado el kernel directamente. Si está seguro de haber iniciado el kernel de la forma habitual, puede deberse a que está ejecutando una versión no compatible de Nitrocid KS."
     },
@@ -7614,18 +6866,6 @@
     {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "Es posible que la fecha y hora de la alarma no estén en el pasado."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_TIP",
-      "text": "Consulte la entrada de ayuda de este comando para obtener más información."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGLISTING",
-      "text": "Este comando tiene los siguientes argumentos que cambian su funcionamiento:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGNODESC",
-      "text": "Descripción del argumento no especificado"
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC",
@@ -7984,18 +7224,6 @@
       "text": "Ordene la lista alfanuméricamente si está habilitada o alfabéticamente si está deshabilitada."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "No se pudo completar el tema predeterminado"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "No hay metadatos de tema definidos."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "No se pueden deserializar los metadatos."
-    },
-    {
       "loc": "NKS_DRIVERS_ENCODING_BASE_EXCEPTION_NEEDSINIT",
       "text": "Esta codificación debe inicializarse."
     },
@@ -8272,34 +7500,6 @@
       "text": "El hilo no se puede regenerar"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED",
-      "text": "No se pudo cargar el recurso de idioma para"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LOCALIZED",
-      "text": "No se puede obtener el texto localizado"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS",
-      "text": "No puedo obtener localizaciones en inglés"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOC",
-      "text": "No puedo obtener el texto en inglés"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN",
-      "text": "Se debe especificar el token de idioma"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA",
-      "text": "No se pueden obtener los metadatos del idioma"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATAARRAY",
-      "text": "No se puede obtener la matriz de metadatos del idioma"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",
       "text": "Metadatos MIME (extendido)"
     },
@@ -8412,30 +7612,6 @@
       "text": "Copyright (C) 2018-2025 Aptivi - Todos los derechos reservados"
     },
     {
-      "loc": "NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO",
-      "text": "No se puede obtener información del argumento o comando"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_COMMANDEXECUTION",
-      "text": "No se especifican los parámetros del hilo."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "No se pueden obtener los parámetros del hilo para la ejecución del proceso."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_INTERNALFIELDENVVARS",
-      "text": "No se puede obtener el campo interno para las variables de entorno"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_NOEXECUTOR",
-      "text": "No se puede obtener el ejecutor de shell para"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC",
-      "text": "Muestra comandos generales (predeterminado)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC",
       "text": "Cambia el nombre completo del usuario (nombre para mostrar)"
     },
@@ -8498,18 +7674,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC",
       "text": "Intervalo mínimo de inactividad para iniciar el protector de pantalla. La unidad está en formato de intervalo de tiempo (HH:MM:SS)."
-    },
-    {
-      "loc": "NKS_THEMES_DEFAULT_DESC",
-      "text": "El tema predeterminado para el kernel"
-    },
-    {
-      "loc": "NKS_THEMES_DYNAMIC_DESC",
-      "text": "Acentos por todas partes!"
-    },
-    {
-      "loc": "NKS_THEMES_NITRICACID_DESC",
-      "text": "Líquido incoloro, humeante y altamente corrosivo."
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
@@ -8604,10 +7768,6 @@
       "text": "Esta versión de Nitrocid KS ya no recibe soporte."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES",
-      "text": "Error al cargar idiomas personalizados"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
       "text": "No se pudieron cargar complementos importantes del kernel"
     },
@@ -8640,10 +7800,6 @@
       "text": "No se pudo cargar el controlador de cancelación"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES",
-      "text": "No se pudieron cargar los alias"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL",
       "text": "No se pudieron cargar las entradas de marcación rápida"
     },
@@ -8664,10 +7820,6 @@
       "text": "No se pudo cargar MOTD y MAL"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES",
-      "text": "No se pudieron cargar los historiales de comandos de shell"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS",
       "text": "No se pudieron cargar los controladores de extensión"
     },
@@ -8686,10 +7838,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_RESET_VARS",
       "text": "No se pudieron restablecer las variables generales"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES",
-      "text": "No se pudieron guardar los historiales de comandos de shell"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_CONSENTS",
@@ -8790,58 +7938,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR",
       "text": "Es posible que la conexión de red no se haya establecido correctamente debido a un error."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "No se puede almacenar en búfer un comando que no esté configurado como encapsulable."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDSWITCHNODESC",
-      "text": "Descripción del interruptor no especificada"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC",
-      "text": "Camino a un proceso"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "Argumentos a pasar a un proceso"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "Comando para mostrar la entrada de ayuda"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
-      "text": "Envía la salida del comando a otro comando como parámetros"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "Comando de origen para canalizar su salida al comando de destino como último parámetro"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Comando de destino que se ejecutará al crear un argumento basado en la salida del comando de origen"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC",
-      "text": "Si se debe pasar la salida del comando de origen como un argumento entre comillas o como un argumento sin comillas"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "Comando para encapsular su salida"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "Error en la ejecución del comando de origen."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "La ejecución del comando de destino falló. Es posible que el contenido no se haya completado correctamente. El comando ejecutado fue"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_FAILED",
-      "text": "La tubería está rota."
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC",
@@ -9032,18 +8128,6 @@
       "text": "Una expresión regular para que coincida con las frases que se van a reemplazar"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDCOUNTRY",
-      "text": "País no válido"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_CHOOSELANGFORCOUNTRY",
-      "text": "Elija un idioma para el país"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDLANG",
-      "text": "Selección de idioma no válida para"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_YES",
       "text": "Sí"
     },
@@ -9090,26 +8174,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC",
       "text": "Enumera las alarmas"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "Agrega un alias"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "Tipo de shell desde el cual obtener comandos"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "Nombre de alias"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "Comando que se utilizará como acceso directo"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC",
-      "text": "Elimina un alias"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC",
@@ -9172,28 +8236,8 @@
       "text": "Identificación del idioma"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC",
-      "text": "Cambia el idioma utilizando un país (es posible que se te solicite que elijas un idioma)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC",
       "text": "Nuevo mensaje para usar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Respuestas a dividir con una barra"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Pregunta para imprimir en pantalla"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Título de la primera respuesta"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Título del segundo respuesta, y así sucesivamente..."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
@@ -9296,10 +8340,6 @@
       "text": "Lista de tipos de controladores"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "Cadena para imprimir"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC",
       "text": "Archivo a codificar"
     },
@@ -9336,32 +8376,12 @@
       "text": "Tipo de hardware"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Expresión UESH para probar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC",
-      "text": "Comando a ejecutar en caso de evaluación exitosa"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC",
       "text": "Ruta al directorio del panel izquierdo"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "Ruta al directorio del panel derecho"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC",
-      "text": "Recarga, carga o descarga un idioma personalizado"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC",
-      "text": "Nombre de idioma personalizado"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC",
-      "text": "Enumera o recarga todos los idiomas personalizados"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
@@ -9480,10 +8500,6 @@
       "text": "Abre la configuración de inicio del complemento."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC",
-      "text": "Valor a establecer"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC",
       "text": "Nombre de la variable de configuración"
     },
@@ -9492,24 +8508,8 @@
       "text": "Nombre del implementador"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "Primer valor"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "Segundo valor"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "Tercer valor, y así sucesivamente..."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC",
       "text": "Nombre de la zona horaria"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC",
-      "text": "Intervalo para dormir"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC",
@@ -9546,10 +8546,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC",
       "text": "Dirección IP para desbloquear"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "Nombre de la variable"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC",
@@ -9956,10 +8952,6 @@
       "text": "No se puede seleccionar la configuración"
     },
     {
-      "loc": "NKS_KNOWNADDONS_PACKS_LANGUAGES",
-      "text": "Paquete de idiomas adicionales"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_PACKS_SCREENSAVERS",
       "text": "Paquete de salvapantallas adicionales"
     },
@@ -10128,22 +9120,6 @@
       "text": "Extras - IA de chatbot"
     },
     {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED1",
-      "text": "No se pudieron cargar los metadatos del idioma"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE1",
-      "text": "No se pudieron deserializar los metadatos del idioma"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED2",
-      "text": "No se pudieron cargar los metadatos del idioma para"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
-      "text": "No se pudieron deserializar los metadatos del idioma para"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
       "text": "No se puede deserializar la configuración base {0}"
     },
@@ -10154,14 +9130,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_DESC",
       "text": "Esta sección enumera la configuración del controlador."
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
-      "text": "Controlador de consola actual"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
-      "text": "¿Qué controlador de consola desea usar?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",

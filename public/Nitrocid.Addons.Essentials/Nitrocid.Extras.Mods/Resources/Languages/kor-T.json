@@ -16,10 +16,6 @@
       "text": "{0} v {1}이 (가) 시작되었습니다"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "잘못된 언어"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "안전 모드에서는 구문 분석 모드가 허용되지 않습니다."
     },
@@ -144,10 +140,6 @@
       "text": "에 대한 제거 실패"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "사용자 지정 언어를 설치하는 데 필요한 메타데이터 정보가 필요한 현지화를 제공하지 않습니다."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "도움말에 모드 명령 카운트 표시"
     },
@@ -158,10 +150,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "제목 없는 매뉴얼 페이지"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "사용자 정의 언어를 설치하는 데 필요한 메타데이터 정보가 존재하지 않습니다."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -296,10 +284,6 @@
       "text": "알 수 없는 로더 예외"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "모드 현지화를 로드할 수 없습니다"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "설정 항목을 가져오지 못했습니다."
     },
@@ -362,10 +346,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "이 클래스는 모드 클래스가 아닙니다."
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "언어"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

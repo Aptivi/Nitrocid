@@ -18,10 +18,6 @@
       "text": "{0} v{1} 已開始"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "語言無效"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "在安全模式下不允許解析模組。"
     },
@@ -146,10 +142,6 @@
       "text": "卸載失敗"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "安裝自定義語言所需的元數據信息不提供所需的必要本地化。"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "顯示 mod 命令依靠幫助"
     },
@@ -160,10 +152,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "無標題手冊頁"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "安裝自訂語言所需的元資料資訊不存在。"
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -298,10 +286,6 @@
       "text": "未知載入異常"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "無法載入 mod 本地化版本"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "無法取得設定條目。"
     },
@@ -364,10 +348,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "此類不是 mod 類"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "語言"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

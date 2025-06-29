@@ -1,0 +1,38 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi-Latn",
+    "hi-Latn-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "jaaree rakhane ke lie koee bhee kunjee dabaen..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "apane kampyootar ko band karana ab surakshit hai."
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "karnel paryaavaran truti:"
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "naitrosid kees ne ek samasya ka pata lagaaya hai aur ise band kar diya gaya hai."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "aap karnel ka vikaas sanskaran chala rahe hain. jabaki aap aane vaalee suvidhaon ka anubhav kar sakate hain jo antim rileez mein maujood ho sakatee hain, aap bag, asthirata ya yahaan tak ki deta haani ka saamana kar sakate hain. yadi sambhav ho to ham sthir sanskaran ka upayog karane kee salaah dete hain."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "aap karnel ka rileez kaindidet varshan chala rahe hain. jab aap antim charan ka anubhav kar sakate hain, to aap bag, asthirata ya yahaan tak ki deta haani ka saamana kar sakate hain. yadi sambhav ho to ham sthir sanskaran ka upayog karane kee salaah dete hain."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "ham karnel ke is sanskaran ko chalaane ke viruddh salaah dete hain, kyonki yah asamarthit hai. yadi aapane is karnel ko agyaat sroton se daunalod kiya hai, to yah sandesh dikhaee de sakata hai. krpaya hamaare aadhikaarik daunalod prshth se daunalod karen."
+    }
+  ]
+}

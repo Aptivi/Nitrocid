@@ -8,14 +8,6 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "Πατήστε οποιοδήποτε πλήκτρο για να συνεχίσετε..."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "Μη έγκυρο χρωματικό πρότυπο {0}"
-    },
-    {
       "loc": "NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE",
       "text": "Εισαγάγετε τον κωδικό πρόσβασης διαχειριστή για συντήρηση."
     },
@@ -84,10 +76,6 @@
       "text": "Λάθος κωδικός."
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PARSEERROR",
-      "text": "Σφάλμα κατά την ανάλυση των συμβόλων κράτησης θέσης. {0}"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_ADDERROR",
       "text": "Σφάλμα κατά την προσθήκη ονόματος χρήστη."
     },
@@ -128,28 +116,8 @@
       "text": "Η προφύλαξη οθόνης {0} δεν βρέθηκε στη βάση δεδομένων. Ελέγξτε το όνομα και δοκιμάστε ξανά."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NODEFINITION",
-      "text": "Δεν υπάρχει ορισμός για την εντολή {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_DEFINEDBY",
-      "text": "Εντολή που ορίζεται από"
-    },
-    {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1",
       "text": "Ο κατάλογος {0} δεν βρέθηκε."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASCOMMANDSAMENAME",
-      "text": "Το ψευδώνυμο δεν μπορεί να είναι το ίδιο όνομα με μια εντολή."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_COMMANDNOTFOUND",
-      "text": "Η εντολή δεν βρέθηκε στο ψευδώνυμο {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_REMOVE",
-      "text": "Το ψευδώνυμο {0} δεν βρέθηκε να αφαιρεθεί."
     },
     {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2",
@@ -196,10 +164,6 @@
       "text": "Η διαμόρφωση φορτώθηκε ξανά. Ίσως χρειαστεί να επανεκκινήσετε τον πυρήνα για να τεθούν σε ισχύ ορισμένες αλλαγές."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_COLORINVALID",
-      "text": "Ένα ή περισσότερα από τα χρώματα δεν είναι έγκυρα."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND",
       "text": "Η προφύλαξη οθόνης {0} δεν βρέθηκε."
     },
@@ -214,10 +178,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
       "text": "Αλλάζει τον κωδικό πρόσβασης για τον τρέχοντα χρήστη"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC",
-      "text": "Καθαρίζει την οθόνη"
     },
     {
       "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
@@ -280,14 +240,6 @@
       "text": "Μήνυμα φλοιού: Η ζητούμενη εντολή {0} δεν επιτρέπεται να εκτελεστεί σε λειτουργία συντήρησης."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMANDNOTFOUND",
-      "text": "Μήνυμα κελύφους: Η ζητούμενη εντολή {0} δεν βρέθηκε. Δείτε «βοήθεια» για διαθέσιμες εντολές."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ERROREXECUTE2",
-      "text": "Σφάλμα κατά την εκτέλεση της εντολής."
-    },
-    {
       "loc": "NKS_KERNEL_TIME_TIMEZONES_LISTENTRY",
       "text": "- Ώρα {0}: {1}"
     },
@@ -298,10 +250,6 @@
     {
       "loc": "NKS_FILES_UNAUTHORIZED",
       "text": "Δεν είστε εξουσιοδοτημένοι να λαμβάνετε πληροφορίες για το {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_OBSOLETECMD",
-      "text": "Αυτή η εντολή είναι ξεπερασμένη και θα αφαιρεθεί σε μελλοντική έκδοση."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN",
@@ -350,10 +298,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTED",
       "text": "Εντοπισμός σφαλμάτων ακρόασης σε όλες τις διευθύνσεις χρησιμοποιώντας τη θύρα {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_ALIASALREADYEXISTS",
-      "text": "Το ψευδώνυμο βρέθηκε ήδη: {0}"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_CDBGLOG_SUCCESS",
@@ -448,10 +392,6 @@
       "text": "Εκτελεί εξ αποστάσεως μια εντολή σε απομακρυσμένο υπολογιστή"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "Μη έγκυρος τύπος {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ENTRYSIZE",
       "text": "Μέγεθος: {0}"
     },
@@ -490,26 +430,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILED",
       "text": "Ο απομακρυσμένος εντοπισμός σφαλμάτων απέτυχε να ξεκινήσει: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CANTEXECUTE",
-      "text": "Σφάλμα κατά την εκτέλεση του σεναρίου: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC",
-      "text": "Γράφει κείμενο στην κονσόλα"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC",
-      "text": "Κάνει τις επιλογές των χρηστών"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHOICE_HELPER",
-      "text": "όπου <απαντήσεις> είναι οι απαντήσεις με ένα γράμμα της ερώτησης χωρισμένες σε κάθετες"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC",
-      "text": "Επιτρέπει στον χρήστη να εισάγει είσοδο"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_DESC",
@@ -688,10 +608,6 @@
       "text": "Προσθέτει χρήστες"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC",
-      "text": "Προσθέτει ψευδώνυμα στις εντολές"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC",
       "text": "Αλλάζει το όνομα κεντρικού υπολογιστή"
     },
@@ -714,10 +630,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC",
       "text": "Αφαιρεί έναν χρήστη από τη λίστα"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_REMOVALSUCCESS",
-      "text": "Το ψευδώνυμο {0} καταργήθηκε με επιτυχία."
     },
     {
       "loc": "NKS_KERNEL_UPDATES_CHECKFAILED",
@@ -1008,10 +920,6 @@
       "text": "Ανοίγει ένα δοκιμαστικό κέλυφος"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDSTARTFAILED",
-      "text": "Απέτυχε η έναρξη του \"{0}\": {1}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC",
       "text": "Διαγράφει το αρχείο κειμένου"
     },
@@ -1096,14 +1004,6 @@
       "text": "Η είσοδος υπάρχει ήδη."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
-      "text": "Τυλίγει την έξοδο της κονσόλας"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAPUNWRAPPABLE",
-      "text": "Η εντολή δεν μπορεί να αναδιπλωθεί. Αυτές οι εντολές μπορούν να αναδιπλωθούν:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
       "text": "Εξάγει ένα αρχείο ZIP"
     },
@@ -1132,10 +1032,6 @@
       "text": "Ο {0} σας έκανε ping."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC",
-      "text": "Ορίζει μια μεταβλητή σε μια τιμή σε ένα σενάριο"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME",
       "text": "Εμφάνιση banner SSH"
     },
@@ -1156,32 +1052,12 @@
       "text": "Γενικές εντολές:"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_MODLISTING",
-      "text": "Εντολές Mod:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ALIASLISTING",
-      "text": "Το Alias δίνει εντολή:"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
       "text": "λειτουργία συντήρησης"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME",
       "text": "Αναζήτηση καταλόγων"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOMODLISTING",
-      "text": "Δεν υπάρχουν εντολές mod."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOALIASLISTING",
-      "text": "Δεν υπάρχουν εντολές ψευδωνύμου."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "Η εντολή wappable δεν βρέθηκε."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC",
@@ -1412,14 +1288,6 @@
       "text": "Η προφύλαξη οθόνης παρουσίασε σφάλμα κατά την εμφάνιση: {0}. Πατήστε οποιοδήποτε πλήκτρο για να εξέλθετε."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_THEMESHOWCASE",
-      "text": "Δείτε πώς θα μοιάζει το θέμα σας:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "Εντολές με δυνατότητα αναδίπλωσης:"
-    },
-    {
       "loc": "NKS_FILES_LISTFOLDEREMPTY",
       "text": "Ο φάκελος είναι κενός."
     },
@@ -1434,10 +1302,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME",
       "text": "Προσαρμοσμένο Banner εκκίνησης"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO",
-      "text": "Η απάντηση μπορεί να μην είναι μηδενική."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION",
@@ -1458,10 +1322,6 @@
     {
       "loc": "NKS_ARGUMENTS_HELP_LISTING",
       "text": "Διαθέσιμα ορίσματα πυρήνα:"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNRECOVERABLEERROR",
-      "text": "Μη ανακτήσιμο σφάλμα στο όρισμα:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA512_DESC",
@@ -1904,16 +1764,8 @@
       "text": "Όπως και η ασφαλής λειτουργία, αλλά επίσης απενεργοποιεί την πολλαπλή χρήση και κάποια προσαρμογή"
     },
     {
-      "loc": "NKS_ARGUMENTS_NOTENOUGHARGS",
-      "text": "Δεν υπήρχαν αρκετά επιχειρήματα."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
       "text": "Τα χρώματα δεν απαιτούν επανεκκίνηση, αλλά οι περισσότερες ρυθμίσεις απαιτούν επανεκκίνηση."
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELP",
-      "text": "Δεν υπάρχει βοήθεια για το όρισμα \"{0}\"."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -1952,10 +1804,6 @@
       "text": "Το αρχείο {0} δεν βρέθηκε"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC",
-      "text": "Δημιουργεί έναν πίνακα μεταβλητών με τις παρεχόμενες τιμές"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC",
       "text": "Ελέγχει όλους τους αριθμούς γραμμών κειμένου τοπικής προσαρμογής για να δει αν είναι όλοι ίσοι"
     },
@@ -1986,10 +1834,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC",
       "text": "Ταξινομεί επαγγελματικά τη λίστα συστημάτων αρχείων."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC",
-      "text": "Παρέχει μια επιλογή επιλογής"
     },
     {
       "loc": "NKS_SHELL_BASE_HELP_NOLISTING",
@@ -2076,10 +1920,6 @@
       "text": "Είσαι ενημερωμένος!"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_SWITCHLISTING",
-      "text": "Αυτή η εντολή έχει τους παρακάτω διακόπτες που αλλάζουν τον τρόπο λειτουργίας:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC",
       "text": "Εμφανίζει τις λεπτομέρειες του αρχείου στη λίστα"
     },
@@ -2120,76 +1960,8 @@
       "text": "Ενεργοποιεί τον εντοπισμό σφαλμάτων για το σύστημα συμβάντων πυρήνα"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGFAILED",
-      "text": "Αποτυχία εγκατάστασης προσαρμοσμένης γλώσσας {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_METADATAHASNOLOCS",
-      "text": "Οι πληροφορίες μεταδεδομένων που απαιτούνται για την εγκατάσταση της προσαρμοσμένης γλώσσας δεν παρέχουν τις απαραίτητες τοπικές ρυθμίσεις που απαιτούνται."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED1",
-      "text": "Απέτυχε η απεγκατάσταση της προσαρμοσμένης γλώσσας {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT",
-      "text": "Το μήκος της αγγλικής γλώσσας δεν ταιριάζει με το μήκος του διακριτικού γλώσσας που παρέχεται."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOOVERWRITE",
-      "text": "Η γλώσσα υπάρχει ήδη και δεν μπορεί να αντικατασταθεί."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED2",
-      "text": "Αποτυχία απεγκατάστασης προσαρμοσμένης γλώσσας. Το πιθανότερο είναι να μην υπάρχει."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGSFAILED",
-      "text": "Αποτυχία εγκατάστασης προσαρμοσμένων γλωσσών."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED1",
-      "text": "Αποτυχία απεγκατάστασης προσαρμοσμένων γλωσσών."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED2",
-      "text": "Αποτυχία απεγκατάστασης προσαρμοσμένων γλωσσών. Δείτε την εσωτερική εξαίρεση για περισσότερες πληροφορίες."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE",
       "text": "Πληροφορίες άδειας χρήσης"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC",
-      "text": "Διαχειριστείτε τις γλώσσες σας"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_LANGNOTFOUND",
-      "text": "Η γλώσσα δεν βρέθηκε ή το αρχείο έχει μη έγκυρους χαρακτήρες."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_NOLANG",
-      "text": "Η γλώσσα δεν προσδιορίζεται."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SAFEMODE",
-      "text": "Η διαχείριση γλώσσας είναι απενεργοποιημένη σε ασφαλή λειτουργία."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SHORTNAME",
-      "text": "Σύντομο όνομα γλώσσας:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_FULLNAME",
-      "text": "Γλώσσα πλήρες όνομα:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_TRANSLITERABLE",
-      "text": "Μεταγραφή γλώσσας:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_CUSTOM",
-      "text": "Προσαρμοσμένη γλώσσα:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME",
@@ -2248,40 +2020,12 @@
       "text": "Δείξτε τα ψευδώνυμα βασίζονται στη βοήθεια"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC",
-      "text": "Εκτελεί εντολές μόλις ικανοποιηθούν οι εκφράσεις UESH"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "Η συνθήκη δεν βρέθηκε στην έκφραση."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "Η συνθήκη {0} απαιτεί {1} ορίσματα. Πήρα {2}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "Σφάλμα ανάλυσης έκφρασης λόγω συντακτικού σφάλματος."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE",
-      "text": "Αποτυχία ικανοποίησης συνθήκης. Περισσότερες πληροφορίες εδώ:"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME",
       "text": "χαρακτήρας μάσκας κωδικού πρόσβασης"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC",
       "text": "Ένας χαρακτήρας που καλύπτει τον κωδικό πρόσβασης. Αφήστε το κενό για περισσότερη ασφάλεια."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC",
-      "text": "Έξοδος από το κέλυφος εάν εκτελείται σε υποκέλυφος"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_KILLINGMOTHERSHELL",
-      "text": "Δεν μπορεί να σκοτώσει το μητρικό κέλυφος!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL",
@@ -2306,10 +2050,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
       "text": "Ενεργοποιεί τη λειτουργία εντοπισμού σφαλμάτων"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE",
-      "text": "Τρέχουσα τιμή:"
     },
     {
       "loc": "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC",
@@ -2432,10 +2172,6 @@
       "text": "Ενεργοποιεί ή απενεργοποιεί τη δυνατότητα αυτόματης αποθήκευσης του εξαγωνικού επεξεργαστή."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "Το σενάριο είναι εσφαλμένο. Ελέγξτε το σενάριο και επιλύστε τυχόν σφάλματα: {0}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC",
       "text": "Χρησιμοποιεί σχετική διαδρομή αντί για απόλυτη"
     },
@@ -2446,10 +2182,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC",
       "text": "Αν το ιστορικό εισόδου είναι ενεργοποιημένο ή όχι. Εάν είναι ενεργοποιημένο, μπορείτε να αποκτήσετε πρόσβαση σε εντολές που πληκτρολογήσατε πρόσφατα χρησιμοποιώντας τα πλήκτρα πάνω ή κάτω βέλους."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "Είναι πλέον ασφαλές να απενεργοποιήσετε τον υπολογιστή σας."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME",
@@ -2468,14 +2200,6 @@
       "text": "Βεβαιωθείτε ότι χρησιμοποιείτε γραμματοσειρά κονσόλας που υποστηρίζει γλυφές PowerLine, διαφορετικά η έξοδος ενδέχεται να μην αποδίδεται σωστά. Συνιστούμε"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC",
-      "text": "Ανοίγει τη βιβλιοθήκη προκαθορισμένων φλοιών"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_EXCEPTION_PRESETNOTFOUND",
-      "text": "Η καθορισμένη προεπιλογή {0} δεν βρέθηκε."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_ALREADYBLOCKED",
       "text": "Η συσκευή υπάρχει ήδη στη λίστα μπλοκ."
     },
@@ -2486,10 +2210,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC",
       "text": "Δοκιμάζει την εκτέλεση του σημείου εισόδου της συναρμολόγησης"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_SELECT",
-      "text": "Επιλέξτε προεπιλογή για {0}:"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
@@ -2514,22 +2234,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
       "text": "Αποκρύπτει την εκκίνηση πριν από τη φόρτωση της διαμόρφωσης"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNKNOWNARGUMENT",
-      "text": "Άγνωστο επιχείρημα"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING",
-      "text": "Πρέπει να εκτελείτε είτε το ConEmu είτε μια γραμμή εντολών των Windows 10 με ενεργοποιημένη την επεξεργασία VT."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO",
-      "text": "Το τερματικό σας είναι {0} στις {1}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION",
-      "text": "Σου φαίνονται σωστές αυτές οι ράμπες; Θα πρέπει να μεταβούν ομαλά."
     },
     {
       "loc": "NKS_DRIVERS_EXCEPTION_NOFALLBACKS",
@@ -2636,22 +2340,6 @@
       "text": "Πιέστε οποιοδήποτε πλήκτρο για να ξεκινήσει το κέλυφος ούτως ή άλλως, αλλά σημειώστε ότι ίσως χρειαστεί να δημιουργήσετε τον νέο σας χρήστη με μη αυτόματο τρόπο."
     },
     {
-      "loc": "NKS_KERNEL_ENVERROR",
-      "text": "Σφάλμα περιβάλλοντος πυρήνα:"
-    },
-    {
-      "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Το Nitrocid KS εντόπισε πρόβλημα και έχει τερματιστεί."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_INSTALL",
-      "text": "Οι πληροφορίες μεταδεδομένων που απαιτούνται για την εγκατάσταση της προσαρμοσμένης γλώσσας δεν υπάρχουν."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_UNINSTALL",
-      "text": "Οι πληροφορίες μεταδεδομένων που απαιτούνται για την απεγκατάσταση της προσαρμοσμένης γλώσσας δεν υπάρχουν."
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "Προσπάθεια τροποποίησης του υπάρχοντος λογαριασμού ενώ είναι κλειδωμένος"
     },
@@ -2698,26 +2386,6 @@
     {
       "loc": "NKS_ARGUMENTS_RESET_WIPEMISCFAILED",
       "text": "Δεν είναι δυνατή η διαγραφή διαφόρων αρχείων"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELPDESC",
-      "text": "Δεν υπάρχει περιγραφή βοήθειας για επιχείρημα"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "Η κονσόλα σας πρέπει να υποστηρίζει αληθινό χρώμα για να χρησιμοποιήσετε αυτό το θέμα."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXITPREVIEW_DESC",
-      "text": "Έξοδος από την προεπισκόπηση"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "Το θέμα {0} γιορτάζει μια εκδήλωση, αλλά είτε είστε πολύ νωρίς είτε πολύ αργά για να παρευρεθείτε. Κάθε χρόνο, αυτό το θέμα είναι προσβάσιμο από {1}/{2} έως {3}/{4}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "Το θέμα {0} χρειάζεται πραγματική υποστήριξη χρώματος, αλλά η κονσόλα σας δεν την υποστηρίζει."
     },
     {
       "loc": "NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT",
@@ -3088,10 +2756,6 @@
       "text": "Παρουσιάστηκε ένα γενικό σφάλμα φλοιού HTTP."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLEDETECTED",
-      "text": "Εντοπίστηκε τρελή κονσόλα. Το Nitrocid KS δεν μπορεί να συνεχίσει να λειτουργεί, επειδή η κονσόλα σας δεν είναι συμβατή με τις απαιτήσεις μας."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHALGORITHM",
       "text": "Μη έγκυρος αλγόριθμος κατακερματισμού. Εάν χρησιμοποιείτε ένα προσαρμοσμένο πρόγραμμα οδήγησης κατακερματισμού, ελέγξτε για να βεβαιωθείτε ότι το πρόγραμμα οδήγησης έχει φορτωθεί."
     },
@@ -3184,10 +2848,6 @@
       "text": "Δεν υπάρχει προκαθορισμένο κέλυφος με αυτό το όνομα."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",
-      "text": "Δεν υπάρχει θέμα με αυτό το όνομα."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NULLUSERS",
       "text": "Δεν υπάρχουν χρήστες σε ολόκληρο τον πυρήνα. Φτάσαμε σε μια εξαιρετικά σπάνια κατάσταση. Ο πυρήνας δεν μπορεί να συνεχίσει."
     },
@@ -3232,14 +2892,6 @@
       "text": "Παρουσιάστηκε ένα γενικό σφάλμα φλοιού SFTP."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONPARSE",
-      "text": "Η ανάλυση συνθηκών απέτυχε. Ελέγξτε τη σύνταξή σας για να ανταποκριθεί στην αναμενόμενη σχεδίαση του χειριστή."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHSCRIPT",
-      "text": "Παρουσιάστηκε σφάλμα κατά την προσπάθεια ανάλυσης του αρχείου δέσμης ενεργειών UESH. Ελέγξτε το αρχείο σεναρίου για σφάλματα και διορθώστε τα."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_USERCREATION",
       "text": "Παρουσιάστηκε σφάλμα δημιουργίας χρήστη."
     },
@@ -3250,10 +2902,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK",
       "text": "Παρουσιάστηκε ένα γενικό σφάλμα δικτύου. Εάν προσπαθείτε να συνδεθείτε σε απομακρυσμένο άκρο, βεβαιωθείτε ότι είστε συνδεδεμένοι στο Διαδίκτυο ή στο τοπικό σας δίκτυο."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UNSUPPORTEDCONSOLE",
-      "text": "Εντοπίστηκε μη υποστηριζόμενη κονσόλα."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE",
@@ -3324,20 +2972,12 @@
       "text": "Παρουσιάστηκε σφάλμα διαχείρισης επαφών κατά την προσπάθεια εκτέλεσης της απαιτούμενης λειτουργίας. Βεβαιωθείτε ότι το αρχείο επαφής υπάρχει στον σωστό φάκελο και ότι είναι έγκυρο αρχείο επαφών vCard 2.1, 3.0 ή 4.0."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
-      "text": "Ένα σύστημα κατάστασης UESH απέτυχε κατά την εκτέλεση της ζητούμενης λειτουργίας. Δείτε το παρακάτω μήνυμα σφάλματος για περισσότερες λεπτομέρειες."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR",
       "text": "Εκτελείται μια μη έγκυρη λειτουργία επεξεργασίας SQL."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP",
       "text": "Η ομάδα δεν υπάρχει. Ελέγξτε για να βεβαιωθείτε ότι έχετε γράψει σωστά το όνομα της ομάδας."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INTERACTIVETUI",
-      "text": "Παρουσιάστηκε σφάλμα στην εφαρμογή διαδραστικής TUI."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS",
@@ -3386,10 +3026,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_REFLECTION",
       "text": "Παρουσιάστηκε σφάλμα στο σύστημα ανάκλασης."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_THEMEMANAGEMENT",
-      "text": "Παρουσιάστηκε σφάλμα κατά την προσπάθεια εκτέλεσης μιας λειτουργίας για τη διαχείριση θεμάτων."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_EVENTMANAGEMENT",
@@ -3760,10 +3396,6 @@
       "text": "Έναρξη Nitrocid..."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_CUSTOMLANGS",
-      "text": "Φόρτωση προσαρμοσμένων γλωσσών..."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_IMPORTANTADDONS",
       "text": "Φόρτωση σημαντικών προσθέτων πυρήνα..."
     },
@@ -3794,10 +3426,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_GENERALVARSRESET",
       "text": "Επαναφορά γενικών μεταβλητών"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_HISTORIESSAVED",
-      "text": "Αποθηκευμένα ιστορικά εντολών φλοιού."
     },
     {
       "loc": "NKS_KERNEL_STARTING_CONFIGSAVED",
@@ -4412,32 +4040,12 @@
       "text": "Αυτό το πρόγραμμα χορηγείται με άδεια χρήσης GNU General Public License 3.0 ή μεταγενέστερη."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "Εκτελείτε την έκδοση ανάπτυξης του πυρήνα. Ενώ μπορείτε να αντιμετωπίσετε επερχόμενες λειτουργίες που μπορεί να υπάρχουν στην τελική έκδοση, ενδέχεται να αντιμετωπίσετε σφάλματα, αστάθειες ή ακόμα και απώλεια δεδομένων. Συνιστούμε τη χρήση της σταθερής έκδοσης, αν είναι δυνατόν."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "Εκτελείτε την υποψήφια έκδοση του πυρήνα. Ενώ μπορείτε να δοκιμάσετε τις τελευταίες πινελιές, μπορεί να αντιμετωπίσετε σφάλματα, αστάθειες ή ακόμα και απώλεια δεδομένων. Συνιστούμε τη χρήση της σταθερής έκδοσης, αν είναι δυνατόν."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "Συνιστούμε να μην εκτελέσετε αυτήν την έκδοση του πυρήνα, επειδή δεν υποστηρίζεται. Εάν έχετε κατεβάσει αυτόν τον πυρήνα από άγνωστες πηγές, ενδέχεται να εμφανιστεί αυτό το μήνυμα. Κάντε λήψη από την επίσημη σελίδα λήψεων."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP",
-      "text": "Για οριστική απόρριψη, είτε πατήστε ENTER στο κουμπί \"Acknowledged\" εδώ επισημαίνοντάς το χρησιμοποιώντας το αριστερό βέλος στο πληκτρολόγιό σας ή ενεργοποιήστε το \"Development Notice Acknowledged\" στις ρυθμίσεις του πυρήνα."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_OK",
       "text": "Εντάξει"
     },
     {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_ACKED",
       "text": "Αναγνώρισε"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISS_TITLE",
-      "text": "Ανακοίνωση ανάπτυξης"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
@@ -4764,228 +4372,12 @@
       "text": "Για να μπορείτε να λαμβάνετε τα τελευταία νέα, πρέπει να εγκαταστήσετε το πρόσθετο RSS Shell Extras. Μπορείτε να χρησιμοποιήσετε την εντολή 'getaddons' για να λάβετε όλα τα πρόσθετα!"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_QUERY",
-      "text": "Το ψευδώνυμο {0} δεν βρέθηκε για ερώτημα."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Ορίζει την τιμή της εξόδου στην επιλεγμένη μεταβλητή UESH"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_LISTING",
-      "text": "Τα απαιτούμενα επιχειρήματα δεν παρέχονται για όλες τις παρακάτω χρήσεις:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGS",
-      "text": "Τα απαιτούμενα επιχειρήματα δεν παρέχονται."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHES",
-      "text": "Δεν παρέχονται οι απαιτούμενοι διακόπτες."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHVALUE",
-      "text": "Ένας από τους διακόπτες απαιτεί μια τιμή που δεν παρέχεται."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_UNKNOWNSWITCH",
-      "text": "Οι διακόπτες που παρατίθενται παρακάτω είναι άγνωστοι."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_CONFLICTSWITCH",
-      "text": "Οι διακόπτες που παρατίθενται παρακάτω έρχονται σε αντίθεση μεταξύ τους."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNOVALUE",
-      "text": "Οι παρακάτω διακόπτες δεν δέχονται τιμές."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGNUMVALUE",
-      "text": "Ένα ή περισσότερα από τα ορίσματα αναμένουν αριθμητική τιμή, αλλά εσείς παρείχατε έναν μη έγκυρο αριθμό."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGEXACTWORD",
-      "text": "Ένα ή περισσότερα από τα επιχειρήματα αναμένουν μια ακριβή διατύπωση, αλλά παρείχατε μια μη έγκυρη λέξη."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNUMVALUE",
-      "text": "Ένας ή περισσότεροι από τους διακόπτες αναμένουν μια αριθμητική τιμή, αλλά εσείς παρείχατε έναν μη έγκυρο αριθμό."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ABORTED",
-      "text": "Η εντολή ματαιώθηκε."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "Δεν πρέπει να εκτελέσετε απευθείας αυτήν την εντολή σε κατάσταση αναδίπλωσης."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "Παρουσιάστηκε σφάλμα κατά την προσπάθεια αναδίπλωσης μιας εξόδου εντολής"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_COMMANDABORTED",
-      "text": "Η εντολή ματαιώθηκε για τον ακόλουθο λόγο:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDPATTERNINVALID",
-      "text": "Παρέχεται μη έγκυρο μοτίβο εντολών."
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Η εντολή δεν βρέθηκε."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND",
-      "text": "Ο τύπος κελύφους {0} δεν υπάρχει."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED",
-      "text": "Πρέπει να παρέχετε τη βάση εντολών."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED",
-      "text": "Πρέπει να δώσετε την εντολή."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS",
-      "text": "Η καθορισμένη εντολή έχει ήδη προστεθεί! Είναι πιθανό να έχετε αντικρουόμενα mod."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_UNDEFINED",
-      "text": "Η εντολή δεν έχει οριστεί"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_CUSTOM",
-      "text": "Δεν είναι δυνατή η φόρτωση ορισμένων προσαρμοσμένων εντολών."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_CUSTOM",
-      "text": "Η προσαρμοσμένη εντολή που καθορίστηκε δεν βρέθηκε."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_CUSTOM",
-      "text": "Δεν είναι δυνατή η εκφόρτωση ορισμένων από τις προσαρμοσμένες εντολές."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS_CUSTOM",
-      "text": "Η καθορισμένη εντολή έχει ήδη προστεθεί! Είναι πιθανό να έχετε πρόσθετα σε διένεξη."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_ADDON",
-      "text": "Δεν είναι δυνατή η φόρτωση ορισμένων από τις εντολές του πρόσθετου."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_ADDON",
-      "text": "Η εντολή addon που καθορίστηκε δεν βρέθηκε."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_ADDON",
-      "text": "Δεν είναι δυνατή η εκφόρτωση ορισμένων από τις εντολές του πρόσθετου."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NEEDSSLASH",
-      "text": "Αυτό το κέλυφος χρησιμοποιεί τις εντολές κάθετο για να εκτελέσει τις εντολές. Προσθέστε το σύμβολο κάθετου '/' στην αρχή της εντολής για να ξεκινήσετε. Για παράδειγμα:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDLISTING",
-      "text": "Διαθέσιμες εντολές:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ADDONLISTING",
-      "text": "Εντολές προσθήκης πυρήνα:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOADDONLISTING",
-      "text": "Δεν υπάρχουν εντολές προσθήκης πυρήνα."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_UNIFIEDLISTING",
-      "text": "Ενοποιημένες εντολές:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOUNIFIEDLISTING",
-      "text": "Οι ενοποιημένες εντολές δεν εφαρμόζονται!!!"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_COMMAND",
-      "text": "Εντολή:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "Δεν μπορείτε να δηλώσετε το νέο μπλοκ πριν τοποθετήσετε εκφράσεις που υποστηρίζουν τη δημιουργία, όπως συνθήκες ή βρόχους. Ο αριθμός στοίβας είναι {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "Όταν ξεκινάτε ένα νέο μπλοκ, βεβαιωθείτε ότι έχετε τοποθετήσει σωστά τη στοίβα. Ο αριθμός στοίβας είναι {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Το σενάριο είναι εσφαλμένο. Ελέγξτε το σενάριο και επιλύστε τυχόν σφάλματα."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "Υπενθύμιση για τις εντολές κάθετο"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
-      "text": "Εκτελεί μια εξωτερική διαδικασία"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC",
-      "text": "Εκτελεί τη διαδικασία χωρίς να διακόπτει το νήμα του κελύφους. Θα δημιουργηθεί ένα ξεχωριστό παράθυρο."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
-      "text": "Βρίσκει τις διαθέσιμες εντολές στον τρέχοντα τύπο κελύφους"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC",
-      "text": "Εμφανίζει εντολές mod"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC",
-      "text": "Εμφανίζει ψευδώνυμα εντολές"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC",
-      "text": "Εμφανίζει ενοποιημένες εντολές"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC",
-      "text": "Εμφανίζει εντολές πρόσθετου πυρήνα"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC",
-      "text": "Εμφανίζει όλες τις εντολές"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC",
-      "text": "Χρησιμοποιεί απλοποιημένη βοήθεια"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC",
-      "text": "Φορτώνει ιστορικά κελύφους"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
-      "text": "Επαναλαμβάνει την τελευταία ενέργεια ή την καθορισμένη εντολή"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC",
-      "text": "Αποθηκεύει ιστορικά κελύφους"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
       "text": "Εμφανίζει μια τυχαία άκρη πυρήνα"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTSTARTWITHOUTMOTHERSHELL",
-      "text": "Τα κοχύλια δεν μπορούν να ξεκινήσουν αν δεν έχει ξεκινήσει το μητρικό κέλυφος."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTINITSHELL",
-      "text": "Η προσπάθεια προετοιμασίας του κελύφους απέτυχε"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -5160,26 +4552,6 @@
       "text": "Αλλάζει τη γλώσσα χρήστη αντί για τη γλώσσα συστήματος"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC",
-      "text": "Στυλ επιλογής μίας γραμμής"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC",
-      "text": "Στυλ επιλογής δύο γραμμών"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC",
-      "text": "Μοντέρνο στυλ επιλογής"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "Η έξοδος μπορεί να είναι μόνο ένας χαρακτήρας"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "Η έξοδος μπορεί να είναι περισσότερο από έναν χαρακτήρα"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
       "text": "Συνδυάζει τα δύο αρχεία κειμένου ή περισσότερα στην κονσόλα."
     },
@@ -5202,18 +4574,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC",
       "text": "Αναγκάζει τη μετατροπή τέλους γραμμής"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
-      "text": "Δείχνει μόνο την ημερομηνία"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
-      "text": "Δείχνει μόνο την ώρα"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
-      "text": "Χρησιμοποιεί UTC αντί για τοπικό"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC",
@@ -5246,10 +4606,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN",
       "text": "Διαχειριστείτε τους οδηγούς σας"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "Εκτυπώνει το κείμενο ως έχει χωρίς ανάλυση κράτησης θέσης"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
@@ -5296,10 +4652,6 @@
       "text": "Βρίσκει ένα αρχείο στον καθορισμένο κατάλογο ή στον τρέχοντα κατάλογο χρησιμοποιώντας κανονικές εκφράσεις"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC",
-      "text": "Διχαλώνει το κέλυφος UESH για να δημιουργήσει ένα άλλο στιγμιότυπο"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC",
       "text": "Καθορίζει τη διαδρομή εξόδου"
     },
@@ -5342,10 +4694,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC",
       "text": "Διαδραστικό σύστημα διαχείρισης αρχείων κεντρικού υπολογιστή"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC",
-      "text": "Επιτρέπει στον χρήστη να εισαγάγει την είσοδο ως κωδικό πρόσβασης"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
@@ -5496,10 +4844,6 @@
       "text": "Ανοίγει ένα διαδραστικό TUI στο οποίο θα μπορείτε να βλέπετε το παγκόσμιο ρολόι σε πραγματικό χρόνο"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
-      "text": "Λειτουργεί για καθορισμένα χιλιοστά του δευτερολέπτου"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
       "text": "Εκτελεί την εντολή ως χρήστης root"
     },
@@ -5550,14 +4894,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC",
       "text": "Ρυθμίστε αμέσως το θέμα στην επιλογή"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC",
-      "text": "Αφαιρεί μια μεταβλητή από τη λίστα μεταβλητών UESH"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "Απλώς σκουπίζει την τιμή της μεταβλητής χωρίς να την αφαιρέσει"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
@@ -5626,10 +4962,6 @@
     {
       "loc": "NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD",
       "text": "Το μήνυμα της ημέρας μπορεί να μην είναι μηδενικό."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER",
-      "text": "Πατήστε οποιοδήποτε γράμμα στο πληκτρολόγιό σας για να το ορίσετε σε αυτόν τον χαρακτήρα."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM",
@@ -5976,50 +5308,6 @@
       "text": "Δοκιμάζει διακόπτες"
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL",
-      "text": "Το σύμβολο κράτησης θέσης μπορεί να μην είναι μηδενικό"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERACTIONNULL",
-      "text": "Η ενέργεια κράτησης θέσης ενδέχεται να μην είναι μηδενική"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED",
-      "text": "Το placeholder δεν είναι εγγεγραμμένο"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT",
-      "text": "Το σύμβολο κράτησης θέσης πρέπει να πληροί αυτήν τη μορφή"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "Η συνθήκη πρέπει να τοποθετηθεί στο τέλος."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "Δεν είναι δυνατή η εγγραφή μιας συνθήκης που υπάρχει ήδη."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "Δεν είναι δυνατή η εγγραφή μιας κενή συνθήκης."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "Δεν είναι δυνατή η κατάργηση της εγγραφής μιας συνθήκης που δεν υπάρχει."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_FINDCMDS_NOTFOUND",
-      "text": "Δεν βρέθηκαν εντολές."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "Μη έγκυρος αριθμός φορών."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "Δεν μπορώ να επαναλάβω τον εαυτό μου."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
       "text": "Ο αριθμός συνεδρίας δεν είναι έγκυρος."
     },
@@ -6150,10 +5438,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS",
       "text": "Προσθήκη χρήστη {0} στην ομάδα {1}..."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_SUCCESS",
-      "text": "Τώρα μπορείτε να εκτελέσετε το \"{0}\" ως \"{1}\"!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED",
@@ -6444,10 +5728,6 @@
       "text": "Η αναζήτηση {0} για {1} απέτυχε."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
-      "text": "Πρέπει να περάσετε τον διακόπτη -set με τη μεταβλητή στην οποία θέλετε να ορίσετε αυτήν την τιμή."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING",
       "text": "όπου θα είναι ο αποταμιευτής"
     },
@@ -6608,14 +5888,6 @@
       "text": "Δεν υπάρχει περιγραφή εντολής απομακρυσμένου εντοπισμού σφαλμάτων"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "Ο τύπος δεδομένων που καθορίστηκε {0} δεν είναι έγκυρος."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "Η πλατφόρμα {0} που καθορίστηκε δεν είναι έγκυρη."
-    },
-    {
       "loc": "NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT",
       "text": "Δεν είναι δυνατή η αναπαραγωγή ήχου λόγω χρονικού ορίου."
     },
@@ -6678,22 +5950,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC",
       "text": "Εάν είστε βέβαιοι ότι η κονσόλα υποστηρίζει αληθινό χρώμα ή εάν θέλετε να αλλάξετε το τερματικό σας σε τερματικό που υποστηρίζει αληθινό χρώμα, αλλάξτε αυτήν την τιμή."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
-      "text": "Ορισμός κωδικοσελίδας"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
-      "text": "Ρυθμίστε την κωδικοσελίδα γλώσσας κατά την εναλλαγή γλώσσας."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME",
-      "text": "Αναγνώριση της ανακοίνωσης ανάπτυξης"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC",
-      "text": "Εάν οριστεί σε true, ο πυρήνας δεν θα σας εμφανίζει την ειδοποίηση ανάπτυξης κάθε φορά που εκκινείτε στον πυρήνα σε εκδόσεις ανάπτυξης."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME",
@@ -7532,10 +6788,6 @@
       "text": "Διερευνήστε τα αρχεία καταγραφής εντοπισμού σφαλμάτων για περισσότερες πληροφορίες σχετικά με το σφάλμα."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC",
-      "text": "Για οριστική απόρριψη, είτε πατήστε ENTER στο πληκτρολόγιό σας είτε ενεργοποιήστε την \"Ειδοποίηση ανάπτυξης επιβεβαιώθηκε\" στις ρυθμίσεις του πυρήνα. Οποιοδήποτε άλλο κλειδί προχωρά χωρίς αναγνώριση."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
       "text": "Εκτελείτε το Nitrocid KS σε ένα ασυνήθιστο περιβάλλον. Επαληθεύστε ότι ξεκινήσατε απευθείας τον πυρήνα. Εάν είστε βέβαιοι ότι ξεκινήσατε τον πυρήνα με έναν συνηθισμένο τρόπο, μπορεί να οφείλεται στο ότι εκτελείτε μια μη υποστηριζόμενη έκδοση του Nitrocid KS."
     },
@@ -7590,18 +6842,6 @@
     {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "Η ημερομηνία και η ώρα συναγερμού μπορεί να μην είναι παρελθόν."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_TIP",
-      "text": "Συμβουλευτείτε την καταχώρηση βοήθειας για αυτήν την εντολή για περισσότερες πληροφορίες"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGLISTING",
-      "text": "Αυτή η εντολή έχει τα παρακάτω ορίσματα που αλλάζουν τον τρόπο λειτουργίας της:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGNODESC",
-      "text": "Απροσδιόριστη περιγραφή ορίσματος"
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC",
@@ -7960,18 +7200,6 @@
       "text": "Ταξινομεί τη λίστα αλφαριθμητικά εάν είναι ενεργοποιημένη ή αλφαβητικά εάν είναι απενεργοποιημένη."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "Αποτυχία συμπλήρωσης προεπιλεγμένου θέματος"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "Δεν έχουν οριστεί μεταδεδομένα θέματος."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "Δεν είναι δυνατή η αφαίρεση μεταδεδομένων."
-    },
-    {
       "loc": "NKS_DRIVERS_ENCODING_BASE_EXCEPTION_NEEDSINIT",
       "text": "Αυτή η κωδικοποίηση θα πρέπει να αρχικοποιηθεί."
     },
@@ -8248,34 +7476,6 @@
       "text": "Το νήμα δεν μπορεί να αναδημιουργηθεί"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED",
-      "text": "Απέτυχε η φόρτωση του πόρου γλώσσας για"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LOCALIZED",
-      "text": "Δεν είναι δυνατή η λήψη τοπικού κειμένου"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS",
-      "text": "Δεν είναι δυνατή η λήψη αγγλικών τοπικοποιήσεων"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOC",
-      "text": "Δεν μπορώ να λάβω αγγλικό κείμενο"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN",
-      "text": "Πρέπει να καθοριστεί το διακριτικό γλώσσας"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA",
-      "text": "Δεν είναι δυνατή η λήψη μεταδεδομένων γλώσσας"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATAARRAY",
-      "text": "Δεν είναι δυνατή η λήψη του πίνακα μεταδεδομένων γλώσσας"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",
       "text": "Μεταδεδομένα MIME (εκτεταμένα)"
     },
@@ -8388,30 +7588,6 @@
       "text": "Πνευματικά δικαιώματα (C) 2018-2025 Aptivi - Με την επιφύλαξη παντός δικαιώματος"
     },
     {
-      "loc": "NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO",
-      "text": "Δεν είναι δυνατή η λήψη πληροφοριών ορισμάτων για εντολή ή όρισμα"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_COMMANDEXECUTION",
-      "text": "Οι παράμετροι νήματος δεν καθορίζονται."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "Δεν είναι δυνατή η λήψη παραμέτρων νήματος για την εκτέλεση της διαδικασίας."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_INTERNALFIELDENVVARS",
-      "text": "Δεν είναι δυνατή η λήψη εσωτερικού πεδίου για μεταβλητές περιβάλλοντος"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_NOEXECUTOR",
-      "text": "Δεν είναι δυνατή η λήψη του εκτελεστή κελύφους για"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC",
-      "text": "Εμφανίζει γενικές εντολές (προεπιλογή)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC",
       "text": "Αλλάζει το πλήρες όνομα του χρήστη (όνομα εμφάνισης)"
     },
@@ -8474,18 +7650,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC",
       "text": "Ελάχιστο διάστημα ρελαντί για την εκκίνηση της προφύλαξης οθόνης. Η μονάδα είναι σε μορφή χρονικού διαστήματος (ΩΩ: ΜΛ: ΔΔ)."
-    },
-    {
-      "loc": "NKS_THEMES_DEFAULT_DESC",
-      "text": "Το προεπιλεγμένο θέμα για τον πυρήνα"
-    },
-    {
-      "loc": "NKS_THEMES_DYNAMIC_DESC",
-      "text": "Προφορές παντού!"
-    },
-    {
-      "loc": "NKS_THEMES_NITRICACID_DESC",
-      "text": "Άχρωμο, ατμίζον και εξαιρετικά διαβρωτικό υγρό"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
@@ -8580,10 +7744,6 @@
       "text": "Αυτή η έκδοση του Nitrocid KS δεν υποστηρίζεται πλέον."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES",
-      "text": "Αποτυχία φόρτωσης προσαρμοσμένων γλωσσών"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
       "text": "Αποτυχία φόρτωσης σημαντικών προσθέτων πυρήνα"
     },
@@ -8616,10 +7776,6 @@
       "text": "Η φόρτωση του προγράμματος χειρισμού ακύρωσης απέτυχε"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES",
-      "text": "Η φόρτωση των ψευδωνύμων απέτυχε"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL",
       "text": "Αποτυχία φόρτωσης καταχωρήσεων ταχείας κλήσης"
     },
@@ -8640,10 +7796,6 @@
       "text": "Αποτυχία φόρτωσης MOTD και MAL"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES",
-      "text": "Η φόρτωση των ιστορικών εντολών φλοιού απέτυχε"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS",
       "text": "Απέτυχε η φόρτωση των προγραμμάτων χειρισμού επεκτάσεων"
     },
@@ -8662,10 +7814,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_RESET_VARS",
       "text": "Αποτυχία επαναφοράς γενικών μεταβλητών"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES",
-      "text": "Αποτυχία αποθήκευσης ιστορικού εντολών φλοιού"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_CONSENTS",
@@ -8766,58 +7914,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR",
       "text": "Η σύνδεση δικτύου ενδέχεται να μην έχει δημιουργηθεί σωστά λόγω σφάλματος."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "Δεν είναι δυνατή η προσωρινή αποθήκευση μιας εντολής που δεν έχει οριστεί ως αναδιπλούμενη."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDSWITCHNODESC",
-      "text": "Απροσδιόριστη περιγραφή διακόπτη"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC",
-      "text": "Πορεία προς μια διαδικασία"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "Επιχειρήματα για να περάσει σε μια διαδικασία"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "Εντολή για εμφάνιση καταχώρισης βοήθειας"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
-      "text": "Διοχετεύει την έξοδο της εντολής σε άλλη εντολή ως παραμέτρους"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "Εντολή πηγής για τη διοχέτευση της εξόδου της στην εντολή προορισμού ως τελευταία παράμετρο"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Εντολή στόχου που θα εκτελεστεί κατά την κατασκευή του ορίσματος με βάση την έξοδο της εντολής πηγής"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC",
-      "text": "Είτε θα μεταβιβαστεί η έξοδος της εντολής πηγής ως ένα όρισμα σε εισαγωγικά ή ως όρισμα χωρίς εισαγωγικά"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "Εντολή για αναδίπλωση της εξόδου του"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "Η εκτέλεση της εντολής πηγής απέτυχε."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "Η εκτέλεση εντολής στόχου απέτυχε. Τα περιεχόμενα ενδέχεται να μην έχουν συμπληρωθεί σωστά. Η εντολή που εκτελέστηκε ήταν"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_FAILED",
-      "text": "Ο σωλήνας έχει σπάσει."
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC",
@@ -9008,18 +8104,6 @@
       "text": "Μια τυπική έκφραση για αντιστοίχιση φράσεων που πρόκειται να αντικατασταθούν"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDCOUNTRY",
-      "text": "Μη έγκυρη χώρα"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_CHOOSELANGFORCOUNTRY",
-      "text": "Επιλέξτε μια γλώσσα για τη χώρα"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDLANG",
-      "text": "Μη έγκυρη επιλογή γλώσσας για"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_YES",
       "text": "Ναί"
     },
@@ -9066,26 +8150,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC",
       "text": "Εμφανίζει τους συναγερμούς"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "Προσθέτει ένα ψευδώνυμο"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "Τύπος κελύφους για λήψη εντολών από"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "Ψευδώνυμο όνομα"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "Εντολή που θα χρησιμοποιηθεί ως συντόμευση"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC",
-      "text": "Αφαιρεί ένα ψευδώνυμο"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC",
@@ -9148,28 +8212,8 @@
       "text": "Αναγνωριστικό γλώσσας"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC",
-      "text": "Αλλάζει τη γλώσσα χρησιμοποιώντας μια χώρα (μπορεί να σας ζητηθεί να επιλέξετε μια γλώσσα)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC",
       "text": "Νέο μήνυμα προς χρήση"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Απαντήσεις σε διάσπαση με κάθετο"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ερώτηση για εκτύπωση στην οθόνη"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Τίτλος πρώτης απάντησης"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Τίτλος δεύτερης απάντησης και ούτω καθεξής..."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
@@ -9272,10 +8316,6 @@
       "text": "Κατάλογος τύπων προγραμμάτων οδήγησης"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "Συμβολοσειρά για εκτύπωση"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC",
       "text": "Αρχείο για κωδικοποίηση"
     },
@@ -9312,32 +8352,12 @@
       "text": "Τύπος υλικού"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Έκφραση UESH για δοκιμή"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC",
-      "text": "Εντολή για εκτέλεση μετά την επιτυχή αξιολόγηση"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC",
       "text": "Διαδρομή στον κατάλογο για το αριστερό παράθυρο"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "Διαδρομή στον κατάλογο για το δεξί παράθυρο"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC",
-      "text": "Φορτώνει ξανά, φορτώνει ή ξεφορτώνει μια προσαρμοσμένη γλώσσα"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC",
-      "text": "Όνομα προσαρμοσμένης γλώσσας"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC",
-      "text": "Εμφανίζει ή φορτώνει ξανά όλες τις προσαρμοσμένες γλώσσες"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
@@ -9456,10 +8476,6 @@
       "text": "Ανοίγει τις ρυθμίσεις εκκίνησης του πρόσθετου"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC",
-      "text": "Τιμή προς ρύθμιση"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC",
       "text": "Όνομα μεταβλητής διαμόρφωσης"
     },
@@ -9468,24 +8484,8 @@
       "text": "Όνομα υλοποίησης"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "Πρώτη τιμή"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "Δεύτερη τιμή"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "Τρίτη τιμή και ούτω καθεξής..."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC",
       "text": "Όνομα ζώνης ώρας"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC",
-      "text": "Διάστημα για ύπνο"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC",
@@ -9522,10 +8522,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC",
       "text": "Διεύθυνση IP για ξεμπλοκάρισμα"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "Όνομα μεταβλητής"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC",
@@ -9932,10 +8928,6 @@
       "text": "Δεν είναι δυνατή η επιλογή διαμόρφωσης"
     },
     {
-      "loc": "NKS_KNOWNADDONS_PACKS_LANGUAGES",
-      "text": "Επιπλέον Πακέτο Γλωσσών"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_PACKS_SCREENSAVERS",
       "text": "Επιπλέον πακέτο προφύλαξης οθόνης"
     },
@@ -10104,22 +9096,6 @@
       "text": "Extras - Chatbot AI"
     },
     {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED1",
-      "text": "Η φόρτωση των μεταδεδομένων γλώσσας απέτυχε"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE1",
-      "text": "Απέτυχε η αποσημείωση των μεταδεδομένων της γλώσσας"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED2",
-      "text": "Αποτυχία φόρτωσης μεταδεδομένων γλώσσας για"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
-      "text": "Απέτυχε η αφαίρεση μεταδεδομένων γλώσσας για"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
       "text": "Δεν είναι δυνατή η αφαίρεση της βασικής διαμόρφωσης {0}"
     },
@@ -10130,14 +9106,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_DESC",
       "text": "Αυτή η ενότητα παραθέτει τις ρυθμίσεις του προγράμματος οδήγησης."
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
-      "text": "Τρέχον πρόγραμμα οδήγησης κονσόλας"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
-      "text": "Ποιο πρόγραμμα οδήγησης κονσόλας θα θέλατε να χρησιμοποιήσετε;"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",

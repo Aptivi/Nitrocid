@@ -15,10 +15,6 @@
       "text": "{0} v{1} dimulai"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Bahasa tidak valid"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Parsing mod tidak diizinkan pada mode aman."
     },
@@ -143,10 +139,6 @@
       "text": "Pencopotan instalasi gagal untuk"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Informasi metadata yang dibutuhkan untuk menginstal bahasa khusus tidak menyediakan lokalisasi yang diperlukan."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Tampilkan jumlah perintah mod pada bantuan"
     },
@@ -157,10 +149,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Halaman manual tanpa judul"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "Informasi metadata yang diperlukan untuk menginstal bahasa khusus tidak ada."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -295,10 +283,6 @@
       "text": "Pengecualian pemuat tidak dikenal"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Tidak dapat memuat lokalisasi mod"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Gagal mendapatkan entri pengaturan."
     },
@@ -361,10 +345,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Kelas ini bukan kelas mod"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Bahasa"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

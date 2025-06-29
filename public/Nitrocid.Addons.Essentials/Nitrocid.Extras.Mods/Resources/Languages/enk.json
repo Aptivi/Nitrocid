@@ -14,10 +14,6 @@
       "text": "{0} v{1} started"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Invalid language"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Parsing mods not allowed on safe mode."
     },
@@ -142,10 +138,6 @@
       "text": "Uninstallation failed for"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "The metadata information needed to install the custom language doesn't provide the necessary localisations needed."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Show the mod commands count on help"
     },
@@ -156,10 +148,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Untitled manual page"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "The metadata information needed to install the custom language doesn't exist."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -294,10 +282,6 @@
       "text": "Unknown loader exception"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Can't load mod localisations"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Failed to obtain settings entries."
     },
@@ -360,10 +344,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "This class is not an mod class"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Languages"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

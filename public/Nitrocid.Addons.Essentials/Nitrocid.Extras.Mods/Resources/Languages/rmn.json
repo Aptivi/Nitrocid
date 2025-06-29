@@ -16,10 +16,6 @@
       "text": "{0} v{1} a început"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Limbă nevalidă"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Analizarea modurilor nu este permisă în modul sigur."
     },
@@ -144,10 +140,6 @@
       "text": "Dezinstalarea a eșuat pentru"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Informațiile despre metadate necesare pentru a instala limba personalizată nu oferă localizările necesare."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Afișați comenzile de mod se bazează pe ajutor"
     },
@@ -158,10 +150,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Pagina de manual fără titlu"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "Informațiile despre metadate necesare pentru a instala limba personalizată nu există."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -296,10 +284,6 @@
       "text": "Excepție de încărcare necunoscută"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Nu se pot încărca localizările modului"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Nu s-au putut obține intrările de setări."
     },
@@ -362,10 +346,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Această clasă nu este o clasă de mod"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Limbi"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

@@ -1,0 +1,41 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Tekan sebarang kekunci untuk meneruskan..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "Kini selamat untuk mematikan komputer anda."
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "Ralat persekitaran kernel:"
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "Nitrocid KS telah mengesan masalah dan ia telah ditutup."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "Anda menjalankan versi pembangunan kernel. Walaupun anda boleh mengalami ciri akan datang yang mungkin wujud dalam keluaran akhir, anda mungkin menghadapi pepijat, ketidakstabilan atau kehilangan data. Kami mengesyorkan menggunakan versi stabil, jika boleh."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "Anda menjalankan versi calon keluaran bagi kernel. Walaupun anda boleh mengalami sentuhan terakhir, anda mungkin menghadapi pepijat, ketidakstabilan, atau kehilangan data. Kami mengesyorkan menggunakan versi stabil, jika boleh."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "Kami mengesyorkan agar anda tidak menjalankan versi kernel ini, kerana ia tidak disokong. Jika anda telah memuat turun kernel ini daripada sumber yang tidak diketahui, mesej ini mungkin muncul. Sila muat turun dari halaman muat turun rasmi kami."
+    }
+  ]
+}

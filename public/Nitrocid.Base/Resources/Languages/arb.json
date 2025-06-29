@@ -33,14 +33,6 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "adghat ealaa 'ayi miftah lilmutabaeati..."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "qalib 'alwan ghayr salih {0}"
-    },
-    {
       "loc": "NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE",
       "text": "'udkhul kalimat murur almaswuwl lilsiyanati."
     },
@@ -109,10 +101,6 @@
       "text": "kalimat murur khatiat."
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PARSEERROR",
-      "text": "khata fi muhawalat tahlil aleanasir alnnayibat. {0}"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_ADDERROR",
       "text": "khata fi muhawalat 'iidafat aism almustakhdm."
     },
@@ -153,28 +141,8 @@
       "text": "shashat altawaquf {0} ghyr mawjudat fi qaeidat albayanat. tuhaqiq min alaism wahawal maratan 'ukhraa."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NODEFINITION",
-      "text": "la yujad taerif lil'amr {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_DEFINEDBY",
-      "text": "alqiadat muhadadat min qibal"
-    },
-    {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1",
       "text": "lm yatim aleuthur ealaa aldalil {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASCOMMANDSAMENAME",
-      "text": "alaism almustaear la ymkn 'an yakun nfs alaism ka'amr."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_COMMANDNOTFOUND",
-      "text": "al'amr lm yatim aleuthur ealaa alaism almustaear l {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_REMOVE",
-      "text": "alaism almustaear {0} lm yatima aleuthur ealaa 'iizalth."
     },
     {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2",
@@ -221,10 +189,6 @@
       "text": "'iieadat tahmil altakwin. qad tahtaj 'iilaa 'iieadat tashghil kernel hataa tusbih bed altaghyirat nafidhat almafaeul."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_COLORINVALID",
-      "text": "wahid 'aw 'akthar min al'alwan ghyr salihin."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND",
       "text": "lm yatim aleuthur ealaa shashat altawaquf {0}."
     },
@@ -239,10 +203,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
       "text": "yughayir kalimat almurur lilmustakhdam alhalii"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC",
-      "text": "masah alshshasha"
     },
     {
       "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
@@ -305,14 +265,6 @@
       "text": "risalat Shell: la yusmh lil'amr almatlub {0} bialeamal fi wade alsiyanati."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMANDNOTFOUND",
-      "text": "risalat Shell: al'amr almatlub {0} lm yatima aleuthur ealayhi. rajie \"msaed\" lilaitilae ealaa al'awamir almatahati."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ERROREXECUTE2",
-      "text": "khata fi muhawalat tanfidh al'amr."
-    },
-    {
       "loc": "NKS_KERNEL_TIME_TIMEZONES_LISTENTRY",
       "text": "- waqt {0}: {1}"
     },
@@ -323,10 +275,6 @@
     {
       "loc": "NKS_FILES_UNAUTHORIZED",
       "text": "ghyr masrah lak bialhusul ealaa maelumat ean {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_OBSOLETECMD",
-      "text": "hadha al'amr qadim wasayatim 'iizalatah fi 'iisdar mustaqbali."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN",
@@ -375,10 +323,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTED",
       "text": "tashih alaistimae ealaa jmye aleanawin biastikhdam almunafidh {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_ALIASALREADYEXISTS",
-      "text": "alaism almustaear mawjud balfel: {0}"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_CDBGLOG_SUCCESS",
@@ -473,10 +417,6 @@
       "text": "yunafidh ean baed 'amr lijihaz alkambiutir albaeid"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "nawe ghayr salih {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ENTRYSIZE",
       "text": "alhajm: {0}"
     },
@@ -515,26 +455,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILED",
       "text": "fashilu bad' tashih al'akhta' ean bued: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CANTEXECUTE",
-      "text": "khata fi muhawalat tanfidh albarnamaj alnasi: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC",
-      "text": "yaktub alnasi fi wahdat altahakum"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC",
-      "text": "yajeal khiarat almustakhdam"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHOICE_HELPER",
-      "text": "hayth <alajwbt> hi 'iijabat min harf wahid lilsuwal mafsulat bikhati mayil"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC",
-      "text": "yasmah lilmustakhdam bi'iidkhal al'iidkhal"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_DESC",
@@ -713,10 +633,6 @@
       "text": "yudif almustakhdimin"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC",
-      "text": "yudif 'asma' mustaearatan 'iilaa al'awamir"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC",
       "text": "yughayir asm almudif"
     },
@@ -739,10 +655,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC",
       "text": "yuzil mustakhdam min alqayima"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_REMOVALSUCCESS",
-      "text": "tamat 'iizalat aliasm almustaear {0} binajahi."
     },
     {
       "loc": "NKS_KERNEL_UPDATES_CHECKFAILED",
@@ -1033,10 +945,6 @@
       "text": "yaftah qadhifat alaikhtibar"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDSTARTFAILED",
-      "text": "fashil bad' \"{0}\": {1}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC",
       "text": "yamsah almilafu alnasia"
     },
@@ -1121,14 +1029,6 @@
       "text": "al'iidkhal mawjud bialfieli."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
-      "text": "yalufu 'iikhraj wahdat altahakum"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAPUNWRAPPABLE",
-      "text": "al'amr ghayr qabil lilaltafafu. hadhih al'awamir qabilat lilaltafafu:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
       "text": "muqtatafat min 'arshif madghut"
     },
@@ -1157,10 +1057,6 @@
       "text": "'arsil {0} lika."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC",
-      "text": "yeyn mtghyrana 'iilaa qimat fi nasin barmajiin"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME",
       "text": "'iizhar shiear SSH"
     },
@@ -1181,32 +1077,12 @@
       "text": "'awamir eamatun:"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_MODLISTING",
-      "text": "'awamir wizarat aldifaei:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ALIASLISTING",
-      "text": "'awamir aliaism almustaeari:"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
       "text": "namat alsiyana"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME",
       "text": "dalayil albahth"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOMODLISTING",
-      "text": "la tujad 'awamir taedili."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOALIASLISTING",
-      "text": "la tujad 'awamir aism mustaeari."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "lam yatima aleuthur ealaa 'amr alaltafafu."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC",
@@ -1437,14 +1313,6 @@
       "text": "wajahat shashat altawaquf khataan 'athna' eardi: {0}. adght ay zirr lilkhuruwji."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_THEMESHOWCASE",
-      "text": "'iilayk kayf sayabdu almazhar alkhasu bika:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "'awamir qabilat lilaltafafu:"
-    },
-    {
       "loc": "NKS_FILES_LISTFOLDEREMPTY",
       "text": "mujalad farghi."
     },
@@ -1459,10 +1327,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME",
       "text": "shiear bad' altashghil almukhasas"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO",
-      "text": "qad la takun al'iijabat sfran."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION",
@@ -1483,10 +1347,6 @@
     {
       "loc": "NKS_ARGUMENTS_HELP_LISTING",
       "text": "wasitat kernel almutawafirati:"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNRECOVERABLEERROR",
-      "text": "khata ghayr qabil liliastirdad fi alwasitati:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA512_DESC",
@@ -1929,16 +1789,8 @@
       "text": "mithl alwade alamin , walakin aydan yueatil taeadud almustakhdimin wabaed altakhsis"
     },
     {
-      "loc": "NKS_ARGUMENTS_NOTENOUGHARGS",
-      "text": "lam yakun hunak ma yakfi min alhujaju."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
       "text": "la tatatalab al'alwan 'iieadat altashghil , lakina muezam al'iiedadat tatatalab 'iieadat altashghili."
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELP",
-      "text": "la tujad musaeadat lilwasita \"{0}\"."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -1977,10 +1829,6 @@
       "text": "almilafu {0} ghayr mawjud"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC",
-      "text": "yunshi masfufat mutaghayirat bialqiam almutawafira"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC",
       "text": "liltahaquq min jamie 'arqam 'astur nasi altarjamat limaerifat ma 'iidha kanat jamieuha mutasawiatan"
     },
@@ -2011,10 +1859,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC",
       "text": "yufriz qayimat nizam almilafaat bishakl ahtirafi."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC",
-      "text": "yuafir aikhtiar alaikhtiar"
     },
     {
       "loc": "NKS_SHELL_BASE_HELP_NOLISTING",
@@ -2101,10 +1945,6 @@
       "text": "'ant muhdithu!"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_SWITCHLISTING",
-      "text": "yahtawi hadha al'amr ealaa almafatih altaaliat alati tughayir tariqat eamalihi:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC",
       "text": "yuzhir tafasil almilafi fi alqayima"
     },
@@ -2145,76 +1985,8 @@
       "text": "tamakan min tashih 'akhta' nizam 'ahdath kernel"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGFAILED",
-      "text": "fashal tathbit lughat mukhasasa {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_METADATAHASNOLOCS",
-      "text": "la tuafir maelumat albayanat alwasfiat allaazimat litathbit allughat almukhasasat altarjumat almatlubat almatlubata."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED1",
-      "text": "fashil 'iilgha' tathbit allughat almukhasasa {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT",
-      "text": "la yatatabaq tul allughat al'iinjiliziat mae tul ramz allughat almuqadami."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOOVERWRITE",
-      "text": "allughat mawjudat bialfiel wala yumkin alkitabat fawqaha."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED2",
-      "text": "fashil 'iilgha' tathbit allughat almukhasasati. ealaa al'arjah ghayr mawjudi."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGSFAILED",
-      "text": "fashal tathbit allughat almukhasasati."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED1",
-      "text": "fashil 'iilgha' tathbit allughat almukhasasati."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED2",
-      "text": "fashil 'iilgha' tathbit allughat almukhasasati. rajie alaistithna' aldaakhilia limazid min almaelumati."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE",
       "text": "maelumat altarkhis"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC",
-      "text": "'iidarat allughat alkhasat bik"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_LANGNOTFOUND",
-      "text": "lam yatima aleuthur ealaa allughat 'aw 'ana almilafa yahtawi ealaa 'ahruf ghayr salihatin."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_NOLANG",
-      "text": "lam yatima tahdid allughati."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SAFEMODE",
-      "text": "tama taetil 'iidarat allughat fi alwade alamana."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SHORTNAME",
-      "text": "aliasm almukhtasar lilughati:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_FULLNAME",
-      "text": "aliasm alkamil lilughati:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_TRANSLITERABLE",
-      "text": "lughat qabilat liltarjamati:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_CUSTOM",
-      "text": "lughat mukhasasatun:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME",
@@ -2273,40 +2045,12 @@
       "text": "'iizhar alaietimad ealaa al'asma' almustaearat ealaa almusaeada"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC",
-      "text": "yunafadh al'awamir bimujarad 'iirda' taebirat UESH"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "lam yatima aleuthur ealaa alshart fi altaebiri."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "yatatalab alshart {0} wasitat {1}. hasalat ealaa {2}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "khataan fi tahlil altaebir bisabab khata fi bina' aljumlati."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE",
-      "text": "fashil fi talbiat alshartu. mazid min almaelumat huna:"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME",
       "text": "shakhsiat qinae kalimat almurur"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC",
       "text": "harf yukhfi kalimat almururi. atrukh farighan limazid min al'amani."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC",
-      "text": "yakhruj min alghilaf 'iidha kan yaemal ealaa qishrat fareia"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_KILLINGMOTHERSHELL",
-      "text": "la yumkin 'an taqtal qadhifat al'um!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL",
@@ -2331,10 +2075,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
       "text": "litamkin wade altashih"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE",
-      "text": "alqimat alhaliatu:"
     },
     {
       "loc": "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC",
@@ -2457,10 +2197,6 @@
       "text": "litashghil 'aw 'iiqaf tashghil mayzat alhifz altalqayiyi lilmuharir alsidasii."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "alnasu ghayr sahihin. afhas alnasu albarmajia wa'aslih 'ayat 'akhta'i: {0}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC",
       "text": "yastakhdim almasar alnisbiu bdlaan min almasar almutlaq"
     },
@@ -2471,10 +2207,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC",
       "text": "sawa' tama tamkin mahfuzat al'iidkhal 'am la. fi halat altamkin , yumkinuk alwusul 'iilaa al'awamir almaktubat mwkhran biaistikhdam mafatih al'ashum li'aelaa 'aw li'asfala."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "yumkinuk alan 'iiqaf tashghil jihaz alkumbuyutar alkhasi bik bi'amani."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME",
@@ -2493,14 +2225,6 @@
       "text": "ta'akad min astikhdam khati wahdat tahakum yadeam alhuruf alrusumiat la PowerLine , wa'iilaa faqad la yatimu eard al'iikhraj bishakl sahihi. nusi"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC",
-      "text": "yaftah maktabat shell almaeadat msbqan"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_EXCEPTION_PRESETNOTFOUND",
-      "text": "lam yatima aleuthur ealaa al'iiedad almusbaq almuhadad {0}."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_ALREADYBLOCKED",
       "text": "aljihaz mawjud bialfiel fi qayimat alhazri."
     },
@@ -2511,10 +2235,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC",
       "text": "aikhtibarat tanfidh nuqtat dukhul altajamue"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_SELECT",
-      "text": "hadid al'iiedad almusbaq la {0}:"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
@@ -2539,22 +2259,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
       "text": "īẖfī al-bdāīẗ qbl al-tmhīd qbl tḥmīl al-tkwyn"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNKNOWNARGUMENT",
-      "text": "ḥǧẗ ġīr mʿrūfẗ"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING",
-      "text": "īǧb an tqūm btšġīl ConEmu aū mūǧh awāmr Windows 10 mʿ tmkīn mʿālǧẗ VT."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO",
-      "text": "al-mḥṭẗ al-ṭrfīẗ al-ẖāṣẗ bk hī {0} fī {1}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION",
-      "text": "hl tbdū hḏh al-mnḥdrāt mnāsbẗ lk? īǧb an īntqlwā bslāsẗ."
     },
     {
       "loc": "NKS_DRIVERS_EXCEPTION_NOFALLBACKS",
@@ -2661,22 +2365,6 @@
       "text": "aḍġṭ ʿli aī mftāḥ lbdʾ al-ṣdfẗ ʿli aī ḥāl, ūlkn īrǧi mlāḥẓẗ anh qd ītʿīn ʿlīk inšāʾ al-mstẖdm al-ǧdīd īdwyًā."
     },
     {
-      "loc": "NKS_KERNEL_ENVERROR",
-      "text": "ẖṭʾa fī bīʾiẗ al-nwāẗ:"
-    },
-    {
-      "loc": "NKS_KERNEL_FATALERROR",
-      "text": "aktšf Nitrocid KS mšklẗ ūtm iġlāqh."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_INSTALL",
-      "text": "mʿlūmāt al-bīānāt al-tʿrīfīẗ al-lāzmẗ ltṯbīt al-lġẗ al-mẖṣṣẗ ġīr mūǧūdẗ."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_UNINSTALL",
-      "text": "mʿlūmāt al-bīānāt al-tʿrīfīẗ al-lāzmẗ lizālẗ tṯbīt al-lġẗ al-mẖṣṣẗ ġīr mūǧūdẗ."
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "mḥāūlẗ tʿdīl al-ḥsāb al-ḥālī aṯnāʾ qflh"
     },
@@ -2723,26 +2411,6 @@
     {
       "loc": "NKS_ARGUMENTS_RESET_WIPEMISCFAILED",
       "text": "lā īmkn msḥ al-mlfāt al-mtnūʿẗ"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELPDESC",
-      "text": "lā īūǧd ūṣf msāʿdẗ ḥǧẗ"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "īǧb an tdʿm ūḥdẗ al-tḥkm al-ẖāṣẗ bk al-lūn al-ḥqīqī lāstẖdām hḏā al-mẓhr."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXITPREVIEW_DESC",
-      "text": "al-ẖrūǧ mn al-mʿāīnẗ"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "īḥtfl al-mūḍūʿ {0} bḥdṯ mā, ūlknk imā mbkr ǧddā aū mtʾaẖr ǧddā llḥḍūr. kl ʿām, īmkn al-ūṣūl ili hḏā al-mūḍūʿ mn {1}/{2} ili {3}/{4}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "al-smẗ {0} tḥtāǧ ili dʿm al-ʾalwān al-ḥqīqīẗ, lkn ūḥdẗ al-tḥkm al-ẖāṣẗ bk lā tdʿmhā."
     },
     {
       "loc": "NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT",
@@ -3113,10 +2781,6 @@
       "text": "ḥdṯ ẖṭʾa ʿām fī ġlāf HTTP."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLEDETECTED",
-      "text": "tm aktšāf ūḥdẗ al-tḥkm al-mǧnūnẗ. lā īmkn l. Nitrocid KS al-āstmrār fī al-tšġīl, lʾan ūḥdẗ al-tḥkm al-ẖāṣẗ bk ġīr mtwāfqẗ mʿ mtṭlbātnā."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHALGORITHM",
       "text": "ẖwārzmīẗ al-tǧzʾiẗ ġīr ṣālḥẗ. iḏā knt tstẖdm brnāmǧ tšġīl mẖṣṣ lmǧmūʿ al-tǧzʾiẗ, ftḥqq lltʾakd mn tḥmīl brnāmǧ al-tšġīl."
     },
@@ -3209,10 +2873,6 @@
       "text": "lā īūǧd qḏīfẗ mḥddẗ msbqًā bhḏā al-āsm."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",
-      "text": "lā īūǧd mūḍūʿ bhḏā al-āsm"
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NULLUSERS",
       "text": "lā īūǧd mstẖdmūn fī al-nwāẗ bʾakmlhā. lqd ūṣlnā ili ḥālẗ nādrẗ llġāīẗ. al-nwāẗ lā īmkn an tstmr."
     },
@@ -3257,14 +2917,6 @@
       "text": "ḥdṯ ẖṭʾa ʿām fī ġlāf SFTP."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONPARSE",
-      "text": "fšl tḥlīl al-ḥālẗ. īrǧi al-tḥqq mn bnāʾ al-ǧmlẗ al-ẖāṣ bk ltlbīẗ al-tṣmīm al-mtūqʿ llmšġl."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHSCRIPT",
-      "text": "ḥdṯ ẖṭʾa aṯnāʾ mḥāūlẗ tḥlīl mlf al-brnāmǧ al-nṣī UESH. tḥqq mn mlf al-brnāmǧ al-nṣī al-ẖāṣ bk bḥṯًā ʿn al-ʾaẖṭāʾ ūqm btṣḥīḥhā."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_USERCREATION",
       "text": "ḥdṯ ẖṭʾa fī inšāʾ al-mstẖdm."
     },
@@ -3275,10 +2927,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK",
       "text": "ḥdṯ ẖṭʾa ʿām fī al-šbkẗ. iḏā knt tḥāūl al-ātṣāl bṭrf bʿīd, ftʾakd mn atṣālk bālintrnt aū bšbktk al-mḥlīẗ."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UNSUPPORTEDCONSOLE",
-      "text": "tm aktšāf ūḥdẗ tḥkm ġīr mdʿūmẗ."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE",
@@ -3349,20 +2997,12 @@
       "text": "ḥdṯ ẖṭʾa fī idārẗ ǧhāt al-ātṣāl aṯnāʾ mḥāūlẗ tnfīḏ al-ʿmlīẗ al-mṭlūbẗ. tʾakd mn ūǧūd mlf ǧhẗ al-ātṣāl fī al-mǧld al-ṣḥīḥ ūʾanh mlf ǧhẗ atṣāl vCard 2.1 aū 3.0 aū 4.0 ṣālḥ."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
-      "text": "fšl nẓām šrṭ UESH aṯnāʾ tnfīḏ al-ʿmlīẗ al-mṭlūbẗ. rāǧʿ rsālẗ al-ẖṭʾa adnāh lmzīd mn al-tfāṣīl."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR",
       "text": "ītm al-ʾān tnfīḏ ʿmlīẗ mḥrr SQL ġīr ṣālḥẗ."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP",
       "text": "al-mǧmūʿẗ ġīr mūǧūdẗ. tḥqq lltʾakd mn ank ktbt asm al-mǧmūʿẗ bškl ṣḥīḥ."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INTERACTIVETUI",
-      "text": "ḥdṯ ẖṭʾa fī tnfīḏ TUI al-tfāʿlī."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS",
@@ -3411,10 +3051,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_REFLECTION",
       "text": "ḥdṯ ẖṭʾa fī nẓām al-ānʿkās."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_THEMEMANAGEMENT",
-      "text": "ḥdṯ ẖṭʾa aṯnāʾ mḥāūlẗ iǧrāʾ ʿmlīẗ lidārẗ al-smāt."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_EVENTMANAGEMENT",
@@ -3785,10 +3421,6 @@
       "text": "bdʾ tšġīl al-nītrūsīd..."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_CUSTOMLANGS",
-      "text": "ǧārٍ tḥmīl al-lġāt al-mẖṣṣẗ..."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_IMPORTANTADDONS",
       "text": "ǧārٍ tḥmīl al-iḍāfāt al-mhmẗ llnwāẗ..."
     },
@@ -3819,10 +3451,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_GENERALVARSRESET",
       "text": "iʿādẗ tʿyin al-mtġīrāt al-ʿāmẗ"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_HISTORIESSAVED",
-      "text": "tārīẖ awāmr al-ṣdfẗ al-mḥfūẓẗ."
     },
     {
       "loc": "NKS_KERNEL_STARTING_CONFIGSAVED",
@@ -4437,32 +4065,12 @@
       "text": "hḏā al-brnāmǧ mrẖṣ bmūǧb trẖīṣ GNU General Public License 3.0 aū al-ʾaḥdṯ."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "ant tqūm btšġīl al-iṣdār al-tṭwyrī llnwāẗ. bīnmā īmknk tǧrbẗ al-mīzāt al-qādmẗ al-tī qd tkūn mūǧūdẗ fī al-iṣdār al-nhāʾī, fqd twāǧh aẖṭāʾ aū ʿdm astqrār aū ḥti fqdān al-bīānāt. nūṣī bāstẖdām al-iṣdār al-ṯābt, in amkn."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "ant tqūm btšġīl al-iṣdār al-mršḥ llnwāẗ. bīnmā īmknk tǧrbẗ al-lmsāt al-ʾaẖīrẗ, qd twāǧh aẖṭāʾ aū ʿdm astqrār aū ḥti fqdān al-bīānāt. nūṣī bāstẖdām al-iṣdār al-ṯābt, in amkn."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "nūṣī bʿdm tšġīl hḏā al-iṣdār mn al-nwāẗ, lʾanh ġīr mdʿūm. iḏā qmt btnzīl hḏā al-nwāẗ mn mṣādr ġīr mʿrūfẗ, fqd tẓhr hḏh al-rsālẗ. īrǧi al-tnzīl mn ṣfḥẗ al-tnzīlāt al-rsmīẗ ldīnā."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP",
-      "text": "llrfḍ nhāʾīًā, aḍġṭ ʿli ENTER ʿli al-zr \"tm al-iqrār\" hnā mn ẖlāl tmyizh bāstẖdām al-shm al-ʾaīsr ʿli lūḥẗ al-mfātīḥ, aū qm btmkīn \"tm al-iqrār bišʿār al-tṭwyr\" fī iʿdādāt kernel."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_OK",
       "text": "nʿm"
     },
     {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_ACKED",
       "text": "mʿtrf bh"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISS_TITLE",
-      "text": "išʿār al-tṭwyr"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
@@ -4789,228 +4397,12 @@
       "text": "lttmkn mn al-ḥṣūl ʿli aẖr al-ʾaẖbār, īǧb ʿlīk tṯbīt al-mlḥq RSS Shell Extras. īmknk astẖdām al-ʾamr \"getaddons\" llḥṣūl ʿli ǧmīʿ al-iḍāfāt!"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_QUERY",
-      "text": "lm ītm al-ʿṯūr ʿli al-āsm al-mstʿār {0} llāstʿlām ʿnh."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "īḍbṭ qīmẗ al-iẖrāǧ ʿli mtġīr UESH al-mḥdd"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_LISTING",
-      "text": "lm ītm tūfīr al-ūsāʾiṭ al-mṭlūbẗ lǧmīʿ al-āstẖdāmāt adnāh:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGS",
-      "text": "lm ītm tūfīr al-ḥǧǧ al-mṭlūbẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHES",
-      "text": "lā ītm tūfīr al-mfātīḥ al-mṭlūbẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHVALUE",
-      "text": "ītṭlb aḥd rmūz al-tbdīl qīmẗ ġīr mtūfrẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_UNKNOWNSWITCH",
-      "text": "rmūz al-tbdīl al-msrūdẗ adnāh ġīr mʿrūfẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_CONFLICTSWITCH",
-      "text": "ttʿārḍ rmūz al-tbdīl al-mḏkūrẗ adnāh mʿ bʿḍhā al-bʿḍ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNOVALUE",
-      "text": "lā tqbl al-mfātīḥ adnāh al-qīm."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGNUMVALUE",
-      "text": "ttūqʿ wāḥdẗ aū akṯr mn al-ūsīṭāt qīmẗ rqmīẗ, lknk qdmt rqmmā ġīr ṣālḥ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGEXACTWORD",
-      "text": "ttūqʿ wāḥdẗ aū akṯr mn al-ūsīṭāt ṣīāġẗ dqīqẗ, ūlknk qdmt klmẗ ġīr ṣālḥẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNUMVALUE",
-      "text": "ītūqʿ wāḥd aū akṯr mn rmūz al-tbdīl qīmẗ rqmīẗ, ūlknk qmt btūfīr rqm ġīr ṣālḥ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ABORTED",
-      "text": "tm iḥbāṭ al-ʾamr."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "lā īǧb ʿlīk tnfīḏ hḏā al-ʾamr mbāšrẗ fī al-ūḍʿ al-mltf."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "ḥdṯ ẖṭʾa aṯnāʾ mḥāūlẗ al-tfāf iẖrāǧ al-ʾamr"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_COMMANDABORTED",
-      "text": "tm iḥbāṭ al-ʾamr llsbb al-tālī:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDPATTERNINVALID",
-      "text": "tm tūfīr nmṭ amr ġīr ṣālḥ."
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "al-qīādẗ lm ītm al-ʿṯūr."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND",
-      "text": "nūʿ al-ṣdfẗ {0} ġīr mūǧūd."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED",
-      "text": "īǧb ʿlīk tūfīr qāʿdẗ al-ʾawāmr."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED",
-      "text": "īǧb ʿlīk tqdīm al-ʾamr."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS",
-      "text": "tmt iḍāfẗ al-ʾamr al-mḥdd bālfʿl! mn al-mmkn an īkūn ldīk tʿdīlāt mtḍārbẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_UNDEFINED",
-      "text": "al-ʾamr ġīr mḥdd"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_CUSTOM",
-      "text": "lā īmkn tḥmīl bʿḍ al-ʾawāmr al-mẖṣṣẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_CUSTOM",
-      "text": "lm ītm al-ʿṯūr ʿli al-ʾamr al-mẖṣṣ al-mḥdd."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_CUSTOM",
-      "text": "lā īmkn ilġāʾ tḥmīl bʿḍ al-ʾawāmr al-mẖṣṣẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS_CUSTOM",
-      "text": "tmt iḍāfẗ al-ʾamr al-mḥdd bālfʿl! mn al-mmkn an īkūn ldīk iḍāfāt mtḍārbẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_ADDON",
-      "text": "lā īmkn tḥmīl bʿḍ awāmr al-ūẓīfẗ al-iḍāfīẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_ADDON",
-      "text": "lm ītm al-ʿṯūr ʿli amr al-mlḥq al-mḥdd."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_ADDON",
-      "text": "lā īmkn ilġāʾ tḥmīl bʿḍ awāmr al-ūẓīfẗ al-iḍāfīẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NEEDSSLASH",
-      "text": "tstẖdm hḏh al-ṣdfẗ awāmr al-šrṭẗ al-māʾilẗ ltnfīḏ al-ʾawāmr. īrǧi ilḥāq rmz al-šrṭẗ al-māʾilẗ '/' bbdāīẗ al-ʾamr llbdʾ. ʿli sbīl al-mṯāl:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDLISTING",
-      "text": "al-ʾawāmr al-mtāḥẗ:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ADDONLISTING",
-      "text": "awāmr mlḥq Kernel:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOADDONLISTING",
-      "text": "lā tūǧd awāmr iḍāfīẗ llnwāẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_UNIFIEDLISTING",
-      "text": "al-ʾawāmr al-mūḥdẗ:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOUNIFIEDLISTING",
-      "text": "al-ʾawāmr al-mūḥdẗ lm tnfḏ!!!"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_COMMAND",
-      "text": "īʾamr:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "lā īmknk al-iʿlān ʿn al-ktlẗ al-ǧdīdẗ qbl ūḍʿ al-tʿbīrāt al-tī tdʿm al-inšāʾ, mṯl al-šrūṭ aū al-ḥlqāt. rqm al-mkds hū {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "ʿnd bdʾ ktlẗ ǧdīdẗ, tʾakd mn ūḍʿ msāfẗ bādʾiẗ llmkds bškl ṣḥīḥ. rqm al-mkds hū {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "al-brnāmǧ al-nṣī ġīr ṣḥīḥ. tḥqq mn al-brnāmǧ al-nṣī ūḥl aī aẖṭāʾ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "tḏkīr lʾawāmr al-qṭʿ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
-      "text": "īnfḏ ʿmlīẗ ẖārǧīẗ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC",
-      "text": "īnfḏ al-ʿmlīẗ dūn mqāṭʿẗ ẖīṭ al-ṣdfẗ. sītm inšāʾ nāfḏẗ mnfṣlẗ."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
-      "text": "ībḥṯ ʿn al-ʾawāmr al-mtūfrẗ fī nūʿ al-ṣdfẗ al-ḥālī"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC",
-      "text": "īẓhr awāmr ūzārẗ al-dfāʿ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC",
-      "text": "īẓhr al-ʾawāmr al-mstʿārẗ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC",
-      "text": "īẓhr al-ʾawāmr al-mūḥdẗ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC",
-      "text": "īẓhr awāmr al-mlḥq kernel"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC",
-      "text": "īẓhr ǧmīʿ al-ʾawāmr"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC",
-      "text": "īstẖdm msāʿdẗ mbsṭẗ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC",
-      "text": "īqūm btḥmīl tārīẖ al-ṣdfẗ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
-      "text": "īkrr al-iǧrāʾ al-ʾaẖīr aū al-ʾamr al-mḥdd"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC",
-      "text": "īḥfẓ tārīẖ al-ṣdfẗ"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
       "text": "īẓhr nṣīḥẗ nwāẗ ʿšwāʾīẗ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTSTARTWITHOUTMOTHERSHELL",
-      "text": "lā īmkn an tbdʾa al-qḏāʾif ilā iḏā bdʾat al-qḏīfẗ al-ʾam."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTINITSHELL",
-      "text": "fšlt mḥāūlẗ thīʾiẗ al-ṣdfẗ"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -5185,26 +4577,6 @@
       "text": "īqūm btġyir lġẗ al-mstẖdm bdlāً mn lġẗ al-nẓām"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC",
-      "text": "aslūb aẖtīār sṭr wāḥd"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC",
-      "text": "aslūb aẖtīār sṭrīn"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC",
-      "text": "aslūb al-āẖtīār al-ḥdīṯ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "īmkn an īkūn al-iẖrāǧ ḥrfًā wāḥddā fqṭ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "īmkn an īkūn al-iẖrāǧ akṯr mn ḥrf"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
       "text": "īǧmʿ al-mlfīn al-nṣyin aū akṯr fī ūḥdẗ al-tḥkm."
     },
@@ -5227,18 +4599,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC",
       "text": "īfrḍ tḥwyl nhāīẗ al-sṭr"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
-      "text": "īẓhr al-tārīẖ fqṭ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
-      "text": "īẓhr al-ūqt fqṭ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
-      "text": "īstẖdm UTC bdlāً mn al-mḥlī"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC",
@@ -5271,10 +4631,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN",
       "text": "idārẗ brāmǧ al-tšġīl al-ẖāṣẗ bk"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "īṭbʿ al-nṣ kmā hū bdūn tḥlīl al-ʿnṣr al-nāʾib"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
@@ -5321,10 +4677,6 @@
       "text": "ībḥṯ ʿn mlf fī al-dlīl al-mḥdd aū fī al-dlīl al-ḥālī bāstẖdām al-tʿbīrāt al-ʿādīẗ"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC",
-      "text": "šūkāt qḏīfẗ UESH linšāʾ mṯīl aẖr"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC",
       "text": "īḥdd msār al-iẖrāǧ"
     },
@@ -5367,10 +4719,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC",
       "text": "mdīr al-mlfāt al-mḍīfẗ llnẓām al-tfāʿlī"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC",
-      "text": "īsmḥ llmstẖdm bidẖāl al-idẖāl kklmẗ mrūr"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
@@ -5521,10 +4869,6 @@
       "text": "īftḥ TUI al-tfāʿlī al-ḏī sttmkn mn ẖlālh mn ruʾīẗ al-sāʿẗ al-ʿālmīẗ fī al-ūqt al-fʿlī"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
-      "text": "īnām lmdẗ mīlī ṯānīẗ mḥddẗ"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
       "text": "īqūm btšġīl al-ʾamr kmstẖdm ǧḏrī"
     },
@@ -5575,14 +4919,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC",
       "text": "qm btʿyin al-mūḍūʿ ʿli al-fūr ʿnd al-āẖtīār"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC",
-      "text": "izālẗ mtġīr mn qāʾimẗ mtġīrāt UESH"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "fqṭ īmsḥ al-qīmẗ al-mtġīrẗ dūn izālthā"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
@@ -5651,10 +4987,6 @@
     {
       "loc": "NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD",
       "text": "lā īǧūz an tkūn rsālẗ al-īūm fārġẗ."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER",
-      "text": "aḍġṭ ʿli aī ḥrf ʿli lūḥẗ al-mfātīḥ ltʿyinh ʿli hḏā al-ḥrf."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM",
@@ -6001,50 +5333,6 @@
       "text": "mfātīḥ al-āẖtbārāt"
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL",
-      "text": "lā īǧūz an īkūn al-ʿnṣr al-nāʾib fārġًā"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERACTIONNULL",
-      "text": "lā īǧūz an īkūn iǧrāʾ al-ʿnṣr al-nāʾib fārġًā"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED",
-      "text": "al-ʿnṣr al-nāʾib ġīr msǧl"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT",
-      "text": "īǧb an īfī al-ʿnṣr al-nāʾib bhḏā al-tnsīq"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "īǧb ūḍʿ al-šrṭ fī al-nhāīẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "lā īmkn tsǧīl šrṭ mūǧūd bālfʿl."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "lā īmkn tsǧīl ḥālẗ fārġẗ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "lā īmkn ilġāʾ tsǧīl šrṭ ġīr mūǧūd."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_FINDCMDS_NOTFOUND",
-      "text": "lm ītm al-ʿṯūr ʿli awāmr."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "ʿdd ġīr ṣālḥ mn al-mrāt."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "lā īmkn tkrār al-ḏāt."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
       "text": "rqm al-ǧlsẗ ġīr ṣālḥ."
     },
@@ -6175,10 +5463,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS",
       "text": "ǧārٍ iḍāfẗ al-mstẖdm {0} ili al-mǧmūʿẗ {1}..."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_SUCCESS",
-      "text": "īmknk al-ʾān tšġīl '{0}' k. '{1}'!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED",
@@ -6469,10 +5753,6 @@
       "text": "fšl al-bḥṯ fī {0} ʿn {1}."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
-      "text": "īǧb ʿlīk tmrīr rmz al-tbdīl -set mʿ al-mtġīr al-ḏī trīd tʿyin hḏh al-qīmẗ ilīh."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING",
       "text": "ḥīṯ sīkūn al-tūqf"
     },
@@ -6633,14 +5913,6 @@
       "text": "lā īūǧd ūṣf lʾamr al-tṣḥīḥ ʿn bʿd"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "nūʿ al-bīānāt al-mḥdd {0} ġīr ṣālḥ."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "al-nẓām al-ʾasāsī {0} al-mḥdd ġīr ṣālḥ."
-    },
-    {
       "loc": "NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT",
       "text": "lā īmkn tšġīl al-ṣūt bsbb anthāʾ al-mhlẗ."
     },
@@ -6703,22 +5975,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC",
       "text": "iḏā knt mtʾakddā mn an ūḥdẗ al-tḥkm tdʿm al-lūn al-ḥqīqī, aū iḏā knt trīd tġyir al-ūḥdẗ al-ṭrfīẗ al-ẖāṣẗ bk ili ūḥdẗ ṭrfīẗ tdʿm al-lūn al-ḥqīqī, fqm btġyir hḏh al-qīmẗ."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
-      "text": "tʿyin ṣfḥẗ al-rmūz"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
-      "text": "qm btʿyin ṣfḥẗ rmūz al-lġẗ ʿnd tbdīl al-lġāt."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME",
-      "text": "tm al-āʿtrāf bišʿār al-tṭwyr"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC",
-      "text": "iḏā tm al-tʿyin ʿli \"ṣḥīḥ\", fln tẓhr lk al-nwāẗ išʿār al-tṭwyr fī kl mrẗ tqūm fīhā bāltmhīd ili al-nwāẗ fī iṣdārāt al-tṭwyr."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME",
@@ -7557,10 +6813,6 @@
       "text": "tahaqaq min sijilaat altashih lilhusul ealaa mazid min almaelumat hawl alkhata."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC",
-      "text": "lilrafd nhayyan, adghat ealaa ENTER ealaa lawhat almafatihi, 'aw qum bitamkin \"tma al'iiqrar bi'iishear altatwiri\" fi 'iiedadat kernel. yatimu almudiu qdman fi 'ayi miftah akhar dun aietirafi."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
       "text": "'ant taqum bitashghil Nitrocid KS fi biyat ghayr eadiatin. yurjaa altahaquq min 'anak qumt bitashghil alnawat mubasharatan. 'iidha kunt mtakdan min 'anak qumt bitashghil alnawat bialtariqat almuetadati, faqad yakun alsabab hu 'anak taqum bitashghil 'iisdar ghayr madeum min Nitrocid KS."
     },
@@ -7615,18 +6867,6 @@
     {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "qad la yakun tarikh wawaqt altanbih fi almadi."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_TIP",
-      "text": "rajie 'iidkhal almusaeadat lihadha al'amr limazid min almaelumat"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGLISTING",
-      "text": "yahtawi hadha al'amr ealaa alwasayit altaaliat alati tughayir tariqat eamalihi:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGNODESC",
-      "text": "wasaf alwasitat ghayr muhadad"
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC",
@@ -7985,18 +7225,6 @@
       "text": "yatimu farz alqayimat abjdyan rqmyan 'iidha tama tamkinuh 'aw abjdyan 'iidha tama taetiluhu."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "fashil mil' alsimat aliaftiradia"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "la tujad bayanat taerifiat lilsimati."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "la yumkin 'iilgha' tasalsul albayanat altaerifiati."
-    },
-    {
       "loc": "NKS_DRIVERS_ENCODING_BASE_EXCEPTION_NEEDSINIT",
       "text": "yajib tahyiat hadha altarmizi."
     },
@@ -8273,34 +7501,6 @@
       "text": "la yumkin 'iieadat 'iinsha' alkhayt"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED",
-      "text": "fashil tahmil mawrid allughat li"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LOCALIZED",
-      "text": "la yumkin alhusul ealaa nasin mutarjim"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS",
-      "text": "la yumkin alhusul ealaa tarjamat biallughat al'iinjilizia"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOC",
-      "text": "la yumkin alhusul ealaa nasin biallughat al'iinjilizia"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN",
-      "text": "yajib tahdid ramz allugha"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA",
-      "text": "la yumkin alhusul ealaa bayanat taerif allugha"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATAARRAY",
-      "text": "la yumkin alhusul ealaa majmueat bayanat taerif allugha"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",
       "text": "bayanat taerif MIME (mumtadatun)"
     },
@@ -8413,30 +7613,6 @@
       "text": "huquq altabe walnashr (C) 2018-2025 Aptivi - jamie alhuquq mahfuza"
     },
     {
-      "loc": "NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO",
-      "text": "la yumkin alhusul ealaa maelumat alwasitat lil'amr 'aw alwasita"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_COMMANDEXECUTION",
-      "text": "lam yatima tahdid muealimat alkhayti."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "la yumkin alhusul ealaa muealimat alkhayt litanfidh aleamaliati."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_INTERNALFIELDENVVARS",
-      "text": "la yumkin alhusul ealaa alhaql aldaakhilii limutaghayirat albiya"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_NOEXECUTOR",
-      "text": "la yumkin alhusul ealaa manfadh shell l"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC",
-      "text": "yaerid al'awamir aleama (aftiradi)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC",
       "text": "taghyir aliasm alkamil lilmustakhdim (asim alearda)"
     },
@@ -8499,18 +7675,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC",
       "text": "'adnaa fatrat khumul libad' tashghil shashat altawaqufu. alwahdat bitansiq fatrat zamania (HH:MM:SS)."
-    },
-    {
-      "loc": "NKS_THEMES_DEFAULT_DESC",
-      "text": "almawdue alaiftiradiu lilnawaa"
-    },
-    {
-      "loc": "NKS_THEMES_DYNAMIC_DESC",
-      "text": "yatamayaz bikuli shay'in!"
-    },
-    {
-      "loc": "NKS_THEMES_NITRICACID_DESC",
-      "text": "sayil eadim alluwn, dukhani, washadid altakl"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
@@ -8605,10 +7769,6 @@
       "text": "lam yaeud hadha al'iisdar min Nitrocid KS mdewman."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES",
-      "text": "fashil tahmil allughat almukhasasa"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
       "text": "fashil tahmil alwazayif al'iidafiat almuhimat lilnawa"
     },
@@ -8641,10 +7801,6 @@
       "text": "fashil tahmil maealij al'iilgha'"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES",
-      "text": "fashil tahmil al'asma' almustaeara"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL",
       "text": "fashil tahmil 'iidkhalat aliaitisal alsarie"
     },
@@ -8665,10 +7821,6 @@
       "text": "fashal tahmil MOTD waMAL"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES",
-      "text": "fashil tahmil sijilaat 'awamir shell"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS",
       "text": "fashil tahmil muealajat aliamtidad"
     },
@@ -8687,10 +7839,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_RESET_VARS",
       "text": "fashil 'iieadat taeyin almutaghayirat aleama"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES",
-      "text": "fashil hifz tawarikh 'awamir shell"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_CONSENTS",
@@ -8791,58 +7939,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR",
       "text": "rubama lam yatima 'iinsha' aitisal alshabakat bishakl sahih bisabab khata."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "la yumkin takhzin 'amr ghayr madbut ealaa 'anah qabil liltaghlifi."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDSWITCHNODESC",
-      "text": "wasaf miftah ghayr muhadad"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC",
-      "text": "almasar 'iilaa eamalia"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "alhujaj alati yajib tamriruha 'iilaa eamalia"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "'amr li'iizhar 'iidkhal almusaeada"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
-      "text": "yuajih 'iikhraj al'amr 'iilaa 'amr akhar kamuealimat"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "'amar almasdar litawjih 'iikhrajih 'iilaa al'amr almustahdaf kamuealimat 'akhira"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "'amar alhadaf litanfidhih eind bina' alhujat bna'an ealaa 'iikhraj al'amr almasdar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC",
-      "text": "sawa' kan litamrir 'iikhraj al'amr almasdar kahujat wahidat muqtabasat 'aw hujat ghayr muqtabasa"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "'amr litaghlif 'iikhrajih"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "fashal tanfidh al'amr almusadari."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "fashil tanfidh al'amr almustahdafi. rubama lam yatima mil' almuhtawayat bishakl sahihi. al'amr aladhi tama tanfidhuh kan"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_FAILED",
-      "text": "al'unbub mueatala."
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC",
@@ -9033,18 +8129,6 @@
       "text": "taebir eadiun limutabaqat aleibarat alati yajib aistibdaluha"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDCOUNTRY",
-      "text": "dawlat ghayr saliha"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_CHOOSELANGFORCOUNTRY",
-      "text": "akhtar lughatan lilbalad"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDLANG",
-      "text": "aikhtiar lughat ghayr salih la"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_YES",
       "text": "naeam"
     },
@@ -9091,26 +8175,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC",
       "text": "sard altanbihat"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "'iidafatan aism mustaear"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "nawe Shell lijalb al'awamir minh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "asm mustaear"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "'amr yustakhdam kiakhtisar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC",
-      "text": "'iizalat aism mustaear"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC",
@@ -9173,28 +8237,8 @@
       "text": "maerif allugha"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC",
-      "text": "taghyir allughat biastikhdam balad (qad yutlb mink akhtiar lughatin)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC",
       "text": "risalat jadidat lilaistikhdam"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "'iijabat liltaqsim bishurtat mayila"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "sual liltibaeat ealaa alshaasha"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "eunwan al'iijabat al'uwlaa"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "eunwan al'iijabat althaaniati, wahakadha..."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
@@ -9297,10 +8341,6 @@
       "text": "qayimat 'anwae baramij altashghil"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "silsilat liltibaea"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC",
       "text": "milafun liltarmiz"
     },
@@ -9337,32 +8377,12 @@
       "text": "nawe al'ajhiza"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "taebir UESH liliakhtibar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC",
-      "text": "'amr yatimu tanfidhuh eind altaqyim alnaajih"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC",
       "text": "masar aldalil liljuz' al'aysar"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "masar aldalil liljuz' al'ayman"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC",
-      "text": "'iieadat tahmil 'aw tahmil 'aw 'iilgha' tahmil lughat mukhasasa"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC",
-      "text": "asm lughat mukhasasa"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC",
-      "text": "'iidraj 'aw 'iieadat tahmil jamie allughat almukhasasa"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
@@ -9481,10 +8501,6 @@
       "text": "yaftah 'iiedadat bad' al'iidafa"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC",
-      "text": "alqimat almurad taeyinuha"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC",
       "text": "asm mutaghayir altakwin"
     },
@@ -9493,24 +8509,8 @@
       "text": "aism almanafadh"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "alqimat al'uwlaa"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "alqimat althaania"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "alqimat althaalithatu, wahakadha..."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC",
       "text": "aism almintaqat alzamania"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC",
-      "text": "alfatrat alzamaniat lilnawm"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC",
@@ -9547,10 +8547,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC",
       "text": "eunwan IP almurad 'iilgha' hazrih"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "aism almutaghayir"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC",
@@ -9957,10 +8953,6 @@
       "text": "la yumkin tahdid al'iiedadat"
     },
     {
-      "loc": "NKS_KNOWNADDONS_PACKS_LANGUAGES",
-      "text": "ḥzmẗ al-lġāt al-iḍāfīẗ"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_PACKS_SCREENSAVERS",
       "text": "ḥzmẗ šāšāt al-tūqf al-iḍāfīẗ"
     },
@@ -10129,22 +9121,6 @@
       "text": "al'iidafat - rwbut aldardashat aldhakiu"
     },
     {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED1",
-      "text": "fashil tahmil bayanat taerif allugha"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE1",
-      "text": "fashil 'iilgha' tasalsul bayanat taerif allugha"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED2",
-      "text": "fashil tahmil bayanat taerif allughat li"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
-      "text": "fashil 'iilgha' tasalsul bayanat taerif allughat li"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
       "text": "la yumkin 'iilgha' tasalsul altakwin al'asasii {0}"
     },
@@ -10155,14 +9131,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_DESC",
       "text": "yasrud hadha alqism 'iiedadat barnamaj altashghili."
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
-      "text": "barnamaj tashghil wahdat altahakum alhalii"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
-      "text": "ma hu barnamaj tashghil wahdat altahakum aladhi targhab fi aistikhdamihi?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",

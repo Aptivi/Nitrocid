@@ -1,0 +1,39 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Devam etmek için herhangi bir tuşa basın..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "Artık bilgisayarınızı güvenle kapatabilirsiniz."
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "Çekirdek ortam hatası:"
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "Nitrocid KS bir sorun tespit etti ve kapatıldı."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "Çekirdeğin geliştirme sürümünü çalıştırıyorsunuz. Son sürümde bulunabilecek yaklaşan özellikleri deneyimleyebilmenize rağmen hatalarla, istikrarsızlıklarla veya hatta veri kaybıyla karşılaşabilirsiniz. Mümkünse kararlı sürümü kullanmanızı öneririz."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "Çekirdeğin yayın adayı sürümünü çalıştırıyorsunuz. Son rötuşları deneyimlerken hatalarla, dengesizliklerle veya hatta veri kaybıyla karşılaşabilirsiniz. Mümkünse kararlı sürümü kullanmanızı öneririz."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "Bu çekirdek sürümünü çalıştırmamanızı öneririz çünkü desteklenmiyor. Bu çekirdeği bilinmeyen kaynaklardan indirdiyseniz, bu mesaj görünebilir. Lütfen resmi indirmeler sayfamızdan indirin."
+    }
+  ]
+}

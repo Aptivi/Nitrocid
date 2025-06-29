@@ -61,10 +61,6 @@
       "text": "{0} v {1} a commencé"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Langue invalide"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "L'analyse des mods n'est pas autorisée en mode sans échec."
     },
@@ -189,10 +185,6 @@
       "text": "La désinstallation a échoué pour"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Les informations de métadonnées nécessaires pour installer la langue personnalisée ne fournissent pas les localisations nécessaires."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Afficher les commandes de mod comptent sur l'aide"
     },
@@ -203,10 +195,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Page de manuel sans titre"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "Les informations de métadonnées nécessaires à l'installation de la langue personnalisée n'existent pas."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -341,10 +329,6 @@
       "text": "Exception de chargeur inconnue"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Impossible de charger les localisations du mod"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Impossible d'obtenir les entrées de paramètres."
     },
@@ -407,10 +391,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Cette classe n'est pas une classe mod"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Langues"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

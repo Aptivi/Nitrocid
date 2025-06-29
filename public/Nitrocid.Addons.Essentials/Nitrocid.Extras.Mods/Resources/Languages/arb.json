@@ -41,10 +41,6 @@
       "text": "{0} v {1} bada"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "lughatan ghyr saliha"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "tahlil altaedil ghyr masmuh bih fi alwade alamina."
     },
@@ -169,10 +165,6 @@
       "text": "fashil 'iilgha' altathbit l"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "la tuafir maelumat albayanat alwasfiat allaazimat litathbit allughat almukhasasat altarjumat almatlubat almatlubata."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "'azhar 'ana 'awamir altaedil taetamid ealaa almusaeada"
     },
@@ -183,10 +175,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "safhat dalil bidun eunwan"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "mʿlūmāt al-bīānāt al-tʿrīfīẗ al-lāzmẗ ltṯbīt al-lġẗ al-mẖṣṣẗ ġīr mūǧūdẗ."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -321,10 +309,6 @@
       "text": "astithna' mahmal ghayr maeruf"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "la yumkin tahmil tarjamat altaedil"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "fashil alhusul ealaa 'iidkhalat al'iiedadati."
     },
@@ -387,10 +371,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "hadhih alfiat laysat fiat taedil"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "allughat"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

@@ -16,10 +16,6 @@
       "text": "{0} v{1} ξεκίνησε"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Μη έγκυρη γλώσσα"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Οι τροποποιήσεις ανάλυσης δεν επιτρέπονται σε ασφαλή λειτουργία."
     },
@@ -144,10 +140,6 @@
       "text": "Η απεγκατάσταση απέτυχε για"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Οι πληροφορίες μεταδεδομένων που απαιτούνται για την εγκατάσταση της προσαρμοσμένης γλώσσας δεν παρέχουν τις απαραίτητες τοπικές ρυθμίσεις που απαιτούνται."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Εμφάνιση των εντολών mod βασίζονται στη βοήθεια"
     },
@@ -158,10 +150,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Σελίδα εγχειριδίου χωρίς τίτλο"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "Οι πληροφορίες μεταδεδομένων που απαιτούνται για την εγκατάσταση της προσαρμοσμένης γλώσσας δεν υπάρχουν."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -296,10 +284,6 @@
       "text": "Άγνωστη εξαίρεση φορτωτή"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Δεν είναι δυνατή η φόρτωση τοπικών προσαρμογών mod"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
     },
@@ -362,10 +346,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Αυτή η τάξη δεν είναι κατηγορία mod"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Γλώσσες"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

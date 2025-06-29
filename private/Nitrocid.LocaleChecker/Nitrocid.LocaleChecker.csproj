@@ -32,6 +32,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     
+    <EmbeddedResource Include="..\..\public\Nitrocid\Resources\Languages\eng.json" Visible="false">
+      <LogicalName>Nitrocid.Langs.Entry eng.json</LogicalName>
+    </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Base\Resources\Languages\eng.json" Visible="false">
       <LogicalName>Nitrocid.Langs eng.json</LogicalName>
     </EmbeddedResource>

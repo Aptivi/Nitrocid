@@ -1,0 +1,38 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Tekan tombol apa saja untuk melanjutkan..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "Sekarang aman untuk mematikan komputer Anda."
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "Kesalahan lingkungan kernel:"
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "Nitrocid KS telah mendeteksi adanya masalah dan telah ditutup."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "Anda menjalankan kernel versi pengembangan. Meskipun Anda dapat mencoba fitur-fitur mendatang yang mungkin ada dalam rilis final, Anda mungkin mengalami bug, ketidakstabilan, atau bahkan kehilangan data. Kami sarankan untuk menggunakan versi stabil, jika memungkinkan."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "Anda menjalankan versi kandidat rilis kernel. Meskipun Anda dapat mencoba sentuhan akhir, Anda mungkin mengalami bug, ketidakstabilan, atau bahkan kehilangan data. Kami sarankan untuk menggunakan versi stabil, jika memungkinkan."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "Kami sarankan untuk tidak menjalankan versi kernel ini, karena tidak didukung. Jika Anda mengunduh kernel ini dari sumber yang tidak dikenal, pesan ini mungkin muncul. Silakan unduh dari halaman unduhan resmi kami."
+    }
+  ]
+}

@@ -16,10 +16,6 @@
       "text": "{0} v {1}i (ga) sijagdoeeossseubnida"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "jalmosdoen eon-eo"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "anjeon modeueseoneun gumun bunseog modeuga heoyongdoeji anhseubnida."
     },
@@ -144,10 +140,6 @@
       "text": "e daehan jegeo silpae"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "sayongja jijeong eon-eoleul seolchihaneun de pil-yohan metadeiteo jeongboga pil-yohan hyeonjihwaleul jegonghaji anhseubnida."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "doummal-e modeu myeonglyeong kaunteu pyosi"
     },
@@ -158,10 +150,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "jemog eobsneun maenyueol peiji"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "sayongja jeongui eoneoreul seolchihaneun de piryohan metadeiteo jeongboga jonjaehaji anhseupnida."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -296,10 +284,6 @@
       "text": "al su eobsneun lodeo ye-oe"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "mod hyeonjihwaleul lodeuhal su eobs-seubnida."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "seoljeong hangmog-eul gajyeooji moshaessseubnida."
     },
@@ -362,10 +346,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "i keullaeseuneun modeu keullaeseuga anibnida."
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "eon-eo"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

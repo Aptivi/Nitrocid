@@ -23,10 +23,6 @@
       "text": "{0} v{1} yǐ qǐdòng"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Yǔyán wúxiào"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Zài ānquán móshì xià bù yǔnxǔ jiěxī mod."
     },
@@ -151,10 +147,6 @@
       "text": "Xiè zǎi shībài"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Ānzhuāng zì dìngyì yǔyán suǒ xū de yuán shùjù xìnxī bù tígōng suǒ xū de bìyào běndì huà."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "xiǎnshì mod mìnglìng yīkào bāngzhù"
     },
@@ -165,10 +157,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Wú biāotí shǒucè yè"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "ān zhuāng zì dìng yì yǔ yán suǒ xū de yuán shù jù xìn xī bù cún zài 。"
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -303,10 +291,6 @@
       "text": "wèizhī jiāzài qì yìcháng"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "wúfǎ jiāzài mod běndì huà"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "wúfǎ huòqǔ shèzhì tiáomù."
     },
@@ -369,10 +353,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Cǐ lèi bùshì mó zǔ lèi"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "yǔyán"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

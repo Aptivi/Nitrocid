@@ -1,0 +1,37 @@
+{
+  "lang": "brz",
+  "name": "Portuguese (Brazil)",
+  "cultures": [
+    "pt-BR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Pressione qualquer tecla para continuar..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "Agora é seguro desligar seu computador."
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "Erro de ambiente do kernel:"
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "O Nitrocid KS detectou um problema e foi desligado."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "Você está executando a versão de desenvolvimento do kernel. Embora você possa experimentar os próximos recursos que podem existir na versão final, você pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos usar a versão estável, se possível."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "Você está executando a versão release candidate do kernel. Embora você possa experimentar os toques finais, você pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos usar a versão estável, se possível."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "Não recomendamos executar esta versão do kernel, pois ela não é suportada. Se você baixou este kernel de fontes desconhecidas, esta mensagem pode aparecer. Por favor, baixe da nossa página oficial de downloads."
+    }
+  ]
+}

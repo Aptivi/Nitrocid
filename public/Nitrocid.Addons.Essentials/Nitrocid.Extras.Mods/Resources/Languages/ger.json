@@ -24,10 +24,6 @@
       "text": "{0} v {1} gestartet"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Ungültige Sprache"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Parsing-Mods im abgesicherten Modus nicht erlaubt."
     },
@@ -152,10 +148,6 @@
       "text": "Deinstallation fehlgeschlagen für"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Die zum Installieren der benutzerdefinierten Sprache erforderlichen Metadateninformationen stellen nicht die erforderlichen Lokalisierungen bereit."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Zeigen Sie die Mod-Befehle an, die auf Hilfe zählen"
     },
@@ -166,10 +158,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Unbenannte Handbuchseite"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "Die für die Installation der benutzerdefinierten Sprache erforderlichen Metadateninformationen sind nicht vorhanden."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -304,10 +292,6 @@
       "text": "Unbekannte Loader-Ausnahme"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Mod-Lokalisierungen können nicht geladen werden"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Einstellungseinträge konnten nicht abgerufen werden."
     },
@@ -370,10 +354,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Diese Klasse ist keine Mod-Klasse"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Sprachen"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

@@ -1,0 +1,39 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "계속하려면 아무 키나 누르세요..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "이제 컴퓨터를 꺼도 안전합니다."
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "커널 환경 오류:"
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "Nitrocid KS가 문제를 감지하여 종료되었습니다."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "커널의 개발 버전을 실행하고 있습니다. 최종 릴리스에 포함될 예정인 기능을 경험할 수 있지만 버그, 불안정성 또는 데이터 손실이 발생할 수도 있습니다. 가능하다면 안정적인 버전을 사용하는 것이 좋습니다."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "커널의 릴리스 후보 버전을 실행하고 있습니다. 최종 손질을 경험할 수는 있지만 버그, 불안정성 또는 데이터 손실이 발생할 수 있습니다. 가능하다면 안정적인 버전을 사용하는 것이 좋습니다."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "이 커널 버전은 지원되지 않으므로 실행하지 않는 것이 좋습니다. 알 수 없는 소스에서 이 커널을 다운로드한 경우 이 메시지가 나타날 수 있습니다. 공식 다운로드 페이지에서 다운로드하시기 바랍니다."
+    }
+  ]
+}

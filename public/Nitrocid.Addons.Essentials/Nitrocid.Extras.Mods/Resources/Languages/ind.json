@@ -15,10 +15,6 @@
       "text": "{0} vee {1} shuroo hua"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "amaany bhaasha"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "surakshit mod par paarsing mod kee anumati nahin hai."
     },
@@ -143,10 +139,6 @@
       "text": "sthaapana radd karane mein viphal"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "kastam bhaasha ko sthaapit karane ke lie aavashyak metaadeta jaanakaaree aavashyak sthaaneeyakaran pradaan nahin karatee hai."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "mod kamaand dikhaen madad par bharosa karen"
     },
@@ -157,10 +149,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "bina sheershak vaala mainual pej"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "kastam bhaasha ko sthaapit karane ke lie aavashyak metaadeta jaanakaaree maujood nahin hai."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -295,10 +283,6 @@
       "text": "agyaat lodar apavaad"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "mod sthaaneeyakaran lod nahin kar sakate"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "setings pravishtiyaan praapt karane mein viphal."
     },
@@ -361,10 +345,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "yah klaas mod klaas nahin hai"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "bhaashaen"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

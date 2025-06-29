@@ -8,14 +8,6 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "Devam etmek için herhangi bir tuşa basın..."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "Geçersiz renk şablonu {0}"
-    },
-    {
       "loc": "NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE",
       "text": "Bakım için yönetici şifresini girin."
     },
@@ -84,10 +76,6 @@
       "text": "Yanlış şifre."
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PARSEERROR",
-      "text": "Yer tutucuları ayrıştırmaya çalışırken hata oluştu. {0}"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_ADDERROR",
       "text": "Kullanıcı adı eklenirken hata oluştu."
     },
@@ -128,28 +116,8 @@
       "text": "Ekran koruyucu {0} veritabanında bulunamadı. Adı kontrol edin ve tekrar deneyin."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NODEFINITION",
-      "text": "{0} komutu için tanım yok."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_DEFINEDBY",
-      "text": "Komut tarafından tanımlandı"
-    },
-    {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1",
       "text": "{0} dizini bulunamadı."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASCOMMANDSAMENAME",
-      "text": "Alias, bir komutla aynı isim olamaz."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_COMMANDNOTFOUND",
-      "text": "{0} takma adının komutu bulunamadı."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_REMOVE",
-      "text": "{0} takma adının kaldırılacağı bulunamadı."
     },
     {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2",
@@ -196,10 +164,6 @@
       "text": "Yapılandırma yeniden yüklendi. Bazı değişikliklerin etkili olması için çekirdeği yeniden başlatmanız gerekebilir."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_COLORINVALID",
-      "text": "Renklerin biri veya birkaçı geçersiz."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND",
       "text": "Ekran koruyucu {0} bulunamadı."
     },
@@ -214,10 +178,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
       "text": "Mevcut kullanıcı için parolayı değiştirir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC",
-      "text": "Ekranı temizler"
     },
     {
       "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
@@ -280,14 +240,6 @@
       "text": "Kabuk mesajı: İstenen {0} komutunun bakım modunda çalıştırılmasına izin verilmiyor."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMANDNOTFOUND",
-      "text": "Kabuk iletisi: İstenen {0} komutu bulunamadı. Kullanılabilir komutlar için 'yardım'a bakın."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ERROREXECUTE2",
-      "text": "Komut yürütülürken hata oluştu."
-    },
-    {
       "loc": "NKS_KERNEL_TIME_TIMEZONES_LISTENTRY",
       "text": "- {0} Zamanı: {1}"
     },
@@ -298,10 +250,6 @@
     {
       "loc": "NKS_FILES_UNAUTHORIZED",
       "text": "{0} için bilgi almaya yetkiniz yok."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_OBSOLETECMD",
-      "text": "Bu komut artık kullanılmıyor ve gelecekteki bir sürümde kaldırılacak."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN",
@@ -350,10 +298,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTED",
       "text": "{0} portunu kullanarak tüm adreslerde dinlemeyi hata ayıkla."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_ALIASALREADYEXISTS",
-      "text": "Takma ad zaten bulundu: {0}"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_CDBGLOG_SUCCESS",
@@ -448,10 +392,6 @@
       "text": "Uzaktaki bilgisayara uzaktan bir komut yürütür"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "Geçersiz tip {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ENTRYSIZE",
       "text": "Boyut: {0}"
     },
@@ -490,26 +430,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILED",
       "text": "Uzaktan hata ayıklama başlatılamadı: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CANTEXECUTE",
-      "text": "Komut dosyasını yürütmeye çalışırken hata oluştu: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC",
-      "text": "Metni konsola yazar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC",
-      "text": "Kullanıcı seçimleri yapar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHOICE_HELPER",
-      "text": "<cevaplar> sorunun eğik çizgilerle ayrılmış tek harfli cevaplarıdır"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC",
-      "text": "Kullanıcının girdi girmesine izin verir"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_DESC",
@@ -688,10 +608,6 @@
       "text": "Kullanıcı ekler"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC",
-      "text": "Komutlara takma adlar ekler"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC",
       "text": "Ana bilgisayar adını değiştirir"
     },
@@ -714,10 +630,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC",
       "text": "Bir kullanıcıyı listeden kaldırır"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_REMOVALSUCCESS",
-      "text": "{0} takma adı başarıyla kaldırıldı."
     },
     {
       "loc": "NKS_KERNEL_UPDATES_CHECKFAILED",
@@ -1008,10 +920,6 @@
       "text": "Bir test kabuğu açar"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDSTARTFAILED",
-      "text": "\"{0}\" başlatılamadı: {1}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC",
       "text": "Metin dosyasını temizler"
     },
@@ -1096,14 +1004,6 @@
       "text": "Giriş zaten mevcut."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
-      "text": "Konsol çıktısını sarar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAPUNWRAPPABLE",
-      "text": "Komut sarılabilir değil. Bu komutlar sarılabilir:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
       "text": "Bir ZIP arşivini çıkarır"
     },
@@ -1132,10 +1032,6 @@
       "text": "{0} size ping attı."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC",
-      "text": "Bir değişkeni bir betikteki bir değere ayarlar"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME",
       "text": "SSH başlığını göster"
     },
@@ -1156,32 +1052,12 @@
       "text": "Genel komutlar:"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_MODLISTING",
-      "text": "Mod komutları:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ALIASLISTING",
-      "text": "Alias komutları:"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
       "text": "Bakım Modu"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME",
       "text": "Dizinleri Ara"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOMODLISTING",
-      "text": "Mod komutları yok."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOALIASLISTING",
-      "text": "Hiçbir takma ad komutu yok."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "Sarmalanabilir komut bulunamadı."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC",
@@ -1412,14 +1288,6 @@
       "text": "Ekran koruyucu şunu görüntülerken bir hatayla karşılaştı: {0}. Çıkmak için herhangi bir tuşa basın."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_THEMESHOWCASE",
-      "text": "Temanız şu şekilde görünecek:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "Sarılabilir komutlar:"
-    },
-    {
       "loc": "NKS_FILES_LISTFOLDEREMPTY",
       "text": "Klasör boş."
     },
@@ -1434,10 +1302,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME",
       "text": "Özel Başlangıç Afişi"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO",
-      "text": "Cevap sıfır olmayabilir."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION",
@@ -1458,10 +1322,6 @@
     {
       "loc": "NKS_ARGUMENTS_HELP_LISTING",
       "text": "Kullanılabilir çekirdek argümanları:"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNRECOVERABLEERROR",
-      "text": "Argümanda kurtarılamaz hata:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA512_DESC",
@@ -1904,16 +1764,8 @@
       "text": "Güvenli mod gibi, ancak aynı zamanda çoklu kullanıcıyı ve bazı özelleştirmeleri de devre dışı bırakıyor"
     },
     {
-      "loc": "NKS_ARGUMENTS_NOTENOUGHARGS",
-      "text": "Yeterli argüman yoktu."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
       "text": "Renklerin yeniden başlatılmasına gerek yok, ancak ayarların çoğu yeniden başlatma gerektiriyor."
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELP",
-      "text": "\"{0}\" argümanı için yardım yok."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -1952,10 +1804,6 @@
       "text": "Dosya {0} bulunamadı"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC",
-      "text": "Verilen değerlerle bir değişken dizisi oluşturur"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC",
       "text": "Tüm yerelleştirme metin satır numaralarının eşit olup olmadığını kontrol eder"
     },
@@ -1986,10 +1834,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC",
       "text": "Dosya sistemi listesini profesyonelce sıralar."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC",
-      "text": "Bir seçim seçeneği sunar"
     },
     {
       "loc": "NKS_SHELL_BASE_HELP_NOLISTING",
@@ -2076,10 +1920,6 @@
       "text": "Güncelsiniz!"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_SWITCHLISTING",
-      "text": "Bu komutun çalışma şeklini değiştiren aşağıdaki anahtarları vardır:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC",
       "text": "Listedeki dosya ayrıntılarını gösterir"
     },
@@ -2120,76 +1960,8 @@
       "text": "Çekirdek olay sistemi için hata ayıklamayı etkinleştirir"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGFAILED",
-      "text": "{0} özel dili yüklenemedi."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_METADATAHASNOLOCS",
-      "text": "Özel dili yüklemek için gereken meta veri bilgileri, ihtiyaç duyulan yerelleştirmeleri sağlamıyor."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED1",
-      "text": "{0} özel dili kaldırılamadı."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT",
-      "text": "İngilizce dilinin uzunluğu, sağlanan dil belirtecinin uzunluğuyla uyuşmuyor."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOOVERWRITE",
-      "text": "Dil zaten mevcut ve üzerine yazılamaz."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED2",
-      "text": "Özel dil kaldırılamadı. Büyük ihtimalle mevcut değil."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGSFAILED",
-      "text": "Özel diller yüklenemedi."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED1",
-      "text": "Özel diller kaldırılamadı."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED2",
-      "text": "Özel diller kaldırılamadı. Daha fazla bilgi için iç istisnaya bakın."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE",
       "text": "Lisans bilgisi"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC",
-      "text": "Dillerinizi yönetin"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_LANGNOTFOUND",
-      "text": "Dil bulunamadı veya dosyada geçersiz karakterler var."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_NOLANG",
-      "text": "Dil belirtilmemiş."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SAFEMODE",
-      "text": "Güvenli modda dil yönetimi devre dışıdır."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SHORTNAME",
-      "text": "Dilin kısa adı:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_FULLNAME",
-      "text": "Dilin tam adı:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_TRANSLITERABLE",
-      "text": "Dil çevirisi yapılabilir:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_CUSTOM",
-      "text": "Özel dil:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME",
@@ -2248,40 +2020,12 @@
       "text": "Yardımda takma ad sayısını göster"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC",
-      "text": "UESH ifadeleri karşılandığında komutları yürütür"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "İfadede koşul bulunamadı."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "{0} koşulu {1} argüman gerektirir. {2} elde edildi."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "Sözdizimi hatası nedeniyle ifade ayrıştırılırken hata oluştu."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE",
-      "text": "Koşul sağlanamadı. Daha fazla bilgi için buraya tıklayın:"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME",
       "text": "Şifre maskesi karakteri"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC",
       "text": "Şifreyi maskeleyen bir karakter. Daha fazla güvenlik için boş bırakın."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC",
-      "text": "Alt kabukta çalışıyorsa kabuktan çıkar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_KILLINGMOTHERSHELL",
-      "text": "Ana kabuğu öldüremezsin!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL",
@@ -2306,10 +2050,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
       "text": "Hata ayıklama modunu etkinleştirir"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE",
-      "text": "Güncel değer:"
     },
     {
       "loc": "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC",
@@ -2432,10 +2172,6 @@
       "text": "Hex düzenleyicinin otomatik kaydetme özelliğini açar veya kapatır."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "Komut dosyası hatalı. Komut dosyasını kontrol edin ve hataları çözün: {0}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC",
       "text": "Mutlak yol yerine bağıl yolu kullanır"
     },
@@ -2446,10 +2182,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC",
       "text": "Giriş geçmişinin etkin olup olmadığı. Etkinse, yukarı veya aşağı ok tuşlarını kullanarak son yazılan komutlara erişebilirsiniz."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "Artık bilgisayarınızı güvenle kapatabilirsiniz."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME",
@@ -2468,14 +2200,6 @@
       "text": "PowerLine gliflerini destekleyen bir konsol yazı tipi kullandığınızdan emin olun, aksi takdirde çıktı düzgün bir şekilde oluşturulmayabilir. Öneririz"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC",
-      "text": "Kabuk ön ayar kitaplığını açar"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_EXCEPTION_PRESETNOTFOUND",
-      "text": "Belirtilen ön ayar {0} bulunamadı."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_ALREADYBLOCKED",
       "text": "Aygıt zaten engelleme listesinde mevcut."
     },
@@ -2486,10 +2210,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC",
       "text": "Testler montaj giriş noktası yürütmesi"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_SELECT",
-      "text": "{0} için ön ayarı seçin:"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
@@ -2514,22 +2234,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
       "text": "Yapılandırma yüklenmeden önce önyükleme öncesi açılış ekranını gizler"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNKNOWNARGUMENT",
-      "text": "Bilinmeyen argüman"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING",
-      "text": "VT işlemeyi etkinleştirmiş bir ConEmu veya Windows 10 komut istemi çalıştırıyor olmanız gerekir."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO",
-      "text": "Terminaliniz {1} üzerinde {0}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION",
-      "text": "Bu rampalar size doğru görünüyor mu? Sorunsuz bir şekilde geçiş yapmalılar."
     },
     {
       "loc": "NKS_DRIVERS_EXCEPTION_NOFALLBACKS",
@@ -2636,22 +2340,6 @@
       "text": "Shell'i başlatmak için herhangi bir tuşa basmanız yeterli olacaktır, ancak yeni kullanıcınızı manuel olarak oluşturmanız gerekebileceğini unutmayın."
     },
     {
-      "loc": "NKS_KERNEL_ENVERROR",
-      "text": "Çekirdek ortam hatası:"
-    },
-    {
-      "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Nitrocid KS bir sorun tespit etti ve kapatıldı."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_INSTALL",
-      "text": "Özel dili yüklemek için gereken meta veri bilgisi mevcut değil."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_UNINSTALL",
-      "text": "Özel dili kaldırmak için gereken meta veri bilgisi mevcut değil."
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "Mevcut hesap kilitliyken değiştirilmeye çalışılıyor"
     },
@@ -2698,26 +2386,6 @@
     {
       "loc": "NKS_ARGUMENTS_RESET_WIPEMISCFAILED",
       "text": "Çeşitli dosyaları silemiyorum"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELPDESC",
-      "text": "Hiçbir argüman yardım açıklaması yok"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "Bu temayı kullanabilmeniz için konsolunuzun gerçek rengi desteklemesi gerekir."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXITPREVIEW_DESC",
-      "text": "Önizlemeden çık"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "{0} teması bir etkinliği kutluyor, ancak katılmak için ya çok erken ya da çok geç. Bu tema her yıl {1}/{2} ile {3}/{4} arasında erişilebilir."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "{0} temasının gerçek renk desteğine ihtiyacı var, ancak konsolunuz bunu desteklemiyor."
     },
     {
       "loc": "NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT",
@@ -3088,10 +2756,6 @@
       "text": "Genel bir HTTP kabuk hatası oluştu."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLEDETECTED",
-      "text": "Insane konsol tespit edildi. Nitrocid KS çalışmaya devam edemiyor çünkü konsolunuz gereksinimlerimizle uyumlu değil."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHALGORITHM",
       "text": "Geçersiz karma algoritması. Özel bir karma toplamı sürücüsü kullanıyorsanız, sürücünün yüklendiğinden emin olmak için kontrol edin."
     },
@@ -3184,10 +2848,6 @@
       "text": "Bu isimde bir kabuk ön ayarı yok."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",
-      "text": "Bu isimde bir tema bulunmamaktadır."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NULLUSERS",
       "text": "Tüm çekirdekte sıfır kullanıcı var. Son derece nadir bir duruma ulaştık. Çekirdek devam edemiyor."
     },
@@ -3232,14 +2892,6 @@
       "text": "Genel bir SFTP kabuk hatası oluştu."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONPARSE",
-      "text": "Koşul ayrıştırma başarısız oldu. Lütfen sözdiziminizi operatörün beklenen tasarımına uygun şekilde kontrol edin."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHSCRIPT",
-      "text": "UESH betik dosyasını ayrıştırmaya çalışırken bir hata oluştu. Betik dosyanızı hatalar açısından kontrol edin ve düzeltin."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_USERCREATION",
       "text": "Kullanıcı oluşturma hatası oluştu."
     },
@@ -3250,10 +2902,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK",
       "text": "Genel bir ağ hatası oluştu. Uzak bir uca bağlanmaya çalışıyorsanız, İnternet'e veya yerel ağınıza bağlı olduğunuzdan emin olun."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UNSUPPORTEDCONSOLE",
-      "text": "Desteklenmeyen bir konsol algılandı."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE",
@@ -3324,20 +2972,12 @@
       "text": "İstenen işlemi gerçekleştirmeye çalışırken bir kişiler yöneticisi hatası oluştu. Kişi dosyasının doğru klasörde bulunduğundan ve geçerli bir vCard 2.1, 3.0 veya 4.0 kişi dosyası olduğundan emin olun."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
-      "text": "İstenen işlemi gerçekleştirirken bir UESH koşul sistemi başarısız oldu. Daha fazla ayrıntı için aşağıdaki hata mesajına bakın."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR",
       "text": "Geçersiz bir SQL düzenleyici işlemi gerçekleştiriliyor."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP",
       "text": "Grup mevcut değil. Grup adını doğru yazdığınızdan emin olun."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INTERACTIVETUI",
-      "text": "Etkileşimli TUI uygulamasında bir hata oluştu."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS",
@@ -3386,10 +3026,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_REFLECTION",
       "text": "Yansıma sisteminde bir hata oluştu."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_THEMEMANAGEMENT",
-      "text": "Tema yönetimi için bir işlem gerçekleştirilirken bir hata oluştu."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_EVENTMANAGEMENT",
@@ -3760,10 +3396,6 @@
       "text": "Nitrocid'e Başlıyorum..."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_CUSTOMLANGS",
-      "text": "Özel diller yükleniyor..."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_IMPORTANTADDONS",
       "text": "Önemli çekirdek eklentileri yükleniyor..."
     },
@@ -3794,10 +3426,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_GENERALVARSRESET",
       "text": "Genel değişkenler sıfırlandı"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_HISTORIESSAVED",
-      "text": "Kaydedilen kabuk komut geçmişleri."
     },
     {
       "loc": "NKS_KERNEL_STARTING_CONFIGSAVED",
@@ -4412,32 +4040,12 @@
       "text": "Bu program GNU Genel Kamu Lisansı 3.0 veya üzeri lisansla lisanslanmıştır."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "Çekirdeğin geliştirme sürümünü çalıştırıyorsunuz. Son sürümde bulunabilecek yaklaşan özellikleri deneyimleyebilmenize rağmen hatalarla, istikrarsızlıklarla veya hatta veri kaybıyla karşılaşabilirsiniz. Mümkünse kararlı sürümü kullanmanızı öneririz."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "Çekirdeğin yayın adayı sürümünü çalıştırıyorsunuz. Son rötuşları deneyimlerken hatalarla, dengesizliklerle veya hatta veri kaybıyla karşılaşabilirsiniz. Mümkünse kararlı sürümü kullanmanızı öneririz."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "Bu çekirdek sürümünü çalıştırmamanızı öneririz çünkü desteklenmiyor. Bu çekirdeği bilinmeyen kaynaklardan indirdiyseniz, bu mesaj görünebilir. Lütfen resmi indirmeler sayfamızdan indirin."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP",
-      "text": "Sonsuza dek kapatmak için, klavyenizdeki sol ok tuşunu kullanarak \"Onaylandı\" düğmesini vurgulayarak buradaki \"ENTER\" tuşuna basın veya çekirdek ayarlarında \"Geliştirme bildirimi onaylandı\" seçeneğini etkinleştirin."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_OK",
       "text": "TAMAM"
     },
     {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_ACKED",
       "text": "Kabul edildi"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISS_TITLE",
-      "text": "Geliştirme bildirimi"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
@@ -4764,228 +4372,12 @@
       "text": "En son haberleri alabilmek için RSS Shell Extras eklentisini yüklemeniz gerekir. Tüm eklentileri edinmek için 'getaddons' komutunu kullanabilirsiniz!"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_QUERY",
-      "text": "{0} takma adının sorgulanacağı bulunamadı."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Çıktının değerini seçili UESH değişkenine ayarlar"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_LISTING",
-      "text": "Aşağıdaki tüm kullanımlar için gerekli argümanlar sağlanmamıştır:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGS",
-      "text": "Gerekli argümanlar sağlanmadı."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHES",
-      "text": "Gerekli anahtarlar sağlanmamıştır."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHVALUE",
-      "text": "Anahtarlardan biri sağlanmayan bir değer gerektiriyor."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_UNKNOWNSWITCH",
-      "text": "Aşağıda listelenen anahtarlar bilinmiyor."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_CONFLICTSWITCH",
-      "text": "Aşağıda listelenen anahtarlar birbirleriyle çakışıyor."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNOVALUE",
-      "text": "Aşağıdaki anahtarlar değer kabul etmez."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGNUMVALUE",
-      "text": "Bir veya daha fazla argüman sayısal bir değer bekliyor, ancak geçersiz bir sayı sağladınız."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGEXACTWORD",
-      "text": "Bir veya daha fazla argüman tam bir ifade bekliyor, ancak siz geçersiz bir kelime sağladınız."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNUMVALUE",
-      "text": "Anahtarlardan biri veya daha fazlası sayısal bir değer bekliyor, ancak siz geçersiz bir sayı sağladınız."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ABORTED",
-      "text": "Komut iptal edildi."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "Bu komutu doğrudan sarmalanmış modda çalıştırmamalısınız."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "Bir komut çıktısını sarmaya çalışırken bir hata oluştu"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_COMMANDABORTED",
-      "text": "Komut aşağıdaki sebepten dolayı iptal edildi:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDPATTERNINVALID",
-      "text": "Geçersiz komut deseni sağlandı."
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Komut bulunamadı."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND",
-      "text": "{0} kabuk türü mevcut değil."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED",
-      "text": "Komuta üssünü sağlamanız gerekir."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED",
-      "text": "Komutu vermeniz gerekmektedir."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS",
-      "text": "Belirtilen komut zaten eklenmiş! Çakışan modlarınız olabilir."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_UNDEFINED",
-      "text": "Komut tanımlanmadı"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_CUSTOM",
-      "text": "Bazı özel komutlar yüklenemiyor."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_CUSTOM",
-      "text": "Belirtilen özel komut bulunamadı."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_CUSTOM",
-      "text": "Bazı özel komutlar kaldırılamıyor."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS_CUSTOM",
-      "text": "Belirtilen komut zaten eklenmiş! Çakışan eklentileriniz olabilir."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_ADDON",
-      "text": "Eklenti komutlarından bazıları yüklenemiyor."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_ADDON",
-      "text": "Belirtilen eklenti komutu bulunamadı."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_ADDON",
-      "text": "Eklenti komutlarından bazıları kaldırılamıyor."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NEEDSSLASH",
-      "text": "Bu kabuk, komutları yürütmek için eğik çizgi komutlarını kullanır. Başlamak için lütfen komutun başına eğik çizgi sembolünü '/' ekleyin. Örneğin:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDLISTING",
-      "text": "Kullanılabilir komutlar:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ADDONLISTING",
-      "text": "Çekirdek eklenti komutları:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOADDONLISTING",
-      "text": "Çekirdek eklenti komutları yok."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_UNIFIEDLISTING",
-      "text": "Birleşik komutlar:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOUNIFIEDLISTING",
-      "text": "Birleşik komutlar uygulanmadı!!!"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_COMMAND",
-      "text": "Emretmek:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "Koşullar veya döngüler gibi oluşturmayı destekleyen ifadeleri yerleştirmeden önce yeni bloğu bildiremezsiniz. Yığın numarası {0}'dır."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "Yeni bir blok başlatırken, yığını doğru şekilde girintilediğinizden emin olun. Yığın numarası {0}'dır."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Komut dosyası hatalı. Komut dosyasını kontrol edin ve hataları çözün."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "Eğik çizgi komutları için hatırlatma"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
-      "text": "Harici bir işlemi yürütür"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC",
-      "text": "Kabuk iş parçacığını kesintiye uğratmadan işlemi yürütür. Ayrı bir pencere oluşturulacaktır."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
-      "text": "Mevcut kabuk türündeki kullanılabilir komutları bulur"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC",
-      "text": "Mod komutlarını gösterir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC",
-      "text": "Takma adlı komutları gösterir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC",
-      "text": "Birleşik komutları gösterir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC",
-      "text": "Çekirdek eklenti komutlarını gösterir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC",
-      "text": "Tüm komutları gösterir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC",
-      "text": "Basitleştirilmiş yardım kullanır"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC",
-      "text": "Kabuk geçmişlerini yükler"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
-      "text": "Son eylemi veya belirtilen komutu tekrarlar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC",
-      "text": "Kabuk geçmişlerini kaydeder"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
       "text": "Rastgele bir çekirdek ipucu gösterir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTSTARTWITHOUTMOTHERSHELL",
-      "text": "Ana kabuk harekete geçmedikçe kabuklar harekete geçemez."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTINITSHELL",
-      "text": "Kabuğu başlatma girişimi başarısız oldu"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -5160,26 +4552,6 @@
       "text": "Sistem dili yerine kullanıcı dilini değiştirir"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC",
-      "text": "Tek satırlık seçim stili"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC",
-      "text": "İki satırlık seçim stili"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC",
-      "text": "Modern seçim stili"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "Çıktı yalnızca bir karakter olabilir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "Çıktı bir karakterden daha fazla olabilir"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
       "text": "İki veya daha fazla metin dosyasını konsolda birleştirir."
     },
@@ -5202,18 +4574,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC",
       "text": "Satır sonu dönüşümünü zorlar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
-      "text": "Sadece tarihi gösterir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
-      "text": "Sadece zamanı gösterir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
-      "text": "Yerel yerine UTC kullanır"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC",
@@ -5246,10 +4606,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN",
       "text": "Sürücülerinizi yönetin"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "Metni yer tutucu ayrıştırması olmadan olduğu gibi yazdırır"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
@@ -5296,10 +4652,6 @@
       "text": "Belirtilen dizinde veya geçerli dizinde düzenli ifadeler kullanarak bir dosya bulur"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC",
-      "text": "Başka bir örnek oluşturmak için UESH kabuğunu çatallandırır"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC",
       "text": "Çıkış yolunu belirtir"
     },
@@ -5342,10 +4694,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC",
       "text": "Etkileşimli sistem ana bilgisayar dosya yöneticisi"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC",
-      "text": "Kullanıcının şifre olarak girdi girmesine izin verir"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
@@ -5496,10 +4844,6 @@
       "text": "Dünya saatini gerçek zamanlı olarak görebileceğiniz etkileşimli bir TUI açar"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
-      "text": "Belirtilen milisaniyeler boyunca uyur"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
       "text": "Komutu kök kullanıcı olarak çalıştırır"
     },
@@ -5550,14 +4894,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC",
       "text": "Temayı hemen seçime ayarlayın"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC",
-      "text": "UESH değişken listesinden bir değişkeni kaldırır"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "Değişken değerini kaldırmadan sadece siler"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
@@ -5626,10 +4962,6 @@
     {
       "loc": "NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD",
       "text": "Günün mesajı boş olmayabilir."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER",
-      "text": "Klavyenizdeki herhangi bir harfe basarak o karakteri atayabilirsiniz."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM",
@@ -5976,50 +5308,6 @@
       "text": "Test anahtarları"
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL",
-      "text": "Yer tutucu boş olamaz"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERACTIONNULL",
-      "text": "Yer tutucu eylem boş olamaz"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED",
-      "text": "Yer tutucu kayıtlı değil"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT",
-      "text": "Yer tutucu bu formatı karşılamalıdır"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "Şartın sona konulması gerekiyor."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "Zaten var olan bir koşulu kaydedemezsiniz."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "Boş bir koşul kaydedilemez."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "Var olmayan bir koşulun kaydı iptal edilemez."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_FINDCMDS_NOTFOUND",
-      "text": "Hiçbir komut bulunamadı."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "Geçersiz sayı."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "Kendini tekrar edemez."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
       "text": "Oturum numarası geçersiz."
     },
@@ -6150,10 +5438,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS",
       "text": "{0} kullanıcısı {1} grubuna ekleniyor..."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_SUCCESS",
-      "text": "Artık '{0}'ı '{1}' olarak çalıştırabilirsiniz!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED",
@@ -6444,10 +5728,6 @@
       "text": "{0} için {1} araması başarısız oldu."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
-      "text": "Bu değeri ayarlamak istediğiniz değişkene -set anahtarını geçirmelisiniz."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING",
       "text": "tasarruf eden nerede olacak"
     },
@@ -6608,14 +5888,6 @@
       "text": "Uzaktan hata ayıklama komutu açıklaması yok"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "Belirtilen {0} veri türü geçersiz."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "Belirtilen {0} Platformu geçersiz."
-    },
-    {
       "loc": "NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT",
       "text": "Zaman aşımı nedeniyle ses çalınamıyor."
     },
@@ -6678,22 +5950,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC",
       "text": "Konsolunuzun gerçek rengi desteklediğinden eminseniz veya terminalinizi gerçek rengi destekleyen bir terminale değiştirmek istiyorsanız bu değeri değiştirin."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
-      "text": "Kod sayfasını ayarla"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
-      "text": "Diller arasında geçiş yaparken dil kod sayfasını ayarlayın."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME",
-      "text": "Geliştirme bildirimi onaylandı"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC",
-      "text": "Doğru olarak ayarlanırsa, çekirdek, geliştirme sürümlerinde çekirdeğe her önyükleme yaptığınızda size geliştirme bildirimini göstermeyecektir."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME",
@@ -7532,10 +6788,6 @@
       "text": "Hata hakkında daha fazla bilgi edinmek için hata ayıklama günlüklerini inceleyin."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC",
-      "text": "Sonsuza dek kapatmak için, klavyenizdeki ENTER tuşuna basın veya çekirdek ayarlarında \"Geliştirme bildirimi onaylandı\"yı etkinleştirin. Diğer herhangi bir tuş onay olmadan devam eder."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
       "text": "Nitrocid KS'yi alışılmadık bir ortamda çalıştırıyorsunuz. Lütfen çekirdeği doğrudan başlattığınızdan emin olun. Çekirdeği olağan bir şekilde başlattığınızdan eminseniz, bunun nedeni desteklenmeyen bir Nitrocid KS sürümü çalıştırıyor olmanız olabilir."
     },
@@ -7590,18 +6842,6 @@
     {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "Alarmın tarihi ve saati geçmişte olmayabilir."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_TIP",
-      "text": "Daha fazla bilgi için bu komutun yardım girişine bakın"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGLISTING",
-      "text": "Bu komutun çalışma şeklini değiştiren aşağıdaki argümanları vardır:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGNODESC",
-      "text": "Belirtilmemiş argüman açıklaması"
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC",
@@ -7960,18 +7200,6 @@
       "text": "Etkinse listeyi alfanümerik olarak, devre dışıysa alfabetik olarak sıralar."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "Varsayılan tema doldurulamadı"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "Tanımlanmış bir tema meta verisi yok."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "Meta veriler seri durumdan çıkarılamıyor."
-    },
-    {
       "loc": "NKS_DRIVERS_ENCODING_BASE_EXCEPTION_NEEDSINIT",
       "text": "Bu kodlamanın başlatılması gerekiyor."
     },
@@ -8248,34 +7476,6 @@
       "text": "Konu yeniden oluşturulamıyor"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED",
-      "text": "Dil kaynağı yüklenemedi"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LOCALIZED",
-      "text": "Yerelleştirilmiş metin alınamıyor"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS",
-      "text": "İngilizce yerelleştirmeleri alamıyorum"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOC",
-      "text": "İngilizce metin alınamıyor"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN",
-      "text": "Dil belirteci belirtilmelidir"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA",
-      "text": "Dil meta verileri alınamıyor"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATAARRAY",
-      "text": "Dil meta veri dizisi alınamıyor"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",
       "text": "MIME meta verileri (genişletilmiş)"
     },
@@ -8388,30 +7588,6 @@
       "text": "Telif Hakkı (C) 2018-2025 Aptivi - Tüm hakları saklıdır"
     },
     {
-      "loc": "NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO",
-      "text": "Komut veya argüman için argüman bilgisi alınamıyor"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_COMMANDEXECUTION",
-      "text": "İş parçacığı parametreleri belirtilmemiş."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "İşlem yürütme için iş parçacığı parametreleri alınamıyor."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_INTERNALFIELDENVVARS",
-      "text": "Çevre değişkenleri için dahili alan alınamıyor"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_NOEXECUTOR",
-      "text": "Kabuk yürütücüsü alınamıyor"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC",
-      "text": "Genel komutları gösterir (varsayılan)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC",
       "text": "Kullanıcının tam adını (görünen adı) değiştirir"
     },
@@ -8474,18 +7650,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC",
       "text": "Ekran koruyucuyu başlatmak için gereken minimum rölanti aralığı. Ünite zaman aralığı biçimindedir (SS:DD:SS)."
-    },
-    {
-      "loc": "NKS_THEMES_DEFAULT_DESC",
-      "text": "Çekirdek için varsayılan tema"
-    },
-    {
-      "loc": "NKS_THEMES_DYNAMIC_DESC",
-      "text": "Her yerde aksanlar!"
-    },
-    {
-      "loc": "NKS_THEMES_NITRICACID_DESC",
-      "text": "Renksiz, dumanlı ve oldukça aşındırıcı sıvı"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
@@ -8580,10 +7744,6 @@
       "text": "Nitrocid KS'nin bu sürümü artık desteklenmiyor."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES",
-      "text": "Özel diller yüklenemedi"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
       "text": "Önemli çekirdek eklentileri yüklenemedi"
     },
@@ -8616,10 +7776,6 @@
       "text": "İptal işleyicisi yüklenemedi"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES",
-      "text": "Takma adlar yüklenemedi"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL",
       "text": "Hızlı arama girişleri yüklenemedi"
     },
@@ -8640,10 +7796,6 @@
       "text": "MOTD ve MAL yüklenemedi"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES",
-      "text": "Kabuk komut geçmişleri yüklenemedi"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS",
       "text": "Uzantı işleyicileri yüklenemedi"
     },
@@ -8662,10 +7814,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_RESET_VARS",
       "text": "Genel değişkenleri sıfırlama başarısız oldu"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES",
-      "text": "Kabuk komut geçmişleri kaydedilemedi"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_CONSENTS",
@@ -8766,58 +7914,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR",
       "text": "Bir hata nedeniyle ağ bağlantısı düzgün bir şekilde kurulmamış olabilir."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "Sarmalanabilir olarak ayarlanmamış bir komut arabelleğe alınamaz."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDSWITCHNODESC",
-      "text": "Belirtilmemiş anahtar açıklaması"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC",
-      "text": "Bir sürece giden yol"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "Bir işleme geçirilecek argümanlar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "Yardım girişini gösterme komutu"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
-      "text": "Komut çıktısını parametre olarak başka bir komuta iletir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "Kaynak komutu, çıktısını hedef komuta son parametre olarak iletir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Kaynak komut çıktısına dayalı olarak argüman oluştururken yürütülecek hedef komut"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC",
-      "text": "Kaynak komutunun çıktısının tek tırnaklı argüman olarak mı yoksa tırnaksız argüman olarak mı geçirileceği"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "Çıktısını sarma komutu"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "Kaynak komut yürütme başarısız oldu."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "Hedef komut yürütme başarısız oldu. İçerikler düzgün bir şekilde doldurulmamış olabilir. Yürütülen komut"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_FAILED",
-      "text": "Boru kırıldı."
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC",
@@ -9008,18 +8104,6 @@
       "text": "Değiştirilecek ifadeleri eşleştirmek için düzenli bir ifade"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDCOUNTRY",
-      "text": "Geçersiz ülke"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_CHOOSELANGFORCOUNTRY",
-      "text": "Ülke için bir dil seçin"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDLANG",
-      "text": "Geçersiz dil seçimi"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_YES",
       "text": "Evet"
     },
@@ -9066,26 +8150,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC",
       "text": "Alarmları listeler"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "Bir takma ad ekler"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "Komutları almak için kabuk türü"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "Takma ad"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "Kısayol olarak kullanılacak komut"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC",
-      "text": "Bir takma adı kaldırır"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC",
@@ -9148,28 +8212,8 @@
       "text": "Dil Kimliği"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC",
-      "text": "Ülkeyi kullanarak dili değiştirir (bir dil seçmeniz istenebilir)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC",
       "text": "Kullanılacak yeni mesaj"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Eğik çizgiyle bölmeye cevaplar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Ekrana yazdırılacak soru"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "İlk cevap başlığı"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "İkinci cevap başlığı, ve benzeri..."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
@@ -9272,10 +8316,6 @@
       "text": "Sürücü tiplerini listele"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "Yazdırılacak dize"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC",
       "text": "Kodlanacak dosya"
     },
@@ -9312,32 +8352,12 @@
       "text": "Donanım türü"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "UESH ifadesi test edilecek"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC",
-      "text": "Başarılı değerlendirme sonrasında yürütülecek komut"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC",
       "text": "Sol bölme için dizine giden yol"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "Sağ bölme için dizine giden yol"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC",
-      "text": "Özel bir dili yeniden yükler, yükler veya boşaltır"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC",
-      "text": "Özel dil adı"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC",
-      "text": "Tüm özel dilleri listeler veya yeniden yükler"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
@@ -9456,10 +8476,6 @@
       "text": "Eklenti açılış ayarlarını açar"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC",
-      "text": "Ayarlanacak değer"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC",
       "text": "Yapılandırma değişken adı"
     },
@@ -9468,24 +8484,8 @@
       "text": "Uygulayıcı adı"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "İlk değer"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "İkinci değer"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "Üçüncü değer ve böyle devam eder..."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC",
       "text": "Zaman dilimi adı"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC",
-      "text": "Uyku aralığı"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC",
@@ -9522,10 +8522,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC",
       "text": "Engellemeyi kaldırmak için IP adresi"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "Değişken adı"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC",
@@ -9932,10 +8928,6 @@
       "text": "Yapılandırma seçilemiyor"
     },
     {
-      "loc": "NKS_KNOWNADDONS_PACKS_LANGUAGES",
-      "text": "Ekstra Diller Paketi"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_PACKS_SCREENSAVERS",
       "text": "Ekstra Ekran Koruyucu Paketi"
     },
@@ -10104,22 +9096,6 @@
       "text": "Ekstralar - Chatbot AI"
     },
     {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED1",
-      "text": "Dil meta verileri yüklenemedi"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE1",
-      "text": "Dil meta verilerinin serileştirilmesi başarısız oldu"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED2",
-      "text": "Dil meta verileri yüklenemedi"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
-      "text": "Dil meta verilerinin seri hale getirilmesi başarısız oldu"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
       "text": "Temel yapılandırma {0} seri hale getirilemiyor"
     },
@@ -10130,14 +9106,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_DESC",
       "text": "Bu bölümde sürücü ayarları listelenmektedir."
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
-      "text": "Mevcut konsol sürücüsü"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
-      "text": "Hangi konsol sürücüsünü kullanmak istersiniz?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",

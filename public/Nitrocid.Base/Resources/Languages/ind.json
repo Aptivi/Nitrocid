@@ -7,14 +7,6 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "jaaree rakhane ke lie koee bhee kunjee dabaen..."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "amaany rang tempalet {0}"
-    },
-    {
       "loc": "NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE",
       "text": "rakharakhaav ke lie vyavasthaapak paasavard darj karen."
     },
@@ -83,10 +75,6 @@
       "text": "galat paasavard."
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PARSEERROR",
-      "text": "plesaholdars ko paars karane ka prayaas karane mein truti. {0}"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_ADDERROR",
       "text": "upayogakarta naam jodane ka prayaas karane mein truti."
     },
@@ -127,28 +115,8 @@
       "text": "skreenasevar {0} detaabes mein nahin mila. naam kee jaanch karen aur punah prayaas karen."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NODEFINITION",
-      "text": "aadesh {0} ke lie koee paribhaasha nahin hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_DEFINEDBY",
-      "text": "aadesh dvaara paribhaashit kamaand "
-    },
-    {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1",
       "text": "nirdeshika {0} nahin milee."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASCOMMANDSAMENAME",
-      "text": "upanaam ek kamaand ke samaan naam nahin ho sakata hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_COMMANDNOTFOUND",
-      "text": "kamaand ko {0} ke lie upanaam nahin mila."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_REMOVE",
-      "text": "upanaam {0} ko hataaya nahin gaya hai."
     },
     {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2",
@@ -195,10 +163,6 @@
       "text": "konfigareshan punah lod kiya gaya. kuchh parivartanon ko prabhaavee hone ke lie aapako karnel ko reeboot karane kee aavashyakata ho sakatee hai."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_COLORINVALID",
-      "text": "rangon mein se ek ya adhik amaany hai. "
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND",
       "text": "skreenasevar {0} nahin mila."
     },
@@ -213,10 +177,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
       "text": "vartamaan upayogakarta ke lie paasavard badalata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC",
-      "text": "skreen saaf karata hai"
     },
     {
       "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
@@ -279,14 +239,6 @@
       "text": "shel sandesh: anurodhit aadesh {0} ko rakharakhaav mod mein chalaane kee anumati nahin hai."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMANDNOTFOUND",
-      "text": "shail sandesh: anurodhit aadesh {0} nahin mila hai. upalabdh kamaand ke lie sahaayata dekhen."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ERROREXECUTE2",
-      "text": "aadesh nishpaadit karane ka prayaas karane mein truti."
-    },
-    {
       "loc": "NKS_KERNEL_TIME_TIMEZONES_LISTENTRY",
       "text": "- {0} ka samay: {1}"
     },
@@ -297,10 +249,6 @@
     {
       "loc": "NKS_FILES_UNAUTHORIZED",
       "text": "aap {0} ke lie jaanakaaree praapt karane ke lie adhikrt nahin hain."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_OBSOLETECMD",
-      "text": "yah kamaand aprachalit hai aur bhavishy ke rileez mein hata dee jaegee."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN",
@@ -349,10 +297,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTED",
       "text": "port {0} ka upayog karake sabhee pate par dibag sunana."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_ALIASALREADYEXISTS",
-      "text": "pahale se hee paaya gaya upanaam: {0}"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_CDBGLOG_SUCCESS",
@@ -447,10 +391,6 @@
       "text": "doorasth peesee par doorasth roop se ek kamaand nishpaadit karata hai"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "amaany prakaar {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ENTRYSIZE",
       "text": "aakaar: {0}"
     },
@@ -489,26 +429,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILED",
       "text": "doorasth deebag praarambh karane mein viphal: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CANTEXECUTE",
-      "text": "skript nishpaadit karane mein truti: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC",
-      "text": "kansol mein tekst likhata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC",
-      "text": "upayogakarta kee pasand banaata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHOICE_HELPER",
-      "text": "jahaan <uttar> prashn ke ek-akshar vaale uttar ko slaish mein alag kiya jaata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC",
-      "text": "upayogakarta ko inaput darj karane kee anumati deta hai"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_DESC",
@@ -687,10 +607,6 @@
       "text": "upayogakartaon ko jodata hai"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC",
-      "text": "upanaamon ko aagyaon mein jodata hai"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC",
       "text": "host naam badalata hai"
     },
@@ -713,10 +629,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC",
       "text": "upayogakarta ko soochee se nikaalata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_REMOVALSUCCESS",
-      "text": "saphalataapoorvak nikaala gaya upanaam {0}."
     },
     {
       "loc": "NKS_KERNEL_UPDATES_CHECKFAILED",
@@ -1007,10 +919,6 @@
       "text": "ek pareekshan khol kholata hai"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDSTARTFAILED",
-      "text": "\"{0}\" shuroo karane mein viphal: {1}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC",
       "text": "paath fail ko saaf karata hai"
     },
@@ -1095,14 +1003,6 @@
       "text": "pravesh pahale se maujood hai."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
-      "text": "kansol aautaput ko lapetata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAPUNWRAPPABLE",
-      "text": "aadesh lapetane yogy nahin hai. ye aadesh lapetane yogy hain:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
       "text": "ek zip sangrah nikaalata hai"
     },
@@ -1131,10 +1031,6 @@
       "text": "{0} ne aapako ping kiya."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC",
-      "text": "ek char ko ek skript mein ek maan par set karata hai"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME",
       "text": "ssh bainar dikhaen"
     },
@@ -1155,32 +1051,12 @@
       "text": "saamaany aadesh:"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_MODLISTING",
-      "text": "mod kamaand:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ALIASLISTING",
-      "text": "upanaam aadesh:"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
       "text": "rakharakhaav mod"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME",
       "text": "lukap nirdeshika"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOMODLISTING",
-      "text": "koee mod kamaand nahin."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOALIASLISTING",
-      "text": "koee upanaam aadesh nahin."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "lapetane yogy aadesh nahin mila hai."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC",
@@ -1411,14 +1287,6 @@
       "text": "skreenasevar ko pradarshit karate samay ek truti ka anubhav hua: {0}. baahar nikalane ke lie koee bhee kunjee dabaen."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_THEMESHOWCASE",
-      "text": "yahaan bataaya gaya hai ki aapakee theem kaisee dikhegee:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "lapetane yogy aadesh:"
-    },
-    {
       "loc": "NKS_FILES_LISTFOLDEREMPTY",
       "text": "foldar khaalee hai."
     },
@@ -1433,10 +1301,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME",
       "text": "kastam staartap bainar"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO",
-      "text": "uttar shoony nahin ho sakata."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION",
@@ -1457,10 +1321,6 @@
     {
       "loc": "NKS_ARGUMENTS_HELP_LISTING",
       "text": "upalabdh karnel tark:"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNRECOVERABLEERROR",
-      "text": "tark mein apraapy truti:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA512_DESC",
@@ -1903,16 +1763,8 @@
       "text": "surakshit mod kee tarah, lekin bahu-upayogakarta aur kuchh anukoolan ko bhee aksham karata hai"
     },
     {
-      "loc": "NKS_ARGUMENTS_NOTENOUGHARGS",
-      "text": "paryaapt tark nahin the."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
       "text": "rangon ko punaraarambh karane kee aavashyakata nahin hai, lekin adhikaansh setings ko punaraarambh karane kee aavashyakata hotee hai."
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELP",
-      "text": "tark \"{0}\" ke lie koee madad nahin."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -1951,10 +1803,6 @@
       "text": "fail {0} nahin milee"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC",
-      "text": "pradaan kie gae maanon ke saath ek char saranee banaata hai"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC",
       "text": "yah dekhane ke lie ki kya ve sabhee samaan hain, sabhee sthaaneeyakaran tekst lain nambaron kee jaanch karata hai"
     },
@@ -1985,10 +1833,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC",
       "text": "phailasistam soochee ko peshevar roop se kramabaddh karata hai."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC",
-      "text": "ek chayan vikalp pradaan karata hai"
     },
     {
       "loc": "NKS_SHELL_BASE_HELP_NOLISTING",
@@ -2075,10 +1919,6 @@
       "text": "aap ap too det hain!"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_SWITCHLISTING",
-      "text": "is kamaand mein neeche die gae svich hain jo yah badalate hain ki yah kaise kaam karata hai:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC",
       "text": "soochee mein fail vivaran dikhaata hai"
     },
@@ -2119,76 +1959,8 @@
       "text": "karnel ivent sistam ke lie dibaging saksham karata hai"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGFAILED",
-      "text": "kastam bhaasha {0} sthaapit karane mein viphal."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_METADATAHASNOLOCS",
-      "text": "kastam bhaasha ko sthaapit karane ke lie aavashyak metaadeta jaanakaaree aavashyak sthaaneeyakaran pradaan nahin karatee hai."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED1",
-      "text": "kastam bhaasha {0} kee sthaapana radd karane mein viphal."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT",
-      "text": "angrejee bhaasha kee lambaee pradaan kee gaee bhaasha tokan kee lambaee se mel nahin khaatee."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOOVERWRITE",
-      "text": "bhaasha pahale se maujood hai aur ise adhilekhit nahin kiya ja sakata hai."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED2",
-      "text": "kastam bhaasha kee sthaapana radd karane mein viphal. sabase adhik sambhaavana hai ki yah maujood nahin hai."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGSFAILED",
-      "text": "pasand ke mutaabik bhaashaen instol karane mein viphal."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED1",
-      "text": "pasand ke mutaabik bhaashaen aninstol karane mein viphal."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED2",
-      "text": "pasand ke mutaabik bhaashaen aninstol karane mein viphal. adhik jaanakaaree ke lie aantarik apavaad dekhen."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE",
       "text": "laisens jaanakaaree"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC",
-      "text": "apanee bhaashaen prabandhit karen"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_LANGNOTFOUND",
-      "text": "bhaasha nahin milee ya fail mein amaany varn hain."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_NOLANG",
-      "text": "bhaasha nirdisht nahin hai."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SAFEMODE",
-      "text": "surakshit mod mein bhaasha prabandhan aksham hai."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SHORTNAME",
-      "text": "bhaasha sankshipt naam:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_FULLNAME",
-      "text": "bhaasha ka poora naam:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_TRANSLITERABLE",
-      "text": "bhaasha lipyantaran yogy:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_CUSTOM",
-      "text": "kastam bhaasha:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME",
@@ -2247,40 +2019,12 @@
       "text": "upanaam dikhaen madad par bharosa karen"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC",
-      "text": "ek baar uaish ke bhaav santusht hone ke baad kamaand nishpaadit karata hai"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "abhivyakti mein sthiti nahin paee gaee."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "shart {0} ke lie {1} tarkon kee aavashyakata hai. {2} mil gaya."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "sintaiks truti ke kaaran abhivyakti ko paars karane mein truti."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE",
-      "text": "shart ko poora karane mein viphal. adhik jaanakaaree yahaan:"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME",
       "text": "paasavard maask kairektar"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC",
       "text": "ek charitr jo paasavard ko maask karata hai. adhik suraksha ke lie khaalee chhod den."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC",
-      "text": "sabashel par chalane par shel se baahar nikalata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_KILLINGMOTHERSHELL",
-      "text": "maan ke khol ko nahin maar sakate!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL",
@@ -2305,10 +2049,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
       "text": "dibag mod saksham karata hai"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE",
-      "text": "vartamaan mooly:"
     },
     {
       "loc": "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC",
@@ -2431,10 +2171,6 @@
       "text": "heks sampaadak svat: sahejana suvidha ko chaaloo ya band karata hai."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "skript vikrt hai. skript kee jaanch karen aur kisee bhee truti ka samaadhaan karen: {0}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC",
       "text": "nirapeksh ke bajaay saapeksh path ka upayog karata hai"
     },
@@ -2445,10 +2181,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC",
       "text": "inaput itihaas saksham hai ya nahin. yadi saksham hai, to aap oopar ya neeche teer kunjiyon ka upayog karake haal hee mein taip kie gae aadeshon tak pahunch sakate hain."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "apane kampyootar ko band karana ab surakshit hai."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME",
@@ -2467,14 +2199,6 @@
       "text": "powairlinai glif ka samarthan karane vaale kansol font ka upayog karana sunishchit karen, ya aautaput theek se prastut nahin ho sakata hai. ham anushansa karate hain"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC",
-      "text": "shel preeset laibreree kholata hai"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_EXCEPTION_PRESETNOTFOUND",
-      "text": "nirdisht preeset {0} nahin mila."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_ALREADYBLOCKED",
       "text": "divais pahale se blok soochee mein maujood hai."
     },
@@ -2485,10 +2209,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC",
       "text": "test asembalee entree point nishpaadan"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_SELECT",
-      "text": "{0} ke lie preeset chunen:"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
@@ -2513,22 +2233,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
       "text": "konfigareshan lod hone se pahale pree-boot splaish ko chhupaata hai"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNKNOWNARGUMENT",
-      "text": "agyaat tark"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING",
-      "text": "aapako vt prosesing saksham ke saath chonaimu ya windows 10 kamaand prompt chalaana hoga."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO",
-      "text": "aapaka tarminal {1} par {0} hai."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION",
-      "text": "kya ye raimp aapako sahee lagate hain? unhen suchaaroo roop se sankraman karana chaahie."
     },
     {
       "loc": "NKS_DRIVERS_EXCEPTION_NOFALLBACKS",
@@ -2635,22 +2339,6 @@
       "text": "shel ko shuroo karane ke lie koee bhee kunjee dabaen, lekin krpaya dhyaan den ki aapako apana naya upayogakarta mainyual roop se banaana pad sakata hai."
     },
     {
-      "loc": "NKS_KERNEL_ENVERROR",
-      "text": "karnel paryaavaran truti:"
-    },
-    {
-      "loc": "NKS_KERNEL_FATALERROR",
-      "text": "naitrosid kees ne ek samasya ka pata lagaaya hai aur ise band kar diya gaya hai."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_INSTALL",
-      "text": "kastam bhaasha ko sthaapit karane ke lie aavashyak metaadeta jaanakaaree maujood nahin hai."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_UNINSTALL",
-      "text": "kastam bhaasha ko aninstol karane ke lie aavashyak metaadeta jaanakaaree maujood nahin hai."
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "maujooda khaate ko sanshodhit karane ka prayaas kar raha hai jabaki yah lok hai"
     },
@@ -2697,26 +2385,6 @@
     {
       "loc": "NKS_ARGUMENTS_RESET_WIPEMISCFAILED",
       "text": "vividh fail mita nahin sakate"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELPDESC",
-      "text": "koee tark sahaayata vivaran nahin"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "is theem ka upayog karane ke lie aapake kansol ko troo kalar ka samarthan karana chaahie."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXITPREVIEW_DESC",
-      "text": "poorvaavalokan se baahar nikalen"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "theem {0} ek eevent manaatee hai, lekin aap bhaag lene ke lie ya to bahut jaldee ya bahut der se aate hain. pratyek varsh, yah theem {1}/{2} se {3}/{4} tak sulabh hai."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "theem {0} ko troo kalar samarthan kee aavashyakata hai, lekin aapaka kansol isaka samarthan nahin karata hai."
     },
     {
       "loc": "NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT",
@@ -3087,10 +2755,6 @@
       "text": "ek saamaany http shel truti huee."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLEDETECTED",
-      "text": "paagal kansol ka pata chala hai. nitrochid ks chalana jaaree nahin rakh sakata, kyonki aapaka kansol hamaaree aavashyakataon ke saath asangat hai."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHALGORITHM",
       "text": "amaany haish elgoridam. yadi aap kastam haish yog draivar ka upayog kar rahe hain, to yah sunishchit karane ke lie jaanch karen ki draivar lod ho gaya hai."
     },
@@ -3183,10 +2847,6 @@
       "text": "is naam se koee shel preeset nahin hai."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",
-      "text": "is naam se koee theem nahin hai."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NULLUSERS",
       "text": "poore karnel mein shoony upayogakarta hain. ham ek atyant durlabh sthiti mein pahunch gae hain. karnel jaaree nahin rah sakata."
     },
@@ -3231,14 +2891,6 @@
       "text": "ek saamaany sftp shel truti huee."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONPARSE",
-      "text": "kandeeshan paarsing viphal rahee. oparetar kee apekshit dizain ko poora karane ke lie krpaya apane sintaiks kee jaanch karen."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHSCRIPT",
-      "text": "uaish skript fail ko paars karane ka prayaas karate samay ek truti huee. trutiyon ke lie apanee skript fail kee jaanch karen aur unhen theek karen."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_USERCREATION",
       "text": "ek upayogakarta nirmaan truti huee."
     },
@@ -3249,10 +2901,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK",
       "text": "ek saamaany netavark truti huee. yadi aap kisee doorasth chhor se kanekt karane ka prayaas kar rahe hain, to sunishchit karen ki aap intaranet ya apane sthaaneey netavark se jude hain."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UNSUPPORTEDCONSOLE",
-      "text": "ek asamarthit kansol ka pata chala hai."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE",
@@ -3323,20 +2971,12 @@
       "text": "anurodhit opareshan karane ka prayaas karate samay ek sampark prabandhak truti huee. sunishchit karen ki sampark fail sahee foldar mein maujood hai aur yah ek vaidh vchard 2.1, 3.0, ya 4.0 sampark fail hai."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
-      "text": "anurodhit opareshan karate samay uaish kandeeshan sistam viphal ho gaya. adhik jaanakaaree ke lie neeche truti sandesh dekhen."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR",
       "text": "ek amaany sql sampaadak opareshan kiya ja raha hai."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP",
       "text": "samooh maujood nahin hai. yah sunishchit karane ke lie jaanch karen ki aapane samooh ka naam sahee dhang se likha hai."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INTERACTIVETUI",
-      "text": "intaraiktiv tui kaaryaanvayan mein ek truti huee."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS",
@@ -3385,10 +3025,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_REFLECTION",
       "text": "pratibimb pranaalee mein koee truti huee."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_THEMEMANAGEMENT",
-      "text": "theem prabandhan ke lie koee kaarravaee karane ka prayaas karate samay koee truti huee."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_EVENTMANAGEMENT",
@@ -3759,10 +3395,6 @@
       "text": "naitrosid praarambh karana..."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_CUSTOMLANGS",
-      "text": "kastam bhaashaen lod karana..."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_IMPORTANTADDONS",
       "text": "mahatvapoorn karnel aidon lod karana..."
     },
@@ -3793,10 +3425,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_GENERALVARSRESET",
       "text": "saamaany char reeset"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_HISTORIESSAVED",
-      "text": "shel kamaand itihaas saheje gae."
     },
     {
       "loc": "NKS_KERNEL_STARTING_CONFIGSAVED",
@@ -4411,32 +4039,12 @@
       "text": "yah prograam gnu janaral pablik laisens 3.0 ya baad ke sanskaran ke antargat laisens praapt hai."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "aap karnel ka vikaas sanskaran chala rahe hain. jabaki aap aane vaalee suvidhaon ka anubhav kar sakate hain jo antim rileez mein maujood ho sakatee hain, aap bag, asthirata ya yahaan tak ki deta haani ka saamana kar sakate hain. yadi sambhav ho to ham sthir sanskaran ka upayog karane kee salaah dete hain."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "aap karnel ka rileez kaindidet varshan chala rahe hain. jab aap antim charan ka anubhav kar sakate hain, to aap bag, asthirata ya yahaan tak ki deta haani ka saamana kar sakate hain. yadi sambhav ho to ham sthir sanskaran ka upayog karane kee salaah dete hain."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "ham karnel ke is sanskaran ko chalaane ke viruddh salaah dete hain, kyonki yah asamarthit hai. yadi aapane is karnel ko agyaat sroton se daunalod kiya hai, to yah sandesh dikhaee de sakata hai. krpaya hamaare aadhikaarik daunalod prshth se daunalod karen."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP",
-      "text": "hamesha ke lie khaarij karane ke lie, ya to apane keebord par baen teer ka upayog karake ise hailait karake yahaan \"sveekaar kiya gaya\" batan par aintair dabaen, ya karnel setings mein \"vikaas notis sveekaar kiya gaya\" saksham karen."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_OK",
       "text": "theek hai"
     },
     {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_ACKED",
       "text": "sveekaar kiya gaya"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISS_TITLE",
-      "text": "vikaas notis"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
@@ -4763,228 +4371,12 @@
       "text": "naveenatam samaachaar praapt karane mein saksham hone ke lie, aapako rss shel ekstra aidon sthaapit karana hoga. aap sabhee aidon praapt karane ke lie gaitaddons kamaand ka upayog kar sakate hain!"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_QUERY",
-      "text": "aliyaas {0} kveree karane ke lie nahin mila."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "aautaput ke maan ko chayanit uaish vairiebal par set karata hai"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_LISTING",
-      "text": "neeche die gae sabhee upayogon ke lie aavashyak tark pradaan nahin kie gae hain:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGS",
-      "text": "aavashyak tark pradaan nahin kie gae hain."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHES",
-      "text": "aavashyak svich pradaan nahin kie gae hain."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHVALUE",
-      "text": "svich mein se ek ke lie aise maan kee aavashyakata hai jo pradaan nahin kiya gaya hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_UNKNOWNSWITCH",
-      "text": "neeche soocheebaddh svich agyaat hain."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_CONFLICTSWITCH",
-      "text": "neeche soocheebaddh svich ek doosare ke saath sangharsh karate hain."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNOVALUE",
-      "text": "neeche die gae svich maan sveekaar nahin karate hain."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGNUMVALUE",
-      "text": "ek ya adhik tark ek sankhyaatmak maan kee apeksha karate hain, lekin aapane ek amaany sankhya pradaan kee hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGEXACTWORD",
-      "text": "ek ya adhik tark ek sateek shabd kee apeksha karate hain, lekin aapane ek amaany shabd pradaan kiya hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNUMVALUE",
-      "text": "ek ya adhik svich ek sankhyaatmak maan kee apeksha karate hain, lekin aapane ek amaany sankhya pradaan kee hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ABORTED",
-      "text": "kamaand nirast kar diya gaya hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "aapako is kamaand ko seedhe raipd mod mein nishpaadit nahin karana chaahie."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "kamaand aautaput ko raip karane ka prayaas karate samay ek truti huee"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_COMMANDABORTED",
-      "text": "kamaand ko nimn kaaran se nirast kiya gaya:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDPATTERNINVALID",
-      "text": "amaany kamaand paitarn pradaan kiya gaya."
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "kamaand nahin mila."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND",
-      "text": "shel prakaar {0} maujood nahin hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED",
-      "text": "aapako kamaand bes pradaan karana hoga."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED",
-      "text": "aapako kamaand pradaan karana hoga."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS",
-      "text": "nirdisht kamaand pahale se hee joda gaya hai! yah sambhav hai ki aapake paas paraspar virodhee mod ho sakate hain."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_UNDEFINED",
-      "text": "kamaand paribhaashit nahin hai"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_CUSTOM",
-      "text": "kuchh kastam kamaand lod nahin kie ja sakate."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_CUSTOM",
-      "text": "nirdisht kastam kamaand nahin mila."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_CUSTOM",
-      "text": "kuchh kastam kamaand analod nahin kie ja sakate."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS_CUSTOM",
-      "text": "nirdisht kamaand pahale se hee joda gaya hai! yah sambhav hai ki aapake paas paraspar virodhee aidon ho sakate hain."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_ADDON",
-      "text": "kuchh aidon kamaand lod nahin kie ja sakate."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_ADDON",
-      "text": "nirdisht aidon kamaand nahin mila."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_ADDON",
-      "text": "kuchh aidon kamaand analod nahin kie ja sakate."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NEEDSSLASH",
-      "text": "yah shel kamaand nishpaadit karane ke lie slaish kamaand ka upayog karata hai. aarambh karane ke lie krpaya kamaand kee shuruaat mein slaish prateek / joden. udaaharan ke lie:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDLISTING",
-      "text": "upalabdh kamaand:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ADDONLISTING",
-      "text": "karnel aidon kamaand:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOADDONLISTING",
-      "text": "koee karnel aidon kamaand nahin."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_UNIFIEDLISTING",
-      "text": "ekeekrt kamaand:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOUNIFIEDLISTING",
-      "text": "ekeekrt kamaand laagoo nahin kie gae!!!"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_COMMAND",
-      "text": "kamaand:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "aap nirmaan ka samarthan karane vaale eksapreshan, jaise ki sharten ya loop rakhane se pahale naya blok ghoshit nahin kar sakate. staik nambar {0} hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "naya blok shuroo karate samay, sunishchit karen ki aapane staik ko sahee dhang se indent kiya hai. staik nambar {0} hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "skript vikrt hai. skript kee jaanch karen aur kisee bhee truti ko hal karen."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "slaish kamaand ke lie anusmaarak"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
-      "text": "baaharee prakriya nishpaadit karata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC",
-      "text": "shel thred ko baadhit kie bina prakriya nishpaadit karata hai. ek alag vindo banaee jaegee."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
-      "text": "vartamaan shel prakaar mein upalabdh kamaand dhoondhata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC",
-      "text": "mod kamaand dikhaata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC",
-      "text": "aliyaas kamaand dikhaata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC",
-      "text": "ekeekrt kamaand dikhaata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC",
-      "text": "karnel aidon kamaand dikhaata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC",
-      "text": "sabhee kamaand dikhaata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC",
-      "text": "saraleekrt sahaayata ka upayog karata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC",
-      "text": "shel itihaas lod karata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
-      "text": "antim kriya ya nirdisht kamaand ko doharaata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC",
-      "text": "shel itihaas sahejata hai"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
       "text": "ek yaadrchchhik karnel tip dikhaata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTSTARTWITHOUTMOTHERSHELL",
-      "text": "jab tak madar shel shuroo nahin ho jaata, shel shuroo nahin ho sakata."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTINITSHELL",
-      "text": "shel aarambh karane ka prayaas viphal raha"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -5159,26 +4551,6 @@
       "text": "sistam bhaasha ke bajaay upayogakarta bhaasha badalata hai"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC",
-      "text": "ek pankti vikalp shailee"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC",
-      "text": "do panktiyon vikalp shailee"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC",
-      "text": "aadhunik vikalp shailee"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "aautaput keval ek varn ho sakata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "aautaput ek varn se adhik ho sakata hai"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
       "text": "kansol mein do ya adhik tekst failon ko jodata hai."
     },
@@ -5201,18 +4573,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC",
       "text": "lain ending kanvarshan ko baadhy karata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
-      "text": "sirph taareekh dikhaata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
-      "text": "sirph samay dikhaata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
-      "text": "sthaaneey ke bajaay utch ka upayog karata hai"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC",
@@ -5245,10 +4605,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN",
       "text": "apane draivar prabandhit karata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "tekst ko bina plesaholdar paarsing ke vaise hee print karata hai jaise vah hai"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
@@ -5295,10 +4651,6 @@
       "text": "niyamit abhivyaktiyon ka upayog karake nirdisht nirdeshika mein ya vartamaan nirdeshika mein fail dhoondhata hai"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC",
-      "text": "ek aur udaaharan banaane ke lie uaish shel ko phork karata hai"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC",
       "text": "aautaput path nirdisht karata hai"
     },
@@ -5341,10 +4693,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC",
       "text": "intaraiktiv sistam host fail prabandhak"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC",
-      "text": "upayogakarta ko paasavard ke roop mein inaput darj karane kee anumati deta hai"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
@@ -5495,10 +4843,6 @@
       "text": "ek intaraiktiv tui kholata hai jisamen aap vaastavik samay mein vishv ghadee dekh paenge"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
-      "text": "nirdisht mileesekand ke lie sota hai"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
       "text": "root upayogakarta ke roop mein kamaand chalaata hai"
     },
@@ -5549,14 +4893,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC",
       "text": "chayan karane par theem ko turant set karata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC",
-      "text": "uaish char soochee se ek char ko hataata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "bas ise hatae bina char maan ko mita deta hai"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
@@ -5625,10 +4961,6 @@
     {
       "loc": "NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD",
       "text": "din ka sandesh shoony nahin ho sakata hai."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER",
-      "text": "ise us varn par set karane ke lie apane keebord par koee bhee akshar dabaen."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM",
@@ -5975,50 +5307,6 @@
       "text": "pareekshan svich"
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL",
-      "text": "plesaholdar shoony nahin ho sakata hai"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERACTIONNULL",
-      "text": "plesaholdar kriya shoony nahin ho sakatee hai"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED",
-      "text": "plesaholdar panjeekrt nahin hai"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT",
-      "text": "plesaholdar ko is praaroop ko poora karana hoga"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "shart ko ant mein rakha jaana chaahie."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "aisee shart ko panjeekrt nahin kiya ja sakata jo pahale se maujood hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "khaalee shart ko panjeekrt nahin kiya ja sakata."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "aisee shart ko apanjeekrt nahin kiya ja sakata jo maujood nahin hai."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_FINDCMDS_NOTFOUND",
-      "text": "koee aadesh nahin mila."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "baar-baar amaany sankhya."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "khud ko doharaaya nahin ja sakata."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
       "text": "satr sankhya amaany hai."
     },
@@ -6149,10 +5437,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS",
       "text": "samooh {1} mein upayogakarta {0} jodana..."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_SUCCESS",
-      "text": "ab aap {0} ko {1} ke roop mein chala sakate hain!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED",
@@ -6443,10 +5727,6 @@
       "text": "{1} ke lie {0} khojana viphal raha."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
-      "text": "aapako us vairiebal ke saath -sait svich paas karana hoga jis par aap yah maan set karana chaahate hain."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING",
       "text": "jahaan sevar hoga"
     },
@@ -6607,14 +5887,6 @@
       "text": "koee rimot dibag kamaand vivaran nahin"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "nirdisht deta prakaar {0} amaany hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "nirdisht pletaform {0} amaany hai."
-    },
-    {
       "loc": "NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT",
       "text": "samay samaapt hone ke kaaran dhvani nahin bajaee ja sakatee."
     },
@@ -6677,22 +5949,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC",
       "text": "yadi aap sunishchit hain ki kansol troo kalar ka samarthan karata hai, ya yadi aap apane tarminal ko aise tarminal mein badalana chaahate hain jo troo kalar ka samarthan karata hai, to yah maan badalen."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
-      "text": "kodapej set karen"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
-      "text": "bhaasha svich karane par bhaasha kodapej set karen."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME",
-      "text": "vikaas soochana sveekaar kee gaee"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC",
-      "text": "yadi saty par set kiya jaata hai, to karnel aapako vikaas sanskaranon mein karnel ko boot karane par har baar vikaas soochana nahin dikhaega."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME",
@@ -7531,10 +6787,6 @@
       "text": "truti ke baare mein adhik jaanakaaree ke lie deebag log kee jaanch karen."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC",
-      "text": "hamesha ke lie khaarij karane ke lie, ya to apane keebord par aintair dabaen, ya karnel setings mein \"vikaas soochana sveekaar kee gaee\" saksham karen. koee bhee any kunjee bina sveekrti ke aage badhatee hai."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
       "text": "aap ek asaamaany vaataavaran par naitrosid ks chala rahe hain. krpaya satyaapit karen ki aapane karnel ko seedhe shuroo kiya hai. yadi aap sunishchit hain ki aapane karnel ko saamaany tareeke se shuroo kiya hai, to aisa isalie ho sakata hai kyonki aap naitrosid ks ka asamarthit sanskaran chala rahe hain."
     },
@@ -7589,18 +6841,6 @@
     {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "alaarm tithi aur samay ateet mein nahin ho sakata hai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_TIP",
-      "text": "adhik jaanakaaree ke lie is kamaand ke lie sahaayata pravishti dekhen"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGLISTING",
-      "text": "is kamaand mein neeche die gae tark hain jo isake kaam karane ke tareeke ko badalate hain:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGNODESC",
-      "text": "anirdisht tark vivaran"
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC",
@@ -7959,18 +7199,6 @@
       "text": "saksham hone par soochee ko alfaanyoomerik roop se ya aksham hone par varnaanukram mein kramabaddh karata hai."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "difolt theem ko popyulet karane mein viphal"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "koee theem metaadeta paribhaashit nahin hai."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "metaadeta ko deeserielaiz nahin kiya ja sakata."
-    },
-    {
       "loc": "NKS_DRIVERS_ENCODING_BASE_EXCEPTION_NEEDSINIT",
       "text": "is enkoding ko inishiyalaiz kiya jaana chaahie."
     },
@@ -8247,34 +7475,6 @@
       "text": "thred ko phir se janaret nahin kiya ja sakata"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED",
-      "text": "bhaasha sansaadhan lod karane mein viphal"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LOCALIZED",
-      "text": "sthaaneeyakrt paath nahin mil sakata"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS",
-      "text": "angrejee sthaaneeyakaran nahin mil sakata"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOC",
-      "text": "angrejee paath nahin mil sakata"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN",
-      "text": "bhaasha tokan nirdisht kiya jaana chaahie"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA",
-      "text": "bhaasha metaadeta nahin mil sakata"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATAARRAY",
-      "text": "bhaasha metaadeta saranee nahin mil sakata"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",
       "text": "mimai metaadeta (vistaarit)"
     },
@@ -8387,30 +7587,6 @@
       "text": "kopeerait (ch) 2018-2025 aptivi - sabhee adhikaar surakshit"
     },
     {
-      "loc": "NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO",
-      "text": "kamaand ya tark ke lie tark jaanakaaree nahin mil sakatee"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_COMMANDEXECUTION",
-      "text": "thred pairaameetar nirdisht nahin hain."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "prakriya nishpaadan ke lie thred pairaameetar nahin mil sakate."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_INTERNALFIELDENVVARS",
-      "text": "paryaavaran char ke lie aantarik feeld nahin mil sakata"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_NOEXECUTOR",
-      "text": "ke lie shel nishpaadak nahin mil sakata"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC",
-      "text": "saamaany kamaand dikhaata hai (difolt)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC",
       "text": "upayogakarta ka poora naam (disple naam) badalata hai"
     },
@@ -8473,18 +7649,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC",
       "text": "skreenasevar lonch karane ke lie nyoonatam nishkriy antaraal. ikaee samay avadhi praaroop (hh:mm:ss) mein hai."
-    },
-    {
-      "loc": "NKS_THEMES_DEFAULT_DESC",
-      "text": "karnel ke lie difolt theem"
-    },
-    {
-      "loc": "NKS_THEMES_DYNAMIC_DESC",
-      "text": "har jagah uchchaaran!"
-    },
-    {
-      "loc": "NKS_THEMES_NITRICACID_DESC",
-      "text": "rangaheen, dhunaadhaar aur atyadhik sankshaarak taral"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
@@ -8579,10 +7743,6 @@
       "text": "nitrochid ks ka yah sanskaran ab samarthit nahin hai."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES",
-      "text": "kastam bhaashaen lod karane mein viphal"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
       "text": "mahatvapoorn karnel aidon lod karane mein viphal"
     },
@@ -8615,10 +7775,6 @@
       "text": "raddeekaran haindalar lod karane mein viphal"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES",
-      "text": "upanaam lod karane mein viphal"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL",
       "text": "speed daayal pravishtiyaan lod karane mein viphal"
     },
@@ -8639,10 +7795,6 @@
       "text": "motd aur mal lod karane mein viphal"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES",
-      "text": "shel kamaand itihaas lod karane mein viphal"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS",
       "text": "eksatenshan haindalar lod karane mein viphal"
     },
@@ -8661,10 +7813,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_RESET_VARS",
       "text": "saamaany char reeset karane mein viphal"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES",
-      "text": "shel kamaand itihaas sahejane mein viphal"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_CONSENTS",
@@ -8765,58 +7913,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR",
       "text": "kisee truti ke kaaran netavark kanekshan theek se sthaapit nahin ho paaya hoga."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "aisee kamaand ko baphar nahin kiya ja sakata jo raip karane yogy ke roop mein set na ho."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDSWITCHNODESC",
-      "text": "anirdisht svich vivaran"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC",
-      "text": "prakriya ka path"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "prakriya ko paas karane ke lie tark"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "sahaayata pravishti dikhaane ke lie kamaand"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
-      "text": "pairaameetar ke roop mein kamaand aautaput ko doosare kamaand mein paip karata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "antim pairaameetar ke roop mein lakshy kamaand ko isake aautaput ko paip karane ke lie srot kamaand"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "srot kamaand aautaput ke aadhaar par bilding tark par nishpaadit karane ke lie lakshy kamaand"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC",
-      "text": "srot kamaand ke aautaput ko ek uddhrt tark ya bina uddhrt tark ke roop mein paas karana hai ya nahin"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "isake aautaput ko lapetane ke lie kamaand"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "srot kamaand nishpaadan viphal raha."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "lakshy kamaand nishpaadan viphal raha. saamagree theek se popyulet nahin huee ho sakatee hai. nishpaadit kamaand thee"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_FAILED",
-      "text": "paip toot gaya hai."
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC",
@@ -9007,18 +8103,6 @@
       "text": "pratisthaapit kie jaane vaale vaakyaanshon se milaan karane ke lie ek niyamit abhivyakti"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDCOUNTRY",
-      "text": "amaany desh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_CHOOSELANGFORCOUNTRY",
-      "text": "desh ke lie ek bhaasha chunen"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDLANG",
-      "text": "ke lie amaany bhaasha chayan"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_YES",
       "text": "haan"
     },
@@ -9065,26 +8149,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC",
       "text": "alaarm ko soocheebaddh karata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "ek upanaam jodata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "kamaand laane ke lie shel prakaar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "upanaam naam"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "shortakat ke roop mein upayog kee jaane vaalee kamaand"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC",
-      "text": "upanaam hataata hai"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC",
@@ -9147,28 +8211,8 @@
       "text": "bhaasha aaeedee"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC",
-      "text": "desh ka upayog karake bhaasha mein parivartan (aapako bhaasha chunane ke lie sanket mil sakata hai)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC",
       "text": "upayog karane ke lie naya sandesh"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "slaish ke saath vibhaajit karane ke lie uttar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "skreen par print karane ke lie prashn"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "pahala uttar sheershak"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "doosara uttar sheershak, aur isee tarah..."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
@@ -9271,10 +8315,6 @@
       "text": "draivar prakaaron kee soochee banaen"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "print karane ke lie string"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC",
       "text": "enkod karane ke lie fail"
     },
@@ -9311,32 +8351,12 @@
       "text": "haardaveyar prakaar"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "pareekshan karane ke lie uaish abhivyakti"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC",
-      "text": "saphal moolyaankan par nishpaadit karane ke lie kamaand"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC",
       "text": "baen phalak ke lie nirdeshika ka path"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "daen phalak ke lie nirdeshika ka path"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC",
-      "text": "kastam bhaasha ko punah lod, lod ya analod karata hai"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC",
-      "text": "kastam bhaasha ka naam"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC",
-      "text": "sabhee kastam bhaashaon ko soocheebaddh ya punah lod karata hai"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
@@ -9455,10 +8475,6 @@
       "text": "aidon splaish setings kholata hai"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC",
-      "text": "set karane ke lie maan"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC",
       "text": "konfigareshan char naam"
     },
@@ -9467,24 +8483,8 @@
       "text": "kaaryaanvayanakarta ka naam"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "pahala maan"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "doosara maan"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "teesara maan, aur isee tarah..."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC",
       "text": "samay kshetr ka naam"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC",
-      "text": "sone ke lie antaraal"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC",
@@ -9521,10 +8521,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC",
       "text": "anablok karane ke lie aaeepee pata"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "char naam"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC",
@@ -9931,10 +8927,6 @@
       "text": "konfigareshan ka chayan nahin kiya ja sakata"
     },
     {
-      "loc": "NKS_KNOWNADDONS_PACKS_LANGUAGES",
-      "text": "atirikt bhaasha paik"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_PACKS_SCREENSAVERS",
       "text": "atirikt skreenasevar paik"
     },
@@ -10103,22 +9095,6 @@
       "text": "atirikt - chaitabot ai"
     },
     {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED1",
-      "text": "bhaasha metaadeta lod karane mein viphal"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE1",
-      "text": "bhaasha metaadeta ko deesereelaiz karane mein viphal"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED2",
-      "text": "bhaasha metaadeta ko lod karane mein viphal"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
-      "text": "bhaasha metaadeta ko deesereelaiz karane mein viphal"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
       "text": "bes konfigareshan {0} ko diserielaiz nahin kiya ja sakata"
     },
@@ -10129,14 +9105,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_DESC",
       "text": "yah anubhaag draivar setings ko soocheebaddh karata hai."
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
-      "text": "vartamaan kansol draivar"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
-      "text": "aap kis kansol draivar ka upayog karana chaahenge?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",

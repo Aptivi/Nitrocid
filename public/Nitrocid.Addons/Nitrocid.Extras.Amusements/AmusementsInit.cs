@@ -159,15 +159,15 @@ namespace Nitrocid.Extras.Amusements
         public void FinalizeAddon()
         {
             // Add the amusements to the homepage
-            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_BACKRACE", BackRace.OpenBackRace);
-            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_HANGMAN", () => Hangman.InitializeHangman(HangmanDifficulty.None));
-            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE", () => MeteorShooter.InitializeMeteor(false, true));
-            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER", () => MeteorShooter.InitializeMeteor());
-            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_PONG", Pong.InitializePong);
-            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET", () => ShipDuetShooter.InitializeShipDuet());
-            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_SNAKER", () => Snaker.InitializeSnaker(false));
-            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_WORDLE", () => Wordle.InitializeWordle());
-            HomepageTools.RegisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG", () => Wordle.InitializeWordle(true));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_BACKRACE", BackRace.OpenBackRace);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_HANGMAN", () => Hangman.InitializeHangman(HangmanDifficulty.None));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE", () => MeteorShooter.InitializeMeteor(false, true));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER", () => MeteorShooter.InitializeMeteor());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_PONG", Pong.InitializePong);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET", () => ShipDuetShooter.InitializeShipDuet());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SNAKER", () => Snaker.InitializeSnaker(false));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_WORDLE", () => Wordle.InitializeWordle());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG", () => Wordle.InitializeWordle(true));
         }
 
         public void StartAddon()
@@ -210,15 +210,15 @@ namespace Nitrocid.Extras.Amusements
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsConfig));
 
             // Remove all options
-            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_BACKRACE");
-            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_HANGMAN");
-            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE");
-            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER");
-            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_PONG");
-            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET");
-            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_SNAKER");
-            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_WORDLE");
-            HomepageTools.UnregisterBuiltinAction("NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_BACKRACE");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_HANGMAN");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_PONG");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SNAKER");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_WORDLE");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG");
         }
     }
 }

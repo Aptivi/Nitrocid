@@ -1,0 +1,39 @@
+{
+  "lang": "kor",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "gyesoghalyeomyeon amu kina nuleuseyo..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "ije keompyuteoleul kkeodo anjeonhabnida."
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "keoneol hwangyeong oryu:"
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "Nitrocid KSga munjereul gamjihayeo jongryodoeeossseupnida."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "keoneorui gaebal beojeoneul silhaenghago issseupnida. choejong rilliseue pohamdoel yejeongin gineungeul gyeongheomhal su issjiman beogeu, buranjeongseong ttoneun deiteo sonsiri balsaenghal sudo issseupnida. ganeunghadamyeon anjeongjeogin beojeoneul sayonghaneun geosi johseupnida."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "keoneorui rilliseu hubo beojeoneul silhaenghago issseupnida. choejong sonjireul gyeongheomhal suneun issjiman beogeu, buranjeongseong ttoneun deiteo sonsiri balsaenghal su issseupnida. ganeunghadamyeon anjeongjeogin beojeoneul sayonghaneun geosi johseupnida."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "i keoneol beojeoneun jiwondoeji anheumeuro silhaenghaji anhneun geosi johseupnida. al su eopsneun soseueseo i keoneoreul daunrodeuhan gyeongu i mesijiga natanal su issseupnida. gongsik daunrodeu peijieseo daunrodeuhasigi barapnida."
+    }
+  ]
+}

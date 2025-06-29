@@ -1,0 +1,42 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Trykk på en hvilken som helst tast for å fortsette..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "Det er nå trygt å slå av datamaskinen."
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "Kjernemiljøfeil:"
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "Nitrocid KS har oppdaget et problem, og det har blitt stengt."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "Du kjører utviklingsversjonen av kjernen. Selv om du kan oppleve kommende funksjoner som kan eksistere i den endelige utgivelsen, kan du støte på feil, ustabilitet eller til og med tap av data. Vi anbefaler å bruke den stabile versjonen, hvis mulig."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "Du kjører utgivelseskandidatversjonen av kjernen. Mens du kan oppleve siste finpuss, kan du støte på feil, ustabilitet eller til og med tap av data. Vi anbefaler å bruke den stabile versjonen, hvis mulig."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "Vi anbefaler ikke å kjøre denne versjonen av kjernen, fordi den ikke støttes. Hvis du har lastet ned denne kjernen fra ukjente kilder, kan denne meldingen vises. Last ned fra vår offisielle nedlastingsside."
+    }
+  ]
+}

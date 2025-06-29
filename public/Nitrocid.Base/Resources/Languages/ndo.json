@@ -7,14 +7,6 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "Tekan tombol apa saja untuk melanjutkan..."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "Template warna tidak valid {0}"
-    },
-    {
       "loc": "NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE",
       "text": "Masukkan kata sandi admin untuk pemeliharaan."
     },
@@ -83,10 +75,6 @@
       "text": "Kata sandi salah."
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PARSEERROR",
-      "text": "Terjadi kesalahan saat mencoba mengurai placeholder. {0}"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_ADDERROR",
       "text": "Terjadi kesalahan saat mencoba menambahkan nama pengguna."
     },
@@ -127,28 +115,8 @@
       "text": "Screensaver {0} tidak ditemukan dalam basis data. Periksa nama dan coba lagi."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NODEFINITION",
-      "text": "Tidak ada definisi untuk perintah {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_DEFINEDBY",
-      "text": "Perintah yang didefinisikan oleh"
-    },
-    {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1",
       "text": "Direktori {0} tidak ditemukan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASCOMMANDSAMENAME",
-      "text": "Alias ​​tidak dapat sama dengan nama perintah."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_COMMANDNOTFOUND",
-      "text": "Perintah tidak ditemukan untuk alias ke {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_REMOVE",
-      "text": "Alias ​​{0} tidak ditemukan untuk dihapus."
     },
     {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2",
@@ -195,10 +163,6 @@
       "text": "Konfigurasi dimuat ulang. Anda mungkin perlu me-reboot kernel agar beberapa perubahan dapat diterapkan."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_COLORINVALID",
-      "text": "Satu atau lebih warna tidak valid."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND",
       "text": "Screensaver {0} tidak ditemukan."
     },
@@ -213,10 +177,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
       "text": "Mengubah kata sandi untuk pengguna saat ini"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC",
-      "text": "Membersihkan layar"
     },
     {
       "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
@@ -279,14 +239,6 @@
       "text": "Pesan shell: Perintah yang diminta {0} tidak diizinkan untuk dijalankan dalam mode pemeliharaan."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMANDNOTFOUND",
-      "text": "Pesan shell: Perintah yang diminta {0} tidak ditemukan. Lihat 'help' untuk perintah yang tersedia."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ERROREXECUTE2",
-      "text": "Terjadi kesalahan saat mencoba menjalankan perintah."
-    },
-    {
       "loc": "NKS_KERNEL_TIME_TIMEZONES_LISTENTRY",
       "text": "- Waktu {0}: {1}"
     },
@@ -297,10 +249,6 @@
     {
       "loc": "NKS_FILES_UNAUTHORIZED",
       "text": "Anda tidak berwenang mendapatkan info untuk {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_OBSOLETECMD",
-      "text": "Perintah ini sudah usang dan akan dihapus pada rilis mendatang."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN",
@@ -349,10 +297,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTED",
       "text": "Debug mendengarkan pada semua alamat menggunakan port {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_ALIASALREADYEXISTS",
-      "text": "Alias ​​sudah ditemukan: {0}"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_CDBGLOG_SUCCESS",
@@ -447,10 +391,6 @@
       "text": "Menjalankan perintah dari jarak jauh ke PC jarak jauh"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "Tipe tidak valid {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ENTRYSIZE",
       "text": "Ukuran: {0}"
     },
@@ -489,26 +429,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILED",
       "text": "Debug jarak jauh gagal dimulai: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CANTEXECUTE",
-      "text": "Terjadi kesalahan saat mencoba menjalankan skrip: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC",
-      "text": "Menulis teks ke konsol"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC",
-      "text": "Membuat pilihan bagi pengguna"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHOICE_HELPER",
-      "text": "di mana <jawaban> adalah jawaban satu huruf dari pertanyaan yang dipisahkan dengan garis miring"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC",
-      "text": "Memungkinkan pengguna untuk memasukkan input"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_DESC",
@@ -687,10 +607,6 @@
       "text": "Menambahkan pengguna"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC",
-      "text": "Menambahkan alias ke perintah"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC",
       "text": "Mengubah nama host"
     },
@@ -713,10 +629,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC",
       "text": "Menghapus pengguna dari daftar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_REMOVALSUCCESS",
-      "text": "Alias ​​​​{0} berhasil dihapus."
     },
     {
       "loc": "NKS_KERNEL_UPDATES_CHECKFAILED",
@@ -1007,10 +919,6 @@
       "text": "Membuka shell pengujian"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDSTARTFAILED",
-      "text": "Gagal memulai \"{0}\": {1}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC",
       "text": "Membersihkan file teks"
     },
@@ -1095,14 +1003,6 @@
       "text": "Entri sudah ada."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
-      "text": "Membungkus output konsol"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAPUNWRAPPABLE",
-      "text": "Perintah ini tidak dapat dibungkus. Perintah berikut dapat dibungkus:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
       "text": "Mengekstrak arsip ZIP"
     },
@@ -1131,10 +1031,6 @@
       "text": "{0} mengirim ping ke Anda."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC",
-      "text": "Mengatur variabel ke nilai dalam skrip"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME",
       "text": "Tampilkan spanduk SSH"
     },
@@ -1155,32 +1051,12 @@
       "text": "Perintah umum:"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_MODLISTING",
-      "text": "Perintah mod:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ALIASLISTING",
-      "text": "Perintah alias:"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
       "text": "Mode Pemeliharaan"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME",
       "text": "Pencarian Direktori"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOMODLISTING",
-      "text": "Tidak ada perintah mod."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOALIASLISTING",
-      "text": "Tidak ada perintah alias."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "Perintah yang dapat dibungkus tidak ditemukan."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC",
@@ -1411,14 +1287,6 @@
       "text": "Screensaver mengalami kesalahan saat menampilkan: {0}. Tekan tombol apa saja untuk keluar."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_THEMESHOWCASE",
-      "text": "Berikut tampilan tema Anda:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "Perintah yang dapat dibungkus:"
-    },
-    {
       "loc": "NKS_FILES_LISTFOLDEREMPTY",
       "text": "Foldernya kosong."
     },
@@ -1433,10 +1301,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME",
       "text": "Spanduk Permulaan Kustom"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO",
-      "text": "Jawabannya mungkin tidak nol."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION",
@@ -1457,10 +1321,6 @@
     {
       "loc": "NKS_ARGUMENTS_HELP_LISTING",
       "text": "Argumen kernel yang tersedia:"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNRECOVERABLEERROR",
-      "text": "Kesalahan yang tidak dapat dipulihkan dalam argumen:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA512_DESC",
@@ -1903,16 +1763,8 @@
       "text": "Seperti mode aman, tetapi juga menonaktifkan multi-pengguna dan beberapa penyesuaian"
     },
     {
-      "loc": "NKS_ARGUMENTS_NOTENOUGHARGS",
-      "text": "Tidak ada cukup argumen."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
       "text": "Warna tidak memerlukan mulai ulang, tetapi sebagian besar pengaturan memerlukan mulai ulang."
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELP",
-      "text": "Tidak ada bantuan untuk argumen \"{0}\"."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -1951,10 +1803,6 @@
       "text": "File {0} tidak ditemukan"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC",
-      "text": "Membuat array variabel dengan nilai yang disediakan"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC",
       "text": "Memeriksa semua nomor baris teks lokalisasi untuk melihat apakah semuanya sama"
     },
@@ -1985,10 +1833,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC",
       "text": "Mengurutkan daftar sistem berkas secara profesional."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC",
-      "text": "Memberikan pilihan pilihan"
     },
     {
       "loc": "NKS_SHELL_BASE_HELP_NOLISTING",
@@ -2075,10 +1919,6 @@
       "text": "Anda sudah mendapatkan informasi terkini!"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_SWITCHLISTING",
-      "text": "Perintah ini memiliki tombol-tombol di bawah ini yang mengubah cara kerjanya:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC",
       "text": "Menampilkan detail file dalam daftar"
     },
@@ -2119,76 +1959,8 @@
       "text": "Mengaktifkan debugging untuk sistem acara kernel"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGFAILED",
-      "text": "Gagal memasang bahasa khusus {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_METADATAHASNOLOCS",
-      "text": "Informasi metadata yang dibutuhkan untuk menginstal bahasa khusus tidak menyediakan lokalisasi yang diperlukan."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED1",
-      "text": "Gagal menghapus bahasa khusus {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT",
-      "text": "Panjang bahasa Inggris tidak sesuai dengan panjang token bahasa yang disediakan."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOOVERWRITE",
-      "text": "Bahasa tersebut sudah ada dan tidak dapat ditimpa."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED2",
-      "text": "Gagal menghapus bahasa kustom. Kemungkinan besar bahasa tersebut tidak ada."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGSFAILED",
-      "text": "Gagal memasang bahasa khusus."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED1",
-      "text": "Gagal menghapus bahasa khusus."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED2",
-      "text": "Gagal menghapus bahasa kustom. Lihat pengecualian internal untuk informasi lebih lanjut."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE",
       "text": "Informasi lisensi"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC",
-      "text": "Kelola bahasa Anda"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_LANGNOTFOUND",
-      "text": "Bahasa tidak ditemukan atau berkas memiliki karakter yang tidak valid."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_NOLANG",
-      "text": "Bahasa tidak ditentukan."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SAFEMODE",
-      "text": "Manajemen bahasa dinonaktifkan dalam mode aman."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SHORTNAME",
-      "text": "Nama pendek bahasa:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_FULLNAME",
-      "text": "Nama lengkap bahasa:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_TRANSLITERABLE",
-      "text": "Bahasa yang dapat ditransliterasikan:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_CUSTOM",
-      "text": "Bahasa khusus:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME",
@@ -2247,40 +2019,12 @@
       "text": "Tampilkan jumlah alias pada bantuan"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC",
-      "text": "Menjalankan perintah setelah ekspresi UESH terpenuhi"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "Kondisi tidak ditemukan dalam ekspresi."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "Kondisi {0} memerlukan {1} argumen. Mendapat {2}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "Terjadi kesalahan saat mengurai ekspresi akibat kesalahan sintaksis."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE",
-      "text": "Gagal memenuhi persyaratan. Info selengkapnya di sini:"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME",
       "text": "Karakter topeng kata sandi"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC",
       "text": "Karakter yang menutupi kata sandi. Kosongkan untuk keamanan lebih."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC",
-      "text": "Keluar dari shell jika berjalan pada subshell"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_KILLINGMOTHERSHELL",
-      "text": "Tidak dapat membunuh cangkang induk!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL",
@@ -2305,10 +2049,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
       "text": "Mengaktifkan mode debug"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE",
-      "text": "Nilai saat ini:"
     },
     {
       "loc": "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC",
@@ -2431,10 +2171,6 @@
       "text": "Mengaktifkan atau menonaktifkan fitur penyimpanan otomatis editor hex."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "Skripnya tidak terbentuk dengan benar. Periksa skripnya dan atasi semua kesalahan: {0}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC",
       "text": "Menggunakan jalur relatif, bukan jalur absolut"
     },
@@ -2445,10 +2181,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC",
       "text": "Apakah riwayat input diaktifkan atau tidak. Jika diaktifkan, Anda dapat mengakses perintah yang baru diketik menggunakan tombol panah atas atau bawah."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "Sekarang aman untuk mematikan komputer Anda."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME",
@@ -2467,14 +2199,6 @@
       "text": "Pastikan untuk menggunakan font konsol yang mendukung glif PowerLine, atau output mungkin tidak ditampilkan dengan benar. Kami sarankan"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC",
-      "text": "Membuka pustaka preset shell"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_EXCEPTION_PRESETNOTFOUND",
-      "text": "Preset yang ditentukan {0} tidak ditemukan."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_ALREADYBLOCKED",
       "text": "Perangkat sudah ada dalam daftar blokir."
     },
@@ -2485,10 +2209,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC",
       "text": "Menguji eksekusi titik masuk perakitan"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_SELECT",
-      "text": "Pilih prasetel untuk {0}:"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
@@ -2513,22 +2233,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
       "text": "Menyembunyikan splash pra-boot sebelum konfigurasi dimuat"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNKNOWNARGUMENT",
-      "text": "Argumen tidak diketahui"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING",
-      "text": "Anda harus menjalankan ConEmu atau prompt perintah Windows 10 dengan pemrosesan VT diaktifkan."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO",
-      "text": "Terminal Anda {0} pada {1}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION",
-      "text": "Apakah jalur landai ini terlihat tepat menurut Anda? Jalur landai ini seharusnya dapat bergerak dengan lancar."
     },
     {
       "loc": "NKS_DRIVERS_EXCEPTION_NOFALLBACKS",
@@ -2635,22 +2339,6 @@
       "text": "Tekan tombol apa saja untuk memulai shell, tetapi harap diingat bahwa Anda mungkin harus membuat pengguna baru secara manual."
     },
     {
-      "loc": "NKS_KERNEL_ENVERROR",
-      "text": "Kesalahan lingkungan kernel:"
-    },
-    {
-      "loc": "NKS_KERNEL_FATALERROR",
-      "text": "Nitrocid KS telah mendeteksi adanya masalah dan telah ditutup."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_INSTALL",
-      "text": "Informasi metadata yang diperlukan untuk menginstal bahasa khusus tidak ada."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_UNINSTALL",
-      "text": "Informasi metadata yang diperlukan untuk menghapus bahasa khusus tidak ada."
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "Mencoba mengubah akun yang ada saat terkunci"
     },
@@ -2697,26 +2385,6 @@
     {
       "loc": "NKS_ARGUMENTS_RESET_WIPEMISCFAILED",
       "text": "Tidak dapat menghapus file lain-lain"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELPDESC",
-      "text": "Tidak ada argumen yang membantu deskripsi"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "Konsol Anda harus mendukung warna sebenarnya untuk menggunakan tema ini."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXITPREVIEW_DESC",
-      "text": "Keluar dari pratinjau"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "Tema {0} merayakan suatu acara, tetapi Anda datang terlalu awal atau terlambat untuk hadir. Setiap tahun, tema ini dapat diakses dari {1}/{2} hingga {3}/{4}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "Tema {0} memerlukan dukungan warna sebenarnya, tetapi konsol Anda tidak mendukungnya."
     },
     {
       "loc": "NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT",
@@ -3087,10 +2755,6 @@
       "text": "Terjadi kesalahan umum HTTP shell."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLEDETECTED",
-      "text": "Konsol yang tidak berfungsi telah terdeteksi. Nitrocid KS tidak dapat terus berjalan, karena konsol Anda tidak kompatibel dengan persyaratan kami."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHALGORITHM",
       "text": "Algoritma hash tidak valid. Jika Anda menggunakan driver hash sum khusus, periksa untuk memastikan bahwa driver tersebut telah dimuat."
     },
@@ -3183,10 +2847,6 @@
       "text": "Tidak ada preset shell dengan nama ini."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",
-      "text": "Tidak ada tema dengan nama ini."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NULLUSERS",
       "text": "Tidak ada pengguna di seluruh kernel. Kita telah mencapai situasi yang sangat langka. Kernel tidak dapat melanjutkan."
     },
@@ -3231,14 +2891,6 @@
       "text": "Terjadi kesalahan shell SFTP umum."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONPARSE",
-      "text": "Penguraian kondisi gagal. Harap periksa sintaksis Anda untuk memenuhi desain yang diharapkan operator."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHSCRIPT",
-      "text": "Terjadi kesalahan saat mencoba mengurai berkas skrip UESH. Periksa berkas skrip Anda untuk mengetahui kesalahan dan perbaiki."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_USERCREATION",
       "text": "Terjadi kesalahan pembuatan pengguna."
     },
@@ -3249,10 +2901,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK",
       "text": "Terjadi kesalahan jaringan umum. Jika Anda mencoba terhubung ke ujung jarak jauh, pastikan Anda terhubung ke Internet atau jaringan lokal."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UNSUPPORTEDCONSOLE",
-      "text": "Konsol yang tidak didukung telah terdeteksi."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE",
@@ -3323,20 +2971,12 @@
       "text": "Terjadi kesalahan pengelola kontak saat mencoba melakukan operasi yang diminta. Pastikan berkas kontak ada di folder yang benar dan merupakan berkas kontak vCard 2.1, 3.0, atau 4.0 yang valid."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
-      "text": "Sistem kondisi UESH gagal saat menjalankan operasi yang diminta. Lihat pesan kesalahan di bawah untuk detail selengkapnya."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR",
       "text": "Operasi editor SQL yang tidak valid sedang dilakukan."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP",
       "text": "Grup tidak ada. Pastikan Anda telah menuliskan nama grup dengan benar."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INTERACTIVETUI",
-      "text": "Terjadi kesalahan dalam implementasi TUI Interaktif."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS",
@@ -3385,10 +3025,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_REFLECTION",
       "text": "Terjadi kesalahan pada sistem refleksi."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_THEMEMANAGEMENT",
-      "text": "Terjadi kesalahan saat mencoba menjalankan operasi manajemen tema."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_EVENTMANAGEMENT",
@@ -3759,10 +3395,6 @@
       "text": "Memulai Nitrocid..."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_CUSTOMLANGS",
-      "text": "Memuat bahasa khusus..."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_IMPORTANTADDONS",
       "text": "Memuat add-on kernel yang penting..."
     },
@@ -3793,10 +3425,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_GENERALVARSRESET",
       "text": "Variabel umum diatur ulang"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_HISTORIESSAVED",
-      "text": "Riwayat perintah shell yang tersimpan."
     },
     {
       "loc": "NKS_KERNEL_STARTING_CONFIGSAVED",
@@ -4411,32 +4039,12 @@
       "text": "Program ini dilisensikan di bawah Lisensi Publik Umum GNU 3.0 atau yang lebih baru."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "Anda menjalankan kernel versi pengembangan. Meskipun Anda dapat mencoba fitur-fitur mendatang yang mungkin ada dalam rilis final, Anda mungkin mengalami bug, ketidakstabilan, atau bahkan kehilangan data. Kami sarankan untuk menggunakan versi stabil, jika memungkinkan."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "Anda menjalankan versi kandidat rilis kernel. Meskipun Anda dapat mencoba sentuhan akhir, Anda mungkin mengalami bug, ketidakstabilan, atau bahkan kehilangan data. Kami sarankan untuk menggunakan versi stabil, jika memungkinkan."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "Kami sarankan untuk tidak menjalankan versi kernel ini, karena tidak didukung. Jika Anda mengunduh kernel ini dari sumber yang tidak dikenal, pesan ini mungkin muncul. Silakan unduh dari halaman unduhan resmi kami."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP",
-      "text": "Untuk menolak selamanya, tekan ENTER pada tombol \"Diakui\" di sini dengan menyorotnya menggunakan panah kiri pada papan ketik Anda, atau aktifkan \"Pemberitahuan pengembangan diakui\" dalam pengaturan kernel."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_OK",
       "text": "OKE"
     },
     {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_ACKED",
       "text": "Diakui"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISS_TITLE",
-      "text": "Pemberitahuan pengembangan"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
@@ -4763,228 +4371,12 @@
       "text": "Untuk bisa mendapatkan berita terbaru, Anda harus memasang add-on RSS Shell Extras. Anda dapat menggunakan perintah 'getaddons' untuk mendapatkan semua add-on tersebut!"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_QUERY",
-      "text": "Alias ​​{0} tidak ditemukan untuk ditanyakan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "Mengatur nilai output ke variabel UESH yang dipilih"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_LISTING",
-      "text": "Argumen yang diperlukan tidak disediakan untuk semua penggunaan di bawah ini:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGS",
-      "text": "Argumen yang diperlukan tidak disediakan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHES",
-      "text": "Sakelar yang diperlukan tidak disediakan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHVALUE",
-      "text": "Salah satu sakelar memerlukan nilai yang tidak disediakan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_UNKNOWNSWITCH",
-      "text": "Sakelar yang tercantum di bawah ini tidak diketahui."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_CONFLICTSWITCH",
-      "text": "Sakelar yang tercantum di bawah ini saling bentrok."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNOVALUE",
-      "text": "Sakelar di bawah ini tidak menerima nilai."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGNUMVALUE",
-      "text": "Satu atau lebih argumen mengharapkan nilai numerik, tetapi Anda memberikan angka yang tidak valid."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGEXACTWORD",
-      "text": "Satu atau lebih argumen mengharapkan kata-kata yang tepat, tetapi Anda memberikan kata yang tidak valid."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNUMVALUE",
-      "text": "Satu atau beberapa sakelar mengharapkan nilai numerik, tetapi Anda memberikan angka yang tidak valid."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ABORTED",
-      "text": "Perintah telah dibatalkan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "Anda tidak boleh langsung menjalankan perintah ini dalam mode terbungkus."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "Terjadi kesalahan saat mencoba membungkus output perintah"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_COMMANDABORTED",
-      "text": "Perintah dibatalkan karena alasan berikut:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDPATTERNINVALID",
-      "text": "Pola perintah yang diberikan tidak valid."
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "Perintah tidak ditemukan."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND",
-      "text": "Tipe shell {0} tidak ada."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED",
-      "text": "Anda harus menyediakan basis perintah."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED",
-      "text": "Anda harus memberikan perintah."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS",
-      "text": "Perintah yang ditentukan sudah ditambahkan! Ada kemungkinan mod Anda saling bertentangan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_UNDEFINED",
-      "text": "Perintah tidak ditentukan"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_CUSTOM",
-      "text": "Beberapa perintah khusus tidak dapat dimuat."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_CUSTOM",
-      "text": "Perintah khusus yang ditentukan tidak ditemukan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_CUSTOM",
-      "text": "Beberapa perintah khusus tidak dapat diunggah."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS_CUSTOM",
-      "text": "Perintah yang ditentukan sudah ditambahkan! Ada kemungkinan Anda memiliki add-on yang saling bertentangan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_ADDON",
-      "text": "Beberapa perintah addon tidak dapat dimuat."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_ADDON",
-      "text": "Perintah addon yang ditentukan tidak ditemukan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_ADDON",
-      "text": "Beberapa perintah addon tidak dapat dibongkar."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NEEDSSLASH",
-      "text": "Shell ini menggunakan perintah slash untuk menjalankan perintah. Harap tambahkan simbol slash '/' di awal perintah untuk memulai. Misalnya:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDLISTING",
-      "text": "Perintah yang tersedia:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ADDONLISTING",
-      "text": "Perintah addon kernel:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOADDONLISTING",
-      "text": "Tidak ada perintah addon kernel."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_UNIFIEDLISTING",
-      "text": "Perintah terpadu:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOUNIFIEDLISTING",
-      "text": "Perintah terpadu tidak diterapkan!!!"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_COMMAND",
-      "text": "Memerintah:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "Anda tidak dapat mendeklarasikan blok baru sebelum Anda menempatkan ekspresi yang mendukung pembuatannya, seperti kondisi atau loop. Nomor tumpukannya adalah {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "Saat memulai blok baru, pastikan Anda telah membuat indentasi tumpukan dengan benar. Nomor tumpukan adalah {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "Skripnya tidak berfungsi dengan baik. Periksa skripnya dan atasi semua kesalahan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "Pengingat untuk perintah garis miring"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
-      "text": "Menjalankan proses eksternal"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC",
-      "text": "Menjalankan proses tanpa mengganggu thread shell. Jendela terpisah akan dibuat."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
-      "text": "Menemukan perintah yang tersedia dalam tipe shell saat ini"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC",
-      "text": "Menampilkan perintah mod"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC",
-      "text": "Menampilkan perintah alias"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC",
-      "text": "Menampilkan perintah terpadu"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC",
-      "text": "Menampilkan perintah addon kernel"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC",
-      "text": "Menampilkan semua perintah"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC",
-      "text": "Menggunakan bantuan yang disederhanakan"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC",
-      "text": "Memuat riwayat shell"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
-      "text": "Mengulang tindakan terakhir atau perintah yang ditentukan"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC",
-      "text": "Menyimpan riwayat shell"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
       "text": "Menunjukkan tip kernel acak"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTSTARTWITHOUTMOTHERSHELL",
-      "text": "Cangkang tidak dapat dimulai kecuali cangkang induknya telah dimulai."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTINITSHELL",
-      "text": "Gagal saat mencoba menginisialisasi shell"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -5159,26 +4551,6 @@
       "text": "Mengubah bahasa pengguna, bukan bahasa sistem"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC",
-      "text": "Gaya pilihan satu baris"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC",
-      "text": "Gaya pilihan dua garis"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC",
-      "text": "Gaya pilihan modern"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "Outputnya hanya bisa satu karakter"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "Outputnya bisa lebih dari satu karakter"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
       "text": "Menggabungkan dua berkas teks atau lebih ke dalam konsol."
     },
@@ -5201,18 +4573,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC",
       "text": "Memaksa konversi akhir baris"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
-      "text": "Hanya menampilkan tanggal"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
-      "text": "Hanya menunjukkan waktu"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
-      "text": "Menggunakan UTC bukan lokal"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC",
@@ -5245,10 +4605,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN",
       "text": "Kelola pengemudi Anda"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "Mencetak teks apa adanya tanpa penguraian placeholder"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
@@ -5295,10 +4651,6 @@
       "text": "Menemukan file di direktori yang ditentukan atau di direktori saat ini menggunakan ekspresi reguler"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC",
-      "text": "Membagi shell UESH untuk membuat instance lain"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC",
       "text": "Menentukan jalur keluaran"
     },
@@ -5341,10 +4693,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC",
       "text": "Manajer file host sistem interaktif"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC",
-      "text": "Memungkinkan pengguna untuk memasukkan input sebagai kata sandi"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
@@ -5495,10 +4843,6 @@
       "text": "Membuka TUI interaktif di mana Anda dapat melihat jam dunia secara real time"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
-      "text": "Tidur selama milidetik tertentu"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
       "text": "Menjalankan perintah sebagai pengguna root"
     },
@@ -5549,14 +4893,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC",
       "text": "Segera atur tema pada pilihan"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC",
-      "text": "Menghapus variabel dari daftar variabel UESH"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "Hanya menghapus nilai variabel tanpa menghapusnya"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
@@ -5625,10 +4961,6 @@
     {
       "loc": "NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD",
       "text": "Pesan hari ini tidak boleh kosong."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER",
-      "text": "Tekan huruf apa saja pada papan ketik Anda untuk mengaturnya ke karakter tersebut."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM",
@@ -5975,50 +5307,6 @@
       "text": "Menguji sakelar"
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL",
-      "text": "Placeholder tidak boleh null"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERACTIONNULL",
-      "text": "Tindakan placeholder tidak boleh null"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED",
-      "text": "Placeholder tidak terdaftar"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT",
-      "text": "Placeholder harus memenuhi format ini"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "Kondisi perlu ditempatkan di akhir."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "Tidak dapat mendaftarkan kondisi yang sudah ada."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "Tidak dapat mendaftarkan kondisi kosong."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "Tidak dapat membatalkan pendaftaran kondisi yang tidak ada."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_FINDCMDS_NOTFOUND",
-      "text": "Tidak ada perintah yang ditemukan."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "Jumlah kali tidak valid."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "Tidak dapat mengulang dirinya sendiri."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
       "text": "Nomor sesi tidak valid."
     },
@@ -6149,10 +5437,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS",
       "text": "Menambahkan pengguna {0} ke grup {1}..."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_SUCCESS",
-      "text": "Anda sekarang dapat menjalankan '{0}' sebagai '{1}'!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED",
@@ -6443,10 +5727,6 @@
       "text": "Pencarian {0} untuk {1} gagal."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
-      "text": "Anda harus meneruskan sakelar -set dengan variabel yang ingin Anda tetapkan nilainya."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING",
       "text": "dimana penabung akan berada"
     },
@@ -6607,14 +5887,6 @@
       "text": "Tidak ada deskripsi perintah debug jarak jauh"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "Tipe data {0} yang ditentukan tidak valid."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "Platform {0} yang ditentukan tidak valid."
-    },
-    {
       "loc": "NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT",
       "text": "Tidak dapat memutar suara karena batas waktu."
     },
@@ -6677,22 +5949,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC",
       "text": "Jika Anda yakin bahwa konsol mendukung warna sebenarnya, atau jika Anda ingin mengubah terminal Anda ke terminal yang mendukung warna sebenarnya, ubah nilai ini."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
-      "text": "Tetapkan kode halaman"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
-      "text": "Tetapkan kode halaman bahasa saat mengganti bahasa."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME",
-      "text": "Pemberitahuan pengembangan diakui"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC",
-      "text": "Jika diatur ke benar, kernel tidak akan menampilkan pemberitahuan pengembangan setiap kali Anda boot ke kernel dalam versi pengembangan."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME",
@@ -7531,10 +6787,6 @@
       "text": "Selidiki log debug untuk informasi lebih lanjut tentang kesalahan tersebut."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC",
-      "text": "Untuk menutup selamanya, tekan ENTER pada papan ketik Anda, atau aktifkan \"Pemberitahuan pengembangan diakui\" di pengaturan kernel. Tombol lain akan terus berjalan tanpa pengakuan."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
       "text": "Anda menjalankan Nitrocid KS pada lingkungan yang tidak biasa. Harap verifikasi bahwa Anda telah memulai kernel secara langsung. Jika Anda yakin telah memulai kernel dengan cara yang biasa, mungkin karena Anda menjalankan versi Nitrocid KS yang tidak didukung."
     },
@@ -7589,18 +6841,6 @@
     {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "Tanggal dan waktu alarm mungkin belum lewat."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_TIP",
-      "text": "Konsultasikan entri bantuan untuk perintah ini untuk informasi lebih lanjut"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGLISTING",
-      "text": "Perintah ini memiliki argumen di bawah ini yang mengubah cara kerjanya:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGNODESC",
-      "text": "Deskripsi argumen tidak ditentukan"
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC",
@@ -7959,18 +7199,6 @@
       "text": "Mengurutkan daftar berdasarkan alfanumerik jika diaktifkan, atau berdasarkan abjad jika dinonaktifkan."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "Gagal mengisi tema default"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "Tidak ada metadata tema yang ditentukan."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "Tidak dapat melakukan deserialisasi metadata."
-    },
-    {
       "loc": "NKS_DRIVERS_ENCODING_BASE_EXCEPTION_NEEDSINIT",
       "text": "Pengkodean ini harus diinisialisasi."
     },
@@ -8247,34 +7475,6 @@
       "text": "Thread tidak dapat dibuat ulang"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED",
-      "text": "Gagal memuat sumber daya bahasa untuk"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LOCALIZED",
-      "text": "Tidak bisa mendapatkan teks yang dilokalkan"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS",
-      "text": "Tidak bisa mendapatkan lokalisasi bahasa Inggris"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOC",
-      "text": "Tidak bisa mendapatkan teks bahasa Inggris"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN",
-      "text": "Token bahasa harus ditentukan"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA",
-      "text": "Tidak bisa mendapatkan metadata bahasa"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATAARRAY",
-      "text": "Tidak bisa mendapatkan array metadata bahasa"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",
       "text": "Metadata MIME (diperluas)"
     },
@@ -8387,30 +7587,6 @@
       "text": "Hak Cipta (C) 2018-2025 Aptivi - Semua hak dilindungi undang-undang"
     },
     {
-      "loc": "NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO",
-      "text": "Tidak bisa mendapatkan info argumen untuk perintah atau argumen"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_COMMANDEXECUTION",
-      "text": "Parameter benang tidak ditentukan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "Tidak dapat memperoleh parameter thread untuk eksekusi proses."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_INTERNALFIELDENVVARS",
-      "text": "Tidak bisa mendapatkan bidang internal untuk variabel lingkungan"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_NOEXECUTOR",
-      "text": "Tidak bisa mendapatkan eksekutor shell untuk"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC",
-      "text": "Menampilkan perintah umum (default)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC",
       "text": "Mengubah nama lengkap pengguna (nama tampilan)"
     },
@@ -8473,18 +7649,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC",
       "text": "Interval waktu diam minimum untuk meluncurkan screensaver. Unit dalam format rentang waktu (HH:MM:DD)."
-    },
-    {
-      "loc": "NKS_THEMES_DEFAULT_DESC",
-      "text": "Tema bawaan untuk kernel"
-    },
-    {
-      "loc": "NKS_THEMES_DYNAMIC_DESC",
-      "text": "Aksen di mana-mana!"
-    },
-    {
-      "loc": "NKS_THEMES_NITRICACID_DESC",
-      "text": "Cairan tidak berwarna, berasap, dan sangat korosif"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
@@ -8579,10 +7743,6 @@
       "text": "Versi Nitrocid KS ini tidak lagi didukung."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES",
-      "text": "Gagal memuat bahasa khusus"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
       "text": "Gagal memuat add-on kernel yang penting"
     },
@@ -8615,10 +7775,6 @@
       "text": "Gagal memuat penangan pembatalan"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES",
-      "text": "Gagal memuat alias"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL",
       "text": "Gagal memuat entri panggilan cepat"
     },
@@ -8639,10 +7795,6 @@
       "text": "Gagal memuat MOTD dan MAL"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES",
-      "text": "Gagal memuat riwayat perintah shell"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS",
       "text": "Gagal memuat penanganan ekstensi"
     },
@@ -8661,10 +7813,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_RESET_VARS",
       "text": "Gagal mengatur ulang variabel umum"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES",
-      "text": "Gagal menyimpan riwayat perintah shell"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_CONSENTS",
@@ -8765,58 +7913,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR",
       "text": "Koneksi jaringan mungkin tidak terjalin dengan benar karena suatu kesalahan."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "Tidak dapat menyangga perintah yang tidak ditetapkan sebagai dapat dibungkus."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDSWITCHNODESC",
-      "text": "Deskripsi sakelar tidak ditentukan"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC",
-      "text": "Jalan menuju suatu proses"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "Argumen untuk diteruskan ke suatu proses"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "Perintah untuk menampilkan entri bantuan"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
-      "text": "Menyalurkan output perintah ke perintah lain sebagai parameter"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "Perintah sumber untuk menyalurkan outputnya ke perintah target sebagai parameter terakhir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "Perintah target untuk dieksekusi setelah membangun argumen berdasarkan output perintah sumber"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC",
-      "text": "Apakah akan meneruskan output perintah sumber sebagai satu argumen yang dikutip atau argumen yang tidak dikutip"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "Perintah untuk membungkus outputnya"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "Eksekusi perintah sumber gagal."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "Eksekusi perintah target gagal. Konten mungkin tidak terisi dengan benar. Perintah yang dieksekusi"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_FAILED",
-      "text": "Pipa rusak."
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC",
@@ -9007,18 +8103,6 @@
       "text": "Ekspresi reguler untuk mencocokkan frasa yang akan diganti"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDCOUNTRY",
-      "text": "Negara tidak valid"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_CHOOSELANGFORCOUNTRY",
-      "text": "Pilih bahasa untuk negara"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDLANG",
-      "text": "Pilihan bahasa tidak valid untuk"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_YES",
       "text": "Ya"
     },
@@ -9065,26 +8149,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC",
       "text": "Mencantumkan alarm"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "Menambahkan alias"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "Jenis shell untuk mengambil perintah dari"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "Nama alias"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "Perintah yang akan digunakan sebagai jalan pintas"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC",
-      "text": "Menghapus alias"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC",
@@ -9147,28 +8211,8 @@
       "text": "ID Bahasa"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC",
-      "text": "Mengubah bahasa menggunakan negara (Anda mungkin diminta untuk memilih bahasa)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC",
       "text": "Pesan baru untuk digunakan"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "Jawaban untuk split dengan garis miring"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "Pertanyaan untuk dicetak ke layar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "Judul jawaban pertama"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "Judul jawaban kedua, dan seterusnya..."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
@@ -9271,10 +8315,6 @@
       "text": "Daftar jenis driver"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "String untuk dicetak"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC",
       "text": "File untuk dikodekan"
     },
@@ -9311,32 +8351,12 @@
       "text": "Jenis perangkat keras"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "Ekspresi UESH untuk diuji"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC",
-      "text": "Perintah untuk dijalankan setelah evaluasi berhasil"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC",
       "text": "Jalur ke direktori untuk panel kiri"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "Jalur ke direktori untuk panel kanan"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC",
-      "text": "Memuat ulang, memuat, atau membongkar bahasa khusus"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC",
-      "text": "Nama bahasa khusus"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC",
-      "text": "Mencantumkan atau memuat ulang semua bahasa khusus"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
@@ -9455,10 +8475,6 @@
       "text": "Membuka pengaturan splash addon"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC",
-      "text": "Nilai untuk ditetapkan"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC",
       "text": "Nama variabel konfigurasi"
     },
@@ -9467,24 +8483,8 @@
       "text": "Nama pelaksana"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "Nilai pertama"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "Nilai kedua"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "Nilai ketiga, dan seterusnya..."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC",
       "text": "Nama zona waktu"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC",
-      "text": "Interval untuk tidur"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC",
@@ -9521,10 +8521,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC",
       "text": "Alamat IP untuk membuka blokir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "Nama variabel"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC",
@@ -9931,10 +8927,6 @@
       "text": "Tidak dapat memilih konfigurasi"
     },
     {
-      "loc": "NKS_KNOWNADDONS_PACKS_LANGUAGES",
-      "text": "Paket Bahasa Ekstra"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_PACKS_SCREENSAVERS",
       "text": "Paket Screensaver Ekstra"
     },
@@ -10103,22 +9095,6 @@
       "text": "Ekstra - Chatbot AI"
     },
     {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED1",
-      "text": "Gagal memuat metadata bahasa"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE1",
-      "text": "Gagal melakukan deserialisasi metadata bahasa"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED2",
-      "text": "Gagal memuat metadata bahasa untuk"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
-      "text": "Gagal melakukan deserialisasi metadata bahasa untuk"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
       "text": "Tidak dapat melakukan deserialisasi konfigurasi dasar {0}"
     },
@@ -10129,14 +9105,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_DESC",
       "text": "Bagian ini mencantumkan pengaturan driver."
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
-      "text": "Driver konsol saat ini"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
-      "text": "Driver konsol mana yang ingin Anda gunakan?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",

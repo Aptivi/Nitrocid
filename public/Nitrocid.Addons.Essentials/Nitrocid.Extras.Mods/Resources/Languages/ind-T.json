@@ -15,10 +15,6 @@
       "text": "{0} v {1} शुरू हुआ"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "अमान्य भाषा"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "सुरक्षित मोड पर पार्सिंग मोड की अनुमति नहीं है।"
     },
@@ -143,10 +139,6 @@
       "text": "स्थापना रद्द करने में विफल"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "कस्टम भाषा को स्थापित करने के लिए आवश्यक मेटाडेटा जानकारी आवश्यक स्थानीयकरण प्रदान नहीं करती है।"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "मॉड कमांड दिखाएं मदद पर भरोसा करें"
     },
@@ -157,10 +149,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "बिना शीर्षक वाला मैनुअल पेज"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "कस्टम भाषा स्थापित करने के लिए आवश्यक मेटाडेटा जानकारी मौजूद नहीं है।"
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -295,10 +283,6 @@
       "text": "अज्ञात लोडर अपवाद"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "मॉड स्थानीयकरण लोड नहीं किया जा सकता"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
     },
@@ -361,10 +345,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "यह वर्ग मॉड वर्ग नहीं है"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "बोली"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

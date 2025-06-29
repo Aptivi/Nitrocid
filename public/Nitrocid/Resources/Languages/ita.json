@@ -1,0 +1,41 @@
+{
+  "lang": "ita",
+  "name": "Italian",
+  "cultures": [
+    "it",
+    "it-CH",
+    "it-IT",
+    "it-SM",
+    "it-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Premi un tasto qualsiasi per continuare..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "Ora è possibile spegnere il computer."
+    },
+    {
+      "loc": "NKS_KERNEL_ENVERROR",
+      "text": "Errore nell'ambiente del kernel:"
+    },
+    {
+      "loc": "NKS_KERNEL_FATALERROR",
+      "text": "Nitrocid KS ha rilevato un problema ed è stato spento."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "Stai eseguendo la versione di sviluppo del kernel. Sebbene tu possa sperimentare le funzionalità future che potrebbero essere presenti nella versione finale, potresti riscontrare bug, instabilità o persino perdita di dati. Ti consigliamo di utilizzare la versione stabile, se possibile."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "Stai eseguendo la versione candidata al rilascio del kernel. Mentre puoi sperimentare i ritocchi finali, potresti imbatterti in bug, instabilità o persino perdita di dati. Ti consigliamo di utilizzare la versione stabile, se possibile."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "Sconsigliamo di eseguire questa versione del kernel perché non è supportata. Se hai scaricato questo kernel da fonti sconosciute, potrebbe apparire questo messaggio. Si prega di scaricarlo dalla nostra pagina di download ufficiale."
+    }
+  ]
+}

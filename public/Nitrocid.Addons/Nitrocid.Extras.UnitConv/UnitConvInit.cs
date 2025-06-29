@@ -97,13 +97,13 @@ namespace Nitrocid.Extras.UnitConv
         {
             LanguageTools.RemoveCustomAction(AddonName);
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
-            HomepageTools.UnregisterBuiltinAction("NKS_UNITCONV_HOMEPAGE_UNITCONV");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_UNITCONV_HOMEPAGE_UNITCONV");
         }
 
         public void FinalizeAddon()
         {
             // Add homepage entries
-            HomepageTools.RegisterBuiltinAction("NKS_UNITCONV_HOMEPAGE_UNITCONV", UnitConvTools.OpenUnitConvTui);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_UNITCONV_HOMEPAGE_UNITCONV", UnitConvTools.OpenUnitConvTui);
         }
     }
 }

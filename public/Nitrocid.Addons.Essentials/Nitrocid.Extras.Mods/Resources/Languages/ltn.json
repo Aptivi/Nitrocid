@@ -15,10 +15,6 @@
       "text": "{0} v{1} incepit"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Lingua invalida"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Parsing mods non permisit in tutum modus."
     },
@@ -143,10 +139,6 @@
       "text": "Uninstallation defecit in"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "Informatio metadata quae opus est ad instituendam linguam consuetudinum necessarias localizationes necessarias non praebet."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Monstra in mod imperium numerare in auxilium"
     },
@@ -157,10 +149,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Untitled paginam manualem"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "Informationes metadatae necessariae ad institutionem linguae consuetudinis non est."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -295,10 +283,6 @@
       "text": "Ignotum oneratus exceptione"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Non potest load mod localizations"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Impetrare occasus viscus."
     },
@@ -361,10 +345,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Hoc genus non est mod classis"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Linguae"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

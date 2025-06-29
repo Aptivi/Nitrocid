@@ -39,6 +39,7 @@ using Nitrocid.Base.Users.Windows;
 using Nitrocid.Base.Kernel.Power;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.ConsoleBase.Inputs;
+using Nitrocid.Localized;
 
 namespace Nitrocid
 {
@@ -54,6 +55,9 @@ namespace Nitrocid
         {
             try
             {
+                // Prepare language
+                LanguageTools.AddCustomAction("Nitrocid.Entry", new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+
                 // Set main thread name
                 Thread.CurrentThread.Name = "Main Nitrocid Kernel Thread";
 

@@ -21,10 +21,6 @@
       "text": "{0} v {1} is gestart"
     },
     {
-      "loc": "NKS_MODS_MODHASINVALIDLANG",
-      "text": "Ongeldige taal"
-    },
-    {
       "loc": "NKS_MODS_MODPARSESAFEMODE",
       "text": "Mods voor parseren niet toegestaan in veilige modus."
     },
@@ -149,10 +145,6 @@
       "text": "Verwijderen mislukt voor"
     },
     {
-      "loc": "NKS_MODS_MODHASNOVALIDLOCALIZATION",
-      "text": "De metagegevens die nodig zijn om de aangepaste taal te installeren, bieden niet de benodigde lokalisaties."
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME",
       "text": "Toon de mod-commando's rekenen op hulp"
     },
@@ -163,10 +155,6 @@
     {
       "loc": "NKS_MODS_MANPAGE_UNTITLEDMANPAGE",
       "text": "Naamloze handleiding"
-    },
-    {
-      "loc": "NKS_MODS_METADATANEEDEDFORCUSTOMLANG",
-      "text": "De metagegevensinformatie die nodig is om de aangepaste taal te installeren, bestaat niet."
     },
     {
       "loc": "NKS_MODS_EXCEPTION_MODSCRIPTNEEDED",
@@ -301,10 +289,6 @@
       "text": "Onbekende loader-uitzondering"
     },
     {
-      "loc": "NKS_MODS_EXCEPTION_MODLOCALIZATIONSFAILED",
-      "text": "Mod-lokalisaties kunnen niet worden geladen"
-    },
-    {
       "loc": "NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED",
       "text": "Het is niet gelukt om de instellingen op te halen."
     },
@@ -367,10 +351,6 @@
     {
       "loc": "NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS",
       "text": "Deze klasse is geen mod-klasse"
-    },
-    {
-      "loc": "NKS_MODS_TUI_MODLANGUAGES",
-      "text": "Talen"
     },
     {
       "loc": "NKS_MODS_TUI_MODENTRYPOINT",

@@ -254,7 +254,7 @@ namespace Nitrocid.Extras.Calendar
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded events & reminders.");
 
             // Add the calendar option to the homepage
-            HomepageTools.RegisterBuiltinAction("NKS_CALENDAR_HOMEPAGE_CALENDAR", CalendarTui.OpenInteractive);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_CALENDAR_HOMEPAGE_CALENDAR", CalendarTui.OpenInteractive);
         }
 
         public void StartAddon()
@@ -273,7 +273,7 @@ namespace Nitrocid.Extras.Calendar
             EventManager.CalendarEvents.Clear();
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(CalendarConfig));
-            HomepageTools.UnregisterBuiltinAction("NKS_CALENDAR_HOMEPAGE_CALENDAR");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_CALENDAR_HOMEPAGE_CALENDAR");
             ScreensaverManager.AddonSavers.Remove("calendar");
         }
     }

@@ -33,14 +33,6 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "اضغط على أي مفتاح للاستمرار..."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TEMPLATEINVALID",
-      "text": "قالب ألوان غير صالح {0}"
-    },
-    {
       "loc": "NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE",
       "text": "أدخل كلمة مرور المسؤول للصيانة."
     },
@@ -109,10 +101,6 @@
       "text": "كلمة مرور خاطئة."
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PARSEERROR",
-      "text": "خطأ في محاولة تحليل العناصر النائبة. {0}"
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_ADDERROR",
       "text": "خطأ في محاولة إضافة اسم المستخدم."
     },
@@ -153,28 +141,8 @@
       "text": "شاشة التوقف {0} غير موجودة في قاعدة البيانات. تحقق من الاسم وحاول مرة أخرى."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NODEFINITION",
-      "text": "لا يوجد تعريف للأمر {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_DEFINEDBY",
-      "text": "القيادة محددة من قبل"
-    },
-    {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND1",
       "text": "لم يتم العثور على الدليل {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASCOMMANDSAMENAME",
-      "text": "الاسم المستعار لا يمكن أن يكون نفس الاسم كأمر."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_COMMANDNOTFOUND",
-      "text": "الأمر لم يتم العثور على الاسم المستعار لـ {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_REMOVE",
-      "text": "الاسم المستعار {0} لم يتم العثور على إزالته."
     },
     {
       "loc": "NKS_FILES_EXCEPTION_DIRECTORYNOTFOUND2",
@@ -221,10 +189,6 @@
       "text": "إعادة تحميل التكوين. قد تحتاج إلى إعادة تشغيل kernel حتى تصبح بعض التغييرات نافذة المفعول."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_COLORINVALID",
-      "text": "واحد أو أكثر من الألوان غير صالح."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_NOTFOUND",
       "text": "لم يتم العثور على شاشة التوقف {0}."
     },
@@ -239,10 +203,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_DESC",
       "text": "يغير كلمة المرور للمستخدم الحالي"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CLS_DESC",
-      "text": "مسح الشاشة"
     },
     {
       "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_DESC",
@@ -305,14 +265,6 @@
       "text": "رسالة Shell: لا يُسمح للأمر المطلوب {0} بالعمل في وضع الصيانة."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMANDNOTFOUND",
-      "text": "رسالة Shell: الأمر المطلوب {0} لم يتم العثور عليه. راجع \"مساعدة\" للاطلاع على الأوامر المتاحة."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ERROREXECUTE2",
-      "text": "خطأ في محاولة تنفيذ الأمر."
-    },
-    {
       "loc": "NKS_KERNEL_TIME_TIMEZONES_LISTENTRY",
       "text": "- وقت {0}: {1}"
     },
@@ -323,10 +275,6 @@
     {
       "loc": "NKS_FILES_UNAUTHORIZED",
       "text": "غير مصرح لك بالحصول على معلومات عن {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_OBSOLETECMD",
-      "text": "هذا الأمر قديم وسيتم إزالته في إصدار مستقبلي."
     },
     {
       "loc": "NKS_USERS_EXCEPTION_CHANGEPASSWORDADMIN",
@@ -375,10 +323,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGSTARTED",
       "text": "تصحيح الاستماع على جميع العناوين باستخدام المنفذ {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_ALIASALREADYEXISTS",
-      "text": "الاسم المستعار موجود بالفعل: {0}"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_CDBGLOG_SUCCESS",
@@ -473,10 +417,6 @@
       "text": "ينفذ عن بعد أمر لجهاز الكمبيوتر البعيد"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_EXCEPTION_INVALIDTYPE",
-      "text": "نوع غير صالح {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_ENTRYSIZE",
       "text": "الحجم: {0}"
     },
@@ -515,26 +455,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILED",
       "text": "فشل بدء تصحيح الأخطاء عن بُعد: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CANTEXECUTE",
-      "text": "خطأ في محاولة تنفيذ البرنامج النصي: {0}"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_DESC",
-      "text": "يكتب النص في وحدة التحكم"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_DESC",
-      "text": "يجعل خيارات المستخدم"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHOICE_HELPER",
-      "text": "حيث <الأجوبة> هي إجابات من حرف واحد للسؤال مفصولة بخط مائل"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUT_DESC",
-      "text": "يسمح للمستخدم بإدخال الإدخال"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_DESC",
@@ -713,10 +633,6 @@
       "text": "يضيف المستخدمين"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_DESC",
-      "text": "يضيف أسماء مستعارة إلى الأوامر"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC",
       "text": "يغير اسم المضيف"
     },
@@ -739,10 +655,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC",
       "text": "يزيل مستخدم من القائمة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_REMOVALSUCCESS",
-      "text": "تمت إزالة الاسم المستعار {0} بنجاح."
     },
     {
       "loc": "NKS_KERNEL_UPDATES_CHECKFAILED",
@@ -1033,10 +945,6 @@
       "text": "يفتح قذيفة الاختبار"
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDSTARTFAILED",
-      "text": "فشل بدء \"{0}\": {1}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_CLEAR_DESC",
       "text": "يمسح الملف النصي"
     },
@@ -1121,14 +1029,6 @@
       "text": "الإدخال موجود بالفعل."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_DESC",
-      "text": "يلف إخراج وحدة التحكم"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAPUNWRAPPABLE",
-      "text": "الأمر غير قابل للالتفاف. هذه الأوامر قابلة للالتفاف:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_DESC",
       "text": "مقتطفات من أرشيف مضغوط"
     },
@@ -1157,10 +1057,6 @@
       "text": "أرسل {0} لك."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_DESC",
-      "text": "يعيّن متغيرًا إلى قيمة في نص برمجي"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_NETWORK_SSHBANNER_NAME",
       "text": "إظهار شعار SSH"
     },
@@ -1181,32 +1077,12 @@
       "text": "أوامر عامة:"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_MODLISTING",
-      "text": "أوامر وزارة الدفاع:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ALIASLISTING",
-      "text": "أوامر الاسم المستعار:"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
       "text": "نمط الصيانة"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_LOOKUPDIRS_NAME",
       "text": "دلائل البحث"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOMODLISTING",
-      "text": "لا توجد أوامر تعديل."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOALIASLISTING",
-      "text": "لا توجد أوامر اسم مستعار."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPPABLECMDNOTFOUND",
-      "text": "لم يتم العثور على أمر الالتفاف."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_DESC",
@@ -1437,14 +1313,6 @@
       "text": "واجهت شاشة التوقف خطأ أثناء عرض: {0}. اضغط اي زر للخروج."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_THEMESHOWCASE",
-      "text": "إليك كيف سيبدو المظهر الخاص بك:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_COMMANDSHELPER",
-      "text": "أوامر قابلة للالتفاف:"
-    },
-    {
       "loc": "NKS_FILES_LISTFOLDEREMPTY",
       "text": "مجلد فارغ."
     },
@@ -1459,10 +1327,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_CUSTOMSTARTUPBANNER_NAME",
       "text": "شعار بدء التشغيل المخصص"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERNOTZERO",
-      "text": "قد لا تكون الإجابة صفرًا."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSELECTION",
@@ -1483,10 +1347,6 @@
     {
       "loc": "NKS_ARGUMENTS_HELP_LISTING",
       "text": "وسيطات kernel المتوفرة:"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNRECOVERABLEERROR",
-      "text": "خطأ غير قابل للاسترداد في الوسيطة:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTSHA512_DESC",
@@ -1929,16 +1789,8 @@
       "text": "مثل الوضع الآمن ، ولكن أيضًا يعطل تعدد المستخدمين وبعض التخصيص"
     },
     {
-      "loc": "NKS_ARGUMENTS_NOTENOUGHARGS",
-      "text": "لم يكن هناك ما يكفي من الحجج."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_RELOADCONFIG_SUCCESS",
       "text": "لا تتطلب الألوان إعادة التشغيل ، لكن معظم الإعدادات تتطلب إعادة التشغيل."
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELP",
-      "text": "لا توجد مساعدة للوسيطة \"{0}\"."
     },
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_DESC",
@@ -1977,10 +1829,6 @@
       "text": "الملف {0} غير موجود"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_DESC",
-      "text": "ينشئ مصفوفة متغيرة بالقيم المتوفرة"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKLOCALIZATIONLINES_DESC",
       "text": "للتحقق من جميع أرقام أسطر نص الترجمة لمعرفة ما إذا كانت جميعها متساوية"
     },
@@ -2011,10 +1859,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_FILESYSTEM_SORTLIST_DESC",
       "text": "يفرز قائمة نظام الملفات بشكل احترافي."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SELECT_DESC",
-      "text": "يوفر اختيار الاختيار"
     },
     {
       "loc": "NKS_SHELL_BASE_HELP_NOLISTING",
@@ -2101,10 +1945,6 @@
       "text": "أنت محدث!"
     },
     {
-      "loc": "NKS_SHELL_BASE_HELP_SWITCHLISTING",
-      "text": "يحتوي هذا الأمر على المفاتيح التالية التي تغير طريقة عمله:"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SHOWDETAILS_DESC",
       "text": "يظهر تفاصيل الملف في القائمة"
     },
@@ -2145,76 +1985,8 @@
       "text": "تمكن من تصحيح أخطاء نظام أحداث kernel"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGFAILED",
-      "text": "فشل تثبيت لغة مخصصة {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_METADATAHASNOLOCS",
-      "text": "لا توفر معلومات البيانات الوصفية اللازمة لتثبيت اللغة المخصصة الترجمات المطلوبة المطلوبة."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED1",
-      "text": "فشل إلغاء تثبيت اللغة المخصصة {0}."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LENGTHINCONSISTENT",
-      "text": "لا يتطابق طول اللغة الإنجليزية مع طول رمز اللغة المقدم."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOOVERWRITE",
-      "text": "اللغة موجودة بالفعل ولا يمكن الكتابة فوقها."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGFAILED2",
-      "text": "فشل إلغاء تثبيت اللغة المخصصة. على الأرجح غير موجود."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_INSTALLCUSTLANGSFAILED",
-      "text": "فشل تثبيت اللغات المخصصة."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED1",
-      "text": "فشل إلغاء تثبيت اللغات المخصصة."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_UNINSTALLCUSTLANGSFAILED2",
-      "text": "فشل إلغاء تثبيت اللغات المخصصة. راجع الاستثناء الداخلي لمزيد من المعلومات."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE",
       "text": "معلومات الترخيص"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_DESC",
-      "text": "إدارة اللغات الخاصة بك"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_LANGNOTFOUND",
-      "text": "لم يتم العثور على اللغة أو أن الملف يحتوي على أحرف غير صالحة."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_NOLANG",
-      "text": "لم يتم تحديد اللغة."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SAFEMODE",
-      "text": "تم تعطيل إدارة اللغة في الوضع الآمن."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_SHORTNAME",
-      "text": "الاسم المختصر للغة:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_FULLNAME",
-      "text": "الاسم الكامل للغة:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_TRANSLITERABLE",
-      "text": "لغة قابلة للترجمة:"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LANGMAN_CUSTOM",
-      "text": "لغة مخصصة:"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_SPLASHENABLE_NAME",
@@ -2273,40 +2045,12 @@
       "text": "إظهار الاعتماد على الأسماء المستعارة على المساعدة"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_DESC",
-      "text": "ينفذ الأوامر بمجرد إرضاء تعبيرات UESH"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND",
-      "text": "لم يتم العثور على الشرط في التعبير."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONARGMISMATCH",
-      "text": "يتطلب الشرط {0} وسيطات {1}. حصلت على {2}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONSYNTAX",
-      "text": "خطأ في تحليل التعبير بسبب خطأ في بناء الجملة."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_IF_CONDITIONUNSATISFIABLE",
-      "text": "فشل في تلبية الشرط. مزيد من المعلومات هنا:"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_NAME",
       "text": "شخصية قناع كلمة المرور"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC",
       "text": "حرف يخفي كلمة المرور. اتركه فارغا لمزيد من الأمان."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXIT_DESC",
-      "text": "يخرج من الغلاف إذا كان يعمل على قشرة فرعية"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_KILLINGMOTHERSHELL",
-      "text": "لا يمكن أن تقتل قذيفة الأم!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_LOGOUT_LOGOUTFROMSUBSHELL",
@@ -2331,10 +2075,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
       "text": "لتمكين وضع التصحيح"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CURRENTVALUE",
-      "text": "القيمة الحالية:"
     },
     {
       "loc": "NKS_SHELL_SHELLS_HEX_COMMAND_ADDBYTE_DESC",
@@ -2457,10 +2197,6 @@
       "text": "لتشغيل أو إيقاف تشغيل ميزة الحفظ التلقائي للمحرر السداسي."
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_SCRIPTMALFORMED",
-      "text": "النص غير صحيح. افحص النص البرمجي وأصلح أية أخطاء: {0}"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_SWITCH_RELATIVE_DESC",
       "text": "يستخدم المسار النسبي بدلاً من المسار المطلق"
     },
@@ -2471,10 +2207,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_INPUTHISTORY_DESC",
       "text": "سواء تم تمكين محفوظات الإدخال أم لا. في حالة التمكين ، يمكنك الوصول إلى الأوامر المكتوبة مؤخرًا باستخدام مفاتيح الأسهم لأعلى أو لأسفل."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "يمكنك الآن إيقاف تشغيل جهاز الكمبيوتر الخاص بك بأمان."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELPOWER_NOAPMSIM_NAME",
@@ -2493,14 +2225,6 @@
       "text": "تأكد من استخدام خط وحدة تحكم يدعم الحروف الرسومية لـ PowerLine ، وإلا فقد لا يتم عرض الإخراج بشكل صحيح. نوصي"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PRESETS_DESC",
-      "text": "يفتح مكتبة shell المعدة مسبقًا"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_EXCEPTION_PRESETNOTFOUND",
-      "text": "لم يتم العثور على الإعداد المسبق المحدد {0}."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_ALREADYBLOCKED",
       "text": "الجهاز موجود بالفعل في قائمة الحظر."
     },
@@ -2511,10 +2235,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTEXECUTEASSEMBLY_DESC",
       "text": "اختبارات تنفيذ نقطة دخول التجمع"
-    },
-    {
-      "loc": "NKS_SHELL_PROMPTS_PRESETS_SELECT",
-      "text": "حدد الإعداد المسبق لـ {0}:"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_TERMINALDEBUG_DESC",
@@ -2539,22 +2259,6 @@
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_NOPREBOOTSPLASH_DESC",
       "text": "يخفي البداية قبل التمهيد قبل تحميل التكوين"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_UNKNOWNARGUMENT",
-      "text": "حجة غير معروفة"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_WARNING",
-      "text": "يجب أن تقوم بتشغيل ConEmu أو موجه أوامر Windows 10 مع تمكين معالجة VT."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_INFO",
-      "text": "المحطة الطرفية الخاصة بك هي {0} في {1}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_TOOLS_COLORTEST_QUESTION",
-      "text": "هل تبدو هذه المنحدرات مناسبة لك؟ يجب أن ينتقلوا بسلاسة."
     },
     {
       "loc": "NKS_DRIVERS_EXCEPTION_NOFALLBACKS",
@@ -2661,22 +2365,6 @@
       "text": "اضغط على أي مفتاح لبدء الصدفة على أي حال، ولكن يرجى ملاحظة أنه قد يتعين عليك إنشاء المستخدم الجديد يدويًا."
     },
     {
-      "loc": "NKS_KERNEL_ENVERROR",
-      "text": "خطأ في بيئة النواة:"
-    },
-    {
-      "loc": "NKS_KERNEL_FATALERROR",
-      "text": "اكتشف Nitrocid KS مشكلة وتم إغلاقه."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_INSTALL",
-      "text": "معلومات البيانات التعريفية اللازمة لتثبيت اللغة المخصصة غير موجودة."
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA_UNINSTALL",
-      "text": "معلومات البيانات التعريفية اللازمة لإزالة تثبيت اللغة المخصصة غير موجودة."
-    },
-    {
       "loc": "NKS_USERS_EXCEPTION_USERLOCKED",
       "text": "محاولة تعديل الحساب الحالي أثناء قفله"
     },
@@ -2723,26 +2411,6 @@
     {
       "loc": "NKS_ARGUMENTS_RESET_WIPEMISCFAILED",
       "text": "لا يمكن مسح الملفات المتنوعة"
-    },
-    {
-      "loc": "NKS_ARGUMENTS_HELP_NOHELPDESC",
-      "text": "لا يوجد وصف مساعدة حجة"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NEEDSTRUECOLOR",
-      "text": "يجب أن تدعم وحدة التحكم الخاصة بك اللون الحقيقي لاستخدام هذا المظهر."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXITPREVIEW_DESC",
-      "text": "الخروج من المعاينة"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_TIMELIMITEDTHEME",
-      "text": "يحتفل الموضوع {0} بحدث ما، ولكنك إما مبكر جدًا أو متأخر جدًا للحضور. كل عام، يمكن الوصول إلى هذا الموضوع من {1}/{2} إلى {3}/{4}."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTRUECOLOR",
-      "text": "السمة {0} تحتاج إلى دعم الألوان الحقيقية، لكن وحدة التحكم الخاصة بك لا تدعمها."
     },
     {
       "loc": "NKS_DRIVERS_ENCODING_BASE_NEEDSTEXT",
@@ -3113,10 +2781,6 @@
       "text": "حدث خطأ عام في غلاف HTTP."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INSANECONSOLEDETECTED",
-      "text": "تم اكتشاف وحدة التحكم المجنونة. لا يمكن لـ Nitrocid KS الاستمرار في التشغيل، لأن وحدة التحكم الخاصة بك غير متوافقة مع متطلباتنا."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDHASHALGORITHM",
       "text": "خوارزمية التجزئة غير صالحة. إذا كنت تستخدم برنامج تشغيل مخصص لمجموع التجزئة، فتحقق للتأكد من تحميل برنامج التشغيل."
     },
@@ -3209,10 +2873,6 @@
       "text": "لا يوجد قذيفة محددة مسبقًا بهذا الاسم."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHTHEME",
-      "text": "لا يوجد موضوع بهذا الاسم"
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NULLUSERS",
       "text": "لا يوجد مستخدمون في النواة بأكملها. لقد وصلنا إلى حالة نادرة للغاية. النواة لا يمكن أن تستمر."
     },
@@ -3257,14 +2917,6 @@
       "text": "حدث خطأ عام في غلاف SFTP."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHCONDITIONPARSE",
-      "text": "فشل تحليل الحالة. يرجى التحقق من بناء الجملة الخاص بك لتلبية التصميم المتوقع للمشغل."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UESHSCRIPT",
-      "text": "حدث خطأ أثناء محاولة تحليل ملف البرنامج النصي UESH. تحقق من ملف البرنامج النصي الخاص بك بحثًا عن الأخطاء وقم بتصحيحها."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_USERCREATION",
       "text": "حدث خطأ في إنشاء المستخدم."
     },
@@ -3275,10 +2927,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORK",
       "text": "حدث خطأ عام في الشبكة. إذا كنت تحاول الاتصال بطرف بعيد، فتأكد من اتصالك بالإنترنت أو بشبكتك المحلية."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_UNSUPPORTEDCONSOLE",
-      "text": "تم اكتشاف وحدة تحكم غير مدعومة."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_ASSERTIONFAILURE",
@@ -3349,20 +2997,12 @@
       "text": "حدث خطأ في إدارة جهات الاتصال أثناء محاولة تنفيذ العملية المطلوبة. تأكد من وجود ملف جهة الاتصال في المجلد الصحيح وأنه ملف جهة اتصال vCard 2.1 أو 3.0 أو 4.0 صالح."
     },
     {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_MESHConditional",
-      "text": "فشل نظام شرط UESH أثناء تنفيذ العملية المطلوبة. راجع رسالة الخطأ أدناه لمزيد من التفاصيل."
-    },
-    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_SQLEDITOR",
       "text": "يتم الآن تنفيذ عملية محرر SQL غير صالحة."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHGROUP",
       "text": "المجموعة غير موجودة. تحقق للتأكد من أنك كتبت اسم المجموعة بشكل صحيح."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_INTERACTIVETUI",
-      "text": "حدث خطأ في تنفيذ TUI التفاعلي."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS",
@@ -3411,10 +3051,6 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_REFLECTION",
       "text": "حدث خطأ في نظام الانعكاس."
-    },
-    {
-      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_THEMEMANAGEMENT",
-      "text": "حدث خطأ أثناء محاولة إجراء عملية لإدارة السمات."
     },
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_EVENTMANAGEMENT",
@@ -3785,10 +3421,6 @@
       "text": "بدء تشغيل النيتروسيد..."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_CUSTOMLANGS",
-      "text": "جارٍ تحميل اللغات المخصصة..."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_IMPORTANTADDONS",
       "text": "جارٍ تحميل الإضافات المهمة للنواة..."
     },
@@ -3819,10 +3451,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_GENERALVARSRESET",
       "text": "إعادة تعيين المتغيرات العامة"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_HISTORIESSAVED",
-      "text": "تاريخ أوامر الصدفة المحفوظة."
     },
     {
       "loc": "NKS_KERNEL_STARTING_CONFIGSAVED",
@@ -4437,32 +4065,12 @@
       "text": "هذا البرنامج مرخص بموجب ترخيص GNU General Public License 3.0 أو الأحدث."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "أنت تقوم بتشغيل الإصدار التطويري للنواة. بينما يمكنك تجربة الميزات القادمة التي قد تكون موجودة في الإصدار النهائي، فقد تواجه أخطاء أو عدم استقرار أو حتى فقدان البيانات. نوصي باستخدام الإصدار الثابت، إن أمكن."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "أنت تقوم بتشغيل الإصدار المرشح للنواة. بينما يمكنك تجربة اللمسات الأخيرة، قد تواجه أخطاء أو عدم استقرار أو حتى فقدان البيانات. نوصي باستخدام الإصدار الثابت، إن أمكن."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "نوصي بعدم تشغيل هذا الإصدار من النواة، لأنه غير مدعوم. إذا قمت بتنزيل هذا النواة من مصادر غير معروفة، فقد تظهر هذه الرسالة. يرجى التنزيل من صفحة التنزيلات الرسمية لدينا."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP",
-      "text": "للرفض نهائيًا، اضغط على ENTER على الزر \"تم الإقرار\" هنا من خلال تمييزه باستخدام السهم الأيسر على لوحة المفاتيح، أو قم بتمكين \"تم الإقرار بإشعار التطوير\" في إعدادات kernel."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_OK",
       "text": "نعم"
     },
     {
       "loc": "NKS_KERNEL_STARTING_DEVDISMISS_ACKED",
       "text": "معترف به"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISS_TITLE",
-      "text": "إشعار التطوير"
     },
     {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV_DESC",
@@ -4789,228 +4397,12 @@
       "text": "لتتمكن من الحصول على آخر الأخبار، يجب عليك تثبيت الملحق RSS Shell Extras. يمكنك استخدام الأمر \"getaddons\" للحصول على جميع الإضافات!"
     },
     {
-      "loc": "NKS_SHELL_BASE_ALIAS_ALIASNOTFOUND_QUERY",
-      "text": "لم يتم العثور على الاسم المستعار {0} للاستعلام عنه."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SWITCH_SET_DESC",
-      "text": "يضبط قيمة الإخراج على متغير UESH المحدد"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_LISTING",
-      "text": "لم يتم توفير الوسائط المطلوبة لجميع الاستخدامات أدناه:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGS",
-      "text": "لم يتم توفير الحجج المطلوبة."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHES",
-      "text": "لا يتم توفير المفاتيح المطلوبة."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHVALUE",
-      "text": "يتطلب أحد رموز التبديل قيمة غير متوفرة."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_UNKNOWNSWITCH",
-      "text": "رموز التبديل المسرودة أدناه غير معروفة."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_CONFLICTSWITCH",
-      "text": "تتعارض رموز التبديل المذكورة أدناه مع بعضها البعض."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNOVALUE",
-      "text": "لا تقبل المفاتيح أدناه القيم."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGNUMVALUE",
-      "text": "تتوقع واحدة أو أكثر من الوسيطات قيمة رقمية، لكنك قدمت رقمًا غير صالح."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_ARGEXACTWORD",
-      "text": "تتوقع واحدة أو أكثر من الوسيطات صياغة دقيقة، ولكنك قدمت كلمة غير صالحة."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_SWITCHNUMVALUE",
-      "text": "يتوقع واحد أو أكثر من رموز التبديل قيمة رقمية، ولكنك قمت بتوفير رقم غير صالح."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ABORTED",
-      "text": "تم إحباط الأمر."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPSHOULDBEMAIN",
-      "text": "لا يجب عليك تنفيذ هذا الأمر مباشرة في الوضع الملتف."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_WRAPFAILED",
-      "text": "حدث خطأ أثناء محاولة التفاف إخراج الأمر"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_COMMANDABORTED",
-      "text": "تم إحباط الأمر للسبب التالي:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDPATTERNINVALID",
-      "text": "تم توفير نمط أمر غير صالح."
-    },
-    {
       "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND",
       "text": "القيادة لم يتم العثور."
     },
     {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_TYPENOTFOUND",
-      "text": "نوع الصدفة {0} غير موجود."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BASENEEDED",
-      "text": "يجب عليك توفير قاعدة الأوامر."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDNEEDED",
-      "text": "يجب عليك تقديم الأمر."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS",
-      "text": "تمت إضافة الأمر المحدد بالفعل! من الممكن أن يكون لديك تعديلات متضاربة."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_UNDEFINED",
-      "text": "الأمر غير محدد"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_CUSTOM",
-      "text": "لا يمكن تحميل بعض الأوامر المخصصة."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_CUSTOM",
-      "text": "لم يتم العثور على الأمر المخصص المحدد."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_CUSTOM",
-      "text": "لا يمكن إلغاء تحميل بعض الأوامر المخصصة."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CMDALREADYEXISTS_CUSTOM",
-      "text": "تمت إضافة الأمر المحدد بالفعل! من الممكن أن يكون لديك إضافات متضاربة."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTLOAD_ADDON",
-      "text": "لا يمكن تحميل بعض أوامر الوظيفة الإضافية."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND_ADDON",
-      "text": "لم يتم العثور على أمر الملحق المحدد."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_CANTUNLOAD_ADDON",
-      "text": "لا يمكن إلغاء تحميل بعض أوامر الوظيفة الإضافية."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_NEEDSSLASH",
-      "text": "تستخدم هذه الصدفة أوامر الشرطة المائلة لتنفيذ الأوامر. يرجى إلحاق رمز الشرطة المائلة '/' ببداية الأمر للبدء. على سبيل المثال:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDLISTING",
-      "text": "الأوامر المتاحة:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_ADDONLISTING",
-      "text": "أوامر ملحق Kernel:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOADDONLISTING",
-      "text": "لا توجد أوامر إضافية للنواة."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_UNIFIEDLISTING",
-      "text": "الأوامر الموحدة:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_NOUNIFIEDLISTING",
-      "text": "الأوامر الموحدة لم تنفذ!!!"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_COMMAND",
-      "text": "يأمر:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_NEWBLOCKBEFORECONDITION",
-      "text": "لا يمكنك الإعلان عن الكتلة الجديدة قبل وضع التعبيرات التي تدعم الإنشاء، مثل الشروط أو الحلقات. رقم المكدس هو {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_INDENTINVALID",
-      "text": "عند بدء كتلة جديدة، تأكد من وضع مسافة بادئة للمكدس بشكل صحيح. رقم المكدس هو {0}."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_MALFORMED",
-      "text": "البرنامج النصي غير صحيح. تحقق من البرنامج النصي وحل أي أخطاء."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMAND_SLASHREMINDER_DESC",
-      "text": "تذكير لأوامر القطع"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_DESC",
-      "text": "ينفذ عملية خارجية"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_SWITCH_FORKED_DESC",
-      "text": "ينفذ العملية دون مقاطعة خيط الصدفة. سيتم إنشاء نافذة منفصلة."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_FINDCMDS_DESC",
-      "text": "يبحث عن الأوامر المتوفرة في نوع الصدفة الحالي"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_MOD_DESC",
-      "text": "يظهر أوامر وزارة الدفاع"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALIAS_DESC",
-      "text": "يظهر الأوامر المستعارة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_UNIFIED_DESC",
-      "text": "يظهر الأوامر الموحدة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ADDON_DESC",
-      "text": "يظهر أوامر الملحق kernel"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_ALL_DESC",
-      "text": "يظهر جميع الأوامر"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_SIMPLIFIED_DESC",
-      "text": "يستخدم مساعدة مبسطة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_LOADHISTORIES_DESC",
-      "text": "يقوم بتحميل تاريخ الصدفة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_REPEAT_DESC",
-      "text": "يكرر الإجراء الأخير أو الأمر المحدد"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_SAVEHISTORIES_DESC",
-      "text": "يحفظ تاريخ الصدفة"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_TIP_DESC",
       "text": "يظهر نصيحة نواة عشوائية"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTSTARTWITHOUTMOTHERSHELL",
-      "text": "لا يمكن أن تبدأ القذائف إلا إذا بدأت القذيفة الأم."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_CANTINITSHELL",
-      "text": "فشلت محاولة تهيئة الصدفة"
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_ERROR",
@@ -5185,26 +4577,6 @@
       "text": "يقوم بتغيير لغة المستخدم بدلاً من لغة النظام"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_O_DESC",
-      "text": "أسلوب اختيار سطر واحد"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_T_DESC",
-      "text": "أسلوب اختيار سطرين"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_M_DESC",
-      "text": "أسلوب الاختيار الحديث"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_SINGLE_DESC",
-      "text": "يمكن أن يكون الإخراج حرفًا واحدًا فقط"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_SWITCH_MULTIPLE_DESC",
-      "text": "يمكن أن يكون الإخراج أكثر من حرف"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_DESC",
       "text": "يجمع الملفين النصيين أو أكثر في وحدة التحكم."
     },
@@ -5227,18 +4599,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CONVERTLINEENDINGS_SWITCH_FORCE_DESC",
       "text": "يفرض تحويل نهاية السطر"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
-      "text": "يظهر التاريخ فقط"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
-      "text": "يظهر الوقت فقط"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
-      "text": "يستخدم UTC بدلاً من المحلي"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC",
@@ -5271,10 +4631,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DRIVERMAN",
       "text": "إدارة برامج التشغيل الخاصة بك"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_SWITCH_NOPARSE_DESC",
-      "text": "يطبع النص كما هو بدون تحليل العنصر النائب"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EDIT_DESC",
@@ -5321,10 +4677,6 @@
       "text": "يبحث عن ملف في الدليل المحدد أو في الدليل الحالي باستخدام التعبيرات العادية"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FORK_DESC",
-      "text": "شوكات قذيفة UESH لإنشاء مثيل آخر"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GET_SWITCH_OUTPUTPATH_DESC",
       "text": "يحدد مسار الإخراج"
     },
@@ -5367,10 +4719,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC",
       "text": "مدير الملفات المضيفة للنظام التفاعلي"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_INPUTPASS_DESC",
-      "text": "يسمح للمستخدم بإدخال الإدخال ككلمة مرور"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
@@ -5521,10 +4869,6 @@
       "text": "يفتح TUI التفاعلي الذي ستتمكن من خلاله من رؤية الساعة العالمية في الوقت الفعلي"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_DESC",
-      "text": "ينام لمدة ميلي ثانية محددة"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
       "text": "يقوم بتشغيل الأمر كمستخدم جذري"
     },
@@ -5575,14 +4919,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_THEMESET_SWITCH_Y_DESC",
       "text": "قم بتعيين الموضوع على الفور عند الاختيار"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_DESC",
-      "text": "إزالة متغير من قائمة متغيرات UESH"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_SWITCH_JUSTWIPE_DESC",
-      "text": "فقط يمسح القيمة المتغيرة دون إزالتها"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
@@ -5651,10 +4987,6 @@
     {
       "loc": "NKS_USERS_LOGIN_MOTD_EXCEPTION_DYNAMICNOTNULL_MOTD",
       "text": "لا يجوز أن تكون رسالة اليوم فارغة."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_PRESSLETTER",
-      "text": "اضغط على أي حرف على لوحة المفاتيح لتعيينه على هذا الحرف."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEFLOATINGNUM",
@@ -6001,50 +5333,6 @@
       "text": "مفاتيح الاختبارات"
     },
     {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNULL",
-      "text": "لا يجوز أن يكون العنصر النائب فارغًا"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERACTIONNULL",
-      "text": "لا يجوز أن يكون إجراء العنصر النائب فارغًا"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERNOTREGGED",
-      "text": "العنصر النائب غير مسجل"
-    },
-    {
-      "loc": "NKS_MISC_TEXT_PROBERS_PLACEHOLDER_EXCEPTION_PLACEHOLDERFORMAT",
-      "text": "يجب أن يفي العنصر النائب بهذا التنسيق"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONPLACEMENT_END",
-      "text": "يجب وضع الشرط في النهاية."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONCANTOVERWRITE",
-      "text": "لا يمكن تسجيل شرط موجود بالفعل."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONEMPTY",
-      "text": "لا يمكن تسجيل حالة فارغة."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_EXCEPTION_CONDITIONNOTFOUND_UNREGISTER",
-      "text": "لا يمكن إلغاء تسجيل شرط غير موجود."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_FINDCMDS_NOTFOUND",
-      "text": "لم يتم العثور على أوامر."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_INVALIDTIMES",
-      "text": "عدد غير صالح من المرات."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_REPEAT_REPEATSELF",
-      "text": "لا يمكن تكرار الذات."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_JOURNAL_SESSIONNUMBERINVALID",
       "text": "رقم الجلسة غير صالح."
     },
@@ -6175,10 +5463,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_ADDUSERTOGROUP_PROGRESS",
       "text": "جارٍ إضافة المستخدم {0} إلى المجموعة {1}..."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_ALIAS_SUCCESS",
-      "text": "يمكنك الآن تشغيل '{0}' كـ '{1}'!"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_CHKLOCK_LOCKED",
@@ -6469,10 +5753,6 @@
       "text": "فشل البحث في {0} عن {1}."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_SET_NEEDSSWITCH",
-      "text": "يجب عليك تمرير رمز التبديل -set مع المتغير الذي تريد تعيين هذه القيمة إليه."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_SETSAVER_LISTING",
       "text": "حيث سيكون التوقف"
     },
@@ -6633,14 +5913,6 @@
       "text": "لا يوجد وصف لأمر التصحيح عن بعد"
     },
     {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDDATATYPE",
-      "text": "نوع البيانات المحدد {0} غير صالح."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_SCRIPTING_CONDITIONS_EXCEPTION_INVALIDPLATFORM",
-      "text": "النظام الأساسي {0} المحدد غير صالح."
-    },
-    {
       "loc": "NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT",
       "text": "لا يمكن تشغيل الصوت بسبب انتهاء المهلة."
     },
@@ -6703,22 +5975,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SUPPORTSTRUECOLOR_DESC",
       "text": "إذا كنت متأكدًا من أن وحدة التحكم تدعم اللون الحقيقي، أو إذا كنت تريد تغيير الوحدة الطرفية الخاصة بك إلى وحدة طرفية تدعم اللون الحقيقي، فقم بتغيير هذه القيمة."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_NAME",
-      "text": "تعيين صفحة الرموز"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CODEPAGE_DESC",
-      "text": "قم بتعيين صفحة رموز اللغة عند تبديل اللغات."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_NAME",
-      "text": "تم الاعتراف بإشعار التطوير"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_DEVNOTICE_DESC",
-      "text": "إذا تم التعيين على \"صحيح\"، فلن تظهر لك النواة إشعار التطوير في كل مرة تقوم فيها بالتمهيد إلى النواة في إصدارات التطوير."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_SYSTIMEZONE_NAME",
@@ -7557,10 +6813,6 @@
       "text": "تحقق من سجلات التصحيح للحصول على مزيد من المعلومات حول الخطأ."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_DEVDISMISSTIP_CLASSIC",
-      "text": "للرفض نهائيًا، اضغط على ENTER على لوحة المفاتيح، أو قم بتمكين \"تم الإقرار بإشعار التطوير\" في إعدادات kernel. يتم المضي قدمًا في أي مفتاح آخر دون اعتراف."
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_UNUSUALENV",
       "text": "أنت تقوم بتشغيل Nitrocid KS في بيئة غير عادية. يرجى التحقق من أنك قمت بتشغيل النواة مباشرة. إذا كنت متأكدًا من أنك قمت بتشغيل النواة بالطريقة المعتادة، فقد يكون السبب هو أنك تقوم بتشغيل إصدار غير مدعوم من Nitrocid KS."
     },
@@ -7615,18 +6867,6 @@
     {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "قد لا يكون تاريخ ووقت التنبيه في الماضي."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_ARGSNOTPROVIDED_TIP",
-      "text": "راجع إدخال المساعدة لهذا الأمر لمزيد من المعلومات"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGLISTING",
-      "text": "يحتوي هذا الأمر على الوسائط التالية التي تغير طريقة عمله:"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDARGNODESC",
-      "text": "وصف الوسيطة غير محدد"
     },
     {
       "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFUNCPARAMS_DESC",
@@ -7985,18 +7225,6 @@
       "text": "يتم فرز القائمة أبجديًا رقميًا إذا تم تمكينه أو أبجديًا إذا تم تعطيله."
     },
     {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_DEFAULTTHEMEFAILED",
-      "text": "فشل في ملء السمة الافتراضية"
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_NOTHEMEMETADATA",
-      "text": "لم يتم تعريف بيانات تعريفية للموضوع."
-    },
-    {
-      "loc": "NKS_CONSOLEBASE_THEMES_EXCEPTION_THEMEMETADATAINVALID",
-      "text": "لا يمكن إلغاء تسلسل البيانات الوصفية."
-    },
-    {
       "loc": "NKS_DRIVERS_ENCODING_BASE_EXCEPTION_NEEDSINIT",
       "text": "ينبغي تهيئة هذا الترميز."
     },
@@ -8273,34 +7501,6 @@
       "text": "لا يمكن تجديد الخيط"
     },
     {
-      "loc": "NKS_LANGUAGES_EXCEPTION_RESOURCEFAILED",
-      "text": "فشل تحميل مورد اللغة لـ"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_LOCALIZED",
-      "text": "لا يمكن الحصول على نص مترجم"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOCS",
-      "text": "لا يمكن الحصول على الترجمات باللغة الإنجليزية"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_ENGLISHLOC",
-      "text": "لا يمكن الحصول على النص باللغة الإنجليزية"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NEEDSTOKEN",
-      "text": "يجب تحديد رمز اللغة"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATA",
-      "text": "لا يمكن الحصول على بيانات تعريف اللغة"
-    },
-    {
-      "loc": "NKS_LANGUAGES_EXCEPTION_NOMETADATAARRAY",
-      "text": "لا يمكن الحصول على مجموعة بيانات تعريف اللغة"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",
       "text": "بيانات التعريف MIME (الممتدة)"
     },
@@ -8413,30 +7613,6 @@
       "text": "جميع الحقوق محفوظة لشركة Aptivi - 2018-2025"
     },
     {
-      "loc": "NKS_SHELL_BASE_ARGUMENTPARSER_EXCEPTION_NOARGINFO",
-      "text": "لا يمكن الحصول على معلومات الحجة للأمر أو الحجة"
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_COMMANDEXECUTION",
-      "text": "لم يتم تحديد معلمات الخيط."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_THREADPARAMSNEEDED_PROCESSEXECUTION",
-      "text": "لا يمكن الحصول على معلمات الخيط لتنفيذ العملية."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_INTERNALFIELDENVVARS",
-      "text": "لا يمكن الحصول على حقل داخلي للمتغيرات البيئية"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_EXCEPTION_NOEXECUTOR",
-      "text": "لا يمكن الحصول على منفذ shell لـ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_SWITCH_GENERAL_DESC",
-      "text": "إظهار الأوامر العامة (افتراضي)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC",
       "text": "تغيير الاسم الكامل للمستخدم (اسم العرض)"
     },
@@ -8499,18 +7675,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_SCREENSAVER_MINIMUMIDLE_DESC",
       "text": "الحد الأدنى لفترة الخمول لبدء تشغيل شاشة التوقف. الوحدة بتنسيق الفترة الزمنية (HH:MM:SS)."
-    },
-    {
-      "loc": "NKS_THEMES_DEFAULT_DESC",
-      "text": "الموضوع الافتراضي للنواة"
-    },
-    {
-      "loc": "NKS_THEMES_DYNAMIC_DESC",
-      "text": "لهجات في كل مكان!"
-    },
-    {
-      "loc": "NKS_THEMES_NITRICACID_DESC",
-      "text": "سائل عديم اللون، دخاني، وشديد التآكل"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_VERSION_DESC",
@@ -8605,10 +7769,6 @@
       "text": "لم يعد هذا الإصدار من Nitrocid KS مدعومًا."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_CUSTOMLANGUAGES",
-      "text": "فشل تحميل اللغات المخصصة"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS",
       "text": "فشل تحميل الإضافات الهامة للنواة"
     },
@@ -8641,10 +7801,6 @@
       "text": "فشل تحميل معالج الإلغاء"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_ALIASES",
-      "text": "فشل تحميل الأسماء المستعارة"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_SPEEDDIAL",
       "text": "فشل تحميل إدخالات الاتصال السريع"
     },
@@ -8665,10 +7821,6 @@
       "text": "فشل تحميل MOTD وMAL"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_HISTORIES",
-      "text": "فشل تحميل سجلات أوامر shell"
-    },
-    {
       "loc": "NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS",
       "text": "فشل تحميل معالجات الامتداد"
     },
@@ -8687,10 +7839,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_RESET_VARS",
       "text": "فشل إعادة تعيين المتغيرات العامة"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_HISTORIES",
-      "text": "فشل في حفظ سجلات أوامر shell"
     },
     {
       "loc": "NKS_KERNEL_STARTING_FAILED_SAVE_CONSENTS",
@@ -8791,58 +7939,6 @@
     {
       "loc": "NKS_NETWORK_CONNECTION_EXCEPTION_CONNECTIONERROR",
       "text": "ربما لم يتم إنشاء اتصال الشبكة بشكل صحيح بسبب خطأ ما."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_COMMANDS_EXCEPTION_BUFFERUNWRAPPABLE",
-      "text": "لا يمكن تخزين أمر غير مضبوط على أنه قابل للتغليف في المخزن المؤقت."
-    },
-    {
-      "loc": "NKS_SHELL_BASE_HELP_CMDSWITCHNODESC",
-      "text": "وصف التبديل غير المحدد"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_PATH_DESC",
-      "text": "المسار إلى العملية"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_EXEC_ARGUMENT_ARGS_DESC",
-      "text": "الحجج التي يجب تمريرها إلى العملية"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_HELP_ARGUMENT_COMMAND_DESC",
-      "text": "أمر لإظهار إدخال المساعدة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_DESC",
-      "text": "يقوم بنقل إخراج الأمر إلى أمر آخر كمعلمات"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_SOURCE_DESC",
-      "text": "أمر المصدر لتوجيه مخرجاته إلى الأمر المستهدف كمعلمة أخيرة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_ARGUMENT_TARGET_DESC",
-      "text": "أمر الهدف الذي سيتم تنفيذه عند بناء الحجة بناءً على إخراج الأمر المصدر"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_PIPE_SWITCH_QUOTED_DESC",
-      "text": "ما إذا كان سيتم تمرير مخرجات الأمر المصدر كحجة واحدة مقتبسة أو حجة غير مقتبسة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_COMMAND_WRAP_ARGUMENT_COMMAND_DESC",
-      "text": "أمر لتغليف مخرجاته"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_SOURCEFAILED",
-      "text": "فشل تنفيذ أمر المصدر."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_TARGETFAILED",
-      "text": "فشل تنفيذ الأمر المستهدف. ربما لم يتم ملء المحتويات بشكل صحيح. تم تنفيذ الأمر"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_WRAP_FAILED",
-      "text": "الأنبوب مكسور."
     },
     {
       "loc": "NKS_SHELL_SHELLS_ADMIN_COMMAND_ARGHELP_ARGUMENT_ARGUMENT_DESC",
@@ -9033,18 +8129,6 @@
       "text": "تعبير منتظم لمطابقة العبارات التي يجب استبدالها"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDCOUNTRY",
-      "text": "بلد غير صالح"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_CHOOSELANGFORCOUNTRY",
-      "text": "اختر لغة البلد"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_CHLANG_INVALIDLANG",
-      "text": "اختيار لغة غير صالح لـ"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_YES",
       "text": "نعم"
     },
@@ -9091,26 +8175,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_ARGUMENT_LIST_DESC",
       "text": "يسرد الإنذارات"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_DESC",
-      "text": "يضيف اسم مستعار"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_TYPE_DESC",
-      "text": "نوع shell لجلب الأوامر منه"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_ALIAS_DESC",
-      "text": "الاسم المستعار"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_ADD_CMD_DESC",
-      "text": "الأمر الذي سيتم استخدامه كاختصار"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ALIAS_ARGUMENT_REM_DESC",
-      "text": "إزالة الاسم المستعار"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_BEEP_ARGUMENT_FREQ_DESC",
@@ -9173,28 +8237,8 @@
       "text": "معرف اللغة"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHLANG_SWITCH_COUNTRY_DESC",
-      "text": "تغيير اللغة باستخدام بلد (قد يُطلب منك اختيار لغة)"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHMOTD_ARGUMENT_MESSAGE_DESC",
       "text": "رسالة جديدة للاستخدام"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_ANSWERS_DESC",
-      "text": "إجابات على التقسيم بالشرطة المائلة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_INPUT_DESC",
-      "text": "سؤال للطباعة على الشاشة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE1_DESC",
-      "text": "عنوان الاجابة الاولى"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHOICE_ARGUMENT_TITLE2_DESC",
-      "text": "عنوان الإجابة الثانية، وهكذا..."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC",
@@ -9297,10 +8341,6 @@
       "text": "قائمة أنواع السائقين"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ECHO_ARGUMENT_TEXT_DESC",
-      "text": "سلسلة للطباعة"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEFILE_ARGUMENT_FILE_DESC",
       "text": "الملف المراد ترميزه"
     },
@@ -9337,32 +8377,12 @@
       "text": "نوع الجهاز"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_UESHEXPRESSION_DESC",
-      "text": "تعبير UESH للاختبار"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IF_ARGUMENT_COMMAND_DESC",
-      "text": "أمر بالتنفيذ عند التقييم الناجح"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_FIRSTPATH_DESC",
       "text": "المسار إلى الدليل للجزء الأيسر"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "المسار إلى الدليل للجزء الأيمن"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_DESC",
-      "text": "إعادة تحميل أو تحميل أو تفريغ لغة مخصصة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LOAD_LANGNAME_DESC",
-      "text": "اسم اللغة المخصصة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LANGMAN_ARGUMENT_LIST_DESC",
-      "text": "يقوم بإدراج أو إعادة تحميل جميع اللغات المخصصة"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
@@ -9481,10 +8501,6 @@
       "text": "يفتح إعدادات بدء الإضافة"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SET_ARGUMENT_VALUE_DESC",
-      "text": "القيمة المطلوب تعيينها"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC",
       "text": "اسم متغير التكوين"
     },
@@ -9493,24 +8509,8 @@
       "text": "اسم المنفذ"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE1_DESC",
-      "text": "القيمة الأولى"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE2_DESC",
-      "text": "القيمة الثانية"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETRANGE_ARGUMENT_VALUE3_DESC",
-      "text": "القيمة الثالثة، وهكذا..."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC",
       "text": "اسم المنطقة الزمنية"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SLEEP_ARGUMENT_MS_DESC",
-      "text": "فترة النوم"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_ARGUMENT_COMMAND_DESC",
@@ -9547,10 +8547,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_ARGUMENT_IP_DESC",
       "text": "عنوان IP لإلغاء الحظر"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNSET_ARGUMENT_VARIABLE_DESC",
-      "text": "اسم المتغير"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_UNZIP_ARGUMENT_ZIPFILE_DESC",
@@ -9957,10 +8953,6 @@
       "text": "لا يمكن تحديد الإعدادات"
     },
     {
-      "loc": "NKS_KNOWNADDONS_PACKS_LANGUAGES",
-      "text": "حزمة اللغات الإضافية"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_PACKS_SCREENSAVERS",
       "text": "حزمة شاشات التوقف الإضافية"
     },
@@ -10129,22 +9121,6 @@
       "text": "الإضافات - روبوت الدردشة الذكي"
     },
     {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED1",
-      "text": "فشل تحميل بيانات تعريف اللغة"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE1",
-      "text": "فشل في إلغاء تسلسل بيانات تعريف اللغة"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATAFAILED2",
-      "text": "فشل تحميل بيانات تعريف اللغة لـ"
-    },
-    {
-      "loc": "NKS_LANGUAGEPACKS_EXCEPTION_METADATADESERIALIZE2",
-      "text": "فشل إلغاء تسلسل بيانات تعريف اللغة لـ"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_BASECONFIGDESERIALIZE",
       "text": "لا يمكن إلغاء تسلسل التكوين الأساسي {0}"
     },
@@ -10155,14 +9131,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_DESC",
       "text": "يسرد هذا القسم إعدادات برنامج التشغيل."
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_NAME",
-      "text": "برنامج تشغيل وحدة التحكم الحالي"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTCONSOLEDRIVER_DESC",
-      "text": "ما هو برنامج تشغيل وحدة التحكم الذي ترغب في استخدامه؟"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTRNGDRIVER_NAME",
