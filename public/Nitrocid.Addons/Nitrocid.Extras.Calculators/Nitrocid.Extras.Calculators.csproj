@@ -35,7 +35,7 @@
   <!-- Extras.Calculators addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="StringMath" Version="4.1.2" />
+    <PackageReference Include="StringMath" Version="4.1.3" />
   </ItemGroup>
 
 </Project>
