@@ -1,10 +1,10 @@
-We've released this version to improve addon packaging.
+We have released a new version to improve UX.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Addon packaging is now more consistent
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
