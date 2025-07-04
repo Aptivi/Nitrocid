@@ -35,6 +35,7 @@ using Nitrocid.Kernel.Events;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Languages.Decoy;
 using Nitrocid.Misc.Reflection.Internal;
+using LocaleStation.Tools;
 
 namespace Nitrocid.Languages
 {
@@ -52,8 +53,15 @@ namespace Nitrocid.Languages
         /// <summary>
         /// Current language
         /// </summary>
-        public static LanguageInfo CurrentLanguageInfo =>
-            Login.LoggedIn ? currentUserLanguage : currentLanguage;
+        public static LanguageInfo CurrentLanguageInfo
+        {
+            get
+            {
+                var lang = Login.LoggedIn ? currentUserLanguage : currentLanguage;
+                LanguageCommon.Language = lang.ThreeLetterLanguageName;
+                return lang;
+            }
+        }
 
         /// <summary>
         /// The installed languages list.
