@@ -58,7 +58,6 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             TimeSpan span = new();
 
             // These command modes require arguments to be passed, so re-check here and there.
-            // TODO: Make UESH natively support this command setup.
             switch (CommandMode)
             {
                 case "start":

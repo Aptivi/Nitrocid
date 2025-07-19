@@ -35,7 +35,7 @@
   <!-- Extras.UnitConv addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="FluentFTP" Version="52.1.0" />
+    <PackageReference Include="FluentFTP" Version="53.0.1" />
     <PackageReference Include="Magico" Version="1.5.0" />
     <PackageReference Include="UnitsNet" Version="5.74.0" />
   </ItemGroup>
