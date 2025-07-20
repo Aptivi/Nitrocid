@@ -16,8 +16,6 @@
     
 *A simulator for our future-planned kernel, Nitrocid Kernel!*
 
-**WARNING: This version is currently tracking the status of Terminaux 7.0 preparation stage, so builds will fail until the first Terminaux 7.0 beta release.**
-
 <br>
 <br>
 
