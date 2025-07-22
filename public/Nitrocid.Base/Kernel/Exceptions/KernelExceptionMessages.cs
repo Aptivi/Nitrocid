@@ -144,6 +144,7 @@ namespace Nitrocid.Base.Kernel.Exceptions
                 { KernelExceptionType.Homepage,                         LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_HOMEPAGE") },
                 { KernelExceptionType.NoSuchCulture,                    LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHCULTURE") },
                 { KernelExceptionType.AudioCue,                         LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_AUDIOCUE") },
+                { KernelExceptionType.ChatbotAI,                        LanguageTools.GetLocalized("NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception? e, params object[] vars)

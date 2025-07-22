@@ -17,25 +17,67 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Network.Connections;
+using Nitrocid.Extras.ChatbotAI.Commands;
+using Nitrocid.Extras.ChatbotAI.Localized;
+using Nitrocid.Extras.ChatbotAI.Settings;
+using Nitrocid.Extras.ChatbotAI.Shell;
+using System.Collections.Generic;
+using System.Linq;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.ChatbotAI
 {
     internal class ChatbotAIInit : IAddon
     {
+        private readonly List<CommandInfo> addonCommands =
+        [
+            new CommandInfo("chatbot", /* Localizable */ "Initializes the chatbot using ChatGPT",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new SwitchInfo("apikey", /* Localizable */ "Overrides the API key that is configured in the settings"),
+
+                        new SwitchInfo("model", /* Localizable */ "Specifies the ChatGPT model variant"),
+                    ])
+                ], new ChatbotCommand()),
+        ];
+
         public string AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasChatbotAI);
 
         public string AddonTranslatedName =>
             InterAddonTranslations.GetLocalizedAddonName(KnownAddons.ExtrasChatbotAI);
 
+        internal static ChatbotAIConfig ChatbotAIConfig =>
+            ConfigTools.IsCustomSettingBuiltin(nameof(ChatbotAIConfig)) ? (ChatbotAIConfig)Config.baseConfigurations[nameof(ChatbotAIConfig)] : Config.GetFallbackKernelConfig<ChatbotAIConfig>();
+
         public void FinalizeAddon()
         { }
 
         public void StartAddon()
-        { }
+        {
+            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            var config = new ChatbotAIConfig();
+            ConfigTools.RegisterBaseSetting(config);
+            ShellManager.RegisterShell("ChatbotShell", new ChatbotShellInfo());
+            NetworkConnectionTools.RegisterCustomConnectionType("Chatbot");
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
+        }
 
         public void StopAddon()
-        { }
+        {
+            LanguageTools.RemoveCustomAction(AddonName);
+            ShellManager.UnregisterShell("ChatbotShell");
+            NetworkConnectionTools.UnregisterCustomConnectionType("Chatbot");
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
+            ConfigTools.UnregisterBaseSetting(nameof(ChatbotAIConfig));
+        }
     }
 }

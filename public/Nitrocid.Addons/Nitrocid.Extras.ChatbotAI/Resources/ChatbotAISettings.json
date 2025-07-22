@@ -1,0 +1,15 @@
+[
+    {
+        "Name": "Chatbot AI",
+        "Desc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+        "Keys": [
+            {
+                "Name": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+                "Type": "SString",
+                "Variable": "ChatGPTApiKey",
+                "Masked": true,
+                "Description": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC"
+            }
+        ]
+    },
+]
