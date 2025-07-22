@@ -476,5 +476,9 @@ namespace Nitrocid.Base.Kernel.Exceptions
         /// There was an error when processing your audio cue action.
         /// </summary>
         AudioCue,
+        /// <summary>
+        /// There was an error when trying to process your prompt for the AI chatbot.
+        /// </summary>
+        ChatbotAI,
     }
 }
