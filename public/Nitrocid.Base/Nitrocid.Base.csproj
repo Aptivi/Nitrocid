@@ -36,10 +36,10 @@
 
   <!-- KS Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Aptivestigate.Serilog" Version="1.2.2" PrivateAssets="all" />
-    <PackageReference Include="Magico" Version="1.4.1" PrivateAssets="all" />
+    <PackageReference Include="Aptivestigate.Serilog" Version="1.3.0" PrivateAssets="all" />
+    <PackageReference Include="Magico" Version="1.5.0" PrivateAssets="all" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" PrivateAssets="all" />
-    <PackageReference Include="SpecProbe" Version="3.5.1" PrivateAssets="all" />
+    <PackageReference Include="SpecProbe" Version="3.6.0" PrivateAssets="all" />
     <PackageReference Include="LocaleStation" Version="1.3.2" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
@@ -48,12 +48,12 @@
   <ItemGroup>
     <PackageReference Include="Terminaux" Version="7.0.0-20250626125827" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
     <PackageReference Include="Terminaux.Images" Version="7.0.0-20250626125827" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Textify.Offline" Version="2.12.0.2" PrivateAssets="contentfiles;analyzers;build;runtime">
+    <PackageReference Include="Textify.Offline" Version="2.13.2" PrivateAssets="contentfiles;analyzers;build;runtime">
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
-    <PackageReference Include="Textify.Offline.Data" Version="2.12.0.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Nettify" Version="1.6.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.6" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Textify.Offline.Data" Version="2.13.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Nettify" Version="1.7.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.7" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
