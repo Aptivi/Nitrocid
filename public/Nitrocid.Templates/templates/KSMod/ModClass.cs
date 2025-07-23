@@ -1,4 +1,4 @@
-﻿using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Extensions;
 using System;
 
 namespace KSMod
