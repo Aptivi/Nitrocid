@@ -16709,5 +16709,41 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region ClochromaAnalog
+        private bool clochromaanalogBright = false;
+        private int clochromaanalogDelay = 1000;
+
+        /// <summary>
+        /// [ClochromaAnalog] Whether to use bright or dark version.
+        /// </summary>
+        public bool ClochromaAnalogBright
+        {
+            get
+            {
+                return clochromaanalogBright;
+            }
+            set
+            {
+                clochromaanalogBright = value;
+            }
+        }
+        /// <summary>
+        /// [ClochromaAnalog] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int ClochromaAnalogDelay
+        {
+            get
+            {
+                return clochromaanalogDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1000;
+                clochromaanalogDelay = value;
+            }
+        }
+        #endregion
     }
 }
