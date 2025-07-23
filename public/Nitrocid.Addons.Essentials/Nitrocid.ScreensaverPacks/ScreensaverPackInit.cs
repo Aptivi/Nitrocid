@@ -47,6 +47,7 @@ namespace Nitrocid.ScreensaverPacks
             { "boxgrid", new BoxGridDisplay() },
             { "bsod", new BSODDisplay() },
             { "clochroma", new ClochromaDisplay() },
+            { "clochromaanalog", new ClochromaAnalogDisplay() },
             { "colorbleed", new ColorBleedDisplay() },
             { "colormix", new ColorMixDisplay() },
             { "commitmilestone", new CommitMilestoneDisplay() },
