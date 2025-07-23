@@ -62,7 +62,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             string minuteCode = ScreensaverPackInit.SaversConfig.ClochromaAnalogBright ? $"{(int)(currentDate.Minute / 60d * 255):X2}" : $"{currentDate.Minute:00}";
             string secondCode = ScreensaverPackInit.SaversConfig.ClochromaAnalogBright ? $"{(int)(currentDate.Second / 60d * 255):X2}" : $"{currentDate.Second:00}";
             Color timeColor = $"#{hourCode}{minuteCode}{secondCode}";
-            Color bgColor = timeColor;
+            Color bgColor = TransformationTools.GetDarkBackground(timeColor);
 
             // Render the analog clock
             ColorTools.LoadBackDry(bgColor);
