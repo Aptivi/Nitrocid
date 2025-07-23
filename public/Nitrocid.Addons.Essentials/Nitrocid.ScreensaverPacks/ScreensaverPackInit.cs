@@ -55,6 +55,7 @@ namespace Nitrocid.ScreensaverPacks
             { "dancenumbers", new DanceNumbersDisplay() },
             { "dateandtime", new DateAndTimeDisplay() },
             { "diamond", new DiamondDisplay() },
+            { "digitalclock", new DigitalClockDisplay() },
             { "disco", new DiscoDisplay() },
             { "dissolve", new DissolveDisplay() },
             { "doorshift", new DoorShiftDisplay() },

@@ -31,7 +31,7 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
 {
     internal class DigitalClock : BaseWidget, IWidget
     {
-        private Color clockColor = Color.Empty;
+        internal Color clockColor = Color.Empty;
         internal Color backgroundColor = Color.Empty;
 
         public override string Cleanup(int left, int top, int width, int height) =>
