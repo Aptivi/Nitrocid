@@ -143,13 +143,11 @@ namespace Nitrocid.Base.Misc.Interactives
                 return "";
             var configs = config.SettingsEntries ??
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
-            string entryDesc = configs[entryIdx].Desc;
+            string entryDesc = LanguageTools.GetLocalized(configs[entryIdx].Desc);
             string status =
                 $"""
-                {entryName}
-                ====================================================
-                    
-                {entryDesc}
+                {LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME").FormatString(entryName)}
+                {LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_DESCRIPTION")} {entryDesc}
                 """;
             return status;
         }
@@ -186,10 +184,8 @@ namespace Nitrocid.Base.Misc.Interactives
             string keyDesc = LanguageTools.GetLocalized(configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description);
             string status =
                 $"""
-                {entryName} > {keyName}
-                ====================================================
-                    
-                {keyDesc}
+                {LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME").FormatString(entryName)} > {keyName}
+                {LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_DESCRIPTION")} {keyDesc}
                 """;
             return status;
         }
