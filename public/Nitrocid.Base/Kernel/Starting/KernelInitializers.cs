@@ -67,6 +67,7 @@ using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.Base.Kernel.Threading.Watchdog;
 using Nitrocid.Base.Kernel.Time.Timezones;
 using Nitrocid.Base.Network.Types.RPC;
+using Nitrocid.Base.Shell.Shells;
 
 namespace Nitrocid.Base.Kernel.Starting
 {
@@ -200,6 +201,9 @@ namespace Nitrocid.Base.Kernel.Starting
                 // Add the placeholders
                 foreach (var placeholder in placeholders)
                     PlaceParse.RegisterCustomPlaceholder(placeholder.Placeholder, placeholder.PlaceholderAction);
+
+                // Add the shell completions
+                ShellCommon.RegisterCompletions();
 
                 // Initialize addons
                 try
@@ -820,9 +824,12 @@ namespace Nitrocid.Base.Kernel.Starting
                 if (!ShellManager.ShellTypeExists("DebugShell"))
                     ShellManager.UnregisterShell("DebugShell");
 
-                // Add the placeholders
+                // Remove the placeholders
                 foreach (var placeholder in placeholders)
                     PlaceParse.UnregisterCustomPlaceholder($"<{placeholder.Placeholder}>");
+
+                // Remove the shell completions
+                ShellCommon.UnregisterCompletions();
 
                 // Check for errors
                 if (exceptions.Count > 0)
