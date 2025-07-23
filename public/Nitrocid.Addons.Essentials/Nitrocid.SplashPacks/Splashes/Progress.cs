@@ -111,7 +111,7 @@ namespace Nitrocid.SplashPacks.Splashes
             string RenderedText = ProgressReport.FormatString(Vars).Truncate(ConsoleWrapper.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
             PresetStringBuilder.Append(
                 KernelColorTools.GetColor(KernelColorType.Progress).VTSequenceForeground +
-                TextWriterWhereColor.RenderWhere("{0:000}%", ProgressWritePositionX, ProgressWritePositionY, true, vars: Progress) +
+                TextWriterWhereColor.RenderWhere("{0,4:##0\\%}", ProgressWritePositionX, ProgressWritePositionY, true, vars: Progress) +
                 finalColor.VTSequenceForeground +
                 TextWriterWhereColor.RenderWhere($"{indicator}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false) +
                 ConsoleClearing.GetClearLineToRightSequence()
