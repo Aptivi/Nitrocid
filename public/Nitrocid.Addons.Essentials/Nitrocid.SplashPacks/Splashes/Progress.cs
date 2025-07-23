@@ -128,6 +128,7 @@ namespace Nitrocid.SplashPacks.Splashes
             progress.ProgressActiveForegroundColor = progressColor;
             progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor);
             progress.ProgressBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
+            progress.ShowPercentage = false;
             PresetStringBuilder.Append(RendererTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 2)));
             return PresetStringBuilder.ToString();
         }
