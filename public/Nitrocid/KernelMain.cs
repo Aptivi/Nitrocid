@@ -71,6 +71,8 @@ namespace Nitrocid
                 if (!PowerManager.KernelShutdown)
                 {
                     string devMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVMESSAGE");
+                    string alphaMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ALPHAMESSAGE");
+                    string betaMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BETAMESSAGE");
                     string rcMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_RCMESSAGE");
                     string unsupportedMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_UNSUPPORTED");
                     string anyKey = LanguageTools.GetLocalized("NKS_COMMON_ANYKEY");
@@ -82,6 +84,10 @@ namespace Nitrocid
                         devMessage
 #elif SPECIFIERRC
                         rcMessage
+#elif SPECIFIERALPHA
+                        alphaMessage
+#elif SPECIFIERBETA
+                        betaMessage
 #else
                         unsupportedMessage
 #endif
