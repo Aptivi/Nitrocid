@@ -30,7 +30,7 @@ namespace Nitrocid.Base.Misc.Reflection.Internal
     {
         internal static bool DataExists(string resource, ResourcesType type, out Stream? data, Assembly? asm = null)
         {
-            asm ??= Assembly.GetExecutingAssembly();
+            asm ??= Assembly.GetCallingAssembly();
 
             // Get the stream
             string resourceName = type == ResourcesType.Misc ? resource : $"{type}.{resource}";
@@ -42,7 +42,7 @@ namespace Nitrocid.Base.Misc.Reflection.Internal
 
         internal static Stream? GetData(string resource, ResourcesType type, Assembly? asm = null)
         {
-            asm ??= Assembly.GetExecutingAssembly();
+            asm ??= Assembly.GetCallingAssembly();
             if (!DataExists(resource, type, out Stream? data, asm))
                 throw new KernelException(KernelExceptionType.Reflection, $"Resource {resource} not found for type {type} in {asm.FullName ?? "this unknown assembly"}");
             return data;
@@ -50,7 +50,7 @@ namespace Nitrocid.Base.Misc.Reflection.Internal
 
         internal static string[] GetResourceNames(Assembly? asm)
         {
-            asm ??= Assembly.GetExecutingAssembly();
+            asm ??= Assembly.GetCallingAssembly();
             var resources = asm.GetManifestResourceNames().Select((resource) => resource.RemovePrefix($"{asm.GetName().Name}.Resources.")).ToArray();
             return resources;
         }
