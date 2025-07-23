@@ -32,6 +32,7 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
     internal class DigitalClock : BaseWidget, IWidget
     {
         private Color clockColor = Color.Empty;
+        internal Color backgroundColor = Color.Empty;
 
         public override string Cleanup(int left, int top, int width, int height) =>
             "";
@@ -39,6 +40,7 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
         public override string Initialize(int left, int top, int width, int height)
         {
             clockColor = ChangeDateAndTimeColor();
+            backgroundColor = ColorTools.CurrentBackgroundColor;
             return "";
         }
 
@@ -55,6 +57,7 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
             {
                 Text = timeStr,
                 ForegroundColor = clockColor,
+                BackgroundColor = backgroundColor,
                 Top = consoleY,
                 Settings = new()
                 {
@@ -72,6 +75,7 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
                 {
                     Text = dateStr,
                     ForegroundColor = clockColor,
+                    BackgroundColor = backgroundColor,
                     Top = consoleInfoY,
                     OneLine = true,
                     Left = left,
