@@ -27,6 +27,7 @@ using Terminaux.Colors.Transformation;
 using Nitrocid.Base.Users.Login.Widgets.Implementations;
 using Nitrocid.Base.Users.Login.Widgets;
 using Nitrocid.Base.Drivers.RNG;
+using System;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -36,6 +37,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class ClochromaAnalogDisplay : BaseScreensaver, IScreensaver
     {
         private readonly AnalogClock widget = (AnalogClock)WidgetTools.GetWidget("AnalogClock");
+        private DateTime lastDateTime;
+        private bool needsRefresh = true;
 
         /// <inheritdoc/>
         public override string ScreensaverName =>
@@ -57,21 +60,43 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             // Get the color
-            var currentDate = TimeDateTools.KernelDateTime;
-            string hourCode = ScreensaverPackInit.SaversConfig.ClochromaAnalogBright ? $"{(int)(currentDate.Hour / 23d * 255):X2}" : $"{currentDate.Hour:00}";
-            string minuteCode = ScreensaverPackInit.SaversConfig.ClochromaAnalogBright ? $"{(int)(currentDate.Minute / 60d * 255):X2}" : $"{currentDate.Minute:00}";
-            string secondCode = ScreensaverPackInit.SaversConfig.ClochromaAnalogBright ? $"{(int)(currentDate.Second / 60d * 255):X2}" : $"{currentDate.Second:00}";
-            Color timeColor = $"#{hourCode}{minuteCode}{secondCode}";
+            Color timeColor = TimeToColor();
             Color bgColor = TransformationTools.GetDarkBackground(timeColor);
+            widget.backgroundColor = bgColor;
 
             // Render the analog clock
-            ColorTools.LoadBackDry(bgColor);
+            if (needsRefresh || ConsoleResizeHandler.WasResized(false))
+            {
+                ColorTools.LoadBackDry(bgColor);
+                needsRefresh = false;
+            }
             string widgetSeq = widget.Render();
             TextWriterRaw.WriteRaw(widgetSeq);
 
             // Delay
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.ClochromaAnalogDelay);
         }
+
+        private Color TimeToColor()
+        {
+            var currentDate = TimeDateTools.KernelDateTime;
+            string hourCode = ScreensaverPackInit.SaversConfig.ClochromaAnalogBright ? $"{(int)(currentDate.Hour / 23d * 255):X2}" : $"{currentDate.Hour:00}";
+            string minuteCode = ScreensaverPackInit.SaversConfig.ClochromaAnalogBright ? $"{(int)(currentDate.Minute / 60d * 255):X2}" : $"{currentDate.Minute:00}";
+            string secondCode = ScreensaverPackInit.SaversConfig.ClochromaAnalogBright ? $"{(int)(currentDate.Second / 60d * 255):X2}" : $"{currentDate.Second:00}";
+            Color timeColor = $"#{hourCode}{minuteCode}{secondCode}";
+            if (DateTimeDifferentNoMs(currentDate))
+                needsRefresh = true;
+            lastDateTime = currentDate;
+            return timeColor;
+        }
+
+        private bool DateTimeDifferentNoMs(DateTime dateTime) =>
+            dateTime.Year != lastDateTime.Year ||
+            dateTime.Month != lastDateTime.Month ||
+            dateTime.Day != lastDateTime.Day ||
+            dateTime.Hour != lastDateTime.Hour ||
+            dateTime.Minute != lastDateTime.Minute ||
+            dateTime.Second != lastDateTime.Second;
 
         private Color ChangeAnalogClockColor()
         {

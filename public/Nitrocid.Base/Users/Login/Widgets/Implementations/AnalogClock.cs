@@ -37,6 +37,7 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
         internal Color bezelColor = Color.Empty;
         internal Color handsColor = Color.Empty;
         internal Color secondsHandColor = Color.Empty;
+        internal Color backgroundColor = Color.Empty;
         internal bool showSecondsHand = false;
         private bool clear = false;
         private string lastRendered = "";
@@ -54,6 +55,7 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
             bezelColor = ChangeAnalogClockColor();
             handsColor = ChangeAnalogClockColor();
             secondsHandColor = ChangeAnalogClockColor();
+            backgroundColor = ColorTools.CurrentBackgroundColor;
             showSecondsHand = Config.WidgetConfig.AnalogShowSecondsHand;
             lastCenter = new(0, 0);
             lastHours = new(0, 0);
@@ -85,7 +87,8 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
                     Top = posY,
                     Left = left,
                     Width = width,
-                    ForegroundColor = timeColor
+                    ForegroundColor = timeColor,
+                    BackgroundColor = backgroundColor,
                 };
                 builder.Append(timeDateClear.Render());
 
@@ -105,6 +108,7 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
                 Left = left,
                 Width = width,
                 ForegroundColor = timeColor,
+                BackgroundColor = backgroundColor,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle
@@ -178,7 +182,7 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
         }
 
         private Line GetLineFrom(Coordinate startPos, Coordinate endPos) =>
-            GetLineFrom((startPos.X, startPos.Y), (endPos.X, endPos.Y), ColorTools.CurrentBackgroundColor);
+            GetLineFrom((startPos.X, startPos.Y), (endPos.X, endPos.Y), backgroundColor);
 
         private Line GetLineFrom((int x, int y) startPos, (int x, int y) endPos, Color color)
         {
