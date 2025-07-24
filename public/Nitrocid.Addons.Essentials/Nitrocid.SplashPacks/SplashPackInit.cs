@@ -54,9 +54,15 @@ namespace Nitrocid.SplashPacks
 
         void IAddon.StartAddon()
         {
+            // Close the splash first
+            SplashManager.BeginSplashOut();
+
             // First, initialize splashes
             foreach (var splash in Splashes)
                 SplashManager.builtinSplashes.Add(splash);
+
+            // Open the splash
+            SplashManager.EndSplashOut();
 
             // Then, initialize configuration in a way that no mod can play with them
             var splashesConfig = new ExtraSplashesConfig();
@@ -65,8 +71,15 @@ namespace Nitrocid.SplashPacks
 
         void IAddon.StopAddon()
         {
+            // Close the splash first
+            SplashManager.BeginSplashOut();
+
+            // First, unload splashes
             foreach (var splash in Splashes)
                 SplashManager.builtinSplashes.Remove(splash);
+
+            // Open the splash
+            SplashManager.EndSplashOut();
 
             // Then, unload the configuration
             ConfigTools.UnregisterBaseSetting(nameof(ExtraSplashesConfig));
