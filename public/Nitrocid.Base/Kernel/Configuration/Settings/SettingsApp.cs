@@ -104,7 +104,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
             }
             int MaxSections = SettingsEntries.Length;
 
-            // TODO: We need to remove the legacy settings app in v0.2.1.
+            // TODO: We need to remove the legacy settings app in v0.2.0 Final.
             InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYSHUTDOWN"));
             while (!PromptFinished)
             {
