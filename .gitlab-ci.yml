@@ -1,0 +1,5 @@
+stages:
+  - release
+
+include:
+  - '.gitlab/workflows/release.yml'
