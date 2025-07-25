@@ -47,3 +47,45 @@ prepare_job:
     - 'glab auth login --hostname $CI_SERVER_HOST --job-token $CI_JOB_TOKEN'
     - 'glab release create $CI_COMMIT_TAG --name "$SUBJECT" --notes "$BODY"'
     - 'NUGET_APIKEY=$NUGET_APIKEY ./tools/push.sh'
+
+launchpadppa_job:
+  stage: launchpadppa
+  image: ubuntu:noble
+  rules:
+    - if: $CI_COMMIT_TAG
+  before_script:
+    - 'apt update'
+    - 'NEEDRESTART_SUSPEND=1 apt -y install devscripts debhelper-compat dput build-essential equivs'
+    - 'NEEDRESTART_SUSPEND=1 mk-build-deps -i'
+    - 'echo "$GPG_PRIVATE_KEY" | base64 -d | gpg --import --batch --yes'
+    - 'echo "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 --pinentry-mode loopback --sign --detach-sign --armor /dev/null || true'
+    - 'mkdir -p ~/.ssh/'
+    - 'echo "$SSH_PRIVATE_KEY" | base64 -d > ~/.ssh/private.key'
+    - 'chmod 600 ~/.ssh/private.key'
+    - 'echo "$SSH_UBUNTU_LAUNCHPAD_PPA_KNOWN_HOST" | base64 -d > ~/.ssh/known_hosts'
+    - |
+      cat > ~/.ssh/config << EOF
+      Host ppa.launchpad.net
+        IdentityFile ~/.ssh/private.key
+        User eofla
+      EOF
+    - |
+      cat > ~/.dput.cf << EOF
+      [apt-ppa]
+      fqdn = ppa.launchpad.net
+      method = sftp
+      incoming = ~eofla/ubuntu/nitrocid/
+      login = eofla
+      allow_unsigned_uploads = 0
+      EOF
+  script:
+    - 'make init-offline'
+    - 'make clean'
+    - 'mv debian ..'
+    - 'mv .github ..'
+    - 'mv .gitlab ..'
+    - 'tar cfv ../nitrocid-28_4.0.28.18-0.2.0.0~beta.orig.tar .'
+    - 'xz ../nitrocid-28_4.0.28.18-0.2.0.0~beta.orig.tar'
+    - 'mv ../debian .'
+    - 'debuild -S -sa'
+    - 'dput apt-ppa ../nitrocid-28_*_source.changes'
