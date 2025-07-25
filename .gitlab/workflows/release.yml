@@ -50,6 +50,8 @@ prepare_job:
 
 launchpadppa_job:
   stage: launchpadppa
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
   image: ubuntu:noble
   rules:
     - if: $CI_COMMIT_TAG
