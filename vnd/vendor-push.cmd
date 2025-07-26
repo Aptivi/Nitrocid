@@ -20,7 +20,7 @@ REM Try to push packages one by one
 set error=0
 for /l %%i in (1,1,%found_packages%) do (
     echo !package_path[%%i]!
-    dotnet nuget push "!package_path[%%i]!" --api-key %apikey% --source %source%
+    dotnet nuget push "!package_path[%%i]!" --api-key %apikey% --source %source% --skip-duplicate
     if !errorlevel! neq 0 (
         set error=!errorlevel!
         echo !package_path[%%i]! (!error!^)
