@@ -157,7 +157,7 @@ pushall() {
     done < <(find "$ROOTDIR/public/Nitrocid/KS*/" -maxdepth 1 -type f -name "*.nupkg")
     for pkg in "${packages[@]}"; do
         echo "$pkg"
-        dotnet nuget push "$pkg" --api-key "$NUGET_APIKEY" --source "$nugetsource"
+        dotnet nuget push "$pkg" --api-key "$NUGET_APIKEY" --source "$nugetsource" --skip-duplicate
         push_result=$?
         if [ $push_result -ne 0 ]; then
             checkvendorerror $push_result
