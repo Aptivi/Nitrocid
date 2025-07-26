@@ -17,7 +17,7 @@ prepare_job:
     - 'make doc'
     - './tools/docgen-pack.sh'
     - 'export SUBJECT="$(cat CHANGES.TITLE)"'
-    - 'export BODY="$(cat CHANGES)"$''\n\n''"$(sha256sum tools/*.zip | sed -e ''s/^/- /g'')"$''\n''"$(sha256sum vnd/*.zip | sed -e ''s/^/- /g'')"'
+    - 'export BODY="$(cat CHANGES)"$''\n\n''"$(sha256sum tools/*.zip | sed -e ''s/^/- /g'')"$''\n''"$(sha256sum vnd/*.zip | sed -e ''s/^/- /g'')"$''\n''"$(sha256sum vnd/changes-*.chg | sed -e ''s/^/- /g'')"'
     - 'export COMMITISH=$(git branch -r --contains $CI_COMMIT_TAG | grep -v HEAD | head -n1 | sed ''s/^[[:space:]]*origin\///'')'
     - 'export RELEASE_JSON="{\"tag_name\":\"$CI_COMMIT_TAG\",\"target_commitish\":\"$COMMITISH\",\"name\":\"$SUBJECT\",\"body\":\"${BODY//$''\n''/\\n}\",\"draft\":false,\"prerelease\":false,\"generate_release_notes\":false}"'
     - 'echo $COMMITISH $RELEASE_JSON'
@@ -32,7 +32,7 @@ prepare_job:
     - 'response=$(curl -s https://api.github.com/repos/Aptivi/Nitrocid/releases/tags/$CI_COMMIT_TAG)'
     - 'eval $(echo "$response" | grep -m 1 "id.:" | grep -w id | tr : = | tr -cd ''[[:alnum:]]='')'
     - '[ "$id" ] || { echo "Release id for tag $CI_COMMIT_TAG not found"; echo "$response\n" >&2; exit 1; }'
-    - 'files=(tools/*.zip vnd/*.zip)'
+    - 'files=(tools/*.zip vnd/*.zip vnd/changes-*.chg)'
     - |
       for file in $files; do
         filename=$(basename "$file")
