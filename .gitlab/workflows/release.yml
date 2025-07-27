@@ -59,7 +59,7 @@ launchpadppa_job:
   before_script:
     - 'apt update'
     - 'NEEDRESTART_SUSPEND=1 apt -y install devscripts debhelper-compat dput build-essential equivs'
-    - 'NEEDRESTART_SUSPEND=1 mk-build-deps -i'
+    - 'NEEDRESTART_SUSPEND=1 mk-build-deps -i -t "apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends -y"'
     - 'echo "$GPG_PRIVATE_KEY" | base64 -d | gpg --import --batch --yes'
     - 'echo "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 --pinentry-mode loopback --sign --detach-sign --armor /dev/null || true'
     - 'mkdir -p ~/.ssh/'
