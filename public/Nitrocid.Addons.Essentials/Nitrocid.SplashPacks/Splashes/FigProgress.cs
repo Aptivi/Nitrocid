@@ -39,122 +39,97 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Colors.Transformation;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
     class SplashFigProgress : BaseSplash, ISplash
     {
-
-        private int dotStep = 0;
+        private bool cleared = false;
+        private ProgressBarNoText progress = new(0, 100);
 
         // Standalone splash information
-        public override string SplashName => "FigProgress";
+        public override string SplashName => "Welcome";
 
         // Actual logic
         public override string Opening(SplashContext context)
         {
             var builder = new StringBuilder();
-            builder.Append(
-                base.Opening(context)
-            );
+            progress.Position = 0;
+            progress.Indeterminate = !Config.SplashConfig.WelcomeShowProgress;
+            progress.Width = ConsoleWrapper.WindowWidth - 6;
+            progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
+            progress.ProgressActiveForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
+            progress.ProgressBackgroundColor = ColorTools.CurrentBackgroundColor;
+            if (ConsoleResizeHandler.WasResized(true))
+                cleared = false;
+            if (!cleared)
+            {
+                cleared = true;
+                builder.Append(
+                    base.Opening(context)
+                );
+            }
+
+            // Populate some text
+            string text = $"{SplashReport.Progress}%";
+            string bottomText =
+                context == SplashContext.Preboot ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT") :
+                context == SplashContext.ShuttingDown ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN") :
+                context == SplashContext.Rebooting ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART") :
+                $"{LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_STARTING")} {KernelReleaseInfo.ConsoleTitle}";
+            bottomText +=
+                KernelEntry.SafeMode ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_SAFEMODE")}" :
+                KernelEntry.Maintenance ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE")}" :
+                KernelEntry.DebugMode ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_DEBUGMODE")}" :
+                "";
 
             // Write a glorious Welcome screen
             Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);
-            string text = $"{SplashReport.Progress}%";
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-            int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-            int consoleX, consoleY;
-            if (figWidth >= ConsoleWrapper.WindowWidth || figHeight >= ConsoleWrapper.WindowHeight)
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+            int bottomTextY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
+            var figText = new AlignedFigletText(figFont)
             {
-                // The figlet won't fit, so use small text
-                consoleX = ConsoleWrapper.WindowWidth / 2 - text.Length / 2;
-                consoleY = ConsoleWrapper.WindowHeight / 2;
-                builder.Append(
-                    col.VTSequenceForeground +
-                    TextWriterWhereColor.RenderWhere(text, consoleX, consoleY, true)
-                );
-            }
-            else
-            {
-                // Write the figlet.
-                consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-                consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                var figletText = new FigletText(figFont)
-                {
-                    Text = text,
-                    ForegroundColor = col,
-                };
-                builder.Append(
-                    RendererTools.RenderRenderable(figletText, new(consoleX, consoleY))
-                );
-                consoleY += figHeight * 2;
-            }
-
-            // Render the kernel version
-            var versionText = new AlignedText()
-            {
-                Text =
-                    context == SplashContext.Preboot ? LanguageTools.GetLocalized("NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING") :
-                    context == SplashContext.ShuttingDown ? LanguageTools.GetLocalized("NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN") :
-                    $"{LanguageTools.GetLocalized("NKS_SPLASHPACKS_FIGPROGRESS_STARTING")} {KernelReleaseInfo.ConsoleTitle}...",
-                Top = consoleY + 2,
+                Top = consoleY,
+                Text = text,
                 ForegroundColor = col,
                 Settings = new()
                 {
-                    Alignment = TextAlignment.Middle
+                    Alignment = TextAlignment.Middle,
+                }
+            };
+            var bottomTextRenderer = new AlignedText()
+            {
+                Text = bottomText,
+                ForegroundColor = col,
+                Top = bottomTextY,
+                OneLine = true,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle,
                 }
             };
             builder.Append(
-                versionText.Render()
+                figText.Render() +
+                bottomTextRenderer.Render()
             );
-            return builder.ToString();
-        }
-
-        public override string Display(SplashContext context)
-        {
-            var builder = new StringBuilder();
-            try
-            {
-                Color firstColor = ThemeColorsTools.GetColor(ThemeColorType.Background).Brightness == ColorBrightness.Light ? new(ConsoleColors.Black) : new(ConsoleColors.White);
-                Color secondColor = ThemeColorsTools.GetColor(ThemeColorType.Success);
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-                Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;
-                Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;
-                Color thirdDotColor = dotStep >= 3 ? secondColor : firstColor;
-                Color fourthDotColor = dotStep >= 4 ? secondColor : firstColor;
-                Color fifthDotColor = dotStep >= 5 ? secondColor : firstColor;
-
-                // Write the three dots
-                string dots =
-                    $"{firstDotColor.VTSequenceForeground}* " +
-                    $"{secondDotColor.VTSequenceForeground}* " +
-                    $"{thirdDotColor.VTSequenceForeground}* " +
-                    $"{fourthDotColor.VTSequenceForeground}* " +
-                    $"{fifthDotColor.VTSequenceForeground}*";
-                int dotsPosX = (ConsoleWrapper.WindowWidth / 2) - (VtSequenceTools.FilterVTSequences(dots).Length / 2);
-                int dotsPosY = ConsoleWrapper.WindowHeight - 2;
-                builder.Append(TextWriterWhereColor.RenderWhere(dots, dotsPosX, dotsPosY));
-                dotStep++;
-                if (dotStep > 5)
-                    dotStep = 0;
-            }
-            catch (ThreadInterruptedException)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
-            }
             return builder.ToString();
         }
 
         public override string Closing(SplashContext context, out bool delayRequired)
         {
             var builder = new StringBuilder();
+            cleared = false;
+            progress.Width = ConsoleWrapper.WindowWidth - 6;
             builder.Append(
                 base.Opening(context)
             );
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
-            if (context == SplashContext.Showcase || context == SplashContext.Preboot)
+            if (context == SplashContext.Showcase ||
+                context == SplashContext.Preboot)
             {
                 delayRequired = false;
                 return builder.ToString();
@@ -168,68 +143,39 @@ namespace Nitrocid.SplashPacks.Splashes
                  LanguageTools.GetLocalized("NKS_SPLASHPACKS_FIGPROGRESS_GOODBYE"))
                 .ToUpper();
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-            var figFontFallback = FigletTools.GetFigletFont("small");
-            int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-            int figWidthFallback = FigletTools.GetFigletWidth(text, figFontFallback) / 2;
-            int figHeightFallback = FigletTools.GetFigletHeight(text, figFontFallback) / 2;
-            int width = ConsoleWrapper.WindowWidth;
-            int height = ConsoleWrapper.WindowHeight;
-            int consoleX = (width / 2) - figWidth;
-            int consoleY = (height / 2) - figHeight;
-            var figletText = new FigletText(figFont)
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+            int bottomTextY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
+            var figText = new AlignedFigletText(figFont)
             {
+                Top = consoleY,
                 Text = text,
-                ForegroundColor = col,
-            };
-            if (consoleX < 0 || consoleY < 0)
-            {
-                // The figlet won't fit, so use small text
-                consoleX = (width / 2) - figWidthFallback;
-                consoleY = (height / 2) - figHeightFallback;
-                if (consoleX < 0 || consoleY < 0)
-                {
-                    // The fallback figlet also won't fit, so use smaller text
-                    consoleX = (width / 2) - (text.Length / 2);
-                    consoleY = height / 2;
-                    builder.Append(
-                        TextWriterWhereColor.RenderWhere(text, consoleX, consoleY, true)
-                    );
-                }
-                else
-                {
-                    // Write the figlet.
-                    figletText.Font = figFontFallback;
-                    builder.Append(
-                        RendererTools.RenderRenderable(figletText, new(consoleX, consoleY))
-                    );
-                    consoleY += figHeightFallback * 2;
-                }
-            }
-            else
-            {
-                // Write the figlet.
-                builder.Append(
-                    RendererTools.RenderRenderable(figletText, new(consoleX, consoleY))
-                );
-                consoleY += figHeight * 2;
-            }
-
-            // Render the kernel version
-            var versionText = new AlignedText()
-            {
-                Text = KernelReleaseInfo.ConsoleTitle,
-                Top = consoleY + 2,
                 ForegroundColor = col,
                 Settings = new()
                 {
-                    Alignment = TextAlignment.Middle
+                    Alignment = TextAlignment.Middle,
+                }
+            };
+            var bottomTextRenderer = new AlignedText()
+            {
+                Text = KernelReleaseInfo.ConsoleTitle,
+                ForegroundColor = col,
+                Top = bottomTextY,
+                OneLine = true,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle,
                 }
             };
             builder.Append(
-                versionText.Render()
+                figText.Render() +
+                bottomTextRenderer.Render()
             );
-            delayRequired = true;
+            delayRequired =
+                context == SplashContext.ShuttingDown && Config.MainConfig.DelayOnShutdown ||
+                context != SplashContext.ShuttingDown && context != SplashContext.Rebooting;
+            if ((context == SplashContext.ShuttingDown || context == SplashContext.Rebooting) && Config.MainConfig.BeepOnShutdown)
+                ConsoleWrapper.Beep();
             return builder.ToString();
         }
 
@@ -246,35 +192,33 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             var builder = new StringBuilder();
             Color col = ThemeColorsTools.GetColor(colorType);
-            string percentage = $"{Progress}%";
+            string text = $"{SplashReport.Progress}%";
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-            int figHeight = FigletTools.GetFigletHeight(percentage, figFont) / 2;
-            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            for (int i = consoleY; i <= consoleY + figHeight; i++)
-                builder.Append(TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, i, true));
-            var percentageFiglet = new AlignedFigletText(figFont, percentage)
-            {
-                Top = consoleY,
-                ForegroundColor = col,
-                Settings = new()
-                {
-                    Alignment = TextAlignment.Middle
-                }
-            };
-            var progressText = new AlignedText()
+            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
+            int progressTextY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+            var report = new AlignedText()
             {
                 Text = ProgressReport.FormatString(Vars),
-                Top = consoleY - 2,
                 ForegroundColor = col,
+                Top = progressTextY - 2,
+                OneLine = true,
                 Settings = new()
                 {
-                    Alignment = TextAlignment.Middle
+                    Alignment = TextAlignment.Middle,
                 }
             };
             builder.Append(
-                percentageFiglet.Render() +
-                TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, consoleY - 2, true) +
-                progressText.Render()
+                col.VTSequenceForeground +
+                TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, progressTextY - 2, true) +
+                report.Render()
+            );
+
+            int posX = 2;
+            int posY = ConsoleWrapper.WindowHeight - 2;
+            progress.Position = Progress;
+            progress.Width = ConsoleWrapper.WindowWidth - 6;
+            builder.Append(
+                RendererTools.RenderRenderable(progress, new(posX, posY))
             );
             return builder.ToString();
         }
