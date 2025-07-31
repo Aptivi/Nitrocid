@@ -1,6 +1,6 @@
 [submodule "tools"]
 	path = tools
-	url = https://github.com/Aptivi/tools
+	url = https://gitlab.com/aptivi/main/tools.git
 [submodule "DocGen/theme"]
 	path = DocGen/theme
-	url = https://github.com/Aptivi/docfx-apt
+	url = https://gitlab.com/aptivi/main/docfx-apt.git
