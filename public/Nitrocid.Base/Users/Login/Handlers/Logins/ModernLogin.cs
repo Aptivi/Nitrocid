@@ -128,7 +128,7 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
                 return true;
 
             // The password is not empty. Prompt for password.
-            pass = InfoBoxInputColor.WriteInfoBoxInputPassword(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PASSWORD") + $" {user}: ");
+            pass = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PASSWORD") + $" {user}: ", InfoBoxInputType.Password);
             ThemeColorsTools.LoadBackground();
 
             // Validate the password

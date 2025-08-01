@@ -226,7 +226,7 @@ namespace Nitrocid.Extras.Dates.Timers
                         string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTPROMPT") + " [{0}] ", new InfoBoxSettings()
                         {
                             ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Question)
-                        }, TimerInterval);
+                        }, InfoBoxInputType.Text, TimerInterval);
                         if (!double.TryParse(UnparsedInterval, out TimerInterval))
                         {
                             // Not numeric.
