@@ -25,6 +25,7 @@ using System.Linq;
 using Terminaux.Inputs.Styles.Infobox;
 using Nettify.Weather;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Interactive
 {
@@ -174,7 +175,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
             {
                 do
                 {
-                    Forecast.ApiKey = InfoBoxInputColor.WriteInfoBoxInputPassword(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT"), Settings.InfoBoxSettings);
+                    Forecast.ApiKey = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT"), Settings.InfoBoxSettings, InfoBoxInputType.Password);
                     if (string.IsNullOrEmpty(Forecast.ApiKey))
                         InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED"), Settings.InfoBoxSettings);
                 } while (string.IsNullOrEmpty(Forecast.ApiKey));

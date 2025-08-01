@@ -126,7 +126,10 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
 
         internal static void LoadSettingsFrom(BaseKernelConfig config)
         {
-            string Location = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT"), ThemeColorsTools.GetColor(ThemeColorType.Question));
+            string Location = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT"), new InfoBoxSettings()
+            {
+                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Question)
+            });
             Location = FilesystemTools.NeutralizePath(Location);
             if (FilesystemTools.FileExists(Location))
             {

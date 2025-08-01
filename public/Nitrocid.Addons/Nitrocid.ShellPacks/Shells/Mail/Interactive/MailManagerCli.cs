@@ -36,6 +36,7 @@ using MailKit.Net.Imap;
 using MimeKit.Cryptography;
 using Terminaux.Inputs.Styles;
 using MimeKit.Text;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
 {
@@ -467,7 +468,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                 // Determine whether to deal with the message or with the folder
                 if (CurrentPane == 1)
                 {
-                    string directoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT"), Settings.InfoBoxSettings, folder.Name);
+                    string directoryName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT"), Settings.InfoBoxSettings, InfoBoxInputType.Text, folder.Name);
                     InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR"), Settings.InfoBoxSettings);
                     MailDirectory.RenameMailDirectory(folder.Name, directoryName);
                     refreshFirstPaneListing = true;
