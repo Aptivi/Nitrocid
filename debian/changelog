@@ -1,5 +1,14 @@
 nitrocid-28 (4.0.28.18-0.2.0.0~beta-1) noble; urgency=medium
 
+  * Added new screensavers
+  * Added Chatbot AI (uses ChatGPT)
+  * Updated to Terminaux 7.0
+  * Restructured the language management to use LocaleStation
+  * Addons and mods are split into two separate folders: important and extras `*`
+  * Fixed splash closing issue if using the custom splash
+  * Build system improvements
   * General improvements and bug fixes
+  * Removed Nitrocid-specific console writers
+  * Removed duplicate code as a result of migration of some features to Terminaux 7.0
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Wed, 23 Jul 2025 11:47:54 +0300
