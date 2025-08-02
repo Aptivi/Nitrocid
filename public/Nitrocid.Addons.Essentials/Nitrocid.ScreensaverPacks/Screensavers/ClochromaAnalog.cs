@@ -47,13 +47,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
+            base.ScreensaverPreparation();
             widget.Initialize();
             widget.timeColor = ChangeAnalogClockColor();
             widget.bezelColor = ChangeAnalogClockColor();
             widget.handsColor = ChangeAnalogClockColor();
             widget.secondsHandColor = ChangeAnalogClockColor();
             widget.showSecondsHand = ScreensaverPackInit.SaversConfig.ClochromaAnalogShowSecondsHand;
-            base.ScreensaverPreparation();
         }
 
         /// <inheritdoc/>
