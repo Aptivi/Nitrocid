@@ -40,9 +40,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
+            base.ScreensaverPreparation();
             widget.Initialize();
             widget.clockColor = ChangeDigitalClockColor();
-            base.ScreensaverPreparation();
         }
 
         /// <inheritdoc/>
