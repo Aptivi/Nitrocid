@@ -52,8 +52,25 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             $"{GetUnits().OfType<string>().Count()} " + LanguageTools.GetLocalized("NKS_UNITCONV_CLI_UNITSTOCONVERT");
 
         /// <inheritdoc/>
+        public override string GetInfoFromItem(object item)
+        {
+            var unitInfos = GetUnitTypes().Cast<QuantityInfo>().ToArray();
+            var unitInfo = unitInfos[FirstPaneCurrentSelection - 1];
+            var unitValues = unitInfo.UnitInfos.Select(x => x.Value);
+            return unitInfo.Name + "\n\n  - " + string.Join("\n  - ", unitValues);
+        }
+
+        /// <inheritdoc/>
         public override string GetEntryFromItem(object item) =>
             (string)item;
+
+        /// <inheritdoc/>
+        public override string GetInfoFromItemSecondary(object item)
+        {
+            var unitEnums = GetUnitEnums().Cast<ValueTuple<Enum, Enum>>().ToArray();
+            var unitEnumTuple = unitEnums[SecondPaneCurrentSelection - 1];
+            return $"{unitEnumTuple.Item1} => {unitEnumTuple.Item2}";
+        }
 
         internal void OpenConvert()
         {
@@ -105,8 +122,18 @@ namespace Nitrocid.Extras.UnitConv.Interactives
 
         internal IEnumerable GetUnits()
         {
-            var unitInfo = GetUnitTypes().Cast<QuantityInfo>().ToArray();
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
+            foreach (ValueTuple<Enum, Enum> unitEnums in GetUnitEnums())
+            {
+                string abbreviationSource = abbreviations.GetDefaultAbbreviation(unitEnums.Item1.GetType(), Convert.ToInt32(unitEnums.Item1));
+                string abbreviationTarget = abbreviations.GetDefaultAbbreviation(unitEnums.Item2.GetType(), Convert.ToInt32(unitEnums.Item2));
+                yield return $"{abbreviationSource} => {abbreviationTarget}";
+            }
+        }
+
+        internal IEnumerable GetUnitEnums()
+        {
+            var unitInfo = GetUnitTypes().Cast<QuantityInfo>().ToArray();
             for (int i = 0; i < unitInfo.Length; i++)
             {
                 if (i != FirstPaneCurrentSelection - 1)
@@ -118,11 +145,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                 {
                     var remainingUnitValues = unitValues.Except([UnitValue]);
                     foreach (Enum remainingUnitValue in remainingUnitValues)
-                    {
-                        string abbreviationSource = abbreviations.GetDefaultAbbreviation(UnitValue.GetType(), Convert.ToInt32(UnitValue));
-                        string abbreviationTarget = abbreviations.GetDefaultAbbreviation(remainingUnitValue.GetType(), Convert.ToInt32(remainingUnitValue));
-                        yield return $"{abbreviationSource} => {abbreviationTarget}";
-                    }
+                        yield return (UnitValue, remainingUnitValue);
                 }
                 break;
             }
