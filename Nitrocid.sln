@@ -195,6 +195,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extras", "Extras", "{98EED1
 		public\Nitrocid.Addons\Directory.Build.props = public\Nitrocid.Addons\Directory.Build.props
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Core", "public\Nitrocid.Core\Nitrocid.Core.csproj", "{371C479A-01A0-AA22-65BE-3F941258C88C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -959,6 +961,22 @@ Global
 		{B34048A8-E8DB-47C7-BF79-BDCAC9B64350}.Release|x64.Build.0 = Release|Any CPU
 		{B34048A8-E8DB-47C7-BF79-BDCAC9B64350}.Release|x86.ActiveCfg = Release|Any CPU
 		{B34048A8-E8DB-47C7-BF79-BDCAC9B64350}.Release|x86.Build.0 = Release|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Debug|x64.Build.0 = Debug|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Debug|x86.Build.0 = Debug|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Release|ARM64.Build.0 = Release|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Release|x64.ActiveCfg = Release|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Release|x64.Build.0 = Release|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Release|x86.ActiveCfg = Release|Any CPU
+		{371C479A-01A0-AA22-65BE-3F941258C88C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1022,6 +1040,7 @@ Global
 		{B34048A8-E8DB-47C7-BF79-BDCAC9B64350} = {98EED11D-F8FC-4F62-9FF4-DE6CCEC6C1C4}
 		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{98EED11D-F8FC-4F62-9FF4-DE6CCEC6C1C4} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{371C479A-01A0-AA22-65BE-3F941258C88C} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}
