@@ -94,6 +94,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
                 return;
             }
 
+            #region Legacy Settings App
             // Now, the main loop
             bool PromptFinished = false;
             SettingsEntry[]? SettingsEntries = settingsType.SettingsEntries;
@@ -442,6 +443,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
                 // User prefers the modern style
                 return title + ": " + description +
                     (!string.IsNullOrEmpty(notes) ? CharManager.NewLine + notes : "");
+            #endregion
         }
 
     }
