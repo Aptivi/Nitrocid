@@ -12,7 +12,7 @@
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series-2</PackageReleaseNotes>
     <!-- MSBuild Tags -->
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageOutputPath>../Nitrocid/KSBuild/</PackageOutputPath>

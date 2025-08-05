@@ -28,7 +28,7 @@ jobs:
         run: dotnet nuget add source --username AptiviCEO --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
       - name: Release Asset Preparation
         run: |
-          cmd.exe /c "tools\build.cmd Release -p:ContinuousIntegrationBuild=true"
+          cmd.exe /c "tools\build.cmd Debug -p:ContinuousIntegrationBuild=true"
           cmd.exe /c "tools\pack.cmd"
           cmd.exe /c "tools\docgen.cmd"
           cmd.exe /c "tools\docgen-pack.cmd"

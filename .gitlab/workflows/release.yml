@@ -12,7 +12,7 @@ prepare_job:
     - 'apt update'
     - 'apt -y install make zip glab'
     - 'dotnet tool install --global docfx'
-    - 'make rel-ci'
+    - 'make dbg-ci'
     - './tools/pack.sh'
     - 'make doc'
     - './tools/docgen-pack.sh'
