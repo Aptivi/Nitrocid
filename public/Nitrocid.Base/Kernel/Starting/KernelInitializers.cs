@@ -99,7 +99,6 @@ namespace Nitrocid.Base.Kernel.Starting
             new PlaceInfo("fgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.NeutralText).VTSequenceForeground),
             new PlaceInfo("bgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground),
             new PlaceInfo("uptime", (_) => PowerManager.KernelUptime),
-            new PlaceInfo("$", MESHVariables.GetVariable),
         ];
 
         internal static void InitializeCritical()
