@@ -91,13 +91,6 @@ namespace Nitrocid.Base.Kernel.Starting
             new PlaceInfo("randomfile", (_) => FilesystemTools.GetRandomFileName()),
             new PlaceInfo("randomfolder", (_) => FilesystemTools.GetRandomFolderName()),
             new PlaceInfo("rid", (_) => KernelPlatform.GetCurrentRid()),
-            new PlaceInfo("ridgeneric", (_) => KernelPlatform.GetCurrentGenericRid()),
-            new PlaceInfo("termemu", (_) => KernelPlatform.GetTerminalEmulator()),
-            new PlaceInfo("termtype", (_) => KernelPlatform.GetTerminalType()),
-            new PlaceInfo("f", (c) => new Color(c).VTSequenceForeground),
-            new PlaceInfo("b", (c) => new Color(c).VTSequenceBackground),
-            new PlaceInfo("fgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.NeutralText).VTSequenceForeground),
-            new PlaceInfo("bgreset", (_) => ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground),
             new PlaceInfo("uptime", (_) => PowerManager.KernelUptime),
         ];
 
