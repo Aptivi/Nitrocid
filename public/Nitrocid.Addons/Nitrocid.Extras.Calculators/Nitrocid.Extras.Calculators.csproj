@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <PackageReference Include="StringMath" Version="4.1.3" />
-    <PackageReference Update="LocaleStation" Version="1.3.2" />
   </ItemGroup>
 
   <ItemGroup>
