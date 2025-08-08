@@ -1,7 +1,7 @@
 nitrocid-28 (4.0.28.18-0.2.0.0~beta-1) noble; urgency=medium
 
   * Added new screensavers
-  * Added Chatbot AI (uses ChatGPT)
+  * Added Chatbot AI (uses ChatGPT, supports GPT-5 (paid only))
   * Updated to Terminaux 7.0
   * Restructured the language management to use LocaleStation
   * Addons and mods are split into two separate folders: important and extras `*`
