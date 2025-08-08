@@ -48,7 +48,7 @@ namespace Nitrocid.Base.Shell.Shells
 
         internal static void RegisterCompletions()
         {
-            // TODO: Publicize this on Terminaux 7.1 and replace below code.
+            // TODO: Replace below code, since Terminaux 7.0.1 already implements this logic.
             var completionsListType = typeof(CommandAutoCompletionList);
             var completionsField = completionsListType.GetField(nameof(completions), BindingFlags.Static | BindingFlags.NonPublic) ??
                 throw new KernelException(KernelExceptionType.ShellOperation, "Can't get a list of completions");
