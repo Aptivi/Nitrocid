@@ -1,7 +1,7 @@
 <Project>
     <Import Project="..\..\Directory.Build.props" />
 
-    <!-- ThemePacks addon General Information -->
+    <!-- Addon General Information -->
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -13,9 +13,9 @@
         <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\$(MSBuildProjectName.Replace('Nitrocid.', ''))</OutputPath>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
     </PropertyGroup>
-    <!-- ThemePacks addon General Information End -->
+    <!-- Addon General Information End -->
 
-    <!-- ThemePacks addon Platform Information -->
+    <!-- Addon Platform Information -->
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <DefineDebug>true</DefineDebug>
     </PropertyGroup>
@@ -27,7 +27,7 @@
         <ProjectReference Include="..\..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
         <ProjectReference Include="..\..\Nitrocid.Base\Nitrocid.Base.csproj" Private="false" />
     </ItemGroup>
-    <!-- ThemePacks addon Platform Information End -->
+    <!-- Addon Platform Information End -->
 
     <!-- Addon Dependencies Information -->
     <ItemGroup>
