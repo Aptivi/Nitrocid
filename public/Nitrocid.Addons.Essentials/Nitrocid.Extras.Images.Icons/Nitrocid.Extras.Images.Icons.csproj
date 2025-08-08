@@ -16,8 +16,6 @@
     -->
     <PackageReference Include="Terminaux.Images" Version="7.0.0.1" />
     <PackageReference Include="Terminaux" Version="7.0.0.1" />
-    
-    <PackageReference Update="LocaleStation" Version="1.3.2" />
   </ItemGroup>
 
   <ItemGroup>

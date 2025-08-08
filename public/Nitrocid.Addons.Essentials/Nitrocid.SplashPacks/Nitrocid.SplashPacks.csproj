@@ -13,10 +13,6 @@
   <ItemGroup>
     <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Update="LocaleStation" Version="1.3.2" />
-  </ItemGroup>
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
   <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />

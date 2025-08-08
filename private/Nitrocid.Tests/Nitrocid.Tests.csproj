@@ -84,8 +84,4 @@
     <Delete Files="@(BuildDirs)" />
     <RemoveDir Directories="KSTest\" />
   </Target>
-
-  <ItemGroup>
-    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.14.0" />
-  </ItemGroup>
 </Project>
