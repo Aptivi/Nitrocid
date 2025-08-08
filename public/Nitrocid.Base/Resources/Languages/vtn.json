@@ -9193,6 +9193,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Bạn muốn sử dụng trình điều khiển mã hóa bất đối xứng nào?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Đã xảy ra lỗi Chatbot AI. Vui lòng đảm bảo bạn có kết nối Internet, khóa API hợp lệ và không vượt quá hạn mức API."
     }
   ]
 }

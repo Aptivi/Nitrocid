@@ -9193,6 +9193,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "どの非対称エンコードドライバーを使用しますか？"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Chatbot AI エラーが発生しました。インターネット接続、API キーの有効性、API クォータの超過がないことを確認してください。"
     }
   ]
 }

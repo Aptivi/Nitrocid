@@ -1793,6 +1793,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Si color cyclus efficitur, quot ricini ante mutantur colores in progressionibus? 1 ricinum = 0.5 tertium"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Horologium analogicum in medio scrinii, colorem secundum tempus praesens mutat."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Horologium digitale pulcherrimum tibi ostendit."
     }
   ]
 }

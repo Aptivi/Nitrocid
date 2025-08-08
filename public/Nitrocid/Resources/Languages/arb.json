@@ -59,6 +59,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "nūṣī bʿdm tšġīl hḏā al-iṣdār mn al-nwāẗ, lʾanh ġīr mdʿūm. iḏā qmt btnzīl hḏā al-nwāẗ mn mṣādr ġīr mʿrūfẗ, fqd tẓhr hḏh al-rsālẗ. īrǧi al-tnzīl mn ṣfḥẗ al-tnzīlāt al-rsmīẗ ldīnā."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "'ant tastakhdim al'iisdar altajribia min alnawati. qad tuajih akhta'an 'aw eadam astiqrar 'aw hataa fqdanan lilbayanati. nusi biastikhdam al'iisdar almustaqiri 'iin 'amkana."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "'ant tastakhdim al'iisdar altajribia min alnawati. qad tuajih akhta'an 'aw eadam astiqrar 'aw hataa fqdanan lilbayanati. nusi biastikhdam al'iisdar almustaqiri 'iin 'amkana."
     }
   ]
 }

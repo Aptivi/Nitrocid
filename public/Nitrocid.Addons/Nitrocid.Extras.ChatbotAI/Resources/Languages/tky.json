@@ -1,0 +1,79 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "ChatGPT kullanarak chatbot'u başlatır"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "Ayarlarda yapılandırılan API anahtarını geçersiz kılar"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "ChatGPT model varyantını belirtir"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "Chatbot'un sorumlu bir şekilde kullanılmasını teşvik ediyoruz. Bu, OpenAI'ye ait olan ChatGPT API'sini kullanır. OpenAI ile bağlantılı değiliz ve bu resmi bir ChatGPT istemcisi değildir. Chatbot'u kullanmadan önce ChatGPT'nin hüküm ve koşullarını okumanızı öneririz. '/exit' komutunu kullanarak çıkabilirsiniz."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Chatbot AI kabuğunda bir hata oluştu:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "Sends prompt to the chatbot"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "Command'ı temsil eden dize"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "Chatbot istemcisi yok."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "Yanıtlanıyor..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "Bu chatbot yanlış yanıtlar üretebilir, bu nedenle doğruluğunu kontrol edin."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Son kabuk, ayrılacak kabuk değil."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Ayar girişleri alınamadı."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "ChatGPT için bir API anahtarı yazın"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "API anahtarı sağlanmamıştır."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "ChatGPT destekli Chatbot AI'yı yapılandırır"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "ChatGPT API Anahtarı"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "ChatGPT'ye erişim için API anahtarınız. Ücretsiz API anahtarını kullanabilirsiniz, ancak gelişmiş modelleri kullanamazsınız. Tüm ücretli modellere tam erişim istiyorsanız, erişim için ödeme yapmanız gerekir."
+    }
+  ]
+}

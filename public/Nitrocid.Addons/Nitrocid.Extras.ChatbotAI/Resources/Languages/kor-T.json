@@ -1,0 +1,79 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "ChatGPT를 사용하여 챗봇을 초기화합니다."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "설정에서 구성된 API 키를 재정의합니다."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "ChatGPT 모델 변형을 지정합니다."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "챗봇을 책임감 있게 사용하는 것을 권장합니다. 이 챗봇은 OpenAI가 소유한 ChatGPT API를 사용합니다. OpenAI는 OpenAI와 제휴 관계가 없으며, 공식 ChatGPT 클라이언트가 아닙니다. 챗봇을 사용하기 전에 ChatGPT의 이용 약관을 읽어보시기 바랍니다. '/exit'를 사용하여 종료할 수 있습니다."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "챗봇 AI 셸에 오류가 발생했습니다."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "챗봇에 프롬프트를 전송합니다."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "프롬프트를 나타내는 문자열"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "챗봇 클라이언트가 없습니다."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "응답 중..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "이 챗봇은 부정확한 응답을 생성할 수 있으므로, 관련 정보를 확인하세요."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "마지막 셸은 분리할 셸이 아닙니다."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "설정 항목을 가져오지 못했습니다."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "ChatGPT용 API 키를 작성하세요."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "API 키가 제공되지 않았습니다."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "ChatGPT 기반 Chatbot AI를 구성합니다."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "ChatGPT API 키"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "액세스를 위한 ChatGPT용 API 키입니다. 무료 API 키는 사용할 수 있지만 고급 모델은 사용할 수 없습니다. 모든 유료 모델에 대한 전체 액세스를 원하시면 액세스 비용을 지불해야 합니다."
+    }
+  ]
+}

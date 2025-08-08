@@ -1,0 +1,81 @@
+{
+  "lang": "cnt",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "Shǐyòng ChatGPT chūshǐhuà liáotiān jīqìrén"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "fùgài shèdìng zhōng pèizhì de API jīn yào"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "zhǐdìng ChatGPT móxíng biàn tǐ"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "wǒmen gǔlì fù zérèn dì shǐyòng liáotiān jīqìrén. Cǐ cāozuò shǐyòng ChatGPT de API, gāi API yóu OpenAI yǒngyǒu. Wǒmen yǔ tāmen méiyǒu rènhé guānlián, bìngqiě zhè bùshì guānfāng de ChatGPT kèhù duān. Wǒmen jiànyì nín zài shǐyòng liáotiān jīqìrén zhīqián yuèdú ChatGPT de tiáokuǎn hé tiáojiàn. Nín kěyǐ shǐyòng “/exit” tuìchū."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Liáotiān jīqìrén AI shell fāshēng cuòwù:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "Xiàng liáotiān jīqìrén fāsòng tíshì"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "biǎoshì tíshì de zì chuàn"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "méiyǒu liáotiān jīqìrén kèhù duān."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "Zhèngzài xiǎngyìng…"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "cǐ liáotiān jīqìrén kěnéng chǎnshēng bù zhǔnquè de huíyīng, yīncǐ qǐng xiāngyìng de jiǎnchá shìshí."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Zuìhòu yīgè yào fēnlí de shell bùshì cǐ shell."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Wúfǎ qǔdé shèdìng tiáomù."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "Wèi ChatGPT xiě rù API jīn yào"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "wèi tígōng API jīn yào."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "Pèizhì yóu ChatGPT tígōng zhīyuán de liáotiān jīqìrén AI"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "ChatGPT API jīn yào"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "nín yòng yú cún qǔ ChatGPT de API jīn yào. Suīrán nín kěyǐ shǐyòng miǎnfèi API jīn yào, dàn wúfǎ shǐyòng gāojí móxíng. Rúguǒ nín xiǎng wánquán cú qǔ suǒyǒu fùfèi móxíng, zé xūyào fùfèi."
+    }
+  ]
+}

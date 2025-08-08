@@ -9193,6 +9193,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Quod asymmetrica delatam coegi vis uti?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Error in Chatbot AI accidit. Fac ut nexus interretialis sit, clavem API validam esse, et quotam API non excedas."
     }
   ]
 }

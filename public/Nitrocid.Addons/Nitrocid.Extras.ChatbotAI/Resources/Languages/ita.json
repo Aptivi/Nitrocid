@@ -1,0 +1,81 @@
+{
+  "lang": "ita",
+  "name": "Italian",
+  "cultures": [
+    "it",
+    "it-CH",
+    "it-IT",
+    "it-SM",
+    "it-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "Inizializza il chatbot utilizzando ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "Sostituisce la chiave API configurata nelle impostazioni"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "Specifica la variante del modello ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "Incoraggiamo un uso responsabile del chatbot. Questo utilizza l'API di ChatGPT, di proprietà di OpenAI. Non siamo affiliati con loro e questo non è un client ChatGPT ufficiale. Ti consigliamo di leggere i termini e le condizioni di ChatGPT prima di utilizzare il chatbot. Puoi uscire usando '/exit'."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Si è verificato un errore con la shell di Chatbot AI:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "Invia un prompt al chatbot"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "Stringa che rappresenta il prompt"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "Non esiste un client chatbot."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "Risposta in corso..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "Questo chatbot potrebbe generare risposte imprecise, quindi verifica i fatti di conseguenza."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "L'ultima shell non è questa shell da cui scollegarsi."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Impossibile ottenere le voci delle impostazioni."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "Scrivi una chiave API per ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "La chiave API non è fornita."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "Configura l'intelligenza artificiale del Chatbot basata su ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "Chiave API di ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "La tua chiave API per ChatGPT per l'accesso. Sebbene tu possa utilizzare la chiave API gratuita, non puoi utilizzare i modelli avanzati. Se desideri l'accesso completo a tutti i modelli a pagamento, dovrai pagare per l'accesso."
+    }
+  ]
+}

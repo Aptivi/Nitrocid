@@ -1,0 +1,82 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "Initialiserer chatboten ved hjelp av ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "Overskriver API-nøkkelen som er konfigurert i innstillingene"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "Angir ChatGPT-modellvarianten"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "Vi oppfordrer til ansvarlig bruk av chatboten. Denne bruker ChatGPTs API, som eies av OpenAI. Vi er ikke tilknyttet dem, og dette er ikke en offisiell ChatGPT-klient. Vi anbefaler at du leser vilkårene og betingelsene for ChatGPT før du bruker chatboten. Du kan avslutte ved å bruke '/exit'."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Det oppsto en feil med Chatbot AI-skallet:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "Sender ledetekst til chatboten"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "Streng som representerer ledeteksten"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "Det finnes ingen chatbot-klient."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "Svarer..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "Denne chatboten kan generere unøyaktige svar, så sjekk fakta deretter."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Det siste skallet er ikke dette skallet å koble fra."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Klarte ikke å hente innstillingsoppføringer."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "Skriv en API-nøkkel for ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "API-nøkkel er ikke oppgitt."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "Konfigurerer Chatbot AI drevet av ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "ChatGPT API-nøkkel"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "Din API-nøkkel for ChatGPT for tilgang. Selv om du kan bruke den gratis API-nøkkelen, kan du ikke bruke avanserte modeller. Hvis du vil ha full tilgang til alle betalte modeller, må du betale for tilgangen."
+    }
+  ]
+}

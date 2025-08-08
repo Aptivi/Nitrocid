@@ -9193,6 +9193,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "आप किस असममित एन्कोडिंग ड्राइवर का उपयोग करना चाहेंगे?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "चैटबॉट AI में एक त्रुटि हुई है। कृपया सुनिश्चित करें कि आपके पास इंटरनेट कनेक्शन है, आपकी API कुंजी मान्य है, और आप अपने API कोटा से अधिक उपयोग नहीं कर रहे हैं।"
     }
   ]
 }

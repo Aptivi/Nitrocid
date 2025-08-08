@@ -1,0 +1,81 @@
+{
+  "lang": "cnt-T",
+  "name": "Chinese (Traditional)",
+  "cultures": [
+    "zh",
+    "zh-Hant",
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-Hant-TW"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "使用 ChatGPT 初始化聊天機器人"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "覆蓋設定中配置的 API 金鑰"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "指定 ChatGPT 模型變體"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "我們鼓勵負責任地使用聊天機器人。此操作使用 ChatGPT 的 API，該 API 由 OpenAI 擁有。我們與他們沒有任何關聯，並且這不是官方的 ChatGPT 客戶端。我們建議您在使用聊天機器人之前閱讀 ChatGPT 的條款和條件。您可以使用“/exit”退出。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "聊天機器人 AI shell 發生錯誤："
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "向聊天機器人發送提示"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "表示提示的字串"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "沒有聊天機器人客戶端。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "正在響應…"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "此聊天機器人可能產生不準確的回應，因此請相應地檢查事實。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "最後一個要分離的 shell 不是此 shell。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "無法取得設定條目。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "為 ChatGPT 寫入 API 金鑰"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "未提供 API 金鑰。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "配置由 ChatGPT 提供支援的聊天機器人 AI"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "ChatGPT API 金鑰"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "您用於存取 ChatGPT 的 API 金鑰。雖然您可以使用免費 API 金鑰，但無法使用高級模型。如果您想完全存取所有付費模型，則需要付費。"
+    }
+  ]
+}

@@ -63,9 +63,9 @@ namespace Nitrocid.Extras.ChatbotAI.Commands
             // Prompt for API key if needed
             while (string.IsNullOrEmpty(apiKey))
             {
-                apiKey = InputTools.ReadLine(LanguageTools.GetLocalized("Write an API key for ChatGPT: "));
+                apiKey = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_CHATBOTAI_APIKEYPROMPT") + ": ");
                 if (string.IsNullOrEmpty(apiKey))
-                    TextWriterColor.Write(LanguageTools.GetLocalized("API key is not provided."), ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CHATBOTAI_APIKEYNOTPROVIDED"), ThemeColorType.Error);
             }
 
             // Try to authenticate

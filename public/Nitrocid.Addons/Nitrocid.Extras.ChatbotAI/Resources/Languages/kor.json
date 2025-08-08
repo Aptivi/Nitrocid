@@ -1,0 +1,79 @@
+{
+  "lang": "kor",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "ChatGPTleul sayonghayeo chaesbos-eul chogihwahabnida."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "seoljeong-eseo guseongdoen API kileul jaejeong-uihabnida."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "ChatGPT model byeonhyeong-eul jijeonghabnida."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "chaesbos-eul chaeg-imgam issge sayonghaneun geos-eul gwonjanghabnida. i chaesbos-eun OpenAIga soyuhan ChatGPT APIleul sayonghabnida. OpenAIneun OpenAIwa jehyu gwangyega eobs-eumyeo, gongsig ChatGPT keullaieonteuga anibnida. chaesbos-eul sayonghagi jeon-e ChatGPTui iyong yaggwan-eul ilg-eobosigi balabnida. '/exit'leul sayonghayeo jonglyohal su issseubnida."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "chaesbos AI syel-e olyuga balsaenghaessseubnida."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "chaesbos-e peulompeuteuleul jeonsonghabnida."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "peulompeuteuleul natanaeneun munjayeol"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "chaesbos keullaieonteuga eobs-seubnida."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "eungdab jung..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "i chaesbos-eun bujeonghwaghan eungdab-eul saengseonghal su iss-eumeulo, gwanlyeon jeongboleul hwag-inhaseyo."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "majimag syel-eun bunlihal syel-i anibnida."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "seoljeong hangmog-eul gajyeooji moshaessseubnida."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "ChatGPTyong API kileul jagseonghaseyo."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "API kiga jegongdoeji anh-assseubnida."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "ChatGPT giban Chatbot AIleul guseonghabnida."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "ChatGPT API ki"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "aegseseuleul wihan ChatGPTyong API kiibnida. mulyo API kineun sayonghal su issjiman gogeub model-eun sayonghal su eobs-seubnida. modeun yulyo model-e daehan jeonche aegseseuleul wonhasimyeon aegseseu biyong-eul jibulhaeya habnida."
+    }
+  ]
+}

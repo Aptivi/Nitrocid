@@ -32,6 +32,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "Não recomendamos executar esta versão do kernel, pois ela não é suportada. Se você baixou este kernel de fontes desconhecidas, esta mensagem pode aparecer. Por favor, baixe da nossa página oficial de downloads."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "Você está executando a versão alfa do kernel. Você pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos usar a versão estável, se possível."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "Você está executando a versão beta do kernel. Você pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos usar a versão estável, se possível."
     }
   ]
 }

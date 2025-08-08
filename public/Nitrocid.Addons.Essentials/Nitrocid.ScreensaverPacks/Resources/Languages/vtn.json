@@ -1793,6 +1793,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Nếu bật tính năng tuần hoàn màu, có bao nhiêu tích tắc trước khi thay đổi màu trong Tiến trình? 1 tích tắc = 0,5 thứ ba"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Đồng hồ analog ở giữa màn hình và thay đổi màu sắc dựa trên thời gian hiện tại."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Hiển thị cho bạn một chiếc đồng hồ kỹ thuật số tuyệt đẹp."
     }
   ]
 }

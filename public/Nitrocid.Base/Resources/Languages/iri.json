@@ -9194,6 +9194,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Cén tiománaí ionchódaithe neamhshiméadrach ar mhaith leat a úsáid?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Tharla earráid le Chatbot AI. Cinntigh go bhfuil nasc Idirlín agat, go bhfuil d'eochair API bailí, agus nach sáraíonn tú do chuóta API."
     }
   ]
 }

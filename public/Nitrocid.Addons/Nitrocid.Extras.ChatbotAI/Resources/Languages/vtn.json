@@ -1,0 +1,78 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "Khởi tạo chatbot bằng ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "Ghi đè khóa API được cấu hình trong cài đặt"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "Chỉ định biến thể mô hình ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "Chúng tôi khuyến khích sử dụng chatbot một cách có trách nhiệm. ChatGPT sử dụng API của ChatGPT, thuộc sở hữu của OpenAI. Chúng tôi không liên kết với OpenAI và đây không phải là ứng dụng ChatGPT chính thức. Chúng tôi khuyên bạn nên đọc kỹ các điều khoản và điều kiện của ChatGPT trước khi sử dụng chatbot. Bạn có thể thoát bằng cách sử dụng '/exit'."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Đã xảy ra lỗi với shell Chatbot AI:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "Gửi lời nhắc đến chatbot"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "Chuỗi đại diện cho lời nhắc"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "Không có ứng dụng chatbot nào."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "Đang phản hồi..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "Chatbot này có thể tạo ra phản hồi không chính xác, vì vậy hãy kiểm tra thông tin cho phù hợp."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Shell cuối cùng không phải là shell để tách ra."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Không lấy được mục cài đặt."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "Ghi khóa API cho ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "Khóa API không được cung cấp."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "Cấu hình Chatbot AI được hỗ trợ bởi ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "Khóa API ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "Khóa API của bạn cho ChatGPT để truy cập. Mặc dù bạn có thể sử dụng khóa API miễn phí, nhưng bạn không thể sử dụng các mô hình nâng cao. Nếu bạn muốn truy cập đầy đủ vào tất cả các mô hình trả phí, bạn sẽ phải trả phí."
+    }
+  ]
+}

@@ -34,6 +34,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "Molaimid gan an leagan seo den eithne a rith, toisc nach dtacaítear leis. Má d’íoslódáil tú an t-eithne seo ó fhoinsí anaithnide, seans go dtaispeánfar an teachtaireacht seo. Le do thoil a íoslódáil ónár leathanach íoslódálacha oifigiúil."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "Tá leagan alfa an eithne á rith agat. D’fhéadfadh fabhtanna, éagobhsaíochtaí, nó fiú cailliúint sonraí teacht ort. Molaimid an leagan cobhsaí a úsáid, más féidir."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "Tá leagan béite an eithne á rith agat. D’fhéadfadh fabhtanna, éagobhsaíochtaí, nó fiú cailliúint sonraí teacht ort. Molaimid an leagan cobhsaí a úsáid, más féidir."
     }
   ]
 }

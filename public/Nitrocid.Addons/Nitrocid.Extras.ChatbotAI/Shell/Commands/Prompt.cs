@@ -42,14 +42,14 @@ namespace Nitrocid.Extras.ChatbotAI.Shell.Commands
                 throw new KernelException(KernelExceptionType.ChatbotAI, LanguageTools.GetLocalized("NKS_CHATBOTAI_EXCEPTION_NOCLIENT"));
 
             // Now, use streaming to generate a response
-            TextWriterColor.Write( /* Localizable */ "Responding...", ThemeColorType.Progress);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CHATBOTAI_RESPONDING"), ThemeColorType.Progress);
             var completions = clientChat.CompleteChatStreaming(parameters.ArgumentsText);
             foreach (var update in completions)
             {
                 if (update.ContentUpdate.Count > 0)
                     TextWriterColor.Write(update.ContentUpdate[0].Text, false);
             }
-            TextWriterColor.Write("\n\n" +  /* Localizable */ "This chatbot may generate inaccurate responses, so check for facts accordingly.", ThemeColorType.Warning);
+            TextWriterColor.Write("\n\n" + LanguageTools.GetLocalized("NKS_CHATBOTAI_POSTRESPONSE"), ThemeColorType.Warning);
             return 0;
         }
 

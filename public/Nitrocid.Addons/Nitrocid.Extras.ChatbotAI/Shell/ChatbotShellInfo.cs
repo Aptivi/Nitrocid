@@ -56,13 +56,13 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
 
         public override bool SlashCommand => true;
 
-        public override CommandInfo NonSlashCommandInfo => new("prompt", /* Localizable */ "Sends prompt to the chatbot",
+        public override CommandInfo NonSlashCommandInfo => new("prompt", /* Localizable */ "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
             [
                 new CommandArgumentInfo(
                 [
                     new CommandArgumentPart(true, "promptString", new CommandArgumentPartOptions()
                     {
-                        ArgumentDescription = /* Localizable */ "String representing the prompt"
+                        ArgumentDescription = /* Localizable */ "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC"
                     })
                 ])
             ], new PromptCommand());

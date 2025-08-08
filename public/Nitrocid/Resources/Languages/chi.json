@@ -41,6 +41,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "wǒ mén jiàn yì bù yào yùn xíng cǐ bǎn běn de nèi hé ， yīn wéi tā bù shòu zhī chí 。 rú guǒ nín cóng wèi zhī lái yuán xià zài liǎo cǐ nèi hé ， zé kě néng huì chū xiàn cǐ xiāo xī 。 qǐng cóng wǒ mén de guān fāng xià zài yè miàn xià zài 。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "Nín zhèngzài yùnxíng nèihé de Alpha bǎnběn. Nín kěnéng huì yù dào cuòwù, bù wěndìng shènzhì shùjù diūshī. Wǒmen jiànyì nín jǐn kěnéng shǐyòng wěndìng bǎnběn."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "Nín zhèngzài yùnxíng nèihé de Beta bǎnběn. Nín kěnéng huì yù dào cuòwù, bù wěndìng shènzhì shùjù diūshī. Wǒmen jiànyì nín jǐn kěnéng shǐyòng wěndìng bǎnběn."
     }
   ]
 }

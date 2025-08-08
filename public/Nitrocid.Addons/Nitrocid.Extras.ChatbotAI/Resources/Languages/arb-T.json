@@ -1,0 +1,104 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "يُهيئ Chatbot باستخدام ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "يتجاوز مفتاح API المُهيأ في الإعدادات"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "يُحدد مُتغير نموذج ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "نُشجع على الاستخدام المسؤول لـ Chatbot. يستخدم هذا واجهة برمجة تطبيقات ChatGPT، المملوكة لشركة OpenAI. لسنا تابعين لها، وهذا ليس عميل ChatGPT رسميًا. نوصي بقراءة شروط وأحكام ChatGPT قبل استخدام Chatbot. يُمكنك الخروج باستخدام '/exit'."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "حدث خطأ في واجهة برمجة تطبيقات Chatbot AI:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "يُرسل مُطالبة إلى Chatbot"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "سلسلة نصية تُمثل المُطالبة"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "لا يوجد عميل Chatbot."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "جاري الاستجابة..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "قد يُصدر هذا Chatbot ردودًا غير دقيقة، لذا تحقق من صحة المعلومات."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "الواجهة الأخيرة ليست هذه الواجهة للفصل عنها."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "فشل الحصول على مُدخلات الإعدادات."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "اكتب مفتاح واجهة برمجة تطبيقات لـ ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "لم يتم توفير مفتاح واجهة برمجة التطبيقات."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "يُهيئ روبوت الدردشة الذكي الذي يعمل بنظام ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "مفتاح واجهة برمجة تطبيقات ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "مفتاح واجهة برمجة التطبيقات الخاص بك لـ ChatGPT للوصول. يمكنك استخدام مفتاح واجهة برمجة التطبيقات المجاني، ولكن لا يمكنك استخدام النماذج المتقدمة. إذا كنت ترغب في الوصول الكامل إلى جميع النماذج المدفوعة، فسيتعين عليك الدفع مقابل الوصول."
+    }
+  ]
+}

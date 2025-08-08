@@ -1801,6 +1801,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Rúguǒ qǐyòngle yánsè xúnhuán, jìndù zhòng gēnggǎi yánsè qián xūyào duōshǎo gè kèdù?1 Kèdù = 0.5 Miǎo"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Píngmù zhōngjiān de mónǐ shízhōng, huì gēnjù dāngqián shíjiān gǎibiàn yánsè."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Xiǎnshì jīngměi de shùzì shízhōng."
     }
   ]
 }

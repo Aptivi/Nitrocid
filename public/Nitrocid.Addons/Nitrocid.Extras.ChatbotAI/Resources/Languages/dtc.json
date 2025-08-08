@@ -1,0 +1,84 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "Initialiseert de chatbot met ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "Overschrijft de API-sleutel die in de instellingen is geconfigureerd"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "Specificeert de ChatGPT-modelvariant"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "We moedigen verantwoord gebruik van de chatbot aan. Deze maakt gebruik van de API van ChatGPT, die eigendom is van OpenAI. Wij zijn niet aan hen gelieerd en dit is geen officiële ChatGPT-client. We raden u aan de algemene voorwaarden van ChatGPT te lezen voordat u de chatbot gebruikt. U kunt afsluiten met '/exit'."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Er is een fout opgetreden in de Chatbot AI-shell:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "Stuurt prompt naar de chatbot"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "String die de prompt vertegenwoordigt"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "Er is geen chatbot-client."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "Reageert..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "Deze chatbot genereert mogelijk onjuiste antwoorden, controleer daarom de feiten."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "De laatste shell is niet deze shell om los te koppelen."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Kan geen instellingen ophalen."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "Schrijf een API-sleutel voor ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "API-sleutel is niet opgegeven."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "Configureert de Chatbot AI, aangestuurd door ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "ChatGPT API-sleutel"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "Uw API-sleutel voor ChatGPT voor toegang. U kunt de gratis API-sleutel gebruiken, maar geen geavanceerde modellen. Als u volledige toegang wilt tot alle betaalde modellen, moet u hiervoor betalen."
+    }
+  ]
+}

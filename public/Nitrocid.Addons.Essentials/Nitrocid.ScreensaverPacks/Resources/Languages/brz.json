@@ -1792,6 +1792,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Se o ciclo de cores estiver habilitado, quantos tiques antes de alterar as cores no Progresses? 1 tique = 0,5 terço"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Relógio analógico no centro da tela, que muda de cor de acordo com a hora atual."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Mostra um lindo relógio digital."
     }
   ]
 }

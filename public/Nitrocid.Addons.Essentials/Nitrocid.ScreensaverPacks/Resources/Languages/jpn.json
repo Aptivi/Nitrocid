@@ -1793,6 +1793,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "色の循環が有効になっている場合、Progresses で色を変更する前に何ティック必要ですか? 1 ティック = 0.5 秒"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "画面中央にアナログ時計が表示され、現在時刻に応じて色が変わります。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "美しいデジタル時計を表示します。"
     }
   ]
 }

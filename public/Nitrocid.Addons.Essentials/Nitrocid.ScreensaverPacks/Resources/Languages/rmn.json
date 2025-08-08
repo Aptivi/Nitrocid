@@ -1794,6 +1794,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Dacă ciclul de culoare este activat, câte bifări înainte de a schimba culorile în Progress? 1 bif = 0,5 treime"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Ceas analogic în mijlocul ecranului, care schimbă culoarea în funcție de ora curentă."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Afișează un ceas digital superb."
     }
   ]
 }

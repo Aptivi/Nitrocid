@@ -1799,6 +1799,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Als kleurcyclus is ingeschakeld, hoeveel ticks voordat kleuren worden gewijzigd in Progresses? 1 tick = 0,5 derde"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Analoge klok in het midden van het scherm die van kleur verandert op basis van de huidige tijd."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Geeft een prachtige digitale klok weer."
     }
   ]
 }

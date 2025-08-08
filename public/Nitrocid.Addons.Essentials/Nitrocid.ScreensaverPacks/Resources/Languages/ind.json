@@ -1793,6 +1793,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "yadi rang saikaling saksham hai, to pragati mein rang badalane se pahale kitane tik hain? 1 tik = 0.5 teesaree"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "skreen ke beech mein enaalog ghadee hotee hai aur vartamaan samay ke anusaar rang badalatee hai."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "aapako ek khoobasoorat dijital ghadee dikhaee detee hai."
     }
   ]
 }

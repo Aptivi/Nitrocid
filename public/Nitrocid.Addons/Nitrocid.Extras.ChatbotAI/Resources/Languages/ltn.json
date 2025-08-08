@@ -1,0 +1,78 @@
+{
+  "lang": "ltn",
+  "name": "Latin",
+  "cultures": [
+    "la",
+    "la-VA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "Chatbot utens ChatGPT initiat."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "Clavem API quae in configurationibus configurata est superat."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "Variantem exemplaris ChatGPT specificat."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "Usum responsabilem chatbot hortamur. Hic API ChatGPT utitur, quae ab OpenAI possidetur. Cum eis non affiliati sumus, et hic non est cliens officialis ChatGPT. Commendamus ut condiciones ChatGPT legas antequam chatbot uteris. Exire potes utens '/exit'."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Error cum testa Chatbot AI ortus est:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "Incitationem ad chatbot mittit."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "Littera incitationem repraesentans."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "Nullus cliens chatbot est."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "Respondens..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "Hic chatbot responsa falsa generare potest, ergo facta proinde verifica."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Testa ultima non est haec testa a qua separandum est."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Inscriptiones configurationum obtinere non potuerunt."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "Clavem API pro ChatGPT scribe."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "Clavis API non praebetur."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "Chatbot AI a ChatGPT impulsum configurat."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "Clavis API ChatGPT."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "Clavis API tua pro ChatGPT ad accessum. Dum clavem API gratuitam uti potes, exemplaria provectiora uti non potes. Si accessum plenum ad omnia exemplaria soluta vis, pro accessu solvere debebis."
+    }
+  ]
+}

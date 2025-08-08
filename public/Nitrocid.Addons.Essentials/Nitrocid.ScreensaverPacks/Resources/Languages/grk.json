@@ -1794,6 +1794,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Εάν είναι ενεργοποιημένος ο κύκλος χρωμάτων, πόσα σημάδια προτού αλλάξετε χρώματα στο Progresses; 1 τικ = 0,5 τρίτο"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Αναλογικό ρολόι στη μέση της οθόνης και αλλάζει το χρώμα με βάση την τρέχουσα ώρα."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Σας δείχνει ένα πανέμορφο ψηφιακό ρολόι."
     }
   ]
 }

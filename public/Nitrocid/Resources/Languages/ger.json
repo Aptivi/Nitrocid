@@ -42,6 +42,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "Wir raten davon ab, diese Version des Kernels auszuführen, da sie nicht unterstützt wird. Wenn Sie diesen Kernel von unbekannten Quellen heruntergeladen haben, wird möglicherweise diese Meldung angezeigt. Bitte laden Sie es von unserer offiziellen Download-Seite herunter."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "Sie verwenden die Alpha-Version des Kernels. Es können Fehler, Instabilitäten oder sogar Datenverlust auftreten. Wir empfehlen, wenn möglich, die stabile Version zu verwenden."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "Sie verwenden die Beta-Version des Kernels. Es können Fehler, Instabilitäten oder sogar Datenverlust auftreten. Wir empfehlen, wenn möglich, die stabile Version zu verwenden."
     }
   ]
 }

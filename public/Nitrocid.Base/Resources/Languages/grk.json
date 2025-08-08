@@ -9194,6 +9194,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Ποιο πρόγραμμα οδήγησης ασύμμετρης κωδικοποίησης θα θέλατε να χρησιμοποιήσετε;"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Παρουσιάστηκε σφάλμα AI του Chatbot. Βεβαιωθείτε ότι έχετε σύνδεση στο Διαδίκτυο, ότι το κλειδί API σας είναι έγκυρο και ότι δεν υπερβαίνετε το όριο του API σας."
     }
   ]
 }

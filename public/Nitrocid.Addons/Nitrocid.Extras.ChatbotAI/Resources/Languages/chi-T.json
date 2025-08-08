@@ -1,0 +1,86 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "使用 ChatGPT 初始化聊天机器人"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "覆盖设置中配置的 API 密钥"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "指定 ChatGPT 模型变体"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "我们鼓励负责任地使用聊天机器人。此操作使用 ChatGPT 的 API，该 API 由 OpenAI 拥有。我们与他们没有任何关联，并且这不是官方的 ChatGPT 客户端。我们建议您在使用聊天机器人之前阅读 ChatGPT 的条款和条件。您可以使用“/exit”退出。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "聊天机器人 AI shell 发生错误："
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "向聊天机器人发送提示"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "表示提示的字符串"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "没有聊天机器人客户端。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "正在响应……"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "此聊天机器人可能生成不准确的响应，因此请相应地检查事实。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "要分离的最后一个 shell 不是此 shell。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "无法获取设置条目。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "为 ChatGPT 写入 API 密钥"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "未提供 API 密钥。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "配置由 ChatGPT 提供支持的聊天机器人 AI"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "ChatGPT API 密钥"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "您用于访问 ChatGPT 的 API 密钥。虽然您可以使用免费 API 密钥，但无法使用高级模型。如果您想完全访问所有付费模型，则需要付费。"
+    }
+  ]
+}

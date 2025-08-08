@@ -9196,6 +9196,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "nín xiǎng shǐyòng nǎge fēi duìchèn biānmǎ qūdòng chéngshì?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Liáotiān jīqìrén AI fāshēng cuòwù. Qǐng quèbǎo nín yǐ lián xiàn zhì wǎngjì wǎng lù,API jīn yào yǒuxiào, qiě wèi chāochū API pèi'é."
     }
   ]
 }

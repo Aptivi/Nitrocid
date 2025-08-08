@@ -9199,6 +9199,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Welke asymmetrische encodingdriver wilt u gebruiken?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Er is een Chatbot AI-fout opgetreden. Zorg ervoor dat u een internetverbinding heeft, uw API-sleutel geldig is en dat u uw API-quotum niet overschrijdt."
     }
   ]
 }

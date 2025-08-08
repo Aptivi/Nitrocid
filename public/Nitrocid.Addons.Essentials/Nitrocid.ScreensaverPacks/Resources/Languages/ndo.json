@@ -1793,6 +1793,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Jika siklus warna diaktifkan, berapa banyak tanda centang sebelum mengubah warna di Progresses? 1 tanda centang = 0,5 pertiga"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Jam analog di tengah layar dan berubah warna berdasarkan waktu saat ini."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Menampilkan jam digital yang menawan."
     }
   ]
 }

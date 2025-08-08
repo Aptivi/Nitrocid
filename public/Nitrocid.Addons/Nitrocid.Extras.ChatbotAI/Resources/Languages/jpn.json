@@ -1,0 +1,78 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "ChatGPT を使用してチャットボットを初期化します。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "設定で設定されている API キーを上書きします。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "ChatGPT モデルバリアントを指定します。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "チャットボットは責任ある使用を推奨します。これは OpenAI が所有する ChatGPT API を使用しています。私たちは OpenAI と提携しておらず、これは公式の ChatGPT クライアントではありません。チャットボットを使用する前に、ChatGPT の利用規約をお読みになることをお勧めします。「/exit」で終了できます。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Chatbot AI シェルでエラーが発生しました:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "チャットボットにプロンプトを送信します。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "プロンプトを表す文字列"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "チャットボットクライアントがありません。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "応答しています..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "このチャットボットは不正確な応答を生成する可能性がありますので、事実関係を確認してください。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "最後に接続したシェルは、このシェルからデタッチするものではありません。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "設定エントリを取得できませんでした。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "ChatGPTのAPIキーを入力してください。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "APIキーが指定されていません。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "ChatGPTを搭載したチャットボットAIを設定します。"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "ChatGPT APIキー"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "ChatGPTにアクセスするためのAPIキーです。無料のAPIキーは使用できますが、高度なモデルは使用できません。すべての有料モデルにフルアクセスするには、アクセス料金を支払う必要があります。"
+    }
+  ]
+}

@@ -79,6 +79,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "Nous vous déconseillons d'exécuter cette version du noyau, car elle n'est pas prise en charge. Si vous avez téléchargé ce noyau à partir de sources inconnues, ce message peut apparaître. Veuillez télécharger depuis notre page de téléchargement officielle."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "Vous utilisez la version alpha du noyau. Vous pourriez rencontrer des bugs, des instabilités, voire des pertes de données. Nous vous recommandons d'utiliser la version stable, si possible."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "Vous utilisez la version bêta du noyau. Vous pourriez rencontrer des bugs, des instabilités, voire des pertes de données. Nous vous recommandons d'utiliser la version stable, si possible."
     }
   ]
 }

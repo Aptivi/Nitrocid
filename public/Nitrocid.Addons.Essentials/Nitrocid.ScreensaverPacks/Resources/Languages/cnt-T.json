@@ -1796,6 +1796,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "如果啟用了顏色循環，那麼在進度中需要多少個刻度才能改變顏色？ 1 刻 = 0.5 秒"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "螢幕中間的類比時鐘，會根據目前時間改變顏色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "顯示精美的數字時鐘。"
     }
   ]
 }

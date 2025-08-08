@@ -1794,6 +1794,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Renk döngüsü etkinleştirilirse, Progresses'ta renkleri değiştirmeden önce kaç tik var? 1 tik = 0,5 üçüncü"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Ekranın ortasında analog saat ve mevcut saate göre renk değişimi."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Size muhteşem bir dijital saat gösterir."
     }
   ]
 }
