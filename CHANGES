@@ -7,7 +7,7 @@ We can't provide an exact ETA for the final release, but contributions, feedback
 This release contains a variety of changes, including, but not limited to:
 
 - `[+]` Added new screensavers
-- `[+]` Added Chatbot AI (uses ChatGPT)
+- `[+]` Added Chatbot AI (uses ChatGPT, supports GPT-5 (paid only))
 - `[*]` Updated to Terminaux 7.0
 - `[*]` Restructured the language management to use LocaleStation
 - `[*]` Addons and mods are split into two separate folders: important and extras `*`
