@@ -9197,6 +9197,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Hvilken asymmetrisk kodingsdriver vil du bruke?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Det har oppstått en AI-feil i Chatbot. Sørg for at du har en Internett-tilkobling, at API-nøkkelen din er gyldig, og at du ikke overskrider API-kvoten din."
     }
   ]
 }

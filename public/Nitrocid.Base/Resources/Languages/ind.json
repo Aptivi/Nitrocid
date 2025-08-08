@@ -9193,6 +9193,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "aap kis asamamit enkoding draivar ka upayog karana chaahenge?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "chaitabot ai mein ek truti huee hai. krpaya sunishchit karen ki aapake paas intaranet kanekshan hai, aapakee api kunjee maany hai, aur aap apane api kota se adhik upayog nahin kar rahe hain."
     }
   ]
 }

@@ -9219,6 +9219,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "ما هو برنامج تشغيل الترميز غير المتماثل الذي ترغب في استخدامه؟"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "حدث خطأ في Chatbot AI. يُرجى التأكد من اتصالك بالإنترنت، وأن مفتاح API الخاص بك صالح، وأنك لا تتجاوز حصة API المخصصة لك."
     }
   ]
 }

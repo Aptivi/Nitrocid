@@ -9194,6 +9194,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "eotteon bidaeching inkoding deulaibeoleul sayonghasigessseubnikka?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "chaesbos AI olyuga balsaenghaessseubnida. inteones-e yeongyeoldoeeo issgo, API kiga yuhyohamyeo, API haldanglyang-eul chogwahaji anh-assneunji hwag-inhaseyo."
     }
   ]
 }

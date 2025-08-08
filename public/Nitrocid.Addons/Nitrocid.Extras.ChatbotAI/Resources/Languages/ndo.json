@@ -1,0 +1,78 @@
+{
+  "lang": "ndo",
+  "name": "Indonesian",
+  "cultures": [
+    "id",
+    "id-ID"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "Menginisialisasi chatbot menggunakan ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "Mengganti kunci API yang dikonfigurasi di pengaturan"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "Menentukan varian model ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "Kami menganjurkan penggunaan chatbot yang bertanggung jawab. Ini menggunakan API ChatGPT, yang dimiliki oleh OpenAI. Kami tidak berafiliasi dengan mereka, dan ini bukan klien ChatGPT resmi. Kami menyarankan Anda membaca syarat dan ketentuan ChatGPT sebelum menggunakan chatbot. Anda dapat keluar menggunakan '/exit'."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Terjadi kesalahan pada shell Chatbot AI:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "Mengirim prompt ke chatbot"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "String yang mewakili prompt"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "Tidak ada klien chatbot."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "Merespons..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "Chatbot ini mungkin menghasilkan respons yang tidak akurat, jadi periksalah fakta yang sesuai."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Shell terakhir bukanlah shell yang akan dilepaskan."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Gagal mendapatkan entri pengaturan."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "Tulis kunci API untuk ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "Kunci API tidak disediakan."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "Mengonfigurasi Chatbot AI yang didukung oleh ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "Kunci API ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "Kunci API Anda untuk ChatGPT untuk akses. Meskipun Anda dapat menggunakan kunci API gratis, Anda tidak dapat menggunakan model lanjutan. Jika Anda ingin akses penuh ke semua model berbayar, Anda harus membayar untuk akses tersebut."
+    }
+  ]
+}

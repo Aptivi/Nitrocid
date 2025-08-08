@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.ChatbotAI.Shell
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Show disclaimer
-            TextWriterColor.Write( /* Localizable */ "We encourage responsible use of the chatbot. This uses ChatGPT's API, which is owned by OpenAI. We are not affiliated with them, and this is not an official ChatGPT client. We recommend that you read the terms and conditions of ChatGPT before using the chatbot. You can exit using '/exit'.", ThemeColorType.Warning);
+            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_CHATBOTAI_SHELL_DISCLAIMER"), ThemeColorType.Warning);
 
             // Finalize current connection
             NetworkConnection chatbotConnection = (NetworkConnection)ShellArgs[0];

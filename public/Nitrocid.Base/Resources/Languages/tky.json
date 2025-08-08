@@ -9194,6 +9194,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Hangi asimetrik kodlama sürücüsünü kullanmak istersiniz?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Bir Chatbot AI hatası oluştu. Lütfen internet bağlantınızın olduğundan, API anahtarınızın geçerli olduğundan ve API kotanızı aşmadığınızdan emin olun."
     }
   ]
 }

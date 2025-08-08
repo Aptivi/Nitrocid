@@ -39,6 +39,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "We raden u aan deze versie van de kernel niet uit te voeren, omdat deze niet wordt ondersteund. Als je deze kernel van onbekende bronnen hebt gedownload, kan dit bericht verschijnen. Download het van onze officiële downloadpagina."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "U gebruikt de alfaversie van de kernel. U kunt bugs, instabiliteit of zelfs gegevensverlies tegenkomen. We raden u aan om, indien mogelijk, de stabiele versie te gebruiken."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "U gebruikt de bètaversie van de kernel. U kunt bugs, instabiliteit of zelfs gegevensverlies tegenkomen. We raden u aan om, indien mogelijk, de stabiele versie te gebruiken."
     }
   ]
 }

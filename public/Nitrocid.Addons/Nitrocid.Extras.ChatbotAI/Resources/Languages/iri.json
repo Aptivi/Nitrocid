@@ -1,0 +1,79 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "Tosaíonn sé an comhrábot ag baint úsáide as ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "Sáraíonn sé an eochair API atá cumraithe sna socruithe"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "Sonraíonn sé an malairt mhúnla ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "Molaimid úsáid fhreagrach an chomhrábot. Úsáideann sé seo API ChatGPT, atá faoi úinéireacht OpenAI. Nílimid cleamhnaithe leo, agus ní cliant oifigiúil ChatGPT é seo. Molaimid duit téarmaí agus coinníollacha ChatGPT a léamh sula n-úsáideann tú an comhrábot. Is féidir leat scoir ag baint úsáide as '/exit'."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Bhí earráid ann leis an mblaosc Chatbot AI:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "Seolann sé leid chuig an gcomhrábot"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "Teaghrán a léiríonn an leid"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "Níl aon chliant comhrábot ann."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "Ag freagairt..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "D'fhéadfadh an comhrábot seo freagraí míchruinne a ghiniúint, mar sin seiceáil le haghaidh fíricí dá réir."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Ní hé an bhlaosc deireanach an bhlaosc seo le scaradh uaidh."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Theip ar iontrálacha socruithe a fháil."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "Scríobh eochair API do ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "Níl eochair API curtha ar fáil."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "Cumraíonn sé an Chatbot AI faoi thiomáint ag ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "Eochair API ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "D'eochair API do ChatGPT le haghaidh rochtana. Cé gur féidir leat an eochair API saor in aisce a úsáid, ní féidir leat samhlacha ardleibhéil a úsáid. Más mian leat rochtain iomlán a fháil ar gach samhail íoctha, beidh ort íoc as an rochtain."
+    }
+  ]
+}

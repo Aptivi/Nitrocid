@@ -1818,6 +1818,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Si el ciclo de color está habilitado, ¿cuántos ticks antes de cambiar los colores en Progresses? 1 tick = 0,5 tercios"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Reloj analógico en el centro de la pantalla que cambia de color según la hora actual."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Muestra un magnífico reloj digital."
     }
   ]
 }

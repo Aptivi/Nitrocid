@@ -1794,6 +1794,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Má tá rothaíocht dathanna cumasaithe, cé mhéad tic sula n-athraítear dathanna in Progresses? 1 tic = 0.5 sa tríú háit"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Clog analógach i lár an scáileáin agus athraíonn sé an dath bunaithe ar an am reatha."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Taispeánann sé clog digiteach álainn duit"
     }
   ]
 }

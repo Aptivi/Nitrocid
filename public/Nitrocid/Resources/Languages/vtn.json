@@ -33,6 +33,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "Chúng tôi khuyên bạn không nên chạy phiên bản kernel này vì nó không được hỗ trợ. Nếu bạn đã tải xuống kernel này từ các nguồn không xác định, thông báo này có thể xuất hiện. Vui lòng tải xuống từ trang tải xuống chính thức của chúng tôi."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "Bạn đang chạy phiên bản alpha của kernel. Bạn có thể gặp lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định, nếu có thể."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "Bạn đang chạy phiên bản beta của kernel. Bạn có thể gặp lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định, nếu có thể."
     }
   ]
 }

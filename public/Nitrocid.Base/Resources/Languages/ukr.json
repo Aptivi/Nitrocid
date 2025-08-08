@@ -9193,6 +9193,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Який драйвер асиметричного кодування ви хотіли б використати?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Сталася помилка штучного інтелекту чат-бота. Переконайтеся, що у вас є підключення до Інтернету, ваш ключ API дійсний і що ви не перевищили свою квоту API."
     }
   ]
 }

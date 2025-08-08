@@ -1802,6 +1802,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Wenn Farbwechsel aktiviert ist, wie viele Ticks vergehen, bevor die Farben in Progresses geändert werden? 1 Tick = 0,5 Drittel"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Die analoge Uhr in der Mitte des Bildschirms ändert ihre Farbe je nach aktueller Uhrzeit."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Zeigt eine wunderschöne Digitaluhr an."
     }
   ]
 }

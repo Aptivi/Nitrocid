@@ -1801,6 +1801,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "如果启用了颜色循环，进度中更改颜色前需要多少个刻度？1 刻度 = 0.5 秒"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "屏幕中间的模拟时钟，会根据当前时间改变颜色。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "显示精美的数字时钟。"
     }
   ]
 }

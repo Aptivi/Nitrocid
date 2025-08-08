@@ -1,0 +1,79 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "Αρχικοποιεί το chatbot χρησιμοποιώντας το ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "Αντικαθιστά το κλειδί API που έχει διαμορφωθεί στις ρυθμίσεις"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "Καθορίζει την παραλλαγή μοντέλου ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "Ενθαρρύνουμε την υπεύθυνη χρήση του chatbot. Αυτό χρησιμοποιεί το API του ChatGPT, το οποίο ανήκει στην OpenAI. Δεν είμαστε συνδεδεμένοι μαζί τους και αυτό δεν είναι επίσημο πρόγραμμα-πελάτης ChatGPT. Συνιστούμε να διαβάσετε τους όρους και τις προϋποθέσεις του ChatGPT πριν χρησιμοποιήσετε το chatbot. Μπορείτε να πραγματοποιήσετε έξοδο χρησιμοποιώντας το '/exit'."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Παρουσιάστηκε σφάλμα με το κέλυφος AI του Chatbot:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "Αποστέλλει προτροπή στο chatbot"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "Συμβολοσειρά που αντιπροσωπεύει την προτροπή"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "Δεν υπάρχει πρόγραμμα-πελάτης chatbot."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "Απάντηση..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "Αυτό το chatbot ενδέχεται να δημιουργήσει ανακριβείς απαντήσεις, επομένως ελέγξτε για δεδομένα ανάλογα."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Το τελευταίο κέλυφος δεν είναι αυτό το κέλυφος για αποσύνδεση."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Αποτυχία λήψης καταχωρίσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "Σύνταξη κλειδιού API για το ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "Δεν παρέχεται κλειδί API."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "Διαμορφώνει την Τεχνητή Νοημοσύνη του Chatbot που υποστηρίζεται από το ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "Κλειδί API ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "Το κλειδί API σας για το ChatGPT για πρόσβαση. Ενώ μπορείτε να χρησιμοποιήσετε το δωρεάν κλειδί API, δεν μπορείτε να χρησιμοποιήσετε προηγμένα μοντέλα. Εάν θέλετε πλήρη πρόσβαση σε όλα τα μοντέλα επί πληρωμή, θα πρέπει να πληρώσετε για την πρόσβαση."
+    }
+  ]
+}

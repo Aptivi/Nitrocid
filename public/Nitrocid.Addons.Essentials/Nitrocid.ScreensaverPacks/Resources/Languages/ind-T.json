@@ -1793,6 +1793,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "यदि रंग साइकलिंग सक्षम है, तो प्रगति में रंग बदलने से पहले कितने टिक हैं? 1 टिक = 0.5 तीसरी"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "स्क्रीन के बीच में एनालॉग घड़ी होती है और वर्तमान समय के अनुसार रंग बदलती है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "आपको एक खूबसूरत डिजिटल घड़ी दिखाई देती है।"
     }
   ]
 }

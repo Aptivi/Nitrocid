@@ -41,6 +41,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "我们建议不要运行此版本的内核，因为它不受支持。如果您从未知来源下载了此内核，则可能会出现此消息。请从我们的官方下载页面下载。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "您正在运行内核的 Alpha 版本。您可能会遇到错误、不稳定甚至数据丢失。我们建议您尽可能使用稳定版本。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "您正在运行内核的 Beta 版本。您可能会遇到错误、不稳定甚至数据丢失。我们建议您尽可能使用稳定版本。"
     }
   ]
 }

@@ -38,13 +38,13 @@ namespace Nitrocid.Extras.ChatbotAI
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("chatbot", /* Localizable */ "Initializes the chatbot using ChatGPT",
+            new CommandInfo("chatbot", /* Localizable */ "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
                 [
                     new CommandArgumentInfo(
                     [
-                        new SwitchInfo("apikey", /* Localizable */ "Overrides the API key that is configured in the settings"),
+                        new SwitchInfo("apikey", /* Localizable */ "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC"),
 
-                        new SwitchInfo("model", /* Localizable */ "Specifies the ChatGPT model variant"),
+                        new SwitchInfo("model", /* Localizable */ "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC"),
                     ])
                 ], new ChatbotCommand()),
         ];

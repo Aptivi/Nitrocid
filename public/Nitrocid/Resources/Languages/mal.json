@@ -36,6 +36,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "Kami mengesyorkan agar anda tidak menjalankan versi kernel ini, kerana ia tidak disokong. Jika anda telah memuat turun kernel ini daripada sumber yang tidak diketahui, mesej ini mungkin muncul. Sila muat turun dari halaman muat turun rasmi kami."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "Anda menjalankan versi alfa kernel. Anda mungkin menghadapi pepijat, ketidakstabilan, atau kehilangan data. Kami mengesyorkan menggunakan versi stabil, jika boleh."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "Anda menjalankan versi beta kernel. Anda mungkin menghadapi pepijat, ketidakstabilan, atau kehilangan data. Kami mengesyorkan menggunakan versi stabil, jika boleh."
     }
   ]
 }

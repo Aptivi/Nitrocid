@@ -34,6 +34,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "i keoneol beojeoneun jiwondoeji anheumeuro silhaenghaji anhneun geosi johseupnida. al su eopsneun soseueseo i keoneoreul daunrodeuhan gyeongu i mesijiga natanal su issseupnida. gongsik daunrodeu peijieseo daunrodeuhasigi barapnida."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "alpa beojeon-ui keoneol-eul silhaeng jung-ibnida. beogeu, bul-anjeongseong ttoneun deiteo sonsil-i balsaenghal su issseubnida. ganeunghamyeon anjeong beojeon-eul sayonghaneun geos-i johseubnida."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "beta beojeon-ui keoneol-eul silhaeng jung-ibnida. beogeu, bul-anjeongseong ttoneun deiteo sonsil-i balsaenghal su issseubnida. ganeunghamyeon anjeong beojeon-eul sayonghaneun geos-i johseubnida."
     }
   ]
 }

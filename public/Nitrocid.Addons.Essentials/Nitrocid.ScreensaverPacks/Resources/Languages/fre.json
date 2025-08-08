@@ -1839,6 +1839,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Si le cycle de couleurs est activé, combien de graduations avant de changer de couleur dans Progresses ? 1 graduation = 0,5 tiers"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Horloge analogique au milieu de l'écran, dont la couleur change en fonction de l'heure."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Affiche une magnifique horloge numérique."
     }
   ]
 }

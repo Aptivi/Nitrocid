@@ -9194,6 +9194,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "어떤 비대칭 인코딩 드라이버를 사용하시겠습니까?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "챗봇 AI 오류가 발생했습니다. 인터넷에 연결되어 있고, API 키가 유효하며, API 할당량을 초과하지 않았는지 확인하세요."
     }
   ]
 }

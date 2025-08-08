@@ -1794,6 +1794,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "saegsang sunhwan-i hwalseonghwadoen gyeong-u Progresses-eseo saegsang-eul byeongyeonghagi jeon-e myeoch tig-i pil-yohabnikka? 1tig = 0.5se beonjjae"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "hwamyeon jung-ang-e anallogeu sigyega pyosidoemyeo, hyeonjae sigan-e ttala saegsang-i byeongyeongdoebnida."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "meosjin dijiteol sigyeleul boyeojubnida."
     }
   ]
 }

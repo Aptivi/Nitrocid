@@ -9203,6 +9203,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Que driver de codificação assimétrica gostaria de utilizar?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Ocorreu um erro no Chatbot AI. Certifique-se de que tem uma ligação à Internet, a sua chave API é válida e de não exceder a sua quota API."
     }
   ]
 }

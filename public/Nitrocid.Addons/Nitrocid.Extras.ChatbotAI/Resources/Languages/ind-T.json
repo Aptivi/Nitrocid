@@ -1,0 +1,78 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "ChatGPT का उपयोग करके चैटबॉट को प्रारंभ करता है"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "सेटिंग्स में कॉन्फ़िगर की गई API कुंजी को ओवरराइड करता है"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "ChatGPT मॉडल वैरिएंट निर्दिष्ट करता है"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "हम चैटबॉट के ज़िम्मेदारीपूर्ण उपयोग को प्रोत्साहित करते हैं। यह ChatGPT के API का उपयोग करता है, जिसका स्वामित्व OpenAI के पास है। हम उनसे संबद्ध नहीं हैं, और यह एक आधिकारिक ChatGPT क्लाइंट नहीं है। हमारा सुझाव है कि आप चैटबॉट का उपयोग करने से पहले ChatGPT के नियम और शर्तें पढ़ लें। आप '/exit' का उपयोग करके बाहर निकल सकते हैं।"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Chatbot AI शेल में एक त्रुटि हुई:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "चैटबॉट को प्रॉम्प्ट भेजता है"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "प्रॉम्प्ट का प्रतिनिधित्व करने वाला स्ट्रिंग"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "कोई चैटबॉट क्लाइंट नहीं है।"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "प्रतिक्रिया दे रहा है..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "यह चैटबॉट गलत प्रतिक्रियाएँ दे सकता है, इसलिए तदनुसार तथ्यों की जाँच करें।"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "अंतिम शेल वह शेल नहीं है जिससे अलग किया जाना है।"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "सेटिंग्स प्रविष्टियाँ प्राप्त करने में विफल।"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "ChatGPT के लिए API कुंजी लिखें"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "API कुंजी प्रदान नहीं की गई है।"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "ChatGPT द्वारा संचालित चैटबॉट AI को कॉन्फ़िगर करता है"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "ChatGPT API कुंजी"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "एक्सेस के लिए ChatGPT हेतु आपकी API कुंजी। हालाँकि आप मुफ़्त API कुंजी का उपयोग कर सकते हैं, लेकिन आप उन्नत मॉडल का उपयोग नहीं कर सकते। यदि आप सभी सशुल्क मॉडल तक पूर्ण पहुँच चाहते हैं, तो आपको एक्सेस के लिए भुगतान करना होगा।"
+    }
+  ]
+}

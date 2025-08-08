@@ -1,0 +1,78 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi-Latn",
+    "hi-Latn-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "chhatgpt ka upayog karake chaitabot ko praarambh karata hai"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "setings mein konfigar kee gaee api kunjee ko ovararaid karata hai"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "chhatgpt modal vairient nirdisht karata hai"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "ham chaitabot ke zimmedaareepoorn upayog ko protsaahit karate hain. yah chhatgpt ke api ka upayog karata hai, jisaka svaamitv opainai ke paas hai. ham unase sambaddh nahin hain, aur yah ek aadhikaarik chhatgpt klaint nahin hai. hamaara sujhaav hai ki aap chaitabot ka upayog karane se pahale chhatgpt ke niyam aur sharten padh len. aap /aixit ka upayog karake baahar nikal sakate hain."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "chhatbot ai shel mein ek truti huee:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "chaitabot ko prompt bhejata hai"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "prompt ka pratinidhitv karane vaala string"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "koee chaitabot klaint nahin hai."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "pratikriya de raha hai..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "yah chaitabot galat pratikriyaen de sakata hai, isalie tadanusaar tathyon kee jaanch karen."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "antim shel vah shel nahin hai jisase alag kiya jaana hai."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "setings pravishtiyaan praapt karane mein viphal."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "chhatgpt ke lie api kunjee likhen"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "api kunjee pradaan nahin kee gaee hai."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "chhatgpt dvaara sanchaalit chaitabot ai ko konfigar karata hai"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "chhatgpt api kunjee"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "ekses ke lie chhatgpt hetu aapakee api kunjee. haalaanki aap muft api kunjee ka upayog kar sakate hain, lekin aap unnat modal ka upayog nahin kar sakate. yadi aap sabhee sashulk modal tak poorn pahunch chaahate hain, to aapako ekses ke lie bhugataan karana hoga."
+    }
+  ]
+}

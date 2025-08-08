@@ -1819,6 +1819,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "إذا تم تمكين دورة الألوان، فكم عدد العلامات قبل تغيير الألوان في ميزة Progresses؟ 1 علامة = 0.5 علامة ثالثة"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "ساعة تناظرية في منتصف الشاشة، تتغير ألوانها بناءً على الوقت الحالي."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "تعرض لك ساعة رقمية رائعة."
     }
   ]
 }

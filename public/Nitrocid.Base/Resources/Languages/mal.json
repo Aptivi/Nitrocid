@@ -9196,6 +9196,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Pemacu pengekodan asimetri manakah yang ingin anda gunakan?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Ralat AI Chatbot telah berlaku. Sila pastikan anda mempunyai sambungan Internet, kunci API anda sah dan anda tidak melebihi kuota API anda."
     }
   ]
 }

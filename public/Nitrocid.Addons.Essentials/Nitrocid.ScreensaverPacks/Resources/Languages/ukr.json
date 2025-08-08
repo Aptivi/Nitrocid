@@ -1793,6 +1793,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Якщо зміну кольорів увімкнено, скільки позначок перед зміною кольорів у прогресі? 1 тик = 0,5 третини"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Аналоговий годинник посередині екрана змінює колір залежно від поточного часу."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Показує чудовий цифровий годинник."
     }
   ]
 }

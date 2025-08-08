@@ -1797,6 +1797,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Hvis fargesykling er aktivert, hvor mange haker før du endrer farger i Progresses? 1 hake = 0,5 tredjedel"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Analog klokke midt på skjermen og endrer fargen basert på gjeldende klokkeslett."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Viser deg en nydelig digital klokke."
     }
   ]
 }

@@ -8183,10 +8183,10 @@
                 "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
             },
             {
-                "Name": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_SECONDSHAND_NAME",
+                "Name": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_NAME",
                 "Type": "SBoolean",
                 "Variable": "ClochromaAnalogShowSecondsHand",
-                "Description": "NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_SECONDSHAND_DESC"
+                "Description": "NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_DESC"
             },
             {
                 "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",

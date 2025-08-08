@@ -33,6 +33,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "ham karnel ke is sanskaran ko chalaane ke viruddh salaah dete hain, kyonki yah asamarthit hai. yadi aapane is karnel ko agyaat sroton se daunalod kiya hai, to yah sandesh dikhaee de sakata hai. krpaya hamaare aadhikaarik daunalod prshth se daunalod karen."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "aap karnel ka alfa sanskaran chala rahe hain. aapako bag, asthirata ya deta haani ka saamana karana pad sakata hai. yadi sambhav ho, to ham sthir sanskaran ka upayog karane kee salaah dete hain."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "aap karnel ka beeta sanskaran chala rahe hain. aapako bag, asthirata ya deta haani ka saamana karana pad sakata hai. yadi sambhav ho, to ham sthir sanskaran ka upayog karane kee salaah dete hain."
     }
   ]
 }

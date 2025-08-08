@@ -9192,6 +9192,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Which asymmetric encoding driver would you like to use?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "A Chatbot AI error has occurred. Please make sure that you have an Internet connection, your API key is valid, and that you don't exceed your API quota."
     }
   ]
 }

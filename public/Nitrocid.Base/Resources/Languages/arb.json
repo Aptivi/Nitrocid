@@ -9219,6 +9219,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "ma hu barnamaj tashghil altarmiz ghayr almutamathil aladhi targhab fi astikhdamihi?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "hadath khata fi Chatbot AI. yurja alta'akud min atisalik bial'iintirnta, wa'ana miftah API alkhasi bik salihu, wa'anak la tatajawaz hisat API almukhasasat lika."
     }
   ]
 }

@@ -9202,6 +9202,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Welchen Treiber für die asymmetrische Kodierung möchten Sie verwenden?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Ein Chatbot-KI-Fehler ist aufgetreten. Bitte stellen Sie sicher, dass Sie eine Internetverbindung haben, Ihr API-Schlüssel gültig ist und Sie Ihr API-Kontingent nicht überschreiten."
     }
   ]
 }

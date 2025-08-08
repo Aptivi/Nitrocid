@@ -1,0 +1,78 @@
+{
+  "lang": "ukr",
+  "name": "Ukrainian",
+  "cultures": [
+    "uk",
+    "uk-UA"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_DESC",
+      "text": "Ініціалізує чат-бота за допомогою ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC",
+      "text": "Перезамінює ключ API, налаштований у налаштуваннях"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC",
+      "text": "Вказує варіант моделі ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_DISCLAIMER",
+      "text": "Ми заохочуємо відповідальне використання чат-бота. Він використовує API ChatGPT, який належить OpenAI. Ми не пов'язані з ними, і це не офіційний клієнт ChatGPT. Ми рекомендуємо вам ознайомитися з умовами ChatGPT перед використанням чат-бота. Ви можете вийти, використовуючи '/exit'."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_COMMON_SHELL_ERROR",
+      "text": "Сталася помилка з оболонкою штучного інтелекту чат-бота:"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC",
+      "text": "Надсилає запит чат-боту"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC",
+      "text": "Рядок, що представляє запит"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_NOCLIENT",
+      "text": "Немає клієнта чат-бота."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_RESPONDING",
+      "text": "Відповідає..."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_POSTRESPONSE",
+      "text": "Цей чат-бот може генерувати неточні відповіді, тому перевірте факти відповідно."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH",
+      "text": "Остання оболонка не є цією оболонкою для від'єднання."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Не вдалося отримати записи налаштувань."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYPROMPT",
+      "text": "Напишіть ключ API для ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_APIKEYNOTPROVIDED",
+      "text": "Ключ API не надано."
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_ENTRYDESC",
+      "text": "Налаштовує штучний інтелект чат-бота на базі ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME",
+      "text": "Ключ API ChatGPT"
+    },
+    {
+      "loc": "NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC",
+      "text": "Ваш ключ API для ChatGPT для доступу. Хоча ви можете використовувати безкоштовний ключ API, ви не можете використовувати розширені моделі. Якщо ви хочете отримати повний доступ до всіх платних моделей, вам доведеться заплатити за доступ."
+    }
+  ]
+}

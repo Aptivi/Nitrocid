@@ -33,6 +33,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "Commendamus contra currendum hanc versionem nuclei, quia sine suffragio est. Si hoc granum ex ignotis fontibus deiecisti, haec epistula potest apparere. Please download from our official downloads page."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "Versionem alpha nuclei uteris. In errores, instabilitates, vel etiam iacturam datorum incidere potes. Versione stabili uti commendamus, si fieri potest."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "Versionem beta nuclei uteris. In errores, instabilitates, vel etiam iacturam datorum incidere potes. Versione stabili uti commendamus, si fieri potest."
     }
   ]
 }

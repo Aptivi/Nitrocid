@@ -1899,6 +1899,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "If color cycling is enabled, how many ticks before changing colors in Progresses? 1 tick = 0.5 third"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Analog clock in the middle of the screen and changes the color based on the current time."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Shows you a gorgeous digital clock"
     }
   ]
 }

@@ -9193,6 +9193,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "Driver enkode asimetris mana yang ingin Anda gunakan?"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "Terjadi kesalahan Chatbot AI. Pastikan Anda memiliki koneksi internet, kunci API Anda valid, dan Anda tidak melebihi kuota API."
     }
   ]
 }

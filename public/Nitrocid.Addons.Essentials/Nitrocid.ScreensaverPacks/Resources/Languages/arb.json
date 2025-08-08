@@ -1819,6 +1819,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "'iidha tama tamkin dawrat al'alwan, fakam eadad alealamat qabl taghyir al'alwan fi mayzat Progresses? 1 ealamat = 0.5 ealamat thalithatan"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "saeat tanazuriat fi muntasaf alshaashati, tataghayar 'alwanuha bna'an ealaa alwaqt alhalii."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "taearad lak saeat raqmiat rayieatun."
     }
   ]
 }

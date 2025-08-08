@@ -9196,6 +9196,10 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
       "text": "您想使用哪個非對稱編碼驅動程式？"
+    },
+    {
+      "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
+      "text": "聊天機器人 AI 發生錯誤。請確保您已連線至網際網路、API 金鑰有效，且未超出 API 配額。"
     }
   ]
 }

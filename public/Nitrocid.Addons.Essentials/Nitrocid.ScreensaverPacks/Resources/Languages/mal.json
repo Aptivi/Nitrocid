@@ -1796,6 +1796,14 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC",
       "text": "Jika kitaran warna didayakan, berapa tanda kutu sebelum menukar warna dalam Progress? 1 tanda = 0.5 pertiga"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC",
+      "text": "Jam analog di tengah-tengah skrin dan menukar warna berdasarkan masa semasa."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
+      "text": "Menunjukkan kepada anda jam digital yang cantik"
     }
   ]
 }

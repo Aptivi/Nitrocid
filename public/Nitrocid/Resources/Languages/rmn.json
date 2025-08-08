@@ -34,6 +34,14 @@
     {
       "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
       "text": "Vă recomandăm să nu rulați această versiune a nucleului, deoarece nu este acceptată. Dacă ați descărcat acest nucleu din surse necunoscute, este posibil să apară acest mesaj. Vă rugăm să descărcați de pe pagina noastră oficială de descărcări."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "Utilizați versiunea alfa a kernelului. Este posibil să întâmpinați erori, instabilități sau chiar pierderi de date. Vă recomandăm să utilizați versiunea stabilă, dacă este posibil."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "Utilizați versiunea beta a kernelului. Este posibil să întâmpinați erori, instabilități sau chiar pierderi de date. Vă recomandăm să utilizați versiunea stabilă, dacă este posibil."
     }
   ]
 }
