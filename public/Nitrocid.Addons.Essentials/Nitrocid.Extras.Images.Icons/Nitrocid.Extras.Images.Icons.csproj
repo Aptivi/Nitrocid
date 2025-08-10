@@ -8,14 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Terminaux.Images.Icons" Version="7.0.0.1" />
+    <PackageReference Include="Terminaux.Images.Icons" Version="7.0.1" />
     
     <!--
         TODO: Remove those once Terminaux 7.0 migration finishes with the official Terminaux 7.0
         release on August 10th.
     -->
-    <PackageReference Include="Terminaux.Images" Version="7.0.0.1" />
-    <PackageReference Include="Terminaux" Version="7.0.0.1" />
+    <PackageReference Include="Terminaux.Images" Version="7.0.1" />
+    <PackageReference Include="Terminaux" Version="7.0.1" />
   </ItemGroup>
 
   <ItemGroup>
