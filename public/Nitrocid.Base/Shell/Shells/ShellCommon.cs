@@ -48,25 +48,16 @@ namespace Nitrocid.Base.Shell.Shells
 
         internal static void RegisterCompletions()
         {
-            // TODO: Replace below code, since Terminaux 7.0.1 already implements this logic.
-            var completionsListType = typeof(CommandAutoCompletionList);
-            var completionsField = completionsListType.GetField(nameof(completions), BindingFlags.Static | BindingFlags.NonPublic) ??
-                throw new KernelException(KernelExceptionType.ShellOperation, "Can't get a list of completions");
-            var completionsDict = (Dictionary<string, Func<string[], string[]>>?)completionsField.GetValue(null) ??
-                throw new KernelException(KernelExceptionType.ShellOperation, "Can't get a list of completions");
             foreach (var completion in completions)
-                completionsDict.Add(completion.Key, completion.Value);
+                if (!CommandAutoCompletionList.IsCompletionFunctionRegistered(completion.Key))
+                    CommandAutoCompletionList.RegisterCompletionFunction(completion.Key, completion.Value);
         }
 
         internal static void UnregisterCompletions()
         {
-            var completionsListType = typeof(CommandAutoCompletionList);
-            var completionsField = completionsListType.GetField(nameof(completions), BindingFlags.Static | BindingFlags.NonPublic) ??
-                throw new KernelException(KernelExceptionType.ShellOperation, "Can't get a list of completions");
-            var completionsDict = (Dictionary<string, Func<string[], string[]>>?)completionsField.GetValue(null) ??
-                throw new KernelException(KernelExceptionType.ShellOperation, "Can't get a list of completions");
             foreach (var completion in completions)
-                completionsDict.Remove(completion.Key);
+                if (CommandAutoCompletionList.IsCompletionFunctionRegistered(completion.Key))
+                    CommandAutoCompletionList.UnregisterCompletionFunction(completion.Key);
         }
     }
 }
