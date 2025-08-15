@@ -50,6 +50,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
       "text": "Sie verwenden die Beta-Version des Kernels. Es können Fehler, Instabilitäten oder sogar Datenverlust auftreten. Wir empfehlen, wenn möglich, die stabile Version zu verwenden."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
+      "text": "Wählt einen zufälligen Bildschirmschoner aus"
     }
   ]
 }
