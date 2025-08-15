@@ -1336,7 +1336,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 [
                     new CommandArgumentInfo(
                     [
-                        new CommandArgumentPart(false, "saver/random", new CommandArgumentPartOptions()
+                        new CommandArgumentPart(false, "saver", new CommandArgumentPartOptions()
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC"
                         }),
@@ -1345,7 +1345,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         new SwitchInfo("select", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_SELECT_DESC", new()
                         {
                             AcceptsValues = false
-                        })
+                        }),
+                        new SwitchInfo("random", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC", new()
+                        {
+                            AcceptsValues = false
+                        }),
                     ])
                 ], new SaveScreenCommand()),
 

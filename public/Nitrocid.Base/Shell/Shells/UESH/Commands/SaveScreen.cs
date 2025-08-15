@@ -42,6 +42,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             bool selectionMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-select");
+            bool randomMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-random");
             if (selectionMode)
             {
                 var tui = new ScreensaverCli();
@@ -52,6 +53,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             {
                 if (parameters.ArgumentsList.Length != 0)
                     ScreensaverManager.ShowSavers(parameters.ArgumentsList[0]);
+                else if (randomMode)
+                    ScreensaverManager.ShowSavers("random");
                 else
                     ScreensaverManager.ShowSavers();
                 PressAndBailHelper();
