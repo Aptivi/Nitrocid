@@ -154,7 +154,7 @@ pushall() {
     packages=()
     while IFS= read -r pkg; do
         packages+=("$pkg")
-    done < <(find "$ROOTDIR/public/Nitrocid/KS*/" -maxdepth 1 -type f -name "*.nupkg")
+    done < <(find "$ROOTDIR"/public/Nitrocid/KS* -maxdepth 1 -type f -name "*.nupkg")
     for pkg in "${packages[@]}"; do
         echo "$pkg"
         dotnet nuget push "$pkg" --api-key "$NUGET_APIKEY" --source "$nugetsource" --skip-duplicate
