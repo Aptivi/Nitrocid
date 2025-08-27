@@ -154,7 +154,7 @@ pushall() {
     packages=()
     while IFS= read -r pkg; do
         packages+=("$pkg")
-    done < <(find "$ROOTDIR/public/Nitrocid/KS*/" -maxdepth 1 -type f -name "*.nupkg")
+    done < <(find "$ROOTDIR"/public/Nitrocid/KS* -maxdepth 1 -type f -name "*.nupkg")
     for pkg in "${packages[@]}"; do
         echo "$pkg"
         dotnet nuget push "$pkg" --api-key "$NUGET_APIKEY" --source "$nugetsource" --skip-duplicate
@@ -220,7 +220,7 @@ increment() {
             return $result
         fi
     done
-    
+
     # Modify the NitrocidModAPIVersionMajor and the NitrocidModAPIVersionChangeset properties
     OLDAPIMAJOR="${NKSMODAPIVERSPLITOLD[0]}.${NKSMODAPIVERSPLITOLD[1]}.${NKSMODAPIVERSPLITOLD[2]}"
     NEWAPIMAJOR="${NKSMODAPIVERSPLITNEW[0]}.${NKSMODAPIVERSPLITNEW[1]}.${NKSMODAPIVERSPLITNEW[2]}"
@@ -242,7 +242,7 @@ increment() {
     OLDMAJOR="${NKSVERSPLITOLD[0]}.${NKSVERSPLITOLD[1]}.${NKSVERSPLITOLD[2]}"
     NEWMAJOR="${NKSVERSPLITNEW[0]}.${NKSVERSPLITNEW[1]}.${NKSVERSPLITNEW[2]}"
     sed -b -i "s/Name=\"Nitrocid $OLDMAJOR\"/Name=\"Nitrocid $NEWMAJOR\"/g" "$ROOTDIR/public/Nitrocid.Installers/Nitrocid.Installer/Package.wxs"
-    
+
     # Modify the PKGBUILD VCS files
     sed -b -i "s/pkgname=nitrocid-${NKSMODAPIVERSPLITOLD[2]}/pkgname=nitrocid-${NKSMODAPIVERSPLITNEW[2]}/g" "$ROOTDIR"/PKGBUILD-VCS*
     sed -b -i "s/pkgver=v$OLDMAJOR/pkgver=v$NEWMAJOR/g" "$ROOTDIR"/PKGBUILD-VCS*
