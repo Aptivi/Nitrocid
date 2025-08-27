@@ -1,3 +1,9 @@
+nitrocid-25 (3.0.25.521-0.1.0.58-1) noble; urgency=medium
+
+  * General improvements and bug fixes
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Wed, 27 Aug 2025 18:33:33 +0300
+
 nitrocid-25 (3.0.25.521-0.1.0.57-1) noble; urgency=medium
 
   * General improvements in the splash screen function
