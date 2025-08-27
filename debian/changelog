@@ -1,6 +1,7 @@
 nitrocid-27 (3.1.27.51-0.1.2.23-1) noble; urgency=medium
 
-  * General improvements and bug fixes
+  * Fixed CVEs: CVE-2025-53015, CVE-2025-55004, CVE-2025-55154,
+    CVE-2025-55298, CVE-2025-57803
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Wed, 27 Aug 2025 18:32:53 +0300
 
