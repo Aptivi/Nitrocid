@@ -1,7 +1,7 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
      xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui"
      xmlns:netfx="http://wixtoolset.org/schemas/v4/wxs/netfx">
-    <Package Name="Nitrocid 0.1.0" Manufacturer="Aptivi" Version="0.1.0.58" UpgradeCode="b44c5027-1ced-41bb-b28f-a2f0af758fc6" Scope="perMachine">
+    <Package Name="Nitrocid 0.1.0" Manufacturer="Aptivi" Version="0.1.0.59" UpgradeCode="b44c5027-1ced-41bb-b28f-a2f0af758fc6" Scope="perMachine">
         <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
 
         <Feature Id="Main">

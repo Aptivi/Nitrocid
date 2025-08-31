@@ -1,3 +1,9 @@
+nitrocid-25 (3.0.25.521-0.1.0.59-1) noble; urgency=medium
+
+  * General improvements and bug fixes
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sun, 31 Aug 2025 09:39:09 +0300
+
 nitrocid-25 (3.0.25.521-0.1.0.58-1) noble; urgency=medium
 
   * Fixed CVEs: CVE-2025-53015, CVE-2025-55004, CVE-2025-55154,
