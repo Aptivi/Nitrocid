@@ -119,12 +119,7 @@ namespace Nitrocid.Drivers.Console
                     return 0;
                 return SystemConsole.CursorLeft;
             }
-            set
-            {
-                if (!IsDumb)
-                    SystemConsole.CursorLeft = value;
-                _moved = true;
-            }
+            set => SetCursorLeft(value);
         }
 
         /// <inheritdoc/>
@@ -136,12 +131,7 @@ namespace Nitrocid.Drivers.Console
                     return 0;
                 return SystemConsole.CursorTop;
             }
-            set
-            {
-                if (!IsDumb)
-                    SystemConsole.CursorTop = value;
-                _moved = true;
-            }
+            set => SetCursorTop(value);
         }
 
         /// <inheritdoc/>
@@ -309,6 +299,24 @@ namespace Nitrocid.Drivers.Console
         {
             if (!IsDumb)
                 SystemConsole.SetCursorPosition(left, top);
+            _moved = true;
+        }
+
+        /// <inheritdoc/>
+        public virtual void SetCursorLeft(int left)
+        {
+            if (IsDumb)
+                return;
+            SystemConsole.CursorLeft = left;
+            _moved = true;
+        }
+
+        /// <inheritdoc/>
+        public virtual void SetCursorTop(int top)
+        {
+            if (IsDumb)
+                return;
+            SystemConsole.CursorTop = top;
             _moved = true;
         }
 

@@ -11,7 +11,7 @@ namespace KSMod
 
         public string Version => "1.0.0";
 
-        public Version MinimumSupportedApiVersion => new(3, 0, 25, 522);
+        public Version MinimumSupportedApiVersion => new(3, 0, 25, 523);
 
         public ReadOnlyDictionary<string, Delegate> PubliclyAvailableFunctions => null;
 
