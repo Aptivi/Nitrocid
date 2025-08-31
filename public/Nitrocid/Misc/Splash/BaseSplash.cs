@@ -33,13 +33,13 @@ namespace Nitrocid.Misc.Splash
     public class BaseSplash : ISplash
     {
 
-        // Standalone splash information
         /// <inheritdoc/>
         public virtual string SplashName => "Blank";
 
-        // Property implementations
-        /// <inheritdoc/>
-        public virtual bool SplashClosing { get; set; }
+        /// <summary>
+        /// Whether the splash is closing. If true, the thread of which handles the display should close itself. <see cref="Closing(SplashContext, out bool)"/> should set this property to True.
+        /// </summary>
+        public static bool SplashClosing { get; internal set; }
 
         /// <inheritdoc/>
         public virtual bool SplashDisplaysProgress => Info.DisplaysProgress;
