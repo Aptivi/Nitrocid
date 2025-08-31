@@ -6,10 +6,17 @@ Magic Bloom
 
 =============================================================================
 
-0.1.0.59 - Service Pack 5 (TBD)
-===============================
+0.1.0.59 - Service Pack 5 (August 31st, 2025)
+=============================================
 
-TBD
+This service pack is a minor service pack for the 0.1.0.x series that
+contains fixes that were baked into both 0.2.0 Tech Preview and 0.1.2 series
+that can be backportable.
+
+Splash closing has been fixed. Now, splashes will no longer prevent the
+kernel from shutting down. Also, we've added modifiable `SetCursor*()`
+functions, backported improvements to games, and usages are shown in the
+command list.
 
 0.1.0.58 - Security release (August 27th, 2025)
 ===============================================

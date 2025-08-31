@@ -1,10 +1,13 @@
-We have released a new version to fix security bugs.
+This is Nitrocid 0.1.0 Service Pack 5 that is a rather small service pack release that brings in several improvements to different kernel areas.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed CVEs: CVE-2025-53015, CVE-2025-55004, CVE-2025-55154, CVE-2025-55298, CVE-2025-57803
+- `[+]` Made `SetCursor*()` functions modifiable
+- `[*]` Fixed splash closing
+- `[*]` Backported improvements from 0.1.2 for games
+- `[*]` Help shows usages in command list
 
 Review the commit history if you want to get a deep insight about the changes.
 
