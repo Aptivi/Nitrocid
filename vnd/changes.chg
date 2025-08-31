@@ -1,12 +1,17 @@
 Nitrocid KS changes
 ===================
 
-Released February 27th, 2025; version 0.1.2.23 (mod API 3.1.27.51); codename
+Released February 27th, 2025; version 0.1.2.24 (mod API 3.1.27.51); codename
 Ink-redible Hotness
 
 =============================================================================
 
-0.1.0.58 - Security release (August 27th, 2025)
+0.1.2.24 - Service Pack 2 (TBD)
+===============================
+
+TBD
+
+0.1.2.23 - Security release (August 27th, 2025)
 ===============================================
 
 This release fixes the following CVEs found in the ImageMagick library that
