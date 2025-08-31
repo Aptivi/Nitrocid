@@ -32,10 +32,10 @@ using Terminaux.Colors.Data;
 using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Inputs;
-using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Colors.Transformation;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -82,7 +82,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // We need to show five boxes and five progress bars representing the horses
                 int consoleSixthsHeight = ConsoleWrapper.WindowHeight / 6;
                 int boxLeft = 1;
-                int boxWidth = 4;
+                int boxWidth = 3;
                 int progressLeft = 7;
                 for (int i = 0; i < 5; i++)
                 {
@@ -108,8 +108,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     builder.Append(
                         TextWriterWhereColor.RenderWhereColor(Translate.DoTranslation("Horse") + $" {horse.HorseNumber}", 1, height - 1, finalColor) +
                         border.Render() +
-                        TextWriterWhereColor.RenderWhereColor($"{horse.HorseProgress:000}%", 2, height + 1, finalColor) +
-                        ContainerTools.RenderRenderable(progress, new(progressLeft, height))
+                        TextWriterWhereColor.RenderWhereColor("🐎", 2, height + 1, finalColor) +
+                        ContainerTools.RenderRenderable(progress, new(progressLeft, height + 1))
                     );
                 }
 

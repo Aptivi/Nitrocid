@@ -71,7 +71,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     underscoresRender.Append(gotChars.Contains(RandomWord[i]) ? $"{RandomWord[i]} " : "_ ");
                 int underscoresPosX = ConsoleWrapper.WindowWidth / 2 - underscoresRender.Length / 2;
                 int underscoresPosY = ConsoleWrapper.WindowHeight - 2;
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} cells for underscore length", underscoresRender.Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} cells for underscore length", vars: [underscoresRender.Length]);
                 builder.Append(
                     TextWriterWhereColor.RenderWhereColor(underscoresRender.ToString(), underscoresPosX, underscoresPosY, underscoresSeq)
                 );
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 string wrongRender = string.Join(" ", wrongChars);
                 int wrongPosX = ConsoleWrapper.WindowWidth / 2 - wrongRender.Length / 2;
                 int wrongPosY = ConsoleWrapper.WindowHeight - 4;
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} cells for {1} wrong letters", wrongRender.Length, wrongChars.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} cells for {1} wrong letters", vars: [wrongRender.Length, wrongChars.Count]);
                 builder.Append(
                     TextWriterWhereColor.RenderWhereColor(wrongRender.ToString(), wrongPosX, wrongPosY, wrongSeq)
                 );

@@ -125,7 +125,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
                     // Select command based on key value
                     HandleKeypress(Keypress, dodge);
-                    ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ScreensaverManager.Delay(100);
                 }
             }
 

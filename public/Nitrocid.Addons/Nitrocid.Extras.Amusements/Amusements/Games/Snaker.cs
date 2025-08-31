@@ -23,7 +23,6 @@ using System.Threading;
 using Terminaux.Colors;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
@@ -68,24 +67,24 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
                 int FloorTopLeftEdge = 2;
                 int FloorBottomLeftEdge = 2;
-                DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", FloorTopLeftEdge, FloorBottomLeftEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", vars: [FloorTopLeftEdge, FloorBottomLeftEdge]);
 
                 int FloorTopRightEdge = ConsoleWrapper.WindowWidth - 3;
                 int FloorBottomRightEdge = ConsoleWrapper.WindowWidth - 3;
-                DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", FloorTopRightEdge, FloorBottomRightEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", vars: [FloorTopRightEdge, FloorBottomRightEdge]);
 
                 int FloorTopEdge = 2;
                 int FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
-                DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", FloorTopEdge, FloorBottomEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", vars: [FloorTopEdge, FloorBottomEdge]);
 
                 int FloorLeftEdge = 2;
                 int FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
-                DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", vars: [FloorLeftEdge, FloorRightEdge]);
 
                 // First, draw the floor top edge
                 for (int x = FloorTopLeftEdge; x <= FloorTopRightEdge; x++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", vars: [x, 1]);
                     floor.Append(
                         CsiSequences.GenerateCsiCursorPosition(x + 1, FloorTopEdge + 1) +
                         " "
@@ -95,7 +94,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Second, draw the floor bottom edge
                 for (int x = FloorBottomLeftEdge; x <= FloorBottomRightEdge; x++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", vars: [x, FloorBottomEdge]);
                     floor.Append(
                         CsiSequences.GenerateCsiCursorPosition(x + 1, FloorBottomEdge + 1) +
                         " "
@@ -105,7 +104,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Third, draw the floor left edge
                 for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", vars: [FloorLeftEdge, y]);
                     floor.Append(
                         CsiSequences.GenerateCsiCursorPosition(FloorLeftEdge + 1, y + 1) +
                         "  "
@@ -115,7 +114,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Finally, draw the floor right edge
                 for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", vars: [FloorRightEdge, y]);
                     floor.Append(
                         CsiSequences.GenerateCsiCursorPosition(FloorRightEdge + 2, y + 1) +
                         "  "
@@ -144,18 +143,18 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             int FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
             int FloorLeftEdge = 3;
             int FloorRightEdge = ConsoleWrapper.WindowWidth - 3;
-            DebugWriter.WriteDebug(DebugLevel.I, "Floor top edge {0}", FloorTopEdge);
-            DebugWriter.WriteDebug(DebugLevel.I, "Floor bottom edge {0}", FloorBottomEdge);
-            DebugWriter.WriteDebug(DebugLevel.I, "Floor left edge {0}", FloorLeftEdge);
-            DebugWriter.WriteDebug(DebugLevel.I, "Floor right edge {0}", FloorRightEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Floor top edge {0}", vars: [FloorTopEdge]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Floor bottom edge {0}", vars: [FloorBottomEdge]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Floor left edge {0}", vars: [FloorLeftEdge]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Floor right edge {0}", vars: [FloorRightEdge]);
 
             int SnakeCurrentX = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
             int SnakeCurrentY = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
-            DebugWriter.WriteDebug(DebugLevel.I, "Initial snake position ({0}, {1})", SnakeCurrentX, SnakeCurrentY);
+            DebugWriter.WriteDebug(DebugLevel.I, "Initial snake position ({0}, {1})", vars: [SnakeCurrentX, SnakeCurrentY]);
 
             int SnakeAppleX = RandomDriver.Random(FloorLeftEdge + 1, FloorRightEdge - 1);
             int SnakeAppleY = RandomDriver.Random(FloorTopEdge + 1, FloorBottomEdge - 1);
-            DebugWriter.WriteDebug(DebugLevel.I, "Initial snake apple position ({0}, {1})", SnakeAppleX, SnakeAppleY);
+            DebugWriter.WriteDebug(DebugLevel.I, "Initial snake apple position ({0}, {1})", vars: [SnakeAppleX, SnakeAppleY]);
 
             bool Dead = false;
             bool DidHorizontal = false;
@@ -183,7 +182,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     CsiSequences.GenerateCsiCursorPosition(SnakeAppleX + 1, SnakeAppleY + 1) +
                     "+"
                 );
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawn apple at ({0}, {1})", SnakeAppleX, SnakeAppleY);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawn apple at ({0}, {1})", vars: [SnakeAppleX, SnakeAppleY]);
 
                 // Make a snake
                 for (int PositionIndex = SnakeMassPositions.Count - 1; PositionIndex >= 0; PositionIndex -= 1)
@@ -201,7 +200,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         CsiSequences.GenerateCsiCursorPosition(PositionX + 1, PositionY + 1) +
                         snakeHead
                     );
-                    DebugWriter.WriteDebug(DebugLevel.I, "Drawn snake at ({0}, {1}) for mass {2}/{3}", PositionX, PositionY, PositionIndex + 1, SnakeMassPositions.Count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawn snake at ({0}, {1}) for mass {2}/{3}", vars: [PositionX, PositionY, PositionIndex + 1, SnakeMassPositions.Count]);
                 }
 
                 // If dead, show dead face to indicate that the dead snake died. Dead snake is game over.
@@ -211,7 +210,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         CsiSequences.GenerateCsiCursorPosition(SnakePreviousX + 1, SnakePreviousY + 1) +
                         "X"
                     );
-                    DebugWriter.WriteDebug(DebugLevel.I, "Snake died at {0}/{1}.", SnakePreviousX, SnakePreviousY);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Snake died at {0}/{1}.", vars: [SnakePreviousX, SnakePreviousY]);
                 }
 
                 // Return the result
@@ -226,7 +225,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 // Delay
                 if (Simulation)
-                    ThreadManager.SleepNoBlock((int)(AmusementsInit.SaversConfig.SnakerDelay * factor), ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ScreensaverManager.Delay((int)(AmusementsInit.SaversConfig.SnakerDelay * factor));
                 else
                     Thread.Sleep((int)(AmusementsInit.SaversConfig.SnakerDelay * factor));
                 ScreenTools.Render();
@@ -238,8 +237,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     float PossibilityToChange = (float)RandomDriver.RandomDouble();
                     if ((int)Math.Round(PossibilityToChange) == 1)
                     {
-                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Change guaranteed. {0}", PossibilityToChange);
-                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", DidHorizontal, DidVertical);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Change guaranteed. {0}", vars: [PossibilityToChange]);
+                        DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", vars: [DidHorizontal, DidVertical]);
                         if (DidHorizontal)
                             Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.RandomIdx(2).ToString()));
                         else if (DidVertical)
@@ -251,25 +250,25 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             SnakeCurrentY += 1;
                             DidHorizontal = false;
                             DidVertical = true;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Increased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Increased vertical snake position from {0} to {1}", vars: [SnakePreviousY, SnakeCurrentY]);
                             break;
                         case SnakeDirection.Top:
                             SnakeCurrentY -= 1;
                             DidHorizontal = false;
                             DidVertical = true;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Decreased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Decreased vertical snake position from {0} to {1}", vars: [SnakePreviousY, SnakeCurrentY]);
                             break;
                         case SnakeDirection.Left:
                             SnakeCurrentX -= 1;
                             DidHorizontal = true;
                             DidVertical = false;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Decreased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Decreased horizontal snake position from {0} to {1}", vars: [SnakePreviousX, SnakeCurrentX]);
                             break;
                         case SnakeDirection.Right:
                             SnakeCurrentX += 1;
                             DidHorizontal = true;
                             DidVertical = false;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal snake position from {0} to {1}", vars: [SnakePreviousX, SnakeCurrentX]);
                             break;
                     }
                 }
@@ -305,40 +304,40 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             SnakeCurrentY += 1;
                             DidHorizontal = false;
                             DidVertical = true;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Increased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Increased vertical snake position from {0} to {1}", vars: [SnakePreviousY, SnakeCurrentY]);
                             break;
                         case SnakeDirection.Top:
                             SnakeCurrentY -= 1;
                             DidHorizontal = false;
                             DidVertical = true;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Decreased vertical snake position from {0} to {1}", SnakePreviousY, SnakeCurrentY);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Decreased vertical snake position from {0} to {1}", vars: [SnakePreviousY, SnakeCurrentY]);
                             break;
                         case SnakeDirection.Left:
                             SnakeCurrentX -= 1;
                             DidHorizontal = true;
                             DidVertical = false;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Decreased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Decreased horizontal snake position from {0} to {1}", vars: [SnakePreviousX, SnakeCurrentX]);
                             break;
                         case SnakeDirection.Right:
                             SnakeCurrentX += 1;
                             DidHorizontal = true;
                             DidVertical = false;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal snake position from {0} to {1}", SnakePreviousX, SnakeCurrentX);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal snake position from {0} to {1}", vars: [SnakePreviousX, SnakeCurrentX]);
                             break;
                     }
                 }
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Snake is facing {0}.", Direction.ToString());
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Snake is facing {0}.", vars: [Direction.ToString()]);
 
                 // Check death using mass position check
                 Dead = SnakeMassPositions.Contains($"{SnakeCurrentX}/{SnakeCurrentY}");
-                DebugWriter.WriteDebug(DebugLevel.I, "Mass position contains the current position ({0}, {1})? {2}", SnakeCurrentX, SnakeCurrentY, Dead);
+                DebugWriter.WriteDebug(DebugLevel.I, "Mass position contains the current position ({0}, {1})? {2}", vars: [SnakeCurrentX, SnakeCurrentY, Dead]);
 
                 // Add the mass position
                 if (!Dead)
                     SnakeMassPositions.Add($"{SnakeCurrentX}/{SnakeCurrentY}");
                 if (SnakeMassPositions.Count > SnakeLength)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Mass position count {0} exceeds snake length of {1}. Removing index 0...", SnakeMassPositions.Count, SnakeLength);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Mass position count {0} exceeds snake length of {1}. Removing index 0...", vars: [SnakeMassPositions.Count, SnakeLength]);
                     var LastTailPositionStrings = SnakeMassPositions[0].Split('/');
                     SnakeLastTailToWipeX = Convert.ToInt32(LastTailPositionStrings[0]);
                     SnakeLastTailToWipeY = Convert.ToInt32(LastTailPositionStrings[1]);
@@ -348,16 +347,16 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Check death state
                 if (!Dead)
                     Dead = SnakeCurrentY == FloorTopEdge;
-                DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current Y is {1} and top edge is {2}", Dead, SnakeCurrentY, FloorTopEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current Y is {1} and top edge is {2}", vars: [Dead, SnakeCurrentY, FloorTopEdge]);
                 if (!Dead)
                     Dead = SnakeCurrentY == FloorBottomEdge;
-                DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current Y is {1} and bottom edge is {2}", Dead, SnakeCurrentY, FloorBottomEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current Y is {1} and bottom edge is {2}", vars: [Dead, SnakeCurrentY, FloorBottomEdge]);
                 if (!Dead)
                     Dead = SnakeCurrentX == FloorLeftEdge;
-                DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current X is {1} and left edge is {2}", Dead, SnakeCurrentX, FloorLeftEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current X is {1} and left edge is {2}", vars: [Dead, SnakeCurrentX, FloorLeftEdge]);
                 if (!Dead)
                     Dead = SnakeCurrentX == FloorRightEdge;
-                DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current X is {1} and right edge is {2}", Dead, SnakeCurrentX, FloorRightEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Dead? {0} because current X is {1} and right edge is {2}", vars: [Dead, SnakeCurrentX, FloorRightEdge]);
 
                 // If the snake ate the apple, grow it up
                 if (SnakeCurrentX == SnakeAppleX & SnakeCurrentY == SnakeAppleY)
@@ -365,12 +364,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     SnakeLength += 1;
                     if (factor > 0.25)
                         factor -= 0.01;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Snake grew up to {0}.", SnakeLength);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Snake grew up to {0}.", vars: [SnakeLength]);
 
                     // Relocate the apple
                     SnakeAppleX = RandomDriver.Random(FloorLeftEdge + 1, FloorRightEdge - 1);
                     SnakeAppleY = RandomDriver.Random(FloorTopEdge + 1, FloorBottomEdge - 1);
-                    DebugWriter.WriteDebug(DebugLevel.I, "New snake apple position ({0}, {1})", SnakeAppleX, SnakeAppleY);
+                    DebugWriter.WriteDebug(DebugLevel.I, "New snake apple position ({0}, {1})", vars: [SnakeAppleX, SnakeAppleY]);
                 }
 
                 // Set the previous positions
@@ -381,7 +380,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Show the stage for few seconds before wiping
             if (Simulation)
-                ThreadManager.SleepNoBlock(AmusementsInit.SaversConfig.SnakerStageDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(AmusementsInit.SaversConfig.SnakerStageDelay);
             else
                 Thread.Sleep(AmusementsInit.SaversConfig.SnakerStageDelay);
 
@@ -403,13 +402,13 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 int RedColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumRedColorLevel, AmusementsInit.SaversConfig.SnakerMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumGreenColorLevel, AmusementsInit.SaversConfig.SnakerMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumBlueColorLevel, AmusementsInit.SaversConfig.SnakerMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 return new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
             }
             else
             {
                 int ColorNum = RandomDriver.Next(AmusementsInit.SaversConfig.SnakerMinimumColorLevel, AmusementsInit.SaversConfig.SnakerMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                 return new Color(ColorNum);
             }
         }

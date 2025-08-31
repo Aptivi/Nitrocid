@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             int RedColorNum = RandomDriver.Random(0, 255);
             int GreenColorNum = RandomDriver.Random(0, 255);
             int BlueColorNum = RandomDriver.Random(0, 255);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
             var fieldColor = new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
 
             // Draw the field
@@ -66,26 +66,26 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 StringBuilder field = new(ColorTools.RenderSetConsoleColor(fieldColor, true));
 
-                int FieldTopLeftEdge = 2;
-                int FieldBottomLeftEdge = 2;
-                DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", FieldTopLeftEdge, FieldBottomLeftEdge);
+                int FieldTopLeftEdge = 3;
+                int FieldBottomLeftEdge = 3;
+                DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", vars: [FieldTopLeftEdge, FieldBottomLeftEdge]);
 
                 int FieldTopRightEdge = ConsoleWrapper.WindowWidth - 3;
                 int FieldBottomRightEdge = ConsoleWrapper.WindowWidth - 3;
-                DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", FieldTopRightEdge, FieldBottomRightEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", vars: [FieldTopRightEdge, FieldBottomRightEdge]);
 
-                int FieldTopEdge = 2;
+                int FieldTopEdge = 3;
                 int FieldBottomEdge = ConsoleWrapper.WindowHeight - 2;
-                DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", FieldTopEdge, FieldBottomEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", vars: [FieldTopEdge, FieldBottomEdge]);
 
                 int FieldLeftEdge = 2;
                 int FieldRightEdge = ConsoleWrapper.WindowWidth - 4;
-                DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FieldLeftEdge, FieldRightEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", vars: [FieldLeftEdge, FieldRightEdge]);
 
                 // First, draw the field top edge
                 for (int x = FieldTopLeftEdge; x <= FieldTopRightEdge; x++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing field top edge ({0}, {1})", x, 1);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing field top edge ({0}, {1})", vars: [x, 1]);
                     field.Append(
                         CsiSequences.GenerateCsiCursorPosition(x + 1, FieldTopEdge + 1) +
                         " "
@@ -95,7 +95,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Second, draw the field bottom edge
                 for (int x = FieldBottomLeftEdge; x <= FieldBottomRightEdge; x++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing field bottom edge ({0}, {1})", x, FieldBottomEdge);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing field bottom edge ({0}, {1})", vars: [x, FieldBottomEdge]);
                     field.Append(
                         CsiSequences.GenerateCsiCursorPosition(x + 1, FieldBottomEdge + 1) +
                         " "
@@ -105,7 +105,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Third, draw the field left edge
                 for (int y = FieldTopEdge; y <= FieldBottomEdge; y++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing field left edge ({0}, {1})", FieldLeftEdge, y);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing field left edge ({0}, {1})", vars: [FieldLeftEdge, y]);
                     field.Append(
                         CsiSequences.GenerateCsiCursorPosition(FieldLeftEdge + 1, y + 1) +
                         "  "
@@ -115,7 +115,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Finally, draw the field right edge
                 for (int y = FieldTopEdge; y <= FieldBottomEdge; y++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing field right edge ({0}, {1})", FieldRightEdge, y);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing field right edge ({0}, {1})", vars: [FieldRightEdge, y]);
                     field.Append(
                         CsiSequences.GenerateCsiCursorPosition(FieldRightEdge + 2, y + 1) +
                         "  "
@@ -127,7 +127,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 {
                     Text =
                         Translate.DoTranslation("Score") + $": {p1Score,3}" +
-                        "           " +
+                        "     |     " +
                         Translate.DoTranslation("Score") + $": {p2Score,3}",
                     Top = 1,
                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText),
@@ -148,20 +148,21 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             var ballColor = new Color(ConsoleColors.White);
 
             // The ball usually starts in the middle.
-            int FloorTopEdge = 2;
+            int FloorTopEdge = 3;
             int FloorBottomEdge = ConsoleWrapper.WindowHeight - 2;
             int FloorLeftEdge = 3;
             int FloorRightEdge = ConsoleWrapper.WindowWidth - 3;
-            DebugWriter.WriteDebug(DebugLevel.I, "Floor top edge {0}", FloorTopEdge);
-            DebugWriter.WriteDebug(DebugLevel.I, "Floor bottom edge {0}", FloorBottomEdge);
-            DebugWriter.WriteDebug(DebugLevel.I, "Floor left edge {0}", FloorLeftEdge);
-            DebugWriter.WriteDebug(DebugLevel.I, "Floor right edge {0}", FloorRightEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Floor top edge {0}", vars: [FloorTopEdge]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Floor bottom edge {0}", vars: [FloorBottomEdge]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Floor left edge {0}", vars: [FloorLeftEdge]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Floor right edge {0}", vars: [FloorRightEdge]);
 
             int BallCurrentX = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
             int BallCurrentY = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
-            DebugWriter.WriteDebug(DebugLevel.I, "Initial ball position ({0}, {1})", BallCurrentX, BallCurrentY);
+            DebugWriter.WriteDebug(DebugLevel.I, "Initial ball position ({0}, {1})", vars: [BallCurrentX, BallCurrentY]);
 
             bool Dead = false;
+            bool bailing = false;
             int BallPreviousX = BallCurrentX;
             int BallPreviousY = BallCurrentY;
             var BallWipeX = 0;
@@ -198,7 +199,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     CsiSequences.GenerateCsiCursorPosition(BallCurrentX + 1, BallCurrentY + 1) +
                     " "
                 );
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawn ball at ({0}, {1})", BallCurrentX, BallCurrentY);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawn ball at ({0}, {1})", vars: [BallCurrentX, BallCurrentY]);
 
                 // Draw two pads
                 for (int y = leftPadY - padLength; y <= leftPadY + padLength; y++)
@@ -208,7 +209,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         " "
                     );
                 }
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawn left pad at ({0}, {1})", leftPadX, leftPadY);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawn left pad at ({0}, {1})", vars: [leftPadX, leftPadY]);
                 for (int y = rightPadY - padLength; y <= rightPadY + padLength; y++)
                 {
                     buffer.Append(
@@ -216,7 +217,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         " "
                     );
                 }
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawn right pad at ({0}, {1})", leftPadX, leftPadY);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawn right pad at ({0}, {1})", vars: [leftPadX, leftPadY]);
 
                 // Return the result
                 return buffer.ToString();
@@ -226,7 +227,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Main loop
             double factor = 1.0;
-            while (!Dead)
+            while (!Dead && !bailing)
             {
                 // Delay
                 SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, (int)(100 * factor));
@@ -258,6 +259,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                                 break;
                             rightPadY -= 1;
                             break;
+                        case ConsoleKey.Escape:
+                            bailing = true;
+                            break;
                     }
                 }
 
@@ -269,25 +273,25 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     case BallDirection.LeftUp:
                         BallCurrentX -= 1;
                         BallCurrentY -= 1;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Increased vertical ball position from {0} to {1}", BallPreviousY, BallCurrentY);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Increased vertical ball position from {0} to {1}", vars: [BallPreviousY, BallCurrentY]);
                         break;
                     case BallDirection.RightUp:
                         BallCurrentX += 1;
                         BallCurrentY -= 1;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Decreased vertical ball position from {0} to {1}", BallPreviousY, BallCurrentY);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Decreased vertical ball position from {0} to {1}", vars: [BallPreviousY, BallCurrentY]);
                         break;
                     case BallDirection.LeftDown:
                         BallCurrentX -= 1;
                         BallCurrentY += 1;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Decreased horizontal ball position from {0} to {1}", BallPreviousX, BallCurrentX);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Decreased horizontal ball position from {0} to {1}", vars: [BallPreviousX, BallCurrentX]);
                         break;
                     case BallDirection.RightDown:
                         BallCurrentX += 1;
                         BallCurrentY += 1;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal ball position from {0} to {1}", BallPreviousX, BallCurrentX);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Increased horizontal ball position from {0} to {1}", vars: [BallPreviousX, BallCurrentX]);
                         break;
                 }
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Ball is facing {0}.", Direction.ToString());
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Ball is facing {0}.", vars: [Direction.ToString()]);
                 
                 // Determine whether the ball has hit the pad or the top and bottom edges
                 if (BallCurrentY <= FloorTopEdge + 1)
@@ -307,37 +311,31 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 if (BallCurrentX == leftPadX + 1 && BallCurrentY <= leftPadY + padLength && BallCurrentY >= leftPadY - padLength)
                 {
                     if (Direction == BallDirection.LeftDown)
-                    {
-                        if (BallCurrentY <= leftPadY + padLength && BallCurrentY >= leftPadY)
-                            Direction = BallDirection.RightDown;
-                        else
-                            Direction = BallDirection.RightUp;
-                    }
+                        Direction = BallDirection.RightDown;
                     else
-                    {
-                        if (BallCurrentY <= leftPadY + padLength && BallCurrentY >= leftPadY)
-                            Direction = BallDirection.RightDown;
-                        else
-                            Direction = BallDirection.RightUp;
-                    }
+                        Direction = BallDirection.RightUp;
+
+                    // Decrease the factor if needed
+                    factor -= 0.01;
+                    if (factor < 0.25)
+                        factor = 0.25;
+
+                    // Increase score
                     p1Score++;
                 }
                 if (BallCurrentX == rightPadX - 1 && BallCurrentY <= rightPadY + padLength && BallCurrentY >= rightPadY - padLength)
                 {
                     if (Direction == BallDirection.RightDown)
-                    {
-                        if (BallCurrentY <= rightPadY + padLength && BallCurrentY >= rightPadY)
-                            Direction = BallDirection.LeftDown;
-                        else
-                            Direction = BallDirection.LeftUp;
-                    }
+                        Direction = BallDirection.LeftDown;
                     else
-                    {
-                        if (BallCurrentY <= rightPadY + padLength && BallCurrentY >= rightPadY)
-                            Direction = BallDirection.LeftDown;
-                        else
-                            Direction = BallDirection.LeftUp;
-                    }
+                        Direction = BallDirection.LeftUp;
+
+                    // Decrease the factor if needed
+                    factor -= 0.01;
+                    if (factor < 0.25)
+                        factor = 0.25;
+
+                    // Increase score
                     p2Score++;
                 }
 
@@ -352,7 +350,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             ScreenTools.Render();
 
             // Show the stage for few seconds before wiping
-            Thread.Sleep(5000);
+            if (Dead)
+                Thread.Sleep(5000);
 
             // Reset console display and screen
             ScreenTools.UnsetCurrent(screen);
