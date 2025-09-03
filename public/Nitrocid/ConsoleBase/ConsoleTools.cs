@@ -35,7 +35,8 @@ using Terminaux.Base.Extensions;
 using System.Text.RegularExpressions;
 using Terminaux.Sequences;
 using Terminaux.Inputs;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using System.Collections.ObjectModel;
 
 namespace Nitrocid.ConsoleBase
 {
@@ -88,15 +89,15 @@ namespace Nitrocid.ConsoleBase
                 {
                     Left = 3,
                     Top = 3,
-                    InteriorWidth = times + 1,
-                    InteriorHeight = 3,
+                    Width = times + 1,
+                    Height = 3,
                 };
                 var hueBand = new BoxFrame()
                 {
                     Left = 3,
                     Top = 9,
-                    InteriorWidth = times + 1,
-                    InteriorHeight = 1,
+                    Width = times + 1,
+                    Height = 1,
                 };
                 band.Append(
                     rgbBand.Render() +
@@ -154,7 +155,7 @@ namespace Nitrocid.ConsoleBase
             KernelColorTools.LoadBackground();
         }
 
-        internal static string BufferChar(string text, (VtSequenceType type, Match[] sequences)[] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
+        internal static string BufferChar(string text, ReadOnlyDictionary<VtSequenceType, VtSequenceInfo[]> sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
         {
             // Before buffering the character, check to see if we're surrounded by the VT sequence. This is to work around
             // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
@@ -172,12 +173,12 @@ namespace Nitrocid.ConsoleBase
             char ch = text[i];
             string seq = "";
             bool vtSeq = false;
-            foreach ((var _, var sequences) in sequencesCollections)
+            foreach (var sequences in sequencesCollections.Values)
             {
-                if (sequences.Length > 0 && sequences[vtSeqIdx].Index == i)
+                if (sequences.Length > 0 && vtSeqIdx < sequences.Length && sequences[vtSeqIdx].Start == i)
                 {
                     // We're at an index which is the same as the captured VT sequence. Get the sequence
-                    seq = sequences[vtSeqIdx].Value;
+                    seq = sequences[vtSeqIdx].FullSequence;
                     vtSeq = true;
 
                     // Raise the index in case we have the next sequence, but only if we're sure that we have another
@@ -189,7 +190,10 @@ namespace Nitrocid.ConsoleBase
                 }
             }
             isVtSequence = vtSeq;
-            return !string.IsNullOrEmpty(seq) ? seq : ch.ToString();
+            return
+                !string.IsNullOrEmpty(seq) ? seq :
+                ch == '\t' ? new string(' ', ConsoleMisc.TabWidth) :
+                ch.ToString();
         }
     }
 }

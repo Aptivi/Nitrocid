@@ -24,7 +24,6 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Colors.Transformation;
 using Nitrocid.Languages;
 using System.Globalization;
 using Nitrocid.Kernel.Time;

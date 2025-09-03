@@ -23,7 +23,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -47,15 +47,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 Left = 2,
                 Top = 1,
-                InteriorWidth = 8,
-                InteriorHeight = 3,
+                Width = 8,
+                Height = 3,
             };
             var dumpShiftedColorBorder = new Border()
             {
                 Left = 13,
                 Top = 1,
-                InteriorWidth = 8,
-                InteriorHeight = 3,
+                Width = 8,
+                Height = 3,
             };
             TextWriterRaw.WriteRaw(
                 dumpInitialColorBorder.Render() +

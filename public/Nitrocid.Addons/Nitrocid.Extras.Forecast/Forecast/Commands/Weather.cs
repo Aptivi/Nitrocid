@@ -29,7 +29,6 @@ using Nitrocid.Shell.ShellBase.Switches;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Forecast.Forecast.Interactive;
 using System;
-using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {

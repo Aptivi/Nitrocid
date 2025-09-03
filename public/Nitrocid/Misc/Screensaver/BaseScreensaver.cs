@@ -24,6 +24,7 @@ using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -50,10 +51,13 @@ namespace Nitrocid.Misc.Screensaver
         public virtual void ScreensaverSeizureWarning()
         {
             KernelColorTools.LoadBackground();
-            InfoBoxNonModalColor.WriteInfoBoxColorBack(
+            InfoBoxNonModalColor.WriteInfoBox(
                 Translate.DoTranslation("Photosensitive seizure warning") + CharManager.NewLine + CharManager.NewLine +
-                Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. It's recommended to seek a medical specialist for more information about such seizure before continuing. If you want to get rid of this warning, you can turn this off from the screensaver settings."),
-                ConsoleColors.White, ConsoleColors.Red);
+                Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. It's recommended to seek a medical specialist for more information about such seizure before continuing. If you want to get rid of this warning, you can turn this off from the screensaver settings."), new InfoBoxSettings()
+                {
+                    ForegroundColor = ConsoleColors.White,
+                    BackgroundColor = ConsoleColors.Red,
+                });
             ConsoleWrapper.CursorVisible = false;
             ThreadManager.SleepUntilInput(10000);
         }

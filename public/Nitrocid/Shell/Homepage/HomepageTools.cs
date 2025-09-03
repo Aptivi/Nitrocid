@@ -18,8 +18,6 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Instances;
-using Nitrocid.Files.Paths;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Settings;
@@ -28,7 +26,6 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Interactives;
-using Nitrocid.Misc.Notifications;
 using Nitrocid.Users;
 using Nitrocid.Users.Login;
 using Nitrocid.Users.Login.Widgets;
@@ -43,7 +40,6 @@ using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
-using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
@@ -51,8 +47,11 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Nitrocid.Files;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Shell.Homepage
 {
@@ -134,8 +133,8 @@ namespace Nitrocid.Shell.Homepage
                     {
                         Left = 0,
                         Top = 1,
-                        InteriorWidth = ConsoleWrapper.WindowWidth - 2,
-                        InteriorHeight = ConsoleWrapper.WindowHeight - 4,
+                        Width = ConsoleWrapper.WindowWidth - 2,
+                        Height = ConsoleWrapper.WindowHeight - 4,
                         Color = KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator),
                     };
                     builder.Append(masterBorder.Render());
@@ -166,11 +165,9 @@ namespace Nitrocid.Shell.Homepage
                         OptionColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption),
                         OptionForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
                         OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
-                        Left = 0,
-                        Top = ConsoleWrapper.WindowHeight - 1,
                         Width = ConsoleWrapper.WindowWidth - 1,
                     };
-                    builder.Append(keybindings.Render());
+                    builder.Append(RendererTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
 
                     // Make a border for a widget and the first three RSS feeds (if the addon is installed)
                     int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
@@ -183,16 +180,16 @@ namespace Nitrocid.Shell.Homepage
                     {
                         Left = widgetLeft,
                         Top = widgetTop,
-                        InteriorWidth = widgetWidth,
-                        InteriorHeight = widgetHeight,
+                        Width = widgetWidth,
+                        Height = widgetHeight,
                         Color = KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator),
                     };
                     var rssBorder = new Border()
                     {
                         Left = widgetLeft,
                         Top = rssTop,
-                        InteriorWidth = widgetWidth,
-                        InteriorHeight = rssHeight,
+                        Width = widgetWidth,
+                        Height = rssHeight,
                         Color = KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator),
                     };
                     builder.Append(
@@ -280,19 +277,19 @@ namespace Nitrocid.Shell.Homepage
                     {
                         Left = settingsButtonPosX,
                         Top = buttonPanelPosY,
-                        InteriorWidth = buttonWidth,
-                        InteriorHeight = buttonHeight,
+                        Width = buttonWidth,
+                        Height = buttonHeight,
                         Color = foregroundSettings,
                         BackgroundColor = backgroundSettings,
                     };
                     var settingsText = new AlignedText()
                     {
+                        Left = settingsButtonPosX + 1,
                         Top = buttonPanelPosY + 1,
                         Text = Translate.DoTranslation("Settings"),
                         ForegroundColor = foregroundSettingsText,
                         BackgroundColor = backgroundSettings,
-                        LeftMargin = settingsButtonPosX + 1,
-                        RightMargin = buttonPanelWidth + settingsButtonPosX + aboutButtonPosX + 2 - ConsoleWrapper.WindowWidth % 2,
+                        Width = buttonWidth,
                         Settings = new()
                         {
                             Alignment = TextAlignment.Middle
@@ -311,19 +308,19 @@ namespace Nitrocid.Shell.Homepage
                     {
                         Left = aboutButtonPosX,
                         Top = buttonPanelPosY,
-                        InteriorWidth = aboutButtonPosX + buttonWidth == buttonPanelWidth ? buttonWidth + 1 : buttonWidth,
-                        InteriorHeight = buttonHeight,
+                        Width = aboutButtonPosX + buttonWidth == buttonPanelWidth ? buttonWidth + 1 : buttonWidth,
+                        Height = buttonHeight,
                         Color = foregroundAbout,
                         BackgroundColor = backgroundAbout,
                     };
                     var aboutText = new AlignedText()
                     {
+                        Left = aboutButtonPosX + 1,
                         Top = buttonPanelPosY + 1,
                         Text = Translate.DoTranslation("About"),
                         ForegroundColor = foregroundAboutText,
                         BackgroundColor = backgroundAbout,
-                        LeftMargin = aboutButtonPosX + 1,
-                        RightMargin = buttonWidth + aboutButtonPosX + 4 - ConsoleWrapper.WindowWidth % 2,
+                        Width = buttonWidth,
                         Settings = new()
                         {
                             Alignment = TextAlignment.Middle
@@ -340,8 +337,8 @@ namespace Nitrocid.Shell.Homepage
                     {
                         Left = settingsButtonPosX,
                         Top = widgetTop,
-                        InteriorWidth = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
-                        InteriorHeight = widgetHeight + 2,
+                        Width = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
+                        Height = widgetHeight + 2,
                         Color = KernelColorTools.GetColor(buttonHighlight == 0 ? KernelColorType.TuiPaneSelectedSeparator : KernelColorType.TuiPaneSeparator),
                     };
                     var choicesSelection = new Selection(availableChoices)
@@ -390,19 +387,21 @@ namespace Nitrocid.Shell.Homepage
                         ScreenTools.Render();
                         render = false;
                     }
-                    if (!SpinWait.SpinUntil(() => Input.InputAvailable, 1000))
+                    InputEventInfo? data = null;
+                    bool idle = !SpinWait.SpinUntil(() =>
+                    {
+                        data = Input.ReadPointerOrKeyNoBlock();
+                        return data.EventType == InputEventType.Keyboard || data.EventType == InputEventType.Mouse;
+                    }, 1000);
+                    if (idle)
                     {
                         render = true;
                         continue;
                     }
 
                     // Read the available input
-                    if (Input.MouseInputAvailable)
+                    if (data?.PointerEventContext is PointerEventContext context)
                     {
-                        var context = Input.ReadPointer();
-                        if (context is null)
-                            continue;
-
                         // Get the necessary positions
                         int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
                         int buttonPanelWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
@@ -485,10 +484,9 @@ namespace Nitrocid.Shell.Homepage
                             render = true;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
+                    else if (data?.ConsoleKeyInfo is ConsoleKeyInfo keypress)
                     {
                         render = true;
-                        var keypress = Input.ReadKey();
                         int widgetHeight = ConsoleWrapper.WindowHeight - 10;
                         int currentPage = (choiceIdx - 1) / widgetHeight;
                         int startIndex = widgetHeight * currentPage;
@@ -551,11 +549,13 @@ namespace Nitrocid.Shell.Homepage
                                 exiting = true;
                                 break;
                             case ConsoleKey.K:
-                                InfoBoxModalColor.WriteInfoBoxModalColorBack(
+                                InfoBoxModalColor.WriteInfoBoxModal(
                                     "Available keys",
-                                    KeybindingTools.RenderKeybindingHelpText(bindings), 
-                                    KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
-                                    KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                                    KeybindingTools.RenderKeybindingHelpText(bindings), new InfoBoxSettings()
+                                    {
+                                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
+                                        BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
+                                    });
                                 break;
                             default:
                                 render = false;
@@ -567,7 +567,10 @@ namespace Nitrocid.Shell.Homepage
             catch (Exception ex)
             {
                 KernelColorTools.LoadBackground();
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("The Nitrocid Homepage has crashed and needs to revert back to the shell.") + $": {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The Nitrocid Homepage has crashed and needs to revert back to the shell.") + $": {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                });
             }
             finally
             {

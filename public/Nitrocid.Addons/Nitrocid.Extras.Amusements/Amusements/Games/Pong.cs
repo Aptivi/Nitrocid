@@ -31,7 +31,7 @@ using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games

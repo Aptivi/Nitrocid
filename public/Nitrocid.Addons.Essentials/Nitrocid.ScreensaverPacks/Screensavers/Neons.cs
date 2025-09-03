@@ -21,7 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Textify.Data.Figlet;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 

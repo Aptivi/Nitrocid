@@ -140,7 +140,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Prompt user for character
                 TextWriterColor.Write(Translate.DoTranslation("Current character:") + " {0}", SelectedChar);
                 TextWriters.Write("> ", false, KernelColorType.Input);
-                var (result, provided) = Input.ReadKeyTimeout(false, TimeSpan.FromMilliseconds(SpeedTimeout));
+                var (result, provided) = Input.ReadKeyTimeout(TimeSpan.FromMilliseconds(SpeedTimeout));
                 WrittenChar = result;
                 TextWriterRaw.Write();
 

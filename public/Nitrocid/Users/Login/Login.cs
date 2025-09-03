@@ -33,6 +33,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Security.Permissions;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Users.Login
 {
@@ -128,7 +129,10 @@ namespace Nitrocid.Users.Login
                         // Cancel shutdown and reboot attempts
                         PowerManager.RebootRequested = false;
                         PowerManager.KernelShutdown = false;
-                        InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("You don't have permission to request a reboot or a shutdown."), KernelColorTools.GetColor(KernelColorType.Error));
+                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You don't have permission to request a reboot or a shutdown."), new InfoBoxSettings()
+                        {
+                            ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                        });
                     }
                     else
                         break;

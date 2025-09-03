@@ -25,10 +25,12 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Base.Structures;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -117,14 +119,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         // Write the figlet.
                         figletText.Font = figFontFallback;
-                        ContainerTools.WriteRenderable(figletText, new(consoleX, consoleY));
+                        RendererTools.WriteRenderable(figletText, new Coordinate(consoleX, consoleY));
                         consoleY += figHeightFallback * 2;
                     }
                 }
                 else
                 {
                     // Write the figlet.
-                    ContainerTools.WriteRenderable(figletText, new(consoleX, consoleY));
+                    RendererTools.WriteRenderable(figletText, new Coordinate(consoleX, consoleY));
                     consoleY += figHeight * 2;
                 }
                 var descText = new AlignedText()

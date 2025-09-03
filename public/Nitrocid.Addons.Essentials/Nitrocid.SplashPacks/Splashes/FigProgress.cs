@@ -34,10 +34,11 @@ using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -85,7 +86,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     ForegroundColor = col,
                 };
                 builder.Append(
-                    ContainerTools.RenderRenderable(figletText, new(consoleX, consoleY))
+                    RendererTools.RenderRenderable(figletText, new(consoleX, consoleY))
                 );
                 consoleY += figHeight * 2;
             }
@@ -200,7 +201,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     // Write the figlet.
                     figletText.Font = figFontFallback;
                     builder.Append(
-                        ContainerTools.RenderRenderable(figletText, new(consoleX, consoleY))
+                        RendererTools.RenderRenderable(figletText, new(consoleX, consoleY))
                     );
                     consoleY += figHeightFallback * 2;
                 }
@@ -209,7 +210,7 @@ namespace Nitrocid.SplashPacks.Splashes
             {
                 // Write the figlet.
                 builder.Append(
-                    ContainerTools.RenderRenderable(figletText, new(consoleX, consoleY))
+                    RendererTools.RenderRenderable(figletText, new(consoleX, consoleY))
                 );
                 consoleY += figHeight * 2;
             }

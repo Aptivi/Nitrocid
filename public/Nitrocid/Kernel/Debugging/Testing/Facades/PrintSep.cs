@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -29,7 +29,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             string rendered = "Hello world!";
-            SeparatorWriterColor.WriteSeparator(rendered);
+            SeparatorWriterColor.WriteSeparator(rendered, true);
         }
     }
 }

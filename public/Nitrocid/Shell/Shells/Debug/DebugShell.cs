@@ -28,7 +28,6 @@ using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Shells;
-using Textify.General;
 
 namespace Nitrocid.Shell.Shells.Debug
 {

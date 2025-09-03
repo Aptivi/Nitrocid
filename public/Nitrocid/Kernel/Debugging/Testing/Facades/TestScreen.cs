@@ -29,6 +29,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
 using Terminaux.Base.Extensions;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -61,7 +62,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Screen failed to render:") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Screen failed to render:") + $" {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                });
             }
             finally
             {

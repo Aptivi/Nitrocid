@@ -19,10 +19,8 @@
 
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
-using Terminaux.Writer.CyclicWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 

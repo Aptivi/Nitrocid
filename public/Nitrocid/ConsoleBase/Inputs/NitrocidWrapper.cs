@@ -17,32 +17,26 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Extras.Notes.Management;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Misc.Audio;
+using System;
+using Terminaux.Base.Wrappers;
+using Terminaux.Reader;
 
-namespace Nitrocid.Extras.Notes.Commands
+namespace Nitrocid.ConsoleBase.Inputs
 {
-    internal class ListNotes : BaseCommand, ICommand
+    internal class NitrocidWrapper : BaseConsoleWrapper
     {
-
-        public override int Execute(CommandParameters parameters, ref string variableValue)
+        public override ConsoleKeyInfo ReadKey(bool intercept = false)
         {
-            TextWriters.WriteList(NoteManagement.notes);
-            return 0;
+            var keyInfo = base.ReadKey(intercept);
+            var cueType =
+                keyInfo.Key == ConsoleKey.Enter ? AudioCueType.KeyboardCueEnter :
+                keyInfo.Key == ConsoleKey.Backspace ? AudioCueType.KeyboardCueBackspace :
+                AudioCueType.KeyboardCueType;
+            if (Config.MainConfig.EnableNavigationSounds && !TermReader.IsReaderBusy)
+                AudioCuesTools.PlayAudioCue(cueType);
+            return keyInfo;
         }
-
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
-        {
-            for (int i = 0; i < NoteManagement.notes.Count; i++)
-            {
-                string note = NoteManagement.notes[i];
-                TextWriterColor.Write($"[{i + 1}] {note}");
-            }
-
-            return 0;
-        }
-
     }
 }

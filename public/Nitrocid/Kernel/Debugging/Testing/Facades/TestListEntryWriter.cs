@@ -20,8 +20,6 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Collections.Generic;
-using Terminaux.Writer.CyclicWriters;
-using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -38,10 +36,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                 ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i]);
             TextWriterColor.Write(Translate.DoTranslation("Indent 1:"));
             for (int i = 0; i < NormalStringListEntries.Count; i++)
-                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], 1);
+                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], indent: 1);
             TextWriterColor.Write(Translate.DoTranslation("Indent 2:"));
             for (int i = 0; i < NormalStringListEntries.Count; i++)
-                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], 2);
+                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], indent: 2);
         }
     }
 }

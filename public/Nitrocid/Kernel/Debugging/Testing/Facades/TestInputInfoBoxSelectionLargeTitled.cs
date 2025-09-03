@@ -22,6 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using System.Collections.Generic;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -34,7 +35,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             var choices = new List<InputChoiceInfo>();
             for (int i = 0; i < 1000; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", $"Number #{i + 1}"));
-            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(nameof(TestInputInfoBoxSelectionLargeTitled), [.. choices], "Select a number");
+            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], "Select a number", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxSelectionLargeTitled),
+            });
             TextWriterWhereColor.WriteWhere($"{selected}", 0, 0);
         }
     }

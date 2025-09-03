@@ -31,6 +31,7 @@ using Nitrocid.Kernel.Power;
 using Nitrocid.Users.Login.Widgets;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Kernel.Exceptions;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Users.Login.Handlers.Logins
 {
@@ -127,7 +128,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 return true;
 
             // The password is not empty. Prompt for password.
-            pass = InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(Translate.DoTranslation("Enter the password for user") + $" {user}: ");
+            pass = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter the password for user") + $" {user}: ", InfoBoxInputType.Password);
             KernelColorTools.LoadBackground();
 
             // Validate the password
@@ -136,7 +137,10 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 return true;
             else
                 // Wrong password.
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Wrong password for user."), KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Wrong password for user."), new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                });
             return false;
         }
 

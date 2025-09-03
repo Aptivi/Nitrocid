@@ -20,7 +20,6 @@
 using System;
 using Nettify.Weather;
 using Nitrocid.Kernel.Debugging;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;

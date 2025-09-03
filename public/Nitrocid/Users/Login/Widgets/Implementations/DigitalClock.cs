@@ -22,9 +22,8 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
 using System.Text;
-using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Data.Figlet;
 
@@ -75,8 +74,8 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                     ForegroundColor = clockColor,
                     Top = consoleInfoY,
                     OneLine = true,
-                    LeftMargin = left,
-                    RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                    Left = left,
+                    Width = width,
                     Settings = new()
                     {
                         Alignment = TextAlignment.Middle,

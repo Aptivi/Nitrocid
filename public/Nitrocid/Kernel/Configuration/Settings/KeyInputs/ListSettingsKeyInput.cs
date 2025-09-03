@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -26,8 +25,8 @@ using Nitrocid.Misc.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Base;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -68,7 +67,10 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 ];
 
                 // Wait for an answer and handle it
-                int selectionAnswer = InfoBoxSelectionColor.WriteInfoBoxSelection(keyName, [.. choices, .. altChoices], keyDesc);
+                int selectionAnswer = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices, .. altChoices], keyDesc, new InfoBoxSettings()
+                {
+                    Title = keyName,
+                });
                 if (selectionAnswer == choices.Count || selectionAnswer == -1)
                     promptBail = true;
                 else

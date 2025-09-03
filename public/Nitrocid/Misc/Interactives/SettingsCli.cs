@@ -33,6 +33,7 @@ using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Configuration.Migration;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Misc.Interactives
 {
@@ -220,7 +221,7 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't set settings entry") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
 
@@ -235,7 +236,7 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't save settings") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
 
@@ -250,7 +251,7 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't save settings") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
 
@@ -269,7 +270,7 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't load settings") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
 
@@ -284,7 +285,7 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't reload settings") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
 
@@ -294,13 +295,16 @@ namespace Nitrocid.Misc.Interactives
             {
                 // Migrate the config
                 if (!ConfigMigration.MigrateAllConfig())
-                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info."), KernelColorTools.GetColor(KernelColorType.Error));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info."), new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                    });
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't migrate settings") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
 
@@ -315,7 +319,7 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't check for updates") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
 
@@ -330,7 +334,7 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't get system information") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
 
@@ -374,7 +378,7 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't reset all settings entries for") + TextTools.FormatString("{0}: {1}", config?.GetType().Name ?? "<null>", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
             finally
             {
@@ -444,7 +448,7 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't reset this settings entry for") + TextTools.FormatString("{0}: {1}", config?.GetType().Name ?? "<null>", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
 
@@ -466,7 +470,7 @@ namespace Nitrocid.Misc.Interactives
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't select configuration") + TextTools.FormatString(": {0}", ex.Message));
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
             }
         }
     }

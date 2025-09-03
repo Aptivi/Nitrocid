@@ -21,7 +21,6 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Console;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
 using System;
 using System.Threading;
 using Terminaux.Writer.ConsoleWriters;

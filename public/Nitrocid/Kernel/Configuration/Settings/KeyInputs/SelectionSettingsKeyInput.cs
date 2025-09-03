@@ -17,9 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs.Styles.Selection;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -29,10 +26,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -74,7 +71,10 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Prompt user and check for input
             string keyName = key.Name;
             string keyDesc = key.Description;
-            int Answer = InfoBoxSelectionColor.WriteInfoBoxSelection(keyName, InputChoiceTools.GetInputChoices([.. items, .. altItems]), keyDesc);
+            int Answer = InfoBoxSelectionColor.WriteInfoBoxSelection(InputChoiceTools.GetInputChoices([.. items, .. altItems]), keyDesc, new InfoBoxSettings()
+            {
+                Title = keyName,
+            });
             bail = true;
             return Answer;
         }

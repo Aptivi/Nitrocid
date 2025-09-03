@@ -22,7 +22,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
-using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

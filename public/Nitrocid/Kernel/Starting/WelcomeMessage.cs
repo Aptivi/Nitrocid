@@ -31,7 +31,7 @@ using Terminaux.Inputs;
 using System;
 using Terminaux.Inputs.Styles;
 using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.FancyWriters;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Starting
 {
@@ -129,12 +129,14 @@ namespace Nitrocid.Kernel.Starting
                     new InputChoiceInfo("ok", devNoticeOk),
                     new InputChoiceInfo("acknowledged", devNoticeAck),
                 ];
-                int answer = InfoBoxButtonsColor.WriteInfoBoxButtonsColor(
-                    devNoticeTitle,
+                int answer = InfoBoxButtonsColor.WriteInfoBoxButtons(
                     answers,
                     $"{message}\n\n" +
-                    $"{devNoticeMessage}",
-                    KernelColorTools.GetColor(KernelColorType.DevelopmentWarning)
+                    $"{devNoticeMessage}", new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.DevelopmentWarning),
+                        Title = devNoticeTitle,
+                    }
                 );
                 if (answer == 1)
                     Config.MainConfig.DevNoticeConsented = true;
@@ -143,7 +145,7 @@ namespace Nitrocid.Kernel.Starting
             {
                 TextWriters.Write($"  * {message}", true, KernelColorType.DevelopmentWarning);
                 TextWriters.Write($"  * {devNoticeClassic}", true, KernelColorType.DevelopmentWarning);
-                var key = Input.ReadKey(true);
+                var key = Input.ReadKey();
                 if (key.Key == ConsoleKey.Enter)
                     Config.MainConfig.DevNoticeConsented = true;
             }
@@ -161,11 +163,13 @@ namespace Nitrocid.Kernel.Starting
                 InputChoiceInfo[] answers = [
                     new InputChoiceInfo("ok", Translate.DoTranslation("OK")),
                 ];
-                InfoBoxButtonsColor.WriteInfoBoxButtonsColor(
-                    Translate.DoTranslation("Unusual environment notice"),
+                InfoBoxButtonsColor.WriteInfoBoxButtons(
                     answers,
-                    message + "\n\n" + message2,
-                    KernelColorTools.GetColor(KernelColorType.Warning)
+                    message + "\n\n" + message2, new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Warning),
+                        Title = Translate.DoTranslation("Unusual environment notice"),
+                    }
                 );
             }
             else

@@ -40,11 +40,12 @@ using Nitrocid.Kernel.Power;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Colors.Transformation;
 using Nitrocid.Files;
 using Nitrocid.Misc.Audio;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Misc.Notifications
 {
@@ -224,8 +225,8 @@ namespace Nitrocid.Misc.Notifications
                                 {
                                     Left = notifLeftAgnostic - 1,
                                     Top = notifTopAgnostic,
-                                    InteriorWidth = notifWidth,
-                                    InteriorHeight = 3,
+                                    Width = notifWidth,
+                                    Height = 3,
                                     Color = NotifyBorderColor,
                                     BackgroundColor = background,
                                     Settings = borderSettings
@@ -288,7 +289,7 @@ namespace Nitrocid.Misc.Notifications
                                 var progress = new SimpleProgress(NewNotification.Progress, 100)
                                 {
                                     Indeterminate = indeterminate,
-                                    LeftMargin = ConsoleWrapper.WindowWidth - 42,
+                                    Width = 42,
                                     ProgressActiveForegroundColor = NotifyProgressColor,
                                     ProgressForegroundColor = TransformationTools.GetDarkBackground(NotifyProgressColor),
                                 };
@@ -309,7 +310,7 @@ namespace Nitrocid.Misc.Notifications
 
                                     // For indeterminate progresses, flash the box inside the progress bar
                                     progress.Position = NewNotification.Progress;
-                                    TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(progress, new(notifLeftAgnostic, notifTipTop)));
+                                    TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(progress, new(notifLeftAgnostic, notifTipTop)));
                                     Thread.Sleep(indeterminate ? 250 : 1);
 
                                     // Print the buffer

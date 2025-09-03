@@ -30,9 +30,10 @@ using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Extensions;
 using Textify.Data.Figlet;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Extras.Chemistry.Screensavers
 {
@@ -70,8 +71,8 @@ namespace Nitrocid.Extras.Chemistry.Screensavers
             {
                 Left = posX,
                 Top = posY,
-                InteriorWidth = width,
-                InteriorHeight = height,
+                Width = width,
+                Height = height,
                 Color = ConsoleColors.Black,
                 BackgroundColor = color,
             };
@@ -101,7 +102,7 @@ namespace Nitrocid.Extras.Chemistry.Screensavers
                 ForegroundColor = ConsoleColors.Black,
                 BackgroundColor = color,
             };
-            periodicItem.Append(ContainerTools.RenderRenderable(figletSubstance, new(elementSymbolFigletPosX, elementSymbolFigletPosY)));
+            periodicItem.Append(RendererTools.RenderRenderable(figletSubstance, new(elementSymbolFigletPosX, elementSymbolFigletPosY)));
 
             // Render the chemical element preview
             TextWriterRaw.WriteRaw(periodicItem.ToString());

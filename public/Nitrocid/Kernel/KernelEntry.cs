@@ -41,6 +41,7 @@ using Nitrocid.Network.Types.RSS;
 using Nitrocid.Shell.Homepage;
 using Terminaux.Base;
 using Nitrocid.Misc.Audio;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel
 {
@@ -104,9 +105,12 @@ namespace Nitrocid.Kernel
             // Show the license infobox
             if (Config.MainConfig.ShowLicenseInfoBox && Config.MainConfig.EnableSplash)
             {
-                InfoBoxNonModalColor.WriteInfoBoxColor(
+                InfoBoxNonModalColor.WriteInfoBox(
                     Translate.DoTranslation("License information"),
-                    WelcomeMessage.GetLicenseString(), KernelColorTools.GetColor(KernelColorType.License)
+                    WelcomeMessage.GetLicenseString(), new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.License),
+                    }
                 );
                 ConsoleWrapper.CursorVisible = false;
                 ThreadManager.SleepUntilInput(15000);

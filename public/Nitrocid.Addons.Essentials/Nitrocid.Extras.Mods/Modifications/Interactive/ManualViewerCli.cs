@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using System.Text;
 using Textify.General;
 using Nitrocid.Extras.Mods.Modifications.ManPages;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Extras.Mods.Modifications.Interactive
 {
@@ -111,7 +112,7 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
             finalInfoRendered.AppendLine(finalRenderedManualRevision);
 
             // Now, render the info box
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), Settings.BoxForegroundColor, Settings.BoxBackgroundColor);
+            InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor });
         }
     }
 }

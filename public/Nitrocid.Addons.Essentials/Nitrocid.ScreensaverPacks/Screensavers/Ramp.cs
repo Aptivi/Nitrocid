@@ -25,7 +25,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -88,8 +88,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     Left = RampFrameStartWidth,
                     Top = RampCenterPosition - 2,
-                    InteriorWidth = RampFrameSpaces,
-                    InteriorHeight = 3,
+                    Width = RampFrameSpaces,
+                    Height = 3,
                     Color =
                         ScreensaverPackInit.SaversConfig.RampUseBorderColors ?
                         new Color(ScreensaverPackInit.SaversConfig.RampLeftFrameColor) :

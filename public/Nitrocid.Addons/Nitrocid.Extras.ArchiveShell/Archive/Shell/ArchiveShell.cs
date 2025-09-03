@@ -33,7 +33,6 @@ using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Debugging;
-using Textify.General;
 using Nitrocid.Files;
 using Nitrocid.ConsoleBase.Inputs;
 

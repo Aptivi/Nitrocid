@@ -35,6 +35,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using TextifyDep::Textify.Tools;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration
 {
@@ -357,7 +358,10 @@ namespace Nitrocid.Kernel.Configuration
             }
             catch (KernelException cex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Validation failed!") + $" {cex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Validation failed!") + $" {cex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                });
                 DebugWriter.WriteDebug(DebugLevel.E, "Config validation error! {0}", vars: [cex.Message]);
                 DebugWriter.WriteDebugStackTrace(cex);
             }
@@ -369,7 +373,10 @@ namespace Nitrocid.Kernel.Configuration
             }
             catch (KernelException cex) when (cex.ExceptionType == KernelExceptionType.Config)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Reading failed!") + $" {cex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Reading failed!") + $" {cex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                });
                 DebugWriter.WriteDebug(DebugLevel.E, "Config read error! {0}", vars: [cex.Message]);
                 DebugWriter.WriteDebugStackTrace(cex);
 
@@ -377,7 +384,10 @@ namespace Nitrocid.Kernel.Configuration
                 ConfigTools.NotifyConfigError = true;
 
                 // Fix anyways, for compatibility...
-                InfoBoxNonModalColor.WriteInfoBoxColor(Translate.DoTranslation("Trying to fix configuration..."), KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Trying to fix configuration..."), new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                });
                 RepairConfig();
             }
         }

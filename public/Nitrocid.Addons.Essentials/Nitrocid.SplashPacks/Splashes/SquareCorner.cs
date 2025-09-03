@@ -26,7 +26,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Splash;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -125,8 +125,8 @@ namespace Nitrocid.SplashPacks.Splashes
                     {
                         Left = left,
                         Top = top,
-                        InteriorWidth = width,
-                        InteriorHeight = height,
+                        Width = width,
+                        Height = height,
                         Color = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut),
                     };
                     builder.Append(box.Render());
@@ -155,8 +155,8 @@ namespace Nitrocid.SplashPacks.Splashes
                     {
                         Left = left,
                         Top = top,
-                        InteriorWidth = width,
-                        InteriorHeight = height,
+                        Width = width,
+                        Height = height,
                         Color = new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn),
                     };
                     builder.Append(box.Render());

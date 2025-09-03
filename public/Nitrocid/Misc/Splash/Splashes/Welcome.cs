@@ -33,10 +33,12 @@ using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Textify.General;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Colors.Transformation;
 
 namespace Nitrocid.Misc.Splash.Splashes
 {
@@ -45,11 +47,7 @@ namespace Nitrocid.Misc.Splash.Splashes
         private bool cleared = false;
         private int dotStep = 0;
         private int currMs = 0;
-        private ProgressBarNoText progress = new(0, 100)
-        {
-            LeftMargin = 3,
-            RightMargin = 3,
-        };
+        private ProgressBarNoText progress = new(0, 100);
 
         // Standalone splash information
         public override string SplashName => "Welcome";
@@ -59,6 +57,11 @@ namespace Nitrocid.Misc.Splash.Splashes
         {
             var builder = new StringBuilder();
             progress.Position = 0;
+            progress.Indeterminate = !Config.SplashConfig.WelcomeShowProgress;
+            progress.Width = ConsoleWrapper.WindowWidth - 6;
+            progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(KernelColorTools.GetColor(KernelColorType.Progress));
+            progress.ProgressActiveForegroundColor = KernelColorTools.GetColor(KernelColorType.Progress);
+            progress.ProgressBackgroundColor = ColorTools.CurrentBackgroundColor;
             if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)
@@ -89,9 +92,12 @@ namespace Nitrocid.Misc.Splash.Splashes
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-            int consoleY = (ConsoleWrapper.WindowHeight / 2) + FigletTools.GetFigletHeight(text, figFont);
+            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+            int bottomTextY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
             var figText = new AlignedFigletText(figFont)
             {
+                Top = consoleY,
                 Text = text,
                 ForegroundColor = col,
                 Settings = new()
@@ -103,7 +109,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             {
                 Text = bottomText,
                 ForegroundColor = col,
-                Top = consoleY - 1,
+                Top = bottomTextY,
                 OneLine = true,
                 Settings = new()
                 {
@@ -173,6 +179,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             currMs = 0;
             dotStep = 0;
             cleared = false;
+            progress.Width = ConsoleWrapper.WindowWidth - 6;
             builder.Append(
                 base.Opening(context)
             );
@@ -193,9 +200,12 @@ namespace Nitrocid.Misc.Splash.Splashes
                  Translate.DoTranslation("Goodbye!"))
                 .ToUpper();
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-            int consoleY = (ConsoleWrapper.WindowHeight / 2) + FigletTools.GetFigletHeight(text, figFont);
+            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+            int bottomTextY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
             var figText = new AlignedFigletText(figFont)
             {
+                Top = consoleY,
                 Text = text,
                 ForegroundColor = col,
                 Settings = new()
@@ -207,7 +217,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             {
                 Text = KernelReleaseInfo.ConsoleTitle,
                 ForegroundColor = col,
-                Top = consoleY - 1,
+                Top = bottomTextY,
                 OneLine = true,
                 Settings = new()
                 {
@@ -269,8 +279,9 @@ namespace Nitrocid.Misc.Splash.Splashes
                 int posX = 2;
                 int posY = ConsoleWrapper.WindowHeight - 2;
                 progress.Position = Progress;
+                progress.Width = ConsoleWrapper.WindowWidth - 6;
                 builder.Append(
-                    ContainerTools.RenderRenderable(progress, new(posX, posY))
+                    RendererTools.RenderRenderable(progress, new(posX, posY))
                 );
             }
             return builder.ToString();

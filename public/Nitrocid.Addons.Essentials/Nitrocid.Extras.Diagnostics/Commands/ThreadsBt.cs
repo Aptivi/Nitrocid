@@ -27,7 +27,6 @@ using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System;
 using System.Collections.Generic;
-using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Diagnostics.Commands
 {

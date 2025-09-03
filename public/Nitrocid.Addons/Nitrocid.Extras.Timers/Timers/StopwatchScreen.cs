@@ -33,7 +33,9 @@ using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -97,8 +99,6 @@ namespace Nitrocid.Extras.Timers.Timers
                 var keybindings = new Keybindings()
                 {
                     KeybindingList = keyBindings,
-                    Left = 0,
-                    Top = KeysTextTopPosition,
                     Width = ConsoleWrapper.WindowWidth - 1,
                     BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
                     BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
@@ -107,7 +107,7 @@ namespace Nitrocid.Extras.Timers.Timers
                     OptionForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
                     OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
                 };
-                builder.Append(keybindings.Render());
+                builder.Append(RendererTools.RenderRenderable(keybindings, new(0, KeysTextTopPosition)));
 
                 // Print the time interval and the current lap
                 builder.Append(
@@ -139,8 +139,8 @@ namespace Nitrocid.Extras.Timers.Timers
                 {
                     Left = 0,
                     Top = SeparatorMinimumHeight,
-                    InteriorWidth = SeparatorHalfConsoleWidthInterior,
-                    InteriorHeight = SeparatorMaximumHeightInterior,
+                    Width = SeparatorHalfConsoleWidthInterior,
+                    Height = SeparatorMaximumHeightInterior,
                     FrameColor = ColorTools.GetGray(),
                     BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
                 };
@@ -148,8 +148,8 @@ namespace Nitrocid.Extras.Timers.Timers
                 {
                     Left = SeparatorHalfConsoleWidth,
                     Top = SeparatorMinimumHeight,
-                    InteriorWidth = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
-                    InteriorHeight = SeparatorMaximumHeightInterior,
+                    Width = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
+                    Height = SeparatorMaximumHeightInterior,
                     FrameColor = ColorTools.GetGray(),
                     BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
                 };

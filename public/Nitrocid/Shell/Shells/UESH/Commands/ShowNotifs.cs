@@ -24,9 +24,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
-using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;
-using System;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

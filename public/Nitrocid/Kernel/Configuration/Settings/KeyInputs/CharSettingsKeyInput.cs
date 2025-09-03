@@ -17,15 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using System;
 using Textify.General;
-using Terminaux.Base;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Misc.Reflection;
 

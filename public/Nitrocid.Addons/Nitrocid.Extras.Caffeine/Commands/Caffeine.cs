@@ -19,14 +19,12 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time.Alarm;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using Nitrocid.Shell.ShellBase.Switches;
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Caffeine.Commands
 {

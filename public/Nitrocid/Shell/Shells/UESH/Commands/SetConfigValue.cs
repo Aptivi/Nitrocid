@@ -24,8 +24,6 @@ using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Languages;
 using Nitrocid.Shell.ShellBase.Commands;
 using System.Linq;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

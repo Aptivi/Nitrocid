@@ -31,7 +31,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -168,8 +168,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     Left = 4,
                     Top = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 11,
-                    InteriorWidth = ConsoleWrapper.WindowWidth - 10,
-                    InteriorHeight = 1,
+                    Width = ConsoleWrapper.WindowWidth - 10,
+                    Height = 1,
                     Settings = hoursBorder,
                     FrameColor = ColorStorageHours,
                 };
@@ -180,8 +180,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     Left = 4,
                     Top = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) - 2,
-                    InteriorWidth = ConsoleWrapper.WindowWidth - 10,
-                    InteriorHeight = 1,
+                    Width = ConsoleWrapper.WindowWidth - 10,
+                    Height = 1,
                     Settings = minutesBorder,
                     FrameColor = ColorStorageMinutes,
                 };
@@ -192,8 +192,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     Left = 4,
                     Top = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d) + 7,
-                    InteriorWidth = ConsoleWrapper.WindowWidth - 10,
-                    InteriorHeight = 1,
+                    Width = ConsoleWrapper.WindowWidth - 10,
+                    Height = 1,
                     Settings = secondsBorder,
                     FrameColor = ColorStorageSeconds,
                 };

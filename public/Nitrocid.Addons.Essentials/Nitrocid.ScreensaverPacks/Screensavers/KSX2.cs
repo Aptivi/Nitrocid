@@ -30,9 +30,10 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Languages;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -228,7 +229,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                     ForegroundColor = darkRed,
                                     BackgroundColor = black,
                                 };
-                                TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s5Figlet, new(s5consoleX, s5consoleY)));
+                                TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(s5Figlet, new(s5consoleX, s5consoleY)));
                             }
                             else
                                 ColorTools.LoadBackDry(darkRed);
@@ -277,7 +278,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             ForegroundColor = darkRed,
                             BackgroundColor = black,
                         };
-                        TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s7Figlet, new(s7consoleX, s7consoleY)));
+                        TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(s7Figlet, new(s7consoleX, s7consoleY)));
                         TextWriterWhereColor.WriteWhereColorBack(renderedTargetLong, ConsoleWrapper.WindowWidth / 2 - renderedTargetLong.Length / 2, s7consoleY + 5, darkRed, black);
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
@@ -327,7 +328,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 ForegroundColor = darkRed,
                                 BackgroundColor = black,
                             };
-                            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s9Figlet, new(s9consoleX, s9consoleY)));
+                            TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(s9Figlet, new(s9consoleX, s9consoleY)));
                             ScreensaverManager.Delay(50);
                         }
                         break;

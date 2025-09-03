@@ -26,7 +26,6 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
-using Textify.General;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Network.Connections;
 using Nitrocid.Kernel.Exceptions;

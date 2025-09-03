@@ -31,7 +31,6 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Text.Probers.Placeholder;
 using Terminaux.Base;
 using Nitrocid.Users.Login.Motd;
-using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Users.Login.Handlers
 {

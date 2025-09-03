@@ -24,8 +24,6 @@ using System.Text.RegularExpressions;
 using Terminaux.Colors;
 using Newtonsoft.Json;
 using System.Linq;
-using Newtonsoft.Json.Schema;
-using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
@@ -37,7 +35,6 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles;
-using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Kernel.Configuration
 {

@@ -24,7 +24,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -98,8 +98,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         Left = UpperLeftBoxStartX,
                         Top = UpperLeftBoxStartY,
-                        InteriorWidth = UpperLeftBoxEndX - UpperLeftBoxStartX,
-                        InteriorHeight = UpperLeftBoxEndY - UpperLeftBoxStartY,
+                        Width = UpperLeftBoxEndX - UpperLeftBoxStartX,
+                        Height = UpperLeftBoxEndY - UpperLeftBoxStartY,
                         Color = windows11Color,
                     };
                     TextWriterRaw.WriteRaw(upperLeftBox.Render());
@@ -109,8 +109,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         Left = LowerLeftBoxStartX,
                         Top = LowerLeftBoxStartY,
-                        InteriorWidth = LowerLeftBoxEndX - LowerLeftBoxStartX,
-                        InteriorHeight = LowerLeftBoxEndY - LowerLeftBoxStartY,
+                        Width = LowerLeftBoxEndX - LowerLeftBoxStartX,
+                        Height = LowerLeftBoxEndY - LowerLeftBoxStartY,
                         Color = windows11Color,
                     };
                     TextWriterRaw.WriteRaw(lowerLeftBox.Render());
@@ -120,8 +120,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         Left = UpperRightBoxStartX,
                         Top = UpperRightBoxStartY,
-                        InteriorWidth = UpperRightBoxEndX - UpperRightBoxStartX,
-                        InteriorHeight = UpperRightBoxEndY - UpperRightBoxStartY,
+                        Width = UpperRightBoxEndX - UpperRightBoxStartX,
+                        Height = UpperRightBoxEndY - UpperRightBoxStartY,
                         Color = windows11Color,
                     };
                     TextWriterRaw.WriteRaw(upperRightBox.Render());
@@ -131,8 +131,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         Left = LowerRightBoxStartX,
                         Top = LowerRightBoxStartY,
-                        InteriorWidth = LowerRightBoxEndX - LowerRightBoxStartX,
-                        InteriorHeight = LowerRightBoxEndY - LowerRightBoxStartY,
+                        Width = LowerRightBoxEndX - LowerRightBoxStartX,
+                        Height = LowerRightBoxEndY - LowerRightBoxStartY,
                         Color = windows11Color,
                     };
                     TextWriterRaw.WriteRaw(lowerRightBox.Render());

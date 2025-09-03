@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration.Instances;
@@ -27,6 +25,7 @@ using Nitrocid.Languages;
 using System;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -41,10 +40,14 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string keyDesc = key.Description;
 
             // Write the prompt
+            var settings = new InfoBoxSettings()
+            {
+                Title = keyName,
+            };
             string? AnswerString =
                 key.Masked ?
-                InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(keyName, $"{keyDesc}\n\n{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}") :
-                InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{keyDesc}\n\n{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]");
+                InfoBoxInputColor.WriteInfoBoxInput($"{keyDesc}\n\n{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}", settings, InfoBoxInputType.Password) :
+                InfoBoxInputColor.WriteInfoBoxInput($"{keyDesc}\n\n{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]", settings);
 
             // Neutralize path if required with the assumption that the keytype is not list
             AnswerString = (string?)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);
