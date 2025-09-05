@@ -123,8 +123,10 @@ namespace Nitrocid.Users.Login
                                     cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
                                     var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
                                     int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
+                                    int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                                     var timeFiglet = new AlignedFigletText(figFont)
                                     {
+                                        Top = consoleY,
                                         Text = timeStr,
                                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.Stage),
                                         Settings = new()
