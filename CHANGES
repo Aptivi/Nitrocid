@@ -1,13 +1,10 @@
-This is Nitrocid 0.1.0 Service Pack 5 that is a rather small service pack release that brings in several improvements to different kernel areas.
+We've made this version to update OpenMoji to 16.0!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Made `SetCursor*()` functions modifiable
-- `[*]` Fixed splash closing
-- `[*]` Backported improvements from 0.1.2 for games
-- `[*]` Help shows usages in command list
+- `[*]` Updated OpenMoji to 16.0
 
 Review the commit history if you want to get a deep insight about the changes.
 
