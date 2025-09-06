@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 using Nitrocid.Extras.RssShell.RSS;
 using Nitrocid.Extras.RssShell.Settings;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.Linq;
 
 namespace Nitrocid.Extras.RssShell
@@ -60,7 +60,7 @@ namespace Nitrocid.Extras.RssShell
             var config = new RssConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterAddonShell("RSSShell", new RSSShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.RssShell
         void IAddon.StopAddon()
         {
             ShellManager.UnregisterAddonShell("RSSShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(RssConfig));
         }
     }

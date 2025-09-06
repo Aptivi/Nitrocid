@@ -21,7 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Users.Windows;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

@@ -19,7 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.IO;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands

@@ -17,16 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using LibGit2Sharp;
 using Nitrocid.Extras.GitShell.Git;
 using Nitrocid.Extras.GitShell.Settings;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Files.Paths;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Kernel;
 using System.Linq;
 
@@ -60,7 +60,7 @@ namespace Nitrocid.Extras.GitShell
             var config = new GitConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterAddonShell("GitShell", new GitShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             if (!nativeLibIsSet)
             {
                 nativeLibIsSet = true;
@@ -74,7 +74,7 @@ namespace Nitrocid.Extras.GitShell
         void IAddon.StopAddon()
         {
             ShellManager.UnregisterAddonShell("GitShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(GitConfig));
         }
     }

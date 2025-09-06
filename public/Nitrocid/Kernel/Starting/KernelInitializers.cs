@@ -19,16 +19,16 @@
 
 using System;
 using System.IO;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Scripting;
+using Terminaux.Shell.Scripting;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.Shell.ShellBase.Aliases;
+using Terminaux.Shell.Aliases;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Reflection;

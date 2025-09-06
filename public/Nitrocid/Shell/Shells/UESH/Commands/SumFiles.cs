@@ -22,7 +22,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Files;
 using Nitrocid.Drivers;
 using Nitrocid.ConsoleBase.Writers;

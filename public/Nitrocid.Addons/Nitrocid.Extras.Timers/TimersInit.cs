@@ -20,10 +20,10 @@
 using Nitrocid.Extras.Timers.Commands;
 using Nitrocid.Extras.Timers.Settings;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Timers.Timers;
@@ -51,12 +51,12 @@ namespace Nitrocid.Extras.Timers
         {
             var config = new TimersConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(TimersConfig));
             HomepageTools.UnregisterBuiltinAction("Timer");
             HomepageTools.UnregisterBuiltinAction("Stopwatch");

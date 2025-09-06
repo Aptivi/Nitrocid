@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Shells;
 using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
@@ -31,7 +31,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             string command = "help shutdown";
-            string[] ListArgsOnly = ArgumentsParser.ParseShellCommandArguments(command, ShellType.Shell).total[0].ArgumentsList;
+            string[] ListArgsOnly = ArgumentsParser.ParseShellCommandArguments(command, "Shell").total[0].ArgumentsList;
             TextWriters.WriteList(ListArgsOnly);
         }
     }

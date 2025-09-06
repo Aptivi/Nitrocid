@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Help;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Help;
+using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Colors;
 using System;
 using Nitrocid.Kernel.Time.Alarm;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Switches;
 using Nitrocid.Misc.Interactives;
 using Terminaux.Writer.ConsoleWriters;
 

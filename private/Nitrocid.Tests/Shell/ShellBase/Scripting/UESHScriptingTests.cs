@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Shell.ShellBase.Scripting;
+using Terminaux.Shell.Scripting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.IO;

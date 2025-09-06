@@ -19,7 +19,7 @@
 
 using System.IO;
 using System.Reflection;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
 using Nitrocid.Misc.Reflection;

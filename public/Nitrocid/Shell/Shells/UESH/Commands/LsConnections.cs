@@ -18,7 +18,7 @@
 //
 
 using System;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Network.Connections;

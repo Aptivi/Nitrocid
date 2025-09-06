@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.Kernel;
-using Nitrocid.Shell.ShellBase.Help;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Help;
+using Terminaux.Shell.Commands;
 using Nitrocid.Files;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;

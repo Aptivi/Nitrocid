@@ -24,7 +24,7 @@ using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 
 namespace Nitrocid.Extras.SftpShell.Settings
 {

@@ -29,10 +29,6 @@ namespace Nitrocid.Drivers
         /// </summary>
         RNG,
         /// <summary>
-        /// Console drivers
-        /// </summary>
-        Console,
-        /// <summary>
         /// Network drivers
         /// </summary>
         Network,

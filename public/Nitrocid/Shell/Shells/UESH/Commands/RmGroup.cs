@@ -20,7 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Users.Groups;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

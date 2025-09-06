@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using System;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Switches;
 using Nitrocid.Files;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands

@@ -19,6 +19,7 @@
 
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
+using Terminaux.Shell.Arguments.Base;
 using System;
 
 namespace Nitrocid.Arguments.CommandLineArguments

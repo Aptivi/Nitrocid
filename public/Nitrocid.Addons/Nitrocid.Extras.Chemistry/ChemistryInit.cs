@@ -21,9 +21,9 @@ using Nitrocid.Extras.Chemistry.Commands;
 using Nitrocid.Extras.Chemistry.Screensavers;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -52,13 +52,13 @@ namespace Nitrocid.Extras.Chemistry
 
         void IAddon.StartAddon()
         {
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("periodicpreview", new PeriodicPreviewDisplay());
         }
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("periodicpreview");
         }
 

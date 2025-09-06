@@ -22,7 +22,7 @@ using Newtonsoft.Json.Linq;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Textify.Tools;
 
 namespace Nitrocid.Extras.JsonShell.Commands

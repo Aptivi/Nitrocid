@@ -22,7 +22,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using System;
 using System.Threading;
-using Nitrocid.Drivers.Console;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters.Simple;
 
@@ -33,6 +32,8 @@ namespace Nitrocid.ConsoleBase.Writers
     /// </summary>
     public static class TextWriters
     {
+        internal static object WriteLock = new();
+
         /// <summary>
         /// Outputs a list entry and value into the terminal prompt.
         /// </summary>
@@ -108,7 +109,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorType, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {
@@ -162,7 +163,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {
@@ -219,7 +220,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, KernelColorType colorType, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {
@@ -276,7 +277,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {

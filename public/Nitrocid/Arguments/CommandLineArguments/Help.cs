@@ -19,9 +19,10 @@
 
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Power;
-using Nitrocid.Arguments.Help;
+using Terminaux.Shell.Arguments.Base;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Shell.Arguments.Base.Help;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {
@@ -31,7 +32,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
         public override void Execute(ArgumentParameters parameters)
         {
             TextWriters.Write(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
-            ArgumentHelpPrint.ShowArgsHelp();
+            ArgumentHelpPrint.ShowArgsHelp(KernelArguments.AvailableCMDLineArgs);
             PowerManager.hardShutdown = true;
             PowerManager.KernelShutdown = true;
         }

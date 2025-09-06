@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -35,7 +35,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ShellManager.StartShell(ShellType.DebugShell);
+            ShellManager.StartShell("DebugShell");
             return 0;
         }
     }

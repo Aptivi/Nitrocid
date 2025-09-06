@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Extras.Ssh.SSH;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 
 namespace Nitrocid.Extras.Ssh.Commands

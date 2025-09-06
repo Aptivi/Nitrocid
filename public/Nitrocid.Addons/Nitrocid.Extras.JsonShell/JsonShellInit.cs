@@ -22,9 +22,9 @@ using Nitrocid.Extras.JsonShell.Json;
 using Nitrocid.Extras.JsonShell.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -91,7 +91,7 @@ namespace Nitrocid.Extras.JsonShell
             var config = new JsonConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterAddonShell("JsonShell", new JsonShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -100,7 +100,7 @@ namespace Nitrocid.Extras.JsonShell
         void IAddon.StopAddon()
         {
             ShellManager.UnregisterAddonShell("JsonShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(JsonConfig));
         }
     }

@@ -22,7 +22,7 @@ using System.Text;
 using System.Collections.Generic;
 using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Languages;
 
@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
         public override string PresetPromptCompletionShowcase =>
             PresetPromptCompletionBuilder();
 
-        internal override string PresetPromptBuilder()
+        private string PresetPromptBuilder()
         {
             // PowerLine glyphs
             char TransitionPartChar = Convert.ToChar(0xE0B1);
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptBuilderShowcase()
+        private string PresetPromptBuilderShowcase()
         {
             // PowerLine glyphs
             char TransitionPartChar = Convert.ToChar(0xE0B1);
@@ -104,7 +104,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptCompletionBuilder()
+        private string PresetPromptCompletionBuilder()
         {
             // Segments
             List<PowerLineSegment> segments =

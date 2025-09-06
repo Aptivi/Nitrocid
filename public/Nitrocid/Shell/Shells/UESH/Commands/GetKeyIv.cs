@@ -24,7 +24,7 @@ using Nitrocid.Drivers.Encoding;
 using Nitrocid.Drivers.EncodingAsymmetric;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

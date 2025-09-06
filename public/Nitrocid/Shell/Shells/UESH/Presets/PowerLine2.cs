@@ -24,9 +24,9 @@ using Terminaux.Colors;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Languages;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files;
@@ -58,7 +58,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
         public override string PresetPromptCompletionShowcase =>
             PresetPromptCompletionBuilder();
 
-        internal override string PresetPromptBuilder()
+        private string PresetPromptBuilder()
         {
             // PowerLine glyphs
             char PadlockChar = Convert.ToChar(0xE0A2);
@@ -93,7 +93,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptBuilderShowcase()
+        private string PresetPromptBuilderShowcase()
         {
             // PowerLine glyphs
             char PadlockChar = Convert.ToChar(0xE0A2);
@@ -128,7 +128,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptCompletionBuilder()
+        private string PresetPromptCompletionBuilder()
         {
             // Segments
             List<PowerLineSegment> segments =

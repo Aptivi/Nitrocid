@@ -23,7 +23,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Textify.Tools;
 
 namespace Nitrocid.Extras.JsonShell.Commands

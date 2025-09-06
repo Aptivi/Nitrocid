@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
@@ -31,11 +31,11 @@ namespace Nitrocid.Tests.Shell.Prompts
         /// Tests setting preset
         /// </summary>
         [TestMethod]
-        [DataRow("PowerLine1", ShellType.Shell, "PowerLine1")]
-        [DataRow("PowerLine1", ShellType.AdminShell, "PowerLine1")]
-        [DataRow("PowerLine1", ShellType.DebugShell, "PowerLine1")]
-        [DataRow("PowerLine1", ShellType.HexShell, "PowerLine1")]
-        [DataRow("PowerLine1", ShellType.TextShell, "PowerLine1")]
+        [DataRow("PowerLine1", "Shell", "PowerLine1")]
+        [DataRow("PowerLine1", "AdminShell", "PowerLine1")]
+        [DataRow("PowerLine1", "DebugShell", "PowerLine1")]
+        [DataRow("PowerLine1", "HexShell", "PowerLine1")]
+        [DataRow("PowerLine1", "TextShell", "PowerLine1")]
         [Description("Action")]
         public void TestSetPresetDry(string presetName, ShellType type, string expected)
         {
@@ -65,11 +65,11 @@ namespace Nitrocid.Tests.Shell.Prompts
         /// Tests getting preset list from shell
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestGetPresetsFromShell(ShellType type)
         {

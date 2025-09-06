@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
 {

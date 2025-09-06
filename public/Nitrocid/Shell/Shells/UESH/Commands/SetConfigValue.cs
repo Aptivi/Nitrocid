@@ -22,7 +22,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Linq;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

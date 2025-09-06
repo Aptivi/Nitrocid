@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Extras.Amusements.Amusements.Games;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {

@@ -23,7 +23,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.Stocks.Interactives;
 using Nitrocid.Languages;
 using Nitrocid.Network.Transfer;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Reader;
 

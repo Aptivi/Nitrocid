@@ -19,7 +19,7 @@
 
 using Newtonsoft.Json;
 using Nitrocid.Extras.JsonShell.Tools;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.JsonShell.Json.Commands
 {

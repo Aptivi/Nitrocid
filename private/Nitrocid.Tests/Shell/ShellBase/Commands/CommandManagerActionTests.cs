@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Tests.Shell.ShellBase.Commands.TestCommands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Commands
 {
@@ -36,11 +36,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests seeing if the command is found in specific shell (test case: lsr command)
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell, false)]
-        [DataRow(ShellType.AdminShell, false)]
-        [DataRow(ShellType.DebugShell, false)]
-        [DataRow(ShellType.HexShell, false)]
-        [DataRow(ShellType.TextShell, false)]
+        [DataRow("Shell", false)]
+        [DataRow("AdminShell", false)]
+        [DataRow("DebugShell", false)]
+        [DataRow("HexShell", false)]
+        [DataRow("TextShell", false)]
         [Description("Action")]
         public void TestIsCommandFoundInSpecificShell(ShellType type, bool expected)
         {
@@ -76,11 +76,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests registering the command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestRegisterCommand(ShellType type)
         {
@@ -118,11 +118,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests registering the command (Counterexample)
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestRegisterEmptyCommandName(ShellType type)
         {
@@ -158,11 +158,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests registering the command (Counterexample)
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestRegisterCommandConflicting(ShellType type)
         {
@@ -198,11 +198,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests registering the command (Counterexample)
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestRegisterNullCommand(ShellType type) =>
             Should.Throw(() => CommandManager.RegisterCustomCommand(type, null), typeof(KernelException));
@@ -224,11 +224,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests unregistering the command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestUnregisterCommand(ShellType type)
         {
@@ -256,11 +256,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests unregistering the command (Counterexample)
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestUnregisterNonexistentCommand(ShellType type) =>
             Should.Throw(() => CommandManager.UnregisterCustomCommand(type, "mycmd3"), typeof(KernelException));
@@ -282,11 +282,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests unregistering the command (Counterexample)
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestUnregisterNullCommand(ShellType type) =>
             Should.Throw(() => CommandManager.UnregisterCustomCommand(type, null), typeof(KernelException));
@@ -308,11 +308,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests registering the commands
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestRegisterCommands(ShellType type)
         {
@@ -378,11 +378,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests registering the commands (Counterexample)
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestRegisterCommandsWithErrors(ShellType type)
         {
@@ -444,11 +444,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests unregistering the commands
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestUnregisterCommands(ShellType type)
         {
@@ -492,11 +492,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests unregistering the commands (Counterexample)
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Action")]
         public void TestUnregisterCommandsWithErrors(ShellType type)
         {

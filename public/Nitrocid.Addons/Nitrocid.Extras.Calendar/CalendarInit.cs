@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 using Nitrocid.Extras.Calendar.Calendar.Commands;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Extras.Calendar.Calendar;
 using Nitrocid.Shell.Homepage;
@@ -257,7 +257,7 @@ namespace Nitrocid.Extras.Calendar
         {
             var config = new CalendarConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("calendar", new CalendarDisplay());
         }
 
@@ -265,7 +265,7 @@ namespace Nitrocid.Extras.Calendar
         {
             ReminderManager.Reminders.Clear();
             EventManager.CalendarEvents.Clear();
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(CalendarConfig));
             HomepageTools.UnregisterBuiltinAction("Calendar");
             ScreensaverManager.AddonSavers.Remove("calendar");

@@ -23,7 +23,7 @@ using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

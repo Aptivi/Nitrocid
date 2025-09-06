@@ -1,4 +1,4 @@
-﻿Imports Nitrocid.Shell.ShellBase.Commands
+﻿Imports Terminaux.Shell.Commands
 
 Namespace KSModVB
     Friend Class TuiCommand

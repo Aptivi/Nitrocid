@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
+using Terminaux.Shell.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Commands
 {
@@ -35,11 +35,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgEmptyInternal(ShellType type)
         {
@@ -64,11 +64,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgEmptyPublic(ShellType type)
         {
@@ -93,11 +93,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgSimple(ShellType type)
         {
@@ -132,11 +132,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArg(ShellType type)
         {
@@ -174,11 +174,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitch(ShellType type)
         {
@@ -226,11 +226,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchAndArg(ShellType type)
         {
@@ -281,11 +281,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptions(ShellType type)
         {
@@ -336,11 +336,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsAndArg(ShellType type)
         {
@@ -695,11 +695,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgSimpleMultiCommandArgumentInfo(ShellType type)
         {
@@ -740,11 +740,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgMultiCommandArgumentInfo(ShellType type)
         {
@@ -792,11 +792,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchMultiCommandArgumentInfo(ShellType type)
         {
@@ -861,11 +861,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchAndArgMultiCommandArgumentInfo(ShellType type)
         {
@@ -937,11 +937,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsMultiCommandArgumentInfo(ShellType type)
         {
@@ -1013,11 +1013,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing CommandInfo instance from a command line Command
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsAndArgMultiCommandArgumentInfo(ShellType type)
         {

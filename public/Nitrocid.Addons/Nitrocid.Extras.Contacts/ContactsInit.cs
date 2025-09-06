@@ -17,17 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Contacts.Contacts;
 using Nitrocid.Extras.Contacts.Contacts.Commands;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.Linq;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Switches;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Contacts.Settings;
 using Nitrocid.Kernel.Configuration;
@@ -93,7 +93,7 @@ namespace Nitrocid.Extras.Contacts
         {
             var config = new ContactsConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
 
             // Enable logging if debugging is enabled
@@ -106,7 +106,7 @@ namespace Nitrocid.Extras.Contacts
             // Unload all contacts
             ContactsManager.RemoveContacts(false);
             DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             foreach (var handler in handlers)
                 ExtensionHandlerTools.extensionHandlers.Remove(handler);
             HomepageTools.UnregisterBuiltinAction("Contacts");

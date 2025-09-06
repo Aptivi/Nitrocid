@@ -20,9 +20,9 @@
 using Nitrocid.Extras.FtpShell.FTP;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Collections.Generic;
 using System.Linq;
 using FtpConfig = Nitrocid.Extras.FtpShell.Settings.FtpConfig;
@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.FtpShell
             var config = new FtpConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterAddonShell("FTPShell", new FTPShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.FtpShell
         void IAddon.StopAddon()
         {
             ShellManager.UnregisterAddonShell("FTPShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(FtpConfig));
         }
     }

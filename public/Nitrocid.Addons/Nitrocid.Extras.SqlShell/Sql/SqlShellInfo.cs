@@ -20,9 +20,9 @@
 using System.Collections.Generic;
 using Nitrocid.Extras.SqlShell.Sql.Presets;
 using Nitrocid.Extras.SqlShell.Sql.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
 
 namespace Nitrocid.Extras.SqlShell.Sql
 {

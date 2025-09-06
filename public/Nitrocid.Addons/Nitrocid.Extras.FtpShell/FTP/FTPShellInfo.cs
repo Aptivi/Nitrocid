@@ -20,11 +20,11 @@
 using System.Collections.Generic;
 using Nitrocid.Extras.FtpShell.FTP.Presets;
 using Nitrocid.Extras.FtpShell.FTP.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.FtpShell.FTP
 {

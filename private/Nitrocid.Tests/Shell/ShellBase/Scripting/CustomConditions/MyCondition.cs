@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Scripting;
-using Nitrocid.Shell.ShellBase.Scripting.Conditions;
+using Terminaux.Shell.Scripting;
+using Terminaux.Shell.Scripting.Conditions;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Scripting.CustomConditions
 {

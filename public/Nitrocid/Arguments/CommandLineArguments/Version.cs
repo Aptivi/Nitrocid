@@ -20,6 +20,7 @@
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Power;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {

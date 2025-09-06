@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Shells;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
@@ -31,11 +31,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgNoArg(ShellType type)
         {
@@ -58,11 +58,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithArg(ShellType type)
         {
@@ -88,11 +88,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithSwitch(ShellType type)
         {
@@ -117,11 +117,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgFull(ShellType type)
         {

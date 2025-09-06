@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.ThemeStudio.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.Linq;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.ThemeStudio
 {
@@ -51,10 +51,10 @@ namespace Nitrocid.Extras.ThemeStudio
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasThemeStudio);
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
 
         void IAddon.FinalizeAddon()
         { }

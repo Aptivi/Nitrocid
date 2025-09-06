@@ -19,9 +19,9 @@
 
 using Nitrocid.Files;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using System.Linq;
 using Textify.General;
 using Nitrocid.ConsoleBase.Writers;

@@ -19,7 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging.Trace;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Diagnostics;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands

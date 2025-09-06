@@ -25,7 +25,7 @@ using Nitrocid.Kernel;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Linq;
 using Nitrocid.Files;
 

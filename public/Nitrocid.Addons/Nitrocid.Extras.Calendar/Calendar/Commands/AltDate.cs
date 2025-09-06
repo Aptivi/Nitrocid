@@ -23,7 +23,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time.Calendars;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 using System.Linq;
 

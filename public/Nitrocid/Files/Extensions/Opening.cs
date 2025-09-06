@@ -24,7 +24,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.IO;
 
 namespace Nitrocid.Files
@@ -80,16 +80,16 @@ namespace Nitrocid.Files
             switch (mode)
             {
                 case OpeningMode.Text:
-                    ShellManager.StartShell(ShellType.TextShell, path);
+                    ShellManager.StartShell("TextShell", path);
                     break;
                 case OpeningMode.Binary:
-                    ShellManager.StartShell(ShellType.HexShell, path);
+                    ShellManager.StartShell("HexShell", path);
                     break;
                 case OpeningMode.Json:
                     if (!hasJsonShell)
                     {
                         TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
-                        ShellManager.StartShell(ShellType.TextShell, path);
+                        ShellManager.StartShell("TextShell", path);
                     }
                     else
                         ShellManager.StartShell("JsonShell", path);
@@ -98,7 +98,7 @@ namespace Nitrocid.Files
                     if (!hasSqlShell)
                     {
                         TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the SQL shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
-                        ShellManager.StartShell(ShellType.HexShell, path);
+                        ShellManager.StartShell("HexShell", path);
                     }
                     else
                         ShellManager.StartShell("SqlShell", path);

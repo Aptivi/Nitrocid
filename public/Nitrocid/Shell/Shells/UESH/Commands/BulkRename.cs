@@ -19,7 +19,7 @@
 
 using Nitrocid.Files;
 using Nitrocid.Security.Permissions;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.IO;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

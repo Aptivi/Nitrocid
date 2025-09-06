@@ -24,9 +24,9 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Scripting.Conditions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Scripting.Conditions;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

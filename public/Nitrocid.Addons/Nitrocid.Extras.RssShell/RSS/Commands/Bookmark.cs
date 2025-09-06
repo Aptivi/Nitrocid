@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Extras.RssShell.Tools;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {

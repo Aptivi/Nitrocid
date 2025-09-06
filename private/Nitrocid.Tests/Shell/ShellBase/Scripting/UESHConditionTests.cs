@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Shell.ShellBase.Scripting;
-using Nitrocid.Shell.ShellBase.Scripting.Conditions;
+using Terminaux.Shell.Scripting;
+using Terminaux.Shell.Scripting.Conditions;
 using Nitrocid.Tests.Shell.ShellBase.Scripting.CustomConditions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;

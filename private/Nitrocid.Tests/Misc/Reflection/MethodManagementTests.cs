@@ -19,7 +19,7 @@
 
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Globalization;

@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.SftpShell.Commands;
 using Nitrocid.Extras.SftpShell.Settings;
 using Nitrocid.Extras.SftpShell.SFTP;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.Linq;
 
 namespace Nitrocid.Extras.SftpShell
@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.SftpShell
             var config = new SftpConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterAddonShell("SFTPShell", new SFTPShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -66,7 +66,7 @@ namespace Nitrocid.Extras.SftpShell
         void IAddon.StopAddon()
         {
             ShellManager.UnregisterAddonShell("SFTPShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(SftpConfig));
         }
     }

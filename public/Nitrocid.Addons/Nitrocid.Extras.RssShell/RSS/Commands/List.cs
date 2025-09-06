@@ -21,7 +21,7 @@ using Nettify.Rss.Instance;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Textify.General;
 using Terminaux.Base.Extensions;
 

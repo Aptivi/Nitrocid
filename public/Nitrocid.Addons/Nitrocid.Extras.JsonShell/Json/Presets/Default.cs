@@ -21,7 +21,7 @@ using System.IO;
 using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.JsonShell.Tools;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
 
 namespace Nitrocid.Extras.JsonShell.Json.Presets
@@ -46,7 +46,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Presets
         /// <inheritdoc/>
         public override string PresetShellType { get; } = "JsonShell";
 
-        internal override string PresetPromptBuilder()
+        private string PresetPromptBuilder()
         {
             // Build the preset
             var PresetStringBuilder = new StringBuilder();
@@ -72,7 +72,7 @@ namespace Nitrocid.Extras.JsonShell.Json.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptBuilderShowcase()
+        private string PresetPromptBuilderShowcase()
         {
             // Build the preset
             var PresetStringBuilder = new StringBuilder();

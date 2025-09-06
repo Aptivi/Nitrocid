@@ -23,8 +23,8 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Users.Login.Motd;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -62,7 +62,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             else
             {
-                ShellManager.StartShell(ShellType.TextShell, PathsManagement.GetKernelPath(KernelPathType.MOTD));
+                ShellManager.StartShell("TextShell", PathsManagement.GetKernelPath(KernelPathType.MOTD));
                 TextWriterColor.Write(Translate.DoTranslation("Changing MOTD..."));
                 MotdParse.ReadMotd();
                 return 0;

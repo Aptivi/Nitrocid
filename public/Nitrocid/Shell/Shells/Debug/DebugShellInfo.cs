@@ -18,14 +18,14 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Shell.Shells.Debug.Commands;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 using Nitrocid.Shell.Shells.Debug.Presets;
 using System.Linq;
 

@@ -5,16 +5,6 @@
         "DisplayAs": "Kernel driver settings",
         "Keys": [
             {
-                "Name": "Current console driver",
-                "Type": "SSelection",
-                "Variable": "CurrentConsoleDriver",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetConsoleDriverNames",
-                "SelectionFunctionType": "ConsoleDriverTools",
-                "SelectionFallback": [ "Default" ],
-                "Description": "Which console driver would you like to use?"
-            },
-            {
                 "Name": "Current random number generator driver",
                 "Type": "SSelection",
                 "Variable": "CurrentRandomDriver",

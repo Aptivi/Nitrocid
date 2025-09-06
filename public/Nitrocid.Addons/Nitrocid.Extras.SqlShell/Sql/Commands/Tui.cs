@@ -19,7 +19,7 @@
 
 using Nitrocid.Extras.SqlShell.Tools;
 using Nitrocid.Files;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Editor;
 
 namespace Nitrocid.Extras.SqlShell.Sql.Commands

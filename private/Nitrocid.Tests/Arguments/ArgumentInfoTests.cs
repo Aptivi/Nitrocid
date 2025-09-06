@@ -19,7 +19,7 @@
 
 using System;
 using Nitrocid.Arguments;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 

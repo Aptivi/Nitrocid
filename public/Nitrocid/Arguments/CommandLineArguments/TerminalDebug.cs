@@ -17,8 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Drivers;
-using Nitrocid.Drivers.Console;
+using Aptivestigate.Logging;
+using Aptivestigate.Serilog;
+using Serilog;
+using Terminaux.Base;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {
@@ -27,7 +30,8 @@ namespace Nitrocid.Arguments.CommandLineArguments
 
         public override void Execute(ArgumentParameters parameters)
         {
-            DriverHandler.SetDriver<IConsoleDriver>("TerminalDebug");
+            ConsoleLogger.AbstractLogger = new SerilogLogger(new LoggerConfiguration().MinimumLevel.Debug().WriteTo.File(LogTools.GenerateLogFilePath(out _)));
+            ConsoleLogger.EnableLogging = true;
         }
     }
 }

@@ -22,9 +22,9 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Aliases;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Aliases;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

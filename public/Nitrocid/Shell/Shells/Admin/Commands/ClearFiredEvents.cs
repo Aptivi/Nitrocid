@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Kernel.Events;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
 {

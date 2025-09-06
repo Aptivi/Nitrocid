@@ -22,8 +22,8 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
 using Nitrocid.Files.LineEndings;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

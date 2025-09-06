@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 using Nitrocid.Extras.Amusements.Commands;
 using Nitrocid.Extras.Amusements.Screensavers;
 using Nitrocid.Extras.Amusements.Settings;
 using Nitrocid.Extras.Amusements.Splashes;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Misc.Splash;
 using System.Linq;
 using Nitrocid.Shell.Homepage;
@@ -169,7 +169,7 @@ namespace Nitrocid.Extras.Amusements
         void IAddon.StartAddon()
         {
             // Initialize everything
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("meteor", new MeteorDisplay());
             ScreensaverManager.AddonSavers.Add("meteordodge", new MeteorDodgeDisplay());
             ScreensaverManager.AddonSavers.Add("quote", new QuoteDisplay());
@@ -192,7 +192,7 @@ namespace Nitrocid.Extras.Amusements
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("meteor");
             ScreensaverManager.AddonSavers.Remove("meteordodge");
             ScreensaverManager.AddonSavers.Remove("quote");

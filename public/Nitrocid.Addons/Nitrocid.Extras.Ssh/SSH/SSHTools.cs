@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.IO;
 using Renci.SshNet;
 using Renci.SshNet.Common;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Events;

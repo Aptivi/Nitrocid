@@ -24,7 +24,7 @@ using Terminaux.Colors;
 using System.Linq;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Time;
-using Nitrocid.Shell.ShellBase.Scripting;
+using Terminaux.Shell.Scripting;
 using Nitrocid.Users;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Time.Renderers;

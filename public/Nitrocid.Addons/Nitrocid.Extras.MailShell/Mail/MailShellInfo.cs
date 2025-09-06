@@ -20,10 +20,10 @@
 using System.Collections.Generic;
 using Nitrocid.Extras.MailShell.Mail.Presets;
 using Nitrocid.Extras.MailShell.Mail.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Extras.MailShell.Mail
 {

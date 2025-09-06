@@ -27,6 +27,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {

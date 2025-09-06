@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
@@ -87,7 +87,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
             // Verify correctness
             ShellManager.AvailableShells.ShouldContainKey("Basic debug shell");
             shellInfo.ShouldNotBeNull();
-            shellInfo.ShellType.ShouldBe("Basic debug shell");
+            shellInfo."ShouldBe"("Basic debug shell");
 
             // Start the shell
             Should.NotThrow(new Action(() => ShellManager.StartShellInternal("Basic debug shell")));
@@ -118,7 +118,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
             // Verify correctness
             ShellManager.AvailableShells.ShouldContainKey("Basic debug shell");
             shellInfo.ShouldNotBeNull();
-            shellInfo.ShellType.ShouldBe("Basic debug shell");
+            shellInfo."ShouldBe"("Basic debug shell");
 
             // Start the shell
             Should.NotThrow(new Action(() => ShellManager.StartShellInternal("Basic debug shell", "Hello", "World")));
@@ -148,17 +148,17 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         /// Tests getting shell info
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Initialization")]
         public void TestGetShellInfo(ShellType type)
         {
             var shellInfo = ShellManager.GetShellInfo(type);
             shellInfo.ShouldNotBeNull();
-            shellInfo.ShellType.ShouldBe(type.ToString());
+            shellInfo."ShouldBe"(type.ToString());
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         {
             var shellInfo = ShellManager.GetShellInfo(type);
             shellInfo.ShouldNotBeNull();
-            shellInfo.ShellType.ShouldBe(type);
+            shellInfo."ShouldBe"(type);
         }
 
     }

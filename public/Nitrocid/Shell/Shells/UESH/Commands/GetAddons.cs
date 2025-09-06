@@ -26,8 +26,8 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Kernel.Updates;
 using Nitrocid.Languages;
 using Nitrocid.Network.Transfer;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using System;
 using System.IO.Compression;
 

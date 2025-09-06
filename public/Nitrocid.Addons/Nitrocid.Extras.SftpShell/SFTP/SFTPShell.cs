@@ -28,8 +28,8 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Network.Connections;
 using Nitrocid.Network.SpeedDial;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Renci.SshNet;
 
 namespace Nitrocid.Extras.SftpShell.SFTP

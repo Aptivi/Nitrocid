@@ -19,7 +19,7 @@
 
 using System;
 using Nitrocid.Extras.SftpShell.Tools.Filesystem;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Terminaux.Inputs.Styles.Choice;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;

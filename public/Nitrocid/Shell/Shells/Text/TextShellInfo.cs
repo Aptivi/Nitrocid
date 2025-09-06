@@ -18,10 +18,10 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Shell.Shells.Text.Commands;
 using Nitrocid.Shell.Shells.Text.Presets;
 

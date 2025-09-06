@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Arguments;
@@ -208,7 +208,7 @@ namespace Nitrocid.Kernel
                     KernelReleaseInfo.NotifyReleaseSupportWindow();
 
                     // Start the shell
-                    ShellManager.StartShellInternal(ShellType.Shell);
+                    ShellManager.StartShellInternal("Shell");
                 }
                 Login.LoggedIn = false;
                 Login.LogoutRequested = false;

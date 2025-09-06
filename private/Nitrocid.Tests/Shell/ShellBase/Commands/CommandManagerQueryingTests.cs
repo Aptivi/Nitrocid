@@ -18,8 +18,8 @@
 //
 
 using System;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
@@ -37,7 +37,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Querying")]
         public void TestGetCommandListFromSpecificShell()
         {
-            var Commands = CommandManager.GetCommandNames(ShellType.Shell);
+            var Commands = CommandManager.GetCommandNames("Shell");
             Console.WriteLine(format: "Commands from Shell: {0} commands", Commands.Length);
             Console.WriteLine(format: string.Join(", ", Commands));
             Commands.ShouldNotBeNull();
@@ -48,11 +48,11 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         /// Tests getting list of commands from all shells
         /// </summary>
         [TestMethod]
-        [DataRow(ShellType.Shell)]
-        [DataRow(ShellType.AdminShell)]
-        [DataRow(ShellType.DebugShell)]
-        [DataRow(ShellType.HexShell)]
-        [DataRow(ShellType.TextShell)]
+        [DataRow("Shell")]
+        [DataRow("AdminShell")]
+        [DataRow("DebugShell")]
+        [DataRow("HexShell")]
+        [DataRow("TextShell")]
         [Description("Querying")]
         public void TestGetCommandListFromAllShells(ShellType type)
         {

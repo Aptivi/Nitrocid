@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Shell.Arguments.Base;
 using Nitrocid.Languages;
 using System.Diagnostics;
 

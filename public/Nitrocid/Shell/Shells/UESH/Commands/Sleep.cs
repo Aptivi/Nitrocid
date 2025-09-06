@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Kernel.Threading;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Threading;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

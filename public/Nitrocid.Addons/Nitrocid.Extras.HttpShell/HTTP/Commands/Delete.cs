@@ -19,7 +19,7 @@
 
 using System;
 using Nitrocid.Extras.HttpShell.Tools;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Styles.Choice;

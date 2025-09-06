@@ -20,7 +20,7 @@
 using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
 
 namespace Nitrocid.Extras.SftpShell.SFTP.Presets
@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
         /// <inheritdoc/>
         public override string PresetShellType { get; } = "SFTPShell";
 
-        internal override string PresetPromptBuilder()
+        private string PresetPromptBuilder()
         {
             // Build the preset
             var PresetStringBuilder = new StringBuilder();
@@ -75,7 +75,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptBuilderShowcase()
+        private string PresetPromptBuilderShowcase()
         {
             // Build the preset
             var PresetStringBuilder = new StringBuilder();

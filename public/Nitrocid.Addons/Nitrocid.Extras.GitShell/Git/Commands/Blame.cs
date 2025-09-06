@@ -20,7 +20,7 @@
 using LibGit2Sharp;
 using System.IO;
 using System.Linq;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;

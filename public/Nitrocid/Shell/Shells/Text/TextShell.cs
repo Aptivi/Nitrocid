@@ -25,8 +25,8 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Shell.Shells.Text
 {

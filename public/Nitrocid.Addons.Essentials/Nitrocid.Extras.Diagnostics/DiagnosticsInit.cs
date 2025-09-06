@@ -18,10 +18,10 @@
 //
 
 using Nitrocid.Extras.Diagnostics.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.Linq;
 
 namespace Nitrocid.Extras.Diagnostics
@@ -40,9 +40,9 @@ namespace Nitrocid.Extras.Diagnostics
         { }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.DebugShell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("DebugShell", [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.DebugShell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("DebugShell", [.. addonCommands.Select((ci) => ci.Command)]);
     }
 }

@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Network.Types.RPC;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

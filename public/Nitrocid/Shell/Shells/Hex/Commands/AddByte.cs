@@ -19,7 +19,7 @@
 
 using System;
 using Nitrocid.Files.Editors.HexEdit;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.Hex.Commands
 {
