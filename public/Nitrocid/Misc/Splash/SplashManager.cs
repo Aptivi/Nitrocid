@@ -285,7 +285,7 @@ namespace Nitrocid.Misc.Splash
                     var closingPart = new ScreenPart();
                     splashScreen.RemoveBufferedParts();
                     currentContext = context;
-                    splash.SplashClosing = true;
+                    BaseSplash.SplashClosing = true;
 
                     // We need to wait for the splash display thread to finish its work once SplashClosing is set, because some splashes, like PowerLine,
                     // actually do some operations that take a few milliseconds to finish what it's doing, and if we didn't wait here until the operations
@@ -314,7 +314,7 @@ namespace Nitrocid.Misc.Splash
                 {
                     // Reset the SplashClosing variable in case it needs to be open again. Some splashes don't do anything if they detect that the splash
                     // screen is closing.
-                    splash.SplashClosing = false;
+                    BaseSplash.SplashClosing = false;
 
                     // Wait for 3 seconds
                     if (delay)
@@ -438,7 +438,7 @@ namespace Nitrocid.Misc.Splash
                 if (threadParameters is null)
                     throw new KernelException(KernelExceptionType.Splash, Translate.DoTranslation("Splash thread parameters are not specified"));
                 var splash = GetSplashFromName(threadParameters.SplashName).EntryPoint;
-                while (!splash.SplashClosing && !SplashThread.IsStopping)
+                while (!BaseSplash.SplashClosing && !SplashThread.IsStopping)
                 {
                     var displayPart = new ScreenPart();
                     displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));

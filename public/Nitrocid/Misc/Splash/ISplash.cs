@@ -28,10 +28,6 @@ namespace Nitrocid.Misc.Splash
     {
 
         /// <summary>
-        /// Whether the splash is closing. If true, the thread of which handles the display should close itself. <see cref="Closing(SplashContext, out bool)"/> should set this property to True.
-        /// </summary>
-        bool SplashClosing { get; set; }
-        /// <summary>
         /// Splash name
         /// </summary>
         string SplashName { get; }
