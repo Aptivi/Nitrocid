@@ -4432,3 +4432,4 @@ Este posibil ca descrierea intrării setărilor să nu fie goală
 Este posibil ca intrarea de setări să nu aibă o listă de chei de setări goală
 Numele cheii de setări poate să nu fie gol
 Este posibil ca cheia de setări să nu dețină un tip de cheie nevalid
+Chei disponibile

@@ -4435,6 +4435,7 @@
     "Settings entry description may not be empty",
     "Settings entry may not have empty settings key list",
     "Settings key name may not be empty",
-    "Settings key may not hold invalid key type"
+    "Settings key may not hold invalid key type",
+    "Available keys"
   ]
 }

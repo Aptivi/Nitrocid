@@ -4435,6 +4435,7 @@
     "A descrição da entrada de definições não pode estar vazia",
     "A entrada de definições pode não ter uma lista de chaves de definições vazia",
     "O nome da chave de configuração não pode estar vazio",
-    "A chave de definições pode não conter um tipo de chave inválido"
+    "A chave de definições pode não conter um tipo de chave inválido",
+    "Chaves disponíveis"
   ]
 }

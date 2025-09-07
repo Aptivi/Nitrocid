@@ -4435,6 +4435,7 @@
     "La descrizione della voce Impostazioni non può essere vuota",
     "La voce Impostazioni non può avere un elenco di chiavi Impostazioni vuoto",
     "Il nome della chiave Impostazioni non può essere vuoto",
-    "La chiave Impostazioni non può contenere un tipo di chiave non valido"
+    "La chiave Impostazioni non può contenere un tipo di chiave non valido",
+    "Chiavi disponibili"
   ]
 }

@@ -4435,6 +4435,7 @@
     "La descripción de la entrada de configuración puede estar vacía.",
     "La entrada de configuración puede no tener una lista de claves de configuración vacía.",
     "El nombre de la clave de configuración puede estar vacío.",
-    "La clave de configuración puede no contener un tipo de clave no válido."
+    "La clave de configuración puede no contener un tipo de clave no válido.",
+    "Claves disponibles"
   ]
 }

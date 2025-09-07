@@ -4435,6 +4435,7 @@
     "Die Beschreibung des Einstellungseintrags darf nicht leer sein.",
     "Die Liste der Einstellungsschlüssel darf nicht leer sein.",
     "Der Name des Einstellungsschlüssels darf nicht leer sein.",
-    "Der Einstellungsschlüssel darf keinen ungültigen Schlüsseltyp enthalten."
+    "Der Einstellungsschlüssel darf keinen ungültigen Schlüsseltyp enthalten.",
+    "Verfügbare Schlüssel"
   ]
 }

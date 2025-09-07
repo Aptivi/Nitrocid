@@ -65,6 +65,9 @@
     <EmbeddedResource Include="..\..\public\Nitrocid\Resources\Themes\*.json" Visible="false">
       <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\**\Resources\*Settings.json" Visible="false">
+      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+    </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\**\Resources\*Settings.json" Visible="false">
       <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
