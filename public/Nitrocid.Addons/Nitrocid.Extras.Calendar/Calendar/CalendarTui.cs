@@ -341,9 +341,11 @@ namespace Nitrocid.Extras.Calendar.Calendar
             // Show the available keys list
             if (bindings.Length == 0)
                 return;
-            InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText(bindings),
-                KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
-                KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            InfoBoxModalColor.WriteInfoBoxModal(KeybindingTools.RenderKeybindingHelpText(bindings), new InfoBoxSettings()
+            {
+                ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
+                BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
+            });
             return;
         }
 

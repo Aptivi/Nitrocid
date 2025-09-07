@@ -110,6 +110,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
             // Populate the text
             string exStr = Settings.ExcaliBeatsExplicit ? "EXCALIBUR" : "EXCALIBEATS";
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
+            int figHeight = FigletTools.GetFigletHeight(exStr, figFont) / 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
 
             // Fade out
             for (int CurrentStep = 1; CurrentStep <= maxSteps; CurrentStep++)
@@ -129,6 +131,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
                     {
                         Text = exStr,
                         ForegroundColor = CurrentColorOut,
+                        Top = consoleY,
                         Settings = new()
                         {
                             Alignment = TextAlignment.Middle,

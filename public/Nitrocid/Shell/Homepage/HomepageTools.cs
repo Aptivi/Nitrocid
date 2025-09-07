@@ -550,11 +550,11 @@ namespace Nitrocid.Shell.Homepage
                                 break;
                             case ConsoleKey.K:
                                 InfoBoxModalColor.WriteInfoBoxModal(
-                                    "Available keys",
                                     KeybindingTools.RenderKeybindingHelpText(bindings), new InfoBoxSettings()
                                     {
                                         ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
                                         BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
+                                        Title = Translate.DoTranslation("Available keys"),
                                     });
                                 break;
                             default:
@@ -703,11 +703,13 @@ namespace Nitrocid.Shell.Homepage
         private static void OpenAboutBox()
         {
             InfoBoxModalColor.WriteInfoBoxModal(
-                Translate.DoTranslation("About Nitrocid"),
                 Translate.DoTranslation("Nitrocid KS simulates our future kernel, the Nitrocid Kernel.") + "\n\n" +
                 Translate.DoTranslation("Version") + $": {KernelMain.VersionFullStr}" + "\n" +
                 Translate.DoTranslation("Mod API") + $": {KernelMain.ApiVersion}" + "\n\n" +
-                Translate.DoTranslation("Copyright (C) 2018-2025 Aptivi - All rights reserved") + " - https://aptivi.github.io"
+                Translate.DoTranslation("Copyright (C) 2018-2025 Aptivi - All rights reserved") + " - https://aptivi.github.io", new InfoBoxSettings()
+                {
+                    Title = Translate.DoTranslation("About Nitrocid"),
+                }
             );
         }
     }
