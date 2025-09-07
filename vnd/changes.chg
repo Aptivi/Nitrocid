@@ -6,10 +6,23 @@ Ink-redible Hotness
 
 =============================================================================
 
-0.1.2.24 - Service Pack 2 (TBD)
-===============================
+0.1.2.25 - Service Pack 2 (September 7th, 2025)
+===============================================
 
-TBD
+We've released this service pack of the 0.1.2.x version series to finally
+exprience the power and strength of Terminaux 7.0 to make the kernel faster
+and better than never before. This was done in an effort to prepare for the
+eventual transition to 0.2.0 when it gets released sometime in early 2026.
+
+We are back to making service packs, but, this time, featuring Terminaux 7.0
+that provides improvements to many areas, including the shell, the writers,
+and much more. This is going to be the last service pack that we've released
+for the 0.1.2.x release series before going EOL.
+
+We've also integrated fixes for the bad splash closing design to prevent the
+kernel from being hung once shut down using the custom splash. Now, custom
+splashes close fine once the kernel reaches its final stages of shutting
+down.
 
 0.1.2.23 - Security release (August 27th, 2025)
 ===============================================

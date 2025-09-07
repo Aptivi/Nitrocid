@@ -1,6 +1,8 @@
 nitrocid-27 (3.1.27.53-0.1.2.25-1) noble; urgency=medium
 
-  * General improvements and bug fixes
+  * Updated to Terminaux 7.0
+  * Fixed splash closing
+  * General improvements
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sun, 07 Sep 2025 13:53:25 +0300
 
