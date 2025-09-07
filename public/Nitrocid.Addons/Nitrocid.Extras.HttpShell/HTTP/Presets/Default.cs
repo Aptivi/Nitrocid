@@ -89,7 +89,5 @@ namespace Nitrocid.Extras.HttpShell.HTTP.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
-
     }
 }

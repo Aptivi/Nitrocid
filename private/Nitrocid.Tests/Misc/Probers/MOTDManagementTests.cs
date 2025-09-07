@@ -21,7 +21,7 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Users.Login.Motd;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using System.IO;
 using Nitrocid.Files;
 

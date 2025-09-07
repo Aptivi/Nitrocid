@@ -89,7 +89,5 @@ namespace Nitrocid.Extras.RssShell.RSS.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
-
     }
 }

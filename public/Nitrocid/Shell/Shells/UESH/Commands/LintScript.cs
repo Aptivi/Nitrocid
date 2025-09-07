@@ -36,7 +36,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             try
             {
                 string pathToScript = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-                UESHParse.Execute(pathToScript, "", true);
+                MESHParse.Execute(pathToScript, "", true);
                 TextWriters.Write(Translate.DoTranslation("Script lint succeeded."), true, KernelColorType.Success);
                 variableValue = "1";
                 return 0;

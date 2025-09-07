@@ -88,7 +88,5 @@ namespace Nitrocid.Extras.GitShell.Git.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
-
     }
 }

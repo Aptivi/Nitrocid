@@ -38,6 +38,7 @@ using Terminaux.Base.Extensions;
 using Nitrocid.Kernel.Configuration;
 using Aptivestigate.CrashHandler;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Kernel
 {
@@ -92,7 +93,7 @@ namespace Nitrocid.Kernel
                 CrashTools.InstallCrashHandler();
 
                 // Show help / version prior to starting the kernel if help / version is passed
-                ArgumentParse.ParseArguments(Args, true);
+                ArgumentParse.ParseArguments(Args, KernelArguments.outArgs);
 
                 // This is a kernel entry point
                 EnvironmentTools.kernelArguments = Args;
@@ -161,7 +162,7 @@ namespace Nitrocid.Kernel
             finally
             {
                 // Load main buffer
-                if (!KernelPlatform.IsOnWindows() && ConsoleTools.UseAltBuffer && ConsoleMisc.IsOnAltBuffer && !PowerManager.hardShutdown)
+                if (!KernelPlatform.IsOnWindows() && KernelEntry.UseAltBuffer && ConsoleMisc.IsOnAltBuffer && !PowerManager.hardShutdown)
                     ConsoleMisc.ShowMainBuffer();
 
                 // Reset colors and clear the console

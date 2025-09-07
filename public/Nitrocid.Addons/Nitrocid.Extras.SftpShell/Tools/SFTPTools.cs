@@ -24,7 +24,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.SftpShell.SFTP;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Renci.SshNet;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;

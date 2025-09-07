@@ -93,7 +93,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
             }
             catch (ThreadInterruptedException)
             {
-                CancellationHandlers.CancelRequested = false;
+                CancellationHandlers.DismissRequest();
                 return;
             }
             catch (Exception ex)

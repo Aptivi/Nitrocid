@@ -35,10 +35,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            foreach (string VarName in UESHVariables.Variables.Keys)
+            foreach (string VarName in MESHVariables.Variables.Keys)
             {
                 TextWriters.Write($"- {VarName}: ", false, KernelColorType.ListEntry);
-                TextWriters.Write(UESHVariables.Variables[VarName], true, KernelColorType.ListValue);
+                TextWriters.Write(MESHVariables.Variables[VarName], true, KernelColorType.ListValue);
             }
             return 0;
         }

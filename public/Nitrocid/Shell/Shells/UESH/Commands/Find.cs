@@ -54,13 +54,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 foreach (var file in FileEntries)
                 {
-                    var AltThreads = ShellManager.ShellStack[^1].AltCommandThreads;
-                    if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
-                    {
-                        var WrappedCommand = new KernelThread($"Find Shell Command Thread for file {file}", false, (cmdThreadParams) =>
-                            CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
-                        ShellManager.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
-                    }
+                    ShellManager.AddAlternateThread();
                     ShellManager.GetLine($"{command} \"{file}\"");
                 }
             }

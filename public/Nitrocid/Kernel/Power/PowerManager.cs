@@ -218,7 +218,6 @@ namespace Nitrocid.Kernel.Power
                     Arguments = string.Join(" ", EnvironmentTools.kernelArguments)
                 },
             };
-            selfProcess.StartInfo = ProcessExecutor.StripEnvironmentVariables(selfProcess.StartInfo);
 
             // Now, go ahead and start.
             selfProcess.Start();

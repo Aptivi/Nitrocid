@@ -395,20 +395,6 @@ namespace Nitrocid.Extras.Mods.Modifications
         }
 
         /// <summary>
-        /// Lists the mod commands based on the shell
-        /// </summary>
-        /// <param name="ShellType">Selected shell type</param>
-        public static CommandInfo[] ListModCommands(ShellType ShellType) =>
-            ListModCommands(ShellManager.GetShellTypeName(ShellType));
-
-        /// <summary>
-        /// Lists the mod commands based on the shell
-        /// </summary>
-        /// <param name="ShellType">Selected shell type</param>
-        public static CommandInfo[] ListModCommands(string ShellType) =>
-            [.. ShellManager.GetShellInfo(ShellType).ModCommands];
-
-        /// <summary>
         /// Gets a mod from the name
         /// </summary>
         /// <param name="modName">The mod name to search for</param>

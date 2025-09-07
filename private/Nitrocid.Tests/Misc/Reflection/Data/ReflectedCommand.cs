@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -17,19 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Threading;
 using Terminaux.Shell.Commands;
-using System.Threading;
 
-namespace Nitrocid.Shell.Shells.UESH.Commands
+namespace Nitrocid.Tests.Misc.Reflection.Data
 {
-    class SleepCommand : BaseCommand, ICommand
+    internal class ReflectedCommand : BaseCommand, ICommand
     {
+        internal string doSet = "";
 
-        public override int Execute(CommandParameters parameters, ref string variableValue)
-        {
-            ThreadManager.SleepNoBlock(long.Parse(parameters.ArgumentsList[0]), Thread.CurrentThread);
-            return 0;
-        }
+        public override int Execute(CommandParameters parameters, ref string variableValue) =>
+            0;
+
+        public override void HelpHelper() =>
+            doSet = "yes";
     }
 }

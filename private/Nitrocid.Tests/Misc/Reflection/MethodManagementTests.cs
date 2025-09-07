@@ -23,6 +23,7 @@ using Terminaux.Shell.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Globalization;
+using Nitrocid.Tests.Misc.Reflection.Data;
 
 namespace Nitrocid.Tests.Misc.Reflection
 {
@@ -49,8 +50,8 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetMethod()
         {
-            var instance = new CommandInfo("cmd", "Test me!");
-            var value = MethodManager.GetMethod(nameof(instance.GetTranslatedHelpEntry), instance.GetType());
+            var instance = new ReflectedCommand();
+            var value = MethodManager.GetMethod(nameof(instance.Execute), instance.GetType());
             value.ShouldNotBeNull();
             value.DeclaringType.ShouldBe(instance.GetType());
         }
@@ -74,11 +75,9 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestInvokeMethod()
         {
-            var instance = new CommandInfo("cmd", "Test me!");
-            var value = MethodManager.InvokeMethod(nameof(instance.GetTranslatedHelpEntry), instance);
-            value.ShouldNotBeNull();
-            value.ShouldBeOfType(typeof(string));
-            value.ShouldBe("Test me!");
+            var instance = new ReflectedCommand();
+            var value = MethodManager.InvokeMethod(nameof(instance.HelpHelper), instance, []);
+            instance.doSet.ShouldBe("yes");
         }
 
     }

@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.HttpShell
         {
             var config = new HttpConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("HTTPShell", new HTTPShellInfo());
+            ShellManager.RegisterShell("HTTPShell", new HTTPShellInfo());
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.HttpShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterAddonShell("HTTPShell");
+            ShellManager.UnregisterShell("HTTPShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(HttpConfig));
         }

@@ -55,7 +55,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     }
                     catch (ThreadInterruptedException)
                     {
-                        CancellationHandlers.CancelRequested = false;
+                        CancellationHandlers.DismissRequest();
                         Bail = true;
                     }
                     catch (Exception ex)

@@ -26,7 +26,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Hardware;
 using Nitrocid.Users;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Users.Windows;
 using Nitrocid.Kernel.Configuration;

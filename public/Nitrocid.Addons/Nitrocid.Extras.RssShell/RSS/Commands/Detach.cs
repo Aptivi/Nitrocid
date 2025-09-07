@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var shell = (RSSShell?)ShellManager.ShellStack[^1].ShellBase ??
+            var shell = (RSSShell?)ShellManager.GetShellInfo(ShellManager.CurrentShellType).ShellBase ??
                 throw new KernelException(KernelExceptionType.RSSShell, Translate.DoTranslation("The last shell is not this shell to detach from."));
             shell.detaching = true;
             ShellManager.KillShell();

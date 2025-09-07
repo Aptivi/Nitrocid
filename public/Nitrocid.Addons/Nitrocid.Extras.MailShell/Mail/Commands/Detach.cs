@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var shell = (MailShell?)ShellManager.ShellStack[^1].ShellBase ??
+            var shell = (MailShell?)ShellManager.GetShellInfo(ShellManager.CurrentShellType).ShellBase ??
                 throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("The last shell is not this shell to detach from."));
             shell.detaching = true;
             ShellManager.KillShell();

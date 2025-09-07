@@ -105,7 +105,5 @@ namespace Nitrocid.Extras.FtpShell.FTP.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
-
     }
 }

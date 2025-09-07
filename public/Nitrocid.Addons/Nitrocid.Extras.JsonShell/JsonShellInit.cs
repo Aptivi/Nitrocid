@@ -90,7 +90,7 @@ namespace Nitrocid.Extras.JsonShell
         {
             var config = new JsonConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("JsonShell", new JsonShellInfo());
+            ShellManager.RegisterShell("JsonShell", new JsonShellInfo());
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
@@ -99,7 +99,7 @@ namespace Nitrocid.Extras.JsonShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterAddonShell("JsonShell");
+            ShellManager.UnregisterShell("JsonShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(JsonConfig));
         }

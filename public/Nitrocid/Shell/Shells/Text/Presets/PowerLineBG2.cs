@@ -119,11 +119,5 @@ namespace Nitrocid.Shell.Shells.Text.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() =>
-            PresetPromptBuilder();
-
-        string IPromptPreset.PresetPromptCompletionBuilder() =>
-            PresetPromptCompletionBuilder();
-
     }
 }

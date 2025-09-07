@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var shell = (SFTPShell?)ShellManager.ShellStack[^1].ShellBase ??
+            var shell = (SFTPShell?)ShellManager.GetShellInfo(ShellManager.CurrentShellType).ShellBase ??
                 throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("The last shell is not this shell to detach from."));
             shell.detaching = true;
             ShellManager.KillShell();

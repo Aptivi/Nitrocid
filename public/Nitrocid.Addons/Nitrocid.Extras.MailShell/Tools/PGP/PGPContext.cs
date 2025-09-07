@@ -22,7 +22,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 
 namespace Nitrocid.Extras.MailShell.Tools.PGP

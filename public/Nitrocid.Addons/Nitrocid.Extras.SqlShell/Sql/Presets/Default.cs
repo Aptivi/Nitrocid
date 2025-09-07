@@ -88,7 +88,5 @@ namespace Nitrocid.Extras.SqlShell.Sql.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
-
     }
 }

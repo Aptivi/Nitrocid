@@ -114,11 +114,5 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() =>
-            PresetPromptBuilder();
-
-        string IPromptPreset.PresetPromptCompletionBuilder() =>
-            PresetPromptCompletionBuilder();
-
     }
 }

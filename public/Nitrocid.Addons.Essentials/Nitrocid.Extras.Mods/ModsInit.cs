@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.Mods
                             ArgumentDescription = /* Localizable */ "Whether to list, reload, stop, start, or interactively manage all mods"
                         }),
                     ]),
-                ], new ModManCommand(), CommandFlags.Strict),
+                ], new ModManCommand()),
 
             new CommandInfo("modmanual", /* Localizable */ "Mod manual",
                 [

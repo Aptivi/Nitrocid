@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.MailShell
         {
             var config = new MailConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("MailShell", new MailShellInfo());
+            ShellManager.RegisterShell("MailShell", new MailShellInfo());
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
@@ -74,7 +74,7 @@ namespace Nitrocid.Extras.MailShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterAddonShell("MailShell");
+            ShellManager.UnregisterShell("MailShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(MailConfig));
         }

@@ -44,7 +44,7 @@ namespace Nitrocid.Shell.Shells.Admin
                     [
                         new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (_) => [.. ArgumentParse.AvailableCMDLineArgs.Keys],
+                            AutoCompleter = (_) => [.. KernelArguments.AvailableCMDLineArgs.Keys],
                             ArgumentDescription = /* Localizable */ "Argument to show help entry"
                         })
                     ])

@@ -34,7 +34,7 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
 using Nitrocid.Kernel.Exceptions;

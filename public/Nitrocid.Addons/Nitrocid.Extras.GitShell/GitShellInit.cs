@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.GitShell
         {
             var config = new GitConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("GitShell", new GitShellInfo());
+            ShellManager.RegisterShell("GitShell", new GitShellInfo());
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             if (!nativeLibIsSet)
             {
@@ -73,7 +73,7 @@ namespace Nitrocid.Extras.GitShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterAddonShell("GitShell");
+            ShellManager.UnregisterShell("GitShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(GitConfig));
         }

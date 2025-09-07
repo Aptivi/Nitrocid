@@ -49,6 +49,7 @@ using System.Runtime.Serialization;
 using Terminaux.Colors;
 using Textify.General.Comparers;
 using Nitrocid.Files;
+using Terminaux.Base.Checks;
 
 namespace Nitrocid.Drivers.Filesystem
 {
@@ -409,7 +410,7 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
         {
             // First, check for dumb console
-            if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
+            if (ConsoleChecker.IsDumb)
             {
                 // Go to dumb mode
                 DisplayInHexDumbMode(ByteContent, HighlightResults, StartByte, EndByte, FileByte);

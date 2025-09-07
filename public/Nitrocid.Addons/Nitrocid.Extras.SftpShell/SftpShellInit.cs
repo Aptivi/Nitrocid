@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.SftpShell
         {
             var config = new SftpConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("SFTPShell", new SFTPShellInfo());
+            ShellManager.RegisterShell("SFTPShell", new SFTPShellInfo());
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.SftpShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterAddonShell("SFTPShell");
+            ShellManager.UnregisterShell("SFTPShell");
             CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(SftpConfig));
         }

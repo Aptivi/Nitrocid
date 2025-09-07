@@ -109,7 +109,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

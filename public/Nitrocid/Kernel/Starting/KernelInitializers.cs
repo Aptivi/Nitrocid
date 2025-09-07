@@ -56,11 +56,44 @@ using System.Collections.Generic;
 using System.Text;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files;
+using Textify.Tools.Placeholder;
+using Nitrocid.Users;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Timezones;
+using Nitrocid.Shell.Shells.UESH;
+using Nitrocid.Shell.Shells.Text;
+using Nitrocid.Shell.Shells.Hex;
+using Nitrocid.Shell.Shells.Admin;
+using Nitrocid.Shell.Shells.Debug;
+using Nitrocid.Shell.Shells;
+using Terminaux.Colors;
 
 namespace Nitrocid.Kernel.Starting
 {
     internal static class KernelInitializers
     {
+        internal static readonly List<PlaceInfo> placeholders =
+        [
+            new PlaceInfo("user", (_) => UserManagement.CurrentUser.Username),
+            new PlaceInfo("host", (_) => Config.MainConfig.HostName),
+            new PlaceInfo("currentdirectory", (_) => FilesystemTools.CurrentDir),
+            new PlaceInfo("currentdirectoryname", (_) => !string.IsNullOrEmpty(FilesystemTools.CurrentDir) ? new DirectoryInfo(FilesystemTools.CurrentDir).Name : ""),
+            new PlaceInfo("shortdate", (_) => TimeDateRenderers.RenderDate(FormatType.Short)),
+            new PlaceInfo("longdate", (_) => TimeDateRenderers.RenderDate(FormatType.Long)),
+            new PlaceInfo("shorttime", (_) => TimeDateRenderers.RenderTime(FormatType.Short)),
+            new PlaceInfo("longtime", (_) => TimeDateRenderers.RenderTime(FormatType.Long)),
+            new PlaceInfo("date", (_) => TimeDateRenderers.RenderDate()),
+            new PlaceInfo("time", (_) => TimeDateRenderers.RenderTime()),
+            new PlaceInfo("timezone", (_) => TimeZones.GetCurrentZoneInfo().StandardName),
+            new PlaceInfo("summertimezone", (_) => TimeZones.GetCurrentZoneInfo().DaylightName),
+            new PlaceInfo("dollar", (_) => UserManagement.GetUserDollarSign()),
+            new PlaceInfo("randomfile", (_) => FilesystemTools.GetRandomFileName()),
+            new PlaceInfo("randomfolder", (_) => FilesystemTools.GetRandomFolderName()),
+            new PlaceInfo("rid", (_) => KernelPlatform.GetCurrentRid()),
+            new PlaceInfo("uptime", (_) => PowerManager.KernelUptime),
+        ];
+
         internal static void InitializeCritical()
         {
             try
@@ -113,7 +146,7 @@ namespace Nitrocid.Kernel.Starting
             try
             {
                 // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
-                if (!KernelPlatform.IsOnWindows() && ConsoleTools.UseAltBuffer)
+                if (!KernelPlatform.IsOnWindows() && KernelEntry.UseAltBuffer)
                 {
                     ConsoleMisc.ShowAltBuffer();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
@@ -121,6 +154,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // A title
                 ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
+                ShellManager.InitialTitle = KernelReleaseInfo.ConsoleTitle;
 
                 // Initialize pre-boot splash (if enabled)
                 if (KernelEntry.PrebootSplash)
@@ -142,6 +176,26 @@ namespace Nitrocid.Kernel.Starting
 
                 // Initialize journal path
                 JournalManager.JournalPath = FilesystemTools.GetNumberedFileName(Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Journaling)), PathsManagement.GetKernelPath(KernelPathType.Journaling));
+
+                // Add the main shells
+                SplashReport.ResetProgressReportArea();
+                if (!ShellManager.ShellTypeExists("Shell"))
+                    ShellManager.RegisterShell("Shell", new UESHShellInfo());
+                if (!ShellManager.ShellTypeExists("TextShell"))
+                    ShellManager.RegisterShell("TextShell", new TextShellInfo());
+                if (!ShellManager.ShellTypeExists("HexShell"))
+                    ShellManager.RegisterShell("HexShell", new HexShellInfo());
+                if (!ShellManager.ShellTypeExists("AdminShell"))
+                    ShellManager.RegisterShell("AdminShell", new AdminShellInfo());
+                if (!ShellManager.ShellTypeExists("DebugShell"))
+                    ShellManager.RegisterShell("DebugShell", new DebugShellInfo());
+
+                // Add the placeholders
+                foreach (var placeholder in placeholders)
+                    PlaceParse.RegisterCustomPlaceholder(placeholder.Placeholder, placeholder.PlaceholderAction);
+
+                // Add the shell completions
+                ShellCommon.RegisterCompletions();
 
                 // Initialize custom languages
                 try
@@ -285,7 +339,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // Show first-time color calibration for first-time run
                 if (KernelEntry.FirstTime)
-                    ConsoleTools.ShowColorRampAndSet();
+                    ColorTools.DetermineTrueColorFromUser();
 
                 // Check for errors
                 if (exceptions.Count > 0)
@@ -359,22 +413,6 @@ namespace Nitrocid.Kernel.Starting
 
                 try
                 {
-                    // Initialize aliases
-                    AliasManager.InitAliases();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded aliases.");
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load aliases");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load aliases") + $": {exc.Message}");
-                }
-
-                try
-                {
                     // Initialize speed dial
                     SpeedDialTools.LoadAll();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded speed dial entries.");
@@ -392,7 +430,7 @@ namespace Nitrocid.Kernel.Starting
                 try
                 {
                     // Load system env vars and convert them
-                    UESHVariables.ConvertSystemEnvironmentVariables();
+                    MESHVariables.ConvertSystemEnvironmentVariables();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
                 }
                 catch (Exception exc)
@@ -453,22 +491,6 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
                         SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load MOTD and MAL") + $": {exc.Message}");
-                }
-
-                try
-                {
-                    // Load shell command histories
-                    ShellManager.LoadHistories();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded shell command histories.");
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load shell command histories");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load shell command histories") + $": {exc.Message}");
                 }
 
                 try
@@ -556,22 +578,6 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     SplashReport.ReportProgressError(Translate.DoTranslation("Failed to reset general variables") + $": {exc.Message}");
-                }
-
-                try
-                {
-                    // Save shell command histories
-                    ShellManager.SaveHistories();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Saved shell command histories.");
-                    SplashReport.ReportProgress(Translate.DoTranslation("Saved shell command histories."));
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to save shell command histories");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to save shell command histories") + $": {exc.Message}");
                 }
 
                 try
@@ -814,6 +820,26 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebugStackTrace(exc);
                     SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop all kernel threads") + $": {exc.Message}");
                 }
+
+                // Remove the main shells
+                SplashReport.ResetProgressReportArea();
+                if (!ShellManager.ShellTypeExists("Shell"))
+                    ShellManager.UnregisterShell("Shell");
+                if (!ShellManager.ShellTypeExists("TextShell"))
+                    ShellManager.UnregisterShell("TextShell");
+                if (!ShellManager.ShellTypeExists("HexShell"))
+                    ShellManager.UnregisterShell("HexShell");
+                if (!ShellManager.ShellTypeExists("AdminShell"))
+                    ShellManager.UnregisterShell("AdminShell");
+                if (!ShellManager.ShellTypeExists("DebugShell"))
+                    ShellManager.UnregisterShell("DebugShell");
+
+                // Remove the placeholders
+                foreach (var placeholder in placeholders)
+                    PlaceParse.UnregisterCustomPlaceholder($"<{placeholder.Placeholder}>");
+
+                // Remove the shell completions
+                ShellCommon.UnregisterCompletions();
 
                 // Check for errors
                 if (exceptions.Count > 0)

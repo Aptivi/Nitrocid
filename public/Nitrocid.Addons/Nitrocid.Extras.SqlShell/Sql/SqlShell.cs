@@ -78,7 +78,7 @@ namespace Nitrocid.Extras.SqlShell.Sql
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

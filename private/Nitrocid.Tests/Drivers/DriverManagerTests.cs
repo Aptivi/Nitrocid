@@ -30,7 +30,6 @@ using Nitrocid.Drivers.Network;
 using Nitrocid.Drivers.Sorting;
 using Nitrocid.Drivers.Regexp;
 using Nitrocid.Drivers.Input;
-using Nitrocid.Drivers.Console;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Drivers.DebugLogger;
 
@@ -43,8 +42,6 @@ namespace Nitrocid.Tests.Drivers
         public static IEnumerable<object[]> ExpectedDriverNames =>
             [
                 // ---------- Actual ----------                                                         ---------- Expected ----------
-                [DriverTypes.Console, DriverHandler.CurrentConsoleDriver,                               "Default"],
-                [DriverTypes.Console, DriverHandler.CurrentConsoleDriverLocal,                          "Default"],
                 [DriverTypes.Encryption, DriverHandler.CurrentEncryptionDriver,                         "Default"],
                 [DriverTypes.Encryption, DriverHandler.CurrentEncryptionDriverLocal,                    "Default"],
                 [DriverTypes.Filesystem, DriverHandler.CurrentFilesystemDriver,                         "Default"],
@@ -67,12 +64,6 @@ namespace Nitrocid.Tests.Drivers
                 [DriverTypes.Input, DriverHandler.CurrentInputDriverLocal,                              "Default"],
                 [DriverTypes.EncodingAsymmetric, DriverHandler.CurrentEncodingAsymmetricDriver,         "Default"],
                 [DriverTypes.EncodingAsymmetric, DriverHandler.CurrentEncodingAsymmetricDriverLocal,    "Default"],
-            ];
-
-        public static IEnumerable<object[]> RegisteredConsoleDriver =>
-            [
-                //                     ---------- Provided ----------
-                [DriverTypes.Console, new MyCustomConsoleDriver()],
             ];
 
         public static IEnumerable<object[]> RegisteredEncryptionDriver =>
@@ -145,18 +136,7 @@ namespace Nitrocid.Tests.Drivers
         //       new MSTest .exe way of running tests runs tests in the source code ordered way (TestAddDriver before
         //       TestGetDriver before TestGetDriverName before ...), so code accordingly.
 
-        [ClassInitialize]
-#pragma warning disable IDE0060
-        public static void TestSetConsoleDriver(TestContext tc)
-#pragma warning restore IDE0060
-        {
-            ConsoleDriverTools.SetConsoleDriver("Default");
-            DriverHandler.CurrentConsoleDriver.DriverName.ShouldBe("Default");
-            DriverHandler.CurrentConsoleDriverLocal.DriverName.ShouldBe("Default");
-        }
-
         [TestMethod]
-        [DynamicData(nameof(RegisteredConsoleDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
         [DynamicData(nameof(RegisteredEncryptionDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
         [DynamicData(nameof(RegisteredFilesystemDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
         [DynamicData(nameof(RegisteredNetworkDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
@@ -176,7 +156,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [TestMethod]
-        [DataRow("Null", DriverTypes.Console)]
         [DataRow("SHA512", DriverTypes.Encryption)]
         [DataRow("Default", DriverTypes.Filesystem)]
         [DataRow("Default", DriverTypes.Network)]
@@ -206,7 +185,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [TestMethod]
-        [DataRow(DriverTypes.Console)]
         [DataRow(DriverTypes.Encryption)]
         [DataRow(DriverTypes.Filesystem)]
         [DataRow(DriverTypes.Network)]
@@ -226,7 +204,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [TestMethod]
-        [DataRow(DriverTypes.Console)]
         [DataRow(DriverTypes.Encryption)]
         [DataRow(DriverTypes.Filesystem)]
         [DataRow(DriverTypes.Network)]
@@ -246,7 +223,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [TestMethod]
-        [DataRow(DriverTypes.Console, "Default")]
         [DataRow(DriverTypes.Encryption, "Default")]
         [DataRow(DriverTypes.Filesystem, "Default")]
         [DataRow(DriverTypes.Network, "Default")]
@@ -267,7 +243,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [TestMethod]
-        [DataRow(DriverTypes.Console, "Default")]
         [DataRow(DriverTypes.Encryption, "Default")]
         [DataRow(DriverTypes.Filesystem, "Default")]
         [DataRow(DriverTypes.Network, "Default")]
@@ -289,7 +264,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [TestMethod]
-        [DataRow(DriverTypes.Console, "Default")]
         [DataRow(DriverTypes.Encryption, "Default")]
         [DataRow(DriverTypes.Filesystem, "Default")]
         [DataRow(DriverTypes.Network, "Default")]
@@ -309,7 +283,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [TestMethod]
-        [DataRow(DriverTypes.Console, "Default")]
         [DataRow(DriverTypes.Encryption, "Default")]
         [DataRow(DriverTypes.Filesystem, "Default")]
         [DataRow(DriverTypes.Network, "Default")]
@@ -329,7 +302,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [TestMethod]
-        [DataRow(DriverTypes.Console, "File", "File", "Default")]
         [DataRow(DriverTypes.Encryption, "SHA512", "SHA512", "Default")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default", "Default")]
         [DataRow(DriverTypes.Network, "Default", "Default", "Default")]
@@ -353,7 +325,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [TestMethod]
-        [DataRow(DriverTypes.Console, "File", "Default", "Default")]
         [DataRow(DriverTypes.Encryption, "SHA512", "SHA512", "Default")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default", "Default")]
         [DataRow(DriverTypes.Network, "Default", "Default", "Default")]
@@ -374,22 +345,6 @@ namespace Nitrocid.Tests.Drivers
             Should.NotThrow(() => DriverHandler.EndLocalDriver(type));
             DriverHandler.currentDrivers[type].DriverName.ShouldBe(expectedNameAfterLocal);
             DriverHandler.currentDriversLocal[type].DriverName.ShouldBe(expectedNameAfterLocal);
-        }
-
-        [TestMethod]
-        [Description("Management")]
-        public void TestGetConsoleDrivers()
-        {
-            var drivers = ConsoleDriverTools.GetConsoleDrivers();
-            drivers.ShouldNotBeEmpty();
-        }
-
-        [TestMethod]
-        [Description("Management")]
-        public void TestGetConsoleDriverNames()
-        {
-            var drivers = ConsoleDriverTools.GetConsoleDriverNames();
-            drivers.ShouldNotBeEmpty();
         }
 
         [TestMethod]
@@ -644,7 +599,6 @@ namespace Nitrocid.Tests.Drivers
 
 
         [TestMethod]
-        [DataRow(DriverTypes.Console, "MyCustom")]
         [DataRow(DriverTypes.Encryption, "MyCustom")]
         [DataRow(DriverTypes.Filesystem, "MyCustom")]
         [DataRow(DriverTypes.Network, "MyCustom")]
@@ -664,7 +618,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [TestMethod]
-        [DataRow(DriverTypes.Console, "File", "File")]
         [DataRow(DriverTypes.Encryption, "SHA512", "SHA512")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default")]
         [DataRow(DriverTypes.Network, "Default", "Default")]
@@ -685,7 +638,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [TestMethod]
-        [DataRow(DriverTypes.Console, "File", "Default")]
         [DataRow(DriverTypes.Encryption, "SHA512", "SHA512")]
         [DataRow(DriverTypes.Filesystem, "Default", "Default")]
         [DataRow(DriverTypes.Network, "Default", "Default")]

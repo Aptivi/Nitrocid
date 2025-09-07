@@ -66,12 +66,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     UserManagement.CurrentUserInfo = root;
                     UserManagement.LockUser(currentUsername);
                     UserManagement.LockUser("root");
-                    var AltThreads = ShellManager.ShellStack[^1].AltCommandThreads;
-                    if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
-                    {
-                        var CommandThread = new KernelThread($"Sudo Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
-                        ShellManager.ShellStack[^1].AltCommandThreads.Add(CommandThread);
-                    }
+                    ShellManager.AddAlternateThread();
                     ShellManager.GetLine(parameters.ArgumentsText);
                 }
                 else
@@ -90,7 +85,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Sudo is done. Switching to user {0}...", vars: [currentUsername]);
                     UserManagement.CurrentUserInfo = UserManagement.GetUser(currentUsername) ??
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't get user info for") + $" {currentUsername}");
+                        throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't get user info for") + $" {currentUsername}");
                     UserManagement.UnlockUser(currentUsername);
                     UserManagement.UnlockUser("root");
                 }

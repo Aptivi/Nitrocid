@@ -97,7 +97,5 @@ namespace Nitrocid.Extras.MailShell.Mail.Presets
             return PresetStringBuilder.ToString();
         }
 
-        string IPromptPreset.PresetPromptBuilder() => PresetPromptBuilder();
-
     }
 }

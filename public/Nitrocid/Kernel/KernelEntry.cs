@@ -29,7 +29,7 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Users.Login.Handlers;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
@@ -42,6 +42,7 @@ using Nitrocid.Shell.Homepage;
 using Terminaux.Base;
 using Nitrocid.Misc.Audio;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Kernel
 {
@@ -54,6 +55,7 @@ namespace Nitrocid.Kernel
         internal static bool QuietKernel;
         internal static bool TalkativePreboot;
         internal static bool PrebootSplash = true;
+        internal static bool UseAltBuffer = true;
 
         internal static void EntryPoint(string[]? args)
         {
@@ -61,7 +63,7 @@ namespace Nitrocid.Kernel
             KernelInitializers.InitializeCritical();
 
             // Check for kernel command-line arguments
-            ArgumentParse.ParseArguments(args);
+            ArgumentParse.ParseArguments(args, KernelArguments.AvailableCMDLineArgs);
 
             // Some command-line arguments may request kernel shutdown
             if (PowerManager.KernelShutdown)
@@ -208,7 +210,7 @@ namespace Nitrocid.Kernel
                     KernelReleaseInfo.NotifyReleaseSupportWindow();
 
                     // Start the shell
-                    ShellManager.StartShellInternal("Shell");
+                    ShellManager.StartShell("Shell");
                 }
                 Login.LoggedIn = false;
                 Login.LogoutRequested = false;
