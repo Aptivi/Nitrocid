@@ -2,9 +2,9 @@ name: Build Project (Debian Package)
 
 on:
   push:
-    branches: [ "main", "v0.1.0.x-saas", "v0.1.2.x-saas", "v0.2.0.x-saas" ]
+    branches: [ "main", "v0.1.0.x-saas", "v0.2.0.x-saas" ]
   pull_request:
-    branches: [ "main", "v0.1.0.x-saas", "v0.1.2.x-saas", "v0.2.0.x-saas" ]
+    branches: [ "main", "v0.1.0.x-saas", "v0.2.0.x-saas" ]
 
 jobs:
   build:

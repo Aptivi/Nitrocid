@@ -2,7 +2,7 @@ gh-pages-branch-verification:
   stage: apidocverify
   rules:
     - if: $CI_COMMIT_TAG
-  image: "mcr.microsoft.com/dotnet/sdk:8.0-noble"
+  image: "mcr.microsoft.com/dotnet/sdk:10.0-noble"
   script:
     - git fetch --all
     - 'export COMMITISH=$(git branch -r --contains $CI_COMMIT_TAG | grep -v HEAD | head -n1 | sed ''s/^[[:space:]]*origin\///'')'
@@ -16,7 +16,7 @@ gh-pages:
     - if: $CI_COMMIT_TAG
   needs:
     - job: gh-pages-branch-verification
-  image: "mcr.microsoft.com/dotnet/sdk:8.0-noble"
+  image: "mcr.microsoft.com/dotnet/sdk:10.0-noble"
   script:
     - git fetch --all
     - export PATH="$PATH:/root/.dotnet/tools"

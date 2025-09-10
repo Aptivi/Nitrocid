@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <Target Name="PruneAddons" BeforeTargets="Build" Condition="Exists('$(RootPath)/public/Nitrocid/KSBuild/net8.0/Addons')">
+  <Target Name="PruneAddons" BeforeTargets="Build" Condition="Exists('$(RootPath)/public/Nitrocid/KSBuild/net10.0/Addons')">
     <Message Importance="high" Text="Pruning addons..." />
     
     <!--
@@ -34,7 +34,7 @@
         output of the main Nitrocid project. In the Addons folder, the addons are already un-prefixed.
     -->
     <ItemGroup>
-      <OutputAddonsNames Include="$([System.IO.Directory]::GetDirectories('$(RootPath)/public/Nitrocid/KSBuild/net8.0/Addons'))" />
+      <OutputAddonsNames Include="$([System.IO.Directory]::GetDirectories('$(RootPath)/public/Nitrocid/KSBuild/net10.0/Addons'))" />
       <OutputAddonsNames>
         <AddonOutputName>$([System.IO.Path]::GetFileName('%(Identity)'))</AddonOutputName>
       </OutputAddonsNames>
@@ -52,7 +52,7 @@
         Wipe out all folders that are in the ExcludedAddons item
     -->
     <ItemGroup>
-      <FullPathsToPrune Include="$(RootPath)/public/Nitrocid/KSBuild/net8.0/Addons/%(ExcludedAddons.Identity)" Condition=" '@(ExcludedAddons)' != '' "/>
+      <FullPathsToPrune Include="$(RootPath)/public/Nitrocid/KSBuild/net10.0/Addons/%(ExcludedAddons.Identity)" Condition=" '@(ExcludedAddons)' != '' "/>
     </ItemGroup>
     <Message Importance="high" Text="Pruning addon: %(FullPathsToPrune.Identity)" Condition=" '@(ExcludedAddons)' != '' " />
     <RemoveDir Directories="@(FullPathsToPrune)" ContinueOnError="true" Condition=" '@(ExcludedAddons)' != '' " />
@@ -99,7 +99,7 @@
     </ItemGroup>
   </Target>
 
-  <Target Name="PruneEssentialAddons" BeforeTargets="Build" Condition="Exists('$(RootPath)/public/Nitrocid/KSBuild/net8.0/Addons.Essentials')">
+  <Target Name="PruneEssentialAddons" BeforeTargets="Build" Condition="Exists('$(RootPath)/public/Nitrocid/KSBuild/net10.0/Addons.Essentials')">
     <Message Importance="high" Text="Pruning essential addons..." />
     
     <!--
@@ -120,7 +120,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <OutputAddonsNames Include="$([System.IO.Directory]::GetDirectories('$(RootPath)/public/Nitrocid/KSBuild/net8.0/Addons.Essentials'))" />
+      <OutputAddonsNames Include="$([System.IO.Directory]::GetDirectories('$(RootPath)/public/Nitrocid/KSBuild/net10.0/Addons.Essentials'))" />
       <OutputAddonsNames>
         <AddonOutputName>$([System.IO.Path]::GetFileName('%(Identity)'))</AddonOutputName>
       </OutputAddonsNames>
@@ -132,7 +132,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <FullPathsToPrune Include="$(RootPath)/public/Nitrocid/KSBuild/net8.0/Addons.Essentials/%(ExcludedAddons.Identity)" Condition=" '@(ExcludedAddons)' != '' "/>
+      <FullPathsToPrune Include="$(RootPath)/public/Nitrocid/KSBuild/net10.0/Addons.Essentials/%(ExcludedAddons.Identity)" Condition=" '@(ExcludedAddons)' != '' "/>
     </ItemGroup>
     <Message Importance="high" Text="Pruning essential addon: %(FullPathsToPrune.Identity)" Condition=" '@(ExcludedAddons)' != '' " />
     <RemoveDir Directories="@(FullPathsToPrune)" ContinueOnError="true" Condition=" '@(ExcludedAddons)' != '' " />
