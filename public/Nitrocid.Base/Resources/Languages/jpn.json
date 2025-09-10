@@ -1663,10 +1663,6 @@
       "text": "グラフィックスカード："
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "正しいセクションを開いたことが確実な場合は、次のメッセージを確認してください。"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "CRC32を使用して文字列を暗号化します"
     },
@@ -4101,18 +4097,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "ホストの汎用 ID"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "道に迷ってしまった！"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "正しいセクションを開いたことが確実な場合は、カーネル デバッガーをオンにして再現し、ログを調査してみてください。"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "上記のメッセージが理解できない場合は、カーネル デバッガーをオンにして再現し、ログを調査してみてください。"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

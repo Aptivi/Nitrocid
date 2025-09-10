@@ -1663,10 +1663,6 @@
       "text": "चित्रोपमा पत्रक:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "यदि आप सुनिश्चित हैं कि आपने सही अनुभाग खोला है, तो इस संदेश को देखें:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "CRC32 का उपयोग करके एक स्ट्रिंग को एन्क्रिप्ट करता है"
     },
@@ -4101,18 +4097,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "होस्ट जेनेरिक आईडी"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "आप खो चुके हैं!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "यदि आप आश्वस्त हैं कि आपने सही अनुभाग खोला है, तो कर्नेल डिबगर चालू करें, पुन: उत्पन्न करें, और लॉग की जांच करने का प्रयास करें।"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "यदि आप उपरोक्त संदेश को नहीं समझते हैं, तो कर्नेल डिबगर चालू करें, पुन: उत्पन्न करें और लॉग की जांच करने का प्रयास करें।"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

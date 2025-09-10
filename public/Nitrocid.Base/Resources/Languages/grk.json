@@ -1664,10 +1664,6 @@
       "text": "Κάρτα γραφικών:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "Εάν είστε βέβαιοι ότι έχετε ανοίξει τη σωστή ενότητα, ελέγξτε αυτό το μήνυμα:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "Κρυπτογραφεί μια συμβολοσειρά χρησιμοποιώντας το CRC32"
     },
@@ -4102,18 +4098,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "Γενικό αναγνωριστικό κεντρικού υπολογιστή"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "Είσαι Χαμένος!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "Εάν είστε βέβαιοι ότι έχετε ανοίξει τη σωστή ενότητα, ενεργοποιήστε το πρόγραμμα εντοπισμού σφαλμάτων του πυρήνα, αναπαραγάγετε και προσπαθήστε να διερευνήσετε τα αρχεία καταγραφής."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "Εάν δεν καταλαβαίνετε το παραπάνω μήνυμα, ενεργοποιήστε το πρόγραμμα εντοπισμού σφαλμάτων του πυρήνα, αναπαραγάγετε και προσπαθήστε να διερευνήσετε τα αρχεία καταγραφής."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

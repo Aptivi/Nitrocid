@@ -1664,10 +1664,6 @@
       "text": "geulaepig kadeu:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "olbaleun segsyeon-eul yeol-eossdamyeon da-eum mesijileul hwag-inhaseyo."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "CRC32leul sayonghayeo munjayeol amhohwa"
     },
@@ -4102,18 +4098,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "hoseuteu ilban It"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "dangsineun gireul ilheosseoyo!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "olbareun seksyeoneul yeoreossdago hwaksinhaneun gyeongu keoneol dibeogeoreul kyeogo jaehyeonhago rogeureul josahae bosipsio."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "wi mesijiga ihaedoeji anheumyeon keoneol dibeogeoreul kyeogo jaehyeonhan hu rogeureul josahae boseyo."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

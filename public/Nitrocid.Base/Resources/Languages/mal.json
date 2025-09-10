@@ -1666,10 +1666,6 @@
       "text": "Kad grafik:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "Jika anda pasti bahawa anda telah membuka bahagian yang betul, semak mesej ini:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "Menyulitkan rentetan menggunakan CRC32"
     },
@@ -4104,18 +4100,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "ID Generik Hos"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "Anda Hilang!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "Jika anda pasti bahawa anda telah membuka bahagian yang betul, hidupkan penyahpepijat kernel, menghasilkan semula dan cuba menyiasat log."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "Jika anda tidak memahami mesej di atas, hidupkan penyahpepijat kernel, keluarkan semula dan cuba menyiasat log."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

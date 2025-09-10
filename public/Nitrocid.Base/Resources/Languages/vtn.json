@@ -1663,10 +1663,6 @@
       "text": "Card đồ họa:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "Nếu bạn chắc chắn rằng mình đã mở đúng phần, hãy kiểm tra thông báo này:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "Mã hóa chuỗi bằng CRC32"
     },
@@ -4101,18 +4097,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "ID chung của máy chủ"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "Bạn bị lạc rồi!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "Nếu bạn chắc chắn rằng mình đã mở đúng phần, hãy bật trình gỡ lỗi hạt nhân, tái tạo và thử điều tra nhật ký."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "Nếu bạn không hiểu thông báo trên, hãy bật trình gỡ lỗi hạt nhân, tái tạo và thử kiểm tra nhật ký."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

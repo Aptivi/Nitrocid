@@ -1689,10 +1689,6 @@
       "text": "bitaqat musawiratin:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "'iidha kunt mtakdan min 'anak fataht alqism alsahih , fatahaqaq min hadhih alrisalati:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "yushfar silsilatan biastikhdam CRC32"
     },
@@ -4127,18 +4123,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "mʿrf ʿām llmḍīf"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "ant ḍāʾiʿ!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "iḏā knt mtʾakddā mn ank ftḥt al-qsm al-ṣḥīḥ, fqm btšġīl mṣḥḥ aẖṭāʾ kernel, ūʾaʿd intāǧh, ūḥāūl al-tḥqq mn al-sǧlāt."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "iḏā lm tfhm al-rsālẗ aʿlāh, fqm btšġīl mṣḥḥ aẖṭāʾ kernel, ūʾaʿd intāǧhā, ūḥāūl al-tḥqq mn al-sǧlāt."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",
