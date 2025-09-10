@@ -1671,10 +1671,6 @@
       "text": "Xiǎnkǎ:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "rúguǒ nín quèdìng nín dǎkāile zhèngquè de bùfèn, qǐng chákàn cǐ xiāoxī:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "Shǐyòng CRC32 jiāmì zìfú chuàn"
     },
@@ -4109,18 +4105,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "zhǔ jī tōng yòng ID"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "nǐ mí lù liǎo ！"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "rú guǒ nín què dìng dǎ kāi liǎo zhèng què de bù fēn ， qǐng dǎ kāi nèi hé diào shì qì ， zhòng xiàn bìng cháng shì diào chá rì zhì 。"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "rú guǒ nín bù míng bái shàng shù xiāo xī ， qǐng dǎ kāi nèi hé diào shì qì ， zhòng xiàn bìng cháng shì diào chá rì zhì 。"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

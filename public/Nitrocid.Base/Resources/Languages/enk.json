@@ -1662,10 +1662,6 @@
       "text": "Graphics card:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "If you're sure that you've opened the right section, check this message out:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "Encrypts a string using CRC32"
     },
@@ -4100,18 +4096,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "Host Generic ID"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "You're Lost!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "If you're sure that you've opened the right section, turn on the kernel debugger, reproduce, and try to investigate the logs."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "If you don't understand the above message, turn on the kernel debugger, reproduce, and try to investigate the logs."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

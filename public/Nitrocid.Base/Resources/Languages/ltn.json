@@ -1663,10 +1663,6 @@
       "text": "Graphics card:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "Si certus es quod sectionem rectam aperuisti, hunc nuntium e mitte:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "Encrypts filum utens CRC32"
     },
@@ -4101,18 +4097,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "Militiae Generic ID"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "Peristi!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "Si certus es quod sectionem rectam aperueris, in nucleum debugger converte, effingere, et acta explora indagare conaris."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "Si nuntium superius non intelligis, in nucleum debugger converte, effingere et acta explora indagare conaris."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

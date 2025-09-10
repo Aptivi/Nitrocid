@@ -1664,10 +1664,6 @@
       "text": "그래픽 카드:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "올바른 섹션을 열었다면 다음 메시지를 확인하세요."
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "CRC32를 사용하여 문자열 암호화"
     },
@@ -4102,18 +4098,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "호스트 일반 ID"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "당신은 길을 잃었어요!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "올바른 섹션을 열었다고 확신하는 경우 커널 디버거를 켜고 재현하고 로그를 조사해 보십시오."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "위 메시지가 이해되지 않으면 커널 디버거를 켜고 재현한 후 로그를 조사해 보세요."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

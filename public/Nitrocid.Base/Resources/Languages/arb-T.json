@@ -1689,10 +1689,6 @@
       "text": "بطاقة مصورات:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "إذا كنت متأكدًا من أنك فتحت القسم الصحيح ، فتحقق من هذه الرسالة:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "يشفر سلسلة باستخدام CRC32"
     },
@@ -4127,18 +4123,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "معرف عام للمضيف"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "أنت ضائع!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "إذا كنت متأكدًا من أنك فتحت القسم الصحيح، فقم بتشغيل مصحح أخطاء kernel، وأعد إنتاجه، وحاول التحقق من السجلات."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "إذا لم تفهم الرسالة أعلاه، فقم بتشغيل مصحح أخطاء kernel، وأعد إنتاجها، وحاول التحقق من السجلات."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

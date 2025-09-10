@@ -1709,10 +1709,6 @@
       "text": "Carte graphique:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "Si vous êtes sûr d'avoir ouvert la bonne section, consultez ce message :"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "Crypte une chaîne en utilisant CRC32"
     },
@@ -4147,18 +4143,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "ID générique de l'hôte"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "Tu es perdu!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "Si vous êtes sûr d'avoir ouvert la bonne section, activez le débogueur du noyau, reproduisez et essayez d'examiner les journaux."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "Si vous ne comprenez pas le message ci-dessus, activez le débogueur du noyau, reproduisez et essayez d'examiner les journaux."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

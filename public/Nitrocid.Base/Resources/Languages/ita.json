@@ -1666,10 +1666,6 @@
       "text": "Scheda grafica:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "Se sei sicuro di aver aperto la sezione giusta, controlla questo messaggio:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "Crittografa una stringa usando CRC32"
     },
@@ -4104,18 +4100,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "ID generico dell'host"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "Sei perduto!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "Se sei sicuro di aver aperto la sezione giusta, attiva il debugger del kernel, riproduci e prova a indagare sui log."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "Se non capisci il messaggio sopra, attiva il debugger del kernel, riproduci e prova a esaminare i log."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",

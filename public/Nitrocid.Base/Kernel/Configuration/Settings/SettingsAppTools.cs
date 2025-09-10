@@ -40,35 +40,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
 {
     internal static class SettingsAppTools
     {
-        internal static InputChoiceInfo[] GetSectionChoices(SettingsEntry[] SettingsEntries)
-        {
-            // Verify that the section choices are not empty
-            DebugCheck.Assert(SettingsEntries.Length > 0, "populating empty section choices makes settings app useless.");
-
-            // Populate sections
-            var sections = new List<InputChoiceInfo>();
-            int MaxSections = SettingsEntries.Length;
-            for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
-            {
-                // Get a section and check to see if the display name is empty
-                SettingsEntry Section = SettingsEntries[SectionIndex];
-                string displayAs =
-                    !string.IsNullOrEmpty(Section.DisplayAs) ?
-                    LanguageTools.GetLocalized(Section.DisplayAs) :
-                    LanguageTools.GetLocalized(Section.Name);
-                string description = LanguageTools.GetLocalized(Section.Desc);
-
-                // Populate the choice information
-                var choice = new InputChoiceInfo(
-                    $"{SectionIndex + 1}",
-                    displayAs,
-                    description
-                );
-                sections.Add(choice);
-            }
-            return [.. sections];
-        }
-
         internal static void SaveSettings()
         {
             // Just a wrapper for CreateConfig() that SettingsApp uses
@@ -281,38 +252,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
                     return PropertyManager.GetPropertyValueInstanceExplicit(configType, KeyVar, configTypeInstance);
             }
             return null;
-        }
-
-        internal static void HandleError(string message, Exception? ex = null)
-        {
-            if (ex is null)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section.");
-                string finalSection = LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE");
-                InfoBoxModalColor.WriteInfoBoxModal(
-                    $"  * {finalSection}\n\n" +
-                    $"{message}\n\n" +
-                    $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION")}", new InfoBoxSettings()
-                    {
-                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
-                    }
-                );
-            }
-            else
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", vars: [ex.Message]);
-                string finalSection = LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE");
-                InfoBoxModalColor.WriteInfoBoxModal(
-                    $"  * {finalSection}\n\n" +
-                    $"{message}\n\n" +
-                    $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS")}\n" +
-                    $"  - {ex.Message}\n\n" +
-                    $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP")}", new InfoBoxSettings()
-                    {
-                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
-                    }
-                );
-            }
         }
 
         internal static object[] ParseParameters(SettingsKey key)

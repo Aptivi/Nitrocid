@@ -1663,10 +1663,6 @@
       "text": "Kartu grafis:"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SECTIONOPENERRORDETAILS",
-      "text": "Jika Anda yakin telah membuka bagian yang benar, periksa pesan ini:"
-    },
-    {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTCRC32_DESC",
       "text": "Mengenkripsi string menggunakan CRC32"
     },
@@ -4101,18 +4097,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID",
       "text": "ID Umum Host"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERRORTITLE",
-      "text": "Kamu Tersesat!"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_NOEXCEPTION",
-      "text": "Jika Anda yakin telah membuka bagian yang benar, nyalakan debugger kernel, ulangi, dan coba selidiki log."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ERROR_DESC_EXCEPTION_TIP",
-      "text": "Jika Anda tidak memahami pesan di atas, aktifkan debugger kernel, ulangi, dan coba selidiki log."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_VERSION",
