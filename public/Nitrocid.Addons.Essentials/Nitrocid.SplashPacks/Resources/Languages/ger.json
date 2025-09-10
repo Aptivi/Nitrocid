@@ -36,18 +36,6 @@
       "text": "Auf Wiedersehen!"
     },
     {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_STARTING",
-      "text": "Beginnend"
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING",
-      "text": "Bitte warten Sie, während der Kernel initialisiert wird ..."
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN",
-      "text": "Bitte warten Sie, während der Kernel heruntergefahren wird ..."
-    },
-    {
       "loc": "NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR",
       "text": "Unbekannter Fehler!"
     },

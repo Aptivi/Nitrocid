@@ -27,18 +27,6 @@
       "text": "Tạm biệt!"
     },
     {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_STARTING",
-      "text": "Bắt đầu"
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING",
-      "text": "Vui lòng đợi trong khi hạt nhân đang khởi tạo..."
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN",
-      "text": "Vui lòng đợi trong khi hạt nhân đang tắt..."
-    },
-    {
       "loc": "NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR",
       "text": "Lỗi không xác định!"
     },

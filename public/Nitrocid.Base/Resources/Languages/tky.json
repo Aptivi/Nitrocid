@@ -536,10 +536,6 @@
       "text": "Çıkış"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_OPTIONINVALID",
-      "text": "Belirtilen {0} seçeneği geçersiz."
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_NAME",
       "text": "Başlangıçta Güncellemeleri Kontrol Et"
     },
@@ -892,10 +888,6 @@
       "text": "Belirtilen satır numarası son dosya satır numarasından büyük olamaz."
     },
     {
-      "loc": "NKS_COMMON_GOBACK",
-      "text": "Geri dönmek için herhangi bir tuşa basın."
-    },
-    {
       "loc": "NKS_DRIVERS_FILESYSTEM_BASE_INFODATE",
       "text": "{0}, {1} {2}'de oluşturuldu, {3} {4}'te değiştirildi"
     },
@@ -1230,10 +1222,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS",
       "text": "Karakter silindi."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HEADER",
-      "text": "Ayarlara Hoş Geldiniz!"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC",
@@ -1778,14 +1766,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORDREGEX_DESC",
       "text": "Belirtilen bir satırdaki veya tüm satırlardaki bir kelimeyi düzenli ifadeler kullanarak sorgular"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHPROMPT",
-      "text": "Ne aramak istediğinizi yazın."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NORESULTS",
-      "text": "Hiçbir şey bulunamadı. Ayarı doğru yazdığınızdan emin olun."
     },
     {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE2",
@@ -4084,84 +4064,12 @@
       "text": "Ayar türü bulunamadı."
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_FINDANOPTION",
-      "text": "Bir seçenek bulun"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_FINDANOPTION_DESC",
-      "text": "Ayarlar girdisini başlığına veya değerine göre kolayca aramanıza olanak tanır."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVESETTINGS",
-      "text": "Ayarları kaydet"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVESETTINGS_DESC",
-      "text": "Çekirdek yapılandırma değişikliklerinizi uygulama veri klasöründe bulunan yapılandırma dosyasına kaydeder."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEAS",
-      "text": "Ayarları farklı kaydet"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEAS_DESC",
-      "text": "Çekirdek yapılandırma değişikliklerinizi belirtilen klasörde bulunan yapılandırma dosyasına kaydeder."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADFROM",
-      "text": "Ayarları şuradan yükle:"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADFROM_DESC",
-      "text": "Belirtilen yapılandırma dosyasından çekirdek yapılandırmasını yükler."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOAD",
-      "text": "Yeniden yükleme ayarları"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOAD_DESC",
-      "text": "Herhangi bir harici değişiklik için çekirdek yapılandırmasını yeniden yükler"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES",
       "text": "Sistem güncellemelerini kontrol edin"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO",
       "text": "Sistem bilgisi"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HEADER_LANDING",
-      "text": "{0} ayarlarının açılış sayfasındasınız. Başlamak için bir bölüm veya bir seçenek seçin. Hangi ayarları değiştirdiğinize bağlı olarak çekirdeği yeniden başlatmanız gerekebilir."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADINGSECTION",
-      "text": "Bölüm yükleniyor..."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_UNSUPPORTEDCONFIG",
-      "text": "Bu bölümde bulunan aşağıdaki ayarlardan bir veya daha fazlası platformunuzda desteklenmiyor:"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSECTION",
-      "text": "Geçersiz bölüm. Lütfen geri dönün."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDKEY",
-      "text": "Geçersiz anahtar. Lütfen geri dönün."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHING",
-      "text": "Ayarlar aranıyor..."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFOUND",
-      "text": "Bu ayarlar bulundu. Lütfen birini seçin."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFAILURE",
-      "text": "İstediğiniz ayar bulunamadı."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVINGSETTINGS",
@@ -6564,14 +6472,6 @@
       "text": "Ekranın ortasında sade bir tarih ve saat."
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG",
-      "text": "Eski yapılandırmayı taşı"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_DESC",
-      "text": "Eski yapılandırmanızın bir kısmını çekirdeğin eski sürümlerinden taşır"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_SUCCESS",
       "text": "Yapılandırma geçişi başarıyla tamamlanmamış olabilir. Yapılandırma dosyalarınızın geçerli olduğundan eminseniz, daha fazla bilgi için hata ayıklama günlüklerini inceleyin."
     },
@@ -6862,10 +6762,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RSHUTDOWN_DESC",
       "text": "Uzak örnekteki çekirdek kapatılacak"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SEL_DESC",
-      "text": "Eski ayarlar stilini kullanır"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_SWITCH_TUI_DESC",
@@ -7354,18 +7250,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ENTRIESNOTFOUND",
       "text": "Ayar girişleri bulunamadı."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES_DESC",
-      "text": "Sistem güncellemelerini kontrol eder (etkin bir İnternet bağlantısı gerektirir)."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO_DESC",
-      "text": "Temel sistem bilgilerini gösterir (daha fazla bilgi 'sysinfo' komutunda mevcuttur)."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_CANTGETSECTION",
-      "text": "Bölüm alınamıyor"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_MAYBEUNEXPECTEDLYDISCONNECTED",
@@ -8912,14 +8796,6 @@
       "text": "Yapılandırmayı seçin"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYSHUTDOWN",
-      "text": "Eski ayarlar uygulaması kullanımdan kaldırıldı ve gelecekteki bir sürümde kaldırılacak."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_DESC",
-      "text": "Bir yapılandırma örneği seçmenizi ister"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_SELECT",
       "text": "Geçiş yapmak için bir yapılandırma örneği seçin."
     },
@@ -9198,6 +9074,10 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
       "text": "Bir Chatbot AI hatası oluştu. Lütfen internet bağlantınızın olduğundan, API anahtarınızın geçerli olduğundan ve API kotanızı aşmadığınızdan emin olun."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
+      "text": "Rastgele bir ekran koruyucu seçer"
     }
   ]
 }

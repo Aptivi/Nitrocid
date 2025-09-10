@@ -53,18 +53,6 @@
       "text": "مع السلامة!"
     },
     {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_STARTING",
-      "text": "ابتداء"
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING",
-      "text": "يرجى الانتظار حتى تتم تهيئة النواة..."
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN",
-      "text": "يرجى الانتظار حتى يتم إيقاف تشغيل النواة..."
-    },
-    {
       "loc": "NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR",
       "text": "خطأ غير معروف!"
     },

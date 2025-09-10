@@ -41,10 +41,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
       "text": "現在実行中のカーネルはベータ版です。バグ、不安定性、さらにはデータ損失が発生する可能性があります。可能であれば、安定版のご使用をお勧めします。"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
-      "text": "ランダムにスクリーンセーバーを選択します"
     }
   ]
 }

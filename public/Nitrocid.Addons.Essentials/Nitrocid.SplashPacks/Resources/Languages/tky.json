@@ -28,18 +28,6 @@
       "text": "Güle güle!"
     },
     {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_STARTING",
-      "text": "Başlangıç"
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING",
-      "text": "Çekirdek başlatılırken lütfen bekleyin..."
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN",
-      "text": "Çekirdek kapatılırken lütfen bekleyin..."
-    },
-    {
       "loc": "NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR",
       "text": "Bilinmeyen hata!"
     },

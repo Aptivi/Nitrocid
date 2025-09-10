@@ -27,18 +27,6 @@
       "text": "अलविदा!"
     },
     {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_STARTING",
-      "text": "शुरुआत"
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING",
-      "text": "कृपया कर्नेल प्रारंभ होने तक प्रतीक्षा करें..."
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN",
-      "text": "कृपया कर्नेल बंद होने तक प्रतीक्षा करें..."
-    },
-    {
       "loc": "NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR",
       "text": "अज्ञात त्रुटि!"
     },

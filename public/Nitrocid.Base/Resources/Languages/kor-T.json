@@ -536,10 +536,6 @@
       "text": "출구"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_OPTIONINVALID",
-      "text": "지정된 옵션 {0}이 (가) 잘못되었습니다."
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_NAME",
       "text": "시작시 업데이트 확인"
     },
@@ -892,10 +888,6 @@
       "text": "지정된 줄 번호는 마지막 파일 줄 번호보다 클 수 없습니다."
     },
     {
-      "loc": "NKS_COMMON_GOBACK",
-      "text": "돌아가려면 아무 키나 누르십시오."
-    },
-    {
       "loc": "NKS_DRIVERS_FILESYSTEM_BASE_INFODATE",
       "text": "{0}, {1} {2}에 생성, {3} {4}에 수정 됨"
     },
@@ -1230,10 +1222,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS",
       "text": "캐릭터가 삭제되었습니다."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HEADER",
-      "text": "설정에 오신 것을 환영합니다!"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC",
@@ -1778,14 +1766,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORDREGEX_DESC",
       "text": "정규식을 사용하여 지정된 줄 또는 모든 줄의 단어를 쿼리합니다."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHPROMPT",
-      "text": "무엇을 검색할 것인지 작성하십시오."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NORESULTS",
-      "text": "아무것도 발견되지 않습니다. 설정을 올바르게 작성했는지 확인하십시오."
     },
     {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE2",
@@ -4084,84 +4064,12 @@
       "text": "설정 유형을 찾을 수 없습니다."
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_FINDANOPTION",
-      "text": "옵션 찾기"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_FINDANOPTION_DESC",
-      "text": "제목이나 값을 사용하여 설정 항목을 쉽게 검색할 수 있습니다."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVESETTINGS",
-      "text": "설정 저장"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVESETTINGS_DESC",
-      "text": "커널 구성 변경 사항을 애플리케이션 데이터 폴더에 있는 구성 파일에 저장합니다."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEAS",
-      "text": "다른 이름으로 설정 저장"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEAS_DESC",
-      "text": "커널 구성 변경 사항을 지정된 폴더에 있는 구성 파일에 저장합니다."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADFROM",
-      "text": "다음에서 설정 로드"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADFROM_DESC",
-      "text": "지정된 구성 파일에서 커널 구성을 로드합니다."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOAD",
-      "text": "설정 새로고침"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOAD_DESC",
-      "text": "외부 변경 사항에 대해 커널 구성을 다시 로드합니다."
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES",
       "text": "시스템 업데이트 확인"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO",
       "text": "시스템 정보"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HEADER_LANDING",
-      "text": "귀하는 {0} 설정의 방문 페이지에 있습니다. 시작하려면 섹션이나 옵션을 선택하세요. 변경한 설정에 따라 커널을 다시 시작해야 할 수도 있습니다."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADINGSECTION",
-      "text": "섹션 로드 중..."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_UNSUPPORTEDCONFIG",
-      "text": "이 섹션에 있는 다음 설정 중 하나 이상이 귀하의 플랫폼에서 지원되지 않습니다."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSECTION",
-      "text": "섹션이 잘못되었습니다. 돌아가주세요."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDKEY",
-      "text": "유효하지 않은 키. 돌아가주세요."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHING",
-      "text": "설정 검색 중..."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFOUND",
-      "text": "이러한 설정이 발견되었습니다. 하나를 골라주세요."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFAILURE",
-      "text": "요청한 설정을 찾지 못했습니다."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVINGSETTINGS",
@@ -6564,14 +6472,6 @@
       "text": "화면 중앙에 간단한 날짜와 시간이 표시됩니다."
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG",
-      "text": "이전 구성 마이그레이션"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_DESC",
-      "text": "이전 버전의 커널에서 이전 구성 중 일부를 마이그레이션합니다."
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_SUCCESS",
       "text": "구성 마이그레이션이 성공적으로 완료되지 않았을 수 있습니다. 구성 파일이 유효하다고 확신하는 경우 디버그 로그를 조사하여 자세한 내용을 확인하세요."
     },
@@ -6862,10 +6762,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RSHUTDOWN_DESC",
       "text": "원격 인스턴스의 커널이 종료됩니다."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SEL_DESC",
-      "text": "레거시 설정 스타일을 사용합니다."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_SWITCH_TUI_DESC",
@@ -7354,18 +7250,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ENTRIESNOTFOUND",
       "text": "설정 항목을 찾을 수 없습니다."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES_DESC",
-      "text": "시스템 업데이트를 확인합니다(활성 인터넷 연결 필요)."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO_DESC",
-      "text": "기본적인 시스템 정보를 보여줍니다(자세한 내용은 'sysinfo' 명령으로 확인 가능)."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_CANTGETSECTION",
-      "text": "섹션을 가져올 수 없습니다"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_MAYBEUNEXPECTEDLYDISCONNECTED",
@@ -8912,14 +8796,6 @@
       "text": "구성 선택"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYSHUTDOWN",
-      "text": "레거시 설정 앱은 더 이상 지원되지 않으며 향후 릴리스에서 제거될 예정입니다."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_DESC",
-      "text": "구성 인스턴스를 선택하라는 메시지를 표시합니다."
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_SELECT",
       "text": "전환할 구성 인스턴스를 선택합니다."
     },
@@ -9198,6 +9074,10 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
       "text": "챗봇 AI 오류가 발생했습니다. 인터넷에 연결되어 있고, API 키가 유효하며, API 할당량을 초과하지 않았는지 확인하세요."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
+      "text": "무작위 스크린세이버를 선택합니다"
     }
   ]
 }
