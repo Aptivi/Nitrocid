@@ -95,16 +95,6 @@
                 "Description": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC"
             },
             {
-                "Name": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
-                "Type": "SSelection",
-                "Variable": "CurrentInputDriver",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetInputDriverNames",
-                "SelectionFunctionType": "InputDriverTools",
-                "SelectionFallback": [ "Default" ],
-                "Description": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC"
-            },
-            {
                 "Name": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
                 "Type": "SSelection",
                 "Variable": "CurrentEncodingAsymmetricDriver",

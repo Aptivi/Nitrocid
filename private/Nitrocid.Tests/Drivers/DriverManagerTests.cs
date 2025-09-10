@@ -29,7 +29,6 @@ using Nitrocid.Base.Drivers.HardwareProber;
 using Nitrocid.Base.Drivers.Network;
 using Nitrocid.Base.Drivers.Sorting;
 using Nitrocid.Base.Drivers.Regexp;
-using Nitrocid.Base.Drivers.Input;
 using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Drivers.DebugLogger;
 
@@ -60,8 +59,6 @@ namespace Nitrocid.Tests.Drivers
                 [DriverTypes.HardwareProber, DriverHandler.CurrentHardwareProberDriverLocal,            "Default"],
                 [DriverTypes.Sorting, DriverHandler.CurrentSortingDriver,                               "Default"],
                 [DriverTypes.Sorting, DriverHandler.CurrentSortingDriverLocal,                          "Default"],
-                [DriverTypes.Input, DriverHandler.CurrentInputDriver,                                   "Default"],
-                [DriverTypes.Input, DriverHandler.CurrentInputDriverLocal,                              "Default"],
                 [DriverTypes.EncodingAsymmetric, DriverHandler.CurrentEncodingAsymmetricDriver,         "Default"],
                 [DriverTypes.EncodingAsymmetric, DriverHandler.CurrentEncodingAsymmetricDriverLocal,    "Default"],
             ];
@@ -120,12 +117,6 @@ namespace Nitrocid.Tests.Drivers
                 [DriverTypes.Sorting, new MyCustomSortingDriver()],
             ];
 
-        public static IEnumerable<object[]> RegisteredInputDriver =>
-            [
-                //                   ---------- Provided ----------
-                [DriverTypes.Input, new MyCustomInputDriver()],
-            ];
-
         public static IEnumerable<object[]> RegisteredEncodingAsymmetricDriver =>
             [
                 //                               ---------- Provided ----------
@@ -146,7 +137,6 @@ namespace Nitrocid.Tests.Drivers
         [DynamicData(nameof(RegisteredEncodingDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
         [DynamicData(nameof(RegisteredHardwareProberDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
         [DynamicData(nameof(RegisteredSortingDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
-        [DynamicData(nameof(RegisteredInputDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
         [DynamicData(nameof(RegisteredEncodingAsymmetricDriver), DynamicDataDisplayNameDeclaringType = typeof(DriverManagerTests))]
         [Description("Management")]
         public void TestAddDriver(DriverTypes type, IDriver driver)
@@ -165,7 +155,6 @@ namespace Nitrocid.Tests.Drivers
         [DataRow("Default", DriverTypes.Encoding)]
         [DataRow("Default", DriverTypes.HardwareProber)]
         [DataRow("Default", DriverTypes.Sorting)]
-        [DataRow("Default", DriverTypes.Input)]
         [DataRow("RSA", DriverTypes.EncodingAsymmetric)]
         [Description("Management")]
         public void TestGetDriver(string driverName, DriverTypes expectedType)
@@ -194,7 +183,6 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.Encoding)]
         [DataRow(DriverTypes.HardwareProber)]
         [DataRow(DriverTypes.Sorting)]
-        [DataRow(DriverTypes.Input)]
         [DataRow(DriverTypes.EncodingAsymmetric)]
         [Description("Management")]
         public void TestGetDrivers(DriverTypes type)
@@ -213,7 +201,6 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.Encoding)]
         [DataRow(DriverTypes.HardwareProber)]
         [DataRow(DriverTypes.Sorting)]
-        [DataRow(DriverTypes.Input)]
         [DataRow(DriverTypes.EncodingAsymmetric)]
         [Description("Management")]
         public void TestGetDriverNames(DriverTypes type)
@@ -232,7 +219,6 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.Encoding, "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default")]
         [DataRow(DriverTypes.Sorting, "Default")]
-        [DataRow(DriverTypes.Input, "Default")]
         [DataRow(DriverTypes.EncodingAsymmetric, "Default")]
         [Description("Management")]
         public void TestGetFallbackDriver(DriverTypes type, string driverName)
@@ -252,7 +238,6 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.Encoding, "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default")]
         [DataRow(DriverTypes.Sorting, "Default")]
-        [DataRow(DriverTypes.Input, "Default")]
         [DataRow(DriverTypes.EncodingAsymmetric, "Default")]
         [Description("Management")]
         public void TestGetFallbackDriverName(DriverTypes type, string expectedName)
@@ -273,7 +258,6 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.Encoding, "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default")]
         [DataRow(DriverTypes.Sorting, "Default")]
-        [DataRow(DriverTypes.Input, "Default")]
         [DataRow(DriverTypes.EncodingAsymmetric, "Default")]
         [Description("Management")]
         public void TestGetCurrentDriver(DriverTypes driverType, string expectedName)
@@ -292,7 +276,6 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.Encoding, "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default")]
         [DataRow(DriverTypes.Sorting, "Default")]
-        [DataRow(DriverTypes.Input, "Default")]
         [DataRow(DriverTypes.EncodingAsymmetric, "Default")]
         [Description("Management")]
         public void TestGetCurrentDriverLocal(DriverTypes driverType, string expectedName)
@@ -311,7 +294,6 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.Encoding, "Default", "Default", "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default", "Default", "Default")]
         [DataRow(DriverTypes.Sorting, "Default", "Default", "Default")]
-        [DataRow(DriverTypes.Input, "Default", "Default", "Default")]
         [DataRow(DriverTypes.EncodingAsymmetric, "RSA", "RSA", "Default")]
         [Description("Management")]
         public void TestBeginLocalDriver(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
@@ -334,7 +316,6 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.Encoding, "Default", "Default", "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default", "Default", "Default")]
         [DataRow(DriverTypes.Sorting, "Default", "Default", "Default")]
-        [DataRow(DriverTypes.Input, "Default", "Default", "Default")]
         [DataRow(DriverTypes.EncodingAsymmetric, "RSA", "RSA", "Default")]
         [Description("Management")]
         public void TestBeginLocalDriverSafe(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
@@ -573,32 +554,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [TestMethod]
-        [Description("Management")]
-        public void TestSetInputDriver()
-        {
-            InputDriverTools.SetInputDriver("Default");
-            DriverHandler.CurrentInputDriver.DriverName.ShouldBe("Default");
-            DriverHandler.CurrentInputDriverLocal.DriverName.ShouldBe("Default");
-        }
-
-        [TestMethod]
-        [Description("Management")]
-        public void TestGetInputDrivers()
-        {
-            var drivers = InputDriverTools.GetInputDrivers();
-            drivers.ShouldNotBeEmpty();
-        }
-
-        [TestMethod]
-        [Description("Management")]
-        public void TestGetInputDriverNames()
-        {
-            var drivers = InputDriverTools.GetInputDriverNames();
-            drivers.ShouldNotBeEmpty();
-        }
-
-
-        [TestMethod]
         [DataRow(DriverTypes.Encryption, "MyCustom")]
         [DataRow(DriverTypes.Filesystem, "MyCustom")]
         [DataRow(DriverTypes.Network, "MyCustom")]
@@ -608,7 +563,6 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.Encoding, "MyCustom")]
         [DataRow(DriverTypes.HardwareProber, "MyCustom")]
         [DataRow(DriverTypes.Sorting, "MyCustom")]
-        [DataRow(DriverTypes.Input, "MyCustom")]
         [DataRow(DriverTypes.EncodingAsymmetric, "MyCustom")]
         [Description("Management")]
         public void TestUnregisterDriver(DriverTypes type, string name)
@@ -627,7 +581,6 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.Encoding, "Default", "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default", "Default")]
         [DataRow(DriverTypes.Sorting, "Default", "Default")]
-        [DataRow(DriverTypes.Input, "Default", "Default")]
         [DataRow(DriverTypes.EncodingAsymmetric, "RSA", "RSA")]
         [Description("Management")]
         public void TestSetDriver(DriverTypes type, string name, string expectedName)
@@ -647,7 +600,6 @@ namespace Nitrocid.Tests.Drivers
         [DataRow(DriverTypes.Encoding, "Default", "Default")]
         [DataRow(DriverTypes.HardwareProber, "Default", "Default")]
         [DataRow(DriverTypes.Sorting, "Default", "Default")]
-        [DataRow(DriverTypes.Input, "Default", "Default")]
         [DataRow(DriverTypes.EncodingAsymmetric, "RSA", "RSA")]
         [Description("Management")]
         public void TestSetDriverSafe(DriverTypes type, string name, string expectedName)

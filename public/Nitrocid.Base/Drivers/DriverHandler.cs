@@ -29,7 +29,6 @@ using Nitrocid.Base.Drivers.DebugLogger.Bases;
 using Nitrocid.Base.Drivers.Encoding.Bases;
 using Nitrocid.Base.Drivers.HardwareProber.Bases;
 using Nitrocid.Base.Drivers.Sorting.Bases;
-using Nitrocid.Base.Drivers.Input.Bases;
 using Nitrocid.Base.Drivers.EncodingAsymmetric.Bases;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
@@ -41,7 +40,6 @@ using Nitrocid.Base.Drivers.Filesystem;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Drivers.Sorting;
 using Nitrocid.Base.Drivers.DebugLogger;
-using Nitrocid.Base.Drivers.Input;
 using Nitrocid.Base.Drivers.Regexp;
 using Nitrocid.Base.Drivers.EncodingAsymmetric;
 using Nitrocid.Base.Drivers.Encryption;
@@ -130,12 +128,6 @@ namespace Nitrocid.Base.Drivers
                 }
             },
             {
-                DriverTypes.Input, new()
-                {
-                    new DefaultInput(),
-                }
-            },
-            {
                 DriverTypes.EncodingAsymmetric, new()
                 {
                     new Base64Encoding(),
@@ -155,7 +147,6 @@ namespace Nitrocid.Base.Drivers
             { DriverTypes.Encoding,             new() },
             { DriverTypes.HardwareProber,       new() },
             { DriverTypes.Sorting,              new() },
-            { DriverTypes.Input,                new() },
             { DriverTypes.EncodingAsymmetric,   new() },
         };
 
@@ -170,7 +161,6 @@ namespace Nitrocid.Base.Drivers
             { DriverTypes.Encoding,             drivers[DriverTypes.Encoding][0] },
             { DriverTypes.HardwareProber,       drivers[DriverTypes.HardwareProber][0] },
             { DriverTypes.Sorting,              drivers[DriverTypes.Sorting][0] },
-            { DriverTypes.Input,                drivers[DriverTypes.Input][0] },
             { DriverTypes.EncodingAsymmetric,   drivers[DriverTypes.EncodingAsymmetric][0] },
         };
 
@@ -185,7 +175,6 @@ namespace Nitrocid.Base.Drivers
             { typeof(IEncodingDriver),              DriverTypes.Encoding },
             { typeof(IHardwareProberDriver),        DriverTypes.HardwareProber },
             { typeof(ISortingDriver),               DriverTypes.Sorting },
-            { typeof(IInputDriver),                 DriverTypes.Input },
             { typeof(IEncodingAsymmetricDriver),    DriverTypes.EncodingAsymmetric },
         };
 
@@ -246,12 +235,6 @@ namespace Nitrocid.Base.Drivers
             begunLocal ? (ISortingDriver)currentDriversLocal[DriverTypes.Sorting] : CurrentSortingDriver;
 
         /// <summary>
-        /// Gets the current input driver (use this when possible)
-        /// </summary>
-        public static IInputDriver CurrentInputDriverLocal =>
-            begunLocal ? (IInputDriver)currentDriversLocal[DriverTypes.Input] : CurrentInputDriver;
-
-        /// <summary>
         /// Gets the current asymmetric encoding driver (use this when possible)
         /// </summary>
         public static IEncodingAsymmetricDriver CurrentEncodingAsymmetricDriverLocal =>
@@ -310,12 +293,6 @@ namespace Nitrocid.Base.Drivers
         /// </summary>
         public static ISortingDriver CurrentSortingDriver =>
             (ISortingDriver)currentDrivers[DriverTypes.Sorting];
-
-        /// <summary>
-        /// Gets the system-wide current input driver
-        /// </summary>
-        public static IInputDriver CurrentInputDriver =>
-            (IInputDriver)currentDrivers[DriverTypes.Input];
 
         /// <summary>
         /// Gets the system-wide current asymmetric encoding driver
