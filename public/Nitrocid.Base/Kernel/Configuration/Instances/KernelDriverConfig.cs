@@ -31,7 +31,6 @@ using Nitrocid.Base.Drivers.Sorting;
 using Nitrocid.Base.Drivers.DebugLogger;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Drivers.Regexp;
-using Nitrocid.Base.Drivers.Input;
 using Nitrocid.Base.Drivers.EncodingAsymmetric;
 using Nitrocid.Base.Drivers.Encryption;
 
@@ -132,14 +131,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         {
             get => DriverHandler.GetDriverName<ISortingDriver>(DriverHandler.CurrentSortingDriver);
             set => SortingDriverTools.SetSortingDriver(value);
-        }
-        /// <summary>
-        /// Current input driver
-        /// </summary>
-        public string CurrentInputDriver
-        {
-            get => DriverHandler.GetDriverName<IInputDriver>(DriverHandler.CurrentInputDriver);
-            set => InputDriverTools.SetInputDriver(value);
         }
         /// <summary>
         /// Current asymmetric encoding driver

@@ -31,7 +31,7 @@ namespace Nitrocid.Base.Drivers
         /// <summary>
         /// Network drivers
         /// </summary>
-        Network,
+        Network = 2,
         /// <summary>
         /// Filesystem drivers
         /// </summary>
@@ -61,12 +61,8 @@ namespace Nitrocid.Base.Drivers
         /// </summary>
         Sorting,
         /// <summary>
-        /// Console input drivers
-        /// </summary>
-        Input,
-        /// <summary>
         /// Asymmetric encoding drivers
         /// </summary>
-        EncodingAsymmetric,
+        EncodingAsymmetric = 11,
     }
 }
