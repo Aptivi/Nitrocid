@@ -1,7 +1,7 @@
 MODAPI = 28
 ROOT_DIR := $(shell dirname "$(realpath $(lastword $(MAKEFILE_LIST)))")
 
-OUTPUT = "$(ROOT_DIR)/public/Nitrocid/KSBuild/net8.0"
+OUTPUT = "$(ROOT_DIR)/public/Nitrocid/KSBuild/net10.0"
 BINARIES = "$(ROOT_DIR)/assets/ks"
 MANUALS = "$(ROOT_DIR)/assets/ks.1"
 DESKTOPS = "$(ROOT_DIR)/assets/ks.desktop"

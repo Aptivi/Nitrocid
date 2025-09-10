@@ -110,15 +110,15 @@ packall() {
 
     # Pack binary
     echo Packing binary...
-    cd "$ROOTDIR/public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$version-bin.zip . && cd -
+    cd "$ROOTDIR/public/Nitrocid/KSBuild/net10.0/" && "$zippath" -r /tmp/$version-bin.zip . && cd -
     checkerror $? "Failed to pack"
-    cd "$ROOTDIR/public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$version-bin-lite.zip . -x "./Addons/*" -x "./Addons.Essentials/*" && cd -
+    cd "$ROOTDIR/public/Nitrocid/KSBuild/net10.0/" && "$zippath" -r /tmp/$version-bin-lite.zip . -x "./Addons/*" -x "./Addons.Essentials/*" && cd -
     checkerror $? "Failed to pack"
-    cd "$ROOTDIR/public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$version-addons.zip Addons Addons.Essentials && cd -
+    cd "$ROOTDIR/public/Nitrocid/KSBuild/net10.0/" && "$zippath" -r /tmp/$version-addons.zip Addons Addons.Essentials && cd -
     checkerror $? "Failed to pack"
     cd "$ROOTDIR/public/Nitrocid/KSAnalyzer/netstandard2.0/" && "$zippath" -r /tmp/$version-analyzers.zip . && cd -
     checkerror $? "Failed to pack"
-    cd "$ROOTDIR/public/Nitrocid/KSAnalyzer/net8.0/" && "$zippath" -r /tmp/$version-mod-analyzer.zip . && cd -
+    cd "$ROOTDIR/public/Nitrocid/KSAnalyzer/net10.0/" && "$zippath" -r /tmp/$version-mod-analyzer.zip . && cd -
     checkerror $? "Failed to pack"
 
     # Inform success
