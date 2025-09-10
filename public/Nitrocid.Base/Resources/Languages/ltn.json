@@ -535,10 +535,6 @@
       "text": "Exitus"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_OPTIONINVALID",
-      "text": "Optio definita {0} invalida est."
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_NAME",
       "text": "Reprehendo pro Updates in Satus"
     },
@@ -891,10 +887,6 @@
       "text": "Numerus lineae certae non potest esse maior quam numerus fasciculi ultimus."
     },
     {
-      "loc": "NKS_COMMON_GOBACK",
-      "text": "Preme aliqua clavis ire."
-    },
-    {
       "loc": "NKS_DRIVERS_FILESYSTEM_BASE_INFODATE",
       "text": "{0}, Creatum in {1}{2} {3}, Modum in {3} {4}"
     },
@@ -1229,10 +1221,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS",
       "text": "Ingenium delevit."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HEADER",
-      "text": "Welcome to Occasus!"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC",
@@ -1777,14 +1765,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORDREGEX_DESC",
       "text": "Queritur verbum in linea determinata vel omnes lineas uti expressionibus regularibus"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHPROMPT",
-      "text": "Scribe quid vis ut quaeram."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NORESULTS",
-      "text": "Nihil invenitur. Fac ut recte scripseris."
     },
     {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE2",
@@ -4083,84 +4063,12 @@
       "text": "Occasus genus non invenitur."
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_FINDANOPTION",
-      "text": "Invenire optionem"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_FINDANOPTION_DESC",
-      "text": "Permittit tibi ut facile quaeras uncinis ingressum utentem vel titulo vel valore eius."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVESETTINGS",
-      "text": "Servo occasus"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVESETTINGS_DESC",
-      "text": "Servat kernel configurationem tuum ad mutationes fasciculi aboutconfig in schedula folder inventa."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEAS",
-      "text": "Salvum occasus ut"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEAS_DESC",
-      "text": "Servat tuum nucleum configuratione mutationes in aboutconfig fasciculi in statis folder."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADFROM",
-      "text": "Onus occasus a"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADFROM_DESC",
-      "text": "Configuratio nuclei onerat ex certo config lima."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOAD",
-      "text": "Reload occasus"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOAD_DESC",
-      "text": "Reloads kernel configuration pro qualibet mutationes externae"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES",
       "text": "Reprehendo pro ratio updates"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO",
       "text": "Ratio informationes"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HEADER_LANDING",
-      "text": "Tu es ad portum pagina {0} occasus. Elige sectionem vel optio ut incipiat. Prout quibus occasus mutasti, nucleum silere debes."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADINGSECTION",
-      "text": "Loading sectionem..."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_UNSUPPORTEDCONFIG",
-      "text": "Unus vel plures ex sequentibus fundis in hac sectione inventi sunt sine in suggestu tuo:"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSECTION",
-      "text": "Invalida sectionem. Cede redi."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDKEY",
-      "text": "Clavis invalida. Cede redi."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHING",
-      "text": "Quaerendo occasus..."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFOUND",
-      "text": "Hae occasus reperiuntur. Elige quaeso unum."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFAILURE",
-      "text": "Defecit ad occasum petitum tuum invenire."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVINGSETTINGS",
@@ -6563,14 +6471,6 @@
       "text": "Simplex date and time in the middle of the screen."
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG",
-      "text": "Transmigrare senex configuratione"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_DESC",
-      "text": "Migrat aliquas vetustas figurae tuae e vetustioribus versionibus nuclei"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_SUCCESS",
       "text": "Migratio configurationis non feliciter consummata est. Si certus es quod lima configuratione tua valida sunt, explora debug ligna pro magis info."
     },
@@ -6861,10 +6761,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RSHUTDOWN_DESC",
       "text": "Acinum in instantia remota claudetur"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SEL_DESC",
-      "text": "Utitur legatum occasus style"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_SWITCH_TUI_DESC",
@@ -7353,18 +7249,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ENTRIESNOTFOUND",
       "text": "Optiones entries non inveni."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES_DESC",
-      "text": "Compescit pro ratio updates (activum Internet connexionem requirit)."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO_DESC",
-      "text": "Praecipua informationis ratio tibi ostendit (more info available in the 'sysinfo' mandatum)."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_CANTGETSECTION",
-      "text": "Non potest sectionem"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_MAYBEUNEXPECTEDLYDISCONNECTED",
@@ -8911,14 +8795,6 @@
       "text": "Configuratione Select"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYSHUTDOWN",
-      "text": "Legatum occasus app deprecatus est et in futura emissione tolletur."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_DESC",
-      "text": "Monet te eligere configuratione exempli"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_SELECT",
       "text": "Configurationis exempli gratia ad flectendum est."
     },
@@ -9197,6 +9073,10 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
       "text": "Error in Chatbot AI accidit. Fac ut nexus interretialis sit, clavem API validam esse, et quotam API non excedas."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
+      "text": "Protector scrinii fortuitus eligit."
     }
   ]
 }

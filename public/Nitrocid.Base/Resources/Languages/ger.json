@@ -544,10 +544,6 @@
       "text": "Ausgang"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_OPTIONINVALID",
-      "text": "Die angegebene Option {0} ist ungültig."
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_NAME",
       "text": "Suchen Sie beim Start nach Updates"
     },
@@ -900,10 +896,6 @@
       "text": "Die angegebene Zeilennummer darf nicht größer als die letzte Dateizeilennummer sein."
     },
     {
-      "loc": "NKS_COMMON_GOBACK",
-      "text": "Drücken Sie eine beliebige Taste, um zurückzukehren."
-    },
-    {
       "loc": "NKS_DRIVERS_FILESYSTEM_BASE_INFODATE",
       "text": "{0}, Erstellt in {1} {2}, Geändert in {3} {4}"
     },
@@ -1238,10 +1230,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS",
       "text": "Zeichen gelöscht."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HEADER",
-      "text": "Willkommen bei den Einstellungen!"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC",
@@ -1786,14 +1774,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORDREGEX_DESC",
       "text": "Fragt ein Wort in einer angegebenen Zeile oder in allen Zeilen mit regulären Ausdrücken ab"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHPROMPT",
-      "text": "Schreiben Sie, wonach Sie suchen möchten."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NORESULTS",
-      "text": "Es wird nichts gefunden. Stellen Sie sicher, dass Sie die Einstellung richtig geschrieben haben."
     },
     {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE2",
@@ -4092,84 +4072,12 @@
       "text": "Der Einstellungstyp wurde nicht gefunden."
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_FINDANOPTION",
-      "text": "Finden Sie eine Option"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_FINDANOPTION_DESC",
-      "text": "Ermöglicht die einfache Suche nach einem Einstellungseintrag anhand seines Titels oder seines Werts."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVESETTINGS",
-      "text": "Einstellungen speichern"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVESETTINGS_DESC",
-      "text": "Speichert Ihre Kernel-Konfigurationsänderungen in der Konfigurationsdatei im Anwendungsdatenordner."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEAS",
-      "text": "Einstellungen speichern unter"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEAS_DESC",
-      "text": "Speichert Ihre Kernel-Konfigurationsänderungen in der Konfigurationsdatei im angegebenen Ordner."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADFROM",
-      "text": "Einstellungen laden von"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADFROM_DESC",
-      "text": "Lädt die Kernelkonfiguration aus der angegebenen Konfigurationsdatei."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOAD",
-      "text": "Einstellungen neu laden"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOAD_DESC",
-      "text": "Lädt die Kernelkonfiguration für alle externen Änderungen neu"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES",
       "text": "Suchen Sie nach Systemaktualisierungen"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO",
       "text": "System Information"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HEADER_LANDING",
-      "text": "Sie befinden sich auf der Zielseite der {0}-Einstellungen. Wählen Sie einen Abschnitt oder eine Option aus, um zu beginnen. Abhängig davon, welche Einstellungen Sie geändert haben, müssen Sie möglicherweise den Kernel neu starten."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADINGSECTION",
-      "text": "Abschnitt wird geladen..."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_UNSUPPORTEDCONFIG",
-      "text": "Eine oder mehrere der folgenden Einstellungen in diesem Abschnitt werden auf Ihrer Plattform nicht unterstützt:"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSECTION",
-      "text": "Ungültiger Abschnitt. Bitte gehen Sie zurück."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDKEY",
-      "text": "Ungültiger Schlüssel. Bitte gehen Sie zurück."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHING",
-      "text": "Suche nach Einstellungen..."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFOUND",
-      "text": "Diese Einstellungen werden gefunden. Bitte wählen Sie eines aus."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFAILURE",
-      "text": "Die gewünschte Einstellung konnte nicht gefunden werden."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVINGSETTINGS",
@@ -6572,14 +6480,6 @@
       "text": "Einfaches Datum und Uhrzeit in der Mitte des Bildschirms."
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG",
-      "text": "Alte Konfiguration migrieren"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_DESC",
-      "text": "Migriert einen Teil Ihrer alten Konfiguration von älteren Versionen des Kernels"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_SUCCESS",
       "text": "Die Konfigurationsmigration wurde möglicherweise nicht erfolgreich abgeschlossen. Wenn Sie sicher sind, dass Ihre Konfigurationsdateien gültig sind, untersuchen Sie die Debug-Protokolle auf weitere Informationen."
     },
@@ -6870,10 +6770,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RSHUTDOWN_DESC",
       "text": "Der Kernel in der Remote-Instanz wird heruntergefahren"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SEL_DESC",
-      "text": "Verwendet den alten Einstellungsstil"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_SWITCH_TUI_DESC",
@@ -7362,18 +7258,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ENTRIESNOTFOUND",
       "text": "Einstellungseinträge wurden nicht gefunden."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES_DESC",
-      "text": "Sucht nach Systemupdates (erfordert eine aktive Internetverbindung)."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO_DESC",
-      "text": "Zeigt Ihnen grundlegende Systeminformationen (weitere Informationen sind mit dem Befehl „sysinfo“ verfügbar)."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_CANTGETSECTION",
-      "text": "Abschnitt kann nicht abgerufen werden"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_MAYBEUNEXPECTEDLYDISCONNECTED",
@@ -8920,14 +8804,6 @@
       "text": "Konfiguration auswählen"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYSHUTDOWN",
-      "text": "Die alte Einstellungs-App ist veraltet und wird in einer zukünftigen Version entfernt."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_DESC",
-      "text": "Fordert Sie zur Auswahl einer Konfigurationsinstanz auf."
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_SELECT",
       "text": "Wählen Sie eine Konfigurationsinstanz aus, zu der gewechselt werden soll."
     },
@@ -9206,6 +9082,10 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
       "text": "Ein Chatbot-KI-Fehler ist aufgetreten. Bitte stellen Sie sicher, dass Sie eine Internetverbindung haben, Ihr API-Schlüssel gültig ist und Sie Ihr API-Kontingent nicht überschreiten."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
+      "text": "Wählt einen zufälligen Bildschirmschoner aus"
     }
   ]
 }

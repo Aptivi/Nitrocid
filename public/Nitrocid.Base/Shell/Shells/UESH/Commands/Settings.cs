@@ -97,7 +97,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            bool useSelection = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-sel");
             bool useType = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-type");
             var typeFinal = useType ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") : nameof(KernelMainConfig);
             if (parameters.SwitchesList.Length > 0 && !useType)
@@ -134,7 +133,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 else if (isDriver)
                     typeFinal = nameof(KernelDriverConfig);
             }
-            SettingsApp.OpenMainPage(typeFinal, useSelection);
+            SettingsApp.OpenMainPage(typeFinal);
             return 0;
         }
 

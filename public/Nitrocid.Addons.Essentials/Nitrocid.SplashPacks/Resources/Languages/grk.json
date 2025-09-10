@@ -28,18 +28,6 @@
       "text": "Αντιο σας!"
     },
     {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_STARTING",
-      "text": "Εκκίνηση"
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING",
-      "text": "Περιμένετε όσο γίνεται η προετοιμασία του πυρήνα..."
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN",
-      "text": "Περιμένετε όσο κλείνει ο πυρήνας..."
-    },
-    {
       "loc": "NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR",
       "text": "Αγνωστο σφάλμα!"
     },

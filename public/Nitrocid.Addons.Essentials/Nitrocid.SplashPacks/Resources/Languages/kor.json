@@ -28,18 +28,6 @@
       "text": "annyeonghi gaseyo!"
     },
     {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_STARTING",
-      "text": "sijak"
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_INITIALIZING",
-      "text": "keoneoreul chogihwahaneun dongan jamsi gidaryeo jusipsio..."
-    },
-    {
-      "loc": "NKS_SPLASHPACKS_FIGPROGRESS_SHUTTINGDOWN",
-      "text": "keoneori jongryodoeneun dongan jamsi gidaryeo jusipsio..."
-    },
-    {
       "loc": "NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR",
       "text": "alsueopsneun oryu!"
     },

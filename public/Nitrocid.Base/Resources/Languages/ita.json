@@ -538,10 +538,6 @@
       "text": "Uscita"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_OPTIONINVALID",
-      "text": "L'opzione specificata {0} non è valida."
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_NAME",
       "text": "Verifica la disponibilità di aggiornamenti all'avvio"
     },
@@ -894,10 +890,6 @@
       "text": "Il numero di riga specificato non può essere maggiore dell'ultimo numero di riga del file."
     },
     {
-      "loc": "NKS_COMMON_GOBACK",
-      "text": "Premere un tasto qualsiasi per tornare indietro."
-    },
-    {
       "loc": "NKS_DRIVERS_FILESYSTEM_BASE_INFODATE",
       "text": "{0}, creato in {1} {2}, modificato in {3} {4}"
     },
@@ -1232,10 +1224,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_DELCHARNUM_SUCCESS",
       "text": "Personaggio cancellato."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HEADER",
-      "text": "Benvenuto in Impostazioni!"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_TESTDICTWRITERSTR_DESC",
@@ -1780,14 +1768,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORDREGEX_DESC",
       "text": "Interroga una parola in una riga specificata o in tutte le righe utilizzando espressioni regolari"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHPROMPT",
-      "text": "Scrivi cosa vuoi cercare."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NORESULTS",
-      "text": "Non si trova nulla. Assicurati di aver scritto l'impostazione correttamente."
     },
     {
       "loc": "NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE2",
@@ -4086,84 +4066,12 @@
       "text": "Tipo di impostazioni non trovato."
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_FINDANOPTION",
-      "text": "Trova un'opzione"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_FINDANOPTION_DESC",
-      "text": "Consente di cercare facilmente una voce di impostazione utilizzando il titolo o il valore."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVESETTINGS",
-      "text": "Salva le impostazioni"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVESETTINGS_DESC",
-      "text": "Salva le modifiche alla configurazione del kernel nel file di configurazione trovato nella cartella dei dati dell'applicazione."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEAS",
-      "text": "Salva impostazioni con nome"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVEAS_DESC",
-      "text": "Salva le modifiche alla configurazione del kernel nel file di configurazione trovato nella cartella specificata."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADFROM",
-      "text": "Carica le impostazioni da"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADFROM_DESC",
-      "text": "Carica la configurazione del kernel dal file di configurazione specificato."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOAD",
-      "text": "Ricarica le impostazioni"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_RELOAD_DESC",
-      "text": "Ricarica la configurazione del kernel per eventuali modifiche esterne"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES",
       "text": "Controlla gli aggiornamenti di sistema"
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO",
       "text": "Informazioni di sistema"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HEADER_LANDING",
-      "text": "Sei nella pagina di destinazione delle impostazioni di {0}. Seleziona una sezione o un'opzione per iniziare. A seconda delle impostazioni che hai modificato, potrebbe essere necessario riavviare il kernel."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADINGSECTION",
-      "text": "Caricamento sezione..."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_UNSUPPORTEDCONFIG",
-      "text": "Una o più delle seguenti impostazioni presenti in questa sezione non sono supportate nella tua piattaforma:"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDSECTION",
-      "text": "Sezione non valida. Per favore, torna indietro."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_INVALIDKEY",
-      "text": "Chiave non valida. Per favore, torna indietro."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHING",
-      "text": "Ricerca delle impostazioni..."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFOUND",
-      "text": "Queste impostazioni sono state trovate. Selezionane uno."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SEARCHFAILURE",
-      "text": "Impossibile trovare l'impostazione richiesta."
     },
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SAVINGSETTINGS",
@@ -6566,14 +6474,6 @@
       "text": "Data e ora semplici al centro dello schermo."
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG",
-      "text": "Migrare la vecchia configurazione"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_DESC",
-      "text": "Migra parte della tua vecchia configurazione dalle versioni precedenti del kernel"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MIGRATEOLDCONFIG_SUCCESS",
       "text": "La migrazione della configurazione potrebbe non essere stata completata correttamente. Se sei sicuro che i file di configurazione siano validi, esamina i log di debug per ulteriori informazioni."
     },
@@ -6864,10 +6764,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_RSHUTDOWN_DESC",
       "text": "Il kernel nell'istanza remota verrà arrestato"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SEL_DESC",
-      "text": "Utilizza lo stile delle impostazioni legacy"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWNOTIFS_SWITCH_TUI_DESC",
@@ -7356,18 +7252,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ENTRIESNOTFOUND",
       "text": "Le voci delle impostazioni non sono state trovate."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES_DESC",
-      "text": "Verifica la presenza di aggiornamenti di sistema (richiede una connessione Internet attiva)."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO_DESC",
-      "text": "Mostra informazioni di base sul sistema (ulteriori informazioni sono disponibili nel comando 'sysinfo')."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_CANTGETSECTION",
-      "text": "Impossibile ottenere la sezione"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_MAYBEUNEXPECTEDLYDISCONNECTED",
@@ -8914,14 +8798,6 @@
       "text": "Seleziona configurazione"
     },
     {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYSHUTDOWN",
-      "text": "L'app Impostazioni legacy è stata deprecata e verrà rimossa in una versione futura."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_DESC",
-      "text": "Richiede di selezionare un'istanza di configurazione"
-    },
-    {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_SELECT",
       "text": "Seleziona un'istanza di configurazione a cui passare."
     },
@@ -9196,6 +9072,10 @@
     {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
       "text": "Si è verificato un errore di Chatbot AI. Assicurati di disporre di una connessione Internet, che la tua chiave API sia valida e di non superare la quota API."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
+      "text": "Seleziona uno screensaver casuale"
     }
   ]
 }

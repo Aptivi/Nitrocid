@@ -1426,10 +1426,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         {
                             ConflictsWith = ["saver", "addonsplash", "splash", "addonsaver", "driver"],
                             ArgumentsRequired = true
-                        }),
-                        new SwitchInfo("sel", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SEL_DESC", new SwitchOptions()
-                        {
-                            AcceptsValues = false
                         })
                     ])
                 ], new SettingsCommand()),
