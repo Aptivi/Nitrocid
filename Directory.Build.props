@@ -65,7 +65,7 @@
 
     <!-- KS SourceLink -->
     <ItemGroup>
-        <PackageReference Include="Microsoft.SourceLink.GitLab" Version="8.0.0" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="all" />
     </ItemGroup>
     <PropertyGroup>
         <RepositoryUrl>https://gitlab.com/aptivi/main/Nitrocid.git</RepositoryUrl>
