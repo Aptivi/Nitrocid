@@ -729,6 +729,188 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Settings.ChatbotAIConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Settings.ChatbotAIConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Settings.ChatbotAIConfig",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Settings.ChatbotAIConfig.yml\" sourcestartlinenumber=\"1\">Configuration instance for Chatbot AI</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Settings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Settings",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.ChatbotShell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.ChatbotShell.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.ChatbotShell",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.ChatbotShell.yml\" sourcestartlinenumber=\"1\">The chatbot shell</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.ChatbotShellCommon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.ChatbotShellCommon.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.ChatbotShellCommon",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.ChatbotShellCommon.yml\" sourcestartlinenumber=\"1\">Common chatbot shell class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotDefaultPreset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotDefaultPreset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotDefaultPreset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotDefaultPreset.yml\" sourcestartlinenumber=\"1\">Default preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine1Preset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine1Preset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine1Preset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine1Preset.yml\" sourcestartlinenumber=\"1\">PowerLine 1 preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine2Preset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine2Preset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine2Preset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine2Preset.yml\" sourcestartlinenumber=\"1\">PowerLine 2 preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine3Preset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine3Preset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine3Preset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine3Preset.yml\" sourcestartlinenumber=\"1\">PowerLine 3 preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG1Preset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG1Preset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG1Preset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG1Preset.yml\" sourcestartlinenumber=\"1\">PowerLine BG 1 preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG2Preset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG2Preset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG2Preset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG2Preset.yml\" sourcestartlinenumber=\"1\">PowerLine BG 2 preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG3Preset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG3Preset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG3Preset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG3Preset.yml\" sourcestartlinenumber=\"1\">PowerLine BG 3 preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Extras.Chemistry.Localized.LocalStrings.yml",
       "output": {
         ".html": {
@@ -3923,11 +4105,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "api/toc.html"
-        },
         ".json": {
           "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
         }
       },
       "version": ""
@@ -3946,11 +4128,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""
