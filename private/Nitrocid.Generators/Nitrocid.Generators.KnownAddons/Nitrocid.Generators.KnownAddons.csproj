@@ -11,7 +11,7 @@
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="[3.11.0]" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" PrivateAssets="all" GeneratePathProperty="true" />
 
-    <PackageReference Remove="Microsoft.SourceLink.GitLab" />
+    <PackageReference Remove="Microsoft.SourceLink.GitHub" />
   </ItemGroup>
 
   <PropertyGroup>
