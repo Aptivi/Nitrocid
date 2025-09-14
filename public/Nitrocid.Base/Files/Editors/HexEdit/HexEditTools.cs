@@ -54,7 +54,7 @@ namespace Nitrocid.Base.Files.Editors.HexEdit
 
                 // Read the file
                 var FileBytes = new byte[(int)(HexEditShellCommon.FileStream.Length + 1)];
-                HexEditShellCommon.FileStream.Read(FileBytes, 0, (int)HexEditShellCommon.FileStream.Length);
+                HexEditShellCommon.FileStream.ReadExactly(FileBytes, 0, (int)HexEditShellCommon.FileStream.Length);
                 HexEditShellCommon.FileStream.Seek(0L, SeekOrigin.Begin);
 
                 // Add the information to the arrays

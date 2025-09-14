@@ -34,6 +34,7 @@ using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug.RemoteChat;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
 {
@@ -211,6 +212,8 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         /// <summary>
         /// Thread to listen to messages and post them to the debugger
         /// </summary>
+        [SuppressMessage("Reliability", "CA2022:Avoid inexact read with 'Stream.Read'", Justification = "We are dealing with network streams")]
+        [SuppressMessage("CodeQuality", "IDE0079:Remove unnecessary suppression", Justification = "This suppression is justified")]
         internal static void Listen(object? RDebugInstance)
         {
             if (RDebugInstance is not RemoteDebugDevice device)
