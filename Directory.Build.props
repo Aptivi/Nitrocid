@@ -13,7 +13,7 @@
         <WarningsAsErrors>CS9057,CS8002,nullable</WarningsAsErrors>
         <EnableSourceControlManagerQueries>true</EnableSourceControlManagerQueries>
         <SignAssembly>True</SignAssembly>
-        <RepositoryUrl>https://gitlab.com/aptivi/main/Nitrocid.git</RepositoryUrl>
+        <RepositoryUrl>https://github.com/Aptivi/Nitrocid.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
