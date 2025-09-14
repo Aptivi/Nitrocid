@@ -1025,7 +1025,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
                 // Try to open an SQL connection
                 byte[] sqlFileBytes = new byte[17];
                 using (FileStream sqlStream = new(Path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                    sqlStream.Read(sqlFileBytes, 0, 16);
+                    sqlStream.ReadExactly(sqlFileBytes, 0, 16);
                 string result = System.Text.Encoding.ASCII.GetString(sqlFileBytes);
                 return result.Contains("SQLite format");
             }
@@ -1414,12 +1414,12 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual byte[] ReadAllBytesNoBlock(string path)
         {
-                        // Read all the bytes, bypassing the restrictions.
+            // Read all the bytes, bypassing the restrictions.
             path = FS.NeutralizePath(path);
             long size = new FileSystemEntry(path).FileSize;
             var AllBytesList = new byte[size];
             var FOpen = File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            FOpen.Read(AllBytesList, 0, (int)size);
+            FOpen.ReadExactly(AllBytesList, 0, (int)size);
             FOpen.Close();
             return AllBytesList;
         }
@@ -1427,7 +1427,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual string[] ReadAllLinesNoBlock(string path)
         {
-                        // Read all the lines, bypassing the restrictions.
+            // Read all the lines, bypassing the restrictions.
             path = FS.NeutralizePath(path);
             var AllLnList = new List<string>();
             var FOpen = new StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite));
@@ -1448,7 +1448,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual string ReadAllTextNoBlock(string path)
         {
-                        // Read all the lines, bypassing the restrictions.
+            // Read all the lines, bypassing the restrictions.
             path = FS.NeutralizePath(path);
             var fileContentBuilder = new StringBuilder();
             var FOpen = new StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite));
@@ -1477,7 +1477,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void WriteAllLinesNoBlock(string path, string[] contents)
         {
-                        // Write all the lines, bypassing the restrictions.
+            // Write all the lines, bypassing the restrictions.
             path = FS.NeutralizePath(path);
             var FOpen = new StreamWriter(File.Open(path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite));
             foreach (var content in contents)
@@ -1496,7 +1496,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void WriteAllTextNoBlock(string path, string contents)
         {
-                        // Write all the lines, bypassing the restrictions.
+            // Write all the lines, bypassing the restrictions.
             path = FS.NeutralizePath(path);
             var FOpen = new StreamWriter(File.Open(path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite));
             FOpen.WriteLine(contents);
@@ -1514,7 +1514,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void WriteAllBytesNoBlock(string path, byte[] contents)
         {
-                        // Write all the bytes, bypassing the restrictions.
+            // Write all the bytes, bypassing the restrictions.
             path = FS.NeutralizePath(path);
             var FOpen = File.Open(path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite);
             FOpen.Write(contents, 0, contents.Length);
