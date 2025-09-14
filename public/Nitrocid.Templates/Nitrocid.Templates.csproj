@@ -8,7 +8,7 @@
     <Description>Simulates our future-planned kernel, Nitrocid Kernel. This package contains templates to use when creating N-KS mods, screensavers, and splashes</Description>
     <PackageTags>dotnet-new;templats;ks;kernel;simulator</PackageTags>
     <!-- URL settings -->
-    <PackageProjectUrl>https://gitlab.com/aptivi/main/Nitrocid</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Aptivi/Nitrocid</PackageProjectUrl>
     <PackageIcon>OfficialAppIcon-NitrocidKS-512.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series-1</PackageReleaseNotes>

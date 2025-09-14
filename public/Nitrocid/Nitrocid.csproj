@@ -7,7 +7,7 @@
     <PackageDescription>Simulates our future-planned kernel, Nitrocid Kernel. This package contains Nitrocid API that you can use for your mods.</PackageDescription>
     <PackageTags>kernel;simulator;csharp</PackageTags>
     <!-- URL settings -->
-    <PackageProjectUrl>https://gitlab.com/aptivi/main/Nitrocid</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Aptivi/Nitrocid</PackageProjectUrl>
     <PackageIcon>OfficialAppIcon-NitrocidKS-512.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series-1</PackageReleaseNotes>
