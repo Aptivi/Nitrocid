@@ -298,17 +298,5 @@ namespace Nitrocid.Base.ConsoleBase.Inputs
             return key;
         }
 
-        /// <summary>
-        /// Initializes (and sets) the Terminaux console wrapper for Nitrocid
-        /// </summary>
-        public static void InitializeTerminauxWrappers()
-        {
-            // Initialize console wrappers for Terminaux
-            var wrapper = new NitrocidWrapper();
-            if (!ConsoleWrapperTools.IsRegistered(nameof(NitrocidWrapper)))
-                ConsoleWrapperTools.RegisterWrapper(nameof(NitrocidWrapper), wrapper);
-            ConsoleWrapperTools.SetWrapper(nameof(NitrocidWrapper));
-        }
-
     }
 }

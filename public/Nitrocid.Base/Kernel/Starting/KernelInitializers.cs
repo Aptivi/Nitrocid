@@ -131,7 +131,6 @@ namespace Nitrocid.Base.Kernel.Starting
 
                 // Resize handler
                 ConsoleResizeHandler.StartHandler();
-                InputTools.InitializeTerminauxWrappers();
             }
             catch (Exception ex)
             {

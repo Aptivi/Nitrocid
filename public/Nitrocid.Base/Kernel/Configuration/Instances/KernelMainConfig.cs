@@ -1193,7 +1193,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
             }
         }
         /// <summary>
-        /// Whether to play keyboard cues for each keypress or not
+        /// Whether to play keyboard cues for each keypress or not (<see cref="EnableNavigationSounds"/> must be enabled for this to take effect)
         /// </summary>
         public bool EnableKeyboardCues
         {
@@ -1215,7 +1215,11 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// Whether to enable navigation sounds or not
         /// </summary>
-        public bool EnableNavigationSounds { get; set; }
+        public bool EnableNavigationSounds
+        {
+            get => Input.KeyboardCues;
+            set => Input.KeyboardCues = value;
+        }
         /// <summary>
         /// Whether to enable the notification sound for low-priority alerts or not
         /// </summary>
@@ -1265,6 +1269,9 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
                 InputTools.globalSettings.CueWrite = cue.KeyboardCueTypeStream ?? InputTools.globalSettings.CueWrite;
                 InputTools.globalSettings.CueRubout = cue.KeyboardCueBackspaceStream ?? InputTools.globalSettings.CueRubout;
                 InputTools.globalSettings.CueEnter = cue.KeyboardCueEnterStream ?? InputTools.globalSettings.CueEnter;
+                Input.CueWrite = cue.KeyboardCueTypeStream ?? Input.CueWrite;
+                Input.CueRubout = cue.KeyboardCueBackspaceStream ?? Input.CueRubout;
+                Input.CueEnter = cue.KeyboardCueEnterStream ?? Input.CueEnter;
             }
         }
         #endregion
