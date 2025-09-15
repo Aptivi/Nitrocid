@@ -1240,6 +1240,14 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// </summary>
         public double AudioCueVolume
         {
+            get => Input.CueVolume;
+            set => Input.CueVolume = value;
+        }
+        /// <summary>
+        /// Audio cue volume for the reader
+        /// </summary>
+        public double AudioCueVolumeReader
+        {
             get => TermReader.GlobalReaderSettings.CueVolume;
             set => TermReader.GlobalReaderSettings.CueVolume = value;
         }
@@ -1396,6 +1404,14 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// A character that masks the password. Leave blank for more security
         /// </summary>
         public string CurrentMask
+        {
+            get => Input.PasswordMaskChar.ToString();
+            set => Input.PasswordMaskChar = string.IsNullOrEmpty(value) ? '*' : value[0];
+        }
+        /// <summary>
+        /// A character that masks the password. Leave blank for more security
+        /// </summary>
+        public string CurrentMaskReader
         {
             get => TermReader.GlobalReaderSettings.PasswordMaskChar.ToString();
             set => TermReader.GlobalReaderSettings.PasswordMaskChar = string.IsNullOrEmpty(value) ? '*' : value[0];

@@ -1143,6 +1143,12 @@
                 "Description": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_DESC"
             },
             {
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME",
+                "Type": "SDouble",
+                "Variable": "AudioCueVolumeReader",
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC"
+            },
+            {
                 "Name": "NKS_SETTINGS_KERNEL_AUDIO_THEME_NAME",
                 "Type": "SSelection",
                 "Variable": "AudioCueThemeName",
@@ -1397,6 +1403,12 @@
                         "Type": "SChar",
                         "Variable": "CurrentMask",
                         "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHAR_DESC"
+                    },
+                    {
+                        "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME",
+                        "Type": "SChar",
+                        "Variable": "CurrentMask",
+                        "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC"
                     },
                     {
                         "Name": "NKS_SETTINGS_KERNEL_MISC_SCROLLINSELECTION_NAME",
