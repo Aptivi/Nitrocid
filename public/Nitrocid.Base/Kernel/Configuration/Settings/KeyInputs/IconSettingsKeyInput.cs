@@ -28,11 +28,14 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
     {
         public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
+#if NKS_EXTENSIONS
             if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons)) is null)
             {
+#endif
                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_ICON_NEEDSADDON"));
                 bail = true;
                 return KeyDefaultValue;
+#if NKS_EXTENSIONS
             }
             string defaultValue = (string?)KeyDefaultValue ?? "heart-suit";
             var type = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasImagesIcons, "Nitrocid.Extras.Images.Icons.Tools.IconsTools");
@@ -43,6 +46,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
             // Bail and return
             bail = true;
             return icon;
+#endif
         }
 
         public object? TranslateStringValue(SettingsKey key, string value) =>

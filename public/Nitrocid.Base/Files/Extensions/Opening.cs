@@ -46,9 +46,11 @@ namespace Nitrocid.Base.Files
         {
             bool fileExists = FilesystemTools.FileExists(path);
 
+#if NKS_EXTENSIONS
             // Check the addons
             bool hasJsonShell = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasJsonShell)) is not null;
             bool hasSqlShell = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSqlShell)) is not null;
+#endif
 
             // Check to see if the file exists
             DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", vars: [path, fileExists]);
@@ -86,22 +88,30 @@ namespace Nitrocid.Base.Files
                     ShellManager.StartShell("HexShell", path);
                     break;
                 case OpeningMode.Json:
-                    if (!hasJsonShell)
+#if NKS_EXTENSIONS
+                    if (hasJsonShell)
+                        ShellManager.StartShell("JsonShell", path);
+                    else
                     {
+#endif
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_OPEN_NEEDSJSONSHELLADDON"), ThemeColorType.Warning);
                         ShellManager.StartShell("TextShell", path);
+#if NKS_EXTENSIONS
                     }
-                    else
-                        ShellManager.StartShell("JsonShell", path);
+#endif
                     break;
                 case OpeningMode.Sql:
-                    if (!hasSqlShell)
+#if NKS_EXTENSIONS
+                    if (hasSqlShell)
+                        ShellManager.StartShell("SqlShell", path);
+                    else
                     {
+#endif
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_OPEN_NEEDSSQLSHELLADDON"), ThemeColorType.Warning);
                         ShellManager.StartShell("HexShell", path);
+#if NKS_EXTENSIONS
                     }
-                    else
-                        ShellManager.StartShell("SqlShell", path);
+#endif
                     break;
             }
         }

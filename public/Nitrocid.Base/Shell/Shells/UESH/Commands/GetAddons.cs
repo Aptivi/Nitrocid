@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+#if NKS_EXTENSIONS
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
@@ -99,3 +100,4 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         }
     }
 }
+#endif

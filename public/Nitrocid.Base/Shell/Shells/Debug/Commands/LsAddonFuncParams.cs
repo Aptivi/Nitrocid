@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+#if NKS_EXTENSIONS
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 using System.Reflection;
@@ -66,3 +67,4 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 
     }
 }
+#endif

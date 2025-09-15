@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+#if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 
@@ -54,3 +55,4 @@ namespace Nitrocid.Base.Kernel.Extensions
         }
     }
 }
+#endif

@@ -158,6 +158,7 @@ namespace Nitrocid.Base.Kernel.Threading
         /// <returns>A dictionary containing thread names and addresses as keys and stack traces as values</returns>
         public static Dictionary<string, string[]> GetThreadBacktraces()
         {
+#if NKS_EXTENSIONS
             try
             {
                 var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasDiagnostics, "Nitrocid.Extras.Diagnostics.Tools.DiagnosticsTools");
@@ -170,6 +171,7 @@ namespace Nitrocid.Base.Kernel.Threading
                 DebugWriter.WriteDebug(DebugLevel.E, $"Can't get thread backtraces: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
             }
+#endif
             return [];
         }
 

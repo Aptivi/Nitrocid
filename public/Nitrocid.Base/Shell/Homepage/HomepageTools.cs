@@ -222,6 +222,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                     rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES"));
                                 else
                                 {
+#if NKS_EXTENSIONS
                                     var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
                                     var feedsObject = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetArticles", addonType, Config.MainConfig.RssHeadlineUrl);
                                     bool found = false;
@@ -238,6 +239,9 @@ namespace Nitrocid.Base.Shell.Homepage
                                     }
                                     if (!found)
                                         rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED"));
+#else
+                                    throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON"));
+#endif
                                 }
                             }
                             catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)

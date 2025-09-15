@@ -80,10 +80,12 @@ namespace Nitrocid.Base.Kernel.Updates
         {
             try
             {
-                // Determine the update kind by fetching the addons
+                // Determine the update kind by build type
+#if NKS_EXTENSIONS
                 var kind = UpdateKind.Binary;
-                if (AddonTools.ListAddons().Count == 0)
-                    kind = UpdateKind.BinaryLite;
+#else
+                var kind = UpdateKind.BinaryLite;
+#endif
                 return FetchKernelUpdates(kind);
             }
             catch (Exception ex)
