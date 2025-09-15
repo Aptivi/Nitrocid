@@ -18,5 +18,5 @@
   </ItemGroup>
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
-  <Import Project="..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
+  <Import Project="..\..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 </Project>
