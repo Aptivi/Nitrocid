@@ -1166,7 +1166,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
 
         #region Audio
         private string audioCueThemeName = "the_mirage";
-        private double audioCueVolume = 1.0;
         private bool enableAudio = true;
 
         /// <summary>
@@ -1197,12 +1196,8 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// </summary>
         public bool EnableKeyboardCues
         {
-            get => InputTools.globalSettings.KeyboardCues;
-            set
-            {
-                TermReader.GlobalReaderSettings.KeyboardCues = value;
-                InputTools.globalSettings.KeyboardCues = value;
-            }
+            get => TermReader.GlobalReaderSettings.KeyboardCues;
+            set => TermReader.GlobalReaderSettings.KeyboardCues = value;
         }
         /// <summary>
         /// Whether to enable startup sounds or not
@@ -1245,13 +1240,8 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// </summary>
         public double AudioCueVolume
         {
-            get => audioCueVolume;
-            set
-            {
-                audioCueVolume = value;
-                TermReader.GlobalReaderSettings.CueVolume = value;
-                InputTools.globalSettings.CueVolume = value;
-            }
+            get => TermReader.GlobalReaderSettings.CueVolume;
+            set => TermReader.GlobalReaderSettings.CueVolume = value;
         }
         /// <summary>
         /// Audio cue theme name
@@ -1266,9 +1256,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
                 TermReader.GlobalReaderSettings.CueWrite = cue.KeyboardCueTypeStream ?? TermReader.GlobalReaderSettings.CueWrite;
                 TermReader.GlobalReaderSettings.CueRubout = cue.KeyboardCueBackspaceStream ?? TermReader.GlobalReaderSettings.CueRubout;
                 TermReader.GlobalReaderSettings.CueEnter = cue.KeyboardCueEnterStream ?? TermReader.GlobalReaderSettings.CueEnter;
-                InputTools.globalSettings.CueWrite = cue.KeyboardCueTypeStream ?? InputTools.globalSettings.CueWrite;
-                InputTools.globalSettings.CueRubout = cue.KeyboardCueBackspaceStream ?? InputTools.globalSettings.CueRubout;
-                InputTools.globalSettings.CueEnter = cue.KeyboardCueEnterStream ?? InputTools.globalSettings.CueEnter;
                 Input.CueWrite = cue.KeyboardCueTypeStream ?? Input.CueWrite;
                 Input.CueRubout = cue.KeyboardCueBackspaceStream ?? Input.CueRubout;
                 Input.CueEnter = cue.KeyboardCueEnterStream ?? Input.CueEnter;
@@ -1410,16 +1397,16 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// </summary>
         public string CurrentMask
         {
-            get => InputTools.currentMask;
-            set => InputTools.currentMask = string.IsNullOrEmpty(value) ? "*" : value[0].ToString();
+            get => TermReader.GlobalReaderSettings.PasswordMaskChar.ToString();
+            set => TermReader.GlobalReaderSettings.PasswordMaskChar = string.IsNullOrEmpty(value) ? '*' : value[0];
         }
         /// <summary>
         /// Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys.
         /// </summary>
         public bool InputHistoryEnabled
         {
-            get => InputTools.globalSettings.HistoryEnabled;
-            set => InputTools.globalSettings.HistoryEnabled = value;
+            get => TermReader.GlobalReaderSettings.HistoryEnabled;
+            set => TermReader.GlobalReaderSettings.HistoryEnabled = value;
         }
         /// <summary>
         /// Enables the scroll bar in selection screens
