@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31612.314
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11010.61 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.BuildTargets", "private\Nitrocid.BuildTargets\Nitrocid.BuildTargets.csproj", "{1205F12D-A766-4431-A8DC-CABDCE31B55C}"
 EndProject
@@ -72,6 +72,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.StandaloneAnalyzer
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Addons", "Addons", "{B60F276A-FE12-4001-916E-080344ED1FD9}"
+	ProjectSection(SolutionItems) = preProject
+		public\NitrocidLiteDetector.targets = public\NitrocidLiteDetector.targets
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.ThemePacks", "public\Nitrocid.Addons\Nitrocid.ThemePacks\Nitrocid.ThemePacks.csproj", "{795E304D-A5A0-45B6-BE43-D2842A28EB45}"
 EndProject
