@@ -36,21 +36,18 @@ namespace Nitrocid.Base.ConsoleBase.Inputs
     /// </summary>
     public static class InputTools
     {
-        internal static TermReaderSettings globalSettings = new();
-        internal static string currentMask = "*";
-
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         public static string ReadLine() =>
-            ReadLine("", "", globalSettings);
+            ReadLine("", "", TermReader.GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         public static string ReadLine(string InputText) =>
-            ReadLine(InputText, "", globalSettings);
+            ReadLine(InputText, "", TermReader.GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console
@@ -58,7 +55,7 @@ namespace Nitrocid.Base.ConsoleBase.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         public static string ReadLine(string InputText, string DefaultValue) =>
-            ReadLine(InputText, DefaultValue, globalSettings);
+            ReadLine(InputText, DefaultValue, TermReader.GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console
@@ -80,14 +77,14 @@ namespace Nitrocid.Base.ConsoleBase.Inputs
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         public static string ReadLineWrapped() =>
-            ReadLineWrapped("", "", globalSettings);
+            ReadLineWrapped("", "", TermReader.GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         public static string ReadLineWrapped(string InputText) =>
-            ReadLineWrapped(InputText, "", globalSettings);
+            ReadLineWrapped(InputText, "", TermReader.GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
@@ -95,7 +92,7 @@ namespace Nitrocid.Base.ConsoleBase.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         public static string ReadLineWrapped(string InputText, string DefaultValue) =>
-            ReadLineWrapped(InputText, DefaultValue, globalSettings);
+            ReadLineWrapped(InputText, DefaultValue, TermReader.GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
@@ -120,7 +117,7 @@ namespace Nitrocid.Base.ConsoleBase.Inputs
         /// <param name="DefaultValue">Default value</param>
         /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
         public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false) =>
-            ReadLineUnsafe(InputText, DefaultValue, OneLineWrap, globalSettings);
+            ReadLineUnsafe(InputText, DefaultValue, OneLineWrap, TermReader.GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console unsafely. This doesn't wait until the screensaver lock mode is released.
@@ -133,7 +130,7 @@ namespace Nitrocid.Base.ConsoleBase.Inputs
         {
             bool cursorState = ConsoleWrapper.CursorVisible;
             ConsoleWrapper.CursorVisible = true;
-            TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
+            TermReaderSettings finalSettings = settings is null ? TermReader.GlobalReaderSettings : settings;
             string Output = TermReader.Read(InputText, DefaultValue, finalSettings, false, OneLineWrap, true);
             ConsoleWrapper.CursorVisible = cursorState;
 
@@ -185,7 +182,7 @@ namespace Nitrocid.Base.ConsoleBase.Inputs
         /// <param name="settings">Reader settings</param>
         public static string ReadLineNoInput(char MaskChar, TermReaderSettings settings)
         {
-            TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
+            TermReaderSettings finalSettings = settings is null ? TermReader.GlobalReaderSettings : settings;
             string pass = ReadLineNoInputUnsafe(MaskChar, finalSettings);
 
             // If in lock mode, wait until release
@@ -222,7 +219,7 @@ namespace Nitrocid.Base.ConsoleBase.Inputs
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
         public static string ReadLineNoInputUnsafe(char MaskChar) =>
-            ReadLineNoInputUnsafe(MaskChar, globalSettings);
+            ReadLineNoInputUnsafe(MaskChar, TermReader.GlobalReaderSettings);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user unsafely. This doesn't wait until the screensaver lock mode is released.
@@ -233,7 +230,7 @@ namespace Nitrocid.Base.ConsoleBase.Inputs
         {
             bool cursorState = ConsoleWrapper.CursorVisible;
             ConsoleWrapper.CursorVisible = true;
-            TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
+            TermReaderSettings finalSettings = settings is null ? TermReader.GlobalReaderSettings : settings;
             finalSettings.PasswordMaskChar = MaskChar;
             string pass = TermReader.Read("", "", finalSettings, true, false, true);
             ConsoleWrapper.CursorVisible = cursorState;
