@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+#if NKS_EXTENSIONS
 using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Debugging;
@@ -241,3 +242,4 @@ namespace Nitrocid.Base.Kernel.Extensions
         }
     }
 }
+#endif

@@ -468,16 +468,20 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
             get => emojiWidgetCurrentEmoticon;
             set
             {
+#if NKS_EXTENSIONS
                 if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons)) is null)
                 {
+#endif
                     emojiWidgetCurrentEmoticon = value;
                     return;
+#if NKS_EXTENSIONS
                 }
                 var type = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasImagesIcons, "Nitrocid.Extras.Images.Icons.Tools.IconsTools");
                 var hasIcon = (bool?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "HasIcon", type, value) ?? false;
                 emojiWidgetCurrentEmoticon = hasIcon ? value : emojiWidgetCurrentEmoticon;
+#endif
             }
         }
-        #endregion
+#endregion
     }
 }

@@ -93,6 +93,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug
 
             new CommandInfo("keyinfo", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_KEYINFO_DESC", new KeyInfoCommand()),
 
+#if NKS_EXTENSIONS
             new CommandInfo("lsaddons", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONS_DESC", new LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsaddonfields", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSADDONFIELDS_DESC",
@@ -181,6 +182,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug
                 ], new LsAddonTypesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsbaseaddons", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSBASEADDONS_DESC", new LsBaseAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+#endif
 
             new CommandInfo("lsfields", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_LSFIELDS_DESC",
                 [

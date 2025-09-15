@@ -44,8 +44,10 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
             int iconTop = top;
 
             // Render the icon, caching it in the process
+#if NKS_EXTENSIONS
             if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons)) is null)
             {
+#endif
                 var message = new AlignedText()
                 {
                     Text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EMOJI_NEEDSADDON"),
@@ -59,12 +61,14 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
                     },
                 };
                 return message.Render();
+#if NKS_EXTENSIONS
             }
             var type = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasImagesIcons, "Nitrocid.Extras.Images.Icons.Tools.IconsTools");
             string[] emojiList = (string[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "GetIconNames", type) ?? [];
             string finalEmojiName = Config.WidgetConfig.EmojiWidgetCycleEmoticons ? emojiList[RandomDriver.RandomIdx(emojiList.Length)] : Config.WidgetConfig.EmojiWidgetEmoticonName;
             cachedIcon = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "RenderIcon", type, finalEmojiName, iconWidth, iconHeight, iconLeft, iconTop) ?? "";
             return "";
+#endif
         }
 
         public override string Render(int left, int top, int width, int height)

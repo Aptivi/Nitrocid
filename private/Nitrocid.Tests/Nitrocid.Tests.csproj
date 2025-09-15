@@ -1,4 +1,5 @@
-﻿<Project Sdk="MSTest.Sdk/3.10.4">
+﻿<Project>
+  <Import Sdk="MSTest.Sdk" Project="Sdk.props" Version="3.10.4" />
 
   <PropertyGroup>
     <OutputPath>KSTest\</OutputPath>
@@ -84,4 +85,7 @@
     <Delete Files="@(BuildDirs)" />
     <RemoveDir Directories="KSTest\" />
   </Target>
+  
+  <Import Sdk="MSTest.Sdk" Project="Sdk.targets" Version="3.10.4" />
+  <Import Project="..\..\public\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 </Project>

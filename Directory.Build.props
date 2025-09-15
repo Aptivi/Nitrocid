@@ -40,13 +40,14 @@
     <!--
 
       Note for constants: All Nitrocid flags should be defined by defining NitrocidFlags, not DefineConstants. Here's how you
-      define such flags: -p:NitrocidFlags=VSDEBUG
+      define such flags: -p:NitrocidFlags=VSDEBUG,NKS_EXTENSIONS
 
       Supported constants (NitrocidFlags):
           - VSDEBUG: Enables immediate window debug in the "Output" pane
+          - NKS_EXTENSIONS: Forces extension support
       
       Supported configurations (build arguments can be passed with -p:CONFIG=VALUE):
-          - NKSLITE: If "true", don't build addons
+          - NKSLITE: If "true", don't build addons and extension support
 
       Possible specifiers (NitrocidReleaseSpecifier):
           - REL: Final release
@@ -65,6 +66,7 @@
         <NitrocidReleaseSpecifier>REL</NitrocidReleaseSpecifier>
         <NitrocidReleaseSpecifier Condition="'$(Configuration)' == 'Debug'">DEV</NitrocidReleaseSpecifier>
         <DefineConstants>SPECIFIER$(NitrocidReleaseSpecifier);$(NitrocidFlags.Replace(",",";"))</DefineConstants>
+        <DefineConstants Condition="'$(NKSLITE)' != 'true'">NKS_EXTENSIONS;$(DefineConstants)</DefineConstants>
         <NoWarn>$(NoWarn);NU1605</NoWarn>
     </PropertyGroup>
     <!-- KS Platform Information End -->

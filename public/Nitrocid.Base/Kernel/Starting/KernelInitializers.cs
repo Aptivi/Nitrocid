@@ -196,6 +196,7 @@ namespace Nitrocid.Base.Kernel.Starting
                 // Add the shell completions
                 ShellCommon.RegisterCompletions();
 
+#if NKS_EXTENSIONS
                 // Initialize addons
                 try
                 {
@@ -213,6 +214,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     if (KernelEntry.TalkativePreboot)
                         SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_IMPADDONS") + $": {exc.Message}");
                 }
+#endif
 
                 // Stop the splash prior to loading config
                 if (KernelEntry.PrebootSplash)
@@ -273,6 +275,7 @@ namespace Nitrocid.Base.Kernel.Starting
                         SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_SPLASH") + $": {exc.Message}");
                 }
 
+#if NKS_EXTENSIONS
                 // Initialize important mods
                 if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods)) is not null)
                 {
@@ -301,6 +304,7 @@ namespace Nitrocid.Base.Kernel.Starting
                         }
                     }
                 }
+#endif
 
                 // Populate debug devices
                 try
@@ -440,6 +444,7 @@ namespace Nitrocid.Base.Kernel.Starting
                         SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_ALARM") + $": {exc.Message}");
                 }
 
+#if NKS_EXTENSIONS
                 try
                 {
                     // Finalize addons
@@ -456,6 +461,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     if (KernelEntry.TalkativePreboot)
                         SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_FINALIZE_ADDONS") + $": {exc.Message}");
                 }
+#endif
 
                 try
                 {
@@ -490,6 +496,7 @@ namespace Nitrocid.Base.Kernel.Starting
                         SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_LOAD_EXTHANDLERS") + $": {exc.Message}");
                 }
 
+#if NKS_EXTENSIONS
                 // Initialize mods
                 if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods)) is not null)
                 {
@@ -518,6 +525,7 @@ namespace Nitrocid.Base.Kernel.Starting
                         }
                     }
                 }
+#endif
 
                 // Check for errors
                 if (exceptions.Count > 0)
@@ -655,6 +663,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_SAVE_CONFIG") + $": {exc.Message}");
                 }
 
+#if NKS_EXTENSIONS
                 if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods)) is not null)
                 {
                     try
@@ -690,6 +699,7 @@ namespace Nitrocid.Base.Kernel.Starting
                     DebugWriter.WriteDebugStackTrace(exc);
                     SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_ADDONS") + $": {exc.Message}");
                 }
+#endif
 
                 try
                 {

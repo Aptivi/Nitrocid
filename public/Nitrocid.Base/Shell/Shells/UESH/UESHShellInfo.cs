@@ -809,6 +809,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ])
                 ], new GetCommand()),
 
+#if NKS_EXTENSIONS
             new CommandInfo("getaddons", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GETADDONS_DESC",
                 [
                     new CommandArgumentInfo(
@@ -819,6 +820,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         })
                     ])
                 ], new GetAddonsCommand()),
+#endif
 
             new CommandInfo("getallexthandlers", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GETALLEXTHANDLERS_DESC", new GetAllExtHandlersCommand()),
 
@@ -1692,9 +1694,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ])
                 ], new UnZipCommand()),
 
-            #if SPECIFIERREL
+#if SPECIFIERREL
             new CommandInfo("update", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UPDATE_DESC", new UpdateCommand()),
-            #endif
+#endif
 
             new CommandInfo("uptime", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_UPTIME_DESC",
                 [

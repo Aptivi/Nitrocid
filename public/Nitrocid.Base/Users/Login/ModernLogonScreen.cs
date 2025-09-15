@@ -78,11 +78,15 @@ namespace Nitrocid.Base.Users.Login
                 {
                     try
                     {
+#if NKS_EXTENSIONS
                         var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
                         var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", addonType, Config.MainConfig.RssHeadlineUrl);
                         if (Feed is (string feedTitle, string articleTitle))
                             return LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM") + $" {feedTitle}: {articleTitle}";
                         return LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED");
+#else
+                        throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON"));
+#endif
                     }
                     catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
                     {

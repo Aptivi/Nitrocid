@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+#if NKS_EXTENSIONS
 using System;
 
 namespace Nitrocid.Base.Kernel.Extensions
@@ -52,3 +53,4 @@ namespace Nitrocid.Base.Kernel.Extensions
         void StopMod();
     }
 }
+#endif

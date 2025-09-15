@@ -42,6 +42,7 @@ namespace Nitrocid.Base.Network.Types.RSS
             {
                 try
                 {
+#if NKS_EXTENSIONS
                     var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
                     var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", addonType, Config.MainConfig.RssHeadlineUrl);
                     if (Feed is (string feedTitle, string articleTitle))
@@ -49,6 +50,9 @@ namespace Nitrocid.Base.Network.Types.RSS
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS") + " {0}: ", false, ThemeColorType.ListEntry, feedTitle);
                         TextWriterColor.Write(articleTitle, true, ThemeColorType.ListValue);
                     }
+#else
+                    throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON"));
+#endif
                 }
                 catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
                 {
