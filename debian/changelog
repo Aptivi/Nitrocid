@@ -1,3 +1,9 @@
+nitrocid-25 (3.0.25.523-0.1.0.61-1) noble; urgency=medium
+
+  * General improvements and bug fixes
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Tue, 16 Sep 2025 21:06:06 +0300
+
 nitrocid-25 (3.0.25.523-0.1.0.60-1) noble; urgency=medium
 
   * Updated OpenMoji to 16.0
