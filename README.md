@@ -13,6 +13,8 @@
 <br>
 
 # Nitrocid KS
+
+**Warning: the 0.1.2.x series development has stopped and will be out of support in November 27th. Instead, use 0.1.0.x where its features will be there, or use the latest supported version.**
     
 *A simulator for our future-planned kernel, Nitrocid Kernel!*
 

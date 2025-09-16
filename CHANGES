@@ -1,11 +1,9 @@
-Since the release of Nitrocid 0.1.2.x, we've released the second service pack to integrate Terminaux 7.0 to the kernel and to bring many improvements.
+We've released this version to update libraries.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated to Terminaux 7.0
-- `[*]` Fixed splash closing
 - `[*]` General improvements
 
 Review the commit history if you want to get a deep insight about the changes.
