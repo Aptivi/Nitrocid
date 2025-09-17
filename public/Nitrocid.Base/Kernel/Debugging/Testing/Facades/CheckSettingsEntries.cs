@@ -34,7 +34,7 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             var Results = ConfigTools.CheckConfigVariables();
-            bool failed = Results.Any((res) => !res);
+            bool failed = Results.Any((res) => !res.Value);
             if (failed)
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSETTINGSENTRIES_FAILED"), true, ThemeColorType.Warning);
             TestActualValue = failed;

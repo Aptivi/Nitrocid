@@ -353,7 +353,7 @@ namespace Nitrocid.Base.Kernel.Configuration
             try
             {
                 var vars = ConfigTools.CheckConfigVariables();
-                if (vars.Any((varFound) => !varFound))
+                if (vars.Any((varFound) => !varFound.Value))
                     throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_VALIDATIONFAILED"));
             }
             catch (KernelException cex)
