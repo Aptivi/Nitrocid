@@ -52,8 +52,11 @@ using Nitrocid.Base.Users.Login.Widgets;
 using Nitrocid.Base.Users.Login.Widgets.Implementations;
 using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Kernel;
+
+#if NKS_EXTENSIONS
+using Nitrocid.Base.Kernel.Extensions;
+#endif
 
 namespace Nitrocid.Base.Shell.Homepage
 {

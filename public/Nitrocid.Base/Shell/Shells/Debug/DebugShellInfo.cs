@@ -27,7 +27,10 @@ using Terminaux.Shell.Switches;
 using Nitrocid.Base.Shell.Shells.Debug.Presets;
 using System.Linq;
 using Nitrocid.Base.Misc.Reflection;
+
+#if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;
+#endif
 
 namespace Nitrocid.Base.Shell.Shells.Debug
 {

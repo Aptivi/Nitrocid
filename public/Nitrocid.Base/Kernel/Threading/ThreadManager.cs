@@ -19,7 +19,6 @@
 
 using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -27,6 +26,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using Terminaux.Base;
+
+#if NKS_EXTENSIONS
+using Nitrocid.Base.Kernel.Extensions;
+#endif
 
 namespace Nitrocid.Base.Kernel.Threading
 {
