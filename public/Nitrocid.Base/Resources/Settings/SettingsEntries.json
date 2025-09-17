@@ -1407,7 +1407,7 @@
                     {
                         "Name": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME",
                         "Type": "SChar",
-                        "Variable": "CurrentMask",
+                        "Variable": "CurrentMaskReader",
                         "Description": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC"
                     },
                     {
