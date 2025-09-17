@@ -24,7 +24,10 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Drivers.RNG;
+
+#if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;
+#endif
 
 namespace Nitrocid.Base.Users.Login.Widgets.Implementations
 {

@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project>
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -28,4 +29,6 @@
     <EmbeddedResource Include="Resources\KnownAddons.json" />
   </ItemGroup>
 
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
+  <Import Project="..\..\..\public\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 </Project>

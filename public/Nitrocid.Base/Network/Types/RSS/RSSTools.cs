@@ -24,7 +24,10 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
+
+#if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;
+#endif
 
 namespace Nitrocid.Base.Network.Types.RSS
 {

@@ -24,8 +24,11 @@ using System.IO;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Files.Extensions;
+
+#if NKS_EXTENSIONS
+using Nitrocid.Base.Kernel.Extensions;
+#endif
 
 namespace Nitrocid.Base.Files
 {

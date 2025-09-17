@@ -23,13 +23,16 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Misc.Reflection.Internal;
-using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Network.Transfer;
 
 #if SPECIFIERREL
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Configuration;
 using System.IO;
+#endif
+
+#if NKS_EXTENSIONS
+using Nitrocid.Base.Kernel.Extensions;
 #endif
 
 namespace Nitrocid.Base.Kernel.Updates

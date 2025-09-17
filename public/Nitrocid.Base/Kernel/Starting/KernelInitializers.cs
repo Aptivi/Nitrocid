@@ -55,7 +55,6 @@ using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Users.Login.Motd;
 using Nitrocid.Base.Users.Login;
-using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Privacy;
 using Nitrocid.Base.Files.Paths;
@@ -68,6 +67,10 @@ using Nitrocid.Base.Kernel.Threading.Watchdog;
 using Nitrocid.Base.Kernel.Time.Timezones;
 using Nitrocid.Base.Network.Types.RPC;
 using Nitrocid.Base.Shell.Shells;
+
+#if NKS_EXTENSIONS
+using Nitrocid.Base.Kernel.Extensions;
+#endif
 
 namespace Nitrocid.Base.Kernel.Starting
 {
