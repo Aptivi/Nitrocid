@@ -32,6 +32,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel;
 
 namespace Nitrocid.Base.Misc.Splash
 {
@@ -194,7 +195,7 @@ namespace Nitrocid.Base.Misc.Splash
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void OpenSplash(ISplash splash, SplashContext context)
         {
-            if (Config.MainConfig.EnableSplash)
+            if (Config.MainConfig.EnableSplash && !KernelPlatform.IsOnTestHost())
             {
                 // Clean everything up
                 var openingPart = new ScreenPart();

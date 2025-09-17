@@ -41,6 +41,15 @@ namespace Nitrocid.Base.Kernel
         }
 
         /// <summary>
+        /// Checks to see if the kernel is being run on the test host (checks against Nitrocid.Tests as entry)
+        /// </summary>
+        public static bool IsOnTestHost()
+        {
+            string entryAssemblyName = Assembly.GetEntryAssembly()?.FullName ?? "";
+            return IsOnUsualEnvironment() && entryAssemblyName.Contains("Nitrocid.Tests");
+        }
+
+        /// <summary>
         /// Is this system a Windows system?
         /// </summary>
         /// <returns>True if running on Windows (Windows 10, Windows 11, etc.). Otherwise, false.</returns>
