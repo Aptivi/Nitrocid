@@ -163,9 +163,10 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// <summary>
         /// Checks all the config variables to see if they can be parsed
         /// </summary>
-        public static List<bool> CheckConfigVariables()
+        public static Dictionary<string, bool> CheckConfigVariables()
         {
-            var Results = new List<bool>();
+            var Results = new Dictionary<string, bool>();
+            var duplicates = new List<string>();
             var entries = new Dictionary<SettingsEntry[], BaseKernelConfig>();
             foreach (var config in Config.GetKernelConfigs())
                 entries.Add(config.SettingsEntries ?? [], config);
@@ -173,15 +174,25 @@ namespace Nitrocid.Base.Kernel.Configuration
             {
                 var variables = CheckConfigVariables(entry.Key, entry.Value);
                 foreach (var variable in variables)
-                    Results.Add(variable);
+                {
+                    if (!Results.TryAdd(variable.Key, variable.Value))
+                        duplicates.Add(variable.Key + " @ " + entry.Value.GetType().Name + "-" + entry.Value.Name);
+                }
+                foreach (var variable in variables)
+                    Results.Add(variable.Key, variable.Value);
             }
+
+            // Check for duplicates
+            // TODO: NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS -> "There have been duplicate keys in your settings instance. Please double check the variable to ensure that it doesn't exist more than once."
+            if (duplicates.Count > 0)
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS") + $"\n\n  - {string.Join("\n  - ", duplicates)}");
             return Results;
         }
 
         /// <summary>
         /// Checks all the config variables to see if they can be parsed
         /// </summary>
-        public static List<bool> CheckConfigVariables(string configTypeName)
+        public static Dictionary<string, bool> CheckConfigVariables(string configTypeName)
         {
             if (string.IsNullOrEmpty(configTypeName))
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOTYPE"));
@@ -193,7 +204,7 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// <summary>
         /// Checks all the config variables to see if they can be parsed
         /// </summary>
-        public static List<bool> CheckConfigVariables(BaseKernelConfig? entries)
+        public static Dictionary<string, bool> CheckConfigVariables(BaseKernelConfig? entries)
         {
             if (entries is null)
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOBASEKERNELCONFIG"));
@@ -203,13 +214,14 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// <summary>
         /// Checks all the config variables to see if they can be parsed
         /// </summary>
-        public static List<bool> CheckConfigVariables(SettingsEntry[]? entries, BaseKernelConfig? config)
+        public static Dictionary<string, bool> CheckConfigVariables(SettingsEntry[]? entries, BaseKernelConfig? config)
         {
             if (config is null)
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOBASEKERNELCONFIG"));
             if (entries is null || entries.Length == 0)
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOENTRIES"));
-            var Results = new List<bool>();
+            var Results = new Dictionary<string, bool>();
+            var duplicates = new List<string>();
 
             // Parse all the settings
             for (int entryIdx = 0; entryIdx < entries.Length; entryIdx++)
@@ -217,8 +229,18 @@ namespace Nitrocid.Base.Kernel.Configuration
                 SettingsEntry? entry = entries[entryIdx];
                 var keys = entry.Keys;
                 DebugWriter.WriteDebug(DebugLevel.I, "[Entry: {0}/{1}] Checking {2} settings keys on {3}...", vars: [entryIdx + 1, entries.Length, keys.Length, entry.Name]);
-                Results.AddRange(CheckConfigVariables(keys, config));
+                var entryVars = CheckConfigVariables(keys, config);
+                foreach (var entryVar in entryVars)
+                {
+                    if (!Results.TryAdd(entryVar.Key, entryVar.Value))
+                        duplicates.Add(entryVar.Key + " @ " + entry.GetType().Name + "-" + entry.Name);
+                }
             }
+
+            // Check for duplicates
+            // TODO: NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS -> "There have been duplicate keys in your settings instance. Please double check the variable to ensure that it doesn't exist more than once."
+            if (duplicates.Count > 0)
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS") + $"\n\n  - {string.Join("\n  - ", duplicates)}");
 
             // Return the results
             DebugWriter.WriteDebug(DebugLevel.I, "{0} results...", vars: [Results.Count]);
@@ -228,13 +250,14 @@ namespace Nitrocid.Base.Kernel.Configuration
         /// <summary>
         /// Checks all the config variables to see if they can be parsed
         /// </summary>
-        public static List<bool> CheckConfigVariables(SettingsKey[]? keys, BaseKernelConfig? config)
+        public static Dictionary<string, bool> CheckConfigVariables(SettingsKey[]? keys, BaseKernelConfig? config)
         {
             if (config is null)
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOBASEKERNELCONFIG"));
             if (keys is null || keys.Length == 0)
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_NOKEYS"));
-            var Results = new List<bool>();
+            var Results = new Dictionary<string, bool>();
+            var duplicates = new List<string>();
 
             // Parse all the settings
             for (int keyIdx = 0; keyIdx < keys.Length; keyIdx++)
@@ -251,7 +274,9 @@ namespace Nitrocid.Base.Kernel.Configuration
                 if (key.Type == SettingsKeyType.SMultivar)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Key is a multivar. Parsing {2} variables...", vars: [keyIdx + 1, keys.Length, key.Variables.Length]);
-                    Results.AddRange(CheckConfigVariables(key.Variables, config));
+                    var entryVars = CheckConfigVariables(key.Variables, config);
+                    foreach (var entryVar in entryVars)
+                        Results.Add(entryVar.Key, entryVar.Value);
                     continue;
                 }
 
@@ -260,7 +285,9 @@ namespace Nitrocid.Base.Kernel.Configuration
                 bool KeyFound = PropertyManager.CheckProperty(KeyVariable, config.GetType());
                 DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Result for {2}: {3}.", vars: [keyIdx + 1, keys.Length, KeyVariable, KeyFound]);
                 DebugWriter.WriteDebugConditional(!KeyFound, DebugLevel.E, "[Key: {0}/{1}] {2} is not found!", vars: [keyIdx + 1, keys.Length, KeyVariable, KeyFound]);
-                Results.Add(KeyFound);
+                string fullKeyVarName = $"{config.GetType().Name}-{config.Name}-{KeyVariable}";
+                if (!Results.TryAdd(fullKeyVarName, KeyFound))
+                    duplicates.Add(fullKeyVarName + " @ " + KeyName);
 
                 // Check the enumeration
                 if (!string.IsNullOrEmpty(KeyEnumeration))
@@ -284,9 +311,16 @@ namespace Nitrocid.Base.Kernel.Configuration
                     bool Result = Type.GetType(fullType) is not null;
                     DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Result: {2}.", vars: [keyIdx + 1, keys.Length, Result]);
                     DebugWriter.WriteDebugConditional(!Result, DebugLevel.E, "[Key: {0}/{1}] Enum {2} is not found!", vars: [keyIdx + 1, keys.Length, KeyVariable, KeyFound]);
-                    Results.Add(Result);
+                    string fullEnumKeyVarName = $"{config.GetType().Name}-{config.Name}-{KeyVariable}-{fullType}";
+                    if (!Results.TryAdd(fullEnumKeyVarName, KeyFound))
+                        duplicates.Add(fullEnumKeyVarName + " @ " + KeyName);
                 }
             }
+
+            // Check for duplicates
+            // TODO: NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS -> "There have been duplicate keys in your settings instance. Please double check the variable to ensure that it doesn't exist more than once."
+            if (duplicates.Count > 0)
+                throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS") + $"\n\n  - {string.Join("\n  - ", duplicates)}");
 
             // Return the results
             DebugWriter.WriteDebug(DebugLevel.I, "{0} results...", vars: [Results.Count]);
@@ -313,7 +347,7 @@ namespace Nitrocid.Base.Kernel.Configuration
 
             // Now, verify that we have a valid kernel config.
             var vars = CheckConfigVariables(kernelConfig);
-            if (vars.Any((varFound) => !varFound))
+            if (vars.Any((varFound) => !varFound.Value))
             {
                 Config.customConfigurations.Remove(name);
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_VALIDATIONFAILED_CUSTOM"));
@@ -518,7 +552,7 @@ namespace Nitrocid.Base.Kernel.Configuration
 
             // Now, verify that we have a valid kernel config.
             var vars = CheckConfigVariables(kernelConfig);
-            if (vars.Any((varFound) => !varFound))
+            if (vars.Any((varFound) => !varFound.Value))
             {
                 Config.baseConfigurations.Remove(name);
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_VALIDATIONFAILED_BASE"));

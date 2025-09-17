@@ -9191,6 +9191,10 @@
     {
       "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3",
       "text": "To go to the shell, press the S key if you're in the homepage. Afterwards, you can write 'help' and press ENTER to get started!"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
+      "text": "There have been duplicate keys in your settings instance. Please double check the variable to ensure that it doesn't exist more than once."
     }
   ]
 }
