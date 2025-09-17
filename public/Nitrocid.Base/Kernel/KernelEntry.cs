@@ -205,6 +205,10 @@ namespace Nitrocid.Base.Kernel
                     // Show a tip telling users to see license information
                     TextWriterColor.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_LICENSEINFO"), ThemeColorType.Tip);
 
+                    // Show a tip telling users to write 'help' to get started
+                    // TODO: NKS_KERNEL_SHELLTIP -> To get started, write 'help' and press ENTER.
+                    TextWriterColor.Write("* " + LanguageTools.GetLocalized("NKS_KERNEL_SHELLTIP"), ThemeColorType.Tip);
+
                     // Show another tip for release window
                     KernelReleaseInfo.NotifyReleaseSupportWindow();
 
