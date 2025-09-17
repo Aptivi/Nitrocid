@@ -1246,6 +1246,8 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// Audio cue volume for the reader
         /// </summary>
+        // TODO: NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME -> "Audio cue volume for the reader"
+        // TODO: NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC -> "Specify how loud do you want the reader audio cues to be"
         public double AudioCueVolumeReader
         {
             get => TermReader.GlobalReaderSettings.CueVolume;
@@ -1411,6 +1413,8 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// A character that masks the password. Leave blank for more security
         /// </summary>
+        // TODO: NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME -> "Password mask character (reader)"
+        // TODO: NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC -> "A character that masks the input password. Leave blank for more security."
         public string CurrentMaskReader
         {
             get => TermReader.GlobalReaderSettings.PasswordMaskChar.ToString();
