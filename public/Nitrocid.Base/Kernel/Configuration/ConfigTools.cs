@@ -178,8 +178,6 @@ namespace Nitrocid.Base.Kernel.Configuration
                     if (!Results.TryAdd(variable.Key, variable.Value))
                         duplicates.Add(variable.Key + " @ " + entry.Value.GetType().Name + "-" + entry.Value.Name);
                 }
-                foreach (var variable in variables)
-                    Results.Add(variable.Key, variable.Value);
             }
 
             // Check for duplicates
