@@ -34,7 +34,7 @@
             {
                 "Name": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINAGE_NAME",
                 "Type": "SIntSlider",
-                "Variable": "PersonLookupMinimumNames",
+                "Variable": "PersonLookupMinimumAgeYears",
                 "Description": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MINAGE_DESC",
                 "MinimumValue": 18,
                 "MaximumValue": 100
@@ -42,7 +42,7 @@
             {
                 "Name": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXAGE_NAME",
                 "Type": "SIntSlider",
-                "Variable": "PersonLookupMaximumNames",
+                "Variable": "PersonLookupMaximumAgeYears",
                 "Description": "NKS_NAMEGEN_PERSONLOOKUP_SETTINGS_MAXAGE_DESC",
                 "MinimumValue": 18,
                 "MaximumValue": 100
