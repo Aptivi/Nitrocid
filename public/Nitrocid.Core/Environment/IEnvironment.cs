@@ -19,7 +19,7 @@
 
 using System;
 
-namespace Nitrocid.Base.Kernel.Starting.Environment
+namespace Nitrocid.Core.Environment
 {
     /// <summary>
     /// Environment interface

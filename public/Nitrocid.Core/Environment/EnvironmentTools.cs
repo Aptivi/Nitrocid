@@ -17,11 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Starting.Environment.Instances;
+using Nitrocid.Core.Environment.Instances;
+using Nitrocid.Core.Languages;
+using System;
+using System.Linq;
+using System.Reflection;
 
-namespace Nitrocid.Base.Kernel.Starting.Environment
+namespace Nitrocid.Core.Environment
 {
     /// <summary>
     /// Environment tools
@@ -41,7 +43,7 @@ namespace Nitrocid.Base.Kernel.Starting.Environment
         public static void SetEnvironment(BaseEnvironment? baseEnvironment)
         {
             if (baseEnvironment is null)
-                throw new KernelException(KernelExceptionType.Environment, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_NOENV"));
+                throw new ArgumentException(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_NOENV"));
             if (baseEnvironment != mainEnvironment)
                 anotherEnvPending = true;
             environment = baseEnvironment;
@@ -55,7 +57,7 @@ namespace Nitrocid.Base.Kernel.Starting.Environment
         public static void SetEnvironmentArgs(BaseEnvironment baseEnvironment, params string[] args)
         {
             if (baseEnvironment is null)
-                throw new KernelException(KernelExceptionType.Environment, LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_NOENV"));
+                throw new ArgumentException(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_NOENV"));
             baseEnvironment.Arguments = args;
         }
 

@@ -29,9 +29,9 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Starting.Bootloader.Style;
-using Nitrocid.Base.Kernel.Starting.Environment;
 using Nitrocid.Base.Kernel.Starting.Bootloader.KeyHandler;
 using Nitrocid.Base.Kernel.Starting.Bootloader.Apps;
+using Nitrocid.Core.Environment;
 
 namespace Nitrocid.Base.Kernel.Starting.Bootloader
 {

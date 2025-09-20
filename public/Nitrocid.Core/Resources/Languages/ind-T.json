@@ -1,0 +1,18 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
+      "text": "नाइट्रोसिड के.एस"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
+      "text": "पर्यावरण निर्दिष्ट नहीं है"
+    }
+  ]
+}

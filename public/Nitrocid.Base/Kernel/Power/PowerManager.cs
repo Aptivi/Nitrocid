@@ -30,11 +30,11 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Users.Login;
-using Nitrocid.Base.Kernel.Starting.Environment;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Journaling;
 using Nitrocid.Base.Network.Types.RPC;
+using Nitrocid.Core.Environment;
 
 namespace Nitrocid.Base.Kernel.Power
 {

@@ -1,0 +1,21 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
+      "text": "Nitrocid KS"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
+      "text": "Persekitaran tidak dinyatakan"
+    }
+  ]
+}

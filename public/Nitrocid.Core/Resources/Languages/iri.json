@@ -1,0 +1,19 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
+      "text": "KS nítrigine"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
+      "text": "Ní shonraítear an comhshaol"
+    }
+  ]
+}

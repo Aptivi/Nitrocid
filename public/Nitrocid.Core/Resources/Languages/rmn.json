@@ -1,0 +1,19 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
+      "text": "Nitrocid KS"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
+      "text": "Mediul nu este specificat"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
+      "text": "Nitrocid KS"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
+      "text": "Môi trường không được chỉ định"
+    }
+  ]
+}

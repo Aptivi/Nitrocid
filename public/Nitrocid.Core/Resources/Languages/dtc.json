@@ -1,0 +1,24 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
+      "text": "Nitrocid KS"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
+      "text": "Omgeving is niet gespecificeerd"
+    }
+  ]
+}

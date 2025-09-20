@@ -1,0 +1,22 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
+      "text": "Nitrocid KS"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
+      "text": "Miljø er ikke spesifisert"
+    }
+  ]
+}

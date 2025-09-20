@@ -1,0 +1,19 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
+      "text": "Nitrosit KS"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
+      "text": "Çevre belirtilmemiş"
+    }
+  ]
+}

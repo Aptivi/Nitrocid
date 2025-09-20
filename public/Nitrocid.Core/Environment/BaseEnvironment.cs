@@ -17,10 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 using System;
+using System.Linq;
+using System.Reflection;
 
-namespace Nitrocid.Base.Kernel.Starting.Environment
+namespace Nitrocid.Core.Environment
 {
     /// <summary>
     /// Base environment
@@ -37,7 +39,17 @@ namespace Nitrocid.Base.Kernel.Starting.Environment
             LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME");
 
         /// <inheritdoc/>
-        public virtual Action EnvironmentEntry =>
-            new(() => KernelEntry.EntryPoint(Arguments));
+        public virtual Action EnvironmentEntry
+        {
+            get
+            {
+                string typeName = typeof(EnvironmentTools).Assembly?.FullName?.Replace(".Core", ".Base") ?? "";
+
+                // TODO: NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT -> "Missing entry point"
+                var entryPointMethod = Type.GetType($"Nitrocid.Base.Kernel.KernelEntry, {typeName}")?.GetMethod("EntryPoint", BindingFlags.NonPublic | BindingFlags.Static) ??
+                    throw new Exception(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT"));
+                return new(() => entryPointMethod.Invoke(null, [Arguments]));
+            }
+        }
     }
 }

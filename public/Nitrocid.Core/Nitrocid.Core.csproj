@@ -29,8 +29,29 @@
     <OutputPath>../Nitrocid/KSBuild/</OutputPath>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
   </PropertyGroup>
   <!-- KS General Information End -->
+
+  <!-- KS Dependencies Information -->
+  <ItemGroup>
+    <PackageReference Include="LocaleStation" Version="1.3.2" PrivateAssets="all" />
+    <PackageReference Include="LocaleStation.Tools" Version="1.3.2" />
+  </ItemGroup>
+  <!-- KS Dependencies Information End -->
+
+  <!-- KS Localizations -->
+  <ItemGroup>
+    <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
+  </ItemGroup>
+  <!-- KS Localizations End -->
+
+  <!-- KS Generators -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <!-- KS Generators End -->
 
   <!-- KS Package Files -->
   <ItemGroup>
@@ -38,4 +59,10 @@
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   <!-- KS Package Files End -->
+
+  <!-- KS Generated -->
+  <ItemGroup>
+    <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
+  </ItemGroup>
+  <!-- KS Generated End -->
 </Project>

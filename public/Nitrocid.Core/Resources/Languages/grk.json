@@ -1,0 +1,19 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
+      "text": "Nitrocid KS"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
+      "text": "Το περιβάλλον δεν προσδιορίζεται"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "lang": "chi-T",
+  "name": "Chinese (Simplified)",
+  "cultures": [
+    "zh",
+    "zh-CN",
+    "zh-HK",
+    "zh-MO",
+    "zh-SG",
+    "zh-Hans",
+    "zh-Hans-CN",
+    "zh-Hans-HK",
+    "zh-Hans-MO",
+    "zh-Hans-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
+      "text": "硝基杀虫剂KS"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
+      "text": "未指定环境"
+    }
+  ]
+}
