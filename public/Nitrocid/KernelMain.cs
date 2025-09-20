@@ -34,12 +34,12 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Arguments;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Starting.Environment;
 using Nitrocid.Base.Users.Windows;
 using Nitrocid.Base.Kernel.Power;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Localized;
+using Nitrocid.Core.Environment;
 
 namespace Nitrocid
 {

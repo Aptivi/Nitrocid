@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Nitrocid.Base.Kernel.Starting.Environment.Instances
+namespace Nitrocid.Core.Environment.Instances
 {
     internal class NitrocidKS :
         BaseEnvironment, IEnvironment

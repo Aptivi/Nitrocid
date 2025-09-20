@@ -28,13 +28,13 @@ using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Kernel.Starting.Bootloader;
-using Nitrocid.Base.Kernel.Starting.Environment;
 using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Kernel.Updates;
 using Nitrocid.Base.Kernel.Hardware;
 using Nitrocid.Base.Kernel.Threading.Watchdog;
 using Nitrocid.Base.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Base.Network.Types.RPC;
+using Nitrocid.Core.Environment;
 
 #if SPECIFIERREL
 using Nitrocid.Base.Files.Paths;

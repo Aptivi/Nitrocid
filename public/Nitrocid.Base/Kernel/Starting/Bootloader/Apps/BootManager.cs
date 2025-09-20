@@ -23,7 +23,7 @@ using System.Collections.ObjectModel;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Starting.Environment;
+using Nitrocid.Core.Environment;
 
 namespace Nitrocid.Base.Kernel.Starting.Bootloader.Apps
 {
