@@ -53,6 +53,8 @@ using Nitrocid.Base.Users.Login.Widgets.Implementations;
 using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Power;
+
 
 #if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;
@@ -87,6 +89,7 @@ namespace Nitrocid.Base.Shell.Homepage
             // Keyboard
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_EXECUTE"), ConsoleKey.Enter),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_LOGOUT"), ConsoleKey.Escape),
+            new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN"), ConsoleKey.Escape, ConsoleModifiers.Shift),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL"), ConsoleKey.S),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SWITCH"), ConsoleKey.Tab),
@@ -555,8 +558,24 @@ namespace Nitrocid.Base.Shell.Homepage
                                     DoAction(choiceIdx);
                                 break;
                             case ConsoleKey.Escape:
-                                exiting = true;
-                                Login.LogoutRequested = true;
+                                if (keypress.Modifiers == ConsoleModifiers.Shift)
+                                {
+                                    int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
+                                        new InputChoiceInfo("shutdown", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SHUTDOWN")),
+                                        new InputChoiceInfo("reboot", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RESTART")),
+                                        new InputChoiceInfo("login", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_LOGIN")),
+                                    ], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_POWERACTION"));
+                                    if (answer == 0)
+                                        PowerManager.PowerManage(PowerMode.Shutdown);
+                                    else if (answer == 1)
+                                        PowerManager.PowerManage(PowerMode.Reboot);
+                                    exiting = answer != 2;
+                                }
+                                else
+                                {
+                                    exiting = true;
+                                    Login.LogoutRequested = true;
+                                }
                                 break;
                             case ConsoleKey.S:
                                 exiting = true;
