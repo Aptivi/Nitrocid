@@ -9195,6 +9195,10 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
       "text": "There have been duplicate keys in your settings instance. Please double check the variable to ensure that it doesn't exist more than once."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
+      "text": "Close"
     }
   ]
 }
