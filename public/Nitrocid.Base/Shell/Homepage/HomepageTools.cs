@@ -570,7 +570,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                         PowerManager.PowerManage(PowerMode.Shutdown);
                                     else if (answer == 1)
                                         PowerManager.PowerManage(PowerMode.Reboot);
-                                    exiting = answer != 2;
+                                    exiting = answer != 2 && answer != -1;
                                 }
                                 else
                                 {
