@@ -563,7 +563,8 @@ namespace Nitrocid.Base.Shell.Homepage
                                     int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
                                         new InputChoiceInfo("shutdown", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SHUTDOWN")),
                                         new InputChoiceInfo("reboot", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RESTART")),
-                                        new InputChoiceInfo("login", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_LOGIN")),
+                                        // TODO: NKS_USERS_LOGIN_MODERNLOGON_CLOSE -> "Close"
+                                        new InputChoiceInfo("exit", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_CLOSE")),
                                     ], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_POWERACTION"));
                                     if (answer == 0)
                                         PowerManager.PowerManage(PowerMode.Shutdown);
