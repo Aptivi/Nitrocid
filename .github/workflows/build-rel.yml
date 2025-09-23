@@ -39,9 +39,9 @@ jobs:
         if: success() || failure()
         with:
           name: unit-test-log-${{ matrix.runs-on }}
-          path: "private/Nitrocid.Tests/KSTest/net8.0/UnitTestDebug.log"
+          path: "private/Nitrocid.Tests/KSTest/net10.0/UnitTestDebug.log"
       - uses: actions/upload-artifact@v4
         if: success() || failure()
         with:
           name: unit-test-log-ms-${{ matrix.runs-on }}
-          path: "private/Nitrocid.Tests/KSTest/net8.0/TestResults"
+          path: "private/Nitrocid.Tests/KSTest/net10.0/TestResults"
