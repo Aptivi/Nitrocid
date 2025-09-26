@@ -32,39 +32,42 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     
-    <EmbeddedResource Include="..\..\public\Nitrocid\Resources\Languages\eng.json" Visible="false">
-      <LogicalName>Nitrocid.Langs.Entry eng.json</LogicalName>
+    <EmbeddedResource Include="..\..\public\Nitrocid\Resources\Languages\*.json" Visible="false">
+      <LogicalName>Nitrocid.Langs Nitrocid %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\public\Nitrocid.Base\Resources\Languages\eng.json" Visible="false">
-      <LogicalName>Nitrocid.Langs eng.json</LogicalName>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Base\Resources\Languages\*.json" Visible="false">
+      <LogicalName>Nitrocid.Langs Nitrocid.Base %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\public\Nitrocid.Addons\**\Resources\Languages\eng.json" Visible="false">
-      <LogicalName>Nitrocid.Langs.Addons %(EmbeddedResource.FullPath)</LogicalName>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Core\Resources\Languages\*.json" Visible="false">
+      <LogicalName>Nitrocid.Langs Nitrocid.Core %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\**\Resources\Languages\eng.json" Visible="false">
-      <LogicalName>Nitrocid.Langs.Addons.Essentials %(EmbeddedResource.FullPath)</LogicalName>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Addons\**\Resources\Languages\*.json" Visible="false">
+      <LogicalName>Nitrocid.Langs %(EmbeddedResource.RelativeDir) %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\**\Resources\Languages\*.json" Visible="false">
+      <LogicalName>Nitrocid.Langs %(EmbeddedResource.RelativeDir) %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
     </EmbeddedResource>
     
     <EmbeddedResource Include="..\..\public\Nitrocid.Base\Resources\Settings\*.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Base\Resources\Themes\*.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\**\Resources\*Settings.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\Nitrocid.ThemePacks\Resources\Themes\*.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\**\Resources\*Settings.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\Nitrocid.ThemePacks\Resources\Themes\*.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Resources\KnownAddons.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 

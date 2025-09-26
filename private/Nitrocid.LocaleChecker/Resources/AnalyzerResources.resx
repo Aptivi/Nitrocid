@@ -125,7 +125,7 @@
     <value>You'll need to localize this string at the end of the development cycle</value>
   </data>
   <data name="UnlocalizedStringAnalyzerMessageFormat" xml:space="preserve">
-    <value>This string, "{0}", is in the DoTranslation() method, but is unlocalized</value>
+    <value>This string, "{0}", is in the DoTranslation() method, but is unlocalized for languages "{1}"</value>
   </data>
   <data name="UnlocalizedStringAnalyzerDescription" xml:space="preserve">
     <value>While Nitrocid KS accepts unlocalized strings and returns them as is, it's recommended to localize this string so that translations would be complete before the end of the development cycle.</value>
@@ -135,13 +135,13 @@
       Unlocalized string (Localizable comment)
   -->
   <data name="UnlocalizedCommentStringAnalyzerMessageFormat" xml:space="preserve">
-    <value>This string, "{0}", is marked as localizable, but is unlocalized</value>
+    <value>This string, "{0}", is marked as localizable, but is unlocalized for languages "{1}"</value>
   </data>
 
   <!--
       Unlocalized string (JSON resource)
   -->
   <data name="UnlocalizedJsonStringAnalyzerMessageFormat" xml:space="preserve">
-    <value>This string, "{0}", is in a localizable part of the JSON resource, but is unlocalized</value>
+    <value>This string, "{0}", is in a localizable part of the JSON resource, but is unlocalized for languages "{1}"</value>
   </data>
 </root>
