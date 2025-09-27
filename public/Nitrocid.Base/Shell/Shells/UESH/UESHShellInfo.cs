@@ -908,6 +908,13 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         {
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC"
                         }),
+                    ],
+                    [
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC -> "Opens the file manager in a single pane"
+                        new SwitchInfo("single", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
                     ])
                 ], new IfmCommand()),
 

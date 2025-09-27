@@ -20,6 +20,7 @@
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -36,7 +37,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             string firstPanePath = parameters.ArgumentsList.Length > 0 ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]) : PathsManagement.HomePath;
             string secondPanePath = parameters.ArgumentsList.Length > 1 ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : PathsManagement.HomePath;
-            FilesystemTools.OpenFileManagerTui(firstPanePath, secondPanePath);
+            bool single = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-single");
+            FilesystemTools.OpenFileManagerTui(firstPanePath, secondPanePath, single);
             return 0;
         }
     }
