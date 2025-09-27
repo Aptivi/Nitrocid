@@ -9054,6 +9054,10 @@
       "text": "Quale driver di codifica asimmetrica desideri utilizzare?"
     },
     {
+      "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_DESC",
+      "text": "Quale driver di codifica asimmetrica vorresti utilizzare?"
+    },
+    {
       "loc": "NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI",
       "text": "Si è verificato un errore di Chatbot AI. Assicurati di disporre di una connessione Internet, che la tua chiave API sia valida e di non superare la quota API."
     },
