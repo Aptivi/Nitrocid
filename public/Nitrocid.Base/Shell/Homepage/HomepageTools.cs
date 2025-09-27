@@ -78,7 +78,9 @@ namespace Nitrocid.Base.Shell.Homepage
         private static readonly Dictionary<string, Action> choiceActionsCustom = [];
         private static readonly Dictionary<string, Action> choiceActionsBuiltin = new()
         {
-            { /* Localizable */ "NKS_SHELL_HOMEPAGE_FILEMANAGER", FilesystemTools.OpenFileManagerTui },
+            { /* Localizable */ "NKS_SHELL_HOMEPAGE_FILEMANAGER", () => FilesystemTools.OpenFileManagerTui() },
+            // TODO: NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE -> "File Manager (single pane)"
+            { /* Localizable */ "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE", () => FilesystemTools.OpenFileManagerTui(true) },
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_ALARMMANAGER", AlarmCli.OpenAlarmCli },
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_NOTIFICATIONS", NotificationsCli.OpenNotificationsCli },
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_TASKMANAGER", TaskManagerCli.OpenTaskManagerCli },

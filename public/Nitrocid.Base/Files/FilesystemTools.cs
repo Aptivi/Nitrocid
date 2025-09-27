@@ -215,30 +215,55 @@ namespace Nitrocid.Base.Files
             SpinWait.SpinUntil(() => !IsLocked(Path));
         }
 
-        internal static void OpenFileManagerTui() =>
-            OpenFileManagerTui(PathsManagement.HomePath, PathsManagement.HomePath);
+        internal static void OpenFileManagerTui(bool single = false) =>
+            OpenFileManagerTui(PathsManagement.HomePath, PathsManagement.HomePath, single);
 
-        internal static void OpenFileManagerTui(string firstPanePath, string secondPanePath)
+        internal static void OpenFileManagerTui(string firstPanePath, string secondPanePath, bool single = false)
         {
-            var tui = new FileManagerCli
+            BaseInteractiveTui<FileSystemEntry> tui;
+            if (single)
             {
-                firstPanePath = FolderExists(firstPanePath) ? firstPanePath : PathsManagement.HomePath,
-                secondPanePath = FolderExists(secondPanePath) ? secondPanePath : PathsManagement.HomePath,
-            };
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_COPY"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_MOVE"), ConsoleKey.F2, (entry1, _, entry2, _) => tui.MoveFileOrDir(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_DELETE"), ConsoleKey.F3, (entry1, _, entry2, _) => tui.RemoveFileOrDir(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UP"), ConsoleKey.F4, (_, _, _, _) => tui.GoUp(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_INFO"), ConsoleKey.F5, (entry1, _, entry2, _) => tui.PrintFileSystemEntry(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_GOTO"), ConsoleKey.F6, (_, _, _, _) => tui.GoTo(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_COPYTO"), ConsoleKey.F1, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.CopyTo(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_MOVETO"), ConsoleKey.F2, ConsoleModifiers.Shift, (entry1, _, entry2, _) => tui.MoveTo(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_RENAME"), ConsoleKey.F9, (entry1, _, entry2, _) => tui.Rename(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_NEWFOLDER"), ConsoleKey.F10, (_, _, _, _) => tui.MakeDir(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_HASHTO"), ConsoleKey.F11, (entry1, _, entry2, _) => tui.Hash(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_VERIFYTO"), ConsoleKey.F12, (entry1, _, entry2, _) => tui.Verify(entry1, entry2)));
-            tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEW"), ConsoleKey.P, (entry1, _, entry2, _) => tui.Preview(entry1, entry2)));
+                // Single-pane, like Windows Explorer
+                tui = new FileManagerSingleCli
+                {
+                    firstPanePath = FolderExists(firstPanePath) ? firstPanePath : PathsManagement.HomePath,
+                };
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, _, _) => ((FileManagerSingleCli)tui).Open(entry1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_COPY"), ConsoleKey.F1, (entry1, _, _, _) => ((FileManagerSingleCli)tui).CopyTo(entry1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_MOVE"), ConsoleKey.F2, (entry1, _, _, _) => ((FileManagerSingleCli)tui).MoveTo(entry1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_DELETE"), ConsoleKey.F3, (entry1, _, _, _) => ((FileManagerSingleCli)tui).RemoveFileOrDir(entry1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UP"), ConsoleKey.F4, (_, _, _, _) => ((FileManagerSingleCli)tui).GoUp(), true));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_INFO"), ConsoleKey.F5, (entry1, _, _, _) => ((FileManagerSingleCli)tui).PrintFileSystemEntry(entry1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_GOTO"), ConsoleKey.F6, (_, _, _, _) => ((FileManagerSingleCli)tui).GoTo(), true));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_RENAME"), ConsoleKey.F9, (entry1, _, _, _) => ((FileManagerSingleCli)tui).Rename(entry1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_NEWFOLDER"), ConsoleKey.F10, (_, _, _, _) => ((FileManagerSingleCli)tui).MakeDir(), true));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_HASHTO"), ConsoleKey.F11, (entry1, _, _, _) => ((FileManagerSingleCli)tui).Hash(entry1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_VERIFYTO"), ConsoleKey.F12, (entry1, _, _, _) => ((FileManagerSingleCli)tui).Verify(entry1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEW"), ConsoleKey.P, (entry1, _, _, _) => ((FileManagerSingleCli)tui).Preview(entry1)));
+            }
+            else
+            {
+                // Double-pane, like Total Commander
+                tui = new FileManagerCli
+                {
+                    firstPanePath = FolderExists(firstPanePath) ? firstPanePath : PathsManagement.HomePath,
+                    secondPanePath = FolderExists(secondPanePath) ? secondPanePath : PathsManagement.HomePath,
+                };
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_OPEN"), ConsoleKey.Enter, (entry1, _, entry2, _) => ((FileManagerCli)tui).Open(entry1, entry2)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_COPY"), ConsoleKey.F1, (entry1, _, entry2, _) => ((FileManagerCli)tui).CopyFileOrDir(entry1, entry2)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_MOVE"), ConsoleKey.F2, (entry1, _, entry2, _) => ((FileManagerCli)tui).MoveFileOrDir(entry1, entry2)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_DELETE"), ConsoleKey.F3, (entry1, _, entry2, _) => ((FileManagerCli)tui).RemoveFileOrDir(entry1, entry2)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_UP"), ConsoleKey.F4, (_, _, _, _) => ((FileManagerCli)tui).GoUp(), true));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_INFO"), ConsoleKey.F5, (entry1, _, entry2, _) => ((FileManagerCli)tui).PrintFileSystemEntry(entry1, entry2)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_GOTO"), ConsoleKey.F6, (_, _, _, _) => ((FileManagerCli)tui).GoTo(), true));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_COPYTO"), ConsoleKey.F1, ConsoleModifiers.Shift, (entry1, _, entry2, _) => ((FileManagerCli)tui).CopyTo(entry1, entry2)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_MOVETO"), ConsoleKey.F2, ConsoleModifiers.Shift, (entry1, _, entry2, _) => ((FileManagerCli)tui).MoveTo(entry1, entry2)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_RENAME"), ConsoleKey.F9, (entry1, _, entry2, _) => ((FileManagerCli)tui).Rename(entry1, entry2)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_NEWFOLDER"), ConsoleKey.F10, (_, _, _, _) => ((FileManagerCli)tui).MakeDir(), true));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_HASHTO"), ConsoleKey.F11, (entry1, _, entry2, _) => ((FileManagerCli)tui).Hash(entry1, entry2)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_VERIFYTO"), ConsoleKey.F12, (entry1, _, entry2, _) => ((FileManagerCli)tui).Verify(entry1, entry2)));
+                tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_KEYBINDING_PREVIEW"), ConsoleKey.P, (entry1, _, entry2, _) => ((FileManagerCli)tui).Preview(entry1, entry2)));
+            }
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }
