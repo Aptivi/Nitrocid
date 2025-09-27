@@ -43,7 +43,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
             TextWriterRaw.Write();
 
             // Individual properties
-            if (!parameters.SwitchesList.Contains("-simplified"))
+            if (!parameters.ContainsSwitch("-simplified"))
             {
                 foreach (var token in JsonShellCommon.FileToken)
                 {
@@ -52,7 +52,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
                     ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES"), $"{token.HasValues}");
                     ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS"), $"{token.Count()}");
                     ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH"), token.Path);
-                    if (parameters.SwitchesList.Contains("-showvals"))
+                    if (parameters.ContainsSwitch("-showvals"))
                         ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE"), $"{token}");
                     TextWriterRaw.Write();
 
@@ -65,7 +65,7 @@ namespace Nitrocid.ShellPacks.Shells.Json.Commands
                         ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT"), $"{prop.Count}");
                         ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME"), prop.Name);
                         ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH"), prop.Path);
-                        if (parameters.SwitchesList.Contains("-showvals"))
+                        if (parameters.ContainsSwitch("-showvals"))
                             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE"), $"{prop.Value}");
                         TextWriterRaw.Write();
                     }

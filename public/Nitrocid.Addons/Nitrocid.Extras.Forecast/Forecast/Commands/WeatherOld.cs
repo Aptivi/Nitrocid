@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var ListMode = false;
-            if (parameters.SwitchesList.Contains("-list"))
+            if (parameters.ContainsSwitch("-list"))
                 ListMode = true;
             if (ListMode)
             {

@@ -46,7 +46,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             string folder = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
             string @out = "";
-            bool UseRelative = parameters.SwitchesList.Contains("-relative");
+            bool UseRelative = parameters.ContainsSwitch("-relative");
             var FileBuilder = new StringBuilder();
             if (parameters.ArgumentsList.Length >= 3)
             {

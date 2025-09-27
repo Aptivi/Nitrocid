@@ -59,8 +59,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool ShowAll = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
-            bool useTui = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-selection");
+            bool ShowAll = parameters.ContainsSwitch("-all");
+            bool useTui = parameters.ContainsSwitch("-selection");
             if (useTui)
             {
                 var tui = new TimeZoneShowCli();

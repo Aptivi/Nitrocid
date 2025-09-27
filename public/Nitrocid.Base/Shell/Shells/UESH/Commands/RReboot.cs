@@ -38,9 +38,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool debug = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-debug");
-            bool safe = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-safe");
-            bool maintenance = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-maintenance");
+            bool debug = parameters.ContainsSwitch("-debug");
+            bool safe = parameters.ContainsSwitch("-safe");
+            bool maintenance = parameters.ContainsSwitch("-maintenance");
             PowerMode mode =
                 debug ? PowerMode.RemoteRestartDebug :
                 safe ? PowerMode.RemoteRestartSafe :

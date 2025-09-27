@@ -156,7 +156,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     Theme = ThemeTools.GetThemeInfo(selectedTheme, true);
 
                 // Immediately bail if -y is passed
-                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-y"))
+                if (parameters.ContainsSwitch("-y"))
                     break;
 
                 // Now, preview the theme

@@ -52,7 +52,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            bool launchTui = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui");
+            bool launchTui = parameters.ContainsSwitch("-tui");
             if (launchTui)
             {
                 AlarmCli.OpenAlarmCli();

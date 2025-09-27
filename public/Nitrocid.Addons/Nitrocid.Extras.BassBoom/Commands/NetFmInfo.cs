@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Get the variables
-            bool https = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-secure");
+            bool https = parameters.ContainsSwitch("-secure");
             string internetFmUrl = $"{(https ? "https" : "http")}://" + parameters.ArgumentsList[0];
             string internetFmPort = parameters.ArgumentsList[1];
 

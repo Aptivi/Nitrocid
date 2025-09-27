@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.LanguageStudio.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool tui = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui");
+            bool tui = parameters.ContainsSwitch("-tui");
             LanguageStudioApp.StartLanguageStudio(parameters.ArgumentsList[0], tui);
             return 0;
         }

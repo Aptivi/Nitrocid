@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.Dates.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool getNow = parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-now");
+            bool getNow = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-now");
             DateTime DateTimeInfo = TimeDateTools.KernelDateTime;
             if (getNow || DateTime.TryParse(parameters.ArgumentsList[0], out DateTimeInfo))
             {

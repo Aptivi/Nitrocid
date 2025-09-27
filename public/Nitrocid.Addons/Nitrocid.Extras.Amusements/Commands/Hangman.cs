@@ -29,11 +29,11 @@ namespace Nitrocid.Extras.Amusements.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var difficulty =
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hardcore") ? HangmanDifficulty.Hardcore :
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-practice") ? HangmanDifficulty.Practice :
+                parameters.ContainsSwitch("-hardcore") ? HangmanDifficulty.Hardcore :
+                parameters.ContainsSwitch("-practice") ? HangmanDifficulty.Practice :
                 HangmanDifficulty.None;
             var wordDifficulty =
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-uncommon") ? HangmanWordDifficulty.Uncommon :
+                parameters.ContainsSwitch("-uncommon") ? HangmanWordDifficulty.Uncommon :
                 HangmanWordDifficulty.Common;
             Hangman.InitializeHangman(difficulty, wordDifficulty);
             return 0;

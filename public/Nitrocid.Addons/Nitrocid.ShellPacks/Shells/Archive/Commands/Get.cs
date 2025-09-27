@@ -51,7 +51,7 @@ namespace Nitrocid.ShellPacks.Shells.Archive.Commands
             var Absolute = false;
             if (parameters.ArgumentsList.Length > 1)
             {
-                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-absolute"))
+                if (parameters.ContainsSwitch("-absolute"))
                     Absolute = true;
                 else
                     Where = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);

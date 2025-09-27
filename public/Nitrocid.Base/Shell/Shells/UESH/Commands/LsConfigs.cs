@@ -38,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var configs = Config.GetKernelConfigs();
-            bool deep = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-deep");
+            bool deep = parameters.ContainsSwitch("-deep");
             foreach (var config in configs)
             {
                 if (config is null || config.SettingsEntries is null)

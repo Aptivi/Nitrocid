@@ -40,7 +40,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             string path = parameters.ArgumentsList[0];
             bool locked = FilesystemTools.IsLocked(path);
-            bool waitForUnlock = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-waitforunlock");
+            bool waitForUnlock = parameters.ContainsSwitch("-waitforunlock");
             string waitForUnlockMsStr = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-waitforunlock");
             bool waitForUnlockTimed = !string.IsNullOrEmpty(waitForUnlockMsStr);
             int waitForUnlockMs = waitForUnlockTimed ? int.Parse(waitForUnlockMsStr) : 0;

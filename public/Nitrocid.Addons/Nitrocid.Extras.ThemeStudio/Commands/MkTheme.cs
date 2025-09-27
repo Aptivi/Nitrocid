@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.ThemeStudio.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool tui = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui");
+            bool tui = parameters.ContainsSwitch("-tui");
             ThemeStudioApp.StartThemeStudio(parameters.ArgumentsList[0], tui);
             return 0;
         }

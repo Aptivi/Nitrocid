@@ -55,10 +55,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool ShowFileDetails = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-showdetails") || Config.MainConfig.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppressmessages") || Config.MainConfig.SuppressUnauthorizedMessages;
-            bool Recursive = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-recursive");
-            bool tree = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tree");
+            bool ShowFileDetails = parameters.ContainsSwitch("-showdetails") || Config.MainConfig.ShowFileDetailsList;
+            bool SuppressUnauthorizedMessage = parameters.ContainsSwitch("-suppressmessages") || Config.MainConfig.SuppressUnauthorizedMessages;
+            bool Recursive = parameters.ContainsSwitch("-recursive");
+            bool tree = parameters.ContainsSwitch("-tree");
             if (parameters.ArgumentsList.Length == 0)
             {
                 if (tree)

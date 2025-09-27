@@ -45,17 +45,17 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             bool ShowUserInfo = false;
             bool ShowMessageOfTheDay = false;
             bool ShowMal = false;
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-s"))
+            if (parameters.ContainsSwitch("-s"))
                 ShowSystemInfo = true;
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-h"))
+            if (parameters.ContainsSwitch("-h"))
                 ShowHardwareInfo = true;
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-u"))
+            if (parameters.ContainsSwitch("-u"))
                 ShowUserInfo = true;
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-m"))
+            if (parameters.ContainsSwitch("-m"))
                 ShowMessageOfTheDay = true;
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-l"))
+            if (parameters.ContainsSwitch("-l"))
                 ShowMal = true;
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-a") || parameters.SwitchesList.Length == 0)
+            if (parameters.ContainsSwitch("-a") || parameters.SwitchesList.Length == 0)
             {
                 ShowSystemInfo = true;
                 ShowHardwareInfo = true;

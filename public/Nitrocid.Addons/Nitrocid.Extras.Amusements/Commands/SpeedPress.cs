@@ -66,15 +66,15 @@ namespace Nitrocid.Extras.Amusements.Commands
         {
             var Difficulty = SpeedPress.SpeedPressDifficulty.Medium;
             int CustomTimeout = SpeedPress.SpeedPressTimeout;
-            if (parameters.SwitchesList.Contains("-e"))
+            if (parameters.ContainsSwitch("-e"))
                 Difficulty = SpeedPress.SpeedPressDifficulty.Easy;
-            if (parameters.SwitchesList.Contains("-m"))
+            if (parameters.ContainsSwitch("-m"))
                 Difficulty = SpeedPress.SpeedPressDifficulty.Medium;
-            if (parameters.SwitchesList.Contains("-h"))
+            if (parameters.ContainsSwitch("-h"))
                 Difficulty = SpeedPress.SpeedPressDifficulty.Hard;
-            if (parameters.SwitchesList.Contains("-v"))
+            if (parameters.ContainsSwitch("-v"))
                 Difficulty = SpeedPress.SpeedPressDifficulty.VeryHard;
-            if (parameters.SwitchesList.Contains("-c") & parameters.ArgumentsList.Length > 0 && TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
+            if (parameters.ContainsSwitch("-c") & parameters.ArgumentsList.Length > 0 && TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {
                 Difficulty = SpeedPress.SpeedPressDifficulty.Custom;
                 CustomTimeout = Convert.ToInt32(parameters.ArgumentsList[0]);

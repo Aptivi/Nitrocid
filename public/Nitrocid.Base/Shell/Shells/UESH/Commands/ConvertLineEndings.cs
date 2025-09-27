@@ -63,13 +63,13 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             bool force = false;
             if (parameters.SwitchesList.Length != 0)
             {
-                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-w"))
+                if (parameters.ContainsSwitch("-w"))
                     TargetLineEnding = FilesystemNewlineStyle.CRLF;
-                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-u"))
+                if (parameters.ContainsSwitch("-u"))
                     TargetLineEnding = FilesystemNewlineStyle.LF;
-                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-m"))
+                if (parameters.ContainsSwitch("-m"))
                     TargetLineEnding = FilesystemNewlineStyle.CR;
-                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-force"))
+                if (parameters.ContainsSwitch("-force"))
                     force = true;
             }
 

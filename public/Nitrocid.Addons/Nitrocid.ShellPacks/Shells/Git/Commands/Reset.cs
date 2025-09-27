@@ -39,9 +39,9 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
             if (parameters.SwitchesList.Length > 0)
             {
                 // Determine the reset mode by switch
-                bool useSoft = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-soft");
-                bool useMixed = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-mixed");
-                bool useHard = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hard");
+                bool useSoft = parameters.ContainsSwitch("-soft");
+                bool useMixed = parameters.ContainsSwitch("-mixed");
+                bool useHard = parameters.ContainsSwitch("-hard");
                 if (useSoft)
                     resetMode = ResetMode.Soft;
                 else if (useMixed)

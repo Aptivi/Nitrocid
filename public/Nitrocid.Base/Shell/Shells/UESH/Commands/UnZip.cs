@@ -56,7 +56,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             }
             else if (parameters.ArgumentsList.Length > 1)
             {
-                bool createDir = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-createdir");
+                bool createDir = parameters.ContainsSwitch("-createdir");
                 string ZipArchiveName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
                 string Destination = createDir ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : "";
                 string target = createDir ? Path.GetFileNameWithoutExtension(ZipArchiveName) : FilesystemTools.NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName));

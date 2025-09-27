@@ -39,8 +39,8 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool splashOut = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-splashout");
-            bool customContext = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-context");
+            bool splashOut = parameters.ContainsSwitch("-splashout");
+            bool customContext = parameters.ContainsSwitch("-context");
             string contextName =
                 customContext ?
                 SwitchManager.GetSwitchValue(parameters.SwitchesList, "-context") :

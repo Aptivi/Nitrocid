@@ -38,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             int columns = 78;
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-columns"))
+            if (parameters.ContainsSwitch("-columns"))
             {
                 string parsedColumns = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-columns");
                 if (!int.TryParse(parsedColumns, out columns))

@@ -37,11 +37,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool ShowName = parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-n") || parameters.SwitchesList.Length == 0;
-            bool ShowVersion = parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-v");
-            bool ShowBits = parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-b");
-            bool ShowCoreClr = parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-c");
-            bool ShowRid = parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-r");
+            bool ShowName = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-n") || parameters.SwitchesList.Length == 0;
+            bool ShowVersion = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-v");
+            bool ShowBits = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-b");
+            bool ShowCoreClr = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-c");
+            bool ShowRid = parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-r");
 
             // Get the platform info according to the provided switches
             if (ShowName)

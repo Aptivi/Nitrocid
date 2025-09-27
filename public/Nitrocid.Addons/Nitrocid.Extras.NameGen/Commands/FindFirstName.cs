@@ -60,11 +60,11 @@ namespace Nitrocid.Extras.NameGen.Commands
             string term = "";
             string NamePrefix = "";
             string NameSuffix = "";
-            bool nametags = parameters.SwitchesList.Contains("-t");
+            bool nametags = parameters.ContainsSwitch("-t");
             NameGenderType genderType = NameGenderType.Unified;
-            if (parameters.SwitchesList.Contains("-male"))
+            if (parameters.ContainsSwitch("-male"))
                 genderType = NameGenderType.Male;
-            else if (parameters.SwitchesList.Contains("-female"))
+            else if (parameters.ContainsSwitch("-female"))
                 genderType = NameGenderType.Female;
             string[] NamesList;
             if (parameters.ArgumentsList.Length >= 1)
