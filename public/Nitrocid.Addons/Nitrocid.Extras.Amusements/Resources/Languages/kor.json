@@ -112,10 +112,6 @@
       "text": "choedae palansaeg sujun-ibnida. choeso heoyong gabs-eun 0igo choedae heoyong gabs-eun 255ibnida."
     },
     {
-      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
-      "text": "choedae saegsang sujun. choeso heoyong gabs-eun 0igo choedae heoyong gabs-eun 255saeg-ui gyeong-u 255, 16saeg-ui gyeong-u 16ibnida."
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
       "text": "solbeo choeso su"
     },
@@ -490,6 +486,114 @@
     {
       "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
       "text": "i segsyeon-eseoneun Meteorwa ShipDuet-eul guseonghal su issseubnida."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_NAME",
+      "text": "milli cho dan-wiui jiyeon"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_DESC",
+      "text": "da-eum sseugileulhagi jeon-e myeoch milli choleul gidalyeoyahabnikka?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_NAME",
+      "text": "saeloun hwamyeon jiyeon(millicho)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC",
+      "text": "sae hwamyeon-e sseugi jeon-e myeoch millicholeul gidalyeoya habnikka?"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "ileum mich seong saengseong-gi"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
+      "text": "choeso ileum su"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_NAME",
+      "text": "choedae ileum su"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC",
+      "text": "saengseonghal ileum-ui choesolyang"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC",
+      "text": "saengseonghal choedae ileum su"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_NAME",
+      "text": "choeso yeonlyeong su"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_NAME",
+      "text": "choedae yeonlyeong su"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC",
+      "text": "saengseonghal choeso yeonlyeong"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC",
+      "text": "saengseonghal su issneun choedae yeonlyeong"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "ireum chajgi"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
+      "text": "namseong ireum mokrogeul sayonghayeo ireum saengseong"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
+      "text": "yeoseong ireum mokrogeul sayonghayeo ireum saengseong"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
+      "text": "tonghap ireum mokrogeul sayonghayeo ireum saengseong"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "seong chajgi"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
+      "text": "imuiui sarame daehan deiteobeiseu johoereul simyulleisyeonhapnida."
+    },
+    {
+      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "seoljeong hangmog-eul gajyeooji moshaessseubnida."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
+      "text": "ileum taegeu saengseong(umlauteuneun hyeonjae jiwondoeji anh-eum)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
+      "text": "geomsaeg-eo"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "geomsaeghal ileum jeobdusa"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "geomsaeghal ileum jeobmisa"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "geomsaeghal seong jeobdusa"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "geomsaeghal seong jeobmisa"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "saengseonghal ileum su?"
     }
   ]
 }

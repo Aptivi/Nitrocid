@@ -137,10 +137,6 @@
       "text": "الحد الأقصى لمستوى اللون الأزرق. الحد الأدنى للقيمة المقبولة هو 0 والحد الأقصى للقيمة المقبولة هو 255."
     },
     {
-      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
-      "text": "الحد الأقصى لمستوى اللون. أدنى قيمة مقبولة هي 0 وأقصى قيمة مقبولة هي 255 لـ 255 لونًا أو 16 لـ 16 لونًا."
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
       "text": "الحد الأدنى لعدد Solver"
     },
@@ -515,6 +511,114 @@
     {
       "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
       "text": "يتيح لك هذا القسم تكوين Meteor وShipDuet."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_NAME",
+      "text": "التأخير في ميلي ثانية"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_DESC",
+      "text": "كم ميلي ثانية يجب الانتظار قبل إجراء الكتابة التالية؟"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_NAME",
+      "text": "تأخير الشاشة الجديد بالمللي ثانية"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC",
+      "text": "كم ميلي ثانية يجب الانتظار قبل الكتابة في الشاشة الجديدة؟"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "مولد الاسم واللقب"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
+      "text": "الحد الأدنى لعدد الأسماء"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_NAME",
+      "text": "الحد الأقصى لعدد الأسماء"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC",
+      "text": "الحد الأدنى من الأسماء المراد إنشاؤها"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC",
+      "text": "الحد الأقصى لعدد الأسماء المراد إنشاؤها"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_NAME",
+      "text": "الحد الأدنى لعمر العد"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_NAME",
+      "text": "الحد الأقصى لعمر العد"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC",
+      "text": "الحد الأدنى لمقدار العمر سنوات المراد إنشاؤها"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC",
+      "text": "الحد الأقصى لمقدار العمر سنوات المراد إنشاؤها"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "مكتشف الاسم الأول"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
+      "text": "توليد الأسماء باستخدام قائمة أسماء الذكور"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
+      "text": "توليد الأسماء باستخدام قائمة أسماء الإناث"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
+      "text": "توليد الأسماء باستخدام قائمة الأسماء الموحدة"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "مكتشف اللقب"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
+      "text": "يحاكي البحث في قاعدة البيانات لشخص عشوائي."
+    },
+    {
+      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "فشل في الحصول على إدخالات الإعدادات."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
+      "text": "إنشاء علامات الأسماء (لا يتم دعم علامات التشكيل حاليًا)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
+      "text": "مصطلح البحث"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "اسم البادئة للبحث"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "اسم لاحقة للبحث"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "بادئة اللقب للبحث"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "لاحقة اللقب للبحث"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "كم عدد الأسماء التي يجب توليدها؟"
     }
   ]
 }

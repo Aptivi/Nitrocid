@@ -112,10 +112,6 @@
       "text": "Nivel maxim de culoare albastră. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255."
     },
     {
-      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
-      "text": "Nivel maxim de culoare. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255 pentru 255 de culori sau 16 pentru 16 culori."
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
       "text": "Numărul minim de rezolvare"
     },
@@ -490,6 +486,114 @@
     {
       "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
       "text": "Această secțiune vă permite să configurați Meteor și ShipDuet."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_NAME",
+      "text": "Întârziere în milisecunde"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_DESC",
+      "text": "Câte milisecunde trebuie să așteptați înainte de a face următoarea scriere?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_NAME",
+      "text": "Noua întârziere a ecranului în milisecunde"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC",
+      "text": "Câte milisecunde să aștepte înainte de a scrie pe noul ecran?"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "Generator de nume și prenume"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
+      "text": "Numele minim contează"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_NAME",
+      "text": "Numărul maxim de nume"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC",
+      "text": "Cantitatea minimă de nume de generat"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC",
+      "text": "Numărul maxim de nume de generat"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_NAME",
+      "text": "Vârsta minimă anii contează"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_NAME",
+      "text": "Vârsta maximă contează"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC",
+      "text": "Cantitatea minimă de ani de vârstă de generat"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC",
+      "text": "Cantitatea maximă de ani de vârstă de generat"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "Găsitor de prenume"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
+      "text": "Generați nume folosind lista de nume masculine"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
+      "text": "Generați nume folosind lista de nume de femei"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
+      "text": "Generați nume utilizând lista unificată de nume"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "Găsește nume de familie"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
+      "text": "Simulează o căutare în baza de date pentru o persoană aleatorie."
+    },
+    {
+      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Nu s-au putut obține intrările de setări."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
+      "text": "Generați etichete de nume (în prezent nu sunt acceptate umlauturile)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
+      "text": "Termen de căutare"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Prefix de nume pentru căutare"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Sufix de nume pentru căutare"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Prefixul numelui pentru căutare"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Sufixul numelui pentru căutare"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "Câte nume de generat?"
     }
   ]
 }

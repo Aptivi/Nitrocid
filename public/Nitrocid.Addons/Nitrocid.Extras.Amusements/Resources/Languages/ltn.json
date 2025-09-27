@@ -111,10 +111,6 @@
       "text": "Maximum colorem caeruleum. Valor minimus acceptus 0 est, maximus valor acceptus 255 est."
     },
     {
-      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
-      "text": "Maximum colorem massa. Valor minimus acceptus 0 est et maximus valor acceptus 255 pro 255 coloribus vel 16 pro 16 coloribus."
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
       "text": "Solver minimum numerus"
     },
@@ -489,6 +485,114 @@
     {
       "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
       "text": "Hanc sectionem permittit tibi configurare Meteor et ShipDuet."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_NAME",
+      "text": "Mora in Milliseconds"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_DESC",
+      "text": "Quot milliseconds expectare ante quam proxime scribes?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_NAME",
+      "text": "Novum Screen Mora in Milliseconds"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC",
+      "text": "Quot milliseconds expectare antequam in novo scrinio scribebat?"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "Nomen et cognomen generans"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
+      "text": "Nomina minimum numerare"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_NAME",
+      "text": "Maximum nomina numerare"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC",
+      "text": "Minimum moles nomina generare"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC",
+      "text": "Maximam quantitatem nominum generandi"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_NAME",
+      "text": "Minimum annos computat"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_NAME",
+      "text": "Maximum aetatis annum computat"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC",
+      "text": "Minimum amount of age years to generate"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC",
+      "text": "Maximum amount of annis generate"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "Primum nomen inventor"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
+      "text": "Genera nomina masculina nomina album"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
+      "text": "Genera nominibus utens in nominibus femininis album"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
+      "text": "Genera nomina utens nominibus unificatis"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "Surname inventor"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
+      "text": "Simulat database lookup pro temere persona."
+    },
+    {
+      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "Impetrare occasus viscus."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
+      "text": "Generate nametags (umlauts sunt currently non valet)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
+      "text": "Quaerere terminum"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "Nomen praepositionem quaerere"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "Nomen que ad investigandum"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "Surname praepositionem quaerere"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "Surname que to search"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "quot nomina generant?"
     }
   ]
 }

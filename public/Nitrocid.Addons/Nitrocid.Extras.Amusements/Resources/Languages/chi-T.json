@@ -119,10 +119,6 @@
       "text": "最大蓝色级别。接受的最小值为 0，接受的最大值为 255。"
     },
     {
-      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
-      "text": "最大颜色级别。接受的最小值为 0，接受的最大值为 255（255 色）或 16（16 色）。"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
       "text": "求解器最小数量"
     },
@@ -497,6 +493,114 @@
     {
       "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
       "text": "本部分让您配置 Meteor 和 ShipDuet。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_NAME",
+      "text": "延迟毫秒"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_DESC",
+      "text": "进行下一次写入之前要等待几毫秒？"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_NAME",
+      "text": "以毫秒为单位的新屏幕延迟"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC",
+      "text": "在新屏幕中写入之前要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "姓名和姓氏生成器"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
+      "text": "最少姓名计数"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_NAME",
+      "text": "最大名称计数"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC",
+      "text": "要生成的最小名称数量"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC",
+      "text": "要生成的最大名称数量"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_NAME",
+      "text": "最低年龄计算"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_NAME",
+      "text": "最大年龄计算"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC",
+      "text": "生成的最小年龄"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC",
+      "text": "生成的最大年龄"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "名字查找器"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
+      "text": "使用男性姓名列表生成姓名"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
+      "text": "使用女性姓名列表生成姓名"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
+      "text": "使用统一姓名列表生成姓名"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "姓氏查找器"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
+      "text": "模拟随机人员的数据库查找。"
+    },
+    {
+      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "无法获取设置条目。"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
+      "text": "生成名称标签（目前不支持变音符号）"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
+      "text": "搜索词"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "要搜索的名称前缀"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "要搜索的名称后缀"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "要搜索的姓氏前缀"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "要搜索的姓氏后缀"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "要生成多少个名称？"
     }
   ]
 }

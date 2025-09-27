@@ -27,7 +27,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 
-namespace Nitrocid.Extras.NameGen.Screensavers
+namespace Nitrocid.Extras.Amusements.Screensavers
 {
     /// <summary>
     /// Display code for PersonLookup
@@ -59,14 +59,14 @@ namespace Nitrocid.Extras.NameGen.Screensavers
             ConsoleWrapper.CursorVisible = false;
 
             // Generate names
-            int NumberOfPeople = RandomDriver.Random(NameGenInit.SaversConfig.PersonLookupMinimumNames, NameGenInit.SaversConfig.PersonLookupMaximumNames);
+            int NumberOfPeople = RandomDriver.Random(AmusementsInit.SaversConfig.PersonLookupMinimumNames, AmusementsInit.SaversConfig.PersonLookupMaximumNames);
             var NamesToLookup = NameGenerator.GenerateNames(NumberOfPeople);
 
             // Loop through names
             foreach (string GeneratedName in NamesToLookup)
             {
                 // Get random age (initial) and its month and day components
-                int Age = RandomDriver.Random(NameGenInit.SaversConfig.PersonLookupMinimumAgeYears, NameGenInit.SaversConfig.PersonLookupMaximumAgeYears);
+                int Age = RandomDriver.Random(AmusementsInit.SaversConfig.PersonLookupMinimumAgeYears, AmusementsInit.SaversConfig.PersonLookupMaximumAgeYears);
                 int AgeMonth = RandomDriver.Random(-12, 12);
                 int AgeDay = RandomDriver.Random(-31, 31);
 
@@ -111,11 +111,11 @@ namespace Nitrocid.Extras.NameGen.Screensavers
                 );
 
                 // Lookup delay
-                ScreensaverManager.Delay(NameGenInit.SaversConfig.PersonLookupDelay);
+                ScreensaverManager.Delay(AmusementsInit.SaversConfig.PersonLookupDelay);
             }
 
             // Wait until we run the lookup again
-            ScreensaverManager.Delay(NameGenInit.SaversConfig.PersonLookupLookedUpDelay);
+            ScreensaverManager.Delay(AmusementsInit.SaversConfig.PersonLookupLookedUpDelay);
         }
 
     }
