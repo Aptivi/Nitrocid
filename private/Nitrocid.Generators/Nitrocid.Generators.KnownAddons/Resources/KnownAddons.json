@@ -110,11 +110,6 @@
         "project": "Extras.MailShell"
     },
     {
-        "name": "ExtrasNameGen",
-        "display": "NKS_KNOWNADDONS_EXTRAS_NAMEGEN",
-        "project": "Extras.NameGen"
-    },
-    {
         "name": "ExtrasNotes",
         "display": "NKS_KNOWNADDONS_EXTRAS_NOTES",
         "project": "Extras.Notes"

@@ -8904,10 +8904,6 @@
       "text": "기타 - 단위 변환기"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_NAMEGEN",
-      "text": "추가 기능 - 이름 생성기"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_PASTEBIN",
       "text": "추가사항 - 페이스트빈"
     },
