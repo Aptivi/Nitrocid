@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Terminaux.Images.Icons" Version="8.0.0-20250915113908" />
+    <PackageReference Include="Terminaux.Images.Icons" Version="8.0.0-20250927123854" />
     
     <!-- Remove below once Terminaux 8.0 releases -->
-    <PackageReference Include="Terminaux.Images" Version="8.0.0-20250915113908" />
-    <PackageReference Include="Terminaux" Version="8.0.0-20250915113908" />
+    <PackageReference Include="Terminaux.Images" Version="8.0.0-20250927123854" />
+    <PackageReference Include="Terminaux" Version="8.0.0-20250927123854" />
   </ItemGroup>
 
   <ItemGroup>
