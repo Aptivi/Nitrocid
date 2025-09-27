@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.Dates.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool implicitExpiry = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-implicit");
+            bool implicitExpiry = parameters.ContainsSwitch("-implicit");
             try
             {
                 TimeSpan expirySpan = TimeSpan.Zero;

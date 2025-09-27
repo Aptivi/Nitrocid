@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool tuiMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui");
+            bool tuiMode = parameters.ContainsSwitch("-tui");
             if (tuiMode)
                 UnitConvTools.OpenUnitConvTui();
             else

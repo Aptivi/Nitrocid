@@ -40,10 +40,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-            bool forceText = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-text");
-            bool forceJson = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-json");
-            bool forceHex = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hex");
-            bool forceSql = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-sql");
+            bool forceText = parameters.ContainsSwitch("-text");
+            bool forceJson = parameters.ContainsSwitch("-json");
+            bool forceHex = parameters.ContainsSwitch("-hex");
+            bool forceSql = parameters.ContainsSwitch("-sql");
             if (FilesystemTools.FileExists(path))
                 FilesystemTools.OpenEditor(path, forceText, forceJson, forceHex, forceSql);
             else

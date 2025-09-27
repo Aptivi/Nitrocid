@@ -45,9 +45,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
             bool useUtc = false;
             if (parameters.SwitchesList.Length > 0)
             {
-                showDate = parameters.SwitchesList.Contains("-date") || parameters.SwitchesList.Contains("-full");
-                showTime = parameters.SwitchesList.Contains("-time") || parameters.SwitchesList.Contains("-full");
-                useUtc = parameters.SwitchesList.Contains("-utc");
+                showDate = parameters.ContainsSwitch("-date") || parameters.ContainsSwitch("-full");
+                showTime = parameters.ContainsSwitch("-time") || parameters.ContainsSwitch("-full");
+                useUtc = parameters.ContainsSwitch("-utc");
                 if (!showDate && !showTime)
                     showDate = showTime = true;
             }

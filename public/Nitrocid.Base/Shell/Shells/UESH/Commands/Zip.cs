@@ -60,15 +60,15 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             string Destination = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
             var ZipCompression = CompressionLevel.Optimal;
             bool ZipBaseDir = true;
-            if (parameters.SwitchesList.Contains("-fast"))
+            if (parameters.ContainsSwitch("-fast"))
             {
                 ZipCompression = CompressionLevel.Fastest;
             }
-            else if (parameters.SwitchesList.Contains("-nocomp"))
+            else if (parameters.ContainsSwitch("-nocomp"))
             {
                 ZipCompression = CompressionLevel.NoCompression;
             }
-            if (parameters.SwitchesList.Contains("-nobasedir"))
+            if (parameters.ContainsSwitch("-nobasedir"))
             {
                 ZipBaseDir = false;
             }

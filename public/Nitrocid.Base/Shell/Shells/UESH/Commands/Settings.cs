@@ -97,15 +97,15 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            bool useType = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-type");
+            bool useType = parameters.ContainsSwitch("-type");
             var typeFinal = useType ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") : nameof(KernelMainConfig);
             if (parameters.SwitchesList.Length > 0 && !useType)
             {
-                bool isSaver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-saver");
-                bool isAddonSaver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-addonsaver");
-                bool isSplash = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-splash");
-                bool isAddonSplash = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-addonsplash");
-                bool isDriver = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-driver");
+                bool isSaver = parameters.ContainsSwitch("-saver");
+                bool isAddonSaver = parameters.ContainsSwitch("-addonsaver");
+                bool isSplash = parameters.ContainsSwitch("-splash");
+                bool isAddonSplash = parameters.ContainsSwitch("-addonsplash");
+                bool isDriver = parameters.ContainsSwitch("-driver");
                 if (isSaver)
                     typeFinal = nameof(KernelSaverConfig);
                 else if (isAddonSaver)

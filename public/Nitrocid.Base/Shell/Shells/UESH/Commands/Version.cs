@@ -39,7 +39,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             Version? ver;
 
             // Get the version according to the switches provided
-            if (parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-m"))
+            if (parameters.SwitchesList.Length > 0 && parameters.ContainsSwitch("-m"))
                 ver = KernelReleaseInfo.ApiVersion;
             else
                 ver = KernelReleaseInfo.Version;

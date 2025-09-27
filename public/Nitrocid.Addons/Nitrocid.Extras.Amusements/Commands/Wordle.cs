@@ -28,9 +28,9 @@ namespace Nitrocid.Extras.Amusements.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool useOrig = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-orig");
+            bool useOrig = parameters.ContainsSwitch("-orig");
             var wordDifficulty =
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-uncommon") ? WordleWordDifficulty.Uncommon :
+                parameters.ContainsSwitch("-uncommon") ? WordleWordDifficulty.Uncommon :
                 WordleWordDifficulty.Common;
             Wordle.InitializeWordle(useOrig, wordDifficulty);
             return 0;

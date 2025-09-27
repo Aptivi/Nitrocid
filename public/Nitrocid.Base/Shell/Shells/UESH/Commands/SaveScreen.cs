@@ -41,8 +41,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool selectionMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-select");
-            bool randomMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-random");
+            bool selectionMode = parameters.ContainsSwitch("-select");
+            bool randomMode = parameters.ContainsSwitch("-random");
             if (selectionMode)
             {
                 var tui = new ScreensaverCli();

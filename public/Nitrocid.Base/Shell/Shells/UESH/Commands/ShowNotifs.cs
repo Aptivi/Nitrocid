@@ -38,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
+            if (parameters.ContainsSwitch("-tui"))
                 NotificationsCli.OpenNotificationsCli();
             else
             {

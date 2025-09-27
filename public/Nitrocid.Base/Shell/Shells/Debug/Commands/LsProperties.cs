@@ -53,7 +53,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
                 }
                 catch (Exception ex)
                 {
-                    if (!SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppress"))
+                    if (!parameters.ContainsSwitch("-suppress"))
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}: {ex.Message}", ThemeColorType.Error);
                 }
             }
@@ -78,7 +78,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
                 }
                 catch (Exception ex)
                 {
-                    if (!SwitchManager.ContainsSwitch(parameters.SwitchesList, "-suppress"))
+                    if (!parameters.ContainsSwitch("-suppress"))
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_GETPROPERTYVALUE_FAILED") + $" {type.Name}: {ex.Message}", ThemeColorType.Error);
                 }
             }

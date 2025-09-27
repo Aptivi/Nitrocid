@@ -46,7 +46,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Bail if there are addons already installed
-            if (AddonTools.ListAddons().Count > 0 && !SwitchManager.ContainsSwitch(parameters.SwitchesList, "-reinstall"))
+            if (AddonTools.ListAddons().Count > 0 && !parameters.ContainsSwitch("-reinstall"))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETADDONS_ALREADYINSTALLED"), ThemeColorType.Progress);
                 return 0;

@@ -50,7 +50,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 return -4;
             }
 
-            bool useUser = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-user");
+            bool useUser = parameters.ContainsSwitch("-user");
             string language = parameters.ArgumentsList[0];
 
             // Language selection takes only one language

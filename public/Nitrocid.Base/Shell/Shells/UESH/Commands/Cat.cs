@@ -59,12 +59,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             {
                 bool PrintLines = Config.MainConfig.PrintLineNumbers;
                 bool ForcePlain = false;
-                if (parameters.SwitchesList.Contains("-lines"))
+                if (parameters.ContainsSwitch("-lines"))
                     PrintLines = true;
-                if (parameters.SwitchesList.Contains("-nolines"))
+                if (parameters.ContainsSwitch("-nolines"))
                     // -lines and -nolines cancel together.
                     PrintLines = false;
-                if (parameters.SwitchesList.Contains("-plain"))
+                if (parameters.ContainsSwitch("-plain"))
                     ForcePlain = true;
                 FilesystemTools.PrintContents(parameters.ArgumentsList[0], PrintLines, ForcePlain);
                 return 0;

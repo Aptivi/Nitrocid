@@ -37,7 +37,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             string firstPanePath = parameters.ArgumentsList.Length > 0 ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]) : PathsManagement.HomePath;
             string secondPanePath = parameters.ArgumentsList.Length > 1 ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : PathsManagement.HomePath;
-            bool single = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-single");
+            bool single = parameters.ContainsSwitch("-single");
             FilesystemTools.OpenFileManagerTui(firstPanePath, secondPanePath, single);
             return 0;
         }

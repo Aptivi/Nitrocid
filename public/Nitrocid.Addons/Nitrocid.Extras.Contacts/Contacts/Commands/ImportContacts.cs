@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
             try
             {
                 // Determine import mode
-                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-mecard"))
+                if (parameters.ContainsSwitch("-mecard"))
                 {
                     string meCard = parameters.ArgumentsList[0];
                     if (!string.IsNullOrEmpty(meCard))

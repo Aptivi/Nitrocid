@@ -38,7 +38,7 @@ namespace Nitrocid.ShellPacks.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
+            if (parameters.ContainsSwitch("-tui"))
             {
                 var tui = new RssReaderCli();
                 tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO"), ConsoleKey.F1, (article, _, _, _) => tui.ShowArticleInfo(article)));

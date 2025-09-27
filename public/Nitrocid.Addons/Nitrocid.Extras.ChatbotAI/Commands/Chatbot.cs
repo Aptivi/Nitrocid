@@ -43,12 +43,12 @@ namespace Nitrocid.Extras.ChatbotAI.Commands
         {
             // Check if user has provided the API key via the switch
             string apiKey = ChatbotAIInit.ChatbotAIConfig.ChatGPTApiKey;
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-apikey"))
+            if (parameters.ContainsSwitch("-apikey"))
                 apiKey = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-apikey");
 
             // Check the model
             string modelUsed = "gpt-4.1-mini";
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-model"))
+            if (parameters.ContainsSwitch("-model"))
                 modelUsed = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-model");
 
             // Now, try to authenticate

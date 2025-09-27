@@ -62,10 +62,10 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool findTitle = parameters.SwitchesList.Contains("-t");
-            bool findDescription = parameters.SwitchesList.Contains("-d");
-            bool findAll = parameters.SwitchesList.Contains("-a");
-            bool caseSensitive = parameters.SwitchesList.Contains("-cs");
+            bool findTitle = parameters.ContainsSwitch("-t");
+            bool findDescription = parameters.ContainsSwitch("-d");
+            bool findAll = parameters.ContainsSwitch("-a");
+            bool caseSensitive = parameters.ContainsSwitch("-cs");
 
             if (findAll)
                 findTitle = findDescription = true;

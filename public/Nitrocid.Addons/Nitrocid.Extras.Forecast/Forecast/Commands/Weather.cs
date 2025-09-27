@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
+            if (parameters.ContainsSwitch("-tui"))
             {
                 var tui = new WeatherCli();
                 tui.Bindings.Add(new InteractiveTuiBinding<(double, double)>(LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD"), ConsoleKey.F1, (_, _, _, _) => tui.Add(), true));
@@ -84,7 +84,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                 Forecast.ApiKey = APIKey;
             }
             var ListMode = false;
-            if (parameters.SwitchesList.Contains("-list"))
+            if (parameters.ContainsSwitch("-list"))
                 ListMode = true;
             if (ListMode)
             {

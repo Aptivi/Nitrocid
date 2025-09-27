@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.NameGen.Commands
             string term = "";
             string SurnamePrefix = "";
             string SurnameSuffix = "";
-            bool nametags = parameters.SwitchesList.Contains("-t");
+            bool nametags = parameters.ContainsSwitch("-t");
             string[] NamesList;
             if (parameters.ArgumentsList.Length >= 1)
                 term = parameters.ArgumentsList[0];

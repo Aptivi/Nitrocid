@@ -54,8 +54,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                     {
                         // User chose to show the calendar TUI
                         var calendar = CalendarTypes.Variant;
-                        bool useLegacy = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-legacy");
-                        if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-calendar"))
+                        bool useLegacy = parameters.ContainsSwitch("-legacy");
+                        if (parameters.ContainsSwitch("-calendar"))
                             calendar = Enum.Parse<CalendarTypes>(SwitchManager.GetSwitchValue(parameters.SwitchesList, "-calendar"));
                         if (ActionArguments.Length != 0)
                         {

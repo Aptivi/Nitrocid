@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.Caffeine.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool abortCurrentAlarm = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-abort");
+            bool abortCurrentAlarm = parameters.ContainsSwitch("-abort");
             if (abortCurrentAlarm)
             {
                 if (!AlarmTools.IsAlarmRegistered("Caffeine"))

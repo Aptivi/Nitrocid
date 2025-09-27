@@ -54,8 +54,8 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || Config.MainConfig.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || Config.MainConfig.SuppressUnauthorizedMessages;
+            bool ShowFileDetails = parameters.ContainsSwitch("-showdetails") || Config.MainConfig.ShowFileDetailsList;
+            bool SuppressUnauthorizedMessage = parameters.ContainsSwitch("-suppressmessages") || Config.MainConfig.SuppressUnauthorizedMessages;
             if (parameters.ArgumentsList?.Length == 0)
             {
                 FilesystemTools.List(SFTPShellCommon.SFTPCurrDirect ?? "", ShowFileDetails, SuppressUnauthorizedMessage);

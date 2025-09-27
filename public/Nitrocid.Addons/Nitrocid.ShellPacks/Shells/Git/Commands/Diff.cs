@@ -46,11 +46,11 @@ namespace Nitrocid.ShellPacks.Shells.Git.Commands
 
             // Determine what to show
             bool doTree =
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tree") ||
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
+                parameters.ContainsSwitch("-tree") ||
+                parameters.ContainsSwitch("-all");
             bool doPatch =
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-patch") ||
-                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
+                parameters.ContainsSwitch("-patch") ||
+                parameters.ContainsSwitch("-all");
             if (!doTree && !doPatch)
                 doTree = doPatch = true;
 

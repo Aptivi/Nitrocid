@@ -52,9 +52,9 @@ namespace Nitrocid.Extras.Pastebin.Commands
             }
 
             // Check the provider and the type
-            string provider = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-provider") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-provider") : "pastebin.com";
+            string provider = parameters.ContainsSwitch("-provider") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-provider") : "pastebin.com";
             int port = 443;
-            string type = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-type") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") : "https";
+            string type = parameters.ContainsSwitch("-type") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") : "https";
             if (provider.Contains(':'))
             {
                 string portStr = provider.Substring(provider.IndexOf(":") + 1);
@@ -68,9 +68,9 @@ namespace Nitrocid.Extras.Pastebin.Commands
             }
 
             // Get the post page, field, format
-            string page = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-postpage") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postpage") : "api/api_post.php";
-            string format = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-postformat") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postformat") : "text";
-            string field = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-postfield") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postfield") : "api_paste_code";
+            string page = parameters.ContainsSwitch("-postpage") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postpage") : "api/api_post.php";
+            string format = parameters.ContainsSwitch("-postformat") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postformat") : "text";
+            string field = parameters.ContainsSwitch("-postfield") ? SwitchManager.GetSwitchValue(parameters.SwitchesList, "-postfield") : "api_paste_code";
 
             // Get the contents
             if (FilesystemTools.FileExists(contents))
