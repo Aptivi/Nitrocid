@@ -89,6 +89,7 @@ namespace Nitrocid.Base.Shell.Homepage
             // Keyboard
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_EXECUTE"), ConsoleKey.Enter),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_LOGOUT"), ConsoleKey.Escape),
+            // TODO: NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN -> "Shut down"
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN"), ConsoleKey.Escape, ConsoleModifiers.Shift),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL"), ConsoleKey.S),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
