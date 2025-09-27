@@ -71,6 +71,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 );
             }
 
+#pragma warning disable NLOC0001
             // Populate some text
             string text = $"{SplashReport.Progress}%";
             string bottomText =
@@ -83,6 +84,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 KernelEntry.Maintenance ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE")}" :
                 KernelEntry.DebugMode ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_DEBUGMODE")}" :
                 "";
+#pragma warning restore NLOC0001
 
             // Write a glorious Welcome screen
             Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);

@@ -50,6 +50,7 @@ namespace Nitrocid.Extras.Mods.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+#pragma warning disable NLOC0001
             if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                 !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
@@ -57,6 +58,7 @@ namespace Nitrocid.Extras.Mods.Commands
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
                 return -4;
             }
+#pragma warning restore NLOC0001
 
             if (!KernelEntry.SafeMode)
             {
