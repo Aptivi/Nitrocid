@@ -563,17 +563,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ])
                 ], new DecodeTextCommand()),
 
-            new CommandInfo("decodebase64", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "encoded", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC"
-                        })
-                    ])
-                ], new DecodeBase64Command()),
-
             new CommandInfo("dirinfo", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_DESC",
                 [
                     new CommandArgumentInfo(
@@ -747,17 +736,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         }),
                     ])
                 ], new EncodeTextCommand()),
-
-            new CommandInfo("encodebase64", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "string", new()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_ARGUMENT_STRING_DESC"
-                        })
-                    ])
-                ], new EncodeBase64Command()),
 
             new CommandInfo("fileinfo", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FILEINFO_DESC",
                 [
@@ -948,17 +926,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH
 
             new CommandInfo("license", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC", new LicenseCommand()),
 
-            new CommandInfo("lintscript", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC",
-                [
-                    new CommandArgumentInfo(
-                    [
-                        new CommandArgumentPart(true, "script", new CommandArgumentPartOptions()
-                        {
-                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC"
-                        }),
-                    ], true)
-                ], new LintScriptCommand()),
-
             new CommandInfo("list", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_DESC",
                 [
                     new CommandArgumentInfo(
@@ -1038,8 +1005,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 ], new LsDisksCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("lsnet", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LSNET_DESC", new LsNetCommand()),
-
-            new CommandInfo("lsvars", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC", new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("md", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MD_DESC",
                 [
