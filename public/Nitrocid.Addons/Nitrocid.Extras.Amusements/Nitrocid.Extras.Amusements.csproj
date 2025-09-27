@@ -4,7 +4,6 @@
   <PropertyGroup>
     <Description>Nitrocid KS Extras - Amusements</Description>
     <AssemblyTitle>Nitrocid KS Extras - Amusements</AssemblyTitle>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>

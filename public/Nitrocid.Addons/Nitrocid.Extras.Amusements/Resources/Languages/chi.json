@@ -119,10 +119,6 @@
       "text": "Zuìdà lán sè jíbié. Jiēshòu de zuìxiǎo zhí wèi 0, jiēshòu de zuìdà zhí wèi 255."
     },
     {
-      "loc": "NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME",
-      "text": "Zuìdà yánsè jíbié. Jiēshòu de zuìxiǎo zhí wèi 0, jiēshòu de zuìdà zhí wèi 255(255 sè) huò 16(16 sè)."
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME",
       "text": "qiújiě qì zuìxiǎo shùliàng"
     },
@@ -497,6 +493,114 @@
     {
       "loc": "NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC",
       "text": "Cǐ bùfèn yǔnxǔ nín pèizhì Meteor hé ShipDuet."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_NAME",
+      "text": "Yánchí háomiǎo"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_DESC",
+      "text": "jìnxíng xià yīcì xiě rù zhīqián yào děngdài jǐ háomiǎo?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_NAME",
+      "text": "yǐ háomiǎo wèi dānwèi de xīn píngmù yánchí"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC",
+      "text": "zài xīn píngmù zhōng xiě rù zhīqián yào děngdài duōshǎo háomiǎo?"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
+      "text": "xìngmíng hé xìngshì shēngchéng qì"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
+      "text": "zuìshǎo xìngmíng jìshù"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_NAME",
+      "text": "zuìdà míngchēng jìshù"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC",
+      "text": "yào shēngchéng de zuìxiǎo míng chèn shùliàng"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC",
+      "text": "yào shēngchéng de zuìdà míng chèn shùliàng"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_NAME",
+      "text": "zuìdī niánlíng jìsuàn"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_NAME",
+      "text": "zuìdà niánlíng jìsuàn"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC",
+      "text": "shēngchéng de zuìxiǎo niánlíng"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC",
+      "text": "shēngchéng de zuìdà niánlíng"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
+      "text": "míng zì chá zhǎo qì"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
+      "text": "shǐ yòng nán xìng xìng míng liè biǎo shēng chéng xìng míng"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
+      "text": "shǐ yòng nǚ xìng xìng míng liè biǎo shēng chéng xìng míng"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
+      "text": "shǐ yòng tǒng yī xìng míng liè biǎo shēng chéng xìng míng"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
+      "text": "xìng shì chá zhǎo qì"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
+      "text": "mó nǐ suí jī rén yuán de shù jù kù chá zhǎo 。"
+    },
+    {
+      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
+      "text": "wúfǎ huòqǔ shèzhì tiáomù."
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
+      "text": "shēngchéng xìngmíng biāoqiān (mùqián bù zhīchí biàn yīn fúhào)"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
+      "text": "sōusuǒ cí"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
+      "text": "yào sōusuǒ de míngchēng qiánzhuì"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
+      "text": "yào sōusuǒ de míngchēng hòuzhuì"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
+      "text": "yào sōusuǒ de xìngshì qiánzhuì"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
+      "text": "yào sōusuǒ de xìngshì hòuzhuì"
+    },
+    {
+      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
+      "text": "duōshǎo yào shēngchéng de míngchēng?"
     }
   ]
 }

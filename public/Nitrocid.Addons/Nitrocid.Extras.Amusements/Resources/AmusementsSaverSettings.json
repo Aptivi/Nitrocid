@@ -182,5 +182,55 @@
                 ]
             }
         ]
+    },
+    {
+        "Name": "PersonLookup",
+        "Desc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_NAME",
+                "Type": "SInt",
+                "Variable": "PersonLookupDelay",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_DESC"
+            },
+            {
+                "Name": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_NAME",
+                "Type": "SInt",
+                "Variable": "PersonLookupLookedUpDelay",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC"
+            },
+            {
+                "Name": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
+                "Type": "SIntSlider",
+                "Variable": "PersonLookupMinimumNames",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC",
+                "MinimumValue": 10,
+                "MaximumValue": 1000
+            },
+            {
+                "Name": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_NAME",
+                "Type": "SIntSlider",
+                "Variable": "PersonLookupMaximumNames",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC",
+                "MinimumValue": 10,
+                "MaximumValue": 1000
+            },
+            {
+                "Name": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_NAME",
+                "Type": "SIntSlider",
+                "Variable": "PersonLookupMinimumAgeYears",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC",
+                "MinimumValue": 18,
+                "MaximumValue": 100
+            },
+            {
+                "Name": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_NAME",
+                "Type": "SIntSlider",
+                "Variable": "PersonLookupMaximumAgeYears",
+                "Description": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC",
+                "MinimumValue": 18,
+                "MaximumValue": 100
+            }
+        ]
     }
 ]
