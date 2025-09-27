@@ -215,10 +215,20 @@ namespace Nitrocid.Base.Files
             SpinWait.SpinUntil(() => !IsLocked(Path));
         }
 
-        internal static void OpenFileManagerTui(bool single = false) =>
+        /// <summary>
+        /// Opens the interactive file manager TUI
+        /// </summary>
+        /// <param name="single">Whether it's a single-pane or a multi-pane file manager</param>
+        public static void OpenFileManagerTui(bool single = false) =>
             OpenFileManagerTui(PathsManagement.HomePath, PathsManagement.HomePath, single);
 
-        internal static void OpenFileManagerTui(string firstPanePath, string secondPanePath, bool single = false)
+        /// <summary>
+        /// Opens the interactive file manager TUI
+        /// </summary>
+        /// <param name="firstPanePath">The first pane path</param>
+        /// <param name="secondPanePath">The second pane path (ignored when <paramref name="single"/> is on)</param>
+        /// <param name="single">Whether it's a single-pane or a multi-pane file manager</param>
+        public static void OpenFileManagerTui(string firstPanePath, string secondPanePath, bool single = false)
         {
             BaseInteractiveTui<FileSystemEntry> tui;
             if (single)
