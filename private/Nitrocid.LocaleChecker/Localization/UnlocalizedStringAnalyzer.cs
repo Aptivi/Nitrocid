@@ -31,7 +31,6 @@ using System.Reflection;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using Nitrocid.Analyzers.Common;
-using System.Diagnostics;
 
 namespace Nitrocid.LocaleChecker.Localization
 {
@@ -252,9 +251,24 @@ namespace Nitrocid.LocaleChecker.Localization
             var resourceNames = thisAssembly.GetManifestResourceNames().Except([
                 .. languageManifestNames,
                 "Nitrocid.LocaleChecker.Resources.AnalyzerResources.resources",
-            ]).Where((path) => path.Contains($"\\{context.Compilation.Assembly.Name}\\"));
+            ]).Where((path) => path.Contains("?"));
             foreach (var resourceName in resourceNames)
             {
+                // Check the assembly name
+                string[] pathArgs = resourceName.Split('?');
+                string relativePath = pathArgs[0];
+                string absolutePath = pathArgs[1];
+                string assemblyName = context.Compilation.AssemblyName ?? "";
+                if (relativePath.Contains("\\"))
+                {
+                    // Split the path and find "Resources"
+                    string[] splitPath = relativePath.Split('\\');
+                    int asmNameIdx = splitPath.IndexOf("Resources") - 1;
+                    assemblyName = splitPath[asmNameIdx];
+                }
+                if (assemblyName != context.Compilation.AssemblyName)
+                    continue;
+
                 // Open the resource and load it to a JSON token instance
                 var stream = thisAssembly.GetManifestResourceStream(resourceName) ??
                     throw new Exception($"Opening the {resourceName} resource stream has failed.");
@@ -277,12 +291,12 @@ namespace Nitrocid.LocaleChecker.Localization
                         foreach (var localization in localizationList.Keys)
                         {
                             var hashSet = localizationList[localization];
-                            if (!hashSet.Contains(description) && localization.Contains($"Nitrocid.Langs {context.Compilation.AssemblyName} "))
+                            if (!hashSet.Contains(description) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                 incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
                         }
                         if (incompleteLangs.Count > 0)
                         {
-                            var location = AnalyzerTools.GenerateLocation(themeMetadata["Description"], descriptionOrig, resourceName, false);
+                            var location = AnalyzerTools.GenerateLocation(themeMetadata["Description"], descriptionOrig, absolutePath, false);
                             var diagnostic = Diagnostic.Create(RuleJson, location, description, string.Join(", ", incompleteLangs));
                             context.ReportDiagnostic(diagnostic);
                         }
@@ -306,12 +320,12 @@ namespace Nitrocid.LocaleChecker.Localization
                             foreach (var localization in localizationList.Keys)
                             {
                                 var hashSet = localizationList[localization];
-                                if (!hashSet.Contains(description) && localization.Contains($"Nitrocid.Langs {context.Compilation.AssemblyName} "))
+                                if (!hashSet.Contains(description) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                     incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
                             }
                             if (incompleteLangs.Count > 0)
                             {
-                                var location = AnalyzerTools.GenerateLocation(settingsEntryList["Desc"], descriptionOrig, resourceName, false);
+                                var location = AnalyzerTools.GenerateLocation(settingsEntryList["Desc"], descriptionOrig, absolutePath, false);
                                 var diagnostic = Diagnostic.Create(RuleJson, location, description, string.Join(", ", incompleteLangs));
                                 context.ReportDiagnostic(diagnostic);
                             }
@@ -322,12 +336,12 @@ namespace Nitrocid.LocaleChecker.Localization
                             foreach (var localization in localizationList.Keys)
                             {
                                 var hashSet = localizationList[localization];
-                                if (!hashSet.Contains(displayAs) && localization.Contains($"Nitrocid.Langs {context.Compilation.AssemblyName} "))
+                                if (!hashSet.Contains(displayAs) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                     incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
                             }
                             if (incompleteLangs.Count > 0)
                             {
-                                var location = AnalyzerTools.GenerateLocation(settingsEntryList["DisplayAs"], displayAsOrig, resourceName, false);
+                                var location = AnalyzerTools.GenerateLocation(settingsEntryList["DisplayAs"], displayAsOrig, absolutePath, false);
                                 var diagnostic = Diagnostic.Create(RuleJson, location, displayAs, string.Join(", ", incompleteLangs));
                                 context.ReportDiagnostic(diagnostic);
                             }
@@ -338,12 +352,12 @@ namespace Nitrocid.LocaleChecker.Localization
                             foreach (var localization in localizationList.Keys)
                             {
                                 var hashSet = localizationList[localization];
-                                if (!hashSet.Contains(knownAddonDisplay) && localization.Contains($"Nitrocid.Langs {context.Compilation.AssemblyName} "))
+                                if (!hashSet.Contains(knownAddonDisplay) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                     incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
                             }
                             if (incompleteLangs.Count > 0)
                             {
-                                var location = AnalyzerTools.GenerateLocation(settingsEntryList["display"], knownAddonDisplayOrig, resourceName, false);
+                                var location = AnalyzerTools.GenerateLocation(settingsEntryList["display"], knownAddonDisplayOrig, absolutePath, false);
                                 var diagnostic = Diagnostic.Create(RuleJson, location, knownAddonDisplay, string.Join(", ", incompleteLangs));
                                 context.ReportDiagnostic(diagnostic);
                             }
@@ -365,12 +379,12 @@ namespace Nitrocid.LocaleChecker.Localization
                                     foreach (var localization in localizationList.Keys)
                                     {
                                         var hashSet = localizationList[localization];
-                                        if (!hashSet.Contains(keyName) && localization.Contains($"Nitrocid.Langs {context.Compilation.AssemblyName} "))
+                                        if (!hashSet.Contains(keyName) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                             incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
                                     }
                                     if (incompleteLangs.Count > 0)
                                     {
-                                        var location = AnalyzerTools.GenerateLocation(key["Name"], keyNameOrig, resourceName, false);
+                                        var location = AnalyzerTools.GenerateLocation(key["Name"], keyNameOrig, absolutePath, false);
                                         var diagnostic = Diagnostic.Create(RuleJson, location, keyName, string.Join(", ", incompleteLangs));
                                         context.ReportDiagnostic(diagnostic);
                                     }
@@ -381,12 +395,12 @@ namespace Nitrocid.LocaleChecker.Localization
                                     foreach (var localization in localizationList.Keys)
                                     {
                                         var hashSet = localizationList[localization];
-                                        if (!hashSet.Contains(keyDesc) && localization.Contains($"Nitrocid.Langs {context.Compilation.AssemblyName} "))
+                                        if (!hashSet.Contains(keyDesc) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                             incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
                                     }
                                     if (incompleteLangs.Count > 0)
                                     {
-                                        var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, resourceName, false);
+                                        var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, absolutePath, false);
                                         var diagnostic = Diagnostic.Create(RuleJson, location, keyDesc, string.Join(", ", incompleteLangs));
                                         context.ReportDiagnostic(diagnostic);
                                     }

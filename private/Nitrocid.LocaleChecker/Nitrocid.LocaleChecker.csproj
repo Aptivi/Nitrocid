@@ -49,25 +49,25 @@
     </EmbeddedResource>
     
     <EmbeddedResource Include="..\..\public\Nitrocid.Base\Resources\Settings\*.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Base\Resources\Themes\*.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\**\Resources\*Settings.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\Nitrocid.ThemePacks\Resources\Themes\*.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\**\Resources\*Settings.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\Nitrocid.ThemePacks\Resources\Themes\*.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Resources\KnownAddons.json" Visible="false">
-      <LogicalName>%(EmbeddedResource.RelativeDir)|%(EmbeddedResource.FullPath)</LogicalName>
+      <LogicalName>%(EmbeddedResource.RelativeDir)?%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 
