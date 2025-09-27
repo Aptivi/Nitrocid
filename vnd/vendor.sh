@@ -199,7 +199,6 @@ increment() {
         "$ROOTDIR/.github/workflows/build-ppa-package.yml"
         "$ROOTDIR/.github/workflows/pushamend.yml"
         "$ROOTDIR/.github/workflows/pushppa.yml"
-        "$ROOTDIR/.gitlab/workflows/release.yml"
         "$ROOTDIR/public/Nitrocid.Installers/Nitrocid.Installer/Package.wxs"
         "$ROOTDIR/public/Nitrocid.Installers/Nitrocid.InstallerBundle/Bundle.wxs"
         "$ROOTDIR/public/Nitrocid.Templates/templates/KSMod/KSMod.csproj"
