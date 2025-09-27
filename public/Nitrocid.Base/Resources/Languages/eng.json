@@ -9211,6 +9211,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC",
       "text": "Opens the file manager in a single pane"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
+      "text": "Shows just the date"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
+      "text": "Shows just the time"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
+      "text": "Uses the UTC time zone instead of the local time zone"
     }
   ]
 }

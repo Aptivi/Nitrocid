@@ -483,6 +483,34 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ])
                 ], new CopyCommand()),
 
+            new CommandInfo("date", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTD_DESC",
+                [
+                    new CommandArgumentInfo([
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC -> "Shows just the date"
+                        new SwitchInfo("date", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["time", "full"],
+                            AcceptsValues = false
+                        }),
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC -> "Shows just the time"
+                        new SwitchInfo("time", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["date", "full"],
+                            AcceptsValues = false
+                        }),
+                        new SwitchInfo("full", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTD_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["date", "time"],
+                            AcceptsValues = false
+                        }),
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC -> "Uses the UTC time zone instead of the local time zone"
+                        new SwitchInfo("utc", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        })
+                    ], true)
+                ], new DateCommand(), CommandFlags.RedirectionSupported),
+
             new CommandInfo("debugshell", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DEBUGSHELL_DESC", new DebugShellCommand()),
 
             new CommandInfo("decodefile", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEFILE_DESC",
