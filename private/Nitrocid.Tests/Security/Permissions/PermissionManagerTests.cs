@@ -36,7 +36,6 @@ namespace Nitrocid.Tests.Security.Permissions
         /// <summary>
         /// Add necessary user for testing
         /// </summary>
-        [Description("Management")]
         [ClassInitialize]
 #pragma warning disable IDE0060
         public static void AddNecessaryUser(TestContext tc)
@@ -85,7 +84,6 @@ namespace Nitrocid.Tests.Security.Permissions
         /// <summary>
         /// Remove necessary user for testing
         /// </summary>
-        [Description("Management")]
         [ClassCleanup]
         public static void RemoveNecessaryUser() =>
             UserManagement.TryRemoveUser("account").ShouldBeTrue();

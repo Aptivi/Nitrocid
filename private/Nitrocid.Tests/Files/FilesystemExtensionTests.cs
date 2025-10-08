@@ -32,7 +32,6 @@ namespace Nitrocid.Tests.Files
         /// Tests registering a custom file handler
         /// </summary>
         [ClassInitialize]
-        [Description("Extension")]
 #pragma warning disable IDE0060
         public static void RegisterUnitHandler(TestContext tc)
 #pragma warning restore IDE0060
@@ -140,7 +139,6 @@ namespace Nitrocid.Tests.Files
         /// Tests unregistering a custom file handler
         /// </summary>
         [ClassCleanup]
-        [Description("Extension")]
         public static void UnregisterUnitHandler()
         {
             var handler = ExtensionHandlerTools.GetFirstExtensionHandler(".ext");

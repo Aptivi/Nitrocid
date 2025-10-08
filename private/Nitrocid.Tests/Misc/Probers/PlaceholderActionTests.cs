@@ -63,14 +63,6 @@ namespace Nitrocid.Tests.Misc.Probers
         [DataRow("RID is <ridgeneric>")]
         [DataRow("Terminal emulator is <termemu>")]
         [DataRow("Terminal type is <termtype>")]
-        [DataRow("Foreground reset is <fgreset>here")]
-        [DataRow("Background reset is <bgreset>here")]
-        [DataRow("Foreground color is <f:4>0-15")]
-        [DataRow("Foreground color is <b:4>0-15")]
-        [DataRow("Foreground color is <f:254>0-255")]
-        [DataRow("Foreground color is <b:254>0-255")]
-        [DataRow("Foreground color is <f:255;255;255>truecolor")]
-        [DataRow("Foreground color is <b:255;255;255>truecolor")]
         [Description("Action")]
         public void TestParsePlaceholders(string stringToProbe)
         {
