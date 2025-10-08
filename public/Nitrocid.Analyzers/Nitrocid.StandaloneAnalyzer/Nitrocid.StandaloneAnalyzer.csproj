@@ -28,11 +28,11 @@
   <!-- LocaleGen Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Locator" Version="1.9.1" />
+    <PackageReference Include="Microsoft.Build.Locator" Version="1.10.2" />
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="[3.11.0]" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="[4.8.0]" />
     <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="[4.8.0]" />
-    <PackageReference Include="Terminaux" Version="8.0.0-20250927123854" />
+    <PackageReference Include="Terminaux" Version="8.0.0-20251008161514" />
   </ItemGroup>
 
   <Import Project="..\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems" Label="Shared" />

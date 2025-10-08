@@ -34,7 +34,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// Tests registering a custom config
         /// </summary>
         [ClassInitialize]
-        [Description("Management")]
         public static void InitRegisterConfig(TestContext tc)
         {
             tc.WriteLine("Entering config registration tests...");
@@ -229,7 +228,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// Tests unregistering a custom config
         /// </summary>
         [ClassCleanup]
-        [Description("Management")]
         public static void UninitUnregisterConfig()
         {
             ConfigTools.UnregisterCustomSetting(name);

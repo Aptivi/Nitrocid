@@ -37,7 +37,7 @@ using Nitrocid.Base.Shell.Shells.Debug;
 using Nitrocid.Base.Kernel.Starting;
 using Textify.Tools.Placeholder;
 
-[assembly: ClassCleanupExecution(ClassCleanupBehavior.EndOfClass)]
+[assembly: DoNotParallelize]
 
 namespace Nitrocid.Tests
 {
@@ -52,11 +52,6 @@ namespace Nitrocid.Tests
         [AssemblyInitialize]
         public static void ReadyEverything(TestContext tc)
         {
-            // Add this assembly to the console check whitelist
-            var asm = Assembly.GetEntryAssembly();
-            if (asm is not null)
-                ConsoleChecker.AddToCheckWhitelist(asm);
-
             // We need not to use real user config directory
             PathsManagement.isTest = true;
             if (FilesystemTools.FolderExists(PathsManagement.AppDataPath))

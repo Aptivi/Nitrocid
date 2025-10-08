@@ -101,9 +101,6 @@ namespace Nitrocid.Base.Kernel.Starting
         {
             try
             {
-                // Check for terminal
-                ConsoleChecker.CheckConsole();
-
                 // Initialize crucial things
                 if (!KernelPlatform.IsOnUnix())
                 {

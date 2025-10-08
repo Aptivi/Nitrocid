@@ -1,5 +1,5 @@
 ﻿<Project>
-  <Import Sdk="MSTest.Sdk" Project="Sdk.props" Version="3.10.4" />
+  <Import Sdk="MSTest.Sdk" Project="Sdk.props" Version="4.0.0" />
 
   <PropertyGroup>
     <OutputPath>KSTest\</OutputPath>
@@ -50,7 +50,7 @@
 
   <ItemGroup>
     <PackageReference Include="Shouldly" Version="4.3.0" />
-    <PackageReference Include="Terminaux" Version="8.0.0-20250927123854" />
+    <PackageReference Include="Terminaux" Version="8.0.0-20251008161514" />
   </ItemGroup>
 
   <ItemGroup>
@@ -86,6 +86,6 @@
     <RemoveDir Directories="KSTest\" />
   </Target>
   
-  <Import Sdk="MSTest.Sdk" Project="Sdk.targets" Version="3.10.4" />
+  <Import Sdk="MSTest.Sdk" Project="Sdk.targets" Version="4.0.0" />
   <Import Project="..\..\public\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 </Project>
