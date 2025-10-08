@@ -60,8 +60,3 @@ jobs:
             vnd/*.exe
       - name: Package Publication
         run: cmd.exe /C "tools\push.cmd ${{ secrets.NUGET_APIKEY }}"
-      - name: Notify build
-        uses: tsickert/discord-webhook@v6.0.0
-        with:
-          webhook-url: ${{ secrets.WEBHOOK_URL }}
-          content: "<:nitrocidks:1268905174563557452> ${{ steps.release-asset.outputs.SUBJECT }} <:nitrocidks:1268905174563557452>\n\n${{ steps.release-asset.outputs.BODY }}"
