@@ -27,8 +27,6 @@ using Nitrocid.Base.Users;
 using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Shell.Arguments;
-using System.Reflection;
-using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.Base.Shell.Shells
 {

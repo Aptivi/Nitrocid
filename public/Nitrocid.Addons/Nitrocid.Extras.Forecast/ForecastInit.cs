@@ -20,14 +20,13 @@
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Switches;
 using Nitrocid.Extras.Forecast.Forecast.Commands;
-using Nitrocid.Extras.Forecast.Localized;
 using Nitrocid.Extras.Forecast.Settings;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Forecast
 {
@@ -105,7 +104,7 @@ namespace Nitrocid.Extras.Forecast
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Forecast.Resources.Languages.Output.Localizations", typeof(ForecastInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             var config = new ForecastConfig();
             ConfigTools.RegisterBaseSetting(config);

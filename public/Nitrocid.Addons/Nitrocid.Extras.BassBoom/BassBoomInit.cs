@@ -21,7 +21,6 @@ using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.BassBoom.Commands;
 using Nitrocid.Extras.BassBoom.Screensavers;
 using Nitrocid.Extras.BassBoom.Settings;
-using Nitrocid.Extras.BassBoom.Localized;
 using System;
 using System.Collections.Generic;
 using BassBoom.Basolia;
@@ -32,7 +31,7 @@ using Nitrocid.Base.Misc.Screensaver;
 using System.Linq;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.BassBoom
 {
@@ -107,7 +106,7 @@ namespace Nitrocid.Extras.BassBoom
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.BassBoom.Resources.Languages.Output.Localizations", typeof(BassBoomInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("lyrics", new LyricsDisplay());
 

@@ -19,14 +19,13 @@
 
 using Nitrocid.Extras.Chemistry.Commands;
 using Nitrocid.Extras.Chemistry.Screensavers;
-using Nitrocid.Extras.Chemistry.Localized;
 using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Chemistry
 {
@@ -56,7 +55,7 @@ namespace Nitrocid.Extras.Chemistry
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Chemistry.Resources.Languages.Output.Localizations", typeof(ChemistryInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("periodicpreview", new PeriodicPreviewDisplay());
         }

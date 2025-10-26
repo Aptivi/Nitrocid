@@ -20,10 +20,9 @@
                         "Type": "SSelection",
                         "Variable": "CurrentLanguage",
                         "IsEnumeration": false,
-                        "SelectionFunctionName": "ListAllLanguages",
-                        "SelectionFunctionType": "LanguageManager",
-                        "IsSelectionFunctionDict": true,
-                        "SelectionFallback": [ "eng" ],
+                        "SelectionFunctionName": "GetCultureCodes",
+                        "SelectionFunctionType": "CultureManager",
+                        "SelectionFallback": [ "en-US" ],
                         "Description": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_LANGUAGE_DESC"
                     },
                     {

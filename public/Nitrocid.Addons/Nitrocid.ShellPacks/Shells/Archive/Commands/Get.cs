@@ -19,7 +19,6 @@
 
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using Nitrocid.ShellPacks.Tools;
 
 namespace Nitrocid.ShellPacks.Shells.Archive.Commands

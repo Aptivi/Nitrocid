@@ -79,7 +79,7 @@ namespace Nitrocid.Base.Kernel
                                     {
                                         Name = LanguageTools.GetLocalized("NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_LANGUAGE_NAME"),
                                         Description = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_LANGPROMPT"),
-                                        Choices = [new("Language", [new("Language group", LanguageManager.Languages.Select((kvp) => new InputChoiceInfo(kvp.Key, kvp.Value.FullLanguageName)).ToArray())])]
+                                        Choices = [new("Language", [new("Language group", LanguageManager.Languages.Select((kvp) => new InputChoiceInfo(kvp.Key, kvp.Value.EnglishName)).ToArray())])]
                                     }, true
                                 )
                             ]

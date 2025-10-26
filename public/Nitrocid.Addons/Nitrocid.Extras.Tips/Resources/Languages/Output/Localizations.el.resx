@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_TIPS_KERNELTIP_1" xml:space="preserve">
+    <value>ότι μπορείτε να εκτελέσετε εντολές διεργασίας με δύο τρόπους: εισάγοντας απευθείας το όνομα του εκτελέσιμου αρχείου και χρησιμοποιώντας την εντολή &apos;exec&apos;;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_2" xml:space="preserve">
+    <value>ότι μπορείτε να κλειδώσετε την οθόνη σας χρησιμοποιώντας την εντολή &apos;lockscreen&apos;;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_3" xml:space="preserve">
+    <value>ότι μπορείτε να δημιουργήσετε τις δικές σας τροποποιήσεις πυρήνα χρησιμοποιώντας C# και Visual Basic;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_4" xml:space="preserve">
+    <value>ότι μπορείτε να χρησιμοποιήσετε πολλές εντολές χρησιμοποιώντας το ερωτηματικό μεταξύ των εντολών;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_5" xml:space="preserve">
+    <value>ότι μπορείτε να ξεφύγετε από διπλά εισαγωγικά μέσα στα εισαγωγικά ορίσματα κατά την εκτέλεση εντολών;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_6" xml:space="preserve">
+    <value>ότι μπορείτε να αλλάξετε τις ρυθμίσεις του πυρήνα χρησιμοποιώντας την εντολή &apos;settings&apos;;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_7" xml:space="preserve">
+    <value>ότι μπορείτε να αποθηκεύσετε την οθόνη σας χρησιμοποιώντας την εντολή &quot;savescreen&quot;;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_8" xml:space="preserve">
+    <value>ότι μπορείτε να μας αναφέρετε σφάλματα μεταβαίνοντας στη σελίδα του έργου GitHub της Nitrocid;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_9" xml:space="preserve">
+    <value>ότι μπορείτε να κάνετε μια συντόμευση στην επιθυμητή εντολή χρησιμοποιώντας την εντολή &apos;ψευδώνυμο&apos;;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_10" xml:space="preserve">
+    <value>ότι μπορείτε να δημιουργήσετε τη δική σας οθόνη εκκίνησης χρησιμοποιώντας C# και Visual Basic;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_11" xml:space="preserve">
+    <value>ότι μπορείτε να εγκαταστήσετε επιπλέον πρόσθετα για να κάνετε τον πυρήνα σας πιο χρήσιμο και διασκεδαστικό;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_12" xml:space="preserve">
+    <value>ότι μπορείτε να δημιουργήσετε τα δικά σας φοβερά θέματα χρησιμοποιώντας την εντολή &apos;mktheme&apos;;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_13" xml:space="preserve">
+    <value>ότι μπορείτε να αλλάξετε τα χρώματα του πυρήνα σας είτε χρησιμοποιώντας την εντολή &quot;ρυθμίσεις&quot; είτε χρησιμοποιώντας ένα από τα προκατασκευασμένα θέματα;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_14" xml:space="preserve">
+    <value>ότι μπορείτε να επαναφέρετε τον πυρήνα σας στις εργοστασιακές προεπιλογές χρησιμοποιώντας το όρισμα &apos;reset&apos;;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_15" xml:space="preserve">
+    <value>ότι μπορείτε να αποκτήσετε πρόσβαση στην εκτενή τεκμηρίωσή μας στη σελίδα μας στο GitBook;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_16" xml:space="preserve">
+    <value>ότι οι μακροπρόθεσμες εκδόσεις υποστηρίζονται για πέντε χρόνια για κύρια υποστήριξη και τρία χρόνια για ενημερώσεις ασφαλείας;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
+    <value>ότι το 0.0.1 ήταν η πρώτη έκδοση του Nitrocid KS που κυκλοφόρησε στις 22 Φεβρουαρίου 2018;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
+    <value>ότι η σειρά 0.0.24.x ήταν η μόνη σειρά εκδόσεων που είχε την έκδοση API v2.1;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_19" xml:space="preserve">
+    <value>ότι οι βραχυπρόθεσμες εκδόσεις υποστηρίζονται μόνο για εννέα μήνες;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_20" xml:space="preserve">
+    <value>ότι η σειρά 0.1.x δεν είναι συμβατή προς τα πίσω με τη σειρά 0.0.24.x ή παλαιότερη;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
+    <value>ότι μπορείτε να εκτελέσετε το Nitrocid KS σε Linux, macOS και Android;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
+    <value>ότι μπορείτε να ανατρέξετε στην τεκμηρίωση του API για να σας βοηθήσει να φτιάξετε τα mods σας;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_23" xml:space="preserve">
+    <value>ότι μπορείτε να αποκτήσετε πολλά από τα φοβερά παιχνίδια, όπως το Hangman και το ShipDuet, εγκαθιστώντας τα επιπλέον πρόσθετα;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_24" xml:space="preserve">
+    <value>ότι, στο Meteor, εάν συντρίψετε με μια κόκκινη καταιγίδα μετεωριτών, το διαστημόπλοιό σας συντρίβεται;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_25" xml:space="preserve">
+    <value>ότι μπορείτε να μετατρέψετε τον πυρήνα σας σε κέντρα πληροφοριών χρησιμοποιώντας τη δυνατότητα σύνδεσης;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_26" xml:space="preserve">
+    <value>ότι μπορείτε να δημιουργήσετε ομάδες χρηστών για να οργανώσετε λογαριασμούς χρηστών;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_27" xml:space="preserve">
+    <value>ότι εάν είστε μέλος μιας ομάδας που εκχωρεί ορισμένα δικαιώματα, σας επιτρέπεται να εκτελείτε τέτοιες λειτουργίες;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_28" xml:space="preserve">
+    <value>ότι μπορείτε να αλλάξετε τη ζώνη ώρας του πυρήνα σας χωρίς να επηρεαστεί το σύστημα κεντρικού υπολογιστή σας;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_29" xml:space="preserve">
+    <value>ότι μπορείτε να χρησιμοποιήσετε το διαδραστικό πρόγραμμα επεξεργασίας κειμένου και hex για εξοικονόμηση χρόνου;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_30" xml:space="preserve">
+    <value>ότι το παλαιότερο πρόγραμμα επεξεργασίας κειμένου που είναι γνωστό ότι δουλεύει με το πρώτο σύστημα Unix είναι το ed, το παλαιότερο πρόγραμμα επεξεργασίας κειμένου που κυκλοφόρησε το 1973 που κυκλοφόρησε μαζί με το σύστημα Unix που βρέθηκε σε ένα PDP-7 στα εργαστήρια AT&amp;T Bell;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_31" xml:space="preserve">
+    <value>ότι μπορείτε επίσης να αναγκάσετε την εντολή επεξεργασίας να εκκινήσει το πρόγραμμα επεξεργασίας σε συγκεκριμένο τύπο;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_32" xml:space="preserve">
+    <value>ότι το διαδραστικό πρόγραμμα επεξεργασίας κειμένου επιχειρεί να προσομοιώσει τα πιο βασικά χαρακτηριστικά των πιο δημοφιλών προγραμμάτων επεξεργασίας κειμένου Unix, vi και vim;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_33" xml:space="preserve">
+    <value>ότι αν δεν ξέρετε τι κάνετε με το δυαδικό αρχείο, η επεξεργασία αυτού του αρχείου με αυτόν τον τρόπο θα οδηγήσει σε καταστροφή δεδομένων ή απώλεια δεδομένων στο στοχευμένο αρχείο;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_34" xml:space="preserve">
+    <value>ότι στα συστήματα Linux, το κέλυφος εκκινείται με τη βοήθεια τόσο του χειριστή σύνδεσης όσο και του προγράμματος προετοιμασίας συστήματος, που συνήθως βρίσκεται στο /sbin/init;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_35" xml:space="preserve">
+    <value>ότι μπορείτε να εκτελέσετε κοινές λειτουργίες αρχείων, όπως αντιγραφή, μετακίνηση, διαγραφή, επεξεργασία και ούτω καθεξής;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_36" xml:space="preserve">
+    <value>ότι το διαδραστικό TUI ενός διαχειριστή αρχείων προσομοιώνει τη λειτουργικότητα του Midnight Commander;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_37" xml:space="preserve">
+    <value>ότι αν ο πυρήνας κολλήσει, συνήθως δημιουργεί ένα αρχείο ένδειξης σφαλμάτων;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_38" xml:space="preserve">
+    <value>ότι μπορείτε να διαγνώσετε τον πυρήνα διορθώνοντάς τον χρησιμοποιώντας την ενσωματωμένη λειτουργία εντοπισμού σφαλμάτων;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_39" xml:space="preserve">
+    <value>ότι μπορείτε να κατεβάσετε και να ανεβάσετε αρχεία απευθείας από το κέλυφος UESH;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_40" xml:space="preserve">
+    <value>ότι ο πυρήνας μπορεί να μεταφραστεί ακόμη και σε στάδια προ-εκκίνησης ξεκινώντας τον με το όρισμα &apos;lang&apos;;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_41" xml:space="preserve">
+    <value>ότι μπορείτε να δημιουργήσετε τα δικά σας screensavers καταχωρώντας τα στο mod σας;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_42" xml:space="preserve">
+    <value>ότι η πρώτη προφύλαξη οθόνης που έκλεισε την οθόνη μετά από τρία λεπτά αδράνειας στους αρχικούς υπολογιστές της IBM, scrnsave, δημιουργήθηκε το 1983 από τον John Socha;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_43" xml:space="preserve">
+    <value>ότι ορισμένες από τις προφυλάξεις οθόνης με γρήγορο ρυθμό μπορεί να προκαλέσουν φωτοευαίσθητες κρίσεις;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_44" xml:space="preserve">
+    <value>ότι τα ημερολόγια του πυρήνα χρησιμοποιούνται ως αρχεία καταγραφής εκκίνησης και τερματισμού λειτουργίας;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_45" xml:space="preserve">
+    <value>ότι τα mods σας μπορούν πλέον να μεταφραστούν;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_46" xml:space="preserve">
+    <value>ότι τα mods σας μπορούν να επικοινωνούν με πρόσθετα πυρήνα και άλλα mod, δημιουργώντας κάποιο είδος επικοινωνίας και επιτυγχάνοντας διαλειτουργικότητα;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_47" xml:space="preserve">
+    <value>ότι μπορείτε να συνδεθείτε στο απομακρυσμένο πρόγραμμα εντοπισμού σφαλμάτων και, προαιρετικά, στον διακομιστή συνομιλίας;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_48" xml:space="preserve">
+    <value>ότι μπορείτε να χρησιμοποιήσετε το κέλυφος εντοπισμού σφαλμάτων, το οποίο είναι διαθέσιμο μόνο για εκδόσεις ανάπτυξης;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_49" xml:space="preserve">
+    <value>ότι τα mods σας μπορούν πλέον να έχουν τη δική τους διαμόρφωση καταχωρώντας τις σχετικές κλάσεις τους;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_50" xml:space="preserve">
+    <value>ότι τα mods σας μπορούν να καταχωρήσουν τα δικά τους κελύφη;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_51" xml:space="preserve">
+    <value>ότι τα mods σας μπορούν να προσθέσουν εντολές στα υπάρχοντα κελύφη για να αυξήσουν τον αριθμό των εντολών που μπορούν να χρησιμοποιηθούν;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_52" xml:space="preserve">
+    <value>ότι οι κλάσεις εντολών σας μπορούν να αναπαραστήσουν με ακρίβεια περασμένα ορίσματα και διακόπτες;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_53" xml:space="preserve">
+    <value>ότι μπορείτε να ρωτήσετε τους διακόπτες που έχουν περάσει χρησιμοποιώντας τις κλάσεις διαχείρισης μεταγωγών που βρίσκονται στο API του πυρήνα;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_54" xml:space="preserve">
+    <value>ότι το UESH περιλαμβάνει τη λειτουργία δέσμης ενεργειών για τη διευκόλυνση της δημιουργίας και εκτέλεσης σεναρίων;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_55" xml:space="preserve">
+    <value>ότι το κέλυφος περιλαμβάνει λειτουργικότητα για την αναστολή ακύρωσης για ενεργές εφαρμογές;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_56" xml:space="preserve">
+    <value>ότι το Nitrocid είναι βαθιά ενσωματωμένο με το Terminaux για να επιτρέπει ταχύτερη και καλύτερη απόδοση;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_57" xml:space="preserve">
+    <value>ότι μπορείτε τώρα να αλλάξετε το μέγεθος των διαδραστικών εφαρμογών χωρίς να ανησυχείτε ότι η έξοδος θα καταστραφεί;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_58" xml:space="preserve">
+    <value>ότι υπάρχουν εντολές που ζητούν είσοδο χρήστη, οι οποίες είναι χρήσιμες για σενάρια;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_59" xml:space="preserve">
+    <value>ότι μπορείτε να παρουσιάσετε την ερώτηση εισαγωγής χρήστη με διάφορους τρόπους, όπως επιλογή, πίνακας, απλός, επιλογή και ούτω καθεξής;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_60" xml:space="preserve">
+    <value>ότι μπορείτε να τοποθετήσετε τα σύμβολα θέσης στο κείμενό σας που τα υποστηρίζει;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_61" xml:space="preserve">
+    <value>ότι μπορείτε να χρησιμοποιήσετε διαφορετικά προγράμματα οδήγησης πυρήνα για να αλλάξετε τον τρόπο λειτουργίας μιας συγκεκριμένης λειτουργίας;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_62" xml:space="preserve">
+    <value>ότι μπορείτε να δημιουργήσετε τις δικές σας προφυλάξεις οθόνης και πιτσιλιές σε C# ή Visual Basic;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_63" xml:space="preserve">
+    <value>ότι μπορείτε να ρωτήσετε το σύστημα κεντρικού υπολογιστή και τον εξομοιωτή τερματικού χρησιμοποιώντας την κλάση πλατφόρμας πυρήνα;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_64" xml:space="preserve">
+    <value>ότι μπορείτε να ζητήσετε συναίνεση απορρήτου πριν κάνετε κάτι ευαίσθητο στο mod σας;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_65" xml:space="preserve">
+    <value>ότι μπορείτε να απενεργοποιήσετε τις ειδοποιήσεις χρησιμοποιώντας τη λειτουργία Μην ενοχλείτε;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_66" xml:space="preserve">
+    <value>ότι μπορείτε να αποθηκεύσετε το ιστορικό ειδοποιήσεων χρησιμοποιώντας μια λειτουργία που βρίσκεται στη διαχείριση ειδοποιήσεων;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_67" xml:space="preserve">
+    <value>ότι μπορείτε να αλλάξετε τον τρόπο δημιουργίας τυχαίων αριθμών αλλάζοντας το πρόγραμμα οδήγησης;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_68" xml:space="preserve">
+    <value>ότι διάφορα API παρέχουν χρήσιμες λειτουργίες για τα mods σας;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_69" xml:space="preserve">
+    <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας των Συμβουλών.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_70" xml:space="preserve">
+    <value>Εμφάνιση συμβουλών πυρήνα</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_71" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένο, το κέλυφος σάς δείχνει τις συμβουλές για κάθε σύνδεση.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_72" xml:space="preserve">
+    <value>ότι μπορείτε να φτιάξετε προγράμματα με δυνατότητα εκκίνησης χρησιμοποιώντας τα mods του πυρήνα σας;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_73" xml:space="preserve">
+    <value>Αποτυχία λήψης καταχωρήσεων ρυθμίσεων.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_74" xml:space="preserve">
+    <value>ότι το Nitrocid (Kernel Simulator 0.0.2) ονόμασε το ενσωματωμένο κέλυφος «UESH»;</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_75" xml:space="preserve">
+    <value>ότι οι προφυλάξεις οθόνης διαφημίζονταν ως λύση κατά της καύσης οθόνης σε καθοδικούς σωλήνες (CRT) ή οθόνες πλάσματος;</value>
+  </data>
+
+</root>

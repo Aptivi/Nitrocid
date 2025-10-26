@@ -26,7 +26,6 @@ using Terminaux.Shell.Shells;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using System.Collections.Generic;
 using System.Text;

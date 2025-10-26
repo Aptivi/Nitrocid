@@ -19,7 +19,6 @@
 
 using Nitrocid.Extras.Amusements.Amusements.Games;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {

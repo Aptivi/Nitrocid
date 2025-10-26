@@ -33,8 +33,7 @@ using Nitrocid.Extras.Calendar.Calendar;
 using Nitrocid.Base.Shell.Homepage;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Extras.Calendar.Calendar.Screensavers;
-using Nitrocid.Extras.Calendar.Localized;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Calendar
 {
@@ -259,7 +258,7 @@ namespace Nitrocid.Extras.Calendar
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Calendar.Resources.Languages.Output.Localizations", typeof(CalendarInit).Assembly));
             var config = new CalendarConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);

@@ -19,9 +19,8 @@
 
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Extensions;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 using Nitrocid.Base.Misc.Screensaver;
-using Nitrocid.ScreensaverPacks.Localized;
 using Nitrocid.ScreensaverPacks.Screensavers;
 using Nitrocid.ScreensaverPacks.Settings;
 using System.Collections.Generic;
@@ -150,7 +149,7 @@ namespace Nitrocid.ScreensaverPacks
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.ScreensaverPacks.Resources.Languages.Output.Localizations", typeof(ScreensaverPackInit).Assembly));
 
             // First, initialize screensavers
             foreach (var saver in Screensavers.Keys)

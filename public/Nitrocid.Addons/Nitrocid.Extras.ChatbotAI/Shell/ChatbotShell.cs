@@ -25,11 +25,8 @@ using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Colors.Themes.Colors;
-using Textify.General;
 using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Network.Connections;
-using Nitrocid.Base.Kernel.Exceptions;
-using OpenAI.Chat;
 
 namespace Nitrocid.Extras.ChatbotAI.Shell
 {

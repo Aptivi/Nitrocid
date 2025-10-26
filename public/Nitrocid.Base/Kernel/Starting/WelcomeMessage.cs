@@ -24,8 +24,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Textify.Tools.Placeholder;
 using Textify.General;
 using Terminaux.Base;
-using Terminaux.Inputs;
-using System;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Configuration;

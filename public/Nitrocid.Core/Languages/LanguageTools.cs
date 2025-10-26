@@ -17,45 +17,37 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LocaleStation.Tools;
-using Nitrocid.Core.Localized;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Resources;
 
 namespace Nitrocid.Core.Languages
 {
     internal static class LanguageTools
     {
-        private const string localType = "Nitrocid.Core";
-
-        internal static string GetLocalized(string id)
+        internal static readonly Dictionary<string, ResourceManager> resourceManagers = new()
         {
-            foreach (string type in LanguageCommon.Actions)
+            { "Nitrocid.Core", new("Nitrocid.Core.Resources.Languages.Output.Localizations", typeof(LanguageTools).Assembly) }
+        };
+
+        internal static string GetLocalized(string id) =>
+            GetLocalized(id, CultureInfo.CurrentUICulture);
+
+        internal static string GetLocalized(string id, CultureInfo culture)
+        {
+            foreach (var resourceManager in resourceManagers.Values)
             {
-                var action = LanguageCommon.GetAction(type);
-                if (action.Exists.Invoke(id, LanguageCommon.Language))
-                    return GetLocalized(id, type, LanguageCommon.Language);
+                string resourceLocalization = resourceManager.GetString(id, culture) ?? "";
+                if (!string.IsNullOrEmpty(resourceLocalization))
+                    return resourceLocalization;
             }
-            return GetLocalized(id, localType, LanguageCommon.Language);
-        }
-
-        internal static string GetLocalized(string id, string localType, string language)
-        {
-            AddCustomAction(localType, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
-            var type = LanguageCommon.GetAction(localType);
-            if (type.Exists.Invoke(id, language))
-                return LanguageCommon.Translate(id, localType, language);
             return id;
         }
 
-        internal static void AddCustomAction(string localType, LanguageLocalActions action)
-        {
-            if (!LanguageCommon.IsCustomActionDefined(localType))
-                LanguageCommon.AddCustomAction(localType, action);
-        }
+        internal static void AddCustomAction(string localType, ResourceManager resourceManager) =>
+            resourceManagers.TryAdd(localType, resourceManager);
 
-        internal static void RemoveCustomAction(string localType)
-        {
-            if (LanguageCommon.IsCustomActionDefined(localType))
-                LanguageCommon.RemoveCustomAction(localType);
-        }
+        internal static void RemoveCustomAction(string localType) =>
+            resourceManagers.Remove(localType);
     }
 }

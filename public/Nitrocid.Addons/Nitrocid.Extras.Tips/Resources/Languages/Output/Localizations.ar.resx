@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_TIPS_KERNELTIP_1" xml:space="preserve">
+    <value>أنه يمكنك تنفيذ أوامر العملية بطريقتين: إدخال اسم الملف القابل للتنفيذ مباشرةً، واستخدام الأمر &quot;exec&quot;؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_2" xml:space="preserve">
+    <value>أنه يمكنك قفل شاشتك باستخدام أمر &quot;lockscreen&quot;؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_3" xml:space="preserve">
+    <value>أنه يمكنك إنشاء تعديلات kernel الخاصة بك باستخدام C# وVisual Basic؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_4" xml:space="preserve">
+    <value>أنه يمكنك استخدام أوامر متعددة باستخدام الفاصلة المنقوطة بين الأوامر؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_5" xml:space="preserve">
+    <value>أنه يمكنك الهروب من علامات الاقتباس المزدوجة داخل الوسائط المقتبسة عند تنفيذ الأوامر؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_6" xml:space="preserve">
+    <value>أنه يمكنك تغيير إعدادات kernel باستخدام أمر &quot;الإعدادات&quot;؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_7" xml:space="preserve">
+    <value>أنه يمكنك حفظ شاشتك باستخدام الأمر &quot;savescreen&quot;؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_8" xml:space="preserve">
+    <value>أنه يمكنك إبلاغنا بالأخطاء بالانتقال إلى صفحة مشروع Nitrocid&apos;s GitHub؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_9" xml:space="preserve">
+    <value>أنه يمكنك عمل اختصار للأمر الذي تريده باستخدام الأمر &quot;الاسم المستعار&quot;؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_10" xml:space="preserve">
+    <value>هل يمكنك إنشاء شاشة البداية الخاصة بك باستخدام C# وVisual Basic؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_11" xml:space="preserve">
+    <value>أنه يمكنك تثبيت إضافات إضافية لجعل النواة الخاصة بك أكثر فائدة وتسلية؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_12" xml:space="preserve">
+    <value>أنه يمكنك إنشاء سماتك الرائعة باستخدام الأمر &quot;mktheme&quot;؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_13" xml:space="preserve">
+    <value>أنه يمكنك تغيير ألوان النواة الخاصة بك إما باستخدام أمر &quot;الإعدادات&quot; أو باستخدام أحد السمات المعدة مسبقًا؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_14" xml:space="preserve">
+    <value>أنه يمكنك إعادة ضبط النواة على إعدادات المصنع الافتراضية باستخدام وسيطة &quot;إعادة الضبط&quot;؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_15" xml:space="preserve">
+    <value>أنه يمكنك الوصول إلى وثائقنا الشاملة على صفحة GitBook الخاصة بنا؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_16" xml:space="preserve">
+    <value>هل يتم دعم الإصدارات طويلة المدى لمدة خمس سنوات للدعم الرئيسي وثلاث سنوات للتحديثات الأمنية؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
+    <value>أن 0.0.1 كان الإصدار الأول من Nitrocid KS الذي تم إصداره في 22 فبراير 2018؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
+    <value>أن سلسلة 0.0.24.x كانت سلسلة الإصدارات الوحيدة التي تحمل إصدار API v2.1؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_19" xml:space="preserve">
+    <value>أن الإصدارات قصيرة المدى مدعومة لمدة تسعة أشهر فقط؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_20" xml:space="preserve">
+    <value>أن السلسلة 0.1.x غير متوافقة مع السلسلة 0.0.24.x أو الأقدم؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
+    <value>هل يمكنك تشغيل Nitrocid KS على Linux وmacOS وAndroid؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
+    <value>هل يمكنك الرجوع إلى وثائق واجهة برمجة التطبيقات (API) لمساعدتك في إجراء تعديلاتك؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_23" xml:space="preserve">
+    <value>هل يمكنك الحصول على العديد من الألعاب الرائعة، مثل Hangman وShipDuet، عن طريق تثبيت الإضافات الإضافية؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_24" xml:space="preserve">
+    <value>أنه في لعبة Meteor، إذا اصطدمت بعاصفة نيزكية حمراء، فإن سفينة الفضاء الخاصة بك ستتحطم؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_25" xml:space="preserve">
+    <value>أنه يمكنك تحويل النواة الخاصة بك إلى مراكز معلومات باستخدام ميزة الإرساء؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_26" xml:space="preserve">
+    <value>أنه يمكنك إنشاء مجموعات مستخدمين لتنظيم حسابات المستخدمين؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_27" xml:space="preserve">
+    <value>أنه إذا كنت عضوًا في مجموعة تمنح أذونات معينة، فيُسمح لك بإجراء مثل هذه العمليات؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_28" xml:space="preserve">
+    <value>أنه يمكنك تغيير المنطقة الزمنية للنواة الخاصة بك دون التأثير على نظامك المضيف؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_29" xml:space="preserve">
+    <value>أنه يمكنك استخدام النص التفاعلي والمحرر السداسي لتوفير الوقت؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_30" xml:space="preserve">
+    <value>أن أقدم محرر نصوص معروف أنه يعمل مع نظام Unix الأول هو ed، وأقدم محرر نصوص تم إصداره في عام 1973 تم شحنه مع نظام Unix الموجود على PDP-7 في AT&amp;T Bell Labs؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_31" xml:space="preserve">
+    <value>أنه يمكنك أيضًا فرض أمر التحرير لتشغيل المحرر في نوع معين؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_32" xml:space="preserve">
+    <value>أن محرر النصوص التفاعلي يحاول محاكاة معظم الميزات الأساسية لمحرري النصوص الأكثر شهرة في Unix، vi وvim؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_33" xml:space="preserve">
+    <value>أنه ما لم تكن تعرف ما تفعله بالملف الثنائي، فإن تحرير هذا الملف بهذه الطريقة سيؤدي إلى تلف البيانات أو فقدان البيانات في الملف المستهدف؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_34" xml:space="preserve">
+    <value>أنه في أنظمة Linux، يتم بدء تشغيل الصدفة بمساعدة كل من معالج تسجيل الدخول وبرنامج تهيئة النظام، الموجود عادة في /sbin/init؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_35" xml:space="preserve">
+    <value>أنه يمكنك إجراء عمليات الملفات الشائعة، مثل النسخ والنقل والحذف والتحرير وما إلى ذلك؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_36" xml:space="preserve">
+    <value>أن TUI التفاعلي لمدير الملفات يحاكي وظيفة Midnight Commander؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_37" xml:space="preserve">
+    <value>أنه في حالة تعطل النواة، فإنه عادةً ما يقوم بإنشاء ملف تفريغ؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_38" xml:space="preserve">
+    <value>أنه يمكنك تشخيص النواة عن طريق تصحيح أخطائها باستخدام وظيفة التصحيح المضمنة؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_39" xml:space="preserve">
+    <value>أنه يمكنك تنزيل وتحميل الملفات مباشرة من shell UESH؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_40" xml:space="preserve">
+    <value>هل يمكن ترجمة النواة حتى في مراحل ما قبل التمهيد عن طريق تشغيلها باستخدام الوسيطة &quot;lang&quot;؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_41" xml:space="preserve">
+    <value>أنه يمكنك إنشاء شاشات التوقف الخاصة بك عن طريق تسجيلها في جهازك؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_42" xml:space="preserve">
+    <value>أن شاشة التوقف الأولى التي غطت الشاشة بعد ثلاث دقائق من عدم النشاط على أجهزة كمبيوتر IBM الأصلية، scrnsave، تم إنشاؤها في عام 1983 بواسطة جون سوشا؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_43" xml:space="preserve">
+    <value>أن بعض شاشات التوقف سريعة الخطى قد تسبب نوبات حساسية؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_44" xml:space="preserve">
+    <value>أن يتم استخدام مجلات kernel كسجلات للتمهيد وإيقاف التشغيل؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_45" xml:space="preserve">
+    <value>أن التعديلات الخاصة بك يمكن أن تصبح الآن قابلة للترجمة؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_46" xml:space="preserve">
+    <value>هل يمكن لتعديلاتك التواصل مع إضافات kernel والتعديلات الأخرى، مما يؤدي إلى إنشاء نوع من الاتصال وتحقيق إمكانية التشغيل البيني؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_47" xml:space="preserve">
+    <value>أنه يمكنك الاتصال بمصحح الأخطاء عن بعد، واختياريًا، بخادم الدردشة؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_48" xml:space="preserve">
+    <value>أنه يمكنك استخدام تصحيح الأخطاء، وهو متاح فقط لإصدارات التطوير؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_49" xml:space="preserve">
+    <value>هل يمكن لتعديلاتك الآن الحصول على تكوين خاص بها عن طريق تسجيل الفئات المرتبطة بها؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_50" xml:space="preserve">
+    <value>أن التعديلات الخاصة بك يمكنها تسجيل الأصداف الخاصة بها؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_51" xml:space="preserve">
+    <value>أن تعديلاتك يمكنها إضافة أوامر إلى الأصداف الموجودة لزيادة كمية الأوامر التي يمكن استخدامها؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_52" xml:space="preserve">
+    <value>أن فئات الأوامر الخاصة بك يمكن أن تمثل بدقة الوسائط والمفاتيح التي تم تمريرها؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_53" xml:space="preserve">
+    <value>أنه يمكنك الاستعلام عن المفاتيح التي تم تمريرها باستخدام فئات إدارة التبديل الموجودة في واجهة برمجة تطبيقات kernel؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_54" xml:space="preserve">
+    <value>أن UESH يتضمن وظيفة البرمجة النصية لتسهيل إنشاء البرامج النصية وتشغيلها؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_55" xml:space="preserve">
+    <value>أن الغلاف يتضمن وظيفة لمنع إلغاء التطبيقات النشطة؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_56" xml:space="preserve">
+    <value>أن Nitrocid متكامل بعمق مع Terminaux للسماح بعرض أسرع وأفضل؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_57" xml:space="preserve">
+    <value>هل يمكنك الآن تغيير حجم التطبيقات التفاعلية دون القلق من تلف المخرجات؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_58" xml:space="preserve">
+    <value>أن هناك أوامر تطلب إدخال المستخدم، وهي مفيدة للنصوص البرمجية؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_59" xml:space="preserve">
+    <value>أنه يمكنك تقديم سؤال إدخال المستخدم الخاص بك بعدة طرق، مثل الاختيار والجدول والبساطة والاختيار وما إلى ذلك؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_60" xml:space="preserve">
+    <value>أنه يمكنك وضع العناصر النائبة على النص الذي يدعمها؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_61" xml:space="preserve">
+    <value>أنه يمكنك استخدام برامج تشغيل kernel مختلفة لتغيير كيفية عمل عملية معينة؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_62" xml:space="preserve">
+    <value>هل يمكنك إنشاء شاشات توقف وبقع شاشة خاصة بك باستخدام لغة C# أو Visual Basic؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_63" xml:space="preserve">
+    <value>أنه يمكنك الاستعلام عن النظام المضيف والمحاكي الطرفي باستخدام فئة النظام الأساسي kernel؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_64" xml:space="preserve">
+    <value>أنه يمكنك طلب موافقة الخصوصية قبل القيام بشيء حساس في تعديلك؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_65" xml:space="preserve">
+    <value>أنه يمكنك إيقاف تشغيل الإشعارات باستخدام ميزة عدم الإزعاج؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_66" xml:space="preserve">
+    <value>هل يمكنك حفظ سجل الإشعارات باستخدام وظيفة موجودة في مدير الإشعارات؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_67" xml:space="preserve">
+    <value>أنه يمكنك تغيير كيفية إنشاء الأرقام العشوائية عن طريق تغيير برنامج التشغيل؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_68" xml:space="preserve">
+    <value>أن واجهات برمجة التطبيقات المتنوعة توفر وظائف مفيدة لتعديلاتك؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_69" xml:space="preserve">
+    <value>يتيح لك هذا القسم تكوين كيفية عمل التلميحات.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_70" xml:space="preserve">
+    <value>عرض نصائح النواة</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_71" xml:space="preserve">
+    <value>إذا تم تمكينه، يعرض لك shell النصائح حول كل تسجيل دخول.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_72" xml:space="preserve">
+    <value>أنه يمكنك إنشاء برامج قابلة للتمهيد باستخدام تعديلات kernel الخاصة بك؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_73" xml:space="preserve">
+    <value>فشل في الحصول على إدخالات الإعدادات.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_74" xml:space="preserve">
+    <value>هل أطلق Nitrocid (Kernel Simulator 0.0.2) على الغلاف المدمج اسم غلاف &quot;UESH&quot;؟</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_75" xml:space="preserve">
+    <value>هل تم الترويج لشاشات التوقف باعتبارها حلاً ضد احتراق الشاشة في أنابيب أشعة الكاثود (CRT) أو شاشات البلازما؟</value>
+  </data>
+
+</root>

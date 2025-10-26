@@ -18,15 +18,10 @@
 //
 
 using Terminaux.Colors.Themes.Colors;
-using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
-using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using System;
-using System.Linq;
 using Terminaux.Shell.Switches;
 using Nitrocid.Base.ConsoleBase.Inputs;
-using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Network.Connections;
 using OpenAI.Chat;

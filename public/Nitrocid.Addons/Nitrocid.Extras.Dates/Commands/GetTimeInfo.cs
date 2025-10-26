@@ -27,7 +27,6 @@ using Nitrocid.Base.Kernel.Time.Converters;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using Textify.General;
 
 namespace Nitrocid.Extras.Dates.Commands

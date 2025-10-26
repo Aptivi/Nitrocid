@@ -29,11 +29,10 @@ using System.Linq;
 using Terminaux.Shell.Switches;
 using Nitrocid.Base.Shell.Homepage;
 using Nitrocid.Extras.Contacts.Settings;
-using Nitrocid.Extras.Contacts.Localized;
 using Nitrocid.Base.Kernel.Configuration;
 using VisualCard.Common.Diagnostics;
 using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Contacts
 {
@@ -95,7 +94,7 @@ namespace Nitrocid.Extras.Contacts
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Contacts.Resources.Languages.Output.Localizations", typeof(ContactsInit).Assembly));
             var config = new ContactsConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);

@@ -27,7 +27,6 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.Base.Network.Connections;

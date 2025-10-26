@@ -19,12 +19,11 @@
 
 using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Dictionary.Commands;
-using Nitrocid.Extras.Dictionary.Localized;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Dictionary
 {
@@ -52,7 +51,7 @@ namespace Nitrocid.Extras.Dictionary
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Dictionary.Resources.Languages.Output.Localizations", typeof(DictionaryInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 

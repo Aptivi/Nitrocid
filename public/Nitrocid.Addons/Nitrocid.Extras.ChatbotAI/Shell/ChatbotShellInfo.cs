@@ -24,7 +24,6 @@ using Terminaux.Shell.Prompts;
 using Nitrocid.Extras.ChatbotAI.Shell.Presets;
 using Nitrocid.Extras.ChatbotAI.Shell.Commands;
 using Terminaux.Shell.Arguments;
-using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Extras.ChatbotAI.Shell
 {

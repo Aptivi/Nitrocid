@@ -26,7 +26,6 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using System;
 using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Network.Connections;

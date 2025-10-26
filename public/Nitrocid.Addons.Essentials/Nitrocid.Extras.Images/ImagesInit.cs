@@ -23,8 +23,7 @@ using System.Collections.Generic;
 using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
 using Nitrocid.Extras.Images.Commands;
-using Nitrocid.Extras.Images.Localized;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Images
 {
@@ -55,7 +54,7 @@ namespace Nitrocid.Extras.Images
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Images.Resources.Languages.Output.Localizations", typeof(ImagesInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 

@@ -22,6 +22,7 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Kernel.Exceptions;
+using System.Globalization;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Commands
 {
@@ -36,7 +37,7 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
             if (lang == "clear")
             {
                 // If we're doing this on ourselves, change the kernel language to the system language
-                lang = LanguageManager.currentLanguage.ThreeLetterLanguageName;
+                lang = LanguageManager.currentLanguage.Name;
                 if (UserManagement.CurrentUser.Username == userName)
                 {
                     LanguageManager.currentUserLanguage = LanguageManager.currentLanguage;
@@ -48,7 +49,7 @@ namespace Nitrocid.Base.Shell.Shells.Admin.Commands
                 UserManagement.SaveUsers();
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_ADMIN_USERLANG_SUCCESS"), lang);
             }
-            else if (LanguageManager.Languages.TryGetValue(lang, out LanguageInfo? langInfo))
+            else if (LanguageManager.Languages.TryGetValue(lang, out CultureInfo? langInfo))
             {
                 // Do it locally
                 if (UserManagement.CurrentUser.Username == userName)

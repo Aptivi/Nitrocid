@@ -20,7 +20,6 @@
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Switches;
 using Nitrocid.Extras.Amusements.Commands;
-using Nitrocid.Extras.Amusements.Localized;
 using Nitrocid.Extras.Amusements.Screensavers;
 using Nitrocid.Extras.Amusements.Settings;
 using Nitrocid.Extras.Amusements.Splashes;
@@ -33,7 +32,7 @@ using Nitrocid.Base.Misc.Splash;
 using System.Linq;
 using Nitrocid.Base.Shell.Homepage;
 using Nitrocid.Extras.Amusements.Amusements.Games;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Amusements
 {
@@ -173,7 +172,7 @@ namespace Nitrocid.Extras.Amusements
         public void StartAddon()
         {
             // Initialize everything
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Amusements.Resources.Languages.Output.Localizations", typeof(AmusementsInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("meteor", new MeteorDisplay());
             ScreensaverManager.AddonSavers.Add("meteordodge", new MeteorDodgeDisplay());

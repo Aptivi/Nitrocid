@@ -21,7 +21,6 @@ using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Base.Files;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles;

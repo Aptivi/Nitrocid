@@ -67,8 +67,6 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing
             new ShowTimeUtc(),
             new ShowDateUtc(),
             new ShowTimeDateUtc(),
-            new CheckString(),
-            new CheckStrings(),
             new CheckLocalizationLines(),
             new CheckSettingsEntries(),
             new ColorTest(),

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_STOCKS_COMMAND_STOCK_DESC" xml:space="preserve">
+    <value>प्रति घंटे स्टॉक की जानकारी प्राप्त करें</value>
+  </data>
+  <data name="NKS_STOCKS_COMMAND_STOCK_ARGUMENT_COMPANY_DESC" xml:space="preserve">
+    <value>लघु कंपनी प्रतीक</value>
+  </data>
+  <data name="NKS_STOCKS_AVAPIKEYPROMPT" xml:space="preserve">
+    <value>अपनी अल्फावेंटेज API कुंजी दर्ज करें</value>
+  </data>
+  <data name="NKS_STOCKS_AVAPIKEYNEEDED" xml:space="preserve">
+    <value>कृपया अपनी API कुंजी प्रदान करें.</value>
+  </data>
+  <data name="NKS_STOCKS_AVAPIKEYISDEMO" xml:space="preserve">
+    <value>प्रदर्शन API कुंजी का उपयोग नहीं किया जा सकता.</value>
+  </data>
+  <data name="NKS_STOCKS_AVAPIKEYINVALIDLENGTH" xml:space="preserve">
+    <value>आपकी API कुंजी 16 अक्षरों की होनी चाहिए.</value>
+  </data>
+  <data name="NKS_STOCKS_AVAPIFAILED" xml:space="preserve">
+    <value>स्टॉक डेटा प्राप्त करते समय कोई त्रुटि हुई। अतिरिक्त जानकारी यहाँ पाई जा सकती है</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_OPENING" xml:space="preserve">
+    <value>प्रारंभिक स्टॉक मूल्य</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HIGH" xml:space="preserve">
+    <value>उच्च स्टॉक मूल्य</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_LOW" xml:space="preserve">
+    <value>कम स्टॉक मूल्य</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_CLOSING" xml:space="preserve">
+    <value>समापन स्टॉक मूल्य</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_VOLUME" xml:space="preserve">
+    <value>स्टॉक वॉल्यूम</value>
+  </data>
+  <data name="NKS_STOCKS_AVAPIKEYCONFIGURE" xml:space="preserve">
+    <value>API कुंजी आवश्यक है। सेटिंग्स से कॉन्फ़िगर करें।</value>
+  </data>
+  <data name="NKS_STOCKS_NODATA" xml:space="preserve">
+    <value>कोई स्टॉक डेटा उपलब्ध नहीं है.</value>
+  </data>
+  <data name="NKS_STOCKS_SETTINGS_DESC" xml:space="preserve">
+    <value>यह अनुभाग आपको स्टॉक कॉन्फ़िगर करने देता है।</value>
+  </data>
+  <data name="NKS_STOCKS_SETTINGS_APIKEY_NAME" xml:space="preserve">
+    <value>एपीआई कुंजी</value>
+  </data>
+  <data name="NKS_STOCKS_SETTINGS_APIKEY_DESC" xml:space="preserve">
+    <value>अल्फावेंटेज स्टॉक एपीआई के लिए कुंजी</value>
+  </data>
+  <data name="NKS_STOCKS_SETTINGS_COMPANY_NAME" xml:space="preserve">
+    <value>कंपनी कोड</value>
+  </data>
+  <data name="NKS_STOCKS_SETTINGS_COMPANY_DESC" xml:space="preserve">
+    <value>स्टॉक कंपनी</value>
+  </data>
+  <data name="NKS_STOCKS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>सेटिंग प्रविष्टियाँ प्राप्त करने में विफल.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
+    <value>स्टॉक की जानकारी नहीं मिल पा रही है.</value>
+  </data>
+
+</root>

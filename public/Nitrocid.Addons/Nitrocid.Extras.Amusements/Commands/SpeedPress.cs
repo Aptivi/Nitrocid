@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Linq;
 using Nitrocid.Extras.Amusements.Amusements.Games;
 using Terminaux.Shell.Commands;
 using Textify.General;

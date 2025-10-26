@@ -19,7 +19,6 @@
 
 using Nitrocid.Extras.ThemeStudio.Studio;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.ThemeStudio.Commands
 {

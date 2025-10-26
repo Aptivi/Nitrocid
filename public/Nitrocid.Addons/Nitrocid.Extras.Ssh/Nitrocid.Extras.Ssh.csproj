@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="SSH.NET" Version="2025.0.0" />
   </ItemGroup>
 

@@ -22,7 +22,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Dates.Tools;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using System;
 
 namespace Nitrocid.Extras.Dates.Commands

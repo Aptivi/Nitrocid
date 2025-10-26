@@ -20,7 +20,6 @@
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {

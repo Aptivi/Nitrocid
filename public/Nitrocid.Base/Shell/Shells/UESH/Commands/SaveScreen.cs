@@ -19,7 +19,6 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Base.Misc.Interactives;
 using Terminaux.Inputs.Pointer;

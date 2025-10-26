@@ -21,7 +21,6 @@
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using System;
 using System.IO.Compression;
 using Nitrocid.Base.Kernel.Debugging;

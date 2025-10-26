@@ -36,7 +36,6 @@ namespace Nitrocid.Tests.Languages
         [Description("Setting")]
         public void TestUpdateCulture()
         {
-            LanguageManager.currentLanguage = LanguageManager.Languages["spa"];
             string ExpectedCulture = "Spanish";
             CultureManager.UpdateCulture(ExpectedCulture);
             CultureManager.CurrentCulture.EnglishName.ShouldContain(ExpectedCulture);
@@ -49,22 +48,8 @@ namespace Nitrocid.Tests.Languages
         [Description("Setting")]
         public void TestUpdateCultureDry()
         {
-            LanguageManager.currentLanguage = LanguageManager.Languages["spa"];
             string ExpectedCulture = "Spanish";
             CultureManager.UpdateCultureDry(ExpectedCulture);
-            CultureManager.CurrentCulture.EnglishName.ShouldContain(ExpectedCulture);
-        }
-
-        /// <summary>
-        /// Tests updating the culture using custom culture
-        /// </summary>
-        [TestMethod]
-        [Description("Setting")]
-        public void TestUpdateCultureCustom()
-        {
-            LanguageManager.currentLanguage = LanguageManager.Languages["spa"];
-            string ExpectedCulture = "Spanish";
-            CultureManager.UpdateCulture(ExpectedCulture);
             CultureManager.CurrentCulture.EnglishName.ShouldContain(ExpectedCulture);
         }
 
@@ -75,18 +60,16 @@ namespace Nitrocid.Tests.Languages
         [Description("Setting")]
         public void TestSetLang()
         {
-            LanguageManager.SetLang("spa").ShouldBeTrue();
-            Config.MainConfig.CurrentLanguage.ShouldBe("spa");
+            LanguageManager.SetLang("es").ShouldBeTrue();
+            Config.MainConfig.CurrentLanguage.ShouldBe("es");
 
             // Check for null
             var InfoInstance = LanguageManager.CurrentLanguageInfo;
             InfoInstance.ShouldNotBeNull();
-            InfoInstance.Strings.ShouldNotBeNull();
 
             // Check for property correctness
-            InfoInstance.FullLanguageName.ShouldBe("Spanish");
-            InfoInstance.ThreeLetterLanguageName.ShouldBe("spa");
-            InfoInstance.Strings.ShouldNotBeEmpty();
+            InfoInstance.EnglishName.ShouldBe("Spanish");
+            InfoInstance.Name.ShouldBe("es");
         }
 
         /// <summary>
@@ -96,18 +79,16 @@ namespace Nitrocid.Tests.Languages
         [Description("Setting")]
         public void TestSetLangDry()
         {
-            LanguageManager.SetLangDry("arb").ShouldBeTrue();
-            Config.MainConfig.CurrentLanguage.ShouldBe("arb");
+            LanguageManager.SetLangDry("ar").ShouldBeTrue();
+            Config.MainConfig.CurrentLanguage.ShouldBe("ar");
 
             // Check for null
             var InfoInstance = LanguageManager.CurrentLanguageInfo;
             InfoInstance.ShouldNotBeNull();
-            InfoInstance.Strings.ShouldNotBeNull();
 
             // Check for property correctness
-            InfoInstance.FullLanguageName.ShouldBe("Arabic");
-            InfoInstance.ThreeLetterLanguageName.ShouldBe("arb");
-            InfoInstance.Strings.ShouldNotBeEmpty();
+            InfoInstance.EnglishName.ShouldBe("Arabic");
+            InfoInstance.Name.ShouldBe("ar");
         }
 
         /// <summary>
@@ -115,7 +96,7 @@ namespace Nitrocid.Tests.Languages
         /// </summary>
         [ClassCleanup]
         public static void RestoreLanguage() =>
-            LanguageManager.SetLang("eng");
+            LanguageManager.SetLang("en-US");
 
     }
 }

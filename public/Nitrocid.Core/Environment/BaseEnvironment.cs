@@ -19,7 +19,6 @@
 
 using Nitrocid.Core.Languages;
 using System;
-using System.Linq;
 using System.Reflection;
 
 namespace Nitrocid.Core.Environment
