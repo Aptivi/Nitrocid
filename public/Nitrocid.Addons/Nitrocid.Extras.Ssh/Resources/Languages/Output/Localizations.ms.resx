@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_SSH_COMMAND_SSHELL_DESC" xml:space="preserve">
+    <value>Menyambung ke pelayan SSH.</value>
+  </data>
+  <data name="NKS_SSH_PASSWORDPROMPT" xml:space="preserve">
+    <value>Masukkan kata laluan untuk {0}:</value>
+  </data>
+  <data name="NKS_SSH_DISCONNECTED" xml:space="preserve">
+    <value>SSH Terputus.</value>
+  </data>
+  <data name="NKS_SSH_CONNECTFAILED" xml:space="preserve">
+    <value>Ralat semasa cuba menyambung ke pelayan SSH: {0}</value>
+  </data>
+  <data name="NKS_SSH_INVALIDOPTION" xml:space="preserve">
+    <value>Pilihan {0} yang ditentukan adalah tidak sah.</value>
+  </data>
+  <data name="NKS_SSH_ANSWERNEEDSNUM" xml:space="preserve">
+    <value>Jawapannya mestilah angka.</value>
+  </data>
+  <data name="NKS_SSH_GOBACK" xml:space="preserve">
+    <value>Tekan sebarang kekunci untuk kembali.</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_SSHCMD_DESC" xml:space="preserve">
+    <value>Menyambung ke pelayan SSH untuk melaksanakan arahan.</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_QUESTION" xml:space="preserve">
+    <value>Bagaimana anda ingin mengesahkan?</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_PRIVATEKEY" xml:space="preserve">
+    <value>Fail kunci peribadi</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_PASSWORD" xml:space="preserve">
+    <value>Kata laluan</value>
+  </data>
+  <data name="NKS_SSH_PASSPHRASEPROMPT" xml:space="preserve">
+    <value>Masukkan frasa laluan untuk kunci {0}:</value>
+  </data>
+  <data name="NKS_SSH_KEYFILENOTFOUND" xml:space="preserve">
+    <value>Fail kunci {0} tidak wujud.</value>
+  </data>
+  <data name="NKS_SSH_CANTADDPRIVKEY" xml:space="preserve">
+    <value>Ralat semasa cuba menambah kunci peribadi:</value>
+  </data>
+  <data name="NKS_SSH_SSHCMDFAILED" xml:space="preserve">
+    <value>Ralat semasa melaksanakan arahan SSH</value>
+  </data>
+  <data name="NKS_SSH_SSHELLFAILED" xml:space="preserve">
+    <value>Ralat pada shell SSH</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_LOGINPROMPT_DESC" xml:space="preserve">
+    <value>Tulis bagaimana anda mahu gesaan log masuk anda. Biarkan kosong untuk menggunakan gaya lalai. Pemegang tempat dihuraikan.</value>
+  </data>
+  <data name="NKS_SSH_PRIVKEYLOCATIONPROMPT" xml:space="preserve">
+    <value>Masukkan lokasi kunci peribadi untuk {0}. Tulis &quot;q&quot; untuk menyelesaikan penambahan kunci:</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_DESC" xml:space="preserve">
+    <value>Bahagian ini membolehkan anda mengkonfigurasi cara SSH berfungsi.</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_LOGINPROMPT_NAME" xml:space="preserve">
+    <value>Gaya gesaan nama pengguna untuk SSH</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_SPEEDDIAL_NAME" xml:space="preserve">
+    <value>Tambahkan sambungan baharu pada dail laju SSH</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_SPEEDDIAL_DESC" xml:space="preserve">
+    <value>Jika didayakan, tambahkan sambungan baharu pada dail laju SSH.</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Gagal mendapatkan entri tetapan.</value>
+  </data>
+  <data name="NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT" xml:space="preserve">
+    <value>SSH disambungkan tetapi tanpa pelanggan.</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC" xml:space="preserve">
+    <value>Pelayan SSH untuk disambungkan</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Nama pengguna untuk mengesahkan dengan</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Perintah untuk melaksanakan dari jauh</value>
+  </data>
+
+</root>

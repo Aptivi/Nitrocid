@@ -19,11 +19,11 @@
 
 using System;
 using System.Collections.Generic;
-using Nitrocid.Base.Localized;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Kernel.Exceptions;
+using System.Globalization;
 
 namespace Nitrocid.Base.Languages
 {
@@ -33,20 +33,20 @@ namespace Nitrocid.Base.Languages
     public static class LanguageManager
     {
 
-        internal static Dictionary<string, LanguageInfo> baseLanguages = [];
-        internal static LanguageInfo currentLanguage = Languages[Config.MainConfig.CurrentLanguage];
-        internal static LanguageInfo currentUserLanguage = Languages[Config.MainConfig.CurrentLanguage];
+        internal static Dictionary<string, CultureInfo> baseLanguages = [];
+        internal static CultureInfo currentLanguage = CultureManager.GetCulturesDictionary()[Config.MainConfig.CurrentLanguage];
+        internal static CultureInfo currentUserLanguage = CultureManager.GetCulturesDictionary()[Config.MainConfig.CurrentLanguage];
 
         /// <summary>
         /// Current language
         /// </summary>
-        public static LanguageInfo CurrentLanguageInfo =>
+        public static CultureInfo CurrentLanguageInfo =>
             Login.LoggedIn ? currentUserLanguage : currentLanguage;
 
         /// <summary>
         /// The installed languages list.
         /// </summary>
-        public static Dictionary<string, LanguageInfo> Languages
+        public static Dictionary<string, CultureInfo> Languages
         {
             get
             {
@@ -54,23 +54,9 @@ namespace Nitrocid.Base.Languages
                     return new(baseLanguages);
 
                 // Open all localized strings list
-                foreach (string lang in LocalStrings.Languages.Keys)
-                {
-                    Dictionary<string, string> strings = [];
-                    foreach (string id in LocalStrings.Localizations)
-                    {
-                        if (LocalStrings.Exists(id, lang))
-                        {
-                            string localized = LocalStrings.Translate(id, lang);
-                            strings.Add(id, localized);
-                        }
-                    }
-
-                    // Get the language name
-                    string langName = LocalStrings.Languages[lang];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}", vars: [lang, langName]);
-                    baseLanguages.Add(lang, new(lang, langName, strings));
-                }
+                var cultures = CultureManager.GetCultureCodes();
+                foreach (var cultureCode in cultures)
+                    baseLanguages.Add(cultureCode, new(cultureCode));
 
                 // Return the list
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} installed languages in total", vars: [baseLanguages.Count]);
@@ -87,7 +73,7 @@ namespace Nitrocid.Base.Languages
         {
             // Settings app may have passed the language name with the country
             lang = lang.Contains(' ') ? lang.Split(' ')[0] : lang;
-            if (Languages.TryGetValue(lang, out LanguageInfo? langInfo))
+            if (Languages.TryGetValue(lang, out CultureInfo? langInfo))
             {
                 // Set current language
                 try
@@ -125,16 +111,16 @@ namespace Nitrocid.Base.Languages
         /// <summary>
         /// Lists all languages
         /// </summary>
-        public static Dictionary<string, LanguageInfo> ListAllLanguages() =>
+        public static Dictionary<string, CultureInfo> ListAllLanguages() =>
             ListLanguages("");
 
         /// <summary>
         /// Lists the languages
         /// </summary>
         /// <param name="SearchTerm">Search term</param>
-        public static Dictionary<string, LanguageInfo> ListLanguages(string SearchTerm)
+        public static Dictionary<string, CultureInfo> ListLanguages(string SearchTerm)
         {
-            var ListedLanguages = new Dictionary<string, LanguageInfo>();
+            var ListedLanguages = new Dictionary<string, CultureInfo>();
 
             // List the Languages using the search term
             foreach (var Language in Languages)

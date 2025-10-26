@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_TIPS_KERNELTIP_1" xml:space="preserve">
+    <value>İşlem komutlarını iki şekilde çalıştırabileceğinizi biliyor muydunuz: çalıştırılabilir dosya adını doğrudan girerek ve &apos;exec&apos; komutunu kullanarak?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_2" xml:space="preserve">
+    <value>&apos;lockscreen&apos; komutunu kullanarak ekranınızı kilitleyebileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_3" xml:space="preserve">
+    <value>C# ve Visual Basic kullanarak kendi çekirdek değişikliklerinizi oluşturabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_4" xml:space="preserve">
+    <value>Komutlar arasında noktalı virgül kullanarak birden fazla komut kullanabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_5" xml:space="preserve">
+    <value>Komutları çalıştırırken tırnak içindeki argümanların içindeki çift tırnak işaretlerinden kaçabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_6" xml:space="preserve">
+    <value>&apos;settings&apos; komutunu kullanarak çekirdek ayarlarını değiştirebileceğinizi mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_7" xml:space="preserve">
+    <value>&apos;savescreen&apos; komutunu kullanarak ekranınızı kaydedebileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_8" xml:space="preserve">
+    <value>Hataları bize Nitrocid&apos;in GitHub proje sayfasına giderek bildirebileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_9" xml:space="preserve">
+    <value>&apos;alias&apos; komutunu kullanarak istediğiniz komuta kısayol oluşturabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_10" xml:space="preserve">
+    <value>C# ve Visual Basic kullanarak kendi açılış ekranınızı oluşturabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_11" xml:space="preserve">
+    <value>Çekirdeğinizi daha kullanışlı ve eğlenceli hale getirmek için ekstra eklentiler yükleyebileceğinizi mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_12" xml:space="preserve">
+    <value>&apos;mktheme&apos; komutunu kullanarak kendi harika temalarınızı yapabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_13" xml:space="preserve">
+    <value>Çekirdek renklerinizi &apos;ayarlar&apos; komutunu kullanarak veya önceden oluşturulmuş temalardan birini kullanarak değiştirebileceğinizi mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_14" xml:space="preserve">
+    <value>&apos;reset&apos; argümanını kullanarak çekirdeğinizi fabrika ayarlarına sıfırlayabileceğinizi mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_15" xml:space="preserve">
+    <value>Kapsamlı dokümanlarımıza GitBook sayfamızdan erişebileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_16" xml:space="preserve">
+    <value>Uzun vadeli sürümlerin ana destek için beş yıl, güvenlik güncellemeleri için ise üç yıl desteklendiği doğru mu?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
+    <value>0.0.1&apos;in 22 Şubat 2018&apos;de yayınlanan Nitrocid KS&apos;nin ilk sürümü olduğunu biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
+    <value>0.0.24.x serisinin API v2.1 sürümünü barındıran tek sürüm serisi olduğunu mu?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_19" xml:space="preserve">
+    <value>Kısa vadeli sürümlerin yalnızca dokuz ay boyunca desteklendiği mi?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_20" xml:space="preserve">
+    <value>0.1.x serisinin 0.0.24.x serisi veya daha eskileriyle geriye dönük uyumsuz olduğu doğru mu?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
+    <value>Nitrocid KS&apos;yi Linux, macOS ve Android&apos;de çalıştırabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
+    <value>Modlarınızı yaparken API dokümantasyonuna başvurabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_23" xml:space="preserve">
+    <value>Hangman ve ShipDuet gibi harika oyunlardan birçoğunu ekstra eklentiler yükleyerek oynayabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_24" xml:space="preserve">
+    <value>Meteor&apos;da kırmızı meteor fırtınasına yakalanırsanız uzay geminizin de parçalanacağını mı söylüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_25" xml:space="preserve">
+    <value>Yerleştirme özelliğini kullanarak çekirdeğinizi bilgi merkezlerine dönüştürebileceğinizi mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_26" xml:space="preserve">
+    <value>Kullanıcı hesaplarını düzenlemek için kullanıcı grupları oluşturabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_27" xml:space="preserve">
+    <value>eğer belirli izinleri veren bir grubun üyesiyseniz, bu tür işlemleri gerçekleştirmenize izin veriliyor mu?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_28" xml:space="preserve">
+    <value>Ana bilgisayarınızı etkilemeden çekirdek saat diliminizi değiştirebileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_29" xml:space="preserve">
+    <value>Zaman kazanmak için etkileşimli metin ve hex düzenleyiciyi kullanabileceğinizi mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_30" xml:space="preserve">
+    <value>İlk Unix sistemiyle çalıştığı bilinen en eski metin düzenleyicisinin, 1973 yılında piyasaya sürülen ve Unix sistemiyle birlikte gelen en eski metin düzenleyicisi olan ed olduğu ve AT&amp;T Bell Laboratuvarları&apos;ndaki bir PDP-7&apos;de bulunduğu doğru mu?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_31" xml:space="preserve">
+    <value>Edit komutunun editörü belirli bir türde başlatmasını da zorlayabilir misiniz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_32" xml:space="preserve">
+    <value>Etkileşimli metin düzenleyicisinin, en popüler Unix metin düzenleyicileri olan vi ve vim&apos;in en temel özelliklerini taklit etmeye çalıştığını mı düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_33" xml:space="preserve">
+    <value>İkili dosyayla ne yaptığınızı bilmediğiniz sürece, bu dosyayı bu şekilde düzenlemenin hedeflenen dosyada veri bozulmasına veya veri kaybına yol açacağını mı düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_34" xml:space="preserve">
+    <value>Linux sistemlerinde kabuğun hem oturum açma işleyicisi hem de sistem başlatma programının yardımıyla başlatıldığı, genellikle /sbin/init dizininde bulunduğu?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_35" xml:space="preserve">
+    <value>Kopyalama, taşıma, silme, düzenleme vb. gibi yaygın dosya işlemlerini gerçekleştirebiliyor musunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_36" xml:space="preserve">
+    <value>Bir dosya yöneticisinin etkileşimli TUI&apos;sinin Midnight Commander&apos;ın işlevselliğini simüle ettiğini biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_37" xml:space="preserve">
+    <value>çekirdek çökerse genellikle bir döküm dosyası mı oluşturulur?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_38" xml:space="preserve">
+    <value>Yerleşik hata ayıklama işlevini kullanarak çekirdeği hata ayıklayarak teşhis edebileceğinizi mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_39" xml:space="preserve">
+    <value>UESH kabuğundan doğrudan dosya indirip yükleyebileceğinizi mi?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_40" xml:space="preserve">
+    <value>çekirdeğin &apos;lang&apos; argümanı ile başlatılarak ön-önceki aşamalarda bile çevrilebileceği mi?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_41" xml:space="preserve">
+    <value>modunuza kaydederek kendi ekran koruyucularınızı oluşturabileceğinizi mi?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_42" xml:space="preserve">
+    <value>Orijinal IBM PC&apos;lerde üç dakikalık hareketsizlikten sonra ekranı karartan ilk ekran koruyucu olan scrnsave&apos;in 1983 yılında John Socha tarafından yaratıldığını biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_43" xml:space="preserve">
+    <value>Bazı hızlı ekran koruyucuların ışığa duyarlı nöbetlere neden olabileceği doğru mu?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_44" xml:space="preserve">
+    <value>Çekirdek günlüklerinin önyükleme ve kapatma günlükleri olarak kullanıldığı doğru mu?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_45" xml:space="preserve">
+    <value>modlarınızın artık çevrilebilir hale gelebileceğini mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_46" xml:space="preserve">
+    <value>Modlarınızın çekirdek eklentileri ve diğer modlarla iletişim kurabilmesi, bir tür iletişim yaratabilmesi ve birlikte çalışabilirlik sağlayabilmesi mümkün mü?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_47" xml:space="preserve">
+    <value>Uzaktan hata ayıklayıcıya ve isteğe bağlı olarak sohbet sunucusuna bağlanabiliyor musunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_48" xml:space="preserve">
+    <value>Yalnızca geliştirme sürümlerinde kullanılabilen hata ayıklama kabuğunu kullanabiliyor musunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_49" xml:space="preserve">
+    <value>Moderatörlerinizin artık ilişkili sınıflarını kaydederek kendi yapılandırmalarına sahip olabileceklerini mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_50" xml:space="preserve">
+    <value>modlarınızın kendi kabuklarını kaydedebilmeleri mümkün mü?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_51" xml:space="preserve">
+    <value>Moderatörlerinizin mevcut kabuklara komutlar ekleyerek kullanılabilecek komut sayısını artırabileceğini mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_52" xml:space="preserve">
+    <value>Komut sınıflarınızın geçirilen argümanları ve anahtarları doğru bir şekilde temsil edebilmesi mümkün mü?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_53" xml:space="preserve">
+    <value>Çekirdek API&apos;sinde bulunan anahtar yönetim sınıflarını kullanarak geçirilen anahtarları sorgulayabileceğinizi mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_54" xml:space="preserve">
+    <value>UESH&apos;nin komut dosyası oluşturmayı ve çalıştırmayı kolaylaştırmak için komut dosyası işlevini içerdiğini mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_55" xml:space="preserve">
+    <value>Kabuğun aktif uygulamalar için iptali engelleyecek bir işlevselliğe sahip olması mı?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_56" xml:space="preserve">
+    <value>Nitrocid&apos;in Terminaux ile derinlemesine entegre edilerek daha hızlı ve daha iyi render alınmasına olanak sağladığını biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_57" xml:space="preserve">
+    <value>Artık çıktı bozulması endişesi duymadan etkileşimli uygulamaların boyutunu değiştirebiliyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_58" xml:space="preserve">
+    <value>Kullanıcıdan girdi isteyen ve scriptler için kullanışlı olan komutların olduğunu biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_59" xml:space="preserve">
+    <value>Kullanıcı girişi sorunuzu seçenek, tablo, basit, seçim vb. gibi çeşitli şekillerde sunabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_60" xml:space="preserve">
+    <value>metninize onları destekleyen yer tutucuları yerleştirebilir misiniz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_61" xml:space="preserve">
+    <value>Belirli bir işlemin nasıl çalıştığını değiştirmek için farklı çekirdek sürücülerini kullanabileceğinizi mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_62" xml:space="preserve">
+    <value>C# veya Visual Basic&apos;te kendi ekran koruyucularınızı ve açılış görsellerinizi yapabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_63" xml:space="preserve">
+    <value>Çekirdek platform sınıfını kullanarak ana sisteme ve terminal emülatörüne sorgu gönderebileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_64" xml:space="preserve">
+    <value>Modunuzda hassas bir şey yapmadan önce gizlilik izni isteyebileceğinizi biliyor musunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_65" xml:space="preserve">
+    <value>Rahatsız Etmeyin özelliğini kullanarak bildirimleri kapatabileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_66" xml:space="preserve">
+    <value>Bildirim yöneticisinde bulunan bir fonksiyonu kullanarak bildirim geçmişini kaydedebileceğinizi biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_67" xml:space="preserve">
+    <value>Sürücüyü değiştirerek rastgele sayıların nasıl üretileceğini değiştirebileceğinizi mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_68" xml:space="preserve">
+    <value>Çeşitli API&apos;lerin modlarınız için yararlı işlevler sağladığını biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_69" xml:space="preserve">
+    <value>Bu bölüm İpuçları&apos;nın nasıl çalışacağını yapılandırmanızı sağlar.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_70" xml:space="preserve">
+    <value>Çekirdek ipuçlarını göster</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_71" xml:space="preserve">
+    <value>Etkinleştirildiğinde, kabuk size her oturum açmada ipuçlarını gösterir.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_72" xml:space="preserve">
+    <value>Çekirdek modlarınızı kullanarak önyüklenebilir programlar yapabileceğinizi mi düşünüyorsunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_73" xml:space="preserve">
+    <value>Ayar girişleri alınamadı.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_74" xml:space="preserve">
+    <value>Nitrocid&apos;in (Kernel Simulator 0.0.2) yerleşik kabuğa &apos;UESH&apos; kabuğu adını verdiğini biliyor muydunuz?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_75" xml:space="preserve">
+    <value>Ekran koruyucuların katot ışınlı tüp (CRT) veya plazma ekranlardaki ekran yanmasına karşı bir çözüm olduğu öne sürülmüştü?</value>
+  </data>
+
+</root>

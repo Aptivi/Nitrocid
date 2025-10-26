@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME" xml:space="preserve">
+    <value>Το κείμενο εμφανίζεται</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_SHORT" xml:space="preserve">
+    <value>Γράψτε όποιο κείμενο θέλετε να εμφανίζεται. Το πιο κοντό είναι καλύτερο.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Ενεργοποιήστε τα αληθινά χρώματα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_NAME" xml:space="preserve">
+    <value>Χρώματα κύκλου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Το Disco θα κάνει κύκλους χρωμάτων όταν είναι ενεργοποιημένο. Διαφορετικά, επιλέξτε τυχαία χρώματα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_BGCOLOR_NAME" xml:space="preserve">
+    <value>Χρώμα του φόντου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>Καθυστέρηση σε χιλιοστά του δευτερολέπτου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν κάνετε την επόμενη εγγραφή;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSCOLOR_NAME" xml:space="preserve">
+    <value>Μπάρα χρώματος δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESCOLOR_NAME" xml:space="preserve">
+    <value>Μπάρα χρώματος λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSCOLOR_NAME" xml:space="preserve">
+    <value>Μπάρα χρώματος ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_INFOCOLOR_NAME" xml:space="preserve">
+    <value>Χρώμα πληροφοριών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_NAME" xml:space="preserve">
+    <value>Κρότωνες για αλλαγή χρώματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLETICKS_DESC" xml:space="preserve">
+    <value>Εάν ο κύκλος χρωμάτων είναι ενεργοποιημένος, πόσα τικ πριν αλλάξετε τα χρώματα στο ProgressClock; 1 τικ = 0,5 δευτερόλεπτα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Το ProgressClock θα επιλέξει τυχαία χρώματα εάν είναι ενεργοποιημένο. Διαφορετικά, χρησιμοποιήστε χρώματα από τη διαμόρφωση.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_NAME" xml:space="preserve">
+    <value>Μέγιστος αριθμός θέσεων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_DESC" xml:space="preserve">
+    <value>Πόσες θέσεις ανάβουν πριν χαμηλώσουν;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME" xml:space="preserve">
+    <value>Καθυστέρηση εξαφάνισης σε χιλιοστά του δευτερολέπτου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME" xml:space="preserve">
+    <value>Max Fade Steps</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν εξαφανιστεί το κείμενο;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC" xml:space="preserve">
+    <value>Πόσα βήματα fade να κάνετε;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_NAME" xml:space="preserve">
+    <value>Καθυστέρηση εγγραφής ξανά σε χιλιοστά του δευτερολέπτου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν γράψετε ξανά κείμενο;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG" xml:space="preserve">
+    <value>Γράψτε όποιο κείμενο θέλετε να εμφανίζεται. Περισσότερο είναι καλύτερο.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME" xml:space="preserve">
+    <value>Ελάχιστη ταχύτητα εγγραφής σε WPM</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MAXSPEED_NAME" xml:space="preserve">
+    <value>Μέγιστη ταχύτητα εγγραφής σε WPM</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TYPOPERCENT_NAME" xml:space="preserve">
+    <value>Πιθανότητα τυπογραφικού λάθους σε ποσοστό</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_NAME" xml:space="preserve">
+    <value>Μαντηλάκια για αλλαγή κατεύθυνσης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_DESC" xml:space="preserve">
+    <value>Πόσα μαντηλάκια πρέπει να κάνετε πριν αλλάξετε κατεύθυνση τυχαία;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_NAME" xml:space="preserve">
+    <value>Πάντα στο κέντρο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC" xml:space="preserve">
+    <value>Γράψτε όποιο κείμενο θέλετε να εμφανίζεται.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_DESC" xml:space="preserve">
+    <value>Εάν το κείμενο που εμφανίζεται στη μαρκίζα είναι πάντα κεντραρισμένο.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_NAME" xml:space="preserve">
+    <value>Χρησιμοποιήστε το Console API</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_DESC" xml:space="preserve">
+    <value>Είτε θα χρησιμοποιήσετε το API της κονσόλας για διαγραφή κειμένου είτε για τη χρήση της ταχύτερης ακολουθίας VT εκκαθάρισης γραμμών. Εάν είναι False, ο Marquee θα χρησιμοποιήσει την κατάλληλη ακολουθία VT. Διαφορετικά, θα χρησιμοποιήσει το πιθανώς πιο αργό API της Κονσόλας.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_NAME" xml:space="preserve">
+    <value>Χρησιμοποιήστε Beats Per Minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC" xml:space="preserve">
+    <value>Εάν θα χρησιμοποιήσετε τη μονάδα Beats Per Minute για να γράψετε το επόμενο χρώμα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME" xml:space="preserve">
+    <value>Καθυστέρηση στα Beats Per Minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC" xml:space="preserve">
+    <value>Πόσους παλμούς ανά λεπτό να περιμένετε πριν κάνετε την επόμενη εγγραφή;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Το BeatFader θα επιλέξει τυχαία χρώματα εάν είναι ενεργοποιημένο. Διαφορετικά, χρησιμοποιήστε χρώματα από τη διαμόρφωση.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME" xml:space="preserve">
+    <value>Νέα καθυστέρηση οθόνης σε χιλιοστά του δευτερολέπτου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_NAME" xml:space="preserve">
+    <value>Καταμέτρηση στηλών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_NAME" xml:space="preserve">
+    <value>Όριο πλήρωσης γραμμής</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_NAME" xml:space="preserve">
+    <value>Πιθανότητα κάλυψης πλήρωσης γραμμής σε ποσοστό</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_NAME" xml:space="preserve">
+    <value>Τύπος πλήρωσης γραμμής</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν γράψετε ξανά το κείμενο στη νέα οθόνη;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_DESC" xml:space="preserve">
+    <value>Οι στήλες κειμένου που θα εκτυπωθούν.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_DESC" xml:space="preserve">
+    <value>Πόσους χαρακτήρες να γράψετε πριν ενεργοποιήσετε το &quot;γέμισμα γραμμής&quot;;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_DESC" xml:space="preserve">
+    <value>Πιθανότητα το μοτίβο πλήρωσης γραμμής να εκτυπωθεί με όλα τα κεφαλαία σε ποσοστό</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MISSPROBABILITY_NAME" xml:space="preserve">
+    <value>Πιθανότητα αστοχίας σε ποσοστό</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_NAME" xml:space="preserve">
+    <value>Επόμενο διάστημα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν γεμίσετε την επόμενη ράμπα;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο κόκκινου χρώματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο πράσινου χρώματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο μπλε χρώματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο χρώματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο κόκκινου χρώματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο πράσινου χρώματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο μπλε χρώματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο κόκκινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο πράσινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο μπλε χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255 για 255 χρώματα ή 16 για 16 χρώματα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Μέγιστο επίπεδο κόκκινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Μέγιστο επίπεδο πράσινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Μέγιστο επίπεδο μπλε χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255 για 255 χρώματα ή 16 για 16 χρώματα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_FGCOLOR_NAME" xml:space="preserve">
+    <value>Χρώμα πρώτου πλάνου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_NAME" xml:space="preserve">
+    <value>Γραμμικός χαρακτήρας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_DESC" xml:space="preserve">
+    <value>Ένας χαρακτήρας για να σχηματίσει μια γραμμή. Φροντίστε να εισάγετε μόνο έναν χαρακτήρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_HOURS_NAME" xml:space="preserve">
+    <value>Χαρακτήρας επάνω αριστερή γωνία για γραμμή ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Χαρακτήρας επάνω αριστερή γωνία για γραμμή λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Χαρακτήρας πάνω αριστερή γωνία για γραμμή δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_HOURS_NAME" xml:space="preserve">
+    <value>Χαρακτήρας επάνω δεξιά γωνία για γραμμή ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Χαρακτήρας επάνω δεξιά γωνία για γραμμή λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Χαρακτήρας επάνω δεξιά γωνία για γραμμή δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_HOURS_NAME" xml:space="preserve">
+    <value>Κάτω αριστερή γωνία χαρακτήρας για γραμμή ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω αριστερής γωνίας για γραμμή λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω αριστερής γωνίας για τη γραμμή δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_HOURS_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω δεξιά γωνία για γραμμή ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω δεξιά γωνία για γραμμή λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω δεξιά γωνία για τη γραμμή δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_HOURS_NAME" xml:space="preserve">
+    <value>Χαρακτήρας άνω καρέ για γραμμή ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Χαρακτήρας άνω καρέ για γραμμή λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Χαρακτήρας άνω καρέ για γραμμή δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_HOURS_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω καρέ για γραμμή ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Χαμηλότερος χαρακτήρας καρέ για γραμμή λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Χαμηλότερος χαρακτήρας καρέ για γραμμή δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_HOURS_NAME" xml:space="preserve">
+    <value>Αριστερός χαρακτήρας καρέ για γραμμή ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Χαρακτήρας αριστερού πλαισίου για γραμμή λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Αριστερός χαρακτήρας καρέ για γραμμή δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_HOURS_NAME" xml:space="preserve">
+    <value>Χαρακτήρας δεξιού πλαισίου για γραμμή ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Χαρακτήρας δεξιού πλαισίου για γραμμή λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Χαρακτήρας δεξιού καρέ για γραμμή δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_NAME" xml:space="preserve">
+    <value>Πληροφοριακό κείμενο για ώρες</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_NAME" xml:space="preserve">
+    <value>Πληροφοριακό κείμενο για λεπτά</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_NAME" xml:space="preserve">
+    <value>Κείμενο πληροφοριών για δευτερόλεπτα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο κόκκινου χρώματος για ώρες</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο πράσινου χρώματος για ώρες</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο μπλε χρώματος για ώρες</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο χρώματος για ώρες</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο κόκκινου χρώματος για ώρες</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο πράσινου χρώματος για ώρες</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο μπλε χρώματος για ώρες</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος για ώρες</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο κόκκινου χρώματος για λεπτά</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο πράσινου χρώματος για λεπτά</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο μπλε χρώματος για λεπτά</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο χρώματος για λεπτά</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο κόκκινου χρώματος για λεπτά</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο πράσινου χρώματος για λεπτά</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο μπλε χρώματος για λεπτά</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος για λεπτά</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο κόκκινου χρώματος για δευτερόλεπτα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο πράσινου χρώματος για δευτερόλεπτα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο μπλε χρώματος για δευτερόλεπτα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο χρώματος για δευτερόλεπτα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο κόκκινου χρώματος για δευτερόλεπτα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο πράσινου χρώματος για δευτερόλεπτα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο μπλε χρώματος για δευτερόλεπτα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος για δευτερόλεπτα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_DESC" xml:space="preserve">
+    <value>Ένας χαρακτήρας που μοιάζει με την επάνω αριστερή γωνία. Φροντίστε να εισάγετε μόνο έναν χαρακτήρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_DESC" xml:space="preserve">
+    <value>Ένας χαρακτήρας που μοιάζει με την κάτω αριστερή γωνία. Φροντίστε να εισάγετε μόνο έναν χαρακτήρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_DESC" xml:space="preserve">
+    <value>Ένας χαρακτήρας που μοιάζει με το πάνω πλαίσιο. Φροντίστε να εισάγετε μόνο έναν χαρακτήρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_DESC" xml:space="preserve">
+    <value>Ένας χαρακτήρας που μοιάζει με το κάτω πλαίσιο. Φροντίστε να εισάγετε μόνο έναν χαρακτήρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_DESC" xml:space="preserve">
+    <value>Ένας χαρακτήρας που μοιάζει με το αριστερό πλαίσιο. Φροντίστε να εισάγετε μόνο έναν χαρακτήρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_DESC" xml:space="preserve">
+    <value>Ένας χαρακτήρας που μοιάζει με το σωστό καρέ. Φροντίστε να εισάγετε μόνο έναν χαρακτήρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_DESC" xml:space="preserve">
+    <value>Γράψτε πώς εμφανίζεται το κείμενο πληροφοριών για την τρέχουσα ώρα. {0} για την τρέχουσα ώρα από τις 24 ώρες.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_DESC" xml:space="preserve">
+    <value>Γράψτε πώς εμφανίζεται το κείμενο πληροφοριών για το τρέχον λεπτό. {0} για το τρέχον λεπτό από τα 60 λεπτά.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_DESC" xml:space="preserve">
+    <value>Γράψτε πώς εμφανίζεται το κείμενο πληροφοριών για το τρέχον δεύτερο. {0} για το τρέχον δευτερόλεπτο από τα 60 δευτερόλεπτα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TEXTCOLOR_NAME" xml:space="preserve">
+    <value>Χρώμα κειμένου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας επάνω αριστερής γωνίας για ράμπα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας επάνω δεξιά γωνία για ράμπα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω αριστερής γωνίας για ράμπα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω δεξιά γωνία για ράμπα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας άνω πλαισίου για ράμπα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω πλαισίου για μπάρα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας αριστερού πλαισίου για μπάρα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας δεξιού πλαισίου για μπάρα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_START_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο κόκκινου χρώματος για το χρώμα έναρξης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_START_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο πράσινου χρώματος για το χρώμα έναρξης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_START_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο μπλε χρώματος για χρώμα έναρξης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_START_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο χρώματος για το χρώμα έναρξης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_START_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο κόκκινου χρώματος για το χρώμα έναρξης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_START_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο πράσινου χρώματος για το χρώμα έναρξης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_START_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο μπλε χρώματος για το χρώμα έναρξης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_START_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος για το χρώμα έναρξης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_END_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο κόκκινου χρώματος για το τελικό χρώμα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_END_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο πράσινου χρώματος για το τελικό χρώμα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_END_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο μπλε χρώματος για το τελικό χρώμα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_END_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο χρώματος για το τελικό χρώμα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_END_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο κόκκινου χρώματος για το τελικό χρώμα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_END_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο πράσινου χρώματος για το τελικό χρώμα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_END_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο μπλε χρώματος για το τελικό χρώμα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_END_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος για το τελικό χρώμα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Ενεργοποιεί την υποστήριξη πραγματικού χρώματος.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCOLOR_NAME" xml:space="preserve">
+    <value>Χρώμα πάνω αριστερή γωνία για ράμπα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCOLOR_NAME" xml:space="preserve">
+    <value>Χρώμα πάνω δεξιά γωνία για μπάρα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCOLOR_NAME" xml:space="preserve">
+    <value>Κάτω αριστερή γωνία χρώματος για μπάρα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCOLOR_NAME" xml:space="preserve">
+    <value>Χρώμα κάτω δεξιά γωνία για ράμπα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECOLOR_NAME" xml:space="preserve">
+    <value>Χρώμα άνω πλαισίου για ράμπα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECOLOR_NAME" xml:space="preserve">
+    <value>Κάτω χρώμα πλαισίου για ράμπα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECOLOR_NAME" xml:space="preserve">
+    <value>Χρώμα αριστερού πλαισίου για ράμπα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECOLOR_NAME" xml:space="preserve">
+    <value>Δεξί χρώμα πλαισίου για ράμπα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_NAME" xml:space="preserve">
+    <value>Χρησιμοποιήστε χρώματα περιγράμματος για τη γραμμή ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_DESC" xml:space="preserve">
+    <value>Χρησιμοποιήστε τα χρώματα περιγράμματος για τη γραμμή ράμπας. Εάν είναι απενεργοποιημένο, θα δημιουργήσει μια γκρι γραμμή.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_NAME" xml:space="preserve">
+    <value>Γεμίστε τα κουτιά</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_DESC" xml:space="preserve">
+    <value>Σχεδιάζουμε το πλαίσιο στο σύνολό του ή σχεδιάζουμε μόνο το περίγραμμα;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_NAME" xml:space="preserve">
+    <value>Επόμενο διάστημα σήψης ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν σαπίσετε το ένα άκρο της επόμενης ράμπας;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_NAME" xml:space="preserve">
+    <value>Ακτίνα έκρηξης πυροτεχνημάτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_DESC" xml:space="preserve">
+    <value>Πόσα μπλοκ (έως 10) είναι η ακτίνα έκρηξης για το πυροτέχνημα όταν αναφλέγεται;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_NAME" xml:space="preserve">
+    <value>Γραμματοσειρά Figlet</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_DESC" xml:space="preserve">
+    <value>Γράψτε μια γραμματοσειρά figlet που να υποστηρίζεται από τη βιβλιοθήκη Figgle. Συμβουλευτείτε την τεκμηρίωση της βιβλιοθήκης για περισσότερες πληροφορίες</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_NAME" xml:space="preserve">
+    <value>Ενεργοποίηση ασπρόμαυρης λειτουργίας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_DESC" xml:space="preserve">
+    <value>Κάνει τη ντίσκο ασπρόμαυρη. Θα βλάψει πραγματικά τα μάτια σας εάν ήταν πολύ γρήγορο, επομένως δεν συνιστάται εάν αντιμετωπίζετε μια κρίση γρήγορων εικόνων.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_NAME" xml:space="preserve">
+    <value>Πυκνότητα θορύβου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_NEWSCREENDELAY_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν γράψετε στη νέα οθόνη;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_DESC" xml:space="preserve">
+    <value>Όσο μεγαλύτερο είναι το ποσοστό, τόσο πιο θορυβώδες είναι το σήμα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME" xml:space="preserve">
+    <value>Πυκνότητα δυσλειτουργίας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC" xml:space="preserve">
+    <value>Όσο μεγαλύτερο είναι το ποσοστό, τόσο πιο πυκνό είναι το σφάλμα!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORD_LOADING" xml:space="preserve">
+    <value>Φόρτωση...</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_KSX_CONTINUED" xml:space="preserve">
+    <value>Συνεχίζεται...</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_KSX_THEEND" xml:space="preserve">
+    <value>Το τέλος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS" xml:space="preserve">
+    <value>Ευτυχισμένο το νέο έτος!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_NAME" xml:space="preserve">
+    <value>Πτώση ευκαιρία</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις χρώματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_DESC" xml:space="preserve">
+    <value>Ένας χαρακτήρας που μοιάζει με την πάνω δεξιά γωνία. Φροντίστε να εισάγετε μόνο έναν χαρακτήρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_DESC" xml:space="preserve">
+    <value>Ένας χαρακτήρας που μοιάζει με την κάτω δεξιά γωνία. Φροντίστε να εισάγετε μόνο έναν χαρακτήρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MATRIX_SETTINGS_DESC" xml:space="preserve">
+    <value>Ο μειωμένος δυαδικός αριθμός στην οθόνη σας.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORMIX_SETTINGS_DESC" xml:space="preserve">
+    <value>Ανάμειξη χρωμάτων και εκτύπωση στην κονσόλα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_DESC" xml:space="preserve">
+    <value>Αυτό είναι το φως της ντίσκο, ένα από τα πρώτα screensavers.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITTERCOLOR_SETTINGS_DESC" xml:space="preserve">
+    <value>Το χρώμα λάμπει σε όλη την οθόνη.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_DESC" xml:space="preserve">
+    <value>Μια γραμμή που περιφέρεται στην κονσόλα κάθετα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISSOLVE_SETTINGS_DESC" xml:space="preserve">
+    <value>Διαλύει τα τυχαία χρώματα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOUNCINGBLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα πολύχρωμο μπλοκ που αναπηδά στην κονσόλα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας εμφανίζει τρεις γραμμές προόδου που αντιπροσωπεύουν την ώρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_DESC" xml:space="preserve">
+    <value>Φωτιστικά μπλοκ.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WIPE_SETTINGS_DESC" xml:space="preserve">
+    <value>Σκουπίζει την οθόνη με ένα χρώμα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIMPLEMATRIX_SETTINGS_DESC" xml:space="preserve">
+    <value>Απλή μήτρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITTERMATRIX_SETTINGS_DESC" xml:space="preserve">
+    <value>Αριθμοί μήτρας που απλώνονται τυχαία στην οθόνη.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα κείμενο που αναπηδά γύρω από την κονσόλα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC" xml:space="preserve">
+    <value>Ξεθώριασμα κειμένου μέσα και έξω.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC" xml:space="preserve">
+    <value>Ξεθώριασμα φόντου μέσα και έξω.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC" xml:space="preserve">
+    <value>Ξεθώριασμα κειμένου μέσα και έξω σε ρυθμούς.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC" xml:space="preserve">
+    <value>Κτυπήστε το χρώμα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει ένα άτομο που γράφει κείμενο με τυπογραφικά λάθη.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας εμφανίζει ένα κυλιόμενο κείμενο από τα δεξιά προς τα αριστερά.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει ένα άτομο που γράφει κείμενο για εφημερίδα στο λινοτυπικό πληκτρολόγιο στα παλιά χρόνια.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_DESC" xml:space="preserve">
+    <value>Τύπος μοτίβου γεμίσματος γραμμής. Το 0 εκτυπώνει το γνωστό μοτίβο χαρακτήρων etaoin, το 1 εκτυπώνει το πλήρες μοτίβο των χαρακτήρων etaoin και το 2 εκτυπώνει το τυχαίο σύνολο χαρακτήρων για να συμπληρώσει γρήγορα τη γραμμή.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει τέλεια ένα άτομο που γράφει κείμενο.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_NAME" xml:space="preserve">
+    <value>Εμφάνιση θέσης βέλους</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_DESC" xml:space="preserve">
+    <value>Εμφανίζει τη θέση της στήλης γράμματος της γραφομηχανής εμφανίζοντας ένα βέλος στο κάτω μέρος της οθόνης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FLASHCOLOR_SETTINGS_DESC" xml:space="preserve">
+    <value>Τα χρώματα που αναβοσβήνουν στην οθόνη σας.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SPOTWRITE_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει έναν προβολέα που αναζητά το κείμενό σας.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_DESC" xml:space="preserve">
+    <value>Γεμίζει τη ράμπα με χρώματα ντεγκραντέ.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_DESC" xml:space="preserve">
+    <value>Στοιβάζει τα κουτιά σε όλη την οθόνη.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARROT_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει μια ράβδο που σαπίζει με άλλο χρώμα φόντου, κάνοντας μια κλίση.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει πυροτεχνήματα που εκτοξεύονται και ανατινάζονται.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα έγχρωμο κείμενο figlet.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_NAME" xml:space="preserve">
+    <value>Λειτουργία ουράνιου τόξου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_DESC" xml:space="preserve">
+    <value>Ενεργοποιεί τη λειτουργία χρωμάτων ουράνιου τόξου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FLASHTEXT_SETTINGS_DESC" xml:space="preserve">
+    <value>Δείξτε ένα έγχρωμο κείμενο που αναβοσβήνει.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει στατικό θόρυβο της τηλεόρασης.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DATEANDTIME_SETTINGS_DESC" xml:space="preserve">
+    <value>Απλή ημερομηνία και ώρα στη μέση της οθόνης.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει ένα σφάλμα στην οθόνη σας.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει μια γραμμή πτώσης που κατεβαίνει και σβήνει.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει μια απροσδιόριστη γραμμή προόδου.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα παλλόμενο φόντο.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα παλλόμενο φόντο σε beats.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Το BeatPulse θα επιλέξει τυχαία χρώματα εάν είναι ενεργοποιημένο. Διαφορετικά, χρησιμοποιήστε χρώματα από τη διαμόρφωση.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC" xml:space="preserve">
+    <value>Σου δείχνει μια παλλόμενη άκρη.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC" xml:space="preserve">
+    <value>Σου δείχνει ένα παλλόμενο πλεονέκτημα στα beats.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Το BeatEdgePulse θα επιλέξει τυχαία χρώματα εάν είναι ενεργοποιημένο. Διαφορετικά, χρησιμοποιήστε χρώματα από τη διαμόρφωση.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει μια οθόνη γεμάτη χρώμα που αργά σαπίζει σε άλλο χρώμα, δημιουργώντας διαβαθμίσεις.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_NAME" xml:space="preserve">
+    <value>Επόμενο διάστημα σήψης κλίσης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν σαπίσετε την επόμενη οθόνη;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENT_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει μια κλίση στην οθόνη σας.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STARFIELD_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα ταξίδι με αστέρια σε 2D.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_DESC" xml:space="preserve">
+    <value>Αλλάζει το φόντο σύμφωνα με τα καθορισμένα χρώματα, το οποίο προσομοιώνει μια σειρήνα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_NAME" xml:space="preserve">
+    <value>Στυλ σειρήνας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_DESC" xml:space="preserve">
+    <value>Το στυλ σειρήνας.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC" xml:space="preserve">
+    <value>Περιστρεφόμενες κάθετες.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC" xml:space="preserve">
+    <value>Γεμίζει την κονσόλα με ένα χρώμα σαν φίδι.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει έναν ισοσταθμιστή που σας δείχνει μπάσα, μεσαία και πρίμα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_NEXTSCREENDELAY_NAME" xml:space="preserve">
+    <value>Καθυστέρηση επόμενης οθόνης σε χιλιοστά του δευτερολέπτου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει σφάλματα συστήματος από διαφορετικά λειτουργικά συστήματα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC" xml:space="preserve">
+    <value>Δημιουργεί χρώματα από την τυχαία μετατόπιση.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας εμφανίζει ένα κείμενο που ξεθωριάζει και αναβοσβήνει σε ρυθμούς.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Το ExcaliBeats θα επιλέξει τυχαία χρώματα εάν είναι ενεργοποιημένο. Διαφορετικά, χρησιμοποιήστε χρώματα από τη διαμόρφωση.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME" xml:space="preserve">
+    <value>Ρητή λειτουργία</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC" xml:space="preserve">
+    <value>Αλλάξτε ρητά το κείμενο σε Excalibur</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME" xml:space="preserve">
+    <value>Τρανς λειτουργία</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC" xml:space="preserve">
+    <value>Trance mode - Πολλαπλασιάζει το BPM επί 2 για να προσομοιώσει το στυλ μουσικής trance</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει μια ομάδα κυμάτων σε μπαρ.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_NAME" xml:space="preserve">
+    <value>Επίπεδο Συχνότητας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_DESC" xml:space="preserve">
+    <value>Το επίπεδο της συχνότητας. Αυτός είναι ο παρονομαστής της τιμής Pi στα μαθηματικά.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WAVE_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα κύμα που δημιουργεί μόνο του και προχωρά.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MESMERIZE_SETTINGS_DESC" xml:space="preserve">
+    <value>Σου δίνει μια μαγευτική αίσθηση.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_AURORA_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει το βόρειο σέλας.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει έναν εντυπωσιακό κεραυνό.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_NAME" xml:space="preserve">
+    <value>Πιθανότητα απεργίας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_DESC" xml:space="preserve">
+    <value>Πιθανότητα, σε ποσοστό, για απεργία</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα χρώμα φόντου που αλλάζει αργά.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_NAME" xml:space="preserve">
+    <value>Σκούρα χρώματα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_DESC" xml:space="preserve">
+    <value>Είτε θα χρησιμοποιήσετε σκούρα είτε ανοιχτά χρώματα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_NAME" xml:space="preserve">
+    <value>Βήματα χρώματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_DESC" xml:space="preserve">
+    <value>Πόσα βήματα χρώματος για τη μετάβαση μεταξύ δύο χρωμάτων;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει μια λέξη και το άθροισμά της.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα τετράγωνο που ξεθωριάζει σε τέσσερις γωνίες.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένω πριν εξαφανιστεί το τετράγωνο;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC" xml:space="preserve">
+    <value>Διασκορπίζει τον αριθμό σε ολόκληρη την οθόνη.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXGRID_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δίνει ένα μοτίβο κουτιού.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DESC" xml:space="preserve">
+    <value>Πτώση γραμμή χρωμάτων.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_DESC" xml:space="preserve">
+    <value>Πιθανότητα να ρίξετε ένα νέο χρώμα που πέφτει</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXT_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα απλό κείμενο.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTBOX_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα απλό κείμενο σε ένα πλαίσιο κειμένου.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORDHASHERWRITE_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει μια λέξη που γράφει αργά και το άθροισμά της.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει μια σειρήνα που χρησιμοποιεί το θέμα σας ως σύνολο χρωμάτων.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_SIRENSTYLE_DESC" xml:space="preserve">
+    <value>Στυλ σειρήνας από θέμα πυρήνα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STARFIELDWARP_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει μια ομάδα αστεριών στην μπροστινή όψη του πλοίου.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SPECKLES_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει μια ομάδα κηλίδων στην μπροστινή όψη του πλοίου.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LETTERSCATTER_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα διάσπαρτο γράμμα σε ολόκληρη την οθόνη.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MULTILINES_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει πολλές γραμμές.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LASERBEAMS_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ακτίνες λέιζερ.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTWANDER_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα κείμενο που περιφέρεται στην κονσόλα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_DESC" xml:space="preserve">
+    <value>Περιστρέφοντας το κύμα οριζόντια και κάθετα για να φτιάξετε υπέροχα μοτίβα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_NAME" xml:space="preserve">
+    <value>Οριζόντιο επίπεδο συχνότητας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_DESC" xml:space="preserve">
+    <value>Το επίπεδο της οριζόντιας συχνότητας. Αυτός είναι ο παρονομαστής της τιμής Pi στα μαθηματικά. Χρησιμοποιήστε αυτό για να δημιουργήσετε όμορφα κυματιστά περιστρεφόμενα!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_NAME" xml:space="preserve">
+    <value>Κάθετο επίπεδο συχνότητας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_DESC" xml:space="preserve">
+    <value>Το επίπεδο της κατακόρυφης συχνότητας. Αυτός είναι ο παρονομαστής της τιμής Pi στα μαθηματικά. Χρησιμοποιήστε αυτό για να δημιουργήσετε όμορφα κυματιστά περιστρεφόμενα!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DOORSHIFT_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει το άνοιγμα και το κλείσιμο της πόρτας.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTBLOOM_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει μια δυναμικά μεταβαλλόμενη κλίση.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SKYCOMET_SETTINGS_DESC" xml:space="preserve">
+    <value>Ένας κομήτης είναι στον ουρανό τρέχοντας γρήγορα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIAMOND_SETTINGS_DESC" xml:space="preserve">
+    <value>Το διαμάντι που λάμπει.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_DESC" xml:space="preserve">
+    <value>Αλλαγή χρώματος φόντου ανάλογα με την αυξανόμενη απόχρωση. ΟΥΡΑΝΙΟ ΤΟΞΟ!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_NAME" xml:space="preserve">
+    <value>Κορεσμός χρωματικής απόχρωσης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_DESC" xml:space="preserve">
+    <value>Πόσο έντονο είναι το χρώμα;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_DESC" xml:space="preserve">
+    <value>Πόσο ανοιχτό είναι το χρώμα;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACKGRADIENT_SETTINGS_DESC" xml:space="preserve">
+    <value>Αλλαγή χρώματος φόντου ανάλογα με την αυξανόμενη απόχρωση. Περισσότερα Rainbow!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DESC" xml:space="preserve">
+    <value>Πολύχρωμα σωματίδια!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_NAME" xml:space="preserve">
+    <value>Πυκνότητα σωματιδίων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_DESC" xml:space="preserve">
+    <value>Πόσο πυκνά είναι τα σωματίδια;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_NAME" xml:space="preserve">
+    <value>Απαιτείται ανανέωση πριν από την αλλαγή ζώνης ώρας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_DESC" xml:space="preserve">
+    <value>Πόσες ανανεώσεις προτού αλλάξει η ζώνη ώρας;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FILLFADE_SETTINGS_DESC" xml:space="preserve">
+    <value>Γεμίζει ολόκληρη την οθόνη μπλοκ-μπλοκ και στη συνέχεια τη σβήνει.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DANCELINES_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει χορευτικές γραμμές.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_DESC" xml:space="preserve">
+    <value>Δημιουργεί ωραίους λαβύρινθους χρησιμοποιώντας τον αλγόριθμο του Kruskal.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_NAME" xml:space="preserve">
+    <value>Νέα καθυστέρηση λαβύρινθου σε χιλιοστά του δευτερολέπτου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_NAME" xml:space="preserve">
+    <value>Ταχύτητα Γενιάς</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_DESC" xml:space="preserve">
+    <value>Ταχύτητα δημιουργίας λαβύρινθου σε χιλιοστά του δευτερολέπτου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_NAME" xml:space="preserve">
+    <value>Επισημάνετε τις ακάλυπτες θέσεις</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_DESC" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένο, επισημαίνει τις μη καλυμμένες θέσεις με το γκρι χρώμα φόντου. Διαφορετικά, αποδίδονται ως κουτιά.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_NAME" xml:space="preserve">
+    <value>Χρησιμοποιήστε το Schwartzian Transform</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_DESC" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένη, αυτή η προφύλαξη οθόνης χρησιμοποιεί τον μετασχηματισμό του Schwartzian για να ανακατέψει τις άκρες του λαβύρινθου. Διαφορετικά, χρησιμοποιεί την απλή μέθοδο μετασχηματισμού.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TWOSPINS_SETTINGS_DESC" xml:space="preserve">
+    <value>Δύο ομάδες κουκκίδων που περιστρέφονται στα δύο μισά της κονσόλας.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMITMILESTONE_SETTINGS_DESC" xml:space="preserve">
+    <value>Γιορτάζει τα ορόσημα δέσμευσης κάθε 1000η δέσμευση.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SPRAY_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει να ψεκάζετε αστέρια.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ZEBRASHIFT_SETTINGS_DESC" xml:space="preserve">
+    <value>Δύο γραμμές ανταλλάσσουν τα χρώματά τους στην οθόνη.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Αναλογικό ρολόι με απλή ημερομηνία και ώρα στο κάτω μέρος της οθόνης.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_NAME" xml:space="preserve">
+    <value>Εμφάνιση δείκτη δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_DESC" xml:space="preserve">
+    <value>Είτε θα εμφανιστεί ο δείκτης δευτερολέπτων είτε όχι.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει μια υποθετική δυσλειτουργική μαύρη οθόνη με μερικές φορές να εμφανίζονται γραμμές RGB.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_NAME" xml:space="preserve">
+    <value>Πιθανότητα σφάλματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_DESC" xml:space="preserve">
+    <value>Πιθανότητα, σε ποσοστό, να προκύψει σφάλμα οθόνης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Αποτυχία λήψης καταχωρήσεων ρυθμίσεων.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_NAME" xml:space="preserve">
+    <value>Φωτεινότητα απόχρωσης χρώματος (ελαφρότητα)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMITMILESTONE_CONGRATS" xml:space="preserve">
+    <value>Γιορτάζουμε την 7.000η δέσμευση από το 0.0.1!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NEWYEAR_LEFT" xml:space="preserve">
+    <value>άφησε μέχρι τον επόμενο χρόνο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τα χρώματα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις ράμπας ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τη ράμπα ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις ράμπας λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τη ράμπα λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις ράμπας δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τη ράμπα δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τις ράμπες</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_DESC" xml:space="preserve">
+    <value>Εμφανίζει κείμενο κάτω από μια γραμμή σε σκοτεινό κόκκινο φόντο.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITTERCHAR_SETTINGS_DESC" xml:space="preserve">
+    <value>Τυχαίοι χαρακτήρες που απλώνονται τυχαία στην οθόνη.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_DESC" xml:space="preserve">
+    <value>Απλή ημερομηνία και ώρα στη μέση της οθόνης και αλλάζει το χρώμα με βάση την τρέχουσα ώρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_NAME" xml:space="preserve">
+    <value>Φωτεινή ημερομηνία και ώρα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_DESC" xml:space="preserve">
+    <value>Είτε θα χρησιμοποιήσετε φωτεινή είτε σκοτεινή έκδοση.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DANCENUMS_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει χορευτικά νούμερα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_DESC" xml:space="preserve">
+    <value>Περιστρέφοντας το κύμα οριζόντια και κάθετα για να δημιουργήσετε υπέροχα μοτίβα με ίχνη που αφήνονται πίσω να εξαφανίζονται.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_NAME" xml:space="preserve">
+    <value>Μήκος διαδρομής</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_DESC" xml:space="preserve">
+    <value>Το μήκος του ίχνους του κινούμενου περιστρεφόμενου κύματος.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_POINTTRACK_SETTINGS_DESC" xml:space="preserve">
+    <value>Το μπλοκ κινείται σε κυματοειδές μοτίβο με πράσινους χάρακες να παρακολουθούν τη θέση του.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BIGLETTER_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει έναν μόνο τυχαίο χαρακτήρα σε ένα έγχρωμο κείμενο figlet.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORDSLOT_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει μια λέξη που επιλέγεται ακριβώς όπως ένας κουλοχέρης που βρίσκεται στα καζίνο.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NEONS_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας εμφανίζει ένα έγχρωμο κείμενο που εναλλάσσεται μεταξύ δύο χρωμάτων νέον: κυανό και φούξια.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις πρώτης ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε την πρώτη ράμπα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις δεύτερης ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τη δεύτερη ράμπα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_NAME" xml:space="preserve">
+    <value>Τρίτη ρυθμίσεις ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε την τρίτη ράμπα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_APPEARANCE_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις εμφάνισης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_HOURS_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε την εμφάνιση της ράμπας ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_HOURS_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε το χρώμα ράμπας ωρών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_MINUTES_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε την εμφάνιση της ράμπας λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_MINUTES_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε το χρώμα της ράμπας λεπτών</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_SECONDS_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε την εμφάνιση ράμπας δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_SECONDS_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε το χρώμα ράμπας δευτερολέπτων</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις χρώματος θέσης έναρξης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τα χρώματα της θέσης έναρξης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις χρώματος τελικής θέσης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τα χρώματα τελικής θέσης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις ράμπας ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τη γραμμή ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_APPEARANCE_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε την εμφάνιση της ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τα χρώματα της ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις εκκίνησης με κλίση</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τα χρώματα ντεγκραντέ έναρξης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις τέλους κλίσης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τα χρώματα τελικής κλίσης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος φόντου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος φόντου. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος γραμμής</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος γραμμής. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος κειμένου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος κειμένου. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_APPEARANCE_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε την πρώτη εμφάνιση ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_NAME" xml:space="preserve">
+    <value>Πληροφοριακό κείμενο για πρώτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_DESC" xml:space="preserve">
+    <value>Γράψτε πώς εμφανίζεται το κείμενο πληροφοριών για την τρέχουσα ώρα. {0} για την τρέχουσα ώρα από 24 πρώτα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_ULCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας επάνω αριστερής γωνίας για την πρώτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_URCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας πάνω δεξιά γωνία για την πρώτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LLCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω αριστερής γωνίας για την πρώτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LRCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω δεξιά γωνία για την πρώτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_UPFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας άνω πλαισίου για την πρώτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LOFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω πλαισίου για την πρώτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LEFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας αριστερού πλαισίου για την πρώτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_RIFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας δεξιού πλαισίου για την πρώτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε το πρώτο χρώμα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_PROGRESSCOLOR_NAME" xml:space="preserve">
+    <value>Χρώμα πρώτης ράβδου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο κόκκινου χρώματος για πρώτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο πράσινου χρώματος για πρώτη φορά</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο μπλε χρώματος για πρώτη φορά</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο χρώματος για το πρώτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο κόκκινου χρώματος για το πρώτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο πράσινου χρώματος για το πρώτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο μπλε χρώματος για το πρώτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος για το πρώτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_APPEARANCE_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τη δεύτερη εμφάνιση ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_NAME" xml:space="preserve">
+    <value>Ενημερωτικό κείμενο για δεύτερο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_DESC" xml:space="preserve">
+    <value>Γράψτε πώς εμφανίζεται το κείμενο πληροφοριών για το τρέχον λεπτό. {0} για το τρέχον λεπτό από τα 60 δευτερόλεπτα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_ULCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας πάνω αριστερή γωνία για τη δεύτερη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_URCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας πάνω δεξιά γωνία για τη δεύτερη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LLCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω αριστερής γωνίας για τη δεύτερη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LRCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω δεξιά γωνία για τη δεύτερη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_UPFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας άνω πλαισίου για τη δεύτερη μπάρα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LOFRAMECHAR_NAME" xml:space="preserve">
+    <value>Κάτω χαρακτήρας καρέ για τη δεύτερη μπάρα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LEFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας αριστερού πλαισίου για τη δεύτερη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_RIFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας δεξιού πλαισίου για τη δεύτερη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε το δεύτερο χρώμα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_PROGRESSCOLOR_NAME" xml:space="preserve">
+    <value>Χρώμα δεύτερης ράβδου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο κόκκινου χρώματος για το δεύτερο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο πράσινου χρώματος για δεύτερο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο μπλε χρώματος για δευτερόλεπτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο χρώματος για δευτερόλεπτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο κόκκινου χρώματος για δευτερόλεπτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο πράσινου χρώματος για δευτερόλεπτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο μπλε χρώματος για δευτερόλεπτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος για δευτερόλεπτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_APPEARANCE_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε την τρίτη εμφάνιση ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_ULCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας επάνω αριστερής γωνίας για την τρίτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_URCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας πάνω δεξιά γωνία για την τρίτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LLCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω αριστερής γωνίας για την τρίτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LRCCHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάτω δεξιά γωνία για την τρίτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_UPFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας άνω πλαισίου για την τρίτη μπάρα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LOFRAMECHAR_NAME" xml:space="preserve">
+    <value>Κάτω χαρακτήρας καρέ για την τρίτη μπάρα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LEFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας αριστερού πλαισίου για την τρίτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_RIFRAMECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας δεξιού πλαισίου για την τρίτη γραμμή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_NAME" xml:space="preserve">
+    <value>Ενημερωτικό κείμενο για το τρίτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_DESC" xml:space="preserve">
+    <value>Γράψτε πώς εμφανίζεται το κείμενο πληροφοριών για το τρέχον δεύτερο. {0} για το τρέχον δεύτερο από τα 60 τρίτα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε το τρίτο χρώμα ράμπας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_PROGRESSCOLOR_NAME" xml:space="preserve">
+    <value>Χρώμα τρίτης ράβδου</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο κόκκινου χρώματος για το τρίτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο πράσινου χρώματος για το τρίτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο μπλε χρώματος για το τρίτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο χρώματος για το τρίτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο κόκκινου χρώματος για το τρίτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο πράσινου χρώματος για το τρίτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο μπλε χρώματος για το τρίτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος για το τρίτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Το Progresses θα επιλέξει τυχαία χρώματα εάν είναι ενεργοποιημένο. Διαφορετικά, χρησιμοποιήστε χρώματα από τη διαμόρφωση.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένος ο κύκλος χρωμάτων, πόσα σημάδια προτού αλλάξετε χρώματα στο Progresses; 1 τικ = 0,5 τρίτο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC" xml:space="preserve">
+    <value>Αναλογικό ρολόι στη μέση της οθόνης και αλλάζει το χρώμα με βάση την τρέχουσα ώρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Σας δείχνει ένα πανέμορφο ψηφιακό ρολόι.</value>
+  </data>
+
+</root>

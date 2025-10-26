@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_MODS_MODCANTLOAD" xml:space="preserve">
+    <value>Mod non può essere caricato a causa di quanto segue:</value>
+  </data>
+  <data name="NKS_MODS_MODSTARTED" xml:space="preserve">
+    <value>{0} v {1} avviato</value>
+  </data>
+  <data name="NKS_MODS_MODPARSESAFEMODE" xml:space="preserve">
+    <value>Mod di analisi non consentite in modalità provvisoria.</value>
+  </data>
+  <data name="NKS_MODS_MODSTOPPED1" xml:space="preserve">
+    <value>Mod {0} interrotto</value>
+  </data>
+  <data name="NKS_MODS_MODSTOPPED2" xml:space="preserve">
+    <value>{0} v {1} interrotto</value>
+  </data>
+  <data name="NKS_MODS_CANTFINALIZE" xml:space="preserve">
+    <value>Impossibile finalizzare la mod {0}: {1}</value>
+  </data>
+  <data name="NKS_MODS_STARTINGMOD" xml:space="preserve">
+    <value>Modalità di avvio</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODVER" xml:space="preserve">
+    <value>Versione mod:</value>
+  </data>
+  <data name="NKS_MODS_MODNOTFOUND" xml:space="preserve">
+    <value>Modulo {0} non trovato.</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODNAME" xml:space="preserve">
+    <value>Nome del modulo:</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODFILENAME" xml:space="preserve">
+    <value>Nome del file del modulo:</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODFILEPATH" xml:space="preserve">
+    <value>Percorso file mod:</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMAN_DESC" xml:space="preserve">
+    <value>Gestisci le tue mod</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_SAFEMODE" xml:space="preserve">
+    <value>La gestione della mod è disabilitata in modalità provvisoria.</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_NOCOMMAND" xml:space="preserve">
+    <value>Comando non valido {0}. Controllare l&apos;utilizzo di seguito:</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODNOTFOUND" xml:space="preserve">
+    <value>Mod non trovata o il file contiene caratteri non validi.</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_MANPAGEINVALID" xml:space="preserve">
+    <value>La pagina di manuale {0} non è valida.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_NEEDSFILL" xml:space="preserve">
+    <value>Considera di riempire questa pagina di manuale.</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMANUAL_DESC" xml:space="preserve">
+    <value>Manuale del modulo</value>
+  </data>
+  <data name="NKS_MODS_MODSTOPPINGSAFEMODE" xml:space="preserve">
+    <value>Arresto delle mod non consentito in modalità provvisoria.</value>
+  </data>
+  <data name="NKS_MODS_MODALREADYSTARTED" xml:space="preserve">
+    <value>La mod è già stata avviata!</value>
+  </data>
+  <data name="NKS_MODS_MODHASNTSTARTED" xml:space="preserve">
+    <value>La mod non è ancora iniziata!</value>
+  </data>
+  <data name="NKS_MODS_MODNEEDSUPGRADE" xml:space="preserve">
+    <value>Contatta il fornitore della mod per aggiornare la mod alla versione compatibile.</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME" xml:space="preserve">
+    <value>Mod nella lista nera</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC" xml:space="preserve">
+    <value>Scrivi i nomi dei file delle mod che non verranno eseguite all&apos;avvio. Quando hai finito, scrivi &quot;q&quot;. Scrivi un segno meno accanto al percorso per rimuovere una mod esistente.</value>
+  </data>
+  <data name="NKS_MODS_MODBLACKLISTED" xml:space="preserve">
+    <value>Il mod {0} è nella lista nera.</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_AUTOSTART_NAME" xml:space="preserve">
+    <value>Avvia le modifiche al kernel all&apos;avvio</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_AUTOSTART_DESC" xml:space="preserve">
+    <value>Avvia automaticamente le modifiche del kernel all&apos;avvio.</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODFILENEEDED" xml:space="preserve">
+    <value>Il file mod non è specificato.</value>
+  </data>
+  <data name="NKS_MODS_MODUPDATING" xml:space="preserve">
+    <value>Tentativo di installare una mod già installata. Aggiornamento mod...</value>
+  </data>
+  <data name="NKS_MODS_MODINSTALLFAILED" xml:space="preserve">
+    <value>Installazione non riuscita per</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_NOMODSCRIPT" xml:space="preserve">
+    <value>Il file mod fornito è incompatibile.</value>
+  </data>
+  <data name="NKS_MODS_MODUNINSTALLFAILED" xml:space="preserve">
+    <value>Disinstallazione non riuscita per</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME" xml:space="preserve">
+    <value>Mostra i comandi mod contano sull&apos;aiuto</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_INVALIDMODFILE" xml:space="preserve">
+    <value>Il file mod non è valido.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_UNTITLEDMANPAGE" xml:space="preserve">
+    <value>Pagina di manuale senza titolo</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_MODSCRIPTNEEDED" xml:space="preserve">
+    <value>Lo script mod potrebbe non essere nullo.</value>
+  </data>
+  <data name="NKS_MODS_NOMODS" xml:space="preserve">
+    <value>Nessuna mod rilevata.</value>
+  </data>
+  <data name="NKS_MODS_STOPPINGMODS" xml:space="preserve">
+    <value>Arresto della mod {0}...</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_UNSAFEMOD" xml:space="preserve">
+    <value>La mod non è fortemente firmata. Potrebbe contenere codice non attendibile.</value>
+  </data>
+  <data name="NKS_MODS_MODINCOMPATIBLE1" xml:space="preserve">
+    <value>Impossibile caricare la mod perché c&apos;è un&apos;incompatibilità tra questa versione del kernel e questa mod:</value>
+  </data>
+  <data name="NKS_MODS_MODINCOMPATIBLE2" xml:space="preserve">
+    <value>Di seguito è riportato un elenco di errori che potrebbero aiutarti a indagare su questa incompatibilità:</value>
+  </data>
+  <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
+    <value>La mod {0} richiede esattamente una versione API {1}, ma hai la versione {2}. Aggiornare Nitrocid KS e/o la mod di solito aiuta. Analisi della mod non riuscita.</value>
+  </data>
+  <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
+    <value>La mod {0} potrebbe non funzionare correttamente con questa versione API. La mod potrebbe non avviarsi. Contatta il venditore del mod per ottenere una copia più recente.</value>
+  </data>
+  <data name="NKS_MODS_MODNEDSNAME" xml:space="preserve">
+    <value>Il mod {0} non ha il nome. Analisi della mod non riuscita. Esamina il codice sorgente.</value>
+  </data>
+  <data name="NKS_MODS_MODNEEDSVERSION" xml:space="preserve">
+    <value>Il mod {0} non ha la versione. Analisi della mod non riuscita. Esamina il codice sorgente.</value>
+  </data>
+  <data name="NKS_MODS_MODVERSIONINVALID" xml:space="preserve">
+    <value>La mod {0} contiene una versione non valida. Analisi della mod non riuscita. La versione era</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODVERSION" xml:space="preserve">
+    <value>Versione</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODFILENAME" xml:space="preserve">
+    <value>Nome del file</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODFILEPATH" xml:space="preserve">
+    <value>Percorso del file</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HASNOCONTENTS" xml:space="preserve">
+    <value>Sfortunatamente, questa pagina di manuale non ha alcun contenuto. Tuttavia, questa documentazione potrebbe essere stata trovata nella pagina Web del fornitore del mod. Se ancora non riesci a trovare questa documentazione, chiedi maggiori informazioni agli sviluppatori della mod.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_PRESENTED" xml:space="preserve">
+    <value>Presentato da</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_CONTENTLENGTH" xml:space="preserve">
+    <value>Lunghezza del contenuto</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_NOCONTENTS" xml:space="preserve">
+    <value>Nessun contenuto.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_NOREVISION" xml:space="preserve">
+    <value>Nessuna revisione.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND" xml:space="preserve">
+    <value>Impossibile eseguire la funzione personalizzata con mod inesistente</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_DEPSFAILED" xml:space="preserve">
+    <value>Dipendenza insoddisfatta. Le dipendenze non riuscite sono elencate di seguito:</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND" xml:space="preserve">
+    <value>Ho provato a interrogare i manuali per un mod {0} inesistente.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND" xml:space="preserve">
+    <value>Ho provato a inizializzare il manuale {0} per il mod inesistente {1}.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND" xml:space="preserve">
+    <value>Ho provato a inizializzare il file manuale {0} per il mod inesistente {1}.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD" xml:space="preserve">
+    <value>Ho provato a inizializzare il file manuale {0} che non esiste per il mod {1}.</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODNAME" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME" xml:space="preserve">
+    <value>Consenti il caricamento di mod non attendibili</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC" xml:space="preserve">
+    <value>Se impostato su true, il kernel non genererà errori durante il caricamento di mod che non hanno la chiave pubblica firmata.</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC" xml:space="preserve">
+    <value>Mostra il conteggio dei comandi di modifica del kernel quando li elenchi nel comando di aiuto</value>
+  </data>
+  <data name="NKS_MODS_STARTSTOPSAFEMODE" xml:space="preserve">
+    <value>L&apos;avvio o l&apos;arresto delle mod non è consentito in modalità provvisoria.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_NOFIELDINFO" xml:space="preserve">
+    <value>Non è possibile ottenere informazioni sul campo per</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_DEPNOMODVER" xml:space="preserve">
+    <value>Non riesco a determinare la versione mod</value>
+  </data>
+  <data name="NKS_MODS_UNKNOWNLOADEREXCEPTION" xml:space="preserve">
+    <value>Eccezione del caricatore sconosciuta</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Impossibile ottenere le voci delle impostazioni.</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STARTMODSELECT" xml:space="preserve">
+    <value>Avvia mod (seleziona)</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STARTMODINPUT" xml:space="preserve">
+    <value>Avvia mod (input)</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STOPMOD" xml:space="preserve">
+    <value>Interrompere la modalità</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_RELOADMOD" xml:space="preserve">
+    <value>Ricarica mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT" xml:space="preserve">
+    <value>Installa mod (seleziona)</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT" xml:space="preserve">
+    <value>Installa mod (input)</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD" xml:space="preserve">
+    <value>Disinstalla mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STARTALL" xml:space="preserve">
+    <value>Inizia tutto</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STOPALL" xml:space="preserve">
+    <value>Fermare tutto</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_RELOADALL" xml:space="preserve">
+    <value>Ricarica tutto</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND" xml:space="preserve">
+    <value>Impossibile restituire un tipo di classe inesistente dall&apos;assemblaggio mod</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
+    <value>Impossibile trovare la funzione &apos;{0}&apos; nel mod &apos;{1}&apos;.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
+    <value>Impossibile trovare la proprietà &apos;{0}&apos; nel mod &apos;{1}&apos;.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
+    <value>Impossibile trovare il campo &apos;{0}&apos; nel mod &apos;{1}&apos;.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS" xml:space="preserve">
+    <value>Questa classe non è una classe mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODENTRYPOINT" xml:space="preserve">
+    <value>Punto di ingresso</value>
+  </data>
+  <data name="NKS_MODS_TUI_PATHTOMODPROMPT" xml:space="preserve">
+    <value>Inserisci un percorso per la mod che vuoi avviare</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODSTARTFAILED" xml:space="preserve">
+    <value>Impossibile avviare la mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_PATHTOMODINSTALLPROMPT" xml:space="preserve">
+    <value>Inserisci un percorso per la mod che vuoi installare</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODINSTALLFAILED" xml:space="preserve">
+    <value>Impossibile installare la mod</value>
+  </data>
+  <data name="NKS_MODS_CANTSTARTORSTOP" xml:space="preserve">
+    <value>Impossibile avviare o interrompere questa mod!</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC" xml:space="preserve">
+    <value>Se avviare, interrompere, ottenere informazioni, ricaricare, installare o disinstallare una mod</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC" xml:space="preserve">
+    <value>Nome mod o nome file</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC" xml:space="preserve">
+    <value>Se elencare, ricaricare, interrompere, avviare o gestire interattivamente tutte le mod</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC" xml:space="preserve">
+    <value>Nome mod</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
+    <value>Questa sezione consente di configurare il funzionamento del sistema di modifica del kernel.</value>
+  </data>
+
+</root>

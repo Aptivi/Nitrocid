@@ -49,7 +49,6 @@ using Nitrocid.Base.Users.Login.Widgets.Implementations;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Users.Login.Handlers;
 using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Files.Folders;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug.RemoteChat;
 using Nitrocid.Base.Kernel.Time.Timezones;
@@ -102,7 +101,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// </summary>
         public string CurrentLanguage
         {
-            get => LanguageManager.currentLanguage is not null ? LanguageManager.currentLanguage.ThreeLetterLanguageName : "eng";
+            get => LanguageManager.currentLanguage is not null ? LanguageManager.currentLanguage.Name : "en-US";
             set => LanguageManager.SetLangDry(value);
         }
         /// <summary>

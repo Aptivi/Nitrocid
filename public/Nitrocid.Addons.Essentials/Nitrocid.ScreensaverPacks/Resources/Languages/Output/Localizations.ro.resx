@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME" xml:space="preserve">
+    <value>Text afișat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_SHORT" xml:space="preserve">
+    <value>Scrieți orice text doriți să fie afișat. Mai scurt este mai bine.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Activați culorile adevărate</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_NAME" xml:space="preserve">
+    <value>Ciclul de culori</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Disco va ciclu culorile când este activat. În caz contrar, selectați culori aleatorii.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_BGCOLOR_NAME" xml:space="preserve">
+    <value>Culoare de fundal</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>Întârziere în milisecunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>Câte milisecunde trebuie să așteptați înainte de a face următoarea scriere?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSCOLOR_NAME" xml:space="preserve">
+    <value>Bara de culoare a secundelor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESCOLOR_NAME" xml:space="preserve">
+    <value>Bara de culoare a minutelor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSCOLOR_NAME" xml:space="preserve">
+    <value>Bara de culoare a orelor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_INFOCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea informațiilor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_NAME" xml:space="preserve">
+    <value>Căpușe pentru a schimba culoarea</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLETICKS_DESC" xml:space="preserve">
+    <value>Dacă ciclul de culoare este activat, câte bifări înainte de a schimba culorile în ProgressClock? 1 bifă = 0,5 secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>ProgressClock va selecta culori aleatorii dacă este activat. În caz contrar, utilizați culorile din config.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_NAME" xml:space="preserve">
+    <value>Număr maxim de poziții</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_DESC" xml:space="preserve">
+    <value>Câte poziții sunt aprinse înainte de atenuare?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME" xml:space="preserve">
+    <value>Întârziere la dispariție în milisecunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME" xml:space="preserve">
+    <value>Max Fade Steps</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC" xml:space="preserve">
+    <value>Câte milisecunde să aștepte înainte de a se estompa textul?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC" xml:space="preserve">
+    <value>Câți pași de fade trebuie să faci?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_NAME" xml:space="preserve">
+    <value>Scrie din nou Întârziere în milisecunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_DESC" xml:space="preserve">
+    <value>Câte milisecunde să aștepte înainte de a scrie din nou text?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG" xml:space="preserve">
+    <value>Scrieți orice text doriți să fie afișat. Mai lung este mai bine.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME" xml:space="preserve">
+    <value>Viteza minimă de scriere în WPM</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MAXSPEED_NAME" xml:space="preserve">
+    <value>Viteza maximă de scriere în WPM</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TYPOPERCENT_NAME" xml:space="preserve">
+    <value>Probabilitatea de greșeală de scriere în procente</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_NAME" xml:space="preserve">
+    <value>Șervețele pentru a schimba direcția</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_DESC" xml:space="preserve">
+    <value>Câte șervețele de făcut înainte de a schimba direcția la întâmplare?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_NAME" xml:space="preserve">
+    <value>Întotdeauna centrat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC" xml:space="preserve">
+    <value>Scrieți orice text doriți să fie afișat.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_DESC" xml:space="preserve">
+    <value>Dacă textul afișat pe marcaj este întotdeauna centrat.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_NAME" xml:space="preserve">
+    <value>Utilizați API-ul Console</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_DESC" xml:space="preserve">
+    <value>Dacă folosiți API-ul Console pentru a șterge textul sau pentru a utiliza secvența mai rapidă de ștergere a liniilor VT. Dacă este fals, Marquee va folosi secvența VT corespunzătoare. În caz contrar, va folosi API-ul Console, probabil mai lent.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_NAME" xml:space="preserve">
+    <value>Utilizați bătăi pe minut</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC" xml:space="preserve">
+    <value>Dacă să folosiți unitatea Beats Per Minute pentru a scrie următoarea culoare.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME" xml:space="preserve">
+    <value>Întârziere în bătăi pe minut</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC" xml:space="preserve">
+    <value>Câte bătăi pe minut să așteptați înainte de a face următoarea scriere?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>BeatFader va selecta culori aleatorii dacă este activat. În caz contrar, utilizați culorile din config.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME" xml:space="preserve">
+    <value>Noua întârziere a ecranului în milisecunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_NAME" xml:space="preserve">
+    <value>Număr de coloane</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_NAME" xml:space="preserve">
+    <value>Pragul de umplere a liniilor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_NAME" xml:space="preserve">
+    <value>Probabilitatea de limitare a umplerii liniei în procente</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_NAME" xml:space="preserve">
+    <value>Tip de umplere a liniilor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_DESC" xml:space="preserve">
+    <value>Câte milisecunde trebuie să așteptați înainte de a scrie din nou textul în noul ecran?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_DESC" xml:space="preserve">
+    <value>Coloanele de text care urmează să fie tipărite.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_DESC" xml:space="preserve">
+    <value>Câte caractere să scrieți înainte de a declanșa „line umplere”?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_DESC" xml:space="preserve">
+    <value>Posibilitatea ca modelul de umplere a liniilor să fie imprimat cu majuscule, în procente</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MISSPROBABILITY_NAME" xml:space="preserve">
+    <value>Probabilitatea de ratare în procente</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_NAME" xml:space="preserve">
+    <value>Următorul interval de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_DESC" xml:space="preserve">
+    <value>Câte milisecunde trebuie să așteptați înainte de a umple următoarea rampă?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare roșie</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare verde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare albastră</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare roșie</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare verde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare albastră</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Nivel minim de culoare roșie. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Nivel minim de culoare verde. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Nivel minim de culoare albastră. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC" xml:space="preserve">
+    <value>Nivel minim de culoare. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255 pentru 255 de culori sau 16 pentru 16 culori.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Nivel maxim de culoare roșie. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Nivel maxim de culoare verde. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Nivel maxim de culoare albastră. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC" xml:space="preserve">
+    <value>Nivel maxim de culoare. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255 pentru 255 de culori sau 16 pentru 16 culori.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_FGCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea primului plan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_NAME" xml:space="preserve">
+    <value>caracter de linie</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_DESC" xml:space="preserve">
+    <value>Un caracter pentru a forma o linie. Asigurați-vă că introduceți un singur caracter.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_HOURS_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga sus pentru bara de ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga sus pentru bara de minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga sus pentru bara de secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_HOURS_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta sus pentru bara de ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta sus pentru bara de minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta sus pentru bara de secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_HOURS_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga jos pentru bara de ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga jos pentru bara de minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga jos pentru bara de secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_HOURS_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta jos pentru bara de ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta jos pentru bara de minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta jos pentru bara de secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_HOURS_NAME" xml:space="preserve">
+    <value>Caracter de cadru superior pentru bara de ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Caracter de cadru superior pentru bara de minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Caracter de cadru superior pentru bara de secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_HOURS_NAME" xml:space="preserve">
+    <value>Caracter de cadru inferior pentru bara de ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Caracter de cadru inferior pentru bara de minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Caracter de cadru inferior pentru bara de secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_HOURS_NAME" xml:space="preserve">
+    <value>Caracter din cadru din stânga pentru bara de ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Caracter din cadru din stânga pentru bara de minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Caracter de cadru din stânga pentru bara de secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_HOURS_NAME" xml:space="preserve">
+    <value>Caracter cadru din dreapta pentru bara de ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Caracter cadru din dreapta pentru bara de minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Caracter cadru din dreapta pentru bara de secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_NAME" xml:space="preserve">
+    <value>Text informativ pentru ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_NAME" xml:space="preserve">
+    <value>Text informativ timp de minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_NAME" xml:space="preserve">
+    <value>Text informativ pentru câteva secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare roșie pentru ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare verde pentru ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare albastră pentru ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare pentru ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare roșie pentru ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare verde pentru ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare albastră pentru ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare pentru ore</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare roșie pentru câteva minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare verde pentru minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare albastră timp de minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare pentru minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare roșie timp de minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare verde pentru minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare albastră timp de minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare pentru minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare roșie pentru secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare verde pentru secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare albastră pentru secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare pentru secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare roșie pentru secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare verde pentru secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare albastră pentru secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare pentru secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_DESC" xml:space="preserve">
+    <value>Un personaj care seamănă cu colțul din stânga sus. Asigurați-vă că introduceți un singur caracter.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_DESC" xml:space="preserve">
+    <value>Un personaj care seamănă cu colțul din stânga jos. Asigurați-vă că introduceți un singur caracter.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_DESC" xml:space="preserve">
+    <value>Un personaj care seamănă cu cadrul de sus. Asigurați-vă că introduceți un singur caracter.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_DESC" xml:space="preserve">
+    <value>Un personaj care seamănă cu cadrul inferior. Asigurați-vă că introduceți un singur caracter.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_DESC" xml:space="preserve">
+    <value>Un personaj care seamănă cu cadrul din stânga. Asigurați-vă că introduceți un singur caracter.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_DESC" xml:space="preserve">
+    <value>Un personaj care seamănă cu cadrul potrivit. Asigurați-vă că introduceți un singur caracter.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_DESC" xml:space="preserve">
+    <value>Scrieți cum arată textul dvs. informativ pentru ora curentă. {0} pentru ora curentă din 24 de ore.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_DESC" xml:space="preserve">
+    <value>Scrieți cum se arată textul dvs. informativ pentru minutul curent. {0} pentru minutul curent din 60 de minute.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_DESC" xml:space="preserve">
+    <value>Scrieți cum arată textul dvs. informativ pentru secunda curentă. {0} pentru secunda curentă din 60 de secunde.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TEXTCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea textului</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga sus pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta sus pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga jos pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta jos pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter de cadru superior pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter de cadru inferior pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter de cadru din stânga pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter cadru din dreapta pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_START_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare roșie pentru culoarea de început</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_START_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare verde pentru culoarea de pornire</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_START_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare albastră pentru culoarea de început</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_START_NAME" xml:space="preserve">
+    <value>Nivelul minim de culoare pentru culoarea de pornire</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_START_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare roșie pentru culoarea de pornire</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_START_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare verde pentru culoarea de pornire</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_START_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare albastră pentru culoarea de pornire</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_START_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare pentru culoarea de pornire</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_END_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare roșie pentru culoarea finală</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_END_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare verde pentru culoarea finală</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_END_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare albastră pentru culoarea finală</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_END_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare pentru culoarea finală</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_END_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare roșie pentru culoarea finală</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_END_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare verde pentru culoarea finală</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_END_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare albastră pentru culoarea finală</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_END_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare pentru culoarea finală</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Activează suportul adevărat al culorilor.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea colțului din stânga sus pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea colțului din dreapta sus pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea colțului din stânga jos pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea colțului din dreapta jos pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECOLOR_NAME" xml:space="preserve">
+    <value>Culoarea cadrului superioară pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECOLOR_NAME" xml:space="preserve">
+    <value>Culoarea inferioară a cadrului pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECOLOR_NAME" xml:space="preserve">
+    <value>Culoarea cadrului din stânga pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECOLOR_NAME" xml:space="preserve">
+    <value>Culoarea dreptă a cadrului pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_NAME" xml:space="preserve">
+    <value>Folosiți culorile marginilor pentru bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_DESC" xml:space="preserve">
+    <value>Utilizați culorile marginilor pentru bara de rampă. Dacă este dezactivat, va genera o bară gri.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_NAME" xml:space="preserve">
+    <value>Umpleți casetele</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_DESC" xml:space="preserve">
+    <value>Desenăm cutia în întregime sau desenăm doar chenarul?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_NAME" xml:space="preserve">
+    <value>Următorul interval de putregai la rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_DESC" xml:space="preserve">
+    <value>Câte milisecunde de așteptat înainte de a putrezi capătul următorului rampă?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_NAME" xml:space="preserve">
+    <value>Raza de explozie a focului de artificii</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_DESC" xml:space="preserve">
+    <value>Câte blocuri (până la 10) este raza exploziei pentru focul de artificii atunci când este aprins?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_NAME" xml:space="preserve">
+    <value>Font Figlet</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_DESC" xml:space="preserve">
+    <value>Scrieți un font figlet care este acceptat de biblioteca Figgle. Consultați documentația bibliotecii pentru mai multe informații</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_NAME" xml:space="preserve">
+    <value>Activați modul Alb-negru</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_DESC" xml:space="preserve">
+    <value>Face discoteca alb-negru. Vă va răni cu adevărat ochii dacă a fost prea rapid, așa că nu este recomandat dacă aveți o criză de imagini rapide.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_NAME" xml:space="preserve">
+    <value>Densitatea zgomotului</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_NEWSCREENDELAY_DESC" xml:space="preserve">
+    <value>Câte milisecunde să aștepte înainte de a scrie pe noul ecran?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_DESC" xml:space="preserve">
+    <value>Cu cât procentul este mai mare, cu atât semnalul este mai zgomotos</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME" xml:space="preserve">
+    <value>Densitatea glitch-urilor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC" xml:space="preserve">
+    <value>Cu cât procentul este mai mare, cu atât mai dens este glitch-ul!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORD_LOADING" xml:space="preserve">
+    <value>Se încarcă...</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_KSX_CONTINUED" xml:space="preserve">
+    <value>Va urma...</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_KSX_THEEND" xml:space="preserve">
+    <value>Sfârșitul</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS" xml:space="preserve">
+    <value>An nou fericit!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_NAME" xml:space="preserve">
+    <value>Pierde sansa</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME" xml:space="preserve">
+    <value>Setări de culoare</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_DESC" xml:space="preserve">
+    <value>Un personaj care seamănă cu colțul din dreapta sus. Asigurați-vă că introduceți un singur caracter.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_DESC" xml:space="preserve">
+    <value>Un personaj care seamănă cu colțul din dreapta jos. Asigurați-vă că introduceți un singur caracter.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MATRIX_SETTINGS_DESC" xml:space="preserve">
+    <value>Numărul binar care scade pe ecran.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORMIX_SETTINGS_DESC" xml:space="preserve">
+    <value>Amestecarea culorilor și imprimarea lor pe consolă.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_DESC" xml:space="preserve">
+    <value>Aceasta este lumina discoteca, unul dintre primele screensavere.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITTERCOLOR_SETTINGS_DESC" xml:space="preserve">
+    <value>Culoarea strălucește pe ecran.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_DESC" xml:space="preserve">
+    <value>O linie care se plimbă pe verticală în jurul consolei.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISSOLVE_SETTINGS_DESC" xml:space="preserve">
+    <value>Dizolvă culorile aleatorii.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOUNCINGBLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un bloc colorat care sare peste consolă.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată trei bare de progres care reprezintă timpul.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_DESC" xml:space="preserve">
+    <value>Blocuri de iluminat.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WIPE_SETTINGS_DESC" xml:space="preserve">
+    <value>Șterge ecranul cu o culoare.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIMPLEMATRIX_SETTINGS_DESC" xml:space="preserve">
+    <value>Matrice simplă.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITTERMATRIX_SETTINGS_DESC" xml:space="preserve">
+    <value>Numere matrice care se răspândesc aleatoriu pe ecran.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un text care sări în jurul consolei.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC" xml:space="preserve">
+    <value>Fading text in and out.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC" xml:space="preserve">
+    <value>Decolorarea fundalului înăuntru și în afară.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC" xml:space="preserve">
+    <value>Fading text in and out in beats.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC" xml:space="preserve">
+    <value>Bate culoarea</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC" xml:space="preserve">
+    <value>Simulează o persoană care scrie text cu greșeli de scriere.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un text care se derulează de la dreapta la stânga.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_DESC" xml:space="preserve">
+    <value>Simulează o persoană care scrie text pentru un ziar pe tastatura de linotip în vremurile vechi.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_DESC" xml:space="preserve">
+    <value>Tipul de model de umplere a liniilor. 0 tipărește modelul cunoscut de caractere etaoin, 1 tipărește modelul complet de caractere etaoin și 2 tipărește setul aleatoriu de caractere pentru a completa rapid linia.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_DESC" xml:space="preserve">
+    <value>Simulează perfect o persoană care scrie text.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_NAME" xml:space="preserve">
+    <value>Afișează poziția săgeții</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_DESC" xml:space="preserve">
+    <value>Afișează poziția coloanei literei mașinii de scris arătând o săgeată în partea de jos a ecranului</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FLASHCOLOR_SETTINGS_DESC" xml:space="preserve">
+    <value>Culori intermitente pe ecran.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SPOTWRITE_SETTINGS_DESC" xml:space="preserve">
+    <value>Simulează un reflector care caută în textul dvs.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_DESC" xml:space="preserve">
+    <value>Umple rampa cu culori gradient.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_DESC" xml:space="preserve">
+    <value>Stivuiți cutiile pe ecran.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARROT_SETTINGS_DESC" xml:space="preserve">
+    <value>Simulează o bară care se putrezește cu o altă culoare de fundal, creând un gradient.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată artificii care se lansează și explodează.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un text colorat.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_NAME" xml:space="preserve">
+    <value>Modul curcubeu</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_DESC" xml:space="preserve">
+    <value>Activează modul de culori curcubeu</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FLASHTEXT_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un text intermitent colorat.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DESC" xml:space="preserve">
+    <value>Simulează un zgomot static TV.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DATEANDTIME_SETTINGS_DESC" xml:space="preserve">
+    <value>Data și ora simple în mijlocul ecranului.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC" xml:space="preserve">
+    <value>Simulează o eroare pe ecran.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată o linie care coboară și se estompează.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată o bară de progres nedeterminată.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un fundal care pulsa.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un fundal care pulsa în ritmuri.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>BeatPulse va selecta culori aleatorii dacă este activat. În caz contrar, utilizați culorile din config.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată o margine pulsatorie.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată o margine pulsatorie în bătăi.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>BeatEdgePulse va selecta culori aleatorii dacă este activat. În caz contrar, utilizați culorile din config.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un ecran plin de culoare care putrezește încet la o altă culoare, creând degrade.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_NAME" xml:space="preserve">
+    <value>Următorul interval de putregai în gradient</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_DESC" xml:space="preserve">
+    <value>Câte milisecunde trebuie să așteptați înainte de a putrezi următorul ecran?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENT_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un gradient pe ecran.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STARFIELD_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată o călătorie cu stele în 2D.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_DESC" xml:space="preserve">
+    <value>Schimbă fundalul în funcție de culorile setate, ceea ce simulează o sirenă.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_NAME" xml:space="preserve">
+    <value>Stilul sirena</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_DESC" xml:space="preserve">
+    <value>Stilul sirena.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC" xml:space="preserve">
+    <value>Se învârtesc tăieturi.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC" xml:space="preserve">
+    <value>Umple consola cu o culoare ca un șarpe.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un egalizator care vă arată bass, medii și înalte.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_NEXTSCREENDELAY_NAME" xml:space="preserve">
+    <value>Următoarea întârziere a ecranului în milisecunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC" xml:space="preserve">
+    <value>Simulează erori de sistem de la diferite sisteme de operare.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC" xml:space="preserve">
+    <value>Generează culori din deplasarea aleatorie.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un text care se estompează și clipește în bătăi.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>ExcaliBeats va selecta culori aleatorii dacă este activat. În caz contrar, utilizați culorile din config.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME" xml:space="preserve">
+    <value>Modul explicit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC" xml:space="preserve">
+    <value>Schimbați explicit textul în Excalibur</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME" xml:space="preserve">
+    <value>Modul transă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC" xml:space="preserve">
+    <value>Modul Trance - Înmulțește BPM-ul cu 2 pentru a simula stilul muzicii trance</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un grup de valuri în baruri.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_NAME" xml:space="preserve">
+    <value>Nivelul de frecvență</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_DESC" xml:space="preserve">
+    <value>Nivelul frecvenței. Acesta este numitorul valorii Pi în matematică.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WAVE_SETTINGS_DESC" xml:space="preserve">
+    <value>Îți arată un val care se generează singur și avansează.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MESMERIZE_SETTINGS_DESC" xml:space="preserve">
+    <value>Îți oferă o senzație fascinantă.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_AURORA_SETTINGS_DESC" xml:space="preserve">
+    <value>Simulează aurora boreală.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_DESC" xml:space="preserve">
+    <value>Îți arată un fulger izbitor.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_NAME" xml:space="preserve">
+    <value>Probabilitatea lovirii</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_DESC" xml:space="preserve">
+    <value>Șansa, în procente, de a lovi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată o culoare de fundal care se schimbă lent.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_NAME" xml:space="preserve">
+    <value>Culori închise</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_DESC" xml:space="preserve">
+    <value>Dacă folosiți culorile închise sau culorile deschise.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_NAME" xml:space="preserve">
+    <value>Pași de culoare</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_DESC" xml:space="preserve">
+    <value>Câți pași de culoare pentru trecerea între două culori?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un cuvânt și suma lui hash.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un pătrat decolorat în patru colțuri.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC" xml:space="preserve">
+    <value>Câte milisecunde să aștepte înainte de a se estompa pătratul?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC" xml:space="preserve">
+    <value>Imprăștie numărul pe tot ecranul.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXGRID_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă oferă un model de cutie.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DESC" xml:space="preserve">
+    <value>Linie de culori în cădere.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_DESC" xml:space="preserve">
+    <value>Șansa de a scăpa o nouă culoare care cădea</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXT_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un text simplu.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTBOX_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un text simplu într-o casetă de text.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORDHASHERWRITE_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un cuvânt care se scrie încet și suma lui hash.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_DESC" xml:space="preserve">
+    <value>Simulează o sirenă care vă folosește tema ca un set de culori.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_SIRENSTYLE_DESC" xml:space="preserve">
+    <value>Stilul sirenă din tema nucleului</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STARFIELDWARP_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un grup de stele în vederea frontală a navei.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SPECKLES_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un grup de pete în vederea frontală a navei.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LETTERSCATTER_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată o literă împrăștiată pe întregul ecran.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MULTILINES_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată mai multe rânduri.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LASERBEAMS_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată raze laser.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTWANDER_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un text care rătăcește pe consolă.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_DESC" xml:space="preserve">
+    <value>Val pivotant pe orizontală și verticală pentru a crea modele grozave.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_NAME" xml:space="preserve">
+    <value>Nivelul de frecvență orizontal</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_DESC" xml:space="preserve">
+    <value>Nivelul frecvenței orizontale. Acesta este numitorul valorii Pi în matematică. Folosiți-l pentru a crea pivotante ondulate frumoase!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_NAME" xml:space="preserve">
+    <value>Nivelul de frecvență vertical</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_DESC" xml:space="preserve">
+    <value>Nivelul frecvenței verticale. Acesta este numitorul valorii Pi în matematică. Folosiți-l pentru a crea pivotante ondulate frumoase!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DOORSHIFT_SETTINGS_DESC" xml:space="preserve">
+    <value>Simulează deschiderea și închiderea ușii.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTBLOOM_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un gradient care se schimbă dinamic.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SKYCOMET_SETTINGS_DESC" xml:space="preserve">
+    <value>O cometă este pe cer care rulează rapid.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIAMOND_SETTINGS_DESC" xml:space="preserve">
+    <value>Diamantul care strălucește.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_DESC" xml:space="preserve">
+    <value>Schimbarea culorii de fundal în funcție de creșterea nuanței. Curcubeu!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_NAME" xml:space="preserve">
+    <value>Saturația nuanței culorii</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_DESC" xml:space="preserve">
+    <value>Cât de intensă este culoarea?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_DESC" xml:space="preserve">
+    <value>Cât de deschisă este culoarea?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACKGRADIENT_SETTINGS_DESC" xml:space="preserve">
+    <value>Schimbarea culorii de fundal în funcție de creșterea nuanței. Mai mult Curcubeu!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DESC" xml:space="preserve">
+    <value>Particule colorate!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_NAME" xml:space="preserve">
+    <value>Densitatea particulelor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_DESC" xml:space="preserve">
+    <value>Cât de dense sunt particulele?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_NAME" xml:space="preserve">
+    <value>Actualizări necesare înainte de a schimba fusul orar</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_DESC" xml:space="preserve">
+    <value>Câte reîmprospătări înainte ca fusul orar să fie schimbat?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FILLFADE_SETTINGS_DESC" xml:space="preserve">
+    <value>Umple întregul ecran bloc cu bloc și apoi îl estompează.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DANCELINES_SETTINGS_DESC" xml:space="preserve">
+    <value>Îți arată replici de dans.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_DESC" xml:space="preserve">
+    <value>Generează labirinturi frumoase folosind algoritmul lui Kruskal.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_NAME" xml:space="preserve">
+    <value>Noua întârziere labirint în milisecunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_NAME" xml:space="preserve">
+    <value>Viteza de generare</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_DESC" xml:space="preserve">
+    <value>Viteza de generare a labirintului în milisecunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_NAME" xml:space="preserve">
+    <value>Evidențiați pozițiile neacoperite</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_DESC" xml:space="preserve">
+    <value>Dacă este activată, evidențiază pozițiile neacoperite cu culoarea de fundal gri. În caz contrar, se redau ca casete.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_NAME" xml:space="preserve">
+    <value>Utilizați Transformarea Schwartziană</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_DESC" xml:space="preserve">
+    <value>Dacă este activat, acest screensaver folosește transformarea lui Schwartzian pentru a amesteca marginile labirintului. În caz contrar, folosește metoda simplă de transformare.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TWOSPINS_SETTINGS_DESC" xml:space="preserve">
+    <value>Două grupuri de puncte care se rotesc pe cele două jumătăți ale consolei.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMITMILESTONE_SETTINGS_DESC" xml:space="preserve">
+    <value>Sărbătorește obiectivul de angajare pentru fiecare al 1000-lea comitere.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SPRAY_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată stele pulverizate.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ZEBRASHIFT_SETTINGS_DESC" xml:space="preserve">
+    <value>Două linii schimbându-și culorile pe ecran.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Ceas analog cu o dată și oră simple în partea de jos a ecranului.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_NAME" xml:space="preserve">
+    <value>Arată mâna secundelor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_DESC" xml:space="preserve">
+    <value>Indiferent dacă arătați sau nu mâna secundelor.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_DESC" xml:space="preserve">
+    <value>Simulează un ecran negru ipotetic defectuos, cu linii RGB care apar uneori.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_NAME" xml:space="preserve">
+    <value>Probabilitatea de glitch</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_DESC" xml:space="preserve">
+    <value>Șansă, în procente, ca eroarea ecranului să apară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Nu s-au putut obține intrările de setări.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_NAME" xml:space="preserve">
+    <value>Luminanța nuanței culorii (luminozitate)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMITMILESTONE_CONGRATS" xml:space="preserve">
+    <value>Sărbătorim cel de-al 7.000-lea angajament de la 0.0.1!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NEWYEAR_LEFT" xml:space="preserve">
+    <value>rămas până în anul următor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați culorile</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_NAME" xml:space="preserve">
+    <value>Setări ale rampei orare</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați rampa orară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_NAME" xml:space="preserve">
+    <value>Setări de rampă pentru minute</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați rampa minutelor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_NAME" xml:space="preserve">
+    <value>Setări rampe secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați rampa de secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_NAME" xml:space="preserve">
+    <value>Setări rampe</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați rampele</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată text sub o linie pe un fundal roșu întunecat.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITTERCHAR_SETTINGS_DESC" xml:space="preserve">
+    <value>Caractere aleatorii care se răspândesc aleatoriu pe ecran.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_DESC" xml:space="preserve">
+    <value>Data și ora simplă în mijlocul ecranului și schimbă culoarea în funcție de ora curentă.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_NAME" xml:space="preserve">
+    <value>Data și ora luminoase</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_DESC" xml:space="preserve">
+    <value>Dacă folosiți versiunea luminoasă sau întunecată.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DANCENUMS_SETTINGS_DESC" xml:space="preserve">
+    <value>Îți arată numere de dans.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_DESC" xml:space="preserve">
+    <value>Val pivotant pe orizontală și verticală pentru a crea modele grozave cu urme lăsate în urmă pentru a dispărea.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_NAME" xml:space="preserve">
+    <value>Lungimea traseului</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_DESC" xml:space="preserve">
+    <value>Lungimea traseului undei pivotante în mișcare.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_POINTTRACK_SETTINGS_DESC" xml:space="preserve">
+    <value>Bloc care se deplasează într-un model ondulat cu rigle verzi urmărind poziția sa.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BIGLETTER_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un singur caracter aleatoriu într-un text colorat.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORDSLOT_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un cuvânt care este selectat la fel ca un aparat de slot găsit în cazinouri.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NEONS_SETTINGS_DESC" xml:space="preserve">
+    <value>Vă arată un text colorat alternând între două culori neon: cyan și fucsia.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_NAME" xml:space="preserve">
+    <value>Primele setări ale rampei</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați prima rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_NAME" xml:space="preserve">
+    <value>Setarea a doua rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați a doua rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_NAME" xml:space="preserve">
+    <value>Setarea a treia rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați a treia rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_APPEARANCE_NAME" xml:space="preserve">
+    <value>Setări de aspect</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_HOURS_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați aspectul rampei orare</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_HOURS_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați culoarea rampei orelor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_MINUTES_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați aspectul rampei minutelor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_MINUTES_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați culoarea rampei minutelor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_SECONDS_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați aspectul rampei de secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_SECONDS_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați culoarea rampei de secunde</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_NAME" xml:space="preserve">
+    <value>Setările de culoare pentru poziție de pornire</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați culorile poziției de pornire</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_NAME" xml:space="preserve">
+    <value>Setări de culoare pentru poziţia finală</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați culorile poziției finale</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_NAME" xml:space="preserve">
+    <value>Setări bară rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați bara de rampă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_APPEARANCE_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați aspectul rampei</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați culorile rampei</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_NAME" xml:space="preserve">
+    <value>Setări de pornire în gradient</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați culorile gradientului de început</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_NAME" xml:space="preserve">
+    <value>Setări de final de gradient</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați culorile gradientului final</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare de fundal</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Nivel maxim de culoare de fundal. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare a liniilor</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Nivel maxim de culoare a liniilor. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare a textului</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Nivel maxim de culoare a textului. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_APPEARANCE_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați prima apariție a rampei</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_NAME" xml:space="preserve">
+    <value>Text informativ pentru primul</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_DESC" xml:space="preserve">
+    <value>Scrieți cum arată textul dvs. informativ pentru ora curentă. {0} pentru ora curentă din 24 mai întâi.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_ULCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga sus pentru prima bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_URCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta sus pentru prima bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LLCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga jos pentru prima bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LRCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta jos pentru prima bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_UPFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter de cadru superior pentru prima bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LOFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter de cadru inferior pentru prima bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LEFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter de cadru din stânga pentru prima bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_RIFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter cadru din dreapta pentru prima bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați prima culoare a rampei</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_PROGRESSCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea primului bar</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare roșie pentru primul</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare verde pentru primul</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare albastră pentru primul</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINCOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare pentru primul</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare roșie pentru primul</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare verde pentru primul</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare albastră pentru primul</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare pentru primul</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_APPEARANCE_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați a doua apariție a rampei</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_NAME" xml:space="preserve">
+    <value>Text informativ pentru secundă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_DESC" xml:space="preserve">
+    <value>Scrieți cum se arată textul dvs. informativ pentru minutul curent. {0} pentru minutul curent din 60 de secunde.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_ULCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga sus pentru a doua bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_URCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta sus pentru a doua bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LLCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga jos pentru a doua bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LRCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta jos pentru a doua bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_UPFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter de cadru superior pentru a doua bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LOFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter de cadru inferior pentru a doua bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LEFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter de cadru din stânga pentru a doua bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_RIFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter cadru din dreapta pentru a doua bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați a doua culoare a rampei</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_PROGRESSCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea celui de-al doilea bar</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare roșie pentru secundă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare verde pentru secundă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare albastră pentru secundă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINCOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare pentru secundă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare roșie pentru secundă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare verde pentru secundă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare albastră pentru secundă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare pentru secundă</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_APPEARANCE_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați a treia apariție a rampei</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_ULCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga sus pentru a treia bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_URCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta sus pentru a treia bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LLCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din stânga jos pentru a treia bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LRCCHAR_NAME" xml:space="preserve">
+    <value>Caracter din colțul din dreapta jos pentru a treia bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_UPFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter de cadru superior pentru a treia bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LOFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter de cadru inferior pentru a treia bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LEFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter de cadru din stânga pentru a treia bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_RIFRAMECHAR_NAME" xml:space="preserve">
+    <value>Caracter cadru din dreapta pentru a treia bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_NAME" xml:space="preserve">
+    <value>Text informativ pentru al treilea</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_DESC" xml:space="preserve">
+    <value>Scrieți cum arată textul dvs. informativ pentru secunda curentă. {0} pentru secunda curentă din 60 de treimi.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Acest lucru vă permite să configurați a treia culoare a rampei</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_PROGRESSCOLOR_NAME" xml:space="preserve">
+    <value>Culoarea a treia bară</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare roșie pentru a treia</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare verde pentru a treia</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare albastră pentru a treia</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINCOLOR_NAME" xml:space="preserve">
+    <value>Nivel minim de culoare pentru a treia</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare roșie pentru a treia</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare verde pentru a treia</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare albastră pentru a treia</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Nivel maxim de culoare pentru a treia</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Progress va selecta culori aleatorii dacă este activat. În caz contrar, utilizați culorile din config.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC" xml:space="preserve">
+    <value>Dacă ciclul de culoare este activat, câte bifări înainte de a schimba culorile în Progress? 1 bif = 0,5 treime</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC" xml:space="preserve">
+    <value>Ceas analogic în mijlocul ecranului, care schimbă culoarea în funcție de ora curentă.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Afișează un ceas digital superb.</value>
+  </data>
+
+</root>

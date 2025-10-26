@@ -19,12 +19,11 @@
 
 using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Calculators.Commands;
-using Nitrocid.Extras.Calculators.Localized;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Calculators
 {
@@ -69,7 +68,7 @@ namespace Nitrocid.Extras.Calculators
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Calculators.Resources.Languages.Output.Localizations", typeof(CalculatorsInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 

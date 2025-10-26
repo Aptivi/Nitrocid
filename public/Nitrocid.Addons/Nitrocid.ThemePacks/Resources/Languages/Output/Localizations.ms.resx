@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_THEMEPACKS_EXCEPTION_NODATA" xml:space="preserve">
+    <value>Tidak boleh mendapatkan data yang diperlukan untuk memulakan addon ini.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_AMAYA" xml:space="preserve">
+    <value>Keharmonian ungu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ANDROID" xml:space="preserve">
+    <value>Ini ialah warna maskot Android di latar depan</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_APTIVI" xml:space="preserve">
+    <value>Keharmonian penjenamaan kami</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_AYUDARK" xml:space="preserve">
+    <value>Versi gelap tema VIM popular, Ayu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_AYULIGHT" xml:space="preserve">
+    <value>Versi ringan tema VIM popular, Ayu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_AYUMIRAGE" xml:space="preserve">
+    <value>Versi Mirage tema VIM popular, Ayu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL" xml:space="preserve">
+    <value>Ini adalah hari pertama tahun persekolahan baru</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE" xml:space="preserve">
+    <value>Terminal paling ringan mungkin</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_BLACKROSE" xml:space="preserve">
+    <value>Ini adalah mawar hitam</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_BREEZE" xml:space="preserve">
+    <value>Skema warna untuk Breeze, tema KDE Plasma 5</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DRACULA" xml:space="preserve">
+    <value>Skim warna popular untuk IDE, seperti IntelliJ</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DARKSIDE" xml:space="preserve">
+    <value>Sudah tiba masanya untuk kembali ke sisi gelap.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DEBIAN" xml:space="preserve">
+    <value>Skim warna untuk Debian</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID" xml:space="preserve">
+    <value>Tema lalai yang jelas untuk kernel</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DYNAMICBACK" xml:space="preserve">
+    <value>Aksen latar belakang dalam kernel anda!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA" xml:space="preserve">
+    <value>Lebih banyak aksen di mana-mana!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_EDM" xml:space="preserve">
+    <value>Gunakan jika anda peminat EDM</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_FIRE" xml:space="preserve">
+    <value>Warna api</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GOLDENPALACE" xml:space="preserve">
+    <value>Istana emas epik anda pada latar belakang biru tua</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI" xml:space="preserve">
+    <value>Anggur dan Kiwi dicampur bersama</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GRAPE" xml:space="preserve">
+    <value>Skim warna untuk anggur</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GREENMIX" xml:space="preserve">
+    <value>Warna hijau, biru dan ungu yang terang dan ditampal</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GREENIFIED" xml:space="preserve">
+    <value>Hijaukan persekitaran anda, hijaukan kernel anda. Jadikan Bumi lebih hijau!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GREENRED" xml:space="preserve">
+    <value>Kami telah menambah hijau dan merah sebagai warna.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GRINK" xml:space="preserve">
+    <value>Hijau dan merah jambu bercampur</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GRUVBOX" xml:space="preserve">
+    <value>Salah satu skema warna terminal yang diketahui</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_HACKER" xml:space="preserve">
+    <value>Teks hijau pada kelabu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_INDIAN" xml:space="preserve">
+    <value>Warna tradisional India betul-betul dalam konsol anda.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LEMON" xml:space="preserve">
+    <value>Jadikan terminal anda penuh dengan asid lemon</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS" xml:space="preserve">
+    <value>Papan kayu ringan</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED" xml:space="preserve">
+    <value>Warna terminal Linux standard</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LINUXUNCOLORED" xml:space="preserve">
+    <value>Terminal kelabu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC" xml:space="preserve">
+    <value>Beberapa teks Reka Bentuk Bahan pada terminal anda</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MAYA" xml:space="preserve">
+    <value>Warna oren dan coklat</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MELANGE" xml:space="preserve">
+    <value>Tema Melange diilhamkan oleh tema VIM dengan nama yang sama</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MINT" xml:space="preserve">
+    <value>Jadikan terminal anda penuh dengan pudina</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MIRAI" xml:space="preserve">
+    <value>Palet warna dari Mirai Kuriyama dari Beyond the Boundary.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_VIMTHEME" xml:space="preserve">
+    <value>Tema yang diilhamkan oleh tema VIM dengan nama yang sama</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_NEONBREEZE" xml:space="preserve">
+    <value>Adakah anda suka neon biru dan merah jambu?</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED" xml:space="preserve">
+    <value>Tema ini sepatutnya neutral kepada anda.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_NIGHTSKY" xml:space="preserve">
+    <value>Ini adalah langit malam anda di awal malam!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST" xml:space="preserve">
+    <value>Oktober akan datang tidak lama lagi, jadi bersedia!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ORANGESEA" xml:space="preserve">
+    <value>Lautan oren</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_PHOSPHORIC" xml:space="preserve">
+    <value>Terminal fosforik yang menukarkan segala-galanya kepada oren</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_REDBREEZE" xml:space="preserve">
+    <value>Memberi anda angin merah.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_REDCONSOLE" xml:space="preserve">
+    <value>Konsol merah berdarah</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_SAKURA" xml:space="preserve">
+    <value>Pokok sakura akan memberi anda sedikit angin Cina</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_TEALED" xml:space="preserve">
+    <value>Semua warna teal</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_TECHNO" xml:space="preserve">
+    <value>Tema untuk pencinta teknologi</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_TRANCE" xml:space="preserve">
+    <value>Peminat muzik berkhayal? Ini adalah tema untuk anda!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_UBUNTU" xml:space="preserve">
+    <value>Skim warna daripada sistem pengendalian Linux yang popular, Ubuntu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_VICECITY" xml:space="preserve">
+    <value>Memberi anda suasana Vice City yang sempurna</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_VICECITYDAWN" xml:space="preserve">
+    <value>Ini adalah Subuh Naib Bandar anda.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO" xml:space="preserve">
+    <value>Skema warna untuk Visual Studio, salah satu IDE yang paling berkuasa</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_WINDOWS11" xml:space="preserve">
+    <value>Skema warna untuk Windows 11, versi Windows terkini</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_WINDOWS95" xml:space="preserve">
+    <value>Kembalikan nostalgia dengan tema ini!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_WOOD" xml:space="preserve">
+    <value>Terminal anda terdiri daripada papan kayu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_YASAI" xml:space="preserve">
+    <value>Diinspirasikan daripada corak buah-buahan Cina yang berbeza</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ALMALINUX" xml:space="preserve">
+    <value>Skim warna daripada Alma Linux, spin-off sistem pengendalian Linux, Red Hat</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ARCHLINUX" xml:space="preserve">
+    <value>Skim warna daripada sistem pengendalian Linux, Arch Linux</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ENDEAVOUR" xml:space="preserve">
+    <value>Skim warna daripada EndeavourOS, spin-off sistem pengendalian Linux, Arch Linux</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_FEDORA" xml:space="preserve">
+    <value>Skim warna daripada Fedora, spin-off sistem pengendalian Linux, Red Hat</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GENTOO" xml:space="preserve">
+    <value>Skim warna daripada sistem pengendalian Linux, Gentoo</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_KALEIDOSCOPE" xml:space="preserve">
+    <value>Warna corak pahat membentuk mandala berwarna-warni</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_KUBUNTU" xml:space="preserve">
+    <value>Skim warna daripada Kubuntu, spin-off sistem pengendalian Linux yang popular, Ubuntu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LINUXMINT" xml:space="preserve">
+    <value>Skim warna daripada Linux Mint, spin-off tidak rasmi sistem pengendalian Linux yang popular, Ubuntu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LUBUNTU" xml:space="preserve">
+    <value>Skim warna daripada Lubuntu, spin-off sistem pengendalian Linux yang popular, Ubuntu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MANJARO" xml:space="preserve">
+    <value>Skim warna daripada Manjaro, spin-off sistem pengendalian Linux, Arch Linux</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_OPENSUSE" xml:space="preserve">
+    <value>Skim warna daripada sistem pengendalian Linux, openSUSE</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_REDHAT" xml:space="preserve">
+    <value>Skim warna daripada sistem pengendalian Linux, Red Hat</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_RENEGADE" xml:space="preserve">
+    <value>Warna merah dengan warna aksen dinamik untuk teks yang menarik perhatian</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX" xml:space="preserve">
+    <value>Skim warna daripada Rocky Linux, spin-off sistem pengendalian Linux, Red Hat</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_SLACKWARE" xml:space="preserve">
+    <value>Skim warna daripada sistem pengendalian Linux, Slackware</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_XUBUNTU" xml:space="preserve">
+    <value>Skim warna daripada Xubuntu, spin-off sistem pengendalian Linux yang popular, Ubuntu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ZORINOS" xml:space="preserve">
+    <value>Skim warna daripada Zorin OS, spinoff tidak rasmi sistem pengendalian Linux yang popular, Ubuntu</value>
+  </data>
+
+</root>

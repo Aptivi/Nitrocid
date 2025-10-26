@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_DATES_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Sortie</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_GETTIMEINFO_DESC" xml:space="preserve">
+    <value>Obtient les informations de date et d&apos;heure</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
+    <value>Millisecondes :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
+    <value>Secondes :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
+    <value>Minutes:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
+    <value>Les heures:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
+    <value>Journées:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
+    <value>Mois:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
+    <value>An:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
+    <value>Jour de l&apos;année :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
+    <value>Jour de la semaine:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
+    <value>Binaire:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
+    <value>Heure locale:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
+    <value>Temps universel:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
+    <value>Temps Unix :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
+    <value>Échec de l&apos;analyse des informations de date pour</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2" xml:space="preserve">
+    <value>Assurez-vous que le format est correct.</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
+    <value>Temps:</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
+    <value>Un simple chronomètre</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STARTSTOP" xml:space="preserve">
+    <value>Démarrer ou arrêter</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_LAP" xml:space="preserve">
+    <value>Genoux</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_RESET" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_TIMER_DESC" xml:space="preserve">
+    <value>Une simple minuterie</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_KEYBINDING_SETTIME" xml:space="preserve">
+    <value>Définir l&apos;intervalle</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER" xml:space="preserve">
+    <value>Le délai d&apos;attente indiqué n&apos;est pas numérique.</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_TIMEOUTPROMPT" xml:space="preserve">
+    <value>Spécifiez le délai d&apos;attente en millisecondes</value>
+  </data>
+  <data name="NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC" xml:space="preserve">
+    <value>Écrivez une police figlet prise en charge par la bibliothèque Figgle. Consultez la documentation de la bibliothèque pour plus d&apos;informations</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME" xml:space="preserve">
+    <value>Police Figlet pour la minuterie</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME" xml:space="preserve">
+    <value>Activer Figlet pour la minuterie</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC" xml:space="preserve">
+    <value>Si activé, utilisera figlet pour la minuterie. Veuillez noter qu&apos;il a besoin d&apos;un grand écran de console pour afficher correctement l&apos;heure avec Figlet activé.</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC" xml:space="preserve">
+    <value>Obtient les informations de date et d&apos;heure actuelles</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_HEADER" xml:space="preserve">
+    <value>Information pour</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STATUS_READY" xml:space="preserve">
+    <value>Le chronomètre est prêt.</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STATUS_RUNNING" xml:space="preserve">
+    <value>Chronomètre en marche !</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STATUS_NEWLAP" xml:space="preserve">
+    <value>Nouveau tour !</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN" xml:space="preserve">
+    <value>Commencez le compte à rebours</value>
+  </data>
+  <data name="NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Impossible d&apos;obtenir les entrées de paramètres.</value>
+  </data>
+  <data name="NKS_DATES_HOMEPAGE_TIMER" xml:space="preserve">
+    <value>Minuteur</value>
+  </data>
+  <data name="NKS_DATES_HOMEPAGE_STOPWATCH" xml:space="preserve">
+    <value>Chronomètre</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_NOLAPS" xml:space="preserve">
+    <value>Pas encore de tours...</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_LAPLIST" xml:space="preserve">
+    <value>Liste des tours</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_POMODORO_DESC" xml:space="preserve">
+    <value>Minuterie Pomodoro</value>
+  </data>
+  <data name="NKS_DATES_HOMEPAGE_POMODORO" xml:space="preserve">
+    <value>Pomodoro</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_STATUS_READY" xml:space="preserve">
+    <value>Le minuteur Pomodoro est prêt</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_STATUS_TIMERNUM" xml:space="preserve">
+    <value>Minuterie Pomodoro numéro {0} en quatre itérations</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_STATUS_SHORTBREAK" xml:space="preserve">
+    <value>Courte pause</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_TIMEOUTPROMPT" xml:space="preserve">
+    <value>Spécifiez le délai d&apos;expiration de la pause en millisecondes</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME" xml:space="preserve">
+    <value>Définir l&apos;intervalle de pause</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC" xml:space="preserve">
+    <value>Date et heure d&apos;impression des informations</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_DESC" xml:space="preserve">
+    <value>Cette section vous permet de configurer le fonctionnement de l&apos;application du minuteur.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_DESC" xml:space="preserve">
+    <value>Cette section vous permet de configurer le fonctionnement de l&apos;application de minuterie Pomodoro.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME" xml:space="preserve">
+    <value>Activer Figlet pour le minuteur Pomodoro</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC" xml:space="preserve">
+    <value>Si cette option est activée, Figlet sera utilisé pour le minuteur Pomodoro. Veuillez noter qu&apos;un grand écran de console est nécessaire pour afficher correctement l&apos;heure avec Figlet activé.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME" xml:space="preserve">
+    <value>Police Figlet pour le minuteur Pomodoro</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODDATEINVALID" xml:space="preserve">
+    <value>Date de production non valide</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPTIMEINVALID" xml:space="preserve">
+    <value>Délai d&apos;expiration non valide</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPDATEINVALID" xml:space="preserve">
+    <value>Date d&apos;expiration non valide</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODDATE" xml:space="preserve">
+    <value>Date de production</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPDATE" xml:space="preserve">
+    <value>Date d&apos;expiration</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPTIME" xml:space="preserve">
+    <value>Délai d&apos;expiration</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODHEALTH" xml:space="preserve">
+    <value>État du produit</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODSTATUS" xml:space="preserve">
+    <value>État du produit</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_NOEXPIRYINFO" xml:space="preserve">
+    <value>Échec de l&apos;obtention des informations d&apos;expiration du produit</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_DESC" xml:space="preserve">
+    <value>Obtention des informations d&apos;expiration du produit</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC" xml:space="preserve">
+    <value>Date de production (regardez sur le côté ou le dessous du produit)</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC" xml:space="preserve">
+    <value>Date ou délai d&apos;expiration (écrit explicitement au même endroit ou par intervalles, par exemple 6 mois ou 1 an)</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC" xml:space="preserve">
+    <value>Si le produit cible ne précise pas explicitement la date d&apos;expiration</value>
+  </data>
+
+</root>

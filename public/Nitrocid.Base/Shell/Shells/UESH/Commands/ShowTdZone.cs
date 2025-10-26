@@ -22,7 +22,6 @@ using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Misc.Interactives;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Timezones;
 

@@ -20,12 +20,11 @@
 using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Docking.Commands;
 using Nitrocid.Extras.Docking.Dock;
-using Nitrocid.Extras.Docking.Localized;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Docking
 {
@@ -57,7 +56,7 @@ namespace Nitrocid.Extras.Docking
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Docking.Resources.Languages.Output.Localizations", typeof(DockingInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 

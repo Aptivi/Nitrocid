@@ -1,0 +1,2044 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
+    <value>Nomen usoris pro {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD" xml:space="preserve">
+    <value>Signum pro {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO" xml:space="preserve">
+    <value>Coniuncta cum {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING" xml:space="preserve">
+    <value>Error cum coniungere conatur {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND" xml:space="preserve">
+    <value>Directorium locale {0} non est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR" xml:space="preserve">
+    <value>Intra presul loci. &quot;.. &quot;recedere.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND" xml:space="preserve">
+    <value>Indicis {0} non invenitur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR" xml:space="preserve">
+    <value>Intra remotiorem presul. &quot;... redire</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_LOCALDIR" xml:space="preserve">
+    <value>Directorium locale: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_REMOTEDIR" xml:space="preserve">
+    <value>Directorium remoti: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE" xml:space="preserve">
+    <value>Scapusculi {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE" xml:space="preserve">
+    <value>Tabularium downloaded {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE" xml:space="preserve">
+    <value>Fasciculus fasciculi {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_UPLOADEDFILE" xml:space="preserve">
+    <value>Fasciculus oneratus {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC" xml:space="preserve">
+    <value>Accipit current loci Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC" xml:space="preserve">
+    <value>Accipit current Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDL_DESC" xml:space="preserve">
+    <value>Mutat loci Directory ut download vel upload a</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDR_DESC" xml:space="preserve">
+    <value>Mutat remotis presul to download ab or upload to</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC" xml:space="preserve">
+    <value>Deletes remotis file a servo</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_GET_DESC" xml:space="preserve">
+    <value>Download file remotis ad loci Directory utens binarii vel textus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC" xml:space="preserve">
+    <value>Index locorum directorium</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC" xml:space="preserve">
+    <value>Lists remotis presul</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_PUT_DESC" xml:space="preserve">
+    <value>Uploads loci lima ut remotis Directory utens binarii vel text</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC" xml:space="preserve">
+    <value>Mutationes Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC" xml:space="preserve">
+    <value>Utere an FTP testa penitus cum servers</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SHELL_ERROR" xml:space="preserve">
+    <value>Error fuit in testa.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_INVALIDPROFILE" xml:space="preserve">
+    <value>Irrita profile lectio.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECTING" xml:space="preserve">
+    <value>Conare coniungere cum {0} cum profile {1}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME" xml:space="preserve">
+    <value>Nomen: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC" xml:space="preserve">
+    <value>Scapus summarum computat.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_INVALIDENCRYPTION" xml:space="preserve">
+    <value>Invalidum encryption algorithmus.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_PASSWORDPROMPT" xml:space="preserve">
+    <value>Tesseram intrant pro {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_SIZE" xml:space="preserve">
+    <value>Magnitudo: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT" xml:space="preserve">
+    <value>Error cum conatur coniungere ad {0}: Connection timeout vel nexum amissum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC" xml:space="preserve">
+    <value>Computat summas imaginum in directorio specifico.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_ADDRESSPROMPT" xml:space="preserve">
+    <value>Intra usoris aut mail:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_PASSWORDPROMPT" xml:space="preserve">
+    <value>Password intrare:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_CONNECTIONFAILED" xml:space="preserve">
+    <value>Error dum coniungitur {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_CONNECTING" xml:space="preserve">
+    <value>Connectens cum {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_AUTHENTICATING" xml:space="preserve">
+    <value>Authenticat...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC" xml:space="preserve">
+    <value>Download nuntios et libros eas</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC" xml:space="preserve">
+    <value>Aperit nuntium</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC" xml:space="preserve">
+    <value>Pagina valorem numericum non est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO" xml:space="preserve">
+    <value>Nuntius numerus non potest esse negativus vel nullus.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC" xml:space="preserve">
+    <value>Nuntius numerus valorem numerorum non est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM" xml:space="preserve">
+    <value>- Ex {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO" xml:space="preserve">
+    <value>- Ad {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN" xml:space="preserve">
+    <value>- Missus {0} in {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND" xml:space="preserve">
+    <value>Nuntius certa non est inventus.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PREPARINGPROFILES" xml:space="preserve">
+    <value>Praeparans profiles... Plura minuta capere potuit.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC" xml:space="preserve">
+    <value>Mutationes current mail Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER" xml:space="preserve">
+    <value>&apos;Non potes aperire epistulam folder {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC" xml:space="preserve">
+    <value>Indices directoriis in electronica epistularum tuarum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_VALIDATIONFAILED_MESSAGE" xml:space="preserve">
+    <value>In sanatione certificatorium errores sunt certificatorium. Posset esse primum servo tuo vel libellum connexae sunt ut expleretur. Hic error est:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT" xml:space="preserve">
+    <value>Certus esne quod coniungere vis?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_VALIDATIONFAILED_INVALID" xml:space="preserve">
+    <value>Irrita responsio. Quaero, iterum conare.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT" xml:space="preserve">
+    <value>IMAP intrant servo electronica et portus (&lt;oratio&gt; vel &lt;oratio&gt;:[portus]);</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT" xml:space="preserve">
+    <value>Intrant ESMTP inscriptionem electronicam et portum (&lt;electronica&gt; vel &lt;inscriptio&gt;:[portum]);</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC" xml:space="preserve">
+    <value>Epistulam mittit ad electronica</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT" xml:space="preserve">
+    <value>Intra recipiens electronica inscriptio:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT" xml:space="preserve">
+    <value>Intra subiectum:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT" xml:space="preserve">
+    <value>Intrant nuntium tuum infra. Scribe &quot;EOF&quot; confirmare.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_SENDING" xml:space="preserve">
+    <value>Nuntium mittere...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_SENT" xml:space="preserve">
+    <value>Nuntius missus.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL" xml:space="preserve">
+    <value>Inscriptio electronica invalida. Fac inscriptionem recte scripseris eamque forma exempli demonstrati aequet:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC" xml:space="preserve">
+    <value>Tollit nuntium</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC" xml:space="preserve">
+    <value>Tollit nuntios ab recipiente</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX" xml:space="preserve">
+    <value>Mandatum {0} e {1} ex {1} deletum e {2} {2}. {3:3} Rehquis epistulis ad parse.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX" xml:space="preserve">
+    <value>Mandatum {0} e {1} ex intheca deletum. {2} Mandata reliquorum ad parse.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FILESHELLS_OPENFAILED" xml:space="preserve">
+    <value>Defecit file aperire. Exitus testam...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION" xml:space="preserve">
+    <value>Optio definita {0} invalida est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC" xml:space="preserve">
+    <value>Dicendum est, quod numerorum est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME" xml:space="preserve">
+    <value>Log FTP usoris</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME" xml:space="preserve">
+    <value>Log FTP IP oratio</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_NAME" xml:space="preserve">
+    <value>Revertere solum primum profile amet</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PUT_FAILED" xml:space="preserve">
+    <value>Deficio ad upload {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_GET_FAILED" xml:space="preserve">
+    <value>Download documentum defecit {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_LIST_FAILED" xml:space="preserve">
+    <value>Defecit tabulas remotas enumerare: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_DELETING" xml:space="preserve">
+    <value>Deletio {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_NOTFOUND" xml:space="preserve">
+    <value>{0} in calculonis servi non invenitur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_SUCCESS" xml:space="preserve">
+    <value>Omnia epistulae ab {0} factae feliciter tolluntur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_FAILURE" xml:space="preserve">
+    <value>Omnia epistulae ab {0} factae removere non potuerunt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING" xml:space="preserve">
+    <value>Error mittit nuntium.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_MOVING" xml:space="preserve">
+    <value>Movere {0} ad {1}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_MOVED" xml:space="preserve">
+    <value>motus feliciter</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_MV_DESC" xml:space="preserve">
+    <value>Movet fasciculum seu directorium ad alium fasciculum seu directorium. Potes uti ad fasciculos renominandi.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_MOVEFAILED" xml:space="preserve">
+    <value>Non potuit movere {0} ad {1}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COPYING" xml:space="preserve">
+    <value>Effingo {0} ad {1}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COPIED" xml:space="preserve">
+    <value>copied feliciter</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_CP_DESC" xml:space="preserve">
+    <value>Codices fasciculi seu directorii alterius fasciculi seu directorii.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COPYFAILED" xml:space="preserve">
+    <value>Deficio ad describendum {0} ad {1}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC" xml:space="preserve">
+    <value>Movet nuntium</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC" xml:space="preserve">
+    <value>Movet omnia mandata ex recipiente</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_SUCCESS" xml:space="preserve">
+    <value>Omnia epistulae ab {0} factae feliciter moventur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_FAILURE" xml:space="preserve">
+    <value>Omnes epistulas ab {0} factas movere non potuit.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX" xml:space="preserve">
+    <value>Nuntius {0} e {1} ex {1}moto {2}. {3:3} Rehquis epistulis ad parse.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_DESC" xml:space="preserve">
+    <value>Utrum sit vel non FTP log cap.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC" xml:space="preserve">
+    <value>Utrum IP oratio FTP sit vel non log.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC" xml:space="preserve">
+    <value>Colligunt primam profile modo cum connectens.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE" xml:space="preserve">
+    <value>{0} novae nuntii in capsa pervenerunt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC" xml:space="preserve">
+    <value>Aperi &quot;mail&quot; videre.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME" xml:space="preserve">
+    <value>Nomen plenum: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME" xml:space="preserve">
+    <value>Tempus creationis: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME" xml:space="preserve">
+    <value>Novissima accessus temporis: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME" xml:space="preserve">
+    <value>Novissime scribe tempus: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES" xml:space="preserve">
+    <value>Attributa: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_PARENTDIR" xml:space="preserve">
+    <value>Parentis directorium: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_WHERETOFIND" xml:space="preserve">
+    <value>Ubi invenire: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE" xml:space="preserve">
+    <value>Magnitudo tabellae: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT" xml:space="preserve">
+    <value>Intra file semitas ad attachiamenta. Press Penetro in blank iter ad confirmandas.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC" xml:space="preserve">
+    <value>Aperit encrypted nuntium</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD" xml:space="preserve">
+    <value>Scribere password pro clavis ID {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC" xml:space="preserve">
+    <value>Et misit ad encrypted ad electronica</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK" xml:space="preserve">
+    <value>Preme aliqua clavis ire.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED" xml:space="preserve">
+    <value>&apos;Non potes creare epistulam folder {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC" xml:space="preserve">
+    <value>Facit directorium in current opus Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC" xml:space="preserve">
+    <value>Removet Directory a current opus Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND" xml:space="preserve">
+    <value>Tabellae folder {0} non invenitur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED" xml:space="preserve">
+    <value>&apos;Non potui&apos; delere folder epistulae {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC" xml:space="preserve">
+    <value>Renames in folder</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME" xml:space="preserve">
+    <value>Ostende mail nuntium preview</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC" xml:space="preserve">
+    <value>Cum epistulas electronicas enumerat, corpus praevisum ostende.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC" xml:space="preserve">
+    <value>Si autosave possit, fasciculus textus singulis secundis &quot;n&quot; salvus erit.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC" xml:space="preserve">
+    <value>Permittit uteris in SSH FTP servo</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC" xml:space="preserve">
+    <value>Omnia files intra archivum recenset</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC" xml:space="preserve">
+    <value>Extrahit lima ut certum Directory vel vena Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC" xml:space="preserve">
+    <value>Mutationes archive Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_LOCALDIRNOTFOUND" xml:space="preserve">
+    <value>Indicium {0} non est</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND" xml:space="preserve">
+    <value>Archivum indicem {0} non est</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR" xml:space="preserve">
+    <value>Fuit error in testa amet;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR" xml:space="preserve">
+    <value>Error fuit in testa SFTP;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD" xml:space="preserve">
+    <value>Quomodo vis signo authenticitatis incisionem?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY" xml:space="preserve">
+    <value>Privata clavis file</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE" xml:space="preserve">
+    <value>Intrant passphrasim clavem {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND" xml:space="preserve">
+    <value>Fasciculus key {0} non est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED" xml:space="preserve">
+    <value>Error privatim clavem addere conatur:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_PERM_DESC" xml:space="preserve">
+    <value>Licentias file ponit. Hoc solum sustinetur in servientibus FTP qui Unix currunt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_TYPE_DESC" xml:space="preserve">
+    <value>Genus huius sessionis occidere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PERM_SETFAILED" xml:space="preserve">
+    <value>Licentias {0} ad {1} exponere non potuit.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PERM_SETSUCCEEDED" xml:space="preserve">
+    <value>Permissiones pone feliciter ad lima</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_ASCII" xml:space="preserve">
+    <value>Data type set to ASCII!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_BINARY" xml:space="preserve">
+    <value>Data genus binarii ad paro!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_INVALID" xml:space="preserve">
+    <value>Genus notitia invalida.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING" xml:space="preserve">
+    <value>Cave ut pleraeque limae hoc modo recte utentes non eximant vel immittant, ita tractet utendi modum binarii in pluribus adiunctis.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC" xml:space="preserve">
+    <value>Testa RSS aperit legere feeds</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC" xml:space="preserve">
+    <value>Lists all feeds</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_READ_DESC" xml:space="preserve">
+    <value>Legit pasco in pasco interretiali</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC" xml:space="preserve">
+    <value>Articulus accipit info</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE" xml:space="preserve">
+    <value>Articulus numerus maior esse non potest quam vasa supposita.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE" xml:space="preserve">
+    <value>Titulus:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK" xml:space="preserve">
+    <value>Link:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC" xml:space="preserve">
+    <value>In feed accipit info</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC" xml:space="preserve">
+    <value>Descriptio:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE" xml:space="preserve">
+    <value>Genus pasce:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT" xml:space="preserve">
+    <value>Numeri articulorum:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READ_NOLINK" xml:space="preserve">
+    <value>Articulus nexum non habet!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_WEBALERT_OPENING" xml:space="preserve">
+    <value>URL apertio... Fac ut vestigia quae in screen ostensa sunt sequantur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC" xml:space="preserve">
+    <value>Pulchrat file JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_GETFOLDER_DESC" xml:space="preserve">
+    <value>Download folder vel remotis locorum utens Directory binarii textus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_PUTFOLDER_DESC" xml:space="preserve">
+    <value>Uploads loci folder ut remotis Directory utens binarii vel text</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING" xml:space="preserve">
+    <value>Folder {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED" xml:space="preserve">
+    <value>folder in Download {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED" xml:space="preserve">
+    <value>Download Defecit pro folder {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING" xml:space="preserve">
+    <value>Discas folder {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADED" xml:space="preserve">
+    <value>Fasciculi impositi folder {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC" xml:space="preserve">
+    <value>Minuit JSON file</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_JSONTOOLS_EXCEPTION_STREAMNOTOPEN" xml:space="preserve">
+    <value>JSON editor limam amnis adhuc non aperuit.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC" xml:space="preserve">
+    <value>Exit JSON testa sine mutationibus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC" xml:space="preserve">
+    <value>Servat JSON file</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC" xml:space="preserve">
+    <value>Prints file JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC" xml:space="preserve">
+    <value>Scribe quomodo aperiens conventum tuum vis promptum esse. Relinque blank ut default style. Placeholders parsed sunt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC" xml:space="preserve">
+    <value>Scribe quomodo tesserae tuae promptum esse velis. Relinque blank ut default style. Placeholders parsed sunt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME" xml:space="preserve">
+    <value>Monstrare lima singula in FTP list</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
+    <value>Username promptum genus pro amet</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_PASSWORDPROMPT_NAME" xml:space="preserve">
+    <value>Password promptum genus ad amet</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_NAME" xml:space="preserve">
+    <value>Utere primo profile amet</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_NAME" xml:space="preserve">
+    <value>Addere novos hospites ad celeritatem amet</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_NAME" xml:space="preserve">
+    <value>Conare ad convalidandum secure FTP libellorum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME" xml:space="preserve">
+    <value>Ostende amet MOTD ad nexum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME" xml:space="preserve">
+    <value>Semper irritum FTP testimonium accipere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC" xml:space="preserve">
+    <value>FTP singula documenta ostendit dum directoria remota recensit.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC" xml:space="preserve">
+    <value>Utitur prima profile FTP ad coniungere ad FTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC" xml:space="preserve">
+    <value>Si enabled, novam nexum addit cum celeritate FTP dial.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_DESC" xml:space="preserve">
+    <value>FTP testimonium convalescere conatur. Vertere non commendatur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC" xml:space="preserve">
+    <value>FTP ostendit nuntium diei in login.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC" xml:space="preserve">
+    <value>Semper irritum FTP testimonium accipitis. Vertere non commendatur ut periculum securitatis poseit.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
+    <value>Username promptum genus pro mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME" xml:space="preserve">
+    <value>Password promptum genus pro mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME" xml:space="preserve">
+    <value>IMAP promptum stilum pro mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME" xml:space="preserve">
+    <value>ESMTP promptum stylum mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME" xml:space="preserve">
+    <value>Automatice deprehendere mail server</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME" xml:space="preserve">
+    <value>Admitte mail lusione</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME" xml:space="preserve">
+    <value>Certiorem pro novis mail nuntia</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME" xml:space="preserve">
+    <value>GPG password promptum genus ad mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME" xml:space="preserve">
+    <value>Mitte IMAP ping intervallum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME" xml:space="preserve">
+    <value>Mitte ESMTP ping intervallum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME" xml:space="preserve">
+    <value>Textum epistulae format</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC" xml:space="preserve">
+    <value>Scribe quomodo vis IMAP servo tuo promptum esse. Relinque blank ut default style. Placeholders parsed sunt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC" xml:space="preserve">
+    <value>Scribe quomodo vis servo tuo SMTP promptus esse. Relinque blank ut default style. Placeholders parsed sunt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC" xml:space="preserve">
+    <value>Automatice servo tabellariorum secundum electronicam datam deprehendere.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC" xml:space="preserve">
+    <value>Mail server ope lusione.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC" xml:space="preserve">
+    <value>Epistulas epistularum novas tibi notificat.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC" xml:space="preserve">
+    <value>Scribe quomodo vis tesserae tuae GPG promptum esse. Relinque blank ut default style. Placeholders parsed sunt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC" xml:space="preserve">
+    <value>Quot milliseconds ping IMAP mittere?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC" xml:space="preserve">
+    <value>Quot milliseconds mittere ESMTP ping?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC" xml:space="preserve">
+    <value>Imperium quomodo textus mail ostendetur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_NAME" xml:space="preserve">
+    <value>RSS pascere URL promptum style</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME" xml:space="preserve">
+    <value>Auto reficite RSS feed</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_NAME" xml:space="preserve">
+    <value>Auto refresh RSS feed interval</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_DESC" xml:space="preserve">
+    <value>Scribe quomodo vis servo tuo RSS pascere promptum esse. Relinque blank ut default style. Placeholders parsed sunt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_DESC" xml:space="preserve">
+    <value>Quot milliseconds ad nutriendum Corpus retrahendum?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME" xml:space="preserve">
+    <value>Ostendere lima singula in SFTP list</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
+    <value>Username promptum genus pro SFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_NAME" xml:space="preserve">
+    <value>Novas hospites addere ad celeritatem SFTP dial</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC" xml:space="preserve">
+    <value>SFTP singula documenta ostendit dum directoria remota recensit.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC" xml:space="preserve">
+    <value>Si enabled, novam nexum addit cum celeritate SFTP dial.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_TITLE" xml:space="preserve">
+    <value>FTP servo notitia</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_ADDRESS" xml:space="preserve">
+    <value>Servo inscriptio:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_PORT" xml:space="preserve">
+    <value>Servo portum:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_TYPE" xml:space="preserve">
+    <value>Servo genus:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_SYSTYPE" xml:space="preserve">
+    <value>Servo ratio generis:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_ENCRYPTION" xml:space="preserve">
+    <value>Servo encryption modus:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_DATACONNECTION" xml:space="preserve">
+    <value>Servo notitia nexu generis:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_SYSTEM" xml:space="preserve">
+    <value>Ratio Servo:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_DOWNLOADDATATYPE" xml:space="preserve">
+    <value>Servo download notitia type:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_UPLOADDATATYPE" xml:space="preserve">
+    <value>Servo eget notitia type:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH" xml:space="preserve">
+    <value>Ingredere remota lima ut hashed.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED" xml:space="preserve">
+    <value>Intra remotiorem presul.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_NAME" xml:space="preserve">
+    <value>Recursive hashing enim amet</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC" xml:space="preserve">
+    <value>Num ad directorium recursively detrahe. Lorem quod non omnes FTP servitores id sustinent.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC" xml:space="preserve">
+    <value>Exsequitur mandatum servo amet</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS" xml:space="preserve">
+    <value>mail transfertur...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_HOSTNAME" xml:space="preserve">
+    <value>Nomen exercitus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_USERNAME" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_DATATYPE" xml:space="preserve">
+    <value>Data Type</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCODING" xml:space="preserve">
+    <value>modum translitterandi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCRYPTION" xml:space="preserve">
+    <value>Encryption</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROTOCOLS" xml:space="preserve">
+    <value>Protocols</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME" xml:space="preserve">
+    <value>Ostende profectum mail translatio</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME" xml:space="preserve">
+    <value>Progressus translatio Mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME" xml:space="preserve">
+    <value>Mail translationem progressus (uno)</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC" xml:space="preserve">
+    <value>Si enabled, concha epistularum ostendet quot bytes transmittuntur cum epistulas electronicas transmisimus.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC" xml:space="preserve">
+    <value>Scribe quomodo vis progressus electronicarum litterarum translationis stilum esse. Relinquere blank ut default style. Placeholders parsed sunt. {0} pro magnitudine translata et {1}pro magnitudine summa.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC" xml:space="preserve">
+    <value>Scribe quomodo vis progressus electronicarum litterarum translationis stilum esse. Relinquere blank ut default style. Placeholders parsed sunt. {0} pro magnitudine translata.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC" xml:space="preserve">
+    <value>Incipit concha HTTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_GET_DESC" xml:space="preserve">
+    <value>Accipit responsum ab HTTP servo usura certum petitionem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_DELETE_DESC" xml:space="preserve">
+    <value>Deletes content ex HTTP servo</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR" xml:space="preserve">
+    <value>Fuit error in testa HTTP:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_GETSTRING_DESC" xml:space="preserve">
+    <value>Accipit filum ex HTTP servo uti ad certum petitionem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_GETTING" xml:space="preserve">
+    <value>Questus {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC" xml:space="preserve">
+    <value>Stipat file locali in archivo</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK" xml:space="preserve">
+    <value>Nihil stipant.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_NAME" xml:space="preserve">
+    <value>RSS feed arcessere timeout</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_DESC" xml:space="preserve">
+    <value>Quot milliseconds expectare ante RSS pascere timeout arcessere?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_NAME" xml:space="preserve">
+    <value>Quin Retry conatus amet tradenda</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME" xml:space="preserve">
+    <value>FTP nexu timeout</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME" xml:space="preserve">
+    <value>FTP data nexu timeout</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_NAME" xml:space="preserve">
+    <value>FTP IP versiones</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_DESC" xml:space="preserve">
+    <value>Quotiens est cognoscere onerationis et download et retry si verificationis deficit ante tionem defecerit in toto?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_DESC" xml:space="preserve">
+    <value>Quot milliseconds expectare ante nexum amet timeout?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_DESC" xml:space="preserve">
+    <value>Quot milliseconds exspectare coram FTP data nexu timeout?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_DESC" xml:space="preserve">
+    <value>Elige versionem Protocollum interretialem quem FTP servitorem sustinet et clientem FTP adhibet.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_NAME" xml:space="preserve">
+    <value>Default JSON formatting pro JSON testa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_DESC" xml:space="preserve">
+    <value>Defectum JSON formatting eligit pro testa JSON ad salvandum.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC" xml:space="preserve">
+    <value>Ostendit tabella singula in indice</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
+    <value>Supprimit molestissima &quot;permissio negata&quot; nuntiis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC" xml:space="preserve">
+    <value>Indicat scopum iter absolutum est</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FILESHELLS_NEEDSFILE" xml:space="preserve">
+    <value>File not specified. Exitus testam...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC" xml:space="preserve">
+    <value>Notat feed</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC" xml:space="preserve">
+    <value>Transfert feed Bookmark</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS" xml:space="preserve">
+    <value>Cibus in bookmarks non est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC" xml:space="preserve">
+    <value>Lists all bookmarked feeds</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND" xml:space="preserve">
+    <value>Tabella {0} non invenitur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_ARCHIVE_FILENOTFOUND" xml:space="preserve">
+    <value>Fasciculus non est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO" xml:space="preserve">
+    <value>No info.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOLDERCANTOPEN" xml:space="preserve">
+    <value>Non possumus aperire file vel folder</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NEWLINESTYLE" xml:space="preserve">
+    <value>Newline style:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_BINFILE" xml:space="preserve">
+    <value>Fasciculus binarius:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATA" xml:space="preserve">
+    <value>MIME metadata:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME2" xml:space="preserve">
+    <value>Nomen plenum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_VERSION" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CULTURENAME" xml:space="preserve">
+    <value>Nomen cultura</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CONTENTTYPE" xml:space="preserve">
+    <value>Genus contentus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NOTDOTNETASSEMBLY" xml:space="preserve">
+    <value>Scapus non valet .NET conventus.\n</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTGETFSINFO" xml:space="preserve">
+    <value>File systema non potest info</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY" xml:space="preserve">
+    <value>Non potest effingo lima vel Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE" xml:space="preserve">
+    <value>Non potest movere file vel Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTREMOVE" xml:space="preserve">
+    <value>Non remove lima vel Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT" xml:space="preserve">
+    <value>Iter ingredi vel plenam viam ad destinatum folder ut effingo limam electam ad.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH" xml:space="preserve">
+    <value>Fac ut rectam viam scripseris.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND" xml:space="preserve">
+    <value>Fasciculus non est. Fac ut rectam viam scripseris.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT" xml:space="preserve">
+    <value>Iter ingredi vel plenam viam ad destinatum folder ut lima delectos moveat ad.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWFILENAMEPROMPT" xml:space="preserve">
+    <value>Intra novum fasciculum nomen tuum.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENAMEINVALID" xml:space="preserve">
+    <value>Fac ut recte nomen fasciculi scripseris.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOUND" xml:space="preserve">
+    <value>Fasciculus iam exstat. Nomen aliud fasciculus occupari non debet.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT" xml:space="preserve">
+    <value>Intra novum presul nomen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND" xml:space="preserve">
+    <value>Folder iam exstat. Nomen ab alio folder occupari non debet.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV" xml:space="preserve">
+    <value>Nulla recognitio.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION" xml:space="preserve">
+    <value>Nexus tamen non constat.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT" xml:space="preserve">
+    <value>Intrant servo electronica:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC" xml:space="preserve">
+    <value>Interactive systema exercitum file procurator</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC" xml:space="preserve">
+    <value>Tabularium aperit tabularium in testudine archivi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC" xml:space="preserve">
+    <value>git testa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC" xml:space="preserve">
+    <value>Differentiam ostendit inter duo files JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC" xml:space="preserve">
+    <value>IMAP aperit clientem mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC" xml:space="preserve">
+    <value>Aperit POP3 clientem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING" xml:space="preserve">
+    <value>POP3 epistularum ab 0.0.20.0 revertitur, sed in hac versione eam dimittere non cogitamus. Sequentem versionem exspecta.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FEEDURLPROMPT" xml:space="preserve">
+    <value>Intrant RSS pascuntur URL</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE" xml:space="preserve">
+    <value>Error inscriptionis parse conatur. Fac ut inscriptio recte scripsisti.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC" xml:space="preserve">
+    <value>Interactive aperit RSS lectorem TUI</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT" xml:space="preserve">
+    <value>Nihil extrahi potest.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK" xml:space="preserve">
+    <value>Archive non writable quod genus est</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC" xml:space="preserve">
+    <value>Legit contentum lima remota ad consolatorium</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC" xml:space="preserve">
+    <value>Exit in testa sine disconnecting</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED" xml:space="preserve">
+    <value>Fac ut portum recte definias.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROMPT" xml:space="preserve">
+    <value>Plus quam una figura invenitur. Delege unum:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSREPO" xml:space="preserve">
+    <value>Repositio non mundabitur sanctuarium. Exitus testam...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_REPOFAILED" xml:space="preserve">
+    <value>Defecit repositio aperire. Exitus testam...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_DESC" xml:space="preserve">
+    <value>Accedit index mutationum in linea lima in linea</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_DESC" xml:space="preserve">
+    <value>Checks de genere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_COMMIT_DESC" xml:space="preserve">
+    <value>Facit committat</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_DESC" xml:space="preserve">
+    <value>Describit committere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC" xml:space="preserve">
+    <value>Discrimen ostendit inter committere inter hodiernas et locales tabulas</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC" xml:space="preserve">
+    <value>Discrimen ostendit inter commissuras currentes et limas locales earum contenti in forma hunkae commissurae</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC" xml:space="preserve">
+    <value>Discrimen ostendit inter committendum hodiernam et localem limam eorum exsistentiam</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC" xml:space="preserve">
+    <value>Discrimen ostendit inter committere inter praesentes et tabellarios locales ex eorum existentia et earum contento</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC" xml:space="preserve">
+    <value>Omnia updates ex longinquo arcessit</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_FILESTATUS_DESC" xml:space="preserve">
+    <value>Adducit tabella status</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_INFO_DESC" xml:space="preserve">
+    <value>Accipit simplex notitia repositio</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC" xml:space="preserve">
+    <value>Rami omnes enumerat</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC" xml:space="preserve">
+    <value>Lists omnia committit</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC" xml:space="preserve">
+    <value>Lists omnes remotes</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSTAGS_DESC" xml:space="preserve">
+    <value>Lists all tags</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_DESC" xml:space="preserve">
+    <value>Facit tag a capite</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC" xml:space="preserve">
+    <value>Trahit omnia updates a servo</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_PUSH_DESC" xml:space="preserve">
+    <value>Urget omnes updates ut servo</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC" xml:space="preserve">
+    <value>Resets locorum repositio</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC" xml:space="preserve">
+    <value>Non est mollis reset</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC" xml:space="preserve">
+    <value>Non enim mixta reset</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC" xml:space="preserve">
+    <value>Non est difficile reset</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_DESC" xml:space="preserve">
+    <value>Ponit tuam identitatem est</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGE_DESC" xml:space="preserve">
+    <value>Graduum mutationem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGEALL_DESC" xml:space="preserve">
+    <value>Gradus omnes mutationes</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC" xml:space="preserve">
+    <value>Reconditorium status</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC" xml:space="preserve">
+    <value>Unsages mutationem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGEALL_DESC" xml:space="preserve">
+    <value>Unsages omnes mutationes</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC" xml:space="preserve">
+    <value>Adiungit header cum clavis et valorem omnibus ventura petitiones</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC" xml:space="preserve">
+    <value>Accipit current user agente</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC" xml:space="preserve">
+    <value>Recensiones clavis in header ad omnes ventura petitiones</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC" xml:space="preserve">
+    <value>Lists petitionem headers</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_PUT_DESC" xml:space="preserve">
+    <value>Ponit lima ad http servo usura certa petitionem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_PUTSTRING_DESC" xml:space="preserve">
+    <value>Ponit in filum ad http server usura et certa petitionem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC" xml:space="preserve">
+    <value>Posts tabella ad petitionem HTTP servo usura certa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING" xml:space="preserve">
+    <value>Posts in filum ad http server usura certa petitionem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_" xml:space="preserve">
+    <value>Tollit clavem in header ad omnes ventura petitiones</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC" xml:space="preserve">
+    <value>A user agente sets</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
+    <value>Additis titulis iam exstat.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
+    <value>Removere header quod non est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
+    <value>Recensere header quod non est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC" xml:space="preserve">
+    <value>Addit novam aciem, objectum seu proprietatem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC" xml:space="preserve">
+    <value>Significat parens viam</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC" xml:space="preserve">
+    <value>Specificat genus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC" xml:space="preserve">
+    <value>Proprietas nominis speciem creat. Hoc adhibetur si iter parentis obiectum est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC" xml:space="preserve">
+    <value>Dimittit JSON file</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC" xml:space="preserve">
+    <value>Invenit rem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC" xml:space="preserve">
+    <value>Proprietas parentis speciem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC" xml:space="preserve">
+    <value>Ostendit informationem de file JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC" xml:space="preserve">
+    <value>Aut ne singula proprietates</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC" xml:space="preserve">
+    <value>Ostende omnia bona</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_RM_DESC" xml:space="preserve">
+    <value>Removet signum objectum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC" xml:space="preserve">
+    <value>Pulchra JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC" xml:space="preserve">
+    <value>Minified JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_DESC" xml:space="preserve">
+    <value>Valorem ens ordinata, objectum seu proprietas</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC" xml:space="preserve">
+    <value>Aperit JSON lima in interactive editor</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOTOKEN" xml:space="preserve">
+    <value>Vestigium intra file JSON non invenitur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN" xml:space="preserve">
+    <value>Vestigium parentis non est inventus. Fac ut viam &apos;{0}&apos; recte scripseris.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Genus certa &apos;{0}&apos; invalidum est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED" xml:space="preserve">
+    <value>Item novam notam appendere non possunt cum nomine proprietatis cum signo generis &quot;{0}&quot; parentis.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED" xml:space="preserve">
+    <value>Notam item novam cum nomine proprietatis &apos;{0}&apos; apponere non possunt cum signo parentis generis &apos;{1}&apos;.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT" xml:space="preserve">
+    <value>Proprietas nomen &apos;{0}&apos; in parente &apos;{1}&apos;, typus &apos;{2}&apos;, non est</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC" xml:space="preserve">
+    <value>Investigat feed pro sententia in titulo et/vel descriptione</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC" xml:space="preserve">
+    <value>Quaere titulum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC" xml:space="preserve">
+    <value>Quaere descriptionem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC" xml:space="preserve">
+    <value>Quaere titulum et descriptionem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC" xml:space="preserve">
+    <value>Si sensitivo quaerere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL" xml:space="preserve">
+    <value>Deficio ad parse URL:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FEEDNODESC" xml:space="preserve">
+    <value>Nulla descriptio</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC" xml:space="preserve">
+    <value>Ostendit singula tabulariorum et folders</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
+    <value>Supprimit &quot;alienum&quot; nuntia</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT" xml:space="preserve">
+    <value>Intra locum clavis privatis ad {0}. Scribere &quot;q&quot; claves addendo ad perficiendum:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTING" xml:space="preserve">
+    <value>Conaris coniungere ad {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC" xml:space="preserve">
+    <value>Exsequitur SQL query</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC" xml:space="preserve">
+    <value>Database info</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC" xml:space="preserve">
+    <value>Fasciculus SQL aperit editor TUI in interactive hexagoni</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED" xml:space="preserve">
+    <value>Hoc genus archivum non praesto est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM" xml:space="preserve">
+    <value>Visne vero {0} delere?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_FSENTRY_NOSYMLINKINFO" xml:space="preserve">
+    <value>Non symlink info</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON" xml:space="preserve">
+    <value>Modified on</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_TITLE" xml:space="preserve">
+    <value>Culpa status in file</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_HUNKNUM" xml:space="preserve">
+    <value>Hunk numerus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_LINENUM" xml:space="preserve">
+    <value>Numerus linearum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALLINE" xml:space="preserve">
+    <value>Prima linea numerus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALLINE" xml:space="preserve">
+    <value>Ultima linea numerus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALCOMMIT_TITLE" xml:space="preserve">
+    <value>Coepi committere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA" xml:space="preserve">
+    <value>committe HA</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE" xml:space="preserve">
+    <value>Mandatum committere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR" xml:space="preserve">
+    <value>Committere auctor</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER" xml:space="preserve">
+    <value>committere committer</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM" xml:space="preserve">
+    <value>Numero parentum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALCOMMIT_TITLE" xml:space="preserve">
+    <value>Final committe</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSSAVING" xml:space="preserve">
+    <value>Prius opus tuum serva creando committe antequam ramum reprehendo.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NOBRANCH" xml:space="preserve">
+    <value>Germen non est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1" xml:space="preserve">
+    <value>Opus est ut te ipsum cognoscas antequam hoc mandato utaris. Usus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2" xml:space="preserve">
+    <value>ad cognoscendum te ipsum.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMIT_SUCCESS" xml:space="preserve">
+    <value>Reconditorium Updated cum novo committere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMIT_DESC" xml:space="preserve">
+    <value>Description for committere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES" xml:space="preserve">
+    <value>General mutationes in</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES" xml:space="preserve">
+    <value>Content mutationes in</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND" xml:space="preserve">
+    <value>Remota non est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_FETCH_NOREMOTES" xml:space="preserve">
+    <value>Nullae remotae inventae sunt ut updates trahere a.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_FILESTATUS_TITLE" xml:space="preserve">
+    <value>Status pro file</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_BARE" xml:space="preserve">
+    <value>Nuda repositio</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_DETACHED" xml:space="preserve">
+    <value>Caput Caesar</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_NOREF" xml:space="preserve">
+    <value>Non referat</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_SHALLOW" xml:space="preserve">
+    <value>Vadum clone</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT" xml:space="preserve">
+    <value>Iter ad .git</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR" xml:space="preserve">
+    <value>Iter ad opus Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE" xml:space="preserve">
+    <value>Committit pro ramo</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_MAKETAG_CREATED" xml:space="preserve">
+    <value>Novum tag! Hic tuum tag singula:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_UPTODATE" xml:space="preserve">
+    <value>Your local copy of the repo is up to date!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_FASTFORWARD" xml:space="preserve">
+    <value>Fast transmittantur ad</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_UPDATED" xml:space="preserve">
+    <value>Reconditorium Updated to</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS" xml:space="preserve">
+    <value>Tua merge in confligit. Quaeso propono aliquo confligit.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_SETID_SUCCESS" xml:space="preserve">
+    <value>Tu bene identificatur ut te ipsum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STAGE_NOCHANGES" xml:space="preserve">
+    <value>Nullae modificationes fiunt in scaena.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STAGE_SUCCESS" xml:space="preserve">
+    <value>Scapusculum {0} feliciter!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STAGE_FAILURE" xml:space="preserve">
+    <value>Fasciculus scaenicus {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_TITLE" xml:space="preserve">
+    <value>Status pro ramo {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOCHANGES" xml:space="preserve">
+    <value>Modificationes nullae fiunt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_UNTRACKED" xml:space="preserve">
+    <value>Untracked files</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOUNTRACKED" xml:space="preserve">
+    <value>Non untracked imagini.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_ADDED" xml:space="preserve">
+    <value>additae files</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOADDED" xml:space="preserve">
+    <value>Nulla addita lima.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_MODIFIED" xml:space="preserve">
+    <value>Mutatio files</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOMODIFIED" xml:space="preserve">
+    <value>Nulla mutatio imagini.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_REMOVED" xml:space="preserve">
+    <value>Remota files</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOREMOVED" xml:space="preserve">
+    <value>Nulla files remota.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_STAGED" xml:space="preserve">
+    <value>Ridiculum files</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOSTAGED" xml:space="preserve">
+    <value>Nullae scapis ridiculo.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_RENAMEDSTAGED" xml:space="preserve">
+    <value>Ridiculo files renamed</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED" xml:space="preserve">
+    <value>Nulla renamed files ridiculo.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_RENAMED" xml:space="preserve">
+    <value>Renamed files</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NORENAMED" xml:space="preserve">
+    <value>Nulla renamed files.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_MISSING" xml:space="preserve">
+    <value>Absentis files</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOMISSING" xml:space="preserve">
+    <value>Nulla files defuit.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES" xml:space="preserve">
+    <value>Nullae modificationes fiunt ad inconstans.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS" xml:space="preserve">
+    <value>Fasciculus unconsed {0} feliciter!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE" xml:space="preserve">
+    <value>Defecit lima instabilis {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_POST_POSTING_FILE" xml:space="preserve">
+    <value>Fasciculus commentarius {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_POST_POSTING_STRING" xml:space="preserve">
+    <value>Filum dispositis ad {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING" xml:space="preserve">
+    <value>Nervum ligandi ad {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_ADD_ITEM_FAILURE" xml:space="preserve">
+    <value>Testa JSON item neglexit addere.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_PROPERTY_FOUND" xml:space="preserve">
+    <value>Res est inventa in</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND" xml:space="preserve">
+    <value>Res non est inventus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_TITLE" xml:space="preserve">
+    <value>Basi JSON indicium notitia</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_TYPE" xml:space="preserve">
+    <value>Basis genus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_VALUES" xml:space="preserve">
+    <value>Basis habet values</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS" xml:space="preserve">
+    <value>Filii indicium comitem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH" xml:space="preserve">
+    <value>Basi iter</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE" xml:space="preserve">
+    <value>Singula JSON indicium notitia</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE" xml:space="preserve">
+    <value>Genus Thochen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES" xml:space="preserve">
+    <value>Vestigium habet values</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH" xml:space="preserve">
+    <value>Vestigium iter</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE" xml:space="preserve">
+    <value>Thochen valorem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE" xml:space="preserve">
+    <value>Res notitia for</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE" xml:space="preserve">
+    <value>Genus proprietas</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT" xml:space="preserve">
+    <value>Res comitem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME" xml:space="preserve">
+    <value>Proprietas nomen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH" xml:space="preserve">
+    <value>Proprietas semita</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE" xml:space="preserve">
+    <value>Proprietas valorem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_REMOVEITEMFAILED" xml:space="preserve">
+    <value>JSON testa defecit item removere.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETITEMFAILED" xml:space="preserve">
+    <value>Et Json Crusta defecit ut an item.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX" xml:space="preserve">
+    <value>{0} {I}} movetur. {II} nuntiis manente ad parse.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_ATTACHMENTS" xml:space="preserve">
+    <value>Annexos:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE" xml:space="preserve">
+    <value>Haec connexio instantia invalidum Corpus pascentium continet.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE" xml:space="preserve">
+    <value>Articulus ignotus titulus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS" xml:space="preserve">
+    <value>Infeliciter, hic articulus nulla contenta non habet. Vos can adhuc sequi articulum ad</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOLINK" xml:space="preserve">
+    <value>Hic articulus non habet link.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED" xml:space="preserve">
+    <value>Non possum aperire exercitum pasco ad articulum link.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED" xml:space="preserve">
+    <value>Mutatio:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT" xml:space="preserve">
+    <value>Intra parameter valorem ad {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMANDSUCCESS" xml:space="preserve">
+    <value>SQL imperium successit. Hic sunt responsa:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMANDFAILURE" xml:space="preserve">
+    <value>SQL mandatum defuit.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_PATH" xml:space="preserve">
+    <value>Semita Database:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_VERSION" xml:space="preserve">
+    <value>Servo versionis:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_STATE" xml:space="preserve">
+    <value>Status nexus:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_STRING" xml:space="preserve">
+    <value>Nexum chorda:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_NAME" xml:space="preserve">
+    <value>Nomen database:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>Promptus consectetur</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo opus testae archivi.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo testaceum FTP operatur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo opus testae Git.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo concha HTTP operatur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo testa JSON opera facit.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>JSON Testa Promptus consectetur</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME" xml:space="preserve">
+    <value>Admitte JSON editor autosave</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC" xml:space="preserve">
+    <value>Vertit pluma JSON editor autosave vel off.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME" xml:space="preserve">
+    <value>JSON editor autosave intervallum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo testae mail operantur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME" xml:space="preserve">
+    <value>Maximus numerus e-mails in una pagina</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC" xml:space="preserve">
+    <value>Quot nuntia e-mail ut in una pagina ostendant?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo testa RSS operatur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>RSS Promptus consectetur</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo testa SFTP operatur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo testa SQL operatur.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>SQL Testa Promptus consectetur</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILETYPE" xml:space="preserve">
+    <value>Genus tabellae</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC" xml:space="preserve">
+    <value>Bibliothecam feed pervestigat pro feed</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPY" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVE" xml:space="preserve">
+    <value>Movere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_DELETE" xml:space="preserve">
+    <value>Delere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_UP" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_RENAME" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_NEWFOLDER" xml:space="preserve">
+    <value>Nova Folder</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN" xml:space="preserve">
+    <value>Apertum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATAEXTENDED" xml:space="preserve">
+    <value>MIME metadata (extenta)</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED" xml:space="preserve">
+    <value>Handl relatus est, sed nescio quo pacto tracto prorogationem obtinere potuit</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+    <value>Effingo To</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+    <value>Movere to</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Impetrare occasus viscus.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_CANTGETENTRIES" xml:space="preserve">
+    <value>Non potest archive entries</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED" xml:space="preserve">
+    <value>Archive is not loaded yet.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE" xml:space="preserve">
+    <value>Presul current archivum determinare non potest.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH" xml:space="preserve">
+    <value>Ultima testa non est haec concha abducere.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT" xml:space="preserve">
+    <value>Cliens non est hominum.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT" xml:space="preserve">
+    <value>Nulla amet elit sed.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1" xml:space="preserve">
+    <value>Clientem non connexum sed.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP" xml:space="preserve">
+    <value>IMAP servo configuratione non potest</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP" xml:space="preserve">
+    <value>Non potest ESMTP servo configuratione</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2" xml:space="preserve">
+    <value>Clientem non pertinet tamen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE" xml:space="preserve">
+    <value>Read More</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH" xml:space="preserve">
+    <value>Renovare</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE" xml:space="preserve">
+    <value>Nullam dictum.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED" xml:space="preserve">
+    <value>Nulla a lorem.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION" xml:space="preserve">
+    <value>Non potest nexum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_STREAMNOTOPEN" xml:space="preserve">
+    <value>Tabella amnis nondum aperta est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOTOPEN" xml:space="preserve">
+    <value>JSON Scapus nondum apertus est.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC" xml:space="preserve">
+    <value>Line number ending range</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC" xml:space="preserve">
+    <value>Iter ad file</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC" xml:space="preserve">
+    <value>Source lima vel Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC" xml:space="preserve">
+    <value>Scopum lima vel Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC" xml:space="preserve">
+    <value>Encryption algorithmus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC" xml:space="preserve">
+    <value>Iter ad directorium cum Git repositorium</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC" xml:space="preserve">
+    <value>Linea numerus incipiens range</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC" xml:space="preserve">
+    <value>Nomen germen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC" xml:space="preserve">
+    <value>Summatim committere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_ARGUMENT_COMMITSHA_DESC" xml:space="preserve">
+    <value>Committere SHA Nullam</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC" xml:space="preserve">
+    <value>Nomen remote</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_TAGNAME_DESC" xml:space="preserve">
+    <value>Nomen Tag</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_MESSAGE_DESC" xml:space="preserve">
+    <value>Nuntius ut annotare tag with</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_EMAIL_DESC" xml:space="preserve">
+    <value>Your e-mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Tuum nomen usoris</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGE_ARGUMENT_UNSTAGED_DESC" xml:space="preserve">
+    <value>Iter ad file unstage</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_ARGUMENT_STAGED_DESC" xml:space="preserve">
+    <value>Iter ad file ridiculo</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC" xml:space="preserve">
+    <value>Iter ad archivum lima</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
+    <value>Loci Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC" xml:space="preserve">
+    <value>In archivo Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC" xml:space="preserve">
+    <value>Tabularium in archivo</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC" xml:space="preserve">
+    <value>Loci Directory extrahere to</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC" xml:space="preserve">
+    <value>Locus lima</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC" xml:space="preserve">
+    <value>Archive Directory addere to</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC" xml:space="preserve">
+    <value>FTP servo ad coniungere to</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC" xml:space="preserve">
+    <value>Iter remotis file</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC" xml:space="preserve">
+    <value>Iter loci Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC" xml:space="preserve">
+    <value>Iter remotum Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC" xml:space="preserve">
+    <value>Semita ut remotis lima delere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Servo mandatum facere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_MKLDIR_DESC" xml:space="preserve">
+    <value>Creat loci Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC" xml:space="preserve">
+    <value>Creat remotis presul</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_SOURCEFILEORDIR_DESC" xml:space="preserve">
+    <value>Iter ad source file vel Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_TARGETFILEORDIR_DESC" xml:space="preserve">
+    <value>Iter ad scopum file seu Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_PUT_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Iter ad loci file</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_PERM_ARGUMENT_PERMNUMBER_DESC" xml:space="preserve">
+    <value>Numeri permission secundum chmod</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC" xml:space="preserve">
+    <value>Notat utrum translatio generis sit ASCII vel binarii</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK" xml:space="preserve">
+    <value>Symbola pagina ad: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC" xml:space="preserve">
+    <value>Header key</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>Header valorem</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC" xml:space="preserve">
+    <value>HTTP request</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>File ad upload</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>Filum ad upload</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC" xml:space="preserve">
+    <value>User agente filum</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC" xml:space="preserve">
+    <value>E-mail address to login to</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER" xml:space="preserve">
+    <value>Create folder</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE" xml:space="preserve">
+    <value>Movere...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL" xml:space="preserve">
+    <value>Move omnia...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER" xml:space="preserve">
+    <value>Rename folder</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER" xml:space="preserve">
+    <value>Remove folder</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Aufer nuntius</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL" xml:space="preserve">
+    <value>Remove omnia...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_FOLDERMESSAGEOPENFAILED" xml:space="preserve">
+    <value>Non possumus aperire folder vel nuntium</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT" xml:space="preserve">
+    <value>Scribere novum indicis nomen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR" xml:space="preserve">
+    <value>Creando presul...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_CREATINGDIRFAILED" xml:space="preserve">
+    <value>Non possumus facere folder</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEPROMPT" xml:space="preserve">
+    <value>Directorium novum eligite ut hoc nuntium moveatis.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE" xml:space="preserve">
+    <value>Nuntium movens...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEFAILED" xml:space="preserve">
+    <value>Non potest movere nuntium</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEBYSAMESENDERPROMPT" xml:space="preserve">
+    <value>Directorium novum eligite ut omnes nuntios ab eodem mittente moveat.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER" xml:space="preserve">
+    <value>Mandata movere a mittente {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDERFAILED" xml:space="preserve">
+    <value>Omnia mandata movere eodem mittente non potest</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT" xml:space="preserve">
+    <value>Nomen tuum ad nomen novum scribe in secunda nomine {0} ad.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR" xml:space="preserve">
+    <value>Renaming presul...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIRFAILED" xml:space="preserve">
+    <value>Non secunda nomine folder</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR" xml:space="preserve">
+    <value>Aufero presul...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIRFAILED" xml:space="preserve">
+    <value>Non potest removere folder</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE" xml:space="preserve">
+    <value>Integer eu lectus...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEFAILED" xml:space="preserve">
+    <value>Non potest delere nuntium</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER" xml:space="preserve">
+    <value>Epistulas removere a mittente {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED" xml:space="preserve">
+    <value>Non potest delere omnia mandata eodem mittente</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC" xml:space="preserve">
+    <value>Nomen mail Directory</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC" xml:space="preserve">
+    <value>Numerus paginae</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC" xml:space="preserve">
+    <value>Nuntius ID</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC" xml:space="preserve">
+    <value>Mittens nomen eius</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC" xml:space="preserve">
+    <value>Vetus mail Directory nomen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC" xml:space="preserve">
+    <value>Novae mail directorium nomen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC" xml:space="preserve">
+    <value>Interactive mail administratione</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC" xml:space="preserve">
+    <value>SFTP servo ad coniungere to</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC" xml:space="preserve">
+    <value>RSS feed link</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC" xml:space="preserve">
+    <value>Numerus pasce</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC" xml:space="preserve">
+    <value>Phrase quaerere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC" xml:space="preserve">
+    <value>Primum file JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC" xml:space="preserve">
+    <value>Secundus JSON file</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC" xml:space="preserve">
+    <value>Iter ad JSON file</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC" xml:space="preserve">
+    <value>Iter ad output JSON file</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
+    <value>JSON valorem addere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC" xml:space="preserve">
+    <value>JSON proprietas nominis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC" xml:space="preserve">
+    <value>Object iter</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
+    <value>JSON value</value>
+  </data>
+
+</root>

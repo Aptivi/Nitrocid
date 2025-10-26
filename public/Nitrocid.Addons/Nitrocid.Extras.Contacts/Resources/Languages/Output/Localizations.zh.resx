@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_CONTACTS_COMMAND_CONTACTS_DESC" xml:space="preserve">
+    <value>管理您的聯絡人</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED" xml:space="preserve">
+    <value>無法開啟檔案“{0}”，因為找不到該檔案。</value>
+  </data>
+  <data name="NKS_CONTACTS_IMPORTSUCCESS" xml:space="preserve">
+    <value>聯絡人導入成功。</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILEINVALID_NAMED" xml:space="preserve">
+    <value>無法開啟檔案“{0}”，因為卡片檔案無效。</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED" xml:space="preserve">
+    <value>聯絡人文件不存在。</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTSCOUNT" xml:space="preserve">
+    <value>找到聯絡人</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED" xml:space="preserve">
+    <value>聯繫文件無效。</value>
+  </data>
+  <data name="NKS_CONTACTS_MECARDEMPTY" xml:space="preserve">
+    <value>MeCard 語法不能為空。</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILENOCONTACT" xml:space="preserve">
+    <value>提供的聯絡人文件沒有任何聯絡人的信息，或無效。</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED" xml:space="preserve">
+    <value>無法解析聯絡人。請參閱錯誤詳細資訊以取得更多資訊。</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE" xml:space="preserve">
+    <value>接觸指數超出範圍。最大索引為 {0}，而提供的索引為 {1}。</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET" xml:space="preserve">
+    <value>沒有聯絡方式。</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH" xml:space="preserve">
+    <value>沒有可搜尋的聯絡人。</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_INVALIDREGEX" xml:space="preserve">
+    <value>正規表示式無效。</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACT" xml:space="preserve">
+    <value>沒有聯繫。如果您想要匯入聯絡人，請使用螢幕底部定義的按鍵來使用匯入選項。</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CANTIMPORTCONTACTS" xml:space="preserve">
+    <value>有些聯絡人無法匯入。</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_PATHVCFPROMPT" xml:space="preserve">
+    <value>輸入包含您的聯絡人的 VCF 檔案的路徑。Android 的contacts2.db 檔案也支援。</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_FILENOTFOUND" xml:space="preserve">
+    <value>文件不存在。確保您已將正確的路徑寫入 VCF 檔案或contacts2.db 檔案。</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MECARDPROMPT" xml:space="preserve">
+    <value>輸入您聯絡人的有效 MeCard 表示形式。</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MECARDINVALID" xml:space="preserve">
+    <value>Contact MeCard 語法無效。</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MECARDEMPTY" xml:space="preserve">
+    <value>Contact MeCard 語法不能為空</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_SEARCHPROMPT" xml:space="preserve">
+    <value>輸入正規表示式來搜尋聯絡人。</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACTSSEARCH" xml:space="preserve">
+    <value>沒有包含您要求的表達的聯絡人。</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNAME" xml:space="preserve">
+    <value>聯絡人姓名</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACTNAME" xml:space="preserve">
+    <value>無聯絡人姓名</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESS" xml:space="preserve">
+    <value>聯絡地址</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MAIL" xml:space="preserve">
+    <value>聯絡信箱</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOMAIL" xml:space="preserve">
+    <value>沒有聯絡郵件</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORG" xml:space="preserve">
+    <value>聯繫機構</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOORG" xml:space="preserve">
+    <value>無聯繫組織</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_PHONE" xml:space="preserve">
+    <value>聯絡電話</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOPHONE" xml:space="preserve">
+    <value>無聯絡電話</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_URL" xml:space="preserve">
+    <value>聯絡網址</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOURL" xml:space="preserve">
+    <value>沒有聯絡網址</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_GEO" xml:space="preserve">
+    <value>聯繫地理</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOGEO" xml:space="preserve">
+    <value>無聯繫地理</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_IMPP" xml:space="preserve">
+    <value>聯絡IMPP</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOIMPP" xml:space="preserve">
+    <value>沒有聯繫IMPP</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NICK" xml:space="preserve">
+    <value>聯繫暱稱</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NONICK" xml:space="preserve">
+    <value>沒有聯繫暱稱</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ROLE" xml:space="preserve">
+    <value>聯繫角色</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOROLE" xml:space="preserve">
+    <value>無聯繫角色</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TITLE" xml:space="preserve">
+    <value>聯絡人姓名</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTITLE" xml:space="preserve">
+    <value>無聯絡人姓名</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTES" xml:space="preserve">
+    <value>聯絡方式</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NONOTES" xml:space="preserve">
+    <value>沒有聯絡方式</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC" xml:space="preserve">
+    <value>列出您的聯絡人</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC" xml:space="preserve">
+    <value>加載您的聯絡人</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC" xml:space="preserve">
+    <value>匯入您的聯絡人</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC" xml:space="preserve">
+    <value>將所需的輸入視為 MeCard 字串</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_CONTACTINFO_DESC" xml:space="preserve">
+    <value>獲取聯絡資訊</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACTS" xml:space="preserve">
+    <value>沒有聯絡方式。</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_NUMINVALID" xml:space="preserve">
+    <value>聯絡電話號碼無效。</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE" xml:space="preserve">
+    <value>聯絡電話號碼超出範圍。</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_FIRSTNAME" xml:space="preserve">
+    <value>名</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_LASTNAME" xml:space="preserve">
+    <value>姓</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_GEO" xml:space="preserve">
+    <value>聯繫地理</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_NOTE" xml:space="preserve">
+    <value>聯絡方式備註</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_CANTLISTSOME" xml:space="preserve">
+    <value>有些聯絡人無法列出。</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_DELETE" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_INFO" xml:space="preserve">
+    <value>資訊</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>無法取得設定條目。</value>
+  </data>
+  <data name="NKS_CONTACTS_HOMEPAGE_CONTACTS" xml:space="preserve">
+    <value>聯絡方式</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_DELETEALL" xml:space="preserve">
+    <value>全部刪除</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_IMPORT" xml:space="preserve">
+    <value>進口</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM" xml:space="preserve">
+    <value>導入自</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>搜尋</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT" xml:space="preserve">
+    <value>搜尋下一個</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK" xml:space="preserve">
+    <value>返回搜尋</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_RAWINFO" xml:space="preserve">
+    <value>原始訊息</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD" xml:space="preserve">
+    <value>從 MeCard 導入</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_DESC" xml:space="preserve">
+    <value>本部分可讓您配置聯絡人外掛程式的工作方式。</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME" xml:space="preserve">
+    <value>顯示個人資料圖片</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC" xml:space="preserve">
+    <value>如果啟用，將顯示聯絡人影像。預設情況下停用以防止誤用和出於效能原因。</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC" xml:space="preserve">
+    <value>vCard 聯絡人檔案的路徑或 MeCard 表示</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC" xml:space="preserve">
+    <value>聯絡電話</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_EDIT" xml:space="preserve">
+    <value>編輯...</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT" xml:space="preserve">
+    <value>輸入此聯絡人的新名稱</value>
+  </data>
+
+</root>

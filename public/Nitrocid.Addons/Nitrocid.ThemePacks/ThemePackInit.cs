@@ -24,8 +24,8 @@ using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Misc.Reflection.Internal;
 using Textify.General;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Languages;
-using Nitrocid.ThemePacks.Localized;
+using BaseLangTools = Nitrocid.Base.Languages.LanguageTools;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.ThemePacks
 {
@@ -40,14 +40,16 @@ namespace Nitrocid.ThemePacks
         public void StartAddon()
         {
             // Add them all!
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.ThemePacks.Resources.Languages.Output.Localizations", typeof(ThemePackInit).Assembly));
             string[] themeResNames = ResourcesManager.GetResourceNames(typeof(ThemePackInit).Assembly);
             foreach (string resource in themeResNames)
             {
+                if (!resource.VerifyPrefix("Themes.") || !resource.VerifySuffix(".json"))
+                    continue;
                 string key = resource.RemovePrefix("Themes.");
                 string themeName = key.RemoveSuffix(".json");
                 string data = ResourcesManager.ConvertToString(ResourcesManager.GetData(key, ResourcesType.Themes, typeof(ThemePackInit).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_THEMEPACKS_EXCEPTION_NODATA")));
+                    throw new KernelException(KernelExceptionType.Reflection, BaseLangTools.GetLocalized("NKS_THEMEPACKS_EXCEPTION_NODATA")));
                 var themeToken = JToken.Parse(data);
                 ThemeTools.RegisterTheme(themeName, new ThemeInfo(themeToken));
                 DebugWriter.WriteDebug(DebugLevel.I, "Added {0}", vars: [themeName]);
@@ -61,6 +63,8 @@ namespace Nitrocid.ThemePacks
             string[] themeResNames = ResourcesManager.GetResourceNames(typeof(ThemePackInit).Assembly);
             foreach (string resource in themeResNames)
             {
+                if (!resource.VerifyPrefix("Themes.") || !resource.VerifySuffix(".json"))
+                    continue;
                 string key = resource.RemovePrefix("Themes.");
                 string themeName = key.RemoveSuffix(".json");
                 ThemeTools.UnregisterTheme(themeName);

@@ -17,12 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Extras.Tips.Localized;
 using Nitrocid.Extras.Tips.Settings;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Kernel.Starting;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Tips
 {
@@ -42,7 +41,7 @@ namespace Nitrocid.Extras.Tips
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Tips.Resources.Languages.Output.Localizations", typeof(TipsInit).Assembly));
             var config = new TipsConfig();
             ConfigTools.RegisterBaseSetting(config);
             WelcomeMessage.ShowTip = TipsConfig.ShowTip;

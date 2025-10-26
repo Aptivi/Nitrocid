@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_FORECAST_COMMAND_WEATHEROLD_DESC" xml:space="preserve">
+    <value>Menunjukkan maklumat cuaca untuk bandar tertentu. Menggunakan OpenWeatherMap.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_HEADER" xml:space="preserve">
+    <value>-- Maklumat cuaca untuk {0} --</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_WEATHER" xml:space="preserve">
+    <value>Cuaca: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_PRESSURE" xml:space="preserve">
+    <value>Tekanan: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY" xml:space="preserve">
+    <value>Kelembapan: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_APIKEY" xml:space="preserve">
+    <value>Anda boleh mendapatkan kunci API anda sendiri di https://home.openweathermap.org/api_keys.</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_PREFERREDUNIT_NAME" xml:space="preserve">
+    <value>Unit Pilihan untuk Suhu</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_FEELSLIKE" xml:space="preserve">
+    <value>Terasa seperti: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE" xml:space="preserve">
+    <value>Suhu: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED" xml:space="preserve">
+    <value>Kelajuan angin: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION" xml:space="preserve">
+    <value>Arah angin: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC" xml:space="preserve">
+    <value>Menunjukkan semua bandar yang ada</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Alih keluar</value>
+  </data>
+  <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
+    <value>Masukkan kunci API anda:</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
+    <value>Anda boleh sama ada merujuk pautan di bawah untuk senarai bandar dengan ID mereka, atau, hantar &quot;-list&quot; kepada arahan ini.</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
+    <value>Bahagian ini membolehkan anda mengkonfigurasi cara Ramalan berfungsi.</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_DESC" xml:space="preserve">
+    <value>Menunjukkan maklumat cuaca untuk bandar tertentu. Menggunakan The Weather Channel daripada IBM.</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC" xml:space="preserve">
+    <value>Maklumat cuaca dalam TUI interaktif</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC" xml:space="preserve">
+    <value>Menunjukkan semua bandar yang tersedia dan pasangan latitud/longitudnya</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_HEADER" xml:space="preserve">
+    <value>-- Maklumat cuaca --</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_LATLON" xml:space="preserve">
+    <value>Latitud dan Longitud</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_CLOUDCOVER" xml:space="preserve">
+    <value>Penutup awan</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_TIMEOFDAY" xml:space="preserve">
+    <value>Masa hari</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_MINTEMP" xml:space="preserve">
+    <value>Suhu minimum</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_MAXTEMP" xml:space="preserve">
+    <value>Suhu maksimum</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_PCPCHANGE" xml:space="preserve">
+    <value>Peluang hujan</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_PCPTYPE" xml:space="preserve">
+    <value>Jenis kerpasan</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_HEATIDX" xml:space="preserve">
+    <value>Indeks haba</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_WINDCHILL" xml:space="preserve">
+    <value>Sejuk angin</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_UVINDEX" xml:space="preserve">
+    <value>Indeks ultraviolet</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_UVDESC" xml:space="preserve">
+    <value>Penerangan ultraviolet</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_LATLONPROMPT" xml:space="preserve">
+    <value>Masukkan latitud dan longitud bandar.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_APIKEY" xml:space="preserve">
+    <value>Anda boleh mendapatkan kunci API anda sendiri dengan merujuk tapak web IBM untuk mendapatkan panduan.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LOADING" xml:space="preserve">
+    <value>Memuatkan maklumat cuaca dari lokasi geografi</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_CONDITION" xml:space="preserve">
+    <value>Keadaan cuaca</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_TEMPERATURE" xml:space="preserve">
+    <value>Suhu</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_WINDSPEED" xml:space="preserve">
+    <value>Kelajuan angin</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_WINDDIRECTION" xml:space="preserve">
+    <value>Arah angin</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HUMIDITY" xml:space="preserve">
+    <value>Kadar kelembapan</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LAT" xml:space="preserve">
+    <value>Latitud</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LON" xml:space="preserve">
+    <value>Longitud</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT" xml:space="preserve">
+    <value>Masukkan nama bandar untuk dicari.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_NOCITIES" xml:space="preserve">
+    <value>Tiada bandar dengan nama ini. Jika anda cuba mencari bandar tertentu, cuba cari lokasi yang lebih luas yang paling hampir dengan bandar yang anda cari.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_SELECTCITY" xml:space="preserve">
+    <value>Pilih bandar daripada senarai di bawah. Dua nombor mewakili lokasi geografi.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATPROMPT" xml:space="preserve">
+    <value>Masukkan latitud bandar.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LONPROMPT" xml:space="preserve">
+    <value>Masukkan longitud bandar.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATINVALID" xml:space="preserve">
+    <value>Latitud tidak sah.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LONINVALID" xml:space="preserve">
+    <value>Longitud tidak sah.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT" xml:space="preserve">
+    <value>Anda boleh mendapatkan kunci API anda sendiri dengan merujuk tapak web IBM untuk mendapatkan panduan. Masukkan kunci API Saluran Cuaca.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED" xml:space="preserve">
+    <value>Kunci API Saluran Cuaca tidak disediakan. Jika anda memerlukan bantuan, rujuk tapak web IBM.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD" xml:space="preserve">
+    <value>Tambah</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL" xml:space="preserve">
+    <value>Keluarkan Semua</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Gagal mendapatkan entri tetapan.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL" xml:space="preserve">
+    <value>Tambah Secara Manual</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY" xml:space="preserve">
+    <value>Tidak boleh mendapatkan tatasusunan bahagian hari</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART" xml:space="preserve">
+    <value>Tidak dapat bahagian hari</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC" xml:space="preserve">
+    <value>Pilih unit pilihan anda untuk suhu (ini hanya terpakai pada arahan &quot;cuaca&quot;). 1 ialah Kelvin, 2 ialah Metrik, dan 3 ialah Imperial.</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC" xml:space="preserve">
+    <value>Latitud untuk digunakan</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC" xml:space="preserve">
+    <value>Longitud untuk digunakan</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC" xml:space="preserve">
+    <value>Kunci API Weather.com</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC" xml:space="preserve">
+    <value>ID bandar atau nama bandar yang dikenali OpenWeatherMap</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
+    <value>Kunci API OpenWeatherMap</value>
+  </data>
+
+</root>

@@ -19,6 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
+using LanguageTester = Nitrocid.Core.Languages.LanguageTools;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
@@ -28,8 +29,8 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
-            string lang = "spa";
-            string str = LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TRANSLATE_TEST", "Nitrocid", lang);
+            var spanish = LanguageManager.ListLanguages("es")["es"];
+            string str = LanguageTester.GetLocalized("NKS_KERNEL_DEBUGGING_TRANSLATE_TEST", spanish);
             TextWriterColor.Write(str);
         }
     }

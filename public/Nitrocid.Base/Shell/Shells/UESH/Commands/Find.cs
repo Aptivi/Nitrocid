@@ -21,7 +21,6 @@ using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
-using System.Linq;
 using Textify.General;
 using Terminaux.Writer.ConsoleWriters;
 

@@ -24,7 +24,6 @@ using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using System;
-using System.Linq;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Commands
 {

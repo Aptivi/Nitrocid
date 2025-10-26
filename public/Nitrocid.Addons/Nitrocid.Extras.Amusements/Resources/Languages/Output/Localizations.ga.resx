@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_AMUSEMENTS_COMMAND_SOLVER_DESC" xml:space="preserve">
+    <value>Féach an féidir leat cothromóidí matamaitice a réiteach in am</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_CORRECT" xml:space="preserve">
+    <value>Réitithe go foirfe!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_INCORRECT" xml:space="preserve">
+    <value>Réitíodh go mícheart.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Gníomhachtaigh dathanna fíor</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME" xml:space="preserve">
+    <value>Moill sna Milleasoicindí</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC" xml:space="preserve">
+    <value>Cé mhéad milleasoicind atá le fanacht roimh an gcéad cheann eile a scríobh?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC" xml:space="preserve">
+    <value>Féach an féidir leat eochair a bhrú in am</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_NOTONTIME" xml:space="preserve">
+    <value>Carachtar nach bhfuil brúite in am.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_CORRECT" xml:space="preserve">
+    <value>Tá an carachtar ceart brúite agat!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_INCORRECT" xml:space="preserve">
+    <value>Tá an carachtar mícheart brúite agat.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_ESC" xml:space="preserve">
+    <value>Brúigh ESC chun imeacht.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Íosleibhéal dath dearg</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Íosleibhéal dath glas</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Íosleibhéal dath gorm</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_NAME" xml:space="preserve">
+    <value>Leibhéal dath íosta</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Uasleibhéal dath dearg</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Uasleibhéal dath glas</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Uasleibhéal dath gorm</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Uasleibhéal datha</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Íosleibhéal dath dearg. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Íosleibhéal dath glas. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Íosleibhéal dath gorm. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_DESC" xml:space="preserve">
+    <value>Leibhéal dath íosta. Is é 0 an luach íosta a nglactar leis agus is é 255 le haghaidh 255 dathanna nó 16 le haghaidh 16 dathanna an t-uasluach a nglactar leis.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Uasleibhéal dath dearg. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Uasleibhéal dath glas. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Uasleibhéal dath gorm. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME" xml:space="preserve">
+    <value>Íoslíon an réiteora</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_NAME" xml:space="preserve">
+    <value>Uimhir uasta an réiteora</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_NAME" xml:space="preserve">
+    <value>Ionchuir seó réitigh</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_DESC" xml:space="preserve">
+    <value>Cibé an dtaispeánfar cad atá scríofa sa leid ionchuir.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_DESC" xml:space="preserve">
+    <value>Cad é an t-íoslíon atá le roghnú?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_DESC" xml:space="preserve">
+    <value>Cad é an t-uaslíon atá le roghnú?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Gníomhachtaigh an tacaíocht dath fíor.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_NAME" xml:space="preserve">
+    <value>Deacracht réamhshocraithe do SpeedPress</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_NAME" xml:space="preserve">
+    <value>Teorainn ama an mhéarchláir do SpeedPress</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_DESC" xml:space="preserve">
+    <value>Cé mhéad milleasoicind chun fanacht leis an eochairbhrú roimh an teorainn ama? (I deacracht saincheaptha)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_NAME" xml:space="preserve">
+    <value>Moill stáitse i milleasoicindí</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_DESC" xml:space="preserve">
+    <value>Cé mhéad milleasoicind atá le fanacht roimh an gcéad chéim eile a tharraingt?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC" xml:space="preserve">
+    <value>Tosaíonn an cluiche i deacracht éasca</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC" xml:space="preserve">
+    <value>Tosaíonn an cluiche i deacracht mheán</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC" xml:space="preserve">
+    <value>Tosaíonn an cluiche i gcruachás</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC" xml:space="preserve">
+    <value>Tosaíonn an cluiche i deacracht an-deacair</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC" xml:space="preserve">
+    <value>Tosaíonn an cluiche i deacracht saincheaptha. Tabhair faoi deara gur chóir an teorainn ama saincheaptha i milleasoicindí a scríobh mar argóint.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_NAME" xml:space="preserve">
+    <value>Dul chun cinn suíomh téacs</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_DESC" xml:space="preserve">
+    <value>Roghnaigh an suíomh téacs dul chun cinn is fearr leat.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_NEEDSNUM" xml:space="preserve">
+    <value>Ní féidir leat ach na huimhreacha a scríobh.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT" xml:space="preserve">
+    <value>Brúigh &quot;q&quot; chun imeacht.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SNAKER_DESC" xml:space="preserve">
+    <value>An cluiche nathair!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_METEOR_DESC" xml:space="preserve">
+    <value>Is spásárthach tú agus tá na meteors ag teacht chun tú a mhilleadh. An féidir leat é a shábháil?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMON_GAMEOVER" xml:space="preserve">
+    <value>Cluiche thart</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR" xml:space="preserve">
+    <value>Earráid gan choinne</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_NAME" xml:space="preserve">
+    <value>Úsáid PowerLine chun spásárthach a rindreáil</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_NAME" xml:space="preserve">
+    <value>Luas cluiche meteor</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_DESC" xml:space="preserve">
+    <value>Cibé an n-úsáidfear PowerLine chun an spásárthach a sholáthar nó an úsáidfear an caighdeán is mó ná an carachtar. Más mian leat PowerLine a úsáid le Meteor, ní mór duit cló cuí a shuiteáil le tacaíocht PowerLine.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_DESC" xml:space="preserve">
+    <value>Sonraíonn an luas cluiche i milleasoicindí.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC" xml:space="preserve">
+    <value>An dtugann tú siar an capall mícheart?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC" xml:space="preserve">
+    <value>Tosaíonn an cluiche Hangman</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC" xml:space="preserve">
+    <value>Litir mícheart amháin agus tá tú ar crochadh!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC" xml:space="preserve">
+    <value>Déan do scileanna Hangman a thástáil trí litir randamach a chaitheamh.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC" xml:space="preserve">
+    <value>Is spásárthach tú agus tá na meteors ag teacht chun tú a mhilleadh. An féidir leat iad a sheachaint?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_QUOTE_DESC" xml:space="preserve">
+    <value>Faigheann sé luachan randamach</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC" xml:space="preserve">
+    <value>Roulette na rúise</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC" xml:space="preserve">
+    <value>Tá dhá spásárthach ag troid lena chéile. Lámhaigh amháin agus séideadh an spásárthach. Is cluiche áitiúil dhá imreoir é seo.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_DESC" xml:space="preserve">
+    <value>Insamhlóir cluiche Wordle</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
+    <value>Seinn an cluiche Wordle ar dtús</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
+    <value>Déanann sé comóradh 5 bliana ar scaoileadh na heithne</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
+    <value>Ag comóradh 5 bliana an eithne</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
+    <value>An chéad scaoileadh riamh</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
+    <value>Eisíodh an eithne seo den chéad uair ar 22 Feabhra, 2018 chun insamhlóir íostach a dhéanamh a shamhlaíonn go hiarbhír conas a oibríonn croí na heithne.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
+    <value>Ní gnách leis ach blaosc amháin a óstáil, agus roinnt orduithe, agus níor oibrigh sé ach le Windows mar gheall ar an úsáid a bhain sé as uirlis Windows Management Instrumentation.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
+    <value>Ní raibh a cháipéisíocht féin aige ach an oiread.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
+    <value>Eithne scagadh</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
+    <value>Scaoileadh leaganacha den eithne, mar shampla an dara scaoileadh mór chun dathú agus gnéithe bunúsacha a chur leis, agus an ceathrú scaoileadh mór chun cumraíocht a chur leis.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
+    <value>Cuireadh tús le doiciméadú ar an séú mór-eisiúint, agus cuireadh rudaí deasa éagsúla leis an eithne go mall.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
+    <value>Leagan reatha</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
+    <value>Déanann an leagan seo an t-eithne a bheachtú anois go dtí an pointe nach n-iompraíonn sé mar na seanleaganacha a thuilleadh.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
+    <value>Toisc gur scaoileadh na gnéithe úrnua nua, bheartaíomar an t-eithne seo a ainmniú...</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
+    <value>Comóradh 5 bliana sona duit!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
+    <value>Capall</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_KEYBINDINGS" xml:space="preserve">
+    <value>[ENTER] Cuir tús leis an rás | [ESC] Scoir | [UP/SÍOS] Bog an roghnúchán</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_YOUWIN" xml:space="preserve">
+    <value>Bhuaigh do chapall an rás!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_YOULOSE" xml:space="preserve">
+    <value>Chaill do chapall an rás!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HANGMAN_YOULOSE" xml:space="preserve">
+    <value>Tá tú ar crochadh!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HANGMAN_YOUWIN" xml:space="preserve">
+    <value>Bhuaigh tú!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_QUESTION" xml:space="preserve">
+    <value>Cad é do geall?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_RIGHT" xml:space="preserve">
+    <value>Rinne tú buille faoi thuairim ceart!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_WRONG" xml:space="preserve">
+    <value>Fuair tú mícheart é.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_UNLUCKY" xml:space="preserve">
+    <value>Ach, tá tú mí-ádh. fear caillte na himeartha.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_LUCKY" xml:space="preserve">
+    <value>Tá an t-ádh ort! Buaiteoir!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SHIPDUET_DRAW" xml:space="preserve">
+    <value>Is tarraingt é.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SHIPDUET_WINNING" xml:space="preserve">
+    <value>Bhuaigh imreoir {0}!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_CURRENTCHAR" xml:space="preserve">
+    <value>Carachtar reatha:</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_WORDLE_WIN" xml:space="preserve">
+    <value>Rinne tú buille faoi thuairim an focal ceart! Bhuaigh tú!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_NAME" xml:space="preserve">
+    <value>Socruithe datha</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_DESC" xml:space="preserve">
+    <value>Cluiche nathair.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_QUOTE_DESC" xml:space="preserve">
+    <value>Taispeánann sé Sleachta cáiliúla deasa duit.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_DESC" xml:space="preserve">
+    <value>Roghnaigh an deacracht is fearr leat, áit a bhfuil 0 éasca, 1 meánach, 2 crua, 3 an-chrua, agus 4 cinn saincheaptha.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_NAME" xml:space="preserve">
+    <value>Úsáid PowerLine chun spásárthach a sholáthar i ShipDuet</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_DESC" xml:space="preserve">
+    <value>Cibé an n-úsáidfear PowerLine chun an spásárthach a sholáthar nó an úsáidfear an caighdeán is mó ná an carachtar. Más mian leat PowerLine a úsáid le ShipDuet, ní mór duit cló cuí a shuiteáil le tacaíocht PowerLine.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETSPEED_NAME" xml:space="preserve">
+    <value>Luas an chluiche i ShipDuet</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC" xml:space="preserve">
+    <value>Úsáideann sé an liosta focal coitianta.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC" xml:space="preserve">
+    <value>Úsáideann sé an liosta focal iomlán.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_PONG_DESC" xml:space="preserve">
+    <value>An cluiche ping-pong!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PONG_SCORE" xml:space="preserve">
+    <value>Scór</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Theip ar na hiontrálacha socruithe a fháil.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_BACKRACE" xml:space="preserve">
+    <value>Rásaíocht Capall</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_HANGMAN" xml:space="preserve">
+    <value>Crochaire</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE" xml:space="preserve">
+    <value>Meteor Dodge</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER" xml:space="preserve">
+    <value>Cluiche Líne Meteor Shooter</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_PONG" xml:space="preserve">
+    <value>pong</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET" xml:space="preserve">
+    <value>Díséad Loinge</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SNAKER" xml:space="preserve">
+    <value>Snaker</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_WORDLE" xml:space="preserve">
+    <value>Focal</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG" xml:space="preserve">
+    <value>Wordle (bunaidh)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN" xml:space="preserve">
+    <value>Athfhriotail anaithnid.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN" xml:space="preserve">
+    <value>Údar anaithnid.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_DESC" xml:space="preserve">
+    <value>Ligeann sé seo duit na dathanna a chumrú</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_DESC" xml:space="preserve">
+    <value>Ligeann an chuid seo duit Réitigh a chumrú.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DESC" xml:space="preserve">
+    <value>Ligeann an chuid seo duit SpeedPress a chumrú.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC" xml:space="preserve">
+    <value>Ligeann an chuid seo duit Meteor agus ShipDuet a chumrú.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_NAME" xml:space="preserve">
+    <value>Moill sna Milleasoicindí</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_DESC" xml:space="preserve">
+    <value>Cé mhéad milleasoicind atá le fanacht roimh an gcéad cheann eile a scríobh?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_NAME" xml:space="preserve">
+    <value>Moill Nua Scáileáin sna Milleasoicindí</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC" xml:space="preserve">
+    <value>Cé mhéad milleasoicind atá le fanacht roimh scríobh sa scáileán nua?</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_GENNAME_DESC" xml:space="preserve">
+    <value>Gineadóir ainm agus sloinne</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME" xml:space="preserve">
+    <value>Áireamh ainmneacha íosta</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_NAME" xml:space="preserve">
+    <value>Uasmhéid ainmneacha a chomhaireamh</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC" xml:space="preserve">
+    <value>Íosmhéid ainmneacha le giniúint</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC" xml:space="preserve">
+    <value>Uasmhéid ainmneacha le giniúint</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_NAME" xml:space="preserve">
+    <value>Comhaireamh blianta aoise íosta</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_NAME" xml:space="preserve">
+    <value>Uasmhéid blianta aoise a chomhaireamh</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC" xml:space="preserve">
+    <value>Íosmhéid blianta d&apos;aois le giniúint</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC" xml:space="preserve">
+    <value>Uasmhéid blianta aoise le giniúint</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC" xml:space="preserve">
+    <value>Aimsitheoir céad ainm</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC" xml:space="preserve">
+    <value>Gin ainmneacha ag baint úsáide as an liosta ainmneacha fireanna</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC" xml:space="preserve">
+    <value>Gin ainmneacha ag baint úsáide as an liosta ainmneacha baineanna</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC" xml:space="preserve">
+    <value>Gin ainmneacha ag baint úsáide as an liosta ainmneacha aontaithe</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC" xml:space="preserve">
+    <value>Aimsitheoir sloinne</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC" xml:space="preserve">
+    <value>Insamhladh cuardaigh bunachar sonraí do dhuine randamach.</value>
+  </data>
+  <data name="NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Theip ar na hiontrálacha socruithe a fháil.</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_T_DESC" xml:space="preserve">
+    <value>Gin clibeanna ainm (ní thacaítear le umlauts faoi láthair)</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC" xml:space="preserve">
+    <value>Téarma cuardaigh</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC" xml:space="preserve">
+    <value>Réimír ainm le cuardach</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC" xml:space="preserve">
+    <value>Iarmhír ainm le cuardach</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC" xml:space="preserve">
+    <value>Réimír sloinne le cuardach</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC" xml:space="preserve">
+    <value>Iarmhír sloinne le cuardach</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
+    <value>Cé mhéad ainm atá le giniúint?</value>
+  </data>
+
+</root>

@@ -24,9 +24,8 @@ using System.Collections.Generic;
 using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
 using Nitrocid.Extras.Ssh.Settings;
-using Nitrocid.Extras.Ssh.Localized;
 using Nitrocid.Extras.Ssh.Commands;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Ssh
 {
@@ -80,7 +79,7 @@ namespace Nitrocid.Extras.Ssh
 
         public void FinalizeAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Ssh.Resources.Languages.Output.Localizations", typeof(SshInit).Assembly));
             var config = new SshConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);

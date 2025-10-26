@@ -17,9 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Languages;
+using LanguageTester = Nitrocid.Core.Languages.LanguageTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Tests.Languages
 {
@@ -36,7 +37,7 @@ namespace Nitrocid.Tests.Languages
         public void TestTranslate()
         {
             string ExpectedTranslation = "Apagando ...";
-            string ActualTranslation = LanguageTools.GetLocalized("NKS_KERNEL_POWER_SHUTTINGDOWN", "Nitrocid", "spa");
+            string ActualTranslation = LanguageTester.GetLocalized("NKS_KERNEL_POWER_SHUTTINGDOWN", LanguageManager.ListLanguages("es")["es"]);
             ActualTranslation.ShouldBe(ExpectedTranslation);
         }
 

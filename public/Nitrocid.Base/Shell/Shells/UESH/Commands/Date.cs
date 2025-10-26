@@ -19,7 +19,6 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using System.Linq;
 using Nitrocid.Base.Kernel.Time.Renderers;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands

@@ -1,0 +1,2044 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
+    <value>Όνομα χρήστη για {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD" xml:space="preserve">
+    <value>Κωδικός πρόσβασης για {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO" xml:space="preserve">
+    <value>Συνδέθηκε στο {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING" xml:space="preserve">
+    <value>Σφάλμα κατά την προσπάθεια σύνδεσης στο {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND" xml:space="preserve">
+    <value>Ο τοπικός κατάλογος {0} δεν υπάρχει.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR" xml:space="preserve">
+    <value>Εισαγάγετε έναν τοπικό κατάλογο. &quot;..&quot; να επιστρεψει.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND" xml:space="preserve">
+    <value>Ο κατάλογος {0} δεν βρέθηκε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR" xml:space="preserve">
+    <value>Εισαγάγετε έναν απομακρυσμένο κατάλογο. &quot;..&quot; να επιστρεψει</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_LOCALDIR" xml:space="preserve">
+    <value>Τοπικός κατάλογος: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_REMOTEDIR" xml:space="preserve">
+    <value>Απομακρυσμένος κατάλογος: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE" xml:space="preserve">
+    <value>Λήψη αρχείου {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE" xml:space="preserve">
+    <value>Λήψη αρχείου {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE" xml:space="preserve">
+    <value>Μεταφόρτωση αρχείου {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_UPLOADEDFILE" xml:space="preserve">
+    <value>Μεταφορτωμένο αρχείο {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC" xml:space="preserve">
+    <value>Λαμβάνει τον τρέχοντα τοπικό κατάλογο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC" xml:space="preserve">
+    <value>Λαμβάνει τον τρέχοντα απομακρυσμένο κατάλογο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDL_DESC" xml:space="preserve">
+    <value>Αλλάζει τον τοπικό κατάλογο για λήψη ή αποστολή από</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDR_DESC" xml:space="preserve">
+    <value>Αλλάζει τον απομακρυσμένο κατάλογο για λήψη ή αποστολή σε</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC" xml:space="preserve">
+    <value>Διαγράφει το απομακρυσμένο αρχείο από τον διακομιστή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_GET_DESC" xml:space="preserve">
+    <value>Λήψη απομακρυσμένου αρχείου στον τοπικό κατάλογο χρησιμοποιώντας δυαδικό ή κείμενο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC" xml:space="preserve">
+    <value>Παραθέτει τον τοπικό κατάλογο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC" xml:space="preserve">
+    <value>Παραθέτει τον απομακρυσμένο κατάλογο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_PUT_DESC" xml:space="preserve">
+    <value>Μεταφορτώνει τοπικό αρχείο σε απομακρυσμένο κατάλογο χρησιμοποιώντας δυαδικό ή κείμενο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC" xml:space="preserve">
+    <value>Κατάλογος αλλαγών</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC" xml:space="preserve">
+    <value>Χρησιμοποιήστε ένα κέλυφος FTP για αλληλεπίδραση με διακομιστές</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SHELL_ERROR" xml:space="preserve">
+    <value>Παρουσιάστηκε σφάλμα στο κέλυφος.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_INVALIDPROFILE" xml:space="preserve">
+    <value>Μη έγκυρη επιλογή προφίλ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECTING" xml:space="preserve">
+    <value>Προσπάθεια σύνδεσης στο {0} με το προφίλ {1}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME" xml:space="preserve">
+    <value>Όνομα: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC" xml:space="preserve">
+    <value>Υπολογίζει αθροίσματα αρχείων.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_INVALIDENCRYPTION" xml:space="preserve">
+    <value>Μη έγκυρος αλγόριθμος κρυπτογράφησης.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_PASSWORDPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε τον κωδικό πρόσβασης για το {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_SIZE" xml:space="preserve">
+    <value>Μέγεθος: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT" xml:space="preserve">
+    <value>Σφάλμα κατά την προσπάθεια σύνδεσης στο {0}: Λήξη χρονικού ορίου σύνδεσης ή απώλεια σύνδεσης</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC" xml:space="preserve">
+    <value>Υπολογίζει αθροίσματα αρχείων σε καθορισμένο κατάλογο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_ADDRESSPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε όνομα χρήστη ή διεύθυνση email:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_PASSWORDPROMPT" xml:space="preserve">
+    <value>Εισάγετε τον κωδικό πρόσβασης:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_CONNECTIONFAILED" xml:space="preserve">
+    <value>Σφάλμα κατά τη σύνδεση στο {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_CONNECTING" xml:space="preserve">
+    <value>Σύνδεση στο {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_AUTHENTICATING" xml:space="preserve">
+    <value>Έλεγχος ταυτότητας...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC" xml:space="preserve">
+    <value>Κατεβάζει μηνύματα και τα παραθέτει</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC" xml:space="preserve">
+    <value>Ανοίγει ένα μήνυμα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC" xml:space="preserve">
+    <value>Η σελίδα δεν είναι αριθμητική τιμή.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO" xml:space="preserve">
+    <value>Ο αριθμός μηνύματος μπορεί να μην είναι αρνητικός ή μηδενικός.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC" xml:space="preserve">
+    <value>Ο αριθμός μηνύματος δεν είναι αριθμητική τιμή.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM" xml:space="preserve">
+    <value>- Από {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO" xml:space="preserve">
+    <value>- Προς {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN" xml:space="preserve">
+    <value>- Στάλθηκε στο {0} σε {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND" xml:space="preserve">
+    <value>Το μήνυμα που καθορίστηκε δεν βρέθηκε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PREPARINGPROFILES" xml:space="preserve">
+    <value>Προετοιμασία προφίλ... Μπορεί να χρειαστούν αρκετά λεπτά...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC" xml:space="preserve">
+    <value>Αλλάζει τον τρέχοντα κατάλογο αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER" xml:space="preserve">
+    <value>Δεν είναι δυνατό το άνοιγμα του φακέλου αλληλογραφίας {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC" xml:space="preserve">
+    <value>Εμφανίζει καταλόγους στη διεύθυνση αλληλογραφίας σας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_VALIDATIONFAILED_MESSAGE" xml:space="preserve">
+    <value>Κατά την επικύρωση του πιστοποιητικού, υπάρχουν σφάλματα πιστοποιητικού. Μπορεί να είναι η πρώτη φορά που συνδέεστε στον διακομιστή ή το πιστοποιητικό να έχει λήξει. Εδώ είναι ένα σφάλμα:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT" xml:space="preserve">
+    <value>Είστε βέβαιοι ότι θέλετε να συνδεθείτε;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_VALIDATIONFAILED_INVALID" xml:space="preserve">
+    <value>Μη έγκυρη απάντηση. ΠΑΡΑΚΑΛΩ προσπαθησε ξανα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε τη διεύθυνση και τη θύρα διακομιστή IMAP (&lt;διεύθυνση&gt; ή &lt;διεύθυνση&gt;:[θύρα]):</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε τη διεύθυνση και τη θύρα διακομιστή SMTP (&lt;διεύθυνση&gt; ή &lt;διεύθυνση&gt;:[θύρα]):</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC" xml:space="preserve">
+    <value>Στέλνει ένα μήνυμα σε μια διεύθυνση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε τη διεύθυνση αλληλογραφίας του παραλήπτη:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε το θέμα:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε το μήνυμά σας παρακάτω. Γράψε «ΕΟΦ» για επιβεβαίωση.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_SENDING" xml:space="preserve">
+    <value>Αποστολή μηνύματος...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_SENT" xml:space="preserve">
+    <value>Το μήνυμα στάλθηκε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL" xml:space="preserve">
+    <value>Μη έγκυρη διεύθυνση e-mail. Βεβαιωθείτε ότι έχετε γράψει σωστά τη διεύθυνση και ότι ταιριάζει με τη μορφή του παραδείγματος που εμφανίζεται:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC" xml:space="preserve">
+    <value>Αφαιρεί ένα μήνυμα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC" xml:space="preserve">
+    <value>Καταργεί όλα τα μηνύματα από τον παραλήπτη</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX" xml:space="preserve">
+    <value>Το μήνυμα {0} από {1} διαγράφηκε από {2}. Απομένουν {3} μηνύματα για ανάλυση.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX" xml:space="preserve">
+    <value>Το μήνυμα {0} από τον χρήστη {1} διαγράφηκε από τα εισερχόμενα. Απομένουν {2} μηνύματα για ανάλυση.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FILESHELLS_OPENFAILED" xml:space="preserve">
+    <value>Απέτυχε το άνοιγμα του αρχείου. Έξοδος από το κέλυφος...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION" xml:space="preserve">
+    <value>Η καθορισμένη επιλογή {0} δεν είναι έγκυρη.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC" xml:space="preserve">
+    <value>Η απάντηση πρέπει να είναι αριθμητική.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME" xml:space="preserve">
+    <value>Καταγραφή ονόματος χρήστη FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME" xml:space="preserve">
+    <value>Καταγραφή διεύθυνσης IP FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_NAME" xml:space="preserve">
+    <value>Επιστροφή μόνο του πρώτου προφίλ FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PUT_FAILED" xml:space="preserve">
+    <value>Απέτυχε η μεταφόρτωση του {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_GET_FAILED" xml:space="preserve">
+    <value>Η λήψη απέτυχε για το αρχείο {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_LIST_FAILED" xml:space="preserve">
+    <value>Απέτυχε η λίστα απομακρυσμένων αρχείων: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_DELETING" xml:space="preserve">
+    <value>Διαγραφή {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_NOTFOUND" xml:space="preserve">
+    <value>Το {0} δεν βρίσκεται στον διακομιστή.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_SUCCESS" xml:space="preserve">
+    <value>Όλα τα μηνύματα που έστειλε ο χρήστης {0} καταργήθηκαν με επιτυχία.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_FAILURE" xml:space="preserve">
+    <value>Αποτυχία κατάργησης όλων των μηνυμάτων που έγιναν από τον χρήστη {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING" xml:space="preserve">
+    <value>Σφάλμα κατά την αποστολή μηνύματος.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_MOVING" xml:space="preserve">
+    <value>Μετακίνηση του {0} στο {1}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_MOVED" xml:space="preserve">
+    <value>Μετακινήθηκε με επιτυχία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_MV_DESC" xml:space="preserve">
+    <value>Μετακινεί αρχείο ή κατάλογο σε άλλο αρχείο ή κατάλογο. Μπορείτε επίσης να το χρησιμοποιήσετε για να μετονομάσετε αρχεία.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_MOVEFAILED" xml:space="preserve">
+    <value>Αποτυχία μετακίνησης του {0} στο {1}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COPYING" xml:space="preserve">
+    <value>Αντιγραφή {0} στο {1}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COPIED" xml:space="preserve">
+    <value>Αντιγράφηκε με επιτυχία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_CP_DESC" xml:space="preserve">
+    <value>Αντιγράφει αρχείο ή κατάλογο σε άλλο αρχείο ή κατάλογο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COPYFAILED" xml:space="preserve">
+    <value>Αποτυχία αντιγραφής του {0} στο {1}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC" xml:space="preserve">
+    <value>Μετακινεί ένα μήνυμα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC" xml:space="preserve">
+    <value>Μετακινεί όλα τα μηνύματα από τον παραλήπτη</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_SUCCESS" xml:space="preserve">
+    <value>Όλα τα μηνύματα που γράφονται από τον χρήστη {0} μετακινήθηκαν με επιτυχία.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_FAILURE" xml:space="preserve">
+    <value>Απέτυχε η μετακίνηση όλων των μηνυμάτων που έγιναν από τον χρήστη {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX" xml:space="preserve">
+    <value>Το μήνυμα {0} από τον χρήστη {1} μετακινήθηκε από το {2}. Απομένουν {3} μηνύματα για ανάλυση.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_DESC" xml:space="preserve">
+    <value>Αν θέλετε να καταγράψετε το όνομα χρήστη FTP ή όχι.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC" xml:space="preserve">
+    <value>Αν θέλετε να καταγράψετε ή όχι τη διεύθυνση IP FTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC" xml:space="preserve">
+    <value>Επιλέξτε το πρώτο προφίλ μόνο όταν συνδέεστε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE" xml:space="preserve">
+    <value>Έφτασαν {0} νέα μηνύματα στα εισερχόμενα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC" xml:space="preserve">
+    <value>Ανοίξτε το &quot;mail&quot; για να τα δείτε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME" xml:space="preserve">
+    <value>Πλήρες όνομα: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME" xml:space="preserve">
+    <value>Χρόνος δημιουργίας: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME" xml:space="preserve">
+    <value>Χρόνος τελευταίας πρόσβασης: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME" xml:space="preserve">
+    <value>Τελευταία ώρα εγγραφής: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES" xml:space="preserve">
+    <value>Χαρακτηριστικά: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_PARENTDIR" xml:space="preserve">
+    <value>Γονικός κατάλογος: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_WHERETOFIND" xml:space="preserve">
+    <value>Πού να βρείτε: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE" xml:space="preserve">
+    <value>Μέγεθος αρχείου: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT" xml:space="preserve">
+    <value>Εισαγάγετε διαδρομές αρχείων στα συνημμένα. Πατήστε ENTER σε μια κενή διαδρομή για επιβεβαίωση.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC" xml:space="preserve">
+    <value>Ανοίγει ένα κρυπτογραφημένο μήνυμα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD" xml:space="preserve">
+    <value>Γράψτε τον κωδικό πρόσβασης για το αναγνωριστικό κλειδιού {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC" xml:space="preserve">
+    <value>Στέλνει ένα κρυπτογραφημένο μήνυμα σε μια διεύθυνση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK" xml:space="preserve">
+    <value>Πατήστε οποιοδήποτε πλήκτρο για να επιστρέψετε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η δημιουργία φακέλου αλληλογραφίας {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC" xml:space="preserve">
+    <value>Δημιουργεί έναν κατάλογο στον τρέχοντα κατάλογο εργασίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC" xml:space="preserve">
+    <value>Καταργεί έναν κατάλογο από τον τρέχοντα κατάλογο εργασίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND" xml:space="preserve">
+    <value>Ο φάκελος αλληλογραφίας {0} δεν βρέθηκε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η διαγραφή του φακέλου αλληλογραφίας {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC" xml:space="preserve">
+    <value>Μετονομάζει έναν φάκελο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME" xml:space="preserve">
+    <value>Εμφάνιση προεπισκόπησης μηνύματος αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC" xml:space="preserve">
+    <value>Κατά την καταχώριση μηνυμάτων αλληλογραφίας, εμφανίστε προεπισκόπηση σώματος.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένη η αυτόματη αποθήκευση, το αρχείο κειμένου θα αποθηκεύεται για κάθε &quot;n&quot; δευτερόλεπτα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC" xml:space="preserve">
+    <value>Σας επιτρέπει να χρησιμοποιείτε έναν διακομιστή SSH FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC" xml:space="preserve">
+    <value>Εμφανίζει όλα τα αρχεία μέσα στο αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC" xml:space="preserve">
+    <value>Εξάγει ένα αρχείο σε έναν καθορισμένο κατάλογο ή σε έναν τρέχοντα κατάλογο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC" xml:space="preserve">
+    <value>Αλλάζει τον κατάλογο αρχειοθέτησης</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_LOCALDIRNOTFOUND" xml:space="preserve">
+    <value>Ο κατάλογος {0} δεν υπάρχει</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND" xml:space="preserve">
+    <value>Ο κατάλογος αρχειοθέτησης {0} δεν υπάρχει</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR" xml:space="preserve">
+    <value>Παρουσιάστηκε ένα σφάλμα στο κέλυφος FTP:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR" xml:space="preserve">
+    <value>Παρουσιάστηκε ένα σφάλμα στο κέλυφος SFTP:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD" xml:space="preserve">
+    <value>Πώς θέλετε να γίνει έλεγχος ταυτότητας;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY" xml:space="preserve">
+    <value>Αρχείο ιδιωτικού κλειδιού</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD" xml:space="preserve">
+    <value>Κωδικός πρόσβασης</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE" xml:space="preserve">
+    <value>Εισαγάγετε τη φράση πρόσβασης για το κλειδί {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND" xml:space="preserve">
+    <value>Το αρχείο κλειδιού {0} δεν υπάρχει.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED" xml:space="preserve">
+    <value>Σφάλμα κατά την προσπάθεια προσθήκης ιδιωτικού κλειδιού:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_PERM_DESC" xml:space="preserve">
+    <value>Ορίζει δικαιώματα αρχείων. Αυτό υποστηρίζεται μόνο σε διακομιστές FTP που εκτελούν Unix.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_TYPE_DESC" xml:space="preserve">
+    <value>Ορίζει τον τύπο για αυτήν την περίοδο λειτουργίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PERM_SETFAILED" xml:space="preserve">
+    <value>Αποτυχία ορισμού αδειών από {0} σε {1}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PERM_SETSUCCEEDED" xml:space="preserve">
+    <value>Τα δικαιώματα ορίστηκαν με επιτυχία για το αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_ASCII" xml:space="preserve">
+    <value>Ο τύπος δεδομένων ορίστηκε σε ASCII!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_BINARY" xml:space="preserve">
+    <value>Ο τύπος δεδομένων ορίστηκε σε Binary!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_INVALID" xml:space="preserve">
+    <value>Μη έγκυρος τύπος δεδομένων.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING" xml:space="preserve">
+    <value>Προσέξτε ότι τα περισσότερα αρχεία δεν θα λάβουν ή δεν θα μεταφορτωθούν σωστά χρησιμοποιώντας αυτήν τη λειτουργία, γι&apos; αυτό συνιστούμε ανεπιφύλακτα τη χρήση της δυαδικής λειτουργίας στις περισσότερες περιπτώσεις.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC" xml:space="preserve">
+    <value>Ανοίγει ένα κέλυφος RSS για ανάγνωση των ροών</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC" xml:space="preserve">
+    <value>Εμφανίζει όλες τις ροές</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_READ_DESC" xml:space="preserve">
+    <value>Διαβάζει μια ροή σε ένα πρόγραμμα περιήγησης ιστού</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC" xml:space="preserve">
+    <value>Λαμβάνει τις πληροφορίες του άρθρου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE" xml:space="preserve">
+    <value>Ο αριθμός του άρθρου δεν θα μπορούσε να είναι μεγαλύτερος από τα διαθέσιμα άρθρα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE" xml:space="preserve">
+    <value>Τίτλος:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK" xml:space="preserve">
+    <value>Σύνδεσμος:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC" xml:space="preserve">
+    <value>Λαμβάνει τις πληροφορίες ροής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC" xml:space="preserve">
+    <value>Περιγραφή:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE" xml:space="preserve">
+    <value>Τύπος ροής:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT" xml:space="preserve">
+    <value>Αριθμός άρθρων:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READ_NOLINK" xml:space="preserve">
+    <value>Το άρθρο δεν έχει σύνδεσμο!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_WEBALERT_OPENING" xml:space="preserve">
+    <value>Άνοιγμα URL... Φροντίστε να ακολουθήσετε τα βήματα που εμφανίζονται στην οθόνη.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC" xml:space="preserve">
+    <value>Ομορφαίνει το αρχείο JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_GETFOLDER_DESC" xml:space="preserve">
+    <value>Λήψη απομακρυσμένου φακέλου στον τοπικό κατάλογο χρησιμοποιώντας δυαδικό ή κείμενο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_PUTFOLDER_DESC" xml:space="preserve">
+    <value>Μεταφορτώνει τοπικό φάκελο σε απομακρυσμένο κατάλογο χρησιμοποιώντας δυαδικό ή κείμενο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING" xml:space="preserve">
+    <value>Λήψη φακέλου {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED" xml:space="preserve">
+    <value>Έγινε λήψη του φακέλου {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED" xml:space="preserve">
+    <value>Η λήψη απέτυχε για το φάκελο {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING" xml:space="preserve">
+    <value>Μεταφόρτωση φακέλου {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADED" xml:space="preserve">
+    <value>Μεταφορτώθηκε ο φάκελος {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC" xml:space="preserve">
+    <value>Ελαχιστοποιεί το αρχείο JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_JSONTOOLS_EXCEPTION_STREAMNOTOPEN" xml:space="preserve">
+    <value>Το πρόγραμμα επεξεργασίας JSON δεν έχει ανοίξει ακόμα ροή αρχείου.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC" xml:space="preserve">
+    <value>Έξοδος από το κέλυφος JSON χωρίς αποθήκευση των αλλαγών</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC" xml:space="preserve">
+    <value>Αποθηκεύει το αρχείο JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC" xml:space="preserve">
+    <value>Εκτυπώνει το αρχείο JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC" xml:space="preserve">
+    <value>Γράψτε πώς θέλετε να είναι η προτροπή σύνδεσής σας. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC" xml:space="preserve">
+    <value>Γράψτε πώς θέλετε να είναι η προτροπή του κωδικού πρόσβασής σας. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME" xml:space="preserve">
+    <value>Εμφάνιση λεπτομερειών αρχείου στη λίστα FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
+    <value>Στυλ προτροπής ονόματος χρήστη για FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_PASSWORDPROMPT_NAME" xml:space="preserve">
+    <value>Στυλ προτροπής κωδικού πρόσβασης για FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_NAME" xml:space="preserve">
+    <value>Χρησιμοποιήστε το πρώτο προφίλ FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_NAME" xml:space="preserve">
+    <value>Προσθήκη νέων συνδέσεων στην ταχεία κλήση FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_NAME" xml:space="preserve">
+    <value>Προσπαθήστε να επικυρώσετε ασφαλή πιστοποιητικά FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME" xml:space="preserve">
+    <value>Εμφάνιση FTP MOTD στη σύνδεση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME" xml:space="preserve">
+    <value>Να αποδέχεστε πάντα μη έγκυρα πιστοποιητικά FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC" xml:space="preserve">
+    <value>Εμφανίζει τις λεπτομέρειες του αρχείου FTP ενώ παραθέτει τους απομακρυσμένους καταλόγους.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC" xml:space="preserve">
+    <value>Χρησιμοποιεί το πρώτο προφίλ FTP για σύνδεση στο FTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένο, προσθέτει μια νέα σύνδεση στην ταχεία κλήση FTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_DESC" xml:space="preserve">
+    <value>Προσπαθεί να επικυρώσει τα πιστοποιητικά FTP. Η απενεργοποίησή του δεν συνιστάται.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC" xml:space="preserve">
+    <value>Εμφανίζει το μήνυμα FTP της ημέρας κατά τη σύνδεση.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC" xml:space="preserve">
+    <value>Να αποδέχεστε πάντα μη έγκυρα πιστοποιητικά FTP. Η ενεργοποίησή του δεν συνιστάται καθώς μπορεί να εγκυμονεί κινδύνους για την ασφάλεια.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
+    <value>Στυλ προτροπής ονόματος χρήστη για αλληλογραφία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME" xml:space="preserve">
+    <value>Στυλ προτροπής κωδικού πρόσβασης για αλληλογραφία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME" xml:space="preserve">
+    <value>Στυλ προτροπής IMAP για αλληλογραφία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME" xml:space="preserve">
+    <value>Στυλ προτροπής SMTP για αλληλογραφία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME" xml:space="preserve">
+    <value>Αυτόματος εντοπισμός διακομιστή αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME" xml:space="preserve">
+    <value>Ενεργοποίηση εντοπισμού σφαλμάτων αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME" xml:space="preserve">
+    <value>Ειδοποίηση για νέα μηνύματα ηλεκτρονικού ταχυδρομείου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME" xml:space="preserve">
+    <value>Στυλ προτροπής κωδικού πρόσβασης GPG για αλληλογραφία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME" xml:space="preserve">
+    <value>Αποστολή διαστήματος ping IMAP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME" xml:space="preserve">
+    <value>Αποστολή διαστήματος ping SMTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME" xml:space="preserve">
+    <value>Μορφή κειμένου αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC" xml:space="preserve">
+    <value>Γράψτε πώς θέλετε να είναι η προτροπή του διακομιστή IMAP. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC" xml:space="preserve">
+    <value>Γράψτε πώς θέλετε να είναι η προτροπή του διακομιστή SMTP. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC" xml:space="preserve">
+    <value>Αυτόματος εντοπισμός του διακομιστή αλληλογραφίας με βάση τη δεδομένη διεύθυνση.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC" xml:space="preserve">
+    <value>Ενεργοποιεί τον εντοπισμό σφαλμάτων διακομιστή αλληλογραφίας.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC" xml:space="preserve">
+    <value>Σας ειδοποιεί για τυχόν νέα μηνύματα αλληλογραφίας.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC" xml:space="preserve">
+    <value>Γράψτε πώς θέλετε να είναι η προτροπή κωδικού πρόσβασης GPG. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου για να στείλετε το ping IMAP;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου για να στείλετε το ping SMTP;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC" xml:space="preserve">
+    <value>Ελέγχει πώς θα εμφανίζεται το κείμενο αλληλογραφίας.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_NAME" xml:space="preserve">
+    <value>Στυλ προτροπής διεύθυνσης URL ροής RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME" xml:space="preserve">
+    <value>Αυτόματη ανανέωση ροής RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_NAME" xml:space="preserve">
+    <value>Αυτόματη ανανέωση διάστημα τροφοδοσίας RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_DESC" xml:space="preserve">
+    <value>Γράψτε πώς θέλετε να είναι η προτροπή του διακομιστή τροφοδοσίας RSS. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου για να ανανεώσετε τη ροή RSS;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME" xml:space="preserve">
+    <value>Εμφάνιση λεπτομερειών αρχείου στη λίστα SFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
+    <value>Στυλ προτροπής ονόματος χρήστη για SFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_NAME" xml:space="preserve">
+    <value>Προσθέστε νέες συνδέσεις στη γρήγορη κλήση SFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC" xml:space="preserve">
+    <value>Εμφανίζει τις λεπτομέρειες του αρχείου SFTP ενώ παραθέτει τους απομακρυσμένους καταλόγους.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένο, προσθέτει μια νέα σύνδεση στη γρήγορη κλήση SFTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_TITLE" xml:space="preserve">
+    <value>Πληροφορίες διακομιστή FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_ADDRESS" xml:space="preserve">
+    <value>Διεύθυνση διακομιστή:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_PORT" xml:space="preserve">
+    <value>Θύρα διακομιστή:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_TYPE" xml:space="preserve">
+    <value>Τύπος διακομιστή:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_SYSTYPE" xml:space="preserve">
+    <value>Τύπος συστήματος διακομιστή:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_ENCRYPTION" xml:space="preserve">
+    <value>Λειτουργία κρυπτογράφησης διακομιστή:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_DATACONNECTION" xml:space="preserve">
+    <value>Τύπος σύνδεσης δεδομένων διακομιστή:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_SYSTEM" xml:space="preserve">
+    <value>Σύστημα διακομιστή:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_DOWNLOADDATATYPE" xml:space="preserve">
+    <value>Τύπος δεδομένων λήψης διακομιστή:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_UPLOADDATATYPE" xml:space="preserve">
+    <value>Τύπος δεδομένων μεταφόρτωσης διακομιστή:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH" xml:space="preserve">
+    <value>Εισαγάγετε ένα απομακρυσμένο αρχείο που θα κατακερματιστεί.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED" xml:space="preserve">
+    <value>Εισαγάγετε έναν απομακρυσμένο κατάλογο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_NAME" xml:space="preserve">
+    <value>Αναδρομικός κατακερματισμός για FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC" xml:space="preserve">
+    <value>Εάν θα κατακερματιστεί αναδρομικά ένας κατάλογος. Λάβετε υπόψη ότι δεν το υποστηρίζουν όλοι οι διακομιστές FTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC" xml:space="preserve">
+    <value>Εκτελεί μια εντολή διακομιστή FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS" xml:space="preserve">
+    <value>της αλληλογραφίας που μεταφέρθηκε...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_HOSTNAME" xml:space="preserve">
+    <value>Όνομα κεντρικού υπολογιστή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_USERNAME" xml:space="preserve">
+    <value>Όνομα χρήστη</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_DATATYPE" xml:space="preserve">
+    <value>Τύπος δεδομένων</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCODING" xml:space="preserve">
+    <value>Κωδικοποίηση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCRYPTION" xml:space="preserve">
+    <value>Κρυπτογράφηση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROTOCOLS" xml:space="preserve">
+    <value>Πρωτόκολλα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME" xml:space="preserve">
+    <value>Εμφάνιση προόδου μεταφοράς αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME" xml:space="preserve">
+    <value>Πρόοδος μεταφοράς αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME" xml:space="preserve">
+    <value>Πρόοδος μεταφοράς αλληλογραφίας (μονό)</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένο, το κέλυφος αλληλογραφίας θα δείχνει πόσα byte μεταδόθηκαν κατά τη λήψη αλληλογραφίας.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC" xml:space="preserve">
+    <value>Γράψτε πώς θέλετε να είναι το στυλ προόδου της μεταφοράς αλληλογραφίας σας. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται. {0} για μεταφερόμενο μέγεθος και {1} για συνολικό μέγεθος.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC" xml:space="preserve">
+    <value>Γράψτε πώς θέλετε να είναι το στυλ προόδου της μεταφοράς αλληλογραφίας σας. Αφήστε το κενό για να χρησιμοποιήσετε το προεπιλεγμένο στυλ. Τα σύμβολα θέσης αναλύονται. {0} για μεταφερόμενο μέγεθος.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC" xml:space="preserve">
+    <value>Ξεκινά το κέλυφος HTTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_GET_DESC" xml:space="preserve">
+    <value>Λαμβάνει την απάντηση από τον διακομιστή HTTP χρησιμοποιώντας το καθορισμένο αίτημα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_DELETE_DESC" xml:space="preserve">
+    <value>Διαγράφει περιεχόμενο από τον διακομιστή HTTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR" xml:space="preserve">
+    <value>Παρουσιάστηκε σφάλμα στο κέλυφος HTTP:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_GETSTRING_DESC" xml:space="preserve">
+    <value>Λαμβάνει τη συμβολοσειρά από τον διακομιστή HTTP χρησιμοποιώντας το καθορισμένο αίτημα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_GETTING" xml:space="preserve">
+    <value>Λήψη {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC" xml:space="preserve">
+    <value>Συσκευάζει ένα τοπικό αρχείο στο αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK" xml:space="preserve">
+    <value>Δεν μπορώ να συσκευάσω τίποτα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_NAME" xml:space="preserve">
+    <value>Λήξη χρονικού ορίου ανάκτησης ροής RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν από το χρονικό όριο ανάκτησης ροής RSS;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_NAME" xml:space="preserve">
+    <value>Επαληθεύστε τις προσπάθειες επανάληψης για μετάδοση FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME" xml:space="preserve">
+    <value>Λήξη χρόνου σύνδεσης FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME" xml:space="preserve">
+    <value>Χρονικό όριο σύνδεσης δεδομένων FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_NAME" xml:space="preserve">
+    <value>Εκδόσεις IP FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_DESC" xml:space="preserve">
+    <value>Πόσες φορές να επαληθεύσετε τη μεταφόρτωση και τη λήψη και να προσπαθήσετε ξανά εάν η επαλήθευση αποτύχει πριν αποτύχει η λήψη συνολικά;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν το χρονικό όριο της σύνδεσης FTP;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν από το χρονικό όριο της σύνδεσης δεδομένων FTP;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_DESC" xml:space="preserve">
+    <value>Επιλέξτε την έκδοση του Πρωτοκόλλου Διαδικτύου που υποστηρίζει ο διακομιστής FTP και που χρησιμοποιεί ο πελάτης FTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_NAME" xml:space="preserve">
+    <value>Προεπιλεγμένη μορφοποίηση JSON για το κέλυφος JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_DESC" xml:space="preserve">
+    <value>Επιλέγει την προεπιλεγμένη μορφοποίηση JSON (βελτιωμένη ή ελαχιστοποιημένη) για αποθήκευση του κελύφους JSON.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC" xml:space="preserve">
+    <value>Εμφανίζει τις λεπτομέρειες του αρχείου στη λίστα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
+    <value>Καταστέλλει τα ενοχλητικά μηνύματα &quot;δεν επιτρέπεται η άδεια&quot;.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC" xml:space="preserve">
+    <value>Υποδεικνύει ότι η διαδρομή στόχου είναι απόλυτη</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FILESHELLS_NEEDSFILE" xml:space="preserve">
+    <value>Το αρχείο δεν προσδιορίζεται. Έξοδος από το κέλυφος...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC" xml:space="preserve">
+    <value>Προσθέτει σελιδοδείκτη στη ροή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC" xml:space="preserve">
+    <value>Καταργεί τον σελιδοδείκτη ροής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS" xml:space="preserve">
+    <value>Η ροή δεν υπάρχει στους σελιδοδείκτες.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC" xml:space="preserve">
+    <value>Εμφανίζει όλες τις ροές με σελιδοδείκτες</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND" xml:space="preserve">
+    <value>Το αρχείο {0} δεν βρέθηκε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_ARCHIVE_FILENOTFOUND" xml:space="preserve">
+    <value>Το αρχείο δεν υπάρχει.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO" xml:space="preserve">
+    <value>Καμία πληροφορία.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOLDERCANTOPEN" xml:space="preserve">
+    <value>Δεν είναι δυνατό το άνοιγμα αρχείου ή φακέλου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NEWLINESTYLE" xml:space="preserve">
+    <value>Στυλ νέας γραμμής:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_BINFILE" xml:space="preserve">
+    <value>Δυαδικό αρχείο:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATA" xml:space="preserve">
+    <value>Μεταδεδομένα MIME:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME2" xml:space="preserve">
+    <value>Πλήρες όνομα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_VERSION" xml:space="preserve">
+    <value>Εκδοχή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CULTURENAME" xml:space="preserve">
+    <value>Όνομα πολιτισμού</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CONTENTTYPE" xml:space="preserve">
+    <value>Τύπος περιεχομένου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NOTDOTNETASSEMBLY" xml:space="preserve">
+    <value>Το αρχείο δεν είναι έγκυρο συγκρότημα .NET.\n</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTGETFSINFO" xml:space="preserve">
+    <value>Δεν είναι δυνατή η λήψη πληροφοριών συστήματος αρχείων</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY" xml:space="preserve">
+    <value>Δεν είναι δυνατή η αντιγραφή αρχείου ή καταλόγου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετακίνηση αρχείου ή καταλόγου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTREMOVE" xml:space="preserve">
+    <value>Δεν είναι δυνατή η κατάργηση αρχείου ή καταλόγου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε μια διαδρομή ή μια πλήρη διαδρομή προς έναν φάκελο προορισμού για να αντιγράψετε το επιλεγμένο αρχείο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH" xml:space="preserve">
+    <value>Βεβαιωθείτε ότι έχετε γράψει τη σωστή διαδρομή.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND" xml:space="preserve">
+    <value>Το αρχείο δεν υπάρχει. Βεβαιωθείτε ότι έχετε γράψει τη σωστή διαδρομή.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε μια διαδρομή ή μια πλήρη διαδρομή σε έναν φάκελο προορισμού για να μετακινήσετε το επιλεγμένο αρχείο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWFILENAMEPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε ένα νέο όνομα αρχείου.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENAMEINVALID" xml:space="preserve">
+    <value>Βεβαιωθείτε ότι έχετε γράψει το σωστό όνομα αρχείου.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOUND" xml:space="preserve">
+    <value>Ο φάκελος υπάρχει ήδη. Το όνομα δεν πρέπει να καταλαμβάνεται από άλλο αρχείο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε ένα νέο όνομα καταλόγου.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND" xml:space="preserve">
+    <value>Ο φάκελος υπάρχει ήδη. Το όνομα δεν πρέπει να καταλαμβάνεται από άλλο φάκελο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV" xml:space="preserve">
+    <value>Καμία αναθεώρηση.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION" xml:space="preserve">
+    <value>Η σύνδεση δεν έχει δημιουργηθεί ακόμα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε τη διεύθυνση διακομιστή:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC" xml:space="preserve">
+    <value>Διαδραστικό σύστημα διαχείρισης αρχείων κεντρικού υπολογιστή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC" xml:space="preserve">
+    <value>Ανοίγει το αρχείο αρχειοθέτησης στο κέλυφος αρχειοθέτησης</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC" xml:space="preserve">
+    <value>Git shell</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC" xml:space="preserve">
+    <value>Δείχνει τη διαφορά μεταξύ δύο αρχείων JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC" xml:space="preserve">
+    <value>Ανοίγει το πρόγραμμα-πελάτη αλληλογραφίας IMAP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC" xml:space="preserve">
+    <value>Ανοίγει το πρόγραμμα-πελάτη αλληλογραφίας POP3</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING" xml:space="preserve">
+    <value>Η αλληλογραφία POP3 επιστρέφει από την 0.0.20.0, αλλά προς το παρόν δεν σκοπεύουμε να την κυκλοφορήσουμε σε αυτήν την έκδοση. Περιμένετε την επόμενη έκδοση.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FEEDURLPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε τη διεύθυνση URL της ροής RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE" xml:space="preserve">
+    <value>Σφάλμα κατά την ανάλυση της διεύθυνσης. Βεβαιωθείτε ότι έχετε γράψει σωστά τη διεύθυνση.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC" xml:space="preserve">
+    <value>Ανοίγει ένα διαδραστικό πρόγραμμα ανάγνωσης ροών RSS TUI</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT" xml:space="preserve">
+    <value>Δεν μπορώ να εξαγάγω τίποτα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK" xml:space="preserve">
+    <value>Το αρχείο δεν είναι εγγράψιμο επειδή ο τύπος είναι</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC" xml:space="preserve">
+    <value>Διαβάζει το περιεχόμενο ενός απομακρυσμένου αρχείου στην κονσόλα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC" xml:space="preserve">
+    <value>Εξέρχεται από το κέλυφος χωρίς αποσύνδεση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED" xml:space="preserve">
+    <value>Βεβαιωθείτε ότι έχετε καθορίσει σωστά τη θύρα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROMPT" xml:space="preserve">
+    <value>Βρέθηκαν περισσότερα από ένα προφίλ. Επέλεξε ένα:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSREPO" xml:space="preserve">
+    <value>Το αποθετήριο δεν προσδιορίζεται. Έξοδος από το κέλυφος...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_REPOFAILED" xml:space="preserve">
+    <value>Απέτυχε το άνοιγμα του αποθετηρίου. Έξοδος από το κέλυφος...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_DESC" xml:space="preserve">
+    <value>Ανακτά τη λίστα των αλλαγών σε ένα αρχείο γραμμή προς γραμμή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_DESC" xml:space="preserve">
+    <value>Ελέγχει ένα υποκατάστημα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_COMMIT_DESC" xml:space="preserve">
+    <value>Αναλαμβάνει μια δέσμευση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_DESC" xml:space="preserve">
+    <value>Περιγράφει μια δέσμευση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC" xml:space="preserve">
+    <value>Εμφανίζει μια διαφορά μεταξύ της τρέχουσας δέσμευσης και των τοπικών αρχείων</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC" xml:space="preserve">
+    <value>Εμφανίζει μια διαφορά μεταξύ της τρέχουσας δέσμευσης και των τοπικών αρχείων με βάση το περιεχόμενό τους σε μορφή ενημερωμένης έκδοσης κώδικα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC" xml:space="preserve">
+    <value>Εμφανίζει μια διαφορά μεταξύ της τρέχουσας δέσμευσης και των τοπικών αρχείων λόγω της ύπαρξής τους</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC" xml:space="preserve">
+    <value>Δείχνει μια διαφορά μεταξύ της τρέχουσας δέσμευσης και των τοπικών αρχείων λόγω της ύπαρξής τους και του περιεχομένου τους</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC" xml:space="preserve">
+    <value>Λαμβάνει όλες τις ενημερώσεις από ένα τηλεχειριστήριο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_FILESTATUS_DESC" xml:space="preserve">
+    <value>Ανακτά την κατάσταση του αρχείου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_INFO_DESC" xml:space="preserve">
+    <value>Λαμβάνει μια απλή πληροφορία αποθετηρίου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC" xml:space="preserve">
+    <value>Παραθέτει όλους τους κλάδους</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC" xml:space="preserve">
+    <value>Εμφανίζει όλες τις δεσμεύσεις</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC" xml:space="preserve">
+    <value>Εμφανίζει όλα τα τηλεχειριστήρια</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSTAGS_DESC" xml:space="preserve">
+    <value>Εμφανίζει όλες τις ετικέτες</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_DESC" xml:space="preserve">
+    <value>Φτιάχνει μια ετικέτα από το ΚΕΦΑΛΙ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC" xml:space="preserve">
+    <value>Παίρνει όλες τις ενημερώσεις από το διακομιστή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_PUSH_DESC" xml:space="preserve">
+    <value>Προωθεί όλες τις ενημερώσεις στον διακομιστή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC" xml:space="preserve">
+    <value>Επαναφέρει το τοπικό αποθετήριο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC" xml:space="preserve">
+    <value>Κάνει μαλακή επαναφορά</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC" xml:space="preserve">
+    <value>Κάνει μικτή επαναφορά</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC" xml:space="preserve">
+    <value>Κάνει hard reset</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_DESC" xml:space="preserve">
+    <value>Ρυθμίζει την ταυτότητά σας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGE_DESC" xml:space="preserve">
+    <value>Στάδια μια αλλαγή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGEALL_DESC" xml:space="preserve">
+    <value>Στάδια όλες οι αλλαγές</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC" xml:space="preserve">
+    <value>Κατάσταση αποθετηρίου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC" xml:space="preserve">
+    <value>Καταργεί μια αλλαγή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGEALL_DESC" xml:space="preserve">
+    <value>Καταργεί όλες τις αλλαγές</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC" xml:space="preserve">
+    <value>Προσθέτει μια κεφαλίδα με το κλειδί και την τιμή σε όλα τα επερχόμενα αιτήματα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC" xml:space="preserve">
+    <value>Λαμβάνει τον τρέχοντα πράκτορα χρήστη</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC" xml:space="preserve">
+    <value>Επεξεργάζεται ένα κλειδί στην κεφαλίδα για όλα τα επερχόμενα αιτήματα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC" xml:space="preserve">
+    <value>Παραθέτει τις κεφαλίδες αιτημάτων</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_PUT_DESC" xml:space="preserve">
+    <value>Τοποθετεί το αρχείο στον διακομιστή HTTP χρησιμοποιώντας το καθορισμένο αίτημα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_PUTSTRING_DESC" xml:space="preserve">
+    <value>Βάζει τη συμβολοσειρά στον διακομιστή HTTP χρησιμοποιώντας το καθορισμένο αίτημα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC" xml:space="preserve">
+    <value>Δημοσιεύει το αρχείο στον διακομιστή HTTP χρησιμοποιώντας το καθορισμένο αίτημα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING" xml:space="preserve">
+    <value>Δημοσιεύει τη συμβολοσειρά στον διακομιστή HTTP χρησιμοποιώντας το καθορισμένο αίτημα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_" xml:space="preserve">
+    <value>Αφαιρεί ένα κλειδί στην κεφαλίδα για όλα τα επερχόμενα αιτήματα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC" xml:space="preserve">
+    <value>Ορίζει έναν παράγοντα χρήστη</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
+    <value>Προσθήκη κεφαλίδας που υπάρχει ήδη.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
+    <value>Αφαίρεση κεφαλίδας που δεν υπάρχει.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
+    <value>Επεξεργασία κεφαλίδας που δεν υπάρχει.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC" xml:space="preserve">
+    <value>Προσθέτει έναν νέο πίνακα, αντικείμενο ή ιδιότητα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC" xml:space="preserve">
+    <value>Καθορίζει τη γονική διαδρομή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC" xml:space="preserve">
+    <value>Καθορίζει τον τύπο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC" xml:space="preserve">
+    <value>Καθορίζει το όνομα ιδιότητας με το οποίο θα δημιουργηθεί. Αυτό χρησιμοποιείται εάν η γονική διαδρομή είναι ένα αντικείμενο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC" xml:space="preserve">
+    <value>Διαγράφει το αρχείο JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC" xml:space="preserve">
+    <value>Βρίσκει ένα ακίνητο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC" xml:space="preserve">
+    <value>Καθορίζει τη μητρική ιδιότητα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC" xml:space="preserve">
+    <value>Εμφανίζει πληροφορίες σχετικά με το αρχείο JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC" xml:space="preserve">
+    <value>Μην εμφανίζετε μεμονωμένες ιδιότητες</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC" xml:space="preserve">
+    <value>Εμφάνιση όλων των τιμών</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_RM_DESC" xml:space="preserve">
+    <value>Αφαιρεί ένα αντικείμενο στόχο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC" xml:space="preserve">
+    <value>Ομορφωμένο JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC" xml:space="preserve">
+    <value>Ελαχιστοποιημένο JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_DESC" xml:space="preserve">
+    <value>Ορίζει μια τιμή σε έναν υπάρχοντα πίνακα, αντικείμενο ή ιδιότητα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC" xml:space="preserve">
+    <value>Ανοίγει το αρχείο JSON στο διαδραστικό πρόγραμμα επεξεργασίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOTOKEN" xml:space="preserve">
+    <value>Το διακριτικό μέσα στο αρχείο JSON δεν βρέθηκε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN" xml:space="preserve">
+    <value>Το γονικό διακριτικό δεν βρέθηκε. Βεβαιωθείτε ότι έχετε γράψει σωστά τη διαδρομή &quot;{0}&quot;.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Ο καθορισμένος τύπος &quot;{0}&quot; δεν είναι έγκυρος.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η προσθήκη νέου στοιχείου με το όνομα ιδιότητας με τον τύπο γονικού διακριτικού &quot;{0}&quot;.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η προσθήκη νέου στοιχείου με το όνομα ιδιότητας &quot;{0}&quot; με τον τύπο γονικού διακριτικού &quot;{1}&quot;.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT" xml:space="preserve">
+    <value>Το όνομα ιδιότητας &quot;{0}&quot; στο γονικό &quot;{1}&quot;, πληκτρολογήστε &quot;{2}&quot;, δεν υπάρχει</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC" xml:space="preserve">
+    <value>Αναζητά τη ροή για μια φράση στον τίτλο ή/και στην περιγραφή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC" xml:space="preserve">
+    <value>Αναζήτηση τίτλου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC" xml:space="preserve">
+    <value>Αναζήτηση για περιγραφή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC" xml:space="preserve">
+    <value>Αναζήτηση τίτλου και περιγραφής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC" xml:space="preserve">
+    <value>Αναζήτηση με διάκριση πεζών-κεφαλαίων</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL" xml:space="preserve">
+    <value>Απέτυχε η ανάλυση της διεύθυνσης URL ροής:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FEEDNODESC" xml:space="preserve">
+    <value>Χωρίς περιγραφή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC" xml:space="preserve">
+    <value>Εμφανίζει τις λεπτομέρειες των αρχείων και των φακέλων</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
+    <value>Καταστέλλει τα &quot;μη εξουσιοδοτημένα&quot; μηνύματα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT" xml:space="preserve">
+    <value>Εισαγάγετε τη θέση του ιδιωτικού κλειδιού για το {0}. Γράψτε &quot;q&quot; για να ολοκληρώσετε την προσθήκη κλειδιών:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTING" xml:space="preserve">
+    <value>Προσπάθεια σύνδεσης στο {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC" xml:space="preserve">
+    <value>Εκτελεί ένα ερώτημα SQL</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC" xml:space="preserve">
+    <value>Πληροφορίες βάσης δεδομένων</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC" xml:space="preserve">
+    <value>Ανοίγει το αρχείο SQL στο διαδραστικό εξαγωνικό πρόγραμμα επεξεργασίας TUI</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED" xml:space="preserve">
+    <value>Αυτός ο τύπος αρχείου δεν υποστηρίζεται.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM" xml:space="preserve">
+    <value>Είστε βέβαιοι ότι θέλετε να διαγράψετε το {0};</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER" xml:space="preserve">
+    <value>Χρήστης</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE" xml:space="preserve">
+    <value>Ιστοσελίδα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_FSENTRY_NOSYMLINKINFO" xml:space="preserve">
+    <value>Δεν υπάρχουν πληροφορίες συμβόλων</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON" xml:space="preserve">
+    <value>Τροποποιήθηκε στις</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_TITLE" xml:space="preserve">
+    <value>Κατάσταση ευθυνών για το αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_HUNKNUM" xml:space="preserve">
+    <value>Αριθμός Hunk</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_LINENUM" xml:space="preserve">
+    <value>Αριθμός γραμμών</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALLINE" xml:space="preserve">
+    <value>Αρχικός αριθμός γραμμής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALLINE" xml:space="preserve">
+    <value>Τελικός αριθμός γραμμής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALCOMMIT_TITLE" xml:space="preserve">
+    <value>Αρχική δέσμευση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA" xml:space="preserve">
+    <value>Δέσμευση SHA</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE" xml:space="preserve">
+    <value>Μήνυμα δέσμευσης</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR" xml:space="preserve">
+    <value>Δέσμευση συγγραφέα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER" xml:space="preserve">
+    <value>Δέσμευση δεσμεύσεως</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM" xml:space="preserve">
+    <value>Αριθμός γονέων</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALCOMMIT_TITLE" xml:space="preserve">
+    <value>Τελική δέσμευση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSSAVING" xml:space="preserve">
+    <value>Αποθηκεύστε την εργασία σας πρώτα δημιουργώντας μια δέσμευση πριν ελέγξετε ένα υποκατάστημα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NOBRANCH" xml:space="preserve">
+    <value>Υποκατάστημα δεν υπάρχει.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1" xml:space="preserve">
+    <value>Πρέπει να αναγνωρίσετε τον εαυτό σας πριν χρησιμοποιήσετε αυτήν την εντολή. Χρήση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2" xml:space="preserve">
+    <value>να προσδιορίσεις τον εαυτό σου.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMIT_SUCCESS" xml:space="preserve">
+    <value>Ενημερώθηκε το αποθετήριο με νέα δέσμευση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMIT_DESC" xml:space="preserve">
+    <value>Περιγραφή για δέσμευση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES" xml:space="preserve">
+    <value>Γενικές αλλαγές σε</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES" xml:space="preserve">
+    <value>Το περιεχόμενο αλλάζει σε</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND" xml:space="preserve">
+    <value>Το τηλεχειριστήριο δεν υπάρχει.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_FETCH_NOREMOTES" xml:space="preserve">
+    <value>Δεν βρέθηκαν τηλεχειριστήρια για λήψη ενημερώσεων.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_FILESTATUS_TITLE" xml:space="preserve">
+    <value>Κατάσταση για το αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_BARE" xml:space="preserve">
+    <value>Γυμνό αποθετήριο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_DETACHED" xml:space="preserve">
+    <value>Το κεφάλι αποσπάται</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_NOREF" xml:space="preserve">
+    <value>Καμία αναφορά</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_SHALLOW" xml:space="preserve">
+    <value>Ρηχός κλώνος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT" xml:space="preserve">
+    <value>Διαδρομή προς το .git</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR" xml:space="preserve">
+    <value>Διαδρομή στον κατάλογο εργασίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE" xml:space="preserve">
+    <value>Δεσμεύσεις για υποκατάστημα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_MAKETAG_CREATED" xml:space="preserve">
+    <value>Δημιούργησε μια νέα ετικέτα! Εδώ είναι τα στοιχεία της ετικέτας σας:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_UPTODATE" xml:space="preserve">
+    <value>Το τοπικό σας αντίγραφο του repo είναι ενημερωμένο!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_FASTFORWARD" xml:space="preserve">
+    <value>Γρήγορη προώθηση σε</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_UPDATED" xml:space="preserve">
+    <value>Ενημερώθηκε το αποθετήριο σε</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS" xml:space="preserve">
+    <value>Η συγχώνευσή σας οδήγησε σε διενέξεις. Επιλύστε οποιαδήποτε από τις διενέξεις.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_SETID_SUCCESS" xml:space="preserve">
+    <value>Αναγνωρίσατε επιτυχώς τον εαυτό σας ως</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STAGE_NOCHANGES" xml:space="preserve">
+    <value>Δεν γίνονται τροποποιήσεις στο στάδιο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STAGE_SUCCESS" xml:space="preserve">
+    <value>Το αρχείο {0} σταδιοποιήθηκε με επιτυχία!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STAGE_FAILURE" xml:space="preserve">
+    <value>Απέτυχε η σταδιοποίηση του αρχείου {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_TITLE" xml:space="preserve">
+    <value>Κατάσταση για το υποκατάστημα {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOCHANGES" xml:space="preserve">
+    <value>Δεν γίνονται τροποποιήσεις.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_UNTRACKED" xml:space="preserve">
+    <value>Μη παρακολουθημένα αρχεία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOUNTRACKED" xml:space="preserve">
+    <value>Δεν υπάρχουν αρχεία χωρίς παρακολούθηση.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_ADDED" xml:space="preserve">
+    <value>Προστέθηκαν αρχεία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOADDED" xml:space="preserve">
+    <value>Δεν προστέθηκαν αρχεία.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_MODIFIED" xml:space="preserve">
+    <value>Τροποποιημένα αρχεία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOMODIFIED" xml:space="preserve">
+    <value>Δεν υπάρχουν τροποποιημένα αρχεία.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_REMOVED" xml:space="preserve">
+    <value>Καταργήθηκαν αρχεία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOREMOVED" xml:space="preserve">
+    <value>Δεν αφαιρέθηκαν αρχεία.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_STAGED" xml:space="preserve">
+    <value>Σταδιακά αρχεία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOSTAGED" xml:space="preserve">
+    <value>Δεν υπάρχουν σταδιακά αρχεία.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_RENAMEDSTAGED" xml:space="preserve">
+    <value>Μετονομασία σταδιακά αρχεία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED" xml:space="preserve">
+    <value>Δεν υπάρχουν μετονομασμένα σταδιακά αρχεία.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_RENAMED" xml:space="preserve">
+    <value>Μετονομασμένα αρχεία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NORENAMED" xml:space="preserve">
+    <value>Δεν υπάρχουν μετονομασμένα αρχεία.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_MISSING" xml:space="preserve">
+    <value>Λείπουν αρχεία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOMISSING" xml:space="preserve">
+    <value>Δεν λείπουν αρχεία.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES" xml:space="preserve">
+    <value>Δεν γίνονται τροποποιήσεις στο unstage.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS" xml:space="preserve">
+    <value>Το αρχείο {0} καταργήθηκε με επιτυχία!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE" xml:space="preserve">
+    <value>Αποτυχία κατάργησης σκηνής του αρχείου {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_POST_POSTING_FILE" xml:space="preserve">
+    <value>Δημοσίευση αρχείου {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_POST_POSTING_STRING" xml:space="preserve">
+    <value>Δημοσίευση συμβολοσειράς στο {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING" xml:space="preserve">
+    <value>Μεταφόρτωση συμβολοσειράς στο {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_ADD_ITEM_FAILURE" xml:space="preserve">
+    <value>Το κέλυφος JSON απέτυχε να προσθέσει ένα στοιχείο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_PROPERTY_FOUND" xml:space="preserve">
+    <value>Το ακίνητο βρίσκεται σε</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND" xml:space="preserve">
+    <value>Το ακίνητο δεν βρέθηκε</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_TITLE" xml:space="preserve">
+    <value>Βασικές πληροφορίες διακριτικού JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_TYPE" xml:space="preserve">
+    <value>Τύπος βάσης</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_VALUES" xml:space="preserve">
+    <value>Η βάση έχει αξίες</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS" xml:space="preserve">
+    <value>Παιδική συμβολική καταμέτρηση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH" xml:space="preserve">
+    <value>Μονοπάτι βάσης</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE" xml:space="preserve">
+    <value>Μεμονωμένες πληροφορίες διακριτικού JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE" xml:space="preserve">
+    <value>Τύπος κουπονιού</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES" xml:space="preserve">
+    <value>Το Token έχει αξίες</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH" xml:space="preserve">
+    <value>Συμβολική διαδρομή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE" xml:space="preserve">
+    <value>Συμβολική αξία</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE" xml:space="preserve">
+    <value>Πληροφορίες ιδιοκτησίας για</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE" xml:space="preserve">
+    <value>Τύπος ακινήτου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT" xml:space="preserve">
+    <value>Καταμέτρηση περιουσίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME" xml:space="preserve">
+    <value>Ονομα ιδιοκτησίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH" xml:space="preserve">
+    <value>Διαδρομή ιδιοκτησίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE" xml:space="preserve">
+    <value>Αξία περιουσίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_REMOVEITEMFAILED" xml:space="preserve">
+    <value>Το κέλυφος JSON απέτυχε να αφαιρέσει ένα στοιχείο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETITEMFAILED" xml:space="preserve">
+    <value>Το κέλυφος JSON απέτυχε να ορίσει ένα στοιχείο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX" xml:space="preserve">
+    <value>Το μήνυμα {0} από τον χρήστη {1} μετακινήθηκε. Απομένουν {2} μηνύματα για ανάλυση.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_ATTACHMENTS" xml:space="preserve">
+    <value>Συνημμένα:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE" xml:space="preserve">
+    <value>Αυτή η σύνδεση περιέχει μια μη έγκυρη παρουσία ροής RSS.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE" xml:space="preserve">
+    <value>Άγνωστος τίτλος άρθρου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS" xml:space="preserve">
+    <value>Δυστυχώς, αυτό το άρθρο δεν έχει περιεχόμενο. Μπορείτε ακόμα να παρακολουθήσετε το άρθρο στο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOLINK" xml:space="preserve">
+    <value>Αυτό το άρθρο δεν έχει σύνδεσμο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατό το άνοιγμα του προγράμματος περιήγησης κεντρικού υπολογιστή στον σύνδεσμο του άρθρου.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED" xml:space="preserve">
+    <value>Τροποποιήθηκε:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT" xml:space="preserve">
+    <value>Εισαγάγετε τιμή παραμέτρου για {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMANDSUCCESS" xml:space="preserve">
+    <value>Η εντολή SQL πέτυχε. Εδώ είναι οι απαντήσεις:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMANDFAILURE" xml:space="preserve">
+    <value>Η εντολή SQL απέτυχε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_PATH" xml:space="preserve">
+    <value>Διαδρομή βάσης δεδομένων:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_VERSION" xml:space="preserve">
+    <value>Έκδοση διακομιστή:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_STATE" xml:space="preserve">
+    <value>Κατάσταση σύνδεσης:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_STRING" xml:space="preserve">
+    <value>Συμβολοσειρά σύνδεσης:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_NAME" xml:space="preserve">
+    <value>Ονομα βάσης δεδομένων:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>Προεπιλογή προεπιλογής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους του αρχείου.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους FTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους Git.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους HTTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους JSON.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>JSON Shell Prompt Preset</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME" xml:space="preserve">
+    <value>Ενεργοποίηση αυτόματης αποθήκευσης του επεξεργαστή JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC" xml:space="preserve">
+    <value>Ενεργοποιεί ή απενεργοποιεί τη δυνατότητα αυτόματης αποθήκευσης του προγράμματος επεξεργασίας JSON.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME" xml:space="preserve">
+    <value>Διάστημα αυτόματης αποθήκευσης προγράμματος επεξεργασίας JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους αλληλογραφίας.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME" xml:space="preserve">
+    <value>Μέγιστος αριθμός e-mail σε μία σελίδα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC" xml:space="preserve">
+    <value>Πόσα μηνύματα ηλεκτρονικού ταχυδρομείου να εμφανίζονται σε μία σελίδα;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους RSS.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>Προρύθμιση προτροπής RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους SFTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του κελύφους SQL.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>SQL Shell Prompt Preset</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILETYPE" xml:space="preserve">
+    <value>Τύπος αρχείου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC" xml:space="preserve">
+    <value>Πραγματοποιεί αναζήτηση στη βιβλιοθήκη ροής δεδομένων για μια ροή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPY" xml:space="preserve">
+    <value>Αντίγραφο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVE" xml:space="preserve">
+    <value>Κίνηση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_DELETE" xml:space="preserve">
+    <value>Διαγράφω</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_UP" xml:space="preserve">
+    <value>Επάνω</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO" xml:space="preserve">
+    <value>Πληροφορίες</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_RENAME" xml:space="preserve">
+    <value>Μετονομάζω</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_NEWFOLDER" xml:space="preserve">
+    <value>Νέος φάκελος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN" xml:space="preserve">
+    <value>Ανοιχτό</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATAEXTENDED" xml:space="preserve">
+    <value>Μεταδεδομένα MIME (εκτεταμένα)</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED" xml:space="preserve">
+    <value>Το Handler είναι εγγεγραμμένο αλλά κατά κάποιο τρόπο απέτυχε να αποκτήσει ένα πρόγραμμα χειρισμού επέκτασης για</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+    <value>Αντιγραφή σε</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+    <value>Μετακίνηση σε</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Αποτυχία λήψης καταχωρήσεων ρυθμίσεων.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_CANTGETENTRIES" xml:space="preserve">
+    <value>Δεν είναι δυνατή η λήψη εγγραφών αρχείου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED" xml:space="preserve">
+    <value>Το αρχείο δεν έχει φορτωθεί ακόμα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE" xml:space="preserve">
+    <value>Δεν είναι δυνατός ο προσδιορισμός του τρέχοντος καταλόγου αρχειοθέτησης.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH" xml:space="preserve">
+    <value>Το τελευταίο κέλυφος δεν είναι αυτό το κέλυφος για να ξεκολλήσετε.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT" xml:space="preserve">
+    <value>Ο πελάτης δεν έχει συμπληρωθεί.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT" xml:space="preserve">
+    <value>Δεν υπάρχει ακόμη πρόγραμμα-πελάτης FTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1" xml:space="preserve">
+    <value>Ο πελάτης δεν έχει συνδεθεί ακόμα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP" xml:space="preserve">
+    <value>Δεν είναι δυνατή η λήψη της διαμόρφωσης διακομιστή IMAP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP" xml:space="preserve">
+    <value>Δεν είναι δυνατή η λήψη της διαμόρφωσης διακομιστή SMTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2" xml:space="preserve">
+    <value>Ο πελάτης δεν έχει συνδεθεί ακόμα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE" xml:space="preserve">
+    <value>Διαβάστε περισσότερα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH" xml:space="preserve">
+    <value>Φρεσκάρω</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE" xml:space="preserve">
+    <value>Δεν υπάρχει άρθρο.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED" xml:space="preserve">
+    <value>Δεν υπάρχει τροφοδοσία.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION" xml:space="preserve">
+    <value>Δεν είναι δυνατή η σύνδεση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_STREAMNOTOPEN" xml:space="preserve">
+    <value>Η ροή του αρχείου δεν έχει ανοίξει ακόμα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOTOPEN" xml:space="preserve">
+    <value>Το αρχείο JSON δεν είναι ακόμη ανοιχτό.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC" xml:space="preserve">
+    <value>Εύρος λήξης αριθμού γραμμής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC" xml:space="preserve">
+    <value>Διαδρομή προς το αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC" xml:space="preserve">
+    <value>Αρχείο προέλευσης ή κατάλογος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC" xml:space="preserve">
+    <value>Αρχείο ή κατάλογος στόχος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC" xml:space="preserve">
+    <value>Αλγόριθμος κρυπτογράφησης</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC" xml:space="preserve">
+    <value>Διαδρομή σε έναν κατάλογο με το αποθετήριο Git</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC" xml:space="preserve">
+    <value>Εύρος έναρξης αριθμού γραμμής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC" xml:space="preserve">
+    <value>Όνομα υποκαταστήματος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC" xml:space="preserve">
+    <value>Περίληψη δέσμευσης</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_ARGUMENT_COMMITSHA_DESC" xml:space="preserve">
+    <value>Δέσμευση κατακερματισμού SHA</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC" xml:space="preserve">
+    <value>Όνομα απομακρυσμένου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_TAGNAME_DESC" xml:space="preserve">
+    <value>Όνομα ετικέτας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_MESSAGE_DESC" xml:space="preserve">
+    <value>Μήνυμα για να σχολιάσετε την ετικέτα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_EMAIL_DESC" xml:space="preserve">
+    <value>Το email σας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Το όνομα χρήστη σας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGE_ARGUMENT_UNSTAGED_DESC" xml:space="preserve">
+    <value>Διαδρομή προς το μη σταδιοποιημένο αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_ARGUMENT_STAGED_DESC" xml:space="preserve">
+    <value>Διαδρομή στο σταδιοποιημένο αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC" xml:space="preserve">
+    <value>Διαδρομή προς το αρχείο αρχειοθέτησης</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
+    <value>Τοπικός κατάλογος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC" xml:space="preserve">
+    <value>Κατάλογος μέσα στο αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC" xml:space="preserve">
+    <value>Αρχείο στο αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC" xml:space="preserve">
+    <value>Τοπικός κατάλογος για εξαγωγή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC" xml:space="preserve">
+    <value>Τοπικό αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC" xml:space="preserve">
+    <value>Αρχειοθέτηση καταλόγου για προσθήκη</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC" xml:space="preserve">
+    <value>Διακομιστής FTP για σύνδεση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC" xml:space="preserve">
+    <value>Διαδρομή προς το απομακρυσμένο αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC" xml:space="preserve">
+    <value>Διαδρομή προς τον τοπικό κατάλογο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC" xml:space="preserve">
+    <value>Διαδρομή προς τον απομακρυσμένο κατάλογο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC" xml:space="preserve">
+    <value>Διαδρομή προς το απομακρυσμένο αρχείο προς διαγραφή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Εντολή διακομιστή για εκτέλεση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_MKLDIR_DESC" xml:space="preserve">
+    <value>Δημιουργεί έναν τοπικό κατάλογο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC" xml:space="preserve">
+    <value>Δημιουργεί έναν απομακρυσμένο κατάλογο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_SOURCEFILEORDIR_DESC" xml:space="preserve">
+    <value>Διαδρομή προς το αρχείο προέλευσης ή τον κατάλογο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_TARGETFILEORDIR_DESC" xml:space="preserve">
+    <value>Διαδρομή προς το αρχείο ή τον κατάλογο προορισμού</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_PUT_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Διαδρομή προς το τοπικό αρχείο</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_PERM_ARGUMENT_PERMNUMBER_DESC" xml:space="preserve">
+    <value>Αριθμοί αδειών σύμφωνα με το chmod</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC" xml:space="preserve">
+    <value>Καθορίζει εάν ο τύπος μεταφοράς είναι ASCII ή Binary</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK" xml:space="preserve">
+    <value>Συμβολικός σύνδεσμος προς: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC" xml:space="preserve">
+    <value>Κλειδί κεφαλίδας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>Τιμή κεφαλίδας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC" xml:space="preserve">
+    <value>Αίτημα HTTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Αρχείο για μεταφόρτωση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>Συμβολοσειρά για μεταφόρτωση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC" xml:space="preserve">
+    <value>Συμβολοσειρά παράγοντα χρήστη</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC" xml:space="preserve">
+    <value>Διεύθυνση ηλεκτρονικού ταχυδρομείου για να συνδεθείτε</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER" xml:space="preserve">
+    <value>Δημιουργία φακέλου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE" xml:space="preserve">
+    <value>Κίνηση...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL" xml:space="preserve">
+    <value>Μετακινήστε όλα...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER" xml:space="preserve">
+    <value>Μετονομασία φακέλου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER" xml:space="preserve">
+    <value>Κατάργηση φακέλου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Κατάργηση μηνύματος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL" xml:space="preserve">
+    <value>Κατάργηση όλων...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_FOLDERMESSAGEOPENFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατό το άνοιγμα φακέλου ή μηνύματος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT" xml:space="preserve">
+    <value>Γράψτε το νέο όνομα καταλόγου.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR" xml:space="preserve">
+    <value>Δημιουργία καταλόγου...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_CREATINGDIRFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η δημιουργία φακέλου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEPROMPT" xml:space="preserve">
+    <value>Επιλέξτε έναν νέο κατάλογο για να μετακινήσετε αυτό το μήνυμα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE" xml:space="preserve">
+    <value>Μετακινούμενο μήνυμα...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετακίνηση του μηνύματος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEBYSAMESENDERPROMPT" xml:space="preserve">
+    <value>Επιλέξτε έναν νέο κατάλογο για να μετακινήσετε όλα τα μηνύματα από τον ίδιο αποστολέα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER" xml:space="preserve">
+    <value>Μετακίνηση μηνυμάτων από τον αποστολέα {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDERFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετακίνηση όλων των μηνυμάτων από τον ίδιο αποστολέα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT" xml:space="preserve">
+    <value>Γράψτε το νέο όνομα καταλόγου για μετονομασία του {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR" xml:space="preserve">
+    <value>Μετονομασία καταλόγου...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIRFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η μετονομασία του φακέλου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR" xml:space="preserve">
+    <value>Κατάργηση καταλόγου...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIRFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η κατάργηση του φακέλου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE" xml:space="preserve">
+    <value>Αφαίρεση μηνύματος...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η διαγραφή του μηνύματος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER" xml:space="preserve">
+    <value>Κατάργηση μηνυμάτων από τον αποστολέα {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η διαγραφή όλων των μηνυμάτων από τον ίδιο αποστολέα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC" xml:space="preserve">
+    <value>Όνομα καταλόγου αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC" xml:space="preserve">
+    <value>Αριθμός σελίδας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC" xml:space="preserve">
+    <value>Αναγνωριστικό μηνύματος</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC" xml:space="preserve">
+    <value>Όνομα αποστολέα</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC" xml:space="preserve">
+    <value>Όνομα παλιού καταλόγου αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC" xml:space="preserve">
+    <value>Όνομα νέου καταλόγου αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC" xml:space="preserve">
+    <value>Διαδραστική διαχείριση αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC" xml:space="preserve">
+    <value>Διακομιστής SFTP για σύνδεση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC" xml:space="preserve">
+    <value>Σύνδεσμος τροφοδοσίας RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC" xml:space="preserve">
+    <value>Αριθμός ροής</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC" xml:space="preserve">
+    <value>Φράση για αναζήτηση</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC" xml:space="preserve">
+    <value>Πρώτο αρχείο JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC" xml:space="preserve">
+    <value>Δεύτερο αρχείο JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC" xml:space="preserve">
+    <value>Διαδρομή προς το αρχείο JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC" xml:space="preserve">
+    <value>Διαδρομή για την έξοδο του αρχείου JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
+    <value>Αξία JSON για προσθήκη</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC" xml:space="preserve">
+    <value>Όνομα ιδιοκτησίας JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC" xml:space="preserve">
+    <value>Διαδρομή αντικειμένου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
+    <value>Τιμή JSON</value>
+  </data>
+
+</root>

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_DATES_KEYBINDING_EXIT" xml:space="preserve">
+    <value>출구</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_GETTIMEINFO_DESC" xml:space="preserve">
+    <value>날짜 및 시간 정보를 가져옵니다.</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
+    <value>밀리 초 :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
+    <value>초 :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
+    <value>의사록:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
+    <value>시간:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
+    <value>요일 :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
+    <value>개월 :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
+    <value>년:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
+    <value>일 :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
+    <value>요일 :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
+    <value>바이너리 :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
+    <value>현지 시각:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
+    <value>세계시 :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
+    <value>유닉스 시간 :</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
+    <value>날짜 정보를 파싱하지 못했습니다.</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2" xml:space="preserve">
+    <value>형식이 올바른지 확인하십시오.</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
+    <value>데이트:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
+    <value>시각:</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
+    <value>간단한 스톱워치</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STARTSTOP" xml:space="preserve">
+    <value>시작 또는 중지</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_LAP" xml:space="preserve">
+    <value>무릎</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_RESET" xml:space="preserve">
+    <value>초기화</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_TIMER_DESC" xml:space="preserve">
+    <value>간단한 타이머</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_KEYBINDING_SETTIME" xml:space="preserve">
+    <value>간격 설정</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER" xml:space="preserve">
+    <value>표시된 시간 초과는 숫자가 아닙니다.</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_TIMEOUTPROMPT" xml:space="preserve">
+    <value>시간 초과를 밀리초 단위로 지정</value>
+  </data>
+  <data name="NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC" xml:space="preserve">
+    <value>Figgle 라이브러리에서 지원하는 figlet 글꼴을 작성하십시오. 자세한 내용은 라이브러리 설명서를 참조하십시오.</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME" xml:space="preserve">
+    <value>타이머용 Figlet 글꼴</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME" xml:space="preserve">
+    <value>타이머에 Figlet 활성화</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC" xml:space="preserve">
+    <value>활성화되면 타이머에 figlet을 사용합니다. Figlet이 활성화된 상태에서 시간을 적절하게 렌더링하려면 큰 콘솔 화면이 필요합니다.</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC" xml:space="preserve">
+    <value>현재 날짜 및 시간 정보를 가져옵니다.</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_HEADER" xml:space="preserve">
+    <value>정보</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STATUS_READY" xml:space="preserve">
+    <value>스톱워치가 준비되었습니다.</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STATUS_RUNNING" xml:space="preserve">
+    <value>스톱워치 실행 중!</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STATUS_NEWLAP" xml:space="preserve">
+    <value>새로운 랩!</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN" xml:space="preserve">
+    <value>카운트다운 시작</value>
+  </data>
+  <data name="NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>설정 항목을 가져오지 못했습니다.</value>
+  </data>
+  <data name="NKS_DATES_HOMEPAGE_TIMER" xml:space="preserve">
+    <value>시간제 노동자</value>
+  </data>
+  <data name="NKS_DATES_HOMEPAGE_STOPWATCH" xml:space="preserve">
+    <value>스톱워치</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_NOLAPS" xml:space="preserve">
+    <value>아직 랩이 없습니다.</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_LAPLIST" xml:space="preserve">
+    <value>랩 목록</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_POMODORO_DESC" xml:space="preserve">
+    <value>포모도로 타이머</value>
+  </data>
+  <data name="NKS_DATES_HOMEPAGE_POMODORO" xml:space="preserve">
+    <value>포모도로</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_STATUS_READY" xml:space="preserve">
+    <value>포모도로 타이머가 준비되었습니다</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_STATUS_TIMERNUM" xml:space="preserve">
+    <value>4번의 반복에서 포모도로 타이머 번호 {0}</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_STATUS_SHORTBREAK" xml:space="preserve">
+    <value>짧은 휴식</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_TIMEOUTPROMPT" xml:space="preserve">
+    <value>밀리초 단위로 휴식 시간 제한을 지정하세요.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME" xml:space="preserve">
+    <value>휴식 간격 설정</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC" xml:space="preserve">
+    <value>정보를 인쇄할 날짜 및 시간</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_DESC" xml:space="preserve">
+    <value>이 섹션에서는 타이머 애플리케이션의 작동 방식을 구성할 수 있습니다.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_DESC" xml:space="preserve">
+    <value>이 섹션에서는 포모도로 타이머 애플리케이션의 작동 방식을 구성할 수 있습니다.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME" xml:space="preserve">
+    <value>포모도로 타이머에 Figlet 활성화</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC" xml:space="preserve">
+    <value>활성화하면, 포모도로 타이머에 figlet을 사용합니다. Figlet을 활성화하면 시간을 제대로 렌더링하려면 큰 콘솔 화면이 필요하다는 점에 유의하세요.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME" xml:space="preserve">
+    <value>포모도로 타이머를 위한 Figlet 글꼴</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODDATEINVALID" xml:space="preserve">
+    <value>생산 날짜가 잘못되었습니다.</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPTIMEINVALID" xml:space="preserve">
+    <value>만료 기간이 잘못되었습니다.</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPDATEINVALID" xml:space="preserve">
+    <value>만료 날짜가 잘못되었습니다.</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODDATE" xml:space="preserve">
+    <value>생산 날짜</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPDATE" xml:space="preserve">
+    <value>만료 날짜</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPTIME" xml:space="preserve">
+    <value>만료 기간</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODHEALTH" xml:space="preserve">
+    <value>제품 상태</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODSTATUS" xml:space="preserve">
+    <value>제품 상태</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_NOEXPIRYINFO" xml:space="preserve">
+    <value>제품 만료 정보를 가져오지 못했습니다.</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_DESC" xml:space="preserve">
+    <value>제품 만료 정보를 가져옵니다.</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC" xml:space="preserve">
+    <value>생산 날짜(제품 측면 또는 하단 참조)</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC" xml:space="preserve">
+    <value>만료 날짜 또는 기간(같은 위치에 명시적으로 작성되거나 6개월 또는 1년과 같이 기간)</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC" xml:space="preserve">
+    <value>대상 제품이 만료 날짜를 명시적으로 지정하지 않았는지 여부</value>
+  </data>
+
+</root>

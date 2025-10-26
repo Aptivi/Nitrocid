@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_AMUSEMENTS_COMMAND_SOLVER_DESC" xml:space="preserve">
+    <value>Vea si puede resolver ecuaciones matemáticas a tiempo</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_CORRECT" xml:space="preserve">
+    <value>Resuelto perfectamente!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_INCORRECT" xml:space="preserve">
+    <value>Resuelto incorrectamente</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Activar colores verdaderos</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME" xml:space="preserve">
+    <value>Retraso en milisegundos</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC" xml:space="preserve">
+    <value>¿Cuántos milisegundos esperar antes de realizar la siguiente escritura?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC" xml:space="preserve">
+    <value>Vea si puede presionar una tecla a tiempo</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_NOTONTIME" xml:space="preserve">
+    <value>Personaje no presionado a tiempo.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_CORRECT" xml:space="preserve">
+    <value>¡Has presionado el personaje correcto!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_INCORRECT" xml:space="preserve">
+    <value>Ha pulsado el carácter equivocado.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_ESC" xml:space="preserve">
+    <value>Presione ESC para salir.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Nivel mínimo de color rojo</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Nivel mínimo de color verde</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Nivel mínimo de color azul</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_NAME" xml:space="preserve">
+    <value>Nivel de color mínimo</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Nivel máximo de color rojo</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Nivel máximo de color verde</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Nivel máximo de color azul</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Nivel máximo de color</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Nivel mínimo de color rojo. El valor mínimo aceptado es 0 y el valor máximo aceptado es 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Nivel mínimo de color verde. El valor mínimo aceptado es 0 y el valor máximo aceptado es 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Nivel mínimo de color azul. El valor mínimo aceptado es 0 y el valor máximo aceptado es 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_DESC" xml:space="preserve">
+    <value>Nivel mínimo de color. El valor mínimo aceptado es 0 y el valor máximo aceptado es 255 para 255 colores o 16 para 16 colores.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Nivel máximo de color rojo. El valor mínimo aceptado es 0 y el valor máximo aceptado es 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Nivel máximo de color verde. El valor mínimo aceptado es 0 y el valor máximo aceptado es 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Nivel máximo de color azul. El valor mínimo aceptado es 0 y el valor máximo aceptado es 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME" xml:space="preserve">
+    <value>Número mínimo de solucionador</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_NAME" xml:space="preserve">
+    <value>Número máximo de solucionador</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_NAME" xml:space="preserve">
+    <value>Solver mostrar entrada</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_DESC" xml:space="preserve">
+    <value>Ya sea para mostrar lo que está escrito en el indicador de entrada.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_DESC" xml:space="preserve">
+    <value>¿Cuál es el número mínimo para elegir?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_DESC" xml:space="preserve">
+    <value>¿Cuál es el número máximo a elegir?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Activa el soporte de color verdadero.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_NAME" xml:space="preserve">
+    <value>Dificultad predeterminada para SpeedPress</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_NAME" xml:space="preserve">
+    <value>Tiempo de espera de pulsación de tecla para SpeedPress</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_DESC" xml:space="preserve">
+    <value>¿Cuántos milisegundos hay que esperar a que se presione la tecla antes del tiempo de espera? (En dificultad personalizada)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_NAME" xml:space="preserve">
+    <value>Retardo de etapa en milisegundos</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_DESC" xml:space="preserve">
+    <value>¿Cuántos milisegundos esperar antes de dibujar la siguiente etapa?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC" xml:space="preserve">
+    <value>Comienza el juego en dificultad fácil.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC" xml:space="preserve">
+    <value>Comienza el juego en dificultad media.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC" xml:space="preserve">
+    <value>Comienza el juego en dificultad difícil.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC" xml:space="preserve">
+    <value>Comienza el juego en dificultad muy difícil.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC" xml:space="preserve">
+    <value>Inicia el juego en dificultad personalizada. Tenga en cuenta que el tiempo de espera personalizado en milisegundos debe escribirse como argumento.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_NAME" xml:space="preserve">
+    <value>Ubicación del texto de progreso</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_DESC" xml:space="preserve">
+    <value>Seleccione su ubicación de texto de progreso preferida.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_NEEDSNUM" xml:space="preserve">
+    <value>Solo puedes escribir los números.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT" xml:space="preserve">
+    <value>Presione &quot;q&quot; para salir.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SNAKER_DESC" xml:space="preserve">
+    <value>¡El juego de la serpiente!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_METEOR_DESC" xml:space="preserve">
+    <value>Eres una nave espacial y los meteoritos vienen a destruirte. ¿Puedes guardarlo?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMON_GAMEOVER" xml:space="preserve">
+    <value>Juego terminado</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR" xml:space="preserve">
+    <value>Error inesperado</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_NAME" xml:space="preserve">
+    <value>Usa PowerLine para renderizar una nave espacial</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_NAME" xml:space="preserve">
+    <value>Velocidad del juego de meteoritos</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_DESC" xml:space="preserve">
+    <value>Ya sea para usar PowerLine para renderizar la nave espacial o para usar el carácter estándar mayor que. Si desea utilizar PowerLine con Meteor, debe instalar una fuente adecuada compatible con PowerLine.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_DESC" xml:space="preserve">
+    <value>Especifica la velocidad del juego en milisegundos.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC" xml:space="preserve">
+    <value>¿Apoyas al caballo equivocado?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC" xml:space="preserve">
+    <value>Comienza el juego del ahorcado.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC" xml:space="preserve">
+    <value>¡Una letra equivocada y estás colgado!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC" xml:space="preserve">
+    <value>Pon a prueba tus habilidades de ahorcado lanzando una letra al azar.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC" xml:space="preserve">
+    <value>Eres una nave espacial y los meteoritos vienen a destruirte. ¿Podrás esquivarlos?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_QUOTE_DESC" xml:space="preserve">
+    <value>Obtiene una cotización aleatoria</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC" xml:space="preserve">
+    <value>Ruleta rusa</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC" xml:space="preserve">
+    <value>Dos naves espaciales están peleando entre sí. Un disparo y la nave espacial explotará. Este es un juego local para dos jugadores.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_DESC" xml:space="preserve">
+    <value>El simulador de juegos de Wordle</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
+    <value>Juega el juego Wordle originalmente</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
+    <value>Conmemora el quinto aniversario del lanzamiento del kernel</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
+    <value>Conmemorando el 5º aniversario del kernel</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
+    <value>Primer lanzamiento</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
+    <value>Este kernel se lanzó por primera vez el 22 de febrero de 2018 para crear un simulador minimalista que realmente simula cómo funciona el núcleo del kernel.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
+    <value>Solía albergar solo un shell y algunos comandos, y solo funcionaba con Windows debido al uso de la herramienta Instrumental de administración de Windows.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
+    <value>Tampoco contaba con documentación propia.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
+    <value>Refinamiento del núcleo</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
+    <value>Se lanzaron versiones del kernel, como la segunda versión principal para agregar colores y características básicas, y la cuarta versión principal para agregar configuración.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
+    <value>La documentación comenzó en la sexta versión principal y poco a poco se han agregado varias cosas interesantes al kernel.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
+    <value>Versión actual</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
+    <value>Esta versión ahora refina el kernel hasta el punto de que ya no se comporta como las versiones anteriores.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
+    <value>Debido a que se lanzaron nuevas características innovadoras, decidimos nombrar este kernel...</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
+    <value>¡Feliz quinto aniversario!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
+    <value>Caballo</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_KEYBINDINGS" xml:space="preserve">
+    <value>[ENTRAR] Iniciar la carrera | [ESC] Salir | [ARRIBA/ABAJO] Mover selección</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_YOUWIN" xml:space="preserve">
+    <value>¡Tu caballo ganó la carrera!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_YOULOSE" xml:space="preserve">
+    <value>¡Tu caballo perdió la carrera!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HANGMAN_YOULOSE" xml:space="preserve">
+    <value>¡Estás colgado!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HANGMAN_YOUWIN" xml:space="preserve">
+    <value>¡Tú ganas!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_QUESTION" xml:space="preserve">
+    <value>¿Cuál es tu apuesta?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_RIGHT" xml:space="preserve">
+    <value>¡Lo has adivinado bien!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_WRONG" xml:space="preserve">
+    <value>Lo entendiste mal.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_UNLUCKY" xml:space="preserve">
+    <value>Pero tienes mala suerte. Perdedor.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_LUCKY" xml:space="preserve">
+    <value>¡Tienes suerte! ¡Ganador!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SHIPDUET_DRAW" xml:space="preserve">
+    <value>Es un empate.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SHIPDUET_WINNING" xml:space="preserve">
+    <value>¡El jugador {0} gana!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_CURRENTCHAR" xml:space="preserve">
+    <value>Personaje actual:</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_WORDLE_WIN" xml:space="preserve">
+    <value>¡Has adivinado la palabra correcta! ¡Tú ganas!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_NAME" xml:space="preserve">
+    <value>Configuraciones de color</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_DESC" xml:space="preserve">
+    <value>Un juego de serpientes.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_QUOTE_DESC" xml:space="preserve">
+    <value>Te muestra bonitas citas famosas.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_DESC" xml:space="preserve">
+    <value>Seleccione su dificultad preferida, donde 0 es fácil, 1 es media, 2 es difícil, 3 es muy difícil y 4 es personalizada.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_NAME" xml:space="preserve">
+    <value>Utilice PowerLine para renderizar naves espaciales en ShipDuet</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_DESC" xml:space="preserve">
+    <value>Si usar PowerLine para renderizar la nave espacial o usar el carácter estándar mayor que. Si desea utilizar PowerLine con ShipDuet, debe instalar una fuente adecuada compatible con PowerLine.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETSPEED_NAME" xml:space="preserve">
+    <value>Velocidad del juego en ShipDuet</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC" xml:space="preserve">
+    <value>Utiliza la lista de palabras comunes.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC" xml:space="preserve">
+    <value>Utiliza la lista completa de palabras.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_PONG_DESC" xml:space="preserve">
+    <value>¡El juego de ping-pong!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PONG_SCORE" xml:space="preserve">
+    <value>Puntaje</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>No se pudieron obtener las entradas de configuración.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_BACKRACE" xml:space="preserve">
+    <value>Carreras de caballos</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_HANGMAN" xml:space="preserve">
+    <value>Verdugo</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE" xml:space="preserve">
+    <value>Esquiva de meteorito</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER" xml:space="preserve">
+    <value>Disparador de meteoritos</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_PONG" xml:space="preserve">
+    <value>Apestar</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET" xml:space="preserve">
+    <value>Dúo de barcos</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SNAKER" xml:space="preserve">
+    <value>Serpiente</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_WORDLE" xml:space="preserve">
+    <value>Palabra</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG" xml:space="preserve">
+    <value>Wordle (original)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN" xml:space="preserve">
+    <value>Cita desconocida.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN" xml:space="preserve">
+    <value>Autor desconocido.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_DESC" xml:space="preserve">
+    <value>Esto le permite configurar los colores.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_DESC" xml:space="preserve">
+    <value>Esta sección le permite configurar Solver.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DESC" xml:space="preserve">
+    <value>Esta sección le permite configurar SpeedPress.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC" xml:space="preserve">
+    <value>Esta sección le permite configurar Meteor y ShipDuet.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_NAME" xml:space="preserve">
+    <value>Retraso en milisegundos</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_DESC" xml:space="preserve">
+    <value>¿Cuántos milisegundos esperar antes de realizar la siguiente escritura?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_NAME" xml:space="preserve">
+    <value>Nuevo retardo de pantalla en milisegundos</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC" xml:space="preserve">
+    <value>¿Cuántos milisegundos hay que esperar antes de escribir en la nueva pantalla?</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_GENNAME_DESC" xml:space="preserve">
+    <value>Generador de nombres y apellidos</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME" xml:space="preserve">
+    <value>Recuento mínimo de nombres</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_NAME" xml:space="preserve">
+    <value>Recuento máximo de nombres</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC" xml:space="preserve">
+    <value>Cantidad mínima de nombres para generar</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC" xml:space="preserve">
+    <value>Cantidad máxima de nombres a generar</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_NAME" xml:space="preserve">
+    <value>Los años de edad mínima cuentan</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_NAME" xml:space="preserve">
+    <value>Número máximo de años de edad</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC" xml:space="preserve">
+    <value>Cantidad mínima de años de edad para generar</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC" xml:space="preserve">
+    <value>Cantidad máxima de años de edad para generar</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC" xml:space="preserve">
+    <value>Buscador de nombre</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC" xml:space="preserve">
+    <value>Genera nombres usando la lista de nombres masculinos.</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC" xml:space="preserve">
+    <value>Genera nombres usando la lista de nombres femeninos.</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC" xml:space="preserve">
+    <value>Generar nombres usando la lista de nombres unificados</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC" xml:space="preserve">
+    <value>Buscador de apellidos</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC" xml:space="preserve">
+    <value>Simula una búsqueda en una base de datos para una persona aleatoria.</value>
+  </data>
+  <data name="NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>No se pudieron obtener las entradas de configuración.</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_T_DESC" xml:space="preserve">
+    <value>Generar etiquetas de nombre (actualmente no se admiten diéresis)</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC" xml:space="preserve">
+    <value>Término de búsqueda</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC" xml:space="preserve">
+    <value>Prefijo del nombre a buscar</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC" xml:space="preserve">
+    <value>Sufijo del nombre a buscar</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC" xml:space="preserve">
+    <value>Prefijo de apellido a buscar</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC" xml:space="preserve">
+    <value>Sufijo de apellido a buscar</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
+    <value>¿Cuántos nombres generar?</value>
+  </data>
+
+</root>

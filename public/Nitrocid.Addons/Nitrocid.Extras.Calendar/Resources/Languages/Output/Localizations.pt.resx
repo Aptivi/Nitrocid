@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_CALENDAR_COMMAND_ALTDATE_DESC" xml:space="preserve">
+    <value>Mostra data e hora</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Saída</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Ative cores verdadeiras</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>Atraso em Milissegundos</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>Quantos milissegundos esperar antes de fazer a próxima gravação?</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Nível mínimo de cor vermelha</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Nível mínimo de cor verde</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Nível mínimo de cor azul</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_NAME" xml:space="preserve">
+    <value>Nível mínimo de cor</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Nível máximo de cor vermelha</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Nível máximo de cor verde</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Nível máximo de cor azul</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Nível máximo de cor</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Nível mínimo de cor vermelha. O valor mínimo aceito é 0 e o valor máximo aceito é 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Nível mínimo de cor verde. O valor mínimo aceito é 0 e o valor máximo aceito é 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Nível mínimo de cor azul. O valor mínimo aceito é 0 e o valor máximo aceito é 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_DESC" xml:space="preserve">
+    <value>Nível mínimo de cor. O valor mínimo aceito é 0 e o valor máximo aceito é 255 para 255 cores ou 16 para 16 cores.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Nível máximo de cor vermelha. O valor mínimo aceito é 0 e o valor máximo aceito é 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Nível máximo de cor verde. O valor mínimo aceito é 0 e o valor máximo aceito é 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Nível máximo de cor azul. O valor mínimo aceito é 0 e o valor máximo aceito é 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_DESC" xml:space="preserve">
+    <value>Nível máximo de cor. O valor mínimo aceito é 0 e o valor máximo aceito é 255 para 255 cores ou 16 para 16 cores.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Ativa o suporte a cores verdadeiras.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTADDFAILED" xml:space="preserve">
+    <value>Falha ao adicionar um evento.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTREMOVEFAILED" xml:space="preserve">
+    <value>Falha ao remover um evento.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD" xml:space="preserve">
+    <value>Não foram fornecidos argumentos suficientes para adicionar um evento.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE" xml:space="preserve">
+    <value>Não há argumentos suficientes fornecidos para remover um evento.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED" xml:space="preserve">
+    <value>Não há argumentos suficientes fornecidos para manipulação de eventos.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED" xml:space="preserve">
+    <value>Não há argumentos suficientes fornecidos para manipulação de lembretes.</value>
+  </data>
+  <data name="NKS_CALENDAR_UNTITLEDREMINDER" xml:space="preserve">
+    <value>Lembrete sem título</value>
+  </data>
+  <data name="NKS_CALENDAR_UNTITLEDEVENT" xml:space="preserve">
+    <value>Evento sem título</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENT_NOTIFICATION" xml:space="preserve">
+    <value>Agora é dia de evento!</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDER_NOTIFICATION" xml:space="preserve">
+    <value>Não perca isso!</value>
+  </data>
+  <data name="NKS_CALENDAR_INVALIDACTION" xml:space="preserve">
+    <value>Ação inválida.</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_NAME" xml:space="preserve">
+    <value>Salve todos os eventos e/ou lembretes de forma destrutiva</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_DESC" xml:space="preserve">
+    <value>Se ativado, exclui todos os eventos e/ou lembretes antes de salvá-los usando o comando calendar.</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC" xml:space="preserve">
+    <value>Nome da cultura</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_STATUS_READY" xml:space="preserve">
+    <value>Preparar</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC" xml:space="preserve">
+    <value>Nome de exibição</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>Combinações de teclas</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Mostra apenas a data</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Mostra exatamente a hora</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Usa UTC em vez de local</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_DESC" xml:space="preserve">
+    <value>Gerenciador de calendário, eventos e lembretes</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC" xml:space="preserve">
+    <value>Tipo de calendário para trabalhar</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC" xml:space="preserve">
+    <value>Use o visualizador de calendário baseado em tabela</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_EVENTS" xml:space="preserve">
+    <value>Eventos...</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_REMINDERS" xml:space="preserve">
+    <value>Lembretes...</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_FAILED" xml:space="preserve">
+    <value>O calendário interativo falhou:</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_EVENTSREMINDERS_TITLE" xml:space="preserve">
+    <value>Eventos e lembretes para</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_LONGFORM" xml:space="preserve">
+    <value>Forma longa</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_CALENDARTYPE" xml:space="preserve">
+    <value>Tipo de calendário</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOREMINDERSMONTH" xml:space="preserve">
+    <value>Nenhum lembrete encontrado para o mês selecionado</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOEVENTSMONTH" xml:space="preserve">
+    <value>Nenhum evento encontrado para o mês selecionado</value>
+  </data>
+  <data name="NKS_CALENDAR_NOCULTURE" xml:space="preserve">
+    <value>A cultura não é encontrada.</value>
+  </data>
+  <data name="NKS_CALENDAR_SHOWCALENDARFAILED" xml:space="preserve">
+    <value>Falha ao mostrar o calendário.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERADDFAILED" xml:space="preserve">
+    <value>Falha ao adicionar um lembrete.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERADDNEEDSARGS" xml:space="preserve">
+    <value>Não foram fornecidos argumentos suficientes para adicionar um lembrete.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERREMOVEFAILED" xml:space="preserve">
+    <value>Falha ao remover um lembrete.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERREMOVENEEDSARGS" xml:space="preserve">
+    <value>Não foram fornecidos argumentos suficientes para remover um lembrete.</value>
+  </data>
+  <data name="NKS_CALENDAR_EXCEPTION_NOEVENT" xml:space="preserve">
+    <value>Não há evento.</value>
+  </data>
+  <data name="NKS_CALENDAR_EXCEPTION_NOREMINDER" xml:space="preserve">
+    <value>Não há lembrete.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME" xml:space="preserve">
+    <value>Cultura</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>Configurações de cores</value>
+  </data>
+  <data name="NKS_CALENDAR_SETTINGS_DESC" xml:space="preserve">
+    <value>Esta seção permite configurar como o Calendário funciona.</value>
+  </data>
+  <data name="NKS_CALENDAR_BUILTIN_NKSANNIVERSARY" xml:space="preserve">
+    <value>Aniversário de lançamento do Nitrocid KS</value>
+  </data>
+  <data name="NKS_CALENDAR_BUILTIN_RAMADAN" xml:space="preserve">
+    <value>Ramadã</value>
+  </data>
+  <data name="NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Falha à obtenção de entradas de definições.</value>
+  </data>
+  <data name="NKS_CALENDAR_HOMEPAGE_CALENDAR" xml:space="preserve">
+    <value>Calendário</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOREMINDERSDAY" xml:space="preserve">
+    <value>Não foram encontrados lembretes para o dia selecionado</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOEVENTSDAY" xml:space="preserve">
+    <value>Nenhum evento encontrado para o dia selecionado</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC" xml:space="preserve">
+    <value>Abre o calendário interativo TUI</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC" xml:space="preserve">
+    <value>Ano alvo</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC" xml:space="preserve">
+    <value>Número do mês alvo</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC" xml:space="preserve">
+    <value>Interação com os acontecimentos</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC" xml:space="preserve">
+    <value>Adiciona um evento</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC" xml:space="preserve">
+    <value>Data alvo</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC" xml:space="preserve">
+    <value>Remove um evento</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC" xml:space="preserve">
+    <value>ID do evento</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC" xml:space="preserve">
+    <value>Lista todos os eventos</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC" xml:space="preserve">
+    <value>Guarda todos os eventos</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC" xml:space="preserve">
+    <value>Interação com os lembretes</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC" xml:space="preserve">
+    <value>Data e hora alvo</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC" xml:space="preserve">
+    <value>Remove um lembrete</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC" xml:space="preserve">
+    <value>ID do lembrete</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC" xml:space="preserve">
+    <value>Lista todos os lembretes</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC" xml:space="preserve">
+    <value>Guarda todos os lembretes</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>Isto permite que configure as cores</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME" xml:space="preserve">
+    <value>Configurações de cultura</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC" xml:space="preserve">
+    <value>Isto permite configurar a cultura utilizada pelo protetor de ecrã do calendário</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_DESC" xml:space="preserve">
+    <value>Qual a cultura que está a ser utilizada para alterar os nomes dos meses, calendário, etc.?</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_NAME" xml:space="preserve">
+    <value>Utilize a cultura do sistema</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC" xml:space="preserve">
+    <value>Se o protetor de ecrã utiliza a cultura definida pelas definições principais do kernel ou pelas definições deste protetor de ecrã.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC" xml:space="preserve">
+    <value>Definições do protetor de ecrã...</value>
+  </data>
+
+</root>

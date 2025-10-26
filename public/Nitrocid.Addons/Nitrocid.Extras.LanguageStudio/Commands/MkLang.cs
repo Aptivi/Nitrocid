@@ -19,7 +19,6 @@
 
 using Nitrocid.Extras.LanguageStudio.Studio;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.LanguageStudio.Commands
 {

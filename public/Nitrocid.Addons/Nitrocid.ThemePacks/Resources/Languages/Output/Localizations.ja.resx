@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_THEMEPACKS_EXCEPTION_NODATA" xml:space="preserve">
+    <value>このアドオンを初期化するために必要なデータを取得できません。</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_AMAYA" xml:space="preserve">
+    <value>紫のハーモニー</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ANDROID" xml:space="preserve">
+    <value>これは前景のAndroidマスコットカラーです</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_APTIVI" xml:space="preserve">
+    <value>私たちのブランドの調和</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_AYUDARK" xml:space="preserve">
+    <value>人気のVIMテーマAyuのダークバージョン</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_AYULIGHT" xml:space="preserve">
+    <value>人気のVIMテーマAyuの軽量版</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_AYUMIRAGE" xml:space="preserve">
+    <value>人気のVIMテーマAyuのMirageバージョン</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL" xml:space="preserve">
+    <value>今日は新学期の初日です</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE" xml:space="preserve">
+    <value>可能な限り軽量な端末</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_BLACKROSE" xml:space="preserve">
+    <value>これは黒いバラです</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_BREEZE" xml:space="preserve">
+    <value>KDE Plasma 5 テーマ Breeze のカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DRACULA" xml:space="preserve">
+    <value>IntelliJのようなIDEでよく使われるカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DARKSIDE" xml:space="preserve">
+    <value>ダークサイドに戻る時が来た。</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DEBIAN" xml:space="preserve">
+    <value>Debian のカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID" xml:space="preserve">
+    <value>カーネルの鮮やかなデフォルトテーマ</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DYNAMICBACK" xml:space="preserve">
+    <value>カーネルの背景アクセント!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA" xml:space="preserve">
+    <value>どこにでもアクセントが増えました！</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_EDM" xml:space="preserve">
+    <value>EDMファンなら使ってください</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_FIRE" xml:space="preserve">
+    <value>ファイアシェード</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GOLDENPALACE" xml:space="preserve">
+    <value>濃い青色の背景に壮大な黄金の宮殿</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI" xml:space="preserve">
+    <value>ブドウとキウイを混ぜたもの</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GRAPE" xml:space="preserve">
+    <value>ブドウの配色</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GREENMIX" xml:space="preserve">
+    <value>鮮やかな緑、青、紫の色彩</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GREENIFIED" xml:space="preserve">
+    <value>あなたの環境を緑化し、あなたの心を緑化しましょう。地球をもっと緑にしましょう!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GREENRED" xml:space="preserve">
+    <value>色として緑と赤を追加しました。</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GRINK" xml:space="preserve">
+    <value>緑とピンクが混ざり合った</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GRUVBOX" xml:space="preserve">
+    <value>既知の端末カラースキームの1つ</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_HACKER" xml:space="preserve">
+    <value>灰色の背景に緑の文字</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_INDIAN" xml:space="preserve">
+    <value>伝統的なインドの色彩をコンソールで再現。</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LEMON" xml:space="preserve">
+    <value>端末をレモン酸で満たす</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS" xml:space="preserve">
+    <value>明るい色の木の板</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED" xml:space="preserve">
+    <value>標準の Linux ターミナルの色</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LINUXUNCOLORED" xml:space="preserve">
+    <value>灰色の端末</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC" xml:space="preserve">
+    <value>端末上のマテリアルデザインのテキスト</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MAYA" xml:space="preserve">
+    <value>オレンジと茶色の色合い</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MELANGE" xml:space="preserve">
+    <value>同名のVIMテーマにインスパイアされたMelangeテーマ</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MINT" xml:space="preserve">
+    <value>ターミナルをミントでいっぱいにしましょう</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MIRAI" xml:space="preserve">
+    <value>境界の彼方の栗山未来さんのカラーパレット。</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_VIMTHEME" xml:space="preserve">
+    <value>同名のVIMテーマにインスパイアされたテーマ</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_NEONBREEZE" xml:space="preserve">
+    <value>ネオンブルーとピンクは好きですか?</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED" xml:space="preserve">
+    <value>このテーマはあなたにとって中立的なものであるべきです。</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_NIGHTSKY" xml:space="preserve">
+    <value>これが夜の始まりの夜空です！</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST" xml:space="preserve">
+    <value>もうすぐ10月がやってきますので、準備しておきましょう！</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ORANGESEA" xml:space="preserve">
+    <value>オレンジ色の海</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_PHOSPHORIC" xml:space="preserve">
+    <value>すべてをオレンジ色に変えるリン酸端子</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_REDBREEZE" xml:space="preserve">
+    <value>赤い風を吹き込みます。</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_REDCONSOLE" xml:space="preserve">
+    <value>真っ赤なコンソール</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_SAKURA" xml:space="preserve">
+    <value>桜の木が中国の風を吹き込んでくれます</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_TEALED" xml:space="preserve">
+    <value>すべて青緑色</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_TECHNO" xml:space="preserve">
+    <value>テクノロジー愛好家のためのテーマ</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_TRANCE" xml:space="preserve">
+    <value>トランスミュージックファンですか？これはあなたにぴったりのテーマです！</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_UBUNTU" xml:space="preserve">
+    <value>人気のLinuxオペレーティングシステムUbuntuのカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_VICECITY" xml:space="preserve">
+    <value>完璧なバイスシティの雰囲気を味わえます</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_VICECITYDAWN" xml:space="preserve">
+    <value>これがバイスシティの夜明けです。</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO" xml:space="preserve">
+    <value>最も強力な IDE の 1 つである Visual Studio のカラー スキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_WINDOWS11" xml:space="preserve">
+    <value>Windowsの最新バージョンであるWindows 11の配色</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_WINDOWS95" xml:space="preserve">
+    <value>このテーマで懐かしさを蘇らせましょう！</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_WOOD" xml:space="preserve">
+    <value>あなたのターミナルは木の板でできています</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_YASAI" xml:space="preserve">
+    <value>さまざまな果物の中国のパターンからインスピレーションを得た</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ALMALINUX" xml:space="preserve">
+    <value>LinuxオペレーティングシステムRed HatのスピンオフであるAlma Linuxのカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ARCHLINUX" xml:space="preserve">
+    <value>Linux オペレーティングシステム、Arch Linux のカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ENDEAVOUR" xml:space="preserve">
+    <value>Linux オペレーティングシステム Arch Linux のスピンオフである EndeavourOS のカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_FEDORA" xml:space="preserve">
+    <value>LinuxオペレーティングシステムのスピンオフであるFedoraのカラースキーム、Red Hat</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GENTOO" xml:space="preserve">
+    <value>Linux オペレーティングシステム Gentoo のカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_KALEIDOSCOPE" xml:space="preserve">
+    <value>色彩豊かな曼荼羅を形作る彫り模様の色彩</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_KUBUNTU" xml:space="preserve">
+    <value>人気のLinuxオペレーティングシステムUbuntuのスピンオフであるKubuntuのカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LINUXMINT" xml:space="preserve">
+    <value>人気のLinuxオペレーティングシステムUbuntuの非公式スピンオフであるLinux Mintのカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LUBUNTU" xml:space="preserve">
+    <value>人気のLinuxオペレーティングシステムUbuntuのスピンオフであるLubuntuのカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MANJARO" xml:space="preserve">
+    <value>Linux オペレーティングシステム Arch Linux のスピンオフである Manjaro のカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_OPENSUSE" xml:space="preserve">
+    <value>Linux オペレーティングシステム openSUSE のカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_REDHAT" xml:space="preserve">
+    <value>Linuxオペレーティングシステム、Red Hatのカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_RENEGADE" xml:space="preserve">
+    <value>注目を集めるテキストのためのダイナミックなアクセントカラーを備えた赤い色合い</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX" xml:space="preserve">
+    <value>LinuxオペレーティングシステムRed HatのスピンオフであるRocky Linuxのカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_SLACKWARE" xml:space="preserve">
+    <value>Linux オペレーティングシステム Slackware のカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_XUBUNTU" xml:space="preserve">
+    <value>人気のLinuxオペレーティングシステムUbuntuのスピンオフであるXubuntuのカラースキーム</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ZORINOS" xml:space="preserve">
+    <value>人気の Linux オペレーティングシステム Ubuntu の非公式スピンオフである Zorin OS のカラースキーム</value>
+  </data>
+
+</root>

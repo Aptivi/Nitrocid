@@ -26,8 +26,6 @@ using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
-using Terminaux.Base.Checks;
-using System.Reflection;
 using Terminaux.Shell.Shells;
 using Nitrocid.Base.Shell.Shells.UESH;
 using Nitrocid.Base.Shell.Shells.Text;

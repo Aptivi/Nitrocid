@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_TIPS_KERNELTIP_1" xml:space="preserve">
+    <value>que vous pouvez exécuter des commandes de processus de deux manières : en saisissant directement le nom du fichier exécutable et en utilisant la commande « exec » ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_2" xml:space="preserve">
+    <value>que vous pouvez verrouiller votre écran à l&apos;aide de la commande « lockscreen » ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_3" xml:space="preserve">
+    <value>que vous pouvez créer vos propres modifications du noyau en utilisant C# et Visual Basic ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_4" xml:space="preserve">
+    <value>que vous pouvez utiliser plusieurs commandes en utilisant le point-virgule entre les commandes ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_5" xml:space="preserve">
+    <value>que vous pouvez échapper aux guillemets doubles à l&apos;intérieur des arguments cités lors de l&apos;exécution de commandes ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_6" xml:space="preserve">
+    <value>que vous pouvez modifier les paramètres du noyau à l&apos;aide de la commande « settings » ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_7" xml:space="preserve">
+    <value>que vous pouvez enregistrer votre écran à l&apos;aide de la commande « savescreen » ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_8" xml:space="preserve">
+    <value>que vous pouvez nous signaler des bugs en vous rendant sur la page du projet GitHub de Nitrocid ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_9" xml:space="preserve">
+    <value>que vous pouvez créer un raccourci vers la commande souhaitée à l&apos;aide de la commande « alias » ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_10" xml:space="preserve">
+    <value>que vous pouvez créer votre propre écran de démarrage en utilisant C# et Visual Basic ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_11" xml:space="preserve">
+    <value>que vous pouvez installer des modules complémentaires pour rendre votre noyau plus utile et amusant ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_12" xml:space="preserve">
+    <value>que vous pouvez créer vos propres thèmes géniaux en utilisant la commande « mktheme » ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_13" xml:space="preserve">
+    <value>que vous pouvez changer les couleurs de votre noyau en utilisant la commande « paramètres » ou en utilisant l&apos;un des thèmes prédéfinis ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_14" xml:space="preserve">
+    <value>que vous pouvez réinitialiser votre noyau aux paramètres d&apos;usine par défaut en utilisant l&apos;argument « reset » ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_15" xml:space="preserve">
+    <value>que vous pouvez accéder à notre documentation complète sur notre page GitBook ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_16" xml:space="preserve">
+    <value>que les versions à long terme sont prises en charge pendant cinq ans pour le support principal et trois ans pour les mises à jour de sécurité ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
+    <value>que la 0.0.1 était la toute première version de Nitrocid KS sortie le 22 février 2018 ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
+    <value>que la série 0.0.24.x était la seule série de versions contenant la version API v2.1 ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_19" xml:space="preserve">
+    <value>que les versions à court terme ne sont prises en charge que pendant neuf mois ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_20" xml:space="preserve">
+    <value>que la série 0.1.x est rétrocompatible avec la série 0.0.24.x ou une version antérieure ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
+    <value>que vous pouvez exécuter Nitrocid KS sur Linux, macOS et Android ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
+    <value>que tu peux te référer à la documentation de l&apos;API pour t&apos;aider à réaliser tes mods ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_23" xml:space="preserve">
+    <value>que vous pouvez obtenir plusieurs jeux géniaux, comme Hangman et ShipDuet, en installant les modules complémentaires supplémentaires ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_24" xml:space="preserve">
+    <value>que, dans Meteor, si vous vous écrasez avec une tempête de météores rouges, votre vaisseau spatial s&apos;écrase ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_25" xml:space="preserve">
+    <value>que vous pouvez convertir votre noyau en centres d&apos;information à l&apos;aide de la fonction d&apos;accueil ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_26" xml:space="preserve">
+    <value>que vous pouvez créer des groupes d&apos;utilisateurs pour organiser les comptes d&apos;utilisateurs ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_27" xml:space="preserve">
+    <value>que si vous êtes membre d&apos;un groupe qui accorde certaines autorisations, vous êtes autorisé à effectuer de telles opérations ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_28" xml:space="preserve">
+    <value>que vous pouvez modifier le fuseau horaire de votre noyau sans affecter votre système hôte ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_29" xml:space="preserve">
+    <value>que vous pouvez utiliser l&apos;éditeur de texte et hexadécimal interactif pour gagner du temps ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_30" xml:space="preserve">
+    <value>que le plus ancien éditeur de texte connu pour fonctionner avec le premier système Unix est ed, le premier éditeur de texte sorti en 1973 et livré avec le système Unix trouvé sur un PDP-7 chez AT&amp;T Bell Labs ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_31" xml:space="preserve">
+    <value>que vous pouvez également forcer la commande d&apos;édition à lancer l&apos;éditeur dans un type spécifique ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_32" xml:space="preserve">
+    <value>que l&apos;éditeur de texte interactif tente de simuler les fonctionnalités les plus élémentaires des éditeurs de texte Unix les plus populaires, vi et vim ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_33" xml:space="preserve">
+    <value>qu&apos;à moins que vous ne sachiez ce que vous faites avec le fichier binaire, la modification d&apos;un tel fichier de cette manière entraînera une corruption ou une perte de données dans le fichier ciblé ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_34" xml:space="preserve">
+    <value>que sur les systèmes Linux, le shell est lancé à l&apos;aide à la fois du gestionnaire de connexion et du programme d&apos;initialisation du système, généralement trouvé dans /sbin/init?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_35" xml:space="preserve">
+    <value>que vous pouvez effectuer des opérations courantes sur les fichiers, telles que copier, déplacer, supprimer, éditer, etc. ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_36" xml:space="preserve">
+    <value>que le TUI interactif d&apos;un gestionnaire de fichiers simule les fonctionnalités de Midnight Commander ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_37" xml:space="preserve">
+    <value>que si le noyau plante, il crée généralement un fichier de vidage ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_38" xml:space="preserve">
+    <value>que vous pouvez diagnostiquer le noyau en le débogant à l&apos;aide de la fonctionnalité de débogage intégrée ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_39" xml:space="preserve">
+    <value>que vous pouvez télécharger et télécharger des fichiers directement depuis le shell UESH ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_40" xml:space="preserve">
+    <value>que le noyau peut être traduit même aux étapes de pré-démarrage en le démarrant avec l&apos;argument « lang » ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_41" xml:space="preserve">
+    <value>que vous pouvez créer vos propres économiseurs d&apos;écran en les enregistrant dans votre mod ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_42" xml:space="preserve">
+    <value>que le premier économiseur d&apos;écran qui masquait l&apos;écran après trois minutes d&apos;inactivité sur les PC IBM d&apos;origine, scrnsave, a été créé en 1983 par John Socha ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_43" xml:space="preserve">
+    <value>que certains des économiseurs d&apos;écran rapides peuvent provoquer des crises photosensibles ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_44" xml:space="preserve">
+    <value>que les journaux du noyau sont utilisés comme journaux de démarrage et d&apos;arrêt ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_45" xml:space="preserve">
+    <value>que vos mods peuvent désormais devenir traduisibles ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_46" xml:space="preserve">
+    <value>que vos mods peuvent communiquer avec les modules complémentaires du noyau et d&apos;autres mods, créant ainsi une sorte de communication et réalisant l&apos;interopérabilité ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_47" xml:space="preserve">
+    <value>que vous pouvez vous connecter au débogueur distant et, éventuellement, au serveur de discussion ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_48" xml:space="preserve">
+    <value>que vous pouvez utiliser le shell de débogage, qui n&apos;est disponible que pour les versions de développement ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_49" xml:space="preserve">
+    <value>que vos mods peuvent désormais avoir leur propre configuration en enregistrant leurs classes associées ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_50" xml:space="preserve">
+    <value>que vos mods peuvent enregistrer leurs propres shells ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_51" xml:space="preserve">
+    <value>que vos mods peuvent ajouter des commandes aux shells existants pour augmenter le nombre de commandes pouvant être utilisées ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_52" xml:space="preserve">
+    <value>que vos classes de commandes peuvent représenter avec précision les arguments et les commutateurs passés ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_53" xml:space="preserve">
+    <value>que vous pouvez interroger les commutateurs passés à l&apos;aide des classes de gestion des commutateurs trouvées dans l&apos;API du noyau ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_54" xml:space="preserve">
+    <value>que UESH inclut la fonctionnalité de script pour faciliter la création et l&apos;exécution de scripts ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_55" xml:space="preserve">
+    <value>que le shell inclut une fonctionnalité permettant d&apos;empêcher l&apos;annulation des applications actives ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_56" xml:space="preserve">
+    <value>que Nitrocid est profondément intégré à Terminaux pour permettre un rendu plus rapide et meilleur ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_57" xml:space="preserve">
+    <value>que vous pouvez désormais redimensionner les applications interactives sans craindre que la sortie soit corrompue ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_58" xml:space="preserve">
+    <value>qu&apos;il existe des commandes qui demandent une saisie à l&apos;utilisateur, qui sont utiles pour les scripts ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_59" xml:space="preserve">
+    <value>que vous pouvez présenter votre question de saisie utilisateur de plusieurs manières, telles que choix, tableau, simple, sélection, etc. ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_60" xml:space="preserve">
+    <value>que vous pouvez placer les espaces réservés dans votre texte qui les prend en charge ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_61" xml:space="preserve">
+    <value>que vous pouvez utiliser différents pilotes du noyau pour modifier le fonctionnement d&apos;une opération spécifique ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_62" xml:space="preserve">
+    <value>que vous pouvez créer vos propres écrans de veille et splashes en C# ou Visual Basic ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_63" xml:space="preserve">
+    <value>que vous pouvez interroger le système hôte et l&apos;émulateur de terminal à l&apos;aide de la classe de plate-forme du noyau ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_64" xml:space="preserve">
+    <value>que vous pouvez demander un consentement en matière de confidentialité avant de faire quelque chose de sensible dans votre mod ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_65" xml:space="preserve">
+    <value>que vous pouvez désactiver les notifications à l&apos;aide de la fonction Ne pas déranger ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_66" xml:space="preserve">
+    <value>que vous pouvez enregistrer l&apos;historique des notifications à l&apos;aide d&apos;une fonction trouvée dans le gestionnaire de notifications ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_67" xml:space="preserve">
+    <value>que vous pouvez modifier la façon dont les nombres aléatoires sont générés en changeant le pilote ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_68" xml:space="preserve">
+    <value>que diverses API fournissent des fonctions utiles pour vos mods ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_69" xml:space="preserve">
+    <value>Cette section vous permet de configurer le fonctionnement des astuces.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_70" xml:space="preserve">
+    <value>Afficher les astuces du noyau</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_71" xml:space="preserve">
+    <value>Si activé, le shell vous montre les conseils à chaque connexion.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_72" xml:space="preserve">
+    <value>que vous pouvez créer des programmes amorçables en utilisant les mods de votre noyau ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_73" xml:space="preserve">
+    <value>Impossible d&apos;obtenir les entrées de paramètres.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_74" xml:space="preserve">
+    <value>que Nitrocid (Kernel Simulator 0.0.2) a appelé le shell intégré le shell « UESH » ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_75" xml:space="preserve">
+    <value>que les économiseurs d&apos;écran étaient présentés comme une solution contre les brûlures d&apos;écran dans les écrans à tube cathodique (CRT) ou à plasma ?</value>
+  </data>
+
+</root>

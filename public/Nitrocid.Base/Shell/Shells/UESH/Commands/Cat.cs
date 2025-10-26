@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Linq;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;

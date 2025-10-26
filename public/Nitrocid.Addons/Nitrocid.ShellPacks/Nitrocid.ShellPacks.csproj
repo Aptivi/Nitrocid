@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentFTP" Version="53.0.2" />
     <PackageReference Include="LibGit2Sharp" Version="0.31.0" />
     <PackageReference Include="MailKit" Version="4.14.1" />

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_THEMESTUDIO_APP_EXIT" xml:space="preserve">
+    <value>Ausgang</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_DESC" xml:space="preserve">
+    <value>Macht ein neues Thema</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_MAKINGTHEME" xml:space="preserve">
+    <value>Erstellen eines neuen Themas &quot;{0}&quot;.</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETOCURRENT" xml:space="preserve">
+    <value>Thema im aktuellen Verzeichnis speichern</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETOOTHER" xml:space="preserve">
+    <value>Thema in einem anderen Verzeichnis speichern...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETOCURRENTAS" xml:space="preserve">
+    <value>Thema im aktuellen Verzeichnis speichern unter...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETOOTHERAS" xml:space="preserve">
+    <value>Thema in einem anderen Verzeichnis speichern unter...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMENAMEPROMPT" xml:space="preserve">
+    <value>Geben Sie den Themennamen an:</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_LOADFROMBUILTIN" xml:space="preserve">
+    <value>Theme aus vorgefertigten Themes laden...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_THEMEFILEPROMPT" xml:space="preserve">
+    <value>Geben Sie den Namen der Designdatei ohne die Erweiterung .json an:</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_PREVIEW" xml:space="preserve">
+    <value>Vorschau...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_LOADCURRENT" xml:space="preserve">
+    <value>Aktuelle Farben laden</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_LOADFROM" xml:space="preserve">
+    <value>Theme aus Datei laden...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_SAVETODIRPROMPT" xml:space="preserve">
+    <value>Geben Sie das Verzeichnis an, in dem das Design gespeichert werden soll:</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_SWITCH_TUI_DESC" xml:space="preserve">
+    <value>Erstellt ein neues Thema in einem interaktiven TUI</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_COPYCOLORTO" xml:space="preserve">
+    <value>Farbe kopieren nach...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_SOURCETYPEPROMPT" xml:space="preserve">
+    <value>Wählen Sie den Quellfarbtyp aus, von dem die Farbe kopiert werden soll.</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TARGETTYPEPROMPT" xml:space="preserve">
+    <value>Wählen Sie die Zielfarbtypen aus, in die der Quellfarbtyp {0} kopiert werden soll.</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_COLORTYPE" xml:space="preserve">
+    <value>Farbtyp</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_COLOR" xml:space="preserve">
+    <value>Farbe</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_COLORNAME" xml:space="preserve">
+    <value>Farbname</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_COLORHEX" xml:space="preserve">
+    <value>Farbe Hex</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_COLORBRIGHT" xml:space="preserve">
+    <value>Farbhelligkeit</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HOWSAVE" xml:space="preserve">
+    <value>Wählen Sie aus, wie Sie dieses Design speichern möchten</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HOWLOAD" xml:space="preserve">
+    <value>Wählen Sie aus, wie Sie ein Design laden möchten</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_KEYBINDING_CHANGE" xml:space="preserve">
+    <value>Ändern...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_KEYBINDING_SAVE" xml:space="preserve">
+    <value>Speichern...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_KEYBINDING_LOAD" xml:space="preserve">
+    <value>Laden...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_KEYBINDING_COPY" xml:space="preserve">
+    <value>Kopie...</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
+    <value>Zu erstellender Themenname</value>
+  </data>
+
+</root>

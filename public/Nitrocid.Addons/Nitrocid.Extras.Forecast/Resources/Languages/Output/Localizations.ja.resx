@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_FORECAST_COMMAND_WEATHEROLD_DESC" xml:space="preserve">
+    <value>指定した都市の天気情報を表示します。 OpenWeatherMapを使用します。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_HEADER" xml:space="preserve">
+    <value>-{0}の天気情報-</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_WEATHER" xml:space="preserve">
+    <value>天気：{0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_PRESSURE" xml:space="preserve">
+    <value>圧力：{0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY" xml:space="preserve">
+    <value>湿度：{0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_APIKEY" xml:space="preserve">
+    <value>https://home.openweathermap.org/api_keysで独自のAPIキーを取得できます。</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_PREFERREDUNIT_NAME" xml:space="preserve">
+    <value>温度の優先単位</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_FEELSLIKE" xml:space="preserve">
+    <value>のように感じる：{0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE" xml:space="preserve">
+    <value>温度：{0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED" xml:space="preserve">
+    <value>風速：{0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION" xml:space="preserve">
+    <value>風向：{0}</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC" xml:space="preserve">
+    <value>利用可能なすべての都市を表示します</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>取り除く</value>
+  </data>
+  <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
+    <value>API キーを入力してください:</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
+    <value>ID を持つ都市のリストについては、以下のリンクを参照するか、このコマンドに「-list」を渡すことができます。</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
+    <value>このセクションでは、予測の動作方法を構成できます。</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_DESC" xml:space="preserve">
+    <value>指定された都市の天気情報を表示します。IBM の The Weather Channel を使用します。</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC" xml:space="preserve">
+    <value>インタラクティブなTUIでの天気情報</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC" xml:space="preserve">
+    <value>利用可能なすべての都市とその緯度/経度のペアを表示します</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_HEADER" xml:space="preserve">
+    <value>-- 天気情報 --</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_LATLON" xml:space="preserve">
+    <value>緯度と経度</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_CLOUDCOVER" xml:space="preserve">
+    <value>雲量</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_TIMEOFDAY" xml:space="preserve">
+    <value>時刻</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_MINTEMP" xml:space="preserve">
+    <value>最低気温</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_MAXTEMP" xml:space="preserve">
+    <value>最高気温</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_PCPCHANGE" xml:space="preserve">
+    <value>降水確率</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_PCPTYPE" xml:space="preserve">
+    <value>降水タイプ</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_HEATIDX" xml:space="preserve">
+    <value>熱指数</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_WINDCHILL" xml:space="preserve">
+    <value>風の寒さ</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_UVINDEX" xml:space="preserve">
+    <value>紫外線指数</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_UVDESC" xml:space="preserve">
+    <value>紫外線の説明</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_LATLONPROMPT" xml:space="preserve">
+    <value>都市の緯度と経度を入力してください。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_APIKEY" xml:space="preserve">
+    <value>IBM Web サイトのガイダンスを参照して、独自の API キーを取得できます。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LOADING" xml:space="preserve">
+    <value>地理的位置から天気情報を読み込み中</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_CONDITION" xml:space="preserve">
+    <value>天気状況</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_TEMPERATURE" xml:space="preserve">
+    <value>温度</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_WINDSPEED" xml:space="preserve">
+    <value>風速</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_WINDDIRECTION" xml:space="preserve">
+    <value>風向き</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HUMIDITY" xml:space="preserve">
+    <value>湿度</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LAT" xml:space="preserve">
+    <value>緯度</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LON" xml:space="preserve">
+    <value>経度</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT" xml:space="preserve">
+    <value>検索する都市名を入力してください。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_NOCITIES" xml:space="preserve">
+    <value>この名前の都市はありません。特定の都市を検索する場合は、探している都市に最も近い、より広い範囲での検索を試みてください。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_SELECTCITY" xml:space="preserve">
+    <value>以下のリストから都市を選択してください。2 つの数字は地理的な場所を表します。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATPROMPT" xml:space="preserve">
+    <value>都市の緯度を入力してください。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LONPROMPT" xml:space="preserve">
+    <value>都市の経度を入力してください。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATINVALID" xml:space="preserve">
+    <value>緯度が無効です。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LONINVALID" xml:space="preserve">
+    <value>経度が無効です。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT" xml:space="preserve">
+    <value>IBM Web サイトのガイダンスを参照して、独自の API キーを取得できます。The Weather Channel API キーを入力します。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED" xml:space="preserve">
+    <value>Weather Channel API キーが提供されていません。ヘルプが必要な場合は、IBM Web サイトを参照してください。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL" xml:space="preserve">
+    <value>すべて削除</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>設定エントリを取得できませんでした。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL" xml:space="preserve">
+    <value>手動で追加</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY" xml:space="preserve">
+    <value>曜日区分配列を取得できません</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART" xml:space="preserve">
+    <value>曜日パートを取得できません</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC" xml:space="preserve">
+    <value>温度の単位を選択します (これは「天気」コマンドにのみ適用されます)。1 はケルビン、2 はメートル法、3 はヤードポンド法です。</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC" xml:space="preserve">
+    <value>使用する緯度</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC" xml:space="preserve">
+    <value>使用する経度</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC" xml:space="preserve">
+    <value>Weather.com API キー</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC" xml:space="preserve">
+    <value>OpenWeatherMap に知られている都市 ID または都市名</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
+    <value>OpenWeatherMap APIキー</value>
+  </data>
+
+</root>

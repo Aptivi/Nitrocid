@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_FORECAST_COMMAND_WEATHEROLD_DESC" xml:space="preserve">
+    <value>Mostra le informazioni meteo per la città specificata. Utilizza OpenWeatherMap.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_HEADER" xml:space="preserve">
+    <value>- Informazioni meteo per {0} -</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_WEATHER" xml:space="preserve">
+    <value>Meteo: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_PRESSURE" xml:space="preserve">
+    <value>Pressione: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY" xml:space="preserve">
+    <value>Umidità: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_APIKEY" xml:space="preserve">
+    <value>Puoi ottenere la tua chiave API su https://home.openweathermap.org/api_keys.</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_PREFERREDUNIT_NAME" xml:space="preserve">
+    <value>Unità preferita per la temperatura</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_FEELSLIKE" xml:space="preserve">
+    <value>Sembra: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE" xml:space="preserve">
+    <value>Temperatura: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED" xml:space="preserve">
+    <value>Velocità del vento: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION" xml:space="preserve">
+    <value>Direzione del vento: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC" xml:space="preserve">
+    <value>Mostra tutte le città disponibili</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Rimuovere</value>
+  </data>
+  <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
+    <value>Inserisci la tua chiave API:</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
+    <value>Puoi consultare il collegamento sottostante per l&apos;elenco delle città con i loro ID oppure passare &quot;-list&quot; a questo comando.</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
+    <value>Questa sezione consente di configurare il funzionamento della previsione.</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_DESC" xml:space="preserve">
+    <value>Mostra le informazioni meteo per la città specificata. Utilizza The Weather Channel di IBM.</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC" xml:space="preserve">
+    <value>Informazioni meteo in un&apos;interfaccia utente interattiva</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC" xml:space="preserve">
+    <value>Mostra tutte le città disponibili e le relative coppie latitudine/longitudine</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_HEADER" xml:space="preserve">
+    <value>-- Informazioni meteo --</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_LATLON" xml:space="preserve">
+    <value>Latitudine e longitudine</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_CLOUDCOVER" xml:space="preserve">
+    <value>Coperto dalle nuvole</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_TIMEOFDAY" xml:space="preserve">
+    <value>Ora del giorno</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_MINTEMP" xml:space="preserve">
+    <value>Temperatura minima</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_MAXTEMP" xml:space="preserve">
+    <value>Temperatura massima</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_PCPCHANGE" xml:space="preserve">
+    <value>Possibilità di precipitazioni</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_PCPTYPE" xml:space="preserve">
+    <value>Tipo di precipitazione</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_HEATIDX" xml:space="preserve">
+    <value>Indice di calore</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_WINDCHILL" xml:space="preserve">
+    <value>Vento gelido</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_UVINDEX" xml:space="preserve">
+    <value>Indice ultravioletto</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_UVDESC" xml:space="preserve">
+    <value>Descrizione ultravioletta</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_LATLONPROMPT" xml:space="preserve">
+    <value>Inserisci latitudine e longitudine della città.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_APIKEY" xml:space="preserve">
+    <value>Puoi ottenere la tua chiave API consultando il sito Web IBM per indicazioni.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LOADING" xml:space="preserve">
+    <value>Caricamento delle informazioni meteo dalla posizione geografica</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_CONDITION" xml:space="preserve">
+    <value>Condizioni metereologiche</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_TEMPERATURE" xml:space="preserve">
+    <value>Temperatura</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_WINDSPEED" xml:space="preserve">
+    <value>Velocità del vento</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_WINDDIRECTION" xml:space="preserve">
+    <value>La direzione del vento</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HUMIDITY" xml:space="preserve">
+    <value>Tasso di umidità</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LAT" xml:space="preserve">
+    <value>Latitudine</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LON" xml:space="preserve">
+    <value>Longitudine</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT" xml:space="preserve">
+    <value>Inserisci il nome di una città da cercare.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_NOCITIES" xml:space="preserve">
+    <value>Non ci sono città con questo nome. Se stai cercando una città specifica, prova a cercare una località più ampia e più vicina alla città che stai cercando.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_SELECTCITY" xml:space="preserve">
+    <value>Seleziona una città dall&apos;elenco sottostante. I due numeri rappresentano posizioni geografiche.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATPROMPT" xml:space="preserve">
+    <value>Inserisci la latitudine della città.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LONPROMPT" xml:space="preserve">
+    <value>Inserisci la longitudine della città.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATINVALID" xml:space="preserve">
+    <value>La latitudine non è valida.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LONINVALID" xml:space="preserve">
+    <value>La longitudine non è valida.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT" xml:space="preserve">
+    <value>Puoi ottenere la tua chiave API consultando il sito Web IBM per indicazioni. Inserisci la chiave API Weather Channel.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED" xml:space="preserve">
+    <value>La chiave API Weather Channel non viene fornita. Se hai bisogno di aiuto, consulta il sito Web IBM.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD" xml:space="preserve">
+    <value>Aggiungere</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL" xml:space="preserve">
+    <value>Rimuovi tutto</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Impossibile ottenere le voci delle impostazioni.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL" xml:space="preserve">
+    <value>Aggiungi manualmente</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY" xml:space="preserve">
+    <value>Impossibile ottenere la matrice delle parti del giorno</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART" xml:space="preserve">
+    <value>Non riesco a vedere la parte del giorno</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC" xml:space="preserve">
+    <value>Seleziona l&apos;unità di misura preferita per la temperatura (questo vale solo per il comando &quot;meteo&quot;). 1 è Kelvin, 2 è metrico e 3 è imperiale.</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC" xml:space="preserve">
+    <value>Latitudine da utilizzare</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC" xml:space="preserve">
+    <value>Longitudine da utilizzare</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC" xml:space="preserve">
+    <value>Chiave API Weather.com</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC" xml:space="preserve">
+    <value>ID città o nome città noto a OpenWeatherMap</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
+    <value>Chiave API OpenWeatherMap</value>
+  </data>
+
+</root>

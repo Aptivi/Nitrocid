@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_DATES_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Exitus</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_GETTIMEINFO_DESC" xml:space="preserve">
+    <value>Accipit diem et tempus informationes</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
+    <value>Milliseconds:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
+    <value>Secundi:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
+    <value>Minuta:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
+    <value>Horae:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
+    <value>Dies:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
+    <value>Menses:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
+    <value>Annus:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
+    <value>Nonas Annus;</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
+    <value>Dies Hebdomadae:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
+    <value>Binarii:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
+    <value>Locus Time:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
+    <value>Universale tempus:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
+    <value>Unix Tempus:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
+    <value>Deficio ad parse date notitia for</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2" xml:space="preserve">
+    <value>Ut forma sit recta.</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
+    <value>Tempus:</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
+    <value>Innocens stopwatch</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STARTSTOP" xml:space="preserve">
+    <value>Satus vel subsisto</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_LAP" xml:space="preserve">
+    <value>Lap</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_RESET" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_TIMER_DESC" xml:space="preserve">
+    <value>Innocens timer</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_KEYBINDING_SETTIME" xml:space="preserve">
+    <value>Set intervallum</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER" xml:space="preserve">
+    <value>Indicatur timeout non est ordo numerorum.</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_TIMEOUTPROMPT" xml:space="preserve">
+    <value>Specificare timeout in milliseconds</value>
+  </data>
+  <data name="NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC" xml:space="preserve">
+    <value>Fons figulus scribe, qui bibliotheca figgle sustentatur. Consule bibliothecam documentorum pro maiori informatione</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME" xml:space="preserve">
+    <value>Figlet font for timer</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME" xml:space="preserve">
+    <value>Admitte Figlet pro timer</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC" xml:space="preserve">
+    <value>Si enabled, figlet pro timer utere. Quaeso nota quod eget magna velamento consolatorio ut tempus apte cum Figlet reddat.</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC" xml:space="preserve">
+    <value>Accipit hodiernam diem ac tempus informationes</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_HEADER" xml:space="preserve">
+    <value>Information for</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STATUS_READY" xml:space="preserve">
+    <value>Stopwatch est.</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STATUS_RUNNING" xml:space="preserve">
+    <value>Stopwatch currit!</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STATUS_NEWLAP" xml:space="preserve">
+    <value>Novum lap!</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN" xml:space="preserve">
+    <value>Satus numero descendit</value>
+  </data>
+  <data name="NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Impetrare occasus viscus.</value>
+  </data>
+  <data name="NKS_DATES_HOMEPAGE_TIMER" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="NKS_DATES_HOMEPAGE_STOPWATCH" xml:space="preserve">
+    <value>Stopwatch</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_NOLAPS" xml:space="preserve">
+    <value>Nulla sed volutpat lacus.</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_LAPLIST" xml:space="preserve">
+    <value>Lapis album</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_POMODORO_DESC" xml:space="preserve">
+    <value>Pomodoro timer</value>
+  </data>
+  <data name="NKS_DATES_HOMEPAGE_POMODORO" xml:space="preserve">
+    <value>Pomodoro</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_STATUS_READY" xml:space="preserve">
+    <value>Timor Pomodoro est paratus</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_STATUS_TIMERNUM" xml:space="preserve">
+    <value>Numerus timoris Pomodoro {0} in quattuor iterations</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_STATUS_SHORTBREAK" xml:space="preserve">
+    <value>Brevis confractus</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_TIMEOUTPROMPT" xml:space="preserve">
+    <value>Specificare confractus timeout in milliseconds</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME" xml:space="preserve">
+    <value>Intermissum set intermissum</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC" xml:space="preserve">
+    <value>Date and time to print info from</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_DESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo opera applicationis timoris.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_DESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo opera applicationis pomodoro timentis.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME" xml:space="preserve">
+    <value>Admitte figlet pro pomodoro timer</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC" xml:space="preserve">
+    <value>Si enabled, figlet pro pomodoro timer. Quaeso nota quod eget magna velamento consolatorio ut tempus apte cum Figlet reddat.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME" xml:space="preserve">
+    <value>Fons figlet pro pomodoro timer</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODDATEINVALID" xml:space="preserve">
+    <value>Productio date invalidum</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPTIMEINVALID" xml:space="preserve">
+    <value>Exitus tempus invalidum est</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPDATEINVALID" xml:space="preserve">
+    <value>Exitus diem invalidum est</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODDATE" xml:space="preserve">
+    <value>Productio diem</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPDATE" xml:space="preserve">
+    <value>Exitus diem</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPTIME" xml:space="preserve">
+    <value>Exitus temporis spatium</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODHEALTH" xml:space="preserve">
+    <value>Product sanitas</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODSTATUS" xml:space="preserve">
+    <value>Product status</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_NOEXPIRYINFO" xml:space="preserve">
+    <value>Deficio ut productum Lapsu notitia</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_DESC" xml:space="preserve">
+    <value>Exitus ad productum accipit notitia</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC" xml:space="preserve">
+    <value>Productio date (vide vel latus vel imum producti)</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC" xml:space="preserve">
+    <value>Dies elapsus vel temporis periodus (vel expresse scriptus in eodem loco vel spatio temporis, ut 6 menses vel 1 annus)</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC" xml:space="preserve">
+    <value>Utrum scopum productum non dat terminum expresse</value>
+  </data>
+
+</root>

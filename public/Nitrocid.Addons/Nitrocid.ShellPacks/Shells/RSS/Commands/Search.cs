@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Linq;
 using Nitrocid.ShellPacks.Tools;
 using Nettify.Rss.Instance;
 using Terminaux.Shell.Commands;

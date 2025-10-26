@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_AMUSEMENTS_COMMAND_SOLVER_DESC" xml:space="preserve">
+    <value>Hãy xem bạn có thể giải các phương trình toán học đúng thời hạn không</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_CORRECT" xml:space="preserve">
+    <value>Đã giải quyết hoàn hảo!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_INCORRECT" xml:space="preserve">
+    <value>Giải quyết không đúng.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Kích hoạt màu sắc thực</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME" xml:space="preserve">
+    <value>Độ trễ tính bằng mili giây</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC" xml:space="preserve">
+    <value>Phải đợi bao nhiêu mili giây trước khi thực hiện lệnh ghi tiếp theo?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC" xml:space="preserve">
+    <value>Xem bạn có thể nhấn phím đúng lúc không</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_NOTONTIME" xml:space="preserve">
+    <value>Nhân vật không bị ép về thời gian.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_CORRECT" xml:space="preserve">
+    <value>Bạn đã nhấn đúng ký tự!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_INCORRECT" xml:space="preserve">
+    <value>Bạn đã nhấn nhầm ký tự.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_ESC" xml:space="preserve">
+    <value>Nhấn ESC để thoát.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Mức độ màu đỏ tối thiểu</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Mức độ màu xanh lá cây tối thiểu</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Mức độ màu xanh tối thiểu</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_NAME" xml:space="preserve">
+    <value>Mức màu tối thiểu</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Mức màu đỏ tối đa</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Mức màu xanh lá cây tối đa</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Mức màu xanh tối đa</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Mức màu tối đa</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Mức màu đỏ tối thiểu. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Mức màu xanh lá cây tối thiểu. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Mức màu xanh tối thiểu. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_DESC" xml:space="preserve">
+    <value>Mức màu tối thiểu. Giá trị tối thiểu được chấp nhận là 0 và giá trị tối đa được chấp nhận là 255 cho 255 màu hoặc 16 cho 16 màu.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Mức màu đỏ tối đa. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Mức màu xanh lá cây tối đa. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Mức màu xanh tối đa. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME" xml:space="preserve">
+    <value>Số lượng tối thiểu của bộ giải</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_NAME" xml:space="preserve">
+    <value>Số lượng tối đa của trình giải</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_NAME" xml:space="preserve">
+    <value>Trình giải quyết hiển thị đầu vào</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_DESC" xml:space="preserve">
+    <value>Có hiển thị nội dung được viết trong dấu nhắc nhập hay không.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_DESC" xml:space="preserve">
+    <value>Số lượng tối thiểu cần chọn là bao nhiêu?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_DESC" xml:space="preserve">
+    <value>Số lượng tối đa có thể chọn là bao nhiêu?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Kích hoạt hỗ trợ màu sắc thực.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_NAME" xml:space="preserve">
+    <value>Độ khó mặc định cho SpeedPress</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_NAME" xml:space="preserve">
+    <value>Thời gian chờ nhấn phím cho SpeedPress</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_DESC" xml:space="preserve">
+    <value>Phải đợi bao nhiêu mili giây để nhấn phím trước khi hết thời gian chờ? (Ở mức độ khó tùy chỉnh)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_NAME" xml:space="preserve">
+    <value>Độ trễ của giai đoạn tính bằng mili giây</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_DESC" xml:space="preserve">
+    <value>Phải đợi bao nhiêu mili giây trước khi vẽ giai đoạn tiếp theo?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC" xml:space="preserve">
+    <value>Bắt đầu trò chơi ở mức độ dễ</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC" xml:space="preserve">
+    <value>Bắt đầu trò chơi ở mức độ khó trung bình</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC" xml:space="preserve">
+    <value>Bắt đầu trò chơi ở mức độ khó</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC" xml:space="preserve">
+    <value>Bắt đầu trò chơi ở mức độ khó rất cao</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC" xml:space="preserve">
+    <value>Bắt đầu trò chơi ở độ khó tùy chỉnh. Xin lưu ý rằng thời gian chờ tùy chỉnh tính bằng mili giây phải được viết dưới dạng đối số.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_NAME" xml:space="preserve">
+    <value>Vị trí văn bản tiến trình</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_DESC" xml:space="preserve">
+    <value>Chọn vị trí văn bản tiến trình bạn muốn.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_NEEDSNUM" xml:space="preserve">
+    <value>Bạn chỉ có thể viết số.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT" xml:space="preserve">
+    <value>Nhấn &quot;q&quot; để thoát.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SNAKER_DESC" xml:space="preserve">
+    <value>Trò chơi rắn!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_METEOR_DESC" xml:space="preserve">
+    <value>Bạn là một con tàu vũ trụ và các thiên thạch đang lao tới để tiêu diệt bạn. Bạn có thể cứu nó không?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMON_GAMEOVER" xml:space="preserve">
+    <value>Trò chơi kết thúc</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR" xml:space="preserve">
+    <value>Lỗi không mong muốn</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_NAME" xml:space="preserve">
+    <value>Sử dụng PowerLine để dựng hình tàu vũ trụ</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_NAME" xml:space="preserve">
+    <value>Tốc độ trò chơi thiên thạch</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_DESC" xml:space="preserve">
+    <value>Có nên sử dụng PowerLine để hiển thị tàu vũ trụ hay sử dụng ký tự chuẩn lớn hơn. Nếu bạn muốn sử dụng PowerLine với Meteor, bạn cần cài đặt phông chữ phù hợp có hỗ trợ PowerLine.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_DESC" xml:space="preserve">
+    <value>Chỉ định tốc độ trò chơi tính bằng mili giây.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC" xml:space="preserve">
+    <value>Bạn có ủng hộ nhầm ngựa không?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC" xml:space="preserve">
+    <value>Bắt đầu trò chơi Hangman</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC" xml:space="preserve">
+    <value>Sai một chữ cái là bạn sẽ bị treo cổ!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC" xml:space="preserve">
+    <value>Kiểm tra kỹ năng Hangman của bạn bằng cách ném một chữ cái ngẫu nhiên.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC" xml:space="preserve">
+    <value>Bạn là một con tàu vũ trụ và các thiên thạch đang lao tới để tiêu diệt bạn. Bạn có thể né tránh chúng không?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_QUOTE_DESC" xml:space="preserve">
+    <value>Nhận được một trích dẫn ngẫu nhiên</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC" xml:space="preserve">
+    <value>Cò Quay Nga</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC" xml:space="preserve">
+    <value>Hai tàu vũ trụ đang chiến đấu với nhau. Chỉ cần bắn một phát là tàu vũ trụ sẽ nổ tung. Đây là trò chơi hai người chơi cục bộ.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_DESC" xml:space="preserve">
+    <value>Trình mô phỏng trò chơi Wordle</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
+    <value>Chơi trò chơi Wordle ban đầu</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
+    <value>Kỷ niệm 5 năm ngày phát hành kernel</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
+    <value>Kỷ niệm 5 năm ngày thành lập hạt nhân</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
+    <value>Lần đầu tiên phát hành</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
+    <value>Hạt nhân này được phát hành lần đầu tiên vào ngày 22 tháng 2 năm 2018 để tạo ra một trình mô phỏng tối giản thực sự mô phỏng cách thức hoạt động của lõi hạt nhân.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
+    <value>Trước đây nó chỉ lưu trữ một shell và một vài lệnh, và nó chỉ hoạt động với Windows do sử dụng công cụ Windows Management Instrumentation.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
+    <value>Nó cũng không có tài liệu hướng dẫn riêng.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
+    <value>Tinh chỉnh hạt nhân</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
+    <value>Các phiên bản của hạt nhân đã được phát hành, chẳng hạn như bản phát hành chính thứ hai bổ sung tính năng tô màu và tính năng cơ bản, và bản phát hành chính thứ tư bổ sung tính năng cấu hình.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
+    <value>Tài liệu bắt đầu được biên soạn từ bản phát hành chính thứ sáu và nhiều tính năng thú vị đã dần được thêm vào kernel.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
+    <value>Phiên bản hiện tại</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
+    <value>Phiên bản này hiện đã cải tiến hạt nhân đến mức nó không còn hoạt động giống như các phiên bản cũ nữa.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
+    <value>Vì các tính năng đột phá mới đã được phát hành nên chúng tôi quyết định đặt tên cho hạt nhân này là...</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
+    <value>Chúc mừng kỷ niệm 5 năm!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
+    <value>Ngựa</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_KEYBINDINGS" xml:space="preserve">
+    <value>[ENTER] Bắt đầu cuộc đua | [ESC] Thoát | [LÊN/XUỐNG] Lựa chọn di chuyển</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_YOUWIN" xml:space="preserve">
+    <value>Con ngựa của bạn đã thắng cuộc đua!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_YOULOSE" xml:space="preserve">
+    <value>Con ngựa của bạn thua cuộc rồi!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HANGMAN_YOULOSE" xml:space="preserve">
+    <value>Bạn bị treo rồi!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HANGMAN_YOUWIN" xml:space="preserve">
+    <value>Bạn thắng rồi!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_QUESTION" xml:space="preserve">
+    <value>Bạn cược bao nhiêu?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_RIGHT" xml:space="preserve">
+    <value>Bạn đoán đúng rồi!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_WRONG" xml:space="preserve">
+    <value>Bạn đã sai rồi.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_UNLUCKY" xml:space="preserve">
+    <value>Nhưng bạn thật không may mắn. Kẻ thua cuộc.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_LUCKY" xml:space="preserve">
+    <value>Bạn thật may mắn! Người chiến thắng!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SHIPDUET_DRAW" xml:space="preserve">
+    <value>Kết quả hòa.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SHIPDUET_WINNING" xml:space="preserve">
+    <value>Người chơi {0} thắng!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_CURRENTCHAR" xml:space="preserve">
+    <value>Nhân vật hiện tại:</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_WORDLE_WIN" xml:space="preserve">
+    <value>Bạn đã đoán đúng từ rồi! Bạn thắng rồi!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_NAME" xml:space="preserve">
+    <value>Cài đặt màu sắc</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_DESC" xml:space="preserve">
+    <value>Trò chơi rắn.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_QUOTE_DESC" xml:space="preserve">
+    <value>Hiển thị cho bạn những câu trích dẫn nổi tiếng hay.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_DESC" xml:space="preserve">
+    <value>Chọn mức độ khó mà bạn mong muốn, trong đó 0 là dễ, 1 là trung bình, 2 là khó, 3 là rất khó và 4 là tùy chỉnh.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_NAME" xml:space="preserve">
+    <value>Sử dụng PowerLine để dựng hình tàu vũ trụ trong ShipDuet</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_DESC" xml:space="preserve">
+    <value>Có nên sử dụng PowerLine để hiển thị tàu vũ trụ hay sử dụng ký tự chuẩn lớn hơn. Nếu bạn muốn sử dụng PowerLine với ShipDuet, bạn cần cài đặt phông chữ phù hợp có hỗ trợ PowerLine.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETSPEED_NAME" xml:space="preserve">
+    <value>Tốc độ trò chơi trong ShipDuet</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC" xml:space="preserve">
+    <value>Sử dụng danh sách từ thông dụng.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC" xml:space="preserve">
+    <value>Sử dụng danh sách từ đầy đủ.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_PONG_DESC" xml:space="preserve">
+    <value>Trò chơi bóng bàn!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PONG_SCORE" xml:space="preserve">
+    <value>Điểm</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Không lấy được mục cài đặt.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_BACKRACE" xml:space="preserve">
+    <value>Đua ngựa</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_HANGMAN" xml:space="preserve">
+    <value>Người treo cổ</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE" xml:space="preserve">
+    <value>né tránh thiên thạch</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER" xml:space="preserve">
+    <value>Bắn thiên thạch</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_PONG" xml:space="preserve">
+    <value>Pông</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET" xml:space="preserve">
+    <value>Song ca tàu</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SNAKER" xml:space="preserve">
+    <value>con rắn</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_WORDLE" xml:space="preserve">
+    <value>Từ ngữ</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG" xml:space="preserve">
+    <value>Wordle (bản gốc)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN" xml:space="preserve">
+    <value>Trích dẫn không rõ nguồn gốc.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN" xml:space="preserve">
+    <value>Tác giả không rõ.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_DESC" xml:space="preserve">
+    <value>Điều này cho phép bạn cấu hình màu sắc</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_DESC" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình Solver.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DESC" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình SpeedPress.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình Meteor và ShipDuet.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_NAME" xml:space="preserve">
+    <value>Độ trễ tính bằng mili giây</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_DESC" xml:space="preserve">
+    <value>Phải đợi bao nhiêu mili giây trước khi thực hiện lệnh ghi tiếp theo?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_NAME" xml:space="preserve">
+    <value>Độ trễ màn hình mới tính bằng mili giây</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC" xml:space="preserve">
+    <value>Phải đợi bao nhiêu mili giây trước khi ghi vào màn hình mới?</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_GENNAME_DESC" xml:space="preserve">
+    <value>Máy phát tên và họ</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME" xml:space="preserve">
+    <value>Số lượng tên tối thiểu</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_NAME" xml:space="preserve">
+    <value>Số lượng tên tối đa</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC" xml:space="preserve">
+    <value>Số lượng tên tối thiểu để tạo</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC" xml:space="preserve">
+    <value>Số lượng tên tối đa để tạo</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_NAME" xml:space="preserve">
+    <value>Độ tuổi tối thiểu tính theo năm</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_NAME" xml:space="preserve">
+    <value>Tuổi tối đa tính theo năm</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC" xml:space="preserve">
+    <value>Số lượng tối thiểu năm tuổi để tạo ra</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC" xml:space="preserve">
+    <value>Số lượng tuổi tối đa để tạo ra</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC" xml:space="preserve">
+    <value>Tìm tên đầu tiên</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC" xml:space="preserve">
+    <value>Tạo tên bằng cách sử dụng danh sách tên nam</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC" xml:space="preserve">
+    <value>Tạo tên bằng cách sử dụng danh sách tên nữ</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC" xml:space="preserve">
+    <value>Tạo tên bằng cách sử dụng danh sách tên thống nhất</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC" xml:space="preserve">
+    <value>Tìm họ</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC" xml:space="preserve">
+    <value>Mô phỏng việc tra cứu cơ sở dữ liệu của một người ngẫu nhiên.</value>
+  </data>
+  <data name="NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Không lấy được mục cài đặt.</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_T_DESC" xml:space="preserve">
+    <value>Tạo thẻ tên (hiện tại không hỗ trợ dấu chấm phẩy)</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC" xml:space="preserve">
+    <value>Thuật ngữ tìm kiếm</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC" xml:space="preserve">
+    <value>Tên tiền tố để tìm kiếm</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC" xml:space="preserve">
+    <value>Tên hậu tố để tìm kiếm</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC" xml:space="preserve">
+    <value>Tiền tố họ để tìm kiếm</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC" xml:space="preserve">
+    <value>Hậu tố họ để tìm kiếm</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
+    <value>Cần tạo bao nhiêu tên?</value>
+  </data>
+
+</root>

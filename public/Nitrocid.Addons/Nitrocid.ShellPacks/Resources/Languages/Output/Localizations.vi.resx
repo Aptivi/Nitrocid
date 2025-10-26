@@ -1,0 +1,2044 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
+    <value>Tên người dùng cho {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD" xml:space="preserve">
+    <value>Mật khẩu cho {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO" xml:space="preserve">
+    <value>Đã kết nối tới {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING" xml:space="preserve">
+    <value>Lỗi khi cố gắng kết nối tới {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND" xml:space="preserve">
+    <value>Thư mục cục bộ {0} không tồn tại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR" xml:space="preserve">
+    <value>Nhập thư mục cục bộ. &quot;..&quot; để quay lại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND" xml:space="preserve">
+    <value>Không tìm thấy thư mục {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR" xml:space="preserve">
+    <value>Nhập thư mục từ xa. &quot;..&quot; để quay lại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_LOCALDIR" xml:space="preserve">
+    <value>Thư mục cục bộ: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_REMOTEDIR" xml:space="preserve">
+    <value>Thư mục từ xa: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE" xml:space="preserve">
+    <value>Đang tải xuống tệp {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE" xml:space="preserve">
+    <value>Đã tải xuống tệp {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE" xml:space="preserve">
+    <value>Đang tải tệp {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_UPLOADEDFILE" xml:space="preserve">
+    <value>Đã tải lên tệp {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC" xml:space="preserve">
+    <value>Lấy thư mục cục bộ hiện tại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC" xml:space="preserve">
+    <value>Lấy thư mục từ xa hiện tại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDL_DESC" xml:space="preserve">
+    <value>Thay đổi thư mục cục bộ để tải xuống hoặc tải lên</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDR_DESC" xml:space="preserve">
+    <value>Thay đổi thư mục từ xa để tải xuống hoặc tải lên</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC" xml:space="preserve">
+    <value>Xóa tập tin từ xa khỏi máy chủ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_GET_DESC" xml:space="preserve">
+    <value>Tải xuống tệp từ xa vào thư mục cục bộ bằng cách sử dụng tệp nhị phân hoặc văn bản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC" xml:space="preserve">
+    <value>Liệt kê thư mục cục bộ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC" xml:space="preserve">
+    <value>Liệt kê thư mục từ xa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_PUT_DESC" xml:space="preserve">
+    <value>Tải tệp cục bộ lên thư mục từ xa bằng cách sử dụng tệp nhị phân hoặc văn bản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC" xml:space="preserve">
+    <value>Thay đổi thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC" xml:space="preserve">
+    <value>Sử dụng FTP shell để tương tác với máy chủ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SHELL_ERROR" xml:space="preserve">
+    <value>Có lỗi trong shell.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_INVALIDPROFILE" xml:space="preserve">
+    <value>Lựa chọn hồ sơ không hợp lệ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECTING" xml:space="preserve">
+    <value>Đang cố gắng kết nối tới {0} bằng hồ sơ {1}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME" xml:space="preserve">
+    <value>Tên: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC" xml:space="preserve">
+    <value>Tính tổng các tập tin.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_INVALIDENCRYPTION" xml:space="preserve">
+    <value>Thuật toán mã hóa không hợp lệ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_PASSWORDPROMPT" xml:space="preserve">
+    <value>Nhập mật khẩu cho {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_SIZE" xml:space="preserve">
+    <value>Kích thước: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT" xml:space="preserve">
+    <value>Lỗi khi cố gắng kết nối tới {0}: Hết thời gian kết nối hoặc mất kết nối</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC" xml:space="preserve">
+    <value>Tính tổng số tập tin trong thư mục được chỉ định.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_ADDRESSPROMPT" xml:space="preserve">
+    <value>Nhập tên người dùng hoặc địa chỉ email:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_PASSWORDPROMPT" xml:space="preserve">
+    <value>Nhập mật khẩu:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_CONNECTIONFAILED" xml:space="preserve">
+    <value>Lỗi khi kết nối tới {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_CONNECTING" xml:space="preserve">
+    <value>Đang kết nối tới {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_AUTHENTICATING" xml:space="preserve">
+    <value>Đang xác thực...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC" xml:space="preserve">
+    <value>Tải xuống tin nhắn và liệt kê chúng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC" xml:space="preserve">
+    <value>Mở một tin nhắn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC" xml:space="preserve">
+    <value>Trang không phải là giá trị số.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO" xml:space="preserve">
+    <value>Số tin nhắn không được là số âm hoặc số không.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC" xml:space="preserve">
+    <value>Số tin nhắn không phải là giá trị số.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM" xml:space="preserve">
+    <value>- Từ {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO" xml:space="preserve">
+    <value>- Đến {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN" xml:space="preserve">
+    <value>- Đã gửi tại {0} trong {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND" xml:space="preserve">
+    <value>Không tìm thấy tin nhắn đã chỉ định.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PREPARINGPROFILES" xml:space="preserve">
+    <value>Đang chuẩn bị hồ sơ... Có thể mất vài phút...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC" xml:space="preserve">
+    <value>Thay đổi thư mục thư hiện tại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER" xml:space="preserve">
+    <value>Không thể mở thư mục thư {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC" xml:space="preserve">
+    <value>Liệt kê các thư mục trong địa chỉ email của bạn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_VALIDATIONFAILED_MESSAGE" xml:space="preserve">
+    <value>Trong quá trình xác thực chứng chỉ, có lỗi chứng chỉ. Có thể đây là lần đầu tiên bạn kết nối với máy chủ hoặc chứng chỉ có thể đã hết hạn. Sau đây là lỗi:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn kết nối không?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_VALIDATIONFAILED_INVALID" xml:space="preserve">
+    <value>Câu trả lời không hợp lệ. Vui lòng thử lại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT" xml:space="preserve">
+    <value>Nhập địa chỉ máy chủ IMAP và cổng (&lt;địa chỉ&gt; hoặc &lt;địa chỉ&gt;:[cổng]):</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT" xml:space="preserve">
+    <value>Nhập địa chỉ máy chủ SMTP và cổng (&lt;địa chỉ&gt; hoặc &lt;địa chỉ&gt;:[cổng]):</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC" xml:space="preserve">
+    <value>Gửi tin nhắn đến một địa chỉ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT" xml:space="preserve">
+    <value>Nhập địa chỉ email của người nhận:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT" xml:space="preserve">
+    <value>Nhập chủ đề:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT" xml:space="preserve">
+    <value>Nhập tin nhắn của bạn bên dưới. Viết &quot;EOF&quot; để xác nhận.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_SENDING" xml:space="preserve">
+    <value>Đang gửi tin nhắn...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_SENT" xml:space="preserve">
+    <value>Đã gửi tin nhắn.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL" xml:space="preserve">
+    <value>Địa chỉ email không hợp lệ. Hãy đảm bảo bạn đã viết đúng địa chỉ và nó khớp với định dạng của ví dụ được hiển thị:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC" xml:space="preserve">
+    <value>Xóa một tin nhắn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC" xml:space="preserve">
+    <value>Xóa tất cả tin nhắn từ người nhận</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX" xml:space="preserve">
+    <value>Tin nhắn {0} từ {1} đã bị xóa khỏi {2}. Còn {3} tin nhắn cần phân tích.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX" xml:space="preserve">
+    <value>Tin nhắn {0} từ {1} đã bị xóa khỏi hộp thư đến. Còn {2} tin nhắn cần phân tích.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FILESHELLS_OPENFAILED" xml:space="preserve">
+    <value>Không mở được tệp. Đang thoát khỏi shell...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION" xml:space="preserve">
+    <value>Tùy chọn {0} được chỉ định là không hợp lệ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC" xml:space="preserve">
+    <value>Câu trả lời phải là số.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME" xml:space="preserve">
+    <value>Đăng nhập tên người dùng FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME" xml:space="preserve">
+    <value>Nhật ký địa chỉ IP FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_NAME" xml:space="preserve">
+    <value>Chỉ trả về hồ sơ FTP đầu tiên</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PUT_FAILED" xml:space="preserve">
+    <value>Không tải lên được {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_GET_FAILED" xml:space="preserve">
+    <value>Tải xuống tệp {0} không thành công.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_LIST_FAILED" xml:space="preserve">
+    <value>Không thể liệt kê các tệp từ xa: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_DELETING" xml:space="preserve">
+    <value>Đang xóa {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_NOTFOUND" xml:space="preserve">
+    <value>{0} không được tìm thấy trên máy chủ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_SUCCESS" xml:space="preserve">
+    <value>Tất cả thư được gửi bởi {0} đã được xóa thành công.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_FAILURE" xml:space="preserve">
+    <value>Không xóa được tất cả thư được gửi bởi {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING" xml:space="preserve">
+    <value>Lỗi khi gửi tin nhắn.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_MOVING" xml:space="preserve">
+    <value>Đang di chuyển {0} đến {1}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_MOVED" xml:space="preserve">
+    <value>Đã di chuyển thành công</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_MV_DESC" xml:space="preserve">
+    <value>Di chuyển tệp hoặc thư mục đến tệp hoặc thư mục khác. Bạn cũng có thể sử dụng lệnh này để đổi tên tệp.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_MOVEFAILED" xml:space="preserve">
+    <value>Không thể di chuyển {0} tới {1}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COPYING" xml:space="preserve">
+    <value>Đang sao chép {0} tới {1}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COPIED" xml:space="preserve">
+    <value>Đã sao chép thành công</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_CP_DESC" xml:space="preserve">
+    <value>Sao chép tập tin hoặc thư mục sang tập tin hoặc thư mục khác.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COPYFAILED" xml:space="preserve">
+    <value>Không thể sao chép {0} đến {1}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC" xml:space="preserve">
+    <value>Di chuyển một tin nhắn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC" xml:space="preserve">
+    <value>Di chuyển tất cả tin nhắn từ người nhận</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_SUCCESS" xml:space="preserve">
+    <value>Tất cả thư được gửi bởi {0} đều được chuyển thành công.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_FAILURE" xml:space="preserve">
+    <value>Không thể di chuyển toàn bộ thư được gửi bởi {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX" xml:space="preserve">
+    <value>Tin nhắn {0} từ {1} đã được chuyển từ {2}. Còn {3} tin nhắn cần phân tích.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_DESC" xml:space="preserve">
+    <value>Có ghi lại tên người dùng FTP hay không.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC" xml:space="preserve">
+    <value>Có ghi lại địa chỉ IP FTP hay không.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC" xml:space="preserve">
+    <value>Chỉ chọn cấu hình đầu tiên khi kết nối.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE" xml:space="preserve">
+    <value>{0} tin nhắn mới đã đến hộp thư đến.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC" xml:space="preserve">
+    <value>Mở &quot;mail&quot; để xem chúng.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME" xml:space="preserve">
+    <value>Họ và tên đầy đủ: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME" xml:space="preserve">
+    <value>Thời gian tạo: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME" xml:space="preserve">
+    <value>Thời gian truy cập cuối cùng: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME" xml:space="preserve">
+    <value>Thời gian viết cuối cùng: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES" xml:space="preserve">
+    <value>Thuộc tính: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_PARENTDIR" xml:space="preserve">
+    <value>Thư mục cha: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_WHERETOFIND" xml:space="preserve">
+    <value>Nơi tìm thấy: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE" xml:space="preserve">
+    <value>Kích thước tập tin: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT" xml:space="preserve">
+    <value>Nhập đường dẫn tệp đến tệp đính kèm. Nhấn ENTER trên đường dẫn trống để xác nhận.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC" xml:space="preserve">
+    <value>Mở một tin nhắn được mã hóa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD" xml:space="preserve">
+    <value>Viết mật khẩu cho ID khóa {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC" xml:space="preserve">
+    <value>Gửi tin nhắn được mã hóa đến một địa chỉ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK" xml:space="preserve">
+    <value>Nhấn phím bất kỳ để quay lại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED" xml:space="preserve">
+    <value>Không thể tạo thư mục thư {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC" xml:space="preserve">
+    <value>Tạo một thư mục trong thư mục làm việc hiện tại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC" xml:space="preserve">
+    <value>Xóa một thư mục khỏi thư mục làm việc hiện tại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND" xml:space="preserve">
+    <value>Không tìm thấy thư mục thư {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED" xml:space="preserve">
+    <value>Không thể xóa thư mục thư {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC" xml:space="preserve">
+    <value>Đổi tên một thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME" xml:space="preserve">
+    <value>Hiển thị bản xem trước tin nhắn thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC" xml:space="preserve">
+    <value>Khi liệt kê các thư, hãy hiển thị phần xem trước nội dung.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC" xml:space="preserve">
+    <value>Nếu bật tính năng lưu tự động, tệp văn bản sẽ được lưu sau mỗi &quot;n&quot; giây.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC" xml:space="preserve">
+    <value>Cho phép bạn sử dụng máy chủ SSH FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC" xml:space="preserve">
+    <value>Liệt kê tất cả các tập tin bên trong kho lưu trữ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC" xml:space="preserve">
+    <value>Trích xuất một tập tin vào một thư mục được chỉ định hoặc một thư mục hiện tại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC" xml:space="preserve">
+    <value>Thay đổi thư mục lưu trữ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_LOCALDIRNOTFOUND" xml:space="preserve">
+    <value>Thư mục {0} không tồn tại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND" xml:space="preserve">
+    <value>Thư mục lưu trữ {0} không tồn tại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR" xml:space="preserve">
+    <value>Có lỗi trong shell FTP:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR" xml:space="preserve">
+    <value>Có lỗi trong shell SFTP:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD" xml:space="preserve">
+    <value>Bạn muốn xác thực như thế nào?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY" xml:space="preserve">
+    <value>Tệp khóa riêng tư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE" xml:space="preserve">
+    <value>Nhập mật khẩu cho khóa {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND" xml:space="preserve">
+    <value>Tệp khóa {0} không tồn tại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED" xml:space="preserve">
+    <value>Lỗi khi cố gắng thêm khóa riêng tư:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_PERM_DESC" xml:space="preserve">
+    <value>Thiết lập quyền cho tệp. Tính năng này chỉ được hỗ trợ trên các máy chủ FTP chạy Unix.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_TYPE_DESC" xml:space="preserve">
+    <value>Đặt loại cho phiên này</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PERM_SETFAILED" xml:space="preserve">
+    <value>Không thể thiết lập quyền của {0} thành {1}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PERM_SETSUCCEEDED" xml:space="preserve">
+    <value>Quyền được thiết lập thành công cho tập tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_ASCII" xml:space="preserve">
+    <value>Kiểu dữ liệu được thiết lập là ASCII!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_BINARY" xml:space="preserve">
+    <value>Kiểu dữ liệu được đặt thành Nhị phân!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_INVALID" xml:space="preserve">
+    <value>Kiểu dữ liệu không hợp lệ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING" xml:space="preserve">
+    <value>Xin lưu ý rằng hầu hết các tệp sẽ không tải xuống hoặc tải lên đúng cách khi sử dụng chế độ này, vì vậy chúng tôi khuyên bạn nên sử dụng chế độ Nhị phân trong hầu hết các trường hợp.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC" xml:space="preserve">
+    <value>Mở một vỏ RSS để đọc các nguồn cấp dữ liệu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC" xml:space="preserve">
+    <value>Liệt kê tất cả các nguồn cấp dữ liệu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_READ_DESC" xml:space="preserve">
+    <value>Đọc nguồn cấp dữ liệu trong trình duyệt web</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC" xml:space="preserve">
+    <value>Nhận thông tin bài viết</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE" xml:space="preserve">
+    <value>Số lượng bài viết không thể lớn hơn số lượng bài viết có sẵn.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE" xml:space="preserve">
+    <value>Tiêu đề:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK" xml:space="preserve">
+    <value>Liên kết:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC" xml:space="preserve">
+    <value>Nhận thông tin nguồn cấp dữ liệu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC" xml:space="preserve">
+    <value>Sự miêu tả:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE" xml:space="preserve">
+    <value>Loại thức ăn:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT" xml:space="preserve">
+    <value>Số lượng bài viết:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READ_NOLINK" xml:space="preserve">
+    <value>Bài viết không có liên kết!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_WEBALERT_OPENING" xml:space="preserve">
+    <value>Đang mở URL... Hãy đảm bảo làm theo các bước hiển thị trên màn hình.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC" xml:space="preserve">
+    <value>Làm đẹp tệp JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_GETFOLDER_DESC" xml:space="preserve">
+    <value>Tải xuống thư mục từ xa vào thư mục cục bộ bằng cách sử dụng nhị phân hoặc văn bản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_PUTFOLDER_DESC" xml:space="preserve">
+    <value>Tải thư mục cục bộ lên thư mục từ xa bằng cách sử dụng nhị phân hoặc văn bản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING" xml:space="preserve">
+    <value>Đang tải xuống thư mục {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED" xml:space="preserve">
+    <value>Đã tải xuống thư mục {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED" xml:space="preserve">
+    <value>Tải xuống thư mục {0} không thành công.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING" xml:space="preserve">
+    <value>Đang tải lên thư mục {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADED" xml:space="preserve">
+    <value>Đã tải lên thư mục {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC" xml:space="preserve">
+    <value>Thu nhỏ tệp JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_JSONTOOLS_EXCEPTION_STREAMNOTOPEN" xml:space="preserve">
+    <value>Trình soạn thảo JSON vẫn chưa mở luồng tệp.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC" xml:space="preserve">
+    <value>Thoát khỏi shell JSON mà không lưu các thay đổi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC" xml:space="preserve">
+    <value>Lưu tệp JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC" xml:space="preserve">
+    <value>In tệp JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC" xml:space="preserve">
+    <value>Viết cách bạn muốn lời nhắc đăng nhập của mình như thế nào. Để trống để sử dụng kiểu mặc định. Các chỗ giữ chỗ được phân tích cú pháp.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC" xml:space="preserve">
+    <value>Viết cách bạn muốn nhắc nhở mật khẩu. Để trống để sử dụng kiểu mặc định. Các chỗ giữ chỗ được phân tích cú pháp.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME" xml:space="preserve">
+    <value>Hiển thị chi tiết tập tin trong danh sách FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
+    <value>Kiểu nhắc tên người dùng cho FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_PASSWORDPROMPT_NAME" xml:space="preserve">
+    <value>Kiểu nhắc mật khẩu cho FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_NAME" xml:space="preserve">
+    <value>Sử dụng hồ sơ FTP đầu tiên</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_NAME" xml:space="preserve">
+    <value>Thêm kết nối mới vào số quay nhanh FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_NAME" xml:space="preserve">
+    <value>Hãy thử xác thực chứng chỉ FTP an toàn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME" xml:space="preserve">
+    <value>Hiển thị FTP MOTD khi kết nối</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME" xml:space="preserve">
+    <value>Luôn chấp nhận chứng chỉ FTP không hợp lệ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC" xml:space="preserve">
+    <value>Hiển thị thông tin chi tiết về tệp FTP trong khi liệt kê các thư mục từ xa.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC" xml:space="preserve">
+    <value>Sử dụng cấu hình FTP đầu tiên để kết nối với FTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC" xml:space="preserve">
+    <value>Nếu được bật, sẽ thêm kết nối mới vào số quay số nhanh FTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_DESC" xml:space="preserve">
+    <value>Cố gắng xác thực chứng chỉ FTP. Không nên tắt chức năng này.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC" xml:space="preserve">
+    <value>Hiển thị tin nhắn FTP trong ngày khi đăng nhập.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC" xml:space="preserve">
+    <value>Luôn chấp nhận chứng chỉ FTP không hợp lệ. Không nên bật tính năng này vì có thể gây ra rủi ro bảo mật.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
+    <value>Kiểu nhắc tên người dùng cho thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME" xml:space="preserve">
+    <value>Kiểu nhắc mật khẩu cho thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME" xml:space="preserve">
+    <value>Kiểu nhắc nhở IMAP cho thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME" xml:space="preserve">
+    <value>Kiểu nhắc nhở SMTP cho thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME" xml:space="preserve">
+    <value>Tự động phát hiện máy chủ thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME" xml:space="preserve">
+    <value>Bật gỡ lỗi thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME" xml:space="preserve">
+    <value>Thông báo khi có tin nhắn email mới</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME" xml:space="preserve">
+    <value>Kiểu nhắc mật khẩu GPG cho thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME" xml:space="preserve">
+    <value>Gửi khoảng thời gian ping IMAP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME" xml:space="preserve">
+    <value>Gửi khoảng thời gian ping SMTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME" xml:space="preserve">
+    <value>Định dạng văn bản thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC" xml:space="preserve">
+    <value>Viết cách bạn muốn lời nhắc máy chủ IMAP của mình như thế nào. Để trống để sử dụng kiểu mặc định. Các chỗ giữ chỗ được phân tích cú pháp.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC" xml:space="preserve">
+    <value>Viết cách bạn muốn lời nhắc máy chủ SMTP của mình như thế nào. Để trống để sử dụng kiểu mặc định. Các chỗ giữ chỗ được phân tích cú pháp.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC" xml:space="preserve">
+    <value>Tự động phát hiện máy chủ thư dựa trên địa chỉ đã cho.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC" xml:space="preserve">
+    <value>Cho phép gỡ lỗi máy chủ thư.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC" xml:space="preserve">
+    <value>Thông báo cho bạn về bất kỳ thư mới nào.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC" xml:space="preserve">
+    <value>Viết cách bạn muốn nhắc nhở mật khẩu GPG của mình. Để trống để sử dụng kiểu mặc định. Các chỗ giữ chỗ được phân tích cú pháp.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC" xml:space="preserve">
+    <value>Phải mất bao nhiêu mili giây để gửi lệnh ping IMAP?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC" xml:space="preserve">
+    <value>Phải mất bao nhiêu mili giây để gửi lệnh ping SMTP?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC" xml:space="preserve">
+    <value>Kiểm soát cách hiển thị nội dung thư.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_NAME" xml:space="preserve">
+    <value>Kiểu nhắc URL nguồn cấp RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME" xml:space="preserve">
+    <value>Tự động làm mới nguồn cấp RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_NAME" xml:space="preserve">
+    <value>Tự động làm mới khoảng thời gian nguồn cấp RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_DESC" xml:space="preserve">
+    <value>Viết cách bạn muốn nhắc nhở máy chủ nguồn cấp RSS của mình. Để trống để sử dụng kiểu mặc định. Các chỗ giữ chỗ được phân tích cú pháp.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_DESC" xml:space="preserve">
+    <value>Phải mất bao nhiêu mili giây để làm mới nguồn cấp dữ liệu RSS?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME" xml:space="preserve">
+    <value>Hiển thị chi tiết tệp trong danh sách SFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
+    <value>Kiểu nhắc tên người dùng cho SFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_NAME" xml:space="preserve">
+    <value>Thêm kết nối mới vào quay số nhanh SFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC" xml:space="preserve">
+    <value>Hiển thị thông tin chi tiết về tệp SFTP trong khi liệt kê các thư mục từ xa.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC" xml:space="preserve">
+    <value>Nếu được bật, sẽ thêm kết nối mới vào nút quay số nhanh SFTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_TITLE" xml:space="preserve">
+    <value>Thông tin máy chủ FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_ADDRESS" xml:space="preserve">
+    <value>Địa chỉ máy chủ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_PORT" xml:space="preserve">
+    <value>Cổng máy chủ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_TYPE" xml:space="preserve">
+    <value>Loại máy chủ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_SYSTYPE" xml:space="preserve">
+    <value>Loại hệ thống máy chủ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_ENCRYPTION" xml:space="preserve">
+    <value>Chế độ mã hóa máy chủ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_DATACONNECTION" xml:space="preserve">
+    <value>Loại kết nối dữ liệu máy chủ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_SYSTEM" xml:space="preserve">
+    <value>Hệ thống máy chủ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_DOWNLOADDATATYPE" xml:space="preserve">
+    <value>Kiểu dữ liệu tải xuống máy chủ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_UPLOADDATATYPE" xml:space="preserve">
+    <value>Kiểu dữ liệu tải lên máy chủ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH" xml:space="preserve">
+    <value>Nhập tệp từ xa để băm.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED" xml:space="preserve">
+    <value>Nhập thư mục từ xa.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_NAME" xml:space="preserve">
+    <value>Băm đệ quy cho FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC" xml:space="preserve">
+    <value>Có nên băm đệ quy một thư mục hay không. Xin lưu ý rằng không phải tất cả các máy chủ FTP đều hỗ trợ điều đó.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC" xml:space="preserve">
+    <value>Thực hiện lệnh máy chủ FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS" xml:space="preserve">
+    <value>của thư được chuyển...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_HOSTNAME" xml:space="preserve">
+    <value>Tên máy chủ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_USERNAME" xml:space="preserve">
+    <value>Tên người dùng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_DATATYPE" xml:space="preserve">
+    <value>Kiểu dữ liệu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCODING" xml:space="preserve">
+    <value>Mã hóa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCRYPTION" xml:space="preserve">
+    <value>Mã hóa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROTOCOLS" xml:space="preserve">
+    <value>Giao thức</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME" xml:space="preserve">
+    <value>Hiển thị tiến trình chuyển thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME" xml:space="preserve">
+    <value>Tiến trình chuyển thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME" xml:space="preserve">
+    <value>Tiến trình chuyển thư (đơn)</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC" xml:space="preserve">
+    <value>Nếu được bật, shell thư sẽ hiển thị số byte được truyền khi tải thư xuống.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC" xml:space="preserve">
+    <value>Viết cách bạn muốn tiến trình chuyển thư của mình sẽ như thế nào. Để trống để sử dụng kiểu mặc định. Các chỗ giữ chỗ được phân tích cú pháp. {0} cho kích thước đã chuyển và {1} cho tổng kích thước.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC" xml:space="preserve">
+    <value>Viết cách bạn muốn tiến trình chuyển thư của mình sẽ như thế nào. Để trống để sử dụng kiểu mặc định. Các chỗ giữ chỗ được phân tích cú pháp. {0} cho kích thước đã chuyển.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC" xml:space="preserve">
+    <value>Bắt đầu shell HTTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_GET_DESC" xml:space="preserve">
+    <value>Nhận phản hồi từ máy chủ HTTP bằng cách sử dụng yêu cầu đã chỉ định</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_DELETE_DESC" xml:space="preserve">
+    <value>Xóa nội dung khỏi máy chủ HTTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR" xml:space="preserve">
+    <value>Có lỗi trong shell HTTP:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_GETSTRING_DESC" xml:space="preserve">
+    <value>Lấy chuỗi từ máy chủ HTTP bằng cách sử dụng yêu cầu được chỉ định</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_GETTING" xml:space="preserve">
+    <value>Đang nhận {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC" xml:space="preserve">
+    <value>Đóng gói một tập tin cục bộ vào kho lưu trữ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK" xml:space="preserve">
+    <value>Không thể đóng gói được gì cả.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_NAME" xml:space="preserve">
+    <value>Hết thời gian chờ lấy nguồn cấp RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_DESC" xml:space="preserve">
+    <value>Phải đợi bao nhiêu mili giây trước khi thời gian chờ tải nguồn cấp dữ liệu RSS hết hạn?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_NAME" xml:space="preserve">
+    <value>Xác minh các nỗ lực thử lại để truyền FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME" xml:space="preserve">
+    <value>Hết thời gian kết nối FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME" xml:space="preserve">
+    <value>Hết thời gian kết nối dữ liệu FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_NAME" xml:space="preserve">
+    <value>Phiên bản IP FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_DESC" xml:space="preserve">
+    <value>Phải xác minh quá trình tải lên, tải xuống và thử lại bao nhiêu lần nếu quá trình xác minh không thành công trước khi quá trình tải xuống hoàn toàn không thành công?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_DESC" xml:space="preserve">
+    <value>Phải đợi bao nhiêu mili giây trước khi kết nối FTP hết thời gian chờ?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_DESC" xml:space="preserve">
+    <value>Phải đợi bao nhiêu mili giây trước khi kết nối dữ liệu FTP hết thời gian chờ?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_DESC" xml:space="preserve">
+    <value>Chọn phiên bản Giao thức Internet mà máy chủ FTP hỗ trợ và máy khách FTP sử dụng.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_NAME" xml:space="preserve">
+    <value>Định dạng JSON mặc định cho shell JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_DESC" xml:space="preserve">
+    <value>Chọn định dạng JSON mặc định (làm đẹp hoặc thu nhỏ) để lưu shell JSON.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC" xml:space="preserve">
+    <value>Hiển thị chi tiết tệp trong danh sách</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
+    <value>Ngăn chặn các thông báo &quot;quyền bị từ chối&quot; gây phiền nhiễu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC" xml:space="preserve">
+    <value>Chỉ ra rằng đường dẫn đích là tuyệt đối</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FILESHELLS_NEEDSFILE" xml:space="preserve">
+    <value>Tệp không được chỉ định. Đang thoát khỏi shell...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC" xml:space="preserve">
+    <value>Đánh dấu nguồn cấp dữ liệu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC" xml:space="preserve">
+    <value>Xóa dấu trang nguồn cấp dữ liệu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS" xml:space="preserve">
+    <value>Nguồn cấp dữ liệu không tồn tại trong dấu trang.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC" xml:space="preserve">
+    <value>Liệt kê tất cả các nguồn cấp dữ liệu được đánh dấu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND" xml:space="preserve">
+    <value>Không tìm thấy tệp {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_ARCHIVE_FILENOTFOUND" xml:space="preserve">
+    <value>Tập tin không tồn tại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO" xml:space="preserve">
+    <value>Không có thông tin.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOLDERCANTOPEN" xml:space="preserve">
+    <value>Không thể mở tệp hoặc thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NEWLINESTYLE" xml:space="preserve">
+    <value>Kiểu xuống dòng:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_BINFILE" xml:space="preserve">
+    <value>Tệp nhị phân:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATA" xml:space="preserve">
+    <value>Siêu dữ liệu MIME:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME2" xml:space="preserve">
+    <value>Họ tên đầy đủ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_VERSION" xml:space="preserve">
+    <value>Phiên bản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CULTURENAME" xml:space="preserve">
+    <value>Tên văn hóa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CONTENTTYPE" xml:space="preserve">
+    <value>Loại nội dung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NOTDOTNETASSEMBLY" xml:space="preserve">
+    <value>Tệp không phải là tệp .NET hợp lệ.\n</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTGETFSINFO" xml:space="preserve">
+    <value>Không thể lấy thông tin hệ thống tập tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY" xml:space="preserve">
+    <value>Không thể sao chép tập tin hoặc thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE" xml:space="preserve">
+    <value>Không thể di chuyển tập tin hoặc thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTREMOVE" xml:space="preserve">
+    <value>Không thể xóa tệp hoặc thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT" xml:space="preserve">
+    <value>Nhập đường dẫn hoặc đường dẫn đầy đủ đến thư mục đích để sao chép tệp đã chọn vào.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH" xml:space="preserve">
+    <value>Hãy đảm bảo rằng bạn đã viết đúng đường dẫn.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND" xml:space="preserve">
+    <value>Tệp không tồn tại. Hãy đảm bảo rằng bạn đã viết đúng đường dẫn.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT" xml:space="preserve">
+    <value>Nhập đường dẫn hoặc đường dẫn đầy đủ đến thư mục đích để di chuyển tệp đã chọn đến.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWFILENAMEPROMPT" xml:space="preserve">
+    <value>Nhập tên tệp mới.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENAMEINVALID" xml:space="preserve">
+    <value>Hãy đảm bảo rằng bạn đã viết đúng tên tệp.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOUND" xml:space="preserve">
+    <value>Tệp đã tồn tại. Tên không được phép bị tệp khác chiếm giữ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT" xml:space="preserve">
+    <value>Nhập tên thư mục mới.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND" xml:space="preserve">
+    <value>Thư mục đã tồn tại. Tên không được phép bị thư mục khác chiếm giữ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV" xml:space="preserve">
+    <value>Không cần sửa đổi.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION" xml:space="preserve">
+    <value>Kết nối vẫn chưa được thiết lập.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT" xml:space="preserve">
+    <value>Nhập địa chỉ máy chủ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC" xml:space="preserve">
+    <value>Trình quản lý tập tin lưu trữ hệ thống tương tác</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC" xml:space="preserve">
+    <value>Mở tệp lưu trữ vào shell lưu trữ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC" xml:space="preserve">
+    <value>Vỏ Git</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC" xml:space="preserve">
+    <value>Hiển thị sự khác biệt giữa hai tệp JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC" xml:space="preserve">
+    <value>Mở máy khách thư IMAP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC" xml:space="preserve">
+    <value>Mở ứng dụng thư POP3</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING" xml:space="preserve">
+    <value>Thư POP3 đang trở lại từ 0.0.20.0, nhưng hiện tại chúng tôi không có kế hoạch phát hành trong phiên bản này. Hãy đợi phiên bản tiếp theo.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FEEDURLPROMPT" xml:space="preserve">
+    <value>Nhập URL nguồn cấp RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE" xml:space="preserve">
+    <value>Có lỗi khi cố gắng phân tích địa chỉ. Hãy đảm bảo rằng bạn đã viết đúng địa chỉ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC" xml:space="preserve">
+    <value>Mở trình đọc nguồn cấp RSS tương tác TUI</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT" xml:space="preserve">
+    <value>Không thể trích xuất được gì cả.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK" xml:space="preserve">
+    <value>Lưu trữ không thể ghi được vì loại là</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC" xml:space="preserve">
+    <value>Đọc nội dung của một tập tin từ xa vào bảng điều khiển</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC" xml:space="preserve">
+    <value>Thoát khỏi shell mà không ngắt kết nối</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED" xml:space="preserve">
+    <value>Hãy đảm bảo rằng bạn chỉ định đúng cổng.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROMPT" xml:space="preserve">
+    <value>Đã tìm thấy nhiều hơn một hồ sơ. Chọn một:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSREPO" xml:space="preserve">
+    <value>Không xác định được kho lưu trữ. Đang thoát khỏi shell...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_REPOFAILED" xml:space="preserve">
+    <value>Không mở được kho lưu trữ. Đang thoát khỏi shell...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_DESC" xml:space="preserve">
+    <value>Lấy danh sách các thay đổi trong một tệp theo từng dòng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_DESC" xml:space="preserve">
+    <value>Kiểm tra một chi nhánh</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_COMMIT_DESC" xml:space="preserve">
+    <value>Thực hiện một cam kết</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_DESC" xml:space="preserve">
+    <value>Mô tả một cam kết</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC" xml:space="preserve">
+    <value>Hiển thị sự khác biệt giữa cam kết hiện tại và các tệp cục bộ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC" xml:space="preserve">
+    <value>Hiển thị sự khác biệt giữa cam kết hiện tại và các tệp cục bộ theo nội dung của chúng trong biểu mẫu bản vá</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC" xml:space="preserve">
+    <value>Hiển thị sự khác biệt giữa cam kết hiện tại và các tệp cục bộ theo sự tồn tại của chúng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC" xml:space="preserve">
+    <value>Hiển thị sự khác biệt giữa cam kết hiện tại và các tệp cục bộ theo sự tồn tại và nội dung của chúng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC" xml:space="preserve">
+    <value>Lấy tất cả các bản cập nhật từ xa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_FILESTATUS_DESC" xml:space="preserve">
+    <value>Lấy trạng thái tập tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_INFO_DESC" xml:space="preserve">
+    <value>Nhận thông tin kho lưu trữ đơn giản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC" xml:space="preserve">
+    <value>Liệt kê tất cả các nhánh</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC" xml:space="preserve">
+    <value>Liệt kê tất cả các cam kết</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC" xml:space="preserve">
+    <value>Liệt kê tất cả các điều khiển từ xa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSTAGS_DESC" xml:space="preserve">
+    <value>Liệt kê tất cả các thẻ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_DESC" xml:space="preserve">
+    <value>Tạo một thẻ từ HEAD</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC" xml:space="preserve">
+    <value>Kéo tất cả các bản cập nhật từ máy chủ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_PUSH_DESC" xml:space="preserve">
+    <value>Đẩy tất cả các bản cập nhật lên máy chủ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC" xml:space="preserve">
+    <value>Đặt lại kho lưu trữ cục bộ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC" xml:space="preserve">
+    <value>Có thiết lập lại mềm không</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC" xml:space="preserve">
+    <value>Có một thiết lập lại hỗn hợp</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC" xml:space="preserve">
+    <value>Có thiết lập lại cứng không</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_DESC" xml:space="preserve">
+    <value>Thiết lập danh tính của bạn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGE_DESC" xml:space="preserve">
+    <value>Các giai đoạn thay đổi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGEALL_DESC" xml:space="preserve">
+    <value>Các giai đoạn thay đổi tất cả</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC" xml:space="preserve">
+    <value>Trạng thái kho lưu trữ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC" xml:space="preserve">
+    <value>Bỏ giai đoạn thay đổi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGEALL_DESC" xml:space="preserve">
+    <value>Bỏ giai đoạn tất cả các thay đổi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC" xml:space="preserve">
+    <value>Thêm tiêu đề có khóa và giá trị vào tất cả các yêu cầu sắp tới</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC" xml:space="preserve">
+    <value>Nhận được tác nhân người dùng hiện tại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC" xml:space="preserve">
+    <value>Chỉnh sửa khóa trên tiêu đề cho tất cả các yêu cầu sắp tới</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC" xml:space="preserve">
+    <value>Liệt kê các tiêu đề yêu cầu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_PUT_DESC" xml:space="preserve">
+    <value>Đưa tệp vào máy chủ HTTP bằng yêu cầu đã chỉ định</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_PUTSTRING_DESC" xml:space="preserve">
+    <value>Đưa chuỗi đến máy chủ HTTP bằng cách sử dụng yêu cầu đã chỉ định</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC" xml:space="preserve">
+    <value>Đăng tệp lên máy chủ HTTP bằng yêu cầu đã chỉ định</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING" xml:space="preserve">
+    <value>Đăng chuỗi lên máy chủ HTTP bằng yêu cầu đã chỉ định</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_" xml:space="preserve">
+    <value>Xóa một khóa trên tiêu đề cho tất cả các yêu cầu sắp tới</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC" xml:space="preserve">
+    <value>Thiết lập một tác nhân người dùng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
+    <value>Thêm tiêu đề đã tồn tại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
+    <value>Xóa tiêu đề không tồn tại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
+    <value>Đang chỉnh sửa tiêu đề không tồn tại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC" xml:space="preserve">
+    <value>Thêm một mảng, đối tượng hoặc thuộc tính mới</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC" xml:space="preserve">
+    <value>Chỉ định đường dẫn cha</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC" xml:space="preserve">
+    <value>Chỉ định loại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC" xml:space="preserve">
+    <value>Chỉ định tên thuộc tính sẽ được tạo. Điều này được sử dụng nếu đường dẫn cha là một đối tượng.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC" xml:space="preserve">
+    <value>Xóa tệp JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC" xml:space="preserve">
+    <value>Tìm một tài sản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC" xml:space="preserve">
+    <value>Chỉ định thuộc tính cha</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC" xml:space="preserve">
+    <value>Hiển thị thông tin về tệp JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC" xml:space="preserve">
+    <value>Không hiển thị các thuộc tính riêng lẻ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC" xml:space="preserve">
+    <value>Hiển thị tất cả các giá trị</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_RM_DESC" xml:space="preserve">
+    <value>Xóa một đối tượng mục tiêu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC" xml:space="preserve">
+    <value>JSON được làm đẹp</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC" xml:space="preserve">
+    <value>JSON thu nhỏ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_DESC" xml:space="preserve">
+    <value>Đặt giá trị cho một mảng, đối tượng hoặc thuộc tính hiện có</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC" xml:space="preserve">
+    <value>Mở tệp JSON trong trình soạn thảo tương tác</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOTOKEN" xml:space="preserve">
+    <value>Không tìm thấy mã thông báo bên trong tệp JSON.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN" xml:space="preserve">
+    <value>Không tìm thấy mã thông báo gốc. Hãy đảm bảo rằng bạn đã viết đúng đường dẫn &apos;{0}&apos;.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Kiểu &apos;{0}&apos; được chỉ định không hợp lệ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED" xml:space="preserve">
+    <value>Không thể thêm mục mới có tên thuộc tính với loại mã thông báo gốc là &apos;{0}&apos;.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED" xml:space="preserve">
+    <value>Không thể thêm mục mới có tên thuộc tính &apos;{0}&apos; với loại mã thông báo gốc là &apos;{1}&apos;.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT" xml:space="preserve">
+    <value>Tên thuộc tính &apos;{0}&apos; trong phần tử cha &apos;{1}&apos;, loại &apos;{2}&apos;, không tồn tại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC" xml:space="preserve">
+    <value>Tìm kiếm nguồn cấp dữ liệu cho một cụm từ trong tiêu đề và/hoặc mô tả</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC" xml:space="preserve">
+    <value>Tìm kiếm tiêu đề</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC" xml:space="preserve">
+    <value>Tìm kiếm mô tả</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC" xml:space="preserve">
+    <value>Tìm kiếm tiêu đề và mô tả</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC" xml:space="preserve">
+    <value>Tìm kiếm phân biệt chữ hoa chữ thường</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL" xml:space="preserve">
+    <value>Không phân tích được URL nguồn cấp dữ liệu:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FEEDNODESC" xml:space="preserve">
+    <value>Không có mô tả</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC" xml:space="preserve">
+    <value>Hiển thị chi tiết các tập tin và thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
+    <value>Ngăn chặn các tin nhắn &quot;không được phép&quot;</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT" xml:space="preserve">
+    <value>Nhập vị trí của khóa riêng cho {0}. Viết &quot;q&quot; để hoàn tất việc thêm khóa:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTING" xml:space="preserve">
+    <value>Đang cố gắng kết nối tới {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC" xml:space="preserve">
+    <value>Thực hiện truy vấn SQL</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC" xml:space="preserve">
+    <value>Thông tin cơ sở dữ liệu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC" xml:space="preserve">
+    <value>Mở tệp SQL trong trình soạn thảo hex tương tác TUI</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED" xml:space="preserve">
+    <value>Kiểu lưu trữ này không được hỗ trợ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa {0} không?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER" xml:space="preserve">
+    <value>Người sử dụng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE" xml:space="preserve">
+    <value>Địa điểm</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_FSENTRY_NOSYMLINKINFO" xml:space="preserve">
+    <value>Không có thông tin liên kết tượng trưng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON" xml:space="preserve">
+    <value>Đã sửa đổi vào</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_TITLE" xml:space="preserve">
+    <value>Trạng thái đổ lỗi cho tập tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_HUNKNUM" xml:space="preserve">
+    <value>Số lượng Hunk</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_LINENUM" xml:space="preserve">
+    <value>Số lượng dòng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALLINE" xml:space="preserve">
+    <value>Số dòng đầu tiên</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALLINE" xml:space="preserve">
+    <value>Số dòng cuối cùng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALCOMMIT_TITLE" xml:space="preserve">
+    <value>Cam kết ban đầu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA" xml:space="preserve">
+    <value>Cam kết SHA</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE" xml:space="preserve">
+    <value>Cam kết tin nhắn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR" xml:space="preserve">
+    <value>Cam kết tác giả</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER" xml:space="preserve">
+    <value>Người cam kết cam kết</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM" xml:space="preserve">
+    <value>Số lượng phụ huynh</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALCOMMIT_TITLE" xml:space="preserve">
+    <value>Cam kết cuối cùng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSSAVING" xml:space="preserve">
+    <value>Trước tiên, hãy lưu công việc của bạn bằng cách tạo một commit trước khi kiểm tra một nhánh.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NOBRANCH" xml:space="preserve">
+    <value>Chi nhánh không tồn tại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1" xml:space="preserve">
+    <value>Bạn cần xác định danh tính của mình trước khi sử dụng lệnh này. Sử dụng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2" xml:space="preserve">
+    <value>để xác định danh tính của bạn.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMIT_SUCCESS" xml:space="preserve">
+    <value>Cập nhật kho lưu trữ với cam kết mới</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMIT_DESC" xml:space="preserve">
+    <value>Mô tả cho cam kết</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES" xml:space="preserve">
+    <value>Những thay đổi chung trong</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES" xml:space="preserve">
+    <value>Nội dung thay đổi trong</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND" xml:space="preserve">
+    <value>Không có điều khiển từ xa.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_FETCH_NOREMOTES" xml:space="preserve">
+    <value>Không tìm thấy điều khiển từ xa nào để tải bản cập nhật.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_FILESTATUS_TITLE" xml:space="preserve">
+    <value>Trạng thái cho tập tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_BARE" xml:space="preserve">
+    <value>Kho lưu trữ trống</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_DETACHED" xml:space="preserve">
+    <value>Đầu tách ra</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_NOREF" xml:space="preserve">
+    <value>Không có tham chiếu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_SHALLOW" xml:space="preserve">
+    <value>Bản sao nông</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT" xml:space="preserve">
+    <value>Đường dẫn đến .git</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR" xml:space="preserve">
+    <value>Đường dẫn đến thư mục làm việc</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE" xml:space="preserve">
+    <value>Cam kết cho nhánh</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_MAKETAG_CREATED" xml:space="preserve">
+    <value>Đã tạo một thẻ mới! Sau đây là thông tin chi tiết về thẻ của bạn:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_UPTODATE" xml:space="preserve">
+    <value>Bản sao lưu cục bộ của bạn đã được cập nhật!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_FASTFORWARD" xml:space="preserve">
+    <value>Chuyển tiếp nhanh đến</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_UPDATED" xml:space="preserve">
+    <value>Đã cập nhật kho lưu trữ thành</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS" xml:space="preserve">
+    <value>Việc hợp nhất của bạn dẫn đến xung đột. Vui lòng giải quyết bất kỳ xung đột nào.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_SETID_SUCCESS" xml:space="preserve">
+    <value>Bạn đã xác định thành công mình là</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STAGE_NOCHANGES" xml:space="preserve">
+    <value>Không có bất kỳ thay đổi nào được thực hiện trên sân khấu.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STAGE_SUCCESS" xml:space="preserve">
+    <value>Đã dàn dựng tệp {0} thành công!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STAGE_FAILURE" xml:space="preserve">
+    <value>Không thể phân giai đoạn tệp {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_TITLE" xml:space="preserve">
+    <value>Trạng thái của nhánh {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOCHANGES" xml:space="preserve">
+    <value>Không có bất kỳ sửa đổi nào được thực hiện.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_UNTRACKED" xml:space="preserve">
+    <value>Các tập tin chưa theo dõi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOUNTRACKED" xml:space="preserve">
+    <value>Không có tập tin nào chưa được theo dõi.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_ADDED" xml:space="preserve">
+    <value>Đã thêm tập tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOADDED" xml:space="preserve">
+    <value>Không có tập tin nào được thêm vào.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_MODIFIED" xml:space="preserve">
+    <value>Các tập tin đã sửa đổi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOMODIFIED" xml:space="preserve">
+    <value>Không có tập tin nào được sửa đổi.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_REMOVED" xml:space="preserve">
+    <value>Đã xóa các tập tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOREMOVED" xml:space="preserve">
+    <value>Không có tập tin nào bị xóa.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_STAGED" xml:space="preserve">
+    <value>Tập tin được dàn dựng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOSTAGED" xml:space="preserve">
+    <value>Không có tập tin dàn dựng.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_RENAMEDSTAGED" xml:space="preserve">
+    <value>Đã đổi tên các tập tin được dàn dựng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED" xml:space="preserve">
+    <value>Không có tệp được đổi tên.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_RENAMED" xml:space="preserve">
+    <value>Đã đổi tên tập tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NORENAMED" xml:space="preserve">
+    <value>Không đổi tên tập tin.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_MISSING" xml:space="preserve">
+    <value>Thiếu tập tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOMISSING" xml:space="preserve">
+    <value>Không có tập tin nào bị thiếu.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES" xml:space="preserve">
+    <value>Không có bất kỳ thay đổi nào được thực hiện để hủy dàn dựng.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS" xml:space="preserve">
+    <value>Đã xử lý thành công tệp {0} chưa phân loại!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE" xml:space="preserve">
+    <value>Không thể hủy phân đoạn tệp {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_POST_POSTING_FILE" xml:space="preserve">
+    <value>Đang đăng tệp {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_POST_POSTING_STRING" xml:space="preserve">
+    <value>Đang đăng chuỗi lên {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING" xml:space="preserve">
+    <value>Đang tải chuỗi lên {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_ADD_ITEM_FAILURE" xml:space="preserve">
+    <value>Shell JSON không thể thêm mục.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_PROPERTY_FOUND" xml:space="preserve">
+    <value>Tài sản được tìm thấy trong</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND" xml:space="preserve">
+    <value>Không tìm thấy tài sản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_TITLE" xml:space="preserve">
+    <value>Thông tin mã thông báo JSON cơ sở</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_TYPE" xml:space="preserve">
+    <value>Loại cơ sở</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_VALUES" xml:space="preserve">
+    <value>Cơ sở có giá trị</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS" xml:space="preserve">
+    <value>Số lượng thẻ trẻ em</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH" xml:space="preserve">
+    <value>Đường cơ sở</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE" xml:space="preserve">
+    <value>Thông tin mã thông báo JSON riêng lẻ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE" xml:space="preserve">
+    <value>Loại mã thông báo</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES" xml:space="preserve">
+    <value>Mã thông báo có giá trị</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH" xml:space="preserve">
+    <value>Đường dẫn mã thông báo</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE" xml:space="preserve">
+    <value>Giá trị mã thông báo</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE" xml:space="preserve">
+    <value>Thông tin tài sản cho</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE" xml:space="preserve">
+    <value>Loại tài sản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT" xml:space="preserve">
+    <value>Số lượng tài sản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME" xml:space="preserve">
+    <value>Tên tài sản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH" xml:space="preserve">
+    <value>Đường dẫn tài sản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE" xml:space="preserve">
+    <value>Giá trị tài sản</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_REMOVEITEMFAILED" xml:space="preserve">
+    <value>Shell JSON không xóa được mục nào.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETITEMFAILED" xml:space="preserve">
+    <value>Shell JSON không thể thiết lập mục.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX" xml:space="preserve">
+    <value>Tin nhắn {0} từ {1} đã được di chuyển. Còn {2} tin nhắn cần phân tích.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_ATTACHMENTS" xml:space="preserve">
+    <value>Đính kèm:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE" xml:space="preserve">
+    <value>Kết nối này chứa một phiên bản nguồn cấp RSS không hợp lệ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE" xml:space="preserve">
+    <value>Tiêu đề bài viết không rõ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS" xml:space="preserve">
+    <value>Thật không may, bài viết này không có bất kỳ nội dung nào. Bạn vẫn có thể theo dõi bài viết tại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOLINK" xml:space="preserve">
+    <value>Bài viết này không có liên kết.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED" xml:space="preserve">
+    <value>Không thể mở trình duyệt lưu trữ tới liên kết bài viết.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED" xml:space="preserve">
+    <value>Đã sửa đổi:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT" xml:space="preserve">
+    <value>Nhập giá trị tham số cho {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMANDSUCCESS" xml:space="preserve">
+    <value>Lệnh SQL đã thành công. Sau đây là các phản hồi:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMANDFAILURE" xml:space="preserve">
+    <value>Lệnh SQL không thành công.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_PATH" xml:space="preserve">
+    <value>Đường dẫn cơ sở dữ liệu:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_VERSION" xml:space="preserve">
+    <value>Phiên bản máy chủ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_STATE" xml:space="preserve">
+    <value>Trạng thái kết nối:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_STRING" xml:space="preserve">
+    <value>Chuỗi kết nối:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_NAME" xml:space="preserve">
+    <value>Tên cơ sở dữ liệu:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>Cài đặt trước nhắc nhở</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình cách hoạt động của shell lưu trữ.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình cách hoạt động của shell FTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình cách hoạt động của Git shell.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình cách hoạt động của shell HTTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình cách hoạt động của shell JSON.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>Cài đặt trước lời nhắc Shell JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME" xml:space="preserve">
+    <value>Bật tính năng tự động lưu trình soạn thảo JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC" xml:space="preserve">
+    <value>Bật hoặc tắt tính năng tự động lưu của trình soạn thảo JSON.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME" xml:space="preserve">
+    <value>Khoảng thời gian tự động lưu của trình soạn thảo JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình cách hoạt động của shell thư.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME" xml:space="preserve">
+    <value>Số lượng email tối đa trong một trang</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC" xml:space="preserve">
+    <value>Có bao nhiêu tin nhắn email có thể hiển thị trên một trang?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình cách hoạt động của RSS shell.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>RSS Prompt cài đặt sẵn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình cách hoạt động của shell SFTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình cách hoạt động của SQL shell.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>Cài đặt trước dấu nhắc lệnh SQL Shell</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILETYPE" xml:space="preserve">
+    <value>Loại tập tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC" xml:space="preserve">
+    <value>Tìm kiếm thư viện nguồn cấp dữ liệu cho một nguồn cấp dữ liệu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPY" xml:space="preserve">
+    <value>Sao chép</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVE" xml:space="preserve">
+    <value>Di chuyển</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_DELETE" xml:space="preserve">
+    <value>Xóa bỏ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_UP" xml:space="preserve">
+    <value>Hướng lên</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_RENAME" xml:space="preserve">
+    <value>Đổi tên</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_NEWFOLDER" xml:space="preserve">
+    <value>Thư mục mới</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN" xml:space="preserve">
+    <value>Mở</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATAEXTENDED" xml:space="preserve">
+    <value>Siêu dữ liệu MIME (mở rộng)</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED" xml:space="preserve">
+    <value>Trình xử lý đã được đăng ký nhưng bằng cách nào đó không nhận được trình xử lý mở rộng cho</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+    <value>Sao chép vào</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+    <value>Di chuyển đến</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Không lấy được mục cài đặt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_CANTGETENTRIES" xml:space="preserve">
+    <value>Không thể lấy được mục lưu trữ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED" xml:space="preserve">
+    <value>Lưu trữ chưa được tải.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE" xml:space="preserve">
+    <value>Không thể xác định thư mục lưu trữ hiện tại.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH" xml:space="preserve">
+    <value>Vỏ cuối cùng không phải là vỏ để tách ra.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT" xml:space="preserve">
+    <value>Máy khách chưa có người ở.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT" xml:space="preserve">
+    <value>Hiện tại vẫn chưa có máy khách FTP.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1" xml:space="preserve">
+    <value>Máy khách vẫn chưa được kết nối.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP" xml:space="preserve">
+    <value>Không thể lấy được cấu hình máy chủ IMAP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP" xml:space="preserve">
+    <value>Không thể lấy được cấu hình máy chủ SMTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2" xml:space="preserve">
+    <value>Máy khách chưa được kết nối</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE" xml:space="preserve">
+    <value>Đọc thêm</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH" xml:space="preserve">
+    <value>Làm cho khỏe lại</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE" xml:space="preserve">
+    <value>Không có bài viết nào.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED" xml:space="preserve">
+    <value>Không có nguồn cấp dữ liệu.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION" xml:space="preserve">
+    <value>Không thể kết nối</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_STREAMNOTOPEN" xml:space="preserve">
+    <value>Luồng tập tin vẫn chưa được mở.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOTOPEN" xml:space="preserve">
+    <value>Tệp JSON vẫn chưa mở.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC" xml:space="preserve">
+    <value>Phạm vi kết thúc số dòng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC" xml:space="preserve">
+    <value>Đường dẫn đến tập tin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC" xml:space="preserve">
+    <value>Tệp nguồn hoặc thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC" xml:space="preserve">
+    <value>Tệp tin hoặc thư mục đích</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC" xml:space="preserve">
+    <value>Thuật toán mã hóa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC" xml:space="preserve">
+    <value>Đường dẫn đến thư mục có kho lưu trữ Git</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC" xml:space="preserve">
+    <value>Phạm vi bắt đầu số dòng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC" xml:space="preserve">
+    <value>Tên chi nhánh</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC" xml:space="preserve">
+    <value>Tóm tắt cam kết</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_ARGUMENT_COMMITSHA_DESC" xml:space="preserve">
+    <value>Cam kết băm SHA</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC" xml:space="preserve">
+    <value>Tên từ xa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_TAGNAME_DESC" xml:space="preserve">
+    <value>Tên thẻ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_MESSAGE_DESC" xml:space="preserve">
+    <value>Tin nhắn để chú thích thẻ với</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_EMAIL_DESC" xml:space="preserve">
+    <value>Email của bạn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Tên người dùng của bạn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGE_ARGUMENT_UNSTAGED_DESC" xml:space="preserve">
+    <value>Đường dẫn đến tệp chưa được dàn dựng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_ARGUMENT_STAGED_DESC" xml:space="preserve">
+    <value>Đường dẫn đến tập tin được dàn dựng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC" xml:space="preserve">
+    <value>Đường dẫn đến tập tin lưu trữ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
+    <value>Thư mục địa phương</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC" xml:space="preserve">
+    <value>Thư mục bên trong kho lưu trữ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC" xml:space="preserve">
+    <value>Tập tin trong kho lưu trữ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC" xml:space="preserve">
+    <value>Thư mục cục bộ để trích xuất</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC" xml:space="preserve">
+    <value>Tập tin cục bộ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC" xml:space="preserve">
+    <value>Lưu trữ thư mục để thêm vào</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC" xml:space="preserve">
+    <value>Máy chủ FTP để kết nối tới</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC" xml:space="preserve">
+    <value>Đường dẫn đến tập tin từ xa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC" xml:space="preserve">
+    <value>Đường dẫn đến thư mục cục bộ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC" xml:space="preserve">
+    <value>Đường dẫn đến thư mục từ xa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC" xml:space="preserve">
+    <value>Đường dẫn đến tệp từ xa để xóa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Lệnh máy chủ để thực hiện</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_MKLDIR_DESC" xml:space="preserve">
+    <value>Tạo một thư mục cục bộ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC" xml:space="preserve">
+    <value>Tạo một thư mục từ xa</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_SOURCEFILEORDIR_DESC" xml:space="preserve">
+    <value>Đường dẫn đến tệp hoặc thư mục nguồn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_TARGETFILEORDIR_DESC" xml:space="preserve">
+    <value>Đường dẫn đến tệp hoặc thư mục đích</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_PUT_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Đường dẫn đến tệp cục bộ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_PERM_ARGUMENT_PERMNUMBER_DESC" xml:space="preserve">
+    <value>Số lượng quyền theo chmod</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC" xml:space="preserve">
+    <value>Chỉ định loại chuyển giao là ASCII hay Nhị phân</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK" xml:space="preserve">
+    <value>Liên kết tượng trưng đến: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC" xml:space="preserve">
+    <value>Phím tiêu đề</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>Giá trị tiêu đề</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC" xml:space="preserve">
+    <value>Yêu cầu HTTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Tệp để tải lên</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>Chuỗi để tải lên</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC" xml:space="preserve">
+    <value>Chuỗi tác nhân người dùng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC" xml:space="preserve">
+    <value>Địa chỉ email để đăng nhập</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER" xml:space="preserve">
+    <value>Tạo thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE" xml:space="preserve">
+    <value>Di chuyển...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL" xml:space="preserve">
+    <value>Di chuyển tất cả...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER" xml:space="preserve">
+    <value>Đổi tên thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER" xml:space="preserve">
+    <value>Xóa thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Xóa tin nhắn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL" xml:space="preserve">
+    <value>Xóa tất cả...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_FOLDERMESSAGEOPENFAILED" xml:space="preserve">
+    <value>Không thể mở thư mục hoặc tin nhắn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT" xml:space="preserve">
+    <value>Viết tên thư mục mới.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR" xml:space="preserve">
+    <value>Đang tạo thư mục...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_CREATINGDIRFAILED" xml:space="preserve">
+    <value>Không thể tạo thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEPROMPT" xml:space="preserve">
+    <value>Chọn thư mục mới để di chuyển tin nhắn này tới.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE" xml:space="preserve">
+    <value>Tin nhắn đang di chuyển...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEFAILED" xml:space="preserve">
+    <value>Không thể di chuyển tin nhắn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEBYSAMESENDERPROMPT" xml:space="preserve">
+    <value>Chọn một thư mục mới để di chuyển tất cả thư của cùng một người gửi đến.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER" xml:space="preserve">
+    <value>Di chuyển tin nhắn theo người gửi {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDERFAILED" xml:space="preserve">
+    <value>Không thể di chuyển tất cả tin nhắn của cùng một người gửi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT" xml:space="preserve">
+    <value>Viết tên thư mục mới để đổi tên {0} thành.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR" xml:space="preserve">
+    <value>Đang đổi tên thư mục...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIRFAILED" xml:space="preserve">
+    <value>Không thể đổi tên thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR" xml:space="preserve">
+    <value>Đang xóa thư mục...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIRFAILED" xml:space="preserve">
+    <value>Không thể xóa thư mục</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE" xml:space="preserve">
+    <value>Đang xóa tin nhắn...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEFAILED" xml:space="preserve">
+    <value>Không thể xóa tin nhắn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER" xml:space="preserve">
+    <value>Đang xóa tin nhắn theo người gửi {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED" xml:space="preserve">
+    <value>Không thể xóa tất cả tin nhắn của cùng một người gửi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC" xml:space="preserve">
+    <value>Tên thư mục thư</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC" xml:space="preserve">
+    <value>Số trang</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC" xml:space="preserve">
+    <value>ID tin nhắn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC" xml:space="preserve">
+    <value>Tên người gửi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC" xml:space="preserve">
+    <value>Tên thư mục thư cũ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC" xml:space="preserve">
+    <value>Tên thư mục thư mới</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC" xml:space="preserve">
+    <value>Quản lý thư tương tác</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC" xml:space="preserve">
+    <value>Máy chủ SFTP để kết nối tới</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC" xml:space="preserve">
+    <value>Liên kết nguồn cấp RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC" xml:space="preserve">
+    <value>Số lượng thức ăn</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC" xml:space="preserve">
+    <value>Cụm từ để tìm kiếm</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC" xml:space="preserve">
+    <value>Tệp JSON đầu tiên</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC" xml:space="preserve">
+    <value>Tệp JSON thứ hai</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC" xml:space="preserve">
+    <value>Đường dẫn đến tệp JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC" xml:space="preserve">
+    <value>Đường dẫn đến tệp JSON đầu ra</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
+    <value>Giá trị JSON để thêm</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC" xml:space="preserve">
+    <value>Tên thuộc tính JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC" xml:space="preserve">
+    <value>Đường dẫn đối tượng</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
+    <value>Giá trị JSON</value>
+  </data>
+
+</root>

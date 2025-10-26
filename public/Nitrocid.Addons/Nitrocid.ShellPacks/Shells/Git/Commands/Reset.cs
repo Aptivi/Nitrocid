@@ -19,7 +19,6 @@
 
 using LibGit2Sharp;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands
 {

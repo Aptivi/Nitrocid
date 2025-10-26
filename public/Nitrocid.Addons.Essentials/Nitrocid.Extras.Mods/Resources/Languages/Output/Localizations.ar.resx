@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_MODS_MODCANTLOAD" xml:space="preserve">
+    <value>لا يمكن تحميل وزارة الدفاع بسبب ما يلي:</value>
+  </data>
+  <data name="NKS_MODS_MODSTARTED" xml:space="preserve">
+    <value>{0} v {1} بدأ</value>
+  </data>
+  <data name="NKS_MODS_MODPARSESAFEMODE" xml:space="preserve">
+    <value>تحليل التعديل غير مسموح به في الوضع الآمن.</value>
+  </data>
+  <data name="NKS_MODS_MODSTOPPED1" xml:space="preserve">
+    <value>تم إيقاف Mod {0}</value>
+  </data>
+  <data name="NKS_MODS_MODSTOPPED2" xml:space="preserve">
+    <value>{0} v {1} توقف</value>
+  </data>
+  <data name="NKS_MODS_CANTFINALIZE" xml:space="preserve">
+    <value>فشل إنهاء التعديل {0}: {1}</value>
+  </data>
+  <data name="NKS_MODS_STARTINGMOD" xml:space="preserve">
+    <value>بدء وزارة الدفاع</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODVER" xml:space="preserve">
+    <value>نسخة وزارة الدفاع:</value>
+  </data>
+  <data name="NKS_MODS_MODNOTFOUND" xml:space="preserve">
+    <value>Mod {0} غير موجود.</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODNAME" xml:space="preserve">
+    <value>اسم التعديل:</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODFILENAME" xml:space="preserve">
+    <value>اسم ملف التعديل:</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODFILEPATH" xml:space="preserve">
+    <value>مسار ملف Mod:</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMAN_DESC" xml:space="preserve">
+    <value>إدارة التعديلات الخاصة بك</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_SAFEMODE" xml:space="preserve">
+    <value>تم تعطيل إدارة التعديل في الوضع الآمن.</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_NOCOMMAND" xml:space="preserve">
+    <value>أمر غير صالح {0}. تحقق من الاستخدام أدناه:</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODNOTFOUND" xml:space="preserve">
+    <value>لم يتم العثور على وزارة الدفاع أو أن الملف يحتوي على أحرف غير صالحة.</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_MANPAGEINVALID" xml:space="preserve">
+    <value>صفحة الدليل {0} غير صالحة.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_NEEDSFILL" xml:space="preserve">
+    <value>ضع في اعتبارك ملء صفحة الدليل هذه.</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMANUAL_DESC" xml:space="preserve">
+    <value>دليل وزارة الدفاع</value>
+  </data>
+  <data name="NKS_MODS_MODSTOPPINGSAFEMODE" xml:space="preserve">
+    <value>لا يُسمح بإيقاف التعديلات في الوضع الآمن.</value>
+  </data>
+  <data name="NKS_MODS_MODALREADYSTARTED" xml:space="preserve">
+    <value>تم بالفعل بدء وزارة الدفاع!</value>
+  </data>
+  <data name="NKS_MODS_MODHASNTSTARTED" xml:space="preserve">
+    <value>وزارة الدفاع لم تبدأ بعد!</value>
+  </data>
+  <data name="NKS_MODS_MODNEEDSUPGRADE" xml:space="preserve">
+    <value>اتصل ببائع التعديل لترقية التعديل إلى الإصدار المتوافق.</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME" xml:space="preserve">
+    <value>تعديل القائمة السوداء</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC" xml:space="preserve">
+    <value>اكتب أسماء ملفات التعديلات التي لن تعمل عند بدء التشغيل. عند الانتهاء ، اكتب &quot;q&quot;. اكتب علامة الطرح بجانب المسار لإزالة تعديل موجود.</value>
+  </data>
+  <data name="NKS_MODS_MODBLACKLISTED" xml:space="preserve">
+    <value>الوضع {0} مدرج في القائمة السوداء.</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_AUTOSTART_NAME" xml:space="preserve">
+    <value>ابدأ تعديلات kernel عند التشغيل</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_AUTOSTART_DESC" xml:space="preserve">
+    <value>ابدأ تلقائيًا تعديلات kernel عند التشغيل.</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODFILENEEDED" xml:space="preserve">
+    <value>لم يتم تحديد ملف Mod.</value>
+  </data>
+  <data name="NKS_MODS_MODUPDATING" xml:space="preserve">
+    <value>محاولة تثبيت تعديل مثبت بالفعل. جارٍ تحديث الوضع ...</value>
+  </data>
+  <data name="NKS_MODS_MODINSTALLFAILED" xml:space="preserve">
+    <value>فشل التثبيت لـ</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_NOMODSCRIPT" xml:space="preserve">
+    <value>ملف mod المتوفر غير متوافق.</value>
+  </data>
+  <data name="NKS_MODS_MODUNINSTALLFAILED" xml:space="preserve">
+    <value>فشل إلغاء التثبيت لـ</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME" xml:space="preserve">
+    <value>أظهر أن أوامر التعديل تعتمد على المساعدة</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_INVALIDMODFILE" xml:space="preserve">
+    <value>النموذج غير صالح.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_UNTITLEDMANPAGE" xml:space="preserve">
+    <value>صفحة دليل بدون عنوان</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_MODSCRIPTNEEDED" xml:space="preserve">
+    <value>قد لا يكون البرنامج النصي المعدل فارغًا.</value>
+  </data>
+  <data name="NKS_MODS_NOMODS" xml:space="preserve">
+    <value>لم يتم اكتشاف أي تعديلات.</value>
+  </data>
+  <data name="NKS_MODS_STOPPINGMODS" xml:space="preserve">
+    <value>جارٍ إيقاف الوضع {0}...</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_UNSAFEMOD" xml:space="preserve">
+    <value>لم يتم التوقيع على الوضع بقوة. قد يحتوي على تعليمات برمجية غير موثوق بها.</value>
+  </data>
+  <data name="NKS_MODS_MODINCOMPATIBLE1" xml:space="preserve">
+    <value>لا يمكن تحميل التعديل بسبب عدم التوافق بين هذا الإصدار من النواة وهذا التعديل:</value>
+  </data>
+  <data name="NKS_MODS_MODINCOMPATIBLE2" xml:space="preserve">
+    <value>فيما يلي قائمة بالأخطاء التي قد تساعدك في التحقق من عدم التوافق هذا:</value>
+  </data>
+  <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
+    <value>يتطلب Mod {0} إصدار API {1} بالضبط، ولكن لديك الإصدار {2}. عادةً ما تساعد ترقية Nitrocid KS و/أو الوضع. فشل تحليل وزارة الدفاع.</value>
+  </data>
+  <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
+    <value>قد لا يعمل Mod {0} بشكل صحيح مع إصدار API هذا. قد يفشل التعديل في بدء التشغيل. اتصل ببائع التعديل للحصول على أحدث نسخة.</value>
+  </data>
+  <data name="NKS_MODS_MODNEDSNAME" xml:space="preserve">
+    <value>الطراز {0} ليس له اسم. فشل تحليل وزارة الدفاع. قم بمراجعة الكود المصدري.</value>
+  </data>
+  <data name="NKS_MODS_MODNEEDSVERSION" xml:space="preserve">
+    <value>لا يحتوي الطراز {0} على الإصدار. فشل تحليل وزارة الدفاع. قم بمراجعة الكود المصدري.</value>
+  </data>
+  <data name="NKS_MODS_MODVERSIONINVALID" xml:space="preserve">
+    <value>يحتوي النموذج {0} على إصدار غير صالح. فشل تحليل وزارة الدفاع. كان الإصدار</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODVERSION" xml:space="preserve">
+    <value>إصدار</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODFILENAME" xml:space="preserve">
+    <value>اسم الملف</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODFILEPATH" xml:space="preserve">
+    <value>مسار الملف</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HASNOCONTENTS" xml:space="preserve">
+    <value>لسوء الحظ، لا تحتوي صفحة الدليل هذه على أي محتويات. ومع ذلك، ربما تم العثور على هذه الوثائق ضمن صفحة الويب الخاصة ببائع التعديل. إذا كنت لا تزال غير قادر على العثور على هذه الوثائق، فاطلب من مطوري التعديل الحصول على مزيد من المعلومات.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_PRESENTED" xml:space="preserve">
+    <value>مقدم لكم من</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_CONTENTLENGTH" xml:space="preserve">
+    <value>طول المحتوى</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_NOCONTENTS" xml:space="preserve">
+    <value>لا محتويات.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_NOREVISION" xml:space="preserve">
+    <value>لا مراجعة.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND" xml:space="preserve">
+    <value>لا يمكن تنفيذ وظيفة مخصصة باستخدام تعديل غير موجود</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_DEPSFAILED" xml:space="preserve">
+    <value>التبعية غير راضية. التبعيات الفاشلة مدرجة أدناه:</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND" xml:space="preserve">
+    <value>حاولت الاستعلام في الأدلة عن الوضع غير الموجود {0}.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND" xml:space="preserve">
+    <value>تمت محاولة تهيئة الدليل {0} للوضع غير الموجود {1}.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND" xml:space="preserve">
+    <value>تمت محاولة تهيئة الملف اليدوي {0} للوضع غير الموجود {1}.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD" xml:space="preserve">
+    <value>تمت محاولة تهيئة الملف اليدوي {0} وهو غير موجود للنموذج {1}.</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODNAME" xml:space="preserve">
+    <value>اسم</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME" xml:space="preserve">
+    <value>السماح بتحميل التعديلات غير الموثوق بها</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC" xml:space="preserve">
+    <value>إذا تم التعيين على &quot;صحيح&quot;، فلن يحدث خطأ في النواة عند تحميل التعديلات التي لا تحتوي على المفتاح العام الموقع.</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC" xml:space="preserve">
+    <value>إظهار عدد أوامر تعديل kernel عند إدراجها في أمر المساعدة</value>
+  </data>
+  <data name="NKS_MODS_STARTSTOPSAFEMODE" xml:space="preserve">
+    <value>لا يُسمح ببدء التعديلات أو إيقافها في الوضع الآمن.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_NOFIELDINFO" xml:space="preserve">
+    <value>لا يمكن الحصول على معلومات الحقل لـ</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_DEPNOMODVER" xml:space="preserve">
+    <value>لا يمكن تحديد إصدار التعديل</value>
+  </data>
+  <data name="NKS_MODS_UNKNOWNLOADEREXCEPTION" xml:space="preserve">
+    <value>استثناء محمل غير معروف</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>فشل في الحصول على إدخالات الإعدادات.</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STARTMODSELECT" xml:space="preserve">
+    <value>بدء التعديل (اختيار)</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STARTMODINPUT" xml:space="preserve">
+    <value>بدء التعديل (الإدخال)</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STOPMOD" xml:space="preserve">
+    <value>إيقاف التعديل</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_RELOADMOD" xml:space="preserve">
+    <value>إعادة تحميل التعديل</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT" xml:space="preserve">
+    <value>تثبيت التعديل (اختيار)</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT" xml:space="preserve">
+    <value>تثبيت التعديل (الإدخال)</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD" xml:space="preserve">
+    <value>إلغاء تثبيت التعديل</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STARTALL" xml:space="preserve">
+    <value>ابدأ كل شيء</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STOPALL" xml:space="preserve">
+    <value>اوقف كل شيء</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_RELOADALL" xml:space="preserve">
+    <value>إعادة تحميل الكل</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND" xml:space="preserve">
+    <value>لا يمكن إرجاع نوع فئة غير موجود من تجميع التعديل</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
+    <value>لا يمكن العثور على الوظيفة &apos;{0}&apos; في الوضع &apos;{1}&apos;.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
+    <value>لا يمكن العثور على الخاصية &apos;{0}&apos; في الوضع &apos;{1}&apos;.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
+    <value>لا يمكن العثور على الحقل &apos;{0}&apos; في الوضع &apos;{1}&apos;.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS" xml:space="preserve">
+    <value>هذه الفئة ليست فئة تعديل</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODENTRYPOINT" xml:space="preserve">
+    <value>نقطة الدخول</value>
+  </data>
+  <data name="NKS_MODS_TUI_PATHTOMODPROMPT" xml:space="preserve">
+    <value>أدخل المسار إلى التعديل الذي تريد بدء تشغيله</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODSTARTFAILED" xml:space="preserve">
+    <value>فشل في بدء التعديل</value>
+  </data>
+  <data name="NKS_MODS_TUI_PATHTOMODINSTALLPROMPT" xml:space="preserve">
+    <value>أدخل المسار إلى التعديل الذي تريد تثبيته</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODINSTALLFAILED" xml:space="preserve">
+    <value>فشل في تثبيت التعديل</value>
+  </data>
+  <data name="NKS_MODS_CANTSTARTORSTOP" xml:space="preserve">
+    <value>لا يمكن بدء أو إيقاف هذا التعديل!</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC" xml:space="preserve">
+    <value>سواء لبدء أو إيقاف أو الحصول على معلومات أو إعادة تحميل أو تثبيت أو إلغاء تثبيت تعديل</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC" xml:space="preserve">
+    <value>اسم التعديل أو اسم الملف</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC" xml:space="preserve">
+    <value>سواء كان ذلك لإدراج أو إعادة تحميل أو إيقاف أو بدء أو إدارة جميع التعديلات بشكل تفاعلي</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC" xml:space="preserve">
+    <value>اسم التعديل</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
+    <value>يتيح لك هذا القسم تكوين كيفية عمل نظام تعديل النواة.</value>
+  </data>
+
+</root>

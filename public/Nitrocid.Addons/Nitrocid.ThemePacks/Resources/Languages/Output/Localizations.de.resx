@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_THEMEPACKS_EXCEPTION_NODATA" xml:space="preserve">
+    <value>Zum Initialisieren dieses Add-ons können die erforderlichen Daten nicht abgerufen werden.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_AMAYA" xml:space="preserve">
+    <value>Lila Harmonie</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ANDROID" xml:space="preserve">
+    <value>Dies ist die Android-Maskottchenfarbe im Vordergrund</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_APTIVI" xml:space="preserve">
+    <value>Unsere Markenharmonie</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_AYUDARK" xml:space="preserve">
+    <value>Dunkle Version eines beliebten VIM-Themas, Ayu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_AYULIGHT" xml:space="preserve">
+    <value>Light-Version eines beliebten VIM-Themas, Ayu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_AYUMIRAGE" xml:space="preserve">
+    <value>Mirage-Version eines beliebten VIM-Themas, Ayu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_BACKTOSCHOOL" xml:space="preserve">
+    <value>Dies ist der erste Tag des neuen Schuljahres</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE" xml:space="preserve">
+    <value>Das leichteste mögliche Terminal</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_BLACKROSE" xml:space="preserve">
+    <value>Das ist die schwarze Rose</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_BREEZE" xml:space="preserve">
+    <value>Farbschema für Breeze, ein KDE Plasma 5-Design</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DRACULA" xml:space="preserve">
+    <value>Beliebtes Farbschema für IDEs wie IntelliJ</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DARKSIDE" xml:space="preserve">
+    <value>Es ist Zeit, auf die dunkle Seite zurückzukehren.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DEBIAN" xml:space="preserve">
+    <value>Farbschemata für Debian</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID" xml:space="preserve">
+    <value>Das lebendige Standarddesign für den Kernel</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DYNAMICBACK" xml:space="preserve">
+    <value>Hintergrundakzente in Ihrem Kernel!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_DYNAMICEXTRA" xml:space="preserve">
+    <value>Überall mehr Akzente!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_EDM" xml:space="preserve">
+    <value>Verwenden Sie es, wenn Sie ein Fan von EDM sind</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_FIRE" xml:space="preserve">
+    <value>Feuerschirme</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GOLDENPALACE" xml:space="preserve">
+    <value>Ihr epischer goldener Palast auf dunkelblauem Hintergrund</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI" xml:space="preserve">
+    <value>Trauben und Kiwi gemischt</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GRAPE" xml:space="preserve">
+    <value>Farbschema für Trauben</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GREENMIX" xml:space="preserve">
+    <value>Lebendige und verputzte Grün-, Blau- und Lilatöne</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GREENIFIED" xml:space="preserve">
+    <value>Machen Sie Ihre Umwelt grüner, machen Sie Ihren Kern grüner. Machen Sie die Erde grüner!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GREENRED" xml:space="preserve">
+    <value>Wir haben Grün und Rot als Farben hinzugefügt.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GRINK" xml:space="preserve">
+    <value>Grün und Rosa gemischt</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GRUVBOX" xml:space="preserve">
+    <value>Eines der bekannten Terminalfarbschemata</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_HACKER" xml:space="preserve">
+    <value>Grüner Text auf Grau</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_INDIAN" xml:space="preserve">
+    <value>Traditionelle indische Farben direkt in Ihrer Konsole.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LEMON" xml:space="preserve">
+    <value>Füllen Sie Ihr Terminal mit Zitronensäure</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS" xml:space="preserve">
+    <value>Helle Holzbretter</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LINUXCOLORED" xml:space="preserve">
+    <value>Standardfarben für Linux-Terminals</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LINUXUNCOLORED" xml:space="preserve">
+    <value>Graue Klemme</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC" xml:space="preserve">
+    <value>Einige Material Design-Texte auf Ihrem Terminal</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MAYA" xml:space="preserve">
+    <value>Orange- und Brauntöne</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MELANGE" xml:space="preserve">
+    <value>Melange-Thema inspiriert vom gleichnamigen VIM-Thema</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MINT" xml:space="preserve">
+    <value>Füllen Sie Ihr Terminal mit Minze</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MIRAI" xml:space="preserve">
+    <value>Farbpalette von Mirai Kuriyama von Beyond the Boundary.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_VIMTHEME" xml:space="preserve">
+    <value>Ein Theme, das von einem gleichnamigen VIM-Theme inspiriert wurde</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_NEONBREEZE" xml:space="preserve">
+    <value>Du magst Neonblau und Pink?</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED" xml:space="preserve">
+    <value>Dieses Thema sollte für Sie neutral sein.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_NIGHTSKY" xml:space="preserve">
+    <value>Das ist Ihr Nachthimmel zu Beginn der Nacht!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_OKTOBERFEST" xml:space="preserve">
+    <value>Der Oktober kommt bald, also machen Sie sich bereit!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ORANGESEA" xml:space="preserve">
+    <value>Das Meer aus Orange</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_PHOSPHORIC" xml:space="preserve">
+    <value>Phosphorhaltiges Terminal, das alles orange färbt</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_REDBREEZE" xml:space="preserve">
+    <value>Verleiht Ihnen einen Hauch von Rot.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_REDCONSOLE" xml:space="preserve">
+    <value>Eine blutrote Konsole</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_SAKURA" xml:space="preserve">
+    <value>Sakura-Bäume bringen eine chinesische Brise in Ihr Leben</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_TEALED" xml:space="preserve">
+    <value>Alle blaugrünen Farben</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_TECHNO" xml:space="preserve">
+    <value>Ein Thema für Technikliebhaber</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_TRANCE" xml:space="preserve">
+    <value>Fan von Trance-Musik? Dann ist dieses Thema genau das Richtige für Sie!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_UBUNTU" xml:space="preserve">
+    <value>Farbschemata aus einem beliebten Linux-Betriebssystem, Ubuntu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_VICECITY" xml:space="preserve">
+    <value>Verleiht Ihnen ein perfektes Vice City-Feeling</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_VICECITYDAWN" xml:space="preserve">
+    <value>Dies ist Ihr Vice City-Morgen.</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO" xml:space="preserve">
+    <value>Farbschema für Visual Studio, eine der leistungsstärksten IDEs</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_WINDOWS11" xml:space="preserve">
+    <value>Farbschema für Windows 11, eine aktuelle Version von Windows</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_WINDOWS95" xml:space="preserve">
+    <value>Bringen Sie mit diesem Thema Nostalgie zurück!</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_WOOD" xml:space="preserve">
+    <value>Ihr Terminal besteht aus Holzbrettern</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_YASAI" xml:space="preserve">
+    <value>Inspiriert vom chinesischen Muster verschiedener Früchte</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ALMALINUX" xml:space="preserve">
+    <value>Farbschemata von Alma Linux, einem Spinoff des Linux-Betriebssystems Red Hat</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ARCHLINUX" xml:space="preserve">
+    <value>Farbschemata aus einem Linux-Betriebssystem, Arch Linux</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ENDEAVOUR" xml:space="preserve">
+    <value>Farbschemata von EndeavourOS, einem Spinoff des Linux-Betriebssystems Arch Linux</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_FEDORA" xml:space="preserve">
+    <value>Farbschemata von Fedora, einem Spinoff des Linux-Betriebssystems, Red Hat</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_GENTOO" xml:space="preserve">
+    <value>Farbschemata aus einem Linux-Betriebssystem, Gentoo</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_KALEIDOSCOPE" xml:space="preserve">
+    <value>Gemeißelte Musterfarben bilden ein buntes Mandala</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_KUBUNTU" xml:space="preserve">
+    <value>Farbschemata von Kubuntu, einem Spinoff des beliebten Linux-Betriebssystems Ubuntu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LINUXMINT" xml:space="preserve">
+    <value>Farbschemata von Linux Mint, einem inoffiziellen Spinoff des beliebten Linux-Betriebssystems Ubuntu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LUBUNTU" xml:space="preserve">
+    <value>Farbschemata von Lubuntu, einem Spinoff des beliebten Linux-Betriebssystems Ubuntu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_MANJARO" xml:space="preserve">
+    <value>Farbschemata von Manjaro, einem Spinoff des Linux-Betriebssystems Arch Linux</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_OPENSUSE" xml:space="preserve">
+    <value>Farbschemata aus einem Linux-Betriebssystem, openSUSE</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_REDHAT" xml:space="preserve">
+    <value>Farbschemata aus einem Linux-Betriebssystem, Red Hat</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_RENEGADE" xml:space="preserve">
+    <value>Rottöne mit dynamischen Akzentfarben für aufmerksamkeitsstarken Text</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ROCKYLINUX" xml:space="preserve">
+    <value>Farbschemata von Rocky Linux, einem Spinoff des Linux-Betriebssystems Red Hat</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_SLACKWARE" xml:space="preserve">
+    <value>Farbschemata aus einem Linux-Betriebssystem, Slackware</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_XUBUNTU" xml:space="preserve">
+    <value>Farbschemata von Xubuntu, einem Spinoff des beliebten Linux-Betriebssystems Ubuntu</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_ZORINOS" xml:space="preserve">
+    <value>Farbschemata von Zorin OS, einem inoffiziellen Spinoff des beliebten Linux-Betriebssystems Ubuntu</value>
+  </data>
+
+</root>

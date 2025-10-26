@@ -18,24 +18,12 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Terminaux.Colors.Themes.Colors;
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.General;
-using Terminaux.Base;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Base.Misc.Interactives;
-using Terminaux.Inputs.Styles;
-using Terminaux.Inputs.Styles.Infobox.Tools;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Configuration.Instances;
-using Nitrocid.Base.Kernel.Configuration.Migration;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Permissions;
 
 namespace Nitrocid.Base.Kernel.Configuration.Settings

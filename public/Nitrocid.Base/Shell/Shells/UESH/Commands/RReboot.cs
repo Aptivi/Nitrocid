@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using System;
 using Nitrocid.Base.Kernel.Power;
 

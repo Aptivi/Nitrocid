@@ -1,0 +1,2044 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
+    <value>Benutzername für {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD" xml:space="preserve">
+    <value>Passwort für {0}:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO" xml:space="preserve">
+    <value>Verbunden mit {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING" xml:space="preserve">
+    <value>Fehler beim Versuch, eine Verbindung zu {0} herzustellen: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND" xml:space="preserve">
+    <value>Das lokale Verzeichnis {0} existiert nicht.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR" xml:space="preserve">
+    <value>Geben Sie ein lokales Verzeichnis ein. &quot;..&quot; zurück zu gehen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND" xml:space="preserve">
+    <value>Das Verzeichnis {0} wurde nicht gefunden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR" xml:space="preserve">
+    <value>Geben Sie ein Remote-Verzeichnis ein. &quot;..&quot; zurückgehen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_LOCALDIR" xml:space="preserve">
+    <value>Lokales Verzeichnis: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_REMOTEDIR" xml:space="preserve">
+    <value>Entferntes Verzeichnis: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_DOWNLOADINGFILE" xml:space="preserve">
+    <value>Download der Datei {0} ...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_DOWNLOADEDFILE" xml:space="preserve">
+    <value>Heruntergeladene Datei {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_UPLOADINGFILE" xml:space="preserve">
+    <value>Upload der Datei {0} ...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_UPLOADEDFILE" xml:space="preserve">
+    <value>Hochgeladene Datei {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDL_DESC" xml:space="preserve">
+    <value>Ruft das aktuelle lokale Verzeichnis ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_FS_COMMAND_PWDR_DESC" xml:space="preserve">
+    <value>Ruft das aktuelle ferne Verzeichnis ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDL_DESC" xml:space="preserve">
+    <value>Ändert das lokale Verzeichnis zum Herunterladen oder Hochladen von</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_CDR_DESC" xml:space="preserve">
+    <value>Ändert das Remote-Verzeichnis zum Herunterladen von oder Hochladen zu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_DEL_DESC" xml:space="preserve">
+    <value>Löscht die entfernte Datei vom Server</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_GET_DESC" xml:space="preserve">
+    <value>Lädt die Remote-Datei in das lokale Verzeichnis unter Verwendung von Binär- oder Textdateien</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSL_DESC" xml:space="preserve">
+    <value>Listet das lokale Verzeichnis auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_LSR_DESC" xml:space="preserve">
+    <value>Listet das entfernte Verzeichnis auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FS_COMMAND_PUT_DESC" xml:space="preserve">
+    <value>Lädt die lokale Datei unter Verwendung von Binärcode oder Text in das Remoteverzeichnis hoch</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_FS_COMMAND_CHDIR_DESC" xml:space="preserve">
+    <value>Ändert das Verzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_FTP_DESC" xml:space="preserve">
+    <value>Verwenden Sie eine FTP-Shell, um mit Servern zu interagieren</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SHELL_ERROR" xml:space="preserve">
+    <value>In der Shell ist ein Fehler aufgetreten.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_INVALIDPROFILE" xml:space="preserve">
+    <value>Ungültige Profilauswahl.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECTING" xml:space="preserve">
+    <value>Es wird versucht, eine Verbindung zu {0} mit dem Profil {1} herzustellen ...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME" xml:space="preserve">
+    <value>Name: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC" xml:space="preserve">
+    <value>Berechnet die Dateisummen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_INVALIDENCRYPTION" xml:space="preserve">
+    <value>Ungültiger Verschlüsselungsalgorithmus.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_PASSWORDPROMPT" xml:space="preserve">
+    <value>Geben Sie das Passwort für {0} ein:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_SIZE" xml:space="preserve">
+    <value>Größe: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT" xml:space="preserve">
+    <value>Fehler beim Versuch, eine Verbindung zu {0} herzustellen: Verbindungszeitlimit oder Verbindungsverlust</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC" xml:space="preserve">
+    <value>Berechnet die Dateisummen im angegebenen Verzeichnis.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_ADDRESSPROMPT" xml:space="preserve">
+    <value>Geben Sie den Benutzernamen oder die E-Mail-Adresse ein:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_PASSWORDPROMPT" xml:space="preserve">
+    <value>Passwort eingeben:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_CONNECTIONFAILED" xml:space="preserve">
+    <value>Fehler beim Herstellen einer Verbindung zu {0}: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_CONNECTING" xml:space="preserve">
+    <value>Verbindung zu {0} herstellen ...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_AUTHENTICATING" xml:space="preserve">
+    <value>Authentifizierung ...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_LIST_DESC" xml:space="preserve">
+    <value>Lädt Nachrichten herunter und listet sie auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READ_DESC" xml:space="preserve">
+    <value>Öffnet eine Nachricht</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_PAGENOTNUMERIC" xml:space="preserve">
+    <value>Seite ist kein numerischer Wert.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTZERO" xml:space="preserve">
+    <value>Die Nachrichtennummer darf nicht negativ oder null sein.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTNUMERIC" xml:space="preserve">
+    <value>Die Nachrichtennummer ist kein numerischer Wert.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM" xml:space="preserve">
+    <value>- Von {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO" xml:space="preserve">
+    <value>- Zu {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN" xml:space="preserve">
+    <value>- Gesendet um {0} in {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND" xml:space="preserve">
+    <value>Die angegebene Nachricht wurde nicht gefunden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PREPARINGPROFILES" xml:space="preserve">
+    <value>Profile vorbereiten ... Es kann einige Minuten dauern ...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_CD_DESC" xml:space="preserve">
+    <value>Ändert das aktuelle Mail-Verzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_CANTOPENMAILFOLDER" xml:space="preserve">
+    <value>E-Mail-Ordner {0} kann nicht geöffnet werden: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC" xml:space="preserve">
+    <value>Listet Verzeichnisse in Ihrer E-Mail-Adresse auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_VALIDATIONFAILED_MESSAGE" xml:space="preserve">
+    <value>Während der Zertifikatsüberprüfung treten Zertifikatfehler auf. Es ist möglicherweise das erste Mal, dass Sie eine Verbindung zum Server herstellen, oder das Zertifikat ist abgelaufen. Hier ist ein Fehler:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie eine Verbindung herstellen möchten?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_VALIDATIONFAILED_INVALID" xml:space="preserve">
+    <value>Ungültige Antwort. Bitte versuche es erneut.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT" xml:space="preserve">
+    <value>Geben Sie die Adresse und den Port des IMAP-Servers ein (&lt;Adresse&gt; oder &lt;Adresse&gt;: [Port]):</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT" xml:space="preserve">
+    <value>Geben Sie die Adresse und den Port des SMTP-Servers ein (&lt;Adresse&gt; oder &lt;Adresse&gt;: [Port]):</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC" xml:space="preserve">
+    <value>Sendet eine Nachricht an eine Adresse</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT" xml:space="preserve">
+    <value>Geben Sie die E-Mail-Adresse des Empfängers ein:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT" xml:space="preserve">
+    <value>Geben Sie den Betreff ein:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT" xml:space="preserve">
+    <value>Geben Sie unten Ihre Nachricht ein. Schreiben Sie zur Bestätigung &quot;EOF&quot;.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_SENDING" xml:space="preserve">
+    <value>Schicke Nachricht...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_SENT" xml:space="preserve">
+    <value>Nachricht gesendet.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL" xml:space="preserve">
+    <value>Ungültige E-Mail-Adresse. Stellen Sie sicher, dass Sie die Adresse richtig geschrieben haben und dass sie dem Format des gezeigten Beispiels entspricht:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC" xml:space="preserve">
+    <value>Entfernt eine Nachricht</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_RMALL_DESC" xml:space="preserve">
+    <value>Entfernt alle Nachrichten vom Empfänger</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDNOTINBOX" xml:space="preserve">
+    <value>Nachricht {0} von {1} von {2} gelöscht. {3} Nachrichten müssen noch analysiert werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX" xml:space="preserve">
+    <value>Nachricht {0} von {1} aus Posteingang gelöscht. {2} Nachrichten müssen noch analysiert werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FILESHELLS_OPENFAILED" xml:space="preserve">
+    <value>Datei konnte nicht geöffnet werden. Shell verlassen ...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION" xml:space="preserve">
+    <value>Die angegebene Option {0} ist ungültig.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC" xml:space="preserve">
+    <value>Die Antwort muss numerisch sein.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME" xml:space="preserve">
+    <value>Protokollieren Sie den FTP-Benutzernamen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME" xml:space="preserve">
+    <value>Protokollieren Sie die FTP-IP-Adresse</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_NAME" xml:space="preserve">
+    <value>Gibt nur das erste FTP-Profil zurück</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PUT_FAILED" xml:space="preserve">
+    <value>Fehler beim Hochladen von {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_GET_FAILED" xml:space="preserve">
+    <value>Download für Datei {0} fehlgeschlagen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_LIST_FAILED" xml:space="preserve">
+    <value>Remote-Dateien konnten nicht aufgelistet werden: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_DELETING" xml:space="preserve">
+    <value>{0} löschen ...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_NOTFOUND" xml:space="preserve">
+    <value>{0} wurde auf dem Server nicht gefunden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_SUCCESS" xml:space="preserve">
+    <value>Alle von {0} erstellten E-Mails werden erfolgreich entfernt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_RMALL_FAILURE" xml:space="preserve">
+    <value>Fehler beim Entfernen aller von {0} erstellten E-Mails.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING" xml:space="preserve">
+    <value>Fehler beim Senden der Nachricht.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_MOVING" xml:space="preserve">
+    <value>Verschieben von {0} nach {1} ...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_MOVED" xml:space="preserve">
+    <value>Erfolgreich umgezogen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_MV_DESC" xml:space="preserve">
+    <value>Verschiebt Datei oder Verzeichnis in eine andere Datei oder ein anderes Verzeichnis. Sie können damit auch Dateien umbenennen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_MOVEFAILED" xml:space="preserve">
+    <value>{0} konnte nicht nach {1} verschoben werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COPYING" xml:space="preserve">
+    <value>Kopieren von {0} nach {1} ...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COPIED" xml:space="preserve">
+    <value>Erfolgreich kopiert</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_CP_DESC" xml:space="preserve">
+    <value>Kopiert eine Datei oder ein Verzeichnis in eine andere Datei oder ein anderes Verzeichnis.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COPYFAILED" xml:space="preserve">
+    <value>{0} konnte nicht nach {1} kopiert werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC" xml:space="preserve">
+    <value>Verschiebt eine Nachricht</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_MVALL_DESC" xml:space="preserve">
+    <value>Verschiebt alle Nachrichten vom Empfänger</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_SUCCESS" xml:space="preserve">
+    <value>Alle von {0} erstellten E-Mails werden erfolgreich verschoben.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_FAILURE" xml:space="preserve">
+    <value>Fehler beim Verschieben aller von {0} erstellten E-Mails.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDNOTINBOX" xml:space="preserve">
+    <value>Nachricht {0} von {1} wurde von {2} verschoben. {3} Nachrichten müssen noch analysiert werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_DESC" xml:space="preserve">
+    <value>Gibt an, ob der FTP-Benutzername protokolliert werden soll.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC" xml:space="preserve">
+    <value>Gibt an, ob die FTP-IP-Adresse protokolliert werden soll.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC" xml:space="preserve">
+    <value>Wählen Sie das erste Profil nur beim Verbinden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE" xml:space="preserve">
+    <value>{0} Neue Nachrichten sind im Posteingang eingetroffen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC" xml:space="preserve">
+    <value>Öffnen Sie &quot;mail&quot;, um sie zu sehen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME" xml:space="preserve">
+    <value>Vollständiger Name: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME" xml:space="preserve">
+    <value>Erstellungszeit: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME" xml:space="preserve">
+    <value>Letzte Zugriffszeit: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME" xml:space="preserve">
+    <value>Letzte Schreibzeit: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_ATTRIBUTES" xml:space="preserve">
+    <value>Attribute: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_PARENTDIR" xml:space="preserve">
+    <value>Übergeordnetes Verzeichnis: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_WHERETOFIND" xml:space="preserve">
+    <value>Wo zu finden: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILESIZE" xml:space="preserve">
+    <value>Dateigröße: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT" xml:space="preserve">
+    <value>Geben Sie Dateipfade zu Anhängen ein. Drücken Sie zur Bestätigung ENTER auf einem leeren Pfad.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC" xml:space="preserve">
+    <value>Öffnet eine verschlüsselte Nachricht</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD" xml:space="preserve">
+    <value>Schreiben Sie das Passwort für die Schlüssel-ID {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC" xml:space="preserve">
+    <value>Sendet eine verschlüsselte Nachricht an eine Adresse</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_GOBACK" xml:space="preserve">
+    <value>Drücken Sie eine beliebige Taste, um zurückzukehren.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MAILDIR_CREATEFAILED" xml:space="preserve">
+    <value>E-Mail-Ordner {0} kann nicht erstellt werden: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_MKDIR_DESC" xml:space="preserve">
+    <value>Erstellt ein Verzeichnis im aktuellen Arbeitsverzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_RMDIR_DESC" xml:space="preserve">
+    <value>Entfernt ein Verzeichnis aus dem aktuellen Arbeitsverzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MAILDIR_DIRNOTFOUND" xml:space="preserve">
+    <value>Mailordner {0} nicht gefunden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MAILDIR_DELETEFAILED" xml:space="preserve">
+    <value>Mailordner {0} kann nicht gelöscht werden: {1}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_DESC" xml:space="preserve">
+    <value>Benennt einen Ordner um</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME" xml:space="preserve">
+    <value>Vorschau der E-Mail-Nachricht anzeigen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC" xml:space="preserve">
+    <value>Zeigen Sie beim Auflisten von E-Mail-Nachrichten die Vorschau des Körpers an.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC" xml:space="preserve">
+    <value>Wenn die automatische Speicherung aktiviert ist, wird die Textdatei alle &quot;n&quot; Sekunden gespeichert.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC" xml:space="preserve">
+    <value>Ermöglicht die Verwendung eines SSH-FTP-Servers</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC" xml:space="preserve">
+    <value>Listet alle Dateien im Archiv auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC" xml:space="preserve">
+    <value>Extrahiert eine Datei in ein angegebenes Verzeichnis oder ein aktuelles Verzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC" xml:space="preserve">
+    <value>Ändert das Archivverzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_LOCALDIRNOTFOUND" xml:space="preserve">
+    <value>Verzeichnis {0} existiert nicht</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_ARCHIVEDIRNOTFOUND" xml:space="preserve">
+    <value>Archivverzeichnis {0} existiert nicht</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_SHELLERROR" xml:space="preserve">
+    <value>In der FTP-Shell ist ein Fehler aufgetreten:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_EXCEPTION_SHELLERROR" xml:space="preserve">
+    <value>In der SFTP-Shell ist ein Fehler aufgetreten:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD" xml:space="preserve">
+    <value>Wie möchten Sie sich authentifizieren?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PRIVATEKEY" xml:space="preserve">
+    <value>Datei mit privatem Schlüssel</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE" xml:space="preserve">
+    <value>Geben Sie die Passphrase für den Schlüssel {0} ein:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYNOTFOUND" xml:space="preserve">
+    <value>Schlüsseldatei {0} existiert nicht.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYADDFAILED" xml:space="preserve">
+    <value>Fehler beim Hinzufügen des privaten Schlüssels:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_PERM_DESC" xml:space="preserve">
+    <value>Legt Dateiberechtigungen fest. Dies wird nur auf FTP-Servern unterstützt, auf denen Unix ausgeführt wird.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_TYPE_DESC" xml:space="preserve">
+    <value>Legt den Typ für diese Sitzung fest</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PERM_SETFAILED" xml:space="preserve">
+    <value>Die Berechtigungen von {0} konnten nicht auf {1} festgelegt werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PERM_SETSUCCEEDED" xml:space="preserve">
+    <value>Berechtigungen für Datei erfolgreich festgelegt</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_ASCII" xml:space="preserve">
+    <value>Datentyp auf ASCII gesetzt!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_BINARY" xml:space="preserve">
+    <value>Datentyp auf Binär gesetzt!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_INVALID" xml:space="preserve">
+    <value>Ungültiger Datentyp.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_TYPE_ASCII_WARNING" xml:space="preserve">
+    <value>Beachten Sie, dass die meisten Dateien in diesem Modus nicht richtig heruntergeladen oder hochgeladen werden. Wir empfehlen daher dringend, in den meisten Situationen den Binärmodus zu verwenden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_DESC" xml:space="preserve">
+    <value>Öffnet eine RSS-Shell zum Lesen der Feeds</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_LIST_DESC" xml:space="preserve">
+    <value>Listet alle Feeds auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_READ_DESC" xml:space="preserve">
+    <value>Liest einen Feed in einem Webbrowser</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC" xml:space="preserve">
+    <value>Ruft die Artikelinfo ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE" xml:space="preserve">
+    <value>Artikelnummer könnte nicht größer sein als die verfügbaren Artikel.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE" xml:space="preserve">
+    <value>Titel:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_LINK" xml:space="preserve">
+    <value>Verknüpfung:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_FEEDINFO_DESC" xml:space="preserve">
+    <value>Ruft die Feed-Informationen ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_DESC" xml:space="preserve">
+    <value>Beschreibung:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_FEEDTYPE" xml:space="preserve">
+    <value>Feed-Typ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_ARTICLECOUNT" xml:space="preserve">
+    <value>Anzahl Artikel:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READ_NOLINK" xml:space="preserve">
+    <value>Artikel hat keinen Link!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_WEBALERT_OPENING" xml:space="preserve">
+    <value>URL öffnen... Befolgen Sie die auf dem Bildschirm angezeigten Schritte.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONBEAUTIFY_DESC" xml:space="preserve">
+    <value>Verschönert die JSON-Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_GETFOLDER_DESC" xml:space="preserve">
+    <value>Lädt den Remote-Ordner mithilfe von Binär- oder Textdateien in das lokale Verzeichnis herunter</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_PUTFOLDER_DESC" xml:space="preserve">
+    <value>Lädt den lokalen Ordner mit Binärdatei oder Text in das Remote-Verzeichnis hoch</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADING" xml:space="preserve">
+    <value>Ordner {0} wird heruntergeladen...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADED" xml:space="preserve">
+    <value>Heruntergeladener Ordner {0}.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_GETFOLDER_DOWNLOADFAILED" xml:space="preserve">
+    <value>Download für Ordner {0} fehlgeschlagen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADING" xml:space="preserve">
+    <value>Ordner {0} wird hochgeladen...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_PUTFOLDER_UPLOADED" xml:space="preserve">
+    <value>Hochgeladener Ordner {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONMINIFY_DESC" xml:space="preserve">
+    <value>Minimiert die JSON-Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_JSONTOOLS_EXCEPTION_STREAMNOTOPEN" xml:space="preserve">
+    <value>Der JSON-Editor hat noch keinen Dateistream geöffnet.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC" xml:space="preserve">
+    <value>Beendet die JSON-Shell, ohne die Änderungen zu speichern</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_DESC" xml:space="preserve">
+    <value>Speichert die JSON-Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_PRINT_DESC" xml:space="preserve">
+    <value>Druckt die JSON-Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_USERNAMEPROMPT_DESC" xml:space="preserve">
+    <value>Schreiben Sie, wie Ihre Anmeldeaufforderung aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_SETTINGS_PASSWORDPROMPT_DESC" xml:space="preserve">
+    <value>Schreiben Sie, wie Ihre Passwortabfrage aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME" xml:space="preserve">
+    <value>Dateidetails in der FTP-Liste anzeigen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
+    <value>Stil der Eingabeaufforderung für den Benutzernamen für FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_PASSWORDPROMPT_NAME" xml:space="preserve">
+    <value>Stil der Passwortabfrage für FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_NAME" xml:space="preserve">
+    <value>Erstes FTP-Profil verwenden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_NAME" xml:space="preserve">
+    <value>Neue Verbindungen zur FTP-Kurzwahl hinzufügen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_NAME" xml:space="preserve">
+    <value>Versuchen Sie, sichere FTP-Zertifikate zu validieren</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME" xml:space="preserve">
+    <value>FTP-MOTD bei Verbindung anzeigen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME" xml:space="preserve">
+    <value>Akzeptieren Sie immer ungültige FTP-Zertifikate</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC" xml:space="preserve">
+    <value>Zeigt die FTP-Dateidetails an, während entfernte Verzeichnisse aufgelistet werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC" xml:space="preserve">
+    <value>Verwendet das erste FTP-Profil, um sich mit FTP zu verbinden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC" xml:space="preserve">
+    <value>Fügt bei Aktivierung eine neue Verbindung zur FTP-Kurzwahl hinzu.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VALIDATESECUREFTP_DESC" xml:space="preserve">
+    <value>Versucht, die FTP-Zertifikate zu validieren. Das Ausschalten wird nicht empfohlen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC" xml:space="preserve">
+    <value>Zeigt beim Login die FTP-Meldung des Tages an.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC" xml:space="preserve">
+    <value>Akzeptieren Sie immer ungültige FTP-Zertifikate. Das Einschalten wird nicht empfohlen, da dies Sicherheitsrisiken darstellen kann.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
+    <value>Eingabeaufforderungsstil für den Benutzernamen für E-Mails</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_PASSWORDPROMPT_NAME" xml:space="preserve">
+    <value>Stil der Passwortabfrage für E-Mails</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_NAME" xml:space="preserve">
+    <value>IMAP-Eingabeaufforderungsstil für E-Mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_NAME" xml:space="preserve">
+    <value>Stil der SMTP-Eingabeaufforderung für E-Mails</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_NAME" xml:space="preserve">
+    <value>Mailserver automatisch erkennen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_NAME" xml:space="preserve">
+    <value>E-Mail-Debug aktivieren</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_NAME" xml:space="preserve">
+    <value>Bei neuen E-Mail-Nachrichten benachrichtigen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_NAME" xml:space="preserve">
+    <value>GPG-Passwortaufforderungsstil für E-Mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_NAME" xml:space="preserve">
+    <value>IMAP-Ping-Intervall senden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_NAME" xml:space="preserve">
+    <value>SMTP-Ping-Intervall senden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_NAME" xml:space="preserve">
+    <value>Mail-Textformat</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_IMAPPROMPT_DESC" xml:space="preserve">
+    <value>Schreiben Sie, wie Ihre IMAP-Server-Eingabeaufforderung aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SMTPPROMPT_DESC" xml:space="preserve">
+    <value>Schreiben Sie, wie Ihre Eingabeaufforderung für den SMTP-Server aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC" xml:space="preserve">
+    <value>Automatische Erkennung des Mailservers anhand der angegebenen Adresse.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC" xml:space="preserve">
+    <value>Aktiviert Mailserver-Debug.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILNOTIFICATIONS_DESC" xml:space="preserve">
+    <value>Benachrichtigt Sie über neue E-Mail-Nachrichten.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_GPGPASSWORDPROMPT_DESC" xml:space="preserve">
+    <value>Schreiben Sie, wie Ihre GPG-Passwortabfrage aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC" xml:space="preserve">
+    <value>Wie viele Millisekunden soll der IMAP-Ping gesendet werden?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC" xml:space="preserve">
+    <value>Wie viele Millisekunden zum Senden des SMTP-Pings?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC" xml:space="preserve">
+    <value>Steuert, wie der Mailtext angezeigt wird.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_NAME" xml:space="preserve">
+    <value>URL-Aufforderungsstil für RSS-Feeds</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESH_NAME" xml:space="preserve">
+    <value>RSS-Feed automatisch aktualisieren</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_NAME" xml:space="preserve">
+    <value>RSS-Feed-Intervall für automatische Aktualisierung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDURLPROMPT_DESC" xml:space="preserve">
+    <value>Schreiben Sie, wie die Eingabeaufforderung Ihres RSS-Feed-Servers aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_AUTOREFRESHINTERVAL_DESC" xml:space="preserve">
+    <value>Wie viele Millisekunden zum Aktualisieren des RSS-Feeds?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME" xml:space="preserve">
+    <value>Dateidetails in der SFTP-Liste anzeigen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
+    <value>Eingabeaufforderungsstil für den Benutzernamen für SFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_NAME" xml:space="preserve">
+    <value>Neue Verbindungen zur SFTP-Kurzwahl hinzufügen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC" xml:space="preserve">
+    <value>Zeigt die Details der SFTP-Datei an, während Remote-Verzeichnisse aufgelistet werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC" xml:space="preserve">
+    <value>Fügt bei Aktivierung eine neue Verbindung zur SFTP-Kurzwahl hinzu.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_TITLE" xml:space="preserve">
+    <value>Informationen zum FTP-Server</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_ADDRESS" xml:space="preserve">
+    <value>Serveradresse:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_PORT" xml:space="preserve">
+    <value>Server Port:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_TYPE" xml:space="preserve">
+    <value>Server Typ:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_SYSTYPE" xml:space="preserve">
+    <value>Serversystemtyp:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_ENCRYPTION" xml:space="preserve">
+    <value>Serververschlüsselungsmodus:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_DATACONNECTION" xml:space="preserve">
+    <value>Verbindungstyp für Serverdaten:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_SYSTEM" xml:space="preserve">
+    <value>Serversystem:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_DOWNLOADDATATYPE" xml:space="preserve">
+    <value>Server-Download-Datentyp:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SERVERINFO_UPLOADDATATYPE" xml:space="preserve">
+    <value>Datentyp des Server-Uploads:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH" xml:space="preserve">
+    <value>Geben Sie eine Remote-Datei ein, die gehasht werden soll.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED" xml:space="preserve">
+    <value>Geben Sie ein Remote-Verzeichnis ein.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_NAME" xml:space="preserve">
+    <value>Rekursives Hashing für FTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC" xml:space="preserve">
+    <value>Ob ein Verzeichnis rekursiv gehasht werden soll. Bitte beachten Sie, dass dies nicht von allen FTP-Servern unterstützt wird.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC" xml:space="preserve">
+    <value>Führt einen FTP-Serverbefehl aus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TRANSFERPROGRESS" xml:space="preserve">
+    <value>der E-Mail übertragen ...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_HOSTNAME" xml:space="preserve">
+    <value>Hostname</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_USERNAME" xml:space="preserve">
+    <value>Nutzername</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_DATATYPE" xml:space="preserve">
+    <value>Datentyp</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCODING" xml:space="preserve">
+    <value>Codierung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_ENCRYPTION" xml:space="preserve">
+    <value>Verschlüsselung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROTOCOLS" xml:space="preserve">
+    <value>Protokolle</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME" xml:space="preserve">
+    <value>Fortschritt der E-Mail-Übertragung anzeigen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME" xml:space="preserve">
+    <value>Fortschritt der E-Mail-Übertragung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_NAME" xml:space="preserve">
+    <value>E-Mail-Übertragungsfortschritt (einzeln)</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_DESC" xml:space="preserve">
+    <value>Wenn diese Option aktiviert ist, zeigt die Mail-Shell an, wie viele Bytes beim Herunterladen von E-Mails übertragen werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_DESC" xml:space="preserve">
+    <value>Schreiben Sie, wie Ihr E-Mail-Übertragungsfortschritt aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert. {0} für die übertragene Größe und {1} für die Gesamtgröße.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLESINGLE_DESC" xml:space="preserve">
+    <value>Schreiben Sie, wie Ihr E-Mail-Übertragungsfortschritt aussehen soll. Lassen Sie das Feld leer, um den Standardstil zu verwenden. Platzhalter werden analysiert. {0} für übertragene Größe.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_HTTP_DESC" xml:space="preserve">
+    <value>Startet die HTTP-Shell</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_GET_DESC" xml:space="preserve">
+    <value>Ruft die Antwort vom HTTP-Server mithilfe der angegebenen Anforderung ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_DELETE_DESC" xml:space="preserve">
+    <value>Löscht Inhalte vom HTTP-Server</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_SHELLERROR" xml:space="preserve">
+    <value>In der HTTP-Shell ist ein Fehler aufgetreten:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_GETSTRING_DESC" xml:space="preserve">
+    <value>Ruft die Zeichenfolge mithilfe der angegebenen Anforderung vom HTTP-Server ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_GETTING" xml:space="preserve">
+    <value>{0} erhalten...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC" xml:space="preserve">
+    <value>Packt eine lokale Datei in das Archiv</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK" xml:space="preserve">
+    <value>Kann nichts packen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_NAME" xml:space="preserve">
+    <value>Zeitüberschreitung beim RSS-Feed-Abruf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_FEEDFETCHTIMEOUT_DESC" xml:space="preserve">
+    <value>Wie viele Millisekunden soll gewartet werden, bis das Zeitlimit für den Abruf des RSS-Feeds überschritten wird?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_NAME" xml:space="preserve">
+    <value>Überprüfen Sie die Wiederholungsversuche für die FTP-Übertragung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME" xml:space="preserve">
+    <value>Timeout der FTP-Verbindung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME" xml:space="preserve">
+    <value>Timeout für FTP-Datenverbindung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_NAME" xml:space="preserve">
+    <value>FTP-IP-Versionen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_VERIFYRETRYATTEMPTS_DESC" xml:space="preserve">
+    <value>Wie oft muss der Upload und Download überprüft und erneut versucht werden, wenn die Überprüfung fehlschlägt, bevor der Download als Ganzes fehlschlägt?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_DESC" xml:space="preserve">
+    <value>Wie viele Millisekunden bis zum Timeout der FTP-Verbindung warten?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_DESC" xml:space="preserve">
+    <value>Wie viele Millisekunden bis zum Timeout der FTP-Datenverbindung warten?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPIPVERS_DESC" xml:space="preserve">
+    <value>Wählen Sie die Version des Internetprotokolls aus, die der FTP-Server unterstützt und die der FTP-Client verwendet.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_NAME" xml:space="preserve">
+    <value>Standardmäßige JSON-Formatierung für die JSON-Shell</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_DEFAULTFORMAT_DESC" xml:space="preserve">
+    <value>Wählt die standardmäßige JSON-Formatierung (verschönert oder minimiert) für die zu speichernde JSON-Shell aus.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC" xml:space="preserve">
+    <value>Zeigt die Dateidetails in der Liste an</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
+    <value>Unterdrückt die lästigen &quot;Erlaubnis verweigert&quot;-Meldungen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC" xml:space="preserve">
+    <value>Gibt an, dass der Zielpfad absolut ist</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FILESHELLS_NEEDSFILE" xml:space="preserve">
+    <value>Datei nicht angegeben. Schale verlassen...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_BOOKMARK_DESC" xml:space="preserve">
+    <value>Lesezeichen für den Feed</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_UNBOOKMARK_DESC" xml:space="preserve">
+    <value>Entfernt das Feed-Lesezeichen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_EXCEPTION_FEEDNOTINBOOKMARKS" xml:space="preserve">
+    <value>Der Feed existiert nicht in Lesezeichen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_LISTBOOKMARK_DESC" xml:space="preserve">
+    <value>Listet alle mit Lesezeichen versehenen Feeds auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_JSON_FILENOTFOUND" xml:space="preserve">
+    <value>Datei {0} nicht gefunden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_ARCHIVE_FILENOTFOUND" xml:space="preserve">
+    <value>Datei existiert nicht.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_STATUS_NOINFO" xml:space="preserve">
+    <value>Keine Informationen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOLDERCANTOPEN" xml:space="preserve">
+    <value>Datei oder Ordner können nicht geöffnet werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NEWLINESTYLE" xml:space="preserve">
+    <value>Newline-Stil:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_BINFILE" xml:space="preserve">
+    <value>Binärdatei:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATA" xml:space="preserve">
+    <value>MIME-Metadaten:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME2" xml:space="preserve">
+    <value>Vollständiger Name</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_VERSION" xml:space="preserve">
+    <value>Ausführung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CULTURENAME" xml:space="preserve">
+    <value>Kulturname</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CONTENTTYPE" xml:space="preserve">
+    <value>Inhaltstyp</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_NOTDOTNETASSEMBLY" xml:space="preserve">
+    <value>Die Datei ist keine gültige .NET-Assembly.\n</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTGETFSINFO" xml:space="preserve">
+    <value>Dateisysteminformationen können nicht abgerufen werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTCOPY" xml:space="preserve">
+    <value>Datei oder Verzeichnis können nicht kopiert werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTMOVE" xml:space="preserve">
+    <value>Datei oder Verzeichnis können nicht verschoben werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_CANTREMOVE" xml:space="preserve">
+    <value>Datei oder Verzeichnis können nicht entfernt werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_COPYPROMPT" xml:space="preserve">
+    <value>Geben Sie einen Pfad oder einen vollständigen Pfad zu einem Zielordner ein, in den die ausgewählte Datei kopiert werden soll.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEEDSCORRECTPATH" xml:space="preserve">
+    <value>Stellen Sie sicher, dass Sie den richtigen Pfad angegeben haben.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENOTFOUND" xml:space="preserve">
+    <value>Datei existiert nicht. Stellen Sie sicher, dass Sie den richtigen Pfad angegeben haben.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_MOVEPROMPT" xml:space="preserve">
+    <value>Geben Sie einen Pfad oder einen vollständigen Pfad zu einem Zielordner ein, in den die ausgewählte Datei verschoben werden soll.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWFILENAMEPROMPT" xml:space="preserve">
+    <value>Geben Sie einen neuen Dateinamen ein.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENAMEINVALID" xml:space="preserve">
+    <value>Stellen Sie sicher, dass Sie den richtigen Dateinamen eingegeben haben.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILEFOUND" xml:space="preserve">
+    <value>Die Datei existiert bereits. Der Name sollte nicht von einer anderen Datei belegt sein.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWDIRNAMEPROMPT" xml:space="preserve">
+    <value>Geben Sie einen neuen Verzeichnisnamen ein.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND" xml:space="preserve">
+    <value>Der Ordner existiert bereits. Der Name sollte nicht von einem anderen Ordner belegt sein.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV" xml:space="preserve">
+    <value>Keine Überarbeitung.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NEEDSCONNECTION" xml:space="preserve">
+    <value>Die Verbindung ist noch nicht hergestellt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT" xml:space="preserve">
+    <value>Geben Sie die Serveradresse ein:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC" xml:space="preserve">
+    <value>Interaktiver System-Host-Dateimanager</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_DESC" xml:space="preserve">
+    <value>Öffnet die Archivdatei in der Archiv-Shell</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_GITSH_DESC" xml:space="preserve">
+    <value>Git-Shell</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_DESC" xml:space="preserve">
+    <value>Zeigt den Unterschied zwischen zwei JSON-Dateien</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_MAIL_DESC" xml:space="preserve">
+    <value>Öffnet den IMAP-Mail-Client</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_POPMAIL_DESC" xml:space="preserve">
+    <value>Öffnet den POP3-Mail-Client</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING" xml:space="preserve">
+    <value>POP3-Mail kehrt von 0.0.20.0 zurück, aber wir planen derzeit nicht, es in dieser Version zu veröffentlichen. Warten Sie auf die nächste Version.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FEEDURLPROMPT" xml:space="preserve">
+    <value>Geben Sie die RSS-Feed-URL ein</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE" xml:space="preserve">
+    <value>Fehler beim Parsen der Adresse. Stellen Sie sicher, dass Sie die Adresse richtig geschrieben haben.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC" xml:space="preserve">
+    <value>Öffnet einen interaktiven RSS-Feed-Reader TUI</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT" xml:space="preserve">
+    <value>Kann nichts extrahieren.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK" xml:space="preserve">
+    <value>Das Archiv ist aufgrund des Typs nicht beschreibbar</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC" xml:space="preserve">
+    <value>Liest den Inhalt einer Remote-Datei in die Konsole</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC" xml:space="preserve">
+    <value>Verlässt die Shell, ohne die Verbindung zu trennen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_CORRECTPORTREQUIRED" xml:space="preserve">
+    <value>Stellen Sie sicher, dass Sie den Port korrekt angeben.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_PROMPT" xml:space="preserve">
+    <value>Mehr als ein Profil gefunden. Wähle eins:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSREPO" xml:space="preserve">
+    <value>Repository nicht angegeben. Shell wird verlassen...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_REPOFAILED" xml:space="preserve">
+    <value>Das Öffnen des Repositorys ist fehlgeschlagen. Shell wird verlassen...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_DESC" xml:space="preserve">
+    <value>Ruft die Liste der Änderungen in einer Datei Zeile für Zeile ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_DESC" xml:space="preserve">
+    <value>Checkt eine Filiale aus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_COMMIT_DESC" xml:space="preserve">
+    <value>Macht einen Commit</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_DESC" xml:space="preserve">
+    <value>Beschreibt einen Commit</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC" xml:space="preserve">
+    <value>Zeigt einen Unterschied zwischen dem aktuellen Commit und den lokalen Dateien an</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_PATCH_DESC" xml:space="preserve">
+    <value>Zeigt einen Unterschied zwischen dem aktuellen Commit und den lokalen Dateien anhand ihres Inhalts in einer Patch-Hunk-Form an</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_TREE_DESC" xml:space="preserve">
+    <value>Zeigt einen Unterschied zwischen dem aktuellen Commit und den lokalen Dateien anhand ihrer Existenz an</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_SWITCH_ALL_DESC" xml:space="preserve">
+    <value>Zeigt einen Unterschied zwischen dem aktuellen Commit und den lokalen Dateien anhand ihrer Existenz und ihres Inhalts an</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_FETCH_DESC" xml:space="preserve">
+    <value>Ruft alle Updates von einer Fernbedienung ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_FILESTATUS_DESC" xml:space="preserve">
+    <value>Ruft den Dateistatus ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_INFO_DESC" xml:space="preserve">
+    <value>Ruft einfache Repository-Informationen ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSBRANCHES_DESC" xml:space="preserve">
+    <value>Listet alle Zweige auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC" xml:space="preserve">
+    <value>Listet alle Commits auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC" xml:space="preserve">
+    <value>Listet alle Fernbedienungen auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_LSTAGS_DESC" xml:space="preserve">
+    <value>Listet alle Tags auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_DESC" xml:space="preserve">
+    <value>Erstellt ein Tag aus dem HEAD</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC" xml:space="preserve">
+    <value>Ruft alle Updates vom Server ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_PUSH_DESC" xml:space="preserve">
+    <value>Schickt alle Aktualisierungen an den Server</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_DESC" xml:space="preserve">
+    <value>Setzt das lokale Repository zurück</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_SOFT_DESC" xml:space="preserve">
+    <value>Führt einen Soft-Reset durch</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_MIXED_DESC" xml:space="preserve">
+    <value>Führt einen gemischten Reset durch</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_RESET_SWITCH_HARD_DESC" xml:space="preserve">
+    <value>Führt einen Hard-Reset durch</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_DESC" xml:space="preserve">
+    <value>Legt Ihre Identität fest</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGE_DESC" xml:space="preserve">
+    <value>Inszeniert eine Veränderung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGEALL_DESC" xml:space="preserve">
+    <value>Stuft alle Änderungen ein</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC" xml:space="preserve">
+    <value>Repository-Status</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC" xml:space="preserve">
+    <value>Hebt eine Änderung auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGEALL_DESC" xml:space="preserve">
+    <value>Hebt alle Änderungen auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC" xml:space="preserve">
+    <value>Fügt allen anstehenden Anfragen einen Header mit dem Schlüssel und dem Wert hinzu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC" xml:space="preserve">
+    <value>Ruft den aktuellen Benutzeragenten ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC" xml:space="preserve">
+    <value>Bearbeitet einen Schlüssel im Header für alle anstehenden Anforderungen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC" xml:space="preserve">
+    <value>Listet die Anforderungsheader auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_PUT_DESC" xml:space="preserve">
+    <value>Legt die Datei mithilfe der angegebenen Anforderung auf dem HTTP-Server ab</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_PUTSTRING_DESC" xml:space="preserve">
+    <value>Sendet die Zeichenfolge mithilfe der angegebenen Anforderung an den HTTP-Server</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_POST_DESC" xml:space="preserve">
+    <value>Sendet die Datei mithilfe der angegebenen Anforderung an den HTTP-Server</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_POSTSTRING" xml:space="preserve">
+    <value>Sendet die Zeichenfolge mithilfe der angegebenen Anforderung an den HTTP-Server</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_" xml:space="preserve">
+    <value>Entfernt einen Schlüssel im Header für alle anstehenden Anforderungen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC" xml:space="preserve">
+    <value>Legt einen Benutzeragenten fest</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
+    <value>Hinzufügen eines bereits vorhandenen Headers.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
+    <value>Header entfernen, der nicht existiert.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
+    <value>Bearbeiten eines nicht vorhandenen Headers.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC" xml:space="preserve">
+    <value>Fügt ein neues Array, Objekt oder eine neue Eigenschaft hinzu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_PARENTPATH_DESC" xml:space="preserve">
+    <value>Gibt den übergeordneten Pfad an</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_SWITCH_TYPE_DESC" xml:space="preserve">
+    <value>Gibt den Typ an</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SWITCH_PROPNAME_DESC" xml:space="preserve">
+    <value>Gibt den Eigenschaftsnamen an, mit dem erstellt werden soll. Dies wird verwendet, wenn der übergeordnete Pfad ein Objekt ist.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_CLEAR_DESC" xml:space="preserve">
+    <value>Löscht die JSON-Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_DESC" xml:space="preserve">
+    <value>Findet eine Immobilie</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_FINDPROPERTY_SWITCH_PARENTPROPERTY_DESC" xml:space="preserve">
+    <value>Gibt die übergeordnete Eigenschaft an</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_DESC" xml:space="preserve">
+    <value>Zeigt Informationen zur JSON-Datei an</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SIMPLIFIED_DESC" xml:space="preserve">
+    <value>Einzelne Eigenschaften nicht anzeigen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_JSONINFO_SWITCH_SHOWVALS_DESC" xml:space="preserve">
+    <value>Alle Werte anzeigen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_RM_DESC" xml:space="preserve">
+    <value>Entfernt ein Zielobjekt</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC" xml:space="preserve">
+    <value>Verschönertes JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_M_DESC" xml:space="preserve">
+    <value>Minimierter JSON</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_DESC" xml:space="preserve">
+    <value>Legt einen Wert auf ein vorhandenes Array, Objekt oder eine vorhandene Eigenschaft fest</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC" xml:space="preserve">
+    <value>Öffnet die JSON-Datei im interaktiven Editor</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOTOKEN" xml:space="preserve">
+    <value>Das Token in der JSON-Datei wurde nicht gefunden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN" xml:space="preserve">
+    <value>Das übergeordnete Token wurde nicht gefunden. Stellen Sie sicher, dass Sie den Pfad „{0}“ richtig geschrieben haben.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
+    <value>Der angegebene Typ „{0}“ ist ungültig.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED" xml:space="preserve">
+    <value>Es kann kein neues Element mit dem Eigenschaftsnamen und dem übergeordneten Tokentyp „{0}“ angehängt werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED" xml:space="preserve">
+    <value>Ein neues Element mit dem Eigenschaftsnamen „{0}“ und dem übergeordneten Tokentyp „{1}“ kann nicht angehängt werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT" xml:space="preserve">
+    <value>Der Eigenschaftsname „{0}“ innerhalb des übergeordneten Elements „{1}“, Typ „{2}“, existiert nicht</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC" xml:space="preserve">
+    <value>Durchsucht den Feed nach einer Phrase im Titel und/oder in der Beschreibung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_T_DESC" xml:space="preserve">
+    <value>Nach Titel suchen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_D_DESC" xml:space="preserve">
+    <value>Nach Beschreibung suchen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_A_DESC" xml:space="preserve">
+    <value>Suchen Sie nach Titel und Beschreibung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_SWITCH_CS_DESC" xml:space="preserve">
+    <value>Bei der Suche muss auf Groß- und Kleinschreibung geachtet werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL" xml:space="preserve">
+    <value>Die Feed-URL konnte nicht analysiert werden:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FEEDNODESC" xml:space="preserve">
+    <value>Keine Beschreibung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_COMMAND_SHOWDETAILS_DESC" xml:space="preserve">
+    <value>Zeigt die Details der Dateien und Ordner an</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
+    <value>Unterdrückt die „nicht autorisierten“ Nachrichten</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT" xml:space="preserve">
+    <value>Geben Sie den Speicherort des privaten Schlüssels für {0} ein. Schreiben Sie „q“, um das Hinzufügen von Schlüsseln abzuschließen:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_CONNECTING" xml:space="preserve">
+    <value>Es wird versucht, eine Verbindung zu {0} herzustellen...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMAND_CMD_DESC" xml:space="preserve">
+    <value>Führt eine SQL-Abfrage aus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMAND_DBINFO_DESC" xml:space="preserve">
+    <value>Datenbankinformationen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC" xml:space="preserve">
+    <value>Öffnet die SQL-Datei im interaktiven Hex-Editor TUI</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED" xml:space="preserve">
+    <value>Dieser Archivtyp wird nicht unterstützt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPHTTPSFTP_DELETECONFIRM" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie {0} löschen möchten?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_USER" xml:space="preserve">
+    <value>Benutzer</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_FSENTRY_NOSYMLINKINFO" xml:space="preserve">
+    <value>Keine Symlink-Informationen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON" xml:space="preserve">
+    <value>Geändert am</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_TITLE" xml:space="preserve">
+    <value>Schuldstatus für die Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_HUNKNUM" xml:space="preserve">
+    <value>Hunk-Nummer</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_LINENUM" xml:space="preserve">
+    <value>Anzahl der Zeilen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALLINE" xml:space="preserve">
+    <value>Anfangszeilennummer</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALLINE" xml:space="preserve">
+    <value>Letzte Zeilennummer</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_INITIALCOMMIT_TITLE" xml:space="preserve">
+    <value>Erster Commit</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA" xml:space="preserve">
+    <value>Commit SHA</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE" xml:space="preserve">
+    <value>Commit-Nachricht</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_AUTHOR" xml:space="preserve">
+    <value>Commit-Autor</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_COMMITTER" xml:space="preserve">
+    <value>Committer begehen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_PARENTNUM" xml:space="preserve">
+    <value>Anzahl der Eltern</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_FINALCOMMIT_TITLE" xml:space="preserve">
+    <value>Endgültiges Commit</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSSAVING" xml:space="preserve">
+    <value>Speichern Sie Ihre Arbeit zunächst, indem Sie einen Commit erstellen, bevor Sie einen Zweig auschecken.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NOBRANCH" xml:space="preserve">
+    <value>Zweig existiert nicht.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_1" xml:space="preserve">
+    <value>Sie müssen sich identifizieren, bevor Sie diesen Befehl verwenden. Verwenden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_NEEDSIDENTIFICATION_2" xml:space="preserve">
+    <value>sich zu identifizieren.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMIT_SUCCESS" xml:space="preserve">
+    <value>Aktualisiertes Repository mit neuem Commit</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMIT_DESC" xml:space="preserve">
+    <value>Beschreibung für Commit</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_DIFF_GENERALCHANGES" xml:space="preserve">
+    <value>Allgemeine Änderungen in</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_DIFF_CONTENTCHANGES" xml:space="preserve">
+    <value>Inhaltliche Änderungen in</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_FETCH_REMOTENOTFOUND" xml:space="preserve">
+    <value>Fernbedienung existiert nicht.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_FETCH_NOREMOTES" xml:space="preserve">
+    <value>Es wurden keine Fernbedienungen gefunden, von denen Updates abgerufen werden können.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_FILESTATUS_TITLE" xml:space="preserve">
+    <value>Status für die Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_BARE" xml:space="preserve">
+    <value>Nacktes Repository</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_DETACHED" xml:space="preserve">
+    <value>Kopf abgetrennt</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_NOREF" xml:space="preserve">
+    <value>Keine Referenz</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_SHALLOW" xml:space="preserve">
+    <value>Flacher Klon</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT" xml:space="preserve">
+    <value>Pfad zu .git</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR" xml:space="preserve">
+    <value>Pfad zum Arbeitsverzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_LSCOMMITS_TITLE" xml:space="preserve">
+    <value>Commits für Zweig</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_MAKETAG_CREATED" xml:space="preserve">
+    <value>Ein neues Tag erstellt! Hier sind Ihre Tag-Details:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_UPTODATE" xml:space="preserve">
+    <value>Ihre lokale Kopie des Repos ist aktuell!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_FASTFORWARD" xml:space="preserve">
+    <value>Schneller Vorlauf zu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_UPDATED" xml:space="preserve">
+    <value>Aktualisiertes Repository auf</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_PULL_MERGECONFLICTS" xml:space="preserve">
+    <value>Ihre Zusammenführung führte zu Konflikten. Bitte lösen Sie etwaige Konflikte.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_SETID_SUCCESS" xml:space="preserve">
+    <value>Sie haben sich erfolgreich identifiziert als</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STAGE_NOCHANGES" xml:space="preserve">
+    <value>Es werden keine Änderungen an der Bühne vorgenommen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STAGE_SUCCESS" xml:space="preserve">
+    <value>Datei {0} erfolgreich bereitgestellt!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STAGE_FAILURE" xml:space="preserve">
+    <value>Datei {0} konnte nicht bereitgestellt werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_TITLE" xml:space="preserve">
+    <value>Status für Zweig {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOCHANGES" xml:space="preserve">
+    <value>Es werden keine Änderungen vorgenommen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_UNTRACKED" xml:space="preserve">
+    <value>Nicht verfolgte Dateien</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOUNTRACKED" xml:space="preserve">
+    <value>Keine nicht verfolgten Dateien.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_ADDED" xml:space="preserve">
+    <value>Dateien hinzugefügt</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOADDED" xml:space="preserve">
+    <value>Keine hinzugefügten Dateien.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_MODIFIED" xml:space="preserve">
+    <value>Geänderte Dateien</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOMODIFIED" xml:space="preserve">
+    <value>Keine geänderten Dateien.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_REMOVED" xml:space="preserve">
+    <value>Dateien entfernt</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOREMOVED" xml:space="preserve">
+    <value>Keine entfernten Dateien.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_STAGED" xml:space="preserve">
+    <value>Bereitgestellte Dateien</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOSTAGED" xml:space="preserve">
+    <value>Keine bereitgestellten Dateien.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_RENAMEDSTAGED" xml:space="preserve">
+    <value>Staging-Dateien umbenannt</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NORENAMEDSTAGED" xml:space="preserve">
+    <value>Keine umbenannten bereitgestellten Dateien.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_RENAMED" xml:space="preserve">
+    <value>Umbenannte Dateien</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NORENAMED" xml:space="preserve">
+    <value>Keine umbenannten Dateien.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_MISSING" xml:space="preserve">
+    <value>Fehlende Dateien</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_STATUS_NOMISSING" xml:space="preserve">
+    <value>Keine fehlenden Dateien.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES" xml:space="preserve">
+    <value>Es werden keine Änderungen an der Aufhebung der Bereitstellung vorgenommen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS" xml:space="preserve">
+    <value>Die Bereitstellung der Datei {0} wurde erfolgreich aufgehoben!</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_UNSTAGE_FAILURE" xml:space="preserve">
+    <value>Die Bereitstellung der Datei {0} konnte nicht aufgehoben werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_POST_POSTING_FILE" xml:space="preserve">
+    <value>Datei {0} wird gepostet...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_POST_POSTING_STRING" xml:space="preserve">
+    <value>Zeichenfolge wird an {0} gesendet...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING" xml:space="preserve">
+    <value>Zeichenfolge wird nach {0} hochgeladen...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_ADD_ITEM_FAILURE" xml:space="preserve">
+    <value>Die JSON-Shell konnte kein Element hinzufügen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_PROPERTY_FOUND" xml:space="preserve">
+    <value>Die Immobilie befindet sich in</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND" xml:space="preserve">
+    <value>Die Eigenschaft wurde nicht gefunden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_TITLE" xml:space="preserve">
+    <value>Basisinformationen zum JSON-Token</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_TYPE" xml:space="preserve">
+    <value>Basistyp</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_VALUES" xml:space="preserve">
+    <value>Basis hat Werte</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_CHILDRENTOKENS" xml:space="preserve">
+    <value>Anzahl der Kinder-Token</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_BASEPATH" xml:space="preserve">
+    <value>Basispfad</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TITLE" xml:space="preserve">
+    <value>Individuelle JSON-Token-Informationen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_TYPE" xml:space="preserve">
+    <value>Tokentyp</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUES" xml:space="preserve">
+    <value>Token hat Werte</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_PATH" xml:space="preserve">
+    <value>Tokenpfad</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_INDIVIDUAL_VALUE" xml:space="preserve">
+    <value>Token-Wert</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TITLE" xml:space="preserve">
+    <value>Immobilieninformationen für</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_TYPE" xml:space="preserve">
+    <value>Art der Immobilie</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_COUNT" xml:space="preserve">
+    <value>Eigentumszählung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_NAME" xml:space="preserve">
+    <value>Name des Anwesens</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_PATH" xml:space="preserve">
+    <value>Eigenschaftspfad</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE" xml:space="preserve">
+    <value>Eigentumswert</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_REMOVEITEMFAILED" xml:space="preserve">
+    <value>Die JSON-Shell konnte ein Element nicht entfernen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETITEMFAILED" xml:space="preserve">
+    <value>Die JSON-Shell konnte ein Element nicht festlegen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX" xml:space="preserve">
+    <value>Nachricht {0} von {1} verschoben. {2} Nachrichten müssen noch analysiert werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_ATTACHMENTS" xml:space="preserve">
+    <value>Anhänge:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE" xml:space="preserve">
+    <value>Diese Verbindung enthält eine ungültige RSS-Feed-Instanz.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE" xml:space="preserve">
+    <value>Unbekannter Artikeltitel</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS" xml:space="preserve">
+    <value>Leider hat dieser Artikel keinen Inhalt. Sie können den Artikel weiterhin unter verfolgen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_NOLINK" xml:space="preserve">
+    <value>Dieser Artikel hat keinen Link.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED" xml:space="preserve">
+    <value>Der Host-Browser zum Artikellink kann nicht geöffnet werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED" xml:space="preserve">
+    <value>Geändert:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_PARAMVALUE_PROMPT" xml:space="preserve">
+    <value>Geben Sie den Parameterwert für {0} ein:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMANDSUCCESS" xml:space="preserve">
+    <value>SQL-Befehl erfolgreich. Hier sind die Antworten:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_COMMANDFAILURE" xml:space="preserve">
+    <value>SQL-Befehl fehlgeschlagen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_PATH" xml:space="preserve">
+    <value>Datenbankpfad:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_VERSION" xml:space="preserve">
+    <value>Serverversion:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_STATE" xml:space="preserve">
+    <value>Verbindungsstatus:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_STRING" xml:space="preserve">
+    <value>Verbindungszeichenfolge:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_NAME" xml:space="preserve">
+    <value>Name der Datenbank:</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>Prompt-Voreinstellung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>In diesem Abschnitt können Sie die Funktionsweise der Archiv-Shell konfigurieren.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>In diesem Abschnitt können Sie die Funktionsweise der FTP-Shell konfigurieren.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>In diesem Abschnitt können Sie die Funktionsweise der Git-Shell konfigurieren.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>In diesem Abschnitt können Sie die Funktionsweise der HTTP-Shell konfigurieren.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>In diesem Abschnitt können Sie die Funktionsweise der JSON-Shell konfigurieren.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>JSON-Shell-Eingabeaufforderungsvoreinstellung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME" xml:space="preserve">
+    <value>Aktivieren Sie die automatische Speicherung des JSON-Editors</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC" xml:space="preserve">
+    <value>Aktiviert oder deaktiviert die Funktion zum automatischen Speichern des JSON-Editors.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME" xml:space="preserve">
+    <value>Intervall für die automatische Speicherung des JSON-Editors</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>In diesem Abschnitt können Sie die Funktionsweise der Mail-Shell konfigurieren.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_NAME" xml:space="preserve">
+    <value>Maximale Anzahl von E-Mails auf einer Seite</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAXEMAILS_DESC" xml:space="preserve">
+    <value>Wie viele E-Mail-Nachrichten sollen auf einer Seite angezeigt werden?</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>In diesem Abschnitt können Sie die Funktionsweise der RSS-Shell konfigurieren.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>RSS-Eingabeaufforderungsvoreinstellung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SFTP_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>In diesem Abschnitt können Sie die Funktionsweise der SFTP-Shell konfigurieren.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>In diesem Abschnitt können Sie die Funktionsweise der SQL-Shell konfigurieren.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_SETTINGS_PROMPTPRESET" xml:space="preserve">
+    <value>SQL-Shell-Eingabeaufforderungsvoreinstellung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FILETYPE" xml:space="preserve">
+    <value>Dateityp</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SELFEED_DESC" xml:space="preserve">
+    <value>Durchsucht die Feed-Bibliothek nach einem Feed</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPY" xml:space="preserve">
+    <value>Kopie</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVE" xml:space="preserve">
+    <value>Bewegen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_DELETE" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_UP" xml:space="preserve">
+    <value>Hoch</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_RENAME" xml:space="preserve">
+    <value>Umbenennen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_NEWFOLDER" xml:space="preserve">
+    <value>Neuer Ordner</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_OPEN" xml:space="preserve">
+    <value>Offen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_MIMEMETADATAEXTENDED" xml:space="preserve">
+    <value>MIME-Metadaten (erweitert)</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED" xml:space="preserve">
+    <value>Handler ist registriert, aber es ist irgendwie fehlgeschlagen, einen Erweiterungshandler für</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+    <value>Kopieren nach</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+    <value>Wechseln zu</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Einstellungseinträge konnten nicht abgerufen werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_CANTGETENTRIES" xml:space="preserve">
+    <value>Archiveinträge können nicht abgerufen werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED" xml:space="preserve">
+    <value>Das Archiv wurde noch nicht geladen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE" xml:space="preserve">
+    <value>Aktuelles Archivverzeichnis kann nicht ermittelt werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH" xml:space="preserve">
+    <value>Die letzte Schale ist nicht diese Schale, von der man sich lösen kann.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT" xml:space="preserve">
+    <value>Der Client ist nicht bestückt.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_EXCEPTION_NOCLIENT" xml:space="preserve">
+    <value>Es gibt noch keinen FTP-Client.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1" xml:space="preserve">
+    <value>Der Client ist noch nicht verbunden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOIMAP" xml:space="preserve">
+    <value>Die IMAP-Serverkonfiguration kann nicht abgerufen werden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_NOSMTP" xml:space="preserve">
+    <value>SMTP-Serverkonfiguration kann nicht abgerufen werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_2" xml:space="preserve">
+    <value>Der Client ist noch nicht verbunden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE" xml:space="preserve">
+    <value>Mehr lesen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE" xml:space="preserve">
+    <value>Es ist kein Artikel vorhanden.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED" xml:space="preserve">
+    <value>Es gibt keinen Feed.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION" xml:space="preserve">
+    <value>Keine Verbindung möglich</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_STREAMNOTOPEN" xml:space="preserve">
+    <value>Der Dateistream ist noch nicht geöffnet.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOTOPEN" xml:space="preserve">
+    <value>Die JSON-Datei ist noch nicht geöffnet.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_ENDLINENUM_DESC" xml:space="preserve">
+    <value>Zeilennummern-Endbereich</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_ARGUMENT_PATH_DESC" xml:space="preserve">
+    <value>Pfad zur Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_SOURCEFILEORDIR_DESC" xml:space="preserve">
+    <value>Quelldatei oder -verzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_WHERE_DESC" xml:space="preserve">
+    <value>Zieldatei oder -verzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_ARGUMENT_ALGORITHM_DESC" xml:space="preserve">
+    <value>Verschlüsselungsalgorithmus</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_GITSH_ARGUMENT_REPOPATH_DESC" xml:space="preserve">
+    <value>Pfad zu einem Verzeichnis mit Git-Repository</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_ARGUMENT_STARTLINENUM_DESC" xml:space="preserve">
+    <value>Zeilennummern-Startbereich</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_ARGUMENT_BRANCH_DESC" xml:space="preserve">
+    <value>Filialname</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_COMMIT_ARGUMENT_SUMMARY_DESC" xml:space="preserve">
+    <value>Commit-Zusammenfassung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_ARGUMENT_COMMITSHA_DESC" xml:space="preserve">
+    <value>SHA-Hash festschreiben</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_FETCH_ARGUMENT_REMOTE_DESC" xml:space="preserve">
+    <value>Remotename</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_TAGNAME_DESC" xml:space="preserve">
+    <value>Tag-Name</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_ARGUMENT_MESSAGE_DESC" xml:space="preserve">
+    <value>Nachricht zum Kommentieren des Tags</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_EMAIL_DESC" xml:space="preserve">
+    <value>Ihre E-Mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Ihr Benutzername</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGE_ARGUMENT_UNSTAGED_DESC" xml:space="preserve">
+    <value>Pfad zur nicht bereitgestellten Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_ARGUMENT_STAGED_DESC" xml:space="preserve">
+    <value>Pfad zur bereitgestellten Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARCHIVE_ARGUMENT_ARCHIVEFILE_DESC" xml:space="preserve">
+    <value>Pfad zur Archivdatei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_CHDIR_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
+    <value>Lokales Verzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC" xml:space="preserve">
+    <value>Verzeichnis im Archiv</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC" xml:space="preserve">
+    <value>Datei im Archiv</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC" xml:space="preserve">
+    <value>Lokales Verzeichnis zum Extrahieren</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_LOCALFILE_DESC" xml:space="preserve">
+    <value>Lokale Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_ARGUMENT_WHERE_DESC" xml:space="preserve">
+    <value>Zum Hinzufügen vorgesehenes Archivverzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_FTP_ARGUMENT_SERVER_DESC" xml:space="preserve">
+    <value>FTP-Server zum Verbinden mit</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEFILE_DESC" xml:space="preserve">
+    <value>Pfad zur Remote-Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_LOCALDIR_DESC" xml:space="preserve">
+    <value>Pfad zum lokalen Verzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_ARGUMENT_REMOTEDIR_DESC" xml:space="preserve">
+    <value>Pfad zum Remote-Verzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_DEL_ARGUMENT_REMOTEFILE_DESC" xml:space="preserve">
+    <value>Pfad zur zu löschenden Remotedatei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Auszuführender Serverbefehl</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_MKLDIR_DESC" xml:space="preserve">
+    <value>Erstellt ein lokales Verzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_MKRDIR_DESC" xml:space="preserve">
+    <value>Erstellt ein Remote-Verzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_SOURCEFILEORDIR_DESC" xml:space="preserve">
+    <value>Pfad zur Quelldatei oder zum Quellverzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_MV_ARGUMENT_TARGETFILEORDIR_DESC" xml:space="preserve">
+    <value>Pfad zur Zieldatei oder zum Zielverzeichnis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_PUT_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Pfad zur lokalen Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_PERM_ARGUMENT_PERMNUMBER_DESC" xml:space="preserve">
+    <value>Berechtigungsnummern gemäß chmod</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC" xml:space="preserve">
+    <value>Gibt an, ob der Übertragungstyp ASCII oder Binär ist</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_SYMLINK" xml:space="preserve">
+    <value>Symbolischer Link zu: {0}</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_KEY_DESC" xml:space="preserve">
+    <value>Kopfzeilenschlüssel</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC" xml:space="preserve">
+    <value>Header-Wert</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC" xml:space="preserve">
+    <value>HTTP-Anforderung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Hochzuladende Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_STRING_DESC" xml:space="preserve">
+    <value>Hochzuladende Zeichenfolge</value>
+  </data>
+  <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC" xml:space="preserve">
+    <value>Benutzer-Agent-Zeichenfolge</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC" xml:space="preserve">
+    <value>E-Mail-Adresse zum Anmelden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER" xml:space="preserve">
+    <value>Ordner erstellen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVE" xml:space="preserve">
+    <value>Bewegen...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_MOVEALL" xml:space="preserve">
+    <value>Alles verschieben...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_RENAMEFOLDER" xml:space="preserve">
+    <value>Ordner umbenennen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEFOLDER" xml:space="preserve">
+    <value>Ordner entfernen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Nachricht entfernen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_REMOVEALL" xml:space="preserve">
+    <value>Alle entfernen...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_FOLDERMESSAGEOPENFAILED" xml:space="preserve">
+    <value>Ordner oder Nachricht können nicht geöffnet werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMEPROMPT" xml:space="preserve">
+    <value>Geben Sie den neuen Verzeichnisnamen ein.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_CREATINGDIR" xml:space="preserve">
+    <value>Verzeichnis wird erstellt...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_CREATINGDIRFAILED" xml:space="preserve">
+    <value>Ordner kann nicht erstellt werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEPROMPT" xml:space="preserve">
+    <value>Wählen Sie ein neues Verzeichnis aus, in das diese Nachricht verschoben werden soll.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGE" xml:space="preserve">
+    <value>Bewegende Nachricht...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEFAILED" xml:space="preserve">
+    <value>Nachricht kann nicht verschoben werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRTOMOVEBYSAMESENDERPROMPT" xml:space="preserve">
+    <value>Wählen Sie ein neues Verzeichnis aus, in das alle Nachrichten desselben Absenders verschoben werden sollen.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER" xml:space="preserve">
+    <value>Verschieben von Nachrichten nach Absender {0}...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDERFAILED" xml:space="preserve">
+    <value>Es können nicht alle Nachrichten desselben Absenders verschoben werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_NEWDIRNAMERENAMEPROMPT" xml:space="preserve">
+    <value>Schreiben Sie den neuen Verzeichnisnamen, in den {0} umbenannt werden soll.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIR" xml:space="preserve">
+    <value>Verzeichnis umbenennen...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_RENAMINGDIRFAILED" xml:space="preserve">
+    <value>Ordner kann nicht umbenannt werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIR" xml:space="preserve">
+    <value>Verzeichnis wird entfernt...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGDIRFAILED" xml:space="preserve">
+    <value>Ordner kann nicht entfernt werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGE" xml:space="preserve">
+    <value>Nachricht wird gelöscht...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEFAILED" xml:space="preserve">
+    <value>Nachricht kann nicht gelöscht werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER" xml:space="preserve">
+    <value>Nachrichten werden nach Absender {0} gelöscht...</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDERFAILED" xml:space="preserve">
+    <value>Es können nicht alle Nachrichten vom selben Absender gelöscht werden</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_FOLDER_DESC" xml:space="preserve">
+    <value>Name des Mail-Verzeichnisses</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_LIST_ARGUMENT_PAGENUM_DESC" xml:space="preserve">
+    <value>Seitenzahl</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_MAILID_DESC" xml:space="preserve">
+    <value>Nachrichten-ID</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC" xml:space="preserve">
+    <value>Absendername</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC" xml:space="preserve">
+    <value>Alter Name des Mail-Verzeichnisses</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_NEWFOLDERNAME_DESC" xml:space="preserve">
+    <value>Neuer Name des Mail-Verzeichnisses</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMAND_TUI_DESC" xml:space="preserve">
+    <value>Interaktives Mailmanagement</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_SFTP_ARGUMENT_SERVER_DESC" xml:space="preserve">
+    <value>SFTP-Server für die Verbindung</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_ARGUMENT_FEEDLINK_DESC" xml:space="preserve">
+    <value>Link zum RSS-Feed</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_ARGUMENT_FEEDNUM_DESC" xml:space="preserve">
+    <value>Feednummer</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_ARGUMENT_PHRASE_DESC" xml:space="preserve">
+    <value>Zu suchender Ausdruck</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE1_DESC" xml:space="preserve">
+    <value>Erste JSON-Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_JSONDIFF_ARGUMENT_FILE2_DESC" xml:space="preserve">
+    <value>Zweite JSON-Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_JSONFILE_DESC" xml:space="preserve">
+    <value>Pfad zur JSON-Datei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ARGUMENT_OUTPUT_DESC" xml:space="preserve">
+    <value>Pfad zur JSON-Ausgabedatei</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
+    <value>Hinzuzufügender JSON-Wert</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_ARGUMENT_PROPERTYNAME_DESC" xml:space="preserve">
+    <value>JSON-Eigenschaftsname</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC" xml:space="preserve">
+    <value>Objektpfad</value>
+  </data>
+  <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
+    <value>JSON-Wert</value>
+  </data>
+
+</root>

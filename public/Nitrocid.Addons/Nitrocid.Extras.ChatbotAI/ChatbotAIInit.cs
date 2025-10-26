@@ -19,10 +19,9 @@
 
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Extensions;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Extras.ChatbotAI.Commands;
-using Nitrocid.Extras.ChatbotAI.Localized;
 using Nitrocid.Extras.ChatbotAI.Settings;
 using Nitrocid.Extras.ChatbotAI.Shell;
 using System.Collections.Generic;
@@ -63,7 +62,7 @@ namespace Nitrocid.Extras.ChatbotAI
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.ChatbotAI.Resources.Languages.Output.Localizations", typeof(ChatbotAIInit).Assembly));
             var config = new ChatbotAIConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("ChatbotShell", new ChatbotShellInfo());

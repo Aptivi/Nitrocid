@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_DATES_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Keluar</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_GETTIMEINFO_DESC" xml:space="preserve">
+    <value>Mendapat maklumat tarikh dan masa</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
+    <value>milisaat:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
+    <value>Saat:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
+    <value>minit:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
+    <value>Jam:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
+    <value>Hari:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
+    <value>bulan:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
+    <value>tahun:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
+    <value>Hari dalam Tahun:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
+    <value>Hari dalam Minggu:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
+    <value>binari:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
+    <value>Waktu Tempatan:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
+    <value>Masa Sejagat:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
+    <value>Masa Unix:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
+    <value>Gagal menghuraikan maklumat tarikh untuk</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE2" xml:space="preserve">
+    <value>Pastikan formatnya betul.</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
+    <value>Tarikh:</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
+    <value>Masa:</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
+    <value>Jam randik yang mudah</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STARTSTOP" xml:space="preserve">
+    <value>Mula atau berhenti</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_LAP" xml:space="preserve">
+    <value>pusingan</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_RESET" xml:space="preserve">
+    <value>Tetapkan semula</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_TIMER_DESC" xml:space="preserve">
+    <value>Pemasa yang mudah</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_KEYBINDING_SETTIME" xml:space="preserve">
+    <value>Tetapkan selang</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER" xml:space="preserve">
+    <value>Tamat masa yang dinyatakan bukan angka.</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_TIMEOUTPROMPT" xml:space="preserve">
+    <value>Tentukan tamat masa dalam milisaat</value>
+  </data>
+  <data name="NKS_DATES_COMMON_SETTINGS_FIGLETFONT_DESC" xml:space="preserve">
+    <value>Tulis fon figlet yang disokong oleh perpustakaan Figgle. Rujuk dokumentasi perpustakaan untuk maklumat lanjut</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_FIGLETFONT_NAME" xml:space="preserve">
+    <value>Fon figlet untuk pemasa</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME" xml:space="preserve">
+    <value>Dayakan Figlet untuk pemasa</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_DESC" xml:space="preserve">
+    <value>Jika didayakan, akan menggunakan figlet untuk pemasa. Sila ambil perhatian bahawa ia memerlukan skrin konsol yang besar untuk memaparkan masa dengan betul dengan Figlet didayakan.</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_GETTIMEINFO_SWITCH_NOW_DESC" xml:space="preserve">
+    <value>Mendapat maklumat tarikh dan masa semasa</value>
+  </data>
+  <data name="NKS_DATES_TIMEINFO_HEADER" xml:space="preserve">
+    <value>Maklumat untuk</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STATUS_READY" xml:space="preserve">
+    <value>Jam randik sudah sedia.</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STATUS_RUNNING" xml:space="preserve">
+    <value>Jam randik berjalan!</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_STATUS_NEWLAP" xml:space="preserve">
+    <value>Pusingan baru!</value>
+  </data>
+  <data name="NKS_DATES_TIMERS_KEYBINDING_COUNTDOWN" xml:space="preserve">
+    <value>Mula mengira mundur</value>
+  </data>
+  <data name="NKS_DATES_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Gagal mendapatkan entri tetapan.</value>
+  </data>
+  <data name="NKS_DATES_HOMEPAGE_TIMER" xml:space="preserve">
+    <value>Pemasa</value>
+  </data>
+  <data name="NKS_DATES_HOMEPAGE_STOPWATCH" xml:space="preserve">
+    <value>Jam randik</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_NOLAPS" xml:space="preserve">
+    <value>Tiada pusingan lagi...</value>
+  </data>
+  <data name="NKS_DATES_STOPWATCH_LAPLIST" xml:space="preserve">
+    <value>Senarai pusingan</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_POMODORO_DESC" xml:space="preserve">
+    <value>Pemasa Pomodoro</value>
+  </data>
+  <data name="NKS_DATES_HOMEPAGE_POMODORO" xml:space="preserve">
+    <value>Pomodoro</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_STATUS_READY" xml:space="preserve">
+    <value>Pemasa Pomodoro sudah sedia</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_STATUS_TIMERNUM" xml:space="preserve">
+    <value>Nombor pemasa Pomodoro {0} dalam empat lelaran</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_STATUS_SHORTBREAK" xml:space="preserve">
+    <value>Rehat sekejap</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_TIMEOUTPROMPT" xml:space="preserve">
+    <value>Tentukan tamat masa rehat dalam milisaat</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_KEYBINDING_SETBREAKTIME" xml:space="preserve">
+    <value>Tetapkan selang waktu rehat</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_GETTIMEINFO_ARGUMENT_DATE_DESC" xml:space="preserve">
+    <value>Tarikh dan masa untuk mencetak maklumat daripada</value>
+  </data>
+  <data name="NKS_DATES_TIMER_SETTINGS_DESC" xml:space="preserve">
+    <value>Bahagian ini membolehkan anda mengkonfigurasi cara aplikasi pemasa berfungsi.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_DESC" xml:space="preserve">
+    <value>Bahagian ini membolehkan anda mengkonfigurasi cara aplikasi pemasa pomodoro berfungsi.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_NAME" xml:space="preserve">
+    <value>Dayakan Figlet untuk pemasa pomodoro</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_ENABLEFIGLET_DESC" xml:space="preserve">
+    <value>Jika didayakan, akan menggunakan figlet untuk pemasa pomodoro. Sila ambil perhatian bahawa ia memerlukan skrin konsol yang besar untuk memaparkan masa dengan betul dengan Figlet didayakan.</value>
+  </data>
+  <data name="NKS_DATES_POMODORO_SETTINGS_FIGLETFONT_NAME" xml:space="preserve">
+    <value>Fon figlet untuk pemasa pomodoro</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODDATEINVALID" xml:space="preserve">
+    <value>Tarikh pengeluaran tidak sah</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPTIMEINVALID" xml:space="preserve">
+    <value>Tempoh masa tamat adalah tidak sah</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPDATEINVALID" xml:space="preserve">
+    <value>Tarikh luput tidak sah</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODDATE" xml:space="preserve">
+    <value>Tarikh pengeluaran</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPDATE" xml:space="preserve">
+    <value>tarikh luput</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_EXPTIME" xml:space="preserve">
+    <value>Jangka masa tamat tempoh</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODHEALTH" xml:space="preserve">
+    <value>Kesihatan produk</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_PRODSTATUS" xml:space="preserve">
+    <value>Status produk</value>
+  </data>
+  <data name="NKS_DATES_EXPIRY_NOEXPIRYINFO" xml:space="preserve">
+    <value>Gagal mendapatkan maklumat tamat tempoh produk</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_DESC" xml:space="preserve">
+    <value>Mendapat maklumat tamat tempoh produk</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_ARGUMENT_PRODUCTION_DESC" xml:space="preserve">
+    <value>Tarikh pengeluaran (lihat sama ada sisi atau bahagian bawah produk)</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_ARGUMENT_EXPIRY_DESC" xml:space="preserve">
+    <value>Tarikh luput atau tempoh masa (sama ada ditulis secara eksplisit pada tempat atau jangka masa yang sama, seperti 6 bulan atau 1 tahun)</value>
+  </data>
+  <data name="NKS_DATES_COMMAND_EXPIRY_STATUS_IMPLICIT_DESC" xml:space="preserve">
+    <value>Sama ada produk sasaran tidak menyatakan tarikh luput dengan jelas</value>
+  </data>
+
+</root>

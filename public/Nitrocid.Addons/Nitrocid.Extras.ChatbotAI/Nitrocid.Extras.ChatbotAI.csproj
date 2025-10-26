@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="OpenAI" Version="2.5.0" />
   </ItemGroup>
 

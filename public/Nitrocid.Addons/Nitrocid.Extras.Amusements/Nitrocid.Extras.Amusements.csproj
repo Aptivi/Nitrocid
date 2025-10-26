@@ -10,10 +10,6 @@
     <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
   
-  <ItemGroup>
-    <AdditionalFiles Include="Resources\Languages\*.json" AptLocIsLanguagePath="true" />
-  </ItemGroup>
-
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
   <Import Project="..\..\NitrocidLiteDetector.targets" Condition="'$(NKSLITE)' == 'true'" />
 </Project>

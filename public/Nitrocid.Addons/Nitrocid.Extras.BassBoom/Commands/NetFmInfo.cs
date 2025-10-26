@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using Nitrocid.Base.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;

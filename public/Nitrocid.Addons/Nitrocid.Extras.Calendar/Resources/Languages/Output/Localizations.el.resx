@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_CALENDAR_COMMAND_ALTDATE_DESC" xml:space="preserve">
+    <value>Εμφανίζει ημερομηνία και ώρα</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Εξοδος</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Ενεργοποιήστε τα αληθινά χρώματα</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>Καθυστέρηση σε χιλιοστά του δευτερολέπτου</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν κάνετε την επόμενη εγγραφή;</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο κόκκινου χρώματος</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο πράσινου χρώματος</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο μπλε χρώματος</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_NAME" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο χρώματος</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο κόκκινου χρώματος</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο πράσινου χρώματος</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο μπλε χρώματος</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο κόκκινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο πράσινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο μπλε χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_DESC" xml:space="preserve">
+    <value>Ελάχιστο επίπεδο χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255 για 255 χρώματα ή 16 για 16 χρώματα.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Μέγιστο επίπεδο κόκκινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Μέγιστο επίπεδο πράσινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Μέγιστο επίπεδο μπλε χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_DESC" xml:space="preserve">
+    <value>Μέγιστο επίπεδο χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255 για 255 χρώματα ή 16 για 16 χρώματα.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Ενεργοποιεί την υποστήριξη πραγματικού χρώματος.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTADDFAILED" xml:space="preserve">
+    <value>Αποτυχία προσθήκης συμβάντος.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTREMOVEFAILED" xml:space="preserve">
+    <value>Αποτυχία κατάργησης ενός συμβάντος.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD" xml:space="preserve">
+    <value>Δεν παρέχονται αρκετά ορίσματα για την προσθήκη ενός συμβάντος.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE" xml:space="preserve">
+    <value>Δεν παρέχονται αρκετά ορίσματα για την κατάργηση ενός συμβάντος.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED" xml:space="preserve">
+    <value>Δεν παρέχονται αρκετά επιχειρήματα για χειραγώγηση συμβάντων.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED" xml:space="preserve">
+    <value>Δεν παρέχονται αρκετά επιχειρήματα για χειρισμό υπενθύμισης.</value>
+  </data>
+  <data name="NKS_CALENDAR_UNTITLEDREMINDER" xml:space="preserve">
+    <value>Υπενθύμιση χωρίς τίτλο</value>
+  </data>
+  <data name="NKS_CALENDAR_UNTITLEDEVENT" xml:space="preserve">
+    <value>Εκδήλωση χωρίς τίτλο</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENT_NOTIFICATION" xml:space="preserve">
+    <value>Τώρα είναι ημέρα εκδήλωσης!</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDER_NOTIFICATION" xml:space="preserve">
+    <value>Μην το χάσετε αυτό!</value>
+  </data>
+  <data name="NKS_CALENDAR_INVALIDACTION" xml:space="preserve">
+    <value>Μη έγκυρη ενέργεια.</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_NAME" xml:space="preserve">
+    <value>Αποθηκεύστε όλα τα συμβάντα ή/και υπενθυμίσεις καταστροφικά</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_DESC" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένο, διαγράφει όλα τα συμβάντα ή/και υπενθυμίσεις πριν τα αποθηκεύσει όλα χρησιμοποιώντας την εντολή ημερολογίου.</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC" xml:space="preserve">
+    <value>Όνομα πολιτισμού</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_STATUS_READY" xml:space="preserve">
+    <value>Ετοιμος</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC" xml:space="preserve">
+    <value>Εμφανιζόμενο όνομα</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>Keybindings</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Δείχνει μόνο την ημερομηνία</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Δείχνει μόνο την ώρα</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Χρησιμοποιεί UTC αντί για τοπικό</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_DESC" xml:space="preserve">
+    <value>Διαχείριση ημερολογίου, συμβάντων και υπενθυμίσεων</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC" xml:space="preserve">
+    <value>Τύπος ημερολογίου για εργασία</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC" xml:space="preserve">
+    <value>Χρησιμοποιήστε το πρόγραμμα προβολής ημερολογίου βάσει πίνακα</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_EVENTS" xml:space="preserve">
+    <value>Εκδηλώσεις...</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_REMINDERS" xml:space="preserve">
+    <value>Υπενθυμίσεις...</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_FAILED" xml:space="preserve">
+    <value>Το διαδραστικό ημερολόγιο απέτυχε:</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_EVENTSREMINDERS_TITLE" xml:space="preserve">
+    <value>Εκδηλώσεις και υπενθυμίσεις για</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_LONGFORM" xml:space="preserve">
+    <value>Μακροσκελές έντυπο</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_CALENDARTYPE" xml:space="preserve">
+    <value>Τύπος ημερολογίου</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOREMINDERSMONTH" xml:space="preserve">
+    <value>Δεν βρέθηκαν υπενθυμίσεις για τον επιλεγμένο μήνα</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOEVENTSMONTH" xml:space="preserve">
+    <value>Δεν βρέθηκαν συμβάντα για τον επιλεγμένο μήνα</value>
+  </data>
+  <data name="NKS_CALENDAR_NOCULTURE" xml:space="preserve">
+    <value>Ο πολιτισμός δεν βρίσκεται.</value>
+  </data>
+  <data name="NKS_CALENDAR_SHOWCALENDARFAILED" xml:space="preserve">
+    <value>Αποτυχία εμφάνισης του ημερολογίου.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERADDFAILED" xml:space="preserve">
+    <value>Αποτυχία προσθήκης υπενθύμισης.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERADDNEEDSARGS" xml:space="preserve">
+    <value>Δεν παρέχονται αρκετά ορίσματα για την προσθήκη υπενθύμισης.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERREMOVEFAILED" xml:space="preserve">
+    <value>Αποτυχία αφαίρεσης υπενθύμισης.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERREMOVENEEDSARGS" xml:space="preserve">
+    <value>Δεν παρέχονται αρκετά ορίσματα για την κατάργηση μιας υπενθύμισης.</value>
+  </data>
+  <data name="NKS_CALENDAR_EXCEPTION_NOEVENT" xml:space="preserve">
+    <value>Δεν υπάρχει εκδήλωση.</value>
+  </data>
+  <data name="NKS_CALENDAR_EXCEPTION_NOREMINDER" xml:space="preserve">
+    <value>Δεν υπάρχει υπενθύμιση.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME" xml:space="preserve">
+    <value>Πολιτισμός</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις χρώματος</value>
+  </data>
+  <data name="NKS_CALENDAR_SETTINGS_DESC" xml:space="preserve">
+    <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του Ημερολογίου.</value>
+  </data>
+  <data name="NKS_CALENDAR_BUILTIN_NKSANNIVERSARY" xml:space="preserve">
+    <value>Επέτειος κυκλοφορίας Nitrocid KS</value>
+  </data>
+  <data name="NKS_CALENDAR_BUILTIN_RAMADAN" xml:space="preserve">
+    <value>Ραμαζάνι</value>
+  </data>
+  <data name="NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Αποτυχία λήψης καταχωρήσεων ρυθμίσεων.</value>
+  </data>
+  <data name="NKS_CALENDAR_HOMEPAGE_CALENDAR" xml:space="preserve">
+    <value>Ημερολόγιο</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOREMINDERSDAY" xml:space="preserve">
+    <value>Δεν βρέθηκαν υπενθυμίσεις για την επιλεγμένη ημέρα</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOEVENTSDAY" xml:space="preserve">
+    <value>Δεν βρέθηκαν συμβάντα για την επιλεγμένη ημέρα</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC" xml:space="preserve">
+    <value>Ανοίγει το διαδραστικό TUI ημερολογίου</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC" xml:space="preserve">
+    <value>Έτος στόχος</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC" xml:space="preserve">
+    <value>Αριθμός μήνα στόχου</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC" xml:space="preserve">
+    <value>Αλληλεπίδραση με τα γεγονότα</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC" xml:space="preserve">
+    <value>Προσθέτει ένα συμβάν</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC" xml:space="preserve">
+    <value>Ημερομηνία στόχος</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC" xml:space="preserve">
+    <value>Καταργεί ένα συμβάν</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC" xml:space="preserve">
+    <value>Αναγνωριστικό συμβάντος</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC" xml:space="preserve">
+    <value>Παραθέτει όλα τα συμβάντα</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC" xml:space="preserve">
+    <value>Αποθηκεύει όλα τα συμβάντα</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC" xml:space="preserve">
+    <value>Αλληλεπίδραση με τις υπενθυμίσεις</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC" xml:space="preserve">
+    <value>Ημερομηνία και ώρα στόχος</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC" xml:space="preserve">
+    <value>Αφαιρεί μια υπενθύμιση</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC" xml:space="preserve">
+    <value>Αναγνωριστικό υπενθύμισης</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC" xml:space="preserve">
+    <value>Εμφανίζει όλες τις υπενθυμίσεις</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC" xml:space="preserve">
+    <value>Αποθηκεύει όλες τις υπενθυμίσεις</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε τα χρώματα</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις πολιτισμού</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC" xml:space="preserve">
+    <value>Αυτό σας επιτρέπει να διαμορφώσετε την κουλτούρα που χρησιμοποιείται από την προφύλαξη οθόνης ημερολογίου</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_DESC" xml:space="preserve">
+    <value>Ποια κουλτούρα χρησιμοποιείται για την αλλαγή των ονομάτων των μηνών, του ημερολογίου κ.λπ.;</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_NAME" xml:space="preserve">
+    <value>Χρησιμοποιήστε την κουλτούρα του συστήματος</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC" xml:space="preserve">
+    <value>Είτε η προφύλαξη οθόνης χρησιμοποιεί την κουλτούρα που έχει οριστεί από τις κύριες ρυθμίσεις του πυρήνα είτε από αυτές τις ρυθμίσεις προφύλαξης οθόνης.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC" xml:space="preserve">
+    <value>Ρυθμίσεις προφύλαξης οθόνης...</value>
+  </data>
+
+</root>

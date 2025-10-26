@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME" xml:space="preserve">
+    <value>Teks ditunjukkan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_SHORT" xml:space="preserve">
+    <value>Tulis sebarang teks yang anda mahu ditunjukkan. Lebih pendek adalah lebih baik.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Aktifkan warna sebenar</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_CYCLECOLORS_NAME" xml:space="preserve">
+    <value>Warna kitaran</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Disko akan mengitar warna apabila didayakan. Jika tidak, pilih warna rawak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_BGCOLOR_NAME" xml:space="preserve">
+    <value>Warna latar belakang</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>Kelewatan dalam Milisaat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>Berapa milisaat untuk menunggu sebelum membuat penulisan seterusnya?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSCOLOR_NAME" xml:space="preserve">
+    <value>Warna Bar Saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESCOLOR_NAME" xml:space="preserve">
+    <value>Bar Warna Minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSCOLOR_NAME" xml:space="preserve">
+    <value>Bar Warna Jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_INFOCOLOR_NAME" xml:space="preserve">
+    <value>Warna Maklumat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_NAME" xml:space="preserve">
+    <value>Kutu untuk menukar warna</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLETICKS_DESC" xml:space="preserve">
+    <value>Jika kitaran warna didayakan, berapa banyak kutu sebelum menukar warna dalam ProgressClock? 1 tanda = 0.5 saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>ProgressClock akan memilih warna rawak jika ia didayakan. Jika tidak, gunakan warna daripada config.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_NAME" xml:space="preserve">
+    <value>Kiraan Kedudukan Maks</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_MAXPOSCOUNT_DESC" xml:space="preserve">
+    <value>Berapa banyak kedudukan yang dinyalakan sebelum dimalapkan?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_NAME" xml:space="preserve">
+    <value>Kelewatan Fade Out dalam milisaat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME" xml:space="preserve">
+    <value>Langkah Pudar Maks</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_FADEOUTDELAY_DESC" xml:space="preserve">
+    <value>Berapa milisaat untuk menunggu sebelum teks pudar?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC" xml:space="preserve">
+    <value>Berapa banyak langkah pudar yang perlu dilakukan?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_NAME" xml:space="preserve">
+    <value>Tulis Lagi Kelewatan dalam Milidetik</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_WRITEAGAIN_DESC" xml:space="preserve">
+    <value>Berapa milisaat untuk menunggu sebelum menulis teks semula?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG" xml:space="preserve">
+    <value>Tulis sebarang teks yang anda mahu ditunjukkan. Lebih lama lebih baik.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME" xml:space="preserve">
+    <value>Kelajuan menulis minimum dalam WPM</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MAXSPEED_NAME" xml:space="preserve">
+    <value>Kelajuan menulis maksimum dalam WPM</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TYPOPERCENT_NAME" xml:space="preserve">
+    <value>Kebarangkalian kesilapan menaip dalam peratus</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_NAME" xml:space="preserve">
+    <value>Lap untuk menukar arah</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WIPE_SETTINGS_WIPESNUMCHANGEDIRECTION_DESC" xml:space="preserve">
+    <value>Berapakah bilangan lap yang perlu dilakukan sebelum menukar arah secara rawak?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_NAME" xml:space="preserve">
+    <value>Sentiasa berpusat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC" xml:space="preserve">
+    <value>Tulis sebarang teks yang anda mahu ditunjukkan.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CENTERED_DESC" xml:space="preserve">
+    <value>Sama ada teks yang ditunjukkan pada marquee sentiasa berpusat.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_NAME" xml:space="preserve">
+    <value>Gunakan Console API</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_CONSOLEAPI_DESC" xml:space="preserve">
+    <value>Sama ada hendak menggunakan Console API untuk mengosongkan teks atau menggunakan urutan VT mengosongkan baris yang lebih pantas. Jika Salah, Marquee akan menggunakan jujukan VT yang sesuai. Jika tidak, ia akan menggunakan API Konsol yang mungkin lebih perlahan.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_NAME" xml:space="preserve">
+    <value>Gunakan Pukulan Per Minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_USEBPM_DESC" xml:space="preserve">
+    <value>Sama ada hendak menggunakan unit Beats Per Minute untuk menulis warna seterusnya.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_NAME" xml:space="preserve">
+    <value>Kelewatan dalam Degupan Per Minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAYBPM_DESC" xml:space="preserve">
+    <value>Berapa banyak denyutan seminit untuk menunggu sebelum membuat penulisan seterusnya?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>BeatFader akan memilih warna rawak jika ia didayakan. Jika tidak, gunakan warna daripada config.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME" xml:space="preserve">
+    <value>Kelewatan Skrin Baharu dalam Milisaat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_NAME" xml:space="preserve">
+    <value>Kiraan Lajur</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_NAME" xml:space="preserve">
+    <value>Ambang Pengisian Baris</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_NAME" xml:space="preserve">
+    <value>Kebarangkalian Had Pengisian Garis dalam peratus</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_NAME" xml:space="preserve">
+    <value>Jenis Isian Baris</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_DESC" xml:space="preserve">
+    <value>Berapa milisaat untuk menunggu sebelum menulis teks dalam skrin baharu semula?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_COLUMNCOUNT_DESC" xml:space="preserve">
+    <value>Lajur teks yang akan dicetak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILL_DESC" xml:space="preserve">
+    <value>Berapa banyak aksara untuk ditulis sebelum mencetuskan &quot;isi baris&quot;?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_CAPPROBABILITY_DESC" xml:space="preserve">
+    <value>Kemungkinan corak isian baris akan dicetak dalam semua huruf besar dalam peratus</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MISSPROBABILITY_NAME" xml:space="preserve">
+    <value>Kebarangkalian terlepas dalam peratus</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_NAME" xml:space="preserve">
+    <value>Selang tanjakan seterusnya</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_NEXTRAMP_DESC" xml:space="preserve">
+    <value>Berapa milisaat untuk menunggu sebelum mengisi tanjakan seterusnya?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna merah minimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna hijau minimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna biru minimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna minimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna merah maksimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna hijau maksimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna biru maksimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna maksimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Tahap warna merah minimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Tahap warna hijau minimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Tahap warna biru minimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC" xml:space="preserve">
+    <value>Tahap warna minimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255 untuk 255 warna atau 16 untuk 16 warna.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Tahap warna merah maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Tahap warna hijau maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Tahap warna biru maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC" xml:space="preserve">
+    <value>Tahap warna maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255 untuk 255 warna atau 16 untuk 16 warna.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_FGCOLOR_NAME" xml:space="preserve">
+    <value>Warna latar depan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_NAME" xml:space="preserve">
+    <value>Watak baris</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_DESC" xml:space="preserve">
+    <value>Watak untuk membentuk garisan. Pastikan anda hanya memasukkan satu aksara.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_HOURS_NAME" xml:space="preserve">
+    <value>Watak sudut kiri atas untuk bar jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri atas untuk bar minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_ULCCHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri atas untuk bar saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_HOURS_NAME" xml:space="preserve">
+    <value>Watak penjuru kanan sebelah atas untuk bar jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Aksara sudut kanan atas untuk bar minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_URCCHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Aksara sudut kanan atas untuk bar saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_HOURS_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri bawah untuk bar jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri bawah untuk bar minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LLCCHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri bawah untuk bar saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_HOURS_NAME" xml:space="preserve">
+    <value>Aksara sudut kanan bawah untuk bar jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Aksara sudut kanan bawah untuk bar minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LRCCHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Aksara sudut kanan bawah untuk bar saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_HOURS_NAME" xml:space="preserve">
+    <value>Watak bingkai atas untuk bar jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Aksara bingkai atas untuk bar minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_UPFRAMECHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Aksara bingkai atas untuk bar saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_HOURS_NAME" xml:space="preserve">
+    <value>Aksara bingkai bawah untuk bar jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Aksara bingkai bawah untuk bar minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LOFRAMECHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Aksara bingkai bawah untuk bar saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_HOURS_NAME" xml:space="preserve">
+    <value>Watak bingkai kiri untuk bar jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Watak bingkai kiri untuk bar minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_LEFRAMECHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Watak bingkai kiri untuk bar saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_HOURS_NAME" xml:space="preserve">
+    <value>Watak bingkai kanan untuk bar jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_MINUTES_NAME" xml:space="preserve">
+    <value>Watak bingkai kanan untuk bar minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_RIFRAMECHAR_SECONDS_NAME" xml:space="preserve">
+    <value>Watak bingkai kanan untuk bar saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_NAME" xml:space="preserve">
+    <value>Teks maklumat selama berjam-jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_NAME" xml:space="preserve">
+    <value>Teks maklumat untuk minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_NAME" xml:space="preserve">
+    <value>Teks maklumat untuk beberapa saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Tahap warna merah minimum selama berjam-jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Tahap warna hijau minimum selama berjam-jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Tahap warna biru minimum selama berjam-jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Tahap warna minimum untuk jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Tahap warna merah maksimum selama berjam-jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Tahap warna hijau maksimum selama berjam-jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Tahap warna biru maksimum selama berjam-jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_HOURS_NAME" xml:space="preserve">
+    <value>Tahap warna maksimum selama berjam-jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Tahap warna merah minimum untuk beberapa minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Tahap warna hijau minimum untuk beberapa minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Tahap warna biru minimum untuk beberapa minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Tahap warna minimum untuk beberapa minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Tahap warna merah maksimum selama beberapa minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Tahap warna hijau maksimum selama beberapa minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Tahap warna biru maksimum selama beberapa minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_MINUTES_NAME" xml:space="preserve">
+    <value>Tahap warna maksimum untuk beberapa minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINREDCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Tahap warna merah minimum untuk beberapa saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINGREENCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Tahap warna hijau minimum untuk beberapa saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINBLUECOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Tahap warna biru minimum untuk beberapa saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Tahap warna minimum untuk beberapa saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXREDCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Tahap warna merah maksimum untuk beberapa saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXGREENCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Tahap warna hijau maksimum untuk beberapa saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXBLUECOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Tahap warna biru maksimum untuk beberapa saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MAXCOLOR_SECONDS_NAME" xml:space="preserve">
+    <value>Tahap warna maksimum untuk beberapa saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_DESC" xml:space="preserve">
+    <value>Watak yang menyerupai sudut kiri atas. Pastikan anda hanya memasukkan satu aksara.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_DESC" xml:space="preserve">
+    <value>Watak yang menyerupai sudut kiri bawah. Pastikan anda hanya memasukkan satu aksara.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_DESC" xml:space="preserve">
+    <value>Watak yang menyerupai bingkai atas. Pastikan anda hanya memasukkan satu aksara.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_DESC" xml:space="preserve">
+    <value>Watak yang menyerupai bingkai bawah. Pastikan anda hanya memasukkan satu aksara.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_DESC" xml:space="preserve">
+    <value>Watak yang menyerupai bingkai kiri. Pastikan anda hanya memasukkan satu aksara.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_DESC" xml:space="preserve">
+    <value>Watak yang menyerupai bingkai yang betul. Pastikan anda hanya memasukkan satu aksara.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_HOURS_DESC" xml:space="preserve">
+    <value>Tulis bagaimana teks maklumat anda untuk jam semasa ditunjukkan. {0} untuk jam semasa daripada 24 jam.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_MINUTES_DESC" xml:space="preserve">
+    <value>Tulis bagaimana teks maklumat anda untuk minit semasa ditunjukkan. {0} untuk minit semasa daripada 60 minit.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_INFOTEXT_SECONDS_DESC" xml:space="preserve">
+    <value>Tulis bagaimana teks maklumat anda untuk detik semasa ditunjukkan. {0} untuk saat semasa daripada 60 saat.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TEXTCOLOR_NAME" xml:space="preserve">
+    <value>Warna teks</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri atas untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_NAME" xml:space="preserve">
+    <value>Watak sudut kanan atas untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri bawah untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kanan bawah untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECHAR_NAME" xml:space="preserve">
+    <value>Watak bingkai atas untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECHAR_NAME" xml:space="preserve">
+    <value>Aksara bingkai bawah untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECHAR_NAME" xml:space="preserve">
+    <value>Watak bingkai kiri untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECHAR_NAME" xml:space="preserve">
+    <value>Watak bingkai kanan untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_START_NAME" xml:space="preserve">
+    <value>Tahap warna merah minimum untuk warna permulaan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_START_NAME" xml:space="preserve">
+    <value>Tahap warna hijau minimum untuk warna permulaan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_START_NAME" xml:space="preserve">
+    <value>Tahap warna biru minimum untuk warna permulaan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_START_NAME" xml:space="preserve">
+    <value>Tahap warna minimum untuk warna permulaan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_START_NAME" xml:space="preserve">
+    <value>Tahap warna merah maksimum untuk warna permulaan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_START_NAME" xml:space="preserve">
+    <value>Tahap warna hijau maksimum untuk warna permulaan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_START_NAME" xml:space="preserve">
+    <value>Tahap warna biru maksimum untuk warna permulaan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_START_NAME" xml:space="preserve">
+    <value>Tahap warna maksimum untuk warna permulaan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINREDCOLOR_END_NAME" xml:space="preserve">
+    <value>Tahap warna merah minimum untuk warna akhir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINGREENCOLOR_END_NAME" xml:space="preserve">
+    <value>Tahap warna hijau minimum untuk warna akhir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINBLUECOLOR_END_NAME" xml:space="preserve">
+    <value>Tahap warna biru minimum untuk warna akhir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MINCOLOR_END_NAME" xml:space="preserve">
+    <value>Tahap warna minimum untuk warna akhir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXREDCOLOR_END_NAME" xml:space="preserve">
+    <value>Tahap warna merah maksimum untuk warna akhir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXGREENCOLOR_END_NAME" xml:space="preserve">
+    <value>Tahap warna hijau maksimum untuk warna akhir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXBLUECOLOR_END_NAME" xml:space="preserve">
+    <value>Tahap warna biru maksimum untuk warna akhir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_MAXCOLOR_END_NAME" xml:space="preserve">
+    <value>Tahap warna maksimum untuk warna akhir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Mengaktifkan sokongan warna sebenar.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_ULCCOLOR_NAME" xml:space="preserve">
+    <value>Warna sudut kiri atas untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCOLOR_NAME" xml:space="preserve">
+    <value>Warna penjuru kanan sebelah atas untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LLCCOLOR_NAME" xml:space="preserve">
+    <value>Warna sudut kiri bawah untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCOLOR_NAME" xml:space="preserve">
+    <value>Warna sudut kanan bawah untuk palang jalan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_UPFRAMECOLOR_NAME" xml:space="preserve">
+    <value>Warna bingkai atas untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LOFRAMECOLOR_NAME" xml:space="preserve">
+    <value>Warna bingkai bawah untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LEFRAMECOLOR_NAME" xml:space="preserve">
+    <value>Warna bingkai kiri untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RIFRAMECOLOR_NAME" xml:space="preserve">
+    <value>Warna bingkai kanan untuk bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_NAME" xml:space="preserve">
+    <value>Gunakan warna sempadan untuk bar ramp</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BORDERCOLORS_DESC" xml:space="preserve">
+    <value>Gunakan warna sempadan untuk bar tanjakan. Jika dilumpuhkan, akan menjana bar kelabu.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_NAME" xml:space="preserve">
+    <value>Isi kotak</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_FILLED_DESC" xml:space="preserve">
+    <value>Adakah kita melukis kotak secara keseluruhan atau kita hanya melukis sempadan?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_NAME" xml:space="preserve">
+    <value>Selang reput tanjakan seterusnya</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARROT_SETTINGS_NEXTROT_DESC" xml:space="preserve">
+    <value>Berapa milisaat untuk menunggu sebelum mereputkan satu hujung tanjakan seterusnya?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_NAME" xml:space="preserve">
+    <value>Jejari letupan bunga api</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_RADIUS_DESC" xml:space="preserve">
+    <value>Berapakah bilangan blok (sehingga 10) jejari letupan untuk bunga api apabila dinyalakan?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_NAME" xml:space="preserve">
+    <value>Fon figlet</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_FONT_DESC" xml:space="preserve">
+    <value>Tulis fon figlet yang disokong oleh perpustakaan Figgle. Rujuk dokumentasi perpustakaan untuk maklumat lanjut</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_NAME" xml:space="preserve">
+    <value>Dayakan Mod Hitam dan Putih</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_BW_DESC" xml:space="preserve">
+    <value>Menjadikan disko hitam dan putih. Benar-benar akan menyakitkan mata anda jika terlalu pantas, jadi tidak disyorkan jika anda mengalami rampasan imej pantas.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_NAME" xml:space="preserve">
+    <value>Ketumpatan bunyi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_NEWSCREENDELAY_DESC" xml:space="preserve">
+    <value>Berapa milisaat perlu menunggu sebelum menulis dalam skrin baharu?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DENSITY_DESC" xml:space="preserve">
+    <value>Semakin besar peratusan, semakin bising isyarat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_NAME" xml:space="preserve">
+    <value>Ketumpatan gangguan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DENSITY_DESC" xml:space="preserve">
+    <value>Lebih besar peratusan, lebih padat gangguan!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORD_LOADING" xml:space="preserve">
+    <value>Memuatkan...</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_KSX_CONTINUED" xml:space="preserve">
+    <value>Bersambung...</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_KSX_THEEND" xml:space="preserve">
+    <value>Akhir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NEWYEAR_CONGRATS" xml:space="preserve">
+    <value>selamat tahun baru!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_NAME" xml:space="preserve">
+    <value>Lepaskan peluang</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME" xml:space="preserve">
+    <value>Tetapan warna</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_URCCHAR_DESC" xml:space="preserve">
+    <value>Watak yang menyerupai sudut kanan atas. Pastikan anda hanya memasukkan satu aksara.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_LRCCHAR_DESC" xml:space="preserve">
+    <value>Watak yang menyerupai sudut kanan bawah. Pastikan anda hanya memasukkan satu aksara.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MATRIX_SETTINGS_DESC" xml:space="preserve">
+    <value>Nombor binari yang jatuh dalam skrin anda.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORMIX_SETTINGS_DESC" xml:space="preserve">
+    <value>Mencampur warna dan mencetaknya ke konsol.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISCO_SETTINGS_DESC" xml:space="preserve">
+    <value>Ini ialah lampu disko, salah satu penyelamat skrin pertama.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITTERCOLOR_SETTINGS_DESC" xml:space="preserve">
+    <value>Warna bergemerlapan pada skrin.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_DESC" xml:space="preserve">
+    <value>Garisan yang mengelilingi konsol secara menegak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DISSOLVE_SETTINGS_DESC" xml:space="preserve">
+    <value>Melarutkan warna rawak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOUNCINGBLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda blok berwarna-warni yang melantun merentasi konsol.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda tiga bar kemajuan yang mewakili masa.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTER_SETTINGS_DESC" xml:space="preserve">
+    <value>Blok lampu.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WIPE_SETTINGS_DESC" xml:space="preserve">
+    <value>Lap skrin dengan warna.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIMPLEMATRIX_SETTINGS_DESC" xml:space="preserve">
+    <value>Matriks mudah.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITTERMATRIX_SETTINGS_DESC" xml:space="preserve">
+    <value>Nombor matriks yang tersebar secara rawak merentasi skrin.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOUNCINGTEXT_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda teks yang melantun di sekeliling konsol.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC" xml:space="preserve">
+    <value>Teks pudar masuk dan keluar.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FADERBACK_SETTINGS_DESC" xml:space="preserve">
+    <value>Latar belakang pudar masuk dan keluar.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_DESC" xml:space="preserve">
+    <value>Teks pudar masuk dan keluar mengikut rentak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATFADER_SETTINGS_BEATCOLOR_DESC" xml:space="preserve">
+    <value>Pukul warna</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPO_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan seseorang menulis teks dengan kesilapan menaip.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARQUEE_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan teks menatal kepada anda dari kanan ke kiri.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan seseorang menulis teks untuk akhbar dalam papan kekunci linotaip pada zaman dahulu.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINOTYPO_SETTINGS_LINEFILLTYPE_DESC" xml:space="preserve">
+    <value>Jenis corak pengisian baris. 0 mencetak corak aksara etaoin yang diketahui, 1 mencetak corak lengkap aksara etaoin dan 2 mencetak set aksara rawak untuk mengisi baris dengan pantas.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan seseorang menulis teks dengan sempurna.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_NAME" xml:space="preserve">
+    <value>Tunjukkan kedudukan anak panah</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TYPEWRITER_SETTINGS_ARROWPOS_DESC" xml:space="preserve">
+    <value>Menunjukkan kedudukan lajur huruf mesin taip dengan menunjukkan anak panah di bahagian bawah skrin</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FLASHCOLOR_SETTINGS_DESC" xml:space="preserve">
+    <value>Warna berkelip dalam skrin anda.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SPOTWRITE_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan sorotan yang mencari merentas teks anda.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_DESC" xml:space="preserve">
+    <value>Mengisi tanjakan dengan warna kecerunan.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STACKBOX_SETTINGS_DESC" xml:space="preserve">
+    <value>Tumpukan kotak di seluruh skrin.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARROT_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan bar yang menjadi busuk dengan warna latar belakang yang lain, menjadikan kecerunan.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIREWORKS_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda bunga api yang dilancarkan dan meletup.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FIGLET_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda teks figlet berwarna.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_NAME" xml:space="preserve">
+    <value>Mod pelangi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXT_SETTINGS_RAINBOW_DESC" xml:space="preserve">
+    <value>Mendayakan mod warna pelangi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FLASHTEXT_SETTINGS_DESC" xml:space="preserve">
+    <value>Tunjukkan kepada anda teks berkelip berwarna.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISE_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan bunyi statik TV.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DATEANDTIME_SETTINGS_DESC" xml:space="preserve">
+    <value>Tarikh dan masa mudah di tengah-tengah skrin.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITCH_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan gangguan pada skrin anda.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FALLINGLINE_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda garis jatuh yang turun dan pudar.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_INDETERMINATE_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda bar kemajuan yang tidak tentu.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PULSE_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda latar belakang yang berdenyut.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan anda latar belakang berdenyut dalam rentak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATPULSE_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>BeatPulse akan memilih warna rawak jika ia didayakan. Jika tidak, gunakan warna daripada config.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EDGEPULSE_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan anda kelebihan berdenyut.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan anda kelebihan berdenyut dalam rentak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BEATEDGEPULSE_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>BeatEdgePulse akan memilih warna rawak jika ia didayakan. Jika tidak, gunakan warna daripada config.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda skrin yang dipenuhi dengan warna yang perlahan-lahan mereput dirinya kepada warna lain, mencipta kecerunan.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_NAME" xml:space="preserve">
+    <value>Selang reput kecerunan seterusnya</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_NEXTROT_DESC" xml:space="preserve">
+    <value>Berapa milisaat untuk menunggu sebelum membusukkan skrin seterusnya?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENT_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kecerunan dalam skrin anda.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STARFIELD_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda perjalanan bintang dalam 2D.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_DESC" xml:space="preserve">
+    <value>Menukar latar belakang mengikut warna yang ditetapkan, yang menyerupai siren.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_NAME" xml:space="preserve">
+    <value>Gaya siren</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIREN_SETTINGS_SIRENSTYLE_DESC" xml:space="preserve">
+    <value>Gaya siren.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SPIN_SETTINGS_DESC" xml:space="preserve">
+    <value>Tebasan berputar.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SNAKEFILL_SETTINGS_DESC" xml:space="preserve">
+    <value>Mengisi konsol dengan warna seperti ular.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan anda penyamaan yang menunjukkan anda bass, pertengahan dan treble.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EQUALIZER_SETTINGS_NEXTSCREENDELAY_NAME" xml:space="preserve">
+    <value>Kelewatan Skrin Seterusnya dalam Milisaat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BSOD_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan ralat sistem daripada sistem pengendalian yang berbeza.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MEMDUMP_SETTINGS_DESC" xml:space="preserve">
+    <value>Menghasilkan warna daripada peralihan rawak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda teks yang pudar dan berkelip dalam rentak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>ExcaliBeats akan memilih warna rawak jika ia didayakan. Jika tidak, gunakan warna daripada config.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_NAME" xml:space="preserve">
+    <value>Mod eksplisit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_EXPLICIT_DESC" xml:space="preserve">
+    <value>Tukar teks secara eksplisit kepada Excalibur</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_NAME" xml:space="preserve">
+    <value>Mod berkhayal</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EXCALIBEATS_SETTINGS_TRANCE_DESC" xml:space="preserve">
+    <value>Mod berkhayal - Mendarab BPM dengan 2 untuk mensimulasikan gaya muzik berkhayal</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda sekumpulan gelombang dalam bar.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_NAME" xml:space="preserve">
+    <value>Tahap Kekerapan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_DESC" xml:space="preserve">
+    <value>Tahap kekerapan. Ini adalah penyebut nilai Pi dalam matematik.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WAVE_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda gelombang yang menjana sendiri dan memajukan.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MESMERIZE_SETTINGS_DESC" xml:space="preserve">
+    <value>Memberi anda rasa yang memukau.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_AURORA_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan aurora borealis.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda kilat yang menyambar.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_NAME" xml:space="preserve">
+    <value>Kebarangkalian Mogok</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LIGHTNING_SETTINGS_STRIKEPROBABILITY_DESC" xml:space="preserve">
+    <value>Peluang, dalam peratus, untuk menyerang</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda warna latar belakang yang berubah perlahan-lahan.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_NAME" xml:space="preserve">
+    <value>Warna gelap</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_DESC" xml:space="preserve">
+    <value>Sama ada menggunakan warna gelap atau warna terang.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_NAME" xml:space="preserve">
+    <value>Langkah warna</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_DESC" xml:space="preserve">
+    <value>Berapa banyak langkah warna untuk peralihan antara dua warna?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORDHASHER_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda perkataan dan jumlah cincangnya.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda segi empat sama pudar di empat penjuru.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SQUARECORNER_SETTINGS_FADEOUTDELAY_DESC" xml:space="preserve">
+    <value>Berapa milisaat untuk menunggu sebelum memudar kuasa dua?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NUMBERSCATTER_SETTINGS_DESC" xml:space="preserve">
+    <value>Menyebarkan nombor di seluruh skrin.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXGRID_SETTINGS_DESC" xml:space="preserve">
+    <value>Memberi anda corak kotak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DESC" xml:space="preserve">
+    <value>Garis warna jatuh.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_DESC" xml:space="preserve">
+    <value>Peluang untuk menjatuhkan warna baru yang jatuh</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXT_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan teks ringkas kepada anda.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTBOX_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan teks ringkas kepada anda dalam kotak teks.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORDHASHERWRITE_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda perkataan yang menulis dengan perlahan dan jumlah cincangnya.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan siren yang menggunakan tema anda sebagai satu set warna.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SIRENTHEME_SETTINGS_SIRENSTYLE_DESC" xml:space="preserve">
+    <value>Gaya siren daripada tema kernel</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_STARFIELDWARP_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda sekumpulan bintang pada pandangan hadapan kapal.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SPECKLES_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda sekumpulan bintik pada pandangan hadapan kapal.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LETTERSCATTER_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda surat yang berselerak di seluruh skrin.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MULTILINES_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan anda berbilang baris.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LASERBEAMS_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan sinar laser kepada anda.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTWANDER_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda teks yang merayau di konsol.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_DESC" xml:space="preserve">
+    <value>Memusing gelombang secara mendatar dan menegak untuk membuat corak yang hebat.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_NAME" xml:space="preserve">
+    <value>Tahap Kekerapan Mendatar</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_DESC" xml:space="preserve">
+    <value>Tahap kekerapan mendatar. Ini adalah penyebut nilai Pi dalam matematik. Gunakan ini untuk mencipta pusingan beralun yang cantik!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_NAME" xml:space="preserve">
+    <value>Tahap Kekerapan Menegak</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_DESC" xml:space="preserve">
+    <value>Tahap kekerapan menegak. Ini adalah penyebut nilai Pi dalam matematik. Gunakan ini untuk mencipta pusingan beralun yang cantik!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DOORSHIFT_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan pembukaan dan penutupan pintu.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTBLOOM_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda kecerunan yang berubah secara dinamik.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SKYCOMET_SETTINGS_DESC" xml:space="preserve">
+    <value>Sebuah komet berada di langit berlari dengan cepat.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIAMOND_SETTINGS_DESC" xml:space="preserve">
+    <value>Berlian yang bersinar.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_DESC" xml:space="preserve">
+    <value>Menukar warna latar belakang mengikut rona yang semakin meningkat. Pelangi!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_NAME" xml:space="preserve">
+    <value>Ketepuan rona warna</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUESAT_DESC" xml:space="preserve">
+    <value>Seberapa sengit warnanya?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_DESC" xml:space="preserve">
+    <value>Seberapa terang warnanya?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACKGRADIENT_SETTINGS_DESC" xml:space="preserve">
+    <value>Menukar warna latar belakang mengikut rona yang semakin meningkat. Lagi Pelangi!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DESC" xml:space="preserve">
+    <value>Zarah berwarna-warni!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_NAME" xml:space="preserve">
+    <value>Ketumpatan zarah</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PARTICLES_SETTINGS_DENSITY_DESC" xml:space="preserve">
+    <value>Seberapa tumpat zarah?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_NAME" xml:space="preserve">
+    <value>Muat semula diperlukan sebelum menukar zon waktu</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORLDCLOCK_SETTINGS_REFRESHNUM_DESC" xml:space="preserve">
+    <value>Berapa banyak muat semula sebelum zon waktu ditukar?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_FILLFADE_SETTINGS_DESC" xml:space="preserve">
+    <value>Isi seluruh blok skrin demi blok dan kemudian pudarkannya.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DANCELINES_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan anda baris menari.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_DESC" xml:space="preserve">
+    <value>Menghasilkan labirin yang bagus menggunakan algoritma Kruskal.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_NAME" xml:space="preserve">
+    <value>Kelewatan Maze Baharu dalam Milisaat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_NAME" xml:space="preserve">
+    <value>Kelajuan Penjanaan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_GENSPEED_DESC" xml:space="preserve">
+    <value>Kelajuan penjanaan labirin dalam milisaat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_NAME" xml:space="preserve">
+    <value>Serlahkan kedudukan yang tidak dilindungi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_HIGHLIGHTUNCOVERED_DESC" xml:space="preserve">
+    <value>Jika didayakan, serlahkan kedudukan yang tidak dilindungi dengan warna latar belakang kelabu. Jika tidak, mereka membuat sebagai kotak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_NAME" xml:space="preserve">
+    <value>Gunakan Schwartzian Transform</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_SCHWARTZIAN_DESC" xml:space="preserve">
+    <value>Jika didayakan, penyelamat skrin ini menggunakan perubahan Schwartzian untuk mengocok tepi labirin. Jika tidak, ia menggunakan kaedah transformasi biasa.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TWOSPINS_SETTINGS_DESC" xml:space="preserve">
+    <value>Dua kumpulan titik berputar merentasi dua bahagian konsol.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMITMILESTONE_SETTINGS_DESC" xml:space="preserve">
+    <value>Raikan pencapaian komit setiap komitmen ke-1000.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SPRAY_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan anda menyembur bintang.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ZEBRASHIFT_SETTINGS_DESC" xml:space="preserve">
+    <value>Dua baris bertukar warna pada skrin.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Jam analog dengan tarikh dan masa mudah di bahagian bawah skrin.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_NAME" xml:space="preserve">
+    <value>Tunjukkan jarum detik</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ANALOGCLOCK_SETTINGS_SECONDSHAND_DESC" xml:space="preserve">
+    <value>Sama ada mahu menunjukkan jarum detik atau tidak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan skrin hitam hipotesis yang tidak berfungsi dengan garis RGB kadangkala muncul.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_NAME" xml:space="preserve">
+    <value>Kebarangkalian Glitch</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_ABERRATION_SETTINGS_PROBABILITY_DESC" xml:space="preserve">
+    <value>Peluang, dalam peratus, untuk gangguan skrin berlaku</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Gagal mendapatkan entri tetapan.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HUEBACK_SETTINGS_HUELIGHT_NAME" xml:space="preserve">
+    <value>Pencahayaan rona warna (kecerahan)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMITMILESTONE_CONGRATS" xml:space="preserve">
+    <value>Meraikan komitmen ke-7,000 sejak 0.0.1!</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NEWYEAR_LEFT" xml:space="preserve">
+    <value>ditinggalkan sehingga tahun hadapan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi warna</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_NAME" xml:space="preserve">
+    <value>Tetapan tanjakan jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_HOURSRAMP_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi tanjakan jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_NAME" xml:space="preserve">
+    <value>Tetapan tanjakan minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_MINUTESRAMP_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi tanjakan minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_NAME" xml:space="preserve">
+    <value>Tetapan tanjakan saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_SECONDSRAMP_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi tanjakan saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_NAME" xml:space="preserve">
+    <value>Tetapan tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_RAMP_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan teks kepada anda di bawah garisan dalam latar belakang merah yang suram.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GLITTERCHAR_SETTINGS_DESC" xml:space="preserve">
+    <value>Watak rawak yang tersebar secara rawak merentasi skrin.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_DESC" xml:space="preserve">
+    <value>Tarikh dan masa ringkas di tengah-tengah skrin dan menukar warna berdasarkan masa semasa.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_NAME" xml:space="preserve">
+    <value>Tarikh dan masa yang terang</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_CLOCHROMA_SETTINGS_BRIGHT_DESC" xml:space="preserve">
+    <value>Sama ada untuk menggunakan versi terang atau gelap.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DANCENUMS_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan anda menari nombor.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_DESC" xml:space="preserve">
+    <value>Memusing gelombang mendatar dan menegak untuk membuat corak yang hebat dengan denai yang ditinggalkan untuk hilang.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_NAME" xml:space="preserve">
+    <value>Panjang Jejak</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TRAILS_SETTINGS_LENGTH_DESC" xml:space="preserve">
+    <value>Panjang jejak ombak berputar yang bergerak.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_POINTTRACK_SETTINGS_DESC" xml:space="preserve">
+    <value>Sekat bergerak dalam corak gelombang dengan pembaris hijau menjejaki kedudukannya.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BIGLETTER_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda satu aksara rawak dalam teks figlet berwarna.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WORDSLOT_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda perkataan yang sedang dipilih sama seperti mesin slot yang terdapat di kasino.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NEONS_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda teks figlet berwarna berselang-seli antara dua warna neon: cyan dan fuchsia.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_NAME" xml:space="preserve">
+    <value>Tetapan tanjakan pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi tanjakan pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_NAME" xml:space="preserve">
+    <value>Tetapan tanjakan kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi tanjakan kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_NAME" xml:space="preserve">
+    <value>Tetapan tanjakan ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi tanjakan ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_APPEARANCE_NAME" xml:space="preserve">
+    <value>Tetapan penampilan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_HOURS_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi penampilan tanjakan jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_HOURS_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi warna tanjakan jam</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_MINUTES_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi penampilan tanjakan minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_MINUTES_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi warna tanjakan minit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_APPEARANCE_SECONDS_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi penampilan tanjakan saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSCLOCK_SETTINGS_COLOR_SECONDS_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi warna tanjakan saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_NAME" xml:space="preserve">
+    <value>Mulakan tetapan warna kedudukan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_START_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi warna kedudukan mula</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_NAME" xml:space="preserve">
+    <value>Tetapan warna kedudukan tamat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_END_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi warna kedudukan akhir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_NAME" xml:space="preserve">
+    <value>Tetapan bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_BAR_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi bar tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_APPEARANCE_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi rupa tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAMP_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi warna tanjakan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_NAME" xml:space="preserve">
+    <value>Tetapan permulaan kecerunan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_START_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi warna kecerunan permulaan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_NAME" xml:space="preserve">
+    <value>Tetapan akhir kecerunan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_GRADIENTROT_SETTINGS_END_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi warna kecerunan akhir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Tahap warna latar belakang maksimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXBGCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Tahap warna latar belakang maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Tahap warna garisan maksimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXLNCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Tahap warna garisan maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_NAME" xml:space="preserve">
+    <value>Tahap warna teks maksimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_OMEN_SETTINGS_MAXTXTCOLORLEVEL_DESC" xml:space="preserve">
+    <value>Tahap warna teks maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_APPEARANCE_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi penampilan ramp pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_NAME" xml:space="preserve">
+    <value>Teks maklumat untuk pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_INFOTEXT_DESC" xml:space="preserve">
+    <value>Tulis bagaimana teks maklumat anda untuk jam semasa ditunjukkan. {0} untuk jam semasa daripada 24 dahulu.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_ULCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri atas untuk bar pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_URCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kanan atas untuk bar pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LLCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri bawah untuk bar pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LRCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kanan bawah untuk bar pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_UPFRAMECHAR_NAME" xml:space="preserve">
+    <value>Aksara bingkai atas untuk bar pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LOFRAMECHAR_NAME" xml:space="preserve">
+    <value>Aksara bingkai bawah untuk bar pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_LEFRAMECHAR_NAME" xml:space="preserve">
+    <value>Watak bingkai kiri untuk bar pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_RIFRAMECHAR_NAME" xml:space="preserve">
+    <value>Watak bingkai kanan untuk bar pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi warna tanjakan pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_PROGRESSCOLOR_NAME" xml:space="preserve">
+    <value>Warna Bar Pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna merah minimum untuk pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna hijau minimum untuk pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna biru minimum untuk pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MINCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna minimum untuk pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna merah maksimum untuk yang pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna hijau maksimum untuk pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna biru maksimum untuk pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP1_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna maksimum untuk pertama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_APPEARANCE_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi penampilan tanjakan kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_NAME" xml:space="preserve">
+    <value>Teks maklumat untuk kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_INFOTEXT_DESC" xml:space="preserve">
+    <value>Tulis bagaimana teks maklumat anda untuk minit semasa ditunjukkan. {0} untuk minit semasa daripada 60 saat.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_ULCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri atas untuk bar kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_URCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kanan atas untuk bar kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LLCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri bawah untuk bar kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LRCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kanan bawah untuk bar kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_UPFRAMECHAR_NAME" xml:space="preserve">
+    <value>Aksara bingkai atas untuk bar kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LOFRAMECHAR_NAME" xml:space="preserve">
+    <value>Aksara bingkai bawah untuk bar kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_LEFRAMECHAR_NAME" xml:space="preserve">
+    <value>Watak bingkai kiri untuk bar kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_RIFRAMECHAR_NAME" xml:space="preserve">
+    <value>Watak bingkai kanan untuk bar kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi warna tanjakan kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_PROGRESSCOLOR_NAME" xml:space="preserve">
+    <value>Warna Bar Kedua</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna merah minimum untuk saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna hijau minimum untuk saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna biru minimum untuk saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MINCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna minimum untuk saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna merah maksimum untuk saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna hijau maksimum untuk saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna biru maksimum untuk saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP2_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna maksimum untuk saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_APPEARANCE_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi penampilan tanjakan ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_ULCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri atas untuk bar ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_URCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kanan atas untuk bar ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LLCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kiri bawah untuk bar ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LRCCHAR_NAME" xml:space="preserve">
+    <value>Aksara sudut kanan bawah untuk bar ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_UPFRAMECHAR_NAME" xml:space="preserve">
+    <value>Aksara bingkai atas untuk bar ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LOFRAMECHAR_NAME" xml:space="preserve">
+    <value>Aksara bingkai bawah untuk bar ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_LEFRAMECHAR_NAME" xml:space="preserve">
+    <value>Watak bingkai kiri untuk bar ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_RIFRAMECHAR_NAME" xml:space="preserve">
+    <value>Watak bingkai kanan untuk bar ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_NAME" xml:space="preserve">
+    <value>Teks maklumat untuk ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_INFOTEXT_DESC" xml:space="preserve">
+    <value>Tulis bagaimana teks maklumat anda untuk detik semasa ditunjukkan. {0} untuk kedua semasa daripada 60 pertiga.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Ini membolehkan anda mengkonfigurasi warna tanjakan ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_PROGRESSCOLOR_NAME" xml:space="preserve">
+    <value>Warna Bar Ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna merah minimum untuk ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna hijau minimum untuk ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna biru minimum untuk ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MINCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna minimum untuk ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna merah maksimum untuk ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna hijau maksimum untuk ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna biru maksimum untuk ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_RAMP3_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Tahap warna maksimum untuk ketiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLECOLORS_DESC" xml:space="preserve">
+    <value>Kemajuan akan memilih warna rawak jika didayakan. Jika tidak, gunakan warna daripada config.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PROGRESSES_SETTINGS_CYCLETICKS_DESC" xml:space="preserve">
+    <value>Jika kitaran warna didayakan, berapa tanda kutu sebelum menukar warna dalam Progress? 1 tanda = 0.5 pertiga</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_CLOCHROMAANALOG_SETTINGS_DESC" xml:space="preserve">
+    <value>Jam analog di tengah-tengah skrin dan menukar warna berdasarkan masa semasa.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda jam digital yang cantik</value>
+  </data>
+
+</root>

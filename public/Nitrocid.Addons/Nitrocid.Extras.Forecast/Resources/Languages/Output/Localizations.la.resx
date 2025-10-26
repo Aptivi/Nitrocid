@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_FORECAST_COMMAND_WEATHEROLD_DESC" xml:space="preserve">
+    <value>Monstrat tempestatem info pro certa urbe. Utitur OpenWeatherMap.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_HEADER" xml:space="preserve">
+    <value>-- Tempestas info pro {0} --</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_WEATHER" xml:space="preserve">
+    <value>Tempestas: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_PRESSURE" xml:space="preserve">
+    <value>Pressura: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_HUMIDITY" xml:space="preserve">
+    <value>Uvor: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_APIKEY" xml:space="preserve">
+    <value>Clavem tuam API in https://home.openweathermap.org/api_keys accipere potes.</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_PREFERREDUNIT_NAME" xml:space="preserve">
+    <value>Maluit Unit pro Temperature</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_FEELSLIKE" xml:space="preserve">
+    <value>Sentit sicut: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_TEMPERATURE" xml:space="preserve">
+    <value>Temperatura: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_WINDSPEED" xml:space="preserve">
+    <value>Celeritas venti: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_INFO_WINDDIRECTION" xml:space="preserve">
+    <value>Directio venti: {0}</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_SWITCH_LIST_DESC" xml:space="preserve">
+    <value>Omnia praesto urbes ostendit</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVE" xml:space="preserve">
+    <value>Aufer</value>
+  </data>
+  <data name="NKS_FORECAST_APIKEYPROMPT" xml:space="preserve">
+    <value>Nulla API clavis:</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHEROLD_CITYLISTLINK" xml:space="preserve">
+    <value>Potes vel infra nexum consulere pro indice civitatum cum IDs suis, vel ad hoc mandatum &quot;-list&quot; transire.</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_DESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo Data opera.</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_DESC" xml:space="preserve">
+    <value>Monstrat tempestatem info pro certa urbe. Tempestas Channel utitur ab IBM.</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_SWITCH_TUI_DESC" xml:space="preserve">
+    <value>Tempestas info per interactive TUI</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_SWITCH_LIST_DESC" xml:space="preserve">
+    <value>Ostendit omnes urbes praesto eorumque latitudo / duo paria</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_HEADER" xml:space="preserve">
+    <value>-- Tempestas info --</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_LATLON" xml:space="preserve">
+    <value>Latitudo et longitudo</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_CLOUDCOVER" xml:space="preserve">
+    <value>Cloud cover</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_TIMEOFDAY" xml:space="preserve">
+    <value>Tempus dies</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_MINTEMP" xml:space="preserve">
+    <value>Minimum temperatus</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_MAXTEMP" xml:space="preserve">
+    <value>Maximum temperatus</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_PCPCHANGE" xml:space="preserve">
+    <value>Praecipitatio forte</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_PCPTYPE" xml:space="preserve">
+    <value>Genus praecipitatio</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_HEATIDX" xml:space="preserve">
+    <value>Index Caloris</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_WINDCHILL" xml:space="preserve">
+    <value>Gelidus ventus</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_UVINDEX" xml:space="preserve">
+    <value>Index Ultraviolet</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_INFO_UVDESC" xml:space="preserve">
+    <value>Ultraviolet descriptio</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_LATLONPROMPT" xml:space="preserve">
+    <value>Intra urbem latitudo et longitudo.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_APIKEY" xml:space="preserve">
+    <value>Clavem API tuam obtinere potes consulendo IBM website ducendo.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LOADING" xml:space="preserve">
+    <value>Ex locorum situ loading tempestas info</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_CONDITION" xml:space="preserve">
+    <value>Tempestas conditio</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_TEMPERATURE" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_WINDSPEED" xml:space="preserve">
+    <value>Ventus celeritas</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_WINDDIRECTION" xml:space="preserve">
+    <value>Ventus directionem</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HUMIDITY" xml:space="preserve">
+    <value>Umor rate</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LAT" xml:space="preserve">
+    <value>Latitudo</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LON" xml:space="preserve">
+    <value>Longitudo</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_CITYNAMEPROMPT" xml:space="preserve">
+    <value>Intra urbem nomen est ut quaeras.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_NOCITIES" xml:space="preserve">
+    <value>Nullae sunt hoc nomine urbes. Si certam urbem quaerere conaris, quaere latiorem locum qui est proximus urbi quam petis.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_SELECTCITY" xml:space="preserve">
+    <value>Ex indice infra urbem elige. Duo numeri locorum geographici significant.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATPROMPT" xml:space="preserve">
+    <value>Intra urbem latitudo.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LONPROMPT" xml:space="preserve">
+    <value>Intra urbem longitudo.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LATINVALID" xml:space="preserve">
+    <value>Latitudo nulla est.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_LONINVALID" xml:space="preserve">
+    <value>Longitudo nulla est.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_APIKEYPROMPT" xml:space="preserve">
+    <value>Clavem API tuam obtinere potes consulendo IBM website ducendo. Tempestas Channel Intra key API.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_APIKEYNOTPROVIDED" xml:space="preserve">
+    <value>Tempestas Channel API clavis non provisum est. Si auxilio opus est, consule website IBM.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADD" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_REMOVEALL" xml:space="preserve">
+    <value>Remove omnia</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Impetrare occasus viscus.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_KEYBINDING_ADDMANUAL" xml:space="preserve">
+    <value>Add Manually</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_EXCEPTION_NODAYPARTARRAY" xml:space="preserve">
+    <value>Non potest diei partem ordinata</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_EXCEPTION_NODAYPART" xml:space="preserve">
+    <value>Non potest diei partem</value>
+  </data>
+  <data name="NKS_FORECAST_SETTINGS_PREFERREDUNIT_DESC" xml:space="preserve">
+    <value>Praelatam unitatem pro temperie elige (hoc solum praeceptum &quot;tempestatis&quot; applicat. 1 est Kelvin, 2 est Metrica, et 3 est Imperiale.</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LATITUDE_DESC" xml:space="preserve">
+    <value>Latitudo utendi</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_LONGITUDE_DESC" xml:space="preserve">
+    <value>Longitudo utendi</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHER_ARGUMENT_APIKEY_DESC" xml:space="preserve">
+    <value>Weather.com API key</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_CITY_DESC" xml:space="preserve">
+    <value>Urbs ID seu urbis nomen notum est OpenWeatherMap</value>
+  </data>
+  <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
+    <value>OpenWeatherMap API key</value>
+  </data>
+
+</root>

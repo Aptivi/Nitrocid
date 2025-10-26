@@ -22,7 +22,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using System.Collections.Generic;
 using System.Linq;
 

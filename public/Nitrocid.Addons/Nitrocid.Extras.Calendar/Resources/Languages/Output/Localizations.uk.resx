@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_CALENDAR_COMMAND_ALTDATE_DESC" xml:space="preserve">
+    <value>Показує дату і час</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_EXIT" xml:space="preserve">
+    <value>Вихід</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Активуйте справжні кольори</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>Затримка в мілісекундах</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>Скільки мілісекунд чекати перед наступним записом?</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Мінімальний рівень червоного кольору</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Мінімальний рівень зеленого кольору</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Мінімальний рівень синього кольору</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_NAME" xml:space="preserve">
+    <value>Мінімальний рівень кольору</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Максимальний рівень червоного кольору</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Максимальний рівень зеленого кольору</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Максимальний рівень синього кольору</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Максимальний рівень кольору</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Мінімальний рівень червоного кольору. Мінімальне допустиме значення — 0, а максимальне — 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Мінімальний рівень зеленого кольору. Мінімальне допустиме значення — 0, а максимальне — 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Мінімальний рівень синього кольору. Мінімальне допустиме значення — 0, а максимальне — 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_DESC" xml:space="preserve">
+    <value>Мінімальний рівень кольору. Мінімальне допустиме значення — 0, а максимальне — 255 для 255 кольорів або 16 для 16 кольорів.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Максимальний рівень червоного кольору. Мінімальне допустиме значення — 0, а максимальне — 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Максимальний рівень зеленого кольору. Мінімальне допустиме значення — 0, а максимальне — 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Максимальний рівень синього кольору. Мінімальне допустиме значення — 0, а максимальне — 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_DESC" xml:space="preserve">
+    <value>Максимальний рівень кольору. Мінімальне допустиме значення — 0, а максимальне — 255 для 255 кольорів або 16 для 16 кольорів.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Активує підтримку справжніх кольорів.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTADDFAILED" xml:space="preserve">
+    <value>Не вдалося додати подію.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTREMOVEFAILED" xml:space="preserve">
+    <value>Не вдалося видалити подію.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD" xml:space="preserve">
+    <value>Недостатньо аргументів, щоб додати подію.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE" xml:space="preserve">
+    <value>Надано недостатньо аргументів для видалення події.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED" xml:space="preserve">
+    <value>Надано недостатньо аргументів для маніпулювання подією.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED" xml:space="preserve">
+    <value>Недостатньо аргументів для маніпуляції з нагадуванням.</value>
+  </data>
+  <data name="NKS_CALENDAR_UNTITLEDREMINDER" xml:space="preserve">
+    <value>Нагадування без назви</value>
+  </data>
+  <data name="NKS_CALENDAR_UNTITLEDEVENT" xml:space="preserve">
+    <value>Подія без назви</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENT_NOTIFICATION" xml:space="preserve">
+    <value>Тепер день подій!</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDER_NOTIFICATION" xml:space="preserve">
+    <value>Не пропустіть це!</value>
+  </data>
+  <data name="NKS_CALENDAR_INVALIDACTION" xml:space="preserve">
+    <value>Недійсна дія.</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_NAME" xml:space="preserve">
+    <value>Зберігайте всі події та/або нагадування деструктивно</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_DESC" xml:space="preserve">
+    <value>Якщо ввімкнено, видаляє всі події та/або нагадування перед збереженням усіх за допомогою команди календаря.</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC" xml:space="preserve">
+    <value>Назва культури</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_STATUS_READY" xml:space="preserve">
+    <value>Готовий</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC" xml:space="preserve">
+    <value>Відображуване ім&apos;я</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>Прив&apos;язки клавіш</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Показує лише дату</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Показує лише час</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Використовує UTC замість місцевого</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_DESC" xml:space="preserve">
+    <value>Менеджер календарів, подій і нагадувань</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC" xml:space="preserve">
+    <value>Тип календаря для роботи</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC" xml:space="preserve">
+    <value>Використовуйте засіб перегляду календаря на основі таблиці</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_EVENTS" xml:space="preserve">
+    <value>Події...</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_REMINDERS" xml:space="preserve">
+    <value>Нагадування...</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_FAILED" xml:space="preserve">
+    <value>Помилка інтерактивного календаря:</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_EVENTSREMINDERS_TITLE" xml:space="preserve">
+    <value>Події та нагадування для</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_LONGFORM" xml:space="preserve">
+    <value>Довга форма</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_CALENDARTYPE" xml:space="preserve">
+    <value>Тип календаря</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOREMINDERSMONTH" xml:space="preserve">
+    <value>Немає нагадувань для вибраного місяця</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOEVENTSMONTH" xml:space="preserve">
+    <value>Для вибраного місяця не знайдено подій</value>
+  </data>
+  <data name="NKS_CALENDAR_NOCULTURE" xml:space="preserve">
+    <value>Культура не знайдена.</value>
+  </data>
+  <data name="NKS_CALENDAR_SHOWCALENDARFAILED" xml:space="preserve">
+    <value>Не вдалося показати календар.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERADDFAILED" xml:space="preserve">
+    <value>Не вдалося додати нагадування.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERADDNEEDSARGS" xml:space="preserve">
+    <value>Недостатньо аргументів, щоб додати нагадування.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERREMOVEFAILED" xml:space="preserve">
+    <value>Не вдалося видалити нагадування.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERREMOVENEEDSARGS" xml:space="preserve">
+    <value>Недостатньо аргументів, щоб видалити нагадування.</value>
+  </data>
+  <data name="NKS_CALENDAR_EXCEPTION_NOEVENT" xml:space="preserve">
+    <value>Події немає.</value>
+  </data>
+  <data name="NKS_CALENDAR_EXCEPTION_NOREMINDER" xml:space="preserve">
+    <value>Нагадування немає.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME" xml:space="preserve">
+    <value>Культура</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>Параметри кольору</value>
+  </data>
+  <data name="NKS_CALENDAR_SETTINGS_DESC" xml:space="preserve">
+    <value>У цьому розділі можна налаштувати роботу Календаря.</value>
+  </data>
+  <data name="NKS_CALENDAR_BUILTIN_NKSANNIVERSARY" xml:space="preserve">
+    <value>Річниця випуску Nitrocid KS</value>
+  </data>
+  <data name="NKS_CALENDAR_BUILTIN_RAMADAN" xml:space="preserve">
+    <value>Рамадан</value>
+  </data>
+  <data name="NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Не вдалося отримати записи налаштувань.</value>
+  </data>
+  <data name="NKS_CALENDAR_HOMEPAGE_CALENDAR" xml:space="preserve">
+    <value>Календар</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOREMINDERSDAY" xml:space="preserve">
+    <value>Немає нагадувань для вибраного дня</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOEVENTSDAY" xml:space="preserve">
+    <value>Для вибраного дня не знайдено подій</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC" xml:space="preserve">
+    <value>Відкриває інтерактивний TUI календаря</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC" xml:space="preserve">
+    <value>Цільовий рік</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC" xml:space="preserve">
+    <value>Цільове число місяця</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC" xml:space="preserve">
+    <value>Взаємодія з подіями</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC" xml:space="preserve">
+    <value>Додає подію</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC" xml:space="preserve">
+    <value>Цільова дата</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC" xml:space="preserve">
+    <value>Видаляє подію</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC" xml:space="preserve">
+    <value>ID події</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC" xml:space="preserve">
+    <value>Перераховує всі події</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC" xml:space="preserve">
+    <value>Зберігає всі події</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC" xml:space="preserve">
+    <value>Взаємодія з нагадуваннями</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC" xml:space="preserve">
+    <value>Цільова дата та час</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC" xml:space="preserve">
+    <value>Видаляє нагадування</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC" xml:space="preserve">
+    <value>ID нагадування</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC" xml:space="preserve">
+    <value>Список усіх нагадувань</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC" xml:space="preserve">
+    <value>Зберігає всі нагадування</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>Це дозволяє налаштувати кольори</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME" xml:space="preserve">
+    <value>Налаштування культури</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC" xml:space="preserve">
+    <value>Це дозволяє налаштувати культуру, яку використовує заставка календаря</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_DESC" xml:space="preserve">
+    <value>Яка культура використовується для зміни назв місяців, календаря тощо?</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_NAME" xml:space="preserve">
+    <value>Використовуйте системну культуру</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC" xml:space="preserve">
+    <value>Чи використовує заставка культуру, встановлену основними налаштуваннями ядра чи налаштуваннями цієї заставки.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC" xml:space="preserve">
+    <value>Налаштування заставки...</value>
+  </data>
+
+</root>

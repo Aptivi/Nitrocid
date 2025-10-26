@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_AMUSEMENTS_COMMAND_SOLVER_DESC" xml:space="preserve">
+    <value>Kijk of je wiskundige vergelijkingen op tijd kunt oplossen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_CORRECT" xml:space="preserve">
+    <value>Perfect opgelost!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_INCORRECT" xml:space="preserve">
+    <value>Onjuist opgelost.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Activeer echte kleuren</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME" xml:space="preserve">
+    <value>Vertraging in milliseconden</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_DESC" xml:space="preserve">
+    <value>Hoeveel milliseconden moet ik wachten voordat ik de volgende keer schrijf?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_DESC" xml:space="preserve">
+    <value>Kijk of je op tijd op een toets kunt drukken</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_NOTONTIME" xml:space="preserve">
+    <value>Karakter niet op tijd gedrukt.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_CORRECT" xml:space="preserve">
+    <value>Je hebt op het juiste personage gedrukt!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_INCORRECT" xml:space="preserve">
+    <value>Je hebt op het verkeerde teken gedrukt.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_ESC" xml:space="preserve">
+    <value>Druk op ESC om af te sluiten.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Minimaal rood kleurniveau</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Minimaal groen kleurniveau</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Minimaal blauw kleurniveau</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_NAME" xml:space="preserve">
+    <value>Minimaal kleurniveau</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Maximaal rood kleurniveau</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Maximaal groen kleurniveau</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Maximaal blauw kleurniveau</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Maximaal kleurniveau</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Minimaal rood kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Minimaal groen kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Minimaal blauw kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MINCOLOR_DESC" xml:space="preserve">
+    <value>Minimaal kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255 voor 255 kleuren of 16 voor 16 kleuren.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Maximaal rood kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Maximaal groen kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Maximaal blauw kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_NAME" xml:space="preserve">
+    <value>Oplosser minimum aantal</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_NAME" xml:space="preserve">
+    <value>Oplosser maximum aantal</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_NAME" xml:space="preserve">
+    <value>Oplosser toon invoer</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_SHOWINPUT_DESC" xml:space="preserve">
+    <value>Of er moet worden weergegeven wat er in de invoerprompt staat.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MININUM_DESC" xml:space="preserve">
+    <value>Wat is het minimum aantal om te kiezen?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_MAXINUM_DESC" xml:space="preserve">
+    <value>Wat is het maximale aantal om te kiezen?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Activeert de ondersteuning voor ware kleuren.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_NAME" xml:space="preserve">
+    <value>Standaard moeilijkheidsgraad voor SpeedPress</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_NAME" xml:space="preserve">
+    <value>Time-out toetsaanslag voor SpeedPress</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_TIMEOUT_DESC" xml:space="preserve">
+    <value>Hoeveel milliseconden wachten op de toetsaanslag voor de time-out? (In aangepaste moeilijkheidsgraad)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_NAME" xml:space="preserve">
+    <value>Stagevertraging in milliseconden</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_STAGEDELAY_DESC" xml:space="preserve">
+    <value>Hoeveel milliseconden wachten voordat de volgende fase wordt getekend?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_E_DESC" xml:space="preserve">
+    <value>Start het spel in gemakkelijke moeilijkheidsgraad</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_M_DESC" xml:space="preserve">
+    <value>Start het spel met gemiddelde moeilijkheidsgraad</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_H_DESC" xml:space="preserve">
+    <value>Start het spel in moeilijkheidsgraad</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_V_DESC" xml:space="preserve">
+    <value>Start het spel in zeer moeilijke moeilijkheidsgraad</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SPEEDPRESS_SWITCH_C_DESC" xml:space="preserve">
+    <value>Start het spel in aangepaste moeilijkheidsgraad. Houd er rekening mee dat de aangepaste time-out in milliseconden als argument moet worden geschreven.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_NAME" xml:space="preserve">
+    <value>Locatie van voortgangstekst</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_QUOTE_TEXTLOCATION_DESC" xml:space="preserve">
+    <value>Selecteer de gewenste voortgangstekstlocatie.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_NEEDSNUM" xml:space="preserve">
+    <value>U kunt alleen de cijfers schrijven.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SOLVER_PRESSTOEXIT" xml:space="preserve">
+    <value>Druk op &quot;q&quot; om af te sluiten.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SNAKER_DESC" xml:space="preserve">
+    <value>Het slangenspel!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_METEOR_DESC" xml:space="preserve">
+    <value>Je bent een ruimteschip en de meteoren komen om je te vernietigen. Kun je het redden?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMON_GAMEOVER" xml:space="preserve">
+    <value>Spel is over</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR" xml:space="preserve">
+    <value>Onverwachte fout</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_NAME" xml:space="preserve">
+    <value>Gebruik PowerLine voor het renderen van een ruimteschip</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_NAME" xml:space="preserve">
+    <value>Meteor spelsnelheid</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_USEPOWERLINE_DESC" xml:space="preserve">
+    <value>Of je nu PowerLine wilt gebruiken om het ruimteschip weer te geven of om de standaard groter dan karakter te gebruiken. Als u PowerLine met Meteor wilt gebruiken, moet u een geschikt lettertype installeren met PowerLine-ondersteuning.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_METEORSPEED_DESC" xml:space="preserve">
+    <value>Specificeert de spelsnelheid in milliseconden.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC" xml:space="preserve">
+    <value>Staat u op het verkeerde paard?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC" xml:space="preserve">
+    <value>Start het Hangman-spel</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_HARDCORE_DESC" xml:space="preserve">
+    <value>Eén verkeerde letter en je hangt!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_HANGMAN_SWITCH_PRACTICE_DESC" xml:space="preserve">
+    <value>Test je Galgje-vaardigheden door een willekeurige letter te gooien.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC" xml:space="preserve">
+    <value>Je bent een ruimteschip en de meteoren komen je vernietigen. Kun jij ze ontwijken?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_QUOTE_DESC" xml:space="preserve">
+    <value>Krijgt een willekeurig citaat</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC" xml:space="preserve">
+    <value>Russische roulette</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC" xml:space="preserve">
+    <value>Twee ruimteschepen zijn met elkaar in gevecht. Eén schot en het ruimteschip ontploft. Dit is een lokaal spel voor twee spelers.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_DESC" xml:space="preserve">
+    <value>De Wordle-spelsimulator</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
+    <value>Speel het Wordle-spel oorspronkelijk</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
+    <value>Herdenkt het 5-jarig jubileum van de kerneluitgave</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
+    <value>Ter herdenking van het 5-jarig jubileum van de kernel</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
+    <value>Eerste uitgave ooit</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
+    <value>Deze kernel werd voor het eerst uitgebracht op 22 februari 2018 om een minimalistische simulator te maken die feitelijk simuleert hoe de kern van de kernel werkt.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
+    <value>Vroeger hostte het slechts één shell en een paar opdrachten, en het werkte alleen met Windows vanwege het gebruik van de Windows Management Instrumentation-tool.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
+    <value>Het had ook geen eigen documentatie.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
+    <value>Kernelverfijning</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
+    <value>Er zijn versies van de kernel uitgebracht, zoals de tweede grote release om kleuren en basisfuncties toe te voegen, en de vierde grote release om configuratie toe te voegen.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
+    <value>De documentatie begon bij de zesde grote release en er zijn langzaam verschillende leuke dingen aan de kernel toegevoegd.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
+    <value>Huidige versie</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
+    <value>Deze versie verfijnt nu de kernel tot het punt dat deze zich niet langer gedraagt als de oude versies.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
+    <value>Omdat de nieuwe baanbrekende functies zijn vrijgegeven, hebben we besloten deze kernel de naam te geven...</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
+    <value>Gelukkig 5-jarig jubileum!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
+    <value>Paard</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_KEYBINDINGS" xml:space="preserve">
+    <value>[ENTER] Start de race | [ESC] Afsluiten | [UP/DOWN] Selectie verplaatsen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_YOUWIN" xml:space="preserve">
+    <value>Jouw paard heeft de race gewonnen!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_BACKRACE_YOULOSE" xml:space="preserve">
+    <value>Je paard heeft de race verloren!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HANGMAN_YOULOSE" xml:space="preserve">
+    <value>Je bent opgehangen!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HANGMAN_YOUWIN" xml:space="preserve">
+    <value>Jij wint!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_QUESTION" xml:space="preserve">
+    <value>Wat is jouw weddenschap?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_RIGHT" xml:space="preserve">
+    <value>Je raadt het goed!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_WRONG" xml:space="preserve">
+    <value>Je hebt het fout.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_UNLUCKY" xml:space="preserve">
+    <value>Maar je hebt pech. Verliezer.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_ROULETTE_LUCKY" xml:space="preserve">
+    <value>Jij hebt geluk! Winnaar!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SHIPDUET_DRAW" xml:space="preserve">
+    <value>Het is een tekening.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SHIPDUET_WINNING" xml:space="preserve">
+    <value>Speler {0} wint!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SPEEDPRESS_CURRENTCHAR" xml:space="preserve">
+    <value>Huidig karakter:</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_WORDLE_WIN" xml:space="preserve">
+    <value>Je raadt het juiste woord! Jij wint!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_NAME" xml:space="preserve">
+    <value>Kleurinstellingen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SNAKER_DESC" xml:space="preserve">
+    <value>Een slangenspel.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_QUOTE_DESC" xml:space="preserve">
+    <value>Toont je leuke bekende citaten.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DIFFICULTY_DESC" xml:space="preserve">
+    <value>Selecteer de moeilijkheidsgraad van uw voorkeur, waarbij 0 gemakkelijk is, 1 gemiddeld, 2 moeilijk, 3 zeer moeilijk en 4 aangepast.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_NAME" xml:space="preserve">
+    <value>Gebruik PowerLine voor het weergeven van ruimteschepen in ShipDuet</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETUSEPOWERLINE_DESC" xml:space="preserve">
+    <value>Of PowerLine moet worden gebruikt om het ruimteschip weer te geven of om de standaard groter dan karakter te gebruiken. Als u PowerLine met ShipDuet wilt gebruiken, moet u een geschikt lettertype met PowerLine-ondersteuning installeren.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_SHIPDUETSPEED_NAME" xml:space="preserve">
+    <value>Spelsnelheid in ShipDuet</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SWITCH_COMMON_DESC" xml:space="preserve">
+    <value>Gebruikt de algemene woordenlijst.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SWITCH_UNCOMMON_DESC" xml:space="preserve">
+    <value>Gebruikt de volledige woordenlijst.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_PONG_DESC" xml:space="preserve">
+    <value>Het pingpongspel!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PONG_SCORE" xml:space="preserve">
+    <value>Scoren</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Het is niet gelukt om de instellingen op te halen.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_BACKRACE" xml:space="preserve">
+    <value>Paardenraces</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_HANGMAN" xml:space="preserve">
+    <value>Beul</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE" xml:space="preserve">
+    <value>Meteoor ontwijken</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER" xml:space="preserve">
+    <value>Meteoorschutter</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_PONG" xml:space="preserve">
+    <value>Pong</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET" xml:space="preserve">
+    <value>Schip Duet</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SNAKER" xml:space="preserve">
+    <value>Slangenjager</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_WORDLE" xml:space="preserve">
+    <value>Woordle</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG" xml:space="preserve">
+    <value>Wordle (origineel)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN" xml:space="preserve">
+    <value>Onbekend citaat.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN" xml:space="preserve">
+    <value>Onbekende auteur.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_COMMON_COLOR_DESC" xml:space="preserve">
+    <value>Hiermee kunt u de kleuren configureren</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SOLVER_DESC" xml:space="preserve">
+    <value>In dit gedeelte kunt u Solver configureren.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SPEEDPRESS_DESC" xml:space="preserve">
+    <value>In dit gedeelte kunt u SpeedPress configureren.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_SHIPS_DESC" xml:space="preserve">
+    <value>In dit gedeelte kunt u Meteor en ShipDuet configureren.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_NAME" xml:space="preserve">
+    <value>Vertraging in milliseconden</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DELAY_DESC" xml:space="preserve">
+    <value>Hoeveel milliseconden moet ik wachten voordat ik de volgende keer schrijf?</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_NAME" xml:space="preserve">
+    <value>Nieuwe schermvertraging in milliseconden</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC" xml:space="preserve">
+    <value>Hoeveel milliseconden wachten voordat u in het nieuwe scherm schrijft?</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_GENNAME_DESC" xml:space="preserve">
+    <value>Naam- en achternaamgenerator</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME" xml:space="preserve">
+    <value>Minimum aantal namen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_NAME" xml:space="preserve">
+    <value>Maximaal aantal namen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_DESC" xml:space="preserve">
+    <value>Minimum aantal te genereren namen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXNAMES_DESC" xml:space="preserve">
+    <value>Maximaal aantal te genereren namen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_NAME" xml:space="preserve">
+    <value>Minimum leeftijd jaren tellen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_NAME" xml:space="preserve">
+    <value>Maximale leeftijd jaren tellen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINAGE_DESC" xml:space="preserve">
+    <value>Minimum aantal leeftijdsjaren om te genereren</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC" xml:space="preserve">
+    <value>Maximaal aantal te genereren leeftijdsjaren</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC" xml:space="preserve">
+    <value>Voornaamzoeker</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC" xml:space="preserve">
+    <value>Genereer namen met behulp van de lijst met mannelijke namen</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC" xml:space="preserve">
+    <value>Genereer namen met behulp van de lijst met vrouwelijke namen</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC" xml:space="preserve">
+    <value>Genereer namen met behulp van de uniforme namenlijst</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC" xml:space="preserve">
+    <value>Achternaamzoeker</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC" xml:space="preserve">
+    <value>Simuleert het opzoeken van een database voor een willekeurig persoon.</value>
+  </data>
+  <data name="NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Het is niet gelukt om de instellingen op te halen.</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_SWITCH_T_DESC" xml:space="preserve">
+    <value>Genereer naamtags (umlauts worden momenteel niet ondersteund)</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC" xml:space="preserve">
+    <value>Zoekterm</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC" xml:space="preserve">
+    <value>Naamvoorvoegsel om te zoeken</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC" xml:space="preserve">
+    <value>Naamsuffix om te zoeken</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC" xml:space="preserve">
+    <value>Achternaamvoorvoegsel om te zoeken</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC" xml:space="preserve">
+    <value>Achternaamsuffix om te zoeken</value>
+  </data>
+  <data name="NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
+    <value>Hoeveel namen moeten er worden gegenereerd?</value>
+  </data>
+
+</root>

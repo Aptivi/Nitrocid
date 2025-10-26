@@ -19,13 +19,12 @@
 
 using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.LanguageStudio.Commands;
-using Nitrocid.Extras.LanguageStudio.Localized;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
 using Terminaux.Shell.Switches;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.LanguageStudio
 {
@@ -56,7 +55,7 @@ namespace Nitrocid.Extras.LanguageStudio
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.LanguageStudio.Resources.Languages.Output.Localizations", typeof(LanguageStudioInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 

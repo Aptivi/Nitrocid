@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_TIPS_KERNELTIP_1" xml:space="preserve">
+    <value>आप प्रक्रिया आदेशों को दो तरीकों से निष्पादित कर सकते हैं: सीधे निष्पादन योग्य फ़ाइल नाम दर्ज करना, और &apos;exec&apos; कमांड का उपयोग करना?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_2" xml:space="preserve">
+    <value>क्या आप &apos;लॉकस्क्रीन&apos; कमांड का उपयोग करके अपनी स्क्रीन को लॉक कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_3" xml:space="preserve">
+    <value>कि आप C# और विज़ुअल बेसिक का उपयोग करके अपना स्वयं का कर्नेल संशोधन बना सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_4" xml:space="preserve">
+    <value>कि आप कमांड के बीच अर्धविराम का उपयोग करके एकाधिक कमांड का उपयोग कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_5" xml:space="preserve">
+    <value>क्या आप आदेश निष्पादित करते समय उद्धृत तर्कों के अंदर दोहरे उद्धरण चिह्नों से बच सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_6" xml:space="preserve">
+    <value>कि आप &apos;सेटिंग्स&apos; कमांड का उपयोग करके कर्नेल सेटिंग्स बदल सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_7" xml:space="preserve">
+    <value>कि आप &apos;सेवस्क्रीन&apos; कमांड का उपयोग करके अपनी स्क्रीन को सेव कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_8" xml:space="preserve">
+    <value>कि आप नाइट्रोसिड के गिटहब प्रोजेक्ट पेज पर जाकर हमें बग की रिपोर्ट कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_9" xml:space="preserve">
+    <value>कि आप &apos;उपनाम&apos; कमांड का उपयोग करके अपने इच्छित कमांड का शॉर्टकट बना सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_10" xml:space="preserve">
+    <value>कि आप C# और विज़ुअल बेसिक का उपयोग करके अपनी स्वयं की स्प्लैश स्क्रीन बना सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_11" xml:space="preserve">
+    <value>कि आप अपने कर्नेल को अधिक उपयोगी और मनोरंजक बनाने के लिए अतिरिक्त ऐडऑन स्थापित कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_12" xml:space="preserve">
+    <value>कि आप &apos;mktheme&apos; कमांड का उपयोग करके अपनी खुद की अद्भुत थीम बना सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_13" xml:space="preserve">
+    <value>कि आप &apos;सेटिंग्स&apos; कमांड का उपयोग करके या पूर्व-निर्मित थीमों में से किसी एक का उपयोग करके अपने कर्नेल रंग बदल सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_14" xml:space="preserve">
+    <value>कि आप &apos;रीसेट&apos; तर्क का उपयोग करके अपने कर्नेल को फ़ैक्टरी डिफ़ॉल्ट पर रीसेट कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_15" xml:space="preserve">
+    <value>कि आप हमारे GitBook पेज पर हमारे व्यापक दस्तावेज़ तक पहुँच सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_16" xml:space="preserve">
+    <value>क्या दीर्घकालिक रिलीज़ को मुख्य समर्थन के लिए पाँच साल और सुरक्षा अद्यतन के लिए तीन साल तक समर्थित किया जाता है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
+    <value>वह 0.0.1 नाइट्रोसिड केएस का पहला संस्करण था जो 22 फरवरी, 2018 को जारी किया गया था?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
+    <value>कि 0.0.24.x श्रृंखला एकमात्र संस्करण श्रृंखला थी जिसमें API v2.1 संस्करण था?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_19" xml:space="preserve">
+    <value>कि अल्पकालिक रिलीज़ केवल नौ महीनों के लिए समर्थित हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_20" xml:space="preserve">
+    <value>वह 0.1.x श्रृंखला 0.0.24.x श्रृंखला या पुरानी के साथ पश्चगामी-असंगत है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
+    <value>कि आप Nitrocid KS को Linux, macOS और Android पर चला सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
+    <value>क्या आप अपने मॉड बनाने में मदद के लिए एपीआई दस्तावेज़ का संदर्भ ले सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_23" xml:space="preserve">
+    <value>क्या आप अतिरिक्त ऐडऑन इंस्टॉल करके हैंगमैन और शिपडुएट जैसे कई शानदार गेम प्राप्त कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_24" xml:space="preserve">
+    <value>कि, उल्का में, यदि आप लाल उल्का तूफान से टकराते हैं, तो आपका अंतरिक्ष यान दुर्घटनाग्रस्त हो जाता है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_25" xml:space="preserve">
+    <value>क्या आप डॉकिंग सुविधा का उपयोग करके अपने कर्नेल को सूचना केंद्रों में परिवर्तित कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_26" xml:space="preserve">
+    <value>कि आप उपयोगकर्ता खातों को व्यवस्थित करने के लिए उपयोगकर्ता समूह बना सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_27" xml:space="preserve">
+    <value>यदि आप किसी ऐसे समूह के सदस्य हैं जो कुछ अनुमतियाँ देता है, तो क्या आपको ऐसे कार्य करने की अनुमति है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_28" xml:space="preserve">
+    <value>कि आप अपने होस्ट सिस्टम को प्रभावित किए बिना अपना कर्नेल समय क्षेत्र बदल सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_29" xml:space="preserve">
+    <value>कि आप समय बचाने के लिए इंटरैक्टिव टेक्स्ट और हेक्स संपादक का उपयोग कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_30" xml:space="preserve">
+    <value>पहले यूनिक्स सिस्टम के साथ काम करने के लिए जाना जाने वाला सबसे पुराना टेक्स्ट एडिटर एड है, 1973 में जारी किया गया सबसे पुराना टेक्स्ट एडिटर एटी एंड टी बेल लैब्स में पीडीपी-7 पर यूनिक्स सिस्टम के साथ भेजा गया था?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_31" xml:space="preserve">
+    <value>कि आप संपादक को एक विशिष्ट प्रकार में लॉन्च करने के लिए संपादन कमांड को भी बाध्य कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_32" xml:space="preserve">
+    <value>कि इंटरैक्टिव टेक्स्ट संपादक सबसे लोकप्रिय यूनिक्स टेक्स्ट संपादकों, vi और vim की सबसे बुनियादी विशेषताओं का अनुकरण करने का प्रयास करता है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_33" xml:space="preserve">
+    <value>जब तक आप यह नहीं जानते कि आप बाइनरी फ़ाइल के साथ क्या कर रहे हैं, ऐसी फ़ाइल को इस तरह से संपादित करने से डेटा भ्रष्टाचार हो जाएगा या लक्षित फ़ाइल में डेटा हानि हो जाएगी?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_34" xml:space="preserve">
+    <value>लिनक्स सिस्टम पर, शेल को लॉग-इन हैंडलर और सिस्टम इनिशियलाइज़ेशन प्रोग्राम दोनों की मदद से शुरू किया जाता है, जो आमतौर पर /sbin/init में पाया जाता है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_35" xml:space="preserve">
+    <value>कि आप सामान्य फ़ाइल संचालन कर सकते हैं, जैसे प्रतिलिपि बनाना, स्थानांतरित करना, हटाना, संपादन करना इत्यादि?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_36" xml:space="preserve">
+    <value>फ़ाइल प्रबंधक का इंटरैक्टिव टीयूआई मिडनाइट कमांडर की कार्यक्षमता का अनुकरण करता है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_37" xml:space="preserve">
+    <value>यदि कर्नेल क्रैश हो जाता है, तो यह आमतौर पर एक डंप फ़ाइल बनाता है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_38" xml:space="preserve">
+    <value>कि आप अंतर्निहित डिबग कार्यक्षमता का उपयोग करके कर्नेल को डिबग करके उसका निदान कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_39" xml:space="preserve">
+    <value>कि आप सीधे यूईएसएच शेल से फ़ाइलें डाउनलोड और अपलोड कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_40" xml:space="preserve">
+    <value>कि कर्नेल को &apos;लैंग&apos; तर्क के साथ शुरू करके प्री-बूट चरणों में भी अनुवादित किया जा सकता है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_41" xml:space="preserve">
+    <value>कि आप उन्हें अपने मॉड में पंजीकृत करके अपने स्वयं के स्क्रीनसेवर बना सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_42" xml:space="preserve">
+    <value>पहला स्क्रीनसेवर जिसने मूल आईबीएम पीसी पर तीन मिनट की निष्क्रियता के बाद स्क्रीन को खाली कर दिया था, स्क्रन्सेव, 1983 में जॉन सोचा द्वारा बनाया गया था?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_43" xml:space="preserve">
+    <value>क्या कुछ तेज़ गति वाले स्क्रीनसेवर प्रकाश-संवेदनशील दौरे का कारण बन सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_44" xml:space="preserve">
+    <value>कि कर्नेल जर्नल का उपयोग बूट और शटडाउन लॉग के रूप में किया जाता है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_45" xml:space="preserve">
+    <value>क्या आपके मॉड अब अनुवाद योग्य हो सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_46" xml:space="preserve">
+    <value>क्या आपके मॉड कर्नेल ऐडऑन और अन्य मॉड के साथ संचार कर सकते हैं, किसी प्रकार का संचार बना सकते हैं और इंटरऑपरेबिलिटी प्राप्त कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_47" xml:space="preserve">
+    <value>कि आप रिमोट डिबगर से और वैकल्पिक रूप से चैट सर्वर से कनेक्ट कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_48" xml:space="preserve">
+    <value>कि आप डिबग शेल का उपयोग कर सकते हैं, जो केवल विकास संस्करणों के लिए उपलब्ध है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_49" xml:space="preserve">
+    <value>क्या आपके मॉड अब अपनी संबद्ध कक्षाओं को पंजीकृत करके अपना स्वयं का कॉन्फ़िगरेशन प्राप्त कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_50" xml:space="preserve">
+    <value>कि आपके मॉड अपने स्वयं के शेल पंजीकृत कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_51" xml:space="preserve">
+    <value>क्या आपके मॉड इस्तेमाल किए जा सकने वाले कमांड की मात्रा बढ़ाने के लिए मौजूदा शेल में कमांड जोड़ सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_52" xml:space="preserve">
+    <value>कि आपकी कमांड कक्षाएं पारित तर्कों और स्विचों का सटीक रूप से प्रतिनिधित्व कर सकती हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_53" xml:space="preserve">
+    <value>कि आप कर्नेल एपीआई में पाए जाने वाले स्विच प्रबंधन वर्गों का उपयोग करके पारित स्विच से पूछताछ कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_54" xml:space="preserve">
+    <value>क्या यूईएसएच में स्क्रिप्ट बनाने और चलाने की सुविधा के लिए स्क्रिप्टिंग कार्यक्षमता शामिल है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_55" xml:space="preserve">
+    <value>कि शेल में सक्रिय अनुप्रयोगों के लिए रद्दीकरण को रोकने की कार्यक्षमता शामिल है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_56" xml:space="preserve">
+    <value>तेज़ और बेहतर प्रतिपादन की अनुमति देने के लिए नाइट्रोसिड को टर्मिनॉक्स के साथ गहराई से एकीकृत किया गया है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_57" xml:space="preserve">
+    <value>कि अब आप आउटपुट के दूषित होने की चिंता किए बिना इंटरैक्टिव एप्लिकेशन का आकार बदल सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_58" xml:space="preserve">
+    <value>क्या ऐसे कमांड हैं जो उपयोगकर्ता से इनपुट मांगते हैं, जो स्क्रिप्ट के लिए उपयोगी हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_59" xml:space="preserve">
+    <value>कि आप अपने उपयोगकर्ता इनपुट प्रश्न को कई तरीकों से प्रस्तुत कर सकते हैं, जैसे विकल्प, तालिका, सरल, चयन, इत्यादि?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_60" xml:space="preserve">
+    <value>क्या आप उन प्लेसहोल्डर्स को अपने टेक्स्ट में रख सकते हैं जो उनका समर्थन करते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_61" xml:space="preserve">
+    <value>किसी विशिष्ट ऑपरेशन के काम करने के तरीके को बदलने के लिए आप विभिन्न कर्नेल ड्राइवरों का उपयोग कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_62" xml:space="preserve">
+    <value>कि आप C# या विज़ुअल बेसिक में अपने स्वयं के स्क्रीनसेवर और स्प्लैश बना सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_63" xml:space="preserve">
+    <value>कि आप कर्नेल प्लेटफ़ॉर्म क्लास का उपयोग करके होस्ट सिस्टम और टर्मिनल एमुलेटर को क्वेरी कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_64" xml:space="preserve">
+    <value>कि आप अपने मॉड में कुछ संवेदनशील करने से पहले गोपनीयता सहमति मांग सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_65" xml:space="preserve">
+    <value>क्या आप डू नॉट डिस्टर्ब सुविधा का उपयोग करके सूचनाएं बंद कर सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_66" xml:space="preserve">
+    <value>क्या आप अधिसूचना प्रबंधक में पाए गए फ़ंक्शन का उपयोग करके अधिसूचना इतिहास सहेज सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_67" xml:space="preserve">
+    <value>कि आप यह बदल सकते हैं कि ड्राइवर को बदलकर यादृच्छिक संख्याएँ कैसे उत्पन्न होती हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_68" xml:space="preserve">
+    <value>विविध एपीआई आपके मॉड के लिए उपयोगी कार्य प्रदान करते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_69" xml:space="preserve">
+    <value>यह अनुभाग आपको यह कॉन्फ़िगर करने देता है कि युक्तियाँ कैसे काम करती हैं।</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_70" xml:space="preserve">
+    <value>कर्नेल युक्तियाँ दिखाएँ</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_71" xml:space="preserve">
+    <value>यदि सक्षम किया गया है, तो शेल आपको प्रत्येक लॉगिन पर युक्तियाँ दिखाता है।</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_72" xml:space="preserve">
+    <value>क्या आप अपने कर्नेल मॉड्स का उपयोग करके बूट करने योग्य प्रोग्राम बना सकते हैं?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_73" xml:space="preserve">
+    <value>सेटिंग प्रविष्टियाँ प्राप्त करने में विफल.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_74" xml:space="preserve">
+    <value>क्या नाइट्रोसिड (कर्नेल सिम्युलेटर 0.0.2) ने अंतर्निहित शेल को &apos;यूईएसएच&apos; शेल कहा है?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_75" xml:space="preserve">
+    <value>क्या स्क्रीनसेवर को कैथोड रे-ट्यूब (सीआरटी) या प्लाज्मा डिस्प्ले में स्क्रीन बर्न-इन के विरुद्ध समाधान के रूप में प्रचारित किया गया था?</value>
+  </data>
+
+</root>

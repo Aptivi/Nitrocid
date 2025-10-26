@@ -22,7 +22,6 @@ using System.Net.Http;
 using System.Threading;
 using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Network.SpeedDial;

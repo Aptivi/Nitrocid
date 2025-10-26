@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_MODS_MODCANTLOAD" xml:space="preserve">
+    <value>Mod tidak dapat dimuatkan kerana perkara berikut:</value>
+  </data>
+  <data name="NKS_MODS_MODSTARTED" xml:space="preserve">
+    <value>{0} v{1} bermula</value>
+  </data>
+  <data name="NKS_MODS_MODPARSESAFEMODE" xml:space="preserve">
+    <value>Menghuraikan mod tidak dibenarkan pada mod selamat.</value>
+  </data>
+  <data name="NKS_MODS_MODSTOPPED1" xml:space="preserve">
+    <value>Mod {0} berhenti</value>
+  </data>
+  <data name="NKS_MODS_MODSTOPPED2" xml:space="preserve">
+    <value>{0} v{1} berhenti</value>
+  </data>
+  <data name="NKS_MODS_CANTFINALIZE" xml:space="preserve">
+    <value>Gagal memuktamadkan mod {0}: {1}</value>
+  </data>
+  <data name="NKS_MODS_STARTINGMOD" xml:space="preserve">
+    <value>Memulakan mod</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODVER" xml:space="preserve">
+    <value>Versi mod:</value>
+  </data>
+  <data name="NKS_MODS_MODNOTFOUND" xml:space="preserve">
+    <value>Mod {0} tidak ditemui.</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODNAME" xml:space="preserve">
+    <value>Nama mod:</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODFILENAME" xml:space="preserve">
+    <value>Nama fail : Mod:</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODFILEPATH" xml:space="preserve">
+    <value>Laluan fail mod:</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMAN_DESC" xml:space="preserve">
+    <value>Urus mod anda</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_SAFEMODE" xml:space="preserve">
+    <value>Pengurusan mod dilumpuhkan dalam mod selamat.</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_NOCOMMAND" xml:space="preserve">
+    <value>Perintah tidak sah {0}. Semak penggunaan di bawah:</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODNOTFOUND" xml:space="preserve">
+    <value>Mod tidak ditemui atau fail mempunyai aksara yang tidak sah.</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_MANPAGEINVALID" xml:space="preserve">
+    <value>Halaman manual {0} tidak sah.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_NEEDSFILL" xml:space="preserve">
+    <value>Pertimbangkan untuk mengisi halaman manual ini.</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMANUAL_DESC" xml:space="preserve">
+    <value>Manual mod</value>
+  </data>
+  <data name="NKS_MODS_MODSTOPPINGSAFEMODE" xml:space="preserve">
+    <value>Menghentikan mod tidak dibenarkan pada mod selamat.</value>
+  </data>
+  <data name="NKS_MODS_MODALREADYSTARTED" xml:space="preserve">
+    <value>Mod telah pun dimulakan!</value>
+  </data>
+  <data name="NKS_MODS_MODHASNTSTARTED" xml:space="preserve">
+    <value>Mod belum bermula lagi!</value>
+  </data>
+  <data name="NKS_MODS_MODNEEDSUPGRADE" xml:space="preserve">
+    <value>Hubungi vendor mod untuk menaik taraf mod kepada versi yang serasi.</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_BLACKLISTEDMODS_NAME" xml:space="preserve">
+    <value>Mod disenaraihitamkan</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_BLACKLISTEDMODS_DESC" xml:space="preserve">
+    <value>Tulis nama fail mod yang tidak akan dijalankan pada permulaan. Apabila anda selesai, tulis &quot;q&quot;. Tulis tanda tolak di sebelah laluan untuk mengalih keluar mod sedia ada.</value>
+  </data>
+  <data name="NKS_MODS_MODBLACKLISTED" xml:space="preserve">
+    <value>Mod {0} disenaraihitamkan.</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_AUTOSTART_NAME" xml:space="preserve">
+    <value>Mulakan pengubahsuaian kernel semasa but</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_AUTOSTART_DESC" xml:space="preserve">
+    <value>Mulakan pengubahsuaian kernel secara automatik semasa but.</value>
+  </data>
+  <data name="NKS_MODS_MODMAN_MODFILENEEDED" xml:space="preserve">
+    <value>Fail mod tidak dinyatakan.</value>
+  </data>
+  <data name="NKS_MODS_MODUPDATING" xml:space="preserve">
+    <value>Cuba memasang mod yang sudah dipasang. Mengemas kini mod...</value>
+  </data>
+  <data name="NKS_MODS_MODINSTALLFAILED" xml:space="preserve">
+    <value>Pemasangan gagal untuk</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_NOMODSCRIPT" xml:space="preserve">
+    <value>Fail mod yang disediakan tidak serasi.</value>
+  </data>
+  <data name="NKS_MODS_MODUNINSTALLFAILED" xml:space="preserve">
+    <value>Penyahpasangan gagal untuk</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_NAME" xml:space="preserve">
+    <value>Tunjukkan arahan mod bergantung pada bantuan</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_INVALIDMODFILE" xml:space="preserve">
+    <value>Modfail tidak sah.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_UNTITLEDMANPAGE" xml:space="preserve">
+    <value>Halaman manual tanpa tajuk</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_MODSCRIPTNEEDED" xml:space="preserve">
+    <value>Skrip mod mungkin tidak batal.</value>
+  </data>
+  <data name="NKS_MODS_NOMODS" xml:space="preserve">
+    <value>Tiada mod dikesan.</value>
+  </data>
+  <data name="NKS_MODS_STOPPINGMODS" xml:space="preserve">
+    <value>Menghentikan mod {0}...</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_UNSAFEMOD" xml:space="preserve">
+    <value>Mod tidak ditandatangani dengan kuat. Ia mungkin mengandungi kod yang tidak dipercayai.</value>
+  </data>
+  <data name="NKS_MODS_MODINCOMPATIBLE1" xml:space="preserve">
+    <value>Mod tidak boleh dimuatkan kerana terdapat ketidakserasian antara versi kernel ini dan mod ini:</value>
+  </data>
+  <data name="NKS_MODS_MODINCOMPATIBLE2" xml:space="preserve">
+    <value>Berikut ialah senarai ralat yang boleh membantu anda menyiasat ketidakserasian ini:</value>
+  </data>
+  <data name="NKS_MODS_MODNEEDSAPIEXACT" xml:space="preserve">
+    <value>Mod {0} memerlukan versi API {1}, tetapi anda mempunyai versi {2}. Menaik taraf Nitrocid KS dan/atau mod biasanya membantu. Penghuraian mod gagal.</value>
+  </data>
+  <data name="NKS_MODS_MODHASNOAPIVERSION" xml:space="preserve">
+    <value>Mod {0} mungkin tidak berfungsi dengan betul dengan versi API ini. Mod mungkin gagal dimulakan. Hubungi vendor mod untuk mendapatkan salinan terkini.</value>
+  </data>
+  <data name="NKS_MODS_MODNEDSNAME" xml:space="preserve">
+    <value>Mod {0} tidak mempunyai nama. Penghuraian mod gagal. Semak kod sumber.</value>
+  </data>
+  <data name="NKS_MODS_MODNEEDSVERSION" xml:space="preserve">
+    <value>Mod {0} tidak mempunyai versi. Penghuraian mod gagal. Semak kod sumber.</value>
+  </data>
+  <data name="NKS_MODS_MODVERSIONINVALID" xml:space="preserve">
+    <value>Mod {0} mengandungi versi tidak sah. Penghuraian mod gagal. Versi ialah</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODVERSION" xml:space="preserve">
+    <value>Versi</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODFILENAME" xml:space="preserve">
+    <value>Nama fail</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODFILEPATH" xml:space="preserve">
+    <value>Laluan fail</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HASNOCONTENTS" xml:space="preserve">
+    <value>Malangnya, halaman manual ini tidak mempunyai sebarang kandungan. Walau bagaimanapun, dokumentasi ini mungkin ditemui di bawah halaman web vendor mod. Jika anda masih tidak menemui dokumentasi ini, tanya pembangun mod untuk mendapatkan maklumat lanjut.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_PRESENTED" xml:space="preserve">
+    <value>Dipersembahkan kepada anda oleh</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_CONTENTLENGTH" xml:space="preserve">
+    <value>Panjang kandungan</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_NOCONTENTS" xml:space="preserve">
+    <value>Tiada kandungan.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_NOREVISION" xml:space="preserve">
+    <value>Tiada semakan.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_MODNOTFOUND" xml:space="preserve">
+    <value>Tidak dapat melaksanakan fungsi tersuai dengan mod yang tidak wujud</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_DEPSFAILED" xml:space="preserve">
+    <value>Kebergantungan tidak berpuas hati. Kebergantungan yang gagal disenaraikan di bawah:</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_EXCEPTION_MODNOTFOUND" xml:space="preserve">
+    <value>Cuba menanyakan manual untuk mod yang tidak wujud {0}.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_EXCEPTION_INITMANNOTFOUND" xml:space="preserve">
+    <value>Cuba untuk memulakan manual {0} untuk mod yang tidak wujud {1}.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFOUND" xml:space="preserve">
+    <value>Cuba untuk memulakan fail manual {0} untuk mod yang tidak wujud {1}.</value>
+  </data>
+  <data name="NKS_MODS_MANPAGE_EXCEPTION_INITMANFILENOTFORMOD" xml:space="preserve">
+    <value>Cuba untuk memulakan fail manual {0} yang tidak wujud untuk mod {1}.</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODNAME" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_ALLOWUNTRUSTED_NAME" xml:space="preserve">
+    <value>Benarkan memuatkan mod yang tidak dipercayai</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_ALLOWUNTRUSTED_DESC" xml:space="preserve">
+    <value>Jika ditetapkan kepada benar, kernel tidak akan ralat semasa memuatkan mod yang tidak mempunyai kunci awam yang ditandatangani.</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_MODCOMMANDSCOUNT_DESC" xml:space="preserve">
+    <value>Tunjukkan kiraan arahan pengubahsuaian kernel apabila menyenaraikannya dalam arahan bantuan</value>
+  </data>
+  <data name="NKS_MODS_STARTSTOPSAFEMODE" xml:space="preserve">
+    <value>Memulakan atau menghentikan mod tidak dibenarkan pada mod selamat.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_NOFIELDINFO" xml:space="preserve">
+    <value>Tidak boleh mendapatkan maklumat medan untuk</value>
+  </data>
+  <data name="NKS_MODS_EXCEPTION_DEPNOMODVER" xml:space="preserve">
+    <value>Tidak dapat menentukan versi mod</value>
+  </data>
+  <data name="NKS_MODS_UNKNOWNLOADEREXCEPTION" xml:space="preserve">
+    <value>Pengecualian pemuat tidak diketahui</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Gagal mendapatkan entri tetapan.</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STARTMODSELECT" xml:space="preserve">
+    <value>Mulakan mod (pilih)</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STARTMODINPUT" xml:space="preserve">
+    <value>Mulakan mod (input)</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STOPMOD" xml:space="preserve">
+    <value>Hentikan mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_RELOADMOD" xml:space="preserve">
+    <value>Muat semula mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_INSTALLMODSELECT" xml:space="preserve">
+    <value>Pasang mod (pilih)</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_INSTALLMODINPUT" xml:space="preserve">
+    <value>Pasang mod (input)</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_UNINSTALLMOD" xml:space="preserve">
+    <value>Nyahpasang mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STARTALL" xml:space="preserve">
+    <value>Mulakan semua</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_STOPALL" xml:space="preserve">
+    <value>Hentikan semua</value>
+  </data>
+  <data name="NKS_MODS_TUI_KEYBINDING_RELOADALL" xml:space="preserve">
+    <value>Muat semula semua</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_CLASSTYPENOTFOUND" xml:space="preserve">
+    <value>Tidak dapat mengembalikan jenis kelas yang tidak wujud daripada pemasangan mod</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
+    <value>Tidak dapat mencari fungsi &apos;{0}&apos; dalam mod &apos;{1}&apos;.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
+    <value>Tidak dapat mencari harta &apos;{0}&apos; dalam mod &apos;{1}&apos;.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
+    <value>Tidak dapat mencari medan &apos;{0}&apos; dalam mod &apos;{1}&apos;.</value>
+  </data>
+  <data name="NKS_MODS_INTERMOD_EXCEPTION_NOTMODCLASS" xml:space="preserve">
+    <value>Kelas ini bukan kelas mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODENTRYPOINT" xml:space="preserve">
+    <value>Titik masuk</value>
+  </data>
+  <data name="NKS_MODS_TUI_PATHTOMODPROMPT" xml:space="preserve">
+    <value>Masukkan laluan ke mod yang anda mahu mulakan</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODSTARTFAILED" xml:space="preserve">
+    <value>Gagal memulakan mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_PATHTOMODINSTALLPROMPT" xml:space="preserve">
+    <value>Masukkan laluan ke mod yang anda ingin pasang</value>
+  </data>
+  <data name="NKS_MODS_TUI_MODINSTALLFAILED" xml:space="preserve">
+    <value>Gagal memasang mod</value>
+  </data>
+  <data name="NKS_MODS_CANTSTARTORSTOP" xml:space="preserve">
+    <value>Tidak boleh memulakan atau menghentikan mod ini!</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMAN_ARGUMENT_STARTSTOP_DESC" xml:space="preserve">
+    <value>Sama ada untuk memulakan, menghentikan, mendapatkan maklumat daripada, memuat semula, memasang atau menyahpasang mod</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMAN_ARGUMENT_MODFILENAME_DESC" xml:space="preserve">
+    <value>Nama mod atau nama fail</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMAN_ARGUMENT_LISTRELOAD_DESC" xml:space="preserve">
+    <value>Sama ada untuk menyenaraikan, memuat semula, menghentikan, memulakan atau mengurus semua mod secara interaktif</value>
+  </data>
+  <data name="NKS_MODS_COMMAND_MODMANUAL_ARGUMENT_MODNAME_DESC" xml:space="preserve">
+    <value>Nama mod</value>
+  </data>
+  <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
+    <value>Bahagian ini membolehkan anda mengkonfigurasi cara sistem pengubahsuaian kernel berfungsi.</value>
+  </data>
+
+</root>

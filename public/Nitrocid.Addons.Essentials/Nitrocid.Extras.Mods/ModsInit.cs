@@ -18,11 +18,10 @@
 //
 
 using Nitrocid.Extras.Mods.Commands;
-using Nitrocid.Extras.Mods.Localized;
 using Nitrocid.Extras.Mods.Settings;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Extensions;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
@@ -84,7 +83,7 @@ namespace Nitrocid.Extras.Mods
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Mods.Resources.Languages.Output.Localizations", typeof(ModsInit).Assembly));
             var config = new ModsConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);

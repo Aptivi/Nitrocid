@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_TIPS_KERNELTIP_1" xml:space="preserve">
+    <value>rằng bạn có thể thực thi các lệnh xử lý theo hai cách: nhập trực tiếp tên tệp thực thi và sử dụng lệnh &apos;exec&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_2" xml:space="preserve">
+    <value>rằng bạn có thể khóa màn hình bằng lệnh &apos;lockscreen&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_3" xml:space="preserve">
+    <value>rằng bạn có thể xây dựng các sửa đổi hạt nhân của riêng mình bằng C# và Visual Basic?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_4" xml:space="preserve">
+    <value>rằng bạn có thể sử dụng nhiều lệnh bằng cách sử dụng dấu chấm phẩy giữa các lệnh?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_5" xml:space="preserve">
+    <value>rằng bạn có thể thoát khỏi dấu ngoặc kép bên trong các đối số được trích dẫn khi thực hiện lệnh không?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_6" xml:space="preserve">
+    <value>rằng bạn có thể thay đổi cài đặt hạt nhân bằng lệnh &apos;settings&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_7" xml:space="preserve">
+    <value>rằng bạn có thể lưu màn hình của mình bằng lệnh &apos;savescreen&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_8" xml:space="preserve">
+    <value>rằng bạn có thể báo cáo lỗi cho chúng tôi bằng cách truy cập trang dự án GitHub của Nitrocid?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_9" xml:space="preserve">
+    <value>rằng bạn có thể tạo lối tắt tới lệnh mong muốn bằng lệnh &apos;alias&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_10" xml:space="preserve">
+    <value>rằng bạn có thể xây dựng màn hình chào mừng của riêng mình bằng C# và Visual Basic?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_11" xml:space="preserve">
+    <value>rằng bạn có thể cài đặt thêm các tiện ích bổ sung để làm cho hạt nhân của bạn hữu ích và thú vị hơn?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_12" xml:space="preserve">
+    <value>rằng bạn có thể tạo ra những chủ đề tuyệt vời của riêng mình bằng lệnh &apos;mktheme&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_13" xml:space="preserve">
+    <value>rằng bạn có thể thay đổi màu hạt nhân của mình bằng cách sử dụng lệnh &apos;cài đặt&apos; hoặc bằng cách sử dụng một trong những chủ đề được dựng sẵn?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_14" xml:space="preserve">
+    <value>rằng bạn có thể khôi phục lại kernel về mặc định gốc bằng cách sử dụng đối số &apos;reset&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_15" xml:space="preserve">
+    <value>rằng bạn có thể truy cập vào tài liệu mở rộng của chúng tôi tại trang GitBook?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_16" xml:space="preserve">
+    <value>rằng các bản phát hành dài hạn được hỗ trợ trong năm năm đối với hỗ trợ chính và ba năm đối với các bản cập nhật bảo mật?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
+    <value>rằng 0.0.1 là phiên bản đầu tiên của Nitrocid KS được phát hành vào ngày 22 tháng 2 năm 2018?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
+    <value>rằng phiên bản 0.0.24.x là phiên bản duy nhất có phiên bản API v2.1?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_19" xml:space="preserve">
+    <value>rằng các bản phát hành ngắn hạn chỉ được hỗ trợ trong chín tháng?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_20" xml:space="preserve">
+    <value>phiên bản 0.1.x không tương thích ngược với phiên bản 0.0.24.x hoặc cũ hơn?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
+    <value>bạn có thể chạy Nitrocid KS trên Linux, macOS và Android không?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
+    <value>rằng bạn có thể tham khảo tài liệu API để giúp bạn tạo bản mod của mình không?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_23" xml:space="preserve">
+    <value>rằng bạn có thể tải được một số trò chơi tuyệt vời như Hangman và ShipDuet bằng cách cài đặt thêm tiện ích bổ sung?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_24" xml:space="preserve">
+    <value>rằng, trong Meteor, nếu bạn va phải một cơn bão sao băng đỏ, tàu vũ trụ của bạn sẽ bị rơi?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_25" xml:space="preserve">
+    <value>rằng bạn có thể chuyển đổi hạt nhân của mình thành trung tâm thông tin bằng tính năng kết nối?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_26" xml:space="preserve">
+    <value>rằng bạn có thể tạo nhóm người dùng để sắp xếp tài khoản người dùng?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_27" xml:space="preserve">
+    <value>rằng nếu bạn là thành viên của một nhóm cấp một số quyền nhất định thì bạn được phép thực hiện các hoạt động như vậy?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_28" xml:space="preserve">
+    <value>rằng bạn có thể thay đổi múi giờ hạt nhân mà không ảnh hưởng đến hệ thống máy chủ của bạn?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_29" xml:space="preserve">
+    <value>rằng bạn có thể sử dụng trình soạn thảo văn bản tương tác và hex để tiết kiệm thời gian?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_30" xml:space="preserve">
+    <value>rằng trình soạn thảo văn bản lâu đời nhất được biết đến là hoạt động với hệ thống Unix đầu tiên là ed, trình soạn thảo văn bản sớm nhất được phát hành vào năm 1973 được cài sẵn trong hệ thống Unix trên PDP-7 tại AT&amp;T Bell Labs?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_31" xml:space="preserve">
+    <value>rằng bạn cũng có thể buộc lệnh chỉnh sửa khởi chạy trình chỉnh sửa theo một kiểu cụ thể?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_32" xml:space="preserve">
+    <value>rằng trình soạn thảo văn bản tương tác này cố gắng mô phỏng các tính năng cơ bản nhất của các trình soạn thảo văn bản Unix phổ biến nhất, vi và vim?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_33" xml:space="preserve">
+    <value>rằng trừ khi bạn biết mình đang làm gì với tệp nhị phân, việc chỉnh sửa tệp theo cách này sẽ dẫn đến hỏng dữ liệu hoặc mất dữ liệu trong tệp mục tiêu?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_34" xml:space="preserve">
+    <value>trên hệ thống Linux, shell được khởi tạo với sự trợ giúp của cả trình xử lý đăng nhập và chương trình khởi tạo hệ thống, thường nằm trong /sbin/init?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_35" xml:space="preserve">
+    <value>rằng bạn có thể thực hiện các thao tác tập tin thông thường, chẳng hạn như sao chép, di chuyển, xóa, chỉnh sửa, v.v.?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_36" xml:space="preserve">
+    <value>rằng TUI tương tác của trình quản lý tệp mô phỏng chức năng của Midnight Commander?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_37" xml:space="preserve">
+    <value>rằng nếu hạt nhân gặp sự cố, nó thường tạo ra một tệp dump?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_38" xml:space="preserve">
+    <value>rằng bạn có thể chẩn đoán hạt nhân bằng cách gỡ lỗi nó bằng chức năng gỡ lỗi tích hợp?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_39" xml:space="preserve">
+    <value>rằng bạn có thể tải xuống và tải lên các tập tin trực tiếp từ shell UESH?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_40" xml:space="preserve">
+    <value>rằng hạt nhân có thể được dịch ngay cả ở giai đoạn trước khi khởi động bằng cách khởi động nó với đối số &apos;lang&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_41" xml:space="preserve">
+    <value>rằng bạn có thể xây dựng trình bảo vệ màn hình của riêng mình bằng cách đăng ký chúng trong bản mod của bạn?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_42" xml:space="preserve">
+    <value>rằng trình bảo vệ màn hình đầu tiên có chức năng làm màn hình đen sau ba phút không hoạt động trên máy tính IBM đầu tiên, scrnsave, được John Socha tạo ra vào năm 1983?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_43" xml:space="preserve">
+    <value>rằng một số màn hình bảo vệ tốc độ cao có thể gây ra chứng động kinh nhạy cảm với ánh sáng?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_44" xml:space="preserve">
+    <value>rằng nhật ký hạt nhân được sử dụng làm nhật ký khởi động và tắt máy?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_45" xml:space="preserve">
+    <value>rằng bản mod của bạn bây giờ có thể dịch được?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_46" xml:space="preserve">
+    <value>rằng các bản mod của bạn có thể giao tiếp với các tiện ích bổ sung của kernel và các bản mod khác, tạo ra một số loại giao tiếp và đạt được khả năng tương tác?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_47" xml:space="preserve">
+    <value>rằng bạn có thể kết nối với trình gỡ lỗi từ xa và tùy chọn là máy chủ trò chuyện?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_48" xml:space="preserve">
+    <value>rằng bạn có thể sử dụng shell gỡ lỗi, chỉ có trong phiên bản phát triển?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_49" xml:space="preserve">
+    <value>rằng các mod của bạn bây giờ có thể có cấu hình riêng bằng cách đăng ký các lớp liên quan?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_50" xml:space="preserve">
+    <value>rằng người quản lý của bạn có thể đăng ký shell của riêng họ?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_51" xml:space="preserve">
+    <value>rằng người quản lý của bạn có thể thêm lệnh vào shell hiện có để tăng số lượng lệnh có thể sử dụng không?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_52" xml:space="preserve">
+    <value>rằng các lớp lệnh của bạn có thể biểu diễn chính xác các đối số và công tắc được truyền không?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_53" xml:space="preserve">
+    <value>rằng bạn có thể truy vấn các công tắc đã chuyển bằng cách sử dụng các lớp quản lý công tắc có trong API hạt nhân?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_54" xml:space="preserve">
+    <value>rằng UESH bao gồm chức năng viết kịch bản để tạo điều kiện thuận lợi cho việc tạo và chạy các kịch bản?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_55" xml:space="preserve">
+    <value>rằng shell bao gồm chức năng ngăn chặn việc hủy bỏ các ứng dụng đang hoạt động?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_56" xml:space="preserve">
+    <value>rằng Nitrocid được tích hợp sâu với Terminaux để cho phép kết xuất nhanh hơn và tốt hơn?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_57" xml:space="preserve">
+    <value>rằng bây giờ bạn có thể thay đổi kích thước các ứng dụng tương tác mà không lo đầu ra bị hỏng?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_58" xml:space="preserve">
+    <value>rằng có những lệnh yêu cầu người dùng nhập dữ liệu, có ích cho các tập lệnh không?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_59" xml:space="preserve">
+    <value>rằng bạn có thể trình bày câu hỏi đầu vào của người dùng theo nhiều cách, chẳng hạn như lựa chọn, bảng, đơn giản, lựa chọn, v.v.?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_60" xml:space="preserve">
+    <value>rằng bạn có thể đặt chỗ giữ chỗ vào văn bản để hỗ trợ chúng không?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_61" xml:space="preserve">
+    <value>rằng bạn có thể sử dụng các trình điều khiển hạt nhân khác nhau để thay đổi cách thức hoạt động của một hoạt động cụ thể?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_62" xml:space="preserve">
+    <value>rằng bạn có thể tự tạo màn hình bảo vệ và hình nền bằng C# hoặc Visual Basic?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_63" xml:space="preserve">
+    <value>rằng bạn có thể truy vấn hệ thống máy chủ và trình giả lập thiết bị đầu cuối bằng cách sử dụng lớp nền tảng hạt nhân?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_64" xml:space="preserve">
+    <value>rằng bạn có thể yêu cầu sự đồng ý về quyền riêng tư trước khi thực hiện điều gì đó nhạy cảm trong bản mod của bạn không?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_65" xml:space="preserve">
+    <value>rằng bạn có thể tắt thông báo bằng tính năng Không làm phiền?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_66" xml:space="preserve">
+    <value>rằng bạn có thể lưu lịch sử thông báo bằng chức năng có trong trình quản lý thông báo?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_67" xml:space="preserve">
+    <value>rằng bạn có thể thay đổi cách tạo ra số ngẫu nhiên bằng cách thay đổi trình điều khiển?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_68" xml:space="preserve">
+    <value>rằng các API khác nhau cung cấp các chức năng hữu ích cho bản mod của bạn?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_69" xml:space="preserve">
+    <value>Phần này cho phép bạn cấu hình cách thức hoạt động của Mẹo.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_70" xml:space="preserve">
+    <value>Hiển thị các mẹo về hạt nhân</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_71" xml:space="preserve">
+    <value>Nếu được bật, shell sẽ hiển thị cho bạn các mẹo sau mỗi lần đăng nhập.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_72" xml:space="preserve">
+    <value>rằng bạn có thể tạo ra các chương trình có thể khởi động bằng cách sử dụng bản mod hạt nhân của mình?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_73" xml:space="preserve">
+    <value>Không lấy được mục cài đặt.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_74" xml:space="preserve">
+    <value>rằng Nitrocid (Kernel Simulator 0.0.2) gọi shell tích hợp là shell &apos;UESH&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_75" xml:space="preserve">
+    <value>rằng màn hình bảo vệ được quảng cáo là giải pháp chống hiện tượng lưu ảnh trên màn hình ống tia âm cực (CRT) hoặc màn hình plasma?</value>
+  </data>
+
+</root>

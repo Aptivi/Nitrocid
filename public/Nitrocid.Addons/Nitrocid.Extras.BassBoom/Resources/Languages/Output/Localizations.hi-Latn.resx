@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>mileesekand mein deree</value>
+  </data>
+  <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>agala lekhan karane se pahale kitane mileesekand tak prateeksha karanee hogee?</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_LYRICLINES_DESC" xml:space="preserve">
+    <value>geet fail se sabhee geet panktiyaan praapt karata hai</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_PLAYLYRIC_DESC" xml:space="preserve">
+    <value>geet fail chalaata hai</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_PLAYSOUND_DESC" xml:space="preserve">
+    <value>dhvani bajaata hai</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_DESC" xml:space="preserve">
+    <value>aapake onalain rediyo steshan ke baare mein jaanakaaree praapt karata hai</value>
+  </data>
+  <data name="NKS_BASSBOOM_NOLYRICFILE" xml:space="preserve">
+    <value>kisee lrch fail ka path nirdisht karana sunishchit karen.</value>
+  </data>
+  <data name="NKS_BASSBOOM_NOSOUNDFILE" xml:space="preserve">
+    <value>fail nahin milane ke kaaran dhvani nahin bajaee ja sakatee.</value>
+  </data>
+  <data name="NKS_BASSBOOM_OPENEDSOUNDFILE" xml:space="preserve">
+    <value>sangeet fail saphalataapoorvak kholee gaee.</value>
+  </data>
+  <data name="NKS_BASSBOOM_CANTOPENSOUNDFILE" xml:space="preserve">
+    <value>sangeet fail nahin kholee ja sakatee.</value>
+  </data>
+  <data name="NKS_BASSBOOM_TIMEOUT" xml:space="preserve">
+    <value>samay samaapt hone ke kaaran dhvani nahin bajaee ja sakatee.</value>
+  </data>
+  <data name="NKS_BASSBOOM_UNKNOWNARTIST" xml:space="preserve">
+    <value>agyaat kalaakaar</value>
+  </data>
+  <data name="NKS_BASSBOOM_UNKNOWNGENRE" xml:space="preserve">
+    <value>agyaat shailee</value>
+  </data>
+  <data name="NKS_BASSBOOM_NAME" xml:space="preserve">
+    <value>naam</value>
+  </data>
+  <data name="NKS_BASSBOOM_ARTIST" xml:space="preserve">
+    <value>kalaakaar</value>
+  </data>
+  <data name="NKS_BASSBOOM_GENRE" xml:space="preserve">
+    <value>shailee</value>
+  </data>
+  <data name="NKS_BASSBOOM_DURATION" xml:space="preserve">
+    <value>avadhi</value>
+  </data>
+  <data name="NKS_BASSBOOM_STOPPLAYING" xml:space="preserve">
+    <value>bajaana band karane ke lie q dabaen.</value>
+  </data>
+  <data name="NKS_BASSBOOM_CANTPLAY" xml:space="preserve">
+    <value>dhvani nahin bajaee ja sakatee.</value>
+  </data>
+  <data name="NKS_BASSBOOM_TITLE" xml:space="preserve">
+    <value>sheershak</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_PORTINVALID" xml:space="preserve">
+    <value>aapake onalain rediyo ke lie port nambar amaany hai.</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_FULLURL" xml:space="preserve">
+    <value>poorn url</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_CURRENTLISTENERS" xml:space="preserve">
+    <value>vartamaan shrota</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_PEAKLISTENERS" xml:space="preserve">
+    <value>sheersh shrota</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_STREAMS" xml:space="preserve">
+    <value>streem</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_ACTIVESTREAMS" xml:space="preserve">
+    <value>sakriy streem</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_STREAMINFO" xml:space="preserve">
+    <value>id ke lie streem jaanakaaree</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_PATH" xml:space="preserve">
+    <value>path</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_CURRENTLYPLAYING" xml:space="preserve">
+    <value>vartamaan mein chal raha hai</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_UPTIME" xml:space="preserve">
+    <value>apataim</value>
+  </data>
+  <data name="NKS_BASSBOOM_LYRICFILENOTFOUND" xml:space="preserve">
+    <value>sunishchit karen ki lrch praaroop mein aapakee geet failon vaalee nirdeshika ka path nirdisht kiya gaya hai. aap geet failon vaale apane sangeet laibreree foldar ke lie ek kastam path bhee nirdisht kar sakate hain.</value>
+  </data>
+  <data name="NKS_BASSBOOM_EXCEPTION_LYRICFILENOTFOUND" xml:space="preserve">
+    <value>yah geet fail maujood nahin hai.</value>
+  </data>
+  <data name="NKS_BASSBOOM_SCREENSAVER_SETTINGS_DESC" xml:space="preserve">
+    <value>is skreenasevar ke lie setings yahaan upalabdh hain.</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_DESC" xml:space="preserve">
+    <value>yah anubhaag aapako konfigar karane deta hai ki baasaboom aidon kaise kaam karata hai.</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_LYRICSPATH_NAME" xml:space="preserve">
+    <value>geet path</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_LYRICSPATH_DESC" xml:space="preserve">
+    <value>.lrch failon ke samooh vaale foldar ka path set karata hai. kisee bhee maujooda nirdeshika ke lie ek poorn path likhen.</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_STATIONTYPE" xml:space="preserve">
+    <value>steshan prakaar</value>
+  </data>
+  <data name="NKS_BASSBOOM_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>setings pravishtiyaan praapt karane mein viphal.</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_HEADER" xml:space="preserve">
+    <value>intaranet rediyo (fm) jaanakaaree</value>
+  </data>
+  <data name="NKS_BASSBOOM_RADIO_CANTGETINFO" xml:space="preserve">
+    <value>intaranet rediyo jaanakaaree nahin mil sakatee.</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_ARGUMENT_LYRICLRC_DESC" xml:space="preserve">
+    <value>geet fail ka path</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_ARGUMENT_MUSICFILE_DESC" xml:space="preserve">
+    <value>mp3 fail ka path</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_HOSTNAME_DESC" xml:space="preserve">
+    <value>host naam jo mpaig rediyo steshan ko host karata hai</value>
+  </data>
+  <data name="NKS_BASSBOOM_COMMAND_NETFMINFO_ARGUMENT_PORT_DESC" xml:space="preserve">
+    <value>mpaig rediyo steshan ka port</value>
+  </data>
+
+</root>

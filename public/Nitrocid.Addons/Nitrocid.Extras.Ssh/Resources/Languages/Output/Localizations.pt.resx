@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_SSH_COMMAND_SSHELL_DESC" xml:space="preserve">
+    <value>Conecta-se a um servidor SSH.</value>
+  </data>
+  <data name="NKS_SSH_PASSWORDPROMPT" xml:space="preserve">
+    <value>Digite a senha para {0}:</value>
+  </data>
+  <data name="NKS_SSH_DISCONNECTED" xml:space="preserve">
+    <value>SSH desconectado.</value>
+  </data>
+  <data name="NKS_SSH_CONNECTFAILED" xml:space="preserve">
+    <value>Erro ao tentar conectar-se ao servidor SSH: {0}</value>
+  </data>
+  <data name="NKS_SSH_INVALIDOPTION" xml:space="preserve">
+    <value>A opção especificada {0} é inválida.</value>
+  </data>
+  <data name="NKS_SSH_ANSWERNEEDSNUM" xml:space="preserve">
+    <value>A resposta deve ser numérica.</value>
+  </data>
+  <data name="NKS_SSH_GOBACK" xml:space="preserve">
+    <value>Pressione qualquer tecla para voltar.</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_SSHCMD_DESC" xml:space="preserve">
+    <value>Conecta-se a um servidor SSH para executar um comando.</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_QUESTION" xml:space="preserve">
+    <value>Como você deseja se autenticar?</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_PRIVATEKEY" xml:space="preserve">
+    <value>Arquivo de chave privada</value>
+  </data>
+  <data name="NKS_SSH_AUTHMETHOD_PASSWORD" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="NKS_SSH_PASSPHRASEPROMPT" xml:space="preserve">
+    <value>Digite a senha longa para a chave {0}:</value>
+  </data>
+  <data name="NKS_SSH_KEYFILENOTFOUND" xml:space="preserve">
+    <value>O arquivo de chave {0} não existe.</value>
+  </data>
+  <data name="NKS_SSH_CANTADDPRIVKEY" xml:space="preserve">
+    <value>Erro ao tentar adicionar chave privada:</value>
+  </data>
+  <data name="NKS_SSH_SSHCMDFAILED" xml:space="preserve">
+    <value>Erro ao executar o comando SSH</value>
+  </data>
+  <data name="NKS_SSH_SSHELLFAILED" xml:space="preserve">
+    <value>Erro no shell SSH</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_LOGINPROMPT_DESC" xml:space="preserve">
+    <value>Escreva como você deseja que seu prompt de login seja. Deixe em branco para usar o estilo padrão. Os espaços reservados são analisados.</value>
+  </data>
+  <data name="NKS_SSH_PRIVKEYLOCATIONPROMPT" xml:space="preserve">
+    <value>Insira o local da chave privada para {0}. Escreva &quot;q&quot; para terminar de adicionar chaves:</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_DESC" xml:space="preserve">
+    <value>Esta seção permite configurar como o SSH funciona.</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_LOGINPROMPT_NAME" xml:space="preserve">
+    <value>Estilo de prompt de nome de usuário para SSH</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_SPEEDDIAL_NAME" xml:space="preserve">
+    <value>Adicione novas conexões à discagem rápida SSH</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_SPEEDDIAL_DESC" xml:space="preserve">
+    <value>Se ativado, adiciona uma nova conexão à discagem rápida SSH.</value>
+  </data>
+  <data name="NKS_SSH_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Falha à obtenção de entradas de definições.</value>
+  </data>
+  <data name="NKS_SSH_EXCEPTION_CONNECTEDNOCLIENT" xml:space="preserve">
+    <value>O SSH está ligado, mas sem cliente.</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_ARGUMENT_ADDRESS_DESC" xml:space="preserve">
+    <value>Servidor SSH para ligar</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Nome de utilizador para autenticação</value>
+  </data>
+  <data name="NKS_SSH_COMMAND_SSHCMD_ARGUMENT_COMMAND_DESC" xml:space="preserve">
+    <value>Comando para executar remotamente</value>
+  </data>
+
+</root>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_CALENDAR_COMMAND_ALTDATE_DESC" xml:space="preserve">
+    <value>Menunjukkan tanggal dan waktu</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_EXIT" xml:space="preserve">
+    <value>KELUAR</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Aktifkan warna asli</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>Penundaan dalam Milidetik</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>Berapa milidetik yang harus ditunggu sebelum melakukan penulisan berikutnya?</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Tingkat warna merah minimum</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Tingkat warna hijau minimum</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Tingkat warna biru minimum</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_NAME" xml:space="preserve">
+    <value>Tingkat warna minimum</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Tingkat warna merah maksimum</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Tingkat warna hijau maksimum</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Tingkat warna biru maksimum</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Tingkat warna maksimum</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Tingkat warna merah minimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Tingkat warna hijau minimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Tingkat warna biru minimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_DESC" xml:space="preserve">
+    <value>Tingkat warna minimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255 untuk 255 warna atau 16 untuk 16 warna.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Tingkat warna merah maksimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Tingkat warna hijau maksimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Tingkat warna biru maksimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_DESC" xml:space="preserve">
+    <value>Tingkat warna maksimum. Nilai minimum yang diterima adalah 0 dan nilai maksimum yang diterima adalah 255 untuk 255 warna atau 16 untuk 16 warna.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Mengaktifkan dukungan warna sebenarnya.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTADDFAILED" xml:space="preserve">
+    <value>Gagal menambahkan acara.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTREMOVEFAILED" xml:space="preserve">
+    <value>Gagal menghapus acara.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD" xml:space="preserve">
+    <value>Tidak cukup argumen yang diberikan untuk menambahkan suatu peristiwa.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE" xml:space="preserve">
+    <value>Tidak cukup argumen yang diberikan untuk menghapus suatu peristiwa.</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED" xml:space="preserve">
+    <value>Tidak cukup argumen yang diberikan untuk manipulasi peristiwa.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED" xml:space="preserve">
+    <value>Tidak cukup argumen yang diberikan untuk manipulasi pengingat.</value>
+  </data>
+  <data name="NKS_CALENDAR_UNTITLEDREMINDER" xml:space="preserve">
+    <value>Pengingat tanpa judul</value>
+  </data>
+  <data name="NKS_CALENDAR_UNTITLEDEVENT" xml:space="preserve">
+    <value>Acara tanpa judul</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENT_NOTIFICATION" xml:space="preserve">
+    <value>Sekarang saatnya hari acara!</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDER_NOTIFICATION" xml:space="preserve">
+    <value>Jangan lewatkan ini!</value>
+  </data>
+  <data name="NKS_CALENDAR_INVALIDACTION" xml:space="preserve">
+    <value>Tindakan tidak valid.</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_NAME" xml:space="preserve">
+    <value>Simpan semua acara dan/atau pengingat secara destruktif</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_DESC" xml:space="preserve">
+    <value>Jika diaktifkan, hapus semua acara dan/atau pengingat sebelum menyimpan semuanya menggunakan perintah kalender.</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC" xml:space="preserve">
+    <value>Nama budaya</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_STATUS_READY" xml:space="preserve">
+    <value>Siap</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC" xml:space="preserve">
+    <value>Nama tampilan</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>Pengikatan tombol</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Hanya menampilkan tanggal</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Hanya menunjukkan waktu</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Menggunakan UTC bukan lokal</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_DESC" xml:space="preserve">
+    <value>Manajer kalender, acara, dan pengingat</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC" xml:space="preserve">
+    <value>Jenis kalender untuk bekerja</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC" xml:space="preserve">
+    <value>Gunakan penampil kalender berbasis tabel</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_EVENTS" xml:space="preserve">
+    <value>Acara...</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_REMINDERS" xml:space="preserve">
+    <value>Pengingat...</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_FAILED" xml:space="preserve">
+    <value>Kalender interaktif gagal:</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_EVENTSREMINDERS_TITLE" xml:space="preserve">
+    <value>Acara dan pengingat untuk</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_LONGFORM" xml:space="preserve">
+    <value>Bentuk panjang</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_CALENDARTYPE" xml:space="preserve">
+    <value>Jenis kalender</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOREMINDERSMONTH" xml:space="preserve">
+    <value>Tidak ada pengingat yang ditemukan untuk bulan yang dipilih</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOEVENTSMONTH" xml:space="preserve">
+    <value>Tidak ada acara yang ditemukan untuk bulan yang dipilih</value>
+  </data>
+  <data name="NKS_CALENDAR_NOCULTURE" xml:space="preserve">
+    <value>Budaya tidak ditemukan.</value>
+  </data>
+  <data name="NKS_CALENDAR_SHOWCALENDARFAILED" xml:space="preserve">
+    <value>Gagal menampilkan kalender.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERADDFAILED" xml:space="preserve">
+    <value>Gagal menambahkan pengingat.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERADDNEEDSARGS" xml:space="preserve">
+    <value>Tidak cukup argumen yang diberikan untuk menambahkan pengingat.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERREMOVEFAILED" xml:space="preserve">
+    <value>Gagal menghapus pengingat.</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERREMOVENEEDSARGS" xml:space="preserve">
+    <value>Tidak cukup argumen yang diberikan untuk menghapus pengingat.</value>
+  </data>
+  <data name="NKS_CALENDAR_EXCEPTION_NOEVENT" xml:space="preserve">
+    <value>Tidak ada acara.</value>
+  </data>
+  <data name="NKS_CALENDAR_EXCEPTION_NOREMINDER" xml:space="preserve">
+    <value>Tidak ada pengingat.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME" xml:space="preserve">
+    <value>Budaya</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>Pengaturan warna</value>
+  </data>
+  <data name="NKS_CALENDAR_SETTINGS_DESC" xml:space="preserve">
+    <value>Bagian ini memungkinkan Anda mengonfigurasi cara kerja Kalender.</value>
+  </data>
+  <data name="NKS_CALENDAR_BUILTIN_NKSANNIVERSARY" xml:space="preserve">
+    <value>Peringatan Peluncuran Nitrocid KS</value>
+  </data>
+  <data name="NKS_CALENDAR_BUILTIN_RAMADAN" xml:space="preserve">
+    <value>Ramadan</value>
+  </data>
+  <data name="NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Gagal mendapatkan entri pengaturan.</value>
+  </data>
+  <data name="NKS_CALENDAR_HOMEPAGE_CALENDAR" xml:space="preserve">
+    <value>Kalender</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOREMINDERSDAY" xml:space="preserve">
+    <value>Tidak ada pengingat yang ditemukan untuk hari yang dipilih</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOEVENTSDAY" xml:space="preserve">
+    <value>Tidak ada acara yang ditemukan untuk hari yang dipilih</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC" xml:space="preserve">
+    <value>Membuka kalender interaktif TUI</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC" xml:space="preserve">
+    <value>Tahun sasaran</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC" xml:space="preserve">
+    <value>Nomor bulan target</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC" xml:space="preserve">
+    <value>Interaksi dengan acara</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC" xml:space="preserve">
+    <value>Menambahkan acara</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC" xml:space="preserve">
+    <value>Tanggal target</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC" xml:space="preserve">
+    <value>Menghapus suatu acara</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC" xml:space="preserve">
+    <value>ID Peristiwa</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC" xml:space="preserve">
+    <value>Mencantumkan semua acara</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC" xml:space="preserve">
+    <value>Menyimpan semua acara</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC" xml:space="preserve">
+    <value>Interaksi dengan pengingat</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC" xml:space="preserve">
+    <value>Tanggal dan waktu target</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC" xml:space="preserve">
+    <value>Menghapus pengingat</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC" xml:space="preserve">
+    <value>ID Pengingat</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC" xml:space="preserve">
+    <value>Mencantumkan semua pengingat</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC" xml:space="preserve">
+    <value>Menyimpan semua pengingat</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>Ini memungkinkan Anda untuk mengonfigurasi warna</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME" xml:space="preserve">
+    <value>Pengaturan budaya</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC" xml:space="preserve">
+    <value>Ini memungkinkan Anda untuk mengonfigurasi budaya yang digunakan oleh screensaver kalender</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_DESC" xml:space="preserve">
+    <value>Budaya mana yang digunakan untuk mengubah nama bulan, kalender, dll.?</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_NAME" xml:space="preserve">
+    <value>Gunakan budaya sistem</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC" xml:space="preserve">
+    <value>Apakah screensaver menggunakan budaya yang ditetapkan oleh pengaturan kernel utama atau oleh pengaturan screensaver ini.</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC" xml:space="preserve">
+    <value>Pengaturan screensaver...</value>
+  </data>
+
+</root>

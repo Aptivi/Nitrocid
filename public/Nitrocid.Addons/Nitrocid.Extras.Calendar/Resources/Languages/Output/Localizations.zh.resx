@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_CALENDAR_COMMAND_ALTDATE_DESC" xml:space="preserve">
+    <value>顯示日期和時間</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_EXIT" xml:space="preserve">
+    <value>出口</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_NAME" xml:space="preserve">
+    <value>激活真實色彩</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>以毫秒為單位的延遲</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>在進行下一次寫入之前要等待多少毫秒？</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>最低紅色等級</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>最低綠色等級</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>最低藍色等級</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_NAME" xml:space="preserve">
+    <value>最低色階</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>最大紅色級別</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>最大綠色等級</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>最大藍色級別</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_NAME" xml:space="preserve">
+    <value>最大色階</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>最低紅色級別。接受的最小值為 0，接受的最大值為 255。</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>最低綠色水平。接受的最小值為 0，接受的最大值為 255。</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>最低藍色級別。接受的最小值為 0，接受的最大值為 255。</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MINCOLOR_DESC" xml:space="preserve">
+    <value>最低顏色級別。接受的最小值為 0，接受的最大值為 255（255 色）或 16（16 色）。</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>最大紅色級別。接受的最小值為 0，接受的最大值為 255。</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>最大綠色級別。接受的最小值為 0，接受的最大值為 255。</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>最大藍色級別。接受的最小值為 0，接受的最大值為 255。</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_MAXCOLOR_DESC" xml:space="preserve">
+    <value>最大顏色級別。接受的最小值為 0，接受的最大值為 255（255 色）或 16（16 色）。</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_TRUECOLORS_DESC" xml:space="preserve">
+    <value>激活真彩色支持。</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTADDFAILED" xml:space="preserve">
+    <value>添加活動失敗。</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTREMOVEFAILED" xml:space="preserve">
+    <value>未能移除事件。</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTARGSNOTPROVIDED_ADD" xml:space="preserve">
+    <value>沒有提供足夠的參數來添加事件。</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTARGSNOTPROVIDED_REMOVE" xml:space="preserve">
+    <value>沒有提供足夠的參數來刪除事件。</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENTMANIPULATIONARGSNOTPROVIDED" xml:space="preserve">
+    <value>沒有為事件操作提供足夠的參數。</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERMANIPULATIONARGSNOTPROVIDED" xml:space="preserve">
+    <value>沒有為提醒操作提供足夠的參數。</value>
+  </data>
+  <data name="NKS_CALENDAR_UNTITLEDREMINDER" xml:space="preserve">
+    <value>無標題提醒</value>
+  </data>
+  <data name="NKS_CALENDAR_UNTITLEDEVENT" xml:space="preserve">
+    <value>未命名活動</value>
+  </data>
+  <data name="NKS_CALENDAR_EVENT_NOTIFICATION" xml:space="preserve">
+    <value>現在是活動日！</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDER_NOTIFICATION" xml:space="preserve">
+    <value>不要錯過這個！</value>
+  </data>
+  <data name="NKS_CALENDAR_INVALIDACTION" xml:space="preserve">
+    <value>無效的操作。</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_NAME" xml:space="preserve">
+    <value>破壞性地保存所有事件和/或提醒</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_DESC" xml:space="preserve">
+    <value>如果啟用，則在使用日曆命令保存所有事件和/或提醒之前刪除所有事件和/或提醒。</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_ARGUMENT_CULTURE_DESC" xml:space="preserve">
+    <value>文化名稱</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_STATUS_READY" xml:space="preserve">
+    <value>準備好</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TITLE_DESC" xml:space="preserve">
+    <value>顯示名稱</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_KEYBINDINGS" xml:space="preserve">
+    <value>鍵綁定</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>僅顯示日期</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>僅顯示時間</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_ALTDATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>使用 UTC 而不是本地</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_DESC" xml:space="preserve">
+    <value>日曆、事件和提醒管理器</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_CALENDAR_DESC" xml:space="preserve">
+    <value>要處理的日曆類型</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_SWITCH_LEGACY_DESC" xml:space="preserve">
+    <value>使用基於表格的日曆檢視器</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_EVENTS" xml:space="preserve">
+    <value>活動...</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_KEYBINDING_REMINDERS" xml:space="preserve">
+    <value>提醒...</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_FAILED" xml:space="preserve">
+    <value>互動式日曆失敗：</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_EVENTSREMINDERS_TITLE" xml:space="preserve">
+    <value>事件和提醒</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_LONGFORM" xml:space="preserve">
+    <value>長表</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_CALENDARTYPE" xml:space="preserve">
+    <value>日曆型</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOREMINDERSMONTH" xml:space="preserve">
+    <value>未找到所選月份的提醒</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOEVENTSMONTH" xml:space="preserve">
+    <value>未找到所選月份的活動</value>
+  </data>
+  <data name="NKS_CALENDAR_NOCULTURE" xml:space="preserve">
+    <value>文化沒找到。</value>
+  </data>
+  <data name="NKS_CALENDAR_SHOWCALENDARFAILED" xml:space="preserve">
+    <value>無法顯示日曆。</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERADDFAILED" xml:space="preserve">
+    <value>新增提醒失敗。</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERADDNEEDSARGS" xml:space="preserve">
+    <value>沒有提供足夠的參數來新增提醒。</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERREMOVEFAILED" xml:space="preserve">
+    <value>無法刪除提醒。</value>
+  </data>
+  <data name="NKS_CALENDAR_REMINDERREMOVENEEDSARGS" xml:space="preserve">
+    <value>沒有提供足夠的參數來刪除提醒。</value>
+  </data>
+  <data name="NKS_CALENDAR_EXCEPTION_NOEVENT" xml:space="preserve">
+    <value>沒有事件。</value>
+  </data>
+  <data name="NKS_CALENDAR_EXCEPTION_NOREMINDER" xml:space="preserve">
+    <value>沒有提醒。</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME" xml:space="preserve">
+    <value>文化</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>顏色設定</value>
+  </data>
+  <data name="NKS_CALENDAR_SETTINGS_DESC" xml:space="preserve">
+    <value>此部分可讓您配置日曆的工作方式。</value>
+  </data>
+  <data name="NKS_CALENDAR_BUILTIN_NKSANNIVERSARY" xml:space="preserve">
+    <value>Nitrocid KS 發布週年紀念日</value>
+  </data>
+  <data name="NKS_CALENDAR_BUILTIN_RAMADAN" xml:space="preserve">
+    <value>齋戒月</value>
+  </data>
+  <data name="NKS_CALENDAR_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>無法取得設定條目。</value>
+  </data>
+  <data name="NKS_CALENDAR_HOMEPAGE_CALENDAR" xml:space="preserve">
+    <value>日曆</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOREMINDERSDAY" xml:space="preserve">
+    <value>未找到所選日期的提醒</value>
+  </data>
+  <data name="NKS_CALENDAR_TUI_NOEVENTSDAY" xml:space="preserve">
+    <value>未找到所選日期的活動</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_TUI_DESC" xml:space="preserve">
+    <value>開啟日曆互動式 TUI</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_YEAR_DESC" xml:space="preserve">
+    <value>目標年份</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_MONTH_DESC" xml:space="preserve">
+    <value>目標月數</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_DESC" xml:space="preserve">
+    <value>與事件的互動</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_ADD_DESC" xml:space="preserve">
+    <value>新增事件</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_TARGETDATE_DESC" xml:space="preserve">
+    <value>目標日期</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_REMOVE_DESC" xml:space="preserve">
+    <value>刪除事件</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_EVENTID_DESC" xml:space="preserve">
+    <value>事件 ID</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_LIST_DESC" xml:space="preserve">
+    <value>列出所有事件</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_EVENT_SAVEALL_DESC" xml:space="preserve">
+    <value>保存所有事件</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_DESC" xml:space="preserve">
+    <value>與提醒器交互</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_TARGET_DESC" xml:space="preserve">
+    <value>目標日期和時間</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMOVE_DESC" xml:space="preserve">
+    <value>刪除提醒</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_REMINDERID_DESC" xml:space="preserve">
+    <value>提醒 ID</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_LIST_DESC" xml:space="preserve">
+    <value>列出所有提醒</value>
+  </data>
+  <data name="NKS_CALENDAR_COMMAND_CALENDAR_ARGUMENT_REMINDER_SAVEALL_DESC" xml:space="preserve">
+    <value>儲存所有提醒</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>這使你可以配置顏色</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME" xml:space="preserve">
+    <value>文化設定</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_DESC" xml:space="preserve">
+    <value>這允許您配置日曆螢幕保護程式使用的文化</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_DESC" xml:space="preserve">
+    <value>哪一種文化被用來改變月份名稱、日曆等？</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_NAME" xml:space="preserve">
+    <value>使用系統文化</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC" xml:space="preserve">
+    <value>螢幕保護程式是否使用由主核心設定或此螢幕保護程式設定所設定的文化。</value>
+  </data>
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_DESC" xml:space="preserve">
+    <value>螢幕保護程式設定...</value>
+  </data>
+
+</root>

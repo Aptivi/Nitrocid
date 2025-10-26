@@ -17,9 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Threading;
 using Terminaux.Colors;
-using Terminaux.Sequences;
 using Textify.Data.Figlet;
 using System;
 using System.Text;
@@ -30,9 +28,7 @@ using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
 using Nitrocid.Base.Kernel.Configuration;
-using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

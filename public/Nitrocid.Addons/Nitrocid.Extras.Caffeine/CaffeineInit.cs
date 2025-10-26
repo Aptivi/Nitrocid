@@ -20,12 +20,11 @@
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Switches;
 using Nitrocid.Extras.Caffeine.Commands;
-using Nitrocid.Extras.Caffeine.Localized;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Caffeine
 {
@@ -59,7 +58,7 @@ namespace Nitrocid.Extras.Caffeine
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Caffeine.Resources.Languages.Output.Localizations", typeof(CaffeineInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 

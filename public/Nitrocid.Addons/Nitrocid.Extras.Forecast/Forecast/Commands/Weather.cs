@@ -21,7 +21,6 @@ using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using System.Linq;
 using Nitrocid.Base.ConsoleBase.Inputs;
 using Nettify.Weather;
 using Terminaux.Shell.Switches;

@@ -21,7 +21,6 @@ using System;
 using System.Runtime.InteropServices;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using Nitrocid.Base.Kernel;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands

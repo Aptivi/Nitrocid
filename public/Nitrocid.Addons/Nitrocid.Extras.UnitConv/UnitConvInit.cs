@@ -20,7 +20,6 @@
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Switches;
 using Nitrocid.Extras.UnitConv.Commands;
-using Nitrocid.Extras.UnitConv.Localized;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +27,7 @@ using UnitsNet;
 using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Extras.UnitConv.Tools;
 using Nitrocid.Base.Shell.Homepage;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.UnitConv
 {
@@ -89,7 +88,7 @@ namespace Nitrocid.Extras.UnitConv
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.UnitConv.Resources.Languages.Output.Localizations", typeof(UnitConvInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 

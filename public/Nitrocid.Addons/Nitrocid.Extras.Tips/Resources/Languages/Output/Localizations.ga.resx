@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_TIPS_KERNELTIP_1" xml:space="preserve">
+    <value>gur féidir leat orduithe próisis a fhorghníomhú ar dhá bhealach: ainm an chomhaid inrite a iontráil go díreach, agus an t-ordú &apos;exec&apos; a úsáid?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_2" xml:space="preserve">
+    <value>gur féidir leat do scáileán a ghlasáil leis an ordú &apos;scáileán glas&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_3" xml:space="preserve">
+    <value>gur féidir leat do chuid modhnuithe eithne féin a thógáil ag baint úsáide as C # agus Visual Basic?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_4" xml:space="preserve">
+    <value>gur féidir leat il-orduithe a úsáid leis an leathstad idir orduithe?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_5" xml:space="preserve">
+    <value>gur féidir leat éalú ó athfhriotail dhúbailte taobh istigh de na hargóintí luaite agus tú ag déanamh orduithe?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_6" xml:space="preserve">
+    <value>gur féidir leat na socruithe eithne a athrú leis an ordú &apos;settings&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_7" xml:space="preserve">
+    <value>gur féidir leat do scáileán a shábháil leis an ordú &apos;savescreen&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_8" xml:space="preserve">
+    <value>gur féidir leat fabhtanna a thuairisciú dúinn trí dhul chuig leathanach tionscadail GitHub Nitrocid?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_9" xml:space="preserve">
+    <value>gur féidir leat aicearra a dhéanamh chuig an ordú atá uait leis an ordú &apos;ailias&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_10" xml:space="preserve">
+    <value>gur féidir leat do splancscáileán féin a thógáil ag baint úsáide as C # agus Visual Basic?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_11" xml:space="preserve">
+    <value>gur féidir leat breiseáin bhreise a shuiteáil chun d&apos;eithne a dhéanamh níos úsáidí agus níos taitneamhaí?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_12" xml:space="preserve">
+    <value>gur féidir leat do théamaí uafásacha féin a dhéanamh ag baint úsáide as an ordú &apos;mktheme&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_13" xml:space="preserve">
+    <value>gur féidir leat do dhathanna eithne a athrú tríd an ordú &apos;socruithe&apos; a úsáid nó trí cheann de na téamaí réamhthógtha a úsáid?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_14" xml:space="preserve">
+    <value>gur féidir leat d&apos;eithne a athshocrú go dtí na réamhshocruithe monarchan leis an argóint &apos;athshocraigh&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_15" xml:space="preserve">
+    <value>gur féidir leat teacht ar ár ndoiciméadú fairsing ar ár leathanach GitBook?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_16" xml:space="preserve">
+    <value>go dtugtar tacaíocht do eisiúintí fadtéarmacha ar feadh cúig bliana don phríomhthacaíocht, agus trí bliana le haghaidh nuashonruithe slándála?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_17" xml:space="preserve">
+    <value>gurbh é 0.0.1 an chéad leagan de Nitrocid KS a eisíodh ar 22 Feabhra, 2018?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_18" xml:space="preserve">
+    <value>go raibh an tsraith 0.0.24.x an tsraith leagan amháin a bhí an leagan API v2.1?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_19" xml:space="preserve">
+    <value>go dtugtar tacaíocht do eisiúintí gearrthéarmacha ar feadh naoi mí amháin?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_20" xml:space="preserve">
+    <value>go bhfuil sraith 0.1.x ar gcúl-neamh-chomhoiriúnach le sraith 0.0.24.x nó níos sine?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_21" xml:space="preserve">
+    <value>gur féidir leat Nitrocid KS a rith ar Linux, macOS, agus Android?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_22" xml:space="preserve">
+    <value>gur féidir leat a tharchur chuig an doiciméadú API chun cabhrú leat a dhéanamh do mods?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_23" xml:space="preserve">
+    <value>gur féidir leat roinnt de na cluichí uafásacha a fháil, cosúil le Hangman agus ShipDuet, trí na breiseáin breise a shuiteáil?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_24" xml:space="preserve">
+    <value>i Meteor, má thuairteáil tú le stoirm meteor dearg, tuairteanna do spásárthach?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_25" xml:space="preserve">
+    <value>gur féidir leat do eithne a thiontú go hionaid faisnéise ag baint úsáide as an ngné Á?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_26" xml:space="preserve">
+    <value>gur féidir leat grúpaí úsáideoirí a dhéanamh chun cuntais úsáideora a eagrú?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_27" xml:space="preserve">
+    <value>má tá tú i do bhall de ghrúpa a thugann ceadanna áirithe, go bhfuil cead agat oibríochtaí den sórt sin a dhéanamh?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_28" xml:space="preserve">
+    <value>gur féidir leat do chrios ama eithne a athrú gan cur isteach ar do chóras óstaigh?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_29" xml:space="preserve">
+    <value>gur féidir leat an téacs idirghníomhach agus eagarthóir heicsidheachúlach a úsáid chun am a shábháil?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_30" xml:space="preserve">
+    <value>go bhfuil an t-eagarthóir téacs is sine ar eolas a bheith ag obair leis an gcéad chóras Unix ed, an t-eagarthóir téacs is luaithe a eisíodh ar 1973 seolta leis an gcóras Unix a fuarthas ar PDP-7 ag AT&amp;T Bell Labs?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_31" xml:space="preserve">
+    <value>gur féidir leat ordú eagarthóireachta a chur i bhfeidhm freisin chun an t-eagarthóir a sheoladh i gcineál ar leith?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_32" xml:space="preserve">
+    <value>go ndéanann an t-eagarthóir téacs idirghníomhach iarracht na gnéithe is bunúsaí de na heagarthóirí téacs Unix is mó a bhfuil tóir orthu, vi agus vim?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_33" xml:space="preserve">
+    <value>go mura bhfuil a fhios agat cad atá tú a dhéanamh leis an gcomhad dénártha, eagarthóireacht comhad den sórt sin ar an mbealach seo beidh éilliú sonraí nó caillteanas sonraí sa chomhad spriocdhírithe?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_34" xml:space="preserve">
+    <value>gur ar chórais Linux a thionscnaítear an bhlaosc le cabhair ón láimhseálaí logáil isteach agus ón gclár tosaithe córais, a fhaightear de ghnáth in /sbin/init?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_35" xml:space="preserve">
+    <value>gur féidir leat oibríochtaí comhaid coitianta a dhéanamh, mar shampla cóipeáil, bogadh, scriosadh, eagarthóireacht, agus mar sin de?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_36" xml:space="preserve">
+    <value>go ndéanann TUI idirghníomhach bainisteoir comhad insamhladh ar fheidhmiúlacht Cheannasaí an Mheán Oíche?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_37" xml:space="preserve">
+    <value>má thuairteanna an eithne, cruthaíonn sé comhad dumpála de ghnáth?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_38" xml:space="preserve">
+    <value>gur féidir leat an eithne a dhiagnóiseadh trína dhífhabhtú ag baint úsáide as an bhfeidhmiúlacht dífhabhtaithe ionsuite?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_39" xml:space="preserve">
+    <value>gur féidir leat comhaid a íoslódáil agus a uaslódáil go díreach ó bhlaosc UESH?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_40" xml:space="preserve">
+    <value>gur féidir an eithne a aistriú fiú ag céimeanna réamh-tosaithe ach é a thosú leis an argóint &apos;lang&apos;?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_41" xml:space="preserve">
+    <value>gur féidir leat do spárálaíscáileáin féin a thógáil trí iad a chlárú i do mod?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_42" xml:space="preserve">
+    <value>gur chruthaigh John Socha an chéad spárálaíscáileáin a d’fholaigh an scáileán tar éis trí nóiméad neamhghníomhaíochta ar na ríomhairí pearsanta bunaidh IBM, scrnsave?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_43" xml:space="preserve">
+    <value>go bhféadfadh cuid de na spárálaíscáileáin atá ar luas tapa a bheith ina gcúis le taomanna fóta-íogair?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_44" xml:space="preserve">
+    <value>go n-úsáidtear dialanna eithne mar logaí tosaithe agus múchta?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_45" xml:space="preserve">
+    <value>gur féidir do mods a aistriú anois?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_46" xml:space="preserve">
+    <value>gur féidir le do mods cumarsáid a dhéanamh le addons eithne agus mods eile, ag cruthú cumarsáide de chineál éigin agus ag baint amach idir-inoibritheacht?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_47" xml:space="preserve">
+    <value>gur féidir leat ceangal leis an gciandhífhabhtóir agus, go roghnach, leis an bhfreastalaí comhrá?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_48" xml:space="preserve">
+    <value>gur féidir leat an bhlaosc dífhabhtaithe a úsáid, nach bhfuil ar fáil ach le haghaidh leaganacha forbartha?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_49" xml:space="preserve">
+    <value>gur féidir a gcumraíocht féin a bheith ag do mods anois trína gcuid ranganna gaolmhara a chlárú?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_50" xml:space="preserve">
+    <value>gur féidir le do mods a sliogáin féin a chlárú?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_51" xml:space="preserve">
+    <value>gur féidir le do mods orduithe a chur leis na sliogáin atá ann cheana féin chun cur leis an méid orduithe is féidir a úsáid?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_52" xml:space="preserve">
+    <value>gur féidir le do chuid ranganna ordaithe argóintí agus lasca a ritheadh a léiriú go cruinn?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_53" xml:space="preserve">
+    <value>gur féidir leat lasca pasáilte a fhiosrú ag baint úsáide as na ranganna bainistíochta lasc a aimsítear san API eithne?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_54" xml:space="preserve">
+    <value>go n-áirítear UESH an fheidhmiúlacht scriptithe chun éascú a dhéanamh agus a rith scripteanna?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_55" xml:space="preserve">
+    <value>go n-áirítear sa bhlaosc feidhmiúlacht chun cealú feidhmchláir ghníomhacha a chosc?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_56" xml:space="preserve">
+    <value>go bhfuil Nitrocid comhtháite go domhain le Terminaux chun rindreáil níos tapúla agus níos fearr a cheadú?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_57" xml:space="preserve">
+    <value>gur féidir leat na feidhmchláir idirghníomhacha a athrú anois gan a bheith buartha go bhfuil an t-aschur truaillithe?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_58" xml:space="preserve">
+    <value>go bhfuil orduithe ann a iarrann ionchur úsáideora, atá úsáideach le haghaidh scripteanna?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_59" xml:space="preserve">
+    <value>gur féidir leat do cheist ionchur úsáideora a chur i láthair ar bhealaí éagsúla, mar shampla rogha, tábla, simplí, roghnú, agus mar sin de?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_60" xml:space="preserve">
+    <value>gur féidir leat na háitsealbhóirí a chur ar do théacs a thacaíonn leo?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_61" xml:space="preserve">
+    <value>gur féidir leat tiománaithe eithne éagsúla a úsáid chun an chaoi a n-oibríonn oibríocht shonrach a athrú?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_62" xml:space="preserve">
+    <value>gur féidir leat do spárálaíscáileáin féin agus splashes a dhéanamh i C# nó Visual Basic?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_63" xml:space="preserve">
+    <value>gur féidir leat an córas óstaigh agus an aithriseoir teirminéil a fhiosrú ag baint úsáide as an rang ardán eithne?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_64" xml:space="preserve">
+    <value>gur féidir leat toiliú príobháideachta a iarraidh sula ndéanfaidh tú rud íogair i do mhodúil?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_65" xml:space="preserve">
+    <value>gur féidir leat fógraí a mhúchadh tríd an ngné Ná Cuir Isteach?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_66" xml:space="preserve">
+    <value>gur féidir leat stair fógraí a shábháil trí úsáid a bhaint as feidhm a aimsíodh sa bhainisteoir fógraí?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_67" xml:space="preserve">
+    <value>gur féidir leat a athrú conas a ghintear uimhreacha randamacha tríd an tiománaí a athrú?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_68" xml:space="preserve">
+    <value>go soláthraíonn APIanna ilghnéitheacha feidhmeanna úsáideacha do do mods?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_69" xml:space="preserve">
+    <value>Ligeann an chuid seo duit conas a oibríonn Leideanna a chumrú.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_70" xml:space="preserve">
+    <value>Taispeáin leideanna eithne</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_71" xml:space="preserve">
+    <value>Má tá sé cumasaithe, taispeánann an bhlaosc na leideanna duit maidir le gach logáil isteach.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_72" xml:space="preserve">
+    <value>gur féidir leat cláir bootable a dhéanamh ag baint úsáide as do mhodhanna eithne?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_73" xml:space="preserve">
+    <value>Theip ar na hiontrálacha socruithe a fháil.</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_74" xml:space="preserve">
+    <value>gur thug Nitrocid (Eithne Insamhlóir 0.0.2) an bhlaosc &apos;UESH&apos; ar an bhlaosc ionsuite?</value>
+  </data>
+  <data name="NKS_TIPS_KERNELTIP_75" xml:space="preserve">
+    <value>ar tugadh faoi na spárálaíscáileáin le bheith ina réiteach i gcoinne dóiteán scáileáin i bhfeadán ga-chatóideach (CRT) nó i dtaispeántais plasma?</value>
+  </data>
+
+</root>

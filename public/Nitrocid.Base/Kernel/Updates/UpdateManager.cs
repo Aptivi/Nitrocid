@@ -32,7 +32,6 @@ using System.IO;
 #endif
 
 #if NKS_EXTENSIONS
-using Nitrocid.Base.Kernel.Extensions;
 #endif
 
 namespace Nitrocid.Base.Kernel.Updates

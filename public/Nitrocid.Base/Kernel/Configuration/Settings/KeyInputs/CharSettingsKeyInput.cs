@@ -18,7 +18,6 @@
 //
 
 using Textify.General;
-using Terminaux.Base;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Base.Kernel.Debugging;

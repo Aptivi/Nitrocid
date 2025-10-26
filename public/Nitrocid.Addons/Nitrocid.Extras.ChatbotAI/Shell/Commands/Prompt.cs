@@ -19,12 +19,9 @@
 
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Files;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
 using OpenAI.Chat;
 
 namespace Nitrocid.Extras.ChatbotAI.Shell.Commands

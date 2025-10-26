@@ -23,8 +23,7 @@ using System.Collections.Generic;
 using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
 using Nitrocid.Extras.BeepSynth.Commands;
-using Nitrocid.Extras.BeepSynth.Localized;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.BeepSynth
 {
@@ -52,7 +51,7 @@ namespace Nitrocid.Extras.BeepSynth
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.BeepSynth.Resources.Languages.Output.Localizations", typeof(BeepSynthInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 

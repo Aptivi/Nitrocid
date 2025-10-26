@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_CONTACTS_COMMAND_CONTACTS_DESC" xml:space="preserve">
+    <value>Contactus tua manages</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILENOTFOUND_NAMED" xml:space="preserve">
+    <value>Scapus &apos;{0}&apos; aperire non potest quia&apos; non invenitur.</value>
+  </data>
+  <data name="NKS_CONTACTS_IMPORTSUCCESS" xml:space="preserve">
+    <value>Importari contactus feliciter.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILEINVALID_NAMED" xml:space="preserve">
+    <value>Scapus &quot;{0}&quot; aperire non potest quia fasciculus chartarum invalidus est.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILENOTFOUND_UNNAMED" xml:space="preserve">
+    <value>Contactus fasciculus non est.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTSCOUNT" xml:space="preserve">
+    <value>contactus invenerunt</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILEINVALID_UNNAMED" xml:space="preserve">
+    <value>Contactus lima invalidum est.</value>
+  </data>
+  <data name="NKS_CONTACTS_MECARDEMPTY" xml:space="preserve">
+    <value>MeCard syntaxin vacua esse non potest.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTFILENOCONTACT" xml:space="preserve">
+    <value>Aut file contactus provisum non informationem de aliquo contactu habet vel non valet.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_CONTACTPARSEFAILED" xml:space="preserve">
+    <value>Deficio ad parse contactus. Errorem details vide pro magis notitia.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_CONTACTIDXOUTOFRANGE" xml:space="preserve">
+    <value>Contactus index feriunt. Maximus index est {0}, dum index {1}provisum est.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_NOCONTACTS_GET" xml:space="preserve">
+    <value>Nullae contactus adquirendi.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_NOCONTACTS_SEARCH" xml:space="preserve">
+    <value>Contactus non sunt ad quaerendum.</value>
+  </data>
+  <data name="NKS_CONTACTS_EXCEPTION_INVALIDREGEX" xml:space="preserve">
+    <value>Expressio regularis invalida est.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACT" xml:space="preserve">
+    <value>Contactus non est. Si contactus importare velis, optionibus importatis utere quaeso utentibus keystros definitos in fundo scrinii.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CANTIMPORTCONTACTS" xml:space="preserve">
+    <value>Aliqua ex contactibus importari non possunt.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_PATHVCFPROMPT" xml:space="preserve">
+    <value>Ingredere iter ad VCF fasciculi cum indicem tuum. Scapus Android contactus2.db sustentatur.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_FILENOTFOUND" xml:space="preserve">
+    <value>Fasciculus non est. Fac ut rectam viam scripseris ad lima VCF vel ad notas2.db lima.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MECARDPROMPT" xml:space="preserve">
+    <value>Intra validum MeCard repraesentatio contactus tui.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MECARDINVALID" xml:space="preserve">
+    <value>Contactus MeCard syntaxin invalidum est.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MECARDEMPTY" xml:space="preserve">
+    <value>Contactus MeCard syntaxin non sit inanis</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_SEARCHPROMPT" xml:space="preserve">
+    <value>Intrant expressionem regularem ad notos quaerendos.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACTSSEARCH" xml:space="preserve">
+    <value>Nullae notae sunt quae expressionem petitam tuam contineant.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNAME" xml:space="preserve">
+    <value>Nomen Contangionis</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACTNAME" xml:space="preserve">
+    <value>Nulla contactus nomen</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESS" xml:space="preserve">
+    <value>Contactus oratio</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MAIL" xml:space="preserve">
+    <value>Contactus mail</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOMAIL" xml:space="preserve">
+    <value>Nulla contactus mail</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORG" xml:space="preserve">
+    <value>Contactus ordo</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOORG" xml:space="preserve">
+    <value>Nulla contactus ordo</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_PHONE" xml:space="preserve">
+    <value>Contactus telephono</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOPHONE" xml:space="preserve">
+    <value>Nulla contactus telephone</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_URL" xml:space="preserve">
+    <value>Contactus URL</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOURL" xml:space="preserve">
+    <value>Nulla contactus URL</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_GEO" xml:space="preserve">
+    <value>Contactus geo</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOGEO" xml:space="preserve">
+    <value>Nulla contactus geo</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_IMPP" xml:space="preserve">
+    <value>Contactus IMPP</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOIMPP" xml:space="preserve">
+    <value>Nulla contactus IMPP</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NICK" xml:space="preserve">
+    <value>Contact cognomen</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NONICK" xml:space="preserve">
+    <value>Contactus cognomen</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ROLE" xml:space="preserve">
+    <value>Contactus munus</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOROLE" xml:space="preserve">
+    <value>Nulla contactus munus</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TITLE" xml:space="preserve">
+    <value>Contactus titulus</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTITLE" xml:space="preserve">
+    <value>Nulla contactus titulus</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTES" xml:space="preserve">
+    <value>Contactus notas</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NONOTES" xml:space="preserve">
+    <value>Nulla contactus notas</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_LISTCONTACTS_DESC" xml:space="preserve">
+    <value>Contactus album tuum</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_LOADCONTACTS_DESC" xml:space="preserve">
+    <value>Contactus tua onerat</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_DESC" xml:space="preserve">
+    <value>Importat tua contactus</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_SWITCH_MECARD_DESC" xml:space="preserve">
+    <value>Tractat requiritur initus ut MeCard filum</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_CONTACTINFO_DESC" xml:space="preserve">
+    <value>Contactus notitia accipit</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOCONTACTS" xml:space="preserve">
+    <value>Nulli contactus.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_NUMINVALID" xml:space="preserve">
+    <value>Contactus numerus invalidum est.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_NUMOUTOFRANGE" xml:space="preserve">
+    <value>Contactus numerus feriunt.</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_FIRSTNAME" xml:space="preserve">
+    <value>Praenomen</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_LASTNAME" xml:space="preserve">
+    <value>Cognomen</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_GEO" xml:space="preserve">
+    <value>Contactus Geo</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_NOTE" xml:space="preserve">
+    <value>Contactus nota</value>
+  </data>
+  <data name="NKS_CONTACTS_CONTACTINFO_CANTLISTSOME" xml:space="preserve">
+    <value>Aliqua ex contactibus enumerari non possunt.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_DELETE" xml:space="preserve">
+    <value>Delere</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_INFO" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Impetrare occasus viscus.</value>
+  </data>
+  <data name="NKS_CONTACTS_HOMEPAGE_CONTACTS" xml:space="preserve">
+    <value>Contactus</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_DELETEALL" xml:space="preserve">
+    <value>Delere All</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_IMPORT" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_IMPORTFROM" xml:space="preserve">
+    <value>Ex importare</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SEARCH" xml:space="preserve">
+    <value>Investigatio</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SEARCHNEXT" xml:space="preserve">
+    <value>Search Next</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK" xml:space="preserve">
+    <value>Quaerere Back</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_RAWINFO" xml:space="preserve">
+    <value>Rudis Info</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD" xml:space="preserve">
+    <value>Import Ex MeCard</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_DESC" xml:space="preserve">
+    <value>Haec sectio permittit te configurare quomodo contactus opera addon.</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME" xml:space="preserve">
+    <value>Ostende profile pictures</value>
+  </data>
+  <data name="NKS_CONTACTS_SETTINGS_PROFILEPICTURES_DESC" xml:space="preserve">
+    <value>Si confortavit, imagines contactus ostendit. Debilitatum ad impediendum abuti et ad rationes perficiendas.</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_IMPORTCONTACTS_ARGUMENT_PATH_DESC" xml:space="preserve">
+    <value>Aut viam ad vCard lima contactum vel MeCard represnetation</value>
+  </data>
+  <data name="NKS_CONTACTS_COMMAND_CONTACTINFO_ARGUMENT_CONTACTNUM_DESC" xml:space="preserve">
+    <value>Contactus numerus</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_EDIT" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT" xml:space="preserve">
+    <value>Intra novum nomen huic contactu</value>
+  </data>
+
+</root>

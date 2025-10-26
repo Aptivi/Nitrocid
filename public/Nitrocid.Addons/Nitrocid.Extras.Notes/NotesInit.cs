@@ -19,14 +19,13 @@
 
 using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Notes.Commands;
-using Nitrocid.Extras.Notes.Localized;
 using Nitrocid.Extras.Notes.Management;
 using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Nitrocid.Base.Kernel.Extensions;
 using System.Linq;
 using Nitrocid.Base.Shell.Homepage;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Notes
 {
@@ -91,7 +90,7 @@ namespace Nitrocid.Extras.Notes
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Notes.Resources.Languages.Output.Localizations", typeof(NotesInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 

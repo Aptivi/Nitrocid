@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <!-- 
+    Microsoft ResX Schema 
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+        <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+            <xsd:element name="metadata">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                </xsd:sequence>
+                <xsd:attribute name="name" use="required" type="xsd:string" />
+                <xsd:attribute name="type" type="xsd:string" />
+                <xsd:attribute name="mimetype" type="xsd:string" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="assembly">
+            <xsd:complexType>
+                <xsd:attribute name="alias" type="xsd:string" />
+                <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="data">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+                <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="resheader">
+            <xsd:complexType>
+                <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                </xsd:sequence>
+                <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+            </xsd:element>
+        </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+    <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+      <data name="NKS_CHATBOTAI_COMMAND_CHATBOT_DESC" xml:space="preserve">
+    <value>Tosaíonn sé an comhrábot ag baint úsáide as ChatGPT</value>
+  </data>
+  <data name="NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_APIKEY_DESC" xml:space="preserve">
+    <value>Sáraíonn sé an eochair API atá cumraithe sna socruithe</value>
+  </data>
+  <data name="NKS_CHATBOTAI_COMMAND_CHATBOT_SWITCH_MODEL_DESC" xml:space="preserve">
+    <value>Sonraíonn sé an malairt mhúnla ChatGPT</value>
+  </data>
+  <data name="NKS_CHATBOTAI_SHELL_DISCLAIMER" xml:space="preserve">
+    <value>Molaimid úsáid fhreagrach an chomhrábot. Úsáideann sé seo API ChatGPT, atá faoi úinéireacht OpenAI. Nílimid cleamhnaithe leo, agus ní cliant oifigiúil ChatGPT é seo. Molaimid duit téarmaí agus coinníollacha ChatGPT a léamh sula n-úsáideann tú an comhrábot. Is féidir leat scoir ag baint úsáide as &apos;/exit&apos;.</value>
+  </data>
+  <data name="NKS_CHATBOTAI_COMMON_SHELL_ERROR" xml:space="preserve">
+    <value>Bhí earráid ann leis an mblaosc Chatbot AI:</value>
+  </data>
+  <data name="NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_DESC" xml:space="preserve">
+    <value>Seolann sé leid chuig an gcomhrábot</value>
+  </data>
+  <data name="NKS_CHATBOTAI_SHELL_COMMAND_PROMPT_ARGUMENT_PROMPTSTRING_DESC" xml:space="preserve">
+    <value>Teaghrán a léiríonn an leid</value>
+  </data>
+  <data name="NKS_CHATBOTAI_EXCEPTION_NOCLIENT" xml:space="preserve">
+    <value>Níl aon chliant comhrábot ann.</value>
+  </data>
+  <data name="NKS_CHATBOTAI_RESPONDING" xml:space="preserve">
+    <value>Ag freagairt...</value>
+  </data>
+  <data name="NKS_CHATBOTAI_POSTRESPONSE" xml:space="preserve">
+    <value>D&apos;fhéadfadh an comhrábot seo freagraí míchruinne a ghiniúint, mar sin seiceáil le haghaidh fíricí dá réir.</value>
+  </data>
+  <data name="NKS_CHATBOTAI_EXCEPTION_LASTSHELLTYPEMISMATCH" xml:space="preserve">
+    <value>Ní hé an bhlaosc deireanach an bhlaosc seo le scaradh uaidh.</value>
+  </data>
+  <data name="NKS_CHATBOTAI_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
+    <value>Theip ar iontrálacha socruithe a fháil.</value>
+  </data>
+  <data name="NKS_CHATBOTAI_APIKEYPROMPT" xml:space="preserve">
+    <value>Scríobh eochair API do ChatGPT</value>
+  </data>
+  <data name="NKS_CHATBOTAI_APIKEYNOTPROVIDED" xml:space="preserve">
+    <value>Níl eochair API curtha ar fáil.</value>
+  </data>
+  <data name="NKS_CHATBOTAI_SETTINGS_ENTRYDESC" xml:space="preserve">
+    <value>Cumraíonn sé an Chatbot AI faoi thiomáint ag ChatGPT</value>
+  </data>
+  <data name="NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_NAME" xml:space="preserve">
+    <value>Eochair API ChatGPT</value>
+  </data>
+  <data name="NKS_CHATBOTAI_SETTINGS_CHATGPTAPIKEY_DESC" xml:space="preserve">
+    <value>D&apos;eochair API do ChatGPT le haghaidh rochtana. Cé gur féidir leat an eochair API saor in aisce a úsáid, ní féidir leat samhlacha ardleibhéil a úsáid. Más mian leat rochtain iomlán a fháil ar gach samhail íoctha, beidh ort íoc as an rochtain.</value>
+  </data>
+
+</root>

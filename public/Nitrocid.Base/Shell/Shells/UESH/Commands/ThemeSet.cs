@@ -22,7 +22,6 @@ using Terminaux.Colors.Themes;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -25,10 +25,9 @@ using System.Linq;
 using Nitrocid.Extras.Stocks.Settings;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Extras.Stocks.Commands;
-using Nitrocid.Extras.Stocks.Localized;
 using Nitrocid.Base.Users.Login.Widgets;
 using Nitrocid.Extras.Stocks.Widgets;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Stocks
 {
@@ -59,7 +58,7 @@ namespace Nitrocid.Extras.Stocks
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Stocks.Resources.Languages.Output.Localizations", typeof(StocksInit).Assembly));
             var config = new StocksConfig();
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ConfigTools.RegisterBaseSetting(config);

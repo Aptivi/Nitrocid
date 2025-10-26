@@ -17,47 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using LocaleStation.Tools;
-using Nitrocid.Base.Localized;
+using System.Globalization;
+using MainLangTools = Nitrocid.Core.Languages.LanguageTools;
 
 namespace Nitrocid.Base.Languages
 {
     internal static class LanguageTools
     {
-        private const string localType = "Nitrocid";
-
         internal static string GetLocalized(string id)
         {
-            if (LanguageCommon.Language != LanguageManager.CurrentLanguageInfo.ThreeLetterLanguageName)
-                LanguageCommon.Language = LanguageManager.CurrentLanguageInfo.ThreeLetterLanguageName;
-            foreach (string type in LanguageCommon.Actions)
-            {
-                var action = LanguageCommon.GetAction(type);
-                if (action.Exists.Invoke(id, LanguageCommon.Language))
-                    return GetLocalized(id, type, LanguageCommon.Language);
-            }
-            return GetLocalized(id, localType, LanguageCommon.Language);
-        }
-
-        internal static string GetLocalized(string id, string localType, string language)
-        {
-            AddCustomAction(localType, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
-            var type = LanguageCommon.GetAction(localType);
-            if (type.Exists.Invoke(id, language))
-                return LanguageCommon.Translate(id, localType, language);
-            return id;
-        }
-
-        internal static void AddCustomAction(string localType, LanguageLocalActions action)
-        {
-            if (!LanguageCommon.IsCustomActionDefined(localType))
-                LanguageCommon.AddCustomAction(localType, action);
-        }
-
-        internal static void RemoveCustomAction(string localType)
-        {
-            if (LanguageCommon.IsCustomActionDefined(localType))
-                LanguageCommon.RemoveCustomAction(localType);
+            if (CultureInfo.CurrentUICulture.Name != LanguageManager.CurrentLanguageInfo.Name)
+                CultureInfo.CurrentUICulture = LanguageManager.CurrentLanguageInfo;
+            MainLangTools.AddCustomAction("Nitrocid.Base", new("Nitrocid.Base.Resources.Languages.Output.Localizations", typeof(LanguageTools).Assembly));
+            return MainLangTools.GetLocalized(id, LanguageManager.CurrentLanguageInfo);
         }
     }
 }

@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Extras.Dates.Commands;
-using Nitrocid.Extras.Dates.Localized;
 using Nitrocid.Extras.Dates.Settings;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Shell.Commands;
@@ -29,7 +28,7 @@ using Nitrocid.Base.Shell.Homepage;
 using Nitrocid.Extras.Dates.Timers;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Switches;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.Dates
 {
@@ -94,7 +93,7 @@ namespace Nitrocid.Extras.Dates
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Dates.Resources.Languages.Output.Localizations", typeof(DatesInit).Assembly));
             var config = new DatesConfig();
             ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);

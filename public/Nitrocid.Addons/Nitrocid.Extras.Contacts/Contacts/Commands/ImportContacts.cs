@@ -23,7 +23,6 @@ using Nitrocid.Base.Languages;
 using System;
 using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Base.Kernel.Exceptions;
-using Terminaux.Shell.Switches;
 using Nitrocid.Base.Files;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands

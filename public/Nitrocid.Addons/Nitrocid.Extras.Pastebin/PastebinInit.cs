@@ -18,9 +18,8 @@
 //
 
 using Nitrocid.Extras.Pastebin.Commands;
-using Nitrocid.Extras.Pastebin.Localized;
 using Nitrocid.Base.Kernel.Extensions;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Switches;
@@ -87,7 +86,7 @@ namespace Nitrocid.Extras.Pastebin
 
         public void StartAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.Extras.Pastebin.Resources.Languages.Output.Localizations", typeof(PastebinInit).Assembly));
             CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 

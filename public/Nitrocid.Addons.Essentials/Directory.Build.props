@@ -28,10 +28,4 @@
         <ProjectReference Include="..\..\Nitrocid.Base\Nitrocid.Base.csproj" Private="false" />
     </ItemGroup>
     <!-- Addon Platform Information End -->
-
-    <!-- Addon Dependencies Information -->
-    <ItemGroup>
-        <PackageReference Include="LocaleStation" Version="1.3.2" />
-    </ItemGroup>
-    <!-- Addon Dependencies Information End -->
 </Project>

@@ -22,7 +22,6 @@ using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;
 using System;
-using Terminaux.Shell.Switches;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Languages;

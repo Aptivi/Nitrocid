@@ -22,13 +22,12 @@ using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Extensions;
-using Nitrocid.Base.Languages;
+using Nitrocid.Core.Languages;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Switches;
 using Nitrocid.ShellPacks.Commands;
-using Nitrocid.ShellPacks.Localized;
 using Nitrocid.ShellPacks.Settings;
 using Nitrocid.ShellPacks.Shells.Archive;
 using Nitrocid.ShellPacks.Shells.FTP;
@@ -209,7 +208,7 @@ namespace Nitrocid.ShellPacks
 
         public void FinalizeAddon()
         {
-            LanguageTools.AddCustomAction(AddonName, new(() => LocalStrings.Languages, () => LocalStrings.Localizations, LocalStrings.Translate, LocalStrings.CheckCulture, LocalStrings.ListLanguagesCulture, LocalStrings.Exists));
+            LanguageTools.AddCustomAction(AddonName, new("Nitrocid.ShellPacks.Resources.Languages.Output.Localizations", typeof(ShellsInit).Assembly));
             var config = new ShellsConfig();
             ConfigTools.RegisterBaseSetting(config);
             ShellManager.RegisterShell("ArchiveShell", new ArchiveShellInfo());
