@@ -35,7 +35,6 @@ using Nitrocid.Kernel.Events;
 using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Languages.Decoy;
 using Nitrocid.Misc.Reflection.Internal;
-using LocaleStation.Tools;
 
 namespace Nitrocid.Languages
 {
@@ -58,7 +57,11 @@ namespace Nitrocid.Languages
             get
             {
                 var lang = Login.LoggedIn ? currentUserLanguage : currentLanguage;
-                LanguageCommon.Language = lang.ThreeLetterLanguageName;
+                var cultures = lang.Cultures;
+                var culture = new CultureInfo("en");
+                if (cultures.Length > 0)
+                    culture = cultures[1];
+                CultureInfo.CurrentUICulture = culture;
                 return lang;
             }
         }

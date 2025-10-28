@@ -32,7 +32,7 @@ using Nitrocid.Modifications;
 using Terminaux.Base.Checks;
 using System.Reflection;
 
-[assembly: ClassCleanupExecution(ClassCleanupBehavior.EndOfClass)]
+[assembly: DoNotParallelize]
 
 namespace Nitrocid.Tests
 {
