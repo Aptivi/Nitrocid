@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="VisualCard" Version="4.1.1" />
-    <PackageReference Include="VisualCard.Extras" Version="4.1.1" />
+    <PackageReference Include="VisualCard" Version="4.1.2" />
+    <PackageReference Include="VisualCard.Extras" Version="4.1.2" />
   </ItemGroup>
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />

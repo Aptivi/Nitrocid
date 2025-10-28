@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ChemiStar" Version="1.1.1" />
+    <PackageReference Include="ChemiStar" Version="1.1.2" />
   </ItemGroup>
   
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />

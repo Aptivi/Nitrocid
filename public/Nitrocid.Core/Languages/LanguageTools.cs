@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
+using ResourceLab.Management;
 using System.Globalization;
 using System.Resources;
 
@@ -25,29 +25,46 @@ namespace Nitrocid.Core.Languages
 {
     internal static class LanguageTools
     {
-        internal static readonly Dictionary<string, ResourceManager> resourceManagers = new()
-        {
-            { "Nitrocid.Core", new("Nitrocid.Core.Resources.Languages.Output.Localizations", typeof(LanguageTools).Assembly) }
-        };
+        private const string LocalName = "Nitrocid.Core";
 
         internal static string GetLocalized(string id) =>
             GetLocalized(id, CultureInfo.CurrentUICulture);
 
         internal static string GetLocalized(string id, CultureInfo culture)
         {
-            foreach (var resourceManager in resourceManagers.Values)
+            // Add local resource
+            if (!ResourcesManager.ResourceManagerExists(LocalName))
+                ResourcesManager.AddResourceManager(LocalName, new($"{LocalName}.Resources.Languages.Output.Localizations", typeof(LanguageTools).Assembly));
+
+            // Loop through all resource managers
+            foreach (var resourceManager in ResourcesManager.ResourceManagers.Values)
             {
-                string resourceLocalization = resourceManager.GetString(id, culture) ?? "";
-                if (!string.IsNullOrEmpty(resourceLocalization))
-                    return resourceLocalization;
+                try
+                {
+                    string resourceLocalization = resourceManager.GetString(id, culture) ?? "";
+                    if (!string.IsNullOrEmpty(resourceLocalization))
+                        return resourceLocalization;
+                }
+                catch
+                {
+                    return id;
+                }
             }
             return id;
         }
 
-        internal static void AddCustomAction(string localType, ResourceManager resourceManager) =>
-            resourceManagers.TryAdd(localType, resourceManager);
+        internal static void AddCustomAction(string localType, ResourceManager resourceManager)
+        {
+            // Add resource
+            if (!ResourcesManager.ResourceManagerExists(localType))
+                ResourcesManager.AddResourceManager(localType, resourceManager);
+        }
 
-        internal static void RemoveCustomAction(string localType) =>
-            resourceManagers.Remove(localType);
+        internal static void RemoveCustomAction(string localType)
+        {
+            // Remove resource
+            if (ResourcesManager.ResourceManagerExists(localType))
+                ResourcesManager.RemoveResourceManager(localType);
+        }
     }
 }
