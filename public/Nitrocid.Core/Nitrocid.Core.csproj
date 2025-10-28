@@ -51,5 +51,8 @@
   <ItemGroup>
     <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ResourceLab" Version="1.0.0" />
+  </ItemGroup>
   <!-- KS Generated End -->
 </Project>
