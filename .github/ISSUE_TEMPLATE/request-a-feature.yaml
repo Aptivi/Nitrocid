@@ -1,0 +1,47 @@
+name: Request a feature
+description: Suggest an idea to us.
+title: "[REQ] <feature> - <title>"
+body:
+- type: checkboxes
+  attributes:
+    label: Have you searched for similar requests?
+    description: Please search for existing requests to check to see if people have already posted the same request.
+    options:
+    - label: I have searched the existing requests
+      required: true
+- type: input
+  id: feature
+  attributes:
+    label: Feature title
+    description: Please provide a title of the feature
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Describe your request
+    description: Please describe your feature request, including your idea and your goal for this feature.
+  validations:
+    required: true
+- type: checkboxes
+  attributes:
+    label: Have you made a PR?
+    description: Have you made a fork of our repository that contains your implementation of your idea?
+    options:
+      - label: Yes, I have forked the repository
+      - label: I have also tested the changes
+- type: checkboxes
+  id: terms
+  attributes:
+    label: Code of Conduct
+    description: By submitting this issue, you agree to follow our [Code of Conduct](https://aptivi.gitbook.io/aptivi/guidelines/code-of-conduct).
+    options:
+      - label: I agree to follow this project's Code of Conduct
+        required: true
+- type: checkboxes
+  id: terms2
+  attributes:
+    label: Contribution Guidelines
+    description: By submitting this issue, you agree to follow our [Contribution Guidelines](https://aptivi.gitbook.io/aptivi/guidelines/contribution-guidelines).
+    options:
+      - label: I agree to follow this project's Contribution Guidelines
+        required: true

@@ -1,0 +1,54 @@
+name: Ask a question
+description: Ask anything about our project.
+title: "[Q&A] <feature> - <title>"
+body:
+- type: checkboxes
+  attributes:
+    label: Have you searched for similar questions?
+    description: Please search for existing questions to check to see if people have already asked the same question.
+    options:
+    - label: I have searched the existing questions
+      required: true
+- type: input
+  id: feature
+  attributes:
+    label: Affected Feature
+    description: With which feature you're trying to ask about?
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Environment
+    description: |
+      examples:
+        - **Version**: 0.1.0.62 c851ab0243d47d4053374fffb175f87b9cc02c2d main
+        - **OS**: Windows 11 build 26200.7019
+    value: |
+        - Version:
+        - OS:
+    render: markdown
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Ask a question here
+    description: |
+      You can ask a question here, but be clear and concise when asking questions to make sure that there is clear communication with the answer.
+  validations:
+    required: true
+- type: checkboxes
+  id: terms
+  attributes:
+    label: Code of Conduct
+    description: By submitting this issue, you agree to follow our [Code of Conduct](https://aptivi.gitbook.io/aptivi/guidelines/code-of-conduct).
+    options:
+      - label: I agree to follow this project's Code of Conduct
+        required: true
+- type: checkboxes
+  id: terms2
+  attributes:
+    label: Contribution Guidelines
+    description: By submitting this issue, you agree to follow our [Contribution Guidelines](https://aptivi.gitbook.io/aptivi/guidelines/contribution-guidelines).
+    options:
+      - label: I agree to follow this project's Contribution Guidelines
+        required: true
