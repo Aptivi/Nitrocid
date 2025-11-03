@@ -1,0 +1,77 @@
+name: Report an issue
+description: Thank you for reporting a bug to us.
+title: "[BUG] <feature> - <title>"
+labels: ["bug"]
+body:
+- type: checkboxes
+  attributes:
+    label: Have you searched for similar issues?
+    description: Please search for existing issues to check to see if people have already reported the bug you're experiencing.
+    options:
+    - label: I have searched the existing issues
+      required: true
+- type: input
+  id: feature
+  attributes:
+    label: Affected Feature
+    description: With which feature you're trying to report the bug against?
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Current Behavior
+    description: What are you experiencing when you're using the feature?
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Expected Behavior
+    description: How do you think the feature should do?
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Steps To Reproduce
+    description: Write down concise reproduction steps for us to be able to triage your bug.
+    placeholder: |
+      1. Do X...
+      1. Do Y...
+      1. Observe bug...
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Environment
+    description: |
+      examples:
+        - **Version**: 0.1.0.62 c851ab0243d47d4053374fffb175f87b9cc02c2d main
+        - **OS**: Windows 11 build 26200.7019
+    value: |
+        - Version:
+        - OS:
+    render: markdown
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Anything else?
+    description: |
+      If you have anything more to add to this bug report that you think it's useful for the bug triaging process, please provide them.
+  validations:
+    required: false
+- type: checkboxes
+  id: terms
+  attributes:
+    label: Code of Conduct
+    description: By submitting this issue, you agree to follow our [Code of Conduct](https://aptivi.gitbook.io/aptivi/guidelines/code-of-conduct).
+    options:
+      - label: I agree to follow this project's Code of Conduct
+        required: true
+- type: checkboxes
+  id: terms2
+  attributes:
+    label: Contribution Guidelines
+    description: By submitting this issue, you agree to follow our [Contribution Guidelines](https://aptivi.gitbook.io/aptivi/guidelines/contribution-guidelines).
+    options:
+      - label: I agree to follow this project's Contribution Guidelines
+        required: true
