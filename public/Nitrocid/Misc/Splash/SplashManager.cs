@@ -21,9 +21,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using Terminaux.Base.Buffered;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs.Styles.Infobox;
+using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -31,6 +30,8 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Splash.Splashes;
 using Terminaux.Base;
+using Terminaux.Base.Buffered;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Misc.Splash
 {
@@ -193,7 +194,7 @@ namespace Nitrocid.Misc.Splash
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void OpenSplash(ISplash splash, SplashContext context)
         {
-            if (Config.MainConfig.EnableSplash)
+            if (Config.MainConfig.EnableSplash && !KernelPlatform.IsOnTestHost())
             {
                 // Clean everything up
                 var openingPart = new ScreenPart();
