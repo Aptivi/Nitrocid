@@ -76,6 +76,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <Import Project="..\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems" Label="Shared" />
+  <ItemGroup>
+    <Compile Include="..\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\*.cs" />
+  </ItemGroup>
 
 </Project>

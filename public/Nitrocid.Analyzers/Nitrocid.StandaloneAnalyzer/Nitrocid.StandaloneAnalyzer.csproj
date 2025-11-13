@@ -35,6 +35,8 @@
     <PackageReference Include="Terminaux" Version="6.1.24.1" />
   </ItemGroup>
 
-  <Import Project="..\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems" Label="Shared" />
+  <ItemGroup>
+    <Compile Include="..\Nitrocid.Analyzers.Common\*.cs" />
+  </ItemGroup>
 
 </Project>
