@@ -26,21 +26,21 @@ namespace Nitrocid.Analyzers.Test.Verifiers
 {
     internal class References
     {
-        private static readonly Lazy<ReferenceAssemblies> _lazyNet80 =
+        private static readonly Lazy<ReferenceAssemblies> _lazyNetRef =
              new(() =>
              {
-                 if (!NuGetFramework.Parse("net8.0").IsPackageBased)
-                     throw new NotSupportedException("Upgrade NuGet to use .NET 8.0.");
+                 if (!NuGetFramework.Parse("net10.0").IsPackageBased)
+                     throw new NotSupportedException("Upgrade NuGet to use .NET 10.0.");
 
-                 // Return a new instance of the .NET 8.0 reference assemblies
+                 // Return a new instance of the .NET 10.0 reference assemblies
                  return new ReferenceAssemblies(
-                     "net8.0",
+                     "net10.0",
                      new PackageIdentity(
                          "Microsoft.NETCore.App.Ref",
-                         "8.0.0"),
-                     Path.Combine("ref", "net8.0"));
+                         "10.0.0"),
+                     Path.Combine("ref", "net10.0"));
              });
 
-        public static ReferenceAssemblies Net80 => _lazyNet80.Value;
+        public static ReferenceAssemblies NetRef => _lazyNetRef.Value;
     }
 }

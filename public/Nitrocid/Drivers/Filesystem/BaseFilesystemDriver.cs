@@ -1029,7 +1029,7 @@ namespace Nitrocid.Drivers.Filesystem
                 // Try to open an SQL connection
                 byte[] sqlFileBytes = new byte[17];
                 using (FileStream sqlStream = new(Path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                    sqlStream.Read(sqlFileBytes, 0, 16);
+                    sqlStream.ReadExactly(sqlFileBytes, 0, 16);
                 string result = System.Text.Encoding.ASCII.GetString(sqlFileBytes);
                 return result.Contains("SQLite format");
             }
@@ -1423,7 +1423,7 @@ namespace Nitrocid.Drivers.Filesystem
             long size = new FileSystemEntry(path).FileSize;
             var AllBytesList = new byte[size];
             var FOpen = File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            FOpen.Read(AllBytesList, 0, (int)size);
+            FOpen.ReadExactly(AllBytesList, 0, (int)size);
             FOpen.Close();
             return AllBytesList;
         }

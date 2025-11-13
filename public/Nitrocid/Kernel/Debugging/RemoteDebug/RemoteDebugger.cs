@@ -19,21 +19,22 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using Textify.Versioning;
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.Kernel.Debugging.RemoteDebug.Command;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Misc.Notifications;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging.RemoteDebug.Command;
 using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
+using Nitrocid.Kernel.Events;
 using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Notifications;
+using Textify.Versioning;
 
 namespace Nitrocid.Kernel.Debugging.RemoteDebug
 {
@@ -211,6 +212,8 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
         /// <summary>
         /// Thread to listen to messages and post them to the debugger
         /// </summary>
+        [SuppressMessage("Reliability", "CA2022:Avoid inexact read with 'Stream.Read'", Justification = "We are dealing with network streams")]
+        [SuppressMessage("CodeQuality", "IDE0079:Remove unnecessary suppression", Justification = "This suppression is justified")]
         internal static void Listen(object? RDebugInstance)
         {
             if (RDebugInstance is not RemoteDebugDevice device)
