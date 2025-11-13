@@ -32,8 +32,22 @@ namespace Nitrocid.Kernel
         /// <summary>
         /// Checks to see if the kernel is running normally or from somewhere else
         /// </summary>
-        public static bool IsOnUsualEnvironment() =>
-            Assembly.GetEntryAssembly()?.FullName == Assembly.GetExecutingAssembly().FullName;
+        public static bool IsOnUsualEnvironment()
+        {
+            string entryAssemblyName = Assembly.GetEntryAssembly()?.FullName ?? "";
+            var executingAssembly = Assembly.GetExecutingAssembly();
+            var expectedAssembly = typeof(KernelPlatform).Assembly;
+            return entryAssemblyName != executingAssembly.FullName && executingAssembly.FullName == expectedAssembly.FullName;
+        }
+
+        /// <summary>
+        /// Checks to see if the kernel is being run on the test host (checks against Nitrocid.Tests as entry)
+        /// </summary>
+        public static bool IsOnTestHost()
+        {
+            string entryAssemblyName = Assembly.GetEntryAssembly()?.FullName ?? "";
+            return IsOnUsualEnvironment() && entryAssemblyName.Contains("Nitrocid.Tests");
+        }
 
         /// <summary>
         /// Is this system a Windows system?
