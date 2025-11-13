@@ -37,7 +37,7 @@ namespace Nitrocid.Kernel
             string entryAssemblyName = Assembly.GetEntryAssembly()?.FullName ?? "";
             var executingAssembly = Assembly.GetExecutingAssembly();
             var expectedAssembly = typeof(KernelPlatform).Assembly;
-            return entryAssemblyName != executingAssembly.FullName && executingAssembly.FullName == expectedAssembly.FullName;
+            return entryAssemblyName == executingAssembly.FullName && executingAssembly.FullName == expectedAssembly.FullName;
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Nitrocid.Kernel
         public static bool IsOnTestHost()
         {
             string entryAssemblyName = Assembly.GetEntryAssembly()?.FullName ?? "";
-            return IsOnUsualEnvironment() && entryAssemblyName.Contains("Nitrocid.Tests");
+            return !IsOnUsualEnvironment() && entryAssemblyName.Contains("Nitrocid.Tests");
         }
 
         /// <summary>
