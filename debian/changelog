@@ -1,6 +1,7 @@
 nitrocid-27 (3.1.27.55-0.1.2.29-1) noble; urgency=medium
 
-  * General improvements and bug fixes
+  * Migrated the framework to .NET 10.0
+  * Fixed unit tests being stuck due to the splash screen function
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 13 Nov 2025 16:00:50 +0300
 
