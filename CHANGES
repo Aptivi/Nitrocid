@@ -1,10 +1,13 @@
-We've released this version to make localization faster.
+We've released this version to migrate the whole codebase to .NET 10.0 to celebrate its general availability!
+
+This release will help you migrate your mods to .NET 10.0 prior to the Nitrocid 0.2.0 release expected February 2026!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` General improvements
+- `[*]` Migrated the framework to .NET 10.0
+- `[*]` Fixed unit tests being stuck due to the splash screen function
 
 Review the commit history if you want to get a deep insight about the changes.
 
