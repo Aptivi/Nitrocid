@@ -34,7 +34,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// Tests registering a custom config
         /// </summary>
         [ClassInitialize]
-        [Description("Management")]
 #pragma warning disable IDE0060
         public static void InitRegisterConfig(TestContext tc)
 #pragma warning restore IDE0060
@@ -226,7 +225,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// Tests unregistering a custom config
         /// </summary>
         [ClassCleanup]
-        [Description("Management")]
         public static void UninitUnregisterConfig()
         {
             ConfigTools.UnregisterCustomSetting(name);

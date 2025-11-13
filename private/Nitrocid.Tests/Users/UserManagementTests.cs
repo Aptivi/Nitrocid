@@ -37,7 +37,6 @@ namespace Nitrocid.Tests.Users
         /// Tests user addition
         /// </summary>
         [ClassInitialize]
-        [Description("Management")]
 #pragma warning disable IDE0060
         public static void TestAddUser(TestContext tc)
 #pragma warning restore IDE0060

@@ -66,7 +66,7 @@ namespace Nitrocid.Extras.SqlShell.Tools
         {
             byte[] sqlFileBytes = new byte[17];
             using (FileStream sqlStream = new(File, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                sqlStream.Read(sqlFileBytes, 0, 16);
+                sqlStream.ReadExactly(sqlFileBytes, 0, 16);
             string result = Encoding.ASCII.GetString(sqlFileBytes);
             return result.Contains("SQLite format");
         }

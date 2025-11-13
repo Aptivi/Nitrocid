@@ -5,7 +5,7 @@
     <SuppressIces>ICE69</SuppressIces>
   </PropertyGroup>
   <ItemGroup>
-    <HarvestDirectory Include="../../Nitrocid/KSBuild/net8.0">
+    <HarvestDirectory Include="../../Nitrocid/KSBuild/net10.0">
       <ComponentGroupName>FullComponent</ComponentGroupName>
       <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
       <SuppressRootDirectory>true</SuppressRootDirectory>
@@ -18,7 +18,7 @@
       -->
       <SuppressRegistry>true</SuppressRegistry>
     </HarvestDirectory>
-    <BindPath Include="../../Nitrocid/KSBuild/net8.0" />
+    <BindPath Include="../../Nitrocid/KSBuild/net10.0" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="WixToolset.Heat" Version="5.0.2" />

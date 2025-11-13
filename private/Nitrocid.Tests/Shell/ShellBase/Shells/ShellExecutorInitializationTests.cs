@@ -34,7 +34,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         /// <summary>
         /// Tests initializing the shell instance from base
         /// </summary>
-        [Description("Initialization")]
         [ClassInitialize]
 #pragma warning disable IDE0060
         public static void TestInitializeShellExecutorFromBase(TestContext tc)

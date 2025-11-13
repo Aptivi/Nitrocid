@@ -321,6 +321,7 @@ namespace Nitrocid.Drivers.Console
         }
 
         /// <inheritdoc/>
+        [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "KernelPlatform.IsOnWindows()")]
         public virtual void SetWindowDimensions(int width, int height)
         {
             if (!IsDumb)
@@ -360,6 +361,7 @@ namespace Nitrocid.Drivers.Console
         }
 
         /// <inheritdoc/>
+        [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "KernelPlatform.IsOnWindows()")]
         public virtual void SetWindowWidth(int width)
         {
             if (!IsDumb)
@@ -375,6 +377,7 @@ namespace Nitrocid.Drivers.Console
         }
 
         /// <inheritdoc/>
+        [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "KernelPlatform.IsOnWindows()")]
         public virtual void SetWindowHeight(int height)
         {
             if (!IsDumb)
