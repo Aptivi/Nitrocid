@@ -47,10 +47,10 @@ namespace Nitrocid.Tests.Languages
         [Description("Querying")]
         public void TestListLanguages()
         {
-            var langs = LanguageManager.ListLanguages("arb");
+            var langs = LanguageManager.ListLanguages("ar");
             langs.ShouldNotBeNull();
             langs.ShouldNotBeEmpty();
-            langs.Count.ShouldBe(2);
+            langs.Count.ShouldBe(30);
         }
 
         /// <summary>

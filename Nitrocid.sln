@@ -163,8 +163,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.LocaleChecker", "p
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Chemistry", "public\Nitrocid.Addons\Nitrocid.Extras.Chemistry\Nitrocid.Extras.Chemistry.csproj", "{D7BC8CF1-C12C-435F-BB53-9F0EA4B8EF20}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Nitrocid.Analyzers.Common", "public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.shproj", "{47D3DE1A-07AB-42A1-BE6E-7F5256B82DD3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Mods", "public\Nitrocid.Addons.Essentials\Nitrocid.Extras.Mods\Nitrocid.Extras.Mods.csproj", "{0F9E07AB-70DC-4305-9406-34465BB0B0D8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Base", "public\Nitrocid.Base\Nitrocid.Base.csproj", "{E47A4664-21AD-4D05-85A5-9E3D86A9AC45}"
@@ -1012,7 +1010,6 @@ Global
 		{E1B8ED9D-541A-4D9E-AAF5-2671114E179B} = {E403EE05-8642-4496-8897-CBD762D7670B}
 		{A9DBA465-7F73-449F-B5BD-E143767513E4} = {5427F963-3094-4111-AB05-DAE364A8DF67}
 		{D7BC8CF1-C12C-435F-BB53-9F0EA4B8EF20} = {98EED11D-F8FC-4F62-9FF4-DE6CCEC6C1C4}
-		{47D3DE1A-07AB-42A1-BE6E-7F5256B82DD3} = {60986DC6-07C5-40D1-A305-741E8ABE39FC}
 		{0F9E07AB-70DC-4305-9406-34465BB0B0D8} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{E47A4664-21AD-4D05-85A5-9E3D86A9AC45} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
 		{38D7F3AD-EA2F-49D3-87A6-1E4A362547D0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
@@ -1029,7 +1026,6 @@ Global
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems*{47d3de1a-07ab-42a1-be6e-7f5256b82dd3}*SharedItemsImports = 13
 		public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems*{a9dba465-7f73-449f-b5bd-e143767513e4}*SharedItemsImports = 5
 		public\Nitrocid.Analyzers\Nitrocid.Analyzers.Common\Nitrocid.Analyzers.Common.projitems*{df07f4e1-47b2-452d-a200-f15f558c4977}*SharedItemsImports = 5
 	EndGlobalSection

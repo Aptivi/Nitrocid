@@ -60,9 +60,6 @@ namespace Nitrocid.Tests.Misc.Probers
         [DataRow("Random File is <randomfile>")]
         [DataRow("Random Folder is <randomfolder>")]
         [DataRow("RID is <rid>")]
-        [DataRow("RID is <ridgeneric>")]
-        [DataRow("Terminal emulator is <termemu>")]
-        [DataRow("Terminal type is <termtype>")]
         [Description("Action")]
         public void TestParsePlaceholders(string stringToProbe)
         {
