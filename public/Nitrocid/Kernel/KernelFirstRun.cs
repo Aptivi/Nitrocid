@@ -167,7 +167,7 @@ namespace Nitrocid.Kernel
                                 ),
                                 new InputInfo(
                                     Translate.DoTranslation("Password"), Translate.DoTranslation("Enter the password"),
-                                    new TextInputMethod()
+                                    new MaskedTextInputMethod()
                                     {
                                         Question = Translate.DoTranslation("Enter your user password. You should choose a strong password for increased security."),
                                     }
