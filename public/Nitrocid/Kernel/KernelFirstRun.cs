@@ -168,10 +168,11 @@ namespace Nitrocid.Kernel
                                 ),
                                 new PresentationInputInfo(
                                     Translate.DoTranslation("Password"), Translate.DoTranslation("Enter the password"),
-                                    new TextBoxModule()
+                                    new MaskedTextBoxModule()
                                     {
                                         Name = Translate.DoTranslation("Enter the password"),
                                         Description = Translate.DoTranslation("Enter your user password. You should choose a strong password for increased security."),
+                                        Mask = !string.IsNullOrEmpty(Config.MainConfig.CurrentMask) ? Config.MainConfig.CurrentMask[0] : '\0',
                                     }
                                 )
                             ]
