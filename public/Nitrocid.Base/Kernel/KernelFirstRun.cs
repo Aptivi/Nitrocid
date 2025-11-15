@@ -168,10 +168,11 @@ namespace Nitrocid.Base.Kernel
                                 ),
                                 new PresentationInputInfo(
                                     LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PASSWORD_PROMPT"), LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PASSWORDPROMPT"),
-                                    new TextBoxModule()
+                                    new MaskedTextBoxModule()
                                     {
                                         Name = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PASSWORD_PROMPT"),
                                         Description = LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PASSWORD_PROMPT_DESC"),
+                                        Mask = !string.IsNullOrEmpty(Config.MainConfig.CurrentMask) ? Config.MainConfig.CurrentMask[0] : '\0',
                                     }
                                 )
                             ]
