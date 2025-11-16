@@ -155,14 +155,15 @@ namespace Nitrocid.Base.Misc.Interactives
         /// <inheritdoc/>
         public override string GetStatusFromItemSecondary((string, int) item)
         {
-            string keyName = item.Item1;
             int keyIdx = item.Item2;
             if (config is null)
                 return "";
             var configs = config.SettingsEntries ??
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
+            var key = configs[FirstPaneCurrentSelection - 1].Keys[keyIdx];
             string entryName = entryNames[FirstPaneCurrentSelection - 1].Item1;
-            string keyDesc = LanguageTools.GetLocalized(configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description);
+            string keyName = LanguageTools.GetLocalized(key.Name);
+            string keyDesc = LanguageTools.GetLocalized(key.Description);
             string status = $"{entryName} > {keyName} - {keyDesc}";
             return status;
         }
