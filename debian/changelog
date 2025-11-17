@@ -1,3 +1,9 @@
+nitrocid-27 (3.1.27.55-0.1.2.30-1) noble; urgency=medium
+
+  * General improvements and bug fixes
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 17 Nov 2025 20:30:53 +0300
+
 nitrocid-27 (3.1.27.55-0.1.2.29-1) noble; urgency=medium
 
   * Migrated the framework to .NET 10.0
