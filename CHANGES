@@ -8,6 +8,7 @@ This release contains a variety of changes, including, but not limited to:
 
 - `[*]` Migrated the framework to .NET 10.0
 - `[*]` Fixed unit tests being stuck due to the splash screen function
+- `[*]` Fixed some TUIs not starting
 
 Review the commit history if you want to get a deep insight about the changes.
 
