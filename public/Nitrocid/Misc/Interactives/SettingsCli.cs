@@ -157,14 +157,15 @@ namespace Nitrocid.Misc.Interactives
         /// <inheritdoc/>
         public override string GetStatusFromItemSecondary((string, int) item)
         {
-            string keyName = item.Item1;
             int keyIdx = item.Item2;
             if (config is null)
                 return "";
             var configs = config.SettingsEntries ??
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't get settings entries"));
+            var key = configs[FirstPaneCurrentSelection - 1].Keys[keyIdx];
             string entryName = entryNames[FirstPaneCurrentSelection - 1].Item1;
-            string keyDesc = configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description;
+            string keyName = key.Name;
+            string keyDesc = key.Description;
             string status = $"{entryName} > {keyName} - {keyDesc}";
             return status;
         }
