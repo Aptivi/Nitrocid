@@ -1232,6 +1232,8 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// Selects the intensity of the ambient sound effect
         /// </summary>
+        // TODO: NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME -> "Ambient screensaver sound effects intensity"
+        // TODO: NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC -> "Specify the level that chooses how intense the ambient screensaver sound effects are"
         public AmbienceFxIntensity AmbientSoundFxIntensity { get; set; } = AmbienceFxIntensity.Medium;
         /// <summary>
         /// Audio cue volume
