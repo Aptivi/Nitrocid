@@ -117,6 +117,36 @@ namespace Nitrocid.Base.Misc.Audio
             }
         }
 
+        /// <summary>
+        /// Maps the ambience intensity to the appropriate cue type
+        /// </summary>
+        /// <param name="intensity">Intensity of the ambient sound</param>
+        /// <returns>Cue type that represents the selected ambience intensity</returns>
+        public static AudioCueType MapAmbienceToCueType(AmbienceFxIntensity intensity) =>
+            intensity switch
+            {
+                AmbienceFxIntensity.Calm => AudioCueType.AmbienceIdle,
+                AmbienceFxIntensity.Normal => AudioCueType.AlarmIdle,
+                AmbienceFxIntensity.Medium => AudioCueType.Ambience,
+                AmbienceFxIntensity.Intense => AudioCueType.Alarm,
+                _ => AudioCueType.AmbienceIdle
+            };
+
+        /// <summary>
+        /// Maps the cue type to the appropriate ambience intensity
+        /// </summary>
+        /// <param name="cueType">Cue type that represents the selected ambience intensity</param>
+        /// <returns>Intensity of the ambient sound</returns>
+        public static AmbienceFxIntensity MapCueTypeToAmbience(AudioCueType cueType) =>
+            cueType switch
+            {
+                AudioCueType.AmbienceIdle => AmbienceFxIntensity.Calm,
+                AudioCueType.AlarmIdle => AmbienceFxIntensity.Normal,
+                AudioCueType.Ambience => AmbienceFxIntensity.Medium,
+                AudioCueType.Alarm => AmbienceFxIntensity.Intense,
+                _ => AmbienceFxIntensity.Calm
+            };
+
         private static Dictionary<string, AudioCueContainer> PopulateCues()
         {
             Dictionary<string, string> cueDescriptors = new()
