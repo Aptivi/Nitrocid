@@ -1186,7 +1186,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
                     EnableMediumPriorityNotificationSounds = value;
                     EnableHighPriorityNotificationSounds = value;
                     EnableAmbientSoundFx = value;
-                    EnableAmbientSoundFxIntense = value;
                 }
             }
         }
@@ -1231,9 +1230,9 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// </summary>
         public bool EnableAmbientSoundFx { get; set; }
         /// <summary>
-        /// Whether to intensify the ambient screensaver sound effects or not
+        /// Selects the intensity of the ambient sound effect
         /// </summary>
-        public bool EnableAmbientSoundFxIntense { get; set; }
+        public AmbienceFxIntensity AmbientSoundFxIntensity { get; set; } = AmbienceFxIntensity.Medium;
         /// <summary>
         /// Audio cue volume
         /// </summary>

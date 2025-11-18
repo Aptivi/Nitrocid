@@ -117,7 +117,7 @@ namespace Nitrocid.Base.Misc.Screensaver
                 DebugWriter.WriteDebug(DebugLevel.I, $"Screensaver ambience starting with theme {Config.MainConfig.AudioCueThemeName}");
                 
                 // Open the ambient SFX stream
-                var ambientFxType = Config.MainConfig.EnableAmbientSoundFxIntense ? AudioCueType.AmbienceIdle : AudioCueType.Ambience;
+                var ambientFxType = AudioCuesTools.MapAmbienceToCueType(Config.MainConfig.AmbientSoundFxIntensity);
                 var cue = AudioCuesTools.GetAudioCue();
 
                 // Repeatedly play it

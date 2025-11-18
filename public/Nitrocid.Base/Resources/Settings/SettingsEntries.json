@@ -1130,10 +1130,13 @@
                 "Description": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_DESC"
             },
             {
-                "Name": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME",
-                "Type": "SBoolean",
-                "Variable": "EnableAmbientSoundFxIntense",
-                "Description": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC"
+                "Name": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME",
+                "Type": "SSelection",
+                "Variable": "AmbientSoundFxIntensity",
+                "IsEnumeration": true,
+                "EnumerationInternal": true,
+                "Enumeration": "Misc.Audio.AmbienceFxIntensity",
+                "Description": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC"
             },
             {
                 "Name": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME",
