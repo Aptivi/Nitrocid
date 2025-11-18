@@ -1,7 +1,8 @@
 [
     {
-        "Name": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
+        "Name": "Contacts",
         "Desc": "NKS_CONTACTS_SETTINGS_DESC",
+        "DisplayAs": "NKS_CONTACTS_HOMEPAGE_CONTACTS",
         "Keys": [
             {
                 "Name": "NKS_CONTACTS_SETTINGS_PROFILEPICTURES_NAME",

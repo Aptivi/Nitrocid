@@ -89,10 +89,6 @@
       "text": "Valeur:"
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "Niveau de couleur jaune :"
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "Lumia :"
     },

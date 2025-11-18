@@ -144,9 +144,6 @@
   <data name="NKS_COLORCONVERT_VALUE" xml:space="preserve">
     <value>Αξία:</value>
   </data>
-  <data name="NKS_COLORCONVERT_YELLOWCOLOR" xml:space="preserve">
-    <value>Επίπεδο κίτρινου χρώματος:</value>
-  </data>
   <data name="NKS_COLORCONVERT_LUMA" xml:space="preserve">
     <value>Λούμα:</value>
   </data>

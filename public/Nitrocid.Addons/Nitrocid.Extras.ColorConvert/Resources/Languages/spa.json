@@ -68,10 +68,6 @@
       "text": "Valor:"
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "Nivel de color amarillo:"
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "luma:"
     },

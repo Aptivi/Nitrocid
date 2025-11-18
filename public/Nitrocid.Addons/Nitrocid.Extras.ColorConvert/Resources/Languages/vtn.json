@@ -43,10 +43,6 @@
       "text": "Giá trị:"
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "Mức độ màu vàng:"
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "Độ sáng:"
     },

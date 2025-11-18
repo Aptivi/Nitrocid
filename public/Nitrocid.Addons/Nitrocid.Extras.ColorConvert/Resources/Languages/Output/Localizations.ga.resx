@@ -144,9 +144,6 @@
   <data name="NKS_COLORCONVERT_VALUE" xml:space="preserve">
     <value>Luach:</value>
   </data>
-  <data name="NKS_COLORCONVERT_YELLOWCOLOR" xml:space="preserve">
-    <value>Leibhéal dath buí:</value>
-  </data>
   <data name="NKS_COLORCONVERT_LUMA" xml:space="preserve">
     <value>Lúma:</value>
   </data>

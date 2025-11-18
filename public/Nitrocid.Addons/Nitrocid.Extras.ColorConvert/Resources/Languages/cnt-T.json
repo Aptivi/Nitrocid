@@ -46,10 +46,6 @@
       "text": "價值："
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "黃色等級："
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "亮度："
     },

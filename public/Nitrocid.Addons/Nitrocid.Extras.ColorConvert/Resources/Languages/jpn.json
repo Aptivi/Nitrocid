@@ -43,10 +43,6 @@
       "text": "価値："
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "黄色の色レベル:"
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "ルマ:"
     },

@@ -43,10 +43,6 @@
       "text": "Значення:"
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "Рівень жовтого кольору:"
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "Яскравість:"
     },

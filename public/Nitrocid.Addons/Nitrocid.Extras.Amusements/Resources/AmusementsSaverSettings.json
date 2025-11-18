@@ -1,7 +1,8 @@
 [
     {
-        "Name": "NKS_AMUSEMENTS_HOMEPAGE_SNAKER",
+        "Name": "Snaker",
         "Desc": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DESC",
+        "DisplayAs": "NKS_AMUSEMENTS_HOMEPAGE_SNAKER",
         "Keys": [
             {
                 "Name": "NKS_AMUSEMENTS_SETTINGS_SNAKER_DELAY_NAME",

@@ -1,7 +1,8 @@
 [
     {
-        "Name": "NKS_DATES_HOMEPAGE_TIMER",
+        "Name": "Timer",
         "Desc": "NKS_DATES_TIMER_SETTINGS_DESC",
+        "DisplayAs": "NKS_DATES_HOMEPAGE_TIMER",
         "Keys": [
             {
                 "Name": "NKS_DATES_TIMER_SETTINGS_ENABLEFIGLET_NAME",

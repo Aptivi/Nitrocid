@@ -300,7 +300,7 @@
   <data name="NKS_CALENDAR_EXCEPTION_NOREMINDER" xml:space="preserve">
     <value>Không có lời nhắc nhở.</value>
   </data>
-  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME" xml:space="preserve">
+  <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_NAME" xml:space="preserve">
     <value>Văn hoá</value>
   </data>
   <data name="NKS_CALENDAR_SCREENSAVER_SETTINGS_COLOR_NAME" xml:space="preserve">
