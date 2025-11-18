@@ -44,10 +44,6 @@
       "text": "값:"
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "노란색 수준:"
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "루마:"
     },

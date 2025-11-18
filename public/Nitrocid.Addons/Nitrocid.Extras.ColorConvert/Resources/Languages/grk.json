@@ -44,10 +44,6 @@
       "text": "Αξία:"
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "Επίπεδο κίτρινου χρώματος:"
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "Λούμα:"
     },

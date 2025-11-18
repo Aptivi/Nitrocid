@@ -2132,11 +2132,11 @@
       "text": "핸들러가 등록되었지만 어떻게든 확장 핸들러를 가져오지 못했습니다."
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPYTO",
       "text": "복사하기"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVETO",
       "text": "이동하다"
     },
     {

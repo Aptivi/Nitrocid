@@ -1710,10 +1710,10 @@
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED" xml:space="preserve">
     <value>Handler-ul este înregistrat, dar nu a reușit cumva să obțină un handler de extensie pentru</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPYTO" xml:space="preserve">
     <value>Copiați în</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVETO" xml:space="preserve">
     <value>Mutați la</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">

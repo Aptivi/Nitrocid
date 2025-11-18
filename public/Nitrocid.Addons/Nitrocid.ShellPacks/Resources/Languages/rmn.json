@@ -2132,11 +2132,11 @@
       "text": "Handler-ul este înregistrat, dar nu a reușit cumva să obțină un handler de extensie pentru"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPYTO",
       "text": "Copiați în"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVETO",
       "text": "Mutați la"
     },
     {

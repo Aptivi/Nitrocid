@@ -2131,11 +2131,11 @@
       "text": "हैंडलर पंजीकृत है, लेकिन किसी तरह से एक्सटेंशन हैंडलर प्राप्त करने में विफल रहा"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPYTO",
       "text": "में कॉपी"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVETO",
       "text": "करने के लिए कदम"
     },
     {

@@ -1,7 +1,8 @@
 [
     {
-        "Name": "NKS_CALENDAR_HOMEPAGE_CALENDAR",
+        "Name": "Calendar",
         "Desc": "NKS_CALENDAR_SETTINGS_DESC",
+        "DisplayAs": "NKS_CALENDAR_HOMEPAGE_CALENDAR",
         "Keys": [
             {
                 "Name": "NKS_CALENDAR_COMMON_SETTINGS_DESTRUCTIVE_NAME",
@@ -32,7 +33,7 @@
                                 "Description": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_SYSTEM_DESC"
                             },
                             {
-                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_NAME",
+                                "Name": "NKS_CALENDAR_SCREENSAVER_SETTINGS_CULTURE_CULTURE_NAME",
                                 "Type": "SSelection",
                                 "Variable": "CalendarCultureName",
                                 "IsEnumeration": false,

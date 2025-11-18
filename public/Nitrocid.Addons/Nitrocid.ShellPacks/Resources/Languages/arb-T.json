@@ -2157,11 +2157,11 @@
       "text": "تم تسجيل المعالج ولكن فشل بطريقة ما في الحصول على معالج تمديد لـ"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPYTO",
       "text": "نسخ إلى"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVETO",
       "text": "انتقل الى"
     },
     {

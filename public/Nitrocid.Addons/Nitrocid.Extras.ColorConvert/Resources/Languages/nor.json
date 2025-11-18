@@ -47,10 +47,6 @@
       "text": "Verdi:"
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "Gul fargenivå:"
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "Luma:"
     },

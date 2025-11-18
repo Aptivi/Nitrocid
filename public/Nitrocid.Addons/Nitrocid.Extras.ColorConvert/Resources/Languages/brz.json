@@ -42,10 +42,6 @@
       "text": "Valor:"
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "Nível de cor amarela:"
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "Luma:"
     },

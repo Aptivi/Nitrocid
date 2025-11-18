@@ -2177,11 +2177,11 @@
       "text": "Le gestionnaire est enregistré mais n'a pas réussi à obtenir un gestionnaire d'extension pour"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPYTO",
       "text": "Copier vers"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVETO",
       "text": "Passer à"
     },
     {

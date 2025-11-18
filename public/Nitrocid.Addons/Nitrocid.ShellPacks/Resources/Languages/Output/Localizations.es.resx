@@ -1710,10 +1710,10 @@
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED" xml:space="preserve">
     <value>El controlador está registrado pero de alguna manera no pudo obtener un controlador de extensión para</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPYTO" xml:space="preserve">
     <value>Copiar a</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVETO" xml:space="preserve">
     <value>Convidar a</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">

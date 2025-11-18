@@ -46,10 +46,6 @@
       "text": "Nilai:"
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "Tahap warna kuning:"
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "Luma:"
     },

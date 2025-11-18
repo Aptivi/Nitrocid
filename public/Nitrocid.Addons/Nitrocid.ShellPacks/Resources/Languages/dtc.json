@@ -2137,11 +2137,11 @@
       "text": "Handler is geregistreerd, maar is er op de een of andere manier niet in geslaagd een extensiehandler te verkrijgen voor"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPYTO",
       "text": "Kopiëren naar"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVETO",
       "text": "Verhuizen naar"
     },
     {

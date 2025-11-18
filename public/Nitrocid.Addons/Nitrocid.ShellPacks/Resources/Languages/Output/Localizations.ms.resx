@@ -1710,10 +1710,10 @@
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED" xml:space="preserve">
     <value>Pengendali didaftarkan tetapi entah bagaimana gagal mendapatkan pengendali sambungan untuk</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPYTO" xml:space="preserve">
     <value>Salin Ke</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVETO" xml:space="preserve">
     <value>Pindah ke</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">

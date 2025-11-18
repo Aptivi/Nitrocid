@@ -144,9 +144,6 @@
   <data name="NKS_COLORCONVERT_VALUE" xml:space="preserve">
     <value>Değer:</value>
   </data>
-  <data name="NKS_COLORCONVERT_YELLOWCOLOR" xml:space="preserve">
-    <value>Sarı renk seviyesi:</value>
-  </data>
   <data name="NKS_COLORCONVERT_LUMA" xml:space="preserve">
     <value>Luma:</value>
   </data>

@@ -44,10 +44,6 @@
       "text": "Değer:"
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "Sarı renk seviyesi:"
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "Luma:"
     },

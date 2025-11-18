@@ -49,10 +49,6 @@
       "text": "Waarde:"
     },
     {
-      "loc": "NKS_COLORCONVERT_YELLOWCOLOR",
-      "text": "Geel kleurniveau:"
-    },
-    {
       "loc": "NKS_COLORCONVERT_LUMA",
       "text": "Luma:"
     },

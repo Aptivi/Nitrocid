@@ -2132,11 +2132,11 @@
       "text": "Το Handler είναι εγγεγραμμένο αλλά κατά κάποιο τρόπο απέτυχε να αποκτήσει ένα πρόγραμμα χειρισμού επέκτασης για"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPYTO",
       "text": "Αντιγραφή σε"
     },
     {
-      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_",
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVETO",
       "text": "Μετακίνηση σε"
     },
     {

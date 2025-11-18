@@ -1710,10 +1710,10 @@
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_EXCEPTION_REGISTEREDHANDLERFAILED" xml:space="preserve">
     <value>Le gestionnaire est enregistré mais n&apos;a pas réussi à obtenir un gestionnaire d&apos;extension pour</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_COPYTO" xml:space="preserve">
     <value>Copier vers</value>
   </data>
-  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_" xml:space="preserve">
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_MOVETO" xml:space="preserve">
     <value>Passer à</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
