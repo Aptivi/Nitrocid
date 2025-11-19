@@ -44,7 +44,7 @@ namespace Nitrocid.Base.Users
     public static class UserManagement
     {
 
-        internal static readonly UserInfo fallbackRootAccount = new("root", Encryption.GetEncryptedString("", "SHA256"), [], "System Account", "", "", [], UserFlags.Administrator, []);
+        internal static readonly UserInfo fallbackRootAccount = new("root", Encryption.GetEncryptedString("", "SHA256"), [], "System Account", "", "", [], UserFlags.Administrator, false, "", []);
         internal static UserInfo CurrentUserInfo = fallbackRootAccount;
         internal static List<UserInfo> Users = [CurrentUserInfo];
         private static readonly List<UserInfo> LockedUsers = [];
@@ -89,7 +89,7 @@ namespace Nitrocid.Base.Users
                 }
 
                 // Add user locally
-                var initedUser = new UserInfo(uninitUser, unpassword, [], "", "", "", [], UserFlags.None, []);
+                var initedUser = new UserInfo(uninitUser, unpassword, [], "", "", "", [], UserFlags.None, false, "", []);
                 if (!UserExists(uninitUser))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Added user {0}!", vars: [uninitUser]);
@@ -300,7 +300,7 @@ namespace Nitrocid.Base.Users
                         // Store user info
                         var oldInfo = GetUser(OldName) ??
                             throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_CANTGETUSER") + $" {OldName}");
-                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage ?? "", oldInfo.PreferredCulture ?? "", oldInfo.Groups, oldInfo.Flags, oldInfo.CustomSettings);
+                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage ?? "", oldInfo.PreferredCulture ?? "", oldInfo.Groups, oldInfo.Flags, oldInfo.TwoFactorEnabled, oldInfo.TwoFactorSecret, oldInfo.CustomSettings);
 
                         // Rename username in dictionary
                         Users.Remove(oldInfo);

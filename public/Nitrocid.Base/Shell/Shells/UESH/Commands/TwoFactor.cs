@@ -1,0 +1,126 @@
+//
+// Nitrocid KS  Copyright (C) 2018-2025  Aptivi
+//
+// This file is part of Nitrocid KS
+//
+// Nitrocid KS is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Nitrocid KS is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+using Terminaux.Shell.Help;
+using Terminaux.Shell.Commands;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Colors.Themes.Colors;
+using System;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Time.Alarm;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Users;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Misc.Interactives;
+using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users.TwoFactorAuth;
+
+namespace Nitrocid.Base.Shell.Shells.UESH.Commands
+{
+    /// <summary>
+    /// Manages 2FA authentication for users
+    /// </summary>
+    class TwoFactorCommand : BaseCommand, ICommand
+    {
+
+        public override int Execute(CommandParameters parameters, ref string variableValue)
+        {
+            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
+                !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_NEEDSPERM"), true, ThemeColorType.Error, parameters.CommandText);
+                return -4;
+            }
+
+            string CommandMode = parameters.ArgumentsList[0].ToLower();
+            string userName = parameters.ArgumentsList[1];
+
+            // Now, the actual logic
+            switch (CommandMode)
+            {
+                case "add":
+                    {
+                        var userInfo = UserManagement.GetUser(userName) ??
+                            throw new KernelException(KernelExceptionType.NoSuchUser);
+                        TwoFactorAuthTools.EnrollUser(userName);
+                        // TODO: NKS_USERS_2FA_ENROLLMENTCOMPLETE -> Enrollment complete for user. Add this setup key
+                        // TODO: NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR -> Or, you can scan the below QR code.
+                        // TODO: NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER -> In case your console shows an incomplete QR code, please use this setup key
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE") + $": {userInfo.TwoFactorSecret}");
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR"));
+                        // TODO: Implement QR code generation
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER") + $": {userInfo.TwoFactorSecret}");
+                        break;
+                    }
+                case "delete":
+                    {
+                        TwoFactorAuthTools.UnenrollUser(userName);
+                        break;
+                    }
+                case "check":
+                    {
+                        bool enrolled = TwoFactorAuthTools.IsUserEnrolled(userName);
+                        // TODO: NKS_USERS_2FA_ENROLLMENTSTATUS -> Enrollment status
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTSTATUS") + $": {enrolled}");
+                        break;
+                    }
+
+                default:
+                    {
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_BASE_COMMANDS_INVALIDCOMMAND_BRANCHED"), true, ThemeColorType.Error, CommandMode);
+                        HelpPrint.ShowHelp("alarm");
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
+                    }
+            }
+            return 0;
+        }
+
+        internal static int CheckArgument(CommandParameters parameters, string commandMode)
+        {
+            // These command modes require arguments to be passed, so re-check here and there.
+            switch (commandMode.ToLower())
+            {
+                case "add":
+                case "delete":
+                case "check":
+                    {
+                        if (parameters.ArgumentsList.Length > 1)
+                        {
+                            string userName = parameters.ArgumentsList[1];
+                            if (!UserManagement.UserExists(userName))
+                            {
+                                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_EXCEPTION_USERNOTFOUND2"), true, ThemeColorType.Error);
+                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchUser);
+                            }
+                        }
+                        else
+                        {
+                            // TODO: NKS_USERS_USERNOTPROVIDED -> User name has not been provided.
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_USERNOTPROVIDED"), true, ThemeColorType.Error);
+                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
+                        }
+
+                        break;
+                    }
+            }
+            return 0;
+        }
+    }
+}
