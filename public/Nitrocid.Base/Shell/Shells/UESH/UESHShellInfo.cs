@@ -100,6 +100,40 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     {
                         ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "check")
                     },
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "setupkey", new()
+                        {
+                            ExactWording = ["setupkey"],
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC -> Returns the setup key (in case you lost it for some reason)
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC"
+                        }),
+                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC -> User name to process for 2FA operations
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
+                        }),
+                    ])
+                    {
+                        ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "setupkey")
+                    },
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "setupqr", new()
+                        {
+                            ExactWording = ["setupqr"],
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC -> Returns the setup key's QR code you can scan with your phone
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC"
+                        }),
+                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC -> User name to process for 2FA operations
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
+                        }),
+                    ])
+                    {
+                        ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "setupqr")
+                    },
                 ], new TwoFactorCommand()),
 
             new CommandInfo("addgroup", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDGROUP_DESC",

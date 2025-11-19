@@ -17,19 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Shell.Help;
-using Terminaux.Shell.Commands;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
 using System;
 using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Misc.Interactives;
 using Nitrocid.Base.Security.Permissions;
+using Nitrocid.Base.Users;
 using Nitrocid.Base.Users.TwoFactorAuth;
+using Terminaux.Colors.Themes.Colors;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Help;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -81,6 +82,38 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTSTATUS") + $": {enrolled}");
                         break;
                     }
+                case "setupkey":
+                    {
+                        bool enrolled = TwoFactorAuthTools.IsUserEnrolled(userName);
+                        if (!enrolled)
+                        {
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED"));
+                            break;
+                        }
+
+                        // Write the setup key
+                        var userInfo = UserManagement.GetUser(userName) ??
+                            throw new KernelException(KernelExceptionType.NoSuchUser);
+                        // TODO: NKS_USERS_2FA_SETUPKEY -> Setup key
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_SETUPKEY") + $": {userInfo.TwoFactorSecret}");
+                        break;
+                    }
+                case "setupqr":
+                    {
+                        bool enrolled = TwoFactorAuthTools.IsUserEnrolled(userName);
+                        if (!enrolled)
+                        {
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED"));
+                            break;
+                        }
+
+                        // Write the setup key
+                        var userInfo = UserManagement.GetUser(userName) ??
+                            throw new KernelException(KernelExceptionType.NoSuchUser);
+                        // TODO: Implement QR code generation
+                        TextWriterColor.Write("TODO: Implement QR code generation", ThemeColorType.Warning);
+                        break;
+                    }
 
                 default:
                     {
@@ -100,6 +133,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 case "add":
                 case "delete":
                 case "check":
+                case "setupkey":
+                case "setupqr":
                     {
                         if (parameters.ArgumentsList.Length > 1)
                         {
