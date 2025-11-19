@@ -260,6 +260,18 @@ namespace Nitrocid.Base.Users.Login
                             // Render it now
                             ScreenTools.Render();
                         }
+                        else if (screenNum == 4)
+                        {
+                            // Place for second widget
+                            screen.RemoveBufferedParts();
+                            var part = new ScreenPart();
+                            var notificationList = WidgetTools.GetWidget(nameof(NotificationList));
+                            part.AddDynamicText(notificationList.Render);
+                            screen.AddBufferedPart("Widget 3 updater (Debug)", part);
+
+                            // Render it now
+                            ScreenTools.Render();
+                        }
                         else
                         {
                             // Unknown screen!
