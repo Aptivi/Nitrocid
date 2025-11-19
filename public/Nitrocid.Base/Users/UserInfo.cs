@@ -53,13 +53,17 @@ namespace Nitrocid.Base.Users
         [JsonProperty]
         internal string[] Permissions { get; set; }
         [JsonProperty]
+        internal bool TwoFactorEnabled { get; set; }
+        [JsonProperty]
+        internal string TwoFactorSecret { get; set; }
+        [JsonProperty]
         internal Dictionary<string, object[]> CustomSettings { get; set; }
 
         /// <summary>
         /// Makes a new class instance of current user info
         /// </summary>
         [JsonConstructor]
-        internal UserInfo(string username, string password, string[] permissions, string fullName, string preferredLanguage, string preferredCulture, string[] groups, UserFlags flags, Dictionary<string, object[]> customSettings)
+        internal UserInfo(string username, string password, string[] permissions, string fullName, string preferredLanguage, string preferredCulture, string[] groups, UserFlags flags, bool twoFactorEnabled, string twoFactorSecret, Dictionary<string, object[]> customSettings)
         {
             Username = username;
             Password = password;
@@ -70,6 +74,8 @@ namespace Nitrocid.Base.Users
             Groups = groups;
             Flags = flags;
             CustomSettings = customSettings;
+            TwoFactorEnabled = twoFactorEnabled;
+            TwoFactorSecret = twoFactorSecret;
         }
 
     }

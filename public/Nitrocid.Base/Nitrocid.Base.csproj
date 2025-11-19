@@ -38,6 +38,7 @@
   <ItemGroup>
     <PackageReference Include="Aptivestigate.Serilog" Version="1.3.2" PrivateAssets="all" />
     <PackageReference Include="Magico" Version="1.5.2" PrivateAssets="all" />
+    <PackageReference Include="Otp.NET" Version="1.4.0" PrivateAssets="all" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="3.6.2.1" PrivateAssets="all" />
   </ItemGroup>

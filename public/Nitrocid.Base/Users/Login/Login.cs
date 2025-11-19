@@ -33,6 +33,8 @@ using Nitrocid.Base.Users.Login.Handlers;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Drivers.Encryption;
+using OtpNet;
+using System.Text;
 
 namespace Nitrocid.Base.Users.Login
 {
@@ -134,7 +136,44 @@ namespace Nitrocid.Base.Users.Login
                         });
                     }
                     else
-                        break;
+                    {
+                        // Password is valid, but we need to check to see if this user has enrolled in to 2FA
+                        var userSignIn = UserManagement.GetUser(user) ??
+                            throw new KernelException(KernelExceptionType.NoSuchUser);
+                        if (!userSignIn.TwoFactorEnabled)
+                            break;
+
+                        // Now, we need to tell the user to provide 2FA code.
+                        bool twoFactorValid = false;
+                        var otp = new Totp(Base32Encoding.ToBytes(userSignIn.TwoFactorSecret));
+                        while (!twoFactorValid)
+                        {
+                            // Present an infobox that tells the user to provide the 2FA code
+                            // TODO: NKS_USERS_LOGIN_2FA_PROVIDECODE -> Provide the verification code for this user. You can usually access this code from authenticator apps, such as Google Authenticator. If you don't enter a code, you'll be taken back to the sign-in page.
+                            string codeInputStr = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_PROVIDECODE"));
+
+                            // If there is no input, assume cancellation
+                            if (string.IsNullOrEmpty(codeInputStr))
+                                break;
+
+                            // Otherwise, check the input
+                            if (!int.TryParse(codeInputStr, out _) || codeInputStr.Length != 6)
+                                // TODO: NKS_USERS_LOGIN_2FA_CODEINVALID -> The code you entered is invalid.
+                                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_CODEINVALID"));
+                            else
+                            {
+                                // Get the current code and compare it
+                                bool totpValid = otp.VerifyTotp(codeInputStr, out long timeWindowUsed);
+                                if (!totpValid)
+                                    // TODO: NKS_USERS_LOGIN_2FA_VERIFYFAILED -> Verification of the account has failed. Most likely, the code you entered is either invalid or expired. Check your system time.
+                                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_2FA_VERIFYFAILED"));
+                                else
+                                    twoFactorValid = true;
+                            }
+                        }
+                        if (twoFactorValid)
+                            break;
+                    }
                 }
 
                 // Check for the state before the final login flow

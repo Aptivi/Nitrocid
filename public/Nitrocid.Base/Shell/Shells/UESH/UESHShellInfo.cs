@@ -46,6 +46,62 @@ namespace Nitrocid.Base.Shell.Shells.UESH
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
+            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC -> Two-factor authentication management for users
+            new CommandInfo("2fa", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "add", new()
+                        {
+                            ExactWording = ["add"],
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC -> Adds requirement for the user
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC"
+                        }),
+                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC -> User name to process for 2FA operations
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
+                        }),
+                    ])
+                    {
+                        ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "start")
+                    },
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "delete", new()
+                        {
+                            ExactWording = ["delete"],
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC -> Deletes requirement for the user
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC"
+                        }),
+                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC -> User name to process for 2FA operations
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
+                        }),
+                    ])
+                    {
+                        ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "stop")
+                    },
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "check", new()
+                        {
+                            ExactWording = ["check"],
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC -> Checks for the user enrollment
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC"
+                        }),
+                        new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC -> User name to process for 2FA operations
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
+                        }),
+                    ])
+                    {
+                        ArgChecker = (cp) => TwoFactorCommand.CheckArgument(cp, "check")
+                    },
+                ], new TwoFactorCommand()),
+
             new CommandInfo("addgroup", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ADDGROUP_DESC",
                 [
                     new CommandArgumentInfo(
