@@ -17,6 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Text;
+using Nitrocid.Base.Misc.Notifications;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
+using Terminaux.Writer.CyclicWriters.Graphical;
+
 namespace Nitrocid.Base.Users.Login.Widgets.Implementations
 {
     internal class NotificationList : BaseWidget, IWidget
@@ -27,7 +34,86 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
         public override string Initialize(int left, int top, int width, int height) =>
             "";
 
-        public override string Render(int left, int top, int width, int height) =>
-            "";
+        public override string Render(int left, int top, int width, int height)
+        {
+            var notificationList = new StringBuilder();
+
+            // Get all notifications and list them with cards
+            int processedHeight = 0;
+            foreach (var notification in NotificationManager.NotifRecents)
+            {
+                // Choose the color according to the priority
+                var notifyBorderColor =
+                    notification.Priority == NotificationPriority.Custom ? notification.CustomColor :
+                    notification.Priority == NotificationPriority.High ? ThemeColorsTools.GetColor("HighPriorityBorderColor") :
+                    notification.Priority == NotificationPriority.Medium ? ThemeColorsTools.GetColor("MediumPriorityBorderColor") :
+                    ThemeColorsTools.GetColor("LowPriorityBorderColor");
+                if (notification.NotificationBorderColor != Color.Empty)
+                    notifyBorderColor = notification.NotificationBorderColor;
+
+                // Add a card box
+                int totalWidth = width - 2;
+                var cardBoxFrame = new BoxFrame()
+                {
+                    Left = left,
+                    Top = top + processedHeight,
+                    Width = totalWidth,
+                    Height = 3,
+                    FrameColor = notifyBorderColor,
+                };
+                notificationList.Append(cardBoxFrame.Render());
+
+                // Check the total interior width
+                if (totalWidth <= 1)
+                    break;
+
+                // Check to see if we can at least print the notification icon
+                if (totalWidth >= 2)
+                {
+                    var notificationIconText = new AlignedText()
+                    {
+                        Left = left + 1,
+                        Top = top + processedHeight + 1,
+                        Width = 2,
+                        Height = 1,
+                        Text = notification.IconEmoji,
+                    };
+                    notificationList.Append(notificationIconText.Render());
+                }
+                
+                // Now, check to see if we can print title and description
+                if (totalWidth >= 6)
+                {
+                    var notificationTitleText = new AlignedText()
+                    {
+                        Left = left + 5,
+                        Top = top + processedHeight + 1,
+                        Width = totalWidth - 3,
+                        Height = 1,
+                        Text = notification.Title,
+                        ForegroundColor = notification.Priority == NotificationPriority.Custom ? notification.CustomTitleColor : ThemeColorsTools.GetColor("NotificationTitleColor"),
+                    };
+                    var notificationDescText = new AlignedText()
+                    {
+                        Left = left + 5,
+                        Top = top + processedHeight + 2,
+                        Width = totalWidth - 3,
+                        Height = 2,
+                        Text = notification.Desc,
+                        ForegroundColor = notification.Priority == NotificationPriority.Custom ? notification.CustomDescriptionColor : ThemeColorsTools.GetColor("NotificationDescriptionColor"),
+                    };
+                    notificationList.Append(notificationTitleText.Render());
+                    notificationList.Append(notificationDescText.Render());
+                }
+
+                // Process only if we can add more notifications
+                processedHeight += 5;
+                if (processedHeight + 5 > height)
+                    break;
+            }
+
+            // Return the notification list
+            return notificationList.ToString();
+        }
     }
 }

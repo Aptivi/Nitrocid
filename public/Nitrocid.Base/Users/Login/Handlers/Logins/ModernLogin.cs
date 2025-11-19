@@ -87,8 +87,8 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
                 else
                 {
                     ModernLogonScreen.screenNum++;
-                    if (ModernLogonScreen.screenNum >= 4)
-                        ModernLogonScreen.screenNum = 3;
+                    if (ModernLogonScreen.screenNum >= 5)
+                        ModernLogonScreen.screenNum = 4;
                 }
             }
             return proceed;
