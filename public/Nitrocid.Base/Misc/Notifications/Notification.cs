@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Terminaux.Colors.Themes.Colors;
 using System;
 using Terminaux.Colors;
+using Textify.General.Structures;
 
 namespace Nitrocid.Base.Misc.Notifications
 {
@@ -108,6 +109,12 @@ namespace Nitrocid.Base.Misc.Notifications
                 }
             }
         }
+
+        /// <summary>
+        /// Icon emoji representation for notification listing
+        /// </summary>
+        [JsonProperty]
+        public WideChar IconEmoji { get; set; } = (WideChar)"🔔";
 
         // --> For Custom Priority Notifications
 
