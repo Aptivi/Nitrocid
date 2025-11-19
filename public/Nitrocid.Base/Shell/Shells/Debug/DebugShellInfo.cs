@@ -233,6 +233,8 @@ namespace Nitrocid.Base.Shell.Shells.Debug
                 ], new PreviewSplashCommand()),
 
             new CommandInfo("showmainbuffer", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC", new ShowMainBufferCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+
+            new CommandInfo("sendnotification", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC", new SendNotificationCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
