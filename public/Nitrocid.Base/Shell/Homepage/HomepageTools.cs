@@ -63,7 +63,6 @@ namespace Nitrocid.Base.Shell.Homepage
     public static class HomepageTools
     {
         internal static bool isHomepageEnabled = true;
-        internal static bool isHomepageWidgetEnabled = true;
         internal static bool isHomepageRssFeedEnabled = true;
         internal static string homepageWidgetName = nameof(AnalogClock);
         private static bool isOnHomepage = false;
@@ -115,25 +114,27 @@ namespace Nitrocid.Base.Shell.Homepage
                 ScreenTools.SetCurrent(homeScreen);
                 ThemeColorsTools.LoadBackground();
 
-                // Prepare the widget
-                var widget =
-                    WidgetTools.CheckWidget(Config.MainConfig.HomepageWidget) ?
-                    WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
-                    WidgetTools.GetWidget(nameof(AnalogClock));
-                if (Config.MainConfig.EnableHomepageWidgets)
-                {
-                    int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
-                    int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
-                    int widgetHeight = ConsoleWrapper.WindowHeight - 11;
-                    int widgetTop = 2;
-                    string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
-                    TextWriterRaw.WriteRaw(widgetInit);
-                }
-
                 // Now, render the homepage
                 homeScreenBuffer.AddDynamicText(() =>
                 {
                     var builder = new StringBuilder();
+
+                    // Prepare the common widget variables
+                    int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
+                    int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
+                    int widgetHeight = ConsoleWrapper.WindowHeight - 11;
+                    int widgetTop = 2;
+
+                    // Prepare the widget
+                    var widget =
+                        WidgetTools.CheckWidget(Config.MainConfig.HomepageWidget) ?
+                        WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
+                        WidgetTools.GetWidget(nameof(AnalogClock));
+                    if (homeScreen.NeedsRefresh)
+                    {
+                        string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
+                        builder.Append(widgetInit);
+                    }
 
                     // Make a master border
                     var masterBorder = new Border()
@@ -177,10 +178,6 @@ namespace Nitrocid.Base.Shell.Homepage
                     builder.Append(RendererTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
 
                     // Make a border for a widget and the first three RSS feeds (if the addon is installed)
-                    int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
-                    int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
-                    int widgetHeight = ConsoleWrapper.WindowHeight - 11;
-                    int widgetTop = 2;
                     int rssTop = widgetTop + widgetHeight + 2;
                     int rssHeight = 3;
                     var widgetBorder = new Border()
@@ -205,11 +202,8 @@ namespace Nitrocid.Base.Shell.Homepage
                     );
 
                     // Render the widget
-                    if (Config.MainConfig.EnableHomepageWidgets)
-                    {
-                        string widgetSeq = widget.Render(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
-                        builder.Append(widgetSeq);
-                    }
+                    string widgetSeq = widget.Render(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
+                    builder.Append(widgetSeq);
 
                     // Render the first three RSS feeds
                     if (Config.MainConfig.EnableHomepageRssFeed)

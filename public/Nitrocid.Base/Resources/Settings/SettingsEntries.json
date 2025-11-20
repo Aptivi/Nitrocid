@@ -99,12 +99,6 @@
                         "Description": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC"
                     },
                     {
-                        "Name": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME",
-                        "Type": "SBoolean",
-                        "Variable": "EnableHomepageWidgets",
-                        "Description": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC"
-                    },
-                    {
                         "Name": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME",
                         "Type": "SBoolean",
                         "Variable": "EnableHomepageRssFeed",
