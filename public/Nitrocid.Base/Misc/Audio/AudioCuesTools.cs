@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using BassBoom.Basolia.Independent;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel.Debugging;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
+using BassBoom.Basolia.Independent;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Threading;
 
 namespace Nitrocid.Base.Misc.Audio
 {
@@ -32,6 +34,8 @@ namespace Nitrocid.Base.Misc.Audio
     public static class AudioCuesTools
     {
         private static readonly Dictionary<string, AudioCueContainer> cueThemes = PopulateCues();
+        private static bool isThemeMusicPlaying = false;
+        private static readonly KernelThread themeMusicThread = new("Theme Music Thread", true, HandleThemeMusic);
 
         /// <summary>
         /// Gets the audio theme names
@@ -147,6 +151,16 @@ namespace Nitrocid.Base.Misc.Audio
                 _ => AmbienceFxIntensity.Calm
             };
 
+        internal static void PlayThemeMusic()
+        {
+            if (!isThemeMusicPlaying)
+            {
+                if (themeMusicThread.BaseThread.ThreadState == ThreadState.Stopped)
+                    themeMusicThread.Regen();
+                themeMusicThread.Start();
+            }
+        }
+
         private static Dictionary<string, AudioCueContainer> PopulateCues()
         {
             Dictionary<string, string> cueDescriptors = new()
@@ -167,6 +181,26 @@ namespace Nitrocid.Base.Misc.Audio
                 containers.Add(descriptor, new AudioCueContainer(descriptor, cueDescriptors[descriptor]));
             }
             return containers;
+        }
+
+        private static void HandleThemeMusic()
+        {
+            try
+            {
+                if (isThemeMusicPlaying)
+                    return;
+                isThemeMusicPlaying = true;
+                PlayAudioCue(AudioCueType.Full, false);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to play theme music: {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            finally
+            {
+                isThemeMusicPlaying = false;
+            }
         }
     }
 }
