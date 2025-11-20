@@ -439,14 +439,11 @@ namespace Nitrocid.Base.Misc.Splash
                 if (threadParameters is null)
                     throw new KernelException(KernelExceptionType.Splash, LanguageTools.GetLocalized("NKS_MISC_SPLASH_EXCEPTION_EMPTYSPLASHTHREADPARAMS"));
                 var splash = GetSplashFromName(threadParameters.SplashName).EntryPoint;
+                var displayPart = new ScreenPart();
+                displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));
+                splashScreen.AddBufferedPart("Display", displayPart);
                 while (!BaseSplash.SplashClosing && !SplashThread.IsStopping)
                 {
-                    var displayPart = new ScreenPart();
-                    displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));
-                    if (splashScreen.CheckBufferedPart("Display"))
-                        splashScreen.EditBufferedPart("Display", displayPart);
-                    else
-                        splashScreen.AddBufferedPart("Display", displayPart);
                     ScreenTools.Render();
                     Thread.Sleep(20);
                 }
