@@ -55,10 +55,6 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Power;
 
-#if NKS_EXTENSIONS
-using Nitrocid.Base.Kernel.Extensions;
-#endif
-
 namespace Nitrocid.Base.Shell.Homepage
 {
     /// <summary>
@@ -71,8 +67,6 @@ namespace Nitrocid.Base.Shell.Homepage
         internal static bool isHomepageRssFeedEnabled = true;
         internal static string homepageWidgetName = nameof(AnalogClock);
         private static bool isOnHomepage = false;
-        private static bool isThemeMusicPlaying = false;
-        private static readonly KernelThread themeMusicThread = new("Theme Music Thread", true, HandleThemeMusic);
         private static readonly Dictionary<string, Action> choiceActionsAddons = [];
         private static readonly Dictionary<string, Action> choiceActionsCustom = [];
         private static readonly Dictionary<string, Action> choiceActionsBuiltin = new()
@@ -573,12 +567,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                     });
                                 break;
                             case ConsoleKey.P:
-                                if (!isThemeMusicPlaying)
-                                {
-                                    if (themeMusicThread.BaseThread.ThreadState == ThreadState.Stopped)
-                                        themeMusicThread.Regen();
-                                    themeMusicThread.Start();
-                                }
+                                AudioCuesTools.PlayThemeMusic();
                                 break;
                             default:
                                 render = false;
@@ -734,26 +723,6 @@ namespace Nitrocid.Base.Shell.Homepage
                     Title = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUTNITROCID"),
                 }
             );
-        }
-
-        private static void HandleThemeMusic()
-        {
-            try
-            {
-                if (isThemeMusicPlaying)
-                    return;
-                isThemeMusicPlaying = true;
-                AudioCuesTools.PlayAudioCue(AudioCueType.Full, false);
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to play theme music: {ex.Message}");
-                DebugWriter.WriteDebugStackTrace(ex);
-            }
-            finally
-            {
-                isThemeMusicPlaying = false;
-            }
         }
     }
 }
