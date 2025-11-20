@@ -51,19 +51,6 @@ namespace Nitrocid.Base.Users.Login
         internal static bool renderedFully = false;
         internal static int screenNum = 1;
         internal readonly static KernelThread updateThread = new("Modern Logon Update Thread", true, ScreenHandler);
-        internal static bool enableWidgets = true;
-        internal static string firstWidgetName = nameof(AnalogClock);
-        internal static string secondWidgetName = nameof(DigitalClock);
-
-        internal static BaseWidget FirstWidget =>
-            WidgetTools.CheckWidget(firstWidgetName) ?
-            WidgetTools.GetWidget(firstWidgetName) :
-            WidgetTools.GetWidget(nameof(AnalogClock));
-
-        internal static BaseWidget SecondWidget =>
-            WidgetTools.CheckWidget(secondWidgetName) ?
-            WidgetTools.GetWidget(secondWidgetName) :
-            WidgetTools.GetWidget(nameof(DigitalClock));
 
         internal static void ScreenHandler()
         {
@@ -159,38 +146,12 @@ namespace Nitrocid.Base.Users.Login
                                     };
                                     display.Append(dateText.Render());
 
-                                    // Print the headline
-                                    if (Config.MainConfig.ShowHeadlineOnLogin)
-                                    {
-                                        if (string.IsNullOrEmpty(headlineStr))
-                                            headlineStr = UpdateHeadline();
-                                        int consoleHeadlineInfoY =
-                                            Config.MainConfig.MotdHeadlineBottom ?
-                                            ConsoleWrapper.WindowHeight / 2 + figHeight + 3 :
-                                            ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
-                                        var headlineText = new AlignedText()
-                                        {
-                                            Top = consoleHeadlineInfoY,
-                                            Text = headlineStr,
-                                            ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
-                                            OneLine = true,
-                                            Settings = new()
-                                            {
-                                                Alignment = TextAlignment.Middle,
-                                            }
-                                        };
-                                        display.Append(headlineText.Render());
-                                    }
-
                                     // Print the MOTD
                                     string[] motdStrs = ConsoleMisc.GetWrappedSentencesByWords(MotdParse.MotdMessage, ConsoleWrapper.WindowWidth - 4);
                                     for (int i = 0; i < motdStrs.Length && i < 2; i++)
                                     {
                                         string motdStr = motdStrs[i];
-                                        int consoleMotdInfoY =
-                                            Config.MainConfig.MotdHeadlineBottom ?
-                                            ConsoleWrapper.WindowHeight / 2 + figHeight + 4 + i :
-                                            ConsoleWrapper.WindowHeight / 2 - figHeight - (Config.MainConfig.ShowHeadlineOnLogin ? 4 : 2) + i;
+                                        int consoleMotdInfoY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2 + i;
                                         var motdText = new AlignedText()
                                         {
                                             Top = consoleMotdInfoY,
@@ -233,44 +194,6 @@ namespace Nitrocid.Base.Users.Login
                                 // Render it now
                                 ScreenTools.Render();
                             }
-                        }
-                        else if (screenNum == 2)
-                        {
-                            // Place for first widget
-                            screen.RemoveBufferedParts();
-                            var part = new ScreenPart();
-                            if (!renderedFully)
-                                part.AddDynamicText(FirstWidget.Initialize);
-                            part.AddDynamicText(FirstWidget.Render);
-                            screen.AddBufferedPart("Widget 1 updater", part);
-
-                            // Render it now
-                            ScreenTools.Render();
-                        }
-                        else if (screenNum == 3)
-                        {
-                            // Place for second widget
-                            screen.RemoveBufferedParts();
-                            var part = new ScreenPart();
-                            if (!renderedFully)
-                                part.AddDynamicText(SecondWidget.Initialize);
-                            part.AddDynamicText(SecondWidget.Render);
-                            screen.AddBufferedPart("Widget 2 updater", part);
-
-                            // Render it now
-                            ScreenTools.Render();
-                        }
-                        else if (screenNum == 4)
-                        {
-                            // Place for second widget
-                            screen.RemoveBufferedParts();
-                            var part = new ScreenPart();
-                            var notificationList = WidgetTools.GetWidget(nameof(NotificationList));
-                            part.AddDynamicText(notificationList.Render);
-                            screen.AddBufferedPart("Widget 3 updater (Debug)", part);
-
-                            // Render it now
-                            ScreenTools.Render();
                         }
                         else
                         {

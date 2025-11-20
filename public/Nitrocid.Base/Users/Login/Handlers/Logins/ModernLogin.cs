@@ -75,9 +75,7 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
             else if (key == ConsoleKey.LeftArrow || key == ConsoleKey.RightArrow)
             {
                 proceed = false;
-                if (!ModernLogonScreen.enableWidgets)
-                    return proceed;
-                CleanWidgetsUp();
+                // TODO: Change this to handle all screens once configurable screens come
                 if (key == ConsoleKey.LeftArrow)
                 {
                     ModernLogonScreen.screenNum--;
@@ -87,8 +85,8 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
                 else
                 {
                     ModernLogonScreen.screenNum++;
-                    if (ModernLogonScreen.screenNum >= 5)
-                        ModernLogonScreen.screenNum = 4;
+                    if (ModernLogonScreen.screenNum >= 2)
+                        ModernLogonScreen.screenNum = 1;
                 }
             }
             return proceed;
@@ -142,14 +140,6 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
                     ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
             return false;
-        }
-
-        private void CleanWidgetsUp()
-        {
-            if (ModernLogonScreen.screenNum == 2)
-                WidgetTools.CleanupWidget(WidgetTools.GetWidgetName(ModernLogonScreen.FirstWidget));
-            else if (ModernLogonScreen.screenNum == 3)
-                WidgetTools.CleanupWidget(WidgetTools.GetWidgetName(ModernLogonScreen.SecondWidget));
         }
     }
 }

@@ -634,45 +634,6 @@
                 "SelectionFunctionType": "LoginHandlerTools",
                 "SelectionFallback": [ "classic", "modern" ],
                 "Description": "NKS_SETTINGS_KERNEL_LOGIN_HANDLER_DESC"
-            },
-            {
-                "Name": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME",
-                "Type": "SMultivar",
-                "Description": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC",
-                "Variables": [
-                    {
-                        "Name": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME",
-                        "Type": "SBoolean",
-                        "Variable": "MotdHeadlineBottom",
-                        "Description": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC"
-                    },
-                    {
-                        "Name": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME",
-                        "Type": "SBoolean",
-                        "Variable": "EnableWidgets",
-                        "Description": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC"
-                    },
-                    {
-                        "Name": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME",
-                        "Type": "SSelection",
-                        "Variable": "FirstWidget",
-                        "IsEnumeration": false,
-                        "SelectionFunctionName": "GetWidgetNames",
-                        "SelectionFunctionType": "WidgetTools",
-                        "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
-                        "Description": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC"
-                    },
-                    {
-                        "Name": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME",
-                        "Type": "SSelection",
-                        "Variable": "SecondWidget",
-                        "IsEnumeration": false,
-                        "SelectionFunctionName": "GetWidgetNames",
-                        "SelectionFunctionType": "WidgetTools",
-                        "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
-                        "Description": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC"
-                    }
-                ]
             }
         ]
     },

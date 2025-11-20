@@ -806,40 +806,12 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// </summary>
         public bool IncludeDisabled { get; set; }
         /// <summary>
-        /// Whether to show the MOTD and the headline at the bottom or at the top of the clock
-        /// </summary>
-        public bool MotdHeadlineBottom { get; set; }
-        /// <summary>
         /// Current login handler.
         /// </summary>
         public string CurrentLoginHandler
         {
             get => LoginHandlerTools.CurrentHandlerName;
             set => LoginHandlerTools.CurrentHandlerName = value;
-        }
-        /// <summary>
-        /// Enables the widgets in the modern logon handler and all the handlers that use the widget API.
-        /// </summary>
-        public bool EnableWidgets
-        {
-            get => ModernLogonScreen.enableWidgets;
-            set => ModernLogonScreen.enableWidgets = value;
-        }
-        /// <summary>
-        /// First widget for the modern logon handler. You can configure this widget in its respective settings entry.
-        /// </summary>
-        public string FirstWidget
-        {
-            get => ModernLogonScreen.firstWidgetName;
-            set => ModernLogonScreen.firstWidgetName = value;
-        }
-        /// <summary>
-        /// Second widget for the modern logon handler. You can configure this widget in its respective settings entry.
-        /// </summary>
-        public string SecondWidget
-        {
-            get => ModernLogonScreen.secondWidgetName;
-            set => ModernLogonScreen.secondWidgetName = value;
         }
         #endregion
 
