@@ -220,10 +220,6 @@ namespace Nitrocid.Base.Users.Login
             };
             display.Append(instText.Render());
 
-            // Print notifications
-            var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
-            display.Append(notificationsWidget.Render(0, consoleInstY - 2, ConsoleWrapper.WindowWidth, 1));
-
             // Print everything
             return display.ToString();
         }
