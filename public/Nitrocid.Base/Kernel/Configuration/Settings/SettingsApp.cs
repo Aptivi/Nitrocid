@@ -63,17 +63,19 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
                 config = settingsType,
                 lastFirstPaneIdx = -1,
             };
-            tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_SET"), ConsoleKey.Enter, (_, entryIdx, _, keyIdx) => tui.Set(entryIdx, keyIdx)));
-            tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_SAVE"), ConsoleKey.F1, (_, _, _, _) => tui.Save()));
-            tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_SAVEAS"), ConsoleKey.F2, (_, _, _, _) => tui.SaveAs()));
-            tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_LOADFROM"), ConsoleKey.F3, (_, _, _, _) => tui.LoadFrom()));
-            tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_RELOAD"), ConsoleKey.F4, (_, _, _, _) => tui.Reload()));
-            tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_MIGRATE"), ConsoleKey.F5, (_, _, _, _) => tui.Migrate()));
-            tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES"), ConsoleKey.F6, (_, _, _, _) => tui.CheckUpdates()));
-            tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO"), ConsoleKey.F7, (_, _, _, _) => tui.SystemInfo()));
-            tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_RESETALL"), ConsoleKey.F8, (_, _, _, _) => tui.ResetAll()));
-            tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_RESETENTRY"), ConsoleKey.R, ConsoleModifiers.Shift, (_, entryIdx, _, keyIdx) => tui.ResetEntry(entryIdx, keyIdx)));
-            tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG"), ConsoleKey.F9, (_, _, _, _) => tui.SelectConfig()));
+            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_SET"), ConsoleKey.Enter, (_, entryIdx, _, keyIdx) => tui.Set(entryIdx, keyIdx)));
+            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_SAVE"), ConsoleKey.F1, (_, _, _, _) => tui.Save()));
+            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_SAVEAS"), ConsoleKey.F2, (_, _, _, _) => tui.SaveAs()));
+            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_LOADFROM"), ConsoleKey.F3, (_, _, _, _) => tui.LoadFrom()));
+            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_RELOAD"), ConsoleKey.F4, (_, _, _, _) => tui.Reload()));
+            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_MIGRATE"), ConsoleKey.F5, (_, _, _, _) => tui.Migrate()));
+            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_CHECKUPDATES"), ConsoleKey.F6, (_, _, _, _) => tui.CheckUpdates()));
+            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SYSINFO"), ConsoleKey.F7, (_, _, _, _) => tui.SystemInfo()));
+            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_RESETALL"), ConsoleKey.F8, (_, _, _, _) => tui.ResetAll()));
+            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_RESETENTRY"), ConsoleKey.R, ConsoleModifiers.Shift, (_, entryIdx, _, keyIdx) => tui.ResetEntry(entryIdx, keyIdx)));
+            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG"), ConsoleKey.F9, (_, _, _, _) => tui.SelectConfig()));
+            // TODO: NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING -> Legacy Multivar Processing
+            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING"), ConsoleKey.F10, (_, _, _, _) => tui.EnableLegacyMultivarProcessing()));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }
