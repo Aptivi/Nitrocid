@@ -55,7 +55,6 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Power;
 
-
 #if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;
 #endif
@@ -119,7 +118,6 @@ namespace Nitrocid.Base.Shell.Homepage
             {
                 // Create a screen for the homepage
                 var homeScreenBuffer = new ScreenPart();
-                string rssSequence = "";
                 ScreenTools.SetCurrent(homeScreen);
                 ThemeColorsTools.LoadBackground();
 
@@ -222,62 +220,43 @@ namespace Nitrocid.Base.Shell.Homepage
                     // Render the first three RSS feeds
                     if (Config.MainConfig.EnableHomepageRssFeed)
                     {
-                        if (string.IsNullOrEmpty(rssSequence))
+                        int rssFeedLeft = widgetLeft + 1;
+                        int rssFeedTop = rssTop + 1;
+                        string rssSequence = "";
+                        bool needsWrapping = true;
+                        try
                         {
-                            var rssSequenceBuilder = new StringBuilder();
-                            try
+                            if (!Config.MainConfig.ShowHeadlineOnLogin)
+                                rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
+                            else if (!WidgetTools.IsWidgetBuiltin("RssFeedSingle"))
+                                rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
+                            else
                             {
-                                if (!Config.MainConfig.ShowHeadlineOnLogin)
-                                    rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES"));
-                                else
-                                {
-#if NKS_EXTENSIONS
-                                    var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
-                                    var feedsObject = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetArticles", addonType, Config.MainConfig.RssHeadlineUrl);
-                                    bool found = false;
-                                    if (feedsObject is (string feedTitle, string articleTitle)[] feeds)
-                                    {
-                                        for (int i = 0; i < 3; i++)
-                                        {
-                                            if (i >= feeds.Length)
-                                                break;
-                                            (string _, string articleTitle) = feeds[i];
-                                            rssSequenceBuilder.AppendLine(articleTitle);
-                                            found = true;
-                                        }
-                                    }
-                                    if (!found)
-                                        rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED"));
-#else
-                                    throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON"));
-#endif
-                                }
+                                var feedWidget = WidgetTools.GetWidget("RssFeedSingle");
+                                needsWrapping = false;
+                                rssSequence = feedWidget.Render(rssFeedLeft, rssFeedTop, widgetWidth, 3);
                             }
-                            catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON"));
-                            }
-                            catch (Exception ex)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                rssSequenceBuilder.Append(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED"));
-                            }
-                            rssSequence = rssSequenceBuilder.ToString();
+                        }
+                        catch (Exception ex)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
+                            DebugWriter.WriteDebugStackTrace(ex);
+                            rssSequence = LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED");
                         }
 
-                        // Render the RSS feed sequence
-                        var sequences = rssSequence.GetWrappedSentencesByWords(widgetWidth);
-                        for (int i = 0; i < 3; i++)
+                        // Render the RSS feed sequence or an error message
+                        if (needsWrapping)
                         {
-                            if (i >= sequences.Length)
-                                break;
-                            string sequence = sequences[i];
-                            builder.Append(CsiSequences.GenerateCsiCursorPosition(widgetLeft + 2, rssTop + 2 + i));
-                            builder.Append(sequence);
+                            rssSequence = new BoundedText()
+                            {
+                                Left = rssFeedLeft,
+                                Top = rssFeedTop,
+                                Width = widgetWidth,
+                                Height = 3,
+                                Text = rssSequence,
+                            }.Render();
                         }
+                        builder.Append(rssSequence);
                     }
 
                     // Populate the button positions
