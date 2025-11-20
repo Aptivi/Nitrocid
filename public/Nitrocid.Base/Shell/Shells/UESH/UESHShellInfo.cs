@@ -1014,6 +1014,34 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ])
                 ], new IfmCommand()),
 
+            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC -> "Returns true or false depending on the kernel mode"
+            new CommandInfo("ismode", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC",
+                [
+                    new CommandArgumentInfo([],
+                    [
+                        new SwitchInfo("s", /* Localizable */ "NKS_MISC_SPLASHES_WELCOME_SAFEMODE", new SwitchOptions()
+                        {
+                            AcceptsValues = false,
+                            ConflictsWith = ["d", "m"]
+                        }),
+                        new SwitchInfo("d", /* Localizable */ "NKS_MISC_SPLASHES_WELCOME_DEBUGMODE", new SwitchOptions()
+                        {
+                            AcceptsValues = false,
+                            ConflictsWith = ["s", "m"]
+                        }),
+                        new SwitchInfo("m", /* Localizable */ "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE", new SwitchOptions()
+                        {
+                            AcceptsValues = false,
+                            ConflictsWith = ["s", "d"]
+                        }),
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC -> "Prints the result to the console"
+                        new SwitchInfo("v", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false,
+                        }),
+                    ], true)
+                ], new IsModeCommand()),
+
             new CommandInfo("license", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC", new LicenseCommand()),
 
             new CommandInfo("list", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_DESC",
