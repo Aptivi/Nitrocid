@@ -34,18 +34,21 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Nitrocid.Base.Kernel.Configuration.Migration;
 using Nitrocid.Base.Kernel.Exceptions;
+using Magico.Enumeration;
 
 namespace Nitrocid.Base.Misc.Interactives
 {
     /// <summary>
     /// Settings interactive TUI
     /// </summary>
-    public class SettingsCli : BaseInteractiveTui<(string, int)>, IInteractiveTui<(string, int)>
+    public class SettingsCli : BaseInteractiveTui<(string, int), (string, string)>, IInteractiveTui<(string, int), (string, string)>
     {
         internal BaseKernelConfig? config;
         internal int lastFirstPaneIdx = -1;
+        internal bool legacyMultivarProcessing = false;
         internal List<(string, int)> entryNames = [];
-        internal List<(string, int)> keyNames = [];
+        internal List<(string, string)> keyNames = [];
+        internal List<(string, int)> toExpand = [];
 
         /// <summary>
         /// Always true in the file manager as we want it to behave like Total Commander
@@ -85,7 +88,7 @@ namespace Nitrocid.Base.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override IEnumerable<(string, int)> SecondaryDataSource
+        public override IEnumerable<(string, string)> SecondaryDataSource
         {
             get
             {
@@ -95,14 +98,18 @@ namespace Nitrocid.Base.Misc.Interactives
                         return keyNames;
                     var configs = config.SettingsEntries ??
                         throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
-                    int finalIdx = FirstPaneCurrentSelection - 1 < configs.Length ? FirstPaneCurrentSelection - 1 : 0;
+                    int entryIdx = FirstPaneCurrentSelection - 1;
+                    int finalIdx = entryIdx < configs.Length ? entryIdx : 0;
                     var entry = configs[finalIdx];
-                    var keys = entry.Keys;
-                    var finalkeyNames = keys.Select((key, idx) =>
+
+                    // Flatten settings keys, in case we need to process expansion
+                    var keys = FlattenSettingsKeys(entryIdx, entry.Keys);
+                    var finalkeyNames = keys.Select((kvp) =>
                     {
+                        var key = kvp.Value;
                         object? currentValue = key.Masked ? "***" : ConfigTools.GetValueFromEntry(key, config);
-                        string finalKeyName = key.Type == SettingsKeyType.SMultivar ? $"{LanguageTools.GetLocalized(key.Name)}..." : $"{LanguageTools.GetLocalized(key.Name)} [{currentValue}]";
-                        return (finalKeyName, idx);
+                        string finalKeyName = key.Type == SettingsKeyType.SMultivar ? $"[{(toExpand.Contains((kvp.Key, entryIdx)) ? "-" : "+")}] {LanguageTools.GetLocalized(key.Name)}" : $"[ ] {LanguageTools.GetLocalized(key.Name)} [{currentValue}]";
+                        return (finalKeyName, kvp.Key);
                     }).ToArray();
                     keyNames.Clear();
                     keyNames.AddRange(finalkeyNames);
@@ -158,15 +165,17 @@ namespace Nitrocid.Base.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override string GetStatusFromItemSecondary((string, int) item)
+        public override string GetStatusFromItemSecondary((string, string) item)
         {
-            int keyIdx = item.Item2;
+            int entryIdx = FirstPaneCurrentSelection - 1;
+            string keyIdx = item.Item2;
             if (config is null)
                 return "";
             var configs = config.SettingsEntries ??
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
-            var key = configs[FirstPaneCurrentSelection - 1].Keys[keyIdx];
-            string entryName = entryNames[FirstPaneCurrentSelection - 1].Item1;
+            var keys = FlattenSettingsKeys(entryIdx, configs[entryIdx].Keys);
+            var key = keys[keyIdx];
+            string entryName = entryNames[entryIdx].Item1;
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
             string status = $"{entryName} > {keyName} - {keyDesc}";
@@ -174,20 +183,25 @@ namespace Nitrocid.Base.Misc.Interactives
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItemSecondary((string, int) item) =>
-            item.Item1;
+        public override string GetEntryFromItemSecondary((string, string) item)
+        {
+            int level = item.Item2.Split('|').Length - 1;
+            return $"{new string(' ', level * 2)}{item.Item1}";
+        }
 
         /// <inheritdoc/>
-        public override string GetInfoFromItemSecondary((string, int) item)
+        public override string GetInfoFromItemSecondary((string, string) item)
         {
+            int entryIdx = FirstPaneCurrentSelection - 1;
             string keyName = item.Item1;
-            int keyIdx = item.Item2;
+            string keyIdx = item.Item2;
             if (config is null)
                 return "";
             var configs = config.SettingsEntries ??
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
-            string entryName = entryNames[FirstPaneCurrentSelection - 1].Item1;
-            string keyDesc = LanguageTools.GetLocalized(configs[FirstPaneCurrentSelection - 1].Keys[keyIdx].Description);
+            var keys = FlattenSettingsKeys(entryIdx, configs[entryIdx].Keys);
+            string entryName = entryNames[entryIdx].Item1;
+            string keyDesc = LanguageTools.GetLocalized(keys[keyIdx].Description);
             string status =
                 $"""
                 {LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME").FormatString(entryName)} > {keyName}
@@ -206,10 +220,24 @@ namespace Nitrocid.Base.Misc.Interactives
                 if (config is null)
                     return;
 
-                // Get the key and try to set
+                // Get the key
                 var configs = config.SettingsEntries ??
                     throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
-                var key = configs[entryIdx].Keys[keyIdx];
+                var keyTuple = ((string, string)?)SecondaryDataSource.GetElementFromIndex(keyIdx) ??
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
+                var keys = FlattenSettingsKeys(entryIdx, configs[entryIdx].Keys);
+                var key = keys[keyTuple.Item2];
+
+                // Check for multivar
+                if (key.Type == SettingsKeyType.SMultivar && !legacyMultivarProcessing)
+                {
+                    // Add this multivar to the expansion list
+                    if (!toExpand.Remove((keyTuple.Item2, entryIdx)))
+                        toExpand.Add((keyTuple.Item2, entryIdx));
+                    return;
+                }
+
+                // Try to set
                 var defaultValue = ConfigTools.GetValueFromEntry(key, config);
                 var input = key.KeyInput.PromptForSet(key, defaultValue, config, out bool provided);
                 if (provided)
@@ -403,8 +431,11 @@ namespace Nitrocid.Base.Misc.Interactives
                     throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
                 var fallbackConfig = Config.GetFallbackKernelConfig(config.GetType().Name) ??
                     throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_EXCEPTION_FALLBACK"));
-                var key = configs[entryIdx].Keys[keyIdx];
-                
+                var keyTuple = ((string, string)?)SecondaryDataSource.GetElementFromIndex(keyIdx) ??
+                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
+                var keys = FlattenSettingsKeys(entryIdx, configs[entryIdx].Keys);
+                var key = keys[keyTuple.Item2];
+
                 // Helper function
                 void ResetKey(SettingsKey key)
                 {
@@ -462,6 +493,7 @@ namespace Nitrocid.Base.Misc.Interactives
                 var selectedConfig = SettingsAppTools.SelectConfig();
                 if (selectedConfig is not null)
                 {
+                    toExpand.Clear();
                     config = selectedConfig;
                     lastFirstPaneIdx = -1;
                     InteractiveTuiTools.SelectionMovement(this, 0, 1);
@@ -474,6 +506,35 @@ namespace Nitrocid.Base.Misc.Interactives
                 finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_FAILED") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
+        }
+
+        internal void EnableLegacyMultivarProcessing()
+        {
+            legacyMultivarProcessing = !legacyMultivarProcessing;
+            if (legacyMultivarProcessing)
+                InfoBoxModalColor.WriteInfoBoxModal("Please note that the legacy multivar processing support for the settings CLI will be removed in the final version of Nitrocid 0.2.0. Use this only when modern multivar processing is buggy.", Settings.InfoBoxSettings);
+        }
+
+        private Dictionary<string, SettingsKey> FlattenSettingsKeys(int entryIdx, SettingsKey[] keys, int level = 0, int[]? originalIndexes = null)
+        {
+            var allKeys = new Dictionary<string, SettingsKey>();
+            for (int i = 0; i < keys.Length; i++)
+            {
+                SettingsKey? key = keys[i];
+                string origKeyStr = originalIndexes is not null ? $"{string.Join("|", originalIndexes)}|{i}" : $"{i}";
+                allKeys.Add(origKeyStr, key);
+                if (key.Type == SettingsKeyType.SMultivar)
+                {
+                    int[] newOriginalIndexes = originalIndexes is not null ? [.. originalIndexes, i] : [i];
+                    var moreKeys = FlattenSettingsKeys(entryIdx, key.Variables, level + 1, newOriginalIndexes);
+                    foreach (var keyToAdd in moreKeys)
+                    {
+                        if (toExpand.Contains((origKeyStr, entryIdx)))
+                            allKeys.Add(keyToAdd.Key, keyToAdd.Value);
+                    }
+                }
+            }
+            return allKeys;
         }
     }
 }
