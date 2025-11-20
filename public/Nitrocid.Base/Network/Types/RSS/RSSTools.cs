@@ -46,8 +46,8 @@ namespace Nitrocid.Base.Network.Types.RSS
                 try
                 {
 #if NKS_EXTENSIONS
-                    var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
-                    var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", addonType, Config.MainConfig.RssHeadlineUrl);
+                    var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.AddonShellPacks, "Nitrocid.ShellPacks.Tools.RSSShellTools");
+                    var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "GetFirstArticle", addonType, Config.MainConfig.RssHeadlineUrl);
                     if (Feed is (string feedTitle, string articleTitle))
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_LATESTNEWS") + " {0}: ", false, ThemeColorType.ListEntry, feedTitle);
