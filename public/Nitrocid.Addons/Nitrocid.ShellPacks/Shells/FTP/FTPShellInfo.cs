@@ -328,5 +328,7 @@ namespace Nitrocid.ShellPacks.Shells.FTP
 
         public override bool AcceptsNetworkConnection => true;
 
+        public override string NetworkConnectionType => nameof(Base.Network.Connections.NetworkConnectionType.FTP);
+
     }
 }

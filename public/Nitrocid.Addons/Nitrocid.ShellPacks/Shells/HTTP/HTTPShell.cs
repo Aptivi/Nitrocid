@@ -55,7 +55,7 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
             HTTPShellCommon.HTTPSite = httpConnection.ConnectionUri.OriginalString;
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(HTTPShellCommon.HTTPSite, httpConnection.ConnectionUri.Port, NetworkConnectionType.HTTP, false);
+            SpeedDialTools.TryAddEntryToSpeedDial(HTTPShellCommon.HTTPSite, httpConnection.ConnectionUri.Port, NetworkConnectionType.HTTP, "", "", false);
 
             while (!Bail)
             {

@@ -199,6 +199,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail
 
         public override bool AcceptsNetworkConnection => true;
 
-        public override string NetworkConnectionType => "Mail";
+        public override string NetworkConnectionType => nameof(Base.Network.Connections.NetworkConnectionType.Mail);
     }
 }

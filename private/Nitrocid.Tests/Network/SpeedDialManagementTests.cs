@@ -35,7 +35,7 @@ namespace Nitrocid.Tests.Network
         [TestMethod]
         [Description("Management")]
         public void TestAddEntryToSpeedDial() =>
-            SpeedDialTools.TryAddEntryToSpeedDial("ftp.riken.jp", 21, NetworkConnectionType.FTP, false, "anonymous").ShouldBeTrue();
+            SpeedDialTools.TryAddEntryToSpeedDial("ftp.riken.jp", 21, NetworkConnectionType.FTP, "anonymous", "", false).ShouldBeTrue();
 
         /// <summary>
         /// Tests listing speed dial entries

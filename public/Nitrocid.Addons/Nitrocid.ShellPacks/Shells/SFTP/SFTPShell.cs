@@ -66,7 +66,7 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
             SFTPShellCommon.SFTPUser = client.ConnectionInfo.Username;
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(SFTPShellCommon.SFTPSite, client.ConnectionInfo.Port, NetworkConnectionType.SFTP, false, SFTPShellCommon.SFTPUser);
+            SpeedDialTools.TryAddEntryToSpeedDial(SFTPShellCommon.SFTPSite, client.ConnectionInfo.Port, NetworkConnectionType.SFTP, SFTPShellCommon.SFTPUser, "", false);
 
             // Populate SFTP current directory
             SFTPShellCommon.SFTPCurrDirect = PathsManagement.HomePath;
@@ -108,7 +108,6 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
                     SFTPShellCommon.SFTPCurrDirect = "";
                     SFTPShellCommon.SFTPCurrentRemoteDir = "";
                     SFTPShellCommon.SFTPUser = "";
-                    SFTPShellCommon.SFTPPass = "";
                 }
             }
         }

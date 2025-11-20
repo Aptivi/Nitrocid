@@ -38,7 +38,7 @@ namespace Nitrocid.ShellPacks.Commands
             string.IsNullOrEmpty(username) ? MailLogin.PromptUser() : MailLogin.PromptPassword(username);
 
         private NetworkConnection? EstablishMailConnectionSpeedDial(SpeedDialEntry connection) =>
-            MailLogin.PromptPassword(connection.Options[0]?.ToString() ?? "");
+            MailLogin.PromptPassword(connection.Username);
 
     }
 }

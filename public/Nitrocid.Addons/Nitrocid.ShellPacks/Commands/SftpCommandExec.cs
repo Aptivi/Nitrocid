@@ -35,7 +35,7 @@ namespace Nitrocid.ShellPacks.Commands
 
         private NetworkConnection EstablishSftpConnection(string address, SpeedDialEntry connection)
         {
-            var info = SFTPTools.GetConnectionInfo(address, connection.Port, connection.Options[0].ToString() ?? "");
+            var info = SFTPTools.GetConnectionInfo(address, connection.Port, connection.Username);
             return SFTPTools.ConnectSFTP(info);
         }
 

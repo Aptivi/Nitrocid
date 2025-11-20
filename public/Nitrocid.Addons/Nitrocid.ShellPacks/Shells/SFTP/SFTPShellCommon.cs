@@ -29,7 +29,6 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
 
         internal static NetworkConnection? clientConnection;
         internal static string SFTPSite = "";
-        internal static string SFTPPass = "";
         internal static string SFTPUser = "";
 
         /// <summary>
