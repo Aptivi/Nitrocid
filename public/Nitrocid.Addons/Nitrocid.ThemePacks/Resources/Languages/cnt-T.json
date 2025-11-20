@@ -312,6 +312,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "Zorin OS 的配色方案，Zorin OS 是流行 Linux 作業系統 Ubuntu 的非官方衍生產品"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "樹莓色"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "Nitrocid KS 標誌的顏色（2021-2022）"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "Nitrocid KS 標誌的顏色（2022-2024）"
     }
   ]
 }

@@ -310,6 +310,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "Scéimeanna datha ó Zorin OS, toradh neamhoifigiúil de chóras oibriúcháin Linux coitianta, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "Dathanna sú craobh"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "Dathanna ó lógó Nitrocid KS (2021-2022)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "Dathanna ó lógó Nitrocid KS (2022-2024)"
     }
   ]
 }

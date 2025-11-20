@@ -310,6 +310,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "인기 있는 Linux 운영 체제인 Ubuntu의 비공식적인 파생 제품인 Zorin OS의 색 구성표"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "라즈베리 색상"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "Nitrocid KS 로고 색상 (2021-2022)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "Nitrocid KS 로고 색상 (2022-2024)"
     }
   ]
 }

@@ -310,6 +310,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "Popüler bir Linux işletim sistemi olan Ubuntu'nun resmi olmayan bir yan ürünü olan Zorin OS'den renk şemaları"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "Ahududu renkleri"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "Nitrocid KS logosundan renkler (2021-2022)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "Nitrocid KS logosundan renkler (2022-2024)"
     }
   ]
 }

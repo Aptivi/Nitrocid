@@ -309,6 +309,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "Các bảng màu từ Zorin OS, một phiên bản phụ không chính thức của hệ điều hành Linux phổ biến, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "Màu mâm xôi"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "Màu sắc từ logo Nitrocid KS (2021-2022)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "Màu sắc từ logo Nitrocid KS (2022-2024)"
     }
   ]
 }

@@ -309,6 +309,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "人気の Linux オペレーティングシステム Ubuntu の非公式スピンオフである Zorin OS のカラースキーム"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "ラズベリーカラー"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "ニトロシドKSロゴの色（2021-2022年）"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "ニトロシドKSロゴの色（2022-2024年）"
     }
   ]
 }
