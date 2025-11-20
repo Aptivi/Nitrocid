@@ -26,7 +26,7 @@ namespace Nitrocid.Analyzers.Test.Verifiers
 {
     internal class References
     {
-        private static readonly Lazy<ReferenceAssemblies> _lazyNet80 =
+        private static readonly Lazy<ReferenceAssemblies> _lazyNetRef =
              new(() =>
              {
                  if (!NuGetFramework.Parse("net10.0").IsPackageBased)
@@ -41,6 +41,6 @@ namespace Nitrocid.Analyzers.Test.Verifiers
                      Path.Combine("ref", "net10.0"));
              });
 
-        public static ReferenceAssemblies Net80 => _lazyNet80.Value;
+        public static ReferenceAssemblies NetRef => _lazyNetRef.Value;
     }
 }
