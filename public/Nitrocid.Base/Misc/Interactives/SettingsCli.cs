@@ -66,22 +66,12 @@ namespace Nitrocid.Base.Misc.Interactives
                         return entryNames;
                     var configs = config.SettingsEntries ??
                         throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
+                    int finalIdx = FirstPaneCurrentSelection - 1 < configs.Length ? FirstPaneCurrentSelection - 1 : 0;
                     var configNames = configs.Select((se, idx) =>
                         (!string.IsNullOrEmpty(se.DisplayAs) ? LanguageTools.GetLocalized(se.DisplayAs) : se.Name, idx)
                     ).ToArray();
-                    int finalIdx = FirstPaneCurrentSelection - 1 < configs.Length ? FirstPaneCurrentSelection - 1 : 0;
-                    var entry = configs[finalIdx];
-                    var keys = entry.Keys;
-                    var finalkeyNames = keys.Select((key, idx) =>
-                    {
-                        object? currentValue = key.Masked ? "***" : ConfigTools.GetValueFromEntry(key, config);
-                        string finalKeyName = key.Type == SettingsKeyType.SMultivar ? $"{LanguageTools.GetLocalized(key.Name)}..." : $"{LanguageTools.GetLocalized(key.Name)} [{currentValue}]";
-                        return (finalKeyName, idx);
-                    }).ToArray();
                     entryNames.Clear();
                     entryNames.AddRange(configNames);
-                    keyNames.Clear();
-                    keyNames.AddRange(finalkeyNames);
                     lastFirstPaneIdx = finalIdx;
                     return configNames;
                 }
@@ -101,6 +91,21 @@ namespace Nitrocid.Base.Misc.Interactives
             {
                 try
                 {
+                    if (config is null)
+                        return keyNames;
+                    var configs = config.SettingsEntries ??
+                        throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_SETTINGSENTRIES"));
+                    int finalIdx = FirstPaneCurrentSelection - 1 < configs.Length ? FirstPaneCurrentSelection - 1 : 0;
+                    var entry = configs[finalIdx];
+                    var keys = entry.Keys;
+                    var finalkeyNames = keys.Select((key, idx) =>
+                    {
+                        object? currentValue = key.Masked ? "***" : ConfigTools.GetValueFromEntry(key, config);
+                        string finalKeyName = key.Type == SettingsKeyType.SMultivar ? $"{LanguageTools.GetLocalized(key.Name)}..." : $"{LanguageTools.GetLocalized(key.Name)} [{currentValue}]";
+                        return (finalKeyName, idx);
+                    }).ToArray();
+                    keyNames.Clear();
+                    keyNames.AddRange(finalkeyNames);
                     return keyNames;
                 }
                 catch (Exception ex)
