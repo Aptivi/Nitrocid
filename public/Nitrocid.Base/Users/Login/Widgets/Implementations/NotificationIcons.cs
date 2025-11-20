@@ -88,7 +88,7 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
             }
 
             // Return the final rendered notification icons
-            var listingText = new AlignedText()
+            var listingText = new BoundedText()
             {
                 Text = notificationListing.ToString(),
                 Top = top,

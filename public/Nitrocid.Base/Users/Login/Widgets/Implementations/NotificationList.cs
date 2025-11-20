@@ -75,8 +75,8 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
                         Left = left + 1,
                         Top = top + processedHeight + 1,
                         Width = 2,
-                        Height = 1,
                         Text = notification.IconEmoji,
+                        OneLine = true,
                     };
                     notificationList.Append(notificationIconText.Render());
                 }
@@ -89,11 +89,11 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
                         Left = left + 5,
                         Top = top + processedHeight + 1,
                         Width = totalWidth - 3,
-                        Height = 1,
                         Text = notification.Title,
+                        OneLine = true,
                         ForegroundColor = notification.Priority == NotificationPriority.Custom ? notification.CustomTitleColor : ThemeColorsTools.GetColor("NotificationTitleColor"),
                     };
-                    var notificationDescText = new AlignedText()
+                    var notificationDescText = new BoundedText()
                     {
                         Left = left + 5,
                         Top = top + processedHeight + 2,
