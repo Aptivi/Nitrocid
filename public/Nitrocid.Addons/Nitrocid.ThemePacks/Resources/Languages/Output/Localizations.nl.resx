@@ -345,5 +345,14 @@
   <data name="NKS_THEMEPACKS_THEME_DESC_ZORINOS" xml:space="preserve">
     <value>Kleurenschema&apos;s van Zorin OS, een onofficiële spin-off van een populair Linux-besturingssysteem, Ubuntu</value>
   </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_RASPBERRY" xml:space="preserve">
+    <value>Frambozenkleuren</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LEGACY2021" xml:space="preserve">
+    <value>Kleuren van het Nitrocid KS-logo (2021-2022)</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LEGACY2022" xml:space="preserve">
+    <value>Kleuren van het Nitrocid KS-logo (2022-2024)</value>
+  </data>
 
 </root>

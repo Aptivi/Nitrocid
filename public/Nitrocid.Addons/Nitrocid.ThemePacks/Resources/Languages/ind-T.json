@@ -309,6 +309,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "ज़ोरिन ओएस से रंग योजनाएं, एक लोकप्रिय लिनक्स ऑपरेटिंग सिस्टम, उबंटू का एक अनौपचारिक स्पिनऑफ"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "रास्पबेरी रंग"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "नाइट्रोसिड KS लोगो के रंग (2021-2022)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "नाइट्रोसिड KS लोगो के रंग (2022-2024)"
     }
   ]
 }

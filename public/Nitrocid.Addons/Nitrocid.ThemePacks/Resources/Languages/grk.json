@@ -310,6 +310,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "Χρωματικοί συνδυασμοί από το Zorin OS, ένα ανεπίσημο spinoff ενός δημοφιλούς λειτουργικού συστήματος Linux, του Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "Χρώματα σμέουρου"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "Χρώματα από το λογότυπο Nitrocid KS (2021-2022)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "Χρώματα από το λογότυπο Nitrocid KS (2022-2024)"
     }
   ]
 }

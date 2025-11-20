@@ -334,6 +334,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "Esquemas de color de Zorin OS, una versión no oficial de un popular sistema operativo Linux, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "Colores frambuesa"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "Colores del logotipo de Nitrocid KS (2021-2022)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "Colores del logotipo de Nitrocid KS (2022-2024)"
     }
   ]
 }

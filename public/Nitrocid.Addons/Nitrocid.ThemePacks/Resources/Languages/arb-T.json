@@ -335,6 +335,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "مخططات الألوان من Zorin OS، وهو نظام تشغيل غير رسمي لنظام التشغيل Linux الشهير، Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "ألوان توت العليق"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "ألوان شعار نيتروسيد كي إس (٢٠٢١-٢٠٢٢)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "ألوان شعار نيتروسيد كي إس (٢٠٢٢-٢٠٢٤)"
     }
   ]
 }

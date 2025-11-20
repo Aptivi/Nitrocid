@@ -345,5 +345,14 @@
   <data name="NKS_THEMEPACKS_THEME_DESC_ZORINOS" xml:space="preserve">
     <value>Scheme de culori de la Zorin OS, un spin-off neoficial al unui sistem de operare Linux popular, Ubuntu</value>
   </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_RASPBERRY" xml:space="preserve">
+    <value>Culori zmeură</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LEGACY2021" xml:space="preserve">
+    <value>Culori din sigla Nitrocid KS (2021-2022)</value>
+  </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_LEGACY2022" xml:space="preserve">
+    <value>Culori din sigla Nitrocid KS (2022-2024)</value>
+  </data>
 
 </root>

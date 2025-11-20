@@ -309,6 +309,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "zorin oes se rang yojanaen, ek lokapriy linaks opareting sistam ka ek anaupachaarik spinof, ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "raaspaberee rang"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "naitrosid ks logo ke rang (2021-2022)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "naitrosid ks logo ke rang (2022-2024)"
     }
   ]
 }

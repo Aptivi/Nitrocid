@@ -308,6 +308,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "Esquemas de cores do Zorin OS, um spinoff não oficial de um popular sistema operacional Linux, o Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "Cores framboesa"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "Cores do logotipo do Nitrocid KS (2021-2022)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "Cores do logotipo do Nitrocid KS (2022-2024)"
     }
   ]
 }

@@ -313,6 +313,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "Fargeskjemaer fra Zorin OS, en uoffisiell spinoff av et populært Linux-operativsystem, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "Bringebærfarger"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "Farger fra Nitrocid KS-logoen (2021-2022)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "Farger fra Nitrocid KS-logoen (2022-2024)"
     }
   ]
 }

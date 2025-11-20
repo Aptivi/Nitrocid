@@ -312,6 +312,18 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_ZORINOS",
       "text": "Combinazioni di colori di Zorin OS, uno spin-off non ufficiale di un popolare sistema operativo Linux, Ubuntu"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_RASPBERRY",
+      "text": "Colori lampone"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2021",
+      "text": "Colori del logo Nitrocid KS (2021-2022)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
+      "text": "Colori del logo Nitrocid KS (2022-2024)"
     }
   ]
 }
