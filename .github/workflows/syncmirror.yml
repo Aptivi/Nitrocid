@@ -1,7 +1,8 @@
 name: 'Sync with GL mirror'
-on: push
-  branches:
-    - '**'
+on:
+  push:
+    branches:
+      - '**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
