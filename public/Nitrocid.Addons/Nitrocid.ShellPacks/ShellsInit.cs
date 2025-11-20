@@ -40,6 +40,8 @@ using Nitrocid.ShellPacks.Shells.SFTP;
 using Nitrocid.ShellPacks.Shells.Sql;
 using System.Collections.Generic;
 using System.Linq;
+using Nitrocid.Base.Users.Login.Widgets;
+using Nitrocid.ShellPacks.Shells.RSS.Widgets;
 
 namespace Nitrocid.ShellPacks
 {
@@ -228,6 +230,7 @@ namespace Nitrocid.ShellPacks
             CommandManager.RegisterCustomCommands("Shell", [.. mailAddonCommands]);
             CommandManager.RegisterCustomCommands("Shell", [.. rssAddonCommands]);
             CommandManager.RegisterCustomCommands("Shell", [.. sftpAddonCommands]);
+            WidgetTools.AddBaseWidget(new RssFeedSingle());
 
             // Set the native lib path for Git
             if (!gitNativeLibIsSet)
@@ -261,6 +264,7 @@ namespace Nitrocid.ShellPacks
             CommandManager.UnregisterCustomCommands("Shell", [.. mailAddonCommands.Select((ci) => ci.Command)]);
             CommandManager.UnregisterCustomCommands("Shell", [.. rssAddonCommands.Select((ci) => ci.Command)]);
             CommandManager.UnregisterCustomCommands("Shell", [.. sftpAddonCommands.Select((ci) => ci.Command)]);
+            WidgetTools.RemoveBaseWidget(nameof(RssFeedSingle));
         }
     }
 }

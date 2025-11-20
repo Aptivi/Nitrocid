@@ -38,13 +38,6 @@ using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Users.Login.Widgets;
 using Nitrocid.Base.Users.Login.Widgets.Implementations;
 using Nitrocid.Base.Users.Login.Motd;
-using Nitrocid.Base.Kernel.Exceptions;
-using System.Timers;
-
-
-#if NKS_EXTENSIONS
-using Nitrocid.Base.Kernel.Extensions;
-#endif
 
 namespace Nitrocid.Base.Users.Login
 {
