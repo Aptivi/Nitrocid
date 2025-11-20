@@ -39,6 +39,8 @@ using Nitrocid.Base.Users.Login.Widgets;
 using Nitrocid.Base.Users.Login.Widgets.Implementations;
 using Nitrocid.Base.Users.Login.Motd;
 using Nitrocid.Base.Kernel.Exceptions;
+using System.Timers;
+
 
 #if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;
@@ -61,139 +63,20 @@ namespace Nitrocid.Base.Users.Login
             // Now, do the job
             try
             {
-                string cachedTimeStr = "";
-
-                // First, get the headline
-                static string UpdateHeadline()
-                {
-                    try
-                    {
-#if NKS_EXTENSIONS
-                        var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
-                        var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", addonType, Config.MainConfig.RssHeadlineUrl);
-                        if (Feed is (string feedTitle, string articleTitle))
-                            return LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM") + $" {feedTitle}: {articleTitle}";
-                        return LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED");
-#else
-                        throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON"));
-#endif
-                    }
-                    catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
-                        DebugWriter.WriteDebugStackTrace(ex);
-                        return LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
-                        DebugWriter.WriteDebugStackTrace(ex);
-                        return LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED");
-                    }
-                }
-
-                string headlineStr = "";
                 while (true)
                 {
                     try
                     {
                         if (screenNum == 1)
                         {
-                            // Main screen. Print the time.
-                            string timeStr = TimeDateRenderers.RenderTime(FormatType.Short);
-                            if (timeStr != cachedTimeStr)
-                            {
-                                screen.RemoveBufferedParts();
-                                var part = new ScreenPart();
-                                part.AddDynamicText(() =>
-                                {
-                                    var display = new StringBuilder();
+                            // TODO: Screen number 1, for now, while we introduce Widget Canvas JSON
+                            screen.RemoveBufferedParts();
+                            var part = new ScreenPart();
+                            part.AddDynamicText(() => PrintConfiguredLogonScreen(screenNum));
+                            screen.AddBufferedPart($"Modern logon screen {screenNum} update part", part);
 
-                                    // Clear the console and write the time using figlet
-                                    display.Append(
-                                        CsiSequences.GenerateCsiCursorPosition(1, 1) +
-                                        CsiSequences.GenerateCsiEraseInDisplay(0)
-                                    );
-                                    cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
-                                    var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-                                    int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
-                                    int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                                    var timeFiglet = new AlignedFigletText(figFont)
-                                    {
-                                        Top = consoleY,
-                                        Text = timeStr,
-                                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Stage),
-                                        Settings = new()
-                                        {
-                                            Alignment = TextAlignment.Middle,
-                                        }
-                                    };
-                                    display.Append(timeFiglet.Render());
-
-                                    // Print the date
-                                    string dateStr = $"{TimeDateRenderers.RenderDate()}";
-                                    int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-                                    var dateText = new AlignedText()
-                                    {
-                                        Top = consoleInfoY,
-                                        Text = dateStr,
-                                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Stage),
-                                        OneLine = true,
-                                        Settings = new()
-                                        {
-                                            Alignment = TextAlignment.Middle,
-                                        }
-                                    };
-                                    display.Append(dateText.Render());
-
-                                    // Print the MOTD
-                                    string[] motdStrs = ConsoleMisc.GetWrappedSentencesByWords(MotdParse.MotdMessage, ConsoleWrapper.WindowWidth - 4);
-                                    for (int i = 0; i < motdStrs.Length && i < 2; i++)
-                                    {
-                                        string motdStr = motdStrs[i];
-                                        int consoleMotdInfoY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2 + i;
-                                        var motdText = new AlignedText()
-                                        {
-                                            Top = consoleMotdInfoY,
-                                            Text = motdStr,
-                                            ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
-                                            OneLine = true,
-                                            Settings = new()
-                                            {
-                                                Alignment = TextAlignment.Middle,
-                                            }
-                                        };
-                                        display.Append(motdText.Render());
-                                    }
-
-                                    // Print the instructions
-                                    string instStr = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PRESSKEY");
-                                    int consoleInstY = ConsoleWrapper.WindowHeight - 2;
-                                    var instText = new AlignedText()
-                                    {
-                                        Top = consoleInstY,
-                                        Text = instStr,
-                                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
-                                        OneLine = true,
-                                        Settings = new()
-                                        {
-                                            Alignment = TextAlignment.Middle,
-                                        }
-                                    };
-                                    display.Append(instText.Render());
-
-                                    // Print notifications
-                                    var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
-                                    display.Append(notificationsWidget.Render(0, consoleInstY - 2, ConsoleWrapper.WindowWidth, 1));
-
-                                    // Print everything
-                                    return display.ToString();
-                                });
-                                screen.AddBufferedPart("Date/time widget updater", part);
-
-                                // Render it now
-                                ScreenTools.Render();
-                            }
+                            // Render it now
+                            ScreenTools.Render();
                         }
                         else
                         {
@@ -263,6 +146,93 @@ namespace Nitrocid.Base.Users.Login
                 DebugWriter.WriteDebug(DebugLevel.I, "User pressed a key to exit the date and time update thread for modern logon. Proceeding...");
             }
             ScreenTools.UnsetCurrent(screen);
+        }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "Function under development")]
+        internal static string PrintConfiguredLogonScreen(int screenNum)
+        {
+            // TODO: screenNum is just an accessory argument for now
+            var display = new StringBuilder();
+
+            // Clear the console and write the time using figlet
+            display.Append(
+                CsiSequences.GenerateCsiCursorPosition(1, 1) +
+                CsiSequences.GenerateCsiEraseInDisplay(0)
+            );
+            string timeStr = TimeDateRenderers.RenderTime(FormatType.Short);
+            var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
+            int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+            var timeFiglet = new AlignedFigletText(figFont)
+            {
+                Top = consoleY,
+                Text = timeStr,
+                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Stage),
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle,
+                }
+            };
+            display.Append(timeFiglet.Render());
+
+            // Print the date
+            string dateStr = $"{TimeDateRenderers.RenderDate()}";
+            int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
+            var dateText = new AlignedText()
+            {
+                Top = consoleInfoY,
+                Text = dateStr,
+                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Stage),
+                OneLine = true,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle,
+                }
+            };
+            display.Append(dateText.Render());
+
+            // Print the MOTD
+            string[] motdStrs = ConsoleMisc.GetWrappedSentencesByWords(MotdParse.MotdMessage, ConsoleWrapper.WindowWidth - 4);
+            for (int i = 0; i < motdStrs.Length && i < 2; i++)
+            {
+                string motdStr = motdStrs[i];
+                int consoleMotdInfoY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2 + i;
+                var motdText = new AlignedText()
+                {
+                    Top = consoleMotdInfoY,
+                    Text = motdStr,
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
+                    OneLine = true,
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle,
+                    }
+                };
+                display.Append(motdText.Render());
+            }
+
+            // Print the instructions
+            string instStr = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PRESSKEY");
+            int consoleInstY = ConsoleWrapper.WindowHeight - 2;
+            var instText = new AlignedText()
+            {
+                Top = consoleInstY,
+                Text = instStr,
+                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
+                OneLine = true,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle,
+                }
+            };
+            display.Append(instText.Render());
+
+            // Print notifications
+            var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
+            display.Append(notificationsWidget.Render(0, consoleInstY - 2, ConsoleWrapper.WindowWidth, 1));
+
+            // Print everything
+            return display.ToString();
         }
     }
 }
