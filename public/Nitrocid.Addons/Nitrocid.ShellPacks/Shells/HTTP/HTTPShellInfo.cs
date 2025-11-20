@@ -202,6 +202,6 @@ namespace Nitrocid.ShellPacks.Shells.HTTP
 
         public override bool AcceptsNetworkConnection => true;
 
-        public override string NetworkConnectionType => "HTTP";
+        public override string NetworkConnectionType => nameof(Base.Network.Connections.NetworkConnectionType.HTTP);
     }
 }

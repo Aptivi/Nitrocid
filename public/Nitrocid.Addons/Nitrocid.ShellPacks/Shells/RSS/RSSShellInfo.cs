@@ -128,6 +128,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS
 
         public override bool AcceptsNetworkConnection => true;
 
-        public override string NetworkConnectionType => "RSS";
+        public override string NetworkConnectionType => nameof(Base.Network.Connections.NetworkConnectionType.RSS);
     }
 }

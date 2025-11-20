@@ -43,10 +43,12 @@ namespace Nitrocid.Base.Network.SpeedDial
         /// <param name="Address">Address to look for</param>
         /// <param name="Port">Port to look for</param>
         /// <param name="SpeedDialType">Speed dial type to look for</param>
+        /// <param name="username">Username</param>
+        /// <param name="password">Password</param>
         /// <param name="arguments">Arguments to look for</param>
         /// <returns>A <see cref="SpeedDialEntry"/> instance if found</returns>
-        public static SpeedDialEntry? GetSpeedDialEntry(string Address, int Port, NetworkConnectionType SpeedDialType, object[] arguments) =>
-            GetSpeedDialEntry(Address, Port, SpeedDialType.ToString(), arguments);
+        public static SpeedDialEntry? GetSpeedDialEntry(string Address, int Port, NetworkConnectionType SpeedDialType, string username, string password, Dictionary<string, object> arguments) =>
+            GetSpeedDialEntry(Address, Port, SpeedDialType.ToString(), username, password, arguments);
 
         /// <summary>
         /// Gets a speed dial entry
@@ -54,9 +56,11 @@ namespace Nitrocid.Base.Network.SpeedDial
         /// <param name="Address">Address to look for</param>
         /// <param name="Port">Port to look for</param>
         /// <param name="SpeedDialType">Speed dial type to look for</param>
+        /// <param name="username">Username</param>
+        /// <param name="password">Password</param>
         /// <param name="arguments">Arguments to look for</param>
         /// <returns>A <see cref="SpeedDialEntry"/> instance if found</returns>
-        public static SpeedDialEntry? GetSpeedDialEntry(string Address, int Port, string SpeedDialType, object[] arguments)
+        public static SpeedDialEntry? GetSpeedDialEntry(string Address, int Port, string SpeedDialType, string username, string password, Dictionary<string, object> arguments)
         {
             if (speedDialEntries.Count == 0)
                 return null;
@@ -64,6 +68,8 @@ namespace Nitrocid.Base.Network.SpeedDial
                 sde.Address == Address &&
                 sde.Port == Port &&
                 sde.Type == SpeedDialType &&
+                sde.Username == username &&
+                sde.Password == password &&
                 sde.Options.SequenceEqual(arguments)
             );
             return entry;
@@ -75,9 +81,11 @@ namespace Nitrocid.Base.Network.SpeedDial
         /// <param name="Address">Address to look for</param>
         /// <param name="Port">Port to look for</param>
         /// <param name="SpeedDialType">Speed dial type to look for</param>
+        /// <param name="username">Username</param>
+        /// <param name="password">Password</param>
         /// <returns>A <see cref="SpeedDialEntry"/> instance if found</returns>
-        public static SpeedDialEntry? GetSpeedDialEntry(string Address, int Port, NetworkConnectionType SpeedDialType) =>
-            GetSpeedDialEntry(Address, Port, SpeedDialType.ToString());
+        public static SpeedDialEntry? GetSpeedDialEntry(string Address, int Port, NetworkConnectionType SpeedDialType, string username, string password) =>
+            GetSpeedDialEntry(Address, Port, SpeedDialType.ToString(), username, password);
 
         /// <summary>
         /// Gets a speed dial entry
@@ -85,15 +93,19 @@ namespace Nitrocid.Base.Network.SpeedDial
         /// <param name="Address">Address to look for</param>
         /// <param name="Port">Port to look for</param>
         /// <param name="SpeedDialType">Speed dial type to look for</param>
+        /// <param name="username">Username</param>
+        /// <param name="password">Password</param>
         /// <returns>A <see cref="SpeedDialEntry"/> instance if found</returns>
-        public static SpeedDialEntry? GetSpeedDialEntry(string Address, int Port, string SpeedDialType)
+        public static SpeedDialEntry? GetSpeedDialEntry(string Address, int Port, string SpeedDialType, string username, string password)
         {
             if (speedDialEntries.Count == 0)
                 return null;
             var entry = speedDialEntries.FirstOrDefault((sde) =>
                 sde.Address == Address &&
                 sde.Port == Port &&
-                sde.Type == SpeedDialType
+                sde.Type == SpeedDialType &&
+                sde.Username == username &&
+                sde.Password == password
             );
             return entry;
         }
@@ -104,10 +116,12 @@ namespace Nitrocid.Base.Network.SpeedDial
         /// <param name="Address">A speed dial address</param>
         /// <param name="Port">A speed dial port</param>
         /// <param name="SpeedDialType">Speed dial type</param>
+        /// <param name="username">Username</param>
+        /// <param name="password">Password</param>
         /// <param name="ThrowException">Optionally throw exception</param>
         /// <param name="arguments">List of arguments to pass to the entry</param>
-        public static void AddEntryToSpeedDial(string Address, int Port, NetworkConnectionType SpeedDialType, bool ThrowException = true, params object[] arguments) =>
-            AddEntryToSpeedDial(Address, Port, SpeedDialType.ToString(), ThrowException, arguments);
+        public static void AddEntryToSpeedDial(string Address, int Port, NetworkConnectionType SpeedDialType, string username, string password, bool ThrowException = true, Dictionary<string, object>? arguments = null) =>
+            AddEntryToSpeedDial(Address, Port, SpeedDialType.ToString(), username, password, ThrowException, arguments);
 
         /// <summary>
         /// Adds an entry to speed dial
@@ -115,12 +129,15 @@ namespace Nitrocid.Base.Network.SpeedDial
         /// <param name="Address">A speed dial address</param>
         /// <param name="Port">A speed dial port</param>
         /// <param name="SpeedDialType">Speed dial type</param>
+        /// <param name="username">Username</param>
+        /// <param name="password">Password</param>
         /// <param name="ThrowException">Optionally throw exception</param>
         /// <param name="arguments">List of arguments to pass to the entry</param>
-        public static void AddEntryToSpeedDial(string Address, int Port, string SpeedDialType, bool ThrowException = true, params object[] arguments)
+        public static void AddEntryToSpeedDial(string Address, int Port, string SpeedDialType, string username, string password, bool ThrowException = true, Dictionary<string, object>? arguments = null)
         {
             // Parse the entry
-            var entryCheck = GetSpeedDialEntry(Address, Port, SpeedDialType, arguments);
+            arguments ??= [];
+            var entryCheck = GetSpeedDialEntry(Address, Port, SpeedDialType, username, password, arguments);
             if (entryCheck is null)
             {
                 // Check the type
@@ -133,7 +150,7 @@ namespace Nitrocid.Base.Network.SpeedDial
                 }
 
                 // The entry doesn't exist. Go ahead and create it.
-                var dialEntry = new SpeedDialEntry(Address, Port, SpeedDialType, [.. arguments]);
+                var dialEntry = new SpeedDialEntry(Address, Port, SpeedDialType, username, password, arguments);
 
                 // Add the entry and write it to the file
                 speedDialEntries.Add(dialEntry);
@@ -152,11 +169,13 @@ namespace Nitrocid.Base.Network.SpeedDial
         /// <param name="Address">A speed dial address</param>
         /// <param name="Port">A speed dial port</param>
         /// <param name="SpeedDialType">Speed dial type</param>
+        /// <param name="username">Username</param>
+        /// <param name="password">Password</param>
         /// <param name="ThrowException">Optionally throw exception</param>
         /// <param name="arguments">List of arguments to pass to the entry</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TryAddEntryToSpeedDial(string Address, int Port, NetworkConnectionType SpeedDialType, bool ThrowException = true, params object[] arguments) =>
-            TryAddEntryToSpeedDial(Address, Port, SpeedDialType.ToString(), ThrowException, arguments);
+        public static bool TryAddEntryToSpeedDial(string Address, int Port, NetworkConnectionType SpeedDialType, string username, string password, bool ThrowException = true, Dictionary<string, object>? arguments = null) =>
+            TryAddEntryToSpeedDial(Address, Port, SpeedDialType.ToString(), username, password, ThrowException, arguments);
 
         /// <summary>
         /// Adds an entry to speed dial
@@ -164,14 +183,16 @@ namespace Nitrocid.Base.Network.SpeedDial
         /// <param name="Address">A speed dial address</param>
         /// <param name="Port">A speed dial port</param>
         /// <param name="SpeedDialType">Speed dial type</param>
+        /// <param name="username">Username</param>
+        /// <param name="password">Password</param>
         /// <param name="ThrowException">Optionally throw exception</param>
         /// <param name="arguments">List of arguments to pass to the entry</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TryAddEntryToSpeedDial(string Address, int Port, string SpeedDialType, bool ThrowException = true, params object[] arguments)
+        public static bool TryAddEntryToSpeedDial(string Address, int Port, string SpeedDialType, string username, string password, bool ThrowException = true, Dictionary<string, object>? arguments = null)
         {
             try
             {
-                AddEntryToSpeedDial(Address, Port, SpeedDialType, ThrowException, arguments);
+                AddEntryToSpeedDial(Address, Port, SpeedDialType, username, password, ThrowException, arguments);
                 return true;
             }
             catch (Exception)

@@ -77,7 +77,10 @@ namespace Nitrocid.ShellPacks.Shells.FTP
             FTPShellCommon.FtpUser = clientFTP.Credentials.UserName;
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(FTPShellCommon.FtpSite, clientFTP.Port, NetworkConnectionType.FTP, false, clientFTP.Credentials.UserName, (long)clientFTP.Config.EncryptionMode);
+            SpeedDialTools.TryAddEntryToSpeedDial(FTPShellCommon.FtpSite, clientFTP.Port, NetworkConnectionType.FTP, clientFTP.Credentials.UserName, clientFTP.Credentials.Password, false, new()
+            {
+                { "FtpEncryptionMode", (long)clientFTP.Config.EncryptionMode }
+            });
 
             // Initialize logging
             clientFTP.Logger = new FTPLogger();

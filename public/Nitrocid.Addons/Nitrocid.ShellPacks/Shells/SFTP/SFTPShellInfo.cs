@@ -186,6 +186,6 @@ namespace Nitrocid.ShellPacks.Shells.SFTP
 
         public override bool AcceptsNetworkConnection => true;
 
-        public override string NetworkConnectionType => "SFTP";
+        public override string NetworkConnectionType => nameof(Base.Network.Connections.NetworkConnectionType.SFTP);
     }
 }

@@ -354,7 +354,11 @@ namespace Nitrocid.Base.Kernel.Configuration.Migration
                     string user = (string?)info["User"] ?? "";
                     int type = (int?)info["Type"] ?? 0;
                     int encryptionMode = (int?)info["FTP Encryption Mode"] ?? 0;
-                    SpeedDialTools.AddEntryToSpeedDial(address, port, NetworkConnectionType.FTP, false, [user, type, encryptionMode]);
+                    SpeedDialTools.AddEntryToSpeedDial(address, port, NetworkConnectionType.FTP, user, "", false, new()
+                    {
+                        { "Type", type },
+                        { "FtpEncryptionMode", encryptionMode },
+                    });
                 }
 
                 // Save the entries
@@ -404,7 +408,11 @@ namespace Nitrocid.Base.Kernel.Configuration.Migration
                     string user = (string?)info["User"] ?? "";
                     int type = (int?)info["Type"] ?? 0;
                     int encryptionMode = (int?)info["SFTP Encryption Mode"] ?? 0;
-                    SpeedDialTools.AddEntryToSpeedDial(address, port, NetworkConnectionType.SFTP, false, [user, type, encryptionMode]);
+                    SpeedDialTools.AddEntryToSpeedDial(address, port, NetworkConnectionType.SFTP, user, "", false, new()
+                    {
+                        { "Type", type },
+                        { "SftpEncryptionMode", encryptionMode },
+                    });
                 }
 
                 // Save the entries

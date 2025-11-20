@@ -38,8 +38,8 @@ namespace Nitrocid.ShellPacks.Commands
         private NetworkConnection? EstablishFtpConnection(string address, SpeedDialEntry connection)
         {
             var options = connection.Options;
-            var encMode = options.Length > 1 ? Enum.Parse<FtpEncryptionMode>(options[1].ToString() ?? "") : FtpEncryptionMode.Auto;
-            return FTPTools.PromptForPassword(null, options[0].ToString() ?? "", address, connection.Port, options.Length > 1 ? encMode : FtpEncryptionMode.None);
+            var encMode = options.TryGetValue(nameof(FtpEncryptionMode), out object? value) ? Enum.Parse<FtpEncryptionMode>(value.ToString() ?? "") : FtpEncryptionMode.Auto;
+            return FTPTools.PromptForPassword(null, connection.Username, address, connection.Port, encMode);
         }
 
     }

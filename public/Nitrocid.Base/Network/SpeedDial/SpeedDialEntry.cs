@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Nitrocid.Base.Network.SpeedDial
@@ -32,8 +33,12 @@ namespace Nitrocid.Base.Network.SpeedDial
         private readonly int port;
         [JsonProperty(nameof(Type))]
         private readonly string type;
+        [JsonProperty(nameof(Username))]
+        private readonly string username;
+        [JsonProperty(nameof(Password))]
+        private readonly string password;
         [JsonProperty(nameof(Options))]
-        private readonly object[] options;
+        private readonly Dictionary<string, object> options;
 
         /// <summary>
         /// IP address to connect to
@@ -54,18 +59,32 @@ namespace Nitrocid.Base.Network.SpeedDial
         public string Type =>
             type;
         /// <summary>
+        /// Speed dial user name
+        /// </summary>
+        [JsonIgnore]
+        public string Username =>
+            username;
+        /// <summary>
+        /// Speed dial password
+        /// </summary>
+        [JsonIgnore]
+        public string Password =>
+            password;
+        /// <summary>
         /// Speed dial options
         /// </summary>
         [JsonIgnore]
-        public object[] Options =>
+        public Dictionary<string, object> Options =>
             options;
 
         [JsonConstructor]
-        internal SpeedDialEntry(string address, int port, string type, object[] options)
+        internal SpeedDialEntry(string address, int port, string type, string username, string password, Dictionary<string, object> options)
         {
             this.address = address;
             this.port = port;
             this.type = type;
+            this.username = username;
+            this.password = password;
             this.options = options;
         }
     }

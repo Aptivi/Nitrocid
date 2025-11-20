@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.ChatbotAI.Commands
             // Now, try to authenticate
             NetworkConnectionTools.OpenConnectionForShell("ChatbotShell",
                 (_) => EstablishChatGPTConnection(apiKey, modelUsed),
-                (_, connection) => EstablishChatGPTConnection(connection.Options[0]?.ToString() ?? "", connection.Options[1]?.ToString() ?? "gpt-4.1-mini"), "chatgpt.com");
+                (_, connection) => EstablishChatGPTConnection(connection.Password, connection.Options["GPTModel"]?.ToString() ?? "gpt-4.1-mini"), "chatgpt.com");
             return 0;
         }
 
