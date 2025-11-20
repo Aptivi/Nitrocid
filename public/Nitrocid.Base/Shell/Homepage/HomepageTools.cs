@@ -130,7 +130,7 @@ namespace Nitrocid.Base.Shell.Homepage
                         WidgetTools.CheckWidget(Config.MainConfig.HomepageWidget) ?
                         WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
                         WidgetTools.GetWidget(nameof(AnalogClock));
-                    if (homeScreen.NeedsRefresh)
+                    if (homeScreen.RefreshWasDone)
                     {
                         string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
                         builder.Append(widgetInit);
