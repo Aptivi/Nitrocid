@@ -40,6 +40,7 @@ namespace Nitrocid.Base.Users.Login.Widgets
             new TextWidget(),
             new NotificationIcons(),
             new NotificationList(),
+            new Photo(),
         ];
         private static readonly List<BaseWidget> customWidgets = [];
 
