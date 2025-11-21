@@ -122,6 +122,7 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing
             new TestFilesSelector(),
             new TestFolderSelector(),
             new TestFoldersSelector(),
+            new WidgetCanvasRenderTest(),
         ];
 
         internal static Dictionary<TestSection, string> Sections => new()
