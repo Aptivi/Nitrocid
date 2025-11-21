@@ -216,11 +216,11 @@ namespace Nitrocid.Base.Shell.Homepage
                         {
                             if (!Config.MainConfig.ShowHeadlineOnLogin)
                                 rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
-                            else if (!WidgetTools.IsWidgetBuiltin("RssFeedSingle"))
+                            else if (!WidgetTools.IsWidgetBuiltin("RssFeeds"))
                                 rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
                             else
                             {
-                                var feedWidget = WidgetTools.GetWidget("RssFeedSingle");
+                                var feedWidget = WidgetTools.GetWidget("RssFeeds");
                                 needsWrapping = false;
                                 rssSequence = feedWidget.Render(rssFeedLeft, rssFeedTop, widgetWidth, 3);
                             }
