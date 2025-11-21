@@ -50,4 +50,6 @@ jobs:
           name: nks-analyzer
           path: "public/Nitrocid/KSAnalyzer"
       - name: Package Publication
-        run: cmd.exe /C "tools\push.cmd ${{ secrets.GITHUB_TOKEN }} github"
+        run: |
+          dotnet nuget add source --username AptiviCEO --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
+          cmd.exe /C "tools\push.cmd ${{ secrets.GITHUB_TOKEN }} github"
