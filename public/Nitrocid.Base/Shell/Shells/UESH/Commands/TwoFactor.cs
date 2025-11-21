@@ -66,7 +66,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         // TODO: NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER -> In case your console shows an incomplete QR code, please use this setup key
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE") + $": {userInfo.TwoFactorSecret}");
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR"));
-                        // TODO: Implement QR code generation
+                        string qrCodeRendered = TwoFactorAuthTools.RenderQRCodeMatrix(userName);
+                        TextWriterColor.Write(qrCodeRendered, false);
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER") + $": {userInfo.TwoFactorSecret}");
                         break;
                     }
@@ -108,10 +109,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         }
 
                         // Write the setup key
-                        var userInfo = UserManagement.GetUser(userName) ??
-                            throw new KernelException(KernelExceptionType.NoSuchUser);
-                        // TODO: Implement QR code generation
-                        TextWriterColor.Write("TODO: Implement QR code generation", ThemeColorType.Warning);
+                        string qrCodeRendered = TwoFactorAuthTools.RenderQRCodeMatrix(userName);
+                        TextWriterColor.Write(qrCodeRendered, false);
                         break;
                     }
 
