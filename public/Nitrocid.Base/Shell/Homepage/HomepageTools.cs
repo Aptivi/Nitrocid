@@ -17,43 +17,46 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors.Themes.Colors;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Configuration.Settings;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Power;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Audio;
+using Nitrocid.Base.Misc.Interactives;
+using Nitrocid.Base.Users;
+using Nitrocid.Base.Users.Login;
+using Nitrocid.Base.Users.Login.Widgets;
+using Nitrocid.Base.Users.Login.Widgets.Canvas;
+using Nitrocid.Base.Users.Login.Widgets.Implementations;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Textify.General;
-using Nitrocid.Base.Files;
 using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Inputs.Styles.Infobox.Tools;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel.Configuration.Settings;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Misc.Interactives;
-using Nitrocid.Base.Kernel.Threading;
-using Nitrocid.Base.Misc.Audio;
-using Nitrocid.Base.Users.Login.Widgets;
-using Nitrocid.Base.Users.Login.Widgets.Implementations;
-using Nitrocid.Base.Users.Login;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Kernel.Power;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Textify.General;
 
 namespace Nitrocid.Base.Shell.Homepage
 {
@@ -88,6 +91,10 @@ namespace Nitrocid.Base.Shell.Homepage
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL"), ConsoleKey.S),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SWITCH"), ConsoleKey.Tab),
+            // TODO: NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE -> "Next page"
+            new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE"), ConsoleKey.RightArrow),
+            // TODO: NKS_SHELL_HOMEPAGE_KEYBINDING_PrevPAGE -> "Previous page"
+            new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE"), ConsoleKey.LeftArrow),
             new("Play...", ConsoleKey.P, true),
 
             // Mouse
@@ -107,6 +114,11 @@ namespace Nitrocid.Base.Shell.Homepage
             int buttonHighlight = 0;
             var choices = PopulateChoices();
 
+            // Handle paging
+            List<WidgetRenderInfo[]> canvases = GetHomepagePages();
+            int maxScreens = canvases.Count + 1;
+            int pageNumber = 1;
+
             try
             {
                 // Create a screen for the homepage
@@ -115,240 +127,7 @@ namespace Nitrocid.Base.Shell.Homepage
                 ThemeColorsTools.LoadBackground();
 
                 // Now, render the homepage
-                homeScreenBuffer.AddDynamicText(() =>
-                {
-                    var builder = new StringBuilder();
-
-                    // Prepare the common widget variables
-                    int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
-                    int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
-                    int widgetHeight = ConsoleWrapper.WindowHeight - 11;
-                    int widgetTop = 2;
-
-                    // Prepare the widget
-                    var widget =
-                        WidgetTools.CheckWidget(Config.MainConfig.HomepageWidget) ?
-                        WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
-                        WidgetTools.GetWidget(nameof(AnalogClock));
-                    if (homeScreen.RefreshWasDone)
-                    {
-                        string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
-                        builder.Append(widgetInit);
-                    }
-
-                    // Make a master border
-                    var masterBorder = new Border()
-                    {
-                        Left = 0,
-                        Top = 1,
-                        Width = ConsoleWrapper.WindowWidth - 2,
-                        Height = ConsoleWrapper.WindowHeight - 4,
-                        Color = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
-                    };
-                    builder.Append(masterBorder.Render());
-
-                    // Show username at the top
-                    string displayName =
-                        string.IsNullOrWhiteSpace(UserManagement.CurrentUser.FullName) ?
-                        UserManagement.CurrentUser.Username :
-                        UserManagement.CurrentUser.FullName;
-                    var greeting = new AlignedText()
-                    {
-                        Top = 0,
-                        Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_HEADER").FormatString(displayName),
-                        Settings = new()
-                        {
-                            Alignment = TextAlignment.Middle
-                        }
-                    };
-                    builder.Append(greeting.Render());
-
-                    // Show bindings
-                    var keybindings = new Keybindings()
-                    {
-                        KeybindingList = Bindings,
-                        BuiltinColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltin),
-                        BuiltinForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinForeground),
-                        BuiltinBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinBackground),
-                        OptionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingOption),
-                        OptionForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionForeground),
-                        OptionBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionBackground),
-                        Width = ConsoleWrapper.WindowWidth - 1,
-                    };
-                    builder.Append(RendererTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
-
-                    // Make a border for a widget and the first three RSS feeds (if the addon is installed)
-                    int rssTop = widgetTop + widgetHeight + 2;
-                    int rssHeight = 3;
-                    var widgetBorder = new Border()
-                    {
-                        Left = widgetLeft,
-                        Top = widgetTop,
-                        Width = widgetWidth,
-                        Height = widgetHeight,
-                        Color = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
-                    };
-                    var rssBorder = new Border()
-                    {
-                        Left = widgetLeft,
-                        Top = rssTop,
-                        Width = widgetWidth,
-                        Height = rssHeight,
-                        Color = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
-                    };
-                    builder.Append(
-                        widgetBorder.Render() +
-                        rssBorder.Render()
-                    );
-
-                    // Render the widget
-                    string widgetSeq = widget.Render(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
-                    builder.Append(widgetSeq);
-
-                    // Render the first three RSS feeds
-                    if (Config.MainConfig.EnableHomepageRssFeed)
-                    {
-                        int rssFeedLeft = widgetLeft + 1;
-                        int rssFeedTop = rssTop + 1;
-                        string rssSequence = "";
-                        bool needsWrapping = true;
-                        try
-                        {
-                            if (!Config.MainConfig.ShowHeadlineOnLogin)
-                                rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
-                            else if (!WidgetTools.IsWidgetBuiltin("RssFeeds"))
-                                rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
-                            else
-                            {
-                                var feedWidget = WidgetTools.GetWidget("RssFeeds");
-                                needsWrapping = false;
-                                rssSequence = feedWidget.Render(rssFeedLeft, rssFeedTop, widgetWidth, 3);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
-                            DebugWriter.WriteDebugStackTrace(ex);
-                            rssSequence = LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED");
-                        }
-
-                        // Render the RSS feed sequence or an error message
-                        if (needsWrapping)
-                        {
-                            rssSequence = new BoundedText()
-                            {
-                                Left = rssFeedLeft,
-                                Top = rssFeedTop,
-                                Width = widgetWidth,
-                                Height = 3,
-                                Text = rssSequence,
-                            }.Render();
-                        }
-                        builder.Append(rssSequence);
-                    }
-
-                    // Populate the button positions
-                    int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
-                    int buttonPanelWidth = widgetLeft - 4;
-                    int buttonWidth = buttonPanelWidth / 2 - 2;
-                    int buttonHeight = 1;
-                    int settingsButtonPosX = 2;
-                    int aboutButtonPosX = settingsButtonPosX + buttonWidth + 3;
-
-                    // Populate the settings button
-                    var foregroundSettings = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSeparator);
-                    var backgroundSettings = buttonHighlight == 1 ? ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
-                    var foregroundSettingsText = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-                    var settingsBorder = new Border()
-                    {
-                        Left = settingsButtonPosX,
-                        Top = buttonPanelPosY,
-                        Width = buttonWidth,
-                        Height = buttonHeight,
-                        Color = foregroundSettings,
-                        BackgroundColor = backgroundSettings,
-                    };
-                    var settingsText = new AlignedText()
-                    {
-                        Left = settingsButtonPosX + 1,
-                        Top = buttonPanelPosY + 1,
-                        Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_SETTINGS"),
-                        ForegroundColor = foregroundSettingsText,
-                        BackgroundColor = backgroundSettings,
-                        Width = buttonWidth,
-                        Settings = new()
-                        {
-                            Alignment = TextAlignment.Middle
-                        },
-                    };
-                    builder.Append(
-                        settingsBorder.Render() +
-                        settingsText.Render()
-                    );
-
-                    // Populate the about button
-                    var foregroundAbout = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSeparator);
-                    var backgroundAbout = buttonHighlight == 2 ? ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
-                    var foregroundAboutText = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-                    var aboutBorder = new Border()
-                    {
-                        Left = aboutButtonPosX,
-                        Top = buttonPanelPosY,
-                        Width = aboutButtonPosX + buttonWidth == buttonPanelWidth ? buttonWidth + 1 : buttonWidth,
-                        Height = buttonHeight,
-                        Color = foregroundAbout,
-                        BackgroundColor = backgroundAbout,
-                    };
-                    var aboutText = new AlignedText()
-                    {
-                        Left = aboutButtonPosX + 1,
-                        Top = buttonPanelPosY + 1,
-                        Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT"),
-                        ForegroundColor = foregroundAboutText,
-                        BackgroundColor = backgroundAbout,
-                        Width = buttonWidth,
-                        Settings = new()
-                        {
-                            Alignment = TextAlignment.Middle
-                        },
-                    };
-                    builder.Append(
-                        aboutBorder.Render() +
-                        aboutText.Render()
-                    );
-
-                    // Populate the available options
-                    var availableChoices = choices.Select((tuple) => tuple.Item1).ToArray();
-                    var choicesBorder = new Border()
-                    {
-                        Left = settingsButtonPosX,
-                        Top = widgetTop,
-                        Width = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
-                        Height = widgetHeight + 2,
-                        Color = ThemeColorsTools.GetColor(buttonHighlight == 0 ? ThemeColorType.TuiPaneSelectedSeparator : ThemeColorType.TuiPaneSeparator),
-                    };
-                    var choicesSelection = new Selection(availableChoices)
-                    {
-                        Left = settingsButtonPosX + 1,
-                        Top = widgetTop + 1,
-                        CurrentSelection = choiceIdx,
-                        AltChoicePos = availableChoices.Length,
-                        Height = widgetHeight + 2,
-                        Width = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
-                        Settings = new()
-                        {
-                            OptionColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
-                            SelectedOptionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
-                        },
-                    };
-                    builder.Append(
-                        choicesBorder.Render() +
-                        choicesSelection.Render()
-                    );
-
-                    // Return the resulting homepage
-                    return builder.ToString();
-                });
+                homeScreenBuffer.AddDynamicText(() => RenderHomepagePage(homeScreen.RefreshWasDone, pageNumber, canvases, choices, choiceIdx, buttonHighlight));
                 homeScreen.AddBufferedPart("The Nitrocid Homepage", homeScreenBuffer);
 
                 // Helper function
@@ -388,6 +167,10 @@ namespace Nitrocid.Base.Shell.Homepage
                     // Read the available input
                     if (data?.PointerEventContext is PointerEventContext context)
                     {
+                        // Unavailable in pages other than the first page
+                        if (pageNumber != 1)
+                            continue;
+
                         // Get the necessary positions
                         int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
                         int buttonPanelWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
@@ -480,6 +263,8 @@ namespace Nitrocid.Base.Shell.Homepage
                         switch (keypress.Key)
                         {
                             case ConsoleKey.DownArrow:
+                                if (pageNumber != 1)
+                                    break;
                                 if (buttonHighlight > 0)
                                     break;
                                 choiceIdx++;
@@ -487,6 +272,8 @@ namespace Nitrocid.Base.Shell.Homepage
                                     choiceIdx--;
                                 break;
                             case ConsoleKey.UpArrow:
+                                if (pageNumber != 1)
+                                    break;
                                 if (buttonHighlight > 0)
                                     break;
                                 choiceIdx--;
@@ -494,38 +281,60 @@ namespace Nitrocid.Base.Shell.Homepage
                                     choiceIdx++;
                                 break;
                             case ConsoleKey.Home:
+                                if (pageNumber != 1)
+                                    break;
                                 if (buttonHighlight > 0)
                                     break;
                                 choiceIdx = 0;
                                 break;
                             case ConsoleKey.End:
+                                if (pageNumber != 1)
+                                    break;
                                 if (buttonHighlight > 0)
                                     break;
                                 choiceIdx = choices.Length - 1;
                                 break;
                             case ConsoleKey.PageUp:
+                                if (pageNumber != 1)
+                                    break;
                                 if (buttonHighlight > 0)
                                     break;
                                 choiceIdx = startIndex;
                                 break;
                             case ConsoleKey.PageDown:
+                                if (pageNumber != 1)
+                                    break;
                                 if (buttonHighlight > 0)
                                     break;
                                 choiceIdx = endIndex > choices.Length - 1 ? choices.Length - 1 : endIndex + 1;
                                 choiceIdx = endIndex == choices.Length - 1 ? endIndex : choiceIdx;
                                 break;
                             case ConsoleKey.Tab:
+                                if (pageNumber != 1)
+                                    break;
                                 buttonHighlight++;
                                 if (buttonHighlight > 2)
                                     buttonHighlight = 0;
                                 break;
                             case ConsoleKey.Enter:
+                                if (pageNumber != 1)
+                                    break;
                                 if (buttonHighlight == 1)
                                     SettingsApp.OpenMainPage(Config.MainConfig);
                                 else if (buttonHighlight == 2)
                                     OpenAboutBox();
                                 else
                                     DoAction(choiceIdx);
+                                break;
+                            case ConsoleKey.LeftArrow:
+                                pageNumber--;
+                                if (pageNumber <= 0)
+                                    pageNumber = 1;
+                                break;
+                            case ConsoleKey.RightArrow:
+                                pageNumber++;
+                                if (pageNumber >= maxScreens + 1)
+                                    pageNumber = maxScreens;
                                 break;
                             case ConsoleKey.Escape:
                                 if (keypress.Modifiers == ConsoleModifiers.Shift)
@@ -717,6 +526,281 @@ namespace Nitrocid.Base.Shell.Homepage
                     Title = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUTNITROCID"),
                 }
             );
+        }
+
+        internal static List<WidgetRenderInfo[]> GetHomepagePages()
+        {
+            // File path to the homepage pages
+            string pathToPages = PathsManagement.HomepagePagesPath;
+            if (!FilesystemTools.FolderExists(pathToPages))
+                FilesystemTools.MakeDirectory(pathToPages);
+
+            // Enumerate the homepage pages
+            string[] homepagePageFiles = Directory.GetFiles(pathToPages, "*.json");
+            List<WidgetRenderInfo[]> homepagePages = [];
+            foreach (var homepagePageFile in homepagePageFiles)
+            {
+                // Parse the file and convert it to an array of render info instances
+                WidgetRenderInfo[] renderInfos = WidgetCanvasTools.GetRenderInfosFromFile(homepagePageFile);
+
+                // Add the page
+                homepagePages.Add(renderInfos);
+            }
+
+            // Return the result
+            return homepagePages;
+        }
+
+        private static string RenderHomepagePage(bool refreshWasDone, int pageNumber, List<WidgetRenderInfo[]> canvases, (InputChoiceInfo, Action)[] choices, int choiceIdx, int buttonHighlight)
+        {
+            int actualScreenNum = pageNumber - 2;
+            var builder = new StringBuilder();
+
+            // Clear the console
+            builder.Append(
+                CsiSequences.GenerateCsiCursorPosition(1, 1) +
+                CsiSequences.GenerateCsiEraseInDisplay(0)
+            );
+
+            if (actualScreenNum < 0)
+            {
+                // Prepare the common widget variables
+                int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
+                int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
+                int widgetHeight = ConsoleWrapper.WindowHeight - 11;
+                int widgetTop = 2;
+
+                // Prepare the widget
+                var widget =
+                    WidgetTools.CheckWidget(Config.MainConfig.HomepageWidget) ?
+                    WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
+                    WidgetTools.GetWidget(nameof(AnalogClock));
+                if (refreshWasDone)
+                {
+                    string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
+                    builder.Append(widgetInit);
+                }
+
+                // Make a master border
+                var masterBorder = new Border()
+                {
+                    Left = 0,
+                    Top = 1,
+                    Width = ConsoleWrapper.WindowWidth - 2,
+                    Height = ConsoleWrapper.WindowHeight - 4,
+                    Color = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
+                };
+                builder.Append(masterBorder.Render());
+
+                // Show username at the top
+                string displayName =
+                    string.IsNullOrWhiteSpace(UserManagement.CurrentUser.FullName) ?
+                    UserManagement.CurrentUser.Username :
+                    UserManagement.CurrentUser.FullName;
+                var greeting = new AlignedText()
+                {
+                    Top = 0,
+                    Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_HEADER").FormatString(displayName),
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    }
+                };
+                builder.Append(greeting.Render());
+
+                // Show bindings
+                var keybindings = new Keybindings()
+                {
+                    KeybindingList = Bindings,
+                    BuiltinColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltin),
+                    BuiltinForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinForeground),
+                    BuiltinBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinBackground),
+                    OptionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingOption),
+                    OptionForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionForeground),
+                    OptionBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionBackground),
+                    Width = ConsoleWrapper.WindowWidth - 1,
+                };
+                builder.Append(RendererTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
+
+                // Make a border for a widget and the first three RSS feeds (if the addon is installed)
+                int rssTop = widgetTop + widgetHeight + 2;
+                int rssHeight = 3;
+                var widgetBorder = new Border()
+                {
+                    Left = widgetLeft,
+                    Top = widgetTop,
+                    Width = widgetWidth,
+                    Height = widgetHeight,
+                    Color = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
+                };
+                var rssBorder = new Border()
+                {
+                    Left = widgetLeft,
+                    Top = rssTop,
+                    Width = widgetWidth,
+                    Height = rssHeight,
+                    Color = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
+                };
+                builder.Append(
+                    widgetBorder.Render() +
+                    rssBorder.Render()
+                );
+
+                // Render the widget
+                string widgetSeq = widget.Render(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
+                builder.Append(widgetSeq);
+
+                // Render the first three RSS feeds
+                if (Config.MainConfig.EnableHomepageRssFeed)
+                {
+                    int rssFeedLeft = widgetLeft + 1;
+                    int rssFeedTop = rssTop + 1;
+                    string rssSequence = "";
+                    bool needsWrapping = true;
+                    try
+                    {
+                        if (!Config.MainConfig.ShowHeadlineOnLogin)
+                            rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
+                        else if (!WidgetTools.IsWidgetBuiltin("RssFeeds"))
+                            rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
+                        else
+                        {
+                            var feedWidget = WidgetTools.GetWidget("RssFeeds");
+                            needsWrapping = false;
+                            rssSequence = feedWidget.Render(rssFeedLeft, rssFeedTop, widgetWidth, 3);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        rssSequence = LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED");
+                    }
+
+                    // Render the RSS feed sequence or an error message
+                    if (needsWrapping)
+                    {
+                        rssSequence = new BoundedText()
+                        {
+                            Left = rssFeedLeft,
+                            Top = rssFeedTop,
+                            Width = widgetWidth,
+                            Height = 3,
+                            Text = rssSequence,
+                        }.Render();
+                    }
+                    builder.Append(rssSequence);
+                }
+
+                // Populate the button positions
+                int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
+                int buttonPanelWidth = widgetLeft - 4;
+                int buttonWidth = buttonPanelWidth / 2 - 2;
+                int buttonHeight = 1;
+                int settingsButtonPosX = 2;
+                int aboutButtonPosX = settingsButtonPosX + buttonWidth + 3;
+
+                // Populate the settings button
+                var foregroundSettings = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSeparator);
+                var backgroundSettings = buttonHighlight == 1 ? ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
+                var foregroundSettingsText = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+                var settingsBorder = new Border()
+                {
+                    Left = settingsButtonPosX,
+                    Top = buttonPanelPosY,
+                    Width = buttonWidth,
+                    Height = buttonHeight,
+                    Color = foregroundSettings,
+                    BackgroundColor = backgroundSettings,
+                };
+                var settingsText = new AlignedText()
+                {
+                    Left = settingsButtonPosX + 1,
+                    Top = buttonPanelPosY + 1,
+                    Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_SETTINGS"),
+                    ForegroundColor = foregroundSettingsText,
+                    BackgroundColor = backgroundSettings,
+                    Width = buttonWidth,
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    },
+                };
+                builder.Append(
+                    settingsBorder.Render() +
+                    settingsText.Render()
+                );
+
+                // Populate the about button
+                var foregroundAbout = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSeparator);
+                var backgroundAbout = buttonHighlight == 2 ? ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
+                var foregroundAboutText = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+                var aboutBorder = new Border()
+                {
+                    Left = aboutButtonPosX,
+                    Top = buttonPanelPosY,
+                    Width = aboutButtonPosX + buttonWidth == buttonPanelWidth ? buttonWidth + 1 : buttonWidth,
+                    Height = buttonHeight,
+                    Color = foregroundAbout,
+                    BackgroundColor = backgroundAbout,
+                };
+                var aboutText = new AlignedText()
+                {
+                    Left = aboutButtonPosX + 1,
+                    Top = buttonPanelPosY + 1,
+                    Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT"),
+                    ForegroundColor = foregroundAboutText,
+                    BackgroundColor = backgroundAbout,
+                    Width = buttonWidth,
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    },
+                };
+                builder.Append(
+                    aboutBorder.Render() +
+                    aboutText.Render()
+                );
+
+                // Populate the available options
+                var availableChoices = choices.Select((tuple) => tuple.Item1).ToArray();
+                var choicesBorder = new Border()
+                {
+                    Left = settingsButtonPosX,
+                    Top = widgetTop,
+                    Width = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
+                    Height = widgetHeight + 2,
+                    Color = ThemeColorsTools.GetColor(buttonHighlight == 0 ? ThemeColorType.TuiPaneSelectedSeparator : ThemeColorType.TuiPaneSeparator),
+                };
+                var choicesSelection = new Selection(availableChoices)
+                {
+                    Left = settingsButtonPosX + 1,
+                    Top = widgetTop + 1,
+                    CurrentSelection = choiceIdx,
+                    AltChoicePos = availableChoices.Length,
+                    Height = widgetHeight + 2,
+                    Width = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
+                    Settings = new()
+                    {
+                        OptionColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
+                        SelectedOptionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
+                    },
+                };
+                builder.Append(
+                    choicesBorder.Render() +
+                    choicesSelection.Render()
+                );
+
+                // Return the resulting homepage
+                return builder.ToString();
+            }
+            else
+            {
+                var canvas = canvases[actualScreenNum];
+                var renderedCanvas = WidgetCanvasTools.RenderFromInfos(canvas);
+                builder.Append(renderedCanvas);
+            }
+            return builder.ToString();
         }
     }
 }
