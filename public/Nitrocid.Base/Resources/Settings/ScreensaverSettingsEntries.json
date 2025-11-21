@@ -24,5 +24,23 @@
                 "MaximumValue": 100
             }
         ]
+    },
+    {
+        "Name": "Curtain",
+        "Desc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME",
+                "Type": "SInt",
+                "Variable": "CurtainDelay",
+                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC"
+            },
+            {
+                "Name": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME",
+                "Type": "SInt",
+                "Variable": "CurtainPageNumber",
+                "Description": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC"
+            }
+        ]
     }
 ]

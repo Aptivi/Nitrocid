@@ -104,5 +104,47 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
             }
         }
         #endregion
+
+        #region Curtain
+        private int curtainDelay = 1000;
+        private int curtainPageNumber = 1;
+
+        /// <summary>
+        /// [Curtain] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int CurtainDelay
+        {
+            get
+            {
+                return curtainDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1000;
+                curtainDelay = value;
+            }
+        }
+
+        /// <summary>
+        /// [Curtain] Page number of the login screen to show
+        /// </summary>
+        // TODO: NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC -> "Shows you a login screen"
+        // TODO: NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME -> "Login page number"
+        // TODO: NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC -> "Page number of the login screen to show"
+        public int CurtainPageNumber
+        {
+            get
+            {
+                return curtainPageNumber;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1;
+                curtainPageNumber = value;
+            }
+        }
+        #endregion
     }
 }
