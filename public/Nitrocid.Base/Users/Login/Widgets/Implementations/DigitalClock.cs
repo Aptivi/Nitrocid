@@ -59,6 +59,8 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
                 ForegroundColor = clockColor,
                 BackgroundColor = backgroundColor,
                 Top = consoleY,
+                Left = left,
+                Width = width,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle,
