@@ -231,6 +231,7 @@ namespace Nitrocid.ShellPacks
             CommandManager.RegisterCustomCommands("Shell", [.. rssAddonCommands]);
             CommandManager.RegisterCustomCommands("Shell", [.. sftpAddonCommands]);
             WidgetTools.AddBaseWidget(new RssFeedSingle());
+            WidgetTools.AddBaseWidget(new RssFeeds());
 
             // Set the native lib path for Git
             if (!gitNativeLibIsSet)
@@ -265,6 +266,7 @@ namespace Nitrocid.ShellPacks
             CommandManager.UnregisterCustomCommands("Shell", [.. rssAddonCommands.Select((ci) => ci.Command)]);
             CommandManager.UnregisterCustomCommands("Shell", [.. sftpAddonCommands.Select((ci) => ci.Command)]);
             WidgetTools.RemoveBaseWidget(nameof(RssFeedSingle));
+            WidgetTools.RemoveBaseWidget(nameof(RssFeeds));
         }
     }
 }
