@@ -33,9 +33,11 @@ namespace Nitrocid.Base.Users.Login.Widgets
     {
         private static readonly List<BaseWidget> baseWidgets =
         [
+            new UnknownWidget(),
             new AnalogClock(),
             new DigitalClock(),
             new Emoji(),
+            new EmojiChar(),
             new NotificationIcons(),
             new NotificationList(),
         ];
