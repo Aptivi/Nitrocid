@@ -121,6 +121,7 @@ namespace Nitrocid.Base.Users.Login.Widgets.Canvas
 
                 // Now, render the widget
                 var widget = WidgetTools.GetWidget(renderInfo.WidgetName);
+                widget.Options = renderInfo.Options;
                 renderBuilder.Append(widget.Initialize(pos.X, pos.Y, margin.Width, margin.Height));
                 renderBuilder.Append(widget.Render(pos.X, pos.Y, margin.Width, margin.Height));
             }

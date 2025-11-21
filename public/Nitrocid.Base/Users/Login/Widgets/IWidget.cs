@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
+
 namespace Nitrocid.Base.Users.Login.Widgets
 {
     /// <summary>
@@ -24,6 +26,11 @@ namespace Nitrocid.Base.Users.Login.Widgets
     /// </summary>
     public interface IWidget
     {
+        /// <summary>
+        /// Options for the widget
+        /// </summary>
+        Dictionary<string, object> Options { get; set; }
+
         /// <summary>
         /// Renders this widget in a specified location
         /// </summary>

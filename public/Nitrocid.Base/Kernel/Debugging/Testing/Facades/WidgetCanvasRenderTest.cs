@@ -1,4 +1,4 @@
-//
+﻿//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -42,27 +42,39 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
                         "left": 3,
                         "top": 1,
                         "width": 30,
-                        "height": 15,
+                        "height": 15
                     },
                     {
-                        "widgetName": "EmojiChar",
+                        "widgetName": "TextWidget",
                         "left": 3,
                         "top": 1,
+                        "options": {
+                            "text": "✅"
+                        }
                     },
                     {
-                        "widgetName": "EmojiChar",
+                        "widgetName": "TextWidget",
                         "left": 32,
                         "top": 1,
+                        "options": {
+                            "text": "✅"
+                        }
                     },
                     {
-                        "widgetName": "EmojiChar",
+                        "widgetName": "TextWidget",
                         "left": 3,
                         "top": 16,
+                        "options": {
+                            "text": "✅"
+                        }
                     },
                     {
-                        "widgetName": "EmojiChar",
+                        "widgetName": "TextWidget",
                         "left": 32,
                         "top": 16,
+                        "options": {
+                            "text": "✅"
+                        }
                     }
                 ]
                 """;

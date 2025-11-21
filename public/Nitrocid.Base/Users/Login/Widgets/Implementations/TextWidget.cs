@@ -21,7 +21,7 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Base.Users.Login.Widgets.Implementations
 {
-    internal class EmojiChar : BaseWidget, IWidget
+    internal class TextWidget : BaseWidget, IWidget
     {
         public override string Cleanup(int left, int top, int width, int height) =>
             "";
@@ -31,16 +31,16 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
 
         public override string Render(int left, int top, int width, int height)
         {
-            // TODO: Let this widget choose random emoji instead of a happy face, as this is a test
-            var emojiAlignedText = new BoundedText()
+            string textText = Options.TryGetValue("text", out object? textValue) ? (string)textValue : "😊";
+            var textAlignedText = new BoundedText()
             {
                 Left = left,
                 Top = top,
                 Width = width,
                 Height = height,
-                Text = "😊",
+                Text = textText,
             };
-            return emojiAlignedText.Render();
+            return textAlignedText.Render();
         }
     }
 }
