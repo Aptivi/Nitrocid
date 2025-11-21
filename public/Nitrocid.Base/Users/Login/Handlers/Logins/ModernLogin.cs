@@ -75,7 +75,8 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
             else if (key == ConsoleKey.LeftArrow || key == ConsoleKey.RightArrow)
             {
                 proceed = false;
-                // TODO: Change this to handle all screens once configurable screens come
+                var canvases = ModernLogonScreen.canvases;
+                int maxLogonScreens = canvases.Count + 1;
                 if (key == ConsoleKey.LeftArrow)
                 {
                     ModernLogonScreen.screenNum--;
@@ -85,8 +86,8 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
                 else
                 {
                     ModernLogonScreen.screenNum++;
-                    if (ModernLogonScreen.screenNum >= 2)
-                        ModernLogonScreen.screenNum = 1;
+                    if (ModernLogonScreen.screenNum >= maxLogonScreens + 1)
+                        ModernLogonScreen.screenNum = maxLogonScreens;
                 }
             }
             return proceed;

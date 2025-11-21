@@ -124,5 +124,13 @@ namespace Nitrocid.Base.Files.Paths
         /// Essential addons folder
         /// </summary>
         AddonsEssentials,
+        /// <summary>
+        /// List of logon pages for the modern logon
+        /// </summary>
+        LogonPages,
+        /// <summary>
+        /// List of homepage pages
+        /// </summary>
+        HomepagePages,
     }
 }
