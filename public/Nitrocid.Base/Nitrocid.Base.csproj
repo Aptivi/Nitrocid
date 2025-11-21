@@ -79,6 +79,15 @@
   </ItemGroup>
   <!-- KS Release Changelogs -->
 
+  <!-- KS Branding (for Photo widget) -->
+  <ItemGroup>
+    <EmbeddedResource Include="..\Nitrocid\OfficialAppIcon-NitrocidKS-32.png">
+      <LogicalName>Nitrocid.Base.Resources.Login.Widgets.Resources.Photo.Placeholder</LogicalName>
+      <Link>Users/Login/Widgets/Resources/Photo/Placeholder.png</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <!-- KS Branding (for Photo widget) -->
+
   <!-- KS Generators -->
   <ItemGroup>
     <ProjectReference Include="..\..\private\Nitrocid.Generators\Nitrocid.Generators.KnownAddons\Nitrocid.Generators.KnownAddons.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
