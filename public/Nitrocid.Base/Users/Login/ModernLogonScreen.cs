@@ -38,6 +38,11 @@ using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Users.Login.Widgets;
 using Nitrocid.Base.Users.Login.Widgets.Implementations;
 using Nitrocid.Base.Users.Login.Motd;
+using System.Collections.Generic;
+using Nitrocid.Base.Users.Login.Widgets.Canvas;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Files;
+using System.IO;
 
 namespace Nitrocid.Base.Users.Login
 {
@@ -45,6 +50,7 @@ namespace Nitrocid.Base.Users.Login
     {
         internal static bool renderedFully = false;
         internal static int screenNum = 1;
+        internal static List<WidgetRenderInfo[]> canvases = [];
         internal readonly static KernelThread updateThread = new("Modern Logon Update Thread", true, ScreenHandler);
 
         internal static void ScreenHandler()
@@ -56,16 +62,20 @@ namespace Nitrocid.Base.Users.Login
             // Now, do the job
             try
             {
+                // Initialize the saved widget canvases
+                canvases = GetLogonPages();
+                int maxLogonScreens = canvases.Count + 1;
+
+                // Main screen loop
                 while (true)
                 {
                     try
                     {
-                        if (screenNum == 1)
+                        if (screenNum > 0 && screenNum <= maxLogonScreens)
                         {
-                            // TODO: Screen number 1, for now, while we introduce Widget Canvas JSON
                             screen.RemoveBufferedParts();
                             var part = new ScreenPart();
-                            part.AddDynamicText(() => PrintConfiguredLogonScreen(screenNum));
+                            part.AddDynamicText(() => PrintConfiguredLogonScreen(screenNum, canvases));
                             screen.AddBufferedPart($"Modern logon screen {screenNum} update part", part);
 
                             // Render it now
@@ -141,59 +151,80 @@ namespace Nitrocid.Base.Users.Login
             ScreenTools.UnsetCurrent(screen);
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "Function under development")]
-        internal static string PrintConfiguredLogonScreen(int screenNum)
+        internal static string PrintConfiguredLogonScreen(int screenNum, List<WidgetRenderInfo[]> canvases)
         {
-            // TODO: screenNum is just an accessory argument for now
+            int actualScreenNum = screenNum - 2;
             var display = new StringBuilder();
 
-            // Clear the console and write the time using figlet
+            // Clear the console
             display.Append(
                 CsiSequences.GenerateCsiCursorPosition(1, 1) +
                 CsiSequences.GenerateCsiEraseInDisplay(0)
             );
-            string timeStr = TimeDateRenderers.RenderTime(FormatType.Short);
-            var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-            int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
-            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            var timeFiglet = new AlignedFigletText(figFont)
-            {
-                Top = consoleY,
-                Text = timeStr,
-                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Stage),
-                Settings = new()
-                {
-                    Alignment = TextAlignment.Middle,
-                }
-            };
-            display.Append(timeFiglet.Render());
 
-            // Print the date
-            string dateStr = $"{TimeDateRenderers.RenderDate()}";
-            int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-            var dateText = new AlignedText()
+            // Check the screen
+            if (actualScreenNum < 0)
             {
-                Top = consoleInfoY,
-                Text = dateStr,
-                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Stage),
-                OneLine = true,
-                Settings = new()
+                // Write the time using figlet
+                string timeStr = TimeDateRenderers.RenderTime(FormatType.Short);
+                var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
+                int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
+                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+                var timeFiglet = new AlignedFigletText(figFont)
                 {
-                    Alignment = TextAlignment.Middle,
-                }
-            };
-            display.Append(dateText.Render());
+                    Top = consoleY,
+                    Text = timeStr,
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Stage),
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle,
+                    }
+                };
+                display.Append(timeFiglet.Render());
 
-            // Print the MOTD
-            string[] motdStrs = ConsoleMisc.GetWrappedSentencesByWords(MotdParse.MotdMessage, ConsoleWrapper.WindowWidth - 4);
-            for (int i = 0; i < motdStrs.Length && i < 2; i++)
-            {
-                string motdStr = motdStrs[i];
-                int consoleMotdInfoY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2 + i;
-                var motdText = new AlignedText()
+                // Print the date
+                string dateStr = $"{TimeDateRenderers.RenderDate()}";
+                int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
+                var dateText = new AlignedText()
                 {
-                    Top = consoleMotdInfoY,
-                    Text = motdStr,
+                    Top = consoleInfoY,
+                    Text = dateStr,
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Stage),
+                    OneLine = true,
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle,
+                    }
+                };
+                display.Append(dateText.Render());
+
+                // Print the MOTD
+                string[] motdStrs = ConsoleMisc.GetWrappedSentencesByWords(MotdParse.MotdMessage, ConsoleWrapper.WindowWidth - 4);
+                for (int i = 0; i < motdStrs.Length && i < 2; i++)
+                {
+                    string motdStr = motdStrs[i];
+                    int consoleMotdInfoY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2 + i;
+                    var motdText = new AlignedText()
+                    {
+                        Top = consoleMotdInfoY,
+                        Text = motdStr,
+                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
+                        OneLine = true,
+                        Settings = new()
+                        {
+                            Alignment = TextAlignment.Middle,
+                        }
+                    };
+                    display.Append(motdText.Render());
+                }
+
+                // Print the instructions
+                string instStr = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PRESSKEY");
+                int consoleInstY = ConsoleWrapper.WindowHeight - 2;
+                var instText = new AlignedText()
+                {
+                    Top = consoleInstY,
+                    Text = instStr,
                     ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
                     OneLine = true,
                     Settings = new()
@@ -201,27 +232,40 @@ namespace Nitrocid.Base.Users.Login
                         Alignment = TextAlignment.Middle,
                     }
                 };
-                display.Append(motdText.Render());
+                display.Append(instText.Render());
+
+                // Print everything
+                return display.ToString();
+            }
+            else
+            {
+                var canvas = canvases[actualScreenNum];
+                var renderedCanvas = WidgetCanvasTools.RenderFromInfos(canvas);
+                return renderedCanvas;
+            }
+        }
+
+        internal static List<WidgetRenderInfo[]> GetLogonPages()
+        {
+            // File path to the logon pages
+            string pathToPages = PathsManagement.LogonPagesPath;
+            if (!FilesystemTools.FolderExists(pathToPages))
+                FilesystemTools.MakeDirectory(pathToPages);
+
+            // Enumerate the logon pages
+            string[] logonPageFiles = Directory.GetFiles(pathToPages, "*.json");
+            List<WidgetRenderInfo[]> logonPages = [];
+            foreach (var logonPageFile in logonPageFiles)
+            {
+                // Parse the file and convert it to an array of render info instances
+                WidgetRenderInfo[] renderInfos = WidgetCanvasTools.GetRenderInfosFromFile(logonPageFile);
+
+                // Add the page
+                logonPages.Add(renderInfos);
             }
 
-            // Print the instructions
-            string instStr = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PRESSKEY");
-            int consoleInstY = ConsoleWrapper.WindowHeight - 2;
-            var instText = new AlignedText()
-            {
-                Top = consoleInstY,
-                Text = instStr,
-                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
-                OneLine = true,
-                Settings = new()
-                {
-                    Alignment = TextAlignment.Middle,
-                }
-            };
-            display.Append(instText.Render());
-
-            // Print everything
-            return display.ToString();
+            // Return the result
+            return logonPages;
         }
     }
 }

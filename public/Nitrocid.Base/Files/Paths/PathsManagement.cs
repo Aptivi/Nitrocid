@@ -62,6 +62,8 @@ namespace Nitrocid.Base.Files.Paths
             { $"{KernelPathType.NotificationRecents}", (() => NotificationRecentsPath, true) },
             { $"{KernelPathType.WidgetConfiguration}", (() => WidgetConfigurationPath, true) },
             { $"{KernelPathType.AddonsEssentials}",    (() => AddonsEssentialsPath, false) },
+            { $"{KernelPathType.LogonPages}",          (() => LogonPagesPath, true) },
+            { $"{KernelPathType.HomepagePages}",       (() => HomepagePagesPath, true) },
         };
 
         /// <summary>
@@ -280,6 +282,18 @@ namespace Nitrocid.Base.Files.Paths
         /// </summary>
         public static string WidgetConfigurationPath =>
             FilesystemTools.NeutralizePath(AppDataPath + "/KernelWidgetsConfig.json");
+
+        /// <summary>
+        /// Logon pages path
+        /// </summary>
+        public static string LogonPagesPath =>
+            FilesystemTools.NeutralizePath(AppDataPath + "/LogonPages/");
+
+        /// <summary>
+        /// Homepage pages path
+        /// </summary>
+        public static string HomepagePagesPath =>
+            FilesystemTools.NeutralizePath(AppDataPath + "/HomepagePages/");
 
         /// <summary>
         /// Gets the kernel path name from the list of known path types
