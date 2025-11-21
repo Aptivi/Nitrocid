@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using Terminaux.Base;
 
 namespace Nitrocid.Base.Users.Login.Widgets
@@ -26,6 +27,11 @@ namespace Nitrocid.Base.Users.Login.Widgets
     /// </summary>
     public abstract class BaseWidget : IWidget
     {
+        /// <summary>
+        /// Options for the widget
+        /// </summary>
+        public Dictionary<string, object> Options { get; set; } = [];
+
         /// <summary>
         /// Renders this widget in the upper left corner of the console with the width and height of the console window
         /// </summary>

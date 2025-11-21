@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using Nitrocid.Base.Users.Login.Widgets.Implementations;
 using Terminaux.Base;
@@ -51,6 +52,8 @@ namespace Nitrocid.Base.Users.Login.Widgets.Canvas
         private readonly int heightTopMargin = 0;
         [JsonProperty]
         private readonly int heightBottomMargin = 0;
+        [JsonProperty]
+        private readonly Dictionary<string, object> options = [];
 
         /// <summary>
         /// A widget
@@ -93,6 +96,13 @@ namespace Nitrocid.Base.Users.Login.Widgets.Canvas
         [JsonIgnore]
         public Margin Margin =>
             new(widthLeftMargin, heightTopMargin, widthRightMargin, heightBottomMargin, Size.Width, Size.Height);
+
+        /// <summary>
+        /// Options of the widget
+        /// </summary>
+        [JsonIgnore]
+        public Dictionary<string, object> Options =>
+            options;
 
         private int Normalize(int value, bool increase = false)
         {

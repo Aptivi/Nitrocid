@@ -37,7 +37,7 @@ namespace Nitrocid.Base.Users.Login.Widgets
             new AnalogClock(),
             new DigitalClock(),
             new Emoji(),
-            new EmojiChar(),
+            new TextWidget(),
             new NotificationIcons(),
             new NotificationList(),
         ];
