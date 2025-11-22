@@ -49,6 +49,8 @@ namespace Nitrocid.SplashPacks.Splashes
         // Standalone splash information
         public override string SplashName => "EdgePulse";
 
+        public override bool RequiresBackground => true;
+
         // Actual logic
         public override string Opening(SplashContext context)
         {
