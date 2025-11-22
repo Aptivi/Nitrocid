@@ -157,10 +157,7 @@ namespace Nitrocid.Base.Users.Login
             var display = new StringBuilder();
 
             // Clear the console
-            display.Append(
-                CsiSequences.GenerateCsiCursorPosition(1, 1) +
-                CsiSequences.GenerateCsiEraseInDisplay(0)
-            );
+            display.Append(ConsoleClearing.GetClearWholeScreenSequence());
 
             // Check the screen
             if (actualScreenNum < 0)

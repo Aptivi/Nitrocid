@@ -24,6 +24,7 @@ using Terminaux.Colors.Themes.Colors;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Base.Kernel.Debugging;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Base.Misc.Splash
 {
@@ -55,10 +56,7 @@ namespace Nitrocid.Base.Misc.Splash
             var builder = new StringBuilder();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
             ColorTools.SetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Background), true);
-            builder.Append(
-                CsiSequences.GenerateCsiCursorPosition(1, 1) +
-                CsiSequences.GenerateCsiEraseInDisplay(0)
-            );
+            builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
             return builder.ToString();
         }
 
@@ -82,10 +80,7 @@ namespace Nitrocid.Base.Misc.Splash
             var builder = new StringBuilder();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
             ColorTools.SetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Background), true);
-            builder.Append(
-                CsiSequences.GenerateCsiCursorPosition(1, 1) +
-                CsiSequences.GenerateCsiEraseInDisplay(0)
-            );
+            builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
             delayRequired = false;
             return builder.ToString();
         }
