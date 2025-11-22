@@ -45,6 +45,18 @@
     {
       "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
       "text": "setings pravishtiyaan praapt karane mein viphal."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC",
+      "text": "kansol ke beech mein likha hua ek bada svaagat shabd dikhaata hai; svaagat mait ke samaan"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME",
+      "text": "pragati dikhaen"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
+      "text": "pragati dikhaen ya nahin"
     }
   ]
 }

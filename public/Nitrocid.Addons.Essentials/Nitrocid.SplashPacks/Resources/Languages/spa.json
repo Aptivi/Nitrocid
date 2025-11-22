@@ -70,6 +70,18 @@
     {
       "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
       "text": "No se pudieron obtener las entradas de configuración."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC",
+      "text": "Muestra una gran palabra de bienvenida escrita en el medio de la consola; similar a los tapetes de bienvenida"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME",
+      "text": "Mostrar progreso"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
+      "text": "Mostrar progreso o no"
     }
   ]
 }

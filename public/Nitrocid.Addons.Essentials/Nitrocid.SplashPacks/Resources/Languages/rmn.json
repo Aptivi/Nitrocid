@@ -46,6 +46,18 @@
     {
       "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
       "text": "Nu s-au putut obține intrările de setări."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC",
+      "text": "Afișează un cuvânt mare de bun venit scris în mijlocul consolei; asemănător covorașelor de bun venit"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME",
+      "text": "Arată progresul"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
+      "text": "Arată progresul sau nu"
     }
   ]
 }

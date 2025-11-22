@@ -147,5 +147,14 @@
   <data name="NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES" xml:space="preserve">
     <value>Gagal mendapatkan entri pengaturan.</value>
   </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC" xml:space="preserve">
+    <value>Menampilkan kata Selamat Datang yang besar tertulis di tengah konsol; mirip dengan tikar selamat datang</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME" xml:space="preserve">
+    <value>Tampilkan kemajuan</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC" xml:space="preserve">
+    <value>Tunjukkan kemajuan atau tidak</value>
+  </data>
 
 </root>

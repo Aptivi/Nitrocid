@@ -48,6 +48,18 @@
     {
       "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
       "text": "Impossibile ottenere le voci delle impostazioni."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC",
+      "text": "Mostra una grande parola di benvenuto scritta al centro della console; simile ai tappetini di benvenuto"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME",
+      "text": "Mostra progressi"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
+      "text": "Mostrare progressi o no"
     }
   ]
 }

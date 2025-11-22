@@ -147,5 +147,14 @@
   <data name="NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES" xml:space="preserve">
     <value>setings pravishtiyaan praapt karane mein viphal.</value>
   </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC" xml:space="preserve">
+    <value>kansol ke beech mein likha hua ek bada svaagat shabd dikhaata hai; svaagat mait ke samaan</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME" xml:space="preserve">
+    <value>pragati dikhaen</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC" xml:space="preserve">
+    <value>pragati dikhaen ya nahin</value>
+  </data>
 
 </root>

@@ -147,5 +147,14 @@
   <data name="NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES" xml:space="preserve">
     <value>Impossible d&apos;obtenir les entrées de paramètres.</value>
   </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC" xml:space="preserve">
+    <value>Affiche un grand mot de bienvenue écrit au milieu de la console ; semblable aux tapis de bienvenue</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME" xml:space="preserve">
+    <value>Afficher les progrès</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC" xml:space="preserve">
+    <value>Montrer des progrès ou non</value>
+  </data>
 
 </root>

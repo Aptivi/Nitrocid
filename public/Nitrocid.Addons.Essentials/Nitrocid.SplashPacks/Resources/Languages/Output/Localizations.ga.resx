@@ -147,5 +147,14 @@
   <data name="NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES" xml:space="preserve">
     <value>Theip ar na hiontrálacha socruithe a fháil.</value>
   </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC" xml:space="preserve">
+    <value>Léiríonn focal Fáilte mór scríofa i lár an consóil; cosúil leis na mataí fáilte</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME" xml:space="preserve">
+    <value>Taispeáin dul chun cinn</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC" xml:space="preserve">
+    <value>Taispeáin dul chun cinn nó ná bíodh</value>
+  </data>
 
 </root>

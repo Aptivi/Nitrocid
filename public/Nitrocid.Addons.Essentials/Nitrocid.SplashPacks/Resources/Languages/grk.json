@@ -46,6 +46,18 @@
     {
       "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
       "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC",
+      "text": "Εμφανίζει μια μεγάλη λέξη καλωσορίσματος γραμμένη στη μέση της κονσόλας. παρόμοια με τα χαλάκια καλωσορίσματος"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME",
+      "text": "Εμφάνιση προόδου"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
+      "text": "Εμφάνιση προόδου ή όχι"
     }
   ]
 }

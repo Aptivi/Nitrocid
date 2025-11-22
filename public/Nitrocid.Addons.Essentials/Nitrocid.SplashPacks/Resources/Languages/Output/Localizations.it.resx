@@ -147,5 +147,14 @@
   <data name="NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES" xml:space="preserve">
     <value>Impossibile ottenere le voci delle impostazioni.</value>
   </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC" xml:space="preserve">
+    <value>Mostra una grande parola di benvenuto scritta al centro della console; simile ai tappetini di benvenuto</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME" xml:space="preserve">
+    <value>Mostra progressi</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC" xml:space="preserve">
+    <value>Mostrare progressi o no</value>
+  </data>
 
 </root>

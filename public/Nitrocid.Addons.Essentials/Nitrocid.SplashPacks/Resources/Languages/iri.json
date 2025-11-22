@@ -46,6 +46,18 @@
     {
       "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
       "text": "Theip ar na hiontrálacha socruithe a fháil."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC",
+      "text": "Léiríonn focal Fáilte mór scríofa i lár an consóil; cosúil leis na mataí fáilte"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME",
+      "text": "Taispeáin dul chun cinn"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
+      "text": "Taispeáin dul chun cinn nó ná bíodh"
     }
   ]
 }

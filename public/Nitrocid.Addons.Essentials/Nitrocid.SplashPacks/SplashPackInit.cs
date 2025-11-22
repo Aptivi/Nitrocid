@@ -45,6 +45,7 @@ namespace Nitrocid.SplashPacks
             new SplashInfo("BeatEdgePulse", new SplashBeatEdgePulse()),
             new SplashInfo("Spin", new SplashSpin()),
             new SplashInfo("SquareCorner", new SplashSquareCorner()),
+            new SplashInfo("Welcome2024", new SplashWelcome2024()),
         ];
 
         public string AddonName =>

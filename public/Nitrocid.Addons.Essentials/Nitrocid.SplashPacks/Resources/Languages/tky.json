@@ -46,6 +46,18 @@
     {
       "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
       "text": "Ayar girişleri alınamadı."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC",
+      "text": "Konsolun ortasına yazılmış büyük bir Hoş Geldiniz sözcüğünü gösterir; hoş geldiniz paspaslarına benzer"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME",
+      "text": "İlerlemeyi göster"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
+      "text": "İlerleme gösterilsin mi gösterilmesin mi"
     }
   ]
 }
