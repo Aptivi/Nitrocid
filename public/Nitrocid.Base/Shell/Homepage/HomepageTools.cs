@@ -42,6 +42,7 @@ using Nitrocid.Base.Users.Login.Widgets.Canvas;
 using Nitrocid.Base.Users.Login.Widgets.Implementations;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
@@ -557,10 +558,7 @@ namespace Nitrocid.Base.Shell.Homepage
             var builder = new StringBuilder();
 
             // Clear the console
-            builder.Append(
-                CsiSequences.GenerateCsiCursorPosition(1, 1) +
-                CsiSequences.GenerateCsiEraseInDisplay(0)
-            );
+            builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
 
             if (actualScreenNum < 0)
             {
