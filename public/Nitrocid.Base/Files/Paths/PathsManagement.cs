@@ -64,6 +64,7 @@ namespace Nitrocid.Base.Files.Paths
             { $"{KernelPathType.AddonsEssentials}",    (() => AddonsEssentialsPath, false) },
             { $"{KernelPathType.LogonPages}",          (() => LogonPagesPath, true) },
             { $"{KernelPathType.HomepagePages}",       (() => HomepagePagesPath, true) },
+            { $"{KernelPathType.ContactsLegacy}",      (() => ContactsLegacyPath, true) },
         };
 
         /// <summary>
@@ -215,6 +216,12 @@ namespace Nitrocid.Base.Files.Paths
         /// Contacts path
         /// </summary>
         public static string ContactsPath =>
+            FilesystemTools.NeutralizePath(AppDataPath + "/KSContacts.json");
+
+        /// <summary>
+        /// Contacts path
+        /// </summary>
+        public static string ContactsLegacyPath =>
             FilesystemTools.NeutralizePath(AppDataPath + "/KSContacts/");
 
         /// <summary>
