@@ -45,6 +45,18 @@
     {
       "loc": "NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES",
       "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC",
+      "text": "कंसोल के मध्य में लिखा हुआ एक बड़ा स्वागत शब्द दिखाता है; स्वागत मैट के समान"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME",
+      "text": "प्रगति दिखाएं"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
+      "text": "प्रगति दिखाएं या नहीं"
     }
   ]
 }

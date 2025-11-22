@@ -47,10 +47,14 @@ namespace Nitrocid.SplashPacks.Settings
             }
         }
 
+        #region Simple
         /// <summary>
         /// [Simple] The progress text location
         /// </summary>
         public int SimpleProgressTextLocation { get; set; } = (int)TextLocation.Top;
+        #endregion
+
+        #region Progress
         /// <summary>
         /// [Progress] The progress color
         /// </summary>
@@ -59,6 +63,9 @@ namespace Nitrocid.SplashPacks.Settings
         /// [Progress] The progress text location
         /// </summary>
         public int ProgressProgressTextLocation { get; set; } = (int)TextLocation.Top;
+        #endregion
+
+        #region PowerLineProgress
         /// <summary>
         /// [PowerLineProgress] The progress color
         /// </summary>
@@ -67,9 +74,20 @@ namespace Nitrocid.SplashPacks.Settings
         /// [PowerLineProgress] The progress text location
         /// </summary>
         public int PowerLineProgressProgressTextLocation { get; set; } = (int)TextLocation.Top;
+        #endregion
+
+        #region Quote
         /// <summary>
         /// [Quote] The progress text location
         /// </summary>
         public int QuoteProgressTextLocation { get; set; } = (int)TextLocation.Top;
+        #endregion
+
+        #region Welcome2024
+        /// <summary>
+        /// [Welcome2024] Show progress or not
+        /// </summary>
+        public bool Welcome2024ShowProgress { get; set; }
+        #endregion
     }
 }

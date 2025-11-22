@@ -147,5 +147,14 @@
   <data name="NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES" xml:space="preserve">
     <value>Αποτυχία λήψης καταχωρήσεων ρυθμίσεων.</value>
   </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC" xml:space="preserve">
+    <value>Εμφανίζει μια μεγάλη λέξη καλωσορίσματος γραμμένη στη μέση της κονσόλας. παρόμοια με τα χαλάκια καλωσορίσματος</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME" xml:space="preserve">
+    <value>Εμφάνιση προόδου</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC" xml:space="preserve">
+    <value>Εμφάνιση προόδου ή όχι</value>
+  </data>
 
 </root>

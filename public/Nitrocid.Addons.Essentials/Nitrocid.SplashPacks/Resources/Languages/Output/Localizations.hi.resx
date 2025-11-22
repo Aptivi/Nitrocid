@@ -147,5 +147,14 @@
   <data name="NKS_SPLASHPACKS_EXCEPTION_SETTINGSENTRIES" xml:space="preserve">
     <value>सेटिंग प्रविष्टियाँ प्राप्त करने में विफल.</value>
   </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_DESC" xml:space="preserve">
+    <value>कंसोल के मध्य में लिखा हुआ एक बड़ा स्वागत शब्द दिखाता है; स्वागत मैट के समान</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME" xml:space="preserve">
+    <value>प्रगति दिखाएं</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC" xml:space="preserve">
+    <value>प्रगति दिखाएं या नहीं</value>
+  </data>
 
 </root>
