@@ -176,11 +176,16 @@ namespace Nitrocid.Extras.Contacts.Contacts
                     DebugWriter.WriteDebug(DebugLevel.I, "VCard version: {0}", vars: [vcard.CardVersion]);
                     DebugWriter.WriteDebug(DebugLevel.D, "Contents:");
                     DebugWriter.WriteDebugPrivacy(DebugLevel.D, "{0}", [0], vars: [vcard.ToString()]);
-                    if (!ContactsManager.cards.Contains(vcard))
-                        ContactsManager.cards.Add(vcard);
                     DebugWriter.WriteDebugPrivacy(DebugLevel.I, "Parser successfully processed contact {0}.", [0], vars: [vcard.GetString(CardStringsEnum.FullName)[0].Value]);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "Cards: {0}", vars: [cards.Length]);
+
+                // Add cards to the detected cards list
+                foreach (var vcard in cards)
+                {
+                    if (!ContactsManager.cards.Contains(vcard))
+                        ContactsManager.cards.Add(vcard);
+                }
 
                 // Save the contacts to the contacts path if possible
                 if (saveToPath)
