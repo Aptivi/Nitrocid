@@ -19,16 +19,20 @@
 
 using System;
 using System.Threading;
-using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Textify.General;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
     class SplashTextBox : BaseSplash, ISplash
     {
+        private InfoBox infoBox = new();
 
         // Standalone splash information
         public override string SplashName => "TextBox";
@@ -48,9 +52,10 @@ namespace Nitrocid.SplashPacks.Splashes
 
         public override string Report(int Progress, string ProgressReport, params object[] Vars)
         {
-            ThemeColorsTools.LoadBackground();
-            InfoBoxNonModalColor.WriteInfoBox($"*) {ProgressReport}\n\n{Progress}%", Vars);
-            return "";
+            string text = $"*) {ProgressReport}\n\n{Progress}%";
+            infoBox.Text = text.FormatString(Vars);
+            int increment = 0;
+            return infoBox.Render(ref increment, 0, true, false);
         }
 
         public override string ReportWarning(int Progress, string WarningReport, Exception? ExceptionInfo, params object[] Vars)
@@ -59,9 +64,10 @@ namespace Nitrocid.SplashPacks.Splashes
                 ExceptionInfo is not null ?
                 ExceptionInfo.Message :
                 LanguageTools.GetLocalized("NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR");
-            ThemeColorsTools.LoadBackground();
-            InfoBoxNonModalColor.WriteInfoBox($"!) {WarningReport}\n\n{exceptionMessage}\n\n{Progress}%", Vars);
-            return "";
+            string text = $"!) {WarningReport}\n\n{exceptionMessage}\n\n{Progress}%";
+            infoBox.Text = text.FormatString(Vars);
+            int increment = 0;
+            return infoBox.Render(ref increment, 0, true, false);
         }
 
         public override string ReportError(int Progress, string ErrorReport, Exception? ExceptionInfo, params object[] Vars)
@@ -70,9 +76,10 @@ namespace Nitrocid.SplashPacks.Splashes
                 ExceptionInfo is not null ?
                 ExceptionInfo.Message :
                 LanguageTools.GetLocalized("NKS_SPLASHPACKS_TEXTBOX_UNKNOWNERROR");
-            ThemeColorsTools.LoadBackground();
-            InfoBoxNonModalColor.WriteInfoBox($"X) {ErrorReport}\n\n{exceptionMessage}\n\n{Progress}%", Vars);
-            return "";
+            string text = $"X) {ErrorReport}\n\n{exceptionMessage}\n\n{Progress}%";
+            infoBox.Text = text.FormatString(Vars);
+            int increment = 0;
+            return infoBox.Render(ref increment, 0, true, false);
         }
     }
 }

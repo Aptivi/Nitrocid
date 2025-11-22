@@ -40,6 +40,8 @@ namespace Nitrocid.SplashPacks.Splashes
         // Standalone splash information
         public override string SplashName => "PowerLineProgress";
 
+        public override bool RequiresBackground => true;
+
         public int ProgressWritePositionY =>
             SplashPackInit.SplashConfig.PowerLineProgressProgressTextLocation switch
             {
@@ -139,7 +141,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor),
                 ProgressBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background),
             };
-            builder.Append(RendererTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 4)));
+            builder.Append(RendererTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 2)));
             return builder.ToString();
         }
 

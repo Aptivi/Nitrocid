@@ -38,6 +38,9 @@ namespace Nitrocid.SplashPacks.Splashes
         private int _currentStep = 0;
         private Color _currentColor = Color.Empty;
         private bool _inited = false;
+        private bool _resetting = true;
+        private int left = 2;
+        private int top = 0;
         private readonly int _squareCornerDelay = 10;
         private readonly int _squareCornerMaxSteps = 25;
         private readonly int _squareCornerMinimumRedColorLevel = 0;
@@ -84,29 +87,31 @@ namespace Nitrocid.SplashPacks.Splashes
                 DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
 
                 // Determine direction based on value
-                cornerDirection = (SquareCornerDirection)RandomDriver.Random(3);
-                int left = 2;
-                int top = 0;
                 int width = 6;
                 int height = 3;
-                switch (cornerDirection)
+                if (_resetting)
                 {
-                    case SquareCornerDirection.UpperLeft:
-                        left = 2;
-                        top = 0;
-                        break;
-                    case SquareCornerDirection.UpperRight:
-                        left = ConsoleWrapper.WindowWidth - width - 2;
-                        top = 0;
-                        break;
-                    case SquareCornerDirection.LowerLeft:
-                        left = 2;
-                        top = ConsoleWrapper.WindowHeight - height - 2;
-                        break;
-                    case SquareCornerDirection.LowerRight:
-                        left = ConsoleWrapper.WindowWidth - width - 2;
-                        top = ConsoleWrapper.WindowHeight - height - 2;
-                        break;
+                    _resetting = false;
+                    cornerDirection = (SquareCornerDirection)RandomDriver.Random(3);
+                    switch (cornerDirection)
+                    {
+                        case SquareCornerDirection.UpperLeft:
+                            left = 2;
+                            top = 1;
+                            break;
+                        case SquareCornerDirection.UpperRight:
+                            left = ConsoleWrapper.WindowWidth - width - 2;
+                            top = 1;
+                            break;
+                        case SquareCornerDirection.LowerLeft:
+                            left = 2;
+                            top = ConsoleWrapper.WindowHeight - height - 1;
+                            break;
+                        case SquareCornerDirection.LowerRight:
+                            left = ConsoleWrapper.WindowWidth - width - 2;
+                            top = ConsoleWrapper.WindowHeight - height - 1;
+                            break;
+                    }
                 }
 
                 // Fade in or out
@@ -138,6 +143,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     {
                         _currentStep = 0;
                         _isFadingOut = false;
+                        _resetting = true;
                     }
                 }
                 else
@@ -175,7 +181,7 @@ namespace Nitrocid.SplashPacks.Splashes
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
-            return "";
+            return builder.ToString();
         }
 
         public override string Closing(SplashContext context, out bool delayRequired)
