@@ -132,5 +132,9 @@ namespace Nitrocid.Base.Files.Paths
         /// List of homepage pages
         /// </summary>
         HomepagePages,
+        /// <summary>
+        /// Legacy contacts directory
+        /// </summary>
+        ContactsLegacy,
     }
 }
