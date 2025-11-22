@@ -35,13 +35,15 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Users.Login.Widgets;
+using Nitrocid.Base.Users.Login.Widgets.Implementations;
+using Terminaux.Base.Structures;
 
 namespace Nitrocid.Base.Misc.Splash.Splashes
 {
     class SplashWelcome : BaseSplash, ISplash
     {
         private bool cleared = false;
-        private ProgressBarNoText progress = new(0, 100);
 
         // Standalone splash information
         public override string SplashName => "Welcome";
@@ -50,12 +52,6 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
         public override string Opening(SplashContext context)
         {
             var builder = new StringBuilder();
-            progress.Position = 0;
-            progress.Indeterminate = !Config.SplashConfig.WelcomeShowProgress;
-            progress.Width = ConsoleWrapper.WindowWidth - 6;
-            progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
-            progress.ProgressActiveForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
-            progress.ProgressBackgroundColor = ColorTools.CurrentBackgroundColor;
             if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)
@@ -68,10 +64,9 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
 
             // Populate some text
             string text =
-                (context == SplashContext.Preboot ?
-                 LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT") :
-                 LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_LOADING"))
-                .ToUpper();
+                context == SplashContext.Preboot ?
+                LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT") :
+                LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_LOADING");
             string bottomText =
                 context == SplashContext.Preboot ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT") :
                 context == SplashContext.ShuttingDown ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN") :
@@ -84,21 +79,33 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
                 "";
 
             // Write a glorious Welcome screen
+            int height = ConsoleWrapper.WindowHeight - 6;
+            int width = height * 2;
+            int posX = ConsoleWrapper.WindowWidth / 2 - width / 2;
+            int posY = 3;
+            var image = WidgetTools.GetWidget(nameof(Photo));
+            if (image is Photo)
+                image.Options["photoPath"] = "";
+            builder.Append(image.Render(posX, posY, width, height));
+
+            // Write the top text
             Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);
-            var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            int bottomTextY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-            var figText = new AlignedFigletText(figFont)
+            int topTextY = 1;
+            var topTextRenderer = new AlignedText()
             {
-                Top = consoleY,
                 Text = text,
                 ForegroundColor = col,
+                Top = topTextY,
+                OneLine = true,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle,
                 }
             };
+            builder.Append(topTextRenderer.Render());
+
+            // Write the bottom text
+            int bottomTextY = ConsoleWrapper.WindowHeight - 2;
             var bottomTextRenderer = new AlignedText()
             {
                 Text = bottomText,
@@ -110,10 +117,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
                     Alignment = TextAlignment.Middle,
                 }
             };
-            builder.Append(
-                figText.Render() +
-                bottomTextRenderer.Render()
-            );
+            builder.Append(bottomTextRenderer.Render());
             return builder.ToString();
         }
 
@@ -121,7 +125,6 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
         {
             var builder = new StringBuilder();
             cleared = false;
-            progress.Width = ConsoleWrapper.WindowWidth - 6;
             builder.Append(
                 base.Opening(context)
             );
@@ -137,27 +140,25 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             // Write a glorious Welcome screen
             Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);
             string text =
-                (context == SplashContext.StartingUp ?
-                 LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME") :
-                 LanguageTools.GetLocalized("NKS_KERNEL_STARTING_GOODBYE"))
-                .ToUpper();
-            var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            int bottomTextY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-            var figText = new AlignedFigletText(figFont)
-            {
-                Top = consoleY,
-                Text = text,
-                ForegroundColor = col,
-                Settings = new()
-                {
-                    Alignment = TextAlignment.Middle,
-                }
-            };
+                context == SplashContext.StartingUp ?
+                LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME") :
+                LanguageTools.GetLocalized("NKS_KERNEL_STARTING_GOODBYE");
+
+            // Write a glorious Welcome screen
+            int height = ConsoleWrapper.WindowHeight - 6;
+            int width = height * 2;
+            int posX = ConsoleWrapper.WindowWidth / 2 - width / 2;
+            int posY = 3;
+            var image = WidgetTools.GetWidget(nameof(Photo));
+            if (image is Photo)
+                image.Options["photoPath"] = "";
+            builder.Append(image.Render(posX, posY, width, height));
+
+            // Write the bottom text
+            int bottomTextY = ConsoleWrapper.WindowHeight - 2;
             var bottomTextRenderer = new AlignedText()
             {
-                Text = KernelReleaseInfo.ConsoleTitle,
+                Text = text,
                 ForegroundColor = col,
                 Top = bottomTextY,
                 OneLine = true,
@@ -166,10 +167,9 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
                     Alignment = TextAlignment.Middle,
                 }
             };
-            builder.Append(
-                figText.Render() +
-                bottomTextRenderer.Render()
-            );
+            builder.Append(bottomTextRenderer.Render());
+
+            // Check if delay is required
             delayRequired =
                 context == SplashContext.ShuttingDown && Config.MainConfig.DelayOnShutdown ||
                 context != SplashContext.ShuttingDown && context != SplashContext.Rebooting;
@@ -191,19 +191,12 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
         {
             var builder = new StringBuilder();
             Color col = ThemeColorsTools.GetColor(colorType);
-            string text =
-                (SplashManager.CurrentSplashContext == SplashContext.StartingUp ?
-                 LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME") :
-                 LanguageTools.GetLocalized("NKS_KERNEL_STARTING_GOODBYE"))
-                .ToUpper();
-            var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-            int progressTextY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            var report = new AlignedText()
+            int bottomTextY = ConsoleWrapper.WindowHeight - 2;
+            var bottomTextRenderer = new AlignedText()
             {
                 Text = $"{Progress}% - {ProgressReport}".FormatString(Vars),
                 ForegroundColor = col,
-                Top = progressTextY - 2,
+                Top = bottomTextY,
                 OneLine = true,
                 Settings = new()
                 {
@@ -212,16 +205,8 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             };
             builder.Append(
                 col.VTSequenceForeground +
-                TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, progressTextY - 2, true) +
-                report.Render()
-            );
-
-            int posX = 2;
-            int posY = ConsoleWrapper.WindowHeight - 2;
-            progress.Position = Progress;
-            progress.Width = ConsoleWrapper.WindowWidth - 6;
-            builder.Append(
-                RendererTools.RenderRenderable(progress, new(posX, posY))
+                TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, bottomTextY, true) +
+                bottomTextRenderer.Render()
             );
             return builder.ToString();
         }
