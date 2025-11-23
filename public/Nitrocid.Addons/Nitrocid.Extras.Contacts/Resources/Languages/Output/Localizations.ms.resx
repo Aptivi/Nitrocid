@@ -351,5 +351,11 @@
   <data name="NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT" xml:space="preserve">
     <value>Masukkan nama baharu untuk kenalan ini</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_EXIT" xml:space="preserve">
+    <value>Keluar</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SAVE" xml:space="preserve">
+    <value>Jimat</value>
+  </data>
 
 </root>

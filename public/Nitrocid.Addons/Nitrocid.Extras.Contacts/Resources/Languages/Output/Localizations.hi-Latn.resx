@@ -351,5 +351,11 @@
   <data name="NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT" xml:space="preserve">
     <value>is sampark ke lie naya naam darj karen</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_EXIT" xml:space="preserve">
+    <value>baahar jaen</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SAVE" xml:space="preserve">
+    <value>sahejen</value>
+  </data>
 
 </root>

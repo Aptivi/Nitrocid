@@ -351,5 +351,11 @@
   <data name="NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT" xml:space="preserve">
     <value>Introduzca un nuevo nombre para este contacto</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_EXIT" xml:space="preserve">
+    <value>Salida</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SAVE" xml:space="preserve">
+    <value>Ahorrar</value>
+  </data>
 
 </root>

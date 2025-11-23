@@ -318,6 +318,14 @@
     {
       "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
       "text": "이 연락처에 대한 새 이름을 입력하세요"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_EXIT",
+      "text": "출구"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
+      "text": "구하다"
     }
   ]
 }

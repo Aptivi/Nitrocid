@@ -351,5 +351,11 @@
   <data name="NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT" xml:space="preserve">
     <value>Εισαγάγετε νέο όνομα για αυτήν την επαφή</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_EXIT" xml:space="preserve">
+    <value>Εξοδος</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_SAVE" xml:space="preserve">
+    <value>Εκτός</value>
+  </data>
 
 </root>

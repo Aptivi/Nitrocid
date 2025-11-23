@@ -36,6 +36,7 @@ using Terminaux.Colors.Themes.Colors;
 using VisualCard.Parts.Enums;
 using Nitrocid.Base.Files;
 using System.Linq;
+using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {
@@ -597,6 +598,57 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
+        internal void EditContact(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Ask what to edit
+            bool editing = true;
+            while (editing)
+            {
+                // Let the user choose what to edit
+                List<InputChoiceInfo> choiceInfos =
+                [
+                    new("1", GetContactNameFinal(card)),
+                    new("2", GetContactAddressFinal(card)),
+                    new("3", GetContactMailFinal(card)),
+                    new("4", GetContactOrganizationFinal(card)),
+                    new("5", GetContactTelephoneFinal(card)),
+                    new("6", GetContactURLFinal(card)),
+                    new("7", GetContactGeoFinal(card)),
+                    new("8", GetContactImppFinal(card)),
+                    new("9", GetContactNicknameFinal(card)),
+                    new("10", GetContactRoleFinal(card)),
+                    new("11", GetContactTitleFinal(card)),
+                    new("12", GetContactNotesFinal(card)),
+                    // TODO: NKS_CONTACTS_TUI_CONTACTHASPICTURE -> "Contains profile picture"
+                    // TODO: NKS_CONTACTS_TUI_CONTACTHASNOPICTURE -> "Doesn't contain profile picture"
+                    new("13", card.GetPartsArray<PhotoInfo>().Length > 0 ? LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTHASPICTURE") : LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTHASNOPICTURE")),
+                ];
+                choiceInfos.Add(new($"{choiceInfos.Count}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_EXIT")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTEDITPROMPT -> "Editing the contact"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTEDITPROMPT") + $": {GetContactNameFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else
+                {
+                    // Select the editing cases based on the index number
+                    switch (editIndex)
+                    {
+                        case 0:
+                            EditName(card);
+                            break;
+                    }
+
+                    // Save all changes
+                    ContactsManager.SaveContacts();
+                }
+            }
+        }
+
         internal void EditName(Card? card)
         {
             if (card is null)
@@ -620,7 +672,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 partsName[0].AltNames = hasExtras ? [.. splitName.Skip(2)] : [];
             }
             else
-                card.AddPartToArray<NameInfo>($"{(hasLastName ? splitName[1] : "")};{(splitName[0])};{(hasExtras ? splitName[2] : "")};;");
+                card.AddPartToArray<NameInfo>($"{(hasLastName ? splitName[1] : "")};{splitName[0]};{(hasExtras ? splitName[2] : "")};;");
             if (stringsName.Length > 0)
                 stringsName[0].Value = newName;
             else

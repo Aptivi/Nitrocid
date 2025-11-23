@@ -423,6 +423,14 @@
     {
       "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
       "text": "Enter new name for this contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_EXIT",
+      "text": "Exit"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
+      "text": "Save"
     }
   ]
 }

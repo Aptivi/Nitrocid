@@ -317,6 +317,14 @@
     {
       "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
       "text": "この連絡先の新しい名前を入力してください"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_EXIT",
+      "text": "出口"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
+      "text": "保存"
     }
   ]
 }

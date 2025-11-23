@@ -318,6 +318,14 @@
     {
       "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
       "text": "Introduceți un nume nou pentru acest contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_EXIT",
+      "text": "Ieșire"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
+      "text": "Salva"
     }
   ]
 }
