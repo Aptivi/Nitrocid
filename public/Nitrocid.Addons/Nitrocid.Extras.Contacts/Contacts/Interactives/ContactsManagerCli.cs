@@ -801,6 +801,27 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                         case 4:
                             EditTelephone(card);
                             break;
+                        case 5:
+                            EditUrl(card);
+                            break;
+                        case 6:
+                            EditGeo(card);
+                            break;
+                        case 7:
+                            EditImpp(card);
+                            break;
+                        case 8:
+                            EditNickname(card);
+                            break;
+                        case 9:
+                            EditRole(card);
+                            break;
+                        case 10:
+                            EditTitle(card);
+                            break;
+                        case 11:
+                            EditNote(card);
+                            break;
                     }
 
                     // Save all changes
@@ -1268,6 +1289,637 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                         case 0:
                             string newTelephone = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT"));
                             telephone.Value = newTelephone;
+                            break;
+                    }
+
+                    // Save all changes
+                    ContactsManager.SaveContacts();
+                }
+            }
+        }
+
+        internal void EditUrl(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Now, open the infobox that lets you select a url, add a new one, and save all
+            bool editing = true;
+            while (editing)
+            {
+                var urls = card.GetString(CardStringsEnum.Url);
+
+                List<InputChoiceInfo> choiceInfos = [];
+                for (int i = 0; i < urls.Length; i++)
+                {
+                    string url = urls[i].Value;
+                    choiceInfos.Add(new($"{i + 1}", url));
+                }
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT -> "Editing the contact urls of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                    OpenUrlEditor(card, true);
+                else
+                    OpenUrlEditor(card, idx: editIndex);
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+        }
+
+        private void OpenUrlEditor(Card card, bool add = false, int idx = 0)
+        {
+            // Add the new url part, as necessary
+            if (add)
+            {
+                card.AddString(CardStringsEnum.Url, "https://example.com");
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+
+            // Determine the final index
+            var urls = card.GetString(CardStringsEnum.Url);
+            int finalIdx = add ? urls.Length - 1 : idx;
+            var url = urls[finalIdx];
+
+            // Open the url editor to this specific url
+            bool editing = true;
+            while (editing)
+            {
+                List<InputChoiceInfo> choiceInfos =
+                [
+                    new("1", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_URLINFO_ADDRESS") + $": {url.Value}"),
+                ];
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT -> "Editing the contact url of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                {
+                    card.DeleteString(CardStringsEnum.Url, finalIdx);
+                    editing = false;
+                }
+                else
+                {
+                    // Select the editing cases based on the index number
+                    switch (editIndex)
+                    {
+                        case 0:
+                            string newUrl = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT"));
+                            url.Value = newUrl;
+                            break;
+                    }
+
+                    // Save all changes
+                    ContactsManager.SaveContacts();
+                }
+            }
+        }
+
+        internal void EditGeo(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Now, open the infobox that lets you select a geo, add a new one, and save all
+            bool editing = true;
+            while (editing)
+            {
+                var geos = card.GetString(CardStringsEnum.Geo);
+
+                List<InputChoiceInfo> choiceInfos = [];
+                for (int i = 0; i < geos.Length; i++)
+                {
+                    string geo = geos[i].Value;
+                    choiceInfos.Add(new($"{i + 1}", geo));
+                }
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT -> "Editing the contact geos of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                    OpenGeoEditor(card, true);
+                else
+                    OpenGeoEditor(card, idx: editIndex);
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+        }
+
+        private void OpenGeoEditor(Card card, bool add = false, int idx = 0)
+        {
+            // Add the new geo part, as necessary
+            if (add)
+            {
+                card.AddString(CardStringsEnum.Geo, "0.00;0.00");
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+
+            // Determine the final index
+            var geos = card.GetString(CardStringsEnum.Geo);
+            int finalIdx = add ? geos.Length - 1 : idx;
+            var geo = geos[finalIdx];
+
+            // Open the geo editor to this specific geo
+            bool editing = true;
+            while (editing)
+            {
+                List<InputChoiceInfo> choiceInfos =
+                [
+                    new("1", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_GEOINFO_COORDS") + $": {geo.Value}"),
+                ];
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTGEOEDITPROMPT -> "Editing the contact geo of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTGEOEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                {
+                    card.DeleteString(CardStringsEnum.Geo, finalIdx);
+                    editing = false;
+                }
+                else
+                {
+                    // Select the editing cases based on the index number
+                    switch (editIndex)
+                    {
+                        case 0:
+                            string newGeo = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT"));
+                            geo.Value = newGeo;
+                            break;
+                    }
+
+                    // Save all changes
+                    ContactsManager.SaveContacts();
+                }
+            }
+        }
+
+        internal void EditImpp(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Check for vCard version
+            if (card.CardVersion.Major == 2)
+                return;
+
+            // Now, open the infobox that lets you select a impp, add a new one, and save all
+            bool editing = true;
+            while (editing)
+            {
+                var impps = card.GetString(CardStringsEnum.Impps);
+
+                List<InputChoiceInfo> choiceInfos = [];
+                for (int i = 0; i < impps.Length; i++)
+                {
+                    string impp = impps[i].Value;
+                    choiceInfos.Add(new($"{i + 1}", impp));
+                }
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT -> "Editing the contact impps of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                    OpenImppEditor(card, true);
+                else
+                    OpenImppEditor(card, idx: editIndex);
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+        }
+
+        private void OpenImppEditor(Card card, bool add = false, int idx = 0)
+        {
+            // Add the new impp part, as necessary
+            if (add)
+            {
+                card.AddString(CardStringsEnum.Impps, "aim:IM");
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+
+            // Determine the final index
+            var impps = card.GetString(CardStringsEnum.Impps);
+            int finalIdx = add ? impps.Length - 1 : idx;
+            var impp = impps[finalIdx];
+
+            // Open the impp editor to this specific impp
+            bool editing = true;
+            while (editing)
+            {
+                List<InputChoiceInfo> choiceInfos =
+                [
+                    new("1", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_IMPPINFO_INFO") + $": {impp.Value}"),
+                ];
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT -> "Editing the contact impp of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                {
+                    card.DeleteString(CardStringsEnum.Impps, finalIdx);
+                    editing = false;
+                }
+                else
+                {
+                    // Select the editing cases based on the index number
+                    switch (editIndex)
+                    {
+                        case 0:
+                            string newImpp = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT"));
+                            impp.Value = newImpp;
+                            break;
+                    }
+
+                    // Save all changes
+                    ContactsManager.SaveContacts();
+                }
+            }
+        }
+
+        internal void EditNickname(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Check for vCard version
+            if (card.CardVersion.Major == 2)
+                return;
+
+            // Now, open the infobox that lets you select a nickname, add a new one, and save all
+            bool editing = true;
+            while (editing)
+            {
+                var nicknames = card.GetString(CardStringsEnum.Nicknames);
+
+                List<InputChoiceInfo> choiceInfos = [];
+                for (int i = 0; i < nicknames.Length; i++)
+                {
+                    string nickname = nicknames[i].Value;
+                    choiceInfos.Add(new($"{i + 1}", nickname));
+                }
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT -> "Editing the contact nicknames of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                    OpenNicknameEditor(card, true);
+                else
+                    OpenNicknameEditor(card, idx: editIndex);
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+        }
+
+        private void OpenNicknameEditor(Card card, bool add = false, int idx = 0)
+        {
+            // Add the new nickname part, as necessary
+            if (add)
+            {
+                card.AddString(CardStringsEnum.Nicknames, "Nickname");
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+
+            // Determine the final index
+            var nicknames = card.GetString(CardStringsEnum.Nicknames);
+            int finalIdx = add ? nicknames.Length - 1 : idx;
+            var nickname = nicknames[finalIdx];
+
+            // Open the nickname editor to this specific nickname
+            bool editing = true;
+            while (editing)
+            {
+                List<InputChoiceInfo> choiceInfos =
+                [
+                    new("1", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NICKNAMEINFO_NICK") + $": {nickname.Value}"),
+                ];
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTNICKNAMEEDITPROMPT -> "Editing the contact nickname of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNICKNAMEEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                {
+                    card.DeleteString(CardStringsEnum.Nicknames, finalIdx);
+                    editing = false;
+                }
+                else
+                {
+                    // Select the editing cases based on the index number
+                    switch (editIndex)
+                    {
+                        case 0:
+                            string newNickname = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT"));
+                            nickname.Value = newNickname;
+                            break;
+                    }
+
+                    // Save all changes
+                    ContactsManager.SaveContacts();
+                }
+            }
+        }
+
+        internal void EditRole(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Now, open the infobox that lets you select a role, add a new one, and save all
+            bool editing = true;
+            while (editing)
+            {
+                var roles = card.GetString(CardStringsEnum.Roles);
+
+                List<InputChoiceInfo> choiceInfos = [];
+                for (int i = 0; i < roles.Length; i++)
+                {
+                    string role = roles[i].Value;
+                    choiceInfos.Add(new($"{i + 1}", role));
+                }
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTROLESEDITPROMPT -> "Editing the contact roles of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTROLESEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                    OpenRoleEditor(card, true);
+                else
+                    OpenRoleEditor(card, idx: editIndex);
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+        }
+
+        private void OpenRoleEditor(Card card, bool add = false, int idx = 0)
+        {
+            // Add the new role part, as necessary
+            if (add)
+            {
+                card.AddString(CardStringsEnum.Roles, "Role");
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+
+            // Determine the final index
+            var roles = card.GetString(CardStringsEnum.Roles);
+            int finalIdx = add ? roles.Length - 1 : idx;
+            var role = roles[finalIdx];
+
+            // Open the role editor to this specific role
+            bool editing = true;
+            while (editing)
+            {
+                List<InputChoiceInfo> choiceInfos =
+                [
+                    new("1", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ROLEINFO_ROLE") + $": {role.Value}"),
+                ];
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTROLEEDITPROMPT -> "Editing the contact role of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTROLEEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                {
+                    card.DeleteString(CardStringsEnum.Roles, finalIdx);
+                    editing = false;
+                }
+                else
+                {
+                    // Select the editing cases based on the index number
+                    switch (editIndex)
+                    {
+                        case 0:
+                            string newRole = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT"));
+                            role.Value = newRole;
+                            break;
+                    }
+
+                    // Save all changes
+                    ContactsManager.SaveContacts();
+                }
+            }
+        }
+
+        internal void EditTitle(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Now, open the infobox that lets you select a title, add a new one, and save all
+            bool editing = true;
+            while (editing)
+            {
+                var titles = card.GetString(CardStringsEnum.Titles);
+
+                List<InputChoiceInfo> choiceInfos = [];
+                for (int i = 0; i < titles.Length; i++)
+                {
+                    string title = titles[i].Value;
+                    choiceInfos.Add(new($"{i + 1}", title));
+                }
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTTITLESEDITPROMPT -> "Editing the contact titles of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTTITLESEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                    OpenTitleEditor(card, true);
+                else
+                    OpenTitleEditor(card, idx: editIndex);
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+        }
+
+        private void OpenTitleEditor(Card card, bool add = false, int idx = 0)
+        {
+            // Add the new title part, as necessary
+            if (add)
+            {
+                card.AddString(CardStringsEnum.Titles, "Job title");
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+
+            // Determine the final index
+            var titles = card.GetString(CardStringsEnum.Titles);
+            int finalIdx = add ? titles.Length - 1 : idx;
+            var title = titles[finalIdx];
+
+            // Open the title editor to this specific title
+            bool editing = true;
+            while (editing)
+            {
+                List<InputChoiceInfo> choiceInfos =
+                [
+                    new("1", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TITLEINFO_TITLE") + $": {title.Value}"),
+                ];
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTTITLEEDITPROMPT -> "Editing the contact title of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTTITLEEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                {
+                    card.DeleteString(CardStringsEnum.Titles, finalIdx);
+                    editing = false;
+                }
+                else
+                {
+                    // Select the editing cases based on the index number
+                    switch (editIndex)
+                    {
+                        case 0:
+                            string newTitle = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT"));
+                            title.Value = newTitle;
+                            break;
+                    }
+
+                    // Save all changes
+                    ContactsManager.SaveContacts();
+                }
+            }
+        }
+
+        internal void EditNote(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Now, open the infobox that lets you select a note, add a new one, and save all
+            bool editing = true;
+            while (editing)
+            {
+                var notes = card.GetString(CardStringsEnum.Notes);
+
+                List<InputChoiceInfo> choiceInfos = [];
+                for (int i = 0; i < notes.Length; i++)
+                {
+                    string note = notes[i].Value;
+                    choiceInfos.Add(new($"{i + 1}", note));
+                }
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTNOTESEDITPROMPT -> "Editing the contact notes of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNOTESEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                    OpenNoteEditor(card, true);
+                else
+                    OpenNoteEditor(card, idx: editIndex);
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+        }
+
+        private void OpenNoteEditor(Card card, bool add = false, int idx = 0)
+        {
+            // Add the new note part, as necessary
+            if (add)
+            {
+                card.AddString(CardStringsEnum.Notes, "Write your note");
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+
+            // Determine the final index
+            var notes = card.GetString(CardStringsEnum.Notes);
+            int finalIdx = add ? notes.Length - 1 : idx;
+            var note = notes[finalIdx];
+
+            // Open the note editor to this specific note
+            bool editing = true;
+            while (editing)
+            {
+                List<InputChoiceInfo> choiceInfos =
+                [
+                    new("1", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOTEINFO_NOTE") + $": {note.Value}"),
+                ];
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTNOTEEDITPROMPT -> "Editing the contact note of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNOTEEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                {
+                    card.DeleteString(CardStringsEnum.Notes, finalIdx);
+                    editing = false;
+                }
+                else
+                {
+                    // Select the editing cases based on the index number
+                    switch (editIndex)
+                    {
+                        case 0:
+                            string newNote = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT"));
+                            note.Value = newNote;
                             break;
                     }
 
