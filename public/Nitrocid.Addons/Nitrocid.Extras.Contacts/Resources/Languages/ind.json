@@ -317,6 +317,14 @@
     {
       "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
       "text": "is sampark ke lie naya naam darj karen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_EXIT",
+      "text": "baahar jaen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
+      "text": "sahejen"
     }
   ]
 }

@@ -343,6 +343,14 @@
     {
       "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
       "text": "أدخل اسمًا جديدًا لهذه جهة الاتصال"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_EXIT",
+      "text": "خروج"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
+      "text": "يحفظ"
     }
   ]
 }

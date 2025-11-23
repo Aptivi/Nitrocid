@@ -320,6 +320,14 @@
     {
       "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
       "text": "輸入此聯絡人的新名稱"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_EXIT",
+      "text": "出口"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
+      "text": "節省"
     }
   ]
 }

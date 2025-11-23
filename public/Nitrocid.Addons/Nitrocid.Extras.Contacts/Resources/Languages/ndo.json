@@ -317,6 +317,14 @@
     {
       "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
       "text": "Masukkan nama baru untuk kontak ini"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_EXIT",
+      "text": "KELUAR"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
+      "text": "Menyimpan"
     }
   ]
 }

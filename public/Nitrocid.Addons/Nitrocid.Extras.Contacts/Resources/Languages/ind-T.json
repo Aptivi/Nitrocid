@@ -317,6 +317,14 @@
     {
       "loc": "NKS_CONTACTS_TUI_CONTACTNEWNAMEPROMPT",
       "text": "इस संपर्क के लिए नया नाम दर्ज करें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_EXIT",
+      "text": "बाहर जाएं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
+      "text": "बचाना"
     }
   ]
 }

@@ -428,7 +428,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
                     contactList.Add(card.SaveToString());
                 }
                 string serialized = JsonConvert.SerializeObject(contactList, Formatting.Indented);
-                FilesystemTools.WriteAllTextNoBlock(contactsPath, serialized);
+                File.WriteAllText(contactsPath, serialized);
             }
             catch (Exception ex)
             {
@@ -452,7 +452,8 @@ namespace Nitrocid.Extras.Contacts.Contacts
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK"), ConsoleKey.F8, (_, _, _, _) => tui.SearchPrevious()));
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_RAWINFO"), ConsoleKey.F9, (_, index, _, _) => tui.ShowContactRawInfo(index)));
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD"), ConsoleKey.F10, (_, _, _, _) => tui.ImportContactFromMeCard(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_EDIT"), ConsoleKey.F11, (card, _, _, _) => tui.EditName(card), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_EDIT"), ConsoleKey.F11, (card, _, _, _) => tui.EditContact(card), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE"), ConsoleKey.F12, (_, _, _, _) => SaveContacts(), true));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }
