@@ -798,6 +798,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                         case 3:
                             EditOrganization(card);
                             break;
+                        case 4:
+                            EditTelephone(card);
+                            break;
                     }
 
                     // Save all changes
@@ -1183,6 +1186,95 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             if (!string.IsNullOrEmpty(role))
                 fullElements.Add(role);
             return string.Join(", ", fullElements);
+        }
+
+        internal void EditTelephone(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Now, open the infobox that lets you select a telephone, add a new one, and save all
+            bool editing = true;
+            while (editing)
+            {
+                var telephones = card.GetString(CardStringsEnum.Telephones);
+
+                List<InputChoiceInfo> choiceInfos = [];
+                for (int i = 0; i < telephones.Length; i++)
+                {
+                    string telephone = telephones[i].Value;
+                    choiceInfos.Add(new($"{i + 1}", telephone));
+                }
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT -> "Editing the contact telephones of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                    OpenTelephoneEditor(card, true);
+                else
+                    OpenTelephoneEditor(card, idx: editIndex);
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+        }
+
+        private void OpenTelephoneEditor(Card card, bool add = false, int idx = 0)
+        {
+            // Add the new telephone part, as necessary
+            if (add)
+            {
+                card.AddString(CardStringsEnum.Telephones, "0000000000");
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+
+            // Determine the final index
+            var telephones = card.GetString(CardStringsEnum.Telephones);
+            int finalIdx = add ? telephones.Length - 1 : idx;
+            var telephone = telephones[finalIdx];
+
+            // Open the telephone editor to this specific telephone
+            bool editing = true;
+            while (editing)
+            {
+                List<InputChoiceInfo> choiceInfos =
+                [
+                    new("1", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBER") + $": {telephone.Value}"),
+                ];
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTTELEPHONEEDITPROMPT -> "Editing the contact telephone of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTTELEPHONEEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                {
+                    card.DeleteString(CardStringsEnum.Telephones, finalIdx);
+                    editing = false;
+                }
+                else
+                {
+                    // Select the editing cases based on the index number
+                    switch (editIndex)
+                    {
+                        case 0:
+                            string newTelephone = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT"));
+                            telephone.Value = newTelephone;
+                            break;
+                    }
+
+                    // Save all changes
+                    ContactsManager.SaveContacts();
+                }
+            }
         }
     }
 }
