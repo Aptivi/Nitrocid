@@ -23,9 +23,14 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Drivers.Encoding;
+using Nitrocid.Base.Drivers.EncodingAsymmetric;
+using Nitrocid.Base.Drivers.EncodingAsymmetric.Bases;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Text.Probers.Regexp;
 using Terminaux.Base;
 using Terminaux.Colors;
@@ -821,6 +826,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                             break;
                         case 11:
                             EditNote(card);
+                            break;
+                        case 12:
+                            EditPicture(card);
                             break;
                     }
 
@@ -1927,6 +1935,58 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     ContactsManager.SaveContacts();
                 }
             }
+        }
+
+        internal void EditPicture(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Now, open the infobox that lets you select a picture, add a new one, and save all
+            bool editing = true;
+            while (editing)
+            {
+                var pictures = card.GetPartsArray<PhotoInfo>();
+
+                List<InputChoiceInfo> choiceInfos = [];
+                for (int i = 0; i < pictures.Length; i++)
+                {
+                    var picture = pictures[i];
+                    choiceInfos.Add(new($"{i + 1}", IntegerTools.SizeString(picture.PhotoEncoded?.Length ?? 0)));
+                }
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTPICTURESEDITPROMPT -> "Editing the contact pictures of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTPICTURESEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                    AddPicture(card);
+                else
+                    card.DeletePartsArray<PhotoInfo>(editIndex);
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+        }
+
+        private void AddPicture(Card card)
+        {
+            // Let the user select a picture
+            string selectedPicture = FilesystemTools.SelectFile();
+
+            // Check the picture and add it to the contact's picture list
+            var defaultEncoding = DriverHandler.GetDriver<IEncodingAsymmetricDriver>("Default");
+            defaultEncoding.Initialize();
+            string pictureContent = FilesystemTools.ReadAllTextNoBlock(selectedPicture);
+            var base64Content = defaultEncoding.GetEncodedString(pictureContent);
+            string base64String = Encoding.Default.GetString(base64Content);
+            card.AddPartToArray<PhotoInfo>("ENCODING=BASE64;PNG:" + base64String);
+
+            // Save all changes
+            ContactsManager.SaveContacts();
         }
     }
 }
