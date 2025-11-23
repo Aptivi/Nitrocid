@@ -357,5 +357,8 @@
   <data name="NKS_CONTACTS_TUI_KEYBINDING_SAVE" xml:space="preserve">
     <value>Sábháil</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_ADD" xml:space="preserve">
+    <value>Cuir</value>
+  </data>
 
 </root>

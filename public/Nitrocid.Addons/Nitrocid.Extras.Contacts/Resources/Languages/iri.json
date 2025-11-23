@@ -326,6 +326,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
       "text": "Sábháil"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_ADD",
+      "text": "Cuir"
     }
   ]
 }

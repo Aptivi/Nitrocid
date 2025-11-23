@@ -335,6 +335,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
       "text": "Guardar"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_ADD",
+      "text": "Adicionar"
     }
   ]
 }

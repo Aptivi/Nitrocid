@@ -350,6 +350,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
       "text": "Ahorrar"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_ADD",
+      "text": "Agregar"
     }
   ]
 }

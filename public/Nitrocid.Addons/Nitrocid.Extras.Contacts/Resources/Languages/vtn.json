@@ -325,6 +325,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
       "text": "Cứu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_ADD",
+      "text": "Thêm vào"
     }
   ]
 }
