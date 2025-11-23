@@ -398,17 +398,8 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 for (int i = 0; i < (single ? 1 : orgs.Length); i++)
                 {
                     var org = card.GetPartsArray<OrganizationInfo>()[0];
-                    List<string> fullElements = [];
-                    string name = org.Name ?? "";
-                    string unit = org.Unit ?? "";
-                    string role = org.Role ?? "";
-                    if (!string.IsNullOrEmpty(name))
-                        fullElements.Add(name);
-                    if (!string.IsNullOrEmpty(unit))
-                        fullElements.Add(unit);
-                    if (!string.IsNullOrEmpty(role))
-                        fullElements.Add(role);
-                    finalInfoRendered.Append(string.Join(", ", fullElements));
+                    string orgStr = PrintOrganization(org);
+                    finalInfoRendered.Append(orgStr);
                     if (i < orgs.Length - 1)
                         finalInfoRendered.Append(" | ");
                 }
@@ -804,6 +795,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                         case 2:
                             EditMail(card);
                             break;
+                        case 3:
+                            EditOrganization(card);
+                            break;
                     }
 
                     // Save all changes
@@ -1075,6 +1069,120 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     ContactsManager.SaveContacts();
                 }
             }
+        }
+
+        internal void EditOrganization(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Now, open the infobox that lets you select an organization, add a new one, and save all
+            bool editing = true;
+            while (editing)
+            {
+                var organizations = card.GetPartsArray<OrganizationInfo>();
+
+                List<InputChoiceInfo> choiceInfos = [];
+                for (int i = 0; i < organizations.Length; i++)
+                {
+                    OrganizationInfo organization = organizations[i];
+                    choiceInfos.Add(new($"{i + 1}", PrintOrganization(organization)));
+                }
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT -> "Editing the contact organizations of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                    OpenOrganizationEditor(card, true);
+                else
+                    OpenOrganizationEditor(card, idx: editIndex);
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+        }
+
+        private void OpenOrganizationEditor(Card card, bool add = false, int idx = 0)
+        {
+            // Add the new organization part, as necessary
+            if (add)
+            {
+                card.AddPartToArray<OrganizationInfo>(";;");
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+
+            // Determine the final index
+            var organizations = card.GetPartsArray<OrganizationInfo>();
+            int finalIdx = add ? organizations.Length - 1 : idx;
+            var organization = organizations[finalIdx];
+
+            // Open the organization editor to this specific organization
+            bool editing = true;
+            while (editing)
+            {
+                List<InputChoiceInfo> choiceInfos =
+                [
+                    new("1", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAME") + $": {organization.Name}"),
+                    new("2", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNIT") + $": {organization.Unit}"),
+                    new("3", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLE") + $": {organization.Role}"),
+                ];
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT -> "Editing the contact organization of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                {
+                    card.DeletePartsArray<OrganizationInfo>(finalIdx);
+                    editing = false;
+                }
+                else
+                {
+                    // Select the editing cases based on the index number
+                    switch (editIndex)
+                    {
+                        case 0:
+                            string newName = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAMEPROMPT"));
+                            organization.Name = newName;
+                            break;
+                        case 1:
+                            string newUnit = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNITPROMPT"));
+                            organization.Unit = newUnit;
+                            break;
+                        case 2:
+                            string newRole = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLEPROMPT"));
+                            organization.Role = newRole;
+                            break;
+                    }
+
+                    // Save all changes
+                    ContactsManager.SaveContacts();
+                }
+            }
+        }
+
+        private string PrintOrganization(OrganizationInfo org)
+        {
+            List<string> fullElements = [];
+            string name = org.Name ?? "";
+            string unit = org.Unit ?? "";
+            string role = org.Role ?? "";
+            if (!string.IsNullOrEmpty(name))
+                fullElements.Add(name);
+            if (!string.IsNullOrEmpty(unit))
+                fullElements.Add(unit);
+            if (!string.IsNullOrEmpty(role))
+                fullElements.Add(role);
+            return string.Join(", ", fullElements);
         }
     }
 }
