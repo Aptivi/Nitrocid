@@ -331,6 +331,10 @@
     {
       "loc": "NKS_CONTACTS_TUI_KEYBINDING_SAVE",
       "text": "Redden"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_KEYBINDING_ADD",
+      "text": "Toevoegen"
     }
   ]
 }

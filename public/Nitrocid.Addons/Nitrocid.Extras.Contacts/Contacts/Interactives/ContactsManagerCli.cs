@@ -598,6 +598,21 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return finalInfoRendered.ToString();
         }
 
+        internal void AddContact()
+        {
+            // Add a placeholder contact for the editing TUI to open
+            var newCard = new Card(new(2, 1));
+            newCard.AddString(CardStringsEnum.FullName, "Unnamed contact");
+            newCard.AddPartToArray<NameInfo>("contact;Unnamed;;;");
+            ContactsManager.cards.Add(newCard);
+
+            // Save all changes
+            ContactsManager.SaveContacts();
+
+            // Open this TUI
+            EditContact(newCard);
+        }
+
         internal void EditContact(Card? card)
         {
             if (card is null)

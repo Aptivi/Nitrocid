@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
-using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Debugging;
@@ -35,7 +34,6 @@ using VisualCard;
 using VisualCard.Extras.Converters;
 using VisualCard.Parts;
 using VisualCard.Parts.Enums;
-using static QRCoder.PayloadGenerator.SwissQrCode;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {
@@ -44,7 +42,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
     /// </summary>
     public static class ContactsManager
     {
-        private static readonly List<Card> cards = [];
+        internal static readonly List<Card> cards = [];
         private static int searchedIdx = -1;
         private static string cachedSearchExpression = "";
 
@@ -452,8 +450,9 @@ namespace Nitrocid.Extras.Contacts.Contacts
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SEARCHBACK"), ConsoleKey.F8, (_, _, _, _) => tui.SearchPrevious()));
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_RAWINFO"), ConsoleKey.F9, (_, index, _, _) => tui.ShowContactRawInfo(index)));
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_IMPORTMECARD"), ConsoleKey.F10, (_, _, _, _) => tui.ImportContactFromMeCard(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_EDIT"), ConsoleKey.F11, (card, _, _, _) => tui.EditContact(card), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE"), ConsoleKey.F12, (_, _, _, _) => SaveContacts(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_EDIT"), ConsoleKey.F11, (card, _, _, _) => tui.EditContact(card)));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE"), ConsoleKey.F12, (_, _, _, _) => SaveContacts()));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD"), ConsoleKey.A, (_, _, _, _) => tui.AddContact(), true));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }

@@ -357,5 +357,8 @@
   <data name="NKS_CONTACTS_TUI_KEYBINDING_SAVE" xml:space="preserve">
     <value>Spare</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_ADD" xml:space="preserve">
+    <value>Legge til</value>
+  </data>
 
 </root>

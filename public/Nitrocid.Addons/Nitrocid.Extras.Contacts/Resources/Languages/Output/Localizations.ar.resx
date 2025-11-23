@@ -357,5 +357,8 @@
   <data name="NKS_CONTACTS_TUI_KEYBINDING_SAVE" xml:space="preserve">
     <value>يحفظ</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_KEYBINDING_ADD" xml:space="preserve">
+    <value>يضيف</value>
+  </data>
 
 </root>
