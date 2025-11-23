@@ -801,6 +801,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                         case 1:
                             EditAddress(card);
                             break;
+                        case 2:
+                            EditMail(card);
+                            break;
                     }
 
                     // Save all changes
@@ -983,6 +986,95 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             if (!string.IsNullOrEmpty(country))
                 fullElements.Add(country);
             return string.Join(", ", fullElements);
+        }
+
+        internal void EditMail(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Now, open the infobox that lets you select a mail, add a new one, and save all
+            bool editing = true;
+            while (editing)
+            {
+                var mails = card.GetString(CardStringsEnum.Mails);
+
+                List<InputChoiceInfo> choiceInfos = [];
+                for (int i = 0; i < mails.Length; i++)
+                {
+                    string mail = mails[i].Value;
+                    choiceInfos.Add(new($"{i + 1}", mail));
+                }
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT -> "Editing the contact mails of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                    OpenMailEditor(card, true);
+                else
+                    OpenMailEditor(card, idx: editIndex);
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+        }
+
+        private void OpenMailEditor(Card card, bool add = false, int idx = 0)
+        {
+            // Add the new mail part, as necessary
+            if (add)
+            {
+                card.AddString(CardStringsEnum.Mails, "newmail@host.com");
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+
+            // Determine the final index
+            var mails = card.GetString(CardStringsEnum.Mails);
+            int finalIdx = add ? mails.Length - 1 : idx;
+            var mail = mails[finalIdx];
+
+            // Open the mail editor to this specific mail
+            bool editing = true;
+            while (editing)
+            {
+                List<InputChoiceInfo> choiceInfos =
+                [
+                    new("1", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MAILINFO_ADDRESS") + $": {mail.Value}"),
+                ];
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT -> "Editing the contact mail of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                {
+                    card.DeleteString(CardStringsEnum.Mails, finalIdx);
+                    editing = false;
+                }
+                else
+                {
+                    // Select the editing cases based on the index number
+                    switch (editIndex)
+                    {
+                        case 0:
+                            string newMail = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT"));
+                            mail.Value = newMail;
+                            break;
+                    }
+
+                    // Save all changes
+                    ContactsManager.SaveContacts();
+                }
+            }
         }
     }
 }
