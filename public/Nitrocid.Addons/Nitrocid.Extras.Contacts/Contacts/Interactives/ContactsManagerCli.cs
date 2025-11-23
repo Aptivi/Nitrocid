@@ -19,24 +19,25 @@
 
 using System;
 using System.Collections.Generic;
-using VisualCard.Parts;
+using System.IO;
+using System.Linq;
+using System.Net;
 using System.Text;
+using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
-using Terminaux.Inputs.Interactive;
-using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Text.Probers.Regexp;
-using Textify.General;
-using VisualCard.Parts.Implementations;
-using Terminaux.Images;
-using Terminaux.Colors;
-using System.IO;
 using Terminaux.Base;
+using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
-using VisualCard.Parts.Enums;
-using Nitrocid.Base.Files;
-using System.Linq;
+using Terminaux.Images;
+using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox;
+using Textify.General;
+using VisualCard.Parts;
+using VisualCard.Parts.Enums;
+using VisualCard.Parts.Implementations;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {
@@ -321,34 +322,12 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             if (hasAddress)
             {
                 finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESS") + ": ");
-
                 var addresses = card.GetPartsArray<AddressInfo>();
                 for (int i = 0; i < (single ? 1 : addresses.Length); i++)
                 {
                     var address = card.GetPartsArray<AddressInfo>()[i];
-                    List<string> fullElements = [];
-                    string street = address.StreetAddress ?? "";
-                    string postal = address.PostalCode ?? "";
-                    string poBox = address.PostOfficeBox ?? "";
-                    string extended = address.ExtendedAddress ?? "";
-                    string locality = address.Locality ?? "";
-                    string region = address.Region ?? "";
-                    string country = address.Country ?? "";
-                    if (!string.IsNullOrEmpty(street))
-                        fullElements.Add(street);
-                    if (!string.IsNullOrEmpty(postal))
-                        fullElements.Add(postal);
-                    if (!string.IsNullOrEmpty(poBox))
-                        fullElements.Add(poBox);
-                    if (!string.IsNullOrEmpty(extended))
-                        fullElements.Add(extended);
-                    if (!string.IsNullOrEmpty(locality))
-                        fullElements.Add(locality);
-                    if (!string.IsNullOrEmpty(region))
-                        fullElements.Add(region);
-                    if (!string.IsNullOrEmpty(country))
-                        fullElements.Add(country);
-                    finalInfoRendered.Append(string.Join(", ", fullElements));
+                    string addressString = PrintAddress(address);
+                    finalInfoRendered.Append(addressString);
                     if (i < addresses.Length - 1)
                         finalInfoRendered.Append(" | ");
                 }
@@ -804,7 +783,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     // TODO: NKS_CONTACTS_TUI_CONTACTHASNOPICTURE -> "Doesn't contain profile picture"
                     new("13", card.GetPartsArray<PhotoInfo>().Length > 0 ? LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTHASPICTURE") : LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTHASNOPICTURE")),
                 ];
-                choiceInfos.Add(new($"{choiceInfos.Count}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_EXIT")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_EXIT")));
                 // TODO: NKS_CONTACTS_TUI_CONTACTEDITPROMPT -> "Editing the contact"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTEDITPROMPT") + $": {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
@@ -818,6 +797,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     {
                         case 0:
                             EditName(card);
+                            break;
+                        case 1:
+                            EditAddress(card);
                             break;
                     }
 
@@ -855,6 +837,152 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 stringsName[0].Value = newName;
             else
                 card.AddString(CardStringsEnum.FullName, newName);
+        }
+
+        internal void EditAddress(Card? card)
+        {
+            if (card is null)
+                return;
+
+            // Now, open the infobox that lets you select an address, add a new one, and save all
+            bool editing = true;
+            while (editing)
+            {
+                var addresses = card.GetPartsArray<AddressInfo>();
+
+                List<InputChoiceInfo> choiceInfos = [];
+                for (int i = 0; i < addresses.Length; i++)
+                {
+                    AddressInfo address = addresses[i];
+                    choiceInfos.Add(new($"{i + 1}", PrintAddress(address)));
+                }
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT -> "Editing the contact addresses of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                    OpenAddressEditor(card, true);
+                else
+                    OpenAddressEditor(card, idx: editIndex);
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+        }
+
+        private void OpenAddressEditor(Card card, bool add = false, int idx = 0)
+        {
+            // Add the new address part, as necessary
+            if (add)
+            {
+                card.AddPartToArray<AddressInfo>(";;;;;;");
+
+                // Save all changes
+                ContactsManager.SaveContacts();
+            }
+
+            // Determine the final index
+            var addresses = card.GetPartsArray<AddressInfo>();
+            int finalIdx = add ? addresses.Length - 1 : idx;
+            var address = addresses[finalIdx];
+
+            // Open the address editor to this specific address
+            bool editing = true;
+            while (editing)
+            {
+                List<InputChoiceInfo> choiceInfos =
+                [
+                    new("1", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_POBOX") + $": {address.PostOfficeBox}"),
+                    new("2", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDR") + $": {address.ExtendedAddress}"),
+                    new("3", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_STRADDR") + $": {address.StreetAddress}"),
+                    new("4", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITY") + $": {address.Locality}"),
+                    new("5", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_REGION") + $": {address.Region}"),
+                    new("6", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODE") + $": {address.PostalCode}"),
+                    new("7", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRY") + $": {address.Country}"),
+                ];
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
+                choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
+                // TODO: NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT -> "Editing the contact address of"
+                int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
+
+                // Check to see if we pressed Exit or not
+                if (editIndex == -1 || editIndex == choiceInfos.Count - 1)
+                    editing = false;
+                else if (editIndex == choiceInfos.Count - 2)
+                {
+                    card.DeletePartsArray<AddressInfo>(finalIdx);
+                    editing = false;
+                }
+                else
+                {
+                    // Select the editing cases based on the index number
+                    switch (editIndex)
+                    {
+                        case 0:
+                            string newPoBox = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_POBOXPROMPT"));
+                            address.PostOfficeBox = newPoBox;
+                            break;
+                        case 1:
+                            string newExtAddr = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDRPROMPT"));
+                            address.ExtendedAddress = newExtAddr;
+                            break;
+                        case 2:
+                            string newStrAddr = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_STRADDRPROMPT"));
+                            address.StreetAddress = newStrAddr;
+                            break;
+                        case 3:
+                            string newLocality = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITYPROMPT"));
+                            address.Locality = newLocality;
+                            break;
+                        case 4:
+                            string newRegion = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_REGIONPROMPT"));
+                            address.Region = newRegion;
+                            break;
+                        case 5:
+                            string newPostalCode = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODEPROMPT"));
+                            address.PostalCode = newPostalCode;
+                            break;
+                        case 6:
+                            string newCountry = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRYPROMPT"));
+                            address.Country = newCountry;
+                            break;
+                    }
+
+                    // Save all changes
+                    ContactsManager.SaveContacts();
+                }
+            }
+        }
+
+        private string PrintAddress(AddressInfo address)
+        {
+            List<string> fullElements = [];
+            string street = address.StreetAddress ?? "";
+            string postal = address.PostalCode ?? "";
+            string poBox = address.PostOfficeBox ?? "";
+            string extended = address.ExtendedAddress ?? "";
+            string locality = address.Locality ?? "";
+            string region = address.Region ?? "";
+            string country = address.Country ?? "";
+            if (!string.IsNullOrEmpty(street))
+                fullElements.Add(street);
+            if (!string.IsNullOrEmpty(postal))
+                fullElements.Add(postal);
+            if (!string.IsNullOrEmpty(poBox))
+                fullElements.Add(poBox);
+            if (!string.IsNullOrEmpty(extended))
+                fullElements.Add(extended);
+            if (!string.IsNullOrEmpty(locality))
+                fullElements.Add(locality);
+            if (!string.IsNullOrEmpty(region))
+                fullElements.Add(region);
+            if (!string.IsNullOrEmpty(country))
+                fullElements.Add(country);
+            return string.Join(", ", fullElements);
         }
     }
 }
