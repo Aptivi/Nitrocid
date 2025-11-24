@@ -133,7 +133,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
                 Top = consoleY,
                 Width = interiorWidth,
                 UseColors = true,
-                ForegroundColor = progressColor,
+                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Banner),
                 OneLine = true,
                 Text = text,
                 Settings = new()
