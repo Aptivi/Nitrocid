@@ -27,6 +27,7 @@ using System.Text;
 using Terminaux.Images;
 using Terminaux.Inputs.Styles.Editor;
 using Textify.General;
+using Terminaux.Images.Interactives;
 
 namespace Nitrocid.Extras.Images.Commands
 {
@@ -47,29 +48,9 @@ namespace Nitrocid.Extras.Images.Commands
                 return 39;
             }
 
-            // Currently, Terminaux.Images doesn't provide a way to get the image's accurate dimensions, so we need to
-            // use the colors array to get the dimension so that we can preview the image 100%.
-            var colors = ImageProcessor.GetColorsFromImage(path);
-            (int width, int height) = (colors.GetLength(0), colors.GetLength(1));
-
-            // Unfortunately, Terminaux.Images assumes that we need to render in the console somewhere by specifying the
-            // x and y positions, but this is out of scope because we need an interactive text viewer, and it doesn't
-            // deal with such things. Use the colors array to formulate a sequence that describes the whole image in
-            // scanlines.
-            StringBuilder builder = new();
-            for (int y = 0; y < height; y++)
-            {
-                for (int x = 0; x < width; x++)
-                {
-                    var color = colors[x, y];
-                    builder.Append(color.VTSequenceBackgroundTrueColor + "  ");
-                }
-                builder.AppendLine();
-            }
-
-            // Use the interactive text viewer to describe the image.
-            var lines = builder.ToString().SplitNewLines().ToList();
-            TextEditInteractive.OpenInteractive(ref lines, edit: false);
+            // Open the image viewer TUI
+            var magickImage = ImageProcessor.OpenImage(path);
+            ImageViewInteractive.OpenInteractive(magickImage);
             return 0;
         }
 
