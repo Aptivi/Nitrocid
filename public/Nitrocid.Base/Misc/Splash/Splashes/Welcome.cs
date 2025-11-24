@@ -96,11 +96,11 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
                  context == SplashContext.Rebooting ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_RESTARTING") :
                  context == SplashContext.StartingUp ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_STARTING") :
                  LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_LOADING")) + "...";
-            modeText +=
-                KernelEntry.SafeMode ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_SAFEMODE")}"  :
-                KernelEntry.Maintenance ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE")}" :
-                KernelEntry.DebugMode ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_DEBUGMODE")}" :
-                "";
+            modeText =
+                (KernelEntry.SafeMode ? $"{LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_SAFEMODE")} - "  :
+                 KernelEntry.Maintenance ? $"{LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE")} - " :
+                 KernelEntry.DebugMode ? $"{LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_DEBUGMODE")} - " :
+                 "") + modeText;
 
             // Write an infobox border
             int height = ConsoleWrapper.WindowHeight - 4;
