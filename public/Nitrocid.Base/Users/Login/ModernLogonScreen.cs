@@ -17,32 +17,33 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Threading;
 using System;
-using Textify.Data.Figlet;
-using System.Text;
-using Terminaux.Sequences.Builder.Types;
-using Terminaux.Colors.Themes.Colors;
-using Terminaux.Base.Buffered;
-using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Base.Extensions;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Kernel.Time;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Time.Renderers;
-using Nitrocid.Base.Kernel.Threading;
-using Nitrocid.Base.Users.Login.Widgets;
-using Nitrocid.Base.Users.Login.Widgets.Implementations;
-using Nitrocid.Base.Users.Login.Motd;
 using System.Collections.Generic;
-using Nitrocid.Base.Users.Login.Widgets.Canvas;
-using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Files;
+using System.Diagnostics;
 using System.IO;
+using System.Text;
+using System.Threading;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Threading;
+using Nitrocid.Base.Kernel.Time;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Users.Login.Motd;
+using Nitrocid.Base.Users.Login.Widgets;
+using Nitrocid.Base.Users.Login.Widgets.Canvas;
+using Nitrocid.Base.Users.Login.Widgets.Implementations;
+using Terminaux.Base;
+using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors.Themes.Colors;
+using Terminaux.Sequences.Builder.Types;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Textify.Data.Figlet;
 
 namespace Nitrocid.Base.Users.Login
 {
@@ -154,92 +155,117 @@ namespace Nitrocid.Base.Users.Login
         internal static string PrintConfiguredLogonScreen(int screenNum, List<WidgetRenderInfo[]> canvases)
         {
             int actualScreenNum = screenNum - 2;
-            var display = new StringBuilder();
+            var builder = new StringBuilder();
 
             // Clear the console
-            display.Append(ConsoleClearing.GetClearWholeScreenSequence());
+            builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
 
             // Check the screen
             if (actualScreenNum < 0)
             {
-                // Write the time using figlet
-                string timeStr = TimeDateRenderers.RenderTime(FormatType.Short);
-                var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-                int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
-                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                var timeFiglet = new AlignedFigletText(figFont)
+                // Write an infobox border
+                int height = ConsoleWrapper.WindowHeight - 4;
+                int width = ConsoleWrapper.WindowWidth - 8;
+                int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
+                int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
+                string versionStr = $"{KernelReleaseInfo.ApiVersion}";
+                var border = new BoxFrame()
                 {
+                    Left = posX,
+                    Top = posY,
+                    Width = width,
+                    Height = height,
+                    UseColors = true,
+                    Text = versionStr,
+                };
+                builder.Append(border.Render());
+
+                // Write the program name
+                int interiorPosX = posX + 3;
+                int interiorWidth = width - 6;
+                string text = $"Nitrocid KS {KernelReleaseInfo.VersionFullStr}";
+                var figFont = FigletTools.GetFigletFont("thin");
+                int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
+                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
+                var nameText = new AlignedFigletText(figFont)
+                {
+                    Left = interiorPosX,
                     Top = consoleY,
-                    Text = timeStr,
-                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Stage),
+                    Width = interiorWidth,
+                    UseColors = true,
+                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Banner),
+                    OneLine = true,
+                    Text = text,
                     Settings = new()
                     {
                         Alignment = TextAlignment.Middle,
                     }
                 };
-                display.Append(timeFiglet.Render());
+                builder.Append(nameText.Render());
 
-                // Print the date
-                string dateStr = $"{TimeDateRenderers.RenderDate()}";
-                int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
+                // Print the time and date
+                string timeStr = TimeDateRenderers.RenderTime();
+                string dateStr = TimeDateRenderers.RenderDate();
+                int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight - 1;
                 var dateText = new AlignedText()
                 {
+                    Left = interiorPosX,
                     Top = consoleInfoY,
-                    Text = dateStr,
-                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Stage),
+                    Width = interiorWidth,
+                    Text = $"{dateStr} {timeStr}",
                     OneLine = true,
                     Settings = new()
                     {
                         Alignment = TextAlignment.Middle,
                     }
                 };
-                display.Append(dateText.Render());
+                builder.Append(dateText.Render());
 
                 // Print the MOTD
                 string[] motdStrs = ConsoleMisc.GetWrappedSentencesByWords(MotdParse.MotdMessage, ConsoleWrapper.WindowWidth - 4);
                 for (int i = 0; i < motdStrs.Length && i < 2; i++)
                 {
                     string motdStr = motdStrs[i];
-                    int consoleMotdInfoY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2 + i;
+                    int consoleMotdInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 1 + i;
                     var motdText = new AlignedText()
                     {
+                        Left = interiorPosX,
                         Top = consoleMotdInfoY,
+                        Width = interiorWidth,
                         Text = motdStr,
-                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
                         OneLine = true,
                         Settings = new()
                         {
                             Alignment = TextAlignment.Middle,
                         }
                     };
-                    display.Append(motdText.Render());
+                    builder.Append(motdText.Render());
                 }
+
+                // Print notifications area
+                int notificationsY = ConsoleWrapper.WindowHeight / 2 - figHeight - 4;
+                var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
+                builder.Append(notificationsWidget.Render(0, notificationsY, interiorWidth, 1));
 
                 // Print the instructions
                 string instStr = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PRESSKEY");
-                int consoleInstY = ConsoleWrapper.WindowHeight - 2;
+                int consoleInstY = ConsoleWrapper.WindowHeight - 4;
                 var instText = new AlignedText()
                 {
+                    Left = interiorPosX,
                     Top = consoleInstY,
+                    Width = interiorWidth,
                     Text = instStr,
-                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
                     OneLine = true,
-                    Settings = new()
-                    {
-                        Alignment = TextAlignment.Middle,
-                    }
                 };
-                display.Append(instText.Render());
-
-                // Print everything
-                return display.ToString();
+                builder.Append(instText.Render());
             }
             else
             {
                 var canvas = canvases[actualScreenNum];
-                var renderedCanvas = WidgetCanvasTools.RenderFromInfos(canvas);
-                return renderedCanvas;
+                builder.Append(WidgetCanvasTools.RenderFromInfos(canvas));
             }
+            return builder.ToString();
         }
 
         internal static List<WidgetRenderInfo[]> GetLogonPages()
