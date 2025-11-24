@@ -17,41 +17,65 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors;
-using Textify.Data.Figlet;
 using System;
 using System.Text;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Textify.General;
+using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
+using Terminaux.Colors.Transformation;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
-using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Colors.Transformation;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users.Login.Widgets;
-using Nitrocid.Base.Users.Login.Widgets.Implementations;
-using Terminaux.Base.Structures;
+using Textify.Data.Figlet;
+using Textify.General;
 
 namespace Nitrocid.Base.Misc.Splash.Splashes
 {
     class SplashWelcome : BaseSplash, ISplash
     {
         private bool cleared = false;
+        private SimpleProgress progress = new(0, 100);
 
         // Standalone splash information
         public override string SplashName => "Welcome";
+
+        /*
+         *   The welcome splash will look like this (conceptual, 60x14 screen):
+         *   
+         *   :------------------------------- 60 -------------------------------
+         *   :
+         *   :    +----------------------------------------------------------+ (box frame color)
+         *   :    |                                                          |
+         *   :    |                        Nitrocid                          | (progress color, figlet, 5 blocks of height)
+         *   :    |                                                          |
+         *   1    |                        ModeText                          | (neutral color)
+         *   4    |                                                          |
+         *   :    |  ProgressReport                                          | (progress report color)
+         *   :    |  ------------------------------------------------- 100%  | (progress theme color)
+         *   :    |                                                          |
+         *   :    +----------------------------------------------------------+
+         *   :
+         *   :------------------------------- 60 -------------------------------
+         *   
+         *   This is adjusted, depending on the terminal size.
+         */
 
         // Actual logic
         public override string Opening(SplashContext context)
         {
             var builder = new StringBuilder();
+            var progressColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
+            progress.Position = 0;
+            progress.Indeterminate = !Config.SplashConfig.WelcomeShowProgress;
+            progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor);
+            progress.ProgressActiveForegroundColor = progressColor;
+            progress.ProgressBackgroundColor = ColorTools.CurrentBackgroundColor;
             if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)
@@ -63,61 +87,78 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             }
 
             // Populate some text
-            string text =
-                context == SplashContext.Preboot ?
-                LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT") :
-                LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_LOADING");
-            string bottomText =
-                context == SplashContext.Preboot ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT") :
-                context == SplashContext.ShuttingDown ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN") :
-                context == SplashContext.Rebooting ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART") :
-                $"{LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_STARTING")} {KernelReleaseInfo.ConsoleTitle}";
-            bottomText +=
+            string modeText =
+                // TODO: NKS_MISC_SPLASHES_WELCOME_INITING -> "Initializing"
+                // TODO: NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN -> "Shutting down"
+                // TODO: NKS_MISC_SPLASHES_WELCOME_RESTARTING -> "Restarting"
+                (context == SplashContext.Preboot ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_INITING") :
+                 context == SplashContext.ShuttingDown ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN") :
+                 context == SplashContext.Rebooting ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_RESTARTING") :
+                 context == SplashContext.StartingUp ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_STARTING") :
+                 LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_LOADING")) + "...";
+            modeText +=
                 KernelEntry.SafeMode ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_SAFEMODE")}"  :
                 KernelEntry.Maintenance ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE")}" :
                 KernelEntry.DebugMode ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_DEBUGMODE")}" :
                 "";
 
-            // Write a glorious Welcome screen
-            int height = ConsoleWrapper.WindowHeight - 6;
-            int width = height * 2;
-            int posX = ConsoleWrapper.WindowWidth / 2 - width / 2;
-            int posY = 3;
-            var image = WidgetTools.GetWidget(nameof(Photo));
-            if (image is Photo)
-                image.Options["photoPath"] = "";
-            builder.Append(image.Render(posX, posY, width, height));
-
-            // Write the top text
-            Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);
-            int topTextY = 1;
-            var topTextRenderer = new AlignedText()
+            // Write an infobox border
+            int height = ConsoleWrapper.WindowHeight - 4;
+            int width = ConsoleWrapper.WindowWidth - 8;
+            int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
+            int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
+            string versionStr = $"{KernelReleaseInfo.ApiVersion}";
+            var border = new BoxFrame()
             {
+                Left = posX,
+                Top = posY,
+                Width = width,
+                Height = height,
+                UseColors = true,
+                Text = versionStr,
+            };
+            builder.Append(border.Render());
+
+            // Write the program name
+            int interiorPosX = posX + 3;
+            int interiorWidth = width - 6;
+            progress.Width = interiorWidth;
+            string text = $"Nitrocid KS {KernelReleaseInfo.VersionFullStr}";
+            var figFont = FigletTools.GetFigletFont("thin");
+            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
+            var nameText = new AlignedFigletText(figFont)
+            {
+                Left = interiorPosX,
+                Top = consoleY,
+                Width = interiorWidth,
+                UseColors = true,
+                ForegroundColor = progressColor,
+                OneLine = true,
                 Text = text,
-                ForegroundColor = col,
-                Top = topTextY,
-                OneLine = true,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle,
                 }
             };
-            builder.Append(topTextRenderer.Render());
+            builder.Append(nameText.Render());
 
-            // Write the bottom text
-            int bottomTextY = ConsoleWrapper.WindowHeight - 2;
-            var bottomTextRenderer = new AlignedText()
+            // Write the mode text
+            int modePosY = ConsoleWrapper.WindowHeight / 2 + figHeight - 1;
+            var modeTextRenderer = new AlignedText()
             {
-                Text = bottomText,
-                ForegroundColor = col,
-                Top = bottomTextY,
+                Left = interiorPosX,
+                Top = modePosY,
+                Width = interiorWidth,
+                UseColors = true,
                 OneLine = true,
+                Text = modeText,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle,
                 }
             };
-            builder.Append(bottomTextRenderer.Render());
+            builder.Append(modeTextRenderer.Render());
             return builder.ToString();
         }
 
@@ -130,12 +171,12 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             );
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
-            if (context == SplashContext.Showcase ||
-                context == SplashContext.Preboot)
-            {
-                delayRequired = false;
+            // Check if delay is required
+            delayRequired =
+                context == SplashContext.ShuttingDown && Config.MainConfig.DelayOnShutdown ||
+                context == SplashContext.StartingUp;
+            if (!delayRequired)
                 return builder.ToString();
-            }
 
             // Write a glorious Welcome screen
             Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);
@@ -143,36 +184,37 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
                 context == SplashContext.StartingUp ?
                 LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME") :
                 LanguageTools.GetLocalized("NKS_KERNEL_STARTING_GOODBYE");
-
-            // Write a glorious Welcome screen
-            int height = ConsoleWrapper.WindowHeight - 6;
-            int width = height * 2;
-            int posX = ConsoleWrapper.WindowWidth / 2 - width / 2;
-            int posY = 3;
-            var image = WidgetTools.GetWidget(nameof(Photo));
-            if (image is Photo)
-                image.Options["photoPath"] = "";
-            builder.Append(image.Render(posX, posY, width, height));
-
-            // Write the bottom text
-            int bottomTextY = ConsoleWrapper.WindowHeight - 2;
-            var bottomTextRenderer = new AlignedText()
+            var figFont = FigletTools.GetFigletFont("thin");
+            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
+            var figText = new AlignedFigletText(figFont)
             {
+                Top = consoleY,
                 Text = text,
                 ForegroundColor = col,
-                Top = bottomTextY,
-                OneLine = true,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle,
                 }
             };
-            builder.Append(bottomTextRenderer.Render());
+            builder.Append(figText.Render());
+
+            // Write the version
+            int versionPosY = ConsoleWrapper.WindowHeight / 2 + figHeight - 1;
+            var versionTextRenderer = new AlignedText()
+            {
+                Top = versionPosY,
+                UseColors = true,
+                OneLine = true,
+                Text = $"Nitrocid KS {KernelReleaseInfo.VersionFullStr} ({KernelReleaseInfo.ApiVersion})",
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle,
+                }
+            };
+            builder.Append(versionTextRenderer.Render());
 
             // Check if delay is required
-            delayRequired =
-                context == SplashContext.ShuttingDown && Config.MainConfig.DelayOnShutdown ||
-                context != SplashContext.ShuttingDown && context != SplashContext.Rebooting;
             if ((context == SplashContext.ShuttingDown || context == SplashContext.Rebooting) && Config.MainConfig.BeepOnShutdown)
                 ConsoleWrapper.Beep();
             return builder.ToString();
@@ -191,22 +233,44 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
         {
             var builder = new StringBuilder();
             Color col = ThemeColorsTools.GetColor(colorType);
-            int bottomTextY = ConsoleWrapper.WindowHeight - 2;
-            var bottomTextRenderer = new AlignedText()
+
+            // Get infobox position info
+            int height = ConsoleWrapper.WindowHeight - 4;
+            int width = ConsoleWrapper.WindowWidth - 8;
+            int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
+            int posY = ConsoleWrapper.WindowHeight / 2 + height / 2 - 3;
+
+            // Write the progress report
+            int interiorPosX = posX + 4;
+            int progressReportPosY = posY;
+            var modeTextEraser = new Eraser()
             {
-                Text = $"{Progress}% - {ProgressReport}".FormatString(Vars),
-                ForegroundColor = col,
-                Top = bottomTextY,
+                Left = posX + 1,
+                Top = progressReportPosY,
+                Width = width - 2,
+                Height = 1,
+            };
+            var modeTextRenderer = new AlignedText()
+            {
+                Left = interiorPosX,
+                Top = progressReportPosY,
+                Width = width - 2,
+                UseColors = true,
                 OneLine = true,
-                Settings = new()
-                {
-                    Alignment = TextAlignment.Middle,
-                }
+                Text = ProgressReport.FormatString(Vars),
+                ForegroundColor = col,
             };
             builder.Append(
-                col.VTSequenceForeground +
-                TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, bottomTextY, true) +
-                bottomTextRenderer.Render()
+                modeTextEraser.Render() +
+                modeTextRenderer.Render()
+            );
+
+            // Write the progress bar
+            int progressBarPosY = posY + 1;
+            progress.Position = Progress;
+            progress.Width = width - 6;
+            builder.Append(
+                RendererTools.RenderRenderable(progress, new(interiorPosX, progressBarPosY))
             );
             return builder.ToString();
         }
