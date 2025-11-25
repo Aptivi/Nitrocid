@@ -17,7 +17,7 @@ Namespace KSModVB
 
         Public ReadOnly Property MinimumSupportedApiVersion As Version Implements IMod.MinimumSupportedApiVersion
             Get
-                Return New Version(4, 0, 28, 39)
+                Return New Version(4, 0, 28, 40)
             End Get
         End Property
 
