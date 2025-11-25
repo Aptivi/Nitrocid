@@ -1,0 +1,70 @@
+{
+  "lang": "nor",
+  "name": "Norwegian",
+  "cultures": [
+    "nb",
+    "nb-NO",
+    "nb-SJ",
+    "nn",
+    "nn-NO",
+    "no"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "Utførlig logging"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "Hjelpeside for argumenter"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "Angir et argument det skal hjelpes med"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Vertsnavn for Nitrocid RPC-instansen"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Angi vertsnavnet for Nitrocid RPC-instansen"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Portnummer for Nitrocid RPC-instansen"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Angi portnummeret for Nitrocid RPC-instansen"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "Handling som skal utføres på en instans"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "Angir en handling som skal utføres"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "Angir argumenter til handlingen"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Kobler til Nitrocid RPC-instans..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "Ugyldig Nitrocid RPC-instans!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "Tilkoblet!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Mislyktes ved forsøk på å behandle kommandoen for Nitrocid-instansen"
+    }
+  ]
+}

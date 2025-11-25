@@ -1,0 +1,67 @@
+{
+  "lang": "tky",
+  "name": "Turkish",
+  "cultures": [
+    "tr",
+    "tr-CY",
+    "tr-TR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "Ayrıntılı günlük kaydı"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "Bağımsız değişken yardım sayfası"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "Yardım almak için bir bağımsız değişken belirtir"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Nitrocid RPC örneği için ana bilgisayar adı"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Nitrocid RPC örneği için ana bilgisayar adını belirtin"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Nitrocid RPC örneği için bağlantı noktası numarası"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Nitrocid RPC örneği için bağlantı noktası numarasını belirtin"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "Bir örnekte gerçekleştirilecek eylem"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "Gerçekleştirilecek bir eylemi belirtir"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "Eylemin bağımsız değişkenlerini belirtir"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Nitrocid RPC örneğine bağlanılıyor..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "Geçersiz Nitrocid RPC örneği!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "Başarıyla bağlanıldı!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Nitrocid örneği için komut işlenirken başarısız oldu"
+    }
+  ]
+}

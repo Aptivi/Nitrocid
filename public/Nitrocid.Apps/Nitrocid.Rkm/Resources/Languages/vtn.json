@@ -1,0 +1,66 @@
+{
+  "lang": "vtn",
+  "name": "Vietnamese",
+  "cultures": [
+    "vi",
+    "vi-VN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "Ghi nhật ký chi tiết"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "Trang trợ giúp đối số"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "Chỉ định đối số để được trợ giúp"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Tên máy chủ cho phiên bản Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Chỉ định tên máy chủ cho phiên bản Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Số cổng cho phiên bản Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Chỉ định số cổng cho phiên bản Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "Hành động cần thực hiện trên một phiên bản"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "Chỉ định hành động cần thực hiện"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "Chỉ định đối số cho hành động"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Đang kết nối với phiên bản Nitrocid RPC..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "Phiên bản Nitrocid RPC không hợp lệ!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "Đã kết nối thành công!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Đã thất bại khi cố gắng xử lý lệnh cho phiên bản Nitrocid"
+    }
+  ]
+}

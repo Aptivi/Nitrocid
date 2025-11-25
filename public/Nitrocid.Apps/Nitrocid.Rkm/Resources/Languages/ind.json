@@ -1,0 +1,66 @@
+{
+  "lang": "ind",
+  "name": "Hindi",
+  "cultures": [
+    "hi-Latn",
+    "hi-Latn-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "varboz loging"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "aargument help pej"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "madad paane ke lie ek aargument bataata hai"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "naitrosid rpch instens ke lie host nem"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "naitrosid rpch instens ke lie host nem bataata hai"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "naitrosid rpch instens ke lie port nambar"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "naitrosid rpch instens ke lie port nambar bataata hai"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "instens par karane ke lie ekshan"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "karane ke lie ek ekshan bataata hai"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "ekshan ke lie aargument bataata hai"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "naitrosid rpch instens se kanekt ho raha hai..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "inavailid naitrosid rpch instens!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "saphalataapoorvak kanekt ho gaya!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "naitrosid instens ke lie kamaand proses karane kee koshish karate samay phel ho gaya"
+    }
+  ]
+}

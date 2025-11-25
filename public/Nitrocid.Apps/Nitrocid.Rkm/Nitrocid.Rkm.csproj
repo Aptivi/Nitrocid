@@ -29,6 +29,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     <ProjectReference Include="..\..\Nitrocid.Base\Nitrocid.Base.csproj" />
+    <ProjectReference Include="..\..\Nitrocid.Core\Nitrocid.Core.csproj" />
   </ItemGroup>
   <!-- KS.Rkm Locale Checker End -->
 </Project>

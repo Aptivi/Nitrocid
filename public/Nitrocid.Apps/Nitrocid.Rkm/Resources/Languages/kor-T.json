@@ -1,0 +1,67 @@
+{
+  "lang": "kor-T",
+  "name": "Korean",
+  "cultures": [
+    "ko",
+    "ko-KP",
+    "ko-KR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "자세한 로깅"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "인수 도움말 페이지"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "도움을 받을 인수를 지정합니다."
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Nitrocid RPC 인스턴스의 호스트 이름"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Nitrocid RPC 인스턴스의 호스트 이름을 지정합니다."
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Nitrocid RPC 인스턴스의 포트 번호"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Nitrocid RPC 인스턴스의 포트 번호를 지정합니다."
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "인스턴스에서 수행할 작업"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "수행할 작업을 지정합니다."
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "작업에 대한 인수를 지정합니다."
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Nitrocid RPC 인스턴스에 연결하는 중..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "잘못된 Nitrocid RPC 인스턴스입니다!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "연결에 성공했습니다!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Nitrocid 인스턴스에 대한 명령을 처리하는 동안 실패했습니다."
+    }
+  ]
+}

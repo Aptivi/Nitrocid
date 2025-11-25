@@ -1,0 +1,67 @@
+{
+  "lang": "grk",
+  "name": "Greek",
+  "cultures": [
+    "el",
+    "el-CY",
+    "el-GR"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "Λεπτομερής καταγραφή"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "Σελίδα βοήθειας ορισμάτων"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "Καθορίζει ένα όρισμα για βοήθεια"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Όνομα κεντρικού υπολογιστή για την παρουσία Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Καθορίστε το όνομα κεντρικού υπολογιστή για την παρουσία Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Αριθμός θύρας για την παρουσία Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Καθορίστε τον αριθμό θύρας για την παρουσία Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "Ενέργεια που θα εκτελεστεί σε μια παρουσία"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "Καθορίζει μια ενέργεια που θα εκτελεστεί"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "Καθορίζει ορίσματα για την ενέργεια"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Σύνδεση με την παρουσία Nitrocid RPC..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "Μη έγκυρη παρουσία Nitrocid RPC!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "Η σύνδεση ολοκληρώθηκε με επιτυχία!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Αποτυχία κατά την προσπάθεια επεξεργασίας εντολής για την παρουσία Nitrocid"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "lang": "dtc",
+  "name": "Dutch",
+  "cultures": [
+    "nl",
+    "nl-AW",
+    "nl-BE",
+    "nl-BQ",
+    "nl-CW",
+    "nl-NL",
+    "nl-SR",
+    "nl-SX"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "Uitgebreide logging"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "Helppagina voor argumenten"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "Geeft een argument op om hulp te krijgen"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Hostnaam voor de Nitrocid RPC-instantie"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Geef de hostnaam op voor de Nitrocid RPC-instantie"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Poortnummer voor de Nitrocid RPC-instantie"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Geef het poortnummer op voor de Nitrocid RPC-instantie"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "Actie die moet worden uitgevoerd op een instantie"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "Geeft een uit te voeren actie op"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "Geeft argumenten voor de actie op"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Verbinding maken met de Nitrocid RPC-instantie..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "Ongeldige Nitrocid RPC-instantie!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "Verbinding succesvol gemaakt!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Proberen om opdracht voor de Nitrocid-instantie te verwerken mislukt"
+    }
+  ]
+}

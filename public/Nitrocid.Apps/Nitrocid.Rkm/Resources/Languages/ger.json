@@ -1,0 +1,75 @@
+{
+  "lang": "ger",
+  "name": "German",
+  "cultures": [
+    "de",
+    "de-AT",
+    "de-BE",
+    "de-CH",
+    "de-DE",
+    "de-IT",
+    "de-LI",
+    "de-LU",
+    "nds",
+    "nds-DE",
+    "nds-NL"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "Ausführliche Protokollierung"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "Argumenthilfeseite"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "Gibt ein Argument an, zu dem Hilfe angezeigt werden soll."
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Hostname der Nitrocid-RPC-Instanz"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Geben Sie den Hostnamen der Nitrocid-RPC-Instanz an."
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Portnummer der Nitrocid-RPC-Instanz"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Geben Sie die Portnummer der Nitrocid-RPC-Instanz an."
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "Auszuführende Aktion für eine Instanz"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "Gibt eine auszuführende Aktion an."
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "Gibt Argumente für die Aktion an."
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Verbindung zur Nitrocid-RPC-Instanz wird hergestellt..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "Ungültige Nitrocid-RPC-Instanz!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "Verbindung erfolgreich hergestellt!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Fehler beim Verarbeiten des Befehls für die Nitrocid-Instanz."
+    }
+  ]
+}

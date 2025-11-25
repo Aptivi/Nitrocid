@@ -1,0 +1,66 @@
+{
+  "lang": "ind-T",
+  "name": "Hindi",
+  "cultures": [
+    "hi",
+    "hi-IN"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "वर्बोज़ लॉगिंग"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "आर्गुमेंट हेल्प पेज"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "मदद पाने के लिए एक आर्गुमेंट बताता है"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "नाइट्रोसिड RPC इंस्टेंस के लिए होस्ट नेम"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "नाइट्रोसिड RPC इंस्टेंस के लिए होस्ट नेम बताता है"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "नाइट्रोसिड RPC इंस्टेंस के लिए पोर्ट नंबर"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "नाइट्रोसिड RPC इंस्टेंस के लिए पोर्ट नंबर बताता है"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "इंस्टेंस पर करने के लिए एक्शन"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "करने के लिए एक एक्शन बताता है"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "एक्शन के लिए आर्गुमेंट बताता है"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "नाइट्रोसिड RPC इंस्टेंस से कनेक्ट हो रहा है..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "इनवैलिड नाइट्रोसिड RPC इंस्टेंस!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "सफलतापूर्वक कनेक्ट हो गया!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "नाइट्रोसिड इंस्टेंस के लिए कमांड प्रोसेस करने की कोशिश करते समय फेल हो गया"
+    }
+  ]
+}

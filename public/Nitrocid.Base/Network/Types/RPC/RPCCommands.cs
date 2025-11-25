@@ -83,19 +83,19 @@ namespace Nitrocid.Base.Network.Types.RPC
 
         private readonly static Dictionary<string, Action<string, IPEndPoint>> RPCCommandReplyActions = new()
         {
-            { "ShutdownConfirm",            (_, _) => HandleShutdown() },
-            { "RebootConfirm",              (_, _) => HandleReboot() },
-            { "RebootSafeConfirm",          (_, _) => HandleRebootSafe() },
-            { "RebootMaintenanceConfirm",   (_, _) => HandleRebootMaintenance() },
-            { "RebootDebugConfirm",         (_, _) => HandleRebootDebug() },
-            { "SaveScrConfirm",             (_, _) => HandleSaveScr() },
-            { "ExecConfirm",                (value, _) => HandleExec(value) },
-            { "AcknowledgeConfirm",         (value, _) => HandleAcknowledge(value) },
-            { "PingConfirm",                (value, _) => HandlePing(value) },
-            { "VersionConfirm",             (_, endpoint) => HandleVersion(endpoint) },
-            { "VersionCodeConfirm",         (_, endpoint) => HandleVersionCode(endpoint) },
-            { "ApiVersionConfirm",          (_, endpoint) => HandleApiVersion(endpoint) },
-            { "ApiVersionCodeConfirm",      (_, endpoint) => HandleApiVersionCode(endpoint) },
+            { "ShutdownConfirm",            (_, _)          => HandleShutdown() },
+            { "RebootConfirm",              (_, _)          => HandleReboot() },
+            { "RebootSafeConfirm",          (_, _)          => HandleRebootSafe() },
+            { "RebootMaintenanceConfirm",   (_, _)          => HandleRebootMaintenance() },
+            { "RebootDebugConfirm",         (_, _)          => HandleRebootDebug() },
+            { "SaveScrConfirm",             (_, _)          => HandleSaveScr() },
+            { "ExecConfirm",                (value, _)      => HandleExec(value) },
+            { "AcknowledgeConfirm",         (_, endpoint)   => HandleAcknowledge(endpoint) },
+            { "PingConfirm",                (value, _)      => HandlePing(value) },
+            { "VersionConfirm",             (_, endpoint)   => HandleVersion(endpoint) },
+            { "VersionCodeConfirm",         (_, endpoint)   => HandleVersionCode(endpoint) },
+            { "ApiVersionConfirm",          (_, endpoint)   => HandleApiVersion(endpoint) },
+            { "ApiVersionCodeConfirm",      (_, endpoint)   => HandleApiVersionCode(endpoint) },
         };
 
         /// <summary>
@@ -237,6 +237,12 @@ namespace Nitrocid.Base.Network.Types.RPC
             received = false;
         }
 
+        private static void ReplyTo(string message, IPEndPoint endpoint)
+        {
+            byte[] versionData = Encoding.UTF8.GetBytes(message);
+            RemoteProcedure.RPCListen?.Send(versionData, versionData.Length, endpoint);
+        }
+
         private static void HandleShutdown()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Shutdown confirmed from remote access.");
@@ -288,10 +294,10 @@ namespace Nitrocid.Base.Network.Types.RPC
                 DebugWriter.WriteDebug(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...");
         }
 
-        private static void HandleAcknowledge(string value)
+        private static void HandleAcknowledge(IPEndPoint endpoint)
         {
-            string IPAddr = value.Replace("AckConfirm, ", "").Replace(CharManager.NewLine, "");
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} says \"Hello.\"", vars: [IPAddr]);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} says \"Hello.\"", vars: [endpoint.Address.ToString()]);
+            ReplyTo("N-KS-ACK", endpoint);
         }
 
         private static void HandlePing(string value)
@@ -304,8 +310,7 @@ namespace Nitrocid.Base.Network.Types.RPC
         private static void HandleVersion(IPEndPoint endpoint)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "{0} tried to get version, sending it to the requester...", vars: [endpoint.Address.ToString()]);
-            byte[] versionData = Encoding.UTF8.GetBytes(KernelReleaseInfo.VersionFullStr);
-            RemoteProcedure.RPCListen?.Send(versionData, versionData.Length, endpoint);
+            ReplyTo(KernelReleaseInfo.VersionFullStr, endpoint);
         }
 
         private static void HandleVersionCode(IPEndPoint endpoint)
@@ -317,15 +322,13 @@ namespace Nitrocid.Base.Network.Types.RPC
                 ((long)version.Minor << 32) |
                 ((long)version.Build << 16) |
                 (long)version.Revision;
-            byte[] versionData = Encoding.UTF8.GetBytes(versionCode.ToString());
-            RemoteProcedure.RPCListen?.Send(versionData, versionData.Length, endpoint);
+            ReplyTo($"{versionCode}", endpoint);
         }
 
         private static void HandleApiVersion(IPEndPoint endpoint)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "{0} tried to get API version, sending it to the requester...", vars: [endpoint.Address.ToString()]);
-            byte[] versionData = Encoding.UTF8.GetBytes(KernelReleaseInfo.ApiVersion.ToString());
-            RemoteProcedure.RPCListen?.Send(versionData, versionData.Length, endpoint);
+            ReplyTo(KernelReleaseInfo.ApiVersion.ToString(), endpoint);
         }
 
         private static void HandleApiVersionCode(IPEndPoint endpoint)
@@ -337,8 +340,7 @@ namespace Nitrocid.Base.Network.Types.RPC
                 ((long)version.Minor << 32) |
                 ((long)version.Build << 16) |
                 (long)version.Revision;
-            byte[] versionData = Encoding.UTF8.GetBytes(versionCode.ToString());
-            RemoteProcedure.RPCListen?.Send(versionData, versionData.Length, endpoint);
+            ReplyTo($"{versionCode}", endpoint);
         }
     }
 }
