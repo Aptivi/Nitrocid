@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>Defecit cum mandatum pro instantia Nitrocid tractare conabatur</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>Mandatum ignotum vel non sustentatum</value>
+  </data>
 
 </root>

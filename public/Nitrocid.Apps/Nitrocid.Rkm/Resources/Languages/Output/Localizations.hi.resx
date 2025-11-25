@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>नाइट्रोसिड इंस्टेंस के लिए कमांड प्रोसेस करने की कोशिश करते समय फेल हो गया</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>अज्ञात या असमर्थित कमांड</value>
+  </data>
 
 </root>

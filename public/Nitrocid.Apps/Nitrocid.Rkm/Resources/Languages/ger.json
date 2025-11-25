@@ -70,6 +70,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Fehler beim Verarbeiten des Befehls für die Nitrocid-Instanz."
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Unbekannter oder nicht unterstützter Befehl"
     }
   ]
 }

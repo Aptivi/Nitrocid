@@ -61,6 +61,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Gagal saat mencoba memproses perintah untuk instans Nitrocid"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Perintah tidak dikenal atau tidak didukung"
     }
   ]
 }

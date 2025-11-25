@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>Помилка під час спроби обробки команди для екземпляра Nitrocid</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>Невідома або непідтримувана команда</value>
+  </data>
 
 </root>

@@ -175,6 +175,11 @@ namespace Nitrocid.Rkm
                         RPCCommands.SendCommand($"<Request:ApiVersionCode>({hostName})", hostName, hostPort, true);
                         processReply = true;
                         break;
+                    default:
+                        if (abstractLogger is not null)
+                            LogTools.Debug(abstractLogger, "Unknown or unsupported command: {0}", command);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_RKM_UNKNOWN_COMMAND") + $": {command}", ThemeColorType.Error);
+                        return -2;
                 }
 
                 // Determine whether we need to process reply

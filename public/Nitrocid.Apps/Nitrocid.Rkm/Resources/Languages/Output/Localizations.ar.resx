@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>فشلت محاولة معالجة أمر لمثيل Nitrocid</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>أمر غير معروف أو غير مدعوم</value>
+  </data>
 
 </root>

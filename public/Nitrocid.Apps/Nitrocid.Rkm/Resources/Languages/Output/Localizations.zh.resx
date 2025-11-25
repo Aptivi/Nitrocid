@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>嘗試處理 Nitrocid 實例的命令時失敗</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>未知或不支援的命令</value>
+  </data>
 
 </root>

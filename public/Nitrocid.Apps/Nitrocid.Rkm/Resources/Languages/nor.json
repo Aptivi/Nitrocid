@@ -65,6 +65,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Mislyktes ved forsøk på å behandle kommandoen for Nitrocid-instansen"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Ukjent eller ustøttet kommando"
     }
   ]
 }

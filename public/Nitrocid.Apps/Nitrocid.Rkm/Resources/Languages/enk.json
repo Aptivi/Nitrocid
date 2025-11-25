@@ -60,6 +60,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Failed when trying to process command for the Nitrocid instance"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Unknown or unsupported command"
     }
   ]
 }

@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>Theip air agus iarracht á déanamh ordú a phróiseáil don chás Nitrocid</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>Ordú anaithnid nó gan tacaíocht</value>
+  </data>
 
 </root>

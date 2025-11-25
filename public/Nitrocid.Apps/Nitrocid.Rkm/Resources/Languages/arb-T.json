@@ -87,6 +87,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "فشلت محاولة معالجة أمر لمثيل Nitrocid"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "أمر غير معروف أو غير مدعوم"
     }
   ]
 }

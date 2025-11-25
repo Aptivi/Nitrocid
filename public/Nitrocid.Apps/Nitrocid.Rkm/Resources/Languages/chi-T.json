@@ -69,6 +69,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "尝试处理 Nitrocid 实例的命令时失败"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "未知或不支持的命令"
     }
   ]
 }

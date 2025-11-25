@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>Gagal saat mencoba memproses perintah untuk instans Nitrocid</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>Perintah tidak dikenal atau tidak didukung</value>
+  </data>
 
 </root>
