@@ -19,23 +19,25 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
-using System.Linq;
-using Terminaux.Shell.Shells;
-using Terminaux.Writer.ConsoleWriters;
-using Textify.General;
-using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Users.Login;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Events;
-using Nitrocid.Base.Kernel.Power;
+using Terminaux.Shell.Shells;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Base.Network.Types.RPC
 {
@@ -57,6 +59,10 @@ namespace Nitrocid.Base.Network.Types.RPC
         /// <br/>&lt;Request:Exec&gt;: Executes a command remotely. Usage: &lt;Request:Exec&gt;(Command)
         /// <br/>&lt;Request:Acknowledge&gt;: Pings the remote kernel silently. Usage: &lt;Request:Acknowledge&gt;(IP)
         /// <br/>&lt;Request:Ping&gt;: Pings the remote kernel with notification. Usage: &lt;Request:Ping&gt;(IP)
+        /// <br/>&lt;Request:Version&gt;: Returns the Nitrocid version. Usage: &lt;Request:Version&gt;(IP)
+        /// <br/>&lt;Request:VersionCode&gt;: Returns the Nitrocid version code. Usage: &lt;Request:VersionCode&gt;(IP)
+        /// <br/>&lt;Request:ApiVersion&gt;: Returns the Nitrocid mod API version. Usage: &lt;Request:ApiVersion&gt;(IP)
+        /// <br/>&lt;Request:ApiVersionCode&gt;: Returns the Nitrocid mod API version code. Usage: &lt;Request:ApiVersionCode&gt;(IP)
         /// </summary>
         private readonly static List<string> RPCCommandsField =
         [
@@ -68,20 +74,28 @@ namespace Nitrocid.Base.Network.Types.RPC
             "SaveScr",
             "Exec",
             "Acknowledge",
-            "Ping"
+            "Ping",
+            "Version",
+            "VersionCode",
+            "ApiVersion",
+            "ApiVersionCode",
         ];
 
-        private readonly static Dictionary<string, Action<string>> RPCCommandReplyActions = new()
+        private readonly static Dictionary<string, Action<string, IPEndPoint>> RPCCommandReplyActions = new()
         {
-            { "ShutdownConfirm",    (_)     => HandleShutdown() },
-            { "RebootConfirm",      (_)     => HandleReboot() },
-            { "RebootSafeConfirm",  (_)     => HandleRebootSafe() },
-            { "RebootMaintenanceConfirm",  (_)     => HandleRebootMaintenance() },
-            { "RebootDebugConfirm",  (_)     => HandleRebootDebug() },
-            { "SaveScrConfirm",     (_)     => HandleSaveScr() },
-            { "ExecConfirm",                   HandleExec },
-            { "AcknowledgeConfirm",            HandleAcknowledge },
-            { "PingConfirm",                   HandlePing },
+            { "ShutdownConfirm",            (_, _) => HandleShutdown() },
+            { "RebootConfirm",              (_, _) => HandleReboot() },
+            { "RebootSafeConfirm",          (_, _) => HandleRebootSafe() },
+            { "RebootMaintenanceConfirm",   (_, _) => HandleRebootMaintenance() },
+            { "RebootDebugConfirm",         (_, _) => HandleRebootDebug() },
+            { "SaveScrConfirm",             (_, _) => HandleSaveScr() },
+            { "ExecConfirm",                (value, _) => HandleExec(value) },
+            { "AcknowledgeConfirm",         (value, _) => HandleAcknowledge(value) },
+            { "PingConfirm",                (value, _) => HandlePing(value) },
+            { "VersionConfirm",             (_, endpoint) => HandleVersion(endpoint) },
+            { "VersionCodeConfirm",         (_, endpoint) => HandleVersionCode(endpoint) },
+            { "ApiVersionConfirm",          (_, endpoint) => HandleApiVersion(endpoint) },
+            { "ApiVersionCodeConfirm",      (_, endpoint) => HandleApiVersionCode(endpoint) },
         };
 
         /// <summary>
@@ -89,8 +103,9 @@ namespace Nitrocid.Base.Network.Types.RPC
         /// </summary>
         /// <param name="Request">A request</param>
         /// <param name="IP">An IP address which the RPC is hosted</param>
-        public static void SendCommand(string Request, string IP) =>
-            SendCommand(Request, IP, Config.MainConfig.RPCPort);
+        /// <param name="clientMode">Client mode (if true, doesn't require RPC server to be running)</param>
+        public static void SendCommand(string Request, string IP, bool clientMode = false) =>
+            SendCommand(Request, IP, Config.MainConfig.RPCPort, clientMode);
 
         /// <summary>
         /// Send an RPC command to another instance of KS using the specified address
@@ -98,10 +113,11 @@ namespace Nitrocid.Base.Network.Types.RPC
         /// <param name="Request">A request</param>
         /// <param name="IP">An IP address which the RPC is hosted</param>
         /// <param name="Port">A port which the RPC is hosted</param>
+        /// <param name="clientMode">Client mode (if true, doesn't require RPC server to be running)</param>
         /// <exception cref="InvalidOperationException"></exception>
-        public static void SendCommand(string Request, string IP, int Port)
+        public static void SendCommand(string Request, string IP, int Port, bool clientMode = false)
         {
-            if (Config.MainConfig.RPCEnabled)
+            if (Config.MainConfig.RPCEnabled || clientMode)
             {
                 // Get the command and the argument
                 string Cmd = Request.Remove(Request.IndexOf("("));
@@ -126,7 +142,10 @@ namespace Nitrocid.Base.Network.Types.RPC
 
                     // Send the response
                     DebugWriter.WriteDebug(DebugLevel.I, "Sending response to device...");
-                    RemoteProcedure.RPCListen?.Send(ByteMsg, ByteMsg.Length, IP, Port);
+                    if (clientMode)
+                        RemoteProcedure.rpcStandaloneClient.Send(ByteMsg, ByteMsg.Length, IP, Port);
+                    else
+                        RemoteProcedure.RPCListen?.Send(ByteMsg, ByteMsg.Length, IP, Port);
                     EventsManager.FireEvent(EventType.RPCCommandSent, Cmd, Arg, IP, Port);
                 }
                 else
@@ -187,8 +206,6 @@ namespace Nitrocid.Base.Network.Types.RPC
                     return;
                 if (RemoteProcedure.rpcStopping)
                     return;
-                if (RemoteProcedure.RPCListen.Available == 0)
-                    return;
                 var endpoint = new IPEndPoint(IPAddress.Any, Config.MainConfig.RPCPort);
                 byte[] MessageBuffer = RemoteProcedure.RPCListen.EndReceive(asyncResult, ref endpoint);
                 string Message = Encoding.Default.GetString(MessageBuffer);
@@ -200,14 +217,14 @@ namespace Nitrocid.Base.Network.Types.RPC
                 DebugWriter.WriteDebug(DebugLevel.I, "Final Arg: {0}", vars: [Arg]);
 
                 // If the message is not empty, parse it
-                if (!string.IsNullOrEmpty(Message))
+                if (!string.IsNullOrEmpty(Message) && endpoint is not null)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "RPC: Received message {0}", vars: [Message]);
-                    EventsManager.FireEvent(EventType.RPCCommandReceived, Message, endpoint?.Address.ToString(), endpoint?.Port);
+                    EventsManager.FireEvent(EventType.RPCCommandReceived, Message, endpoint.Address.ToString(), endpoint.Port);
 
                     // Invoke the action based on message
-                    if (RPCCommandReplyActions.TryGetValue(Cmd, out Action<string>? replyAction))
-                        replyAction.Invoke(Arg);
+                    if (RPCCommandReplyActions.TryGetValue(Cmd, out Action<string, IPEndPoint>? replyAction))
+                        replyAction.Invoke(Arg, endpoint);
                     else
                         DebugWriter.WriteDebug(DebugLevel.W, "Not found. Message was {0}", vars: [Message]);
                 }
@@ -282,6 +299,46 @@ namespace Nitrocid.Base.Network.Types.RPC
             string IPAddr = value.Replace("PingConfirm, ", "").Replace(CharManager.NewLine, "");
             DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", vars: [IPAddr]);
             NotificationManager.NotifySend(new Notification(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_PINGACK_TITLE"), TextTools.FormatString(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_PINGACK_DESC"), IPAddr), NotificationPriority.Low, NotificationType.Normal));
+        }
+
+        private static void HandleVersion(IPEndPoint endpoint)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} tried to get version, sending it to the requester...", vars: [endpoint.Address.ToString()]);
+            byte[] versionData = Encoding.UTF8.GetBytes(KernelReleaseInfo.VersionFullStr);
+            RemoteProcedure.RPCListen?.Send(versionData, versionData.Length, endpoint);
+        }
+
+        private static void HandleVersionCode(IPEndPoint endpoint)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} tried to get version code, sending it to the requester...", vars: [endpoint.Address.ToString()]);
+            var version = KernelReleaseInfo.Version ?? new();
+            long versionCode =
+                ((long)version.Major << 48) |
+                ((long)version.Minor << 32) |
+                ((long)version.Build << 16) |
+                (long)version.Revision;
+            byte[] versionData = Encoding.UTF8.GetBytes(versionCode.ToString());
+            RemoteProcedure.RPCListen?.Send(versionData, versionData.Length, endpoint);
+        }
+
+        private static void HandleApiVersion(IPEndPoint endpoint)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} tried to get API version, sending it to the requester...", vars: [endpoint.Address.ToString()]);
+            byte[] versionData = Encoding.UTF8.GetBytes(KernelReleaseInfo.ApiVersion.ToString());
+            RemoteProcedure.RPCListen?.Send(versionData, versionData.Length, endpoint);
+        }
+
+        private static void HandleApiVersionCode(IPEndPoint endpoint)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} tried to get API version code, sending it to the requester...", vars: [endpoint.Address.ToString()]);
+            var version = KernelReleaseInfo.ApiVersion ?? new();
+            long versionCode =
+                ((long)version.Major << 48) |
+                ((long)version.Minor << 32) |
+                ((long)version.Build << 16) |
+                (long)version.Revision;
+            byte[] versionData = Encoding.UTF8.GetBytes(versionCode.ToString());
+            RemoteProcedure.RPCListen?.Send(versionData, versionData.Length, endpoint);
         }
     }
 }
