@@ -2,8 +2,8 @@ MODAPI = 28
 ROOT_DIR := $(shell dirname "$(realpath $(lastword $(MAKEFILE_LIST)))")
 
 OUTPUT = "$(ROOT_DIR)/public/Nitrocid/KSBuild/net10.0"
-BINARIES = "$(ROOT_DIR)/assets/ks"
-MANUALS = "$(ROOT_DIR)/assets/ks.1"
+BINARIES = "$(ROOT_DIR)/assets/ks" "$(ROOT_DIR)/assets/ks-rkm"
+MANUALS = "$(ROOT_DIR)/assets/ks.1" "$(ROOT_DIR)/assets/ks-rkm.1"
 DESKTOPS = "$(ROOT_DIR)/assets/ks.desktop"
 BRANDINGS = "$(ROOT_DIR)/public/Nitrocid/OfficialAppIcon-NitrocidKS-512.png"
 
@@ -54,7 +54,9 @@ install:
 	install -m 755 -t $(FDESTDIR)/share/applications/ $(DESKTOPS)
 	install -m 755 -t $(FDESTDIR)/lib/ks-$(MODAPI)/ $(BRANDINGS)
 	mv $(FDESTDIR)/bin/ks $(FDESTDIR)/bin/ks-$(MODAPI)
+	mv $(FDESTDIR)/bin/ks-rkm $(FDESTDIR)/bin/ks-$(MODAPI)-rkm
 	mv $(FDESTDIR)/share/man/man1/ks.1 $(FDESTDIR)/share/man/man1/ks-$(MODAPI).1
+	mv $(FDESTDIR)/share/man/man1/ks-rkm.1 $(FDESTDIR)/share/man/man1/ks-$(MODAPI)-rkm.1
 	mv $(FDESTDIR)/share/applications/ks.desktop $(FDESTDIR)/share/applications/ks-$(MODAPI).desktop
 	sed -i 's|/usr/lib/ks|/usr/lib/ks-$(MODAPI)|g' $(FDESTDIR)/bin/ks-*
 	sed -i 's|/usr/lib/ks|/usr/lib/ks-$(MODAPI)|g' $(FDESTDIR)/share/applications/ks-$(MODAPI).desktop
