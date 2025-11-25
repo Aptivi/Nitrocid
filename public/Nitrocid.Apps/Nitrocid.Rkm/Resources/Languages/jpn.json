@@ -1,0 +1,66 @@
+{
+  "lang": "jpn",
+  "name": "Japanese",
+  "cultures": [
+    "ja",
+    "ja-JP"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "詳細ログ"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "引数ヘルプページ"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "ヘルプを表示する引数を指定します"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Nitrocid RPCインスタンスのホスト名"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Nitrocid RPCインスタンスのホスト名を指定します"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Nitrocid RPCインスタンスのポート番号"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Nitrocid RPCインスタンスのポート番号を指定します"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "インスタンスで実行するアクション"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "実行するアクションを指定します"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "アクションの引数を指定します"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Nitrocid RPCインスタンスに接続しています..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "無効なNitrocid RPCインスタンスです！"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "接続に成功しました！"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Nitrocidインスタンスのコマンド処理に失敗しました"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "lang": "fre",
+  "name": "French",
+  "cultures": [
+    "fr",
+    "fr-029",
+    "fr-BE",
+    "fr-BF",
+    "fr-BI",
+    "fr-BJ",
+    "fr-BL",
+    "fr-CA",
+    "fr-CD",
+    "fr-CF",
+    "fr-CG",
+    "fr-CH",
+    "fr-CI",
+    "fr-CM",
+    "fr-DJ",
+    "fr-DZ",
+    "fr-FR",
+    "fr-GA",
+    "fr-GF",
+    "fr-GN",
+    "fr-GP",
+    "fr-GQ",
+    "fr-HT",
+    "fr-KM",
+    "fr-LU",
+    "fr-MA",
+    "fr-MC",
+    "fr-MF",
+    "fr-MG",
+    "fr-ML",
+    "fr-MQ",
+    "fr-MR",
+    "fr-MU",
+    "fr-NC",
+    "fr-NE",
+    "fr-PF",
+    "fr-PM",
+    "fr-RE",
+    "fr-RW",
+    "fr-SC",
+    "fr-SN",
+    "fr-SY",
+    "fr-TD",
+    "fr-TG",
+    "fr-TN",
+    "fr-VU",
+    "fr-WF",
+    "fr-YT"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "Journalisation détaillée"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "Page d'aide des arguments"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "Spécifiez un argument pour obtenir de l'aide"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Nom d'hôte de l'instance Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Spécifiez le nom d'hôte de l'instance Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Numéro de port de l'instance Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Spécifiez le numéro de port de l'instance Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "Action à effectuer sur une instance"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "Spécifiez une action à effectuer"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "Spécifiez les arguments de l'action"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Connexion à l'instance Nitrocid RPC..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "Instance Nitrocid RPC invalide !"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "Connexion réussie !"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Échec lors du traitement de la commande pour l'instance Nitrocid"
+    }
+  ]
+}

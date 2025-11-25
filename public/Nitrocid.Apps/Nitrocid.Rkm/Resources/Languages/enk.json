@@ -1,0 +1,65 @@
+{
+  "lang": "enk",
+  "name": "English (UK)",
+  "cultures": [
+    "en-GB"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "Verbose logging"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "Argument help page"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "Specifies an argument to get help with"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Host name for the Nitrocid RPC instance"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Specify the host name for the Nitrocid RPC instance"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Port number for the Nitrocid RPC instance"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Specify the port number for the Nitrocid RPC instance"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "Action to perform on an instance"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "Specifies an action to perform"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "Specifies arguments to the action"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Connecting to Nitrocid RPC instance..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "Invalid Nitrocid RPC instance!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "Successfully connected!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Failed when trying to process command for the Nitrocid instance"
+    }
+  ]
+}

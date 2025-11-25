@@ -1,0 +1,69 @@
+{
+  "lang": "mal",
+  "name": "Malay",
+  "cultures": [
+    "ms",
+    "ms-BN",
+    "ms-ID",
+    "ms-MY",
+    "ms-SG"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "Pembalakan Verbose"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "Halaman bantuan argumen"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "Menentukan argumen untuk mendapatkan bantuan"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Nama hos untuk tika Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Menentukan nama hos untuk tika Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Nombor port untuk tika Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Menentukan nombor port untuk tika Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "Tindakan untuk dilaksanakan pada tika"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "Menentukan tindakan untuk dilaksanakan"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "Menentukan argumen kepada tindakan"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Menyambung ke tika Nitrocid RPC..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "Tindakan Nitrocid RPC tidak sah!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "Berjaya disambungkan!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Gagal semasa cuba memproses arahan untuk tika Nitrocid"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "lang": "iri",
+  "name": "Irish",
+  "cultures": [
+    "ga",
+    "ga-GB",
+    "ga-IE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "Logáil fhairsing"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "Leathanach cabhrach argóintí"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "Sonraíonn sé argóint le cabhair a fháil leis"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Ainm óstach don chás Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Sonraíonn an t-ainm óstach don chás Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Uimhir an phoirt don chás Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Sonraíonn sé uimhir an phoirt don chás Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "Gníomh le déanamh ar chás"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "Sonraíonn sé gníomh le déanamh"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "Sonraíonn sé argóintí don ghníomh"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Ag ceangal le cás Nitrocid RPC..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "Cás Nitrocid RPC neamhbhailí!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "Ceangailte go rathúil!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Theip air agus iarracht á déanamh ordú a phróiseáil don chás Nitrocid"
+    }
+  ]
+}

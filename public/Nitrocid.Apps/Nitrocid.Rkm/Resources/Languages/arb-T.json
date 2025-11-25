@@ -1,0 +1,92 @@
+{
+  "lang": "arb-T",
+  "name": "Arabic",
+  "cultures": [
+    "ar",
+    "ar-001",
+    "ar-AE",
+    "ar-BH",
+    "ar-DJ",
+    "ar-DZ",
+    "ar-EG",
+    "ar-ER",
+    "ar-IL",
+    "ar-IQ",
+    "ar-JO",
+    "ar-KM",
+    "ar-KW",
+    "ar-LB",
+    "ar-LY",
+    "ar-MA",
+    "ar-MR",
+    "ar-OM",
+    "ar-PS",
+    "ar-QA",
+    "ar-SA",
+    "ar-SD",
+    "ar-SO",
+    "ar-SS",
+    "ar-SY",
+    "ar-TD",
+    "ar-TN",
+    "ar-YE"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "التسجيل المُفصّل"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "صفحة مساعدة الوسيطات"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "تحديد وسيطة للحصول على مساعدة بشأنها"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "اسم المضيف لمثيل Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "تحديد اسم المضيف لمثيل Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "رقم المنفذ لمثيل Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "تحديد رقم المنفذ لمثيل Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "الإجراء المطلوب تنفيذه على مثيل"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "تحديد إجراء المطلوب تنفيذه"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "تحديد وسيطات الإجراء"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "جارٍ الاتصال بمثيل Nitrocid RPC..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "مثيل Nitrocid RPC غير صالح!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "تم الاتصال بنجاح!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "فشلت محاولة معالجة أمر لمثيل Nitrocid"
+    }
+  ]
+}

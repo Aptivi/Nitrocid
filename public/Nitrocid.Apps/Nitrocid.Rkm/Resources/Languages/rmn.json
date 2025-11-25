@@ -1,0 +1,67 @@
+{
+  "lang": "rmn",
+  "name": "Romanian",
+  "cultures": [
+    "ro",
+    "ro-MD",
+    "ro-RO"
+  ],
+  "locs": [
+    {
+      "loc": "NKS_RKM_ARGUMENTS_VERBOSE_DESC",
+      "text": "Înregistrare detaliată"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_DESC",
+      "text": "Pagina de ajutor pentru argumente"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC",
+      "text": "Specifică un argument pentru a obține ajutor"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_DESC",
+      "text": "Nume gazdă pentru instanța Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_HOST_HOST_DESC",
+      "text": "Specifică numele gazdei pentru instanța Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_DESC",
+      "text": "Numărul de port pentru instanța Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_PORT_PORT_DESC",
+      "text": "Specifică numărul de port pentru instanța Nitrocid RPC"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_DESC",
+      "text": "Acțiune de efectuat asupra unei instanțe"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+      "text": "Specifică o acțiune de efectuat"
+    },
+    {
+      "loc": "NKS_RKM_ARGUMENTS_COMMAND_ARGUMENTS_DESC",
+      "text": "Specifică argumentele acțiunii"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTING",
+      "text": "Conectare la instanța Nitrocid RPC..."
+    },
+    {
+      "loc": "NKS_RKM_INVALIDINSTANCE",
+      "text": "Instanță Nitrocid RPC nevalidă!"
+    },
+    {
+      "loc": "NKS_RKM_CONNECTIONSUCCESS",
+      "text": "Conectare reușită!"
+    },
+    {
+      "loc": "NKS_RKM_FAILED",
+      "text": "Eșuat la încercarea de procesare a comenzii pentru instanța Nitrocid"
+    }
+  ]
+}
