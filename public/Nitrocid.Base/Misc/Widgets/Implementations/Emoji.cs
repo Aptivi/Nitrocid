@@ -29,7 +29,7 @@ using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Extensions;
 #endif
 
-namespace Nitrocid.Base.Users.Login.Widgets.Implementations
+namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
     internal class Emoji : BaseWidget, IWidget
     {

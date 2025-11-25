@@ -29,7 +29,7 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
-namespace Nitrocid.Base.Users.Login.Widgets.Implementations
+namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
     internal class AnalogClock : BaseWidget, IWidget
     {

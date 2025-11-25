@@ -24,7 +24,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
-namespace Nitrocid.Base.Users.Login.Widgets.Implementations
+namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
     internal class NotificationList : BaseWidget, IWidget
     {

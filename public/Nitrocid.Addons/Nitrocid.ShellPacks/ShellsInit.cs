@@ -40,7 +40,7 @@ using Nitrocid.ShellPacks.Shells.SFTP;
 using Nitrocid.ShellPacks.Shells.Sql;
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.Base.Users.Login.Widgets;
+using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.ShellPacks.Shells.RSS.Widgets;
 
 namespace Nitrocid.ShellPacks

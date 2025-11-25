@@ -20,7 +20,7 @@
 using System.Text;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users.Login.Widgets;
+using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using System;
