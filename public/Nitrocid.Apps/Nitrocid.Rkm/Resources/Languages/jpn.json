@@ -61,6 +61,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Nitrocidインスタンスのコマンド処理に失敗しました"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "不明またはサポートされていないコマンド"
     }
   ]
 }

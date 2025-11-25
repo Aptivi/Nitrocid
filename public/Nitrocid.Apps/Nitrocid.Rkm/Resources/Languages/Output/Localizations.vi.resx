@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>Đã thất bại khi cố gắng xử lý lệnh cho phiên bản Nitrocid</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>Lệnh không xác định hoặc không được hỗ trợ</value>
+  </data>
 
 </root>

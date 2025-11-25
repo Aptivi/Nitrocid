@@ -62,6 +62,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Theip air agus iarracht á déanamh ordú a phróiseáil don chás Nitrocid"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Ordú anaithnid nó gan tacaíocht"
     }
   ]
 }

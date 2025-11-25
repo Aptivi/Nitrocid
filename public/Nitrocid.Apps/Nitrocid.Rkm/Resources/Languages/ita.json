@@ -64,6 +64,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Errore durante il tentativo di elaborazione del comando per l'istanza Nitrocid"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Comando sconosciuto o non supportato"
     }
   ]
 }

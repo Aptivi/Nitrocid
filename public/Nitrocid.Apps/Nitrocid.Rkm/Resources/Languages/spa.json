@@ -86,6 +86,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Error al intentar procesar el comando para la instancia de Nitrocid"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Comando desconocido o no compatible"
     }
   ]
 }

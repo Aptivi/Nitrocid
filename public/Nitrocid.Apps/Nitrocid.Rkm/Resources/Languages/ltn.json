@@ -61,6 +61,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Defecit cum mandatum pro instantia Nitrocid tractare conabatur"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Mandatum ignotum vel non sustentatum"
     }
   ]
 }

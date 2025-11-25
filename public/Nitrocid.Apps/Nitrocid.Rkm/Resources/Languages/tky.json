@@ -62,6 +62,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Nitrocid örneği için komut işlenirken başarısız oldu"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Bilinmeyen veya desteklenmeyen komut"
     }
   ]
 }

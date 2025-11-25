@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>Mislyktes ved forsøk på å behandle kommandoen for Nitrocid-instansen</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>Ukjent eller ustøttet kommando</value>
+  </data>
 
 </root>

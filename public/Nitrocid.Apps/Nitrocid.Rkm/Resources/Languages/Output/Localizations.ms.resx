@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>Gagal semasa cuba memproses arahan untuk tika Nitrocid</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>Perintah yang tidak diketahui atau tidak disokong</value>
+  </data>
 
 </root>

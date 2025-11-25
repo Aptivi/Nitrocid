@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>Αποτυχία κατά την προσπάθεια επεξεργασίας εντολής για την παρουσία Nitrocid</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>Άγνωστη ή μη υποστηριζόμενη εντολή</value>
+  </data>
 
 </root>

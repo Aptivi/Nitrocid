@@ -67,6 +67,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Proberen om opdracht voor de Nitrocid-instantie te verwerken mislukt"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Onbekende of niet-ondersteunde opdracht"
     }
   ]
 }

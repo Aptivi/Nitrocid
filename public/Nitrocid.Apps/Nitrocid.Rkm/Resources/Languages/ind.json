@@ -61,6 +61,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "naitrosid instens ke lie kamaand proses karane kee koshish karate samay phel ho gaya"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "agyaat ya asamarthit kamaand"
     }
   ]
 }

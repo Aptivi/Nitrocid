@@ -62,6 +62,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Eșuat la încercarea de procesare a comenzii pentru instanța Nitrocid"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Comandă necunoscută sau neacceptată"
     }
   ]
 }

@@ -107,6 +107,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Échec lors du traitement de la commande pour l'instance Nitrocid"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Commande inconnue ou non prise en charge"
     }
   ]
 }

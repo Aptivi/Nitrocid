@@ -61,6 +61,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Đã thất bại khi cố gắng xử lý lệnh cho phiên bản Nitrocid"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Lệnh không xác định hoặc không được hỗ trợ"
     }
   ]
 }

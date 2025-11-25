@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>Nitrocidインスタンスのコマンド処理に失敗しました</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>不明またはサポートされていないコマンド</value>
+  </data>
 
 </root>

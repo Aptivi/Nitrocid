@@ -64,6 +64,10 @@
     {
       "loc": "NKS_RKM_FAILED",
       "text": "Gagal semasa cuba memproses arahan untuk tika Nitrocid"
+    },
+    {
+      "loc": "NKS_RKM_UNKNOWN_COMMAND",
+      "text": "Perintah yang tidak diketahui atau tidak disokong"
     }
   ]
 }

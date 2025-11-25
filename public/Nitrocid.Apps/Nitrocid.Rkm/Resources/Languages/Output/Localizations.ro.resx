@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>Eșuat la încercarea de procesare a comenzii pentru instanța Nitrocid</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>Comandă necunoscută sau neacceptată</value>
+  </data>
 
 </root>

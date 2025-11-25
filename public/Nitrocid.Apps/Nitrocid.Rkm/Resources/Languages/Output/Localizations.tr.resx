@@ -159,5 +159,8 @@
   <data name="NKS_RKM_FAILED" xml:space="preserve">
     <value>Nitrocid örneği için komut işlenirken başarısız oldu</value>
   </data>
+  <data name="NKS_RKM_UNKNOWN_COMMAND" xml:space="preserve">
+    <value>Bilinmeyen veya desteklenmeyen komut</value>
+  </data>
 
 </root>
