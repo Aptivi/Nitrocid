@@ -151,7 +151,7 @@ namespace Nitrocid.Rkm
                         RPCCommands.SendCommand($"<Request:SaveScr>({hostName})", hostName, hostPort, true);
                         break;
                     case "exec":
-                        RPCCommands.SendCommand($"<Request:Exec>({arguments})", hostName, hostPort, true);
+                        RPCCommands.SendCommand($"<Request:Exec>({commandArguments})", hostName, hostPort, true);
                         break;
                     case "test":
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_RKM_CONNECTIONSUCCESS"), ThemeColorType.Success);
