@@ -283,14 +283,14 @@ namespace Nitrocid.Base.Network.Types.RPC
         private static void HandleExec(string value)
         {
             string Command = value.Replace("ExecConfirm, ", "").Replace(CharManager.NewLine, "");
-            if (Login.LoggedIn)
+            if (Login.LoggedIn && KernelEntry.inShell)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Exec confirmed from remote access.");
                 TextWriterRaw.Write();
                 ShellManager.GetLine(Command);
             }
             else
-                DebugWriter.WriteDebug(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...");
+                DebugWriter.WriteDebug(DebugLevel.W, "Tried to exec from remote access while not logged in or not in shell. Dropping packet...");
         }
 
         private static void HandleAcknowledge(IPEndPoint endpoint)

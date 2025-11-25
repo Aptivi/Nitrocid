@@ -55,6 +55,7 @@ namespace Nitrocid.Base.Kernel
         internal static bool TalkativePreboot;
         internal static bool PrebootSplash = true;
         internal static bool UseAltBuffer = true;
+        internal static bool inShell = false;
 
         internal static void EntryPoint(string[]? args)
         {
@@ -213,7 +214,9 @@ namespace Nitrocid.Base.Kernel
                     KernelReleaseInfo.NotifyReleaseSupportWindow();
 
                     // Start the shell
+                    inShell = true;
                     ShellManager.StartShell("Shell");
+                    inShell = false;
                 }
                 Login.LoggedIn = false;
                 Login.LogoutRequested = false;
