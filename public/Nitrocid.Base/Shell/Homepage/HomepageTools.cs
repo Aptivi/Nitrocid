@@ -172,29 +172,48 @@ namespace Nitrocid.Base.Shell.Homepage
                         if (pageNumber != 1)
                             continue;
 
+                        // Prepare the common variables
+                        int height = ConsoleWrapper.WindowHeight - 4;
+                        int width = ConsoleWrapper.WindowWidth - 8;
+                        int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
+                        int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
+
+                        // Prepare the common widget variables
+                        int widgetLeft = ConsoleWrapper.WindowWidth / 2 + (ConsoleWrapper.WindowWidth % 2) + 1;
+                        int widgetWidth = width / 2 - 4;
+                        int widgetHeight = height - 7;
+                        int widgetTop = posY + 1;
+
                         // Get the necessary positions
                         int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
-                        int buttonPanelWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
-                        int buttonWidth = buttonPanelWidth / 2 - 2;
+                        int buttonPanelWidth = widgetWidth + 1 + ConsoleWrapper.WindowWidth % 2;
+                        int buttonWidth = buttonPanelWidth / 2 - 1;
                         int buttonHeight = 1;
-                        int settingsButtonStartPosX = 2;
-                        int settingsButtonStartPosY = ConsoleWrapper.WindowHeight - 5;
+
+                        // Settings button
+                        int settingsButtonStartPosX = posX + 2;
+                        int settingsButtonStartPosY = buttonPanelPosY;
                         int settingsButtonEndPosX = settingsButtonStartPosX + buttonWidth + 1;
                         int settingsButtonEndPosY = settingsButtonStartPosY + buttonHeight + 1;
-                        int aboutButtonStartPosX = buttonWidth + 2;
-                        int aboutButtonStartPosY = ConsoleWrapper.WindowHeight - 5;
+
+                        // About button
+                        int aboutButtonStartPosX = settingsButtonStartPosX + buttonWidth + 3;
+                        int aboutButtonStartPosY = buttonPanelPosY;
                         int aboutButtonEndPosX = aboutButtonStartPosX + buttonWidth + 1;
                         int aboutButtonEndPosY = aboutButtonStartPosY + buttonHeight + 1;
-                        int widgetTop = 3;
-                        int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
-                        int widgetHeight = ConsoleWrapper.WindowHeight - 13;
-                        int optionsEndX = settingsButtonStartPosX + widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2;
-                        int optionsEndY = widgetTop + widgetHeight + 1;
+
+                        // Options
+                        int optionsEndX = settingsButtonStartPosX + widgetWidth + 1 + ConsoleWrapper.WindowWidth % 2;
+                        int optionsEndY = widgetTop + widgetHeight - 1;
+
+                        // Notifications
+                        int notificationsEndY = widgetTop + widgetHeight + 2;
 
                         // Check the ranges
                         bool isWithinSettings = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX, settingsButtonStartPosY), (settingsButtonEndPosX, settingsButtonEndPosY));
                         bool isWithinAbout = PointerTools.PointerWithinRange(context, (aboutButtonStartPosX, aboutButtonStartPosY), (aboutButtonEndPosX, aboutButtonEndPosY));
-                        bool isWithinOptions = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, widgetTop), (optionsEndX, optionsEndY));
+                        bool isWithinOptions = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, widgetTop + 1), (optionsEndX, optionsEndY));
+                        bool isWithinNotifications = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, notificationsEndY), (optionsEndX, notificationsEndY));
 
                         // If the mouse pointer is within the settings, check for left release
                         if (isWithinSettings)
@@ -211,12 +230,11 @@ namespace Nitrocid.Base.Shell.Homepage
                         }
                         else if (isWithinOptions)
                         {
-                            int selectionChoices = widgetHeight + 2;
                             int currentChoices = choices.Length;
                             if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left || context.ButtonPress == PointerButtonPress.Moved)
                             {
-                                int posY = context.Coordinates.y;
-                                int finalPos = posY - widgetTop;
+                                int contextPosY = context.Coordinates.y;
+                                int finalPos = contextPosY - widgetTop - 1;
                                 if (finalPos < currentChoices)
                                 {
                                     choiceIdx = finalPos;
@@ -242,6 +260,12 @@ namespace Nitrocid.Base.Shell.Homepage
                                     render = true;
                                 }
                             }
+                        }
+                        else if (isWithinNotifications)
+                        {
+                            if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
+                                NotificationsCli.OpenNotificationsCli();
+                            render = true;
                         }
                         if (context.ButtonPress == PointerButtonPress.Moved)
                         {
@@ -314,7 +338,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                 if (pageNumber != 1)
                                     break;
                                 buttonHighlight++;
-                                if (buttonHighlight > 2)
+                                if (buttonHighlight > 3)
                                     buttonHighlight = 0;
                                 break;
                             case ConsoleKey.Enter:
@@ -324,6 +348,8 @@ namespace Nitrocid.Base.Shell.Homepage
                                     SettingsApp.OpenMainPage(Config.MainConfig);
                                 else if (buttonHighlight == 2)
                                     OpenAboutBox();
+                                else if (buttonHighlight == 3)
+                                    NotificationsCli.OpenNotificationsCli();
                                 else
                                     DoAction(choiceIdx);
                                 break;
@@ -562,11 +588,17 @@ namespace Nitrocid.Base.Shell.Homepage
 
             if (actualScreenNum < 0)
             {
+                // Prepare the common variables
+                int height = ConsoleWrapper.WindowHeight - 4;
+                int width = ConsoleWrapper.WindowWidth - 8;
+                int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
+                int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
+
                 // Prepare the common widget variables
-                int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
-                int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
-                int widgetHeight = ConsoleWrapper.WindowHeight - 11;
-                int widgetTop = 2;
+                int widgetLeft = ConsoleWrapper.WindowWidth / 2 + (ConsoleWrapper.WindowWidth % 2) + 1;
+                int widgetWidth = width / 2 - 4;
+                int widgetHeight = height - 7;
+                int widgetTop = posY + 1;
 
                 // Prepare the widget
                 var widget =
@@ -580,45 +612,33 @@ namespace Nitrocid.Base.Shell.Homepage
                 }
 
                 // Make a master border
-                var masterBorder = new Border()
-                {
-                    Left = 0,
-                    Top = 1,
-                    Width = ConsoleWrapper.WindowWidth - 2,
-                    Height = ConsoleWrapper.WindowHeight - 4,
-                    Color = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
-                };
-                builder.Append(masterBorder.Render());
-
-                // Show username at the top
                 string displayName =
                     string.IsNullOrWhiteSpace(UserManagement.CurrentUser.FullName) ?
                     UserManagement.CurrentUser.Username :
                     UserManagement.CurrentUser.FullName;
-                var greeting = new AlignedText()
+                var masterBorder = new BoxFrame()
                 {
-                    Top = 0,
+                    Left = posX,
+                    Top = posY,
+                    Width = width,
+                    Height = height,
                     Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_HEADER").FormatString(displayName),
-                    Settings = new()
-                    {
-                        Alignment = TextAlignment.Middle
-                    }
                 };
-                builder.Append(greeting.Render());
+                builder.Append(masterBorder.Render());
 
                 // Show bindings
-                var keybindings = new Keybindings()
+                var keybindingSequenceBuilder = new StringBuilder();
+                keybindingSequenceBuilder.Append(masterBorder.Settings.BorderRightHorizontalIntersectionEnabled ? $"{ColorTools.RenderSetConsoleColor(masterBorder.FrameColor)}{masterBorder.Settings.BorderRightHorizontalIntersectionChar} " : "");
+                keybindingSequenceBuilder.Append($"{ColorTools.RenderSetConsoleColor(masterBorder.TitleColor)}K: {LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS")} aa tt ee ss tt tt ees  s");
+                keybindingSequenceBuilder.Append(masterBorder.Settings.BorderLeftHorizontalIntersectionEnabled ? $"{ColorTools.RenderSetConsoleColor(masterBorder.FrameColor)} {masterBorder.Settings.BorderLeftHorizontalIntersectionChar}" : "");
+                string keybindingSequence = keybindingSequenceBuilder.ToString();
+                int keybindingSequenceWidth = ConsoleChar.EstimateCellWidth(keybindingSequence);
+                int keybindingSequencePanelWidth = width - 2;
+                if (keybindingSequenceWidth <= keybindingSequencePanelWidth)
                 {
-                    KeybindingList = Bindings,
-                    BuiltinColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltin),
-                    BuiltinForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinForeground),
-                    BuiltinBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingBuiltinBackground),
-                    OptionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiKeyBindingOption),
-                    OptionForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionForeground),
-                    OptionBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiOptionBackground),
-                    Width = ConsoleWrapper.WindowWidth - 1,
-                };
-                builder.Append(RendererTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
+                    int sequenceLeft = posX + width - keybindingSequenceWidth;
+                    builder.Append(TextWriterWhereColor.RenderWherePlain(keybindingSequence, sequenceLeft, posY + height + 1));
+                }
 
                 // Make a border for a widget and the first three RSS feeds (if the addon is installed)
                 int rssTop = widgetTop + widgetHeight + 2;
@@ -629,7 +649,6 @@ namespace Nitrocid.Base.Shell.Homepage
                     Top = widgetTop,
                     Width = widgetWidth,
                     Height = widgetHeight,
-                    Color = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
                 };
                 var rssBorder = new Border()
                 {
@@ -637,7 +656,6 @@ namespace Nitrocid.Base.Shell.Homepage
                     Top = rssTop,
                     Width = widgetWidth,
                     Height = rssHeight,
-                    Color = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
                 };
                 builder.Append(
                     widgetBorder.Render() +
@@ -692,16 +710,15 @@ namespace Nitrocid.Base.Shell.Homepage
 
                 // Populate the button positions
                 int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
-                int buttonPanelWidth = widgetLeft - 4;
-                int buttonWidth = buttonPanelWidth / 2 - 2;
+                int buttonPanelWidth = widgetWidth + 1 + ConsoleWrapper.WindowWidth % 2;
+                int buttonWidth = buttonPanelWidth / 2 - 1;
                 int buttonHeight = 1;
-                int settingsButtonPosX = 2;
+                int settingsButtonPosX = posX + 2;
                 int aboutButtonPosX = settingsButtonPosX + buttonWidth + 3;
 
                 // Populate the settings button
-                var foregroundSettings = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSeparator);
-                var backgroundSettings = buttonHighlight == 1 ? ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
-                var foregroundSettingsText = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+                var foregroundSettings = buttonHighlight == 2 ? ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator) : ThemeColorsTools.GetColor(ThemeColorType.Separator);
+                var foregroundSettingsText = buttonHighlight == 2 ? ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator) : ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
                 var settingsBorder = new Border()
                 {
                     Left = settingsButtonPosX,
@@ -709,7 +726,6 @@ namespace Nitrocid.Base.Shell.Homepage
                     Width = buttonWidth,
                     Height = buttonHeight,
                     Color = foregroundSettings,
-                    BackgroundColor = backgroundSettings,
                 };
                 var settingsText = new AlignedText()
                 {
@@ -717,7 +733,6 @@ namespace Nitrocid.Base.Shell.Homepage
                     Top = buttonPanelPosY + 1,
                     Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_SETTINGS"),
                     ForegroundColor = foregroundSettingsText,
-                    BackgroundColor = backgroundSettings,
                     Width = buttonWidth,
                     Settings = new()
                     {
@@ -730,17 +745,15 @@ namespace Nitrocid.Base.Shell.Homepage
                 );
 
                 // Populate the about button
-                var foregroundAbout = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSeparator);
-                var backgroundAbout = buttonHighlight == 2 ? ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
-                var foregroundAboutText = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+                var foregroundAbout = buttonHighlight == 3 ? ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator) : ThemeColorsTools.GetColor(ThemeColorType.Separator);
+                var foregroundAboutText = buttonHighlight == 3 ? ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator) : ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
                 var aboutBorder = new Border()
                 {
                     Left = aboutButtonPosX,
                     Top = buttonPanelPosY,
-                    Width = aboutButtonPosX + buttonWidth == buttonPanelWidth ? buttonWidth + 1 : buttonWidth,
+                    Width = buttonWidth * 2 + 2 == buttonPanelWidth ? buttonWidth - 1 : buttonWidth,
                     Height = buttonHeight,
                     Color = foregroundAbout,
-                    BackgroundColor = backgroundAbout,
                 };
                 var aboutText = new AlignedText()
                 {
@@ -748,7 +761,6 @@ namespace Nitrocid.Base.Shell.Homepage
                     Top = buttonPanelPosY + 1,
                     Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT"),
                     ForegroundColor = foregroundAboutText,
-                    BackgroundColor = backgroundAbout,
                     Width = buttonWidth,
                     Settings = new()
                     {
@@ -766,9 +778,9 @@ namespace Nitrocid.Base.Shell.Homepage
                 {
                     Left = settingsButtonPosX,
                     Top = widgetTop,
-                    Width = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
-                    Height = widgetHeight + 2,
-                    Color = ThemeColorsTools.GetColor(buttonHighlight == 0 ? ThemeColorType.TuiPaneSelectedSeparator : ThemeColorType.TuiPaneSeparator),
+                    Width = buttonPanelWidth,
+                    Height = widgetHeight - 1,
+                    Color = ThemeColorsTools.GetColor(buttonHighlight == 0 ? ThemeColorType.TuiPaneSelectedSeparator : ThemeColorType.Separator),
                 };
                 var choicesSelection = new Selection(availableChoices)
                 {
@@ -776,8 +788,8 @@ namespace Nitrocid.Base.Shell.Homepage
                     Top = widgetTop + 1,
                     CurrentSelection = choiceIdx,
                     AltChoicePos = availableChoices.Length,
-                    Height = widgetHeight + 2,
-                    Width = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
+                    Width = buttonPanelWidth,
+                    Height = widgetHeight - 1,
                     Settings = new()
                     {
                         OptionColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
@@ -787,6 +799,23 @@ namespace Nitrocid.Base.Shell.Homepage
                 builder.Append(
                     choicesBorder.Render() +
                     choicesSelection.Render()
+                );
+
+                // Render the notification icons widget
+                int notificationsY = widgetTop + widgetHeight + 1;
+                var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
+                var notificationsBorder = new BoxFrame()
+                {
+                    Left = settingsButtonPosX,
+                    Top = notificationsY,
+                    Width = buttonPanelWidth,
+                    Height = buttonHeight,
+                    FrameColor = ThemeColorsTools.GetColor(buttonHighlight == 1 ? ThemeColorType.TuiPaneSelectedSeparator : ThemeColorType.Separator),
+                    Text = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NOTIFICATIONS")
+                };
+                builder.Append(
+                    notificationsBorder.Render() +
+                    notificationsWidget.Render(settingsButtonPosX, notificationsY + 1, buttonPanelWidth, buttonHeight)
                 );
 
                 // Return the resulting homepage
