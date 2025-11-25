@@ -46,7 +46,7 @@ namespace Nitrocid.Base.Network.Types.RPC
     /// </summary>
     public static class RPCCommands
     {
-        private static bool received = false;
+        internal static ManualResetEvent rpcStopTrigger = new(false);
 
         /// <summary>
         /// List of RPC commands.<br/>
@@ -161,45 +161,28 @@ namespace Nitrocid.Base.Network.Types.RPC
         /// </summary>
         public static void ReceiveCommand()
         {
-            var RemoteEndpoint = new IPEndPoint(IPAddress.Any, Config.MainConfig.RPCPort);
-            while (!RemoteProcedure.rpcStopping)
-            {
-                try
-                {
-                    var receiveResult = RemoteProcedure.RPCListen?.BeginReceive(new AsyncCallback(AcknowledgeMessage), null);
-                    while (!received)
-                    {
-                        SpinWait.SpinUntil(() => received || RemoteProcedure.rpcStopping);
-                        if (RemoteProcedure.rpcStopping)
-                            break;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    var SE = (SocketException?)ex.InnerException;
-                    if (SE is not null)
-                    {
-                        if (SE.SocketErrorCode != SocketError.TimedOut)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Error from host: {0}", vars: [SE.SocketErrorCode.ToString()]);
-                            DebugWriter.WriteDebugStackTrace(ex);
-                        }
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Fatal error: {0}", vars: [ex.Message]);
-                        DebugWriter.WriteDebugStackTrace(ex);
-                        EventsManager.FireEvent(EventType.RPCCommandError, ex, RemoteEndpoint.Address.ToString(), RemoteEndpoint.Port);
-                    }
-                }
-                received = false;
-            }
+            StartReceivingCommand();
+            rpcStopTrigger.WaitOne();
             RemoteProcedure.RPCListen?.Close();
+            rpcStopTrigger.Reset();
+        }
+
+        private static void StartReceivingCommand()
+        {
+            try
+            {
+                if (RemoteProcedure.RPCListen is not null)
+                    RemoteProcedure.RPCListen?.BeginReceive(new AsyncCallback(AcknowledgeMessage), null);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Fatal error on receiver: {0}", vars: [ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
         }
 
         private static void AcknowledgeMessage(IAsyncResult asyncResult)
         {
-            received = true;
             try
             {
                 if (RemoteProcedure.RPCListen is null || RemoteProcedure.RPCListen.Client is null)
@@ -232,9 +215,25 @@ namespace Nitrocid.Base.Network.Types.RPC
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to acknowledge message: {0}", vars: [ex.Message]);
-                DebugWriter.WriteDebugStackTrace(ex);
+                var SE = (SocketException?)ex.InnerException;
+                if (SE is not null)
+                {
+                    if (SE.SocketErrorCode != SocketError.TimedOut)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Error from host: {0}", vars: [SE.SocketErrorCode.ToString()]);
+                        DebugWriter.WriteDebugStackTrace(ex);
+                    }
+                }
+                else
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Fatal error: {0}", vars: [ex.Message]);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
             }
-            received = false;
+            finally
+            {
+                StartReceivingCommand();
+            }
         }
 
         private static void ReplyTo(string message, IPEndPoint endpoint)

@@ -103,9 +103,8 @@ namespace Nitrocid.Base.Network.Types.RPC
         {
             if (RPCStarted)
             {
-                rpcStopping = true;
+                RPCCommands.rpcStopTrigger.Set();
                 RPCThread.Stop();
-                rpcStopping = false;
                 DebugWriter.WriteDebug(DebugLevel.I, "RPC stopped.");
             }
             else
