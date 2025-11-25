@@ -82,8 +82,8 @@
   <!-- KS Branding (for Photo widget) -->
   <ItemGroup>
     <EmbeddedResource Include="..\Nitrocid\OfficialAppIcon-NitrocidKS-32.png">
-      <LogicalName>Nitrocid.Base.Resources.Login.Widgets.Resources.Photo.Placeholder</LogicalName>
-      <Link>Users/Login/Widgets/Resources/Photo/Placeholder.png</Link>
+      <LogicalName>Nitrocid.Base.Resources.Misc.Widgets.Resources.Photo.Placeholder</LogicalName>
+      <Link>Misc/Widgets/Resources/Photo/Placeholder.png</Link>
     </EmbeddedResource>
   </ItemGroup>
   <!-- KS Branding (for Photo widget) -->

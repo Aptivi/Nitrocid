@@ -25,7 +25,7 @@ using System.Linq;
 using Nitrocid.Extras.Stocks.Settings;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Extras.Stocks.Commands;
-using Nitrocid.Base.Users.Login.Widgets;
+using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Extras.Stocks.Widgets;
 using Nitrocid.Core.Languages;
 

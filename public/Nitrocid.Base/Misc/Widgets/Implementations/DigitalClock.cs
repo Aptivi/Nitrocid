@@ -27,7 +27,7 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Data.Figlet;
 
-namespace Nitrocid.Base.Users.Login.Widgets.Implementations
+namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
     internal class DigitalClock : BaseWidget, IWidget
     {

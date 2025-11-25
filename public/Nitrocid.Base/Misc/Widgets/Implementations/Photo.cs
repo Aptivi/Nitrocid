@@ -23,7 +23,7 @@ using Nitrocid.Base.Misc.Reflection.Internal;
 using Terminaux.Images;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
-namespace Nitrocid.Base.Users.Login.Widgets.Implementations
+namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
     internal class Photo : BaseWidget, IWidget
     {
@@ -39,7 +39,7 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
             if (string.IsNullOrEmpty(photoPath) || !FilesystemTools.FileExists(photoPath))
             {
                 // Get the Nitrocid logo
-                var resourceLogo = ResourcesManager.GetData("Login.Widgets.Resources.Photo.Placeholder", ResourcesType.Misc);
+                var resourceLogo = ResourcesManager.GetData("Misc.Widgets.Resources.Photo.Placeholder", ResourcesType.Misc);
                 if (resourceLogo is Stream resourceStream)
                     return ImageProcessor.RenderImage(resourceStream, width, height, left, top);
 

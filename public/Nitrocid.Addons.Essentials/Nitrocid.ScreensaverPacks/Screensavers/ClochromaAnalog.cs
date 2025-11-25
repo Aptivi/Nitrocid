@@ -23,8 +23,8 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Time;
 using Terminaux.Colors.Transformation;
-using Nitrocid.Base.Users.Login.Widgets.Implementations;
-using Nitrocid.Base.Users.Login.Widgets;
+using Nitrocid.Base.Misc.Widgets.Implementations;
+using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Drivers.RNG;
 using System;
 

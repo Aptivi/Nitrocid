@@ -22,7 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Docking.Dock;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Nitrocid.Base.Users.Login.Widgets;
+using Nitrocid.Base.Misc.Widgets;
 
 namespace Nitrocid.Extras.Docking.Commands
 {

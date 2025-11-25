@@ -19,8 +19,8 @@
 
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver;
-using Nitrocid.Base.Users.Login.Widgets;
-using Nitrocid.Base.Users.Login.Widgets.Implementations;
+using Nitrocid.Base.Misc.Widgets;
+using Nitrocid.Base.Misc.Widgets.Implementations;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 

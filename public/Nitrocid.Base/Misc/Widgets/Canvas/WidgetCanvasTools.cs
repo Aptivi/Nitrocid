@@ -28,7 +28,7 @@ using Terminaux.Base.Structures;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using TextifyDep::System.Diagnostics.CodeAnalysis;
 
-namespace Nitrocid.Base.Users.Login.Widgets.Canvas
+namespace Nitrocid.Base.Misc.Widgets.Canvas
 {
     /// <summary>
     /// Widget canvas tools

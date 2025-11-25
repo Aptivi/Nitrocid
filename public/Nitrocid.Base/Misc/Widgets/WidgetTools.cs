@@ -19,12 +19,12 @@
 
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users.Login.Widgets.Implementations;
+using Nitrocid.Base.Misc.Widgets.Implementations;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Nitrocid.Base.Users.Login.Widgets
+namespace Nitrocid.Base.Misc.Widgets
 {
     /// <summary>
     /// Widget tools class

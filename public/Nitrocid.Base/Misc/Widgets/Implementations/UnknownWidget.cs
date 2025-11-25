@@ -1,4 +1,4 @@
-﻿//
+//
 // Nitrocid KS  Copyright (C) 2018-2025  Aptivi
 //
 // This file is part of Nitrocid KS
@@ -17,11 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Base.Languages;
+using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
-namespace Nitrocid.Base.Users.Login.Widgets.Implementations
+namespace Nitrocid.Base.Misc.Widgets.Implementations
 {
-    internal class TextWidget : BaseWidget, IWidget
+    internal class UnknownWidget : BaseWidget, IWidget
     {
         public override string Cleanup(int left, int top, int width, int height) =>
             "";
@@ -31,16 +34,21 @@ namespace Nitrocid.Base.Users.Login.Widgets.Implementations
 
         public override string Render(int left, int top, int width, int height)
         {
-            string textText = Options.TryGetValue("text", out object? textValue) ? (string)textValue : "😊";
-            var textAlignedText = new BoundedText()
+            var unknownWidget = new BoundedText()
             {
-                Left = left,
+                Text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"),
                 Top = top,
+                Left = left,
                 Width = width,
                 Height = height,
-                Text = textText,
+                UseColors = true,
+                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error),
+                Settings =
+                {
+                    Alignment = TextAlignment.Middle,
+                }
             };
-            return textAlignedText.Render();
+            return unknownWidget.Render();
         }
     }
 }

@@ -19,11 +19,11 @@
 
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using Nitrocid.Base.Users.Login.Widgets.Implementations;
+using Nitrocid.Base.Misc.Widgets.Implementations;
 using Terminaux.Base;
 using Terminaux.Base.Structures;
 
-namespace Nitrocid.Base.Users.Login.Widgets.Canvas
+namespace Nitrocid.Base.Misc.Widgets.Canvas
 {
     /// <summary>
     /// Widget render info

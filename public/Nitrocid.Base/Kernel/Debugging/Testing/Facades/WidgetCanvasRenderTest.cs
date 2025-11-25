@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users.Login.Widgets.Canvas;
+using Nitrocid.Base.Misc.Widgets.Canvas;
 using Terminaux.Base;
 using Terminaux.Inputs;
 using Terminaux.Shell.Arguments;
