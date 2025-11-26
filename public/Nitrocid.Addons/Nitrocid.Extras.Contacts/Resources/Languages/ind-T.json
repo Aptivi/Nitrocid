@@ -329,6 +329,270 @@
     {
       "loc": "NKS_CONTACTS_TUI_KEYBINDING_ADD",
       "text": "जोड़ना"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTSAVEFAILED",
+      "text": "कॉन्टैक्ट सेव नहीं हो पाए"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTHASPICTURE",
+      "text": "प्रोफ़ाइल पिक्चर है"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTHASNOPICTURE",
+      "text": "प्रोफ़ाइल पिक्चर नहीं है"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTEDITPROMPT",
+      "text": "कॉन्टैक्ट एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT",
+      "text": "कॉन्टैक्ट एड्रेस एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT",
+      "text": "कॉन्टैक्ट एड्रेस एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POBOX",
+      "text": "पोस्ट ऑफ़िस बॉक्स"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDR",
+      "text": "एक्सटेंडेड एड्रेस"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_STRADDR",
+      "text": "स्ट्रीट एड्रेस"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITY",
+      "text": "लोकैलिटी"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_REGION",
+      "text": "रीजन"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODE",
+      "text": "पोस्टल कोड"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRY",
+      "text": "कंट्री"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POBOXPROMPT",
+      "text": "नया पोस्ट ऑफ़िस बॉक्स डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDRPROMPT",
+      "text": "नया एक्सटेंडेड एड्रेस डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_STRADDRPROMPT",
+      "text": "नया स्ट्रीट एड्रेस डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITYPROMPT",
+      "text": "नया लोकैलिटी डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_REGIONPROMPT",
+      "text": "नया रीजन डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODEPROMPT",
+      "text": "नया पोस्टल कोड डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRYPROMPT",
+      "text": "नया कंट्री डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT",
+      "text": "कॉन्टैक्ट मेल एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT",
+      "text": "कॉन्टैक्ट मेल एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT",
+      "text": "कॉन्टैक्ट ऑर्गनाइज़ेशन एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT",
+      "text": "कॉन्टैक्ट ऑर्गनाइज़ेशन एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAME",
+      "text": "ऑर्गनाइज़ेशन का नाम"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNIT",
+      "text": "ऑर्गनाइज़ेशन यूनिट"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLE",
+      "text": "ऑर्गनाइज़ेशन रोल"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAMEPROMPT",
+      "text": "ऑर्गनाइज़ेशन का नया नाम डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNITPROMPT",
+      "text": "ऑर्गनाइज़ेशन यूनिट डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLEPROMPT",
+      "text": "ऑर्गनाइज़ेशन का नया रोल डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT",
+      "text": "कॉन्टैक्ट टेलीफ़ोन एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTELEPHONEEDITPROMPT",
+      "text": "कॉन्टैक्ट टेलीफ़ोन एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT",
+      "text": "कॉन्टैक्ट URL एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT",
+      "text": "कॉन्टैक्ट URL एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT",
+      "text": "कॉन्टैक्ट जियो एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTGEOEDITPROMPT",
+      "text": "कॉन्टैक्ट जियो एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT",
+      "text": "कॉन्टैक्ट IMPPs एडिट कर रहे हैं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT",
+      "text": "कॉन्टैक्ट IMPP एडिट कर रहे हैं का"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT",
+      "text": "कॉन्टैक्ट निकनेम एडिट करना"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNICKNAMEEDITPROMPT",
+      "text": "कॉन्टैक्ट निकनेम एडिट करना"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTROLESEDITPROMPT",
+      "text": "कॉन्टैक्ट रोल एडिट करना"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTROLEEDITPROMPT",
+      "text": "कॉन्टैक्ट रोल एडिट करना"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTITLESEDITPROMPT",
+      "text": "कॉन्टैक्ट टाइटल एडिट करना"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTITLEEDITPROMPT",
+      "text": "कॉन्टैक्ट टाइटल एडिट करना"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNOTESEDITPROMPT",
+      "text": "कॉन्टैक्ट नोट्स एडिट करना"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNOTEEDITPROMPT",
+      "text": "कॉन्टैक्ट नोट एडिट करना"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTPICTURESEDITPROMPT",
+      "text": "कॉन्टैक्ट पिक्चर्स एडिट करना"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOADDRESS",
+      "text": "कोई संपर्क पता नहीं"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAILINFO_ADDRESS",
+      "text": "कॉन्टैक्ट मेल एड्रेस"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT",
+      "text": "नया कॉन्टैक्ट मेल एड्रेस डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBER",
+      "text": "कॉन्टैक्ट फ़ोन नंबर"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT",
+      "text": "नया कॉन्टैक्ट फ़ोन नंबर डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URLINFO_ADDRESS",
+      "text": "कॉन्टैक्ट URL"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT",
+      "text": "नया कॉन्टैक्ट URL डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEOINFO_COORDS",
+      "text": "कॉन्टैक्ट कोऑर्डिनेट्स"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT",
+      "text": "नया कॉन्टैक्ट कोऑर्डिनेट्स डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPPINFO_INFO",
+      "text": "कॉन्टैक्ट IMPP इन्फो"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT",
+      "text": "नया कॉन्टैक्ट IMPP इन्फो डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICKNAMEINFO_NICK",
+      "text": "कॉन्टैक्ट निकनेम"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT",
+      "text": "नया कॉन्टैक्ट निकनेम डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLEINFO_ROLE",
+      "text": "कॉन्टैक्ट रोल"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT",
+      "text": "नया कॉन्टैक्ट रोल डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLEINFO_TITLE",
+      "text": "कॉन्टैक्ट टाइटल"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT",
+      "text": "नया कॉन्टैक्ट टाइटल डालें"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTE",
+      "text": "कॉन्टैक्ट नोट"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
+      "text": "नया कॉन्टैक्ट नोट डालें"
     }
   ]
 }

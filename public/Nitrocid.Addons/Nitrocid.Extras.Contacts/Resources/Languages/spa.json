@@ -354,6 +354,270 @@
     {
       "loc": "NKS_CONTACTS_TUI_KEYBINDING_ADD",
       "text": "Agregar"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTSAVEFAILED",
+      "text": "No se pudieron guardar los contactos"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTHASPICTURE",
+      "text": "Contiene foto de perfil"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTHASNOPICTURE",
+      "text": "No contiene foto de perfil"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTEDITPROMPT",
+      "text": "Editando contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT",
+      "text": "Editando las direcciones de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT",
+      "text": "Editando la dirección de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POBOX",
+      "text": "Apartado postal"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDR",
+      "text": "Dirección extendida"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_STRADDR",
+      "text": "Dirección"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITY",
+      "text": "Localidad"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_REGION",
+      "text": "Región"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODE",
+      "text": "Código postal"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRY",
+      "text": "País"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POBOXPROMPT",
+      "text": "Introducir un nuevo apartado postal"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDRPROMPT",
+      "text": "Introducir una nueva dirección extendida"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_STRADDRPROMPT",
+      "text": "Introducir una nueva dirección"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITYPROMPT",
+      "text": "Introducir una nueva localidad"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_REGIONPROMPT",
+      "text": "Introducir una nueva región"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODEPROMPT",
+      "text": "Introducir un nuevo código postal"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRYPROMPT",
+      "text": "Introducir un nuevo país"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT",
+      "text": "Editando los correos electrónicos de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT",
+      "text": "Editando el correo electrónico de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT",
+      "text": "Editando las organizaciones de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT",
+      "text": "Editando la organización de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAME",
+      "text": "Nombre de la organización"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNIT",
+      "text": "Unidad organizativa"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLE",
+      "text": "Rol en la organización"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAMEPROMPT",
+      "text": "Introducir un nuevo nombre de organización"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNITPROMPT",
+      "text": "Introducir una nueva unidad organizativa"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLEPROMPT",
+      "text": "Introducir un nuevo rol en la organización"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT",
+      "text": "Editando los teléfonos de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTELEPHONEEDITPROMPT",
+      "text": "Editando el teléfono de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT",
+      "text": "Editando las URL de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT",
+      "text": "Editando la URL de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT",
+      "text": "Editando la ubicación geográfica de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTGEOEDITPROMPT",
+      "text": "Editando la ubicación geográfica de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT",
+      "text": "Editando los IMPP de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT",
+      "text": "Editando el IMPP de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT",
+      "text": "Editando los apodos de contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNICKNAMEEDITPROMPT",
+      "text": "Editar el apodo del contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTROLESEDITPROMPT",
+      "text": "Editar los roles del contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTROLEEDITPROMPT",
+      "text": "Editar el rol del contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTITLESEDITPROMPT",
+      "text": "Editar los títulos del contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTITLEEDITPROMPT",
+      "text": "Editar el título del contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNOTESEDITPROMPT",
+      "text": "Editar las notas del contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNOTEEDITPROMPT",
+      "text": "Editar la nota del contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTPICTURESEDITPROMPT",
+      "text": "Editar las fotos del contacto de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOADDRESS",
+      "text": "Sin dirección de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAILINFO_ADDRESS",
+      "text": "Dirección de correo electrónico de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT",
+      "text": "Introduzca una nueva dirección de correo electrónico de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBER",
+      "text": "Número de teléfono de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT",
+      "text": "Introduzca un nuevo número de teléfono de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URLINFO_ADDRESS",
+      "text": "URL de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT",
+      "text": "Introduzca una nueva URL de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEOINFO_COORDS",
+      "text": "Coordenadas de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT",
+      "text": "Introduzca las coordenadas de un nuevo contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPPINFO_INFO",
+      "text": "Información IMPP de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT",
+      "text": "Introduzca la información IMPP de un nuevo contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICKNAMEINFO_NICK",
+      "text": "Apodo de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT",
+      "text": "Introduzca un nuevo apodo de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLEINFO_ROLE",
+      "text": "Rol de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT",
+      "text": "Introduzca un nuevo rol de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLEINFO_TITLE",
+      "text": "Título de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT",
+      "text": "Introduzca un nuevo título de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTE",
+      "text": "Nota de contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
+      "text": "Introduzca una nueva nota de contacto"
     }
   ]
 }

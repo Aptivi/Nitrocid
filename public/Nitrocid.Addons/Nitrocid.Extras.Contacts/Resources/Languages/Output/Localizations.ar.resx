@@ -360,5 +360,203 @@
   <data name="NKS_CONTACTS_TUI_KEYBINDING_ADD" xml:space="preserve">
     <value>يضيف</value>
   </data>
+  <data name="NKS_CONTACTS_EXCEPTION_CONTACTSAVEFAILED" xml:space="preserve">
+    <value>تعذّر حفظ جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTHASPICTURE" xml:space="preserve">
+    <value>يحتوي على صورة شخصية</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTHASNOPICTURE" xml:space="preserve">
+    <value>لا يحتوي على صورة شخصية</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTEDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل عناوين جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل عنوان جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POBOX" xml:space="preserve">
+    <value>صندوق بريد</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDR" xml:space="preserve">
+    <value>عنوان ممتد</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_STRADDR" xml:space="preserve">
+    <value>عنوان الشارع</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITY" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_REGION" xml:space="preserve">
+    <value>المنطقة</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODE" xml:space="preserve">
+    <value>الرمز البريدي</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRY" xml:space="preserve">
+    <value>البلد</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POBOXPROMPT" xml:space="preserve">
+    <value>أدخل صندوق بريد جديدًا</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDRPROMPT" xml:space="preserve">
+    <value>أدخل عنوانًا ممتدًا جديدًا</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_STRADDRPROMPT" xml:space="preserve">
+    <value>أدخل عنوان شارع جديدًا</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITYPROMPT" xml:space="preserve">
+    <value>أدخل موقعًا جديدًا</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_REGIONPROMPT" xml:space="preserve">
+    <value>أدخل منطقة جديدة</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODEPROMPT" xml:space="preserve">
+    <value>أدخل رمزًا بريديًا جديدًا</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRYPROMPT" xml:space="preserve">
+    <value>أدخل بلدًا جديدًا</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل عناوين البريد الإلكتروني</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل بريد جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAME" xml:space="preserve">
+    <value>جارٍ تعديل جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNIT" xml:space="preserve">
+    <value>اسم المؤسسة</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLE" xml:space="preserve">
+    <value>وحدة المؤسسة</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAMEPROMPT" xml:space="preserve">
+    <value>دور المؤسسة</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNITPROMPT" xml:space="preserve">
+    <value>جارٍ إدخال اسم مؤسسة جديد</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLEPROMPT" xml:space="preserve">
+    <value>جارٍ إدخال وحدة تنظيمية جديدة</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT" xml:space="preserve">
+    <value>جارٍ إدخال دور مؤسسة جديد</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTTELEPHONEEDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل أرقام هواتف جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل رقم هاتف جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل عناوين URL لجهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل عنوان URL لجهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTGEOEDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل الموقع الجغرافي لجهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل الموقع الجغرافي لجهة الاتصال تعديل جهات الاتصال IMPPs</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT" xml:space="preserve">
+    <value>تعديل جهات الاتصال IMPP</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT" xml:space="preserve">
+    <value>تعديل ألقاب جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNICKNAMEEDITPROMPT" xml:space="preserve">
+    <value>تعديل ألقاب جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTROLESEDITPROMPT" xml:space="preserve">
+    <value>تعديل أدوار جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTROLEEDITPROMPT" xml:space="preserve">
+    <value>تعديل دور جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTTITLESEDITPROMPT" xml:space="preserve">
+    <value>تعديل عناوين جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTTITLEEDITPROMPT" xml:space="preserve">
+    <value>تعديل عنوان جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNOTESEDITPROMPT" xml:space="preserve">
+    <value>تعديل ملاحظات جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNOTEEDITPROMPT" xml:space="preserve">
+    <value>تعديل ملاحظة جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTPICTURESEDITPROMPT" xml:space="preserve">
+    <value>تعديل صور جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOADDRESS" xml:space="preserve">
+    <value>لا يوجد عنوان اتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MAILINFO_ADDRESS" xml:space="preserve">
+    <value>تعذّر حفظ جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT" xml:space="preserve">
+    <value>يحتوي على صورة شخصية</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBER" xml:space="preserve">
+    <value>لا يحتوي على صورة شخصية</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_URLINFO_ADDRESS" xml:space="preserve">
+    <value>جارٍ تعديل عناوين جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT" xml:space="preserve">
+    <value>جارٍ تعديل عنوان جهة الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_GEOINFO_COORDS" xml:space="preserve">
+    <value>صندوق بريد</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT" xml:space="preserve">
+    <value>عنوان ممتد</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_IMPPINFO_INFO" xml:space="preserve">
+    <value>عنوان الشارع</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NICKNAMEINFO_NICK" xml:space="preserve">
+    <value>المنطقة</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT" xml:space="preserve">
+    <value>الرمز البريدي</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ROLEINFO_ROLE" xml:space="preserve">
+    <value>البلد</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT" xml:space="preserve">
+    <value>أدخل صندوق بريد جديدًا</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TITLEINFO_TITLE" xml:space="preserve">
+    <value>أدخل عنوانًا ممتدًا جديدًا</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT" xml:space="preserve">
+    <value>أدخل عنوان شارع جديدًا</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTE" xml:space="preserve">
+    <value>أدخل موقعًا جديدًا</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
+    <value>أدخل منطقة جديدة</value>
+  </data>
 
 </root>

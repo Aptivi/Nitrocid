@@ -360,5 +360,203 @@
   <data name="NKS_CONTACTS_TUI_KEYBINDING_ADD" xml:space="preserve">
     <value>Hinzufügen</value>
   </data>
+  <data name="NKS_CONTACTS_EXCEPTION_CONTACTSAVEFAILED" xml:space="preserve">
+    <value>Kontakte konnten nicht gespeichert werden</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTHASPICTURE" xml:space="preserve">
+    <value>Profilbild vorhanden</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTHASNOPICTURE" xml:space="preserve">
+    <value>Kein Profilbild vorhanden</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTEDITPROMPT" xml:space="preserve">
+    <value>Kontakt bearbeiten</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT" xml:space="preserve">
+    <value>Kontaktadressen bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT" xml:space="preserve">
+    <value>Kontaktadresse bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POBOX" xml:space="preserve">
+    <value>Postfach</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDR" xml:space="preserve">
+    <value>Zusätzliche Adresse</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_STRADDR" xml:space="preserve">
+    <value>Straße</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITY" xml:space="preserve">
+    <value>Ort</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_REGION" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODE" xml:space="preserve">
+    <value>Postleitzahl</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRY" xml:space="preserve">
+    <value>Land</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POBOXPROMPT" xml:space="preserve">
+    <value>Neues Postfach eingeben</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDRPROMPT" xml:space="preserve">
+    <value>Neue zusätzliche Adresse eingeben</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_STRADDRPROMPT" xml:space="preserve">
+    <value>Neue Straße eingeben</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITYPROMPT" xml:space="preserve">
+    <value>Neuen Ort eingeben</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_REGIONPROMPT" xml:space="preserve">
+    <value>Neue Region eingeben</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODEPROMPT" xml:space="preserve">
+    <value>Neue Postleitzahl eingeben</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRYPROMPT" xml:space="preserve">
+    <value>Neues Land eingeben</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT" xml:space="preserve">
+    <value>E-Mail-Adressen bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT" xml:space="preserve">
+    <value>E-Mail-Adresse bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT" xml:space="preserve">
+    <value>Organisationen bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT" xml:space="preserve">
+    <value>Organisation bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAME" xml:space="preserve">
+    <value>Name der Organisation</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNIT" xml:space="preserve">
+    <value>Organisationseinheit</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLE" xml:space="preserve">
+    <value>Funktion der Organisation</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAMEPROMPT" xml:space="preserve">
+    <value>Neuen Organisationsnamen eingeben</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNITPROMPT" xml:space="preserve">
+    <value>Neue Organisationseinheit eingeben</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLEPROMPT" xml:space="preserve">
+    <value>Funktion der Organisation eingeben</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT" xml:space="preserve">
+    <value>Telefonnummern bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTTELEPHONEEDITPROMPT" xml:space="preserve">
+    <value>Telefonnummer bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT" xml:space="preserve">
+    <value>URLs bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT" xml:space="preserve">
+    <value>URL bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT" xml:space="preserve">
+    <value>Geografischer Standort bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTGEOEDITPROMPT" xml:space="preserve">
+    <value>Geografischer Standort bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT" xml:space="preserve">
+    <value>IMPP bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT" xml:space="preserve">
+    <value>IMPP bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT" xml:space="preserve">
+    <value>Spitznamen bearbeiten von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNICKNAMEEDITPROMPT" xml:space="preserve">
+    <value>Bearbeiten des Kontakt-Nicknamens von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTROLESEDITPROMPT" xml:space="preserve">
+    <value>Bearbeiten der Kontaktrollen von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTROLEEDITPROMPT" xml:space="preserve">
+    <value>Bearbeiten der Kontaktrolle von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTTITLESEDITPROMPT" xml:space="preserve">
+    <value>Bearbeiten der Kontakttitel von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTTITLEEDITPROMPT" xml:space="preserve">
+    <value>Bearbeiten des Kontakttitels von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNOTESEDITPROMPT" xml:space="preserve">
+    <value>Bearbeiten der Kontaktnotizen von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNOTEEDITPROMPT" xml:space="preserve">
+    <value>Bearbeiten der Kontaktnotizen von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTPICTURESEDITPROMPT" xml:space="preserve">
+    <value>Bearbeiten der Kontaktbilder von</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOADDRESS" xml:space="preserve">
+    <value>Keine Kontaktadresse</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MAILINFO_ADDRESS" xml:space="preserve">
+    <value>Kontakt-E-Mail-Adresse</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT" xml:space="preserve">
+    <value>Geben Sie eine neue Kontakt-E-Mail-Adresse ein.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBER" xml:space="preserve">
+    <value>Kontakt-Telefonnummer</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT" xml:space="preserve">
+    <value>Geben Sie eine neue Kontakt-Telefonnummer ein.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_URLINFO_ADDRESS" xml:space="preserve">
+    <value>Kontakt-URL</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT" xml:space="preserve">
+    <value>Geben Sie eine neue Kontakt-URL ein.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_GEOINFO_COORDS" xml:space="preserve">
+    <value>Kontakt-Koordinaten</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT" xml:space="preserve">
+    <value>Geben Sie neue Kontakt-Koordinaten ein.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_IMPPINFO_INFO" xml:space="preserve">
+    <value>IMPP-Informationen</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT" xml:space="preserve">
+    <value>Geben Sie neue IMPP-Informationen ein.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NICKNAMEINFO_NICK" xml:space="preserve">
+    <value>Kontakt-Spitzname</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT" xml:space="preserve">
+    <value>Geben Sie einen neuen Kontakt-Spitznamen ein.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ROLEINFO_ROLE" xml:space="preserve">
+    <value>Kontaktrolle</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT" xml:space="preserve">
+    <value>Geben Sie eine neue Kontaktrolle ein.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TITLEINFO_TITLE" xml:space="preserve">
+    <value>Kontakttitel</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT" xml:space="preserve">
+    <value>Geben Sie einen neuen Kontakttitel ein.</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTE" xml:space="preserve">
+    <value>Kontaktnotiz</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
+    <value>Geben Sie eine neue Kontaktnotiz ein.</value>
+  </data>
 
 </root>

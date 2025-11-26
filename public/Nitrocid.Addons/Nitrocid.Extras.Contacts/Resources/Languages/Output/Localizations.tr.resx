@@ -360,5 +360,203 @@
   <data name="NKS_CONTACTS_TUI_KEYBINDING_ADD" xml:space="preserve">
     <value>Eklemek</value>
   </data>
+  <data name="NKS_CONTACTS_EXCEPTION_CONTACTSAVEFAILED" xml:space="preserve">
+    <value>Kişiler kaydedilemedi</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTHASPICTURE" xml:space="preserve">
+    <value>Profil resmi içeriyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTHASNOPICTURE" xml:space="preserve">
+    <value>Profil resmi içermiyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTEDITPROMPT" xml:space="preserve">
+    <value>Kişi düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT" xml:space="preserve">
+    <value>Kişi adresleri düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT" xml:space="preserve">
+    <value>Kişi adresi düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POBOX" xml:space="preserve">
+    <value>Posta kutusu</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDR" xml:space="preserve">
+    <value>Genişletilmiş adres</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_STRADDR" xml:space="preserve">
+    <value>Sokak adresi</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITY" xml:space="preserve">
+    <value>Yerleşim yeri</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_REGION" xml:space="preserve">
+    <value>Bölge</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODE" xml:space="preserve">
+    <value>Posta kodu</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRY" xml:space="preserve">
+    <value>Ülke</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POBOXPROMPT" xml:space="preserve">
+    <value>Yeni bir posta kutusu girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDRPROMPT" xml:space="preserve">
+    <value>Yeni bir genişletilmiş adres girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_STRADDRPROMPT" xml:space="preserve">
+    <value>Yeni bir sokak adresi girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITYPROMPT" xml:space="preserve">
+    <value>Yeni bir yerleşim yeri girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_REGIONPROMPT" xml:space="preserve">
+    <value>Yeni bir bölge girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODEPROMPT" xml:space="preserve">
+    <value>Yeni bir posta kodu girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRYPROMPT" xml:space="preserve">
+    <value>Yeni bir ülke girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT" xml:space="preserve">
+    <value>Kişi e-posta adresleri düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT" xml:space="preserve">
+    <value>Kişi e-posta adresleri düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT" xml:space="preserve">
+    <value>Kişi kuruluşlarını düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT" xml:space="preserve">
+    <value>Kişi kuruluşlarını düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAME" xml:space="preserve">
+    <value>Kuruluş adı</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNIT" xml:space="preserve">
+    <value>Kuruluş birimi</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLE" xml:space="preserve">
+    <value>Kuruluş rolü</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAMEPROMPT" xml:space="preserve">
+    <value>Yeni bir kuruluş adı girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNITPROMPT" xml:space="preserve">
+    <value>Yeni bir kuruluş birimi girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLEPROMPT" xml:space="preserve">
+    <value>Yeni bir kuruluş rolü girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT" xml:space="preserve">
+    <value>Kişi telefonları düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTTELEPHONEEDITPROMPT" xml:space="preserve">
+    <value>Kişi telefonları düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT" xml:space="preserve">
+    <value>Kişi URL&apos;leri düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT" xml:space="preserve">
+    <value>Kişi URL&apos;leri düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT" xml:space="preserve">
+    <value>Kişi coğrafi konumlarını düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTGEOEDITPROMPT" xml:space="preserve">
+    <value>Kişi coğrafi konumlarını düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT" xml:space="preserve">
+    <value>Kişi IMPP&apos;leri düzenleniyor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT" xml:space="preserve">
+    <value>Kişi IMPP ile iletişime geçin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT" xml:space="preserve">
+    <value>Kişi takma adlarını düzenleme</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNICKNAMEEDITPROMPT" xml:space="preserve">
+    <value>Kişi takma adını düzenleme</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTROLESEDITPROMPT" xml:space="preserve">
+    <value>Kişi rollerini düzenleme</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTROLEEDITPROMPT" xml:space="preserve">
+    <value>Kişi rolünü düzenleme</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTTITLESEDITPROMPT" xml:space="preserve">
+    <value>Kişi başlıklarını düzenleme</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTTITLEEDITPROMPT" xml:space="preserve">
+    <value>Kişi başlığını düzenleme</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNOTESEDITPROMPT" xml:space="preserve">
+    <value>Kişi notlarını düzenleme</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTNOTEEDITPROMPT" xml:space="preserve">
+    <value>Kişi notunu düzenleme</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_CONTACTPICTURESEDITPROMPT" xml:space="preserve">
+    <value>Kişi resimlerini düzenleme</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOADDRESS" xml:space="preserve">
+    <value>İletişim adresi yok</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MAILINFO_ADDRESS" xml:space="preserve">
+    <value>İletişim e-posta adresi</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT" xml:space="preserve">
+    <value>Yeni bir iletişim e-posta adresi girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBER" xml:space="preserve">
+    <value>İletişim telefon numarası</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT" xml:space="preserve">
+    <value>Yeni bir iletişim telefon numarası girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_URLINFO_ADDRESS" xml:space="preserve">
+    <value>İletişim URL&apos;si</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT" xml:space="preserve">
+    <value>Yeni bir iletişim URL&apos;si girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_GEOINFO_COORDS" xml:space="preserve">
+    <value>İletişim koordinatları</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT" xml:space="preserve">
+    <value>Yeni bir iletişim koordinatı girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_IMPPINFO_INFO" xml:space="preserve">
+    <value>İletişim IMPP bilgisi</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT" xml:space="preserve">
+    <value>Yeni bir iletişim IMPP bilgisi girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NICKNAMEINFO_NICK" xml:space="preserve">
+    <value>İletişim takma adı</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT" xml:space="preserve">
+    <value>Yeni bir iletişim takma adı girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ROLEINFO_ROLE" xml:space="preserve">
+    <value>İletişim rolü</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT" xml:space="preserve">
+    <value>Yeni bir iletişim rolü girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TITLEINFO_TITLE" xml:space="preserve">
+    <value>İletişim unvanı</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT" xml:space="preserve">
+    <value>Yeni bir iletişim unvanı girin</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTE" xml:space="preserve">
+    <value>İletişim notu</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
+    <value>Yeni bir iletişim notu girin</value>
+  </data>
 
 </root>

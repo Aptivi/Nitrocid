@@ -375,6 +375,270 @@
     {
       "loc": "NKS_CONTACTS_TUI_KEYBINDING_ADD",
       "text": "Ajouter"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTSAVEFAILED",
+      "text": "Échec de l'enregistrement des contacts"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTHASPICTURE",
+      "text": "Contient une photo de profil"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTHASNOPICTURE",
+      "text": "Ne contient pas de photo de profil"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTEDITPROMPT",
+      "text": "Modification du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT",
+      "text": "Modification de l'adresse du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT",
+      "text": "Modification de l'adresse du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POBOX",
+      "text": "Boîte postale"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDR",
+      "text": "Adresse complète"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_STRADDR",
+      "text": "Adresse postale"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITY",
+      "text": "Localité"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_REGION",
+      "text": "Région"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODE",
+      "text": "Code postal"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRY",
+      "text": "Pays"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POBOXPROMPT",
+      "text": "Saisir une nouvelle boîte postale"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDRPROMPT",
+      "text": "Saisir une nouvelle adresse complète"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_STRADDRPROMPT",
+      "text": "Saisir une nouvelle adresse postale"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITYPROMPT",
+      "text": "Saisir une nouvelle localité"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_REGIONPROMPT",
+      "text": "Saisir une nouvelle région"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODEPROMPT",
+      "text": "Saisir un nouveau code postal"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRYPROMPT",
+      "text": "Saisir un nouveau pays"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT",
+      "text": "Modification de l'adresse e-mail du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT",
+      "text": "Modification de l'adresse e-mail du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT",
+      "text": "Modification de l'organisation du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT",
+      "text": "Modification de l'organisation du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAME",
+      "text": "Nom de l'organisation"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNIT",
+      "text": "Unité organisationnelle"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLE",
+      "text": "Rôle au sein de l'organisation"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAMEPROMPT",
+      "text": "Saisir un nouveau nom d'organisation"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNITPROMPT",
+      "text": "Saisir une nouvelle unité organisationnelle"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLEPROMPT",
+      "text": "Saisir un nouveau rôle au sein de l'organisation"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT",
+      "text": "Modification du numéro de téléphone du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTELEPHONEEDITPROMPT",
+      "text": "Modification du numéro de téléphone du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT",
+      "text": "Modification de l'URL du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT",
+      "text": "Modification de l'URL du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT",
+      "text": "Modification de la géolocalisation du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTGEOEDITPROMPT",
+      "text": "Modification de la géolocalisation du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT",
+      "text": "Modification de l'IMPP du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT",
+      "text": "Modification de l'IMPP du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT",
+      "text": "Modification du contact Surnoms de"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNICKNAMEEDITPROMPT",
+      "text": "Modifier le surnom du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTROLESEDITPROMPT",
+      "text": "Modifier les rôles du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTROLEEDITPROMPT",
+      "text": "Modifier le rôle du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTITLESEDITPROMPT",
+      "text": "Modifier le titre du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTITLEEDITPROMPT",
+      "text": "Modifier le titre du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNOTESEDITPROMPT",
+      "text": "Modifier les notes du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNOTEEDITPROMPT",
+      "text": "Modifier les notes du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTPICTURESEDITPROMPT",
+      "text": "Modifier les photos du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOADDRESS",
+      "text": "Aucune adresse de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAILINFO_ADDRESS",
+      "text": "Adresse e-mail du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT",
+      "text": "Saisir une nouvelle adresse e-mail"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBER",
+      "text": "Numéro de téléphone du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT",
+      "text": "Saisir un nouveau numéro de téléphone"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URLINFO_ADDRESS",
+      "text": "URL du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT",
+      "text": "Saisir une nouvelle URL du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEOINFO_COORDS",
+      "text": "Coordonnées du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT",
+      "text": "Saisir de nouvelles coordonnées du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPPINFO_INFO",
+      "text": "Informations IMPP du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT",
+      "text": "Saisir de nouvelles informations IMPP du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICKNAMEINFO_NICK",
+      "text": "Surnom du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT",
+      "text": "Saisir un nouveau surnom du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLEINFO_ROLE",
+      "text": "Fonction du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT",
+      "text": "Saisir une nouvelle fonction du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLEINFO_TITLE",
+      "text": "Titre du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT",
+      "text": "Saisir un nouveau titre du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTE",
+      "text": "Note du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
+      "text": "Saisir une nouvelle note du contact"
     }
   ]
 }

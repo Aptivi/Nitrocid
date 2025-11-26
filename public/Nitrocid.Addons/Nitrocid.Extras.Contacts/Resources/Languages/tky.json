@@ -330,6 +330,270 @@
     {
       "loc": "NKS_CONTACTS_TUI_KEYBINDING_ADD",
       "text": "Eklemek"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTSAVEFAILED",
+      "text": "Kişiler kaydedilemedi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTHASPICTURE",
+      "text": "Profil resmi içeriyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTHASNOPICTURE",
+      "text": "Profil resmi içermiyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTEDITPROMPT",
+      "text": "Kişi düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT",
+      "text": "Kişi adresleri düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT",
+      "text": "Kişi adresi düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POBOX",
+      "text": "Posta kutusu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDR",
+      "text": "Genişletilmiş adres"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_STRADDR",
+      "text": "Sokak adresi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITY",
+      "text": "Yerleşim yeri"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_REGION",
+      "text": "Bölge"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODE",
+      "text": "Posta kodu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRY",
+      "text": "Ülke"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POBOXPROMPT",
+      "text": "Yeni bir posta kutusu girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDRPROMPT",
+      "text": "Yeni bir genişletilmiş adres girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_STRADDRPROMPT",
+      "text": "Yeni bir sokak adresi girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITYPROMPT",
+      "text": "Yeni bir yerleşim yeri girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_REGIONPROMPT",
+      "text": "Yeni bir bölge girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODEPROMPT",
+      "text": "Yeni bir posta kodu girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRYPROMPT",
+      "text": "Yeni bir ülke girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT",
+      "text": "Kişi e-posta adresleri düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT",
+      "text": "Kişi e-posta adresleri düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT",
+      "text": "Kişi kuruluşlarını düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT",
+      "text": "Kişi kuruluşlarını düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAME",
+      "text": "Kuruluş adı"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNIT",
+      "text": "Kuruluş birimi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLE",
+      "text": "Kuruluş rolü"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAMEPROMPT",
+      "text": "Yeni bir kuruluş adı girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNITPROMPT",
+      "text": "Yeni bir kuruluş birimi girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLEPROMPT",
+      "text": "Yeni bir kuruluş rolü girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT",
+      "text": "Kişi telefonları düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTELEPHONEEDITPROMPT",
+      "text": "Kişi telefonları düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT",
+      "text": "Kişi URL'leri düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT",
+      "text": "Kişi URL'leri düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT",
+      "text": "Kişi coğrafi konumlarını düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTGEOEDITPROMPT",
+      "text": "Kişi coğrafi konumlarını düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT",
+      "text": "Kişi IMPP'leri düzenleniyor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT",
+      "text": "Kişi IMPP ile iletişime geçin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT",
+      "text": "Kişi takma adlarını düzenleme"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNICKNAMEEDITPROMPT",
+      "text": "Kişi takma adını düzenleme"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTROLESEDITPROMPT",
+      "text": "Kişi rollerini düzenleme"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTROLEEDITPROMPT",
+      "text": "Kişi rolünü düzenleme"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTITLESEDITPROMPT",
+      "text": "Kişi başlıklarını düzenleme"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTITLEEDITPROMPT",
+      "text": "Kişi başlığını düzenleme"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNOTESEDITPROMPT",
+      "text": "Kişi notlarını düzenleme"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNOTEEDITPROMPT",
+      "text": "Kişi notunu düzenleme"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTPICTURESEDITPROMPT",
+      "text": "Kişi resimlerini düzenleme"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOADDRESS",
+      "text": "İletişim adresi yok"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAILINFO_ADDRESS",
+      "text": "İletişim e-posta adresi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT",
+      "text": "Yeni bir iletişim e-posta adresi girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBER",
+      "text": "İletişim telefon numarası"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT",
+      "text": "Yeni bir iletişim telefon numarası girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URLINFO_ADDRESS",
+      "text": "İletişim URL'si"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT",
+      "text": "Yeni bir iletişim URL'si girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEOINFO_COORDS",
+      "text": "İletişim koordinatları"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT",
+      "text": "Yeni bir iletişim koordinatı girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPPINFO_INFO",
+      "text": "İletişim IMPP bilgisi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT",
+      "text": "Yeni bir iletişim IMPP bilgisi girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICKNAMEINFO_NICK",
+      "text": "İletişim takma adı"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT",
+      "text": "Yeni bir iletişim takma adı girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLEINFO_ROLE",
+      "text": "İletişim rolü"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT",
+      "text": "Yeni bir iletişim rolü girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLEINFO_TITLE",
+      "text": "İletişim unvanı"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT",
+      "text": "Yeni bir iletişim unvanı girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTE",
+      "text": "İletişim notu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
+      "text": "Yeni bir iletişim notu girin"
     }
   ]
 }

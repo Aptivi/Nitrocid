@@ -332,6 +332,270 @@
     {
       "loc": "NKS_CONTACTS_TUI_KEYBINDING_ADD",
       "text": "Tambah"
+    },
+    {
+      "loc": "NKS_CONTACTS_EXCEPTION_CONTACTSAVEFAILED",
+      "text": "Gagal menyimpan kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTHASPICTURE",
+      "text": "Mengandungi gambar profil"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTHASNOPICTURE",
+      "text": "Tidak mengandungi gambar profil"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTEDITPROMPT",
+      "text": "Mengedit kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT",
+      "text": "Mengedit alamat kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT",
+      "text": "Menyunting alamat kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POBOX",
+      "text": "Peti surat"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDR",
+      "text": "Alamat lanjutan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_STRADDR",
+      "text": "Alamat jalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITY",
+      "text": "Lokaliti"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_REGION",
+      "text": "Wilayah"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODE",
+      "text": "Kod pos"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRY",
+      "text": "Negara"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POBOXPROMPT",
+      "text": "Masukkan peti surat baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_EXTADDRPROMPT",
+      "text": "Masukkan alamat lanjutan baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_STRADDRPROMPT",
+      "text": "Masukkan alamat jalan baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_LOCALITYPROMPT",
+      "text": "Masukkan lokaliti baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_REGIONPROMPT",
+      "text": "Masukkan wilayah baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_POSTALCODEPROMPT",
+      "text": "Masukkan poskod baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ADDRESSINFO_COUNTRYPROMPT",
+      "text": "Masukkan negara baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT",
+      "text": "Mengedit mel kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT",
+      "text": "Mengedit mel kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT",
+      "text": "Mengedit organisasi kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT",
+      "text": "Mengedit organisasi kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAME",
+      "text": "Nama organisasi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNIT",
+      "text": "Unit organisasi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLE",
+      "text": "Peranan organisasi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_NAMEPROMPT",
+      "text": "Masukkan nama organisasi baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_UNITPROMPT",
+      "text": "Masukkan unit organisasi baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ORGANIZATIONINFO_ROLEPROMPT",
+      "text": "Masukkan peranan organisasi baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT",
+      "text": "Mengedit telefon kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTELEPHONEEDITPROMPT",
+      "text": "Mengedit telefon kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT",
+      "text": "Mengedit URL kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT",
+      "text": "Mengedit URL kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT",
+      "text": "Mengedit geo kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTGEOEDITPROMPT",
+      "text": "Mengedit geo kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT",
+      "text": "Mengedit IMPP kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT",
+      "text": "Mengedit IMPP kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT",
+      "text": "Mengedit nama panggilan kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNICKNAMEEDITPROMPT",
+      "text": "Mengedit nama panggilan kenalan daripada"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTROLESEDITPROMPT",
+      "text": "Mengedit peranan kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTROLEEDITPROMPT",
+      "text": "Mengedit peranan kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTITLESEDITPROMPT",
+      "text": "Mengedit tajuk kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTTITLEEDITPROMPT",
+      "text": "Mengedit tajuk kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNOTESEDITPROMPT",
+      "text": "Mengedit nota kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTNOTEEDITPROMPT",
+      "text": "Mengedit nota kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_CONTACTPICTURESEDITPROMPT",
+      "text": "Mengedit gambar kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOADDRESS",
+      "text": "Tiada alamat untuk dihubungi"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAILINFO_ADDRESS",
+      "text": "Alamat mel kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT",
+      "text": "Masukkan alamat mel kenalan baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBER",
+      "text": "Nombor telefon kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT",
+      "text": "Masukkan nombor telefon kenalan baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URLINFO_ADDRESS",
+      "text": "URL Kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT",
+      "text": "Masukkan URL kenalan baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEOINFO_COORDS",
+      "text": "Koordinat kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT",
+      "text": "Masukkan koordinat kenalan baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPPINFO_INFO",
+      "text": "Maklumat IMPP kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT",
+      "text": "Masukkan maklumat IMPP kenalan baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICKNAMEINFO_NICK",
+      "text": "Nama panggilan kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT",
+      "text": "Masukkan nama panggilan kenalan baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLEINFO_ROLE",
+      "text": "Peranan kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT",
+      "text": "Masukkan peranan kenalan baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLEINFO_TITLE",
+      "text": "Gelaran kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT",
+      "text": "Masukkan gelaran kenalan baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTE",
+      "text": "Nota kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
+      "text": "Masukkan nota kenalan baharu"
     }
   ]
 }
