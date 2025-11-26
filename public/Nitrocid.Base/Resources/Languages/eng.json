@@ -9231,6 +9231,162 @@
     {
       "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING",
       "text": "Checking kernel addon"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME",
+      "text": "Ambient screensaver sound effects intensity"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC",
+      "text": "Specify the level that chooses how intense the ambient screensaver sound effects are"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC",
+      "text": "Sends test notification"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE",
+      "text": "Enrollment complete for user. Add this setup key"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR",
+      "text": "Or, you can scan the below QR code."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER",
+      "text": "In case your console shows an incomplete QR code, please use this setup key"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTSTATUS",
+      "text": "Enrollment status"
+    },
+    {
+      "loc": "NKS_USERS_USERNOTPROVIDED",
+      "text": "User name has not been provided."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC",
+      "text": "Two-factor authentication management for users"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC",
+      "text": "Adds requirement for the user"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC",
+      "text": "User name to process for 2FA operations"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC",
+      "text": "Deletes requirement for the user"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC",
+      "text": "Checks for the user enrollment"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE",
+      "text": "Provide the verification code for this user. You can usually access this code from authenticator apps, such as Google Authenticator. If you don't enter a code, you'll be taken back to the sign-in page."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_CODEINVALID",
+      "text": "The code you entered is invalid."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_VERIFYFAILED",
+      "text": "Verification of the account has failed. Most likely, the code you entered is either invalid or expired. Check your system time."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED",
+      "text": "User has already enrolled in to the 2FA authentication."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL",
+      "text": "User has no password to enroll it in to the 2FA authentication."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED",
+      "text": "User has not enrolled in to the 2FA authentication."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL",
+      "text": "User has no password to unenroll it in to the 2FA authentication."
+    },
+    {
+      "loc": "NKS_USERS_2FA_SETUPKEY",
+      "text": "Setup key"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC",
+      "text": "Returns the setup key (in case you lost it for some reason)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC",
+      "text": "Returns the setup key's QR code you can scan with your phone"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED",
+      "text": "Mode is not specified."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC",
+      "text": "Returns true or false depending on the kernel mode"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
+      "text": "Prints the result to the console"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
+      "text": "Legacy Multivar Processing"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",
+      "text": "User has no password to perform 2FA authentication operations."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC",
+      "text": "Tests the widget canvas renderer"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE",
+      "text": "Failed to deserialize the widget canvas info"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE",
+      "text": "Next page"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE",
+      "text": "Previous page"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC",
+      "text": "Shows you a login screen"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME",
+      "text": "Login page number"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC",
+      "text": "Page number of the login screen to show"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "Initializing"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "Shutting down"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "Restarting"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC",
+      "text": "Tests the widget canvas renderer"
     }
   ]
 }
