@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>Haec sectio permittit te configurare quomodo ratio modificationis nuclei operatur.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Modificationes administrandae</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Interfacies interactiva ad modificationes administrandas</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Modificationes nuclei tui installatas facile administrare potes hac interfacie interactiva utens. Videre potes quae modificationes in nucleo tuo currunt, necnon modificationes incipere et sistere.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Paginas manuales inspicere</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>Interfacies interactiva ad paginas manuales inspiciendas</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>Paginae manuales cum modificationibus tuis coniungi possunt, si forte tibi auxilium additum praebent, omnia in uno loco. Hac interfacie interactiva uti potes ad paginas manuales interactive inspiciendas.</value>
+  </data>
 
 </root>

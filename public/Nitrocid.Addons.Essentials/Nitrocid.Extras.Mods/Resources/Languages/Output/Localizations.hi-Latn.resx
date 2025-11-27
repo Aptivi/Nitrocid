@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>yah anubhaag aapako konfigar karane deta hai ki karnel sanshodhan pranaalee kaise kaam karatee hai.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>mod mainej karana</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>mod mainejament ke lie intaraiktiv tui</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>aap is intaraiktiv tui ka istemaal karake apane instol kie gae karnel mod ko aasaanee se mainej kar sakate hain. aap dekh sakate hain ki aapake karnel par kaun se mod chal rahe hain, saath hee mod ko shuroo aur band bhee kar sakate hain.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>mainyual pej dekhana</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>mainyual pej dekhane ke lie intaraiktiv tui</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>mainyual pej aapake mod ke saath aa sakate hain, agar ve aapako aur madad dete hain, to sab ek hee jagah par. aap is intaraiktiv tui ka istemaal karake mainual pej ko zyaada intaraiktiv tareeke se dekh sakate hain.</value>
+  </data>
 
 </root>

@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>Cette section vous permet de configurer le fonctionnement du système de modification du noyau.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Gestion des mods</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Interface en ligne de commande interactive pour la gestion des mods</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Gérez facilement vos mods de noyau installés grâce à cette interface en ligne de commande interactive. Vous pouvez visualiser les mods actifs sur votre noyau, et les démarrer ou les arrêter.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Consultation des pages de manuel</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>Interface en ligne de commande interactive pour la consultation des pages de manuel</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>Les pages de manuel peuvent être incluses avec vos mods et vous fournir une aide supplémentaire, regroupée au même endroit. Cette interface en ligne de commande interactive vous permet de consulter ces pages de manuel de manière plus interactive.</value>
+  </data>
 
 </root>

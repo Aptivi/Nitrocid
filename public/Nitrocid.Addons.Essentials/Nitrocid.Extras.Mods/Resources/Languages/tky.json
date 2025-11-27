@@ -390,6 +390,30 @@
     {
       "loc": "NKS_MODS_SETTINGS_DESC",
       "text": "Bu bölüm çekirdek değişiklik sisteminin nasıl çalışacağını yapılandırmanızı sağlar."
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_TITLE",
+      "text": "Modları Yönetme"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_DESC",
+      "text": "Mod Yönetimi için Etkileşimli TUI"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_BODY",
+      "text": "Bu etkileşimli TUI'yi kullanarak yüklü çekirdek modlarınızı kolayca yönetebilirsiniz. Çekirdeğinizde hangi modların çalıştığını görebilir, modları başlatıp durdurabilirsiniz."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_TITLE",
+      "text": "Kılavuz Sayfalarını Görüntüleme"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_DESC",
+      "text": "Kılavuz Sayfa Görüntüleyicisi için Etkileşimli TUI"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_BODY",
+      "text": "Kılavuz sayfaları, ek yardım sağlamaları durumunda modlarınızla birlikte tek bir yerde gelebilir. Kılavuz sayfalarını daha etkileşimli bir şekilde görüntülemek için bu etkileşimli TUI'yi kullanabilirsiniz."
     }
   ]
 }

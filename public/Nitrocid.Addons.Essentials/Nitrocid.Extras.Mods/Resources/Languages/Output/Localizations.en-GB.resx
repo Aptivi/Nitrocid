@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>This section lets you configure how the kernel modification system works.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Managing mods</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Interactive TUI for mod management</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>You can easily manage your installed kernel mods by making use of this interactive TUI. You can see what mods are running on your kernel, as well as starting and stopping mods.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Viewing manual pages</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>Interactive TUI for manual page viewer</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>Manual pages may come bundled with your mods, in case they give you additional help, all in one place. You can use this interactive TUI to view the manual pages more interactively.</value>
+  </data>
 
 </root>

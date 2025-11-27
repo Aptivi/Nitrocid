@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>Ligeann an chuid seo duit conas a oibríonn an córas modhnuithe eithne a chumrú.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Bainistiú modhanna</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>TUI idirghníomhach le haghaidh bainistíocht modhanna</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Is féidir leat do mhodhanna eithne suiteáilte a bhainistiú go héasca trí úsáid a bhaint as an TUI idirghníomhach seo. Is féidir leat a fheiceáil cé na modhanna atá ag rith ar do eithne, chomh maith le modhanna a thosú agus a stopadh.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Ag féachaint ar leathanaigh láimhe</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>TUI idirghníomhach don amharcóir leathanaigh láimhe</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>Féadfaidh leathanaigh láimhe teacht le do mhodhanna, ar eagla go dtugann siad cabhair bhreise duit, ar fad in aon áit amháin. Is féidir leat an TUI idirghníomhach seo a úsáid chun na leathanaigh láimhe a fheiceáil ar bhealach níos idirghníomhaí.</value>
+  </data>
 
 </root>

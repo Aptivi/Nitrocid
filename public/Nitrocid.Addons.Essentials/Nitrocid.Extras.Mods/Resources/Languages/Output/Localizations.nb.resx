@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>Denne delen lar deg konfigurere hvordan kjernemodifikasjonssystemet fungerer.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Administrere mods</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Interaktivt TUI for mod-administrasjon</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Du kan enkelt administrere dine installerte kjernemods ved å bruke dette interaktive TUI-et. Du kan se hvilke mods som kjører på kjernen din, samt starte og stoppe mods.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Vise manualsider</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>Interaktivt TUI for manualsidevisning</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>Manualsider kan komme sammen med modsene dine, i tilfelle de gir deg ytterligere hjelp, alt på ett sted. Du kan bruke dette interaktive TUI-et for å se manualsidene mer interaktivt.</value>
+  </data>
 
 </root>

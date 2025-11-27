@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>Phần này cho phép bạn cấu hình cách thức hoạt động của hệ thống sửa đổi hạt nhân.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Quản lý mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>TUI tương tác để quản lý mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Bạn có thể dễ dàng quản lý các mod kernel đã cài đặt bằng cách sử dụng TUI tương tác này. Bạn có thể xem những mod nào đang chạy trên kernel của mình, cũng như khởi động và dừng mod.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Xem trang hướng dẫn</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>TUI tương tác để xem trang hướng dẫn</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>Các trang hướng dẫn có thể được tích hợp sẵn với mod của bạn, trong trường hợp chúng cung cấp thêm trợ giúp, tất cả đều ở một nơi. Bạn có thể sử dụng TUI tương tác này để xem các trang hướng dẫn một cách tương tác hơn.</value>
+  </data>
 
 </root>

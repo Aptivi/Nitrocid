@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>يتيح لك هذا القسم تكوين كيفية عمل نظام تعديل النواة.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>إدارة التعديلات</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>واجهة مستخدم تفاعلية لإدارة التعديلات</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>يمكنك بسهولة إدارة تعديلات نواة جهازك المثبتة باستخدام هذه الواجهة التفاعلية. يمكنك رؤية التعديلات التي تعمل على نواة جهازك، بالإضافة إلى تشغيلها وإيقافها.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>عرض صفحات الدليل</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>واجهة مستخدم تفاعلية لعرض صفحات الدليل</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>قد تأتي صفحات الدليل مرفقة مع تعديلاتك، في حال كانت توفر لك مساعدة إضافية، كل ذلك في مكان واحد. يمكنك استخدام هذه الواجهة التفاعلية لعرض صفحات الدليل بشكل أكثر تفاعلية.</value>
+  </data>
 
 </root>

@@ -37,6 +37,21 @@ namespace Nitrocid.Extras.Mods.Modifications.Interactive
     public class ModManagerTui : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         /// <inheritdoc/>
+        public override InteractiveTuiHelpPage[] HelpPages =>
+        [
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_MODS_TUI_HELP01_TITLE",
+                HelpDescription = /* Localizable */ "NKS_MODS_TUI_HELP01_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_MODS_TUI_HELP01_BODY") + "\n\n" +
+#pragma warning disable NLOC0001
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications",
+#pragma warning restore NLOC0001
+            }
+        ];
+
+        /// <inheritdoc/>
         public override bool AcceptsEmptyData =>
             true;
 

@@ -397,6 +397,30 @@
     {
       "loc": "NKS_MODS_SETTINGS_DESC",
       "text": "本节让您配置内核修改系统的工作方式。"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_TITLE",
+      "text": "管理模组"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_DESC",
+      "text": "交互式模组管理界面"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_BODY",
+      "text": "您可以使用此交互式界面轻松管理已安装的内核模组。您可以查看内核上正在运行的模组，以及启动和停止模组。"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_TITLE",
+      "text": "查看手册页"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_DESC",
+      "text": "交互式手册页查看器"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_BODY",
+      "text": "您的模组可能附带手册页，以便您在需要额外帮助时，在一个地方查看所有手册页。您可以使用此交互式界面以更交互的方式查看手册页。"
     }
   ]
 }

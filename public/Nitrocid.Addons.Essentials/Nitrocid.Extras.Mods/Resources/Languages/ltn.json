@@ -389,6 +389,30 @@
     {
       "loc": "NKS_MODS_SETTINGS_DESC",
       "text": "Haec sectio permittit te configurare quomodo ratio modificationis nuclei operatur."
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_TITLE",
+      "text": "Modificationes administrandae"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_DESC",
+      "text": "Interfacies interactiva ad modificationes administrandas"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_BODY",
+      "text": "Modificationes nuclei tui installatas facile administrare potes hac interfacie interactiva utens. Videre potes quae modificationes in nucleo tuo currunt, necnon modificationes incipere et sistere."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_TITLE",
+      "text": "Paginas manuales inspicere"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_DESC",
+      "text": "Interfacies interactiva ad paginas manuales inspiciendas"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_BODY",
+      "text": "Paginae manuales cum modificationibus tuis coniungi possunt, si forte tibi auxilium additum praebent, omnia in uno loco. Hac interfacie interactiva uti potes ad paginas manuales interactive inspiciendas."
     }
   ]
 }
