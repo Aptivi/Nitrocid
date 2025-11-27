@@ -90,6 +90,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "주식 정보를 얻을 수 없습니다."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "주식이란 무엇인가요?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "주식 정보가 무엇인지 설명합니다."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "주식은 NASDAQ의 등록 기업 데이터베이스와 같은 기업 주식 데이터베이스에 등록된 기업의 주가를 분석하는 것입니다. 등록된 각 기업의 주가가 변동함에 따라, NASDAQ, DOW JONES 등 선택한 기업의 시간별 주가 변동 내역을 제공합니다."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "주식 정보는 어떻게 처리하나요?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "주식 정보를 이해하는 과정에 대해 설명합니다."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "대화형 TUI는 추적 중인 특정 기업의 주식 정보(시가 및 종가, 최고가 및 최저가 등)를 제공합니다. 이 정보는 매시간 변동하므로 기업의 주가 움직임을 심층적으로 이해하려면 주가를 최대한 면밀히 살펴봐야 합니다."
     }
   ]
 }

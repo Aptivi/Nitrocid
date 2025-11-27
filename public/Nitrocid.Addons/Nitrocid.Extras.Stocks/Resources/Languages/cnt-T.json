@@ -92,6 +92,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "無法取得股票資訊。"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "什麼是股票？"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "描述什麼是股票訊息"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "股票是對已在公司股票資料庫（例如納斯達克股票資料庫）中註冊的公司的股票價格進行分析。由於每家註冊公司的股票價格都會發生變化，我們會為您提供您所選公司（例如納斯達克、道瓊斯等）的每小時股票價格歷史記錄。"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "如何處理股票資訊？"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "介紹理解股票資訊的過程"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "互動式使用者介面 (TUI) 為您提供您正在追蹤的特定公司的股票信息，例如開盤價和收盤價、最高價和最低價以及其他資訊。這些資訊每小時都會變化，因此您需要密切注意價格，以深入了解公司股票價格的走勢。"
     }
   ]
 }

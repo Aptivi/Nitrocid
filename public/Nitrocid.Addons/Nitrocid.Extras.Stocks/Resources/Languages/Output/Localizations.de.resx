@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Es können keine Bestandsinformationen abgerufen werden.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Was sind Aktien?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Beschreibt, was Aktieninformationen sind.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Aktien sind eine Analyse des Aktienkurses eines Unternehmens, das in einer Aktiendatenbank wie der NASDAQ registriert ist. Da sich die Aktienkurse jedes registrierten Unternehmens ändern, stellen wir Ihnen stündlich die Kurshistorie Ihres gewählten Unternehmens zur Verfügung, z. B. NASDAQ, Dow Jones usw.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Wie verarbeitet man Aktieninformationen?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Erläutert, wie man Aktieninformationen versteht.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Die interaktive Benutzeroberfläche (TUI) liefert Ihnen Aktieninformationen zu einem bestimmten Unternehmen, das Sie beobachten, wie z. B. Eröffnungs- und Schlusskurse, Höchst- und Tiefstkurse und weitere Informationen. Da sich diese Informationen stündlich ändern, sollten Sie die Kurse möglichst genau verfolgen, um die Kursentwicklung eines Unternehmens umfassend zu verstehen.</value>
+  </data>
 
 </root>

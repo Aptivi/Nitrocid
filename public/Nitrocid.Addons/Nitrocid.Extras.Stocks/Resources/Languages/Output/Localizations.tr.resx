@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Stok bilgisine ulaşılamıyor.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Hisse senetleri nedir?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Hisse senedi bilgilerinin ne olduğunu açıklar</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Hisse senetleri, NASDAQ&apos;ın kayıtlı şirket veritabanı gibi şirket hisse senedi veritabanına kayıtlı bir şirketin hisse senedi fiyatının analizidir. Kayıtlı her şirket için hisse senedi fiyatları değiştikçe, NASDAQ, DOW JONES vb. gibi seçtiğiniz şirketin hisse senedi fiyatlarının saatlik geçmişini size sunarız.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Hisse senedi bilgileri nasıl işlenir?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Hisse senedi bilgilerini anlama sürecinden bahseder</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Etkileşimli TUI, takip ettiğiniz belirli bir şirket hakkında açılış ve kapanış hisse senedi fiyatları, en yüksek ve en düşük hisse senedi fiyatları ve diğer bilgiler gibi hisse senedi bilgileri sağlar. Bu bilgiler her saat değişir, bu nedenle bir şirketin hisse senedi fiyatlarının nasıl performans gösterdiğini derinlemesine anlamak için fiyatları mümkün olduğunca yakından takip etmeniz gerekir.</value>
+  </data>
 
 </root>

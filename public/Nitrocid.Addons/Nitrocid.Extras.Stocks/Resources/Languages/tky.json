@@ -90,6 +90,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "Stok bilgisine ulaşılamıyor."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "Hisse senetleri nedir?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "Hisse senedi bilgilerinin ne olduğunu açıklar"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "Hisse senetleri, NASDAQ'ın kayıtlı şirket veritabanı gibi şirket hisse senedi veritabanına kayıtlı bir şirketin hisse senedi fiyatının analizidir. Kayıtlı her şirket için hisse senedi fiyatları değiştikçe, NASDAQ, DOW JONES vb. gibi seçtiğiniz şirketin hisse senedi fiyatlarının saatlik geçmişini size sunarız."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "Hisse senedi bilgileri nasıl işlenir?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "Hisse senedi bilgilerini anlama sürecinden bahseder"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "Etkileşimli TUI, takip ettiğiniz belirli bir şirket hakkında açılış ve kapanış hisse senedi fiyatları, en yüksek ve en düşük hisse senedi fiyatları ve diğer bilgiler gibi hisse senedi bilgileri sağlar. Bu bilgiler her saat değişir, bu nedenle bir şirketin hisse senedi fiyatlarının nasıl performans gösterdiğini derinlemesine anlamak için fiyatları mümkün olduğunca yakından takip etmeniz gerekir."
     }
   ]
 }

@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Không thể lấy được thông tin về cổ phiếu.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Cổ phiếu là gì?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Mô tả thông tin cổ phiếu là gì</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Cổ phiếu là phân tích giá cổ phiếu của một công ty được đăng ký trong cơ sở dữ liệu cổ phiếu của công ty, chẳng hạn như cơ sở dữ liệu công ty đã đăng ký của NASDAQ. Khi giá cổ phiếu thay đổi đối với mỗi công ty được đăng ký, chúng tôi cung cấp cho bạn lịch sử giá cổ phiếu hàng giờ của công ty bạn đã chọn, chẳng hạn như NASDAQ, DOW JONES, v.v.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Cách xử lý thông tin cổ phiếu?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Thảo luận về quy trình hiểu thông tin cổ phiếu</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Công cụ TUI tương tác cung cấp cho bạn thông tin cổ phiếu về một công ty cụ thể mà bạn đang theo dõi, chẳng hạn như giá cổ phiếu mở cửa và đóng cửa, giá cổ phiếu cao nhất và thấp nhất, và các thông tin khác. Thông tin này thay đổi mỗi giờ, vì vậy bạn cần theo dõi giá càng sát càng tốt để hiểu sâu sắc về diễn biến giá cổ phiếu của công ty.</value>
+  </data>
 
 </root>

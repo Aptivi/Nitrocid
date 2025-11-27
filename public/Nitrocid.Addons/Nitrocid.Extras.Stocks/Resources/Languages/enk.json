@@ -88,6 +88,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "Can't get stock information."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "What are stocks?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "Describes what is stocks information"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "Stocks is an analysis of the stock price of a company that is registered in the company stocks database, such as NASDAQ's registered company database. As stocks prices changes for each company that is registered, we provide you with an hourly history of the stock prices of your chosen company, such as NASDAQ, DOW JONES, and so on."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "How to process stocks information?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "Talks about the process of understanding stocks information"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "The interactive TUI provides you with stocks information about a particular company that you're tracking, such as opening and closing stock prices, high and low stock prices, and other information. For every hour, this information changes, so you'll need to watch the prices as close as possible to have a deep understanding of how a company's stock prices performs."
     }
   ]
 }

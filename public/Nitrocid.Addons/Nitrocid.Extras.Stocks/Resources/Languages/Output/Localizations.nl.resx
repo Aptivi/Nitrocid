@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Kan geen aandeleninformatie verkrijgen.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Wat zijn aandelen?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Beschrijft wat aandeleninformatie is.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Aandelen is een analyse van de aandelenkoers van een bedrijf dat geregistreerd staat in de aandelendatabase van het bedrijf, zoals de geregistreerde bedrijvendatabase van NASDAQ. Naarmate de aandelenkoersen voor elk geregistreerd bedrijf veranderen, bieden we u een uurlijkse geschiedenis van de aandelenkoersen van het door u gekozen bedrijf, zoals NASDAQ, DOW JONES, enzovoort.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Hoe verwerkt u aandeleninformatie?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Bespreekt het proces van het begrijpen van aandeleninformatie.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>De interactieve TUI biedt u aandeleninformatie over een bepaald bedrijf dat u volgt, zoals openings- en slotkoersen, hoogste en laagste aandelenkoersen en andere informatie. Deze informatie verandert elk uur, dus u moet de koersen zo goed mogelijk in de gaten houden om een ​​goed inzicht te krijgen in de prestaties van de aandelenkoersen van een bedrijf.</value>
+  </data>
 
 </root>

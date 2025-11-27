@@ -90,6 +90,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "Nu pot obține informații despre stoc."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "Ce sunt acțiunile?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "Descrie ce reprezintă informațiile despre acțiuni"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "Acțiunile reprezintă o analiză a prețului acțiunilor unei companii înregistrate în baza de date a acțiunilor companiei, cum ar fi baza de date a companiilor înregistrate NASDAQ. Pe măsură ce prețurile acțiunilor se modifică pentru fiecare companie înregistrată, vă oferim un istoric orar al prețurilor acțiunilor companiei alese, cum ar fi NASDAQ, DOW JONES și așa mai departe."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "Cum se procesează informațiile despre acțiuni?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "Vorbește despre procesul de înțelegere a informațiilor despre acțiuni"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "Interfața interactivă TUI vă oferă informații despre acțiunile unei anumite companii pe care o urmăriți, cum ar fi prețurile de deschidere și închidere ale acțiunilor, prețurile maxime și minime ale acțiunilor și alte informații. Aceste informații se schimbă în fiecare oră, așa că va trebui să urmăriți prețurile cât mai atent posibil pentru a avea o înțelegere profundă a modului în care performează prețurile acțiunilor unei companii."
     }
   ]
 }

@@ -93,6 +93,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "Kan ikke få aksjeinformasjon."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "Hva er aksjer?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "Beskriver hva aksjeinformasjon er"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "Aksjer er en analyse av aksjekursen til et selskap som er registrert i selskapets aksjedatabase, for eksempel NASDAQs registrerte selskapsdatabase. Etter hvert som aksjekursene endres for hvert registrerte selskap, gir vi deg en timebasert historikk over aksjekursene til det valgte selskapet, for eksempel NASDAQ, DOW JONES og så videre."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "Hvordan behandle aksjeinformasjon?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "Snakker om prosessen med å forstå aksjeinformasjon"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "Den interaktive brukergrensesnittet gir deg aksjeinformasjon om et bestemt selskap du sporer, for eksempel åpnings- og sluttkurser for aksjer, høyeste og laveste aksjekurser og annen informasjon. Denne informasjonen endres hver time, så du må følge med på prisene så nøye som mulig for å få en dyp forståelse av hvordan et selskaps aksjekurser presterer."
     }
   ]
 }

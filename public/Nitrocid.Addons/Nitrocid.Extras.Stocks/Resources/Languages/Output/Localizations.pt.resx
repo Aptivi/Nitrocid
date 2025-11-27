@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Não é possível obter informações sobre ações.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>O que são ações?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Descreve o que são informações sobre ações.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Ações é uma análise do preço das ações de uma empresa registada numa base de dados de ações, como a da NASDAQ. Como os preços das ações mudam para cada empresa registada, fornecemos um histórico horário dos preços das ações da empresa escolhida, como NASDAQ, Dow Jones, etc.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Como processar informação sobre ações?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Explica o processo de compreensão da informação sobre ações.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>A interface interativa TUI fornece informações sobre as ações de uma empresa específica que está a acompanhar, tais como preços de abertura e fecho, preços máximos e mínimos das ações e outras informações. Esta informação muda a cada hora, pelo que terá de observar os preços com atenção para ter uma compreensão profunda do desempenho das ações de uma empresa.</value>
+  </data>
 
 </root>

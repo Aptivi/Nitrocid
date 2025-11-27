@@ -36,6 +36,31 @@ namespace Nitrocid.Extras.Stocks.Interactives
         internal string? ianaTimeZone;
 
         /// <inheritdoc/>
+        public override InteractiveTuiHelpPage[] HelpPages =>
+        [
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_STOCKS_TUI_HELP01_TITLE",
+                HelpDescription = /* Localizable */ "NKS_STOCKS_TUI_HELP01_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_STOCKS_TUI_HELP01_BODY") + "\n\n" +
+#pragma warning disable NLOC0001
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/extra-features/common-programs/stocks",
+#pragma warning restore NLOC0001
+            },
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_STOCKS_TUI_HELP02_TITLE",
+                HelpDescription = /* Localizable */ "NKS_STOCKS_TUI_HELP02_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_STOCKS_TUI_HELP02_BODY") + "\n\n" +
+#pragma warning disable NLOC0001
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/extra-features/common-programs/stocks",
+#pragma warning restore NLOC0001
+            }
+        ];
+
+        /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
             stocksToken?.Select((token) => ((JProperty)token).Name) ??
                 throw new KernelException(KernelExceptionType.Unknown, LanguageTools.GetLocalized("NKS_STOCKS_TUI_CANTOBTAININFO"));

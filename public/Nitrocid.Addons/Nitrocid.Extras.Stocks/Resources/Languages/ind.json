@@ -89,6 +89,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "stok jaanakaaree nahin mil sakatee."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "stoks kya hain?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "stoks kee jaanakaaree kya hai, yah bataata hai"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "stoks kisee kampanee ke stok prais ka enaalisis hai jo kampanee stoks detaabes mein rajistard hai, jaise ki nasdaq ka rajistard kampanee detaabes. jaise hee har rajistard kampanee ke stok prais badalate hain, ham aapako aapakee chunee huee kampanee, jaise ki nasdaq, dow jonais, vagairah ke stok prais kee har ghante kee histree dete hain."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "stoks kee jaanakaaree ko kaise proses karen?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "stoks kee jaanakaaree ko samajhane ke proses ke baare mein baat karata hai"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "intaraiktiv tui aapako us khaas kampanee ke baare mein stoks kee jaanakaaree deta hai jise aap traik kar rahe hain, jaise ki opaning aur klojing stok prais, haee aur lo stok prais, aur doosaree jaanakaaree. har ghante, yah jaanakaaree badalatee hai, isalie aapako kampanee ke stok prais kaisa paraphorm karate hain, isakee gaharee samajh paane ke lie prais ko jitana ho sake kareeb se dekhana hoga."
     }
   ]
 }
