@@ -88,6 +88,10 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
             }
 
             // Return the final rendered notification icons
+            TextAlignment alignment =
+                Options.TryGetValue("alignment", out object? alignmentValue) ?
+                    alignmentValue is not null ? (TextAlignment)alignmentValue : TextAlignment.Middle :
+                TextAlignment.Middle;
             var listingText = new BoundedText()
             {
                 Text = notificationListing.ToString(),
@@ -97,7 +101,7 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
                 Height = height,
                 Settings =
                 {
-                    Alignment = TextAlignment.Middle,
+                    Alignment = alignment,
                 }
             };
             return listingText.Render();
