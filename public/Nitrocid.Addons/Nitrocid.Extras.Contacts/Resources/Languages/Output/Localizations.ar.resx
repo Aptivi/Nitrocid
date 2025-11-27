@@ -505,58 +505,58 @@
     <value>لا يوجد عنوان اتصال</value>
   </data>
   <data name="NKS_CONTACTS_TUI_MAILINFO_ADDRESS" xml:space="preserve">
-    <value>تعذّر حفظ جهات الاتصال</value>
+    <value>عنوان بريد جهة الاتصال</value>
   </data>
   <data name="NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT" xml:space="preserve">
-    <value>يحتوي على صورة شخصية</value>
+    <value>أدخل عنوان بريد جديد لجهة الاتصال</value>
   </data>
   <data name="NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBER" xml:space="preserve">
-    <value>لا يحتوي على صورة شخصية</value>
+    <value>رقم هاتف جهة الاتصال</value>
   </data>
   <data name="NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT" xml:space="preserve">
-    <value>جارٍ تعديل جهة الاتصال</value>
+    <value>أدخل رقم هاتف جهة الاتصال الجديد</value>
   </data>
   <data name="NKS_CONTACTS_TUI_URLINFO_ADDRESS" xml:space="preserve">
-    <value>جارٍ تعديل عناوين جهات الاتصال</value>
+    <value>رابط جهة الاتصال</value>
   </data>
   <data name="NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT" xml:space="preserve">
-    <value>جارٍ تعديل عنوان جهة الاتصال</value>
+    <value>أدخل رابط جهة الاتصال الجديد</value>
   </data>
   <data name="NKS_CONTACTS_TUI_GEOINFO_COORDS" xml:space="preserve">
-    <value>صندوق بريد</value>
+    <value>إحداثيات جهة الاتصال</value>
   </data>
   <data name="NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT" xml:space="preserve">
-    <value>عنوان ممتد</value>
+    <value>أدخل إحداثيات جهة الاتصال الجديدة</value>
   </data>
   <data name="NKS_CONTACTS_TUI_IMPPINFO_INFO" xml:space="preserve">
-    <value>عنوان الشارع</value>
+    <value>معلومات IMPP لجهة الاتصال</value>
   </data>
   <data name="NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT" xml:space="preserve">
-    <value>الموقع</value>
+    <value>أدخل معلومات IMPP لجهة الاتصال الجديدة</value>
   </data>
   <data name="NKS_CONTACTS_TUI_NICKNAMEINFO_NICK" xml:space="preserve">
-    <value>المنطقة</value>
+    <value>لقب جهة الاتصال</value>
   </data>
   <data name="NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT" xml:space="preserve">
-    <value>الرمز البريدي</value>
+    <value>أدخل لقب جهة الاتصال الجديد</value>
   </data>
   <data name="NKS_CONTACTS_TUI_ROLEINFO_ROLE" xml:space="preserve">
-    <value>البلد</value>
+    <value>دور جهة الاتصال</value>
   </data>
   <data name="NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT" xml:space="preserve">
-    <value>أدخل صندوق بريد جديدًا</value>
+    <value>أدخل دور جهة الاتصال الجديد</value>
   </data>
   <data name="NKS_CONTACTS_TUI_TITLEINFO_TITLE" xml:space="preserve">
-    <value>أدخل عنوانًا ممتدًا جديدًا</value>
+    <value>لقب جهة الاتصال</value>
   </data>
   <data name="NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT" xml:space="preserve">
-    <value>أدخل عنوان شارع جديدًا</value>
+    <value>أدخل لقب جهة الاتصال الجديد</value>
   </data>
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTE" xml:space="preserve">
-    <value>أدخل موقعًا جديدًا</value>
+    <value>ملاحظة جهة الاتصال</value>
   </data>
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
-    <value>أدخل منطقة جديدة</value>
+    <value>أدخل ملاحظة جهة اتصال جديدة</value>
   </data>
 
 </root>

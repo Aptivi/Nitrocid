@@ -550,75 +550,75 @@
     },
     {
       "loc": "NKS_CONTACTS_TUI_MAILINFO_ADDRESS",
-      "text": "تعذّر حفظ جهات الاتصال"
+      "text": "عنوان بريد جهة الاتصال"
     },
     {
       "loc": "NKS_CONTACTS_TUI_MAILINFO_ADDRESSPROMPT",
-      "text": "يحتوي على صورة شخصية"
+      "text": "أدخل عنوان بريد جديد لجهة الاتصال"
     },
     {
       "loc": "NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBER",
-      "text": "لا يحتوي على صورة شخصية"
+      "text": "رقم هاتف جهة الاتصال"
     },
     {
       "loc": "NKS_CONTACTS_TUI_TELEPHONEINFO_NUMBERPROMPT",
-      "text": "جارٍ تعديل جهة الاتصال"
+      "text": "أدخل رقم هاتف جهة الاتصال الجديد"
     },
     {
       "loc": "NKS_CONTACTS_TUI_URLINFO_ADDRESS",
-      "text": "جارٍ تعديل عناوين جهات الاتصال"
+      "text": "رابط جهة الاتصال"
     },
     {
       "loc": "NKS_CONTACTS_TUI_URLINFO_ADDRESSPROMPT",
-      "text": "جارٍ تعديل عنوان جهة الاتصال"
+      "text": "أدخل رابط جهة الاتصال الجديد"
     },
     {
       "loc": "NKS_CONTACTS_TUI_GEOINFO_COORDS",
-      "text": "صندوق بريد"
+      "text": "إحداثيات جهة الاتصال"
     },
     {
       "loc": "NKS_CONTACTS_TUI_GEOINFO_COORDSPROMPT",
-      "text": "عنوان ممتد"
+      "text": "أدخل إحداثيات جهة الاتصال الجديدة"
     },
     {
       "loc": "NKS_CONTACTS_TUI_IMPPINFO_INFO",
-      "text": "عنوان الشارع"
+      "text": "معلومات IMPP لجهة الاتصال"
     },
     {
       "loc": "NKS_CONTACTS_TUI_IMPPINFO_INFOPROMPT",
-      "text": "الموقع"
+      "text": "أدخل معلومات IMPP لجهة الاتصال الجديدة"
     },
     {
       "loc": "NKS_CONTACTS_TUI_NICKNAMEINFO_NICK",
-      "text": "المنطقة"
+      "text": "لقب جهة الاتصال"
     },
     {
       "loc": "NKS_CONTACTS_TUI_NICKNAMEINFO_NICKPROMPT",
-      "text": "الرمز البريدي"
+      "text": "أدخل لقب جهة الاتصال الجديد"
     },
     {
       "loc": "NKS_CONTACTS_TUI_ROLEINFO_ROLE",
-      "text": "البلد"
+      "text": "دور جهة الاتصال"
     },
     {
       "loc": "NKS_CONTACTS_TUI_ROLEINFO_ROLEPROMPT",
-      "text": "أدخل صندوق بريد جديدًا"
+      "text": "أدخل دور جهة الاتصال الجديد"
     },
     {
       "loc": "NKS_CONTACTS_TUI_TITLEINFO_TITLE",
-      "text": "أدخل عنوانًا ممتدًا جديدًا"
+      "text": "لقب جهة الاتصال"
     },
     {
       "loc": "NKS_CONTACTS_TUI_TITLEINFO_TITLEPROMPT",
-      "text": "أدخل عنوان شارع جديدًا"
+      "text": "أدخل لقب جهة الاتصال الجديد"
     },
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTE",
-      "text": "أدخل موقعًا جديدًا"
+      "text": "ملاحظة جهة الاتصال"
     },
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
-      "text": "أدخل منطقة جديدة"
+      "text": "أدخل ملاحظة جهة اتصال جديدة"
     }
   ]
 }
