@@ -125,6 +125,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "Tên chủ đề để tạo"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "Tạo chủ đề"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "Dễ dàng tạo chủ đề"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "Bạn có thể sử dụng TUI tương tác này để tạo chủ đề dễ dàng hơn bao giờ hết. Với bộ chọn màu nâng cao được hỗ trợ bởi Terminaux, bạn có thể tạo các chủ đề tùy chỉnh tuyệt đẹp cho kernel của mình để cá nhân hóa theo lựa chọn màu sắc của bạn."
     }
   ]
 }

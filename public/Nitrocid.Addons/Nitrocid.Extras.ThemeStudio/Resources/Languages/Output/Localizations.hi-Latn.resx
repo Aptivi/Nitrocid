@@ -207,5 +207,14 @@
   <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
     <value>banaane ke lie theem ka naam</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>theem banaana</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>aasaanee se apanee theem banaen</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>aap is intaraiktiv tui ka istemaal karake pahale se zyaada aasaanee se theem bana sakate hain. tairminaux ke edavaansd kalar pikar se, aap apane karnel ke lie apanee pasand ke kalar ke hisaab se apanee pasand kee kastam shaanadaar theem bana sakate hain.</value>
+  </data>
 
 </root>

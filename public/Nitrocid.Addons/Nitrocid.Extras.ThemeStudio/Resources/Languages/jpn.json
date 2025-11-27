@@ -125,6 +125,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "作成するテーマ名"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "テーマの作成"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "テーマを簡単に作成"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "インタラクティブなTUIを使えば、これまで以上に簡単にテーマを作成できます。Terminaux搭載の高度なカラーピッカーを使えば、カーネルに合わせて魅力的なカスタムテーマを作成し、お好みのカラーでカスタマイズできます。"
     }
   ]
 }

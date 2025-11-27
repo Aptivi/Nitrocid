@@ -135,6 +135,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "Nome do tema a criar"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "Criando temas"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "Crie os seus temas facilmente"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "Pode utilizar esta interface de utilizador interativa (TUI) para criar temas com mais facilidade do que nunca. Com o avançado seletor de cores do Terminaux, pode criar temas personalizados e impressionantes para o seu kernel e personalizá-lo com as cores da sua preferência."
     }
   ]
 }

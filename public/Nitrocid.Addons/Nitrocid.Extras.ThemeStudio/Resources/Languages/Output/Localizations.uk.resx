@@ -207,5 +207,14 @@
   <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
     <value>Назва теми для створення</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Створення тем</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Легко створюйте власні теми</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Ви можете використовувати цей інтерактивний TUI для створення тем легше, ніж раніше. За допомогою розширеного засобу вибору кольорів на базі Terminaux ви можете створювати власні приголомшливі теми для свого ядра, щоб персоналізувати його за допомогою обраного кольору.</value>
+  </data>
 
 </root>

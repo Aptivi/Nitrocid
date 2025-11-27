@@ -207,5 +207,14 @@
   <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
     <value>Όνομα θέματος για δημιουργία</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Δημιουργία θεμάτων</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Δημιουργήστε εύκολα τα θέματά σας</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Μπορείτε να χρησιμοποιήσετε αυτό το διαδραστικό TUI για να δημιουργήσετε θέματα πιο εύκολα από πριν. Με το προηγμένο εργαλείο επιλογής χρωμάτων που υποστηρίζεται από την Terminaux, μπορείτε να δημιουργήσετε τα δικά σας προσαρμοσμένα εντυπωσιακά θέματα για τον πυρήνα σας, ώστε να τον εξατομικεύσετε με την επιλογή χρώματος που έχετε κάνει.</value>
+  </data>
 
 </root>

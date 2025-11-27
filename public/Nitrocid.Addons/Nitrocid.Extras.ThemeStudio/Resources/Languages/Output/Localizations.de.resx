@@ -207,5 +207,14 @@
   <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
     <value>Zu erstellender Themenname</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Designs erstellen</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Designs ganz einfach erstellen</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Mit dieser interaktiven Benutzeroberfläche erstellen Sie Designs so einfach wie nie zuvor. Dank der fortschrittlichen Farbauswahl von Terminaux gestalten Sie im Handumdrehen individuelle, beeindruckende Designs für Ihren Kernel und personalisieren ihn mit Ihren Wunschfarben.</value>
+  </data>
 
 </root>

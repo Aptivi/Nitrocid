@@ -128,6 +128,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "Nama tema untuk dibuat"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "Membuat tema"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "Cipta tema anda dengan mudah"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "Anda boleh menggunakan TUI interaktif ini untuk mencipta tema dengan lebih mudah berbanding sebelum ini. Dengan pemilih warna lanjutan yang dikuasakan oleh Terminaux, anda boleh membuat tema tersuai yang menakjubkan untuk kernel anda bagi memperibadikannya dengan pilihan warna anda."
     }
   ]
 }

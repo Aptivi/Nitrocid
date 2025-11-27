@@ -207,5 +207,14 @@
   <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
     <value>要建立的主題名稱</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>創建主題</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>輕鬆創建您的主題</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>您可以使用這款互動式 TUI 介面，比以往更輕鬆地建立主題。透過 Terminaux 提供的先進色彩選擇器，您可以為核心建立自訂的精美主題，並使用您選擇的顏色進行個人化設定。</value>
+  </data>
 
 </root>

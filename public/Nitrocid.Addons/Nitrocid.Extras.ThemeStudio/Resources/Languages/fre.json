@@ -171,6 +171,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "Nom du thème à créer"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "Création de thèmes"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "Créez facilement vos thèmes"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "Grâce à cette interface utilisateur interactive, créez des thèmes plus facilement que jamais. Avec le sélecteur de couleurs avancé de Terminaux, créez des thèmes personnalisés et époustouflants pour votre noyau et personnalisez-le selon vos envies."
     }
   ]
 }
