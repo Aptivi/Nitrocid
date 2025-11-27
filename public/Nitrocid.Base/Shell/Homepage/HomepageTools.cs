@@ -629,7 +629,7 @@ namespace Nitrocid.Base.Shell.Homepage
                 // Show bindings
                 var keybindingSequenceBuilder = new StringBuilder();
                 keybindingSequenceBuilder.Append(masterBorder.Settings.BorderRightHorizontalIntersectionEnabled ? $"{ColorTools.RenderSetConsoleColor(masterBorder.FrameColor)}{masterBorder.Settings.BorderRightHorizontalIntersectionChar} " : "");
-                keybindingSequenceBuilder.Append($"{ColorTools.RenderSetConsoleColor(masterBorder.TitleColor)}K: {LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS")} aa tt ee ss tt tt ees  s");
+                keybindingSequenceBuilder.Append($"{ColorTools.RenderSetConsoleColor(masterBorder.TitleColor)}K: {LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS")}");
                 keybindingSequenceBuilder.Append(masterBorder.Settings.BorderLeftHorizontalIntersectionEnabled ? $"{ColorTools.RenderSetConsoleColor(masterBorder.FrameColor)} {masterBorder.Settings.BorderLeftHorizontalIntersectionChar}" : "");
                 string keybindingSequence = keybindingSequenceBuilder.ToString();
                 int keybindingSequenceWidth = ConsoleChar.EstimateCellWidth(keybindingSequence);
