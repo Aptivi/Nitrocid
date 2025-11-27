@@ -5,12 +5,6 @@
         "DisplayAs": "NKS_SETTINGS_KERNEL_GENERAL_DISPLAYAS",
         "Keys": [
             {
-                "Name": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME",
-                "Type": "SBoolean",
-                "Variable": "ShowLicenseInfoBox",
-                "Description": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC"
-            },
-            {
                 "Name": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_NAME",
                 "Type": "SMultivar",
                 "Description": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_DESC",
