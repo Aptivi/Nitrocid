@@ -104,21 +104,6 @@ namespace Nitrocid.Base.Kernel
                 KernelFirstRun.PresentFirstRunIntro();
             }
 
-            // Show the license infobox
-            if (Config.MainConfig.ShowLicenseInfoBox && Config.MainConfig.EnableSplash)
-            {
-                InfoBoxNonModalColor.WriteInfoBox(
-                    WelcomeMessage.GetLicenseString(), new InfoBoxSettings()
-                    {
-                        Title = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE_TITLE"),
-                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.License)
-                    }
-                );
-                ConsoleWrapper.CursorVisible = false;
-                ThreadManager.SleepUntilInput(15000);
-                ThemeColorsTools.LoadBackground();
-            }
-
             // Start the main loop
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop start.");
             MainLoop();
