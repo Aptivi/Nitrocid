@@ -107,6 +107,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "ملاحظة رقم"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "عرض الملاحظات"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "عارض الملاحظات التفاعلي"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "يمكنك عرض الملاحظات بشكل تفاعلي باستخدام واجهة المستخدم التفاعلية للملاحظات. ما عليك سوى اختيار ملاحظة وعرضها. كما يمكنك تعديلها وحذفها وإضافتها."
     }
   ]
 }

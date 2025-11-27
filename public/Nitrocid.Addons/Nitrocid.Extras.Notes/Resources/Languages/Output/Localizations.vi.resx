@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>Ghi chú số</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Xem ghi chú</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Trình xem ghi chú tương tác</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Bạn có thể xem ghi chú một cách tương tác bằng TUI ghi chú. Chỉ cần chọn ghi chú và xem. Bạn cũng có thể chỉnh sửa, xóa và thêm ghi chú.</value>
+  </data>
 
 </root>

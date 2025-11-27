@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>ノート番号</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>メモの表示</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>インタラクティブなメモビューア</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>メモのTUIを使用して、メモをインタラクティブに表示できます。メモを選択するだけで表示されます。また、メモの編集、削除、追加も可能です。</value>
+  </data>
 
 </root>

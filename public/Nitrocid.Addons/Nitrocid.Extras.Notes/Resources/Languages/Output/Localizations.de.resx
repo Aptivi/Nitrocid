@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>Notiznummer</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Notizen anzeigen</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Interaktiver Notizen-Viewer</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Sie können Ihre Notizen interaktiv mit der Notizen-Benutzeroberfläche anzeigen. Wählen Sie einfach eine Notiz aus, um sie anzuzeigen. Sie können Notizen auch bearbeiten, löschen und hinzufügen.</value>
+  </data>
 
 </root>

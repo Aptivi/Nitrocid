@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>नोट संख्या</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>नोट्स देखना</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>इंटरैक्टिव नोट्स व्यूअर</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>आप नोट्स TUI का इस्तेमाल करके नोट्स को इंटरैक्टिव तरीके से देख सकते हैं। बस एक नोट चुनें और उसे देखें। आप नोट्स को एडिट, डिलीट और जोड़ भी सकते हैं।</value>
+  </data>
 
 </root>

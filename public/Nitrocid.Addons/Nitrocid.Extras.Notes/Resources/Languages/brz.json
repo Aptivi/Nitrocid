@@ -80,6 +80,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "Número da nota"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "Visualizando notas"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "Visualizador de notas interativo"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "Você pode visualizar as notas interativamente usando a interface de texto (TUI) de notas. Basta selecionar uma nota e visualizá-la. Você também pode editar, excluir e adicionar notas."
     }
   ]
 }

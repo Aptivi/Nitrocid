@@ -85,6 +85,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "Merk nummer"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "Vise notater"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "Interaktiv notatvisning"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "Du kan vise notatene interaktivt ved hjelp av notat-TUI-en. Bare velg et notat og vis det. Du kan også redigere, slette og legge til notater."
     }
   ]
 }

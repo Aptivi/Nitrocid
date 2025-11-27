@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>Αριθμός σημείωσης</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Προβολή σημειώσεων</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Διαδραστικό πρόγραμμα προβολής σημειώσεων</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Μπορείτε να δείτε τις σημειώσεις διαδραστικά χρησιμοποιώντας το TUI σημειώσεων. Απλώς επιλέξτε μια σημείωση και προβάλετέ την. Μπορείτε επίσης να επεξεργαστείτε, να διαγράψετε και να προσθέσετε σημειώσεις.</value>
+  </data>
 
 </root>

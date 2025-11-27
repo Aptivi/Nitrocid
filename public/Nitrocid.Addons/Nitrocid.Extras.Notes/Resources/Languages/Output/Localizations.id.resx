@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>Catatan nomor</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Melihat catatan</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Penampil catatan interaktif</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Anda dapat melihat catatan secara interaktif menggunakan TUI catatan. Cukup pilih catatan dan lihat. Anda juga dapat mengedit, menghapus, dan menambahkan catatan.</value>
+  </data>
 
 </root>

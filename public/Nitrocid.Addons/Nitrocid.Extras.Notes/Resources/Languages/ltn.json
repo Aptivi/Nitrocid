@@ -81,6 +81,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "Nota numerum"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "Annotationes inspiciendae"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "Inspicitorium annotationum interactivum"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "Notas interactive inspicere potes utens interfacie usoris annotationum. Notam tantum elige et inspice. Notas etiam recensere, delere et addere potes."
     }
   ]
 }

@@ -84,6 +84,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "Numero di nota"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "Visualizzazione delle note"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "Visualizzatore interattivo di note"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "È possibile visualizzare le note in modo interattivo utilizzando l'interfaccia utente delle note. È sufficiente selezionare una nota e visualizzarla. È anche possibile modificare, eliminare e aggiungere note."
     }
   ]
 }

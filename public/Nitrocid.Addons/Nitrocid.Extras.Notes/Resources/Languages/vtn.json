@@ -81,6 +81,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "Ghi chú số"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "Xem ghi chú"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "Trình xem ghi chú tương tác"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "Bạn có thể xem ghi chú một cách tương tác bằng TUI ghi chú. Chỉ cần chọn ghi chú và xem. Bạn cũng có thể chỉnh sửa, xóa và thêm ghi chú."
     }
   ]
 }

@@ -81,6 +81,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "ノート番号"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "メモの表示"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "インタラクティブなメモビューア"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "メモのTUIを使用して、メモをインタラクティブに表示できます。メモを選択するだけで表示されます。また、メモの編集、削除、追加も可能です。"
     }
   ]
 }

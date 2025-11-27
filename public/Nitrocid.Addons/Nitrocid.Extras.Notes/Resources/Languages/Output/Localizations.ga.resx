@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>Uimhir nóta</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Nótaí á n-amharc</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Breathnóir nótaí idirghníomhach</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Is féidir leat na nótaí a fheiceáil go hidirghníomhach ag baint úsáide as TUI na nótaí. Roghnaigh nóta agus féach air. Is féidir leat nótaí a chur in eagar, a scriosadh agus a chur leis freisin.</value>
+  </data>
 
 </root>

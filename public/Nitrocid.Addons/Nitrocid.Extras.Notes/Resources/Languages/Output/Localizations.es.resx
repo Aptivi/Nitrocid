@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>Número de nota</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Visualización de notas</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Visor interactivo de notas</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Puedes ver las notas de forma interactiva mediante la interfaz de usuario de notas. Solo tienes que seleccionar una nota y visualizarla. También puedes editarla, eliminarla y añadirla.</value>
+  </data>
 
 </root>

@@ -81,6 +81,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "Catatan nomor"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "Melihat catatan"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "Penampil catatan interaktif"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "Anda dapat melihat catatan secara interaktif menggunakan TUI catatan. Cukup pilih catatan dan lihat. Anda juga dapat mengedit, menghapus, dan menambahkan catatan."
     }
   ]
 }

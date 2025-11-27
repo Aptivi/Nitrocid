@@ -87,6 +87,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "Notitie nummer"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "Notities bekijken"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "Interactieve notitieviewer"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "Je kunt de notities interactief bekijken met de notitie-TUI. Selecteer een notitie en bekijk deze. Je kunt ook notities bewerken, verwijderen en toevoegen."
     }
   ]
 }

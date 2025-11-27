@@ -84,6 +84,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "註釋編號"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "看筆記"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "互動式筆記檢視器"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "您可以使用筆記互動式使用者介面 (TUI) 以互動方式查看筆記。只需選擇一則筆記即可查看。您也可以編輯、刪除和新增筆記。"
     }
   ]
 }

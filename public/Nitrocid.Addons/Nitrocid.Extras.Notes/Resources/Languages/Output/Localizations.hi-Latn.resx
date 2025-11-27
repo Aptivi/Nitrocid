@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>not sankhya</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>nots dekhana</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>intaraiktiv nots vyooar</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>aap nots tui ka istemaal karake nots ko intaraiktiv tareeke se dekh sakate hain. bas ek not chunen aur use dekhen. aap nots ko edit, dileet aur jod bhee sakate hain.</value>
+  </data>
 
 </root>

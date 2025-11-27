@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>註釋編號</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>看筆記</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>互動式筆記檢視器</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>您可以使用筆記互動式使用者介面 (TUI) 以互動方式查看筆記。只需選擇一則筆記即可查看。您也可以編輯、刪除和新增筆記。</value>
+  </data>
 
 </root>
