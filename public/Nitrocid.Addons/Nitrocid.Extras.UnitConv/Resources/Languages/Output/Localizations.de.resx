@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>Zieleinheit</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>Einheitenumrechnung</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>Umrechnung von Einheit zu Einheit</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>Sie können Einheiten ganz einfach umrechnen, indem Sie im zweiten Fenster die Einheitengruppe (z. B. Masse oder Druck) und anschließend die Ausgangs- und die Zieleinheit (z. B. Gramm in Kilogramm oder Millimeter Quecksilbersäule in Hektopascal) auswählen. Drücken Sie anschließend F1, um die Umrechnung zu starten.</value>
+  </data>
 
 </root>

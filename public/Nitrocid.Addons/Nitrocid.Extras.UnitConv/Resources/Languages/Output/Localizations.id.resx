@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>Satuan sasaran</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>Konversi Satuan</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>Mengonversi dari Satuan ke Satuan</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>Anda dapat dengan mudah mengonversi dari satuan ke satuan dengan memilih kelompok satuan (seperti massa atau tekanan), lalu memilih satuan sumber dan satuan target (seperti gram ke kilogram, atau dari milimeter air raksa ke hektopascal) di panel kedua. Setelah itu, tekan F1 untuk memulai proses konversi.</value>
+  </data>
 
 </root>

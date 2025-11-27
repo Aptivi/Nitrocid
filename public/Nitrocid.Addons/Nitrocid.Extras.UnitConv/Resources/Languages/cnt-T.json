@@ -76,6 +76,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "目標單位"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "單位換算"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "單位換算"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "您可以輕鬆地進行單位換算。首先，在第二個窗格中選擇單位組（例如質量或壓力），然後選擇源單位和目標單位（例如克到公斤，或毫米汞柱到百帕）。之後，按 F1 鍵即可開始換算流程。"
     }
   ]
 }

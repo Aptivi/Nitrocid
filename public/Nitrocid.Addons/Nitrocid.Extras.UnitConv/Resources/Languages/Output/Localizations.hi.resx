@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>लक्ष्य इकाई</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>यूनिट कन्वर्ज़न</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>एक यूनिट से दूसरी यूनिट में कन्वर्ट करना</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>आप दूसरे पेन में यूनिट ग्रुप (जैसे मास या प्रेशर), फिर सोर्स और टारगेट यूनिट (जैसे ग्राम से किलोग्राम, या मिलीमीटर ऑफ़ मरकरी से हेक्टोपास्कल) चुनकर आसानी से एक यूनिट से दूसरी यूनिट में कन्वर्ट कर सकते हैं। इसके बाद, कन्वर्ज़न प्रोसेस शुरू करने के लिए F1 दबाएँ।</value>
+  </data>
 
 </root>

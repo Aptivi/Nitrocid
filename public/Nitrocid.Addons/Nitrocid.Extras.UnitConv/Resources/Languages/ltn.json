@@ -73,6 +73,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "Scopum unitas"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "Conversio Unitatum"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "Conversio ab unitate ad unitatem"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "Facile ex unitate ad unitatem convertere potes eligendo gregem unitatum (velut massam vel pressionem), deinde fontem et unitatem destinatam (velut grammata ad kilogrammata, vel a millimetris mercurii ad hectopascalia) in secundo tabulato. Postea, preme F1 ut processum conversionis incipias."
     }
   ]
 }

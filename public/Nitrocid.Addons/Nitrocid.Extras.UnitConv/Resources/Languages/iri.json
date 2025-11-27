@@ -74,6 +74,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "Aonad sprice"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "Comhshó aonad"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "Ag comhshó ó aonad go haonad"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "Is féidir leat comhshó go héasca ó aonad go haonad tríd an ngrúpa aonad (amhail mais nó brú) a roghnú, ansin an fhoinse agus an t-aonad sprice (amhail graim go cileagraim, nó ó mhilliméadair mearcair go heicteapaiscéil) sa dara painéal. Ina dhiaidh sin, brúigh F1 chun an próiseas comhshó a thionscnamh."
     }
   ]
 }

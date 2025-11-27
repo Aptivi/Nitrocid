@@ -98,6 +98,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "Unidad objetivo"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "Conversión de unidades"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "Conversión de unidades"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "Puede convertir fácilmente entre unidades seleccionando el grupo de unidades (como masa o presión), luego la unidad de origen y la de destino (como gramos a kilogramos, o de milímetros de mercurio a hectopascales) en el segundo panel. Después, presione F1 para iniciar la conversión."
     }
   ]
 }

@@ -73,6 +73,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "Satuan sasaran"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "Konversi Satuan"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "Mengonversi dari Satuan ke Satuan"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "Anda dapat dengan mudah mengonversi dari satuan ke satuan dengan memilih kelompok satuan (seperti massa atau tekanan), lalu memilih satuan sumber dan satuan target (seperti gram ke kilogram, atau dari milimeter air raksa ke hektopascal) di panel kedua. Setelah itu, tekan F1 untuk memulai proses konversi."
     }
   ]
 }

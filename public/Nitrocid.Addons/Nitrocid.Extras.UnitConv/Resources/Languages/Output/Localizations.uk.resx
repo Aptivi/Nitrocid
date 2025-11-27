@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>Цільова одиниця</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>Перетворення одиниць вимірювання</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>Перетворення з одиниці в одиницю</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>Ви можете легко перетворити з одиниці в одиницю, вибравши групу одиниць (наприклад, масу або тиск), потім вихідну та цільову одиниці вимірювання (наприклад, грами в кілограми або з міліметрів ртутного стовпа в гектопаскалі) на другій панелі. Після цього натисніть F1, щоб розпочати процес перетворення.</value>
+  </data>
 
 </root>

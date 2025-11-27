@@ -73,6 +73,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "Đơn vị mục tiêu"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "Chuyển đổi đơn vị"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "Chuyển đổi từ đơn vị này sang đơn vị khác"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "Bạn có thể dễ dàng chuyển đổi từ đơn vị này sang đơn vị khác bằng cách chọn nhóm đơn vị (chẳng hạn như khối lượng hoặc áp suất), sau đó chọn đơn vị nguồn và đơn vị đích (chẳng hạn như gam sang kilôgam, hoặc từ milimét thủy ngân sang hectopascal) trong khung thứ hai. Sau đó, nhấn F1 để bắt đầu quá trình chuyển đổi."
     }
   ]
 }

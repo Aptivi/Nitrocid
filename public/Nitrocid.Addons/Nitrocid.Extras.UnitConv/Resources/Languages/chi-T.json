@@ -81,6 +81,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "目标单位"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "单位换算"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "单位换算"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "您可以轻松地进行单位换算。首先，在第二个窗格中选择单位组（例如质量或压力），然后选择源单位和目标单位（例如克到千克，或毫米汞柱到百帕）。之后，按 F1 键即可开始换算过程。"
     }
   ]
 }

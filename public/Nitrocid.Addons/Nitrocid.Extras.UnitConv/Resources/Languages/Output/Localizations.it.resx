@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>Unità bersaglio</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>Conversione di unità</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>Conversione da unità a unità</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>È possibile convertire facilmente da un&apos;unità a un&apos;altra selezionando il gruppo di unità (ad esempio massa o pressione), quindi l&apos;unità di origine e quella di destinazione (ad esempio da grammi a chilogrammi o da millimetri di mercurio a ettopascal) nel secondo riquadro. Successivamente, premere F1 per avviare il processo di conversione.</value>
+  </data>
 
 </root>

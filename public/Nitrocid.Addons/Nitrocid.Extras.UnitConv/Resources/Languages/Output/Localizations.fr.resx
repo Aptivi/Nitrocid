@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>Unité cible</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>Conversion d&apos;unités</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>Conversion d&apos;unités</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>Pour convertir facilement une unité en une autre, sélectionnez le groupe d&apos;unités (par exemple, masse ou pression), puis l&apos;unité source et l&apos;unité cible (par exemple, grammes en kilogrammes ou millimètres de mercure en hectopascals) dans le deuxième volet. Appuyez ensuite sur F1 pour lancer la conversion.</value>
+  </data>
 
 </root>

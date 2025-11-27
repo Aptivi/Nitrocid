@@ -72,6 +72,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "Target unit"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "Unit conversion"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "Converting from unit to unit"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "You can easily convert from unit to unit by selecting the unit group (such as mass or pressure), then the source and the target unit (such as grams to kilogrammes, or from millimetres of mercury to hectopascals) in the second pane. Afterwards, press F1 to initiate the conversion process."
     }
   ]
 }

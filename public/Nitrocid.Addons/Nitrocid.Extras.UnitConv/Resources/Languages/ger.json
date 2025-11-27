@@ -82,6 +82,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "Zieleinheit"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "Einheitenumrechnung"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "Umrechnung von Einheit zu Einheit"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "Sie können Einheiten ganz einfach umrechnen, indem Sie im zweiten Fenster die Einheitengruppe (z. B. Masse oder Druck) und anschließend die Ausgangs- und die Zieleinheit (z. B. Gramm in Kilogramm oder Millimeter Quecksilbersäule in Hektopascal) auswählen. Drücken Sie anschließend F1, um die Umrechnung zu starten."
     }
   ]
 }

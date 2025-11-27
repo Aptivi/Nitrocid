@@ -76,6 +76,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "Unità bersaglio"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "Conversione di unità"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "Conversione da unità a unità"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "È possibile convertire facilmente da un'unità a un'altra selezionando il gruppo di unità (ad esempio massa o pressione), quindi l'unità di origine e quella di destinazione (ad esempio da grammi a chilogrammi o da millimetri di mercurio a ettopascal) nel secondo riquadro. Successivamente, premere F1 per avviare il processo di conversione."
     }
   ]
 }

@@ -76,6 +76,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "Unit sasaran"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "Penukaran unit"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "Menukar dari unit ke unit"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "Anda boleh menukar dari unit ke unit dengan mudah dengan memilih kumpulan unit (seperti jisim atau tekanan), kemudian sumber dan unit sasaran (seperti gram kepada kilogram, atau dari milimeter merkuri kepada hektopascal) dalam panel kedua. Selepas itu, tekan F1 untuk memulakan proses penukaran."
     }
   ]
 }
