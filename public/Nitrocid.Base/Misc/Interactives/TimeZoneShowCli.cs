@@ -33,6 +33,19 @@ namespace Nitrocid.Base.Misc.Interactives
     public class TimeZoneShowCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         /// <inheritdoc/>
+        public override InteractiveTuiHelpPage[] HelpPages =>
+        [
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE",
+                HelpDescription = /* Localizable */ "NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY") + "\n\n" +
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/advanced-and-power-users/inner-workings/inner-essentials/date-and-time",
+            }
+        ];
+
+        /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
             TimeZones.GetTimeZoneTimes().Select((kvp) =>
                 $"[{TimeDateRenderers.RenderDate(kvp.Value, FormatType.Short)} " +

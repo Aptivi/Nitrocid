@@ -7074,5 +7074,125 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC" xml:space="preserve">
     <value>Tests the widget canvas renderer</value>
   </data>
+  <data name="NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO" xml:space="preserve">
+    <value>For more information about this interactive TUI, visit</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Previewing the screensaver</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC" xml:space="preserve">
+    <value>Using the screensaver TUI to preview the screensaver</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY" xml:space="preserve">
+    <value>This interactive TUI allows you to preview a screensaver and save your screen with it, with either a built-in screensaver or a custom screensaver. You can easily choose a screensaver to preview straight from this TUI by selecting a screensaver from the list and pressing ENTER.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Live time zones</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC" xml:space="preserve">
+    <value>Using the time zone TUI for the world clock</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY" xml:space="preserve">
+    <value>This interactive TUI shows you a list of time zones and their local time representations that are refreshed every second. This allows you to use it as a world clock application to look at the time for all time zones.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE" xml:space="preserve">
+    <value>Managing tasks</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC" xml:space="preserve">
+    <value>Using the task manager TUI to manage threads</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY" xml:space="preserve">
+    <value>The task manager TUI allows you to manage both the Nitrocid kernel threads, which are managed by Nitrocid and its thread manager, and the operating system threads, which are managed by your operating system. You can list all threads and manage them, including the ability to end their tasks.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE" xml:space="preserve">
+    <value>Viewing operating system threads</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC" xml:space="preserve">
+    <value>Using the task manager TUI to view operating system threads</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY" xml:space="preserve">
+    <value>For each managed thread (that is, managed by Nitrocid and its thread manager), the task manager TUI shows you all operating system threads that are related to a managed thread, and they don&apos;t always have a one-to-one relationship, because a managed thread may contain more than one operating system thread. Unlike managed threads, they can&apos;t be terminated.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Managing kernel settings</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Using the settings app TUI to manage kernel settings</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Kernel configuration is an essential part of Nitrocid that lets you configure parts of the kernel and its components, including the networking stack and the shell stack. This TUI makes it easier for you to configure parts of the kernel, and its intuitive design makes it more convenient than manually editing the configuration file.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Managing notifications</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Using the notifications TUI to manage notifications</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY" xml:space="preserve">
+    <value>With this TUI, you can manage all notifications that you haven&apos;t read yet. When a notification is received, it&apos;s added to the history for future reference, which lasts for the entire kernel session or until you dismiss it. This TUI allows you to easily dismiss and manage notifications, which is easier than using the command-line utility.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE" xml:space="preserve">
+    <value>Selecting folders</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC" xml:space="preserve">
+    <value>Using the folder group selector TUI to select folders</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY" xml:space="preserve">
+    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the folder group selection TUI, which allows you to select multiple folders as targets for the intended operation. If you&apos;re brought here, an application has requested you to select a group of folders in order for the operation to complete. You can use the SPACE key to add a folder to the list, then press ESC to confirm your selection.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE" xml:space="preserve">
+    <value>Selecting folders</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC" xml:space="preserve">
+    <value>Using the folder selector TUI to select a folder</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY" xml:space="preserve">
+    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the folder selection TUI, which allows you to select a folder as a target for the intended operation. If you&apos;re brought here, an application has requested you to select a folder in order for the operation to complete. You can use the SPACE key to select a folder, then press ESC to confirm your selection.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE" xml:space="preserve">
+    <value>Selecting files</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC" xml:space="preserve">
+    <value>Using the file group selector TUI to select files</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY" xml:space="preserve">
+    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the file group selection TUI, which allows you to select multiple files as targets for the intended operation. If you&apos;re brought here, an application has requested you to select a group of files in order for the operation to complete. You can use the SPACE key to add a file to the list, then press ESC to confirm your selection.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE" xml:space="preserve">
+    <value>Selecting files</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC" xml:space="preserve">
+    <value>Using the file selector TUI to select a file</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY" xml:space="preserve">
+    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the file selection TUI, which allows you to select a file as a target for the intended operation. If you&apos;re brought here, an application has requested you to select a file in order for the operation to complete. You can use the SPACE key to select a file, then press ESC to confirm your selection.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Single-pane file manager</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Using the file selector TUI to manage files with preview</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the single-pane file management TUI, which allows you to manage your files with the preview of the file in the right pane. This is useful if you want at-a-glance preview pane when you select files or folders.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Double-pane file manager</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Using the file selector TUI to manage files in two panes</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>A subset of file management TUIs are provided for easier management, which is faster and more convenient than using the command-line utilities to perform the same action. One of the TUIs provided is the double-pane file management TUI, which allows you to manage your files similar to that of Total Commander. It allows you to quickly perform file operations to either pane, without having to specify paths manually.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Managing alarms</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC" xml:space="preserve">
+    <value>Using the alarm manager TUI to manage alarms</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY" xml:space="preserve">
+    <value>Managing your alarms is easy with this interactive TUI. This user interface allows you to add and dismiss alarms. The alarms fire when they reach the timeout period, which causes a notification to show.</value>
+  </data>
 
 </root>
