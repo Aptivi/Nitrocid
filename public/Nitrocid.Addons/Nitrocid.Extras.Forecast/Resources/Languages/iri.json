@@ -254,6 +254,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "Eochair API OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Réamhaisnéis na haimsire"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "Faisnéis réamhaisnéise na haimsire ar fáil duit"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "Is grúpa faisnéise í réamhaisnéis na haimsire ina bhfuil sonraí aimsire, amhail teocht, réamhaisnéis (grianmhar, báistí, srl.), agus innéacs ultraivialait. Trí úsáid a bhaint as do nasc líonra, is féidir leat a fháil amach cén staid aimsire atá ann san am agus sa dáta reatha."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Foinsí a úsáidtear"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "Cad iad na foinsí a úsáidimid?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "Úsáidimid OpenWeatherMap le haghaidh sonraí réamhaisnéise na haimsire, ach tacaímid le The Weather Channel (weather.com) freisin le haghaidh na sonraí céanna má tá tú in ann íoc as an tseirbhís."
     }
   ]
 }

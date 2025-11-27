@@ -261,6 +261,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "OpenWeatherMap API 密钥"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "天气预报"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "天气预报信息尽在掌握"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "天气预报是一组包含天气数据的信息，例如温度、天气预报（晴天、雨天等）和紫外线指数。通过网络连接，您可以了解当前时间和日期的天气状况。"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "数据来源"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "我们使用哪些数据来源？"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "我们使用 OpenWeatherMap 获取天气预报数据，如果您愿意付费，我们也支持使用 The Weather Channel (weather.com) 提供的相同数据。"
     }
   ]
 }

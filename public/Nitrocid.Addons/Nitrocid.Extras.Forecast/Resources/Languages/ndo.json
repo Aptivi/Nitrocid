@@ -253,6 +253,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "Kunci API OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Prakiraan cuaca"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "Informasi prakiraan cuaca di ujung jari Anda"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "Prakiraan cuaca adalah kumpulan informasi yang berisi data cuaca, seperti suhu, prakiraan (cerah, hujan, dll.), dan indeks ultraviolet. Dengan menggunakan koneksi jaringan Anda, Anda dapat mengetahui kondisi cuaca pada waktu dan tanggal saat ini."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Sumber yang digunakan"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "Sumber apa saja yang kami gunakan?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "Kami menggunakan OpenWeatherMap untuk data prakiraan cuaca, tetapi kami juga mendukung The Weather Channel (weather.com) untuk data yang sama jika Anda dapat membayar layanan tersebut."
     }
   ]
 }

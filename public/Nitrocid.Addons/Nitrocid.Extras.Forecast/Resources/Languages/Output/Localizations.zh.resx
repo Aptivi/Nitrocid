@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>OpenWeatherMap API 金鑰</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>天氣預報</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>天氣預報資訊盡在掌握</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>天氣預報是一組包含天氣資料的訊息，例如溫度、天氣預報（晴天、雨天等）和紫外線指數。透過網路連接，您可以了解當前時間和日期的天氣狀況。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>數據來源</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>我們使用哪些資料來源？</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>我們使用 OpenWeatherMap 取得天氣預報數據，如果您願意付費，我們也支援使用 The Weather Channel (weather.com) 提供的相同數據。</value>
+  </data>
 
 </root>

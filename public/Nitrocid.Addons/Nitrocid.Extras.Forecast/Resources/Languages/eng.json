@@ -359,6 +359,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "OpenWeatherMap API key"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Weather forecast"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "Weather forecast information in your fingertips"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "The weather forecast is a group of information that contains weather data, such as temperature, forecast (sunny, rainy, etc.), and ultraviolet index. Using your network connection, you can find out what's the weather state in the current time and date."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Sources used"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "What are the sources that we use?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "We use OpenWeatherMap for the weather forecast data, but we also support The Weather Channel (weather.com) for the same data if you can pay for the service."
     }
   ]
 }

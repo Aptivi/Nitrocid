@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>Κλειδί API OpenWeatherMap</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Πρόγνωση καιρού</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Πληροφορίες πρόγνωσης καιρού στα χέρια σας</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Η πρόγνωση καιρού είναι μια ομάδα πληροφοριών που περιέχει δεδομένα καιρού, όπως θερμοκρασία, πρόγνωση (ηλιόλουστη, βροχερή, κ.λπ.) και δείκτη υπεριώδους ακτινοβολίας. Χρησιμοποιώντας τη σύνδεση δικτύου σας, μπορείτε να μάθετε ποια είναι η καιρική κατάσταση στην τρέχουσα ώρα και ημερομηνία.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Πηγές που χρησιμοποιούμε</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Ποιες είναι οι πηγές που χρησιμοποιούμε;</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Χρησιμοποιούμε το OpenWeatherMap για τα δεδομένα πρόγνωσης καιρού, αλλά υποστηρίζουμε επίσης το The Weather Channel (weather.com) για τα ίδια δεδομένα, εάν μπορείτε να πληρώσετε για την υπηρεσία.</value>
+  </data>
 
 </root>

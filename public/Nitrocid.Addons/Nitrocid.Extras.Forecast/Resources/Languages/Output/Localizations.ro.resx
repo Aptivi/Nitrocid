@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>Cheia API OpenWeatherMap</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Prognoza meteo</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Informații despre prognoza meteo la îndemână</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Prognoza meteo este un grup de informații care conține date meteo, cum ar fi temperatura, prognoza meteo (însorit, ploios etc.) și indicele ultraviolet. Folosind conexiunea la rețea, puteți afla care este starea vremii la ora și data curente.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Surse utilizate</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Care sunt sursele pe care le folosim?</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Folosim OpenWeatherMap pentru datele de prognoză meteo, dar oferim și servicii de asistență The Weather Channel (weather.com) pentru aceleași date, dacă puteți plăti pentru serviciu.</value>
+  </data>
 
 </root>

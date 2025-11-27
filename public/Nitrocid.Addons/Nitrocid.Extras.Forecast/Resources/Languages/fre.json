@@ -299,6 +299,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "Clé API OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Prévisions météo"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "L'information météo à portée de main"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "Les prévisions météo regroupent des données météorologiques telles que la température, les prévisions (ensoleillé, pluvieux, etc.) et l'indice UV. Grâce à votre connexion internet, vous pouvez consulter la météo actuelle."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Sources utilisées"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "Quelles sont nos sources ?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "Nous utilisons OpenWeatherMap pour les données de prévisions météo, et nous proposons également les mêmes données sur The Weather Channel (weather.com) moyennant un abonnement."
     }
   ]
 }

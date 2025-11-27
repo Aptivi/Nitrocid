@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>Chave API OpenWeatherMap</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Previsão do tempo</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Informação de previsão do tempo na ponta dos seus dedos</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>A previsão meteorológica é um conjunto de informações que contém dados meteorológicos, como a temperatura, a previsão (ensolarado, chuvoso, etc.) e o índice ultravioleta. Utilizando a sua ligação à internet, pode descobrir como está o tempo na data e hora atuais.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Fontes utilizadas</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Quais são as fontes que utilizamos?</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Utilizamos o OpenWeatherMap para os dados de previsão meteorológica, mas também suportamos o The Weather Channel (weather.com) para os mesmos dados, caso possa pagar o serviço.</value>
+  </data>
 
 </root>

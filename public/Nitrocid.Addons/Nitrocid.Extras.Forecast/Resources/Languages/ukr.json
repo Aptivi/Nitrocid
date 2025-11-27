@@ -253,6 +253,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "Ключ API OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Прогноз погоди"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "Інформація про прогноз погоди у вас під рукою"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "Прогноз погоди – це група інформації, яка містить дані про погоду, такі як температура, прогноз (сонячно, дощить тощо) та ультрафіолетовий індекс. Використовуючи мережеве підключення, ви можете дізнатися про стан погоди на поточну дату та час."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Використані джерела"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "Які джерела ми використовуємо?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "Ми використовуємо OpenWeatherMap для даних прогнозу погоди, але ми також підтримуємо The Weather Channel (weather.com) для отримання тих самих даних, якщо ви можете заплатити за послугу."
     }
   ]
 }

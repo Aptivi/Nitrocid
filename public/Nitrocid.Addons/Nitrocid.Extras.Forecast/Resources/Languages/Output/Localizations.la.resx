@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>OpenWeatherMap API key</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Praedictio meteorologica</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Informationes de praedictione meteorologica in promptu</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Praedictio meteorologica est collectio informationum quae continet notitias meteorologicas, ut temperaturam, praedictionem (solis, pluviosum, etc.), et indicem ultravioletum. Utente nexu tuo retiario, cognoscere potes qualis status meteorologicus sit tempore et die praesenti.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Fontes adhibiti</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Quibus fontibus utimur?</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>OpenWeatherMap utimur pro notitiis praedictionis meteorologicae, sed etiam The Weather Channel (weather.com) pro eisdem notitiis sustinemus si pro servitio solvere potes.</value>
+  </data>
 
 </root>

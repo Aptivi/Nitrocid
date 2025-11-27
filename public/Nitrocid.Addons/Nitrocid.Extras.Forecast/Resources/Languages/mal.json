@@ -256,6 +256,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "Kunci API OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Ramalan Cuaca"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "Maklumat ramalan cuaca di hujung jari anda"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "Ramalan cuaca ialah sekumpulan maklumat yang mengandungi data cuaca, seperti suhu, ramalan (cerah, hujan, dll.), dan indeks ultraungu. Menggunakan sambungan rangkaian anda, anda boleh mengetahui keadaan cuaca pada masa dan tarikh semasa."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Sumber yang digunakan"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "Apakah sumber yang kami gunakan?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "Kami menggunakan OpenWeatherMap untuk data ramalan cuaca, tetapi kami juga menyokong The Weather Channel (weather.com) untuk data yang sama jika anda boleh membayar untuk perkhidmatan tersebut."
     }
   ]
 }

@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>OpenWeatherMap API anahtarı</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Hava Durumu Tahmini</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Hava durumu bilgileri parmaklarınızın ucunda</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Hava durumu tahmini, sıcaklık, hava durumu tahmini (güneşli, yağmurlu vb.) ve ultraviyole indeksi gibi hava durumu verilerini içeren bir bilgi grubudur. Ağ bağlantınızı kullanarak, mevcut saat ve tarihteki hava durumunu öğrenebilirsiniz.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Kullanılan Kaynaklar</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Hangi kaynakları kullanıyoruz?</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Hava durumu tahmini verileri için OpenWeatherMap kullanıyoruz, ancak ücretli bir hizmet olması durumunda aynı veriler için The Weather Channel&apos;ı (weather.com) da destekliyoruz.</value>
+  </data>
 
 </root>
