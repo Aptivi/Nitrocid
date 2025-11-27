@@ -33,6 +33,21 @@ namespace Nitrocid.Extras.Notes.Interactive
     public class NoteViewerCli : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         /// <inheritdoc/>
+        public override InteractiveTuiHelpPage[] HelpPages =>
+        [
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_NOTES_TUI_HELP01_TITLE",
+                HelpDescription = /* Localizable */ "NKS_NOTES_TUI_HELP01_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_NOTES_TUI_HELP01_BODY") + "\n\n" +
+#pragma warning disable NLOC0001
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/extra-features/common-programs/notes",
+#pragma warning restore NLOC0001
+            }
+        ];
+
+        /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
             NoteManagement.ListNotes();
 

@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>Notă numărul</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Vizualizarea notelor</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Vizualizator interactiv de note</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Puteți vizualiza notele interactiv utilizând interfața interfață TUI pentru notițe. Trebuie doar să selectați o notă și să o vizualizați. De asemenea, puteți edita, șterge și adăuga note.</value>
+  </data>
 
 </root>

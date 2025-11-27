@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>노트 번호</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>메모 보기</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>대화형 메모 뷰어</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>노트 TUI를 사용하여 메모를 대화형으로 볼 수 있습니다. 메모를 선택하여 보기만 하면 됩니다. 메모를 편집, 삭제, 추가할 수도 있습니다.</value>
+  </data>
 
 </root>

@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>Notitie nummer</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Notities bekijken</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Interactieve notitieviewer</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Je kunt de notities interactief bekijken met de notitie-TUI. Selecteer een notitie en bekijk deze. Je kunt ook notities bewerken, verwijderen en toevoegen.</value>
+  </data>
 
 </root>

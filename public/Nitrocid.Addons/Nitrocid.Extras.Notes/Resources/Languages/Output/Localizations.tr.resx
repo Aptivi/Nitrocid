@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>Not numarası</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Notları görüntüleme</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Etkileşimli not görüntüleyici</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Notları TUI ile etkileşimli olarak görüntüleyebilirsiniz. Bir notu seçip görüntülemeniz yeterli. Ayrıca notları düzenleyebilir, silebilir ve ekleyebilirsiniz.</value>
+  </data>
 
 </root>

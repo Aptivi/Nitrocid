@@ -84,6 +84,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "Nombor nota"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "Melihat nota"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "Pemapar nota interaktif"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "Anda boleh melihat nota secara interaktif menggunakan nota TUI. Hanya pilih nota dan lihatnya. Anda juga boleh mengedit, memadam dan menambah nota."
     }
   ]
 }

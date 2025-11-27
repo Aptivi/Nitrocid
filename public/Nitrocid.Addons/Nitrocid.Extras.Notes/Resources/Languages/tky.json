@@ -82,6 +82,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "Not numarası"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "Notları görüntüleme"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "Etkileşimli not görüntüleyici"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "Notları TUI ile etkileşimli olarak görüntüleyebilirsiniz. Bir notu seçip görüntülemeniz yeterli. Ayrıca notları düzenleyebilir, silebilir ve ekleyebilirsiniz."
     }
   ]
 }

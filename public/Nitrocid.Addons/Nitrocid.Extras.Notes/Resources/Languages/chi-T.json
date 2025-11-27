@@ -89,6 +89,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "注释编号"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "查看笔记"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "交互式笔记查看器"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "您可以使用笔记交互式用户界面 (TUI) 以交互方式查看笔记。只需选择一条笔记即可查看。您还可以编辑、删除和添加笔记。"
     }
   ]
 }

@@ -81,6 +81,18 @@
     {
       "loc": "NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC",
       "text": "not sankhya"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_TITLE",
+      "text": "nots dekhana"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_DESC",
+      "text": "intaraiktiv nots vyooar"
+    },
+    {
+      "loc": "NKS_NOTES_TUI_HELP01_BODY",
+      "text": "aap nots tui ka istemaal karake nots ko intaraiktiv tareeke se dekh sakate hain. bas ek not chunen aur use dekhen. aap nots ko edit, dileet aur jod bhee sakate hain."
     }
   ]
 }

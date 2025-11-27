@@ -174,5 +174,14 @@
   <data name="NKS_NOTES_COMMAND_REMOVENOTE_ARGUMENT_NOTENUMBER_DESC" xml:space="preserve">
     <value>Номер примітки</value>
   </data>
+  <data name="NKS_NOTES_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Перегляд нотаток</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Інтерактивний переглядач нотаток</value>
+  </data>
+  <data name="NKS_NOTES_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Ви можете переглядати нотатки інтерактивно за допомогою інтерфейсу користувача нотаток. Просто виберіть нотатку та перегляньте її. Ви також можете редагувати, видаляти та додавати нотатки.</value>
+  </data>
 
 </root>
