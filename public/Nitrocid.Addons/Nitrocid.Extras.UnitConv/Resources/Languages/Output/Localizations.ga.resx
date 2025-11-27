@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>Aonad sprice</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>Comhshó aonad</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>Ag comhshó ó aonad go haonad</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>Is féidir leat comhshó go héasca ó aonad go haonad tríd an ngrúpa aonad (amhail mais nó brú) a roghnú, ansin an fhoinse agus an t-aonad sprice (amhail graim go cileagraim, nó ó mhilliméadair mearcair go heicteapaiscéil) sa dara painéal. Ina dhiaidh sin, brúigh F1 chun an próiseas comhshó a thionscnamh.</value>
+  </data>
 
 </root>

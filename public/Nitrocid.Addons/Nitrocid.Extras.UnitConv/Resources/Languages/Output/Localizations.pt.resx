@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>Unidade alvo</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>Conversão de unidades</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>Conversão de unidade para unidade</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>Pode converter facilmente de uma unidade para outra, seleccionando o grupo de unidades (como massa ou pressão), depois a unidade de origem e a unidade de destino (como gramas para quilogramas ou de milímetros de mercúrio para hectopascais) no segundo painel. Em seguida, prima F1 para iniciar o processo de conversão.</value>
+  </data>
 
 </root>

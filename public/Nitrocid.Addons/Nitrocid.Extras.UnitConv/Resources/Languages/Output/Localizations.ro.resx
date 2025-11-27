@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>Unitatea țintă</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>Conversia unităților</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>Conversia de la o unitate la alta</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>Puteți converti cu ușurință de la o unitate la alta selectând grupul de unități (cum ar fi masa sau presiunea), apoi unitatea sursă și cea țintă (cum ar fi grame la kilograme sau de la milimetri de mercur la hectopascali) în al doilea panou. Apoi, apăsați F1 pentru a iniția procesul de conversie.</value>
+  </data>
 
 </root>

@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>対象ユニット</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>単位変換</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>単位間の変換</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>単位グループ（質量や圧力など）を選択し、2番目のペインで変換元と変換先の単位（グラムからキログラム、ミリメートル水銀柱からヘクトパスカルなど）を選択することで、簡単に単位を変換できます。その後、F1キーを押して変換処理を開始します。</value>
+  </data>
 
 </root>

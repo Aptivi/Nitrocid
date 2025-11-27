@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>Doeleenheid</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>Eenheden omrekenen</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>Omrekenen van eenheid naar eenheid</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>U kunt eenvoudig van eenheid naar eenheid omrekenen door de eenhedengroep (zoals massa of druk) te selecteren en vervolgens de bron- en doeleenheid (zoals gram naar kilogram, of van millimeter kwik naar hectopascal) in het tweede venster. Druk vervolgens op F1 om het omrekenproces te starten.</value>
+  </data>
 
 </root>

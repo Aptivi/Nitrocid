@@ -74,6 +74,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "Hedef birim"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "Birim dönüştürme"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "Birimden birime dönüştürme"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "İkinci bölmede birim grubunu (kütle veya basınç gibi), ardından kaynak ve hedef birimi (gramdan kilograma veya milimetre cıvadan hektopaskala gibi) seçerek birimden birime kolayca dönüştürme yapabilirsiniz. Ardından, dönüştürme işlemini başlatmak için F1 tuşuna basın."
     }
   ]
 }

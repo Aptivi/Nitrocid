@@ -74,6 +74,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "Unitatea țintă"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "Conversia unităților"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "Conversia de la o unitate la alta"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "Puteți converti cu ușurință de la o unitate la alta selectând grupul de unități (cum ar fi masa sau presiunea), apoi unitatea sursă și cea țintă (cum ar fi grame la kilograme sau de la milimetri de mercur la hectopascali) în al doilea panou. Apoi, apăsați F1 pentru a iniția procesul de conversie."
     }
   ]
 }

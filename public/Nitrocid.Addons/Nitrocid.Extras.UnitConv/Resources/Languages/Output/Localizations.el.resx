@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>Μονάδα στόχου</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>Μετατροπή μονάδων</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>Μετατροπή από μονάδα σε μονάδα</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>Μπορείτε εύκολα να μετατρέψετε από μονάδα σε μονάδα επιλέγοντας την ομάδα μονάδων (όπως μάζα ή πίεση) και, στη συνέχεια, την πηγή και τη μονάδα-στόχο (όπως γραμμάρια σε κιλά ή από χιλιοστά υδραργύρου σε εκτοπασκάλ) στο δεύτερο παράθυρο. Στη συνέχεια, πατήστε F1 για να ξεκινήσετε τη διαδικασία μετατροπής.</value>
+  </data>
 
 </root>

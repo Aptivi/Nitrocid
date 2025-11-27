@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>lakshy ikaee</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>yoonit kanvarzan</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>ek yoonit se doosaree yoonit mein kanvart karana</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>aap doosare pen mein yoonit grup (jaise maas ya preshar), phir sors aur taaraget yoonit (jaise graam se kilograam, ya mileemeetar of marakaree se hektopaaskal) chunakar aasaanee se ek yoonit se doosaree yoonit mein kanvart kar sakate hain. isake baad, kanvarzan proses shuroo karane ke lie f1 dabaen.</value>
+  </data>
 
 </root>

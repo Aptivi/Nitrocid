@@ -168,5 +168,14 @@
   <data name="NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC" xml:space="preserve">
     <value>Målenhet</value>
   </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_TITLE" xml:space="preserve">
+    <value>Enhetskonvertering</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_DESC" xml:space="preserve">
+    <value>Konvertering fra enhet til enhet</value>
+  </data>
+  <data name="NKS_UNITCONV_CLI_HELP01_BODY" xml:space="preserve">
+    <value>Du kan enkelt konvertere fra enhet til enhet ved å velge enhetsgruppen (for eksempel masse eller trykk), deretter kilden og målenheten (for eksempel gram til kilogram, eller fra millimeter kvikksølv til hektopascal) i den andre ruten. Trykk deretter på F1 for å starte konverteringsprosessen.</value>
+  </data>
 
 </root>

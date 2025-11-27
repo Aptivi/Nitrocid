@@ -119,6 +119,18 @@
     {
       "loc": "NKS_UNITCONV_COMMAND_UNITCONV_ARGUMENT_TARGETUNIT_DESC",
       "text": "Unité cible"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_TITLE",
+      "text": "Conversion d'unités"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_DESC",
+      "text": "Conversion d'unités"
+    },
+    {
+      "loc": "NKS_UNITCONV_CLI_HELP01_BODY",
+      "text": "Pour convertir facilement une unité en une autre, sélectionnez le groupe d'unités (par exemple, masse ou pression), puis l'unité source et l'unité cible (par exemple, grammes en kilogrammes ou millimètres de mercure en hectopascals) dans le deuxième volet. Appuyez ensuite sur F1 pour lancer la conversion."
     }
   ]
 }
