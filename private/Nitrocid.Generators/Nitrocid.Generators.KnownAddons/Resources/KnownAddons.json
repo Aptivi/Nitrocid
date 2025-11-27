@@ -100,11 +100,6 @@
         "project": "Extras.JsonShell"
     },
     {
-        "name": "ExtrasLanguageStudio",
-        "display": "NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO",
-        "project": "Extras.LanguageStudio"
-    },
-    {
         "name": "ExtrasMailShell",
         "display": "NKS_KNOWNADDONS_EXTRAS_MAIL",
         "project": "Extras.MailShell"
