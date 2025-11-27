@@ -253,6 +253,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "OpenWeatherMap API कुंजी"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "मौसम का अनुमान"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "मौसम के अनुमान की जानकारी आपकी उंगलियों पर"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "मौसम का अनुमान जानकारी का एक ग्रुप है जिसमें मौसम का डेटा होता है, जैसे तापमान, अनुमान (धूप, बारिश, वगैरह), और अल्ट्रावॉयलेट इंडेक्स। अपने नेटवर्क कनेक्शन का इस्तेमाल करके, आप पता लगा सकते हैं कि अभी के समय और तारीख में मौसम कैसा है।"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "इस्तेमाल किए गए सोर्स"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "हम कौन से सोर्स इस्तेमाल करते हैं?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "हम मौसम के अनुमान के डेटा के लिए OpenWeatherMap का इस्तेमाल करते हैं, लेकिन अगर आप सर्विस के लिए पैसे दे सकते हैं तो हम उसी डेटा के लिए The Weather Channel (weather.com) को भी सपोर्ट करते हैं।"
     }
   ]
 }

@@ -252,6 +252,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "Chave da API OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Previsão do tempo"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "Informações de previsão do tempo na ponta dos seus dedos"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "A previsão do tempo é um conjunto de informações que contém dados meteorológicos, como temperatura, previsão (ensolarado, chuvoso, etc.) e índice ultravioleta. Usando sua conexão de internet, você pode descobrir como está o tempo na data e hora atuais."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Fontes utilizadas"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "Quais são as fontes que utilizamos?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "Utilizamos o OpenWeatherMap para os dados de previsão do tempo, mas também oferecemos suporte ao The Weather Channel (weather.com) para os mesmos dados, caso você possa pagar pelo serviço."
     }
   ]
 }

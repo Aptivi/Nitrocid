@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>Khóa API OpenWeatherMap</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Dự báo thời tiết</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Thông tin dự báo thời tiết trong tầm tay bạn</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Dự báo thời tiết là một nhóm thông tin chứa dữ liệu thời tiết, chẳng hạn như nhiệt độ, dự báo (nắng, mưa, v.v.) và chỉ số tia cực tím. Sử dụng kết nối mạng, bạn có thể tìm hiểu tình hình thời tiết tại thời điểm và ngày hiện tại.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Nguồn được sử dụng</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Chúng tôi sử dụng những nguồn nào?</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Chúng tôi sử dụng OpenWeatherMap cho dữ liệu dự báo thời tiết, nhưng chúng tôi cũng hỗ trợ The Weather Channel (weather.com) cho cùng dữ liệu này nếu bạn có thể trả phí cho dịch vụ.</value>
+  </data>
 
 </root>

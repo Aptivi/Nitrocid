@@ -256,6 +256,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "Chiave API OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Previsioni meteo"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "Informazioni sulle previsioni meteo a portata di mano"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "Le previsioni meteo sono un insieme di informazioni che contengono dati meteorologici, come temperatura, previsioni (soleggiato, piovoso, ecc.) e indice ultravioletto. Utilizzando la tua connessione di rete, puoi scoprire le condizioni meteorologiche nell'ora e nella data correnti."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Fonti utilizzate"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "Quali sono le fonti che utilizziamo?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "Utilizziamo OpenWeatherMap per i dati delle previsioni meteo, ma supportiamo anche The Weather Channel (weather.com) per gli stessi dati se puoi pagare per il servizio."
     }
   ]
 }

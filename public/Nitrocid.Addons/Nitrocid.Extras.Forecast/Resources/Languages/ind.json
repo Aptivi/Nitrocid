@@ -253,6 +253,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "opainwaiathairmap api kunjee"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "mausam ka anumaan"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "mausam ke anumaan kee jaanakaaree aapakee ungaliyon par"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "mausam ka anumaan jaanakaaree ka ek grup hai jisamen mausam ka deta hota hai, jaise taapamaan, anumaan (dhoop, baarish, vagairah), aur altraavoyalet indeks. apane netavark kanekshan ka istemaal karake, aap pata laga sakate hain ki abhee ke samay aur taareekh mein mausam kaisa hai."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "istemaal kie gae sors"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "ham kaun se sors istemaal karate hain?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "ham mausam ke anumaan ke deta ke lie OpenWeatherMap ka istemaal karate hain, lekin agar aap sarvis ke lie paise de sakate hain to ham usee deta ke lie The Weather Channel (weather.com) ko bhee saport karate hain."
     }
   ]
 }

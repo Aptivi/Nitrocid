@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>مفتاح API لـ OpenWeatherMap</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>توقعات الطقس</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>معلومات توقعات الطقس في متناول يديك</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>توقعات الطقس هي مجموعة من المعلومات التي تحتوي على بيانات الطقس، مثل درجة الحرارة، والتوقعات (مشمس، ممطر، إلخ)، ومؤشر الأشعة فوق البنفسجية. باستخدام اتصالك بالشبكة، يمكنك معرفة حالة الطقس في الوقت والتاريخ الحاليين.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>المصادر المستخدمة</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>ما هي المصادر التي نستخدمها؟</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>نستخدم OpenWeatherMap للحصول على بيانات توقعات الطقس، وندعم أيضًا The Weather Channel (weather.com) للحصول على البيانات نفسها إذا كنت تستطيع الدفع مقابل الخدمة.</value>
+  </data>
 
 </root>

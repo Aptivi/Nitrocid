@@ -254,6 +254,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "Κλειδί API OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Πρόγνωση καιρού"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "Πληροφορίες πρόγνωσης καιρού στα χέρια σας"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "Η πρόγνωση καιρού είναι μια ομάδα πληροφοριών που περιέχει δεδομένα καιρού, όπως θερμοκρασία, πρόγνωση (ηλιόλουστη, βροχερή, κ.λπ.) και δείκτη υπεριώδους ακτινοβολίας. Χρησιμοποιώντας τη σύνδεση δικτύου σας, μπορείτε να μάθετε ποια είναι η καιρική κατάσταση στην τρέχουσα ώρα και ημερομηνία."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Πηγές που χρησιμοποιούμε"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "Ποιες είναι οι πηγές που χρησιμοποιούμε;"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "Χρησιμοποιούμε το OpenWeatherMap για τα δεδομένα πρόγνωσης καιρού, αλλά υποστηρίζουμε επίσης το The Weather Channel (weather.com) για τα ίδια δεδομένα, εάν μπορείτε να πληρώσετε για την υπηρεσία."
     }
   ]
 }

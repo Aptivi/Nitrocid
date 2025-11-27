@@ -259,6 +259,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "OpenWeatherMap API-sleutel"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Weersverwachting"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "Weersverwachtingsinformatie binnen handbereik"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "De weersvoorspelling is een verzameling informatie die weergegevens bevat, zoals temperatuur, voorspelling (zonnig, regenachtig, enz.) en ultraviolette index. Via uw netwerkverbinding kunt u de weersomstandigheden op de huidige tijd en datum bekijken."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Gebruikte bronnen"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "Welke bronnen gebruiken we?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "We gebruiken OpenWeatherMap voor de weersvoorspelling, maar we ondersteunen ook The Weather Channel (weather.com) voor dezelfde gegevens, mits u hiervoor kunt betalen."
     }
   ]
 }

@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>Clé API OpenWeatherMap</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Prévisions météo</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>L&apos;information météo à portée de main</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Les prévisions météo regroupent des données météorologiques telles que la température, les prévisions (ensoleillé, pluvieux, etc.) et l&apos;indice UV. Grâce à votre connexion internet, vous pouvez consulter la météo actuelle.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Sources utilisées</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Quelles sont nos sources ?</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Nous utilisons OpenWeatherMap pour les données de prévisions météo, et nous proposons également les mêmes données sur The Weather Channel (weather.com) moyennant un abonnement.</value>
+  </data>
 
 </root>

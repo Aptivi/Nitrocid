@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>OpenWeatherMap APIキー</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>天気予報</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>指先で天気予報情報を確認</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>天気予報は、気温、予報（晴れ、雨など）、紫外線指数などの気象データを含む情報です。ネットワーク接続を使用して、現在の日時の天気を確認できます。</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>使用情報源</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>どのような情報源を使用していますか？</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>天気予報データはOpenWeatherMapを使用していますが、有料サービスの場合はThe Weather Channel（weather.com）から同じデータも提供しています。</value>
+  </data>
 
 </root>

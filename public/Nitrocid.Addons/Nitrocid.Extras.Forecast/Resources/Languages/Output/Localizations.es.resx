@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>Clave API de OpenWeatherMap</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Pronóstico del tiempo</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Información del pronóstico del tiempo al alcance de tu mano</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>El pronóstico del tiempo es un conjunto de datos meteorológicos, como la temperatura, el pronóstico (soleado, lluvioso, etc.) y el índice ultravioleta. Con tu conexión de red, puedes saber qué tiempo hace en la fecha y hora actuales.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Fuentes utilizadas</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>¿Qué fuentes utilizamos?</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Utilizamos OpenWeatherMap para los datos del pronóstico del tiempo, pero también ofrecemos soporte a The Weather Channel (weather.com) para obtener los mismos datos si puedes pagar por el servicio.</value>
+  </data>
 
 </root>

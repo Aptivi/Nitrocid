@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>OpenWeatherMap API कुंजी</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>मौसम का अनुमान</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>मौसम के अनुमान की जानकारी आपकी उंगलियों पर</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>मौसम का अनुमान जानकारी का एक ग्रुप है जिसमें मौसम का डेटा होता है, जैसे तापमान, अनुमान (धूप, बारिश, वगैरह), और अल्ट्रावॉयलेट इंडेक्स। अपने नेटवर्क कनेक्शन का इस्तेमाल करके, आप पता लगा सकते हैं कि अभी के समय और तारीख में मौसम कैसा है।</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>इस्तेमाल किए गए सोर्स</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>हम कौन से सोर्स इस्तेमाल करते हैं?</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>हम मौसम के अनुमान के डेटा के लिए OpenWeatherMap का इस्तेमाल करते हैं, लेकिन अगर आप सर्विस के लिए पैसे दे सकते हैं तो हम उसी डेटा के लिए The Weather Channel (weather.com) को भी सपोर्ट करते हैं।</value>
+  </data>
 
 </root>

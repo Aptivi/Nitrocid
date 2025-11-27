@@ -253,6 +253,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "OpenWeatherMap API key"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Praedictio meteorologica"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "Informationes de praedictione meteorologica in promptu"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "Praedictio meteorologica est collectio informationum quae continet notitias meteorologicas, ut temperaturam, praedictionem (solis, pluviosum, etc.), et indicem ultravioletum. Utente nexu tuo retiario, cognoscere potes qualis status meteorologicus sit tempore et die praesenti."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Fontes adhibiti"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "Quibus fontibus utimur?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "OpenWeatherMap utimur pro notitiis praedictionis meteorologicae, sed etiam The Weather Channel (weather.com) pro eisdem notitiis sustinemus si pro servitio solvere potes."
     }
   ]
 }

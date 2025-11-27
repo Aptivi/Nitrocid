@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>Kunci API OpenWeatherMap</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Prakiraan cuaca</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Informasi prakiraan cuaca di ujung jari Anda</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Prakiraan cuaca adalah kumpulan informasi yang berisi data cuaca, seperti suhu, prakiraan (cerah, hujan, dll.), dan indeks ultraviolet. Dengan menggunakan koneksi jaringan Anda, Anda dapat mengetahui kondisi cuaca pada waktu dan tanggal saat ini.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Sumber yang digunakan</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Sumber apa saja yang kami gunakan?</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Kami menggunakan OpenWeatherMap untuk data prakiraan cuaca, tetapi kami juga mendukung The Weather Channel (weather.com) untuk data yang sama jika Anda dapat membayar layanan tersebut.</value>
+  </data>
 
 </root>

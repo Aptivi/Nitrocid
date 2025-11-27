@@ -279,6 +279,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "مفتاح API لـ OpenWeatherMap"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "توقعات الطقس"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "معلومات توقعات الطقس في متناول يديك"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "توقعات الطقس هي مجموعة من المعلومات التي تحتوي على بيانات الطقس، مثل درجة الحرارة، والتوقعات (مشمس، ممطر، إلخ)، ومؤشر الأشعة فوق البنفسجية. باستخدام اتصالك بالشبكة، يمكنك معرفة حالة الطقس في الوقت والتاريخ الحاليين."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "المصادر المستخدمة"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "ما هي المصادر التي نستخدمها؟"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "نستخدم OpenWeatherMap للحصول على بيانات توقعات الطقس، وندعم أيضًا The Weather Channel (weather.com) للحصول على البيانات نفسها إذا كنت تستطيع الدفع مقابل الخدمة."
     }
   ]
 }

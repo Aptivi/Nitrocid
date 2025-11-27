@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>Kunci API OpenWeatherMap</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Ramalan Cuaca</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Maklumat ramalan cuaca di hujung jari anda</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Ramalan cuaca ialah sekumpulan maklumat yang mengandungi data cuaca, seperti suhu, ramalan (cerah, hujan, dll.), dan indeks ultraungu. Menggunakan sambungan rangkaian anda, anda boleh mengetahui keadaan cuaca pada masa dan tarikh semasa.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Sumber yang digunakan</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Apakah sumber yang kami gunakan?</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Kami menggunakan OpenWeatherMap untuk data ramalan cuaca, tetapi kami juga menyokong The Weather Channel (weather.com) untuk data yang sama jika anda boleh membayar untuk perkhidmatan tersebut.</value>
+  </data>
 
 </root>

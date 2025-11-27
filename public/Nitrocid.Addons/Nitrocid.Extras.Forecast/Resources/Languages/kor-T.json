@@ -254,6 +254,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "OpenWeatherMap API 키"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "날씨 예보"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "손안의 날씨 예보 정보"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "날씨 예보는 기온, 예보(맑음, 비 등), 자외선 지수 등의 날씨 데이터를 포함하는 정보입니다. 네트워크 연결을 통해 현재 시간과 날짜의 날씨 상태를 확인할 수 있습니다."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "사용 출처"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "저희는 어떤 출처를 사용하나요?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "저희는 날씨 예보 데이터로 OpenWeatherMap을 사용하지만, 유료 서비스인 The Weather Channel(weather.com)에서도 동일한 데이터를 제공합니다."
     }
   ]
 }

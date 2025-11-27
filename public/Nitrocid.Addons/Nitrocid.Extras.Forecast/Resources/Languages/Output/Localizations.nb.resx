@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>OpenWeatherMap API-nøkkel</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Værmelding</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Værmeldingsinformasjon lett tilgjengelig</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Værmeldingen er en gruppe informasjon som inneholder værdata, for eksempel temperatur, værmelding (sol, regn osv.) og ultrafiolett indeks. Ved å bruke nettverkstilkoblingen din kan du finne ut hva værtilstanden er for gjeldende tid og dato.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Kilder brukt</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Hvilke kilder bruker vi?</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Vi bruker OpenWeatherMap for værmeldingsdata, men vi støtter også The Weather Channel (weather.com) for de samme dataene hvis du kan betale for tjenesten.</value>
+  </data>
 
 </root>

@@ -303,5 +303,23 @@
   <data name="NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC" xml:space="preserve">
     <value>opainwaiathairmap api kunjee</value>
   </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>mausam ka anumaan</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_DESC" xml:space="preserve">
+    <value>mausam ke anumaan kee jaanakaaree aapakee ungaliyon par</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP01_BODY" xml:space="preserve">
+    <value>mausam ka anumaan jaanakaaree ka ek grup hai jisamen mausam ka deta hota hai, jaise taapamaan, anumaan (dhoop, baarish, vagairah), aur altraavoyalet indeks. apane netavark kanekshan ka istemaal karake, aap pata laga sakate hain ki abhee ke samay aur taareekh mein mausam kaisa hai.</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>istemaal kie gae sors</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_DESC" xml:space="preserve">
+    <value>ham kaun se sors istemaal karate hain?</value>
+  </data>
+  <data name="NKS_FORECAST_WEATHER_TUI_HELP02_BODY" xml:space="preserve">
+    <value>ham mausam ke anumaan ke deta ke lie OpenWeatherMap ka istemaal karate hain, lekin agar aap sarvis ke lie paise de sakate hain to ham usee deta ke lie The Weather Channel (weather.com) ko bhee saport karate hain.</value>
+  </data>
 
 </root>

@@ -257,6 +257,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "OpenWeatherMap API-nøkkel"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Værmelding"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "Værmeldingsinformasjon lett tilgjengelig"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "Værmeldingen er en gruppe informasjon som inneholder værdata, for eksempel temperatur, værmelding (sol, regn osv.) og ultrafiolett indeks. Ved å bruke nettverkstilkoblingen din kan du finne ut hva værtilstanden er for gjeldende tid og dato."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Kilder brukt"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "Hvilke kilder bruker vi?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "Vi bruker OpenWeatherMap for værmeldingsdata, men vi støtter også The Weather Channel (weather.com) for de samme dataene hvis du kan betale for tjenesten."
     }
   ]
 }

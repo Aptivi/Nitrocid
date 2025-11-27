@@ -262,6 +262,30 @@
     {
       "loc": "NKS_FORECAST_COMMAND_WEATHEROLD_ARGUMENT_APIKEY_DESC",
       "text": "OpenWeatherMap API-Schlüssel"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_TITLE",
+      "text": "Wettervorhersage"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_DESC",
+      "text": "Wettervorhersage-Informationen immer griffbereit"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP01_BODY",
+      "text": "Die Wettervorhersage umfasst Wetterdaten wie Temperatur, Vorhersage (sonnig, regnerisch usw.) und UV-Index. Über Ihre Internetverbindung können Sie den aktuellen Wetterstatus abrufen."
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+      "text": "Verwendete Quellen"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+      "text": "Welche Quellen nutzen wir?"
+    },
+    {
+      "loc": "NKS_FORECAST_WEATHER_TUI_HELP02_BODY",
+      "text": "Wir verwenden OpenWeatherMap für die Wettervorhersagedaten. Alternativ bieten wir Ihnen gegen Gebühr auch The Weather Channel (weather.com) für dieselben Daten an."
     }
   ]
 }
