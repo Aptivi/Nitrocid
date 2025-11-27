@@ -207,5 +207,14 @@
   <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
     <value>Themanaam om te maken</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Thema&apos;s maken</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Maak eenvoudig je thema&apos;s</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Je kunt deze interactieve TUI gebruiken om gemakkelijker dan ooit thema&apos;s te maken. Met de geavanceerde kleurenkiezer van Terminaux kun je je eigen verbluffende thema&apos;s voor je kernel maken en deze personaliseren met je eigen kleurkeuze.</value>
+  </data>
 
 </root>

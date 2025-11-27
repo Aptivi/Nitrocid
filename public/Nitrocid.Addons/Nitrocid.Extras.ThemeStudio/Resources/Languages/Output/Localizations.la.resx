@@ -207,5 +207,14 @@
   <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
     <value>Theme nomen creare</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Themata creando</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Themata tua facile crea</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Hoc TUI interactivo uti potes ad themata facilius quam antea creanda. Cum selectore colorum provecto a Terminaux impulsato, themata tua propria et pulchra pro nucleo tuo creare potes ut ea cum electione coloris tui personalizes.</value>
+  </data>
 
 </root>

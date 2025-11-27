@@ -207,5 +207,14 @@
   <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
     <value>Theme name to create</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Making themes</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Easily create your themes</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>You can use this interactive TUI to create themes easier than before. With the advanced colour picker powered by Terminaux, you can make your custom stunning themes for your kernel to personalise it with your colour choice.</value>
+  </data>
 
 </root>

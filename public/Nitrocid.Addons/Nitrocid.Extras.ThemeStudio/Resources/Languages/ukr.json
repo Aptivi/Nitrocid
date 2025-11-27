@@ -125,6 +125,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "Назва теми для створення"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "Створення тем"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "Легко створюйте власні теми"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "Ви можете використовувати цей інтерактивний TUI для створення тем легше, ніж раніше. За допомогою розширеного засобу вибору кольорів на базі Terminaux ви можете створювати власні приголомшливі теми для свого ядра, щоб персоналізувати його за допомогою обраного кольору."
     }
   ]
 }

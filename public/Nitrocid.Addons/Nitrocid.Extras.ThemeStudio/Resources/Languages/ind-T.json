@@ -125,6 +125,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "बनाने के लिए थीम का नाम"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "थीम बनाना"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "आसानी से अपनी थीम बनाएं"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "आप इस इंटरैक्टिव TUI का इस्तेमाल करके पहले से ज़्यादा आसानी से थीम बना सकते हैं। Terminaux के एडवांस्ड कलर पिकर से, आप अपने कर्नेल के लिए अपनी पसंद के कलर के हिसाब से अपनी पसंद की कस्टम शानदार थीम बना सकते हैं।"
     }
   ]
 }

@@ -151,6 +151,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "اسم الموضوع المراد إنشاؤه"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "إنشاء السمات"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "أنشئ سماتك بسهولة"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "يمكنك استخدام واجهة المستخدم التفاعلية هذه لإنشاء السمات بسهولة أكبر من ذي قبل. باستخدام أداة اختيار الألوان المتقدمة من Terminaux، يمكنك إنشاء سماتك الخاصة والرائعة لنواة نظامك، وإضفاء طابعك الشخصي عليها باختيارك للألوان."
     }
   ]
 }

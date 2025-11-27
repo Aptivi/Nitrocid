@@ -207,5 +207,14 @@
   <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
     <value>Nom du thème à créer</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Création de thèmes</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Créez facilement vos thèmes</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Grâce à cette interface utilisateur interactive, créez des thèmes plus facilement que jamais. Avec le sélecteur de couleurs avancé de Terminaux, créez des thèmes personnalisés et époustouflants pour votre noyau et personnalisez-le selon vos envies.</value>
+  </data>
 
 </root>

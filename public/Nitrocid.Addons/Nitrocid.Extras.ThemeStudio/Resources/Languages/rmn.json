@@ -126,6 +126,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "Numele temei de creat"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "Crearea temelor"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "Creează-ți temele cu ușurință"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "Poți folosi această interfață interactivă pentru a crea teme mai ușor ca înainte. Cu selectorul de culori avansat oferit de Terminaux, poți crea teme personalizate uimitoare pentru kernelul tău, personalizându-l cu culoarea dorită."
     }
   ]
 }

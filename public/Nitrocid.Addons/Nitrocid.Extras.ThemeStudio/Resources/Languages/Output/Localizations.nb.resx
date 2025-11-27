@@ -207,5 +207,14 @@
   <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
     <value>Temanavn å lage</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Lage temaer</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Lag temaene dine enkelt</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Du kan bruke denne interaktive brukergrensesnittet til å lage temaer enklere enn før. Med den avanserte fargevelgeren drevet av Terminaux kan du lage dine egne, flotte temaer for kjernen din for å tilpasse den med fargevalget ditt.</value>
+  </data>
 
 </root>

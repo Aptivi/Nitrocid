@@ -207,5 +207,14 @@
   <data name="NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC" xml:space="preserve">
     <value>اسم الموضوع المراد إنشاؤه</value>
   </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>إنشاء السمات</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>أنشئ سماتك بسهولة</value>
+  </data>
+  <data name="NKS_THEMESTUDIO_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>يمكنك استخدام واجهة المستخدم التفاعلية هذه لإنشاء السمات بسهولة أكبر من ذي قبل. باستخدام أداة اختيار الألوان المتقدمة من Terminaux، يمكنك إنشاء سماتك الخاصة والرائعة لنواة نظامك، وإضفاء طابعك الشخصي عليها باختيارك للألوان.</value>
+  </data>
 
 </root>

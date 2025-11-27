@@ -126,6 +126,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "Ainm téama le cruthú"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "Téamaí a chruthú"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "Cruthaigh do théamaí féin go héasca"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "Is féidir leat an TUI idirghníomhach seo a úsáid chun téamaí a chruthú níos éasca ná riamh. Leis an roghnóir dathanna chun cinn atá faoi thiomáint ag Terminaux, is féidir leat do théamaí saincheaptha iontacha a chruthú do do chroílár chun é a phearsantú le do rogha datha."
     }
   ]
 }

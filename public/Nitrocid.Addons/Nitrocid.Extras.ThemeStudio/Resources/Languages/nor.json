@@ -129,6 +129,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "Temanavn å lage"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "Lage temaer"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "Lag temaene dine enkelt"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "Du kan bruke denne interaktive brukergrensesnittet til å lage temaer enklere enn før. Med den avanserte fargevelgeren drevet av Terminaux kan du lage dine egne, flotte temaer for kjernen din for å tilpasse den med fargevalget ditt."
     }
   ]
 }

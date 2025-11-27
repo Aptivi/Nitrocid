@@ -126,6 +126,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "Oluşturulacak tema adı"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "Tema Oluşturma"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "Temalarınızı Kolayca Oluşturun"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "Bu etkileşimli TUI'yi kullanarak temaları her zamankinden daha kolay oluşturabilirsiniz. Terminaux tarafından desteklenen gelişmiş renk seçiciyle, çekirdeğiniz için özel ve göz alıcı temalar oluşturabilir ve renk seçiminizle kişiselleştirebilirsiniz."
     }
   ]
 }

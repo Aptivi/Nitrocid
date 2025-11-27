@@ -134,6 +134,18 @@
     {
       "loc": "NKS_THEMESTUDIO_COMMAND_MKTHEME_ARGUMENT_THEMENAME_DESC",
       "text": "Zu erstellender Themenname"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_TITLE",
+      "text": "Designs erstellen"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_DESC",
+      "text": "Designs ganz einfach erstellen"
+    },
+    {
+      "loc": "NKS_THEMESTUDIO_APP_TUI_HELP01_BODY",
+      "text": "Mit dieser interaktiven Benutzeroberfläche erstellen Sie Designs so einfach wie nie zuvor. Dank der fortschrittlichen Farbauswahl von Terminaux gestalten Sie im Handumdrehen individuelle, beeindruckende Designs für Ihren Kernel und personalisieren ihn mit Ihren Wunschfarben."
     }
   ]
 }
