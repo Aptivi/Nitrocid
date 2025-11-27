@@ -392,6 +392,30 @@
     {
       "loc": "NKS_MODS_SETTINGS_DESC",
       "text": "Questa sezione consente di configurare il funzionamento del sistema di modifica del kernel."
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_TITLE",
+      "text": "Gestione delle mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_DESC",
+      "text": "Interfaccia utente interattiva per la gestione delle mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_BODY",
+      "text": "È possibile gestire facilmente le mod del kernel installate utilizzando questa interfaccia utente interattiva. È possibile visualizzare quali mod sono in esecuzione sul kernel, nonché avviarle e arrestarle."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_TITLE",
+      "text": "Visualizzazione delle pagine di manuale"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_DESC",
+      "text": "Interfaccia utente interattiva per la visualizzazione delle pagine di manuale"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_BODY",
+      "text": "Le pagine di manuale potrebbero essere incluse con le mod, nel caso in cui forniscano ulteriore supporto, il tutto in un unico posto. È possibile utilizzare questa interfaccia utente interattiva per visualizzare le pagine di manuale in modo più interattivo."
     }
   ]
 }

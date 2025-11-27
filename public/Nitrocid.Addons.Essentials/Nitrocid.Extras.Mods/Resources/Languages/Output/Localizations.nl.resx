@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>In deze sectie kunt u configureren hoe het kernelmodificatiesysteem werkt.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Mods beheren</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Interactieve TUI voor modbeheer</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Je kunt je geïnstalleerde kernelmods eenvoudig beheren met deze interactieve TUI. Je kunt zien welke mods er op je kernel draaien en mods starten en stoppen.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Handleidingen bekijken</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>Interactieve TUI voor het bekijken van handleidingen</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>Handleidingen kunnen bij je mods worden geleverd, voor extra hulp, allemaal op één plek. Je kunt deze interactieve TUI gebruiken om de handleidingen interactiever te bekijken.</value>
+  </data>
 
 </root>

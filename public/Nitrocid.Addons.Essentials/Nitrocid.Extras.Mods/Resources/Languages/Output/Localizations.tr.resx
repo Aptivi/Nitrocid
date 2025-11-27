@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>Bu bölüm çekirdek değişiklik sisteminin nasıl çalışacağını yapılandırmanızı sağlar.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Modları Yönetme</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Mod Yönetimi için Etkileşimli TUI</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Bu etkileşimli TUI&apos;yi kullanarak yüklü çekirdek modlarınızı kolayca yönetebilirsiniz. Çekirdeğinizde hangi modların çalıştığını görebilir, modları başlatıp durdurabilirsiniz.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Kılavuz Sayfalarını Görüntüleme</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>Kılavuz Sayfa Görüntüleyicisi için Etkileşimli TUI</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>Kılavuz sayfaları, ek yardım sağlamaları durumunda modlarınızla birlikte tek bir yerde gelebilir. Kılavuz sayfalarını daha etkileşimli bir şekilde görüntülemek için bu etkileşimli TUI&apos;yi kullanabilirsiniz.</value>
+  </data>
 
 </root>

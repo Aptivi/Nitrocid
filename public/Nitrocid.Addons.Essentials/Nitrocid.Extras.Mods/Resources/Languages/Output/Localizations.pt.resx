@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>Esta secção permite configurar o funcionamento do sistema de modificação do kernel.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Gerir mods</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Interface de utilizador interativa para gestão de mods</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Pode gerir facilmente os mods do kernel instalados utilizando esta interface de utilizador interativa. Pode ver quais os mods que estão a ser executados no seu kernel, bem como iniciar e parar mods.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Visualização de páginas de manual</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>Interface de utilizador interativo para visualização de páginas de manual</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>As páginas de manual podem vir incluídas com os seus mods, caso forneçam ajuda adicional, tudo num só local. Pode utilizar esta interface de utilizador interativa para visualizar as páginas de manual de forma mais interativa.</value>
+  </data>
 
 </root>

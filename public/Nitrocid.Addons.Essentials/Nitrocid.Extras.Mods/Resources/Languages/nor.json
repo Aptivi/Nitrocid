@@ -393,6 +393,30 @@
     {
       "loc": "NKS_MODS_SETTINGS_DESC",
       "text": "Denne delen lar deg konfigurere hvordan kjernemodifikasjonssystemet fungerer."
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_TITLE",
+      "text": "Administrere mods"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_DESC",
+      "text": "Interaktivt TUI for mod-administrasjon"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_BODY",
+      "text": "Du kan enkelt administrere dine installerte kjernemods ved å bruke dette interaktive TUI-et. Du kan se hvilke mods som kjører på kjernen din, samt starte og stoppe mods."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_TITLE",
+      "text": "Vise manualsider"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_DESC",
+      "text": "Interaktivt TUI for manualsidevisning"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_BODY",
+      "text": "Manualsider kan komme sammen med modsene dine, i tilfelle de gir deg ytterligere hjelp, alt på ett sted. Du kan bruke dette interaktive TUI-et for å se manualsidene mer interaktivt."
     }
   ]
 }

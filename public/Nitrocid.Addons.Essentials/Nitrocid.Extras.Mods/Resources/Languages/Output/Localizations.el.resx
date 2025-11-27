@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>Αυτή η ενότητα σάς επιτρέπει να διαμορφώσετε τον τρόπο λειτουργίας του συστήματος τροποποίησης πυρήνα.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Διαχείριση mods</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Διαδραστικό TUI για διαχείριση mods</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Μπορείτε εύκολα να διαχειριστείτε τα εγκατεστημένα mods του πυρήνα σας χρησιμοποιώντας αυτό το διαδραστικό TUI. Μπορείτε να δείτε ποια mods εκτελούνται στον πυρήνα σας, καθώς και να ξεκινήσετε και να σταματήσετε mods.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Προβολή σελίδων εγχειριδίου</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>Διαδραστικό TUI για προβολή σελίδας χειροκίνητου</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>Οι σελίδες εγχειριδίου ενδέχεται να συνοδεύουν τα mods σας, σε περίπτωση που σας παρέχουν επιπλέον βοήθεια, όλα σε ένα μέρος. Μπορείτε να χρησιμοποιήσετε αυτό το διαδραστικό TUI για να δείτε τις σελίδες εγχειριδίου πιο διαδραστικά.</value>
+  </data>
 
 </root>

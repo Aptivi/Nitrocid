@@ -395,6 +395,30 @@
     {
       "loc": "NKS_MODS_SETTINGS_DESC",
       "text": "In deze sectie kunt u configureren hoe het kernelmodificatiesysteem werkt."
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_TITLE",
+      "text": "Mods beheren"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_DESC",
+      "text": "Interactieve TUI voor modbeheer"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_BODY",
+      "text": "Je kunt je geïnstalleerde kernelmods eenvoudig beheren met deze interactieve TUI. Je kunt zien welke mods er op je kernel draaien en mods starten en stoppen."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_TITLE",
+      "text": "Handleidingen bekijken"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_DESC",
+      "text": "Interactieve TUI voor het bekijken van handleidingen"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_BODY",
+      "text": "Handleidingen kunnen bij je mods worden geleverd, voor extra hulp, allemaal op één plek. Je kunt deze interactieve TUI gebruiken om de handleidingen interactiever te bekijken."
     }
   ]
 }

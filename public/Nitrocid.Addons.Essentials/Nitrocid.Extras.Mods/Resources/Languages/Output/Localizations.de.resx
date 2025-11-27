@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>In diesem Abschnitt können Sie die Funktionsweise des Kernel-Änderungssystems konfigurieren.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Mod-Verwaltung</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Interaktive Benutzeroberfläche für die Mod-Verwaltung</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Mit dieser interaktiven Benutzeroberfläche können Sie Ihre installierten Kernel-Mods ganz einfach verwalten. Sie sehen, welche Mods auf Ihrem Kernel ausgeführt werden, und können diese starten und stoppen.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Anzeigen von Handbuchseiten</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>Interaktive Benutzeroberfläche zum Anzeigen von Handbuchseiten</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>Handbuchseiten sind möglicherweise in Ihren Mods enthalten und bieten Ihnen zusätzliche Hilfestellungen an einem Ort. Mit dieser interaktiven Benutzeroberfläche können Sie die Handbuchseiten interaktiver anzeigen.</value>
+  </data>
 
 </root>

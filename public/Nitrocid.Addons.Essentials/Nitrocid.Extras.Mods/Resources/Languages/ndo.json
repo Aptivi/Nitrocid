@@ -389,6 +389,30 @@
     {
       "loc": "NKS_MODS_SETTINGS_DESC",
       "text": "Bagian ini memungkinkan Anda mengonfigurasi cara kerja sistem modifikasi kernel."
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_TITLE",
+      "text": "Mengelola mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_DESC",
+      "text": "TUI interaktif untuk manajemen mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_BODY",
+      "text": "Anda dapat dengan mudah mengelola mod kernel yang terinstal dengan memanfaatkan TUI interaktif ini. Anda dapat melihat mod apa saja yang berjalan di kernel Anda, serta memulai dan menghentikan mod."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_TITLE",
+      "text": "Melihat halaman manual"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_DESC",
+      "text": "TUI interaktif untuk penampil halaman manual"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_BODY",
+      "text": "Halaman manual mungkin disertakan dengan mod Anda, jika ada, jika memberikan bantuan tambahan, semuanya di satu tempat. Anda dapat menggunakan TUI interaktif ini untuk melihat halaman manual secara lebih interaktif."
     }
   ]
 }

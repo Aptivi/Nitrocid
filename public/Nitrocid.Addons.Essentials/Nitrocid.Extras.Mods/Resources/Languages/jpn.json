@@ -389,6 +389,30 @@
     {
       "loc": "NKS_MODS_SETTINGS_DESC",
       "text": "このセクションでは、カーネル変更システムの動作を設定できます。"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_TITLE",
+      "text": "MOD の管理"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_DESC",
+      "text": "MOD 管理のためのインタラクティブ TUI"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_BODY",
+      "text": "このインタラクティブ TUI を利用することで、インストール済みのカーネル MOD を簡単に管理できます。カーネル上で実行中の MOD を確認したり、MOD の起動と停止を行ったりできます。"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_TITLE",
+      "text": "マニュアルページの表示"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_DESC",
+      "text": "マニュアルページビューアのためのインタラクティブ TUI"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_BODY",
+      "text": "MOD には、追加のヘルプが必要な場合に備えて、マニュアルページがバンドルされている場合があります。このインタラクティブ TUI を使用すると、マニュアルページをよりインタラクティブに表示できます。"
     }
   ]
 }

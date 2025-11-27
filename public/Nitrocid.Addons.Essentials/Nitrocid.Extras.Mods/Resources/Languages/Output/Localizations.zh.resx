@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>本節讓您配置核心修改系統的工作方式。</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>管理模組</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>互動式模組管理介面</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>您可以使用此互動式介面輕鬆管理已安裝的核心模組。您可以查看核心上正在運行的模組，以及啟動和停止模組。</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>查看手冊頁</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>互動式手冊頁檢視器</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>您的模組可能附帶手冊頁，以便在需要額外協助時，請在一個地方查看所有手冊頁。您可以使用此互動式介面以更互動的方式查看手冊頁。</value>
+  </data>
 
 </root>

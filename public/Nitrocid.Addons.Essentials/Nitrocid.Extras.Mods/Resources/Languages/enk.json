@@ -388,6 +388,30 @@
     {
       "loc": "NKS_MODS_SETTINGS_DESC",
       "text": "This section lets you configure how the kernel modification system works."
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_TITLE",
+      "text": "Managing mods"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_DESC",
+      "text": "Interactive TUI for mod management"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_BODY",
+      "text": "You can easily manage your installed kernel mods by making use of this interactive TUI. You can see what mods are running on your kernel, as well as starting and stopping mods."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_TITLE",
+      "text": "Viewing manual pages"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_DESC",
+      "text": "Interactive TUI for manual page viewer"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_BODY",
+      "text": "Manual pages may come bundled with your mods, in case they give you additional help, all in one place. You can use this interactive TUI to view the manual pages more interactively."
     }
   ]
 }

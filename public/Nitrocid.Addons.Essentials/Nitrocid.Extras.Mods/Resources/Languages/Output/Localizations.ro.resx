@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>Această secțiune vă permite să configurați modul în care funcționează sistemul de modificare a nucleului.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Gestionarea modurilor</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Interfață interactivă pentru gestionarea modurilor</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Puteți gestiona cu ușurință modurile de kernel instalate utilizând această interfață interactivă. Puteți vedea ce moduri rulează pe kernel, precum și pornirea și oprirea modurilor.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Vizualizarea paginilor de manual</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>Interfață interactivă pentru vizualizatorul de pagini de manual</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>Paginile de manual pot fi incluse în pachetul modurilor, în cazul în care acestea vă oferă ajutor suplimentar, toate într-un singur loc. Puteți utiliza această interfață interactivă pentru a vizualiza paginile de manual într-un mod mai interactiv.</value>
+  </data>
 
 </root>

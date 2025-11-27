@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>このセクションでは、カーネル変更システムの動作を設定できます。</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>MOD の管理</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>MOD 管理のためのインタラクティブ TUI</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>このインタラクティブ TUI を利用することで、インストール済みのカーネル MOD を簡単に管理できます。カーネル上で実行中の MOD を確認したり、MOD の起動と停止を行ったりできます。</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>マニュアルページの表示</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>マニュアルページビューアのためのインタラクティブ TUI</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>MOD には、追加のヘルプが必要な場合に備えて、マニュアルページがバンドルされている場合があります。このインタラクティブ TUI を使用すると、マニュアルページをよりインタラクティブに表示できます。</value>
+  </data>
 
 </root>

@@ -389,6 +389,30 @@
     {
       "loc": "NKS_MODS_SETTINGS_DESC",
       "text": "Phần này cho phép bạn cấu hình cách thức hoạt động của hệ thống sửa đổi hạt nhân."
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_TITLE",
+      "text": "Quản lý mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_DESC",
+      "text": "TUI tương tác để quản lý mod"
+    },
+    {
+      "loc": "NKS_MODS_TUI_HELP01_BODY",
+      "text": "Bạn có thể dễ dàng quản lý các mod kernel đã cài đặt bằng cách sử dụng TUI tương tác này. Bạn có thể xem những mod nào đang chạy trên kernel của mình, cũng như khởi động và dừng mod."
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_TITLE",
+      "text": "Xem trang hướng dẫn"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_DESC",
+      "text": "TUI tương tác để xem trang hướng dẫn"
+    },
+    {
+      "loc": "NKS_MODS_MANTUI_HELP01_BODY",
+      "text": "Các trang hướng dẫn có thể được tích hợp sẵn với mod của bạn, trong trường hợp chúng cung cấp thêm trợ giúp, tất cả đều ở một nơi. Bạn có thể sử dụng TUI tương tác này để xem các trang hướng dẫn một cách tương tác hơn."
     }
   ]
 }

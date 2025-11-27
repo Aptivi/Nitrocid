@@ -405,5 +405,23 @@
   <data name="NKS_MODS_SETTINGS_DESC" xml:space="preserve">
     <value>Bagian ini memungkinkan Anda mengonfigurasi cara kerja sistem modifikasi kernel.</value>
   </data>
+  <data name="NKS_MODS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Mengelola mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>TUI interaktif untuk manajemen mod</value>
+  </data>
+  <data name="NKS_MODS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Anda dapat dengan mudah mengelola mod kernel yang terinstal dengan memanfaatkan TUI interaktif ini. Anda dapat melihat mod apa saja yang berjalan di kernel Anda, serta memulai dan menghentikan mod.</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Melihat halaman manual</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_DESC" xml:space="preserve">
+    <value>TUI interaktif untuk penampil halaman manual</value>
+  </data>
+  <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
+    <value>Halaman manual mungkin disertakan dengan mod Anda, jika ada, jika memberikan bantuan tambahan, semuanya di satu tempat. Anda dapat menggunakan TUI interaktif ini untuk melihat halaman manual secara lebih interaktif.</value>
+  </data>
 
 </root>
