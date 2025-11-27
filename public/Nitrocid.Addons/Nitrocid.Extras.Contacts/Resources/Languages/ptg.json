@@ -603,6 +603,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "Introduza uma nova nota para contacto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "Gerir contatos"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "Gerir os seus contatos interativamente"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "Esta interface interativa permite gerir os seus contactos de forma interativa, pois oferece um painel para selecionar contactos e outro para visualizar informações sobre cada contacto. Também pode editar, adicionar, importar e eliminar contactos para maior praticidade."
     }
   ]
 }

@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>新しい連絡先メモを入力</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>連絡先の管理</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>連絡先をインタラクティブに管理</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>このインタラクティブなTUIでは、連絡先を選択するためのパネルと連絡先の情報を表示するパネルが用意されているため、インタラクティブに連絡先を管理できます。また、連絡先の編集、追加、インポート、削除もここで行えるため、利便性が向上します。</value>
+  </data>
 
 </root>

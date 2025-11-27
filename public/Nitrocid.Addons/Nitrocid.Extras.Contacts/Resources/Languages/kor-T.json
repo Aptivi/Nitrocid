@@ -594,6 +594,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "새 연락처 메모 입력"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "연락처 관리"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "대화형 연락처 관리"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "이 대화형 TUI는 연락처 선택 창과 연락처 정보 보기 창을 제공하여 대화형 방식으로 연락처를 관리할 수 있도록 지원합니다. 또한, 연락처를 편집, 추가, 가져오기 및 삭제할 수 있어 더욱 편리합니다."
     }
   ]
 }

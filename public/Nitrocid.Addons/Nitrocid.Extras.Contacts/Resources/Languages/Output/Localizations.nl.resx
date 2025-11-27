@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Voer een nieuwe notitie voor de contactpersoon in</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Contacten beheren</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Uw contacten interactief beheren</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Met deze interactieve TUI kunt u uw contacten interactief beheren. U beschikt over een deelvenster om contacten te selecteren en een deelvenster om informatie over een contact te bekijken. U kunt hier ook contacten bewerken, toevoegen, importeren en verwijderen voor extra gemak.</value>
+  </data>
 
 </root>

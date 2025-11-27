@@ -594,6 +594,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "Introduceți o nouă notă de contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "Gestionarea contactelor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "Gestionarea interactivă a contactelor"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "Această interfață interactivă TUI vă permite să gestionați contactele într-un mod interactiv, deoarece vă oferă un panou pentru selectarea contactelor și un panou pentru vizualizarea informațiilor despre un contact. De asemenea, puteți edita, adăuga, importa și șterge contacte aici pentru o comoditate sporită."
     }
   ]
 }

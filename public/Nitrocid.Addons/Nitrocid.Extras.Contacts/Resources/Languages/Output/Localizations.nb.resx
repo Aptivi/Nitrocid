@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Skriv inn et nytt kontaktnotat</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Administrere kontakter</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Administrere kontaktene dine interaktivt</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Denne interaktive brukergrensesnittet lar deg administrere kontaktene dine på en interaktiv måte, fordi den gir deg en rute for å velge kontakter og en rute for å vise informasjon om en kontakt. Du kan også redigere, legge til, importere og slette kontakter her for økt bekvemmelighet.</value>
+  </data>
 
 </root>

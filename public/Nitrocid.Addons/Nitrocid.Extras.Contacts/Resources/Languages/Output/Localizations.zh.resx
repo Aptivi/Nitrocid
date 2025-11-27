@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>輸入新的聯絡人備註</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>聯絡人管理</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>互動式管理聯絡人</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>此互動式使用者介面 (TUI) 可讓您以互動方式管理聯絡人，因為它提供了一個用於選擇聯絡人的面板和一個用於查看聯絡人資訊的面板。您也可以在此編輯、新增、匯入和刪除聯絡人，從而更加方便。</value>
+  </data>
 
 </root>

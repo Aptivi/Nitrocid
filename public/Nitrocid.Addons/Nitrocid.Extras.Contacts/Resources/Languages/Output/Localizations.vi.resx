@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Nhập ghi chú liên hệ mới</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Quản lý danh bạ</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Quản lý danh bạ theo cách tương tác</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>TUI tương tác này cho phép bạn quản lý danh bạ theo cách tương tác, vì nó cung cấp cho bạn một khung để chọn danh bạ và một khung để xem thông tin về một danh bạ. Bạn cũng có thể chỉnh sửa, thêm, nhập và xóa danh bạ tại đây để thuận tiện hơn.</value>
+  </data>
 
 </root>

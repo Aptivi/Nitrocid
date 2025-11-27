@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Introduceți o nouă notă de contact</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Gestionarea contactelor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Gestionarea interactivă a contactelor</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Această interfață interactivă TUI vă permite să gestionați contactele într-un mod interactiv, deoarece vă oferă un panou pentru selectarea contactelor și un panou pentru vizualizarea informațiilor despre un contact. De asemenea, puteți edita, adăuga, importa și șterge contacte aici pentru o comoditate sporită.</value>
+  </data>
 
 </root>

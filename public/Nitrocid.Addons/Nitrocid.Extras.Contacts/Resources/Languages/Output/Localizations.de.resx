@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Geben Sie eine neue Kontaktnotiz ein.</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Kontaktverwaltung</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Interaktive Kontaktverwaltung</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Diese interaktive Benutzeroberfläche ermöglicht Ihnen die komfortable Verwaltung Ihrer Kontakte. Sie bietet Ihnen einen Bereich zur Auswahl von Kontakten und einen Bereich zur Anzeige von Kontaktinformationen. Hier können Sie Kontakte bearbeiten, hinzufügen, importieren und löschen.</value>
+  </data>
 
 </root>

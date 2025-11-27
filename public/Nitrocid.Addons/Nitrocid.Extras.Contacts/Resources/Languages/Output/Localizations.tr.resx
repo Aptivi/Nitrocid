@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Yeni bir iletişim notu girin</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Kişileri Yönetme</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Kişilerinizi Etkileşimli Olarak Yönetme</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Bu etkileşimli TUI, kişileri seçmek ve bir kişi hakkındaki bilgileri görüntülemek için birer bölme sunarak kişilerinizi etkileşimli bir şekilde yönetmenizi sağlar. Ayrıca, daha fazla kolaylık sağlamak için kişileri düzenleyebilir, ekleyebilir, içe aktarabilir ve silebilirsiniz.</value>
+  </data>
 
 </root>

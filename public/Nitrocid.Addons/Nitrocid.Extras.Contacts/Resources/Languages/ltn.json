@@ -593,6 +593,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "Novam notam contactus inscribe"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "Contactus administrando"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "Contactus tuos interactive administrando"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "Haec TUI interactiva te sinit contactus tuos modo interactivo administrare, quia tibi praebet tabulam ad contactus eligendos et tabulam ad informationes de contactu inspiciendas. Contactus etiam hic recensere, addere, importare et delere potes ad maiorem commoditatem."
     }
   ]
 }

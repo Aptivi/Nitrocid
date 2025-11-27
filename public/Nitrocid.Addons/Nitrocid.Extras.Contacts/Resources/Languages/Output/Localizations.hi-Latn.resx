@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>naya kontaikt not daalen</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>kontaikts mainej karana</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>apane kontaikts ko intaraiktiv tareeke se mainej karana</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>yah intaraiktiv tui aapako apane kontaikts ko intaraiktiv tareeke se mainej karane deta hai, kyonki yah aapako kontaikts chunane ke lie ek pen aur kontaikt ke baare mein jaanakaaree dekhane ke lie ek pen deta hai. aap zyaada aasaanee ke lie yahaan kontaikts ko edit, aid, import aur dileet bhee kar sakate hain.</value>
+  </data>
 
 </root>
