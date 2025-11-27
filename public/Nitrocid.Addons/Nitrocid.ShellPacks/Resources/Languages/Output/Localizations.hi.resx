@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>JSON मान</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>FTP और SFTP सर्वर मैनेज करना</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>एक इंटरैक्टिव TUI में अपने FTP और SFTP सर्वर मैनेज करना</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>FTP और SFTP सर्वर को कमांड-लाइन इंटरफ़ेस या दोनों सर्वर प्रोटोकॉल के लिए बने इंटरैक्टिव TUI से मैनेज किया जा सकता है। TUI सेट दो अलग-अलग यूज़र इंटरफ़ेस देता है: FTP मैनेजमेंट TUI और SFTP मैनेजमेंट TUI। TUI डबल-पैन वाले होते हैं, जिसका मतलब है कि आप एक ही समय में दो डायरेक्टरी के साथ काम कर सकते हैं, बिल्कुल टोटल कमांडर की तरह। आप फ़ाइल ऑपरेशन भी कर सकते हैं, जैसे डाउनलोड, अपलोड, कॉपी, मूव, डिलीट, वगैरह।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>ई-मेल मैसेज मैनेज करना</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>मेल TUI आपके ई-मेल मैसेज को मैनेज करता है</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>अपने ई-मेल मैसेज के साथ ज़्यादा अच्छे से काम करने के लिए, आप इस इंटरैक्टिव TUI का इस्तेमाल करके अपने मैसेज को ज़्यादा अच्छे से पढ़ सकते हैं, बस एक सिंपल टेक्स्ट यूज़र इंटरफ़ेस के साथ, जिसमें पहले पेन में डायरेक्टरी और दूसरे पेन में मैसेज की लिस्ट होती है। जब आप ENTER दबाकर कोई मैसेज खोलते हैं, तो आपको एक इन्फोबॉक्स में एक टेक्स्ट मैसेज मिलेगा।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>मेल का ऑटोमैटिक पता लगाना</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>मेल सर्वर का ऑटोमैटिक पता लगाना</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>मेल सिस्टम आम तौर पर आपके उस ई-मेल एड्रेस के आधार पर उन मेल सर्वर का ऑटोमैटिक पता लगाता है जिनका इस्तेमाल किया जाएगा, जिसका इस्तेमाल आपने अपने अकाउंट में साइन इन करते समय किया था। कॉन्फ़िगरेशन मॉड्यूल के बैकएंड के तौर पर थंडरबर्ड ऑटोकॉन्फ़िग का इस्तेमाल करके, आपका मेल सर्वर ऑटोमैटिक पता चल जाएगा।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>RSS फ़ीड पढ़ना</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>एक स्क्रीन में आपके RSS फ़ीड</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>इस इंटरैक्टिव TUI में RSS फ़ीड पढ़ना आसान हो गया है! आप एक RSS फ़ीड चुन सकते हैं और सीधे दाएं पेन पर आर्टिकल पढ़ सकते हैं।</value>
+  </data>
 
 </root>

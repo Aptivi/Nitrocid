@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>Valoarea JSON</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Gestionarea serverelor FTP și SFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>Gestionarea serverelor FTP și SFTP într-o interfață utilizator interactivă (TUI)</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>Serverele FTP și SFTP pot fi gestionate fie prin interfața din linia de comandă, fie prin interfața utilizator interactivă construită pentru ambele protocoale de server. Setul TUI oferă două interfețe utilizator separate: TUI de gestionare FTP și TUI de gestionare SFTP. TUI-urile au două panouri, ceea ce înseamnă că puteți lucra cu cele două directoare simultan, la fel ca în Total Commander. De asemenea, puteți efectua operațiuni cu fișierele, cum ar fi descărcarea, încărcarea, copierea, mutarea, ștergerea și așa mai departe.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Gestionarea mesajelor de e-mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>TUI-ul Mail gestionează mesajele dvs. de e-mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Pentru a lucra mai eficient cu mesajele dvs. de e-mail, puteți utiliza această interfață utilizator interactivă pentru a citi mesajele mai eficient cu o simplă interfață utilizator textuală, primul panou listând directoarele, iar al doilea panou listând mesajele. Când deschideți un mesaj apăsând ENTER, veți primi un mesaj text într-o casetă de informații.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Detectarea automată a e-mailurilor</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Detectarea automată a serverelor de e-mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Sistemul de e-mail detectează automat, în general, serverele de e-mail care vor fi utilizate, bazându-se doar pe adresa de e-mail utilizată la conectarea la contul dvs. Folosind configurația automată Thunderbird ca backend al modulului de configurare, serverul dvs. de e-mail va fi determinat automat.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Citirea fluxurilor RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>Fluxurile dvs. RSS într-un singur ecran</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>Citirea fluxurilor RSS în această interfață interactivă a devenit mai ușoară! Puteți selecta un flux RSS și citi articolul direct în panoul din dreapta.</value>
+  </data>
 
 </root>

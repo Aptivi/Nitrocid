@@ -2569,6 +2569,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "Nilai JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "Mengelola server FTP dan SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "Mengelola server FTP dan SFTP Anda dalam TUI interaktif"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "Server FTP dan SFTP dapat dikelola melalui antarmuka baris perintah atau TUI interaktif yang dirancang untuk kedua protokol server. Rangkaian TUI menyediakan dua antarmuka pengguna terpisah: TUI manajemen FTP dan TUI manajemen SFTP. TUI ini memiliki panel ganda, yang berarti Anda dapat bekerja dengan dua direktori sekaligus, seperti Total Commander. Anda juga dapat melakukan operasi berkas, seperti mengunduh, mengunggah, menyalin, memindahkan, menghapus, dan sebagainya."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "Mengelola pesan email"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "TUI Mail mengelola pesan email Anda"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "Untuk mengelola pesan email Anda dengan lebih efisien, Anda dapat menggunakan TUI interaktif ini untuk membaca pesan Anda secara lebih efisien hanya dengan antarmuka pengguna tekstual sederhana, dengan panel pertama berisi direktori, dan panel kedua berisi pesan. Saat Anda membuka pesan dengan menekan ENTER, Anda akan mendapatkan pesan teks di kotak info."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "Deteksi Email Otomatis"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "Deteksi Otomatis Server Email"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "Sistem email secara umum secara otomatis mendeteksi server email yang akan digunakan berdasarkan alamat email yang Anda gunakan saat masuk ke akun Anda. Dengan menggunakan Thunderbird Autoconfig sebagai backend modul konfigurasi, server email Anda akan ditentukan secara otomatis."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "Membaca RSS feed"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "RSS feed Anda dalam satu layar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "Membaca RSS feed di TUI interaktif ini menjadi lebih mudah! Anda dapat memilih RSS feed dan membaca artikel langsung di panel kanan."
     }
   ]
 }

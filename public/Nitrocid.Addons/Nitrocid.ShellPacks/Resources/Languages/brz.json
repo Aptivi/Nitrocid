@@ -2568,6 +2568,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "Valor JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "Gerenciando servidores FTP e SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "Gerenciando seus servidores FTP e SFTP em uma TUI interativa"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "Os servidores FTP e SFTP podem ser gerenciados pela interface de linha de comando ou pela TUI interativa criada para ambos os protocolos de servidor. O conjunto de TUIs oferece duas interfaces de usuário separadas: TUI de gerenciamento de FTP e TUI de gerenciamento de SFTP. As TUIs possuem dois painéis, o que significa que você pode trabalhar com os dois diretórios simultaneamente, assim como no Total Commander. Você também pode realizar operações com arquivos, como baixar, enviar, copiar, mover, excluir e assim por diante."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "Gerenciando mensagens de e-mail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "A TUI de e-mail gerencia suas mensagens de e-mail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "Para trabalhar com suas mensagens de e-mail de forma mais eficiente, você pode usar esta TUI interativa para ler suas mensagens com mais facilidade por meio de uma interface de usuário textual simples, com o primeiro painel listando os diretórios e o segundo painel listando as mensagens. Ao abrir uma mensagem pressionando ENTER, você verá uma mensagem de texto em uma caixa de informações."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "Detecção automática de e-mail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "Detecção automática de servidores de e-mail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "O sistema de e-mail, em geral, detecta automaticamente os servidores de e-mail que serão usados ​​com base no endereço de e-mail que você usou ao acessar sua conta. Usando o Thunderbird Autoconfig como backend do módulo de configuração, seu servidor de e-mail será determinado automaticamente."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "Leitura de feeds RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "Seus feeds RSS em uma única tela"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "Ler feeds RSS nesta interface interativa ficou mais fácil! Você pode selecionar um feed RSS e ler o artigo diretamente no painel direito."
     }
   ]
 }

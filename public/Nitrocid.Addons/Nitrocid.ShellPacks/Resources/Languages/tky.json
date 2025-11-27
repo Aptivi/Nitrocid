@@ -2570,6 +2570,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "JSON değeri"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "FTP ve SFTP Sunucularını Yönetme"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "FTP ve SFTP Sunucularınızı Etkileşimli Bir TUI'de Yönetme"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "FTP ve SFTP sunucuları, komut satırı arayüzü veya her iki sunucu protokolü için oluşturulmuş etkileşimli TUI ile yönetilebilir. TUI seti iki ayrı kullanıcı arayüzü sunar: FTP yönetimi TUI ve SFTP yönetimi TUI. TUI'ler çift panellidir, yani Total Commander gibi iki dizinle aynı anda çalışabilirsiniz. Ayrıca indirme, yükleme, kopyalama, taşıma, silme vb. dosya işlemlerini de gerçekleştirebilirsiniz."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "E-posta Mesajlarını Yönetme"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "Mail TUI, e-posta mesajlarınızı yönetir"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "E-posta mesajlarınızla daha verimli çalışmak için, bu etkileşimli TUI'yi kullanarak mesajlarınızı basit bir metinsel kullanıcı arayüzüyle daha verimli bir şekilde okuyabilirsiniz. İlk panelde dizinler, ikinci panelde ise mesajlar listelenir. ENTER tuşuna basarak bir mesajı açtığınızda, bir bilgi kutusunda bir metin mesajı alırsınız."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "Otomatik posta algılama"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "Posta sunucularının otomatik algılanması"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "Posta sistemi, genellikle hesabınıza giriş yaparken kullandığınız e-posta adresinize bağlı olarak kullanılacak posta sunucularını otomatik olarak algılar. Yapılandırma modülünün arka ucu olarak Thunderbird Autoconfig kullanılarak, posta sunucunuz otomatik olarak belirlenir."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "RSS beslemelerini okuma"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "RSS beslemeleriniz tek ekranda"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "Bu etkileşimli TUI'de RSS beslemelerini okumak artık daha kolay! Bir RSS beslemesi seçebilir ve makaleyi doğrudan sağ bölmeden okuyabilirsiniz."
     }
   ]
 }

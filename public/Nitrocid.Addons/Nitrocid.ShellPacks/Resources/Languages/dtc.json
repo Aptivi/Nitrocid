@@ -2575,6 +2575,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "JSON-waarde"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "FTP- en SFTP-servers beheren"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "Uw FTP- en SFTP-servers beheren in een interactieve TUI"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "FTP- en SFTP-servers kunnen worden beheerd via de opdrachtregelinterface of via de interactieve TUI die voor beide serverprotocollen is ontwikkeld. De TUI-set biedt twee afzonderlijke gebruikersinterfaces: een TUI voor FTP-beheer en een TUI voor SFTP-beheer. De TUI's hebben een dubbel venster, wat betekent dat u met beide mappen tegelijk kunt werken, net als Total Commander. U kunt ook bestandsbewerkingen uitvoeren, zoals downloaden, uploaden, kopiëren, verplaatsen, verwijderen, enzovoort."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "E-mailberichten beheren"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "De Mail TUI beheert uw e-mailberichten"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "Om efficiënter met uw e-mailberichten te werken, kunt u deze interactieve TUI gebruiken om uw berichten efficiënter te lezen met slechts een eenvoudige tekstuele gebruikersinterface, waarbij het eerste venster de mappen weergeeft en het tweede venster de berichten. Wanneer u een bericht opent door op ENTER te drukken, ontvangt u een tekstbericht in een infobox."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "Automatische detectie van e-mail"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "Automatische detectie van de mailservers"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "Het mailsysteem detecteert over het algemeen automatisch de mailservers die gebruikt gaan worden, op basis van uw e-mailadres dat u gebruikte toen u inlogde op uw account. Met Thunderbird Autoconfig als backend van de configuratiemodule wordt uw mailserver automatisch bepaald."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "RSS-feeds lezen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "Uw RSS-feeds in één scherm"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "Het lezen van RSS-feeds in deze interactieve TUI is nog eenvoudiger geworden! U kunt een RSS-feed selecteren en het artikel direct in het rechterdeelvenster lezen."
     }
   ]
 }

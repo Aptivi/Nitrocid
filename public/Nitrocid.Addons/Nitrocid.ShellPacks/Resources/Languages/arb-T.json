@@ -2595,6 +2595,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "قيمة JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "إدارة خوادم FTP وSFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "إدارة خوادم FTP وSFTP عبر واجهة مستخدم تفاعلية"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "يمكن إدارة خوادم FTP وSFTP إما عبر واجهة سطر الأوامر أو عبر واجهة المستخدم التفاعلية المصممة لكلا بروتوكولي الخادم. توفر مجموعة واجهات المستخدم واجهتي مستخدم منفصلتين: واجهة مستخدم لإدارة FTP وواجهة مستخدم لإدارة SFTP. واجهات المستخدم مزدوجة، مما يعني أنه يمكنك العمل مع المجلدين في آنٍ واحد، تمامًا مثل Total Commander. كما يمكنك إجراء عمليات على الملفات، مثل التنزيل والتحميل والنسخ والنقل والحذف، وما إلى ذلك."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "إدارة رسائل البريد الإلكتروني"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "تدير واجهة المستخدم التفاعلية للبريد رسائل بريدك الإلكتروني"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "للعمل مع رسائل بريدك الإلكتروني بكفاءة أكبر، يمكنك استخدام واجهة المستخدم التفاعلية هذه لقراءة رسائلك بكفاءة أكبر من خلال واجهة مستخدم نصية بسيطة، حيث يعرض الجزء الأول المجلدات، بينما يعرض الجزء الثاني الرسائل. عند فتح رسالة بالضغط على زر الإدخال (ENTER)، ستظهر لك رسالة نصية في مربع معلومات."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "الكشف التلقائي عن البريد"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "الكشف التلقائي عن خوادم البريد"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "يكتشف نظام البريد تلقائيًا خوادم البريد المُستخدمة بناءً على عنوان بريدك الإلكتروني الذي استخدمته عند تسجيل الدخول إلى حسابك. باستخدام Thunderbird Autoconfig كواجهة خلفية لوحدة التكوين، سيتم تحديد خادم بريدك تلقائيًا."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "قراءة موجزات RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "موجزات RSS الخاصة بك في شاشة واحدة"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "أصبحت قراءة موجزات RSS في واجهة المستخدم التفاعلية هذه أسهل! يمكنك تحديد موجز RSS وقراءة المقالة مباشرةً في الجزء الأيمن."
     }
   ]
 }

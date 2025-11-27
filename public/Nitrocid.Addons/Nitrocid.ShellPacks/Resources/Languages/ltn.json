@@ -2569,6 +2569,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "JSON value"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "Administratio servorum FTP et SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "Administratio servorum FTP et SFTP in TUI interactiva"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "Servitores FTP et SFTP administrari possunt vel per interfaciem lineae mandati vel per TUI interactivam pro utroque protocollo servorum constructam. Series TUI duas interfacies usoris separatas praebet: TUI administrationis FTP et TUI administrationis SFTP. TUI dupliciter patent, quod significat te cum duobus directoriis simul laborare posse, sicut Total Commander. Etiam operationes fasciculorum perficere potes, ut detrahere, imponere, copiare, movere, delere, et cetera."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "Administratio epistularum electronicarum"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "TUI Epistularum electronicarum epistulas tuas administrat"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "Ut cum epistulis tuis electronicis efficacius opereris, hanc TUI interactivam uti potes ad epistulas tuas efficacius legendas cum simplici interfacie usoris textuali, cum primo panello directoria enumerante, et secundo panello epistulas enumerante. Cum epistulam aperis premendo ENTER, epistulam textualem in capsa informationis accipies."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "Detectio automatica epistularum"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "Detectio automatica servorum epistularum"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "Systema epistularum plerumque servos epistularum qui adhibebuntur automatice detegit, solum secundum inscriptionem electronicam quam usus es cum rationem tuam ingressus es. Utente Thunderbird Autoconfig ut parte administrativa moduli configurationis, servus epistularum tuus automatice determinabitur."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "Lectio canalium RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "Tui canales RSS in uno velo"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "Lectio canalium RSS in hac interactiva TUI facilior facta est! Canalem RSS eligere et articulum directe in dextro tabula legere potes."
     }
   ]
 }

@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>قيمة JSON</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>إدارة خوادم FTP وSFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>إدارة خوادم FTP وSFTP عبر واجهة مستخدم تفاعلية</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>يمكن إدارة خوادم FTP وSFTP إما عبر واجهة سطر الأوامر أو عبر واجهة المستخدم التفاعلية المصممة لكلا بروتوكولي الخادم. توفر مجموعة واجهات المستخدم واجهتي مستخدم منفصلتين: واجهة مستخدم لإدارة FTP وواجهة مستخدم لإدارة SFTP. واجهات المستخدم مزدوجة، مما يعني أنه يمكنك العمل مع المجلدين في آنٍ واحد، تمامًا مثل Total Commander. كما يمكنك إجراء عمليات على الملفات، مثل التنزيل والتحميل والنسخ والنقل والحذف، وما إلى ذلك.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>إدارة رسائل البريد الإلكتروني</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>تدير واجهة المستخدم التفاعلية للبريد رسائل بريدك الإلكتروني</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>للعمل مع رسائل بريدك الإلكتروني بكفاءة أكبر، يمكنك استخدام واجهة المستخدم التفاعلية هذه لقراءة رسائلك بكفاءة أكبر من خلال واجهة مستخدم نصية بسيطة، حيث يعرض الجزء الأول المجلدات، بينما يعرض الجزء الثاني الرسائل. عند فتح رسالة بالضغط على زر الإدخال (ENTER)، ستظهر لك رسالة نصية في مربع معلومات.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>الكشف التلقائي عن البريد</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>الكشف التلقائي عن خوادم البريد</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>يكتشف نظام البريد تلقائيًا خوادم البريد المُستخدمة بناءً على عنوان بريدك الإلكتروني الذي استخدمته عند تسجيل الدخول إلى حسابك. باستخدام Thunderbird Autoconfig كواجهة خلفية لوحدة التكوين، سيتم تحديد خادم بريدك تلقائيًا.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>قراءة موجزات RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>موجزات RSS الخاصة بك في شاشة واحدة</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>أصبحت قراءة موجزات RSS في واجهة المستخدم التفاعلية هذه أسهل! يمكنك تحديد موجز RSS وقراءة المقالة مباشرةً في الجزء الأيمن.</value>
+  </data>
 
 </root>

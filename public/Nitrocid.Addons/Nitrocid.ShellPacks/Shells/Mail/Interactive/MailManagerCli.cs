@@ -48,6 +48,31 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
         private List<MimeMessage> secondPaneListing = [];
         private int pageNum = 1;
 
+        /// <inheritdoc/>
+        public override InteractiveTuiHelpPage[] HelpPages =>
+        [
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+                HelpDescription = /* Localizable */ "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY") + "\n\n" +
+#pragma warning disable NLOC0001
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/extra-features/more-networking/mail-client",
+#pragma warning restore NLOC0001
+            },
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+                HelpDescription = /* Localizable */ "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY") + "\n\n" +
+#pragma warning disable NLOC0001
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/extra-features/more-networking/mail-client",
+#pragma warning restore NLOC0001
+            }
+        ];
+
         public override bool SecondPaneInteractable =>
             true;
 

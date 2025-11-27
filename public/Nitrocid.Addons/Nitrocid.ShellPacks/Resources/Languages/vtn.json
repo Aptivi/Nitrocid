@@ -2569,6 +2569,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "Giá trị JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "Quản lý máy chủ FTP và SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "Quản lý máy chủ FTP và SFTP của bạn trong TUI tương tác"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "Máy chủ FTP và SFTP có thể được quản lý bằng giao diện dòng lệnh hoặc bằng TUI tương tác được xây dựng cho cả hai giao thức máy chủ. Bộ TUI cung cấp hai giao diện người dùng riêng biệt: TUI quản lý FTP và TUI quản lý SFTP. Các TUI này có hai khung, nghĩa là bạn có thể làm việc với hai thư mục cùng một lúc, giống như Total Commander. Bạn cũng có thể thực hiện các thao tác tệp, chẳng hạn như tải xuống, tải lên, sao chép, di chuyển, xóa, v.v."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "Quản lý email"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "TUI Mail quản lý email của bạn"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "Để làm việc với email hiệu quả hơn, bạn có thể sử dụng TUI tương tác này để đọc email hiệu quả hơn chỉ với một giao diện người dùng văn bản đơn giản, với khung đầu tiên liệt kê các thư mục và khung thứ hai liệt kê các email. Khi bạn mở một email bằng cách nhấn ENTER, bạn sẽ nhận được một tin nhắn văn bản trong hộp thông tin."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "Tự động phát hiện thư"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "Tự động phát hiện máy chủ thư"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "Hệ thống thư nói chung sẽ tự động phát hiện máy chủ thư sẽ được sử dụng dựa trên địa chỉ email bạn đã sử dụng khi đăng nhập vào tài khoản. Sử dụng Thunderbird Autoconfig làm nền tảng của mô-đun cấu hình, máy chủ thư của bạn sẽ được tự động xác định."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "Đọc nguồn cấp RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "Nguồn cấp RSS của bạn trong một màn hình"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "Việc đọc nguồn cấp RSS trong TUI tương tác này trở nên dễ dàng hơn! Bạn có thể chọn nguồn cấp RSS và đọc bài viết trực tiếp ở khung bên phải."
     }
   ]
 }

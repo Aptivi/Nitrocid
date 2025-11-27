@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>nilai JSON</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Mengurus pelayan FTP dan SFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>Mengurus pelayan FTP dan SFTP anda dalam TUI interaktif</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>Pelayan FTP dan SFTP boleh diuruskan sama ada melalui antara muka baris arahan atau melalui TUI interaktif yang dibina untuk kedua-dua protokol pelayan. Set TUI menyediakan dua antara muka pengguna berasingan: pengurusan FTP TUI dan pengurusan SFTP TUI. TUI mempunyai panel berganda, bermakna anda boleh mengendalikan dua direktori sekaligus, sama seperti Total Commander. Anda juga boleh melakukan operasi fail, seperti memuat turun, memuat naik, menyalin, memindahkan, memadam dan sebagainya.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Mengurus mesej e-mel</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Mail TUI mengurus mesej e-mel anda</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Untuk mengendalikan mesej e-mel anda dengan lebih cekap, anda boleh menggunakan TUI interaktif ini untuk membaca mesej anda dengan lebih cekap hanya dengan antara muka pengguna teks yang mudah, dengan panel pertama menyenaraikan direktori dan panel kedua menyenaraikan mesej. Apabila anda membuka mesej dengan menekan ENTER, anda akan mendapat mesej teks dalam kotak maklumat.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Pengesanan automatik mel</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Pengesanan automatik pelayan mel</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Sistem mel secara amnya mengesan pelayan mel yang akan digunakan secara automatik berdasarkan alamat e-mel anda yang anda gunakan semasa log masuk ke akaun anda. Dengan menggunakan Thunderbird Autoconfig sebagai bahagian belakang modul konfigurasi, pelayan mel anda akan ditentukan secara automatik.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Membaca suapan RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>Suapan RSS anda dalam satu skrin</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>Membaca suapan RSS dalam TUI interaktif ini menjadi lebih mudah! Anda boleh memilih suapan RSS dan membaca artikel terus di panel kanan.</value>
+  </data>
 
 </root>

@@ -50,6 +50,21 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
         }
 
         /// <inheritdoc/>
+        public override InteractiveTuiHelpPage[] HelpPages =>
+        [
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+                HelpDescription = /* Localizable */ "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY") + "\n\n" +
+#pragma warning disable NLOC0001
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/extra-features/more-networking/rss-client",
+#pragma warning restore NLOC0001
+            }
+        ];
+
+        /// <inheritdoc/>
         public override IEnumerable<RSSArticle> PrimaryDataSource =>
             Feed.FeedArticles;
 
