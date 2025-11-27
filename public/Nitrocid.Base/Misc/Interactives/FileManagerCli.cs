@@ -55,6 +55,19 @@ namespace Nitrocid.Base.Misc.Interactives
         private List<FileSystemEntry> firstPaneListing = [];
         private List<FileSystemEntry> secondPaneListing = [];
 
+        /// <inheritdoc/>
+        public override InteractiveTuiHelpPage[] HelpPages =>
+        [
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE",
+                HelpDescription = /* Localizable */ "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY") + "\n\n" +
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/files-and-folders",
+            }
+        ];
+
         /// <summary>
         /// Always true in the file manager as we want it to behave like Total Commander
         /// </summary>

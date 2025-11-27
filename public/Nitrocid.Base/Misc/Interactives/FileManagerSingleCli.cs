@@ -53,6 +53,19 @@ namespace Nitrocid.Base.Misc.Interactives
         private List<FileSystemEntry> firstPaneListing = [];
 
         /// <inheritdoc/>
+        public override InteractiveTuiHelpPage[] HelpPages =>
+        [
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE",
+                HelpDescription = /* Localizable */ "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY") + "\n\n" +
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/files-and-folders",
+            }
+        ];
+
+        /// <inheritdoc/>
         public override IEnumerable<FileSystemEntry> PrimaryDataSource
         {
             get

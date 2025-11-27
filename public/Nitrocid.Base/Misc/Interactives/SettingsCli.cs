@@ -50,6 +50,19 @@ namespace Nitrocid.Base.Misc.Interactives
         internal List<(string, string)> keyNames = [];
         internal List<(string, int)> toExpand = [];
 
+        /// <inheritdoc/>
+        public override InteractiveTuiHelpPage[] HelpPages =>
+        [
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE",
+                HelpDescription = /* Localizable */ "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY") + "\n\n" +
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/advanced-and-power-users/inner-workings/kernel-settings",
+            }
+        ];
+
         /// <summary>
         /// Always true in the file manager as we want it to behave like Total Commander
         /// </summary>
