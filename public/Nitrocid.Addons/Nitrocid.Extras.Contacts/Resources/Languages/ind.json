@@ -593,6 +593,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "naya kontaikt not daalen"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "kontaikts mainej karana"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "apane kontaikts ko intaraiktiv tareeke se mainej karana"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "yah intaraiktiv tui aapako apane kontaikts ko intaraiktiv tareeke se mainej karane deta hai, kyonki yah aapako kontaikts chunane ke lie ek pen aur kontaikt ke baare mein jaanakaaree dekhane ke lie ek pen deta hai. aap zyaada aasaanee ke lie yahaan kontaikts ko edit, aid, import aur dileet bhee kar sakate hain."
     }
   ]
 }

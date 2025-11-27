@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Enter a new contact note</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Managing contacts</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Managing your contacts interactively</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>This interactive TUI allows you to manage your contacts in an interactive way, because it provides you a pane for selecting contacts and a pane for viewing information about a contact. You can also edit, add, import, and delete contacts here for increased convenience.</value>
+  </data>
 
 </root>

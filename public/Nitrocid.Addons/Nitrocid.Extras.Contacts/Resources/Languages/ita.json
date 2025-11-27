@@ -596,6 +596,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "Inserisci una nuova nota del contatto"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "Gestione dei contatti"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "Gestione interattiva dei contatti"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "Questa interfaccia utente utente interattiva consente di gestire i contatti in modo interattivo, poiché offre un riquadro per la selezione dei contatti e un riquadro per la visualizzazione delle informazioni su un contatto. È inoltre possibile modificare, aggiungere, importare ed eliminare i contatti per una maggiore praticità."
     }
   ]
 }

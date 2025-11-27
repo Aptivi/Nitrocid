@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Insira uma nova nota para contato</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Gerenciando contatos</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Gerenciando seus contatos interativamente</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Esta interface interativa permite que você gerencie seus contatos de forma interativa, pois oferece um painel para selecionar contatos e outro para visualizar informações sobre cada contato. Você também pode editar, adicionar, importar e excluir contatos para maior praticidade.</value>
+  </data>
 
 </root>

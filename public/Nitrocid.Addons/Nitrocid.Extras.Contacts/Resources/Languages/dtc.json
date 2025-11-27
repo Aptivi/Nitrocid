@@ -599,6 +599,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "Voer een nieuwe notitie voor de contactpersoon in"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "Contacten beheren"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "Uw contacten interactief beheren"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "Met deze interactieve TUI kunt u uw contacten interactief beheren. U beschikt over een deelvenster om contacten te selecteren en een deelvenster om informatie over een contact te bekijken. U kunt hier ook contacten bewerken, toevoegen, importeren en verwijderen voor extra gemak."
     }
   ]
 }

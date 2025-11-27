@@ -639,6 +639,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "Saisir une nouvelle note du contact"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "Gestion des contacts"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "Gestion interactive de vos contacts"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "Cette interface utilisateur interactive vous permet de gérer vos contacts de manière intuitive. Elle propose un volet de sélection et un volet d'affichage des informations relatives à chaque contact. Vous pouvez également modifier, ajouter, importer et supprimer des contacts pour plus de simplicité."
     }
   ]
 }

@@ -594,6 +594,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "Yeni bir iletişim notu girin"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "Kişileri Yönetme"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "Kişilerinizi Etkileşimli Olarak Yönetme"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "Bu etkileşimli TUI, kişileri seçmek ve bir kişi hakkındaki bilgileri görüntülemek için birer bölme sunarak kişilerinizi etkileşimli bir şekilde yönetmenizi sağlar. Ayrıca, daha fazla kolaylık sağlamak için kişileri düzenleyebilir, ekleyebilir, içe aktarabilir ve silebilirsiniz."
     }
   ]
 }

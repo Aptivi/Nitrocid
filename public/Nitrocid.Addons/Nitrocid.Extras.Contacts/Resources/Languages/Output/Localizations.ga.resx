@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Cuir isteach nóta teagmhála nua</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Bainistiú teagmhála</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Bainistiú idirghníomhach a dhéanamh ar do theagmhálaithe</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Ligeann an TUI idirghníomhach seo duit do theagmhálaithe a bhainistiú ar bhealach idirghníomhach, mar go soláthraíonn sé painéal duit chun teagmhálaithe a roghnú agus painéal chun faisnéis faoi theagmhálaí a fheiceáil. Is féidir leat teagmhálaithe a chur in eagar, a chur leis, a allmhairiú agus a scriosadh anseo freisin ar mhaithe le háisiúlacht mhéadaithe.</value>
+  </data>
 
 </root>

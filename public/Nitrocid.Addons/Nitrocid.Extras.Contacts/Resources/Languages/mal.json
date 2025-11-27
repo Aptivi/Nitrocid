@@ -596,6 +596,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "Masukkan nota kenalan baharu"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "Mengurus kenalan"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "Mengurus kenalan anda secara interaktif"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "TUI interaktif ini membolehkan anda mengurus kenalan anda secara interaktif, kerana ia menyediakan anak tetingkap untuk memilih kenalan dan anak tetingkap untuk melihat maklumat tentang kenalan. Anda juga boleh mengedit, menambah, mengimport dan memadam kenalan di sini untuk kemudahan yang lebih baik."
     }
   ]
 }

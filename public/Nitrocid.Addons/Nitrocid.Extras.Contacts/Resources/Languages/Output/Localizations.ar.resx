@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>أدخل ملاحظة جهة اتصال جديدة</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>إدارة جهات الاتصال</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>إدارة جهات اتصالك بشكل تفاعلي</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>تتيح لك واجهة المستخدم التفاعلية هذه إدارة جهات اتصالك بطريقة تفاعلية، حيث توفر لك لوحةً لاختيار جهات الاتصال ولوحةً لعرض معلوماتها. كما يمكنك تعديل جهات الاتصال وإضافتها واستيرادها وحذفها لمزيد من الراحة.</value>
+  </data>
 
 </root>

@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Εισαγάγετε μια νέα σημείωση επαφής</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Διαχείριση επαφών</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Διαδραστική διαχείριση των επαφών σας</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Αυτό το διαδραστικό TUI σάς επιτρέπει να διαχειρίζεστε τις επαφές σας με διαδραστικό τρόπο, επειδή σας παρέχει ένα παράθυρο για την επιλογή επαφών και ένα παράθυρο για την προβολή πληροφοριών σχετικά με μια επαφή. Μπορείτε επίσης να επεξεργαστείτε, να προσθέσετε, να εισαγάγετε και να διαγράψετε επαφές εδώ για μεγαλύτερη ευκολία.</value>
+  </data>
 
 </root>

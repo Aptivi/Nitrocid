@@ -597,6 +597,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "Skriv inn et nytt kontaktnotat"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "Administrere kontakter"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "Administrere kontaktene dine interaktivt"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "Denne interaktive brukergrensesnittet lar deg administrere kontaktene dine på en interaktiv måte, fordi den gir deg en rute for å velge kontakter og en rute for å vise informasjon om en kontakt. Du kan også redigere, legge til, importere og slette kontakter her for økt bekvemmelighet."
     }
   ]
 }

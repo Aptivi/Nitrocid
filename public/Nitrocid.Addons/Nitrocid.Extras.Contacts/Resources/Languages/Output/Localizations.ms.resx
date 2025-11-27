@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Masukkan nota kenalan baharu</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Mengurus kenalan</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Mengurus kenalan anda secara interaktif</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>TUI interaktif ini membolehkan anda mengurus kenalan anda secara interaktif, kerana ia menyediakan anak tetingkap untuk memilih kenalan dan anak tetingkap untuk melihat maklumat tentang kenalan. Anda juga boleh mengedit, menambah, mengimport dan memadam kenalan di sini untuk kemudahan yang lebih baik.</value>
+  </data>
 
 </root>

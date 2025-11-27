@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Введіть нову примітку контакту</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Керування контактами</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Інтерактивне керування контактами</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Цей інтерактивний інтерфейс користувача дозволяє керувати контактами інтерактивним способом, оскільки він надає панель для вибору контактів та панель для перегляду інформації про контакт. Ви також можете редагувати, додавати, імпортувати та видаляти контакти тут для більшої зручності.</value>
+  </data>
 
 </root>

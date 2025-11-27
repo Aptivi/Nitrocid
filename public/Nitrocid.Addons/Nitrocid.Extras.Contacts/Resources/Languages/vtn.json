@@ -593,6 +593,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "Nhập ghi chú liên hệ mới"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "Quản lý danh bạ"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "Quản lý danh bạ theo cách tương tác"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "TUI tương tác này cho phép bạn quản lý danh bạ theo cách tương tác, vì nó cung cấp cho bạn một khung để chọn danh bạ và một khung để xem thông tin về một danh bạ. Bạn cũng có thể chỉnh sửa, thêm, nhập và xóa danh bạ tại đây để thuận tiện hơn."
     }
   ]
 }

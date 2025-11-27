@@ -699,6 +699,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "Enter a new contact note"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "Managing contacts"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "Managing your contacts interactively"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "This interactive TUI allows you to manage your contacts in an interactive way, because it provides you a pane for selecting contacts and a pane for viewing information about a contact. You can also edit, add, import, and delete contacts here for increased convenience."
     }
   ]
 }

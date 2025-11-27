@@ -558,5 +558,14 @@
   <data name="NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT" xml:space="preserve">
     <value>Novam notam contactus inscribe</value>
   </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Contactus administrando</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Contactus tuos interactive administrando</value>
+  </data>
+  <data name="NKS_CONTACTS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Haec TUI interactiva te sinit contactus tuos modo interactivo administrare, quia tibi praebet tabulam ad contactus eligendos et tabulam ad informationes de contactu inspiciendas. Contactus etiam hic recensere, addere, importare et delere potes ad maiorem commoditatem.</value>
+  </data>
 
 </root>

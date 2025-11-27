@@ -602,6 +602,18 @@
     {
       "loc": "NKS_CONTACTS_TUI_NOTEINFO_NOTEPROMPT",
       "text": "Geben Sie eine neue Kontaktnotiz ein."
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_TITLE",
+      "text": "Kontaktverwaltung"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_DESC",
+      "text": "Interaktive Kontaktverwaltung"
+    },
+    {
+      "loc": "NKS_CONTACTS_TUI_HELP01_BODY",
+      "text": "Diese interaktive Benutzeroberfläche ermöglicht Ihnen die komfortable Verwaltung Ihrer Kontakte. Sie bietet Ihnen einen Bereich zur Auswahl von Kontakten und einen Bereich zur Anzeige von Kontaktinformationen. Hier können Sie Kontakte bearbeiten, hinzufügen, importieren und löschen."
     }
   ]
 }
