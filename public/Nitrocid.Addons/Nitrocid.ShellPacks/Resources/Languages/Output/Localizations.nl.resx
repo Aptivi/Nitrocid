@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>JSON-waarde</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>FTP- en SFTP-servers beheren</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>Uw FTP- en SFTP-servers beheren in een interactieve TUI</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>FTP- en SFTP-servers kunnen worden beheerd via de opdrachtregelinterface of via de interactieve TUI die voor beide serverprotocollen is ontwikkeld. De TUI-set biedt twee afzonderlijke gebruikersinterfaces: een TUI voor FTP-beheer en een TUI voor SFTP-beheer. De TUI&apos;s hebben een dubbel venster, wat betekent dat u met beide mappen tegelijk kunt werken, net als Total Commander. U kunt ook bestandsbewerkingen uitvoeren, zoals downloaden, uploaden, kopiëren, verplaatsen, verwijderen, enzovoort.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>E-mailberichten beheren</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>De Mail TUI beheert uw e-mailberichten</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Om efficiënter met uw e-mailberichten te werken, kunt u deze interactieve TUI gebruiken om uw berichten efficiënter te lezen met slechts een eenvoudige tekstuele gebruikersinterface, waarbij het eerste venster de mappen weergeeft en het tweede venster de berichten. Wanneer u een bericht opent door op ENTER te drukken, ontvangt u een tekstbericht in een infobox.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Automatische detectie van e-mail</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Automatische detectie van de mailservers</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Het mailsysteem detecteert over het algemeen automatisch de mailservers die gebruikt gaan worden, op basis van uw e-mailadres dat u gebruikte toen u inlogde op uw account. Met Thunderbird Autoconfig als backend van de configuratiemodule wordt uw mailserver automatisch bepaald.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>RSS-feeds lezen</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>Uw RSS-feeds in één scherm</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>Het lezen van RSS-feeds in deze interactieve TUI is nog eenvoudiger geworden! U kunt een RSS-feed selecteren en het artikel direct in het rechterdeelvenster lezen.</value>
+  </data>
 
 </root>

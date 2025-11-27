@@ -2570,6 +2570,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "luach JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "Bainistiú freastalaithe FTP agus SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "Bainistiú do fhreastalaithe FTP agus SFTP i TUI idirghníomhach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "Is féidir freastalaithe FTP agus SFTP a bhainistiú tríd an gcomhéadan líne ordaithe nó tríd an TUI idirghníomhach atá tógtha do na prótacail freastalaí araon. Soláthraíonn an tacar TUI dhá chomhéadan úsáideora ar leithligh: TUI bainistíochta FTP agus TUI bainistíochta SFTP. Tá na TUIanna dé-phainéalaithe, rud a chiallaíonn gur féidir leat oibriú leis an dá eolaire ag an am céanna, díreach cosúil le Total Commander. Is féidir leat oibríochtaí comhad a dhéanamh freisin, amhail íoslódáil, uaslódáil, cóipeáil, bogadh, scriosadh, agus mar sin de."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "Bainistiú teachtaireachtaí ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "Bainistíonn TUI Mail do theachtaireachtaí ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "Chun oibriú le do theachtaireachtaí ríomhphoist ar bhealach níos éifeachtaí, is féidir leat an TUI idirghníomhach seo a úsáid chun do theachtaireachtaí a léamh ar bhealach níos éifeachtaí le comhéadan úsáideora téacsúil simplí, agus na heolairí liostaithe sa chéad phainéal, agus na teachtaireachtaí liostaithe sa dara painéal. Nuair a osclaíonn tú teachtaireacht trí ENTER a bhrú, gheobhaidh tú teachtaireacht téacs i mbosca eolais."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "Brath uathoibríoch ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "Brath uathoibríoch na bhfreastalaithe ríomhphoist"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "Go ginearálta, braitheann an córas ríomhphoist go huathoibríoch na freastalaithe ríomhphoist a úsáidfear bunaithe ar do sheoladh ríomhphoist a d'úsáid tú nuair a shínigh tú isteach i do chuntas. Trí Thunderbird Autoconfig a úsáid mar chúlra an mhodúil chumraíochta, cinnfear do fhreastalaí ríomhphoist go huathoibríoch."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "Fothaí RSS a léamh"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "Do fhothaí RSS in aon scáileán amháin"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "Tá sé níos éasca anois na fothaí RSS a léamh sa TUI idirghníomhach seo! Is féidir leat fotha RSS a roghnú agus an t-alt a léamh go díreach sa phána ar dheis."
     }
   ]
 }

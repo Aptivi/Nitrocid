@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>JSON 값</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>FTP 및 SFTP 서버 관리</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>대화형 TUI에서 FTP 및 SFTP 서버 관리</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>FTP 및 SFTP 서버는 명령줄 인터페이스 또는 두 서버 프로토콜 모두에 맞게 구축된 대화형 TUI를 통해 관리할 수 있습니다. TUI 세트는 FTP 관리 TUI와 SFTP 관리 TUI라는 두 가지 별도의 사용자 인터페이스를 제공합니다. TUI는 이중 창으로 구성되어 Total Commander처럼 두 디렉터리를 동시에 작업할 수 있습니다. 다운로드, 업로드, 복사, 이동, 삭제 등의 파일 작업도 수행할 수 있습니다.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>이메일 메시지 관리</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Mail TUI는 이메일 메시지를 관리합니다.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>이메일 메시지를 더욱 효율적으로 관리하기 위해 이 대화형 TUI를 사용하면 간단한 텍스트 사용자 인터페이스로 메시지를 더욱 효율적으로 읽을 수 있습니다. 첫 번째 창에는 디렉터리가 나열되고 두 번째 창에는 메시지가 나열됩니다. Enter 키를 눌러 메시지를 열면 정보 상자에 텍스트 메시지가 표시됩니다.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>메일 자동 감지</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>메일 서버 자동 감지</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>일반적으로 메일 시스템은 계정에 로그인할 때 사용한 이메일 주소만 기반으로 사용할 메일 서버를 자동으로 감지합니다. Thunderbird Autoconfig를 구성 모듈의 백엔드로 사용하면 메일 서버가 자동으로 결정됩니다.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>RSS 피드 읽기</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>한 화면에서 RSS 피드 보기</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>이 대화형 TUI에서 RSS 피드 읽기가 더욱 쉬워졌습니다! RSS 피드를 선택하고 오른쪽 창에서 바로 기사를 읽을 수 있습니다.</value>
+  </data>
 
 </root>

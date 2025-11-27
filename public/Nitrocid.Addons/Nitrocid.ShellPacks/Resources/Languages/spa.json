@@ -2594,6 +2594,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "Valor JSON"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "Administración de servidores FTP y SFTP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "Administración de sus servidores FTP y SFTP en una interfaz de usuario interactiva"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "Los servidores FTP y SFTP se pueden administrar mediante la interfaz de línea de comandos o mediante la interfaz de usuario interactiva diseñada para ambos protocolos de servidor. La interfaz de usuario interactiva (UI) ofrece dos interfaces de usuario independientes: la interfaz de usuario de FTP y la interfaz de usuario de SFTP. Las UI tienen doble panel, lo que significa que puede trabajar con los dos directorios a la vez, al igual que Total Commander. También puede realizar operaciones con archivos, como descargar, subir, copiar, mover, eliminar, etc."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "Administración de correo electrónico"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "La UI de correo administra sus correos electrónicos"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "Para trabajar con sus correos electrónicos de forma más eficiente, puede usar esta UI interactiva para leer sus mensajes de forma más eficiente con una interfaz de usuario textual sencilla: el primer panel muestra los directorios y el segundo, los mensajes. Al abrir un mensaje pulsando INTRO, verá un mensaje de texto en un cuadro de información."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "Detección automática de correo"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "Detección automática de servidores de correo"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "El sistema de correo, en general, detecta automáticamente los servidores de correo que se utilizarán basándose únicamente en la dirección de correo electrónico que utilizó al iniciar sesión en su cuenta. Al usar la configuración automática de Thunderbird como backend del módulo de configuración, su servidor de correo se determinará automáticamente."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "Lectura de feeds RSS"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "Sus feeds RSS en una sola pantalla"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "¡Leer los feeds RSS en esta interfaz de usuario interactiva ahora es más fácil! Puede seleccionar un feed RSS y leer el artículo directamente en el panel derecho."
     }
   ]
 }

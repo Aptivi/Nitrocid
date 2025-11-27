@@ -49,6 +49,21 @@ namespace Nitrocid.ShellPacks.Shells.SFTP.Interactive
         private List<FileSystemEntry> firstPaneListing = [];
         private List<ISftpFile> secondPaneListing = [];
 
+        /// <inheritdoc/>
+        public override InteractiveTuiHelpPage[] HelpPages =>
+        [
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+                HelpDescription = /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY") + "\n\n" +
+#pragma warning disable NLOC0001
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/extra-features/more-networking/sftp-client",
+#pragma warning restore NLOC0001
+            }
+        ];
+
         /// <summary>
         /// Always true in the file manager as we want it to behave like Total Commander
         /// </summary>

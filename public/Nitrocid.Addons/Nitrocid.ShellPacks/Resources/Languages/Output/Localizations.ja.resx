@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>JSON値</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>FTP サーバーと SFTP サーバーの管理</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>インタラクティブ TUI で FTP サーバーと SFTP サーバーを管理</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>FTP サーバーと SFTP サーバーは、コマンドラインインターフェース、または両方のサーバープロトコル用に構築されたインタラクティブ TUI のいずれかを使用して管理できます。TUI セットには、FTP 管理 TUI と SFTP 管理 TUI という 2 つの独立したユーザーインターフェースが用意されています。これらの TUI は 2 つのペインで構成されており、Total Commander と同様に 2 つのディレクトリを同時に操作できます。ダウンロード、アップロード、コピー、移動、削除などのファイル操作も実行できます。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>メールメッセージの管理</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>メール TUI でメールメッセージを管理</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>メールメッセージをより効率的に処理するために、このインタラクティブ TUI を使用すると、シンプルなテキスト形式のユーザーインターフェースでメッセージを効率的に読むことができます。最初のペインにはディレクトリが、2 番目のペインにはメッセージが一覧表示されます。ENTER キーを押してメッセージを開くと、情報ボックスにテキストメッセージが表示されます。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>メール自動検出</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>メールサーバーの自動検出</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>メールシステムは通常、アカウントへのサインイン時に使用したメールアドレスに基づいて、使用するメールサーバーを自動的に検出します。設定モジュールのバックエンドとしてThunderbird Autoconfigを使用することで、メールサーバーが自動的に決定されます。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>RSSフィードの閲覧</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>RSSフィードを1画面に表示</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>このインタラクティブなTUIでRSSフィードの閲覧がさらに簡単になりました！RSSフィードを選択すると、右側のペインで記事を直接読むことができます。</value>
+  </data>
 
 </root>

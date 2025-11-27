@@ -2568,6 +2568,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "JSON value"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "Managing FTP and SFTP servers"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "Managing your FTP and SFTP servers in an interactive TUI"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "FTP and SFTP servers can be managed by either the command-line interface or by the interactive TUI built for both server protocols. The TUI set provides two separate user interfaces: FTP management TUI and SFTP management TUI. The TUIs are double-paned, meaning that you can work with the two directories at once, just like Total Commander. You can also perform file operations, such as download, upload, copy, move, delete, and so on."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "Managing e-mail messages"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "Mail TUI manages your e-mail messages"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "To work with your e-mail messages more efficiently, you can use this interactive TUI to read your messages more efficiently with just a simple textual user interface, with the first pane listing the directories, and the second pane listing the messages. When you open a message by pressing ENTER, you'll get a text message in an infobox."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "Mail automatic detection"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "Automatic detection of the mail servers"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "The mail system in general automatically detects the mail servers that are going to be used based on just your e-mail address that you used when you sign in to your account. Using the Thunderbird Autoconfig as the backend of the configuration module, your mail server will be automatically determined."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "Reading RSS feeds"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "Your RSS feeds in one screen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "Reading the RSS feeds in this interactive TUI became easier! You can select an RSS feed and read the article directly at the right pane."
     }
   ]
 }

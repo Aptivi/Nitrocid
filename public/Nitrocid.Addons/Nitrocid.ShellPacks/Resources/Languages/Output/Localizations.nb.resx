@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>JSON-verdi</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Administrere FTP- og SFTP-servere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>Administrere FTP- og SFTP-serverne dine i et interaktivt brukergrensesnitt</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>FTP- og SFTP-servere kan administreres enten via kommandolinjegrensesnittet eller via det interaktive brukergrensesnittet som er bygget for begge serverprotokollene. TUI-settet har to separate brukergrensesnitt: FTP-administrasjons-TUI og SFTP-administrasjons-TUI. TUI-ene har to ruter, noe som betyr at du kan jobbe med de to katalogene samtidig, akkurat som Total Commander. Du kan også utføre filoperasjoner, for eksempel nedlasting, opplasting, kopiering, flytting, sletting og så videre.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Administrere e-postmeldinger</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Mail TUI administrerer e-postmeldingene dine</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>For å jobbe mer effektivt med e-postmeldingene dine, kan du bruke dette interaktive brukergrensesnittet til å lese meldingene dine mer effektivt med et enkelt tekstgrensesnitt, der den første ruten viser katalogene og den andre ruten viser meldingene. Når du åpner en melding ved å trykke ENTER, får du en tekstmelding i en infoboks.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Automatisk deteksjon av e-post</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Automatisk deteksjon av e-postservere</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>E-postsystemet registrerer vanligvis automatisk e-postserverne som skal brukes, basert på e-postadressen du brukte da du logget på kontoen din. Ved å bruke Thunderbird Autoconfig som backend for konfigurasjonsmodulen, bestemmes e-postserveren din automatisk.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Lese RSS-feeder</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>RSS-feedene dine på én skjerm</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>Det ble enklere å lese RSS-feedene i denne interaktive brukergrensesnittet! Du kan velge en RSS-feed og lese artikkelen direkte i høyre rute.</value>
+  </data>
 
 </root>

@@ -2572,6 +2572,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "JSON 值"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "管理 FTP 和 SFTP 伺服器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "在互動式 TUI 中管理您的 FTP 和 SFTP 伺服器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "FTP 和 SFTP 伺服器可以透過命令列介面或專為這兩種伺服器協定所建置的互動式 TUI 進行管理。 TUI 集提供兩個獨立的使用者介面：FTP 管理 TUI 和 SFTP 管理 TUI。這兩個 TUI 採用雙窗格設計，這意味著您可以像使用 Total Commander 一樣同時處理兩個目錄。您還可以執行檔案操作，例如下載、上傳、複製、移動、刪除等等。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "管理電子郵件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "郵件 TUI 用於管理您的電子郵件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "為了更有效率地處理電子郵件，您可以使用此互動式 TUI，透過簡單的文字使用者介面更有效率地閱讀郵件。第一個窗格列出目錄，第二個窗格列出郵件。按下 Enter 鍵開啟郵件後，您將在訊息方塊中看到一則文字訊息。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "郵件自動偵測"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "郵件伺服器自動偵測"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "郵件系統通常會根據您登入帳戶時使用的電子郵件地址自動偵測要使用的郵件伺服器。 Thunderbird 使用 Autoconfig 作為設定模組的後端，系統會自動決定您的郵件伺服器。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "閱讀 RSS 來源"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "在一個螢幕上查看您的 RSS 來源"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "在這個互動式 TUI 中閱讀 RSS 來源變得更加輕鬆！您可以選擇一個 RSS 來源，並在右側窗格中直接閱讀文章。"
     }
   ]
 }

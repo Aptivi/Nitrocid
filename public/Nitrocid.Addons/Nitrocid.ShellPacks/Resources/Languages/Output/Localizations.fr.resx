@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>Valeur JSON</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Gestion des serveurs FTP et SFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>Gestion de vos serveurs FTP et SFTP via une interface en ligne de commande (TUI) interactive</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>Les serveurs FTP et SFTP peuvent être gérés soit par l&apos;interface en ligne de commande, soit par l&apos;interface en ligne de commande (TUI) interactive conçue pour les deux protocoles. L&apos;interface TUI propose deux interfaces distinctes : une pour la gestion FTP et une autre pour la gestion SFTP. Ces interfaces sont organisées en deux volets, ce qui vous permet de travailler simultanément sur les deux répertoires, comme avec Total Commander. Vous pouvez également effectuer des opérations sur les fichiers, telles que télécharger, téléverser, copier, déplacer, supprimer, etc.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Gestion des messages électroniques</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>L&apos;interface en ligne de commande (TUI) permet de gérer vos messages électroniques</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Pour une gestion plus efficace de vos messages électroniques, vous pouvez utiliser cette interface en ligne de commande interactive. Son interface textuelle simple se compose d&apos;un premier volet affichant les répertoires et d&apos;un second volet affichant les messages. Lorsque vous ouvrez un message en appuyant sur Entrée, un texte d&apos;information s&apos;affiche dans une infobulle.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Détection automatique du serveur de messagerie</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Détection automatique des serveurs de messagerie</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Le système de messagerie détecte automatiquement les serveurs de messagerie à utiliser à partir de votre adresse e-mail. Grâce à Thunderbird Autoconfig, votre serveur de messagerie est déterminé automatiquement.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Lecture des flux RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>Vos flux RSS sur un seul écran</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>La lecture des flux RSS est désormais plus simple grâce à cette interface utilisateur interactive ! Sélectionnez un flux RSS et lisez l&apos;article directement dans le volet de droite.</value>
+  </data>
 
 </root>

@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>Τιμή JSON</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Διαχείριση διακομιστών FTP και SFTP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>Διαχείριση των διακομιστών FTP και SFTP σε ένα διαδραστικό TUI</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>Οι διακομιστές FTP και SFTP μπορούν να διαχειριστούν είτε από τη διεπαφή γραμμής εντολών είτε από το διαδραστικό TUI που έχει δημιουργηθεί και για τα δύο πρωτόκολλα διακομιστή. Το σετ TUI παρέχει δύο ξεχωριστά περιβάλλοντα χρήστη: TUI διαχείρισης FTP και TUI διαχείρισης SFTP. Τα TUI έχουν διπλό πλαίσιο, που σημαίνει ότι μπορείτε να εργαστείτε με τους δύο καταλόγους ταυτόχρονα, όπως ακριβώς το Total Commander. Μπορείτε επίσης να εκτελέσετε λειτουργίες αρχείων, όπως λήψη, μεταφόρτωση, αντιγραφή, μετακίνηση, διαγραφή και ούτω καθεξής.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Διαχείριση μηνυμάτων ηλεκτρονικού ταχυδρομείου</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Το TUI αλληλογραφίας διαχειρίζεται τα μηνύματα ηλεκτρονικού ταχυδρομείου σας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Για να εργαστείτε με τα μηνύματα ηλεκτρονικού ταχυδρομείου σας πιο αποτελεσματικά, μπορείτε να χρησιμοποιήσετε αυτό το διαδραστικό TUI για να διαβάζετε τα μηνύματά σας πιο αποτελεσματικά με ένα απλό περιβάλλον χρήστη κειμένου, με το πρώτο παράθυρο να παραθέτει τους καταλόγους και το δεύτερο παράθυρο να παραθέτει τα μηνύματα. Όταν ανοίγετε ένα μήνυμα πατώντας ENTER, θα λάβετε ένα μήνυμα κειμένου σε ένα πλαίσιο πληροφοριών.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Αυτόματη ανίχνευση αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Αυτόματη ανίχνευση των διακομιστών αλληλογραφίας</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Το σύστημα αλληλογραφίας γενικά ανιχνεύει αυτόματα τους διακομιστές αλληλογραφίας που θα χρησιμοποιηθούν μόνο με βάση τη διεύθυνση ηλεκτρονικού ταχυδρομείου που χρησιμοποιήσατε κατά την είσοδό σας στον λογαριασμό σας. Χρησιμοποιώντας το Thunderbird Autoconfig ως backend της ενότητας διαμόρφωσης, ο διακομιστής αλληλογραφίας σας θα προσδιοριστεί αυτόματα.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Ανάγνωση ροών RSS</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>Οι ροές RSS σας σε μία οθόνη</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>Η ανάγνωση των ροών RSS σε αυτό το διαδραστικό TUI έγινε ευκολότερη! Μπορείτε να επιλέξετε μια ροή RSS και να διαβάσετε το άρθρο απευθείας στο δεξί παράθυρο.</value>
+  </data>
 
 </root>

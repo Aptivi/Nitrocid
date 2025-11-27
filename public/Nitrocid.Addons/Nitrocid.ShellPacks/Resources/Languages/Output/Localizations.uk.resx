@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>Значення JSON</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Керування FTP- та SFTP-серверами</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>Керування FTP- та SFTP-серверами в інтерактивному TUI</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>FTP- та SFTP-серверами можна керувати або за допомогою інтерфейсу командного рядка, або за допомогою інтерактивного TUI, створеного для обох протоколів сервера. Набір TUI надає два окремі інтерфейси користувача: TUI керування FTP та TUI керування SFTP. TUI мають дві панелі, що означає, що ви можете працювати з двома каталогами одночасно, як і Total Commander. Ви також можете виконувати операції з файлами, такі як завантаження, вивантаження, копіювання, переміщення, видалення тощо.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Керування електронними листами</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Поштовий TUI керує вашими електронними листами</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Щоб ефективніше працювати з електронними листами, ви можете використовувати цей інтерактивний TUI для ефективнішого читання повідомлень за допомогою простого текстового інтерфейсу користувача, де перша панель містить список каталогів, а друга панель – список повідомлень. Коли ви відкриваєте повідомлення, натискаючи ENTER, ви отримуєте текстове повідомлення в інформаційному полі.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Автоматичне виявлення пошти</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Автоматичне виявлення поштових серверів</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Поштова система загалом автоматично визначає поштові сервери, які будуть використовуватися, на основі вашої адреси електронної пошти, яку ви використовували під час входу до свого облікового запису. Використовуючи автоматичну конфігурацію Thunderbird як серверну частину модуля конфігурації, ваш поштовий сервер буде визначено автоматично.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Читання RSS-каналів</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>Ваші RSS-канали на одному екрані</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>Читання RSS-каналів у цьому інтерактивному TUI стало ще простішим! Ви можете вибрати RSS-канал і прочитати статтю безпосередньо на правій панелі.</value>
+  </data>
 
 </root>

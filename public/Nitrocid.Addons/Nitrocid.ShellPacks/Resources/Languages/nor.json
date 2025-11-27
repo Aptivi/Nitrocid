@@ -2573,6 +2573,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "JSON-verdi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "Administrere FTP- og SFTP-servere"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "Administrere FTP- og SFTP-serverne dine i et interaktivt brukergrensesnitt"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "FTP- og SFTP-servere kan administreres enten via kommandolinjegrensesnittet eller via det interaktive brukergrensesnittet som er bygget for begge serverprotokollene. TUI-settet har to separate brukergrensesnitt: FTP-administrasjons-TUI og SFTP-administrasjons-TUI. TUI-ene har to ruter, noe som betyr at du kan jobbe med de to katalogene samtidig, akkurat som Total Commander. Du kan også utføre filoperasjoner, for eksempel nedlasting, opplasting, kopiering, flytting, sletting og så videre."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "Administrere e-postmeldinger"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "Mail TUI administrerer e-postmeldingene dine"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "For å jobbe mer effektivt med e-postmeldingene dine, kan du bruke dette interaktive brukergrensesnittet til å lese meldingene dine mer effektivt med et enkelt tekstgrensesnitt, der den første ruten viser katalogene og den andre ruten viser meldingene. Når du åpner en melding ved å trykke ENTER, får du en tekstmelding i en infoboks."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "Automatisk deteksjon av e-post"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "Automatisk deteksjon av e-postservere"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "E-postsystemet registrerer vanligvis automatisk e-postserverne som skal brukes, basert på e-postadressen du brukte da du logget på kontoen din. Ved å bruke Thunderbird Autoconfig som backend for konfigurasjonsmodulen, bestemmes e-postserveren din automatisk."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "Lese RSS-feeder"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "RSS-feedene dine på én skjerm"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "Det ble enklere å lese RSS-feedene i denne interaktive brukergrensesnittet! Du kan velge en RSS-feed og lese artikkelen direkte i høyre rute."
     }
   ]
 }

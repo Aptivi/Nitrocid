@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>JSON değeri</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>FTP ve SFTP Sunucularını Yönetme</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>FTP ve SFTP Sunucularınızı Etkileşimli Bir TUI&apos;de Yönetme</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>FTP ve SFTP sunucuları, komut satırı arayüzü veya her iki sunucu protokolü için oluşturulmuş etkileşimli TUI ile yönetilebilir. TUI seti iki ayrı kullanıcı arayüzü sunar: FTP yönetimi TUI ve SFTP yönetimi TUI. TUI&apos;ler çift panellidir, yani Total Commander gibi iki dizinle aynı anda çalışabilirsiniz. Ayrıca indirme, yükleme, kopyalama, taşıma, silme vb. dosya işlemlerini de gerçekleştirebilirsiniz.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>E-posta Mesajlarını Yönetme</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Mail TUI, e-posta mesajlarınızı yönetir</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>E-posta mesajlarınızla daha verimli çalışmak için, bu etkileşimli TUI&apos;yi kullanarak mesajlarınızı basit bir metinsel kullanıcı arayüzüyle daha verimli bir şekilde okuyabilirsiniz. İlk panelde dizinler, ikinci panelde ise mesajlar listelenir. ENTER tuşuna basarak bir mesajı açtığınızda, bir bilgi kutusunda bir metin mesajı alırsınız.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Otomatik posta algılama</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Posta sunucularının otomatik algılanması</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Posta sistemi, genellikle hesabınıza giriş yaparken kullandığınız e-posta adresinize bağlı olarak kullanılacak posta sunucularını otomatik olarak algılar. Yapılandırma modülünün arka ucu olarak Thunderbird Autoconfig kullanılarak, posta sunucunuz otomatik olarak belirlenir.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>RSS beslemelerini okuma</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>RSS beslemeleriniz tek ekranda</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>Bu etkileşimli TUI&apos;de RSS beslemelerini okumak artık daha kolay! Bir RSS beslemesi seçebilir ve makaleyi doğrudan sağ bölmeden okuyabilirsiniz.</value>
+  </data>
 
 </root>

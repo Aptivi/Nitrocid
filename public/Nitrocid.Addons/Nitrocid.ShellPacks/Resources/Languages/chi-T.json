@@ -2577,6 +2577,54 @@
     {
       "loc": "NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC",
       "text": "JSON 值"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE",
+      "text": "管理 FTP 和 SFTP 服务器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC",
+      "text": "在交互式 TUI 中管理您的 FTP 和 SFTP 服务器"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY",
+      "text": "FTP 和 SFTP 服务器可以通过命令行界面或专为这两种服务器协议构建的交互式 TUI 进行管理。TUI 集提供两个独立的用户界面：FTP 管理 TUI 和 SFTP 管理 TUI。这两个 TUI 采用双窗格设计，这意味着您可以像使用 Total Commander 一样同时处理两个目录。您还可以执行文件操作，例如下载、上传、复制、移动、删除等等。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE",
+      "text": "管理电子邮件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC",
+      "text": "邮件 TUI 用于管理您的电子邮件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY",
+      "text": "为了更高效地处理电子邮件，您可以使用此交互式 TUI，通过简单的文本用户界面更高效地阅读邮件。第一个窗格列出目录，第二个窗格列出邮件。按下 Enter 键打开邮件后，您将在信息框中看到一条文本消息。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE",
+      "text": "邮件自动检测"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC",
+      "text": "邮件服务器自动检测"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY",
+      "text": "邮件系统通常会根据您登录帐户时使用的电子邮件地址自动检测要使用的邮件服务器。Thunderbird 使用 Autoconfig 作为配置模块的后端，系统会自动确定您的邮件服务器。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE",
+      "text": "阅读 RSS 源"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC",
+      "text": "在一个屏幕上查看您的 RSS 源"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
+      "text": "在这个交互式 TUI 中阅读 RSS 源变得更加轻松！您可以选择一个 RSS 源，并在右侧窗格中直接阅读文章。"
     }
   ]
 }

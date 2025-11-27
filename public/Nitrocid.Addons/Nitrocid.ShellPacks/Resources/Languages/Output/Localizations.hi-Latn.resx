@@ -2040,5 +2040,41 @@
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>json maan</value>
   </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_TITLE" xml:space="preserve">
+    <value>ftp aur sftp sarvar mainej karana</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
+    <value>ek intaraiktiv tui mein apane ftp aur sftp sarvar mainej karana</value>
+  </data>
+  <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
+    <value>ftp aur sftp sarvar ko kamaand-lain intarafes ya donon sarvar protokol ke lie bane intaraiktiv tui se mainej kiya ja sakata hai. tui set do alag-alag yoozar intarafes deta hai: ftp mainejament tui aur sftp mainejament tui. tui dabal-pain vaale hote hain, jisaka matalab hai ki aap ek hee samay mein do daayarektaree ke saath kaam kar sakate hain, bilkul total kamaandar kee tarah. aap fail opareshan bhee kar sakate hain, jaise daunalod, apalod, kopee, moov, dileet, vagairah.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>ee-mel maisej mainej karana</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_DESC" xml:space="preserve">
+    <value>mel tui aapake ee-mel maisej ko mainej karata hai</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
+    <value>apane ee-mel maisej ke saath zyaada achchhe se kaam karane ke lie, aap is intaraiktiv tui ka istemaal karake apane maisej ko zyaada achchhe se padh sakate hain, bas ek simpal tekst yoozar intarafes ke saath, jisamen pahale pen mein daayarektaree aur doosare pen mein maisej kee list hotee hai. jab aap aintair dabaakar koee maisej kholate hain, to aapako ek inphoboks mein ek tekst maisej milega.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>mel ka otomaitik pata lagaana</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_DESC" xml:space="preserve">
+    <value>mel sarvar ka otomaitik pata lagaana</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
+    <value>mel sistam aam taur par aapake us ee-mel edres ke aadhaar par un mel sarvar ka otomaitik pata lagaata hai jinaka istemaal kiya jaega, jisaka istemaal aapane apane akaunt mein sain in karate samay kiya tha. konfigareshan modyool ke baikend ke taur par thandarabard otokonfig ka istemaal karake, aapaka mel sarvar otomaitik pata chal jaega.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
+    <value>rss feed padhana</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
+    <value>ek skreen mein aapake rss feed</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
+    <value>is intaraiktiv tui mein rss feed padhana aasaan ho gaya hai! aap ek rss feed chun sakate hain aur seedhe daen pen par aartikal padh sakate hain.</value>
+  </data>
 
 </root>
