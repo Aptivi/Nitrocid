@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>在庫情報を取得できません。</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>株式とは？</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>株式情報とは何かを説明します。</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>株式とは、NASDAQの登録企業データベースなどの企業株式データベースに登録されている企業の株価を分析することです。登録されている各企業の株価は変動するため、NASDAQ、DOW JONESなど、選択した企業の株価の1時間ごとの履歴を提供します。</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>株式情報の処理方法</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>株式情報を理解するプロセスについて説明します。</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>インタラクティブなTUIでは、追跡している特定の企業の株価情報（始値と終値、最高値と最安値など）を提供します。この情報は1時間ごとに変化するため、企業の株価の動きを深く理解するには、できるだけ注意深く株価を監視する必要があります。</value>
+  </data>
 
 </root>

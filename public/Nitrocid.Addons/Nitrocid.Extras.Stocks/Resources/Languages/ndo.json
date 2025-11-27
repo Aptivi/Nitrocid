@@ -89,6 +89,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "Tidak dapat memperoleh informasi saham."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "Apa itu saham?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "Menjelaskan apa itu informasi saham"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "Saham adalah analisis harga saham suatu perusahaan yang terdaftar dalam basis data saham perusahaan, seperti basis data perusahaan terdaftar NASDAQ. Karena harga saham berubah untuk setiap perusahaan yang terdaftar, kami memberikan riwayat harga saham perusahaan pilihan Anda per jam, seperti NASDAQ, DOW JONES, dan sebagainya."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "Bagaimana cara memproses informasi saham?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "Membahas proses memahami informasi saham"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "TUI interaktif memberi Anda informasi saham tentang perusahaan tertentu yang Anda lacak, seperti harga saham pembukaan dan penutupan, harga saham tertinggi dan terendah, dan informasi lainnya. Setiap jam, informasi ini berubah, jadi Anda perlu memantau harga sedekat mungkin untuk mendapatkan pemahaman yang mendalam tentang kinerja harga saham suatu perusahaan."
     }
   ]
 }

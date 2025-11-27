@@ -90,6 +90,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "Ní féidir faisnéis stoic a fháil."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "Cad is scaireanna ann?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "Déanann cur síos ar cad is faisnéis faoi scaireanna ann"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "Is anailís ar phraghas scaireanna cuideachta atá cláraithe i mbunachar sonraí scaireanna cuideachta é scaireanna, amhail bunachar sonraí cuideachtaí cláraithe NASDAQ. De réir mar a athraíonn praghsanna scaireanna do gach cuideachta atá cláraithe, soláthraímid stair uair an chloig duit de phraghsanna scaireanna na cuideachta a roghnaigh tú, amhail NASDAQ, DOW JONES, agus mar sin de."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "Conas faisnéis faoi scaireanna a phróiseáil?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "Labhraíonn sé faoin bpróiseas chun faisnéis faoi scaireanna a thuiscint"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "Soláthraíonn an TUI idirghníomhach faisnéis faoi scaireanna duit faoi chuideachta ar leith atá á rianú agat, amhail praghsanna scaireanna oscailte agus dúnta, praghsanna scaireanna arda agus ísle, agus faisnéis eile. Athraíonn an fhaisnéis seo gach uair an chloig, mar sin beidh ort na praghsanna a fheiceáil chomh dlúth agus is féidir chun tuiscint dhomhain a bheith agat ar fheidhmíocht praghsanna scaireanna cuideachta."
     }
   ]
 }

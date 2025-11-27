@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Can&apos;t get stock information.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>What are stocks?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Describes what is stocks information</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Stocks is an analysis of the stock price of a company that is registered in the company stocks database, such as NASDAQ&apos;s registered company database. As stocks prices changes for each company that is registered, we provide you with an hourly history of the stock prices of your chosen company, such as NASDAQ, DOW JONES, and so on.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>How to process stocks information?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Talks about the process of understanding stocks information</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>The interactive TUI provides you with stocks information about a particular company that you&apos;re tracking, such as opening and closing stock prices, high and low stock prices, and other information. For every hour, this information changes, so you&apos;ll need to watch the prices as close as possible to have a deep understanding of how a company&apos;s stock prices performs.</value>
+  </data>
 
 </root>

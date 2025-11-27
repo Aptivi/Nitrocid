@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Tidak dapat memperoleh informasi saham.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Apa itu saham?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Menjelaskan apa itu informasi saham</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Saham adalah analisis harga saham suatu perusahaan yang terdaftar dalam basis data saham perusahaan, seperti basis data perusahaan terdaftar NASDAQ. Karena harga saham berubah untuk setiap perusahaan yang terdaftar, kami memberikan riwayat harga saham perusahaan pilihan Anda per jam, seperti NASDAQ, DOW JONES, dan sebagainya.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Bagaimana cara memproses informasi saham?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Membahas proses memahami informasi saham</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>TUI interaktif memberi Anda informasi saham tentang perusahaan tertentu yang Anda lacak, seperti harga saham pembukaan dan penutupan, harga saham tertinggi dan terendah, dan informasi lainnya. Setiap jam, informasi ini berubah, jadi Anda perlu memantau harga sedekat mungkin untuk mendapatkan pemahaman yang mendalam tentang kinerja harga saham suatu perusahaan.</value>
+  </data>
 
 </root>

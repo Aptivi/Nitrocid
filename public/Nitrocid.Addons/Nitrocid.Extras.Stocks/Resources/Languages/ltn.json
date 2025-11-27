@@ -89,6 +89,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "Stock notitia non potest."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "Quid sunt actiones?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "Describit quid sit informatio de actionibus."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "Actiones est analysis pretii actionum societatis quae in indice actionum societatum, ut puta in indice societatum NASDAQ, relata est. Cum pretia actionum pro singulis societatibus relatis mutantur, tibi historiam horariam pretiorum actionum societatis electae, ut puta NASDAQ, DOW JONES, et cetera, praebemus."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "Quomodo informationem de actionibus tractare?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "De processu intellegendi informationem de actionibus disserit."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "Interfacies usoris interactiva tibi informationem de actionibus de societate particulari quam observas praebet, ut pretia initialia et finalia, pretia maxima et minima, et alias informationes. Pro qualibet hora, haec informatio mutatur, ergo pretia quam proxime observare debebis ut profundam intelligentiam habeas quomodo pretia actionum societatis se habent."
     }
   ]
 }

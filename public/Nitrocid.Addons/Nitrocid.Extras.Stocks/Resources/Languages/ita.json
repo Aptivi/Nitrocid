@@ -92,6 +92,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "Impossibile ottenere informazioni sulle azioni."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "Cosa sono le azioni?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "Descrive cosa sono le informazioni sulle azioni"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "Le azioni sono un'analisi del prezzo delle azioni di una società registrata nel database azionario aziendale, come il database delle società registrate del NASDAQ. Man mano che i prezzi delle azioni per ciascuna società registrata cambiano, forniamo uno storico orario dei prezzi delle azioni della società scelta, come NASDAQ, DOW JONES e così via."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "Come elaborare le informazioni sulle azioni?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "Descrive il processo di comprensione delle informazioni sulle azioni"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "L'interfaccia utente interattiva fornisce informazioni sulle azioni di una particolare società che si sta monitorando, come i prezzi di apertura e chiusura, i prezzi massimi e minimi delle azioni e altre informazioni. Queste informazioni cambiano ogni ora, quindi è necessario monitorare i prezzi il più attentamente possibile per avere una comprensione approfondita dell'andamento dei prezzi delle azioni di una società."
     }
   ]
 }

@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>stok jaanakaaree nahin mil sakatee.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>stoks kya hain?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>stoks kee jaanakaaree kya hai, yah bataata hai</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>stoks kisee kampanee ke stok prais ka enaalisis hai jo kampanee stoks detaabes mein rajistard hai, jaise ki nasdaq ka rajistard kampanee detaabes. jaise hee har rajistard kampanee ke stok prais badalate hain, ham aapako aapakee chunee huee kampanee, jaise ki nasdaq, dow jonais, vagairah ke stok prais kee har ghante kee histree dete hain.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>stoks kee jaanakaaree ko kaise proses karen?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>stoks kee jaanakaaree ko samajhane ke proses ke baare mein baat karata hai</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>intaraiktiv tui aapako us khaas kampanee ke baare mein stoks kee jaanakaaree deta hai jise aap traik kar rahe hain, jaise ki opaning aur klojing stok prais, haee aur lo stok prais, aur doosaree jaanakaaree. har ghante, yah jaanakaaree badalatee hai, isalie aapako kampanee ke stok prais kaisa paraphorm karate hain, isakee gaharee samajh paane ke lie prais ko jitana ho sake kareeb se dekhana hoga.</value>
+  </data>
 
 </root>

@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>لا يمكن الحصول على معلومات المخزون.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>ما هي الأسهم؟</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>يوضح هذا المقال معلومات الأسهم</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>الأسهم هي تحليل لسعر سهم شركة مسجلة في قاعدة بيانات أسهمها، مثل قاعدة بيانات الشركات المسجلة في ناسداك. مع تغير أسعار أسهم كل شركة مسجلة، نوفر لك سجلاً كل ساعة لأسعار أسهم الشركة التي تختارها، مثل ناسداك وداو جونز، وغيرها.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>كيف تتم معالجة معلومات الأسهم؟</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>يتحدث هذا المقال عن عملية فهم معلومات الأسهم</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>توفر لك واجهة المستخدم التفاعلية معلومات عن أسهم شركة معينة تتابعها، مثل أسعار الافتتاح والإغلاق، وأعلى وأدنى أسعار الأسهم، ومعلومات أخرى. تتغير هذه المعلومات كل ساعة، لذا ستحتاج إلى متابعة الأسعار عن كثب لفهم أداء أسهم الشركة بشكل أعمق.</value>
+  </data>
 
 </root>

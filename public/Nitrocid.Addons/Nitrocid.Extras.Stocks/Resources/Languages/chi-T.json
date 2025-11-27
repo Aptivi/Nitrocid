@@ -97,6 +97,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "无法获取股票信息。"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "什么是股票？"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "描述什么是股票信息"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "股票是对已在公司股票数据库（例如纳斯达克股票数据库）中注册的公司的股票价格进行分析。由于每家注册公司的股票价格都会发生变化，我们会为您提供您所选公司（例如纳斯达克、道琼斯等）的每小时股票价格历史记录。"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "如何处理股票信息？"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "介绍理解股票信息的过程"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "交互式用户界面 (TUI) 为您提供您正在跟踪的特定公司的股票信息，例如开盘价和收盘价、最高价和最低价以及其他信息。这些信息每小时都会变化，因此您需要密切关注价格，才能深入了解公司股票价格的走势。"
     }
   ]
 }

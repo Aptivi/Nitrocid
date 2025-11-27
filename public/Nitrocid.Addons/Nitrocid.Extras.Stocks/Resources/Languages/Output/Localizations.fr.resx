@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Impossible d&apos;obtenir des informations sur les stocks.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Que sont les actions ?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Ceci décrit ce que sont les informations boursières.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Les actions correspondent à l&apos;analyse du cours de l&apos;action d&apos;une société cotée dans une base de données boursières, telle que celle du NASDAQ. Pour chaque société cotée, nous vous fournissons un historique horaire des cours, mis à jour régulièrement, de l&apos;action de la société que vous avez sélectionnée (NASDAQ, Dow Jones, etc.).</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Comment exploiter les informations boursières ?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Ceci explique comment interpréter les informations boursières.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>L&apos;interface utilisateur interactive (TUI) vous fournit des informations sur l&apos;action de la société que vous suivez, comme les cours d&apos;ouverture et de clôture, les cours les plus hauts et les plus bas, et d&apos;autres données. Ces informations étant mises à jour toutes les heures, il est important de suivre attentivement l&apos;évolution des cours pour bien comprendre la performance boursière de la société.</value>
+  </data>
 
 </root>

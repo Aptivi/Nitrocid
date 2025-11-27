@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Не вдається отримати інформацію про акції.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Що таке акції?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Описує, що таке інформація про акції</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Акції – це аналіз ціни акцій компанії, зареєстрованої в базі даних акцій компаній, такій як база даних зареєстрованих компаній NASDAQ. Оскільки ціни на акції кожної зареєстрованої компанії змінюються, ми надаємо вам щогодинну історію цін на акції обраної вами компанії, таких як NASDAQ, DOW JONES тощо.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Як обробляти інформацію про акції?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Розповідає про процес розуміння інформації про акції</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Інтерактивний TUI надає вам інформацію про акції конкретної компанії, яку ви відстежуєте, таку як ціни відкриття та закриття біржі, максимальні та мінімальні ціни акцій та інша інформація. Ця інформація змінюється щогодини, тому вам потрібно буде стежити за цінами якомога уважніше, щоб мати глибоке розуміння того, як рухаються ціни акцій компанії.</value>
+  </data>
 
 </root>

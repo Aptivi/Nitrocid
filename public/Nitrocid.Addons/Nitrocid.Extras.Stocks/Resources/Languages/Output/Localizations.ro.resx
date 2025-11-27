@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Nu pot obține informații despre stoc.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Ce sunt acțiunile?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Descrie ce reprezintă informațiile despre acțiuni</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Acțiunile reprezintă o analiză a prețului acțiunilor unei companii înregistrate în baza de date a acțiunilor companiei, cum ar fi baza de date a companiilor înregistrate NASDAQ. Pe măsură ce prețurile acțiunilor se modifică pentru fiecare companie înregistrată, vă oferim un istoric orar al prețurilor acțiunilor companiei alese, cum ar fi NASDAQ, DOW JONES și așa mai departe.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Cum se procesează informațiile despre acțiuni?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>Vorbește despre procesul de înțelegere a informațiilor despre acțiuni</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Interfața interactivă TUI vă oferă informații despre acțiunile unei anumite companii pe care o urmăriți, cum ar fi prețurile de deschidere și închidere ale acțiunilor, prețurile maxime și minime ale acțiunilor și alte informații. Aceste informații se schimbă în fiecare oră, așa că va trebui să urmăriți prețurile cât mai atent posibil pentru a avea o înțelegere profundă a modului în care performează prețurile acțiunilor unei companii.</value>
+  </data>
 
 </root>

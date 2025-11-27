@@ -180,5 +180,23 @@
   <data name="NKS_STOCKS_TUI_CANTOBTAININFO" xml:space="preserve">
     <value>Stock notitia non potest.</value>
   </data>
+  <data name="NKS_STOCKS_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Quid sunt actiones?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Describit quid sit informatio de actionibus.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Actiones est analysis pretii actionum societatis quae in indice actionum societatum, ut puta in indice societatum NASDAQ, relata est. Cum pretia actionum pro singulis societatibus relatis mutantur, tibi historiam horariam pretiorum actionum societatis electae, ut puta NASDAQ, DOW JONES, et cetera, praebemus.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_TITLE" xml:space="preserve">
+    <value>Quomodo informationem de actionibus tractare?</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_DESC" xml:space="preserve">
+    <value>De processu intellegendi informationem de actionibus disserit.</value>
+  </data>
+  <data name="NKS_STOCKS_TUI_HELP02_BODY" xml:space="preserve">
+    <value>Interfacies usoris interactiva tibi informationem de actionibus de societate particulari quam observas praebet, ut pretia initialia et finalia, pretia maxima et minima, et alias informationes. Pro qualibet hora, haec informatio mutatur, ergo pretia quam proxime observare debebis ut profundam intelligentiam habeas quomodo pretia actionum societatis se habent.</value>
+  </data>
 
 </root>

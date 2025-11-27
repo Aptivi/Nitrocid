@@ -88,6 +88,30 @@
     {
       "loc": "NKS_STOCKS_TUI_CANTOBTAININFO",
       "text": "Não é possível obter informações sobre ações."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_TITLE",
+      "text": "O que são ações?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_DESC",
+      "text": "Descreve o que são informações sobre ações."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP01_BODY",
+      "text": "Ações é uma análise do preço das ações de uma empresa registrada em um banco de dados de ações, como o da NASDAQ. Como os preços das ações mudam para cada empresa registrada, fornecemos um histórico horário dos preços das ações da empresa escolhida, como NASDAQ, Dow Jones, etc."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_TITLE",
+      "text": "Como processar informações sobre ações?"
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_DESC",
+      "text": "Explica o processo de compreensão das informações sobre ações."
+    },
+    {
+      "loc": "NKS_STOCKS_TUI_HELP02_BODY",
+      "text": "A interface interativa TUI fornece informações sobre as ações de uma empresa específica que você está acompanhando, como preços de abertura e fechamento, preços máximos e mínimos das ações e outras informações. Essas informações mudam a cada hora, portanto, você precisará observar os preços com atenção para ter uma compreensão profunda do desempenho das ações de uma empresa."
     }
   ]
 }
