@@ -7071,9 +7071,6 @@
   <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
     <value>Restarting</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC" xml:space="preserve">
-    <value>Tests the widget canvas renderer</value>
-  </data>
   <data name="NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO" xml:space="preserve">
     <value>For more information about this interactive TUI, visit</value>
   </data>

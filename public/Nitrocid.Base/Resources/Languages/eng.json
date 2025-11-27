@@ -9385,10 +9385,6 @@
       "text": "Restarting"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC",
-      "text": "Tests the widget canvas renderer"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO",
       "text": "For more information about this interactive TUI, visit"
     },
