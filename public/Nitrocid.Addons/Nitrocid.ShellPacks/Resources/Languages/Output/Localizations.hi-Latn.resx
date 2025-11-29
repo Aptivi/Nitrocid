@@ -2076,5 +2076,14 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
     <value>is intaraiktiv tui mein rss feed padhana aasaan ho gaya hai! aap ek rss feed chun sakate hain aur seedhe daen pen par aartikal padh sakate hain.</value>
   </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
+    <value>se</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_NOFEED" xml:space="preserve">
+    <value>koee feed nahin।</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
+    <value>naveenatam samaachaar praapt karane mein viphal.</value>
+  </data>
 
 </root>

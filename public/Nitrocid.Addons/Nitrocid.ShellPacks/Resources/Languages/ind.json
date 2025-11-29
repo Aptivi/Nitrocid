@@ -2617,6 +2617,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "is intaraiktiv tui mein rss feed padhana aasaan ho gaya hai! aap ek rss feed chun sakate hain aur seedhe daen pen par aartikal padh sakate hain."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "se"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "koee feed nahin।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "naveenatam samaachaar praapt karane mein viphal."
     }
   ]
 }

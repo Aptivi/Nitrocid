@@ -2617,6 +2617,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "इस इंटरैक्टिव TUI में RSS फ़ीड पढ़ना आसान हो गया है! आप एक RSS फ़ीड चुन सकते हैं और सीधे दाएं पेन पर आर्टिकल पढ़ सकते हैं।"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "से"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "कोई चारा नहीं."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "नवीनतम समाचार प्राप्त करने में विफल।"
     }
   ]
 }

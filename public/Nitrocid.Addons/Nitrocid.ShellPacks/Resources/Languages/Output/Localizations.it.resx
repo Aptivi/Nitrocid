@@ -2076,5 +2076,14 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
     <value>Leggere i feed RSS in questa interfaccia utente interattiva è diventato più semplice! Puoi selezionare un feed RSS e leggere l&apos;articolo direttamente nel riquadro di destra.</value>
   </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_NOFEED" xml:space="preserve">
+    <value>Nessuna alimentazione.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
+    <value>Impossibile ricevere le ultime notizie.</value>
+  </data>
 
 </root>

@@ -2620,6 +2620,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "在這個互動式 TUI 中閱讀 RSS 來源變得更加輕鬆！您可以選擇一個 RSS 來源，並在右側窗格中直接閱讀文章。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "從"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "沒有飼料。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "未能獲得最新消息。"
     }
   ]
 }

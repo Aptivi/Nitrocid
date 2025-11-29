@@ -2076,5 +2076,14 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
     <value>La lecture des flux RSS est désormais plus simple grâce à cette interface utilisateur interactive ! Sélectionnez un flux RSS et lisez l&apos;article directement dans le volet de droite.</value>
   </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
+    <value>Depuis</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_NOFEED" xml:space="preserve">
+    <value>Pas de nourriture.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
+    <value>Impossible d&apos;obtenir les dernières nouvelles.</value>
+  </data>
 
 </root>

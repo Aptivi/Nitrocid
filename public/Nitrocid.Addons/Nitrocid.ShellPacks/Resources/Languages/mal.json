@@ -2620,6 +2620,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "Membaca suapan RSS dalam TUI interaktif ini menjadi lebih mudah! Anda boleh memilih suapan RSS dan membaca artikel terus di panel kanan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "daripada"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Tiada suapan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Gagal mendapat berita terkini."
     }
   ]
 }

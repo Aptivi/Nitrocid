@@ -2076,5 +2076,14 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
     <value>Việc đọc nguồn cấp RSS trong TUI tương tác này trở nên dễ dàng hơn! Bạn có thể chọn nguồn cấp RSS và đọc bài viết trực tiếp ở khung bên phải.</value>
   </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
+    <value>Từ</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_NOFEED" xml:space="preserve">
+    <value>Không có nguồn cấp dữ liệu.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
+    <value>Không nhận được tin tức mới nhất.</value>
+  </data>
 
 </root>

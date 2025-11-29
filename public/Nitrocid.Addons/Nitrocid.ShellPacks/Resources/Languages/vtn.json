@@ -2617,6 +2617,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "Việc đọc nguồn cấp RSS trong TUI tương tác này trở nên dễ dàng hơn! Bạn có thể chọn nguồn cấp RSS và đọc bài viết trực tiếp ở khung bên phải."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "Từ"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Không có nguồn cấp dữ liệu."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Không nhận được tin tức mới nhất."
     }
   ]
 }

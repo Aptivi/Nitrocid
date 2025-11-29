@@ -2617,6 +2617,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "Читання RSS-каналів у цьому інтерактивному TUI стало ще простішим! Ви можете вибрати RSS-канал і прочитати статтю безпосередньо на правій панелі."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "Від"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Без корму."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Не вдалося отримати останні новини."
     }
   ]
 }

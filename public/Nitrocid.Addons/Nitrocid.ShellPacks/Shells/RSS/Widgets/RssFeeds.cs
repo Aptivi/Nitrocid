@@ -65,7 +65,6 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
             try
             {
                 articles ??= RSSShellTools.GetArticles(Config.MainConfig.RssHeadlineUrl);
-                // TODO: Transfer NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED to here with NKS_SHELLPACKS_RSS_RSSFEED_NOFEED
                 if (articles is not null)
                 {
                     var headlines = new StringBuilder();
@@ -79,14 +78,13 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
                     }
                     return headlines.ToString();
                 }
-                return LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED");
+                return LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_RSSFEED_NOFEED");
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                // TODO: Transfer NKS_NETWORK_TYPES_RSS_FETCHFAILED to here with NKS_SHELLPACKS_RSS_FETCHFAILED
-                return LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED");
+                return LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FETCHFAILED");
             }
         }
     }

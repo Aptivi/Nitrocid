@@ -2617,6 +2617,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "このインタラクティブなTUIでRSSフィードの閲覧がさらに簡単になりました！RSSフィードを選択すると、右側のペインで記事を直接読むことができます。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "から"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "餌はありません。"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "最新のニュースを入手できませんでした。"
     }
   ]
 }

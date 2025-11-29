@@ -2626,6 +2626,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "Das Lesen von RSS-Feeds ist in dieser interaktiven Benutzeroberfläche jetzt noch einfacher! Wählen Sie einfach einen RSS-Feed aus und lesen Sie den Artikel direkt im rechten Bereich."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "Aus"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Kein Feed."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Die neuesten Nachrichten konnten nicht abgerufen werden."
     }
   ]
 }

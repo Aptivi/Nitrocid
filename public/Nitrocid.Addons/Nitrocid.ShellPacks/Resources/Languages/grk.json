@@ -2618,6 +2618,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "Η ανάγνωση των ροών RSS σε αυτό το διαδραστικό TUI έγινε ευκολότερη! Μπορείτε να επιλέξετε μια ροή RSS και να διαβάσετε το άρθρο απευθείας στο δεξί παράθυρο."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "Από"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Χωρίς τροφοδοσία."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Αποτυχία λήψης των τελευταίων ειδήσεων."
     }
   ]
 }
