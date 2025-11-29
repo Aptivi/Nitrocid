@@ -1807,6 +1807,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "Geeft een prachtige digitale klok weer."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "Hoeveel milliseconden moet ik wachten voordat ik een nieuw doolhof genereer?"
     }
   ]
 }

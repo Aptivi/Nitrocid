@@ -1464,5 +1464,8 @@
   <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC" xml:space="preserve">
     <value>멋진 디지털 시계를 보여줍니다.</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
+    <value>새로운 미로를 생성하기 전에 몇 밀리초를 기다려야 합니까?</value>
+  </data>
 
 </root>

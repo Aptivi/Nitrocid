@@ -123,5 +123,8 @@
   <data name="NKS_KERNEL_STARTING_ENVIRONMENT_NOENV" xml:space="preserve">
     <value>環境未指定</value>
   </data>
+  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT" xml:space="preserve">
+    <value>缺少入口點</value>
+  </data>
 
 </root>

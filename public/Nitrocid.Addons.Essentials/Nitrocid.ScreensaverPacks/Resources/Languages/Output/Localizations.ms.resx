@@ -1464,5 +1464,8 @@
   <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC" xml:space="preserve">
     <value>Menunjukkan kepada anda jam digital yang cantik</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
+    <value>Berapa milisaat perlu menunggu sebelum menjana labirin baharu?</value>
+  </data>
 
 </root>

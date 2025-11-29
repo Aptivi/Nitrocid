@@ -1464,5 +1464,8 @@
   <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC" xml:space="preserve">
     <value>Horologium digitale pulcherrimum tibi ostendit.</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
+    <value>Quot millisecunda exspectanda sunt antequam novus labyrinthus generetur?</value>
+  </data>
 
 </root>

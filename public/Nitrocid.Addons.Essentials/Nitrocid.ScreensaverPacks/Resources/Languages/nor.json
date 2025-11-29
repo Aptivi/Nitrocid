@@ -1805,6 +1805,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "Viser deg en nydelig digital klokke."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "Hvor mange millisekunder skal man vente før man genererer en ny labyrint?"
     }
   ]
 }

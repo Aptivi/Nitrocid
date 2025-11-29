@@ -1810,6 +1810,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "Zeigt eine wunderschöne Digitaluhr an."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "Wie viele Millisekunden soll gewartet werden, bevor ein neues Labyrinth generiert wird?"
     }
   ]
 }

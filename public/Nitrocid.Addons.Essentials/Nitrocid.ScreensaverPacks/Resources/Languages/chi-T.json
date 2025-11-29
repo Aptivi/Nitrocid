@@ -1809,6 +1809,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "显示精美的数字时钟。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "生成新迷宫前需要等待多少毫秒？"
     }
   ]
 }

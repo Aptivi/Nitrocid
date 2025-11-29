@@ -1,4 +1,4 @@
-{
+﻿{
   "lang": "rmn",
   "name": "Romanian",
   "cultures": [
@@ -14,6 +14,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
       "text": "Mediul nu este specificat"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT",
+      "text": "Punct de intrare lipsă"
     }
   ]
 }

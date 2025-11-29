@@ -1827,6 +1827,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "تعرض لك ساعة رقمية رائعة."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "كم ميلي ثانية يجب الانتظار قبل إنشاء متاهة جديدة؟"
     }
   ]
 }

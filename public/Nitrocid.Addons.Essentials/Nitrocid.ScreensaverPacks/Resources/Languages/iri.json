@@ -1802,6 +1802,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "Taispeánann sé clog digiteach álainn duit"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "Cé mhéad milleasoicind le fanacht sula ngintear labirint nua?"
     }
   ]
 }

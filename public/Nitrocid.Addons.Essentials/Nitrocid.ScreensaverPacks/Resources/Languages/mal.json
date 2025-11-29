@@ -1804,6 +1804,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "Menunjukkan kepada anda jam digital yang cantik"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "Berapa milisaat perlu menunggu sebelum menjana labirin baharu?"
     }
   ]
 }
