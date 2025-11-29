@@ -37,6 +37,12 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
         /// <summary>
         /// Opens the main page for settings, listing all the sections that are configurable
         /// </summary>
+        public static void OpenMainPage() =>
+            OpenMainPage(SettingsAppTools.SelectConfig());
+
+        /// <summary>
+        /// Opens the main page for settings, listing all the sections that are configurable
+        /// </summary>
         /// <param name="settingsType">Type of settings</param>
         public static void OpenMainPage(string settingsType) =>
             OpenMainPage(Config.GetKernelConfig(settingsType));
