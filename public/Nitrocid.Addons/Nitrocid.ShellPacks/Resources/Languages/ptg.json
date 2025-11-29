@@ -2627,6 +2627,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "Ler feeds RSS nesta interface interactiva tornou-se mais fácil! Pode selecionar um feed RSS e ler o artigo diretamente no painel direito."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "De"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Sem alimentação."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Falha ao receber as últimas notícias."
     }
   ]
 }

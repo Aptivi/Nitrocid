@@ -2618,6 +2618,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "이 대화형 TUI에서 RSS 피드 읽기가 더욱 쉬워졌습니다! RSS 피드를 선택하고 오른쪽 창에서 바로 기사를 읽을 수 있습니다."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "에서"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "피드가 없습니다."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "최신 뉴스를 가져오지 못했습니다."
     }
   ]
 }

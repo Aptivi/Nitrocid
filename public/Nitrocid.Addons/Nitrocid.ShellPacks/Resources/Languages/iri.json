@@ -2618,6 +2618,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "Tá sé níos éasca anois na fothaí RSS a léamh sa TUI idirghníomhach seo! Is féidir leat fotha RSS a roghnú agus an t-alt a léamh go díreach sa phána ar dheis."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "Ó"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Gan beatha."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Theip ar an nuacht is déanaí a fháil."
     }
   ]
 }

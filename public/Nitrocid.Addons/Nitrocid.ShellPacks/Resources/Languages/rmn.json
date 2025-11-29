@@ -2618,6 +2618,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "Citirea fluxurilor RSS în această interfață interactivă a devenit mai ușoară! Puteți selecta un flux RSS și citi articolul direct în panoul din dreapta."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "Din"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Fără hrană."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Nu s-au putut obține cele mai recente știri."
     }
   ]
 }

@@ -2076,5 +2076,14 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
     <value>Citirea fluxurilor RSS în această interfață interactivă a devenit mai ușoară! Puteți selecta un flux RSS și citi articolul direct în panoul din dreapta.</value>
   </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
+    <value>Din</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_NOFEED" xml:space="preserve">
+    <value>Fără hrană.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
+    <value>Nu s-au putut obține cele mai recente știri.</value>
+  </data>
 
 </root>

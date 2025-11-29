@@ -2617,6 +2617,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "Membaca RSS feed di TUI interaktif ini menjadi lebih mudah! Anda dapat memilih RSS feed dan membaca artikel langsung di panel kanan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "Dari"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Tidak ada umpan."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Gagal mendapatkan berita terkini."
     }
   ]
 }

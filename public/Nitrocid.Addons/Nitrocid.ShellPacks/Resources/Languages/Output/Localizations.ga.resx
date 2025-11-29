@@ -2076,5 +2076,14 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
     <value>Tá sé níos éasca anois na fothaí RSS a léamh sa TUI idirghníomhach seo! Is féidir leat fotha RSS a roghnú agus an t-alt a léamh go díreach sa phána ar dheis.</value>
   </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
+    <value>Ó</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_NOFEED" xml:space="preserve">
+    <value>Gan beatha.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
+    <value>Theip ar an nuacht is déanaí a fháil.</value>
+  </data>
 
 </root>

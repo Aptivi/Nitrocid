@@ -2643,6 +2643,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "أصبحت قراءة موجزات RSS في واجهة المستخدم التفاعلية هذه أسهل! يمكنك تحديد موجز RSS وقراءة المقالة مباشرةً في الجزء الأيمن."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "من"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "لا يوجد رد فعل."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "فشل في الحصول على آخر الأخبار."
     }
   ]
 }

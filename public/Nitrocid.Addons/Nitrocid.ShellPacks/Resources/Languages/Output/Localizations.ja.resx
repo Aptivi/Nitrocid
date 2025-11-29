@@ -2076,5 +2076,14 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
     <value>このインタラクティブなTUIでRSSフィードの閲覧がさらに簡単になりました！RSSフィードを選択すると、右側のペインで記事を直接読むことができます。</value>
   </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
+    <value>から</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_NOFEED" xml:space="preserve">
+    <value>餌はありません。</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
+    <value>最新のニュースを入手できませんでした。</value>
+  </data>
 
 </root>

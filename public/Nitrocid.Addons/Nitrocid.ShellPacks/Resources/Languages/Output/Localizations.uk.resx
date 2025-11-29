@@ -2076,5 +2076,14 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
     <value>Читання RSS-каналів у цьому інтерактивному TUI стало ще простішим! Ви можете вибрати RSS-канал і прочитати статтю безпосередньо на правій панелі.</value>
   </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
+    <value>Від</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_NOFEED" xml:space="preserve">
+    <value>Без корму.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
+    <value>Не вдалося отримати останні новини.</value>
+  </data>
 
 </root>

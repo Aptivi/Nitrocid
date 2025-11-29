@@ -2076,5 +2076,14 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
     <value>Bu etkileşimli TUI&apos;de RSS beslemelerini okumak artık daha kolay! Bir RSS beslemesi seçebilir ve makaleyi doğrudan sağ bölmeden okuyabilirsiniz.</value>
   </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
+    <value>İtibaren</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_NOFEED" xml:space="preserve">
+    <value>Besleme yok.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
+    <value>Son haberlere ulaşılamadı.</value>
+  </data>
 
 </root>

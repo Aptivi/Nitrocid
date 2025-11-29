@@ -2076,5 +2076,14 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
     <value>Het lezen van RSS-feeds in deze interactieve TUI is nog eenvoudiger geworden! U kunt een RSS-feed selecteren en het artikel direct in het rechterdeelvenster lezen.</value>
   </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
+    <value>Van</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_NOFEED" xml:space="preserve">
+    <value>Geen voer.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
+    <value>Het laatste nieuws is niet ontvangen.</value>
+  </data>
 
 </root>

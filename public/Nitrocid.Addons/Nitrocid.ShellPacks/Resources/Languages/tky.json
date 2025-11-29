@@ -2618,6 +2618,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "Bu etkileşimli TUI'de RSS beslemelerini okumak artık daha kolay! Bir RSS beslemesi seçebilir ve makaleyi doğrudan sağ bölmeden okuyabilirsiniz."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "İtibaren"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Besleme yok."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Son haberlere ulaşılamadı."
     }
   ]
 }

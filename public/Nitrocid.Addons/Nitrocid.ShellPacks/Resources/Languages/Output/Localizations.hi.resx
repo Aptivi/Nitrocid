@@ -2076,5 +2076,14 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
     <value>इस इंटरैक्टिव TUI में RSS फ़ीड पढ़ना आसान हो गया है! आप एक RSS फ़ीड चुन सकते हैं और सीधे दाएं पेन पर आर्टिकल पढ़ सकते हैं।</value>
   </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
+    <value>से</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_NOFEED" xml:space="preserve">
+    <value>कोई चारा नहीं.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
+    <value>नवीनतम समाचार प्राप्त करने में विफल।</value>
+  </data>
 
 </root>

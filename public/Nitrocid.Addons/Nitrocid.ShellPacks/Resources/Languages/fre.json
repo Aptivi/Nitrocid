@@ -2663,6 +2663,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "La lecture des flux RSS est désormais plus simple grâce à cette interface utilisateur interactive ! Sélectionnez un flux RSS et lisez l'article directement dans le volet de droite."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "Depuis"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Pas de nourriture."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Impossible d'obtenir les dernières nouvelles."
     }
   ]
 }

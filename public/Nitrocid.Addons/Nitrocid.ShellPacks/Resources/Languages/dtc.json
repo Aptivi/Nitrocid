@@ -2623,6 +2623,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "Het lezen van RSS-feeds in deze interactieve TUI is nog eenvoudiger geworden! U kunt een RSS-feed selecteren en het artikel direct in het rechterdeelvenster lezen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "Van"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Geen voer."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Het laatste nieuws is niet ontvangen."
     }
   ]
 }

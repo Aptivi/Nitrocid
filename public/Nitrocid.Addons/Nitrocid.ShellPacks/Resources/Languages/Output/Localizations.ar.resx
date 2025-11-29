@@ -2076,5 +2076,14 @@
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
     <value>أصبحت قراءة موجزات RSS في واجهة المستخدم التفاعلية هذه أسهل! يمكنك تحديد موجز RSS وقراءة المقالة مباشرةً في الجزء الأيمن.</value>
   </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
+    <value>من</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_RSSFEED_NOFEED" xml:space="preserve">
+    <value>لا يوجد رد فعل.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
+    <value>فشل في الحصول على آخر الأخبار.</value>
+  </data>
 
 </root>

@@ -2621,6 +2621,18 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY",
       "text": "Det ble enklere å lese RSS-feedene i denne interaktive brukergrensesnittet! Du kan velge en RSS-feed og lese artikkelen direkte i høyre rute."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_FROM",
+      "text": "Fra"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_RSSFEED_NOFEED",
+      "text": "Ingen feed."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
+      "text": "Kunne ikke få siste nytt."
     }
   ]
 }
