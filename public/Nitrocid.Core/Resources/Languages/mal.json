@@ -16,6 +16,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
       "text": "Persekitaran tidak dinyatakan"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT",
+      "text": "Titik masuk yang hilang"
     }
   ]
 }

@@ -1800,6 +1800,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "Shows you a gorgeous digital clock"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "How many milliseconds to wait before generating a new maze?"
     }
   ]
 }

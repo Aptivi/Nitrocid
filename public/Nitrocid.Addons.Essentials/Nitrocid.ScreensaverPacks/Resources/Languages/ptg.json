@@ -1811,6 +1811,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "Mostra um bonito relógio digital."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "Quantos milissegundos devo esperar antes de gerar um novo labirinto?"
     }
   ]
 }

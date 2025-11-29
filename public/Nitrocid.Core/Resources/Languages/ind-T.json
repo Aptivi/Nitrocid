@@ -13,6 +13,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
       "text": "पर्यावरण निर्दिष्ट नहीं है"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT",
+      "text": "प्रवेश बिंदु गुम है"
     }
   ]
 }

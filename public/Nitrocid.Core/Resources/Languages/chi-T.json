@@ -21,6 +21,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
       "text": "未指定环境"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT",
+      "text": "缺少入口点"
     }
   ]
 }

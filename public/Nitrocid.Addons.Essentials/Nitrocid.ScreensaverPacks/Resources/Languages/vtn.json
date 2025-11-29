@@ -1801,6 +1801,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "Hiển thị cho bạn một chiếc đồng hồ kỹ thuật số tuyệt đẹp."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "Phải đợi bao nhiêu mili giây trước khi tạo ra một mê cung mới?"
     }
   ]
 }

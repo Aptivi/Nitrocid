@@ -59,6 +59,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
       "text": "L'environnement n'est pas spécifié"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT",
+      "text": "Point d'entrée manquant"
     }
   ]
 }

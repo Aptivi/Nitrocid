@@ -12,6 +12,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
       "text": "O ambiente não é especificado"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT",
+      "text": "Ponto de entrada ausente"
     }
   ]
 }

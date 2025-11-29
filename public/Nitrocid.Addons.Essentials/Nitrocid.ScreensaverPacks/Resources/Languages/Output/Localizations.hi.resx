@@ -1464,5 +1464,8 @@
   <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC" xml:space="preserve">
     <value>आपको एक खूबसूरत डिजिटल घड़ी दिखाई देती है।</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
+    <value>नया मेज़ बनाने से पहले कितने मिलीसेकंड इंतज़ार करना चाहिए?</value>
+  </data>
 
 </root>

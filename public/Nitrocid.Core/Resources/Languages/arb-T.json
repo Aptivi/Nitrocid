@@ -34,11 +34,15 @@
   "locs": [
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
-      "text": "نيتروسيد كانساس"
+      "text": "نيتروسيد"
     },
     {
       "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
       "text": "لم يتم تحديد البيئة"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT",
+      "text": "نقطة دخول مفقودة"
     }
   ]
 }

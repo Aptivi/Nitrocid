@@ -1801,6 +1801,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "आपको एक खूबसूरत डिजिटल घड़ी दिखाई देती है।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "नया मेज़ बनाने से पहले कितने मिलीसेकंड इंतज़ार करना चाहिए?"
     }
   ]
 }

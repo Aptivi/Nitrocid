@@ -13513,7 +13513,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [Mazer] How many milliseconds to wait before generating a new maze?
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC -> "How many milliseconds to wait before generating a new maze?"
         public int MazerNewMazeDelay
         {
             get

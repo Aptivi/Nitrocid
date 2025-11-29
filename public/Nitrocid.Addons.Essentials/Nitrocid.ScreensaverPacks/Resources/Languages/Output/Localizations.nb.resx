@@ -1464,5 +1464,8 @@
   <data name="NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC" xml:space="preserve">
     <value>Viser deg en nydelig digital klokke.</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
+    <value>Hvor mange millisekunder skal man vente før man genererer en ny labyrint?</value>
+  </data>
 
 </root>

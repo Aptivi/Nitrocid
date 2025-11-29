@@ -123,5 +123,8 @@
   <data name="NKS_KERNEL_STARTING_ENVIRONMENT_NOENV" xml:space="preserve">
     <value>Môi trường không được chỉ định</value>
   </data>
+  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT" xml:space="preserve">
+    <value>Відсутня точка входу</value>
+  </data>
 
 </root>

@@ -1802,6 +1802,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "Afișează un ceas digital superb."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "Câte milisecunde trebuie să aștepți înainte de a genera un nou labirint?"
     }
   ]
 }

@@ -1802,6 +1802,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "Σας δείχνει ένα πανέμορφο ψηφιακό ρολόι."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου πρέπει να περιμένετε πριν δημιουργήσετε έναν νέο λαβύρινθο;"
     }
   ]
 }

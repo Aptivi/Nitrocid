@@ -1801,6 +1801,10 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_DIGITALCLOCK_SETTINGS_DESC",
       "text": "美しいデジタル時計を表示します。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
+      "text": "新しい迷路を生成する前に何ミリ秒待機しますか?"
     }
   ]
 }

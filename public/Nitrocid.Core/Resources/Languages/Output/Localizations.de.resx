@@ -123,5 +123,8 @@
   <data name="NKS_KERNEL_STARTING_ENVIRONMENT_NOENV" xml:space="preserve">
     <value>Umgebung ist nicht angegeben</value>
   </data>
+  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT" xml:space="preserve">
+    <value>Fehlender Einstiegspunkt</value>
+  </data>
 
 </root>
