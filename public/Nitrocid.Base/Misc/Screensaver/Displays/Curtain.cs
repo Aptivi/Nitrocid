@@ -17,18 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Users.Login;
 using Terminaux.Base;
-using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Base.Misc.Screensaver.Displays
 {

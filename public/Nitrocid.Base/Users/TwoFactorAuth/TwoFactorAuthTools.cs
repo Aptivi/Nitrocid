@@ -17,18 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections;
-using System.Collections.Generic;
 using System.Text;
-using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Drivers.Encryption;
-using Nitrocid.Base.Drivers.Encryption.Bases;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Text.Probers.Regexp;
 using OtpNet;
 using QRCoder;
-using Terminaux.Base.TermInfo.Tabsets;
 
 namespace Nitrocid.Base.Users.TwoFactorAuth
 {

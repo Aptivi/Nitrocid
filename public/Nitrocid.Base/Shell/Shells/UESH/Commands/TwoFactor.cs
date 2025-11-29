@@ -17,12 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Time.Alarm;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Interactives;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Users.TwoFactorAuth;
@@ -30,7 +27,6 @@ using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Help;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {

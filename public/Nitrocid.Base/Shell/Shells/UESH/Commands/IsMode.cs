@@ -20,14 +20,8 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Terminaux.Colors.Themes.Colors;
-using Textify.Tools.Placeholder;
 using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
-using Nitrocid.Base.Users.Login.Motd;
-using Nitrocid.Base.Users.Windows;
-using Nitrocid.Base.Kernel.Hardware;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {

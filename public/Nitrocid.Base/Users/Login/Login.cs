@@ -34,7 +34,6 @@ using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Drivers.Encryption;
 using OtpNet;
-using System.Text;
 
 namespace Nitrocid.Base.Users.Login
 {

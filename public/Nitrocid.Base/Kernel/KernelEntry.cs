@@ -19,12 +19,9 @@
 
 using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Inputs.Styles.Infobox;
 using Textify.Tools.Placeholder;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Base.Checks;
-using Terminaux.Base;
-using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Shell.Arguments.Base;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
@@ -33,7 +30,6 @@ using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Arguments;
 using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Misc.Audio;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Kernel.Starting;
 using Nitrocid.Base.Users.Login.Motd;
 using Nitrocid.Base.Users.Login;

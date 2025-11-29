@@ -22,11 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using System.Linq;
-using System.Text;
 using Terminaux.Images;
-using Terminaux.Inputs.Styles.Editor;
-using Textify.General;
 using Terminaux.Images.Interactives;
 
 namespace Nitrocid.Extras.Images.Commands

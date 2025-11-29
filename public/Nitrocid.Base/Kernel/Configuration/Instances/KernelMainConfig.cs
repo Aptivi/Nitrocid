@@ -43,7 +43,6 @@ using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Misc.Reflection.Internal;
 using Nitrocid.Base.Kernel.Starting;
 using Nitrocid.Base.Misc.Notifications;
-using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Misc.Widgets.Implementations;
 using Nitrocid.Base.Kernel.Exceptions;

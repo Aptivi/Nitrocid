@@ -22,7 +22,6 @@ using System.Text;
 using System.Threading;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Base.Extensions;
 

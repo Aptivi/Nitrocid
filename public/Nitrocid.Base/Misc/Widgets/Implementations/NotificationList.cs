@@ -19,7 +19,6 @@
 
 using System.Text;
 using Nitrocid.Base.Misc.Notifications;
-using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
