@@ -214,7 +214,7 @@ namespace Nitrocid.Base.Shell.Homepage
                         if (isWithinSettings)
                         {
                             if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
-                                SettingsApp.OpenMainPage(Config.MainConfig);
+                                SettingsApp.OpenMainPage();
                             render = true;
                         }
                         else if (isWithinAbout)
@@ -342,7 +342,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                 if (buttonHighlight == 1)
                                     NotificationsCli.OpenNotificationsCli();
                                 else if (buttonHighlight == 2)
-                                    SettingsApp.OpenMainPage(Config.MainConfig);
+                                    SettingsApp.OpenMainPage();
                                 else if (buttonHighlight == 3)
                                     OpenAboutBox();
                                 else
