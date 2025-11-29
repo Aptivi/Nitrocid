@@ -43,8 +43,6 @@ namespace Nitrocid.ShellPacks.Commands
                 tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO"), ConsoleKey.F1, (article, _, _, _) => tui.ShowArticleInfo(article)));
                 tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE"), ConsoleKey.F2, (article, _, _, _) => tui.OpenArticleLink(article)));
                 tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH"), ConsoleKey.F3, (article, _, _, _) => tui.RefreshFeed()));
-                var client = (RSSFeed?)tui.rssConnection?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
                 if (parameters.ArgumentsList.Length > 0)
                     tui.rssConnection = EstablishRssConnection(parameters.ArgumentsList[0]);
                 else
@@ -57,6 +55,8 @@ namespace Nitrocid.ShellPacks.Commands
                     }
                     tui.rssConnection = EstablishRssConnection(address);
                 }
+                var client = (RSSFeed?)tui.rssConnection?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
                 client.Refresh();
                 InteractiveTuiTools.OpenInteractiveTui(tui);
             }
