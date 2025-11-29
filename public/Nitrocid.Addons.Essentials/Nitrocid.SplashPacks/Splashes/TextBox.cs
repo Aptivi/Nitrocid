@@ -22,11 +22,8 @@ using System.Threading;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
-using Terminaux.Colors.Themes.Colors;
-using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Textify.General;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

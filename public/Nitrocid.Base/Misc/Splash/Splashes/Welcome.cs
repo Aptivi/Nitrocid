@@ -24,7 +24,6 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Terminaux.Base;
-using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Colors.Transformation;

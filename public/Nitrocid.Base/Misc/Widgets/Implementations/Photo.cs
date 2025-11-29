@@ -21,7 +21,6 @@ using System.IO;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Misc.Reflection.Internal;
 using Terminaux.Images;
-using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Base.Misc.Widgets.Implementations
 {

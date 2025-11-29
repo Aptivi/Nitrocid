@@ -31,7 +31,6 @@ using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Power;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Audio;
 using Nitrocid.Base.Misc.Interactives;
@@ -44,19 +43,15 @@ using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
 
 namespace Nitrocid.Base.Shell.Homepage

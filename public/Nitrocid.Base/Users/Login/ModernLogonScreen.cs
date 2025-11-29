@@ -19,17 +19,14 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Threading;
-using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users.Login.Motd;
@@ -40,7 +37,6 @@ using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors.Themes.Colors;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Data.Figlet;
