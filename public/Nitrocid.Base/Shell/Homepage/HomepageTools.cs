@@ -340,11 +340,11 @@ namespace Nitrocid.Base.Shell.Homepage
                                 if (pageNumber != 1)
                                     break;
                                 if (buttonHighlight == 1)
-                                    SettingsApp.OpenMainPage(Config.MainConfig);
-                                else if (buttonHighlight == 2)
-                                    OpenAboutBox();
-                                else if (buttonHighlight == 3)
                                     NotificationsCli.OpenNotificationsCli();
+                                else if (buttonHighlight == 2)
+                                    SettingsApp.OpenMainPage(Config.MainConfig);
+                                else if (buttonHighlight == 3)
+                                    OpenAboutBox();
                                 else
                                     DoAction(choiceIdx);
                                 break;
