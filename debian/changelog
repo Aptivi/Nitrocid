@@ -1,3 +1,30 @@
+nitrocid-28 (4.0.28.43-0.2.0.0~rc-1) noble; urgency=medium
+
+  * Added two-factor authentication for Nitrocid users
+  * Added Widget Canvas JSON
+  * Added configurable modern logon screen
+  * Added configurable Nitrocid homepage
+  * Added ambient sound FX intensity
+  * Added the Raspberry theme
+  * Added single-pane file manager TUI
+  * Added new widgets
+  * Added contact editing feature
+  * Added new RPC commands
+  * Added new Nitrocid application: Nitrocid.Rkm
+  * Added help pages for all interactive TUIs
+  * Migrated framework to .NET 10.0 `*`
+  * Updated to Terminaux 8.0 `+`
+  * Attractive new look
+  * Delegated navigation sounds to Terminaux
+  * Improved configuration verification
+  * SourceLink reverted to GitHub `*`
+  * Improved localization system
+  * Settings in The Nitrocid Homepage now lets you select configuration instances
+  * General improvements and bug fixes
+  * Removed the legacy settings app
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sun, 30 Nov 2025 14:18:01 +0300
+
 nitrocid-28 (4.0.28.18-0.2.0.0~beta-1) noble; urgency=medium
 
   * Added new screensavers

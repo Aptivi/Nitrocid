@@ -3,6 +3,25 @@ Nitrocid KS changes
 
 Release Candidate version
 
-Released 2026; version 0.2.0.0 (mod API 4.0.28.43); codename TBD
+Released December 25th, 2025; version 0.2.0.0 (mod API 4.0.28.43); codename
+Solidification
 
-TBD
+This version of Nitrocid KS is the second major version series released after
+the revolutional 0.1.0.0 release that was the most historic event at the time.
+Dedicated to providing improved user experience, we've improved our libraries
+and our applications to ensure that they're at their highest quality possible.
+
+The v0.2.0.x version series incorporates many major changes, from the kernel
+itself to the graphical terminal library, Terminaux, that has been updated to
+version 8.0 to provide improved performance of the kernel overall. Not only
+that, but we've also worked hard on making sure that this version of Nitrocid
+will be faster than never before, increasing your productivity.
+
+The kernel simulation functionality remains Nitrocid's #1 goal, because we
+started this project back in 2018 to showcase the simulation process. Over
+time, new features landed, and many improvements were made to existing
+features.
+
+You are now testing the release candidate of the upcoming version of Nitrocid,
+version 0.2.0.0 (Solidification). The final release will be distributed early
+next year.
