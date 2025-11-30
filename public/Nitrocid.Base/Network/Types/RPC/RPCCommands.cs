@@ -170,7 +170,7 @@ namespace Nitrocid.Base.Network.Types.RPC
         {
             try
             {
-                if (RemoteProcedure.RPCListen is not null)
+                if (RemoteProcedure.RPCListen is not null && RemoteProcedure.RPCListen.Client is not null)
                     RemoteProcedure.RPCListen?.BeginReceive(new AsyncCallback(AcknowledgeMessage), null);
             }
             catch (Exception ex)
@@ -185,8 +185,6 @@ namespace Nitrocid.Base.Network.Types.RPC
             try
             {
                 if (RemoteProcedure.RPCListen is null || RemoteProcedure.RPCListen.Client is null)
-                    return;
-                if (RemoteProcedure.rpcStopping)
                     return;
                 var endpoint = new IPEndPoint(IPAddress.Any, Config.MainConfig.RPCPort);
                 byte[] MessageBuffer = RemoteProcedure.RPCListen.EndReceive(asyncResult, ref endpoint);
