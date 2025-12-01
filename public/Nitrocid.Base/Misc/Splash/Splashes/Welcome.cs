@@ -23,7 +23,9 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Users.Login.Motd;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Colors.Transformation;
@@ -177,6 +179,23 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             if (!delayRequired)
                 return builder.ToString();
 
+            // Write an infobox border
+            int height = ConsoleWrapper.WindowHeight - 4;
+            int width = ConsoleWrapper.WindowWidth - 8;
+            int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
+            int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
+            string versionStr = $"{KernelReleaseInfo.ApiVersion}";
+            var border = new BoxFrame()
+            {
+                Left = posX,
+                Top = posY,
+                Width = width,
+                Height = height,
+                UseColors = true,
+                Text = versionStr,
+            };
+            builder.Append(border.Render());
+
             // Write a glorious Welcome screen
             Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);
             string text =
@@ -212,6 +231,21 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
                 }
             };
             builder.Append(versionTextRenderer.Render());
+
+            // Print the welcome message
+            int welcomeMessagePosY = ConsoleWrapper.WindowHeight / 2 + figHeight + 1;
+            var welcomeMessageTextRenderer = new AlignedText()
+            {
+                Top = welcomeMessagePosY,
+                UseColors = true,
+                OneLine = true,
+                Text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MOTD_DEFAULTMOTD"),
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle,
+                }
+            };
+            builder.Append(welcomeMessageTextRenderer.Render());
 
             // Check if delay is required
             if ((context == SplashContext.ShuttingDown || context == SplashContext.Rebooting) && Config.MainConfig.BeepOnShutdown)
