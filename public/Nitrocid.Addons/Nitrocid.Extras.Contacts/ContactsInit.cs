@@ -101,8 +101,9 @@ namespace Nitrocid.Extras.Contacts
             ExtensionHandlerTools.extensionHandlers.AddRange(handlers);
 
             // Enable logging if debugging is enabled
-            LoggingTools.AbstractLogger = DebugWriter.debugLogger;
             LoggingTools.EnableLogging = KernelEntry.DebugMode;
+            if (LoggingTools.EnableLogging)
+                LoggingTools.AbstractLogger = DebugWriter.debugLogger;
         }
 
         public void StopAddon()
