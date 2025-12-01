@@ -350,7 +350,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
             }
             else
-                // TODO: NKS_CONTACTS_TUI_NOADDRESS -> "No contact address"
                 finalInfoRendered.Append(LanguageTools.GetLocalized("NKS_CONTACTS_TUI_NOADDRESS"));
 
             // Now, return the value
@@ -787,12 +786,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                     new("10", GetContactRolesFinal(card, false)),
                     new("11", GetContactTitlesFinal(card, false)),
                     new("12", GetContactNotesFinal(card, false)),
-                    // TODO: NKS_CONTACTS_TUI_CONTACTHASPICTURE -> "Contains profile picture"
-                    // TODO: NKS_CONTACTS_TUI_CONTACTHASNOPICTURE -> "Doesn't contain profile picture"
                     new("13", card.GetPartsArray<PhotoInfo>().Length > 0 ? LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTHASPICTURE") : LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTHASNOPICTURE")),
                 ];
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_EXIT")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTEDITPROMPT -> "Editing the contact"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTEDITPROMPT") + $": {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -899,7 +895,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT -> "Editing the contact addresses of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTADDRSEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -947,7 +942,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 ];
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT -> "Editing the contact address of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTADDREDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1045,7 +1039,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT -> "Editing the contact mails of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTMAILSEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1087,7 +1080,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 ];
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT -> "Editing the contact mail of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTMAILEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1134,7 +1126,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT -> "Editing the contact organizations of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTORGSEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1178,7 +1169,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 ];
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT -> "Editing the contact organization of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTORGEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1248,7 +1238,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT -> "Editing the contact telephones of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTTELEPHONESEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1290,7 +1279,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 ];
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTTELEPHONEEDITPROMPT -> "Editing the contact telephone of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTTELEPHONEEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1337,7 +1325,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT -> "Editing the contact urls of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTURLSEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1379,7 +1366,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 ];
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT -> "Editing the contact url of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTURLEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1426,7 +1412,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT -> "Editing the contact geos of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTGEOSEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1468,7 +1453,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 ];
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTGEOEDITPROMPT -> "Editing the contact geo of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTGEOEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1519,7 +1503,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT -> "Editing the contact impps of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTIMPPSEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1561,7 +1544,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 ];
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT -> "Editing the contact impp of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTIMPPEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1612,7 +1594,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT -> "Editing the contact nicknames of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNICKNAMESEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1654,7 +1635,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 ];
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTNICKNAMEEDITPROMPT -> "Editing the contact nickname of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNICKNAMEEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1701,7 +1681,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTROLESEDITPROMPT -> "Editing the contact roles of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTROLESEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1743,7 +1722,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 ];
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTROLEEDITPROMPT -> "Editing the contact role of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTROLEEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1790,7 +1768,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTTITLESEDITPROMPT -> "Editing the contact titles of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTTITLESEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1832,7 +1809,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 ];
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTTITLEEDITPROMPT -> "Editing the contact title of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTTITLEEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1879,7 +1855,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTNOTESEDITPROMPT -> "Editing the contact notes of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNOTESEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1921,7 +1896,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 ];
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_DELETE")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTNOTEEDITPROMPT -> "Editing the contact note of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTNOTEEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not
@@ -1968,7 +1942,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_ADD")));
                 choiceInfos.Add(new($"{choiceInfos.Count + 1}", LanguageTools.GetLocalized("NKS_CONTACTS_TUI_KEYBINDING_SAVE")));
-                // TODO: NKS_CONTACTS_TUI_CONTACTPICTURESEDITPROMPT -> "Editing the contact pictures of"
                 int editIndex = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choiceInfos], LanguageTools.GetLocalized("NKS_CONTACTS_TUI_CONTACTPICTURESEDITPROMPT") + $" {GetContactNamesFinal(card)}", Settings.InfoBoxSettings);
 
                 // Check to see if we pressed Exit or not

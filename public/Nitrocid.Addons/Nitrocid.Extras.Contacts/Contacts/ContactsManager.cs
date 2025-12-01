@@ -432,7 +432,6 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to save contacts: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                // TODO: NKS_CONTACTS_EXCEPTION_CONTACTSAVEFAILED -> "Failed to save contacts"
                 throw new KernelException(KernelExceptionType.Contacts, LanguageTools.GetLocalized("NKS_CONTACTS_EXCEPTION_CONTACTSAVEFAILED"), ex);
             }
         }
