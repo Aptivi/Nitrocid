@@ -17,20 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors.Themes.Colors;
-using Terminaux.Inputs.Styles.Infobox;
-using System.Linq;
-using System.Threading;
-using Terminaux.Base;
-using Terminaux.Inputs;
 using System;
-using Terminaux.Inputs.Styles;
-using Terminaux.Inputs.Styles.Infobox.Tools;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Power;
-using Nitrocid.Base.Drivers.Encryption;
+using Nitrocid.Base.Languages;
+using Terminaux.Base;
+using Terminaux.Base.Buffered;
+using Terminaux.Colors.Themes.Colors;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Base.Users.Login.Handlers.Logins
 {
@@ -94,19 +98,40 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
 
         public override string UserSelector()
         {
-            // First, get the user number from the selection input
-            var users = UserManagement.ListAllUsers().Select(
-                (user) =>
+            // Get the user list first
+            var users = GetUsersList();
+
+            // Some common variables
+            var userSelectorScreen = new Screen();
+            var userSelectorScreenBuffer = new ScreenPart();
+            userSelectorScreenBuffer.AddDynamicText(() =>
+            {
+                var builder = new StringBuilder();
+
+                // Write an infobox border
+                int height = ConsoleWrapper.WindowHeight - 4;
+                int width = ConsoleWrapper.WindowWidth - 8;
+                int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
+                int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
+                string versionStr = $"{KernelReleaseInfo.ApiVersion}";
+                var border = new BoxFrame()
                 {
-                    var userInfo = UserManagement.GetUser(user) ??
-                    throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {user}");
-                    var fullName = userInfo.FullName;
-                    return (user, string.IsNullOrEmpty(fullName) ? user : fullName);
-                }
-            ).ToArray();
+                    Left = posX,
+                    Top = posY,
+                    Width = width,
+                    Height = height,
+                    UseColors = true,
+                    Text = versionStr,
+                };
+                builder.Append(border.Render());
+
+                return builder.ToString();
+            });
+            userSelectorScreen.AddBufferedPart("User selector screen part", userSelectorScreenBuffer);
 
             // Then, make the choices and prompt for the selection
-            ThemeColorsTools.LoadBackground();
+            ScreenTools.SetCurrent(userSelectorScreen);
+            ScreenTools.Render();
             var choices = InputChoiceTools.GetInputChoices(users);
             int userNum = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SELECTUSER")) + 1;
             return
@@ -140,6 +165,20 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
                     ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
             return false;
+        }
+
+        private (string user, string fullName)[] GetUsersList()
+        {
+            var users = UserManagement.ListAllUsers().Select(
+                (user) =>
+                {
+                    var userInfo = UserManagement.GetUser(user) ??
+                        throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_SUDO_EXCEPTION_USERINFO") + $" {user}");
+                    var fullName = userInfo.FullName;
+                    return (user, string.IsNullOrEmpty(fullName) ? user : fullName);
+                }
+            ).ToArray();
+            return users;
         }
     }
 }
