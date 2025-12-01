@@ -789,6 +789,7 @@ namespace Nitrocid.Base.Shell.Homepage
                     {
                         OptionColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText),
                         SelectedOptionColor = ThemeColorsTools.GetColor(ThemeColorType.TuiPaneSelectedSeparator),
+                        SliderColor = ThemeColorsTools.GetColor(buttonHighlight == 0 ? ThemeColorType.TuiPaneSelectedSeparator : ThemeColorType.Separator),
                     },
                 };
                 builder.Append(
