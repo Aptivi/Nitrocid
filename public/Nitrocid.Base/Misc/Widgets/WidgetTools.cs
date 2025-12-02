@@ -20,6 +20,7 @@
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Widgets.Implementations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Writer.ConsoleWriters;
@@ -31,18 +32,18 @@ namespace Nitrocid.Base.Misc.Widgets
     /// </summary>
     public static class WidgetTools
     {
-        private static readonly List<BaseWidget> baseWidgets =
+        private static readonly List<Type> baseWidgets =
         [
-            new UnknownWidget(),
-            new AnalogClock(),
-            new DigitalClock(),
-            new Emoji(),
-            new TextWidget(),
-            new NotificationIcons(),
-            new NotificationList(),
-            new Photo(),
+            typeof(UnknownWidget),
+            typeof(AnalogClock),
+            typeof(DigitalClock),
+            typeof(Emoji),
+            typeof(TextWidget),
+            typeof(NotificationIcons),
+            typeof(NotificationList),
+            typeof(Photo),
         ];
-        private static readonly List<BaseWidget> customWidgets = [];
+        private static readonly List<Type> customWidgets = [];
 
         /// <summary>
         /// Adds a widget
@@ -56,7 +57,7 @@ namespace Nitrocid.Base.Misc.Widgets
             string widgetName = GetWidgetName(widget);
             if (CheckWidget(widgetName))
                 throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETEXISTS"));
-            customWidgets.Add(widget);
+            customWidgets.Add(widget.GetType());
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Nitrocid.Base.Misc.Widgets
             if (IsWidgetBuiltin(widgetName))
                 throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETUNREMOVABLE"));
             var widget = GetWidget(widgetName);
-            customWidgets.Remove(widget);
+            customWidgets.Remove(widget.GetType());
         }
 
         /// <summary>
@@ -89,9 +90,11 @@ namespace Nitrocid.Base.Misc.Widgets
             if (!CheckWidget(widgetName))
                 throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
             if (IsWidgetBuiltin(widgetName))
-                return baseWidgets.Single((w) => GetWidgetName(w) == widgetName);
+                return (BaseWidget?)Activator.CreateInstance(baseWidgets.Single((w) => w.Name == widgetName)) ??
+                    throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
             else
-                return customWidgets.Single((w) => GetWidgetName(w) == widgetName);
+                return (BaseWidget?)Activator.CreateInstance(customWidgets.Single((w) => w.Name == widgetName)) ??
+                    throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
         }
 
         /// <summary>
@@ -105,7 +108,7 @@ namespace Nitrocid.Base.Misc.Widgets
             if (string.IsNullOrWhiteSpace(widgetName))
                 throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
             return
-                IsWidgetBuiltin(widgetName) || customWidgets.Any((w) => GetWidgetName(w) == widgetName);
+                IsWidgetBuiltin(widgetName) || customWidgets.Any((w) => w.Name == widgetName);
         }
 
         /// <summary>
@@ -118,7 +121,7 @@ namespace Nitrocid.Base.Misc.Widgets
         {
             if (string.IsNullOrWhiteSpace(widgetName))
                 throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_NOWIDGETNAME"));
-            return baseWidgets.Any((w) => GetWidgetName(w) == widgetName);
+            return baseWidgets.Any((w) => w.Name == widgetName);
         }
 
         /// <summary>
@@ -248,8 +251,8 @@ namespace Nitrocid.Base.Misc.Widgets
         /// <returns>An array containing base and custom widget class names</returns>
         public static string[] GetWidgetNames()
         {
-            var baseNames = baseWidgets.Select(GetWidgetName).ToArray();
-            var customNames = customWidgets.Select(GetWidgetName).ToArray();
+            var baseNames = baseWidgets.Select((t) => t.Name).ToArray();
+            var customNames = customWidgets.Select((t) => t.Name).ToArray();
             return [.. baseNames, .. customNames];
         }
 
@@ -260,7 +263,7 @@ namespace Nitrocid.Base.Misc.Widgets
             string widgetName = GetWidgetName(widget);
             if (CheckWidget(widgetName))
                 throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETEXISTS"));
-            baseWidgets.Add(widget);
+            baseWidgets.Add(widget.GetType());
         }
 
         internal static void RemoveBaseWidget(string widgetName)
@@ -272,7 +275,7 @@ namespace Nitrocid.Base.Misc.Widgets
             if (!IsWidgetBuiltin(widgetName))
                 throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTBUILTIN"));
             var widget = GetWidget(widgetName);
-            baseWidgets.Remove(widget);
+            baseWidgets.Remove(widget.GetType());
         }
     }
 }

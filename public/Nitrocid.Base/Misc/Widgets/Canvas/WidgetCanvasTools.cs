@@ -130,7 +130,7 @@ namespace Nitrocid.Base.Misc.Widgets.Canvas
                 }
 
                 // Now, render the widget
-                var widget = WidgetTools.GetWidget(renderInfo.WidgetName);
+                var widget = renderInfo.Widget;
                 widget.Options = renderInfo.Options;
                 if (requiresRefresh)
                     renderBuilder.Append(widget.Initialize(pos.X, pos.Y, margin.Width, margin.Height));
