@@ -24,6 +24,7 @@ using Newtonsoft.Json;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Terminaux.Base.Buffered;
 using Terminaux.Base.Structures;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using TextifyDep::System.Diagnostics.CodeAnalysis;
@@ -92,7 +93,16 @@ namespace Nitrocid.Base.Misc.Widgets.Canvas
         /// </summary>
         /// <param name="renderInfos">A list of <see cref="WidgetRenderInfo"/></param>
         /// <returns>Rendered widgets in a string to print to the console</returns>
-        public static string RenderFromInfos(WidgetRenderInfo[] renderInfos)
+        public static string RenderFromInfos(WidgetRenderInfo[] renderInfos) =>
+            RenderFromInfos(renderInfos, ScreenTools.CurrentScreen?.RefreshWasDone ?? true);
+
+        /// <summary>
+        /// Renders the widgets to a string
+        /// </summary>
+        /// <param name="renderInfos">A list of <see cref="WidgetRenderInfo"/></param>
+        /// <param name="requiresRefresh">Whether the rendering system requires a refresh</param>
+        /// <returns>Rendered widgets in a string to print to the console</returns>
+        public static string RenderFromInfos(WidgetRenderInfo[] renderInfos, bool requiresRefresh)
         {
             var renderBuilder = new StringBuilder();
             foreach (var renderInfo in renderInfos)
@@ -122,7 +132,8 @@ namespace Nitrocid.Base.Misc.Widgets.Canvas
                 // Now, render the widget
                 var widget = WidgetTools.GetWidget(renderInfo.WidgetName);
                 widget.Options = renderInfo.Options;
-                renderBuilder.Append(widget.Initialize(pos.X, pos.Y, margin.Width, margin.Height));
+                if (requiresRefresh)
+                    renderBuilder.Append(widget.Initialize(pos.X, pos.Y, margin.Width, margin.Height));
                 renderBuilder.Append(widget.Render(pos.X, pos.Y, margin.Width, margin.Height));
             }
             return renderBuilder.ToString();
