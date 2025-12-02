@@ -134,6 +134,7 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
             ScreenTools.Render();
             var choices = InputChoiceTools.GetInputChoices(users);
             int userNum = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SELECTUSER")) + 1;
+            ScreenTools.UnsetCurrent(userSelectorScreen);
             return
                 userNum != 0 ?
                 UserManagement.SelectUser(userNum) :

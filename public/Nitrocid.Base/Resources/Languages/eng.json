@@ -9543,6 +9543,10 @@
     {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY",
       "text": "Managing your alarms is easy with this interactive TUI. This user interface allows you to add and dismiss alarms. The alarms fire when they reach the timeout period, which causes a notification to show."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC",
+      "text": "Verification code"
     }
   ]
 }
