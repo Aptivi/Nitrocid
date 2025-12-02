@@ -123,7 +123,13 @@ namespace Nitrocid.Base.Shell.Homepage
                 ThemeColorsTools.LoadBackground();
 
                 // Now, render the homepage
-                homeScreenBuffer.AddDynamicText(() => RenderHomepagePage(homeScreen.RefreshWasDone, pageNumber, canvases, choices, choiceIdx, buttonHighlight));
+                var widget =
+                    WidgetTools.CheckWidget(Config.MainConfig.HomepageWidget) ?
+                    WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
+                    WidgetTools.GetWidget(nameof(AnalogClock));
+                var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
+                BaseWidget? feedWidget = WidgetTools.CheckWidget("RssFeeds") ? WidgetTools.GetWidget("RssFeeds") : null;
+                homeScreenBuffer.AddDynamicText(() => RenderHomepagePage(homeScreen.RefreshWasDone, pageNumber, canvases, choices, choiceIdx, buttonHighlight, widget, notificationsWidget, feedWidget));
                 homeScreen.AddBufferedPart("The Nitrocid Homepage", homeScreenBuffer);
 
                 // Helper function
@@ -352,11 +358,13 @@ namespace Nitrocid.Base.Shell.Homepage
                                 pageNumber--;
                                 if (pageNumber <= 0)
                                     pageNumber = 1;
+                                homeScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.RightArrow:
                                 pageNumber++;
                                 if (pageNumber >= maxScreens + 1)
                                     pageNumber = maxScreens;
+                                homeScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.Escape:
                                 if (keypress.Modifiers == ConsoleModifiers.Shift)
@@ -573,7 +581,7 @@ namespace Nitrocid.Base.Shell.Homepage
             return homepagePages;
         }
 
-        private static string RenderHomepagePage(bool refreshWasDone, int pageNumber, List<WidgetRenderInfo[]> canvases, (InputChoiceInfo, Action)[] choices, int choiceIdx, int buttonHighlight)
+        private static string RenderHomepagePage(bool refreshWasDone, int pageNumber, List<WidgetRenderInfo[]> canvases, (InputChoiceInfo, Action)[] choices, int choiceIdx, int buttonHighlight, BaseWidget widget, BaseWidget notificationsWidget, BaseWidget? feedWidget)
         {
             int actualScreenNum = pageNumber - 2;
             var builder = new StringBuilder();
@@ -596,10 +604,6 @@ namespace Nitrocid.Base.Shell.Homepage
                 int widgetTop = posY + 1;
 
                 // Prepare the widget
-                var widget =
-                    WidgetTools.CheckWidget(Config.MainConfig.HomepageWidget) ?
-                    WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
-                    WidgetTools.GetWidget(nameof(AnalogClock));
                 if (refreshWasDone)
                 {
                     string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
@@ -672,11 +676,10 @@ namespace Nitrocid.Base.Shell.Homepage
                     {
                         if (!Config.MainConfig.ShowHeadlineOnLogin)
                             rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
-                        else if (!WidgetTools.IsWidgetBuiltin("RssFeeds"))
+                        else if (feedWidget is null)
                             rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
                         else
                         {
-                            var feedWidget = WidgetTools.GetWidget("RssFeeds");
                             needsWrapping = false;
                             rssSequence = feedWidget.Render(rssFeedLeft, rssFeedTop, widgetWidth, 3);
                         }
@@ -799,7 +802,6 @@ namespace Nitrocid.Base.Shell.Homepage
 
                 // Render the notification icons widget
                 int notificationsY = widgetTop + widgetHeight + 1;
-                var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
                 var notificationsBorder = new BoxFrame()
                 {
                     Left = settingsButtonPosX,
@@ -821,7 +823,7 @@ namespace Nitrocid.Base.Shell.Homepage
             else
             {
                 var canvas = canvases[actualScreenNum];
-                var renderedCanvas = WidgetCanvasTools.RenderFromInfos(canvas);
+                var renderedCanvas = WidgetCanvasTools.RenderFromInfos(canvas, refreshWasDone);
                 builder.Append(renderedCanvas);
             }
             return builder.ToString();

@@ -19,6 +19,8 @@
 
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Widgets.Implementations;
 using Terminaux.Base;
 using Terminaux.Base.Structures;
@@ -30,6 +32,8 @@ namespace Nitrocid.Base.Misc.Widgets.Canvas
     /// </summary>
     public class WidgetRenderInfo
     {
+        [JsonIgnore]
+        private BaseWidget? widget;
         [JsonProperty(Required = Required.Always)]
         private readonly string widgetName = nameof(UnknownWidget);
         [JsonProperty]
@@ -103,6 +107,17 @@ namespace Nitrocid.Base.Misc.Widgets.Canvas
         [JsonIgnore]
         public Dictionary<string, object> Options =>
             options;
+
+        [JsonIgnore]
+        internal BaseWidget Widget
+        {
+            get
+            {
+                widget ??= WidgetTools.GetWidget(widgetName) ??
+                    throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_EXCEPTION_WIDGETNOTFOUND"));
+                return widget;
+            }
+        }
 
         private int Normalize(int value, bool increase = false)
         {
