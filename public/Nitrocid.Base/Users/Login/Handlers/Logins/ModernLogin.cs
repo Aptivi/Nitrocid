@@ -102,39 +102,17 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
             var users = GetUsersList();
 
             // Some common variables
-            var userSelectorScreen = new Screen();
-            var userSelectorScreenBuffer = new ScreenPart();
-            userSelectorScreenBuffer.AddDynamicText(() =>
-            {
-                var builder = new StringBuilder();
-
-                // Write an infobox border
-                int height = ConsoleWrapper.WindowHeight - 4;
-                int width = ConsoleWrapper.WindowWidth - 8;
-                int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
-                int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
-                string versionStr = $"{KernelReleaseInfo.ApiVersion}";
-                var border = new BoxFrame()
-                {
-                    Left = posX,
-                    Top = posY,
-                    Width = width,
-                    Height = height,
-                    UseColors = true,
-                    Text = versionStr,
-                };
-                builder.Append(border.Render());
-
-                return builder.ToString();
-            });
-            userSelectorScreen.AddBufferedPart("User selector screen part", userSelectorScreenBuffer);
+            var logonScreenScreen = new Screen();
+            var logonScreenScreenBuffer = new ScreenPart();
+            logonScreenScreenBuffer.AddDynamicText(() => ModernLogonScreen.PrintConfiguredLogonScreen(ModernLogonScreen.screenNum, ModernLogonScreen.canvases));
+            logonScreenScreen.AddBufferedPart("User selector screen part", logonScreenScreenBuffer);
 
             // Then, make the choices and prompt for the selection
-            ScreenTools.SetCurrent(userSelectorScreen);
+            ScreenTools.SetCurrent(logonScreenScreen);
             ScreenTools.Render();
             var choices = InputChoiceTools.GetInputChoices(users);
             int userNum = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SELECTUSER")) + 1;
-            ScreenTools.UnsetCurrent(userSelectorScreen);
+            ScreenTools.UnsetCurrent(logonScreenScreen);
             return
                 userNum != 0 ?
                 UserManagement.SelectUser(userNum) :
@@ -151,8 +129,17 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
             if (UserPassword == Encryption.GetEmptyHash("SHA256"))
                 return true;
 
+            // Some common variables
+            var logonScreenScreen = new Screen();
+            var logonScreenScreenBuffer = new ScreenPart();
+            logonScreenScreenBuffer.AddDynamicText(() => ModernLogonScreen.PrintConfiguredLogonScreen(ModernLogonScreen.screenNum, ModernLogonScreen.canvases));
+            logonScreenScreen.AddBufferedPart("User selector screen part", logonScreenScreenBuffer);
+            ScreenTools.SetCurrent(logonScreenScreen);
+            ScreenTools.Render();
+
             // The password is not empty. Prompt for password.
             pass = InfoBoxInputColor.WriteInfoBoxInput(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PASSWORD") + $" {user}: ", InfoBoxInputType.Password);
+            ScreenTools.UnsetCurrent(logonScreenScreen);
             ThemeColorsTools.LoadBackground();
 
             // Validate the password
