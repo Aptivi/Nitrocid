@@ -50,13 +50,13 @@ namespace Nitrocid.Locales.Actions
 
                 // Create a workspace using the instance
                 using var workspace = MSBuildWorkspace.Create();
-                workspace.WorkspaceFailed += (o, e) =>
+                workspace.RegisterWorkspaceFailedHandler((e) =>
                 {
                     if (e.Diagnostic.Kind == WorkspaceDiagnosticKind.Warning)
                         TextWriterColor.WriteColor($"Warning while loading the workspace: [{e.Diagnostic.Kind}] {e.Diagnostic.Message}", true, ConsoleColors.Yellow);
                     else
                         TextWriterColor.WriteColor($"Failed to load the workspace: [{e.Diagnostic.Kind}] {e.Diagnostic.Message}", true, ConsoleColors.Red);
-                };
+                });
 
                 // Check for Nitrocid solution
                 var solutionPath = "../../../../Nitrocid.sln";
