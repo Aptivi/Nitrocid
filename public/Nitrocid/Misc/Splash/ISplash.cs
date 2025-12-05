@@ -32,6 +32,10 @@ namespace Nitrocid.Misc.Splash
         /// </summary>
         string SplashName { get; }
         /// <summary>
+        /// Whether the splash requires the background color
+        /// </summary>
+        bool RequiresBackground { get; }
+        /// <summary>
         /// The opening screen. Should be synchronous.
         /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>

@@ -36,10 +36,15 @@ namespace Nitrocid.Misc.Splash
         /// <inheritdoc/>
         public virtual string SplashName => "Blank";
 
+        /// <inheritdoc/>
+        public virtual bool RequiresBackground => false;
+
         /// <summary>
         /// Whether the splash is closing. If true, the thread of which handles the display should close itself. <see cref="Closing(SplashContext, out bool)"/> should set this property to True.
         /// </summary>
         public static bool SplashClosing { get; internal set; }
+
+        internal static bool initialBackgroundAllowed = false;
 
         internal virtual SplashInfo Info => SplashManager.GetSplashFromName(SplashName);
 
