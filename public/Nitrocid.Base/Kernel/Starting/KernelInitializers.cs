@@ -141,6 +141,7 @@ namespace Nitrocid.Base.Kernel.Starting
         internal static void InitializeEssential()
         {
             List<Exception> exceptions = [];
+            KernelEntry.enteredBase = true;
             try
             {
                 // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
@@ -646,20 +647,23 @@ namespace Nitrocid.Base.Kernel.Starting
                     SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_STOP_ALARM") + $": {exc.Message}");
                 }
 
-                try
+                if (KernelEntry.enteredBase)
                 {
-                    // Save all settings
-                    Config.CreateConfig();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Config saved");
-                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_CONFIGSAVED"));
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to save configuration");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_SAVE_CONFIG") + $": {exc.Message}");
+                    try
+                    {
+                        // Save all settings
+                        Config.CreateConfig();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Config saved");
+                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_CONFIGSAVED"));
+                    }
+                    catch (Exception exc)
+                    {
+                        exceptions.Add(exc);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to save configuration");
+                        DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
+                        DebugWriter.WriteDebugStackTrace(exc);
+                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_SAVE_CONFIG") + $": {exc.Message}");
+                    }
                 }
 
 #if NKS_EXTENSIONS
@@ -826,7 +830,8 @@ namespace Nitrocid.Base.Kernel.Starting
 
                 // Remove the placeholders
                 foreach (var placeholder in placeholders)
-                    PlaceParse.UnregisterCustomPlaceholder($"<{placeholder.Placeholder}>");
+                    if (PlaceParse.IsPlaceholderRegistered($"<{placeholder.Placeholder}>"))
+                        PlaceParse.UnregisterCustomPlaceholder($"<{placeholder.Placeholder}>");
 
                 // Remove the shell completions
                 ShellCommon.UnregisterCompletions();
@@ -878,6 +883,9 @@ namespace Nitrocid.Base.Kernel.Starting
 
                 // Reset quiet state
                 KernelEntry.QuietKernel = false;
+
+                // Reset base state
+                KernelEntry.enteredBase = false;
             }
         }
 
