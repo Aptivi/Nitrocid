@@ -432,7 +432,7 @@ namespace Nitrocid.Misc.Splash
             for (int i = 1; i <= 5; i++)
             {
                 int prog = i * 20;
-                SplashReport.ReportProgress($"{prog}%", 20, true, splash);
+                SplashReport.ReportProgress($"{prog}%", 20, force: true, splash: splash);
                 Thread.Sleep(1000);
                 if (splashOut)
                 {

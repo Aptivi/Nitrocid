@@ -18,12 +18,14 @@
 //
 
 using System;
+using System.Text;
 using System.Threading;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Splash;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 
 namespace Nitrocid.SplashPacks.Splashes
@@ -65,6 +67,7 @@ namespace Nitrocid.SplashPacks.Splashes
 
         public override string Display(SplashContext context)
         {
+            var builder = new StringBuilder();
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
@@ -92,7 +95,10 @@ namespace Nitrocid.SplashPacks.Splashes
                     CurrentColorGreenOut = (int)Math.Round(CurrentColorGreenOut - ThresholdGreen * _currentStep);
                     CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
                     DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
-                    ColorTools.LoadBackDry(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
+                    builder.Append(
+                        ColorTools.RenderSetConsoleColor(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut), true) +
+                        ConsoleClearing.GetClearWholeScreenSequence()
+                    );
                     _currentStep++;
                     if (_currentStep > _pulseMaxSteps)
                     {
@@ -112,7 +118,10 @@ namespace Nitrocid.SplashPacks.Splashes
                     CurrentColorGreenIn = (int)Math.Round((CurrentColorGreenIn + ThresholdGreen) * _currentStep);
                     CurrentColorBlueIn = (int)Math.Round((CurrentColorBlueIn + ThresholdBlue) * _currentStep);
                     DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
-                    ColorTools.LoadBackDry(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn));
+                    builder.Append(
+                        ColorTools.RenderSetConsoleColor(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn), true) +
+                        ConsoleClearing.GetClearWholeScreenSequence()
+                    );
                     _currentStep++;
                     if (_currentStep > _pulseMaxSteps)
                     {
@@ -125,7 +134,7 @@ namespace Nitrocid.SplashPacks.Splashes
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
-            return "";
+            return builder.ToString();
         }
 
         public override string Closing(SplashContext context, out bool delayRequired)
