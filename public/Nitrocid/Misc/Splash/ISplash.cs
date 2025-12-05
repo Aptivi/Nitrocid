@@ -32,6 +32,10 @@ namespace Nitrocid.Misc.Splash
         /// </summary>
         string SplashName { get; }
         /// <summary>
+        /// Whether the splash requires the background color
+        /// </summary>
+        bool RequiresBackground { get; }
+        /// <summary>
         /// Splash displays progress
         /// </summary>
         bool SplashDisplaysProgress { get; }

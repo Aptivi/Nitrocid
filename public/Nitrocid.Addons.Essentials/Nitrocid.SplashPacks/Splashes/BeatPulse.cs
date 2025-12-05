@@ -53,6 +53,8 @@ namespace Nitrocid.SplashPacks.Splashes
         // Standalone splash information
         public override string SplashName => "BeatPulse";
 
+        public override bool RequiresBackground => true;
+
         // Actual logic
         public override string Opening(SplashContext context)
         {

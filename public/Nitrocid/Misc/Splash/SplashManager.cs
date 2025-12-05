@@ -31,6 +31,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Splash.Splashes;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Misc.Splash
@@ -212,6 +213,12 @@ namespace Nitrocid.Misc.Splash
                 // Make it resize-aware
                 ScreenTools.SetCurrent(splashScreen);
 
+                // Require background, if necessary
+                bool initialBackgroundAllowed = Config.MainConfig.AllowBackgroundColor;
+                BaseSplash.initialBackgroundAllowed = initialBackgroundAllowed;
+                if (splash.RequiresBackground)
+                    ColorTools.AllowBackground = true;
+
                 // Finally, render it
                 KernelColorTools.LoadBackground();
                 ScreenTools.Render();
@@ -321,6 +328,11 @@ namespace Nitrocid.Misc.Splash
                     SplashReport._InSplash = false;
                     ScreenTools.UnsetCurrent(splashScreen);
 
+                    // Reset the background setting
+                    if (splash.RequiresBackground)
+                        ColorTools.AllowBackground = BaseSplash.initialBackgroundAllowed;
+                    KernelColorTools.LoadBackground();
+
                     // Reset the cursor visibility
                     ConsoleWrapper.CursorVisible = true;
                 }
@@ -331,32 +343,38 @@ namespace Nitrocid.Misc.Splash
         /// Clears the screen for important messages to show up during kernel booting
         /// </summary>
         public static void BeginSplashOut() =>
-            BeginSplashOut(currentContext);
+            BeginSplashOut(CurrentSplash, currentContext);
 
         /// <summary>
         /// Clears the screen for important messages to show up during kernel booting
         /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        public static void BeginSplashOut(SplashContext context)
+        public static void BeginSplashOut(SplashContext context) =>
+            BeginSplashOut(CurrentSplash, context);
+
+        internal static void BeginSplashOut(ISplash currentSplash, SplashContext context)
         {
             if (Config.MainConfig.EnableSplash && SplashReport._InSplash)
-                CloseSplash(CurrentSplash, false, context);
+                CloseSplash(currentSplash, false, context);
         }
 
         /// <summary>
         /// Declares that it's done showing important messages during kernel booting
         /// </summary>
         public static void EndSplashOut() =>
-            EndSplashOut(currentContext);
+            EndSplashOut(CurrentSplash, currentContext);
 
         /// <summary>
         /// Declares that it's done showing important messages during kernel booting
         /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        public static void EndSplashOut(SplashContext context)
+        public static void EndSplashOut(SplashContext context) =>
+            EndSplashOut(CurrentSplash, context);
+
+        internal static void EndSplashOut(ISplash currentSplash, SplashContext context)
         {
             if (Config.MainConfig.EnableSplash && !SplashReport._InSplash)
-                OpenSplash(context);
+                OpenSplash(currentSplash, context);
         }
 
         /// <summary>
@@ -418,9 +436,9 @@ namespace Nitrocid.Misc.Splash
                 Thread.Sleep(1000);
                 if (splashOut)
                 {
-                    BeginSplashOut(context);
+                    BeginSplashOut(splash, context);
                     InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("We've reached {0}%!"), vars: prog);
-                    EndSplashOut(context);
+                    EndSplashOut(splash, context);
                 }
             }
 

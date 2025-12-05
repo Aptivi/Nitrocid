@@ -55,6 +55,8 @@ namespace Nitrocid.SplashPacks.Splashes
         // Standalone splash information
         public override string SplashName => "BeatEdgePulse";
 
+        public override bool RequiresBackground => true;
+
         public override string Opening(SplashContext context)
         {
             if (!_inited)
