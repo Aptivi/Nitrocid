@@ -44,14 +44,8 @@ namespace Nitrocid.Extras.RssShell
                 tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(Translate.DoTranslation("Info"), ConsoleKey.F1, (article, _, _, _) => tui.ShowArticleInfo(article)));
                 tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(Translate.DoTranslation("Read More"), ConsoleKey.F2, (article, _, _, _) => tui.OpenArticleLink(article)));
                 tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(Translate.DoTranslation("Refresh"), ConsoleKey.F3, (article, _, _, _) => tui.RefreshFeed()));
-                var client = (RSSFeed?)tui.rssConnection?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.RSSShell, Translate.DoTranslation("Client is not connected yet."));
                 if (parameters.ArgumentsList.Length > 0)
-                {
                     tui.rssConnection = EstablishRssConnection(parameters.ArgumentsList[0]);
-                    (client).Refresh();
-                    InteractiveTuiTools.OpenInteractiveTui(new RssReaderCli());
-                }
                 else
                 {
                     string address = InputTools.ReadLine(Translate.DoTranslation("Enter the RSS feed URL") + ": ", Config.MainConfig.RssHeadlineUrl);
@@ -61,9 +55,11 @@ namespace Nitrocid.Extras.RssShell
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSNetwork);
                     }
                     tui.rssConnection = EstablishRssConnection(address);
-                    (client).Refresh();
-                    InteractiveTuiTools.OpenInteractiveTui(new RssReaderCli());
                 }
+                var client = (RSSFeed?)tui.rssConnection?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.RSSShell, Translate.DoTranslation("Client is not connected yet."));
+                client.Refresh();
+                InteractiveTuiTools.OpenInteractiveTui(tui);
             }
             else
                 NetworkConnectionTools.OpenConnectionForShell("RSSShell", EstablishRssConnection, (_, connection) =>
