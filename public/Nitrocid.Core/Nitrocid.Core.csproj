@@ -34,6 +34,12 @@
   </PropertyGroup>
   <!-- KS General Information End -->
 
+  <!-- KS Dependencies Information -->
+  <ItemGroup>
+    <PackageReference Include="ResourceLab" Version="1.0.0" PrivateAssets="all" />
+  </ItemGroup>
+  <!-- KS Dependencies Information End -->
+
   <!-- KS Generators -->
   <ItemGroup>
     <ProjectReference Include="..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
@@ -50,9 +56,6 @@
   <!-- KS Generated -->
   <ItemGroup>
     <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="ResourceLab" Version="1.0.0" />
   </ItemGroup>
   <!-- KS Generated End -->
 </Project>

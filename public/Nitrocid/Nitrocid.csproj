@@ -16,6 +16,11 @@
   <!-- KS Dependencies Information -->
   <ItemGroup>
     <PackageReference Include="Aptivestigate.Serilog" Version="1.3.2" PrivateAssets="all" />
+    <PackageReference Include="Magico" Version="1.5.2" PrivateAssets="all" />
+    <PackageReference Include="Otp.NET" Version="1.4.1" PrivateAssets="all" />
+    <PackageReference Include="QRCoder" Version="1.7.0" PrivateAssets="all" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" PrivateAssets="all" />
+    <PackageReference Include="SpecProbe" Version="3.6.2.1" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 
@@ -62,7 +67,8 @@
 
   <!-- KS Base projects -->
   <ItemGroup>
-    <ProjectReference Include="..\Nitrocid.Base\Nitrocid.Base.csproj" PrivateAssets="all" />
+    <ProjectReference Include="..\Nitrocid.Base\Nitrocid.Base.csproj" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <ProjectReference Include="..\Nitrocid.Core\Nitrocid.Core.csproj" PrivateAssets="contentfiles;analyzers;build;runtime" />
   </ItemGroup>
   <!-- KS Base projects End -->
 

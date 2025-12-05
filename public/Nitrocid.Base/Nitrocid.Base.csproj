@@ -97,8 +97,9 @@
 
   <!-- KS Core -->
   <ItemGroup>
-    <ProjectReference Include="..\Nitrocid.Core\Nitrocid.Core.csproj" />
+    <ProjectReference Include="..\Nitrocid.Core\Nitrocid.Core.csproj" PrivateAssets="contentfiles;analyzers;build;runtime" />
   </ItemGroup>
+  <!-- KS Core End -->
 
   <!-- KS Package Files -->
   <ItemGroup>
