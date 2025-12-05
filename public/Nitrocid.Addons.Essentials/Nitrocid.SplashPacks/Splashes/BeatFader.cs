@@ -18,12 +18,14 @@
 //
 
 using System;
+using System.Text;
 using System.Threading;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Splash;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 
@@ -110,6 +112,7 @@ namespace Nitrocid.SplashPacks.Splashes
 
         public override string Display(SplashContext context)
         {
+            var builder = new StringBuilder();
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
@@ -138,7 +141,10 @@ namespace Nitrocid.SplashPacks.Splashes
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * _currentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * _currentStep);
                 DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
-                ColorTools.LoadBackDry(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"));
+                builder.Append(
+                    ColorTools.RenderSetConsoleColor(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), true) +
+                    ConsoleClearing.GetClearWholeScreenSequence()
+                );
                 _currentStep++;
                 if (_currentStep > _beatFaderMaxSteps)
                     _currentStep = 0;
@@ -147,7 +153,7 @@ namespace Nitrocid.SplashPacks.Splashes
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
-            return "";
+            return builder.ToString();
         }
 
         public override string Closing(SplashContext context, out bool delayRequired)
