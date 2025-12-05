@@ -9547,6 +9547,46 @@
     {
       "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC",
       "text": "Verification code"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE",
+      "text": "Interactive testing"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC",
+      "text": "How to interactively test kernel components"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY",
+      "text": "You can interactively test all kernel components that are testable here by selecting a test section in the left pane and a test fixture in the right pane. You'll be given a report that indicates that a test has passed or failed."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR",
+      "text": "Unknown error when running a test fixture"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_RUNTEST",
+      "text": "Run test"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED",
+      "text": "This test has succeeded!"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH",
+      "text": "Expected value matches actual value."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED",
+      "text": "This test has failed."
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE",
+      "text": "Message"
+    },
+    {
+      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH",
+      "text": "Expected value doesn't match actual value."
     }
   ]
 }

@@ -17,18 +17,26 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles.Selection;
-using Nitrocid.Base.Kernel.Debugging.Testing.Facades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Magico.Enumeration;
+using Nitrocid.Base.ConsoleBase.Inputs;
+using Nitrocid.Base.Kernel.Debugging.Testing.Facades;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Interactives;
+using Terminaux.Base.Buffered;
+using Terminaux.Colors.Themes.Colors;
+using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.TestFixtures;
 using Terminaux.Inputs.TestFixtures.Tools;
-using Nitrocid.Base.Languages;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing
 {
-    internal static class TestInteractive
+    internal class TestInteractive : BaseInteractiveTui<TestSection, Fixture>, IInteractiveTui<TestSection, Fixture>
     {
+        internal static Fixture[]? fixtures;
         internal static TestFacade[] facades =
         [
             new Print(),
@@ -138,40 +146,110 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing
             { TestSection.Shell,                LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_SHELL") },
             { TestSection.Users,                LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS") },
         };
-        private static bool exiting;
 
-        internal static void Open()
+        /// <inheritdoc/>
+        public override InteractiveTuiHelpPage[] HelpPages =>
+        [
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE",
+                HelpDescription = /* Localizable */ "NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY") + "\n\n" +
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/advanced-and-power-users/diagnostics/testing",
+            }
+        ];
+
+        /// <inheritdoc/>
+        public override IEnumerable<TestSection> PrimaryDataSource =>
+            Sections.Keys;
+
+        /// <inheritdoc/>
+        public override IEnumerable<Fixture> SecondaryDataSource
         {
-            exiting = false;
-
-            // List sections and alt options
-            int sectionCount = Sections.Count;
-            var listFacadesCodeNames = Sections.Keys.Select((sec) => sec).ToArray();
-            var listFacades = Sections.Select((kvp) => ($"{kvp.Key}", kvp.Value)).ToArray();
-            var listFacadesAlt = new (string, string)[]
+            get
             {
-                (LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN"), LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC"))
-            };
-
-            // Prompt for section
-            while (!exiting)
-            {
-                // Now, prompt for the selection of the section
-                int sel = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT"), listFacades, listFacadesAlt, true);
-                if (sel <= sectionCount)
-                    OpenSection(listFacadesCodeNames[sel - 1]);
-                else
-                {
-                    // Selected alternative option
-                    if (sel == sectionCount + 1 || sel == -1)
-                        exiting = true;
-                }
+                var section = (TestSection?)PrimaryDataSource.GetElementFromIndex(FirstPaneCurrentSelection - 1);
+                if (section is null)
+                    return [];
+                return GetSectionInfo((TestSection)section);
             }
         }
 
-        internal static void OpenSection(TestSection section)
+        /// <inheritdoc/>
+        public override bool SecondPaneInteractable =>
+            true;
+
+        /// <inheritdoc/>
+        public override string GetStatusFromItem(TestSection section)
         {
-            var facadesList = facades
+            // Get a list of fixtures
+            var fixtures = GetSectionInfo(section);
+            return $"[{fixtures.Length}] {section}";
+        }
+
+        /// <inheritdoc/>
+        public override string GetEntryFromItem(TestSection section) =>
+            section.ToString();
+
+        /// <inheritdoc/>
+        public override string GetStatusFromItemSecondary(Fixture fixture)
+        {
+            var fixtureName = fixture.Name;
+            var fixtureDescription = fixture.Description;
+            return $"{fixtureName} - {fixtureDescription}";
+        }
+
+        /// <inheritdoc/>
+        public override string GetEntryFromItemSecondary(Fixture fixture) =>
+            fixture.Name;
+
+        internal void RunTest(Fixture? fixture)
+        {
+            if (fixture is null)
+                return;
+            var currentScreen = ScreenTools.CurrentScreen;
+            if (currentScreen is null)
+                return;
+            try
+            {
+                ScreenTools.UnsetCurrent(currentScreen);
+                ThemeColorsTools.LoadBackground();
+                bool result = FixtureRunner.RunGeneralTest(fixture, out var exc, args: null);
+                if (result)
+                {
+                    // TODO: Transfer T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED from Terminaux to Nitrocid with NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED"), ThemeColorType.Success);
+                    // TODO: Transfer T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH from Terminaux to Nitrocid with NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH
+                    if (fixture.GetType() == typeof(FixtureConditional) || fixture.GetType().BaseType == typeof(FixtureConditional))
+                        TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH"), ThemeColorType.Success);
+                }
+                else
+                {
+                    // TODO: Transfer T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED from Terminaux to Nitrocid with NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED"), ThemeColorType.Error);
+                    // TODO: Transfer T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE from Terminaux to Nitrocid with NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE
+                    // TODO: NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR -> "Unknown error when running a test fixture"
+                    TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE") + ": " + exc?.Message ?? LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR"), ThemeColorType.Error);
+                    // TODO: Transfer T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH from Terminaux to Nitrocid with NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH
+                    if (fixture.GetType() == typeof(FixtureConditional) || fixture.GetType().BaseType == typeof(FixtureConditional))
+                        TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH"), ThemeColorType.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE") + ": " + ex?.Message ?? LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR"), ThemeColorType.Error);
+            }
+            finally
+            {
+                ScreenTools.SetCurrent(currentScreen);
+                InputTools.DetectKeypress();
+            }
+        }
+
+        internal static Fixture[] GetSectionInfo(TestSection section)
+        {
+            fixtures = [.. facades
                 .Where((facade) => facade.TestSection == section)
                 .Select((facade) => (Fixture)
                     (facade.TestInteractive ?
@@ -180,8 +258,16 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing
                      {
                          facade.Run();
                          return facade.TestActualValue;
-                     }, facade.TestExpectedValue))).ToArray();
-            FixtureSelector.OpenFixtureSelector(facadesList);
+                     }, facade.TestExpectedValue)))];
+            return fixtures;
+        }
+
+        internal static void OpenTestInteractiveCli()
+        {
+            var tui = new TestInteractive();
+            // TODO: T_INPUT_TESTFIXTURES_SELECTOR_RUNTEST -> "Run test"
+            tui.Bindings.Add(new InteractiveTuiBinding<TestSection, Fixture>(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_RUNTEST"), ConsoleKey.Enter, (_, _, fixture, _) => tui.RunTest(fixture), true));
+            InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }
 }

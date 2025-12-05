@@ -30,7 +30,7 @@ namespace Nitrocid.Base.Arguments.CommandLineArguments
         public override void Execute(ArgumentParameters parameters)
         {
             KernelStageTools.StageTimer.Stop();
-            TestInteractive.Open();
+            TestInteractive.OpenTestInteractiveCli();
             KernelStageTools.StageTimer.Start();
             PowerManager.KernelShutdown = true;
         }
