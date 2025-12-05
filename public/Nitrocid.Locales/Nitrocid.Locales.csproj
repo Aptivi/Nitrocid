@@ -50,11 +50,15 @@
   <!-- Locales Translations End -->
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Locator" Version="1.10.12" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="[3.11.0]" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Build.Locator" Version="1.11.2" />
+    <PackageReference Include="Microsoft.Build.Framework" Version="[18.0.2]" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.Build" Version="[18.0.2]" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="[18.0.2]" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="[3.11.0]" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="[5.0.0]" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="[5.0.0]" />
     <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="[5.0.0]" />
-    <PackageReference Include="Terminaux" Version="6.1.26" />
+    <PackageReference Include="Terminaux" Version="6.1.31" />
   </ItemGroup>
 
   <ItemGroup>
