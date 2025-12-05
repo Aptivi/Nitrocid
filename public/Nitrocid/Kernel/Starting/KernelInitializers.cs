@@ -140,6 +140,7 @@ namespace Nitrocid.Kernel.Starting
         internal static void InitializeEssential()
         {
             List<Exception> exceptions = [];
+            KernelEntry.enteredBase = true;
             try
             {
                 // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
@@ -655,20 +656,23 @@ namespace Nitrocid.Kernel.Starting
                     SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop alarm listener") + $": {exc.Message}");
                 }
 
-                try
+                if (KernelEntry.enteredBase)
                 {
-                    // Save all settings
-                    Config.CreateConfig();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Config saved");
-                    SplashReport.ReportProgress(Translate.DoTranslation("Config saved."));
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to save configuration");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to save configuration") + $": {exc.Message}");
+                    try
+                    {
+                        // Save all settings
+                        Config.CreateConfig();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Config saved");
+                        SplashReport.ReportProgress(Translate.DoTranslation("Config saved."));
+                    }
+                    catch (Exception exc)
+                    {
+                        exceptions.Add(exc);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to save configuration");
+                        DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
+                        DebugWriter.WriteDebugStackTrace(exc);
+                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to save configuration") + $": {exc.Message}");
+                    }
                 }
 
                 if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods)) is not null)
@@ -833,7 +837,8 @@ namespace Nitrocid.Kernel.Starting
 
                 // Remove the placeholders
                 foreach (var placeholder in placeholders)
-                    PlaceParse.UnregisterCustomPlaceholder($"<{placeholder.Placeholder}>");
+                    if (PlaceParse.IsPlaceholderRegistered($"<{placeholder.Placeholder}>"))
+                        PlaceParse.UnregisterCustomPlaceholder($"<{placeholder.Placeholder}>");
 
                 // Remove the shell completions
                 ShellCommon.UnregisterCompletions();
@@ -885,6 +890,9 @@ namespace Nitrocid.Kernel.Starting
 
                 // Reset quiet state
                 KernelEntry.QuietKernel = false;
+
+                // Reset base state
+                KernelEntry.enteredBase = false;
             }
         }
 
