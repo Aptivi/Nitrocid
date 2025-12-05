@@ -52,6 +52,7 @@ namespace Nitrocid.Base.Kernel
         internal static bool PrebootSplash = true;
         internal static bool UseAltBuffer = true;
         internal static bool inShell = false;
+        internal static bool enteredBase = false;
 
         internal static void EntryPoint(string[]? args)
         {
