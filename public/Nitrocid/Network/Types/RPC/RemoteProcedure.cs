@@ -37,7 +37,6 @@ namespace Nitrocid.Network.Types.RPC
         internal static int rpcPort = 12345;
         internal static UdpClient? RPCListen;
         internal static KernelThread RPCThread = new("RPC Thread", true, RPCCommands.ReceiveCommand) { isCritical = true };
-        internal static bool rpcStopping = false;
 
         /// <summary>
         /// Whether the RPC started
@@ -102,9 +101,8 @@ namespace Nitrocid.Network.Types.RPC
         {
             if (RPCStarted)
             {
-                rpcStopping = true;
+                RPCCommands.rpcStopTrigger.Set();
                 RPCThread.Stop();
-                rpcStopping = false;
                 DebugWriter.WriteDebug(DebugLevel.I, "RPC stopped.");
             }
             else
