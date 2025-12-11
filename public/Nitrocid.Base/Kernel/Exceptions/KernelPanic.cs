@@ -429,23 +429,36 @@ namespace Nitrocid.Base.Kernel.Exceptions
 
         internal static void NotifyBootFailure()
         {
-            if (NotifyKernelError)
+            if (NotifyKernelError || KernelErrored)
             {
-                string translated = LanguageTools.GetLocalized("NKS_KERNEL_PANIC_NOTIFY_BOOTFAILED");
+                // Reset the flags
                 var failureBuilder = new StringBuilder();
                 NotifyKernelError = false;
-                string finalMessage =
-                    LastKernelErrorException is not null ?
-                    LastKernelErrorException.Message :
-                    LanguageTools.GetLocalized("NKS_KERNEL_PANIC_NOTIFY_UNKNOWN");
-                SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
-                failureBuilder.AppendLine(translated);
-                failureBuilder.AppendLine(new string('=', translated.Length) + "\n");
+                KernelErrored = false;
+
+                // Build the text for boot failure
                 failureBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_NOTIFY_DESCRIPTION") + "\n");
-                failureBuilder.AppendLine(finalMessage + "\n");
-                failureBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_NOTIFY_TIP"));
+                if (LastKernelErrorException is not null)
+                {
+                    var currentException = LastKernelErrorException;
+                    while (currentException is not null)
+                    {
+                        failureBuilder.AppendLine(currentException.Message);
+                        currentException = currentException.InnerException;
+                        if (currentException is not null)
+                            failureBuilder.AppendLine();
+                    }
+                    LastKernelErrorException = null;
+                }
+                else
+                    failureBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_NOTIFY_UNKNOWN"));
+                failureBuilder.AppendLine("\n" + LanguageTools.GetLocalized("NKS_KERNEL_PANIC_NOTIFY_TIP"));
+
+                // Render the infobox
+                SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
                 InfoBoxModalColor.WriteInfoBoxModal(failureBuilder.ToString(), new InfoBoxSettings()
                 {
+                    Title = LanguageTools.GetLocalized("NKS_KERNEL_PANIC_NOTIFY_BOOTFAILED"),
                     ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                 });
                 SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);

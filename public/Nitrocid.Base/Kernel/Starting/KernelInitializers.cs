@@ -173,6 +173,9 @@ namespace Nitrocid.Base.Kernel.Starting
                 if (!KernelPlatform.IsOnUsualEnvironment())
                     KernelEntry.SafeMode = true;
 
+                // Notify user of errors if appropriate
+                KernelPanic.NotifyBootFailure();
+
                 // Initialize journal path
                 JournalManager.JournalPath = FilesystemTools.GetNumberedFileName(Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Journaling)), PathsManagement.GetKernelPath(KernelPathType.Journaling));
 
