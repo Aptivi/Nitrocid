@@ -76,9 +76,6 @@ namespace Nitrocid.Base.Kernel
             KernelInitializers.InitializeWelcomeMessages();
             CheckErrored();
 
-            // Notify user of errors if appropriate
-            KernelPanic.NotifyBootFailure();
-
             // Iterate through available stages
             for (int i = 1; i <= KernelStageTools.Stages.Count + 1; i++)
                 KernelStageTools.RunKernelStage(i);
