@@ -9063,6 +9063,430 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
       "text": "Selecteert een willekeurige screensaver"
+    },
+    {
+      "loc": "NKS_KERNEL_SHELLTIP",
+      "text": "Om te beginnen, typ 'help' en druk op ENTER."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME",
+      "text": "Audiogeluidssignaalvolume voor de lezer"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC",
+      "text": "Geef aan hoe hard u de audio-aanwijzingen voor de voorlezer wilt hebben."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME",
+      "text": "Wachtwoordmaskerteken (lezer)"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC",
+      "text": "Een teken dat het ingevoerde wachtwoord maskeert. Laat dit veld leeg voor meer veiligheid."
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3",
+      "text": "Om de shell te openen, druk je op de S-toets als je op de homepage bent. Daarna kun je 'help' typen en op ENTER drukken om te beginnen!"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
+      "text": "Er zijn dubbele sleutels in uw instellingen. Controleer de variabele om er zeker van te zijn dat deze niet meer dan één keer voorkomt."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
+      "text": "Dichtbij"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
+      "text": "Uitschakelen"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",
+      "text": "Bestandsbeheer (enkel venster)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC",
+      "text": "Opent het bestandsbeheer in één venster."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
+      "text": "Toont alleen de datum"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
+      "text": "Toont precies de tijd"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
+      "text": "Gebruikt de UTC-tijdzone in plaats van de lokale tijdzone."
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING",
+      "text": "Initialiseren van de kernel-add-on"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN",
+      "text": "dat is niet bekend"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING",
+      "text": "Kernel-add-on controleren"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME",
+      "text": "Intensiteit van omgevingsgeluidseffecten in de screensaver"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC",
+      "text": "Geef het niveau op dat bepaalt hoe intens de omgevingsgeluidseffecten van de screensaver zijn."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC",
+      "text": "Verstuurt testmelding"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE",
+      "text": "Registratie voor gebruiker voltooid. Voeg deze installatiesleutel toe."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR",
+      "text": "Of u kunt de onderstaande QR-code scannen."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER",
+      "text": "Als uw console een onvolledige QR-code weergeeft, gebruik dan deze installatiesleutel."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTSTATUS",
+      "text": "Inschrijvingsstatus"
+    },
+    {
+      "loc": "NKS_USERS_USERNOTPROVIDED",
+      "text": "Er is geen gebruikersnaam opgegeven."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC",
+      "text": "Beheer van tweefactorauthenticatie voor gebruikers"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC",
+      "text": "Voegt een vereiste toe voor de gebruiker."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC",
+      "text": "Gebruikersnaam die verwerkt moet worden voor 2FA-bewerkingen"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC",
+      "text": "Verwijdert de vereiste voor de gebruiker"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC",
+      "text": "Controleert de gebruikersregistratie."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE",
+      "text": "Voer de verificatiecode voor deze gebruiker in. Deze code is meestal te vinden in authenticatie-apps, zoals Google Authenticator. Als u geen code invoert, wordt u teruggeleid naar de inlogpagina."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_CODEINVALID",
+      "text": "De ingevoerde code is ongeldig."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_VERIFYFAILED",
+      "text": "De verificatie van het account is mislukt. Waarschijnlijk is de ingevoerde code ongeldig of verlopen. Controleer de systeemtijd."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED",
+      "text": "De gebruiker heeft zich al aangemeld voor de 2FA-authenticatie."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL",
+      "text": "De gebruiker heeft geen wachtwoord om zich aan te melden voor de 2FA-authenticatie."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED",
+      "text": "De gebruiker heeft zich niet aangemeld voor de 2FA-authenticatie."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL",
+      "text": "De gebruiker heeft geen wachtwoord om zich af te melden voor de 2FA-authenticatie."
+    },
+    {
+      "loc": "NKS_USERS_2FA_SETUPKEY",
+      "text": "Instelsleutel"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC",
+      "text": "Geeft de installatiesleutel terug (voor het geval u deze om de een of andere reden bent kwijtgeraakt)."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC",
+      "text": "Geeft de QR-code van de installatiesleutel terug die u met uw telefoon kunt scannen."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED",
+      "text": "De modus is niet gespecificeerd."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC",
+      "text": "Retourneert true of false, afhankelijk van de kernelmodus."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
+      "text": "Print het resultaat naar de console."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
+      "text": "Verouderde Multivar-verwerking"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",
+      "text": "De gebruiker heeft geen wachtwoord om 2FA-authenticatie uit te voeren."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC",
+      "text": "Test de widget canvas renderer"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE",
+      "text": "Het deserialiseren van de widgetcanvasinformatie is mislukt."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE",
+      "text": "Volgende pagina"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE",
+      "text": "Vorige pagina"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC",
+      "text": "Toont een inlogscherm"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME",
+      "text": "Inlogpagina nummer"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC",
+      "text": "Paginanummer van het inlogscherm dat moet worden weergegeven"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "Initialiseren"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "Afsluiten"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "Opnieuw opstarten"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO",
+      "text": "Voor meer informatie over deze interactieve TUI kunt u terecht op"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE",
+      "text": "Voorbeeld van de schermbeveiliging"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC",
+      "text": "Gebruik de TUI van de screensaver om een ​​voorbeeld van de screensaver te bekijken."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY",
+      "text": "Met deze interactieve gebruikersinterface kunt u een screensaver bekijken en uw scherm ermee instellen, zowel met een ingebouwde als een aangepaste screensaver. U kunt eenvoudig een screensaver kiezen om te bekijken door er een uit de lijst te selecteren en op ENTER te drukken."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE",
+      "text": "Live tijdzones"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC",
+      "text": "De tijdzone TUI gebruiken voor de wereldklok"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY",
+      "text": "Deze interactieve TUI toont een lijst met tijdzones en hun lokale tijdweergave, die elke seconde wordt bijgewerkt. Hierdoor kunt u de app gebruiken als een wereldklok om de tijd in alle tijdzones te bekijken."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE",
+      "text": "Taken beheren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC",
+      "text": "Threads beheren met behulp van de TUI van Taakbeheer."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY",
+      "text": "Met de TUI van Taakbeheer kunt u zowel de Nitrocid-kernelthreads (die worden beheerd door Nitrocid en de bijbehorende threadmanager) als de besturingssysteemthreads (die worden beheerd door uw besturingssysteem) beheren. U kunt alle threads weergeven en beheren, inclusief de mogelijkheid om hun taken te beëindigen."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE",
+      "text": "Het bekijken van threads van het besturingssysteem"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC",
+      "text": "Het gebruik van de gebruikersinterface van Taakbeheer om de threads van het besturingssysteem te bekijken."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY",
+      "text": "Voor elke beheerde thread (dat wil zeggen, beheerd door Nitrocid en de bijbehorende threadmanager) toont de TUI van Taakbeheer alle threads van het besturingssysteem die gerelateerd zijn aan een beheerde thread. Deze threads hebben niet altijd een één-op-één-relatie, omdat een beheerde thread meerdere threads van het besturingssysteem kan bevatten. In tegenstelling tot beheerde threads kunnen beheerde threads niet worden beëindigd."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE",
+      "text": "Kernelinstellingen beheren"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC",
+      "text": "De TUI-interface van de instellingen-app gebruiken om kernelinstellingen te beheren."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY",
+      "text": "Kernelconfiguratie is een essentieel onderdeel van Nitrocid waarmee u delen van de kernel en de bijbehorende componenten kunt configureren, waaronder de netwerkstack en de shellstack. Deze TUI (Technical User Interface) maakt het configureren van kernelonderdelen eenvoudiger en het intuïtieve ontwerp maakt het handiger dan het handmatig bewerken van het configuratiebestand."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE",
+      "text": "Meldingen beheren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC",
+      "text": "Het notificatie-TUI gebruiken om notificaties te beheren."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY",
+      "text": "Met deze TUI kunt u alle meldingen beheren die u nog niet hebt gelezen. Wanneer een melding binnenkomt, wordt deze toegevoegd aan de geschiedenis voor toekomstig gebruik. Deze geschiedenis blijft bewaard gedurende de hele kernelsessie of totdat u de melding sluit. Met deze TUI kunt u meldingen eenvoudig sluiten en beheren, wat gemakkelijker is dan het gebruik van het opdrachtregelprogramma."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE",
+      "text": "Mappen selecteren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC",
+      "text": "Mappen selecteren met behulp van de TUI voor het selecteren van mappengroepen"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY",
+      "text": "Een deel van de TUI's voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van opdrachtregelprogramma's om dezelfde actie uit te voeren. Een van de TUI's is de TUI voor het selecteren van mapgroepen, waarmee u meerdere mappen kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een groep mappen te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​map aan de lijst toe te voegen en vervolgens op ESC drukken om uw selectie te bevestigen."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE",
+      "text": "Mappen selecteren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC",
+      "text": "Gebruik de mapkiezer-interface om een ​​map te selecteren."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY",
+      "text": "Een deel van de TUI's voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van de opdrachtregelprogramma's om dezelfde actie uit te voeren. Een van de TUI's is de TUI voor mapselectie, waarmee u een map kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een map te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​map te selecteren en vervolgens op ESC drukken om uw selectie te bevestigen."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE",
+      "text": "Bestanden selecteren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC",
+      "text": "Bestanden selecteren met behulp van de TUI voor het selecteren van bestandsgroepen."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY",
+      "text": "Een deel van de TUI's voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van de opdrachtregelprogramma's om dezelfde actie uit te voeren. Een van de TUI's is de TUI voor het selecteren van bestandsgroepen, waarmee u meerdere bestanden kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een groep bestanden te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​bestand aan de lijst toe te voegen en vervolgens op ESC drukken om uw selectie te bevestigen."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE",
+      "text": "Bestanden selecteren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC",
+      "text": "Een bestand selecteren met behulp van de TUI-bestandsselector"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY",
+      "text": "Een deel van de TUI's voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van de opdrachtregelprogramma's om dezelfde actie uit te voeren. Een van de TUI's is de TUI voor bestandsselectie, waarmee u een bestand kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een bestand te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​bestand te selecteren en vervolgens op ESC drukken om uw selectie te bevestigen."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE",
+      "text": "Bestandsbeheerder met één venster"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC",
+      "text": "Bestanden beheren met behulp van de TUI-bestandsselector en een voorbeeldweergave."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY",
+      "text": "Een selectie van TUI's voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van opdrachtregelprogramma's om dezelfde actie uit te voeren. Een van de beschikbare TUI's is de TUI voor bestandsbeheer met één venster, waarmee u uw bestanden kunt beheren met een voorbeeldweergave in het rechtervenster. Dit is handig als u in één oogopslag een voorbeeldweergave wilt zien wanneer u bestanden of mappen selecteert."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE",
+      "text": "Bestandsbeheerder met dubbel venster"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC",
+      "text": "De bestandsselector-interface gebruiken om bestanden in twee vensters te beheren."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY",
+      "text": "Een selectie van TUI's voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van opdrachtregelprogramma's om dezelfde actie uit te voeren. Een van de beschikbare TUI's is de TUI voor bestandsbeheer met twee vensters, waarmee u uw bestanden kunt beheren zoals in Total Commander. Hiermee kunt u snel bestandsbewerkingen uitvoeren in beide vensters, zonder handmatig paden te hoeven opgeven."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE",
+      "text": "Alarmen beheren"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC",
+      "text": "Alarmen beheren met behulp van de alarmmanager TUI."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY",
+      "text": "Met deze interactieve gebruikersinterface is het beheren van uw alarmen eenvoudig. U kunt alarmen toevoegen en verwijderen. Alarmen gaan af wanneer de ingestelde time-outperiode is bereikt, waarna een melding verschijnt."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC",
+      "text": "Verificatiecode"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE",
+      "text": "Interactieve tests"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC",
+      "text": "Hoe test je kernelcomponenten interactief?"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY",
+      "text": "Je kunt hier interactief alle testbare kernelcomponenten testen door een testsectie in het linkerpaneel en een testfixture in het rechterpaneel te selecteren. Je krijgt een rapport te zien dat aangeeft of een test geslaagd of mislukt is."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR",
+      "text": "Onbekende fout bij het uitvoeren van een testfixture"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_RUNTEST",
+      "text": "Test uitvoeren"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED",
+      "text": "Deze test is geslaagd!"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH",
+      "text": "De verwachte waarde komt overeen met de werkelijke waarde."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED",
+      "text": "Deze test is mislukt."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE",
+      "text": "Bericht"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
+      "text": "De verwachte waarde komt niet overeen met de werkelijke waarde."
     }
   ]
 }

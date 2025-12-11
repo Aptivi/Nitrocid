@@ -6906,5 +6906,323 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC" xml:space="preserve">
     <value>Memilih penyelamat skrin rawak</value>
   </data>
+  <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
+    <value>Untuk bermula, tulis &apos;help&apos; dan tekan ENTER.</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
+    <value>Kelantangan isyarat audio untuk pembaca</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC" xml:space="preserve">
+    <value>Tentukan seberapa kuat yang anda mahu isyarat audio pembaca</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME" xml:space="preserve">
+    <value>Aksara topeng kata laluan (pembaca)</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC" xml:space="preserve">
+    <value>Watak yang menutup kata laluan input. Biarkan kosong untuk lebih keselamatan.</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
+    <value>Untuk pergi ke cangkerang, tekan kekunci S jika anda berada di halaman utama. Selepas itu, anda boleh menulis &apos;help&apos; dan tekan ENTER untuk bermula!</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
+    <value>Terdapat kunci pendua dalam contoh tetapan anda. Sila semak semula pembolehubah untuk memastikan ia tidak wujud lebih daripada sekali.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_CLOSE" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN" xml:space="preserve">
+    <value>tutup</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE" xml:space="preserve">
+    <value>Pengurus Fail (anak tetingkap tunggal)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC" xml:space="preserve">
+    <value>Membuka pengurus fail dalam anak tetingkap tunggal</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Hanya menunjukkan tarikh</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Menunjukkan masa sahaja</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Menggunakan zon waktu UTC dan bukannya zon waktu tempatan</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING" xml:space="preserve">
+    <value>Memulakan tambahan kernel</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN" xml:space="preserve">
+    <value>itu tidak diketahui</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING" xml:space="preserve">
+    <value>Menyemak tambahan kernel</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME" xml:space="preserve">
+    <value>Keamatan kesan bunyi penyelamat skrin ambien</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC" xml:space="preserve">
+    <value>Tentukan tahap yang memilih sejauh mana kesan bunyi penyelamat skrin ambien</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC" xml:space="preserve">
+    <value>Menghantar pemberitahuan ujian</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE" xml:space="preserve">
+    <value>Pendaftaran lengkap untuk pengguna. Tambahkan kunci persediaan ini</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR" xml:space="preserve">
+    <value>Atau, anda boleh mengimbas kod QR di bawah.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER" xml:space="preserve">
+    <value>Sekiranya konsol anda menunjukkan kod QR yang tidak lengkap, sila gunakan kekunci persediaan ini</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTSTATUS" xml:space="preserve">
+    <value>Status pendaftaran</value>
+  </data>
+  <data name="NKS_USERS_USERNOTPROVIDED" xml:space="preserve">
+    <value>Nama pengguna belum diberikan.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC" xml:space="preserve">
+    <value>Pengurusan pengesahan dua faktor untuk pengguna</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC" xml:space="preserve">
+    <value>Menambah keperluan untuk pengguna</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Nama pengguna untuk diproses untuk operasi 2FA</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC" xml:space="preserve">
+    <value>Memadam keperluan untuk pengguna</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC" xml:space="preserve">
+    <value>Semakan untuk pendaftaran pengguna</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE" xml:space="preserve">
+    <value>Berikan kod pengesahan untuk pengguna ini. Anda biasanya boleh mengakses kod ini daripada apl pengesah, seperti Google Authenticator. Jika anda tidak memasukkan kod, anda akan dibawa kembali ke halaman log masuk.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_CODEINVALID" xml:space="preserve">
+    <value>Kod yang anda masukkan tidak sah.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_VERIFYFAILED" xml:space="preserve">
+    <value>Pengesahan akaun telah gagal. Kemungkinan besar, kod yang anda masukkan sama ada tidak sah atau tamat tempoh. Semak masa sistem anda.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED" xml:space="preserve">
+    <value>Pengguna telah pun mendaftar masuk ke pengesahan 2FA.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL" xml:space="preserve">
+    <value>Pengguna tidak mempunyai kata laluan untuk mendaftarkannya ke dalam pengesahan 2FA.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED" xml:space="preserve">
+    <value>Pengguna belum mendaftar masuk ke pengesahan 2FA.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL" xml:space="preserve">
+    <value>Pengguna tidak mempunyai kata laluan untuk membatalkan pendaftarannya ke dalam pengesahan 2FA.</value>
+  </data>
+  <data name="NKS_USERS_2FA_SETUPKEY" xml:space="preserve">
+    <value>Kunci persediaan</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC" xml:space="preserve">
+    <value>Mengembalikan kunci persediaan (sekiranya anda kehilangannya atas sebab tertentu)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC" xml:space="preserve">
+    <value>Mengembalikan kod QR kunci persediaan yang anda boleh imbas dengan telefon anda</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED" xml:space="preserve">
+    <value>Mod tidak dinyatakan.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC" xml:space="preserve">
+    <value>Mengembalikan benar atau salah bergantung pada mod kernel</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
+    <value>Mencetak hasilnya ke konsol</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
+    <value>Pemprosesan Multivar Warisan</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
+    <value>Pengguna tidak mempunyai kata laluan untuk melakukan operasi pengesahan 2FA.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC" xml:space="preserve">
+    <value>Menguji pemapar kanvas widget</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE" xml:space="preserve">
+    <value>Gagal menyahsiri maklumat kanvas widget</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Halaman seterusnya</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Halaman sebelumnya</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC" xml:space="preserve">
+    <value>Menunjukkan kepada anda skrin log masuk</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME" xml:space="preserve">
+    <value>Nombor halaman log masuk</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC" xml:space="preserve">
+    <value>Nombor halaman skrin log masuk untuk ditunjukkan</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_INITING" xml:space="preserve">
+    <value>Memulakan</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN" xml:space="preserve">
+    <value>Mematikan</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
+    <value>Memulakan semula</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO" xml:space="preserve">
+    <value>Untuk maklumat lanjut tentang TUI interaktif ini, lawati</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Pratonton penyelamat skrin</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC" xml:space="preserve">
+    <value>Menggunakan screensaver TUI untuk pratonton screensaver</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY" xml:space="preserve">
+    <value>TUI interaktif ini membolehkan anda melihat pratonton penyelamat skrin dan menyimpan skrin anda dengannya, sama ada dengan penyelamat skrin terbina dalam atau penyelamat skrin tersuai. Anda boleh memilih penyelamat skrin dengan mudah untuk dipratonton terus dari TUI ini dengan memilih penyelamat skrin daripada senarai dan menekan ENTER.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Zon waktu langsung</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC" xml:space="preserve">
+    <value>Menggunakan zon waktu TUI untuk jam dunia</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY" xml:space="preserve">
+    <value>TUI interaktif ini menunjukkan senarai zon waktu dan perwakilan waktu setempatnya yang disegarkan setiap saat. Ini membolehkan anda menggunakannya sebagai aplikasi jam dunia untuk melihat waktu bagi semua zon waktu.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE" xml:space="preserve">
+    <value>Menguruskan tugas</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC" xml:space="preserve">
+    <value>Menggunakan pengurus tugas TUI untuk mengurus urutan</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY" xml:space="preserve">
+    <value>Pengurus tugas TUI membolehkan anda mengurus kedua-dua utas kernel Nitrocid, yang diuruskan oleh Nitrocid dan pengurus utasnya, dan utas sistem pengendalian, yang diuruskan oleh sistem pengendalian anda. Anda boleh menyenaraikan semua urutan dan mengurusnya, termasuk keupayaan untuk menamatkan tugasnya.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE" xml:space="preserve">
+    <value>Melihat thread sistem pengendalian</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC" xml:space="preserve">
+    <value>Menggunakan pengurus tugas TUI untuk melihat urutan sistem pengendalian</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY" xml:space="preserve">
+    <value>Bagi setiap thread yang diuruskan (iaitu, diuruskan oleh Nitrocid dan pengurus threadnya), pengurus tugas TUI menunjukkan kepada anda semua thread sistem pengendalian yang berkaitan dengan thread yang diuruskan, dan ia tidak selalunya mempunyai hubungan satu sama satu, kerana thread yang diuruskan mungkin mengandungi lebih daripada satu thread sistem pengendalian. Tidak seperti thread yang diuruskan, ia tidak boleh ditamatkan.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Menguruskan tetapan kernel</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Menggunakan apl tetapan TUI untuk mengurus tetapan kernel</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Konfigurasi kernel ialah bahagian penting Nitrocid yang membolehkan anda mengkonfigurasi bahagian kernel dan komponennya, termasuk tindanan rangkaian dan tindanan shell. TUI ini memudahkan anda untuk mengkonfigurasi bahagian kernel, dan reka bentuk intuitifnya menjadikannya lebih mudah daripada mengedit fail konfigurasi secara manual.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Menguruskan pemberitahuan</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Menggunakan pemberitahuan TUI untuk mengurus pemberitahuan</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY" xml:space="preserve">
+    <value>Dengan TUI ini, anda boleh menguruskan semua pemberitahuan yang anda belum baca lagi. Apabila pemberitahuan diterima, ia ditambahkan pada sejarah untuk rujukan masa hadapan, yang berlangsung untuk keseluruhan sesi kernel atau sehingga anda menolaknya. TUI ini membolehkan anda mengetepikan dan mengurus pemberitahuan dengan mudah, yang lebih mudah daripada menggunakan utiliti baris arahan.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE" xml:space="preserve">
+    <value>Memilih folder</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC" xml:space="preserve">
+    <value>Menggunakan TUI pemilih kumpulan folder untuk memilih folder</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY" xml:space="preserve">
+    <value>Subset TUI pengurusan fail disediakan untuk pengurusan yang lebih mudah, yang lebih pantas dan mudah daripada menggunakan utiliti baris arahan untuk melakukan tindakan yang sama. Salah satu TUI yang disediakan ialah pemilihan kumpulan folder TUI, yang membolehkan anda memilih berbilang folder sebagai sasaran untuk operasi yang dimaksudkan. Jika anda dibawa ke sini, aplikasi telah meminta anda memilih sekumpulan folder agar operasi tersebut selesai. Anda boleh menggunakan kekunci SPACE untuk menambah folder ke dalam senarai, kemudian tekan ESC untuk mengesahkan pilihan anda.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE" xml:space="preserve">
+    <value>Memilih folder</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC" xml:space="preserve">
+    <value>Menggunakan TUI pemilih folder untuk memilih folder</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY" xml:space="preserve">
+    <value>Subset TUI pengurusan fail disediakan untuk pengurusan yang lebih mudah, yang lebih pantas dan mudah daripada menggunakan utiliti baris arahan untuk melakukan tindakan yang sama. Salah satu TUI yang disediakan ialah TUI pemilihan folder, yang membolehkan anda memilih folder sebagai sasaran untuk operasi yang dimaksudkan. Jika anda dibawa ke sini, aplikasi telah meminta anda memilih folder agar operasi tersebut selesai. Anda boleh menggunakan kekunci SPACE untuk memilih folder, kemudian tekan ESC untuk mengesahkan pilihan anda.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE" xml:space="preserve">
+    <value>Memilih fail</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC" xml:space="preserve">
+    <value>Menggunakan pemilih kumpulan fail TUI untuk memilih fail</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY" xml:space="preserve">
+    <value>Subset TUI pengurusan fail disediakan untuk pengurusan yang lebih mudah, yang lebih pantas dan lebih mudah daripada menggunakan utiliti baris arahan untuk melakukan tindakan yang sama. Salah satu TUI yang disediakan ialah TUI pemilihan kumpulan fail, yang membolehkan anda memilih berbilang fail sebagai sasaran untuk operasi yang dimaksudkan. Jika anda dibawa ke sini, aplikasi telah meminta anda memilih sekumpulan fail agar operasi selesai. Anda boleh menggunakan kekunci SPACE untuk menambah fail pada senarai, kemudian tekan ESC untuk mengesahkan pilihan anda.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE" xml:space="preserve">
+    <value>Memilih fail</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC" xml:space="preserve">
+    <value>Menggunakan TUI pemilih fail untuk memilih fail</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY" xml:space="preserve">
+    <value>Subset TUI pengurusan fail disediakan untuk pengurusan yang lebih mudah, yang lebih pantas dan lebih mudah daripada menggunakan utiliti baris arahan untuk melakukan tindakan yang sama. Salah satu TUI yang disediakan ialah TUI pemilihan fail, yang membolehkan anda memilih fail sebagai sasaran untuk operasi yang dimaksudkan. Jika anda dibawa ke sini, aplikasi telah meminta anda memilih fail untuk operasi selesai. Anda boleh menggunakan kekunci SPACE untuk memilih fail, kemudian tekan ESC untuk mengesahkan pilihan anda.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Pengurus fail anak tetingkap tunggal</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Menggunakan TUI pemilih fail untuk mengurus fail dengan pratonton</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Subset TUI pengurusan fail disediakan untuk pengurusan yang lebih mudah, yang lebih pantas dan lebih mudah daripada menggunakan utiliti baris arahan untuk melakukan tindakan yang sama. Salah satu TUI yang disediakan ialah TUI pengurusan fail anak tetingkap tunggal, yang membolehkan anda mengurus fail anda dengan pratonton fail di anak tetingkap kanan. Ini berguna jika anda mahu anak tetingkap pratonton sepintas lalu apabila anda memilih fail atau folder.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Pengurus fail anak tetingkap dua</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Menggunakan TUI pemilih fail untuk mengurus fail dalam dua anak tetingkap</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Subset TUI pengurusan fail disediakan untuk pengurusan yang lebih mudah, yang lebih pantas dan lebih mudah daripada menggunakan utiliti baris arahan untuk melakukan tindakan yang sama. Salah satu TUI yang disediakan ialah TUI pengurusan fail anak tetingkap dua, yang membolehkan anda mengurus fail anda sama seperti Total Commander. Ia membolehkan anda melakukan operasi fail dengan cepat pada mana-mana anak tetingkap, tanpa perlu menentukan laluan secara manual.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Menguruskan penggera</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC" xml:space="preserve">
+    <value>Menggunakan pengurus penggera TUI untuk mengurus penggera</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY" xml:space="preserve">
+    <value>Menguruskan penggera anda adalah mudah dengan TUI interaktif ini. Antara muka pengguna ini membolehkan anda menambah dan mengetepikan penggera. Penggera berbunyi apabila ia mencapai tempoh tamat masa, yang menyebabkan pemberitahuan dipaparkan.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC" xml:space="preserve">
+    <value>Kod pengesahan</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE" xml:space="preserve">
+    <value>Ujian interaktif</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC" xml:space="preserve">
+    <value>Bagaimana untuk menguji komponen kernel secara interaktif</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY" xml:space="preserve">
+    <value>Anda boleh menguji secara interaktif semua komponen kernel yang boleh diuji di sini dengan memilih bahagian ujian di anak tetingkap kiri dan lekapan ujian di anak tetingkap kanan. Anda akan diberi laporan yang menunjukkan bahawa ujian telah lulus atau gagal.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR" xml:space="preserve">
+    <value>Ralat tidak diketahui semasa menjalankan perlawanan ujian</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_RUNTEST" xml:space="preserve">
+    <value>Jalankan ujian</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED" xml:space="preserve">
+    <value>Ujian ini telah berjaya!</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>Nilai yang dijangka sepadan dengan nilai sebenar.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED" xml:space="preserve">
+    <value>Ujian ini telah gagal.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Mesej</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
+    <value>Nilai yang dijangkakan tidak sepadan dengan nilai sebenar.</value>
+  </data>
 
 </root>

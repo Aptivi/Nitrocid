@@ -6906,5 +6906,323 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC" xml:space="preserve">
     <value>Seleciona um protetor de tela aleatório</value>
   </data>
+  <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
+    <value>Para começar, digite &apos;help&apos; e pressione ENTER.</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
+    <value>Volume do sinal de áudio para o leitor</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC" xml:space="preserve">
+    <value>Especifique o volume desejado para os avisos sonoros do leitor.</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME" xml:space="preserve">
+    <value>Caractere de máscara de senha (leitor)</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC" xml:space="preserve">
+    <value>Um caractere que mascara a senha digitada. Deixe em branco para maior segurança.</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
+    <value>Para acessar o shell, pressione a tecla S se estiver na página inicial. Em seguida, digite &apos;help&apos; e pressione ENTER para começar!</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
+    <value>Foram encontradas chaves duplicadas na sua instância de configurações. Verifique novamente a variável para garantir que ela não exista mais de uma vez.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_CLOSE" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN" xml:space="preserve">
+    <value>Desligar</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE" xml:space="preserve">
+    <value>Gerenciador de Arquivos (painel único)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC" xml:space="preserve">
+    <value>Abre o gerenciador de arquivos em um único painel.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Mostra apenas a data.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Mostra exatamente a hora</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Utiliza o fuso horário UTC em vez do fuso horário local.</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING" xml:space="preserve">
+    <value>Inicializando o complemento do kernel</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN" xml:space="preserve">
+    <value>que não é conhecido</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING" xml:space="preserve">
+    <value>Verificando complemento do kernel</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME" xml:space="preserve">
+    <value>Intensidade dos efeitos sonoros do protetor de tela ambiente</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC" xml:space="preserve">
+    <value>Especifique o nível que define a intensidade dos efeitos sonoros ambientes do protetor de tela.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC" xml:space="preserve">
+    <value>Envia notificação de teste</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE" xml:space="preserve">
+    <value>Cadastro do usuário concluído. Adicione esta chave de configuração.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR" xml:space="preserve">
+    <value>Ou você pode escanear o código QR abaixo.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER" xml:space="preserve">
+    <value>Caso seu console exiba um código QR incompleto, utilize esta chave de configuração.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTSTATUS" xml:space="preserve">
+    <value>Situação de matrícula</value>
+  </data>
+  <data name="NKS_USERS_USERNOTPROVIDED" xml:space="preserve">
+    <value>O nome de usuário não foi fornecido.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC" xml:space="preserve">
+    <value>Gerenciamento de autenticação de dois fatores para usuários</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC" xml:space="preserve">
+    <value>Adiciona um requisito para o usuário.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Nome de usuário a ser processado para operações de autenticação de dois fatores (2FA).</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC" xml:space="preserve">
+    <value>Remove a exigência para o usuário.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC" xml:space="preserve">
+    <value>Verifica a inscrição do usuário</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE" xml:space="preserve">
+    <value>Forneça o código de verificação para este usuário. Normalmente, você pode acessar esse código em aplicativos de autenticação, como o Google Authenticator. Se você não inserir um código, será redirecionado para a página de login.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_CODEINVALID" xml:space="preserve">
+    <value>O código que você digitou é inválido.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_VERIFYFAILED" xml:space="preserve">
+    <value>A verificação da conta falhou. Provavelmente, o código inserido é inválido ou expirou. Verifique a hora do seu sistema.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED" xml:space="preserve">
+    <value>O usuário já se cadastrou na autenticação de dois fatores (2FA).</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL" xml:space="preserve">
+    <value>O usuário não possui senha para se cadastrar na autenticação de dois fatores (2FA).</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED" xml:space="preserve">
+    <value>O usuário não se inscreveu na autenticação de dois fatores (2FA).</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL" xml:space="preserve">
+    <value>O usuário não possui senha para cancelar sua inscrição na autenticação de dois fatores (2FA).</value>
+  </data>
+  <data name="NKS_USERS_2FA_SETUPKEY" xml:space="preserve">
+    <value>Chave de configuração</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC" xml:space="preserve">
+    <value>Retorna a chave de configuração (caso você a tenha perdido por algum motivo).</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC" xml:space="preserve">
+    <value>Retorna o código QR da chave de configuração que você pode escanear com seu celular.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED" xml:space="preserve">
+    <value>O modo não foi especificado.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC" xml:space="preserve">
+    <value>Retorna verdadeiro ou falso dependendo do modo do kernel.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
+    <value>Imprime o resultado no console.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
+    <value>Processamento multivariável legado</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
+    <value>O usuário não possui senha para realizar operações de autenticação de dois fatores (2FA).</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC" xml:space="preserve">
+    <value>Testa o renderizador de tela do widget</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE" xml:space="preserve">
+    <value>Falha ao desserializar as informações do canvas do widget</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Próxima página</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Página anterior</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC" xml:space="preserve">
+    <value>Exibe a tela de login.</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME" xml:space="preserve">
+    <value>Número da página de login</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC" xml:space="preserve">
+    <value>Número da página da tela de login a ser exibida.</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_INITING" xml:space="preserve">
+    <value>Inicializando</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN" xml:space="preserve">
+    <value>Desligando</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
+    <value>Reiniciando</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO" xml:space="preserve">
+    <value>Para obter mais informações sobre esta interface de usuário interativa (TUI), visite [link].</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Visualizando o protetor de tela</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC" xml:space="preserve">
+    <value>Usando a interface de usuário TUI do protetor de tela para visualizar o protetor de tela.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY" xml:space="preserve">
+    <value>Esta interface de usuário interativa permite que você visualize um protetor de tela e salve sua tela com ele, seja com um protetor de tela integrado ou um protetor de tela personalizado. Você pode escolher facilmente um protetor de tela para visualizar diretamente desta interface, selecionando-o na lista e pressionando ENTER.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Fusos horários ao vivo</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC" xml:space="preserve">
+    <value>Utilizando o fuso horário TUI para o relógio mundial</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY" xml:space="preserve">
+    <value>Esta interface de usuário interativa exibe uma lista de fusos horários e suas respectivas representações de hora local, atualizadas a cada segundo. Isso permite que você a utilize como um aplicativo de relógio mundial para consultar a hora em todos os fusos horários.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE" xml:space="preserve">
+    <value>Gerenciar tarefas</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC" xml:space="preserve">
+    <value>Utilizando a interface de texto do gerenciador de tarefas para gerenciar threads.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY" xml:space="preserve">
+    <value>A interface de gerenciamento de tarefas (TUI) permite gerenciar tanto os threads do kernel do Nitrocid, que são gerenciados pelo Nitrocid e seu gerenciador de threads, quanto os threads do sistema operacional, que são gerenciados pelo seu sistema operacional. Você pode listar todos os threads e gerenciá-los, incluindo a possibilidade de encerrar suas tarefas.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE" xml:space="preserve">
+    <value>Visualizando tópicos do sistema operacional</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC" xml:space="preserve">
+    <value>Utilizando a interface de texto do gerenciador de tarefas para visualizar as threads do sistema operacional.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY" xml:space="preserve">
+    <value>Para cada thread gerenciada (isto é, gerenciada pelo Nitrocid e seu gerenciador de threads), a interface de texto do gerenciador de tarefas mostra todas as threads do sistema operacional relacionadas a ela. Essa relação nem sempre é direta, pois uma thread gerenciada pode conter mais de uma thread do sistema operacional. Ao contrário das threads gerenciadas, elas não podem ser finalizadas.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Gerenciando as configurações do kernel</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Utilizando a interface de usuário de texto (TUI) do aplicativo de configurações para gerenciar as configurações do kernel.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>A configuração do kernel é uma parte essencial do Nitrocid que permite configurar partes do kernel e seus componentes, incluindo a pilha de rede e a pilha do shell. Esta interface de texto facilita a configuração de partes do kernel, e seu design intuitivo a torna mais conveniente do que editar manualmente o arquivo de configuração.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Gerenciar notificações</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Utilizando a interface de usuário de notificações (TUI) para gerenciar notificações.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY" xml:space="preserve">
+    <value>Com esta interface de texto (TUI), você pode gerenciar todas as notificações que ainda não leu. Quando uma notificação é recebida, ela é adicionada ao histórico para referência futura, permanecendo lá durante toda a sessão do kernel ou até que você a descarte. Esta TUI permite que você descarte e gerencie notificações facilmente, o que é mais simples do que usar o utilitário de linha de comando.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE" xml:space="preserve">
+    <value>Selecionando pastas</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC" xml:space="preserve">
+    <value>Utilizando a interface de usuário de texto (TUI) do seletor de grupo de pastas para selecionar pastas.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY" xml:space="preserve">
+    <value>Um subconjunto de interfaces de usuário de texto (TUIs) para gerenciamento de arquivos é fornecido para facilitar o gerenciamento, sendo mais rápido e conveniente do que usar os utilitários de linha de comando para executar a mesma ação. Uma das TUIs fornecidas é a de seleção de grupo de pastas, que permite selecionar várias pastas como alvos para a operação desejada. Se você foi direcionado para esta tela, significa que um aplicativo solicitou que você selecionasse um grupo de pastas para que a operação fosse concluída. Você pode usar a tecla ESPAÇO para adicionar uma pasta à lista e, em seguida, pressionar ESC para confirmar sua seleção.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE" xml:space="preserve">
+    <value>Selecionando pastas</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC" xml:space="preserve">
+    <value>Utilizando a interface de texto do seletor de pastas para selecionar uma pasta.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY" xml:space="preserve">
+    <value>Um subconjunto de interfaces de usuário de texto (TUIs) para gerenciamento de arquivos é fornecido para facilitar o gerenciamento, sendo mais rápido e conveniente do que usar os utilitários de linha de comando para executar a mesma ação. Uma das TUIs fornecidas é a de seleção de pastas, que permite selecionar uma pasta como destino para a operação desejada. Se você foi direcionado para esta tela, significa que um aplicativo solicitou que você selecione uma pasta para que a operação seja concluída. Você pode usar a tecla ESPAÇO para selecionar uma pasta e, em seguida, pressionar ESC para confirmar sua seleção.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE" xml:space="preserve">
+    <value>Selecionando arquivos</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC" xml:space="preserve">
+    <value>Utilizando a interface de usuário de texto (TUI) do seletor de grupo de arquivos para selecionar arquivos.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY" xml:space="preserve">
+    <value>Um subconjunto de interfaces de usuário de texto (TUIs) para gerenciamento de arquivos é fornecido para facilitar o gerenciamento, sendo mais rápido e conveniente do que usar os utilitários de linha de comando para executar a mesma ação. Uma das TUIs fornecidas é a de seleção de grupo de arquivos, que permite selecionar vários arquivos como alvos para a operação desejada. Se você foi direcionado para esta tela, significa que um aplicativo solicitou que você selecionasse um grupo de arquivos para que a operação fosse concluída. Você pode usar a tecla ESPAÇO para adicionar um arquivo à lista e, em seguida, pressionar ESC para confirmar sua seleção.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE" xml:space="preserve">
+    <value>Selecionando arquivos</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC" xml:space="preserve">
+    <value>Utilizando a interface de texto do seletor de arquivos para selecionar um arquivo.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY" xml:space="preserve">
+    <value>Um subconjunto de interfaces de usuário de texto (TUIs) para gerenciamento de arquivos é fornecido para facilitar o gerenciamento, sendo mais rápido e conveniente do que usar os utilitários de linha de comando para executar a mesma ação. Uma das TUIs fornecidas é a de seleção de arquivos, que permite selecionar um arquivo como alvo para a operação desejada. Se você foi direcionado para esta tela, significa que um aplicativo solicitou que você selecione um arquivo para que a operação seja concluída. Você pode usar a tecla ESPAÇO para selecionar um arquivo e, em seguida, pressionar ESC para confirmar sua seleção.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Gerenciador de arquivos de painel único</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Utilizando a interface de texto do seletor de arquivos para gerenciar arquivos com visualização prévia.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Um subconjunto de interfaces de usuário de texto (TUIs) para gerenciamento de arquivos é fornecido para facilitar o gerenciamento, sendo mais rápido e conveniente do que usar os utilitários de linha de comando para executar a mesma ação. Uma das TUIs fornecidas é a TUI de gerenciamento de arquivos em painel único, que permite gerenciar seus arquivos com a pré-visualização do arquivo no painel direito. Isso é útil se você deseja ter uma pré-visualização rápida ao selecionar arquivos ou pastas.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Gerenciador de arquivos de painel duplo</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Utilizando a interface de texto (TUI) do seletor de arquivos para gerenciar arquivos em dois painéis.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Um subconjunto de interfaces de usuário de texto (TUIs) para gerenciamento de arquivos é fornecido para facilitar o gerenciamento, sendo mais rápido e conveniente do que usar os utilitários de linha de comando para executar a mesma ação. Uma das TUIs fornecidas é a TUI de gerenciamento de arquivos em painel duplo, que permite gerenciar seus arquivos de forma semelhante ao Total Commander. Ela permite realizar operações de arquivo rapidamente em qualquer um dos painéis, sem precisar especificar os caminhos manualmente.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Gerenciando alarmes</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC" xml:space="preserve">
+    <value>Utilizando a interface de gerenciamento de alarmes (TUI) para gerenciar alarmes.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY" xml:space="preserve">
+    <value>Gerenciar seus alarmes é fácil com esta interface de usuário interativa. Esta interface permite adicionar e descartar alarmes. Os alarmes são acionados quando atingem o tempo limite, o que gera uma notificação.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC" xml:space="preserve">
+    <value>Código de verificação</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE" xml:space="preserve">
+    <value>Testes interativos</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC" xml:space="preserve">
+    <value>Como testar componentes do kernel de forma interativa</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY" xml:space="preserve">
+    <value>Você pode testar interativamente todos os componentes do kernel que podem ser testados aqui, selecionando uma seção de teste no painel esquerdo e um conjunto de testes no painel direito. Você receberá um relatório indicando se o teste foi aprovado ou reprovado.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR" xml:space="preserve">
+    <value>Erro desconhecido ao executar um teste de compatibilidade.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_RUNTEST" xml:space="preserve">
+    <value>Executar teste</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED" xml:space="preserve">
+    <value>Este teste foi bem-sucedido!</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>O valor esperado corresponde ao valor real.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED" xml:space="preserve">
+    <value>Este teste falhou.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Mensagem</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
+    <value>O valor esperado não corresponde ao valor real.</value>
+  </data>
 
 </root>

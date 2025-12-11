@@ -6906,5 +6906,323 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC" xml:space="preserve">
     <value>Velger en tilfeldig skjermsparer</value>
   </data>
+  <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
+    <value>For å komme i gang, skriv «hjelp» og trykk ENTER.</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
+    <value>Lydsignalvolum for leseren</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC" xml:space="preserve">
+    <value>Angi hvor høye du vil at leserens lydsignaler skal være</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME" xml:space="preserve">
+    <value>Passordmasketegn (leser)</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC" xml:space="preserve">
+    <value>Et tegn som maskerer inndatapassordet. La stå tomt for økt sikkerhet.</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
+    <value>For å gå til skallet, trykk på S-tasten hvis du er på hjemmesiden. Etterpå kan du skrive «hjelp» og trykke ENTER for å komme i gang!</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
+    <value>Det har vært dupliserte nøkler i innstillingsinstansen din. Dobbeltsjekk variabelen for å sikre at den ikke finnes mer enn én gang.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_CLOSE" xml:space="preserve">
+    <value>Lukke</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN" xml:space="preserve">
+    <value>Slå av</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE" xml:space="preserve">
+    <value>Filbehandler (enkelt rute)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC" xml:space="preserve">
+    <value>Åpner filbehandleren i én rute</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Viser bare datoen</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Viser bare tiden</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Bruker UTC-tidssonen i stedet for den lokale tidssonen</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING" xml:space="preserve">
+    <value>Initialiserer kjernetillegg</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN" xml:space="preserve">
+    <value>det er ikke kjent</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING" xml:space="preserve">
+    <value>Sjekker kjernetillegg</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME" xml:space="preserve">
+    <value>Intensitet av lydeffekter for omgivende skjermsparer</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC" xml:space="preserve">
+    <value>Angi nivået som velger hvor intense lydeffektene for omgivelsesskjermspareren er</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC" xml:space="preserve">
+    <value>Sender testvarsel</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE" xml:space="preserve">
+    <value>Registrering fullført for brukeren. Legg til denne konfigurasjonsnøkkelen</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR" xml:space="preserve">
+    <value>Eller du kan skanne QR-koden nedenfor.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER" xml:space="preserve">
+    <value>Hvis konsollen din viser en ufullstendig QR-kode, bruk denne konfigurasjonsnøkkelen</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTSTATUS" xml:space="preserve">
+    <value>Registreringsstatus</value>
+  </data>
+  <data name="NKS_USERS_USERNOTPROVIDED" xml:space="preserve">
+    <value>Brukernavn er ikke oppgitt.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC" xml:space="preserve">
+    <value>Tofaktorautentiseringsadministrasjon for brukere</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC" xml:space="preserve">
+    <value>Legger til krav for brukeren</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Brukernavn som skal behandles for 2FA-operasjoner</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC" xml:space="preserve">
+    <value>Sletter kravet for brukeren</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC" xml:space="preserve">
+    <value>Sjekker for brukerregistrering</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE" xml:space="preserve">
+    <value>Oppgi bekreftelseskoden for denne brukeren. Du kan vanligvis få tilgang til denne koden fra autentiseringsapper, for eksempel Google Authenticator. Hvis du ikke skriver inn en kode, blir du tatt tilbake til påloggingssiden.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_CODEINVALID" xml:space="preserve">
+    <value>Koden du skrev inn er ugyldig.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_VERIFYFAILED" xml:space="preserve">
+    <value>Kontobekreftelsen mislyktes. Sannsynligvis er koden du skrev inn enten ugyldig eller utløpt. Sjekk systemtiden.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED" xml:space="preserve">
+    <value>Brukeren har allerede registrert seg for 2FA-autentisering.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL" xml:space="preserve">
+    <value>Brukeren har ikke noe passord for å registrere seg for 2FA-autentisering.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED" xml:space="preserve">
+    <value>Brukeren har ikke registrert seg for 2FA-autentisering.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL" xml:space="preserve">
+    <value>Brukeren har ikke noe passord for å avregistrere seg fra 2FA-autentiseringen.</value>
+  </data>
+  <data name="NKS_USERS_2FA_SETUPKEY" xml:space="preserve">
+    <value>Oppsettnøkkel</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC" xml:space="preserve">
+    <value>Returnerer oppsettnøkkelen (i tilfelle du mistet den av en eller annen grunn)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC" xml:space="preserve">
+    <value>Returnerer QR-koden til konfigurasjonsnøkkelen som du kan skanne med telefonen din</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED" xml:space="preserve">
+    <value>Modus er ikke spesifisert.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC" xml:space="preserve">
+    <value>Returnerer sann eller usann avhengig av kjernemodus</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
+    <value>Skriver ut resultatet til konsollen</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
+    <value>Eldre multivariatbehandling</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
+    <value>Brukeren har ikke passord for å utføre 2FA-autentiseringsoperasjoner.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC" xml:space="preserve">
+    <value>Tester widget-lerretsgjengivelsen</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE" xml:space="preserve">
+    <value>Kunne ikke avserialisering av widget-lerretsinformasjonen</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Neste side</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Forrige side</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC" xml:space="preserve">
+    <value>Viser deg en innloggingsskjerm</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME" xml:space="preserve">
+    <value>Nummer på innloggingssiden</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC" xml:space="preserve">
+    <value>Sidetall på innloggingsskjermen som skal vises</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_INITING" xml:space="preserve">
+    <value>Initialiserer</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN" xml:space="preserve">
+    <value>Avslutter</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
+    <value>Starter på nytt</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO" xml:space="preserve">
+    <value>For mer informasjon om denne interaktive TUI-en, besøk</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Forhåndsvisning av skjermspareren</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC" xml:space="preserve">
+    <value>Bruke skjermspareren TUI for å forhåndsvise skjermspareren</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY" xml:space="preserve">
+    <value>Denne interaktive brukergrensesnittet (TUI) lar deg forhåndsvise en skjermsparer og lagre skjermen din med den, enten med en innebygd skjermsparer eller en tilpasset skjermsparer. Du kan enkelt velge en skjermsparer å forhåndsvise direkte fra denne brukergrensesnittet ved å velge en skjermsparer fra listen og trykke ENTER.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Live-tidssoner</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC" xml:space="preserve">
+    <value>Bruk av tidssonen TUI for verdensklokken</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY" xml:space="preserve">
+    <value>Denne interaktive brukervennlige brukergrensesnittet (TUI) viser deg en liste over tidssoner og deres lokale tidsrepresentasjoner som oppdateres hvert sekund. Dette lar deg bruke den som en verdensklokkeapplikasjon for å se på tiden for alle tidssoner.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE" xml:space="preserve">
+    <value>Administrere oppgaver</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC" xml:space="preserve">
+    <value>Bruke oppgavebehandlingens brukergrensesnitt (TUI) til å administrere tråder</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY" xml:space="preserve">
+    <value>Oppgavebehandlingens brukergrensesnitt (TUI) lar deg administrere både Nitrocid-kjernetrådene, som administreres av Nitrocid og trådbehandleren, og operativsystemtrådene, som administreres av operativsystemet ditt. Du kan liste opp alle tråder og administrere dem, inkludert muligheten til å avslutte oppgavene deres.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE" xml:space="preserve">
+    <value>Viser tråder fra operativsystemet</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC" xml:space="preserve">
+    <value>Bruke oppgavebehandlingens brukergrensesnitt (TUI) til å vise operativsystemtråder</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY" xml:space="preserve">
+    <value>For hver administrerte tråd (det vil si administrert av Nitrocid og trådbehandleren), viser oppgavebehandlerens brukergrensesnitt (TUI) alle operativsystemtråder som er relatert til en administrert tråd, og de har ikke alltid et én-til-én-forhold, fordi en administrert tråd kan inneholde mer enn én operativsystemtråd. I motsetning til administrerte tråder kan de ikke avsluttes.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Administrere kjerneinnstillinger</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Bruk av innstillingsappens brukergrensesnitt (TUI) til å administrere kjerneinnstillinger</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Kjernekonfigurasjon er en viktig del av Nitrocid som lar deg konfigurere deler av kjernen og dens komponenter, inkludert nettverksstakken og skallstakken. Denne brukergrensesnittet (TUI) gjør det enklere for deg å konfigurere deler av kjernen, og den intuitive designen gjør det mer praktisk enn å redigere konfigurasjonsfilen manuelt.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Administrere varsler</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Bruke varslings-TUI-en til å administrere varsler</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY" xml:space="preserve">
+    <value>Med denne brukergrensesnittet (TUI) kan du administrere alle varsler du ikke har lest ennå. Når et varsel mottas, legges det til i historikken for fremtidig referanse, som varer i hele kjerneøkten eller til du lukker det. Denne brukergrensesnittet lar deg enkelt lukke og administrere varsler, noe som er enklere enn å bruke kommandolinjeverktøyet.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE" xml:space="preserve">
+    <value>Velge mapper</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC" xml:space="preserve">
+    <value>Bruke mappegruppevelgerens TUI til å velge mapper</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY" xml:space="preserve">
+    <value>Et delsett av TUI-er for filbehandling er tilgjengelig for enklere administrasjon, noe som er raskere og mer praktisk enn å bruke kommandolinjeverktøyene til å utføre samme handling. En av TUI-ene som er tilgjengelige er TUI-en for valg av mappegruppe, som lar deg velge flere mapper som mål for den tiltenkte operasjonen. Hvis du kommer hit, har et program bedt deg om å velge en gruppe mapper for at operasjonen skal kunne fullføres. Du kan bruke mellomromstasten for å legge til en mappe i listen, og deretter trykke ESC for å bekrefte valget.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE" xml:space="preserve">
+    <value>Velge mapper</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC" xml:space="preserve">
+    <value>Bruke mappevelgerens TUI til å velge en mappe</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY" xml:space="preserve">
+    <value>Et delsett av TUI-er for filbehandling er tilgjengelig for enklere administrasjon, noe som er raskere og mer praktisk enn å bruke kommandolinjeverktøyene til å utføre den samme handlingen. En av TUI-ene som er tilgjengelige er TUI-en for mappevalg, som lar deg velge en mappe som mål for den tiltenkte operasjonen. Hvis du kommer hit, har et program bedt deg om å velge en mappe for at operasjonen skal kunne fullføres. Du kan bruke mellomromstasten til å velge en mappe, og deretter trykke ESC for å bekrefte valget.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE" xml:space="preserve">
+    <value>Velge filer</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC" xml:space="preserve">
+    <value>Bruke filgruppevelgeren (TUI) til å velge filer</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY" xml:space="preserve">
+    <value>Et delsett av TUI-er for filbehandling er tilgjengelig for enklere administrasjon, noe som er raskere og mer praktisk enn å bruke kommandolinjeverktøyene til å utføre samme handling. En av TUI-ene som er tilgjengelige er TUI-en for valg av filgruppe, som lar deg velge flere filer som mål for den tiltenkte operasjonen. Hvis du kommer hit, har et program bedt deg om å velge en gruppe filer for at operasjonen skal kunne fullføres. Du kan bruke mellomromstasten for å legge til en fil i listen, og deretter trykke ESC for å bekrefte valget.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE" xml:space="preserve">
+    <value>Velge filer</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC" xml:space="preserve">
+    <value>Bruke filvelgeren TUI til å velge en fil</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY" xml:space="preserve">
+    <value>Et delsett av TUI-er for filbehandling er tilgjengelig for enklere administrasjon, noe som er raskere og mer praktisk enn å bruke kommandolinjeverktøyene til å utføre den samme handlingen. En av TUI-ene som er tilgjengelige er TUI-en for filvalg, som lar deg velge en fil som mål for den tiltenkte operasjonen. Hvis du kommer hit, har et program bedt deg om å velge en fil for at operasjonen skal kunne fullføres. Du kan bruke mellomromstasten til å velge en fil, og deretter trykke ESC for å bekrefte valget.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Filbehandler med én rute</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Bruke filvelgerens TUI til å administrere filer med forhåndsvisning</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Et delsett av TUI-er for filbehandling er tilgjengelig for enklere administrasjon, noe som er raskere og mer praktisk enn å bruke kommandolinjeverktøyene til å utføre den samme handlingen. En av TUI-ene som er tilgjengelige er TUI-en for filbehandling med ett rutenett, som lar deg administrere filene dine med forhåndsvisning av filen i høyre rute. Dette er nyttig hvis du vil ha en rask forhåndsvisningsrute når du velger filer eller mapper.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Filbehandler med dobbelt rute</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Bruke filvelgerens TUI til å administrere filer i to ruter</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Et delsett av TUI-er for filbehandling er tilgjengelig for enklere administrasjon, noe som er raskere og mer praktisk enn å bruke kommandolinjeverktøyene til å utføre den samme handlingen. En av TUI-ene som er tilgjengelige er TUI-en for filbehandling med to ruter, som lar deg administrere filene dine på samme måte som i Total Commander. Den lar deg raskt utføre filoperasjoner til begge rutene, uten å måtte spesifisere stier manuelt.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Administrere alarmer</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC" xml:space="preserve">
+    <value>Bruk av alarmbehandlerens TUI til å administrere alarmer</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY" xml:space="preserve">
+    <value>Det er enkelt å administrere alarmene dine med dette interaktive brukergrensesnittet. Dette brukergrensesnittet lar deg legge til og avvise alarmer. Alarmene utløses når de når tidsavbruddsperioden, noe som fører til at et varsel vises.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC" xml:space="preserve">
+    <value>Verifiseringskode</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE" xml:space="preserve">
+    <value>Interaktiv testing</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC" xml:space="preserve">
+    <value>Slik tester du kjernekomponenter interaktivt</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY" xml:space="preserve">
+    <value>Du kan interaktivt teste alle kjernekomponenter som kan testes her ved å velge en testseksjon i venstre rute og en testfixtur i høyre rute. Du vil få en rapport som indikerer om en test har bestått eller mislyktes.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR" xml:space="preserve">
+    <value>Ukjent feil ved kjøring av en testinnretning</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_RUNTEST" xml:space="preserve">
+    <value>Kjør testen</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED" xml:space="preserve">
+    <value>Denne testen har vært vellykket!</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>Forventet verdi samsvarer med faktisk verdi.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED" xml:space="preserve">
+    <value>Denne testen har mislyktes.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Beskjed</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
+    <value>Forventet verdi samsvarer ikke med faktisk verdi.</value>
+  </data>
 
 </root>

@@ -57,9 +57,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         var userInfo = UserManagement.GetUser(userName) ??
                             throw new KernelException(KernelExceptionType.NoSuchUser);
                         TwoFactorAuthTools.EnrollUser(userName);
-                        // TODO: NKS_USERS_2FA_ENROLLMENTCOMPLETE -> Enrollment complete for user. Add this setup key
-                        // TODO: NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR -> Or, you can scan the below QR code.
-                        // TODO: NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER -> In case your console shows an incomplete QR code, please use this setup key
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE") + $": {userInfo.TwoFactorSecret}");
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR"));
                         string qrCodeRendered = TwoFactorAuthTools.RenderQRCodeMatrix(userName);
@@ -75,7 +72,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 case "check":
                     {
                         bool enrolled = TwoFactorAuthTools.IsUserEnrolled(userName);
-                        // TODO: NKS_USERS_2FA_ENROLLMENTSTATUS -> Enrollment status
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTSTATUS") + $": {enrolled}");
                         break;
                     }
@@ -91,7 +87,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         // Write the setup key
                         var userInfo = UserManagement.GetUser(userName) ??
                             throw new KernelException(KernelExceptionType.NoSuchUser);
-                        // TODO: NKS_USERS_2FA_SETUPKEY -> Setup key
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_SETUPKEY") + $": {userInfo.TwoFactorSecret}");
                         break;
                     }
@@ -142,7 +137,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         }
                         else
                         {
-                            // TODO: NKS_USERS_USERNOTPROVIDED -> User name has not been provided.
                             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_USERNOTPROVIDED"), true, ThemeColorType.Error);
                             return KernelExceptionTools.GetErrorCode(KernelExceptionType.UserManagement);
                         }

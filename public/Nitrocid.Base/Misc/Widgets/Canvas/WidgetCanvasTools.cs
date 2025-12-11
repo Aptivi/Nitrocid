@@ -57,7 +57,6 @@ namespace Nitrocid.Base.Misc.Widgets.Canvas
         public static WidgetRenderInfo[] GetRenderInfos([StringSyntax("json")] string renderInfoJson)
         {
             // Load the JSON representation
-            // TODO: NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE -> "Failed to deserialize the widget canvas info"
             WidgetRenderInfo[] renderInfos = JsonConvert.DeserializeObject<WidgetRenderInfo[]?>(renderInfoJson) ??
                 throw new KernelException(KernelExceptionType.Widget, LanguageTools.GetLocalized("NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE"));
 

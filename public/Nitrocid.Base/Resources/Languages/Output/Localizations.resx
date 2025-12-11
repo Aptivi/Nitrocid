@@ -7206,22 +7206,22 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR" xml:space="preserve">
     <value>Unknown error when running a test fixture</value>
   </data>
-  <data name="T_INPUT_TESTFIXTURES_SELECTOR_RUNTEST" xml:space="preserve">
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_RUNTEST" xml:space="preserve">
     <value>Run test</value>
   </data>
-  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED" xml:space="preserve">
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED" xml:space="preserve">
     <value>This test has succeeded!</value>
   </data>
-  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH" xml:space="preserve">
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH" xml:space="preserve">
     <value>Expected value matches actual value.</value>
   </data>
-  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED" xml:space="preserve">
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED" xml:space="preserve">
     <value>This test has failed.</value>
   </data>
-  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE" xml:space="preserve">
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE" xml:space="preserve">
     <value>Message</value>
   </data>
-  <data name="T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH" xml:space="preserve">
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
     <value>Expected value doesn&apos;t match actual value.</value>
   </data>
 

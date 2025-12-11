@@ -49,7 +49,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
             if (!safeModeCheck && !debugModeCheck && !maintenanceModeCheck)
             {
-                // TODO: NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED -> "Mode is not specified."
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED"), true, ThemeColorType.Error);
                 return 46;
             }

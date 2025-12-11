@@ -181,7 +181,6 @@ namespace Nitrocid.Base.Kernel.Configuration
             }
 
             // Check for duplicates
-            // TODO: NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS -> "There have been duplicate keys in your settings instance. Please double check the variable to ensure that it doesn't exist more than once."
             if (duplicates.Count > 0)
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS") + $"\n\n  - {string.Join("\n  - ", duplicates)}");
             return Results;
@@ -236,7 +235,6 @@ namespace Nitrocid.Base.Kernel.Configuration
             }
 
             // Check for duplicates
-            // TODO: NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS -> "There have been duplicate keys in your settings instance. Please double check the variable to ensure that it doesn't exist more than once."
             if (duplicates.Count > 0)
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS") + $"\n\n  - {string.Join("\n  - ", duplicates)}");
 
@@ -316,7 +314,6 @@ namespace Nitrocid.Base.Kernel.Configuration
             }
 
             // Check for duplicates
-            // TODO: NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS -> "There have been duplicate keys in your settings instance. Please double check the variable to ensure that it doesn't exist more than once."
             if (duplicates.Count > 0)
                 throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS") + $"\n\n  - {string.Join("\n  - ", duplicates)}");
 

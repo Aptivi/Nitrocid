@@ -100,7 +100,6 @@ namespace Nitrocid.Base.Kernel.Extensions
                 // Now, guess and check the addon path
                 DebugWriter.WriteDebug(DebugLevel.I, "Guessing addon path {0}...", vars: [addon]);
                 string addonPath = $"{addon}/Nitrocid.{Path.GetFileName($"{addon}.dll")}";
-                // TODO: NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING -> "Checking kernel addon"
                 SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING") + " {0}...", Path.GetFileName(addonPath));
                 DebugWriter.WriteDebug(DebugLevel.I, "Addon entry {0} is using path [{1}].", vars: [addon, addonPath]);
                 if (!FilesystemTools.FileExists(addonPath))
@@ -141,8 +140,6 @@ namespace Nitrocid.Base.Kernel.Extensions
                     DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of conflicts with the already-loaded addon in the queue [{1}]...", vars: [addon, addonPath]);
                     return;
                 }
-                // TODO: NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING -> "Initializing kernel addon"
-                // TODO: NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN -> "that is not known"
                 SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING") + " {0}...", asmName.Name ?? LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN"));
                 bool exists = addonInstances.ContainsKey(addonPath);
                 DebugWriter.WriteDebug(DebugLevel.I, $"[{current}/{length}] Initializing kernel addon {Path.GetFileName(addon)}...");

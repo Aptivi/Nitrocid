@@ -55,7 +55,6 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         {
             // Check for user enrollment
             if (IsUserEnrolled(user))
-                // TODO: NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED -> User has already enrolled in to the 2FA authentication.
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED"));
 
             // Check the lock
@@ -64,7 +63,6 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
 
             // Check the password
             if (string.IsNullOrEmpty(user.Password) || user.Password == Encryption.GetEmptyHash("SHA256"))
-                // TODO: NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL -> User has no password to enroll it in to the 2FA authentication.
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL"));
 
             // Generate a random key
@@ -89,7 +87,6 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         {
             // Check for user enrollment
             if (!IsUserEnrolled(user))
-                // TODO: NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED -> User has not enrolled in to the 2FA authentication.
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED"));
 
             // Check the lock
@@ -98,7 +95,6 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
 
             // Check the password
             if (string.IsNullOrEmpty(user.Password) || user.Password == Encryption.GetEmptyHash("SHA256"))
-                // TODO: NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL -> User has no password to unenroll it in to the 2FA authentication.
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL"));
 
             // Cancel the enrollment
@@ -119,12 +115,10 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         {
             // Check for user enrollment
             if (!IsUserEnrolled(user))
-                // TODO: NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED -> User has not enrolled in to the 2FA authentication.
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED"));
 
             // Check the password
             if (string.IsNullOrEmpty(user.Password) || user.Password == Encryption.GetEmptyHash("SHA256"))
-                // TODO: NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC -> User has no password to perform 2FA authentication operations.
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC"));
 
             // Get the secret bytes
@@ -143,12 +137,10 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         {
             // Check for user enrollment
             if (!IsUserEnrolled(user))
-                // TODO: NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED -> User has not enrolled in to the 2FA authentication.
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED"));
 
             // Check the password
             if (string.IsNullOrEmpty(user.Password) || user.Password == Encryption.GetEmptyHash("SHA256"))
-                // TODO: NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC -> User has no password to perform 2FA authentication operations.
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC"));
 
             // Generate the OTP auth URL for Google Authenticator
@@ -173,12 +165,10 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         {
             // Check for user enrollment
             if (!IsUserEnrolled(user))
-                // TODO: NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED -> User has not enrolled in to the 2FA authentication.
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED"));
 
             // Check the password
             if (string.IsNullOrEmpty(user.Password) || user.Password == Encryption.GetEmptyHash("SHA256"))
-                // TODO: NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC -> User has no password to perform 2FA authentication operations.
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC"));
 
             // Generate the OTP auth QR code for scanning from phone

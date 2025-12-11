@@ -234,7 +234,6 @@ namespace Nitrocid.Base.Shell.Shells.Debug
 
             new CommandInfo("showmainbuffer", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC", new ShowMainBufferCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            // TODO: NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC -> Sends test notification
             new CommandInfo("sendnotification", /* Localizable */ "NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC", new SendNotificationCommand()),
         ];
 

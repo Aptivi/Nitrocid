@@ -89,9 +89,6 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
 
             // Populate some text
             string modeText =
-                // TODO: NKS_MISC_SPLASHES_WELCOME_INITING -> "Initializing"
-                // TODO: NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN -> "Shutting down"
-                // TODO: NKS_MISC_SPLASHES_WELCOME_RESTARTING -> "Restarting"
                 (context == SplashContext.Preboot ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_INITING") :
                  context == SplashContext.ShuttingDown ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN") :
                  context == SplashContext.Rebooting ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_RESTARTING") :

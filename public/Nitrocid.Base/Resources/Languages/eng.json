@@ -9565,27 +9565,27 @@
       "text": "Unknown error when running a test fixture"
     },
     {
-      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_RUNTEST",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_RUNTEST",
       "text": "Run test"
     },
     {
-      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED",
       "text": "This test has succeeded!"
     },
     {
-      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH",
       "text": "Expected value matches actual value."
     },
     {
-      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED",
       "text": "This test has failed."
     },
     {
-      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE",
       "text": "Message"
     },
     {
-      "loc": "T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH",
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
       "text": "Expected value doesn't match actual value."
     }
   ]
