@@ -218,27 +218,21 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing
                 bool result = FixtureRunner.RunGeneralTest(fixture, out var exc, args: null);
                 if (result)
                 {
-                    // TODO: Transfer T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED from Terminaux to Nitrocid with NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED
-                    TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED"), ThemeColorType.Success);
-                    // TODO: Transfer T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH from Terminaux to Nitrocid with NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED"), ThemeColorType.Success);
                     if (fixture.GetType() == typeof(FixtureConditional) || fixture.GetType().BaseType == typeof(FixtureConditional))
-                        TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTSUCCEEDED_MATCH"), ThemeColorType.Success);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH"), ThemeColorType.Success);
                 }
                 else
                 {
-                    // TODO: Transfer T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED from Terminaux to Nitrocid with NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED
-                    TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED"), ThemeColorType.Error);
-                    // TODO: Transfer T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE from Terminaux to Nitrocid with NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE
-                    // TODO: NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR -> "Unknown error when running a test fixture"
-                    TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE") + ": " + exc?.Message ?? LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR"), ThemeColorType.Error);
-                    // TODO: Transfer T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH from Terminaux to Nitrocid with NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED"), ThemeColorType.Error);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE") + ": " + exc?.Message ?? LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR"), ThemeColorType.Error);
                     if (fixture.GetType() == typeof(FixtureConditional) || fixture.GetType().BaseType == typeof(FixtureConditional))
-                        TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MATCH"), ThemeColorType.Error);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH"), ThemeColorType.Error);
                 }
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_TESTFAILED_MESSAGE") + ": " + ex?.Message ?? LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR"), ThemeColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE") + ": " + ex?.Message ?? LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR"), ThemeColorType.Error);
             }
             finally
             {
@@ -265,8 +259,7 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing
         internal static void OpenTestInteractiveCli()
         {
             var tui = new TestInteractive();
-            // TODO: T_INPUT_TESTFIXTURES_SELECTOR_RUNTEST -> "Run test"
-            tui.Bindings.Add(new InteractiveTuiBinding<TestSection, Fixture>(LanguageTools.GetLocalized("T_INPUT_TESTFIXTURES_SELECTOR_RUNTEST"), ConsoleKey.Enter, (_, _, fixture, _) => tui.RunTest(fixture), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<TestSection, Fixture>(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTING_RUNTEST"), ConsoleKey.Enter, (_, _, fixture, _) => tui.RunTest(fixture), true));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }

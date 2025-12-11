@@ -9058,6 +9058,430 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
       "text": "Roghnaíonn sé spárálaíscáileáin randamach"
+    },
+    {
+      "loc": "NKS_KERNEL_SHELLTIP",
+      "text": "Chun tús a chur leis, scríobh 'cabhair' agus brúigh ENTER."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME",
+      "text": "Toirt leid fuaime don léitheoir"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC",
+      "text": "Sonraigh cé chomh hard is mian leat go mbeadh leideanna fuaime an léitheora"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME",
+      "text": "Carachtar masc pasfhocail (léitheoir)"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC",
+      "text": "Carachtar a chuireann an focal faire ionchuir i bhfolach. Fág bán é le haghaidh níos mó slándála."
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3",
+      "text": "Chun dul chuig an mblaosc, brúigh an eochair S má tá tú ar an leathanach baile. Ina dhiaidh sin, is féidir leat 'cabhair' a scríobh agus brúigh ENTER chun tús a chur leis!"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
+      "text": "Bhí eochracha dúblacha i do shocruithe. Déan seiceáil dhúbailte ar an athróg lena chinntiú nach bhfuil sí ann níos mó ná uair amháin."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
+      "text": "Dún"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
+      "text": "Dún síos"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",
+      "text": "Bainisteoir Comhad (painéal aonair)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC",
+      "text": "Osclaíonn an bainisteoir comhad i bpána amháin"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
+      "text": "Ní thaispeánann sé ach an dáta"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
+      "text": "Taispeánann sé an t-am amháin"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
+      "text": "Úsáideann sé crios ama UTC in ionad an chrios ama áitiúil"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING",
+      "text": "Ag tosú breiseán eithne"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN",
+      "text": "nach bhfuil ar eolas"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING",
+      "text": "Ag seiceáil breiseán eithne"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME",
+      "text": "Déine éifeachtaí fuaime spárálaíscáileáin chomhthimpeallach"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC",
+      "text": "Sonraigh an leibhéal a roghnaíonn cé chomh dian is atá éifeachtaí fuaime an scáileáin scáileáin chomhthimpeallaigh"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC",
+      "text": "Seolann sé fógra tástála"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE",
+      "text": "Clárú críochnaithe don úsáideoir. Cuir an eochair thusála seo leis."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR",
+      "text": "Nó, is féidir leat an cód QR thíos a scanadh."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER",
+      "text": "Sa chás go bhfuil cód QR neamhiomlán le feiceáil ar do chonsól, bain úsáid as an eochair thusála seo le do thoil."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTSTATUS",
+      "text": "Stádas clárúcháin"
+    },
+    {
+      "loc": "NKS_USERS_USERNOTPROVIDED",
+      "text": "Níor soláthraíodh ainm úsáideora."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC",
+      "text": "Bainistíocht fíordheimhnithe dhá fhachtóir d'úsáideoirí"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC",
+      "text": "Cuireann sé riachtanas leis don úsáideoir"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC",
+      "text": "Ainm úsáideora le próiseáil le haghaidh oibríochtaí 2FA"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC",
+      "text": "Scriosann sé an riachtanas don úsáideoir"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC",
+      "text": "Seiceálacha le haghaidh clárú an úsáideora"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE",
+      "text": "Cuir an cód fíoraithe ar fáil don úsáideoir seo. De ghnáth is féidir leat rochtain a fháil ar an gcód seo ó aipeanna fíordheimhnitheora, amhail Google Authenticator. Mura gcuireann tú cód isteach, tabharfar ar ais chuig an leathanach logála isteach thú."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_CODEINVALID",
+      "text": "Tá an cód a chuir tú isteach neamhbhailí."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_VERIFYFAILED",
+      "text": "Theip ar fhíorú an chuntais. Is dóichí go bhfuil an cód a chuir tú isteach neamhbhailí nó imithe in éag. Seiceáil am do chórais."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED",
+      "text": "Tá an t-úsáideoir cláraithe cheana féin san fhíordheimhniú 2FA."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL",
+      "text": "Níl aon phasfhocal ag an úsáideoir chun é a chlárú san fhíordheimhniú 2FA."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED",
+      "text": "Níl an t-úsáideoir cláraithe don fhíordheimhniú 2FA."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL",
+      "text": "Níl aon phasfhocal ag an úsáideoir chun é a dhíchlárú san fhíordheimhniú 2FA."
+    },
+    {
+      "loc": "NKS_USERS_2FA_SETUPKEY",
+      "text": "Eochair socraithe"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC",
+      "text": "Tugann sé an eochair thusála ar ais (ar eagla go gcaillfeá í ar chúis éigin)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC",
+      "text": "Tugann sé cód QR an eochair thusála ar ais is féidir leat a scanadh le do ghuthán"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED",
+      "text": "Níl an mód sonraithe."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC",
+      "text": "Tugann fíor nó bréagach ar ais ag brath ar mhodh an eithne"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
+      "text": "Priontálann sé an toradh chuig an gconsól"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
+      "text": "Próiseáil Il-athraitheach Oidhreachta"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",
+      "text": "Níl aon phasfhocal ag an úsáideoir chun oibríochtaí fíordheimhnithe 2FA a dhéanamh."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC",
+      "text": "Déanann tástáil ar rindreálaí chanbhás an ghiuirléid"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE",
+      "text": "Theip ar dhíshraithiú faisnéise chanbhás an ghiuirléid"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE",
+      "text": "An chéad leathanach eile"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE",
+      "text": "Leathanach roimhe seo"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC",
+      "text": "Taispeánann sé scáileán logála isteach duit"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME",
+      "text": "Uimhir leathanaigh logála isteach"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC",
+      "text": "Uimhir leathanaigh an scáileáin logála isteach le taispeáint"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "Ag tosú"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "Ag múchadh"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "Atosú"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO",
+      "text": "Chun tuilleadh eolais a fháil faoin TUI idirghníomhach seo, tabhair cuairt ar"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE",
+      "text": "Réamhamharc ar an spárálaíscáileáin"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC",
+      "text": "Ag baint úsáide as an spárálaíscáileáin TUI chun réamhamharc a dhéanamh ar an spárálaíscáileáin"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY",
+      "text": "Leis an TUI idirghníomhach seo, is féidir leat réamhamharc a dhéanamh ar spárálaíscáileáin agus do scáileán a shábháil leis, le spárálaíscáileáin ionsuite nó spárálaíscáileáin saincheaptha. Is féidir leat spárálaíscáileáin a roghnú go héasca le réamhamharc a dhéanamh air go díreach ón TUI seo trí spárálaíscáileáin a roghnú ón liosta agus ENTER a bhrú."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE",
+      "text": "Criosanna ama beo"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC",
+      "text": "Ag baint úsáide as an gcrios ama TUI don chlog domhanda"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY",
+      "text": "Taispeánann an TUI idirghníomhach seo liosta criosanna ama agus a n-ionadaíochtaí ama áitiúla duit a athnuachan gach soicind. Ligeann sé seo duit é a úsáid mar fheidhmchlár clog domhanda chun breathnú ar an am do gach crios ama."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE",
+      "text": "Bainistiú tascanna"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC",
+      "text": "Ag baint úsáide as TUI an bhainisteora tascanna chun snáitheanna a bhainistiú"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY",
+      "text": "Ligeann TUI an bhainisteora tascanna duit snáitheanna croí Nitrocid, atá á mbainistiú ag Nitrocid agus a bhainisteoir snáitheanna, agus snáitheanna an chórais oibriúcháin, atá á mbainistiú ag do chóras oibriúcháin, a bhainistiú. Is féidir leat na snáitheanna go léir a liostáil agus iad a bhainistiú, lena n-áirítear an cumas a gcuid tascanna a chríochnú."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE",
+      "text": "Ag féachaint ar shnáitheanna an chórais oibriúcháin"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC",
+      "text": "Ag baint úsáide as TUI an bhainisteora tascanna chun snáitheanna an chórais oibriúcháin a fheiceáil"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY",
+      "text": "I gcás gach snáithe bainistithe (is é sin, bainistithe ag Nitrocid agus a bhainisteoir snáitheanna), taispeánann TUI an bhainisteora tascanna gach snáithe córais oibriúcháin a bhaineann le snáithe bainistithe, agus ní bhíonn caidreamh aon-le-haon acu i gcónaí, toisc go bhféadfadh níos mó ná snáithe córais oibriúcháin amháin a bheith i snáithe bainistithe. Murab ionann agus snáitheanna bainistithe, ní féidir iad a fhoirceannadh."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE",
+      "text": "Bainistiú socruithe eithne"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC",
+      "text": "Ag baint úsáide as TUI an aip socruithe chun socruithe eithne a bhainistiú"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY",
+      "text": "Is cuid riachtanach de Nitrocid í cumraíocht an eithne a ligeann duit codanna den eithne agus a chomhpháirteanna a chumrú, lena n-áirítear an stac líonraithe agus an stac bhlaosc. Déanann an TUI seo níos éasca duit codanna den eithne a chumrú, agus déanann a dhearadh iomasach níos áisiúla é ná an comhad cumraíochta a chur in eagar de láimh."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE",
+      "text": "Fógraí a bhainistiú"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC",
+      "text": "Ag baint úsáide as an TUI fógraí chun fógraí a bhainistiú"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY",
+      "text": "Leis an TUI seo, is féidir leat gach fógra nár léigh tú fós a bhainistiú. Nuair a fhaightear fógra, cuirtear leis an stair é le haghaidh tagartha sa todhchaí, a mhaireann ar feadh an tseisiúin eithne ar fad nó go dtí go ndiúltaíonn tú dó. Ligeann an TUI seo duit fógraí a dhíbhe agus a bhainistiú go héasca, rud atá níos éasca ná an fóntais líne ordaithe a úsáid."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE",
+      "text": "Ag roghnú fillteán"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC",
+      "text": "Ag baint úsáide as an roghnóir grúpa fillteán TUI chun fillteáin a roghnú"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY",
+      "text": "Cuirtear fo-thacar de TUIanna bainistíochta comhad ar fáil le haghaidh bainistíocht níos éasca, rud atá níos tapúla agus níos áisiúla ná na fóntais líne ordaithe a úsáid chun an gníomh céanna a dhéanamh. Ceann de na TUIanna a chuirtear ar fáil ná an TUI roghnúcháin grúpa fillteán, rud a ligeann duit fillteáin iolracha a roghnú mar spriocanna don oibríocht atá beartaithe. Má thugtar anseo thú, tá iarratas déanta ag feidhmchlár ort grúpa fillteán a roghnú chun an oibríocht a chríochnú. Is féidir leat an eochair SPÁS a úsáid chun fillteán a chur leis an liosta, ansin brúigh ESC chun do rogha a dhearbhú."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE",
+      "text": "Ag roghnú fillteán"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC",
+      "text": "Ag baint úsáide as an roghnóir fillteán TUI chun fillteán a roghnú"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY",
+      "text": "Cuirtear fo-thacar de TUIanna bainistíochta comhad ar fáil le haghaidh bainistíocht níos éasca, rud atá níos tapúla agus níos áisiúla ná na fóntais líne ordaithe a úsáid chun an gníomh céanna a dhéanamh. Ceann de na TUIanna a chuirtear ar fáil ná an TUI roghnúcháin fillteán, rud a ligeann duit fillteán a roghnú mar sprioc don oibríocht atá beartaithe. Má thugtar anseo thú, tá iarratas déanta ag feidhmchlár ort fillteán a roghnú chun an oibríocht a chríochnú. Is féidir leat an eochair SPÁS a úsáid chun fillteán a roghnú, agus ansin brúigh ESC chun do rogha a dhearbhú."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE",
+      "text": "Comhaid á roghnú"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC",
+      "text": "Ag baint úsáide as an roghnóir grúpa comhad TUI chun comhaid a roghnú"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY",
+      "text": "Cuirtear fo-thacar de TUIanna bainistíochta comhad ar fáil le haghaidh bainistíocht níos éasca, rud atá níos tapúla agus níos áisiúla ná na fóntais líne ordaithe a úsáid chun an gníomh céanna a dhéanamh. Ceann de na TUIanna a chuirtear ar fáil ná an TUI roghnúcháin grúpa comhad, rud a ligeann duit comhaid iolracha a roghnú mar spriocanna don oibríocht atá beartaithe. Má thugtar anseo thú, tá iarratas déanta ag feidhmchlár ort grúpa comhad a roghnú chun an oibríocht a chríochnú. Is féidir leat an eochair SPÁS a úsáid chun comhad a chur leis an liosta, agus ansin brúigh ESC chun do rogha a dhearbhú."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE",
+      "text": "Comhaid á roghnú"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC",
+      "text": "Ag baint úsáide as an roghnóir comhad TUI chun comhad a roghnú"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY",
+      "text": "Cuirtear fo-thacar de TUIanna bainistíochta comhad ar fáil le haghaidh bainistíocht níos éasca, rud atá níos tapúla agus níos áisiúla ná na fóntais líne ordaithe a úsáid chun an gníomh céanna a dhéanamh. Ceann de na TUIanna a chuirtear ar fáil ná an TUI roghnúcháin comhad, rud a ligeann duit comhad a roghnú mar sprioc don oibríocht atá beartaithe. Má thugtar anseo thú, tá iarratas déanta ag feidhmchlár ort comhad a roghnú chun an oibríocht a chríochnú. Is féidir leat an eochair SPÁS a úsáid chun comhad a roghnú, agus ansin brúigh ESC chun do rogha a dhearbhú."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE",
+      "text": "Bainisteoir comhad aon-phainéal"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC",
+      "text": "Ag baint úsáide as an TUI roghnóra comhad chun comhaid a bhainistiú le réamhamharc"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY",
+      "text": "Cuirtear fo-thacar de TUIanna bainistíochta comhad ar fáil le haghaidh bainistíocht níos éasca, rud atá níos tapúla agus níos áisiúla ná na fóntais líne ordaithe a úsáid chun an gníomh céanna a dhéanamh. Ceann de na TUIanna a chuirtear ar fáil ná an TUI bainistíochta comhad aon-phainéil, rud a ligeann duit do chuid comhad a bhainistiú leis an réamhamharc den chomhad sa phainéil ar dheis. Tá sé seo úsáideach más mian leat painéil réamhamhairc a fheiceáil go tapa nuair a roghnaíonn tú comhaid nó fillteáin."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE",
+      "text": "Bainisteoir comhad dé-phainéal"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC",
+      "text": "Ag baint úsáide as an roghnóir comhad TUI chun comhaid a bhainistiú i ndá phainéal"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY",
+      "text": "Cuirtear fo-thacar de TUIanna bainistíochta comhad ar fáil le haghaidh bainistíocht níos éasca, rud atá níos tapúla agus níos áisiúla ná na fóntais líne ordaithe a úsáid chun an gníomh céanna a dhéanamh. Ceann de na TUIanna a chuirtear ar fáil ná an TUI bainistíochta comhad dé-phainéal, rud a ligeann duit do chuid comhad a bhainistiú cosúil le Total Commander. Ligeann sé duit oibríochtaí comhad a dhéanamh go tapa chuig ceachtar painéal, gan a bheith ort cosáin a shonrú de láimh."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE",
+      "text": "Bainistiú aláraim"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC",
+      "text": "Ag baint úsáide as TUI an bhainisteora aláraim chun aláraim a bhainistiú"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY",
+      "text": "Is furasta do chuid aláraim a bhainistiú leis an TUI idirghníomhach seo. Ligeann an comhéadan úsáideora seo duit aláraim a chur leis agus a dhíbhe. Téann na haláraim ar siúl nuair a shroicheann siad an tréimhse ama scoir, rud a fhágann go dtaispeántar fógra."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC",
+      "text": "Cód fíoraithe"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE",
+      "text": "Tástáil idirghníomhach"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC",
+      "text": "Conas comhpháirteanna eithne a thástáil go hidirghníomhach"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY",
+      "text": "Is féidir leat gach comhpháirt eithne atá intástála a thástáil go hidirghníomhach anseo trí rannóg tástála a roghnú sa phána clé agus daingneán tástála sa phána deas. Gheobhaidh tú tuarascáil a léiríonn gur éirigh leis an tástáil nó gur theip uirthi."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR",
+      "text": "Earráid anaithnid agus daingneán tástála á rith"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_RUNTEST",
+      "text": "Rith tástáil"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED",
+      "text": "D’éirigh leis an tástáil seo!"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH",
+      "text": "Tá an luach ionchais ag teacht leis an luach iarbhír."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED",
+      "text": "Theip ar an tástáil seo."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE",
+      "text": "Teachtaireacht"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
+      "text": "Ní hionann an luach ionchais agus an luach iarbhír."
     }
   ]
 }

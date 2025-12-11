@@ -9057,6 +9057,430 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
       "text": "ランダムにスクリーンセーバーを選択します"
+    },
+    {
+      "loc": "NKS_KERNEL_SHELLTIP",
+      "text": "開始するには、「help」と入力して Enter キーを押します。"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME",
+      "text": "読者向けオーディオキュー音量"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC",
+      "text": "リーダーの音声キューの音量を指定します"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME",
+      "text": "パスワードマスク文字（リーダー）"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC",
+      "text": "入力したパスワードを隠す文字です。セキュリティを強化するには空白のままにしてください。"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3",
+      "text": "シェルに移動するには、ホームページからSキーを押してください。その後、「help」と入力してEnterキーを押すと起動できます。"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
+      "text": "設定インスタンスに重複したキーがあります。変数が複数回存在していないか、再度ご確認ください。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
+      "text": "近い"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
+      "text": "シャットダウン"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",
+      "text": "ファイルマネージャー（単一ペイン）"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC",
+      "text": "ファイルマネージャを単一のペインで開きます"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
+      "text": "日付のみ表示"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
+      "text": "時間だけ表示"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
+      "text": "ローカルタイムゾーンの代わりに UTC タイムゾーンを使用します"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING",
+      "text": "カーネルアドオンの初期化"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN",
+      "text": "それは知られていない"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING",
+      "text": "カーネルアドオンの確認"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME",
+      "text": "周囲のスクリーンセーバーの音響効果の強さ"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC",
+      "text": "スクリーンセーバーの周囲のサウンド効果の強さを選択するレベルを指定します"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC",
+      "text": "テスト通知を送信します"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE",
+      "text": "ユーザーの登録が完了しました。このセットアップキーを追加してください"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR",
+      "text": "または、以下のQRコードをスキャンすることもできます。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER",
+      "text": "コンソールに不完全なQRコードが表示された場合は、このセットアップキーを使用してください。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTSTATUS",
+      "text": "登録状況"
+    },
+    {
+      "loc": "NKS_USERS_USERNOTPROVIDED",
+      "text": "ユーザー名が指定されていません。"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC",
+      "text": "ユーザー向け二要素認証管理"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC",
+      "text": "ユーザーに要件を追加する"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC",
+      "text": "2FA操作を処理するユーザー名"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC",
+      "text": "ユーザーの要件を削除します"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC",
+      "text": "ユーザー登録の確認"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE",
+      "text": "このユーザーの確認コードを入力してください。通常、このコードはGoogle Authenticatorなどの認証アプリからアクセスできます。コードを入力しない場合は、サインインページに戻ります。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_CODEINVALID",
+      "text": "入力したコードは無効です。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_VERIFYFAILED",
+      "text": "アカウントの認証に失敗しました。入力したコードが無効か期限切れである可能性があります。システム時刻をご確認ください。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED",
+      "text": "ユーザーは既に 2FA 認証に登録されています。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL",
+      "text": "ユーザーには 2FA 認証に登録するためのパスワードがありません。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED",
+      "text": "ユーザーは 2FA 認証に登録されていません。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL",
+      "text": "ユーザーには、2FA 認証への登録を解除するためのパスワードがありません。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_SETUPKEY",
+      "text": "セットアップキー"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC",
+      "text": "セットアップ キーを返します (何らかの理由で紛失した場合)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC",
+      "text": "携帯電話でスキャンできるセットアップキーのQRコードを返します"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED",
+      "text": "モードが指定されていません。"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC",
+      "text": "カーネルモードに応じてtrueまたはfalseを返します"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
+      "text": "結果をコンソールに出力します"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
+      "text": "レガシーマルチバー処理"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",
+      "text": "ユーザーには 2FA 認証操作を実行するためのパスワードがありません。"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC",
+      "text": "ウィジェットのキャンバスレンダラーをテストします"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE",
+      "text": "ウィジェットのキャンバス情報の逆シリアル化に失敗しました"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE",
+      "text": "次のページ"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE",
+      "text": "前のページ"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC",
+      "text": "ログイン画面を表示します"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME",
+      "text": "ログインページ番号"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC",
+      "text": "表示するログイン画面のページ番号"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "初期化中"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "シャットダウン"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "再起動"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO",
+      "text": "このインタラクティブTUIの詳細については、"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE",
+      "text": "スクリーンセーバーのプレビュー"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC",
+      "text": "スクリーンセーバーTUIを使用してスクリーンセーバーをプレビューする"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY",
+      "text": "このインタラクティブなTUIでは、スクリーンセーバーをプレビューし、画面を保存することができます。スクリーンセーバーは、内蔵スクリーンセーバーまたはカスタムスクリーンセーバーから選択できます。リストからスクリーンセーバーを選択してEnterキーを押すだけで、このTUIから直接プレビューするスクリーンセーバーを簡単に選択できます。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE",
+      "text": "ライブタイムゾーン"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC",
+      "text": "世界時計にタイムゾーンTUIを使用する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY",
+      "text": "このインタラクティブなTUIは、タイムゾーンのリストと、毎秒更新される現地時間を表示します。これにより、すべてのタイムゾーンの時刻を確認できる世界時計アプリケーションとして使用できます。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE",
+      "text": "タスクの管理"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC",
+      "text": "タスクマネージャーTUIを使用してスレッドを管理する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY",
+      "text": "タスクマネージャーのTUIを使用すると、Nitrocidとそのスレッドマネージャーによって管理されるNitrocidカーネルスレッドと、オペレーティングシステムによって管理されるオペレーティングシステムスレッドの両方を管理できます。すべてのスレッドを一覧表示し、タスクの終了を含む管理を行うことができます。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE",
+      "text": "オペレーティング システム スレッドの表示"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC",
+      "text": "タスク マネージャー TUI を使用してオペレーティング システムのスレッドを表示する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY",
+      "text": "タスクマネージャーのTUIには、管理対象スレッド（つまり、Nitrocidとそのスレッドマネージャーによって管理されているスレッド）ごとに、関連するすべてのオペレーティングシステムスレッドが表示されます。管理対象スレッドには複数のオペレーティングシステムスレッドが含まれる場合があるため、これらのスレッドは必ずしも1対1の関係にあるとは限りません。管理対象スレッドとは異なり、これらのスレッドは終了できません。"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE",
+      "text": "カーネル設定の管理"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC",
+      "text": "設定アプリTUIを使用してカーネル設定を管理する"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY",
+      "text": "カーネル設定はNitrocidの重要な部分であり、ネットワークスタックやシェルスタックなど、カーネルとそのコンポーネントの一部を設定できます。このTUIを使用すると、カーネルの各部分を簡単に設定でき、直感的なデザインにより、設定ファイルを手動で編集するよりも便利です。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE",
+      "text": "通知の管理"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC",
+      "text": "通知TUIを使用して通知を管理する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY",
+      "text": "このTUIを使えば、まだ読んでいない通知をすべて管理できます。通知を受信すると、今後の参照のために履歴に追加されます。履歴はカーネルセッション全体、またはユーザーが通知を閉じるまで保持されます。このTUIを使えば、コマンドラインユーティリティを使うよりも簡単に通知を閉じたり管理したりできます。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE",
+      "text": "フォルダの選択"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC",
+      "text": "フォルダグループセレクターTUIを使用してフォルダを選択する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY",
+      "text": "ファイル管理用のTUIのサブセットが提供されており、管理が容易になります。これは、コマンドラインユーティリティを使用して同じ操作を実行するよりも、より迅速かつ便利です。提供されているTUIの1つに、フォルダーグループ選択TUIがあります。これを使用すると、複数のフォルダーを目的の操作の対象として選択できます。このTUIが表示された場合は、操作を完了するためにアプリケーションがフォルダーのグループを選択するように要求しています。スペースキーを使用してフォルダーをリストに追加し、ESCキーを押して選択を確定できます。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE",
+      "text": "フォルダの選択"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC",
+      "text": "フォルダセレクターTUIを使用してフォルダを選択する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY",
+      "text": "ファイル管理用のTUIのサブセットが提供されており、管理が容易になります。これは、コマンドラインユーティリティを使用して同じ操作を実行するよりも、より迅速かつ便利です。提供されるTUIの1つに、フォルダー選択TUIがあります。これを使用すると、目的の操作の対象としてフォルダーを選択できます。このTUIが表示された場合は、操作を完了するためにアプリケーションがフォルダーの選択を要求しています。SPACEキーを使用してフォルダーを選択し、ESCキーを押して選択を確定できます。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE",
+      "text": "ファイルの選択"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC",
+      "text": "ファイルグループセレクターTUIを使用してファイルを選択する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY",
+      "text": "ファイル管理用のTUIのサブセットが提供されており、管理が容易になります。これは、コマンドラインユーティリティを使用して同じ操作を実行するよりも、より迅速かつ便利です。提供されるTUIの1つは、ファイルグループ選択TUIです。これを使用すると、複数のファイルを目的の操作の対象として選択できます。このTUIが表示された場合は、アプリケーションが操作を完了するためにファイルグループの選択を要求しています。スペースキーを使用してファイルをリストに追加し、ESCキーを押して選択を確定できます。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE",
+      "text": "ファイルの選択"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC",
+      "text": "ファイルセレクタTUIを使用してファイルを選択する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY",
+      "text": "ファイル管理用のTUIのサブセットが提供されており、管理が容易になります。これは、コマンドラインユーティリティを使用して同じ操作を実行するよりも、より迅速かつ便利です。提供されるTUIの1つはファイル選択TUIで、これを使用すると、目的の操作の対象としてファイルを選択できます。このTUIが表示された場合は、操作を完了するためにアプリケーションがファイルの選択を要求しています。スペースキーを使用してファイルを選択し、ESCキーを押して選択を確定できます。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE",
+      "text": "シングルペインファイルマネージャー"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC",
+      "text": "ファイルセレクタTUIを使用してプレビューでファイルを管理する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY",
+      "text": "ファイル管理用のTUIのサブセットが提供されており、管理が容易になります。これは、コマンドラインユーティリティを使用して同じ操作を実行するよりも、より迅速かつ便利です。提供されるTUIの1つは、シングルペインのファイル管理TUIです。これにより、右ペインにファイルのプレビューを表示しながらファイルを管理できます。これは、ファイルやフォルダを選択する際に、一目で内容がわかるプレビューペインが必要な場合に便利です。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE",
+      "text": "ダブルペインファイルマネージャー"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC",
+      "text": "ファイルセレクタTUIを使用して2つのペインでファイルを管理する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY",
+      "text": "ファイル管理用のTUIのサブセットが提供されており、管理が容易になります。これは、コマンドラインユーティリティを使用して同じ操作を実行するよりも、より迅速かつ便利です。提供されるTUIの1つは、Total Commanderと同様のファイル管理を可能にする、ダブルペインのファイル管理TUIです。これにより、手動でパスを指定することなく、どちらのペインに対してもファイル操作を迅速に実行できます。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE",
+      "text": "アラームの管理"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC",
+      "text": "アラームマネージャTUIを使用してアラームを管理する"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY",
+      "text": "このインタラクティブなTUIを使えば、アラームの管理が簡単になります。このユーザーインターフェースでは、アラームの追加と解除が可能です。アラームはタイムアウト時間に達すると起動し、通知が表示されます。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC",
+      "text": "検証コード"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE",
+      "text": "インタラクティブテスト"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC",
+      "text": "カーネルコンポーネントを対話的にテストする方法"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY",
+      "text": "左ペインでテストセクションを選択し、右ペインでテストフィクスチャを選択することで、ここでテスト可能なすべてのカーネルコンポーネントをインタラクティブにテストできます。テストの合格または不合格を示すレポートが表示されます。"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR",
+      "text": "テストフィクスチャ実行中に不明なエラーが発生しました"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_RUNTEST",
+      "text": "テストを実行する"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED",
+      "text": "このテストは成功しました!"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH",
+      "text": "期待値は実際の値と一致します。"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED",
+      "text": "このテストは失敗しました。"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE",
+      "text": "メッセージ"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
+      "text": "予想値が実際の値と一致しません。"
     }
   ]
 }

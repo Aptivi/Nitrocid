@@ -1191,8 +1191,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// Selects the intensity of the ambient sound effect
         /// </summary>
-        // TODO: NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME -> "Ambient screensaver sound effects intensity"
-        // TODO: NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC -> "Specify the level that chooses how intense the ambient screensaver sound effects are"
         public AmbienceFxIntensity AmbientSoundFxIntensity { get; set; } = AmbienceFxIntensity.Medium;
         /// <summary>
         /// Audio cue volume
@@ -1205,8 +1203,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// Audio cue volume for the reader
         /// </summary>
-        // TODO: NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME -> "Audio cue volume for the reader"
-        // TODO: NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC -> "Specify how loud do you want the reader audio cues to be"
         public double AudioCueVolumeReader
         {
             get => TermReader.GlobalReaderSettings.CueVolume;
@@ -1372,8 +1368,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// A character that masks the password. Leave blank for more security
         /// </summary>
-        // TODO: NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME -> "Password mask character (reader)"
-        // TODO: NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC -> "A character that masks the input password. Leave blank for more security."
         public string CurrentMaskReader
         {
             get => TermReader.GlobalReaderSettings.PasswordMaskChar.ToString();

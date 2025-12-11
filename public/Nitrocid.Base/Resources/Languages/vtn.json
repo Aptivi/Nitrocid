@@ -9057,6 +9057,430 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
       "text": "Chọn một trình bảo vệ màn hình ngẫu nhiên"
+    },
+    {
+      "loc": "NKS_KERNEL_SHELLTIP",
+      "text": "Để bắt đầu, hãy gõ 'help' và nhấn ENTER."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME",
+      "text": "Âm lượng tín hiệu âm thanh dành cho người đọc"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC",
+      "text": "Hãy xác định âm lượng bạn muốn cho các tín hiệu âm thanh của người đọc."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME",
+      "text": "Ký tự mặt nạ mật khẩu (đầu đọc)"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC",
+      "text": "Một ký tự dùng để che giấu mật khẩu nhập vào. Để trống để tăng cường bảo mật."
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3",
+      "text": "Để truy cập vào giao diện dòng lệnh, hãy nhấn phím S nếu bạn đang ở trang chủ. Sau đó, bạn có thể gõ 'help' và nhấn ENTER để bắt đầu!"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
+      "text": "Có các khóa trùng lặp trong phần cài đặt của bạn. Vui lòng kiểm tra kỹ biến đó để đảm bảo rằng nó không tồn tại nhiều hơn một lần."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
+      "text": "Đóng"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
+      "text": "Tắt máy"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",
+      "text": "Trình quản lý tập tin (một ngăn)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC",
+      "text": "Mở trình quản lý tập tin trong một cửa sổ duy nhất"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
+      "text": "Chỉ hiển thị ngày tháng"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
+      "text": "Chỉ hiển thị thời gian."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
+      "text": "Sử dụng múi giờ UTC thay vì múi giờ địa phương."
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING",
+      "text": "Khởi tạo tiện ích bổ sung nhân hệ điều hành"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN",
+      "text": "điều đó không được biết đến"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING",
+      "text": "Kiểm tra tiện ích bổ sung kernel"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME",
+      "text": "Cường độ hiệu ứng âm thanh bảo vệ màn hình"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC",
+      "text": "Chọn mức độ để quyết định cường độ của hiệu ứng âm thanh nền của trình bảo vệ màn hình."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC",
+      "text": "Gửi thông báo thử nghiệm"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE",
+      "text": "Đăng ký người dùng đã hoàn tất. Thêm khóa thiết lập này."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR",
+      "text": "Hoặc, bạn có thể quét mã QR bên dưới."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER",
+      "text": "Trong trường hợp bảng điều khiển của bạn hiển thị mã QR không đầy đủ, vui lòng sử dụng khóa thiết lập này."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTSTATUS",
+      "text": "Tình trạng đăng ký"
+    },
+    {
+      "loc": "NKS_USERS_USERNOTPROVIDED",
+      "text": "Tên người dùng chưa được cung cấp."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC",
+      "text": "Quản lý xác thực hai yếu tố cho người dùng"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC",
+      "text": "Thêm yêu cầu cho người dùng"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC",
+      "text": "Tên người dùng cần xử lý cho các thao tác xác thực hai yếu tố (2FA)."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC",
+      "text": "Xóa yêu cầu đối với người dùng"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC",
+      "text": "Kiểm tra việc đăng ký người dùng"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE",
+      "text": "Vui lòng cung cấp mã xác thực cho người dùng này. Thông thường, bạn có thể lấy mã này từ các ứng dụng xác thực, chẳng hạn như Google Authenticator. Nếu bạn không nhập mã, bạn sẽ được đưa trở lại trang đăng nhập."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_CODEINVALID",
+      "text": "Mã bạn nhập không hợp lệ."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_VERIFYFAILED",
+      "text": "Xác minh tài khoản không thành công. Rất có thể mã bạn nhập không hợp lệ hoặc đã hết hạn. Vui lòng kiểm tra thời gian hệ thống của bạn."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED",
+      "text": "Người dùng đã đăng ký xác thực hai yếu tố (2FA)."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL",
+      "text": "Người dùng không có mật khẩu để đăng ký xác thực hai yếu tố (2FA)."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED",
+      "text": "Người dùng chưa đăng ký xác thực hai yếu tố (2FA)."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL",
+      "text": "Người dùng không có mật khẩu để hủy đăng ký xác thực hai yếu tố (2FA)."
+    },
+    {
+      "loc": "NKS_USERS_2FA_SETUPKEY",
+      "text": "Khóa cài đặt"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC",
+      "text": "Trả về khóa cài đặt (trong trường hợp bạn bị mất khóa vì lý do nào đó)."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC",
+      "text": "Trả về mã QR của khóa thiết lập mà bạn có thể quét bằng điện thoại."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED",
+      "text": "Chế độ không được chỉ định."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC",
+      "text": "Trả về true hoặc false tùy thuộc vào chế độ kernel."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
+      "text": "In kết quả ra màn hình console."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
+      "text": "Xử lý đa biến cũ"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",
+      "text": "Người dùng không có mật khẩu để thực hiện xác thực hai yếu tố (2FA)."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC",
+      "text": "Kiểm tra trình kết xuất canvas của widget"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE",
+      "text": "Không thể giải mã thông tin canvas của widget."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE",
+      "text": "Trang tiếp theo"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE",
+      "text": "Trang trước"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC",
+      "text": "Hiển thị màn hình đăng nhập"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME",
+      "text": "Số trang đăng nhập"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC",
+      "text": "Số trang của màn hình đăng nhập cần hiển thị"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "Khởi tạo"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "Đang tắt máy"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "Khởi động lại"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO",
+      "text": "Để biết thêm thông tin về công cụ tương tác TUI này, hãy truy cập"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE",
+      "text": "Xem trước trình bảo vệ màn hình"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC",
+      "text": "Sử dụng giao diện người dùng đồ họa (TUI) của trình bảo vệ màn hình để xem trước trình bảo vệ màn hình."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY",
+      "text": "Giao diện người dùng tương tác (TUI) này cho phép bạn xem trước trình bảo vệ màn hình và lưu màn hình của mình với trình bảo vệ đó, bằng trình bảo vệ màn hình tích hợp sẵn hoặc trình bảo vệ màn hình tùy chỉnh. Bạn có thể dễ dàng chọn trình bảo vệ màn hình để xem trước trực tiếp từ TUI này bằng cách chọn trình bảo vệ màn hình từ danh sách và nhấn ENTER."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE",
+      "text": "Múi giờ trực tiếp"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC",
+      "text": "Sử dụng múi giờ TUI cho đồng hồ thế giới"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY",
+      "text": "Giao diện người dùng tương tác này hiển thị cho bạn danh sách các múi giờ và cách diễn đạt giờ địa phương tương ứng, được cập nhật mỗi giây. Điều này cho phép bạn sử dụng nó như một ứng dụng đồng hồ thế giới để xem giờ ở tất cả các múi giờ."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE",
+      "text": "Quản lý nhiệm vụ"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC",
+      "text": "Sử dụng giao diện người dùng đồ họa (TUI) của trình quản lý tác vụ để quản lý các luồng."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY",
+      "text": "Giao diện người dùng dựa trên văn bản (TUI) của trình quản lý tác vụ cho phép bạn quản lý cả các luồng nhân Nitrocid, được quản lý bởi Nitrocid và trình quản lý luồng của nó, và các luồng hệ điều hành, được quản lý bởi hệ điều hành của bạn. Bạn có thể liệt kê tất cả các luồng và quản lý chúng, bao gồm cả khả năng kết thúc các tác vụ của chúng."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE",
+      "text": "Xem các luồng hệ điều hành"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC",
+      "text": "Sử dụng giao diện người dùng đồ họa (TUI) của trình quản lý tác vụ để xem các luồng của hệ điều hành."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY",
+      "text": "Đối với mỗi luồng được quản lý (tức là được quản lý bởi Nitrocid và trình quản lý luồng của nó), giao diện người dùng đồ họa (TUI) của trình quản lý tác vụ sẽ hiển thị cho bạn tất cả các luồng hệ điều hành có liên quan đến luồng được quản lý đó, và chúng không phải lúc nào cũng có mối quan hệ một-một, bởi vì một luồng được quản lý có thể chứa nhiều hơn một luồng hệ điều hành. Không giống như các luồng được quản lý, chúng không thể bị chấm dứt."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE",
+      "text": "Quản lý cài đặt nhân hệ điều hành"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC",
+      "text": "Sử dụng ứng dụng cài đặt TUI để quản lý các cài đặt kernel."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY",
+      "text": "Cấu hình nhân hệ điều hành là một phần thiết yếu của Nitrocid, cho phép bạn cấu hình các phần của nhân và các thành phần của nó, bao gồm cả ngăn xếp mạng và ngăn xếp shell. Giao diện người dùng dựa trên văn bản (TUI) này giúp bạn dễ dàng cấu hình các phần của nhân hơn, và thiết kế trực quan của nó giúp việc này thuận tiện hơn so với việc chỉnh sửa thủ công tệp cấu hình."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE",
+      "text": "Quản lý thông báo"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC",
+      "text": "Sử dụng giao diện người dùng đồ họa (TUI) để quản lý thông báo."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY",
+      "text": "Với giao diện người dùng dựa trên văn bản (TUI) này, bạn có thể quản lý tất cả các thông báo mà bạn chưa đọc. Khi nhận được một thông báo, nó sẽ được thêm vào lịch sử để tham khảo trong tương lai, lịch sử này sẽ tồn tại trong suốt phiên làm việc của nhân hệ điều hành hoặc cho đến khi bạn tắt nó đi. TUI này cho phép bạn dễ dàng tắt và quản lý các thông báo, dễ dàng hơn so với việc sử dụng tiện ích dòng lệnh."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE",
+      "text": "Chọn thư mục"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC",
+      "text": "Sử dụng giao diện người dùng đồ họa (TUI) để chọn nhóm thư mục."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY",
+      "text": "Một tập hợp con các giao diện người dùng dựa trên văn bản (TUI) quản lý tập tin được cung cấp để quản lý dễ dàng hơn, nhanh hơn và thuận tiện hơn so với việc sử dụng các tiện ích dòng lệnh để thực hiện cùng một thao tác. Một trong những TUI được cung cấp là TUI chọn nhóm thư mục, cho phép bạn chọn nhiều thư mục làm mục tiêu cho thao tác mong muốn. Nếu bạn được đưa đến đây, một ứng dụng đã yêu cầu bạn chọn một nhóm thư mục để hoàn tất thao tác. Bạn có thể sử dụng phím SPACE để thêm thư mục vào danh sách, sau đó nhấn ESC để xác nhận lựa chọn của mình."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE",
+      "text": "Chọn thư mục"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC",
+      "text": "Sử dụng giao diện người dùng đồ họa (TUI) để chọn thư mục."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY",
+      "text": "Một tập hợp con các giao diện người dùng dựa trên văn bản (TUI) quản lý tập tin được cung cấp để quản lý dễ dàng hơn, nhanh hơn và thuận tiện hơn so với việc sử dụng các tiện ích dòng lệnh để thực hiện cùng một thao tác. Một trong những TUI được cung cấp là TUI chọn thư mục, cho phép bạn chọn một thư mục làm mục tiêu cho thao tác mong muốn. Nếu bạn được đưa đến đây, một ứng dụng đã yêu cầu bạn chọn một thư mục để hoàn tất thao tác. Bạn có thể sử dụng phím SPACE để chọn thư mục, sau đó nhấn ESC để xác nhận lựa chọn của mình."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE",
+      "text": "Chọn tệp"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC",
+      "text": "Sử dụng giao diện người dùng đồ họa (TUI) để chọn nhóm tệp."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY",
+      "text": "Một tập hợp con các giao diện người dùng dựa trên văn bản (TUI) để quản lý tập tin được cung cấp để quản lý dễ dàng hơn, nhanh hơn và thuận tiện hơn so với việc sử dụng các tiện ích dòng lệnh để thực hiện cùng một thao tác. Một trong những TUI được cung cấp là TUI chọn nhóm tập tin, cho phép bạn chọn nhiều tập tin làm mục tiêu cho thao tác mong muốn. Nếu bạn được đưa đến đây, một ứng dụng đã yêu cầu bạn chọn một nhóm tập tin để hoàn tất thao tác. Bạn có thể sử dụng phím SPACE để thêm tập tin vào danh sách, sau đó nhấn ESC để xác nhận lựa chọn của mình."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE",
+      "text": "Chọn tệp"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC",
+      "text": "Sử dụng giao diện người dùng đồ họa (TUI) để chọn tệp."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY",
+      "text": "Một tập hợp con các giao diện người dùng dựa trên văn bản (TUI) quản lý tập tin được cung cấp để quản lý dễ dàng hơn, nhanh hơn và thuận tiện hơn so với việc sử dụng các tiện ích dòng lệnh để thực hiện cùng một thao tác. Một trong những TUI được cung cấp là TUI chọn tập tin, cho phép bạn chọn một tập tin làm mục tiêu cho thao tác dự định. Nếu bạn được đưa đến đây, một ứng dụng đã yêu cầu bạn chọn một tập tin để hoàn tất thao tác. Bạn có thể sử dụng phím SPACE để chọn tập tin, sau đó nhấn ESC để xác nhận lựa chọn của mình."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE",
+      "text": "Trình quản lý tập tin một ngăn"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC",
+      "text": "Sử dụng giao diện người dùng đồ họa (TUI) để chọn tập tin và quản lý tập tin với chức năng xem trước."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY",
+      "text": "Một tập hợp con các giao diện người dùng dựa trên văn bản (TUI) quản lý tập tin được cung cấp để quản lý dễ dàng hơn, nhanh hơn và thuận tiện hơn so với việc sử dụng các tiện ích dòng lệnh để thực hiện cùng một thao tác. Một trong những TUI được cung cấp là TUI quản lý tập tin một ngăn, cho phép bạn quản lý các tập tin của mình với bản xem trước tập tin ở ngăn bên phải. Điều này hữu ích nếu bạn muốn có ngăn xem trước nhanh khi chọn tập tin hoặc thư mục."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE",
+      "text": "Trình quản lý tập tin hai ngăn"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC",
+      "text": "Sử dụng giao diện người dùng đồ họa (TUI) để chọn tập tin và quản lý tập tin trong hai ngăn."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY",
+      "text": "Một tập hợp con các giao diện người dùng dựa trên văn bản (TUI) quản lý tập tin được cung cấp để quản lý dễ dàng hơn, nhanh hơn và thuận tiện hơn so với việc sử dụng các tiện ích dòng lệnh để thực hiện cùng một thao tác. Một trong những TUI được cung cấp là TUI quản lý tập tin hai ngăn, cho phép bạn quản lý các tập tin của mình tương tự như Total Commander. Nó cho phép bạn nhanh chóng thực hiện các thao tác tập tin trên một trong hai ngăn mà không cần phải chỉ định đường dẫn theo cách thủ công."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE",
+      "text": "Quản lý cảnh báo"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC",
+      "text": "Sử dụng giao diện người dùng đồ họa (TUI) của trình quản lý cảnh báo để quản lý các cảnh báo."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY",
+      "text": "Việc quản lý cảnh báo của bạn trở nên dễ dàng hơn với giao diện người dùng dựa trên văn bản (TUI) tương tác này. Giao diện người dùng cho phép bạn thêm và xóa cảnh báo. Cảnh báo sẽ được kích hoạt khi hết thời gian chờ, và một thông báo sẽ hiển thị."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC",
+      "text": "Mã xác minh"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE",
+      "text": "Kiểm tra tương tác"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC",
+      "text": "Cách kiểm tra tương tác các thành phần nhân hệ điều hành"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY",
+      "text": "Bạn có thể kiểm tra tương tác tất cả các thành phần nhân hệ điều hành có thể kiểm tra được tại đây bằng cách chọn một phần kiểm tra ở ngăn bên trái và một thiết lập kiểm tra ở ngăn bên phải. Bạn sẽ nhận được một báo cáo cho biết bài kiểm tra đã thành công hay thất bại."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR",
+      "text": "Lỗi không xác định khi chạy thiết bị kiểm thử"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_RUNTEST",
+      "text": "Chạy thử nghiệm"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED",
+      "text": "Bài kiểm tra này đã thành công!"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH",
+      "text": "Giá trị kỳ vọng trùng khớp với giá trị thực tế."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED",
+      "text": "Bài kiểm tra này đã thất bại."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE",
+      "text": "Tin nhắn"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
+      "text": "Giá trị kỳ vọng không khớp với giá trị thực tế."
     }
   ]
 }

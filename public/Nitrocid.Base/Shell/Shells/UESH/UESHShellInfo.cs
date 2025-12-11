@@ -46,7 +46,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC -> Two-factor authentication management for users
             new CommandInfo("2fa", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC",
                 [
                     new CommandArgumentInfo(
@@ -54,12 +53,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         new CommandArgumentPart(true, "add", new()
                         {
                             ExactWording = ["add"],
-                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC -> Adds requirement for the user
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC"
                         }),
                         new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
                         {
-                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC -> User name to process for 2FA operations
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
                         }),
                     ])
@@ -71,12 +68,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         new CommandArgumentPart(true, "delete", new()
                         {
                             ExactWording = ["delete"],
-                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC -> Deletes requirement for the user
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC"
                         }),
                         new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
                         {
-                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC -> User name to process for 2FA operations
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
                         }),
                     ])
@@ -88,12 +83,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         new CommandArgumentPart(true, "check", new()
                         {
                             ExactWording = ["check"],
-                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC -> Checks for the user enrollment
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC"
                         }),
                         new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
                         {
-                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC -> User name to process for 2FA operations
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
                         }),
                     ])
@@ -105,12 +98,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         new CommandArgumentPart(true, "setupkey", new()
                         {
                             ExactWording = ["setupkey"],
-                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC -> Returns the setup key (in case you lost it for some reason)
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC"
                         }),
                         new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
                         {
-                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC -> User name to process for 2FA operations
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
                         }),
                     ])
@@ -122,12 +113,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         new CommandArgumentPart(true, "setupqr", new()
                         {
                             ExactWording = ["setupqr"],
-                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC -> Returns the setup key's QR code you can scan with your phone
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC"
                         }),
                         new CommandArgumentPart(true, "username", new CommandArgumentPartOptions()
                         {
-                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC -> User name to process for 2FA operations
                             ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC"
                         }),
                     ])
@@ -576,13 +565,11 @@ namespace Nitrocid.Base.Shell.Shells.UESH
             new CommandInfo("date", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTD_DESC",
                 [
                     new CommandArgumentInfo([
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC -> "Shows just the date"
                         new SwitchInfo("date", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["time", "full"],
                             AcceptsValues = false
                         }),
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC -> "Shows just the time"
                         new SwitchInfo("time", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC", new SwitchOptions()
                         {
                             ConflictsWith = ["date", "full"],
@@ -593,7 +580,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                             ConflictsWith = ["date", "time"],
                             AcceptsValues = false
                         }),
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC -> "Uses the UTC time zone instead of the local time zone"
                         new SwitchInfo("utc", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
@@ -1006,7 +992,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                         }),
                     ],
                     [
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC -> "Opens the file manager in a single pane"
                         new SwitchInfo("single", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false
@@ -1014,7 +999,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ])
                 ], new IfmCommand()),
 
-            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC -> "Returns true or false depending on the kernel mode"
             new CommandInfo("ismode", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC",
                 [
                     new CommandArgumentInfo([],
@@ -1034,7 +1018,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                             AcceptsValues = false,
                             ConflictsWith = ["s", "d"]
                         }),
-                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC -> "Prints the result to the console"
                         new SwitchInfo("v", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC", new SwitchOptions()
                         {
                             AcceptsValues = false,

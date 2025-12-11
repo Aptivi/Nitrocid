@@ -6906,5 +6906,323 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC" xml:space="preserve">
     <value>Вибирає випадкову заставку</value>
   </data>
+  <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
+    <value>Щоб розпочати, напишіть «допомога» та натисніть ENTER.</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
+    <value>Гучність аудіопідказки для зчитувача</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC" xml:space="preserve">
+    <value>Вкажіть, наскільки гучними мають бути звукові підказки читача</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME" xml:space="preserve">
+    <value>Символ маски пароля (читач)</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC" xml:space="preserve">
+    <value>Символ, який маскує введений пароль. Залиште поле порожнім для кращої безпеки.</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
+    <value>Щоб перейти до оболонки, натисніть клавішу S, якщо ви знаходитесь на головній сторінці. Після цього ви можете написати «довідка» та натиснути ENTER, щоб розпочати!</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
+    <value>У вашому екземплярі налаштувань є дублікати ключів. Будь ласка, перевірте змінну ще раз, щоб переконатися, що вона не існує більше одного разу.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_CLOSE" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN" xml:space="preserve">
+    <value>Вимкнути</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE" xml:space="preserve">
+    <value>Файловий менеджер (одна панель)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC" xml:space="preserve">
+    <value>Відкриває файловий менеджер в одній панелі</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Показує лише дату</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Показує саме час</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Використовує часовий пояс UTC замість місцевого часового поясу</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING" xml:space="preserve">
+    <value>Ініціалізація доповнення ядра</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN" xml:space="preserve">
+    <value>що невідомо</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING" xml:space="preserve">
+    <value>Перевірка доповнення ядра</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME" xml:space="preserve">
+    <value>Інтенсивність звукових ефектів навколишньої заставки</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC" xml:space="preserve">
+    <value>Вкажіть рівень інтенсивності звукових ефектів навколишнього середовища заставки</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC" xml:space="preserve">
+    <value>Надсилає тестове сповіщення</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE" xml:space="preserve">
+    <value>Реєстрацію користувача завершено. Додайте цей ключ налаштування.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR" xml:space="preserve">
+    <value>Або ж ви можете відсканувати QR-код нижче.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER" xml:space="preserve">
+    <value>Якщо ваша консоль відображає неповний QR-код, скористайтеся цим ключем налаштування</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTSTATUS" xml:space="preserve">
+    <value>Статус реєстрації</value>
+  </data>
+  <data name="NKS_USERS_USERNOTPROVIDED" xml:space="preserve">
+    <value>Ім&apos;я користувача не вказано.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC" xml:space="preserve">
+    <value>Керування двофакторною автентифікацією для користувачів</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC" xml:space="preserve">
+    <value>Додає вимогу для користувача</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Ім&apos;я користувача для обробки операцій 2FA</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC" xml:space="preserve">
+    <value>Видаляє вимогу для користувача</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC" xml:space="preserve">
+    <value>Перевірки реєстрації користувачів</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE" xml:space="preserve">
+    <value>Надайте код підтвердження для цього користувача. Зазвичай ви можете отримати доступ до цього коду з програм автентифікації, таких як Google Authenticator. Якщо ви не введете код, вас буде перенаправлено назад на сторінку входу.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_CODEINVALID" xml:space="preserve">
+    <value>Введений вами код недійсний.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_VERIFYFAILED" xml:space="preserve">
+    <value>Не вдалося перевірити обліковий запис. Найімовірніше, введений вами код недійсний або термін його дії минув. Перевірте системний час.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED" xml:space="preserve">
+    <value>Користувач вже зареєструвався для автентифікації 2FA.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL" xml:space="preserve">
+    <value>Користувач не має пароля для реєстрації в двофакторній автентифікації.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED" xml:space="preserve">
+    <value>Користувач не зареєструвався для автентифікації 2FA.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL" xml:space="preserve">
+    <value>Користувач не має пароля для скасування реєстрації в двофакторній автентифікації.</value>
+  </data>
+  <data name="NKS_USERS_2FA_SETUPKEY" xml:space="preserve">
+    <value>Ключ налаштування</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC" xml:space="preserve">
+    <value>Повертає ключ налаштування (на випадок, якщо ви його з якоїсь причини втратили)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC" xml:space="preserve">
+    <value>Повертає QR-код ключа налаштування, який можна відсканувати телефоном</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED" xml:space="preserve">
+    <value>Режим не вказано.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC" xml:space="preserve">
+    <value>Повертає значення true або false залежно від режиму ядра</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
+    <value>Виводить результат у консоль</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
+    <value>Застаріла багатовимірна обробка</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
+    <value>Користувач не має пароля для виконання операцій автентифікації 2FA.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC" xml:space="preserve">
+    <value>Тестує рендерер полотна віджета</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE" xml:space="preserve">
+    <value>Не вдалося десеріалізувати інформацію про полотно віджета</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Наступна сторінка</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Попередня сторінка</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC" xml:space="preserve">
+    <value>Показує екран входу</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME" xml:space="preserve">
+    <value>Номер сторінки входу</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC" xml:space="preserve">
+    <value>Номер сторінки екрана входу для відображення</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_INITING" xml:space="preserve">
+    <value>Ініціалізація</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN" xml:space="preserve">
+    <value>Вимкнення</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
+    <value>Перезапуск</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO" xml:space="preserve">
+    <value>Щоб отримати докладнішу інформацію про цей інтерактивний TUI, відвідайте</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Попередній перегляд заставки</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC" xml:space="preserve">
+    <value>Використання інтерфейсу користувача заставки для попереднього перегляду заставки</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY" xml:space="preserve">
+    <value>Цей інтерактивний TUI дозволяє переглядати заставку та зберігати зображення з неї, використовуючи вбудовану або власну заставку. Ви можете легко вибрати заставку для попереднього перегляду безпосередньо з цього TUI, вибравши заставку зі списку та натиснувши ENTER.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Часові пояси в реальному часі</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC" xml:space="preserve">
+    <value>Використання часового поясу TUI для світового годинника</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY" xml:space="preserve">
+    <value>Цей інтерактивний TUI показує вам список часових поясів та їх місцеві часові представлення, які оновлюються щосекунди. Це дозволяє використовувати його як програму світового годинника для перегляду часу для всіх часових поясів.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE" xml:space="preserve">
+    <value>Керування завданнями</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC" xml:space="preserve">
+    <value>Використання TUI диспетчера завдань для керування потоками</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY" xml:space="preserve">
+    <value>Інтерфейс менеджера завдань (TUI) дозволяє керувати як потоками ядра Nitrocid, якими керує Nitrocid та його менеджер потоків, так і потоками операційної системи, якими керує ваша операційна система. Ви можете переглядати всі потоки та керувати ними, включаючи можливість завершувати їхні завдання.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE" xml:space="preserve">
+    <value>Перегляд потоків операційної системи</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC" xml:space="preserve">
+    <value>Використання TUI диспетчера завдань для перегляду потоків операційної системи</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY" xml:space="preserve">
+    <value>Для кожного керованого потоку (тобто керованого Nitrocid та його менеджером потоків) TUI менеджера завдань показує всі потоки операційної системи, пов&apos;язані з керованим потоком, і вони не завжди мають зв&apos;язок &quot;один-до-одного&quot;, оскільки керований потік може містити більше одного потоку операційної системи. На відміну від керованих потоків, їх не можна завершити.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Керування налаштуваннями ядра</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Використання TUI програми налаштувань для керування параметрами ядра</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Конфігурація ядра є важливою частиною Nitrocid, яка дозволяє налаштовувати частини ядра та його компоненти, включаючи мережевий стек та стек оболонки. Цей TUI спрощує налаштування частин ядра, а його інтуїтивно зрозумілий дизайн робить його зручнішим, ніж ручне редагування файлу конфігурації.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Керування сповіщеннями</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Використання інтерфейсу сповіщень TUI для керування сповіщеннями</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY" xml:space="preserve">
+    <value>За допомогою цього TUI ви можете керувати всіма сповіщеннями, які ви ще не прочитали. Коли сповіщення отримано, воно додається до історії для подальшого використання, яка зберігається протягом усього сеансу ядра або доки ви його не закриєте. Цей TUI дозволяє легко закривати та керувати сповіщеннями, що простіше, ніж використовувати утиліту командного рядка.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE" xml:space="preserve">
+    <value>Вибір папок</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC" xml:space="preserve">
+    <value>Використання інтерфейсу вибору групи папок (TUI) для вибору папок</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY" xml:space="preserve">
+    <value>Для спрощення керування файлами передбачено підмножину TUI для керування файлами, що є швидшим та зручнішим, ніж використання утиліт командного рядка для виконання тієї ж дії. Одним із наданих TUI є TUI вибору групи папок, який дозволяє вибрати кілька папок як цілі для запланованої операції. Якщо ви потрапили сюди, це означає, що програма запросила вас вибрати групу папок для завершення операції. Ви можете скористатися клавішею ПРОБІЛ, щоб додати папку до списку, а потім натиснути ESC, щоб підтвердити свій вибір.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE" xml:space="preserve">
+    <value>Вибір папок</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC" xml:space="preserve">
+    <value>Використання інтерфейсу вибору папок (TUI) для вибору папки</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY" xml:space="preserve">
+    <value>Для спрощення керування файлами передбачено підмножину TUI для керування файлами, що є швидшим та зручнішим, ніж використання утиліт командного рядка для виконання тієї ж дії. Одним із наданих TUI є TUI вибору папки, який дозволяє вибрати папку як ціль для запланованої операції. Якщо ви потрапили сюди, це означає, що програма запросила вас вибрати папку для завершення операції. Ви можете скористатися клавішею ПРОБІЛ, щоб вибрати папку, а потім натиснути ESC, щоб підтвердити свій вибір.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE" xml:space="preserve">
+    <value>Вибір файлів</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC" xml:space="preserve">
+    <value>Використання інтерфейсу вибору групи файлів (TUI) для вибору файлів</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY" xml:space="preserve">
+    <value>Для спрощення керування файлами передбачено підмножину TUI для керування файлами, що є швидшим та зручнішим, ніж використання утиліт командного рядка для виконання тієї ж дії. Одним із наданих TUI є TUI вибору групи файлів, який дозволяє вибрати кілька файлів як цілі для запланованої операції. Якщо ви потрапили сюди, це означає, що програма запросила вас вибрати групу файлів для завершення операції. Ви можете скористатися клавішею ПРОБІЛ, щоб додати файл до списку, а потім натиснути ESC, щоб підтвердити свій вибір.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE" xml:space="preserve">
+    <value>Вибір файлів</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC" xml:space="preserve">
+    <value>Використання інтерфейсу вибору файлів (TUI) для вибору файлу</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY" xml:space="preserve">
+    <value>Для спрощення керування файлами передбачено підмножину TUI для керування файлами, що є швидшим та зручнішим, ніж використання утиліт командного рядка для виконання тієї ж дії. Одним із наданих TUI є TUI вибору файлу, який дозволяє вибрати файл як ціль для запланованої операції. Якщо ви потрапили сюди, це означає, що програма запросила вас вибрати файл для завершення операції. Ви можете скористатися клавішею ПРОБІЛ, щоб вибрати файл, а потім натиснути ESC, щоб підтвердити свій вибір.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Однопанельний файловий менеджер</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Використання інтерфейсу вибору файлів (TUI) для керування файлами з попереднім переглядом</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Для спрощення керування файлами передбачено підмножину TUI-інтерфейсів, що є швидшим та зручнішим, ніж використання утиліт командного рядка для виконання тієї ж дії. Одним із наданих TUI є TUI-інтерфейс керування файлами з однією панеллю, який дозволяє керувати файлами за допомогою попереднього перегляду файлу в правій панелі. Це корисно, якщо вам потрібна панель попереднього перегляду під час вибору файлів або папок.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Двопанельний файловий менеджер</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Використання інтерфейсу вибору файлів (TUI) для керування файлами у двох панелях</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Для спрощення керування файлами передбачено підмножину TUI-інтерфейсів, що є швидшим та зручнішим, ніж використання утиліт командного рядка для виконання тієї ж дії. Одним із наданих TUI є двопанельний TUI-інтерфейс керування файлами, який дозволяє керувати файлами подібно до Total Commander. Він дозволяє швидко виконувати операції з файлами в будь-якій з панелей, без необхідності вручну вказувати шляхи.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Керування тривогами</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC" xml:space="preserve">
+    <value>Використання TUI менеджера тривог для керування тривогами</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY" xml:space="preserve">
+    <value>Керувати будильниками легко за допомогою цього інтерактивного інтерфейсу користувача. Цей інтерфейс дозволяє додавати та відхиляти будильники. Будильники спрацьовують, коли виходить за межі часу очікування, що призводить до появи сповіщення.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC" xml:space="preserve">
+    <value>Код підтвердження</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE" xml:space="preserve">
+    <value>Інтерактивне тестування</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC" xml:space="preserve">
+    <value>Як інтерактивно тестувати компоненти ядра</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY" xml:space="preserve">
+    <value>Ви можете інтерактивно протестувати всі компоненти ядра, які можна протестувати тут, вибравши розділ тестування на лівій панелі та тестову програму на правій панелі. Вам буде надано звіт, який вказує, що тест пройшов успішно або не пройшов.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR" xml:space="preserve">
+    <value>Невідома помилка під час запуску тестового обладнання</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_RUNTEST" xml:space="preserve">
+    <value>Виконати тест</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED" xml:space="preserve">
+    <value>Цей тест успішно пройшов!</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>Очікуване значення відповідає фактичному значенню.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED" xml:space="preserve">
+    <value>Цей тест провалився.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Повідомлення</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
+    <value>Очікуване значення не відповідає фактичному значенню.</value>
+  </data>
 
 </root>

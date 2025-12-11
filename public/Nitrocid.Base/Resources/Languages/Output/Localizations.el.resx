@@ -6906,5 +6906,323 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC" xml:space="preserve">
     <value>Επιλέγει μια τυχαία προφύλαξη οθόνης</value>
   </data>
+  <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
+    <value>Για να ξεκινήσετε, γράψτε «βοήθεια» και πατήστε ENTER.</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
+    <value>Ένταση ήχου για τον αναγνώστη</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC" xml:space="preserve">
+    <value>Καθορίστε πόσο δυνατά θέλετε να είναι τα ηχητικά σήματα του αναγνώστη</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME" xml:space="preserve">
+    <value>Χαρακτήρας μάσκας κωδικού πρόσβασης (αναγνώστης)</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC" xml:space="preserve">
+    <value>Ένας χαρακτήρας που καλύπτει τον κωδικό πρόσβασης που εισαγάγατε. Αφήστε το κενό για περισσότερη ασφάλεια.</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
+    <value>Για να μεταβείτε στο κέλυφος, πατήστε το πλήκτρο S εάν βρίσκεστε στην αρχική σελίδα. Στη συνέχεια, μπορείτε να γράψετε «βοήθεια» και να πατήσετε ENTER για να ξεκινήσετε!</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
+    <value>Υπήρξαν διπλότυπα κλειδιά στην παρουσία ρυθμίσεών σας. Ελέγξτε ξανά τη μεταβλητή για να βεβαιωθείτε ότι δεν υπάρχει περισσότερες από μία φορές.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_CLOSE" xml:space="preserve">
+    <value>Κοντά</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN" xml:space="preserve">
+    <value>Κλείνω το εργοστάσιον</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE" xml:space="preserve">
+    <value>Διαχείριση αρχείων (ένα παράθυρο)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC" xml:space="preserve">
+    <value>Ανοίγει τον διαχειριστή αρχείων σε ένα μόνο παράθυρο</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Εμφανίζει μόνο την ημερομηνία</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Δείχνει ακριβώς την ώρα</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Χρησιμοποιεί την ζώνη ώρας UTC αντί για την τοπική ζώνη ώρας</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING" xml:space="preserve">
+    <value>Αρχικοποίηση πρόσθετου πυρήνα</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN" xml:space="preserve">
+    <value>αυτό δεν είναι γνωστό</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING" xml:space="preserve">
+    <value>Έλεγχος πρόσθετου πυρήνα</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME" xml:space="preserve">
+    <value>Ένταση ηχητικών εφέ προφύλαξης οθόνης περιβάλλοντος</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC" xml:space="preserve">
+    <value>Καθορίστε το επίπεδο που επιλέγει πόσο έντονα θα είναι τα ηχητικά εφέ της προστασίας οθόνης περιβάλλοντος</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC" xml:space="preserve">
+    <value>Αποστέλλει δοκιμαστική ειδοποίηση</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE" xml:space="preserve">
+    <value>Η εγγραφή ολοκληρώθηκε για τον χρήστη. Προσθέστε αυτό το κλειδί ρύθμισης</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR" xml:space="preserve">
+    <value>Ή, μπορείτε να σαρώσετε τον παρακάτω κωδικό QR.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER" xml:space="preserve">
+    <value>Σε περίπτωση που η κονσόλα σας εμφανίζει έναν ελλιπή κωδικό QR, χρησιμοποιήστε αυτό το κλειδί ρύθμισης</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTSTATUS" xml:space="preserve">
+    <value>Κατάσταση εγγραφής</value>
+  </data>
+  <data name="NKS_USERS_USERNOTPROVIDED" xml:space="preserve">
+    <value>Δεν έχει δοθεί όνομα χρήστη.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC" xml:space="preserve">
+    <value>Διαχείριση ελέγχου ταυτότητας δύο παραγόντων για χρήστες</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC" xml:space="preserve">
+    <value>Προσθέτει απαίτηση για τον χρήστη</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Όνομα χρήστη προς επεξεργασία για λειτουργίες 2FA</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC" xml:space="preserve">
+    <value>Διαγράφει την απαίτηση για τον χρήστη</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC" xml:space="preserve">
+    <value>Έλεγχοι για την εγγραφή χρήστη</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE" xml:space="preserve">
+    <value>Δώστε τον κωδικό επαλήθευσης για αυτόν τον χρήστη. Συνήθως μπορείτε να αποκτήσετε πρόσβαση σε αυτόν τον κωδικό από εφαρμογές ελέγχου ταυτότητας, όπως το Google Authenticator. Εάν δεν εισαγάγετε κωδικό, θα επιστρέψετε στη σελίδα σύνδεσης.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_CODEINVALID" xml:space="preserve">
+    <value>Ο κωδικός που εισαγάγατε δεν είναι έγκυρος.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_VERIFYFAILED" xml:space="preserve">
+    <value>Η επαλήθευση του λογαριασμού απέτυχε. Πιθανότατα, ο κωδικός που εισαγάγατε δεν είναι έγκυρος ή έχει λήξει. Ελέγξτε την ώρα του συστήματός σας.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED" xml:space="preserve">
+    <value>Ο χρήστης έχει ήδη εγγραφεί στον έλεγχο ταυτότητας 2FA.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL" xml:space="preserve">
+    <value>Ο χρήστης δεν έχει κωδικό πρόσβασης για να τον εγγράψει στον έλεγχο ταυτότητας 2FA.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED" xml:space="preserve">
+    <value>Ο χρήστης δεν έχει εγγραφεί στον έλεγχο ταυτότητας 2FA.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL" xml:space="preserve">
+    <value>Ο χρήστης δεν έχει κωδικό πρόσβασης για να τον διαγράψει από τον έλεγχο ταυτότητας 2FA.</value>
+  </data>
+  <data name="NKS_USERS_2FA_SETUPKEY" xml:space="preserve">
+    <value>Κλειδί ρύθμισης</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC" xml:space="preserve">
+    <value>Επιστρέφει το κλειδί εγκατάστασης (σε περίπτωση που το χάσατε για κάποιο λόγο)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC" xml:space="preserve">
+    <value>Επιστρέφει τον κωδικό QR του κλειδιού ρύθμισης, τον οποίο μπορείτε να σαρώσετε με το τηλέφωνό σας.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED" xml:space="preserve">
+    <value>Η λειτουργία δεν έχει καθοριστεί.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC" xml:space="preserve">
+    <value>Επιστρέφει true ή false ανάλογα με την κατάσταση λειτουργίας πυρήνα</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
+    <value>Εκτυπώνει το αποτέλεσμα στην κονσόλα</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
+    <value>Παλαιότερη επεξεργασία πολλαπλών μεταβλητών</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
+    <value>Ο χρήστης δεν έχει κωδικό πρόσβασης για την εκτέλεση λειτουργιών ελέγχου ταυτότητας 2FA.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC" xml:space="preserve">
+    <value>Δοκιμάζει την απόδοση του καμβά widget</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE" xml:space="preserve">
+    <value>Αποτυχία αποσειριοποίησης των πληροφοριών καμβά γραφικού στοιχείου</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Επόμενη σελίδα</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Προηγούμενη σελίδα</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC" xml:space="preserve">
+    <value>Σας εμφανίζει μια οθόνη σύνδεσης</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME" xml:space="preserve">
+    <value>Αριθμός σελίδας σύνδεσης</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC" xml:space="preserve">
+    <value>Αριθμός σελίδας της οθόνης σύνδεσης που θα εμφανίζεται</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_INITING" xml:space="preserve">
+    <value>Αρχικοποίηση</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN" xml:space="preserve">
+    <value>Τερματισμός λειτουργίας</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
+    <value>Επανεκκίνηση</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO" xml:space="preserve">
+    <value>Για περισσότερες πληροφορίες σχετικά με αυτό το διαδραστικό TUI, επισκεφθείτε την ιστοσελίδα</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Προεπισκόπηση της προφύλαξης οθόνης</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC" xml:space="preserve">
+    <value>Χρήση του TUI της προφύλαξης οθόνης για προεπισκόπηση της προφύλαξης οθόνης</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY" xml:space="preserve">
+    <value>Αυτό το διαδραστικό TUI σάς επιτρέπει να κάνετε προεπισκόπηση μιας προφύλαξης οθόνης και να αποθηκεύσετε την οθόνη σας με αυτήν, είτε με ενσωματωμένη είτε με προσαρμοσμένη προφύλαξη οθόνης. Μπορείτε εύκολα να επιλέξετε μια προφύλαξη οθόνης για προεπισκόπηση απευθείας από αυτήν την TUI επιλέγοντας μια προφύλαξη οθόνης από τη λίστα και πατώντας ENTER.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Ζώνες ώρας σε πραγματικό χρόνο</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC" xml:space="preserve">
+    <value>Χρήση της ζώνης ώρας TUI για το παγκόσμιο ρολόι</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY" xml:space="preserve">
+    <value>Αυτό το διαδραστικό TUI σας δείχνει μια λίστα με ζώνες ώρας και τις τοπικές αναπαραστάσεις ώρας τους, οι οποίες ανανεώνονται κάθε δευτερόλεπτο. Αυτό σας επιτρέπει να το χρησιμοποιήσετε ως εφαρμογή παγκόσμιου ρολογιού για να δείτε την ώρα για όλες τις ζώνες ώρας.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE" xml:space="preserve">
+    <value>Διαχείριση εργασιών</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC" xml:space="preserve">
+    <value>Χρήση του διαχειριστή εργασιών TUI για τη διαχείριση νημάτων</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY" xml:space="preserve">
+    <value>Ο διαχειριστής εργασιών TUI σάς επιτρέπει να διαχειρίζεστε τόσο τα νήματα πυρήνα του Nitrocid, τα οποία διαχειρίζεται το Nitrocid και ο διαχειριστής νημάτων του, όσο και τα νήματα του λειτουργικού συστήματος, τα οποία διαχειρίζεται το λειτουργικό σας σύστημα. Μπορείτε να παραθέσετε όλα τα νήματα και να τα διαχειριστείτε, συμπεριλαμβανομένης της δυνατότητας τερματισμού των εργασιών τους.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE" xml:space="preserve">
+    <value>Προβολή νημάτων λειτουργικού συστήματος</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC" xml:space="preserve">
+    <value>Χρήση του διαχειριστή εργασιών TUI για την προβολή νημάτων του λειτουργικού συστήματος</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY" xml:space="preserve">
+    <value>Για κάθε διαχειριζόμενο νήμα (δηλαδή, που διαχειρίζεται από το Nitrocid και τον διαχειριστή νημάτων του), το TUI της διαχείρισης εργασιών σας δείχνει όλα τα νήματα του λειτουργικού συστήματος που σχετίζονται με ένα διαχειριζόμενο νήμα και δεν έχουν πάντα σχέση ένα προς ένα, επειδή ένα διαχειριζόμενο νήμα μπορεί να περιέχει περισσότερα από ένα νήματα λειτουργικού συστήματος. Σε αντίθεση με τα διαχειριζόμενα νήματα, δεν μπορούν να τερματιστούν.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Διαχείριση ρυθμίσεων πυρήνα</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Χρήση του TUI της εφαρμογής ρυθμίσεων για τη διαχείριση των ρυθμίσεων του πυρήνα</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Η διαμόρφωση του πυρήνα είναι ένα ουσιαστικό μέρος του Nitrocid που σας επιτρέπει να διαμορφώνετε μέρη του πυρήνα και τα στοιχεία του, συμπεριλαμβανομένης της στοίβας δικτύωσης και της στοίβας κελύφους. Αυτό το TUI σας διευκολύνει να διαμορφώνετε μέρη του πυρήνα και ο εύχρηστος σχεδιασμός του το καθιστά πιο βολικό από τη χειροκίνητη επεξεργασία του αρχείου διαμόρφωσης.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Διαχείριση ειδοποιήσεων</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Χρήση του TUI ειδοποιήσεων για τη διαχείριση ειδοποιήσεων</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY" xml:space="preserve">
+    <value>Με αυτό το TUI, μπορείτε να διαχειριστείτε όλες τις ειδοποιήσεις που δεν έχετε διαβάσει ακόμα. Όταν λαμβάνεται μια ειδοποίηση, προστίθεται στο ιστορικό για μελλοντική αναφορά, το οποίο διαρκεί για ολόκληρη την περίοδο λειτουργίας του πυρήνα ή μέχρι να την απορρίψετε. Αυτό το TUI σάς επιτρέπει να απορρίπτετε και να διαχειρίζεστε εύκολα ειδοποιήσεις, κάτι που είναι ευκολότερο από τη χρήση του βοηθητικού προγράμματος γραμμής εντολών.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE" xml:space="preserve">
+    <value>Επιλογή φακέλων</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC" xml:space="preserve">
+    <value>Χρήση του επιλογέα ομάδας φακέλων TUI για την επιλογή φακέλων</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY" xml:space="preserve">
+    <value>Παρέχεται ένα υποσύνολο TUI διαχείρισης αρχείων για ευκολότερη διαχείριση, η οποία είναι ταχύτερη και πιο βολική από τη χρήση των βοηθητικών προγραμμάτων γραμμής εντολών για την εκτέλεση της ίδιας ενέργειας. Ένα από τα TUI που παρέχονται είναι το TUI επιλογής ομάδας φακέλων, το οποίο σας επιτρέπει να επιλέξετε πολλούς φακέλους ως στόχους για την προβλεπόμενη λειτουργία. Εάν βρίσκεστε εδώ, μια εφαρμογή σας έχει ζητήσει να επιλέξετε μια ομάδα φακέλων για να ολοκληρωθεί η λειτουργία. Μπορείτε να χρησιμοποιήσετε το πλήκτρο SPACE για να προσθέσετε έναν φάκελο στη λίστα και, στη συνέχεια, να πατήσετε ESC για να επιβεβαιώσετε την επιλογή σας.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE" xml:space="preserve">
+    <value>Επιλογή φακέλων</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC" xml:space="preserve">
+    <value>Χρήση του επιλογέα φακέλων TUI για την επιλογή ενός φακέλου</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY" xml:space="preserve">
+    <value>Παρέχεται ένα υποσύνολο TUI διαχείρισης αρχείων για ευκολότερη διαχείριση, η οποία είναι ταχύτερη και πιο βολική από τη χρήση των βοηθητικών προγραμμάτων γραμμής εντολών για την εκτέλεση της ίδιας ενέργειας. Ένα από τα TUI που παρέχονται είναι το TUI επιλογής φακέλου, το οποίο σας επιτρέπει να επιλέξετε έναν φάκελο ως στόχο για την προβλεπόμενη λειτουργία. Εάν βρίσκεστε εδώ, μια εφαρμογή σας έχει ζητήσει να επιλέξετε έναν φάκελο για να ολοκληρωθεί η λειτουργία. Μπορείτε να χρησιμοποιήσετε το πλήκτρο SPACE για να επιλέξετε έναν φάκελο και, στη συνέχεια, να πατήσετε ESC για να επιβεβαιώσετε την επιλογή σας.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE" xml:space="preserve">
+    <value>Επιλογή αρχείων</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC" xml:space="preserve">
+    <value>Χρήση του επιλογέα ομάδας αρχείων TUI για την επιλογή αρχείων</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY" xml:space="preserve">
+    <value>Παρέχεται ένα υποσύνολο TUI διαχείρισης αρχείων για ευκολότερη διαχείριση, η οποία είναι ταχύτερη και πιο βολική από τη χρήση των βοηθητικών προγραμμάτων γραμμής εντολών για την εκτέλεση της ίδιας ενέργειας. Ένα από τα TUI που παρέχονται είναι το TUI επιλογής ομάδας αρχείων, το οποίο σας επιτρέπει να επιλέξετε πολλά αρχεία ως στόχους για την προβλεπόμενη λειτουργία. Εάν βρίσκεστε εδώ, μια εφαρμογή σας έχει ζητήσει να επιλέξετε μια ομάδα αρχείων για να ολοκληρωθεί η λειτουργία. Μπορείτε να χρησιμοποιήσετε το πλήκτρο SPACE για να προσθέσετε ένα αρχείο στη λίστα και, στη συνέχεια, να πατήσετε ESC για να επιβεβαιώσετε την επιλογή σας.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE" xml:space="preserve">
+    <value>Επιλογή αρχείων</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC" xml:space="preserve">
+    <value>Χρήση του επιλογέα αρχείων TUI για την επιλογή ενός αρχείου</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY" xml:space="preserve">
+    <value>Παρέχεται ένα υποσύνολο TUI διαχείρισης αρχείων για ευκολότερη διαχείριση, η οποία είναι ταχύτερη και πιο βολική από τη χρήση των βοηθητικών προγραμμάτων γραμμής εντολών για την εκτέλεση της ίδιας ενέργειας. Ένα από τα TUI που παρέχονται είναι το TUI επιλογής αρχείου, το οποίο σας επιτρέπει να επιλέξετε ένα αρχείο ως στόχο για την προβλεπόμενη λειτουργία. Εάν βρίσκεστε εδώ, μια εφαρμογή σας έχει ζητήσει να επιλέξετε ένα αρχείο για να ολοκληρωθεί η λειτουργία. Μπορείτε να χρησιμοποιήσετε το πλήκτρο SPACE για να επιλέξετε ένα αρχείο και, στη συνέχεια, να πατήσετε ESC για να επιβεβαιώσετε την επιλογή σας.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Διαχειριστής αρχείων ενός παραθύρου</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Χρήση του επιλογέα αρχείων TUI για διαχείριση αρχείων με προεπισκόπηση</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Παρέχεται ένα υποσύνολο TUI διαχείρισης αρχείων για ευκολότερη διαχείριση, η οποία είναι ταχύτερη και πιο βολική από τη χρήση των βοηθητικών προγραμμάτων γραμμής εντολών για την εκτέλεση της ίδιας ενέργειας. Ένα από τα TUI που παρέχονται είναι το TUI διαχείρισης αρχείων ενός παραθύρου, το οποίο σας επιτρέπει να διαχειρίζεστε τα αρχεία σας με την προεπισκόπηση του αρχείου στο δεξιό παράθυρο. Αυτό είναι χρήσιμο εάν θέλετε ένα παράθυρο προεπισκόπησης με μια ματιά όταν επιλέγετε αρχεία ή φακέλους.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Διαχειριστής αρχείων διπλού παραθύρου</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Χρήση του επιλογέα αρχείων TUI για τη διαχείριση αρχείων σε δύο τμήματα παραθύρων</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Παρέχεται ένα υποσύνολο TUI διαχείρισης αρχείων για ευκολότερη διαχείριση, η οποία είναι ταχύτερη και πιο βολική από τη χρήση των βοηθητικών προγραμμάτων γραμμής εντολών για την εκτέλεση της ίδιας ενέργειας. Ένα από τα TUI που παρέχονται είναι το TUI διαχείρισης αρχείων διπλού παραθύρου, το οποίο σας επιτρέπει να διαχειρίζεστε τα αρχεία σας παρόμοια με αυτό του Total Commander. Σας επιτρέπει να εκτελείτε γρήγορα λειτουργίες αρχείων σε οποιοδήποτε παράθυρο, χωρίς να χρειάζεται να καθορίσετε διαδρομές χειροκίνητα.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Διαχείριση συναγερμών</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC" xml:space="preserve">
+    <value>Χρήση του διαχειριστή συναγερμών TUI για τη διαχείριση συναγερμών</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY" xml:space="preserve">
+    <value>Η διαχείριση των συναγερμών σας είναι εύκολη με αυτό το διαδραστικό TUI. Αυτή η διεπαφή χρήστη σάς επιτρέπει να προσθέτετε και να απορρίπτετε συναγερμούς. Οι συναγερμοί ενεργοποιούνται όταν φτάσουν στο χρονικό όριο λήξης, γεγονός που προκαλεί την εμφάνιση μιας ειδοποίησης.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC" xml:space="preserve">
+    <value>Κωδικός επαλήθευσης</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE" xml:space="preserve">
+    <value>Διαδραστικές δοκιμές</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC" xml:space="preserve">
+    <value>Πώς να δοκιμάσετε διαδραστικά τα στοιχεία του πυρήνα</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY" xml:space="preserve">
+    <value>Μπορείτε να δοκιμάσετε διαδραστικά όλα τα στοιχεία του πυρήνα που είναι ελέγξιμα εδώ, επιλέγοντας μια ενότητα δοκιμής στο αριστερό παράθυρο και ένα στοιχείο δοκιμής στο δεξί παράθυρο. Θα σας δοθεί μια αναφορά που υποδεικνύει ότι μια δοκιμή έχει περάσει ή αποτύχει.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR" xml:space="preserve">
+    <value>Άγνωστο σφάλμα κατά την εκτέλεση μιας δοκιμαστικής διάταξης</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_RUNTEST" xml:space="preserve">
+    <value>Εκτέλεση δοκιμής</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED" xml:space="preserve">
+    <value>Αυτή η δοκιμή πέτυχε!</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>Η αναμενόμενη τιμή αντιστοιχεί στην πραγματική τιμή.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED" xml:space="preserve">
+    <value>Αυτή η δοκιμή απέτυχε.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Μήνυμα</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
+    <value>Η αναμενόμενη τιμή δεν ταιριάζει με την πραγματική τιμή.</value>
+  </data>
 
 </root>

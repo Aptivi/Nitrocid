@@ -6906,5 +6906,323 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC" xml:space="preserve">
     <value>Protector scrinii fortuitus eligit.</value>
   </data>
+  <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
+    <value>Ad incipiendum, scribe &apos;help&apos; et preme ENTER.</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
+    <value>Volumen indicii audio pro lectore</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC" xml:space="preserve">
+    <value>Specifica quam altae sint signa audio lectoris.</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME" xml:space="preserve">
+    <value>Character personae tesserae (lector)</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC" xml:space="preserve">
+    <value>Character qui tesserae ingressae obtegit. Vacuum relinque propter maiorem securitatem.</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
+    <value>Ad testam accedendum, clavem S preme si in pagina prima es. Postea, &apos;auxilium&apos; scribere et clavem ENTER premere potes ut incipias!</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
+    <value>Claves duplicatae in exemplo configurationum tuarum fuerunt. Quaeso, variabilem iterum verifica ut confirmes eam non plus quam semel exstare.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_CLOSE" xml:space="preserve">
+    <value>Claudere</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN" xml:space="preserve">
+    <value>Claude</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE" xml:space="preserve">
+    <value>Administrator Archivorum (pars singularis)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC" xml:space="preserve">
+    <value>Administratorem fasciculorum in uno tabulato aperit.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Diem tantum ostendit</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Tempus tantum ostendit</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Zonam temporis UTC loco zonae temporis localis adhibet.</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING" xml:space="preserve">
+    <value>Initiatio additamenti nuclei</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN" xml:space="preserve">
+    <value>quod nescitur</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING" xml:space="preserve">
+    <value>Additamentum nuclei inspiciens</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME" xml:space="preserve">
+    <value>Intensitas effectuum soni ambientalis protectoris scrinii</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC" xml:space="preserve">
+    <value>Gradum qui intensitatem effectuum soni ambientalis protectoris scrinii eligit specifica.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC" xml:space="preserve">
+    <value>Nuntium probationis mittit</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE" xml:space="preserve">
+    <value>Inscriptio usoris completa est. Hanc clavem configurationis adde.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR" xml:space="preserve">
+    <value>Vel, infra codicem QR legere potes.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER" xml:space="preserve">
+    <value>Si consola tua codicem QR incompletum ostendit, clavem hanc configurationis utere.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTSTATUS" xml:space="preserve">
+    <value>Status inscriptionis</value>
+  </data>
+  <data name="NKS_USERS_USERNOTPROVIDED" xml:space="preserve">
+    <value>Nomen usoris non datum est.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC" xml:space="preserve">
+    <value>Administratio authenticationis duorum factorum pro usoribus</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC" xml:space="preserve">
+    <value>Requisitum pro usore addit</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Nomen usoris ad operationes 2FA tractandum</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC" xml:space="preserve">
+    <value>Requisitum usoris delet.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC" xml:space="preserve">
+    <value>Inscriptionem usoris verificat</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE" xml:space="preserve">
+    <value>Codicem verificationis pro hoc usore praebe. Hunc codicem plerumque ex applicationibus authenticationis, ut Google Authenticator, accedere potes. Si codicem non inseras, ad paginam inscriptionis reverteris.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_CODEINVALID" xml:space="preserve">
+    <value>Codex quem intulisti invalidus est.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_VERIFYFAILED" xml:space="preserve">
+    <value>Verificatio rationis fefellit. Probabilissime, codex quem intulisti vel invalidus est vel exspiravit. Tempus systematis tui inspice.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED" xml:space="preserve">
+    <value>Usor iam in authenticationem 2FA se inscripsit.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL" xml:space="preserve">
+    <value>Usor nullam tesseram habet ad se in authenticationem 2FA inscribendum.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED" xml:space="preserve">
+    <value>Usor in authenticationem 2FA non inscriptus est.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL" xml:space="preserve">
+    <value>Usor nullam tesseram habet ad se ex authenticatione 2FA exscribendum.</value>
+  </data>
+  <data name="NKS_USERS_2FA_SETUPKEY" xml:space="preserve">
+    <value>Clavis configurationis</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC" xml:space="preserve">
+    <value>Clavem configurationis reddit (si forte eam ob aliquam causam amiseris)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC" xml:space="preserve">
+    <value>Clavis configurationis codicem QR reddit, quem telephono tuo legere potes.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED" xml:space="preserve">
+    <value>Modus non specificatus est.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC" xml:space="preserve">
+    <value>Verum vel falsum reddit secundum modum nuclei.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
+    <value>Resultatum in consolam imprimit</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
+    <value>Processus Multivariabilis Legati</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
+    <value>Usor nullam tesseram habet ad operationes authenticationis 2FA peragendas.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC" xml:space="preserve">
+    <value>Instrumentum ad reddendum tabulae instrumentorum (vel tabulae instrumentorum) examinat.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE" xml:space="preserve">
+    <value>Informationes tabulae instrumenti deserializare non potuerunt.</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Pagina sequens</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Pagina prior</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC" xml:space="preserve">
+    <value>Ostendit tibi paginam inscriptionis</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME" xml:space="preserve">
+    <value>Numerus paginae inscriptionis</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC" xml:space="preserve">
+    <value>Numerus paginae paginae inscriptionis ostendendae</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_INITING" xml:space="preserve">
+    <value>Initiatio</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN" xml:space="preserve">
+    <value>Clausura</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
+    <value>Reincipiens</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO" xml:space="preserve">
+    <value>Plura de hac TUI interactiva discere cupientes, vide</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Praevisio protectoris scrinii</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC" xml:space="preserve">
+    <value>Utendi interfacie usoris tutelaris scrinii ad praevidendum servatorem scrinii</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY" xml:space="preserve">
+    <value>Haec interactiva interfacies usoris (TUI) tibi permittit ut protectorem scrinii praevideas et imaginem tuam cum eo serves, sive cum protectore incluso sive cum protectore proprio. Facile protectorem scrinii eligere potes ut directe ex hac TUI praevideas, protectorem scrinii ex indice deligendo et clavem &quot;ENTER&quot; premendo.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Zonae horariae vivae</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC" xml:space="preserve">
+    <value>Usus TUI zonae temporalis pro horologio mundano</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY" xml:space="preserve">
+    <value>Haec interactiva TUI tibi indicem zonarum temporalium et earum repraesentationum temporis localis, quae singulis secundis renovantur, ostendit. Hoc tibi permittit ut eam tamquam applicationem horologii mundialis utaris ad tempus omnium zonarum temporalium inspiciendum.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE" xml:space="preserve">
+    <value>Administratio munerum</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC" xml:space="preserve">
+    <value>Utendi interfacie usoris administratoris operum (TUI) ad fila administranda</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY" xml:space="preserve">
+    <value>Interfacies usoris administratoris operum (TUI) tibi permittit ut et fila nuclei Nitrocid, quae a Nitrocid et eius administratore filorum administrantur, et fila systematis operativi, quae a systemate tuo operativo administrantur, administres. Omnia fila enumerare et administrare potes, inclusa facultate opera eorum finiendi.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE" xml:space="preserve">
+    <value>Fila systematis operandi inspicienda</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC" xml:space="preserve">
+    <value>Utendi interfacie usoris administratoris operum (TUI) ad inspicienda fila systematis operandi</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY" xml:space="preserve">
+    <value>Pro quolibet filo administrato (hoc est, a Nitrocid eiusque administratore filorum administrato), interfacies operandi administratoris operum (TUI) omnia fila systematis operandi ostendit quae filo administrato conexa sunt, nec semper relationem unum-ad-unum habent, quia filum administratum plus uno filo systematis operandi continere potest. Dissimiliter filis administratis, haec terminari non possunt.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Administratio configurationum nuclei</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>Utere applicatione configurationum TUI ad configurationes nuclei administrandas</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Configuratio nuclei pars essentialis Nitrocid est quae te partes nuclei eiusque componentes, inter quos acervus retium et acervus testae, configurare sinit. Haec interfacies usoris (TUI) tibi configurationem partium nuclei faciliorem reddit, et eius designatio intuitiva eam commodiorem reddit quam manualem mutationem fasciculi configurationis.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Administratio notificationum</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Utendi interfacie usoris notificationum ad notificationes administrandas</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY" xml:space="preserve">
+    <value>Hac interfacie usoris programmatum (TUI), omnes notificationes quas nondum legisti administrare potes. Cum notificatio accepta est, historiae additur ad usum futurum, quae per totam sessionem nuclei vel donec eam dimittas durat. Haec TUI te permittit notificationes facile dimittere et administrare, quod facilius est quam utilitate lineae mandatorum utendo.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE" xml:space="preserve">
+    <value>Selectio fasciculorum</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC" xml:space="preserve">
+    <value>Utere interfacie usoris selectoris gregis fasciculorum ad fasciculos eligendos</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY" xml:space="preserve">
+    <value>Subcoetus UI administrationis fasciculorum praebetur ad faciliorem administrationem, quae celerior et commodior est quam utendo instrumentis lineae mandatorum ad eandem actionem peragendam. Unum ex UI praebitis est TUI selectionis gregis fasciculorum, quod tibi permittit ut plura fascicula ut scopos pro operatione proposita eligas. Si huc adductus es, applicatio te rogavit ut gregem fasciculorum eligas ut operatio perficiatur. Clavem SPATII uti potes ut fasciculum ad indicem addas, deinde clavem ESC premere ut selectionem tuam confirmes.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE" xml:space="preserve">
+    <value>Selectio fasciculorum</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC" xml:space="preserve">
+    <value>Utere interfacie usoris selectoris fasciculorum ad fasciculum eligendum</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY" xml:space="preserve">
+    <value>Subcoetus UI administrationis fasciculorum praebetur ad faciliorem administrationem, quae celerior et commodior est quam utendo instrumentis lineae mandatorum ad eandem actionem peragendam. Unum ex UI praebitis est UI selectionis fasciculorum, quod tibi permittit fasciculum eligere ut scopum operationis propositae. Si huc adductus es, applicatio te rogavit ut fasciculum eligas ut operatio perficiatur. Clavem SPATII uti potes ad fasciculum eligendum, deinde clavem ESC premere ad selectionem tuam confirmandam.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE" xml:space="preserve">
+    <value>Selectio fasciculorum</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC" xml:space="preserve">
+    <value>Utendi interfacie usoris selectoris gregis fasciculorum ad fasciculos eligendos</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY" xml:space="preserve">
+    <value>Subpars TUIs administrationis fasciculorum praebetur ad faciliorem administrationem, quae celerior et commodior est quam utendo utilitatibus lineae mandatorum ad eandem actionem peragendam. Una ex TUIs praebitis est TUI selectionis gregis fasciculorum, quae te sinit plures fasciculos eligere ut scopos pro operatione proposita. Si huc adductus es, applicatio te rogavit ut gregem fasciculorum eligas ut operatio perficiatur. Clavem SPATII uti potes ad fasciculum ad indicem addendum, deinde clavem ESC premere ad selectionem tuam confirmandam.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE" xml:space="preserve">
+    <value>Selectio fasciculorum</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC" xml:space="preserve">
+    <value>Utere TUI selectoris fasciculorum ad fasciculum eligendum</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY" xml:space="preserve">
+    <value>Subcoetus TUIs administrationis fasciculorum praebetur ad faciliorem administrationem, quae celerior et commodior est quam utendo instrumentis lineae mandatorum ad eandem actionem peragendam. Unum ex TUIs praebitis est TUI selectionis fasciculorum, quod tibi permittit fasciculum eligere ut scopum pro operatione proposita. Si huc adductus es, applicatio te rogavit ut fasciculum eligas ut operatio perficiatur. Clavem SPATII uti potes ad fasciculum eligendum, deinde clavem ESC premere ad selectionem tuam confirmandam.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Administrator fasciculorum unius tabulae</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Utere interfacie usoris selectoris fasciculorum ad fasciculos cum praevisu administrandos.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Subcoetus UI administrationis fasciculorum praebetur ad faciliorem administrationem, quae celerior et commodior est quam utendo instrumentis lineae mandatorum ad eandem actionem peragendam. Unum ex UI praebitis est UI administrationis fasciculorum unius partis, quod te permittit fasciculos tuos administrare cum praevisio fasciculi in parte dextra. Hoc utile est si partem praevisionis uno obtutu vis cum fasciculos vel capsas eligis.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Administrator fasciculorum duplicis partis</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Utere interfacie usoris selectoris fasciculorum ad fasciculos in duobus tabulis administrandos.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Subpars TUIs administrationis fasciculorum praebetur ad faciliorem administrationem, quae celerior et commodior est quam utendo utilitatibus lineae mandatorum ad eandem actionem peragendam. Una ex TUIs praebitis est TUI administrationis fasciculorum duplicis partis, quae te permittit fasciculos tuos administrare similem ei quod Total Commander facit. Permittit te celeriter operationes fasciculorum in alterutro parti perficere, sine necessitate semitas manu specificandi.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Administratio alarmorum</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC" xml:space="preserve">
+    <value>Utendi interfacie usoris administratoris alarmis (TUI) ad alarmas administrandas</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY" xml:space="preserve">
+    <value>Administratio alarmorum tuorum facilis est hac interfacie usoris interactiva. Haec interfacies usoris te sinit alarmos addere et dimittere. Alarmae ​​sonant cum tempus definitum attingunt, quod notificationem ostendit.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC" xml:space="preserve">
+    <value>Codex verificationis</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE" xml:space="preserve">
+    <value>Examinatio interactiva</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC" xml:space="preserve">
+    <value>Quomodo partes nuclei interactive probare</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY" xml:space="preserve">
+    <value>Omnia elementa nuclei quae hic probari possunt interactive probare potes sectionem probationis in parte sinistra et instrumentum probationis in parte dextra deligendo. Relatio tibi dabitur quae indicat probationem vel superasse vel defecisse.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR" xml:space="preserve">
+    <value>Error ignotus dum instrumentum probationis currit</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_RUNTEST" xml:space="preserve">
+    <value>Experimentum curre</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED" xml:space="preserve">
+    <value>Hoc experimentum successit!</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>Valor expectatus valori reali congruit.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED" xml:space="preserve">
+    <value>Hoc experimentum defecit.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Nuntius</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
+    <value>Valor expectatus valori vero non congruit.</value>
+  </data>
 
 </root>

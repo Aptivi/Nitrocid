@@ -6906,5 +6906,323 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC" xml:space="preserve">
     <value>Selecteert een willekeurige screensaver</value>
   </data>
+  <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
+    <value>Om te beginnen, typ &apos;help&apos; en druk op ENTER.</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
+    <value>Audiogeluidssignaalvolume voor de lezer</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC" xml:space="preserve">
+    <value>Geef aan hoe hard u de audio-aanwijzingen voor de voorlezer wilt hebben.</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME" xml:space="preserve">
+    <value>Wachtwoordmaskerteken (lezer)</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC" xml:space="preserve">
+    <value>Een teken dat het ingevoerde wachtwoord maskeert. Laat dit veld leeg voor meer veiligheid.</value>
+  </data>
+  <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
+    <value>Om de shell te openen, druk je op de S-toets als je op de homepage bent. Daarna kun je &apos;help&apos; typen en op ENTER drukken om te beginnen!</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
+    <value>Er zijn dubbele sleutels in uw instellingen. Controleer de variabele om er zeker van te zijn dat deze niet meer dan één keer voorkomt.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_MODERNLOGON_CLOSE" xml:space="preserve">
+    <value>Dichtbij</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN" xml:space="preserve">
+    <value>Uitschakelen</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE" xml:space="preserve">
+    <value>Bestandsbeheer (enkel venster)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC" xml:space="preserve">
+    <value>Opent het bestandsbeheer in één venster.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC" xml:space="preserve">
+    <value>Toont alleen de datum</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC" xml:space="preserve">
+    <value>Toont precies de tijd</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC" xml:space="preserve">
+    <value>Gebruikt de UTC-tijdzone in plaats van de lokale tijdzone.</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING" xml:space="preserve">
+    <value>Initialiseren van de kernel-add-on</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN" xml:space="preserve">
+    <value>dat is niet bekend</value>
+  </data>
+  <data name="NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING" xml:space="preserve">
+    <value>Kernel-add-on controleren</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME" xml:space="preserve">
+    <value>Intensiteit van omgevingsgeluidseffecten in de screensaver</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC" xml:space="preserve">
+    <value>Geef het niveau op dat bepaalt hoe intens de omgevingsgeluidseffecten van de screensaver zijn.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC" xml:space="preserve">
+    <value>Verstuurt testmelding</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE" xml:space="preserve">
+    <value>Registratie voor gebruiker voltooid. Voeg deze installatiesleutel toe.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR" xml:space="preserve">
+    <value>Of u kunt de onderstaande QR-code scannen.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER" xml:space="preserve">
+    <value>Als uw console een onvolledige QR-code weergeeft, gebruik dan deze installatiesleutel.</value>
+  </data>
+  <data name="NKS_USERS_2FA_ENROLLMENTSTATUS" xml:space="preserve">
+    <value>Inschrijvingsstatus</value>
+  </data>
+  <data name="NKS_USERS_USERNOTPROVIDED" xml:space="preserve">
+    <value>Er is geen gebruikersnaam opgegeven.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC" xml:space="preserve">
+    <value>Beheer van tweefactorauthenticatie voor gebruikers</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC" xml:space="preserve">
+    <value>Voegt een vereiste toe voor de gebruiker.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC" xml:space="preserve">
+    <value>Gebruikersnaam die verwerkt moet worden voor 2FA-bewerkingen</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC" xml:space="preserve">
+    <value>Verwijdert de vereiste voor de gebruiker</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC" xml:space="preserve">
+    <value>Controleert de gebruikersregistratie.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE" xml:space="preserve">
+    <value>Voer de verificatiecode voor deze gebruiker in. Deze code is meestal te vinden in authenticatie-apps, zoals Google Authenticator. Als u geen code invoert, wordt u teruggeleid naar de inlogpagina.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_CODEINVALID" xml:space="preserve">
+    <value>De ingevoerde code is ongeldig.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_VERIFYFAILED" xml:space="preserve">
+    <value>De verificatie van het account is mislukt. Waarschijnlijk is de ingevoerde code ongeldig of verlopen. Controleer de systeemtijd.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED" xml:space="preserve">
+    <value>De gebruiker heeft zich al aangemeld voor de 2FA-authenticatie.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL" xml:space="preserve">
+    <value>De gebruiker heeft geen wachtwoord om zich aan te melden voor de 2FA-authenticatie.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED" xml:space="preserve">
+    <value>De gebruiker heeft zich niet aangemeld voor de 2FA-authenticatie.</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL" xml:space="preserve">
+    <value>De gebruiker heeft geen wachtwoord om zich af te melden voor de 2FA-authenticatie.</value>
+  </data>
+  <data name="NKS_USERS_2FA_SETUPKEY" xml:space="preserve">
+    <value>Instelsleutel</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC" xml:space="preserve">
+    <value>Geeft de installatiesleutel terug (voor het geval u deze om de een of andere reden bent kwijtgeraakt).</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC" xml:space="preserve">
+    <value>Geeft de QR-code van de installatiesleutel terug die u met uw telefoon kunt scannen.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED" xml:space="preserve">
+    <value>De modus is niet gespecificeerd.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC" xml:space="preserve">
+    <value>Retourneert true of false, afhankelijk van de kernelmodus.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
+    <value>Print het resultaat naar de console.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
+    <value>Verouderde Multivar-verwerking</value>
+  </data>
+  <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
+    <value>De gebruiker heeft geen wachtwoord om 2FA-authenticatie uit te voeren.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC" xml:space="preserve">
+    <value>Test de widget canvas renderer</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE" xml:space="preserve">
+    <value>Het deserialiseren van de widgetcanvasinformatie is mislukt.</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE" xml:space="preserve">
+    <value>Volgende pagina</value>
+  </data>
+  <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE" xml:space="preserve">
+    <value>Vorige pagina</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC" xml:space="preserve">
+    <value>Toont een inlogscherm</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME" xml:space="preserve">
+    <value>Inlogpagina nummer</value>
+  </data>
+  <data name="NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC" xml:space="preserve">
+    <value>Paginanummer van het inlogscherm dat moet worden weergegeven</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_INITING" xml:space="preserve">
+    <value>Initialiseren</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN" xml:space="preserve">
+    <value>Afsluiten</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
+    <value>Opnieuw opstarten</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO" xml:space="preserve">
+    <value>Voor meer informatie over deze interactieve TUI kunt u terecht op</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Voorbeeld van de schermbeveiliging</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC" xml:space="preserve">
+    <value>Gebruik de TUI van de screensaver om een ​​voorbeeld van de screensaver te bekijken.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY" xml:space="preserve">
+    <value>Met deze interactieve gebruikersinterface kunt u een screensaver bekijken en uw scherm ermee instellen, zowel met een ingebouwde als een aangepaste screensaver. U kunt eenvoudig een screensaver kiezen om te bekijken door er een uit de lijst te selecteren en op ENTER te drukken.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Live tijdzones</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC" xml:space="preserve">
+    <value>De tijdzone TUI gebruiken voor de wereldklok</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY" xml:space="preserve">
+    <value>Deze interactieve TUI toont een lijst met tijdzones en hun lokale tijdweergave, die elke seconde wordt bijgewerkt. Hierdoor kunt u de app gebruiken als een wereldklok om de tijd in alle tijdzones te bekijken.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE" xml:space="preserve">
+    <value>Taken beheren</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC" xml:space="preserve">
+    <value>Threads beheren met behulp van de TUI van Taakbeheer.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY" xml:space="preserve">
+    <value>Met de TUI van Taakbeheer kunt u zowel de Nitrocid-kernelthreads (die worden beheerd door Nitrocid en de bijbehorende threadmanager) als de besturingssysteemthreads (die worden beheerd door uw besturingssysteem) beheren. U kunt alle threads weergeven en beheren, inclusief de mogelijkheid om hun taken te beëindigen.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE" xml:space="preserve">
+    <value>Het bekijken van threads van het besturingssysteem</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC" xml:space="preserve">
+    <value>Het gebruik van de gebruikersinterface van Taakbeheer om de threads van het besturingssysteem te bekijken.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY" xml:space="preserve">
+    <value>Voor elke beheerde thread (dat wil zeggen, beheerd door Nitrocid en de bijbehorende threadmanager) toont de TUI van Taakbeheer alle threads van het besturingssysteem die gerelateerd zijn aan een beheerde thread. Deze threads hebben niet altijd een één-op-één-relatie, omdat een beheerde thread meerdere threads van het besturingssysteem kan bevatten. In tegenstelling tot beheerde threads kunnen beheerde threads niet worden beëindigd.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE" xml:space="preserve">
+    <value>Kernelinstellingen beheren</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC" xml:space="preserve">
+    <value>De TUI-interface van de instellingen-app gebruiken om kernelinstellingen te beheren.</value>
+  </data>
+  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY" xml:space="preserve">
+    <value>Kernelconfiguratie is een essentieel onderdeel van Nitrocid waarmee u delen van de kernel en de bijbehorende componenten kunt configureren, waaronder de netwerkstack en de shellstack. Deze TUI (Technical User Interface) maakt het configureren van kernelonderdelen eenvoudiger en het intuïtieve ontwerp maakt het handiger dan het handmatig bewerken van het configuratiebestand.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE" xml:space="preserve">
+    <value>Meldingen beheren</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC" xml:space="preserve">
+    <value>Het notificatie-TUI gebruiken om notificaties te beheren.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY" xml:space="preserve">
+    <value>Met deze TUI kunt u alle meldingen beheren die u nog niet hebt gelezen. Wanneer een melding binnenkomt, wordt deze toegevoegd aan de geschiedenis voor toekomstig gebruik. Deze geschiedenis blijft bewaard gedurende de hele kernelsessie of totdat u de melding sluit. Met deze TUI kunt u meldingen eenvoudig sluiten en beheren, wat gemakkelijker is dan het gebruik van het opdrachtregelprogramma.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE" xml:space="preserve">
+    <value>Mappen selecteren</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC" xml:space="preserve">
+    <value>Mappen selecteren met behulp van de TUI voor het selecteren van mappengroepen</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY" xml:space="preserve">
+    <value>Een deel van de TUI&apos;s voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van opdrachtregelprogramma&apos;s om dezelfde actie uit te voeren. Een van de TUI&apos;s is de TUI voor het selecteren van mapgroepen, waarmee u meerdere mappen kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een groep mappen te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​map aan de lijst toe te voegen en vervolgens op ESC drukken om uw selectie te bevestigen.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE" xml:space="preserve">
+    <value>Mappen selecteren</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC" xml:space="preserve">
+    <value>Gebruik de mapkiezer-interface om een ​​map te selecteren.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY" xml:space="preserve">
+    <value>Een deel van de TUI&apos;s voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van de opdrachtregelprogramma&apos;s om dezelfde actie uit te voeren. Een van de TUI&apos;s is de TUI voor mapselectie, waarmee u een map kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een map te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​map te selecteren en vervolgens op ESC drukken om uw selectie te bevestigen.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE" xml:space="preserve">
+    <value>Bestanden selecteren</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC" xml:space="preserve">
+    <value>Bestanden selecteren met behulp van de TUI voor het selecteren van bestandsgroepen.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY" xml:space="preserve">
+    <value>Een deel van de TUI&apos;s voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van de opdrachtregelprogramma&apos;s om dezelfde actie uit te voeren. Een van de TUI&apos;s is de TUI voor het selecteren van bestandsgroepen, waarmee u meerdere bestanden kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een groep bestanden te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​bestand aan de lijst toe te voegen en vervolgens op ESC drukken om uw selectie te bevestigen.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE" xml:space="preserve">
+    <value>Bestanden selecteren</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC" xml:space="preserve">
+    <value>Een bestand selecteren met behulp van de TUI-bestandsselector</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY" xml:space="preserve">
+    <value>Een deel van de TUI&apos;s voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van de opdrachtregelprogramma&apos;s om dezelfde actie uit te voeren. Een van de TUI&apos;s is de TUI voor bestandsselectie, waarmee u een bestand kunt selecteren als doel voor de gewenste bewerking. Als u hier terechtkomt, heeft een toepassing u gevraagd een bestand te selecteren om de bewerking te voltooien. U kunt de spatiebalk gebruiken om een ​​bestand te selecteren en vervolgens op ESC drukken om uw selectie te bevestigen.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Bestandsbeheerder met één venster</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>Bestanden beheren met behulp van de TUI-bestandsselector en een voorbeeldweergave.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Een selectie van TUI&apos;s voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van opdrachtregelprogramma&apos;s om dezelfde actie uit te voeren. Een van de beschikbare TUI&apos;s is de TUI voor bestandsbeheer met één venster, waarmee u uw bestanden kunt beheren met een voorbeeldweergave in het rechtervenster. Dit is handig als u in één oogopslag een voorbeeldweergave wilt zien wanneer u bestanden of mappen selecteert.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE" xml:space="preserve">
+    <value>Bestandsbeheerder met dubbel venster</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC" xml:space="preserve">
+    <value>De bestandsselector-interface gebruiken om bestanden in twee vensters te beheren.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY" xml:space="preserve">
+    <value>Een selectie van TUI&apos;s voor bestandsbeheer is beschikbaar voor eenvoudiger beheer, wat sneller en handiger is dan het gebruik van opdrachtregelprogramma&apos;s om dezelfde actie uit te voeren. Een van de beschikbare TUI&apos;s is de TUI voor bestandsbeheer met twee vensters, waarmee u uw bestanden kunt beheren zoals in Total Commander. Hiermee kunt u snel bestandsbewerkingen uitvoeren in beide vensters, zonder handmatig paden te hoeven opgeven.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE" xml:space="preserve">
+    <value>Alarmen beheren</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC" xml:space="preserve">
+    <value>Alarmen beheren met behulp van de alarmmanager TUI.</value>
+  </data>
+  <data name="NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY" xml:space="preserve">
+    <value>Met deze interactieve gebruikersinterface is het beheren van uw alarmen eenvoudig. U kunt alarmen toevoegen en verwijderen. Alarmen gaan af wanneer de ingestelde time-outperiode is bereikt, waarna een melding verschijnt.</value>
+  </data>
+  <data name="NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC" xml:space="preserve">
+    <value>Verificatiecode</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE" xml:space="preserve">
+    <value>Interactieve tests</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC" xml:space="preserve">
+    <value>Hoe test je kernelcomponenten interactief?</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY" xml:space="preserve">
+    <value>Je kunt hier interactief alle testbare kernelcomponenten testen door een testsectie in het linkerpaneel en een testfixture in het rechterpaneel te selecteren. Je krijgt een rapport te zien dat aangeeft of een test geslaagd of mislukt is.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR" xml:space="preserve">
+    <value>Onbekende fout bij het uitvoeren van een testfixture</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_RUNTEST" xml:space="preserve">
+    <value>Test uitvoeren</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED" xml:space="preserve">
+    <value>Deze test is geslaagd!</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH" xml:space="preserve">
+    <value>De verwachte waarde komt overeen met de werkelijke waarde.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED" xml:space="preserve">
+    <value>Deze test is mislukt.</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE" xml:space="preserve">
+    <value>Bericht</value>
+  </data>
+  <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
+    <value>De verwachte waarde komt niet overeen met de werkelijke waarde.</value>
+  </data>
 
 </root>

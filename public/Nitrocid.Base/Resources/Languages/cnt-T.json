@@ -9060,6 +9060,430 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
       "text": "選擇隨機螢幕保護程式"
+    },
+    {
+      "loc": "NKS_KERNEL_SHELLTIP",
+      "text": "要开始使用，请输入“help”并按回车键。"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME",
+      "text": "朗读者的音频提示音量"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC",
+      "text": "请指定朗读者音频提示的音量大小。"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME",
+      "text": "密码掩码字符（读取器）"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC",
+      "text": "用于屏蔽输入密码的字符。留空以提高安全性。"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3",
+      "text": "如果您在主页，请按 S 键进入 shell。之后，您可以输入“help”并按回车键开始使用！"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
+      "text": "您的设置实例中存在重复的键。请仔细检查该变量，确保它只存在一次。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
+      "text": "关闭"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
+      "text": "关闭"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",
+      "text": "文件管理器（单窗格）"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC",
+      "text": "在单个窗格中打开文件管理器"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
+      "text": "仅显示日期"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
+      "text": "恰逢其时"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
+      "text": "使用 UTC 时区而不是本地时区"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING",
+      "text": "初始化内核插件"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN",
+      "text": "这一点尚不清楚"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING",
+      "text": "检查内核插件"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME",
+      "text": "环境屏保音效强度"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC",
+      "text": "指定屏幕保护程序环境音效的强度级别。"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC",
+      "text": "发送测试通知"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE",
+      "text": "用户注册完成。添加此设置密钥"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR",
+      "text": "或者，您可以扫描下面的二维码。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER",
+      "text": "如果您的主机显示的二维码不完整，请使用此设置密钥"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTSTATUS",
+      "text": "入学状态"
+    },
+    {
+      "loc": "NKS_USERS_USERNOTPROVIDED",
+      "text": "用户名尚未提供。"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC",
+      "text": "用户双因素身份验证管理"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC",
+      "text": "增加用户要求"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC",
+      "text": "用于处理双因素身份验证操作的用户名"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC",
+      "text": "删除用户需求"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC",
+      "text": "检查用户注册情况"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE",
+      "text": "请提供此用户的验证码。您通常可以通过身份验证器应用（例如 Google Authenticator）获取此验证码。如果您不输入验证码，系统将返回登录页面。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_CODEINVALID",
+      "text": "您输入的验证码无效。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_VERIFYFAILED",
+      "text": "账户验证失败。很可能是您输入的验证码无效或已过期。请检查您的系统时间。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED",
+      "text": "用户已注册双因素身份验证。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL",
+      "text": "用户没有密码，无法注册双因素身份验证。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED",
+      "text": "用户尚未注册双因素身份验证。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL",
+      "text": "用户没有密码，无法取消注册双因素身份验证。"
+    },
+    {
+      "loc": "NKS_USERS_2FA_SETUPKEY",
+      "text": "设置密钥"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC",
+      "text": "返回设置密钥（以防您因某种原因丢失密钥）"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC",
+      "text": "返回设置密钥的二维码，您可以使用手机扫描该二维码。"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED",
+      "text": "未指定模式。"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC",
+      "text": "根据内核模式返回 true 或 false"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
+      "text": "将结果打印到控制台。"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
+      "text": "传统多变量处理"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",
+      "text": "用户没有密码，无法执行双因素身份验证操作。"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC",
+      "text": "测试小部件画布渲染器"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE",
+      "text": "无法反序列化控件画布信息"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE",
+      "text": "下一页"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE",
+      "text": "上一页"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC",
+      "text": "显示登录界面"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME",
+      "text": "登录页面编号"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC",
+      "text": "要显示的登录屏幕页码"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "初始化"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "关闭"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "重新启动"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO",
+      "text": "如需了解更多关于此互动式 TUI 的信息，请访问"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE",
+      "text": "预览屏幕保护程序"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC",
+      "text": "使用屏幕保护程序 TUI 预览屏幕保护程序"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY",
+      "text": "这个交互式用户界面 (TUI) 允许您预览屏幕保护程序并将其保存到屏幕，既可以使用内置屏幕保护程序，也可以使用自定义屏幕保护程序。您可以直接从列表中选择屏幕保护程序并按 Enter 键，轻松地从该 TUI 中选择要预览的屏幕保护程序。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE",
+      "text": "实时时区"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC",
+      "text": "使用 TUI 时区作为世界时钟"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY",
+      "text": "这个交互式时间用户界面会显示时区列表及其对应的本地时间，并每秒刷新一次。因此，您可以将其用作世界时钟应用程序，查看所有时区的时间。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE",
+      "text": "管理任务"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC",
+      "text": "使用任务管理器 TUI 管理线程"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY",
+      "text": "任务管理器 TUI 允许您管理 Nitrocid 内核线程（由 Nitrocid 及其线程管理器管理）和操作系统线程（由您的操作系统管理）。您可以列出所有线程并对其进行管理，包括结束其任务。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE",
+      "text": "查看操作系统线程"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC",
+      "text": "使用任务管理器 TUI 查看操作系统线程"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY",
+      "text": "对于每个受管线程（即由 Nitrocid 及其线程管理器管理的线程），任务管理器 TUI 会显示所有与该受管线程相关的操作系统线程，但它们并非总是一一对应，因为一个受管线程可能包含多个操作系统线程。与受管线程不同，操作系统线程无法被终止。"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE",
+      "text": "管理内核设置"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC",
+      "text": "使用设置应用 TUI 管理内核设置"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY",
+      "text": "内核配置是 Nitrocid 的重要组成部分，它允许您配置内核及其组件的部分内容，包括网络协议栈和 shell 协议栈。此 TUI 界面使内核配置更加便捷，其直观的设计也比手动编辑配置文件更加方便。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE",
+      "text": "管理通知"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC",
+      "text": "使用通知用户界面 (TUI) 管理通知"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY",
+      "text": "通过此用户界面 (TUI)，您可以管理所有尚未阅读的通知。收到通知后，它会被添加到历史记录中以供将来参考，历史记录会一直保留到内核会话结束或您将其关闭为止。此 TUI 使您可以轻松地关闭和管理通知，比使用命令行实用程序更加便捷。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE",
+      "text": "选择文件夹"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC",
+      "text": "使用文件夹组选择器 TUI 选择文件夹"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY",
+      "text": "为了方便管理，我们提供了一系列文件管理用户界面 (TUI)，比使用命令行工具执行相同操作更快捷方便。其中一个 TUI 是文件夹组选择 TUI，它允许您选择多个文件夹作为目标操作。如果您看到此界面，说明某个应用程序要求您选择一组文件夹才能完成操作。您可以使用空格键将文件夹添加到列表中，然后按 Esc 键确认选择。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE",
+      "text": "选择文件夹"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC",
+      "text": "使用文件夹选择器 TUI 选择一个文件夹"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY",
+      "text": "为了方便管理，我们提供了一系列文件管理用户界面 (TUI)，这比使用命令行工具执行相同操作更快捷方便。其中一个 TUI 是文件夹选择 TUI，它允许您选择一个文件夹作为目标操作。如果您看到此界面，则表示某个应用程序要求您选择一个文件夹才能完成操作。您可以使用空格键选择文件夹，然后按 Esc 键确认选择。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE",
+      "text": "选择文件"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC",
+      "text": "使用文件组选择器 TUI 选择文件"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY",
+      "text": "为了方便管理文件，我们提供了一系列文件管理用户界面 (TUI)，比使用命令行工具执行相同操作更快捷方便。其中一个 TUI 是文件组选择 TUI，它允许您选择多个文件作为目标操作。如果您看到此界面，说明某个应用程序要求您选择一组文件才能完成操作。您可以使用空格键将文件添加到列表中，然后按 Esc 键确认选择。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE",
+      "text": "选择文件"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC",
+      "text": "使用文件选择器 TUI 选择文件"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY",
+      "text": "为了方便管理文件，我们提供了一系列文件管理用户界面 (TUI)，这比使用命令行工具执行相同操作更快捷方便。其中一个 TUI 是文件选择 TUI，它允许您选择一个文件作为目标操作。如果您看到此界面，则表示某个应用程序要求您选择一个文件才能完成操作。您可以使用空格键选择文件，然后按 Esc 键确认选择。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE",
+      "text": "单窗格文件管理器"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC",
+      "text": "使用文件选择器 TUI 管理文件并预览"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY",
+      "text": "为了方便管理文件，我们提供了一系列文件管理用户界面 (TUI)，比使用命令行工具执行相同操作更快捷、更方便。其中一个 TUI 是单窗格文件管理 TUI，它允许您在右侧窗格中预览文件，从而轻松管理文件。如果您希望在选择文件或文件夹时快速预览，这将非常有用。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE",
+      "text": "双窗格文件管理器"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC",
+      "text": "使用文件选择器 TUI 在两个窗格中管理文件"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY",
+      "text": "为了方便管理文件，我们提供了一系列文件管理用户界面 (TUI)，比使用命令行工具执行相同操作更快捷方便。其中一个 TUI 是双窗格文件管理 TUI，其文件管理方式与 Total Commander 类似。您可以快速地在任一窗格中执行文件操作，而无需手动指定路径。"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE",
+      "text": "管理警报"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC",
+      "text": "使用报警管理器 TUI 管理报警"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY",
+      "text": "借助这款交互式用户界面 (TUI)，管理警报变得轻而易举。您可以通过此用户界面添加和关闭警报。警报会在超时后触发，并显示通知。"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC",
+      "text": "验证码"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE",
+      "text": "交互式测试"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC",
+      "text": "如何交互式地测试内核组件"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY",
+      "text": "您可以在此处交互式地测试所有可测试的内核组件：在左侧窗格中选择测试段，在右侧窗格中选择测试夹具。系统将生成一份报告，指示测试是否通过。"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR",
+      "text": "运行测试装置时出现未知错误。"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_RUNTEST",
+      "text": "运行测试"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED",
+      "text": "测试成功！"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH",
+      "text": "预期值与实际值相符。"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED",
+      "text": "本次测试失败。"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE",
+      "text": "信息"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
+      "text": "预期值与实际值不符。"
     }
   ]
 }

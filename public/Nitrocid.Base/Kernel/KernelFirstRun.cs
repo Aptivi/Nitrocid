@@ -273,7 +273,6 @@ namespace Nitrocid.Base.Kernel
                                     Arguments =
                                     [
                                         LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT2") + "\n\n" +
-                                        // TODO: NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3 -> "To go to the shell, press the S key if you're in the homepage. Afterwards, you can write 'help' and press ENTER to get started!"
                                         LanguageTools.GetLocalized("NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3")
                                     ]
                                 }

@@ -9057,6 +9057,430 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
       "text": "Memilih screensaver acak"
+    },
+    {
+      "loc": "NKS_KERNEL_SHELLTIP",
+      "text": "Untuk memulai, ketik 'help' dan tekan ENTER."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME",
+      "text": "Volume isyarat audio untuk pembaca"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC",
+      "text": "Tentukan seberapa keras Anda ingin suara isyarat pembaca terdengar."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME",
+      "text": "Karakter penyamaran kata sandi (pembaca)"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC",
+      "text": "Karakter yang menyembunyikan kata sandi yang dimasukkan. Biarkan kosong untuk keamanan lebih."
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3",
+      "text": "Untuk masuk ke shell, tekan tombol S jika Anda berada di halaman beranda. Setelah itu, Anda dapat mengetik 'help' dan tekan ENTER untuk memulai!"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
+      "text": "Terdapat kunci duplikat dalam instance pengaturan Anda. Harap periksa kembali variabel tersebut untuk memastikan bahwa variabel tersebut tidak ada lebih dari satu kali."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
+      "text": "Menutup"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
+      "text": "Menutup"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",
+      "text": "Pengelola File (panel tunggal)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC",
+      "text": "Membuka pengelola file dalam satu panel."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
+      "text": "Hanya menampilkan tanggal"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
+      "text": "Menunjukkan waktu"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
+      "text": "Menggunakan zona waktu UTC, bukan zona waktu lokal."
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING",
+      "text": "Menginisialisasi add-on kernel"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN",
+      "text": "itu tidak diketahui"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING",
+      "text": "Memeriksa add-on kernel"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME",
+      "text": "Intensitas efek suara screensaver ambient"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC",
+      "text": "Tentukan level yang memilih seberapa intens efek suara latar screensaver."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC",
+      "text": "Mengirimkan notifikasi uji coba"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE",
+      "text": "Pendaftaran pengguna telah selesai. Tambahkan kunci pengaturan ini."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR",
+      "text": "Atau, Anda dapat memindai kode QR di bawah ini."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER",
+      "text": "Jika konsol Anda menampilkan kode QR yang tidak lengkap, silakan gunakan kunci pengaturan ini."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTSTATUS",
+      "text": "Status pendaftaran"
+    },
+    {
+      "loc": "NKS_USERS_USERNOTPROVIDED",
+      "text": "Nama pengguna belum diberikan."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC",
+      "text": "Manajemen otentikasi dua faktor untuk pengguna"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC",
+      "text": "Menambahkan persyaratan untuk pengguna"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC",
+      "text": "Nama pengguna yang akan diproses untuk operasi otentikasi dua faktor (2FA)."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC",
+      "text": "Menghapus persyaratan untuk pengguna"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC",
+      "text": "Memeriksa pendaftaran pengguna"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE",
+      "text": "Masukkan kode verifikasi untuk pengguna ini. Anda biasanya dapat mengakses kode ini dari aplikasi otentikasi, seperti Google Authenticator. Jika Anda tidak memasukkan kode, Anda akan diarahkan kembali ke halaman masuk."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_CODEINVALID",
+      "text": "Kode yang Anda masukkan tidak valid."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_VERIFYFAILED",
+      "text": "Verifikasi akun gagal. Kemungkinan besar, kode yang Anda masukkan tidak valid atau sudah kedaluwarsa. Periksa waktu sistem Anda."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED",
+      "text": "Pengguna telah terdaftar dalam otentikasi 2FA."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL",
+      "text": "Pengguna tidak memiliki kata sandi untuk mendaftarkannya ke otentikasi 2FA."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED",
+      "text": "Pengguna belum mendaftar untuk otentikasi 2FA."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL",
+      "text": "Pengguna tidak memiliki kata sandi untuk membatalkan pendaftarannya dari otentikasi 2FA."
+    },
+    {
+      "loc": "NKS_USERS_2FA_SETUPKEY",
+      "text": "Kunci pengaturan"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC",
+      "text": "Mengembalikan kunci pengaturan (jika Anda kehilangan kunci tersebut karena suatu alasan)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC",
+      "text": "Mengembalikan kode QR kunci pengaturan yang dapat Anda pindai dengan ponsel Anda."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED",
+      "text": "Mode tidak ditentukan."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC",
+      "text": "Mengembalikan nilai true atau false tergantung pada mode kernel."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
+      "text": "Mencetak hasilnya ke konsol."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
+      "text": "Pemrosesan Multivariabel Warisan"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",
+      "text": "Pengguna tidak memiliki kata sandi untuk melakukan operasi otentikasi 2FA."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC",
+      "text": "Menguji perender kanvas widget"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE",
+      "text": "Gagal mendeserialisasi informasi kanvas widget."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE",
+      "text": "Halaman berikutnya"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE",
+      "text": "Halaman sebelumnya"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC",
+      "text": "Menampilkan layar login"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME",
+      "text": "Nomor halaman login"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC",
+      "text": "Nomor halaman layar login yang akan ditampilkan"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "Inisialisasi"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "Mematikan"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "Memulai ulang"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO",
+      "text": "Untuk informasi lebih lanjut tentang TUI interaktif ini, kunjungi"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE",
+      "text": "Melihat pratinjau screensaver."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC",
+      "text": "Menggunakan TUI screensaver untuk melihat pratinjau screensaver."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY",
+      "text": "Antarmuka pengguna berbasis teks (TUI) interaktif ini memungkinkan Anda untuk melihat pratinjau screensaver dan menyimpan layar Anda dengannya, baik dengan screensaver bawaan maupun screensaver kustom. Anda dapat dengan mudah memilih screensaver untuk dipratinjau langsung dari TUI ini dengan memilih screensaver dari daftar dan menekan ENTER."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE",
+      "text": "Zona waktu langsung"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC",
+      "text": "Menggunakan antarmuka pengguna grafis (TUI) zona waktu untuk jam dunia."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY",
+      "text": "Antarmuka pengguna berbasis teks (TUI) interaktif ini menampilkan daftar zona waktu dan representasi waktu lokalnya yang diperbarui setiap detik. Ini memungkinkan Anda untuk menggunakannya sebagai aplikasi jam dunia untuk melihat waktu di semua zona waktu."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE",
+      "text": "Mengelola tugas"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC",
+      "text": "Menggunakan pengelola tugas TUI untuk mengelola thread."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY",
+      "text": "Pengelola tugas TUI memungkinkan Anda untuk mengelola baik thread kernel Nitrocid, yang dikelola oleh Nitrocid dan pengelola thread-nya, maupun thread sistem operasi, yang dikelola oleh sistem operasi Anda. Anda dapat mendaftarkan semua thread dan mengelolanya, termasuk kemampuan untuk mengakhiri tugas-tugasnya."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE",
+      "text": "Melihat thread sistem operasi"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC",
+      "text": "Menggunakan TUI pengelola tugas untuk melihat thread sistem operasi."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY",
+      "text": "Untuk setiap thread terkelola (yaitu, yang dikelola oleh Nitrocid dan pengelola thread-nya), TUI pengelola tugas menunjukkan kepada Anda semua thread sistem operasi yang terkait dengan thread terkelola tersebut, dan hubungan antara thread terkelola dan thread sistem operasi tidak selalu satu-ke-satu, karena sebuah thread terkelola dapat berisi lebih dari satu thread sistem operasi. Tidak seperti thread terkelola, thread sistem operasi tidak dapat dihentikan."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE",
+      "text": "Mengelola pengaturan kernel"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC",
+      "text": "Menggunakan aplikasi pengaturan TUI untuk mengelola pengaturan kernel."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY",
+      "text": "Konfigurasi kernel adalah bagian penting dari Nitrocid yang memungkinkan Anda mengkonfigurasi bagian-bagian kernel dan komponennya, termasuk tumpukan jaringan dan tumpukan shell. TUI ini memudahkan Anda untuk mengkonfigurasi bagian-bagian kernel, dan desainnya yang intuitif membuatnya lebih nyaman daripada mengedit file konfigurasi secara manual."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE",
+      "text": "Mengelola notifikasi"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC",
+      "text": "Menggunakan TUI (Tuned User Interface) notifikasi untuk mengelola notifikasi."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY",
+      "text": "Dengan TUI ini, Anda dapat mengelola semua notifikasi yang belum Anda baca. Saat notifikasi diterima, notifikasi tersebut ditambahkan ke riwayat untuk referensi di masa mendatang, yang berlaku selama seluruh sesi kernel atau hingga Anda menutupnya. TUI ini memungkinkan Anda untuk dengan mudah menutup dan mengelola notifikasi, yang lebih mudah daripada menggunakan utilitas baris perintah."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE",
+      "text": "Memilih folder"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC",
+      "text": "Menggunakan TUI pemilih grup folder untuk memilih folder"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY",
+      "text": "Sebagian dari antarmuka pengguna berbasis teks (TUI) manajemen file disediakan untuk pengelolaan yang lebih mudah, yang lebih cepat dan lebih nyaman daripada menggunakan utilitas baris perintah untuk melakukan tindakan yang sama. Salah satu TUI yang disediakan adalah TUI pemilihan grup folder, yang memungkinkan Anda memilih beberapa folder sebagai target untuk operasi yang dimaksud. Jika Anda dibawa ke sini, aplikasi telah meminta Anda untuk memilih sekelompok folder agar operasi dapat diselesaikan. Anda dapat menggunakan tombol SPASI untuk menambahkan folder ke daftar, lalu tekan ESC untuk mengkonfirmasi pilihan Anda."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE",
+      "text": "Memilih folder"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC",
+      "text": "Menggunakan TUI pemilih folder untuk memilih folder"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY",
+      "text": "Sebagian dari TUI (Transactional User Interface) manajemen file disediakan untuk pengelolaan yang lebih mudah, yang lebih cepat dan lebih nyaman daripada menggunakan utilitas baris perintah untuk melakukan tindakan yang sama. Salah satu TUI yang disediakan adalah TUI pemilihan folder, yang memungkinkan Anda memilih folder sebagai target untuk operasi yang dimaksud. Jika Anda dibawa ke sini, aplikasi telah meminta Anda untuk memilih folder agar operasi dapat diselesaikan. Anda dapat menggunakan tombol SPASI untuk memilih folder, lalu tekan ESC untuk mengkonfirmasi pilihan Anda."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE",
+      "text": "Memilih file"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC",
+      "text": "Menggunakan TUI pemilih grup file untuk memilih file."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY",
+      "text": "Sebagian dari antarmuka pengguna berbasis teks (TUI) manajemen file disediakan untuk pengelolaan yang lebih mudah, yang lebih cepat dan lebih nyaman daripada menggunakan utilitas baris perintah untuk melakukan tindakan yang sama. Salah satu TUI yang disediakan adalah TUI pemilihan grup file, yang memungkinkan Anda memilih beberapa file sebagai target untuk operasi yang dimaksud. Jika Anda dibawa ke sini, aplikasi telah meminta Anda untuk memilih sekelompok file agar operasi dapat diselesaikan. Anda dapat menggunakan tombol SPASI untuk menambahkan file ke daftar, lalu tekan ESC untuk mengkonfirmasi pilihan Anda."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE",
+      "text": "Memilih file"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC",
+      "text": "Menggunakan TUI pemilih file untuk memilih file."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY",
+      "text": "Sebagian dari TUI (Transactional User Interface) manajemen file disediakan untuk pengelolaan yang lebih mudah, yang lebih cepat dan lebih nyaman daripada menggunakan utilitas baris perintah untuk melakukan tindakan yang sama. Salah satu TUI yang disediakan adalah TUI pemilihan file, yang memungkinkan Anda untuk memilih file sebagai target untuk operasi yang dimaksud. Jika Anda dibawa ke sini, sebuah aplikasi telah meminta Anda untuk memilih file agar operasi dapat diselesaikan. Anda dapat menggunakan tombol SPASI untuk memilih file, lalu tekan ESC untuk mengkonfirmasi pilihan Anda."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE",
+      "text": "Pengelola file satu panel"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC",
+      "text": "Menggunakan TUI pemilih file untuk mengelola file dengan pratinjau."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY",
+      "text": "Sejumlah antarmuka pengguna berbasis teks (TUI) untuk manajemen file disediakan untuk memudahkan pengelolaan, yang lebih cepat dan lebih nyaman daripada menggunakan utilitas baris perintah untuk melakukan tindakan yang sama. Salah satu TUI yang disediakan adalah TUI manajemen file panel tunggal, yang memungkinkan Anda mengelola file dengan pratinjau file di panel kanan. Ini berguna jika Anda menginginkan panel pratinjau sekilas saat memilih file atau folder."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE",
+      "text": "Pengelola file dua panel"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC",
+      "text": "Menggunakan TUI pemilih file untuk mengelola file dalam dua panel."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY",
+      "text": "Sejumlah antarmuka pengguna berbasis teks (TUI) untuk manajemen file disediakan untuk memudahkan pengelolaan, yang lebih cepat dan lebih nyaman daripada menggunakan utilitas baris perintah untuk melakukan tindakan yang sama. Salah satu TUI yang disediakan adalah TUI manajemen file dua panel, yang memungkinkan Anda mengelola file Anda mirip dengan Total Commander. Ini memungkinkan Anda untuk dengan cepat melakukan operasi file ke salah satu panel, tanpa harus menentukan jalur secara manual."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE",
+      "text": "Mengelola alarm"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC",
+      "text": "Menggunakan TUI pengelola alarm untuk mengelola alarm"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY",
+      "text": "Mengelola alarm Anda menjadi mudah dengan TUI interaktif ini. Antarmuka pengguna ini memungkinkan Anda untuk menambahkan dan menonaktifkan alarm. Alarm akan berbunyi ketika mencapai periode waktu habis (timeout), yang menyebabkan notifikasi muncul."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC",
+      "text": "Kode verifikasi"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE",
+      "text": "Pengujian interaktif"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC",
+      "text": "Cara menguji komponen kernel secara interaktif"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY",
+      "text": "Anda dapat menguji semua komponen kernel yang dapat diuji di sini secara interaktif dengan memilih bagian pengujian di panel kiri dan perlengkapan pengujian di panel kanan. Anda akan diberikan laporan yang menunjukkan apakah pengujian telah berhasil atau gagal."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR",
+      "text": "Terjadi kesalahan yang tidak diketahui saat menjalankan test fixture."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_RUNTEST",
+      "text": "Jalankan pengujian"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED",
+      "text": "Tes ini berhasil!"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH",
+      "text": "Nilai yang diharapkan sesuai dengan nilai aktual."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED",
+      "text": "Tes ini gagal."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE",
+      "text": "Pesan"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
+      "text": "Nilai yang diharapkan tidak sesuai dengan nilai aktual."
     }
   ]
 }

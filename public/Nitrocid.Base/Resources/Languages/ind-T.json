@@ -9057,6 +9057,430 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
       "text": "एक यादृच्छिक स्क्रीनसेवर का चयन करता है"
+    },
+    {
+      "loc": "NKS_KERNEL_SHELLTIP",
+      "text": "शुरू करने के लिए, 'help' लिखें और ENTER दबाएं।"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME",
+      "text": "रीडर के लिए ऑडियो संकेत वॉल्यूम"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC",
+      "text": "आप चाहते हैं कि पढ़ने वाले की ऑडियो आवाज़ कितनी तेज़ हो, यह निर्दिष्ट करें।"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME",
+      "text": "पासवर्ड मास्क वर्ण (रीडर)"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC",
+      "text": "एक ऐसा कैरेक्टर जो इनपुट पासवर्ड को छुपाता है। अधिक सुरक्षा के लिए इसे खाली छोड़ दें।"
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3",
+      "text": "होमपेज पर रहते हुए शेल खोलने के लिए S कुंजी दबाएं। इसके बाद, 'help' लिखकर एंटर दबाकर शुरुआत करें!"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
+      "text": "आपकी सेटिंग्स इंस्टेंस में डुप्लिकेट कुंजियाँ मौजूद हैं। कृपया वेरिएबल की दोबारा जाँच करें ताकि यह सुनिश्चित हो सके कि यह एक से अधिक बार मौजूद न हो।"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
+      "text": "बंद करना"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
+      "text": "शट डाउन"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",
+      "text": "फ़ाइल प्रबंधक (एकल फलक)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC",
+      "text": "फ़ाइल मैनेजर को एक ही फलक में खोलता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
+      "text": "केवल तिथि दिखाता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
+      "text": "सिर्फ समय दिखाता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
+      "text": "यह स्थानीय समय क्षेत्र के बजाय यूटीसी समय क्षेत्र का उपयोग करता है।"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING",
+      "text": "कर्नेल ऐडऑन प्रारंभ करना"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN",
+      "text": "जो ज्ञात नहीं है"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING",
+      "text": "कर्नेल ऐडऑन की जाँच करना"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME",
+      "text": "परिवेशी स्क्रीनसेवर ध्वनि प्रभावों की तीव्रता"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC",
+      "text": "स्क्रीनसेवर के परिवेशी ध्वनि प्रभावों की तीव्रता को निर्धारित करने वाला स्तर निर्दिष्ट करें।"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC",
+      "text": "परीक्षण अधिसूचना भेजता है"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE",
+      "text": "उपयोगकर्ता का नामांकन पूरा हो गया है। इस सेटअप कुंजी को जोड़ें।"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR",
+      "text": "या फिर आप नीचे दिए गए क्यूआर कोड को स्कैन कर सकते हैं।"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER",
+      "text": "यदि आपके कंसोल पर अधूरा क्यूआर कोड दिखाई देता है, तो कृपया इस सेटअप कुंजी का उपयोग करें।"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTSTATUS",
+      "text": "नामांकन स्थिति"
+    },
+    {
+      "loc": "NKS_USERS_USERNOTPROVIDED",
+      "text": "उपयोगकर्ता का नाम प्रदान नहीं किया गया है।"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC",
+      "text": "उपयोगकर्ताओं के लिए दो-कारक प्रमाणीकरण प्रबंधन"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC",
+      "text": "उपयोगकर्ता के लिए आवश्यकता जोड़ता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC",
+      "text": "2FA संचालन के लिए संसाधित किए जाने वाला उपयोगकर्ता नाम"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC",
+      "text": "उपयोगकर्ता के लिए आवश्यकता हटाता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC",
+      "text": "उपयोगकर्ता नामांकन की जाँच करता है"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE",
+      "text": "इस उपयोगकर्ता के लिए सत्यापन कोड प्रदान करें। आप आमतौर पर Google Authenticator जैसे प्रमाणीकरण ऐप्स से यह कोड प्राप्त कर सकते हैं। यदि आप कोड दर्ज नहीं करते हैं, तो आपको साइन-इन पृष्ठ पर वापस भेज दिया जाएगा।"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_CODEINVALID",
+      "text": "आपके द्वारा दर्ज किया गया कोड अमान्य है।"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_VERIFYFAILED",
+      "text": "खाते का सत्यापन विफल हो गया है। संभवतः, आपके द्वारा दर्ज किया गया कोड अमान्य है या समाप्त हो चुका है। कृपया अपने सिस्टम का समय जांचें।"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED",
+      "text": "उपयोगकर्ता पहले ही 2FA प्रमाणीकरण में नामांकित हो चुका है।"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL",
+      "text": "उपयोगकर्ता के पास 2FA प्रमाणीकरण में नामांकन करने के लिए कोई पासवर्ड नहीं है।"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED",
+      "text": "उपयोगकर्ता ने 2FA प्रमाणीकरण के लिए पंजीकरण नहीं कराया है।"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL",
+      "text": "उपयोगकर्ता के पास 2FA प्रमाणीकरण से उसे हटाने के लिए कोई पासवर्ड नहीं है।"
+    },
+    {
+      "loc": "NKS_USERS_2FA_SETUPKEY",
+      "text": "सेटअप कुंजी"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC",
+      "text": "सेटअप कुंजी लौटाता है (यदि आपने इसे किसी कारणवश खो दिया हो)।"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC",
+      "text": "यह सेटअप कुंजी का क्यूआर कोड लौटाता है जिसे आप अपने फोन से स्कैन कर सकते हैं।"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED",
+      "text": "मोड निर्दिष्ट नहीं है।"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC",
+      "text": "कर्नेल मोड के आधार पर true या false लौटाता है"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
+      "text": "परिणाम को कंसोल पर प्रिंट करता है"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
+      "text": "विरासत बहुचर प्रसंस्करण"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",
+      "text": "उपयोगकर्ता के पास 2FA प्रमाणीकरण संचालन करने के लिए कोई पासवर्ड नहीं है।"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC",
+      "text": "विजेट कैनवास रेंडरर का परीक्षण करता है"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE",
+      "text": "विजेट कैनवास जानकारी को डीसीरियलाइज़ करने में विफलता"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE",
+      "text": "अगला पृष्ठ"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE",
+      "text": "पिछला पृष्ठ"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC",
+      "text": "यह आपको लॉगिन स्क्रीन दिखाता है"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME",
+      "text": "लॉगिन पृष्ठ संख्या"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC",
+      "text": "लॉगिन स्क्रीन का पृष्ठ क्रमांक प्रदर्शित किया जाना है"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "शुरु कर रहा है"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "बंद करना"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "पुन: प्रारंभ हो"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO",
+      "text": "इस इंटरैक्टिव टीयूआई के बारे में अधिक जानकारी के लिए, यहां जाएं"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE",
+      "text": "स्क्रीनसेवर का पूर्वावलोकन"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC",
+      "text": "स्क्रीनसेवर का पूर्वावलोकन करने के लिए TUI का उपयोग करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY",
+      "text": "यह इंटरैक्टिव यूजर इंटरफेस (TUI) आपको स्क्रीनसेवर का पूर्वावलोकन करने और उसे अपनी स्क्रीन पर सेव करने की सुविधा देता है, चाहे वह बिल्ट-इन स्क्रीनसेवर हो या कस्टम स्क्रीनसेवर। आप इस TUI से ही स्क्रीनसेवर का चयन करके और ENTER दबाकर आसानी से पूर्वावलोकन कर सकते हैं।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE",
+      "text": "लाइव समय क्षेत्र"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC",
+      "text": "विश्व घड़ी के लिए TUI समय क्षेत्र का उपयोग करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY",
+      "text": "यह इंटरैक्टिव TUI आपको समय क्षेत्रों और उनके स्थानीय समय की सूची दिखाता है, जो हर सेकंड अपडेट होती रहती है। इससे आप इसे विश्व घड़ी एप्लिकेशन के रूप में उपयोग कर सकते हैं और सभी समय क्षेत्रों का समय देख सकते हैं।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE",
+      "text": "कार्यों का प्रबंधन"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC",
+      "text": "थ्रेड्स को प्रबंधित करने के लिए टास्क मैनेजर TUI का उपयोग करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY",
+      "text": "टास्क मैनेजर TUI आपको नाइट्रोसिड कर्नेल थ्रेड्स (जो नाइट्रोसिड और उसके थ्रेड मैनेजर द्वारा प्रबंधित होते हैं) और ऑपरेटिंग सिस्टम थ्रेड्स (जो आपके ऑपरेटिंग सिस्टम द्वारा प्रबंधित होते हैं) दोनों को प्रबंधित करने की अनुमति देता है। आप सभी थ्रेड्स को सूचीबद्ध कर सकते हैं और उन्हें प्रबंधित कर सकते हैं, जिसमें उनके कार्यों को समाप्त करने की क्षमता भी शामिल है।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE",
+      "text": "ऑपरेटिंग सिस्टम थ्रेड्स देखना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC",
+      "text": "ऑपरेटिंग सिस्टम थ्रेड्स देखने के लिए टास्क मैनेजर TUI का उपयोग करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY",
+      "text": "प्रत्येक प्रबंधित थ्रेड (अर्थात्, नाइट्रोसिड और उसके थ्रेड मैनेजर द्वारा प्रबंधित) के लिए, टास्क मैनेजर का TUI आपको उन सभी ऑपरेटिंग सिस्टम थ्रेड्स को दिखाता है जो उस प्रबंधित थ्रेड से संबंधित हैं, और उनका हमेशा एक-से-एक संबंध नहीं होता है, क्योंकि एक प्रबंधित थ्रेड में एक से अधिक ऑपरेटिंग सिस्टम थ्रेड हो सकते हैं। प्रबंधित थ्रेड्स के विपरीत, इन्हें समाप्त नहीं किया जा सकता है।"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE",
+      "text": "कर्नेल सेटिंग्स का प्रबंधन"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC",
+      "text": "कर्नेल सेटिंग्स को प्रबंधित करने के लिए सेटिंग्स ऐप TUI का उपयोग करना"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY",
+      "text": "कर्नेल कॉन्फ़िगरेशन नाइट्रोसिड का एक अनिवार्य हिस्सा है जो आपको कर्नेल और उसके घटकों, जैसे नेटवर्किंग स्टैक और शेल स्टैक, को कॉन्फ़िगर करने की सुविधा देता है। यह TUI कर्नेल के कुछ हिस्सों को कॉन्फ़िगर करना आसान बनाता है, और इसका सहज डिज़ाइन कॉन्फ़िगरेशन फ़ाइल को मैन्युअल रूप से संपादित करने की तुलना में इसे अधिक सुविधाजनक बनाता है।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE",
+      "text": "सूचनाओं का प्रबंधन"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC",
+      "text": "नोटिफिकेशन TUI का उपयोग करके नोटिफिकेशन प्रबंधित करें"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY",
+      "text": "इस TUI की मदद से आप उन सभी नोटिफिकेशन्स को मैनेज कर सकते हैं जिन्हें आपने अभी तक पढ़ा नहीं है। नोटिफिकेशन मिलने पर, उसे भविष्य में देखने के लिए हिस्ट्री में जोड़ दिया जाता है, जो पूरे कर्नेल सेशन तक या आपके द्वारा उसे हटाने तक बनी रहती है। यह TUI आपको नोटिफिकेशन्स को आसानी से हटाने और मैनेज करने की सुविधा देता है, जो कमांड-लाइन यूटिलिटी का उपयोग करने से कहीं अधिक आसान है।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE",
+      "text": "फ़ोल्डरों का चयन करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC",
+      "text": "फ़ोल्डर समूह चयनकर्ता TUI का उपयोग करके फ़ोल्डरों का चयन करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY",
+      "text": "फ़ाइल प्रबंधन के लिए कुछ विशेष टूलकिट उपलब्ध कराए गए हैं, जो कमांड-लाइन यूटिलिटीज़ का उपयोग करने की तुलना में तेज़ और अधिक सुविधाजनक हैं। इनमें से एक टूलकिट फ़ोल्डर समूह चयन टूलकिट है, जो आपको इच्छित कार्य के लिए कई फ़ोल्डर चुनने की सुविधा देता है। यदि आप यहाँ आए हैं, तो किसी एप्लिकेशन ने आपसे फ़ोल्डरों का एक समूह चुनने का अनुरोध किया है ताकि कार्य पूरा हो सके। सूची में फ़ोल्डर जोड़ने के लिए आप SPACE कुंजी का उपयोग कर सकते हैं, फिर अपने चयन की पुष्टि करने के लिए ESC दबाएँ।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE",
+      "text": "फ़ोल्डरों का चयन करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC",
+      "text": "फ़ोल्डर चयनकर्ता TUI का उपयोग करके फ़ोल्डर का चयन करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY",
+      "text": "फ़ाइल प्रबंधन के लिए कुछ विशेष टूल (टीयूआई) उपलब्ध कराए गए हैं, जो कमांड-लाइन यूटिलिटीज़ की तुलना में तेज़ और अधिक सुविधाजनक हैं। इनमें से एक है फ़ोल्डर चयन टूल (टीयूआई), जो आपको इच्छित कार्य के लिए फ़ोल्डर चुनने की सुविधा देता है। यदि आप यहाँ आए हैं, तो किसी एप्लिकेशन ने आपसे फ़ोल्डर चुनने का अनुरोध किया है ताकि कार्य पूरा हो सके। फ़ोल्डर चुनने के लिए आप SPACE कुंजी का उपयोग कर सकते हैं, फिर अपनी पसंद की पुष्टि करने के लिए ESC दबाएँ।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE",
+      "text": "फ़ाइलें चुनना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC",
+      "text": "फ़ाइलों का चयन करने के लिए फ़ाइल समूह चयनकर्ता TUI का उपयोग करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY",
+      "text": "फ़ाइल प्रबंधन के लिए कुछ विशेष टूल (टीयूआई) उपलब्ध कराए गए हैं, जो कमांड-लाइन यूटिलिटीज़ का उपयोग करके समान कार्य करने की तुलना में तेज़ और अधिक सुविधाजनक हैं। इनमें से एक टूल फ़ाइल समूह चयन टूल है, जो आपको इच्छित कार्य के लिए कई फ़ाइलों का चयन करने की अनुमति देता है। यदि आप यहां आए हैं, तो किसी एप्लिकेशन ने आपसे कार्य पूरा करने के लिए फ़ाइलों का एक समूह चुनने का अनुरोध किया है। आप सूची में फ़ाइल जोड़ने के लिए SPACE कुंजी का उपयोग कर सकते हैं, फिर अपने चयन की पुष्टि करने के लिए ESC दबाएं।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE",
+      "text": "फ़ाइलें चुनना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC",
+      "text": "फ़ाइल चयनकर्ता TUI का उपयोग करके फ़ाइल का चयन करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY",
+      "text": "फ़ाइल प्रबंधन के लिए कुछ विशेष टूल (टीयूआई) उपलब्ध कराए गए हैं, जो कमांड-लाइन यूटिलिटीज़ का उपयोग करने की तुलना में तेज़ और अधिक सुविधाजनक हैं। इनमें से एक टूल फ़ाइल चयन टूल है, जिसकी मदद से आप इच्छित कार्य के लिए फ़ाइल का चयन कर सकते हैं। यदि आप यहाँ आए हैं, तो किसी एप्लिकेशन ने आपसे फ़ाइल का चयन करने का अनुरोध किया है ताकि कार्य पूरा हो सके। आप SPACE कुंजी का उपयोग करके फ़ाइल का चयन कर सकते हैं, फिर अपने चयन की पुष्टि करने के लिए ESC दबाएँ।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE",
+      "text": "सिंगल-पेन फ़ाइल मैनेजर"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC",
+      "text": "फ़ाइल चयनकर्ता TUI का उपयोग करके पूर्वावलोकन के साथ फ़ाइलों को प्रबंधित करें"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY",
+      "text": "आसान प्रबंधन के लिए फ़ाइल प्रबंधन टूलकिट (टीयूआई) का एक उपसमूह उपलब्ध कराया गया है, जो कमांड-लाइन यूटिलिटी का उपयोग करके समान कार्य करने की तुलना में तेज़ और अधिक सुविधाजनक है। उपलब्ध टीयूआई में से एक सिंगल-पेन फ़ाइल प्रबंधन टीयूआई है, जो आपको दाईं ओर के पेन में फ़ाइल का पूर्वावलोकन देखते हुए अपनी फ़ाइलों का प्रबंधन करने की अनुमति देता है। यह तब उपयोगी होता है जब आप फ़ाइलों या फ़ोल्डरों का चयन करते समय एक नज़र में पूर्वावलोकन पेन देखना चाहते हैं।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE",
+      "text": "डबल-पेन फ़ाइल प्रबंधक"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC",
+      "text": "दो पैन में फ़ाइलों को प्रबंधित करने के लिए फ़ाइल चयनकर्ता TUI का उपयोग करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY",
+      "text": "फ़ाइल प्रबंधन को आसान बनाने के लिए कई तरह के TUI उपलब्ध कराए गए हैं, जो कमांड-लाइन यूटिलिटीज़ का उपयोग करने की तुलना में तेज़ और अधिक सुविधाजनक हैं। इनमें से एक डबल-पेन फ़ाइल प्रबंधन TUI है, जो आपको टोटल कमांडर की तरह ही अपनी फ़ाइलों को प्रबंधित करने की सुविधा देता है। यह आपको मैन्युअल रूप से पाथ निर्दिष्ट किए बिना, किसी भी पेन पर फ़ाइल संबंधी कार्य शीघ्रता से करने की अनुमति देता है।"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE",
+      "text": "अलार्म का प्रबंधन"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC",
+      "text": "अलार्म मैनेजर TUI का उपयोग करके अलार्म का प्रबंधन करना"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY",
+      "text": "इस इंटरैक्टिव यूजर इंटरफेस की मदद से अलार्म को मैनेज करना आसान है। यह यूजर इंटरफेस आपको अलार्म जोड़ने और बंद करने की सुविधा देता है। अलार्म टाइमआउट अवधि पूरी होने पर सक्रिय हो जाते हैं, जिससे एक नोटिफिकेशन दिखाई देता है।"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC",
+      "text": "सत्यापन कोड"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE",
+      "text": "इंटरैक्टिव परीक्षण"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC",
+      "text": "कर्नेल घटकों का इंटरैक्टिव परीक्षण कैसे करें"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY",
+      "text": "यहां परीक्षण योग्य सभी कर्नेल घटकों का परीक्षण करने के लिए, बाएं फलक में एक परीक्षण अनुभाग और दाएं फलक में एक परीक्षण फिक्स्चर का चयन करें। आपको एक रिपोर्ट मिलेगी जो बताएगी कि परीक्षण सफल हुआ है या असफल।"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR",
+      "text": "टेस्ट फिक्स्चर चलाते समय अज्ञात त्रुटि"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_RUNTEST",
+      "text": "चालू परीक्षण"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED",
+      "text": "यह परीक्षण सफल रहा!"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH",
+      "text": "अपेक्षित मान वास्तविक मान से मेल खाता है।"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED",
+      "text": "यह परीक्षण असफल रहा।"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE",
+      "text": "संदेश"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
+      "text": "अपेक्षित मान वास्तविक मान से मेल नहीं खाता।"
     }
   ]
 }

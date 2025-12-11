@@ -27,7 +27,6 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
     internal class WidgetCanvasRenderTest : TestFacade
     {
-        // TODO: NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC -> Tests the widget canvas renderer
         public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC");
         public override TestSection TestSection => TestSection.Misc;
         public override void Run()

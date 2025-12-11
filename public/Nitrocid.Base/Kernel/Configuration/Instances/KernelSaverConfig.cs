@@ -129,9 +129,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// <summary>
         /// [Curtain] Page number of the login screen to show
         /// </summary>
-        // TODO: NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC -> "Shows you a login screen"
-        // TODO: NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME -> "Login page number"
-        // TODO: NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC -> "Page number of the login screen to show"
         public int CurtainPageNumber
         {
             get

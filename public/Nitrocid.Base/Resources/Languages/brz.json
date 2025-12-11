@@ -9056,6 +9056,430 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC",
       "text": "Seleciona um protetor de tela aleatório"
+    },
+    {
+      "loc": "NKS_KERNEL_SHELLTIP",
+      "text": "Para começar, digite 'help' e pressione ENTER."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME",
+      "text": "Volume do sinal de áudio para o leitor"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_DESC",
+      "text": "Especifique o volume desejado para os avisos sonoros do leitor."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_NAME",
+      "text": "Caractere de máscara de senha (leitor)"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_MISC_AESTHETICS_MASKCHARREADER_DESC",
+      "text": "Um caractere que mascara a senha digitada. Deixe em branco para maior segurança."
+    },
+    {
+      "loc": "NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3",
+      "text": "Para acessar o shell, pressione a tecla S se estiver na página inicial. Em seguida, digite 'help' e pressione ENTER para começar!"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS",
+      "text": "Foram encontradas chaves duplicadas na sua instância de configurações. Verifique novamente a variável para garantir que ela não exista mais de uma vez."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_MODERNLOGON_CLOSE",
+      "text": "Fechar"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN",
+      "text": "Desligar"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE",
+      "text": "Gerenciador de Arquivos (painel único)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_SWITCH_SINGLE_DESC",
+      "text": "Abre o gerenciador de arquivos em um único painel."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_DATE_DESC",
+      "text": "Mostra apenas a data."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_TIME_DESC",
+      "text": "Mostra exatamente a hora"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DATE_SWITCH_UTC_DESC",
+      "text": "Utiliza o fuso horário UTC em vez do fuso horário local."
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING",
+      "text": "Inicializando o complemento do kernel"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN",
+      "text": "que não é conhecido"
+    },
+    {
+      "loc": "NKS_KERNEL_EXTENSIONS_ADDONS_CHECKING",
+      "text": "Verificando complemento do kernel"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_NAME",
+      "text": "Intensidade dos efeitos sonoros do protetor de tela ambiente"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSITY_DESC",
+      "text": "Especifique o nível que define a intensidade dos efeitos sonoros ambientes do protetor de tela."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_DEBUG_COMMAND_SENDNOTIFICATION_DESC",
+      "text": "Envia notificação de teste"
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE",
+      "text": "Cadastro do usuário concluído. Adicione esta chave de configuração."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR",
+      "text": "Ou você pode escanear o código QR abaixo."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER",
+      "text": "Caso seu console exiba um código QR incompleto, utilize esta chave de configuração."
+    },
+    {
+      "loc": "NKS_USERS_2FA_ENROLLMENTSTATUS",
+      "text": "Situação de matrícula"
+    },
+    {
+      "loc": "NKS_USERS_USERNOTPROVIDED",
+      "text": "O nome de usuário não foi fornecido."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC",
+      "text": "Gerenciamento de autenticação de dois fatores para usuários"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC",
+      "text": "Adiciona um requisito para o usuário."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC",
+      "text": "Nome de usuário a ser processado para operações de autenticação de dois fatores (2FA)."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC",
+      "text": "Remove a exigência para o usuário."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_CHECK_DESC",
+      "text": "Verifica a inscrição do usuário"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE",
+      "text": "Forneça o código de verificação para este usuário. Normalmente, você pode acessar esse código em aplicativos de autenticação, como o Google Authenticator. Se você não inserir um código, será redirecionado para a página de login."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_CODEINVALID",
+      "text": "O código que você digitou é inválido."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_VERIFYFAILED",
+      "text": "A verificação da conta falhou. Provavelmente, o código inserido é inválido ou expirou. Verifique a hora do seu sistema."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED",
+      "text": "O usuário já se cadastrou na autenticação de dois fatores (2FA)."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_ENROLL",
+      "text": "O usuário não possui senha para se cadastrar na autenticação de dois fatores (2FA)."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED",
+      "text": "O usuário não se inscreveu na autenticação de dois fatores (2FA)."
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_UNENROLL",
+      "text": "O usuário não possui senha para cancelar sua inscrição na autenticação de dois fatores (2FA)."
+    },
+    {
+      "loc": "NKS_USERS_2FA_SETUPKEY",
+      "text": "Chave de configuração"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPKEY_DESC",
+      "text": "Retorna a chave de configuração (caso você a tenha perdido por algum motivo)."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_SETUPQR_DESC",
+      "text": "Retorna o código QR da chave de configuração que você pode escanear com seu celular."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_ISMODE_NOTSPECIFIED",
+      "text": "O modo não foi especificado."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_DESC",
+      "text": "Retorna verdadeiro ou falso dependendo do modo do kernel."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
+      "text": "Imprime o resultado no console."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
+      "text": "Processamento multivariável legado"
+    },
+    {
+      "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",
+      "text": "O usuário não possui senha para realizar operações de autenticação de dois fatores (2FA)."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_WIDGETCANVASRENDERTEST_DESC",
+      "text": "Testa o renderizador de tela do widget"
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_WIDGETS_CANVAS_EXCEPTION_DESERIALIZE",
+      "text": "Falha ao desserializar as informações do canvas do widget"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE",
+      "text": "Próxima página"
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE",
+      "text": "Página anterior"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_DESC",
+      "text": "Exibe a tela de login."
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_NAME",
+      "text": "Número da página de login"
+    },
+    {
+      "loc": "NKS_SETTINGS_SCREENSAVER_CURTAIN_PAGENUM_DESC",
+      "text": "Número da página da tela de login a ser exibida."
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "Inicializando"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "Desligando"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "Reiniciando"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO",
+      "text": "Para obter mais informações sobre esta interface de usuário interativa (TUI), visite [link]."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_TITLE",
+      "text": "Visualizando o protetor de tela"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_DESC",
+      "text": "Usando a interface de usuário TUI do protetor de tela para visualizar o protetor de tela."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_SCREENSAVERTUI_HELP01_BODY",
+      "text": "Esta interface de usuário interativa permite que você visualize um protetor de tela e salve sua tela com ele, seja com um protetor de tela integrado ou um protetor de tela personalizado. Você pode escolher facilmente um protetor de tela para visualizar diretamente desta interface, selecionando-o na lista e pressionando ENTER."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_TITLE",
+      "text": "Fusos horários ao vivo"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_DESC",
+      "text": "Utilizando o fuso horário TUI para o relógio mundial"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TZTUI_HELP01_BODY",
+      "text": "Esta interface de usuário interativa exibe uma lista de fusos horários e suas respectivas representações de hora local, atualizadas a cada segundo. Isso permite que você a utilize como um aplicativo de relógio mundial para consultar a hora em todos os fusos horários."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_TITLE",
+      "text": "Gerenciar tarefas"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_DESC",
+      "text": "Utilizando a interface de texto do gerenciador de tarefas para gerenciar threads."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP01_BODY",
+      "text": "A interface de gerenciamento de tarefas (TUI) permite gerenciar tanto os threads do kernel do Nitrocid, que são gerenciados pelo Nitrocid e seu gerenciador de threads, quanto os threads do sistema operacional, que são gerenciados pelo seu sistema operacional. Você pode listar todos os threads e gerenciá-los, incluindo a possibilidade de encerrar suas tarefas."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_TITLE",
+      "text": "Visualizando tópicos do sistema operacional"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_DESC",
+      "text": "Utilizando a interface de texto do gerenciador de tarefas para visualizar as threads do sistema operacional."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY",
+      "text": "Para cada thread gerenciada (isto é, gerenciada pelo Nitrocid e seu gerenciador de threads), a interface de texto do gerenciador de tarefas mostra todas as threads do sistema operacional relacionadas a ela. Essa relação nem sempre é direta, pois uma thread gerenciada pode conter mais de uma thread do sistema operacional. Ao contrário das threads gerenciadas, elas não podem ser finalizadas."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE",
+      "text": "Gerenciando as configurações do kernel"
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_DESC",
+      "text": "Utilizando a interface de usuário de texto (TUI) do aplicativo de configurações para gerenciar as configurações do kernel."
+    },
+    {
+      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_BODY",
+      "text": "A configuração do kernel é uma parte essencial do Nitrocid que permite configurar partes do kernel e seus componentes, incluindo a pilha de rede e a pilha do shell. Esta interface de texto facilita a configuração de partes do kernel, e seu design intuitivo a torna mais conveniente do que editar manualmente o arquivo de configuração."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_TITLE",
+      "text": "Gerenciar notificações"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_DESC",
+      "text": "Utilizando a interface de usuário de notificações (TUI) para gerenciar notificações."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_NOTIFICATIONSCLI_HELP01_BODY",
+      "text": "Com esta interface de texto (TUI), você pode gerenciar todas as notificações que ainda não leu. Quando uma notificação é recebida, ela é adicionada ao histórico para referência futura, permanecendo lá durante toda a sessão do kernel ou até que você a descarte. Esta TUI permite que você descarte e gerencie notificações facilmente, o que é mais simples do que usar o utilitário de linha de comando."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_TITLE",
+      "text": "Selecionando pastas"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_DESC",
+      "text": "Utilizando a interface de usuário de texto (TUI) do seletor de grupo de pastas para selecionar pastas."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDERS_HELP01_BODY",
+      "text": "Um subconjunto de interfaces de usuário de texto (TUIs) para gerenciamento de arquivos é fornecido para facilitar o gerenciamento, sendo mais rápido e conveniente do que usar os utilitários de linha de comando para executar a mesma ação. Uma das TUIs fornecidas é a de seleção de grupo de pastas, que permite selecionar várias pastas como alvos para a operação desejada. Se você foi direcionado para esta tela, significa que um aplicativo solicitou que você selecionasse um grupo de pastas para que a operação fosse concluída. Você pode usar a tecla ESPAÇO para adicionar uma pasta à lista e, em seguida, pressionar ESC para confirmar sua seleção."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_TITLE",
+      "text": "Selecionando pastas"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_DESC",
+      "text": "Utilizando a interface de texto do seletor de pastas para selecionar uma pasta."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FOLDER_HELP01_BODY",
+      "text": "Um subconjunto de interfaces de usuário de texto (TUIs) para gerenciamento de arquivos é fornecido para facilitar o gerenciamento, sendo mais rápido e conveniente do que usar os utilitários de linha de comando para executar a mesma ação. Uma das TUIs fornecidas é a de seleção de pastas, que permite selecionar uma pasta como destino para a operação desejada. Se você foi direcionado para esta tela, significa que um aplicativo solicitou que você selecione uma pasta para que a operação seja concluída. Você pode usar a tecla ESPAÇO para selecionar uma pasta e, em seguida, pressionar ESC para confirmar sua seleção."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_TITLE",
+      "text": "Selecionando arquivos"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_DESC",
+      "text": "Utilizando a interface de usuário de texto (TUI) do seletor de grupo de arquivos para selecionar arquivos."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILES_HELP01_BODY",
+      "text": "Um subconjunto de interfaces de usuário de texto (TUIs) para gerenciamento de arquivos é fornecido para facilitar o gerenciamento, sendo mais rápido e conveniente do que usar os utilitários de linha de comando para executar a mesma ação. Uma das TUIs fornecidas é a de seleção de grupo de arquivos, que permite selecionar vários arquivos como alvos para a operação desejada. Se você foi direcionado para esta tela, significa que um aplicativo solicitou que você selecionasse um grupo de arquivos para que a operação fosse concluída. Você pode usar a tecla ESPAÇO para adicionar um arquivo à lista e, em seguida, pressionar ESC para confirmar sua seleção."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_TITLE",
+      "text": "Selecionando arquivos"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_DESC",
+      "text": "Utilizando a interface de texto do seletor de arquivos para selecionar um arquivo."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_FILE_HELP01_BODY",
+      "text": "Um subconjunto de interfaces de usuário de texto (TUIs) para gerenciamento de arquivos é fornecido para facilitar o gerenciamento, sendo mais rápido e conveniente do que usar os utilitários de linha de comando para executar a mesma ação. Uma das TUIs fornecidas é a de seleção de arquivos, que permite selecionar um arquivo como alvo para a operação desejada. Se você foi direcionado para esta tela, significa que um aplicativo solicitou que você selecione um arquivo para que a operação seja concluída. Você pode usar a tecla ESPAÇO para selecionar um arquivo e, em seguida, pressionar ESC para confirmar sua seleção."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_TITLE",
+      "text": "Gerenciador de arquivos de painel único"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_DESC",
+      "text": "Utilizando a interface de texto do seletor de arquivos para gerenciar arquivos com visualização prévia."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_SINGLEPANE_HELP01_BODY",
+      "text": "Um subconjunto de interfaces de usuário de texto (TUIs) para gerenciamento de arquivos é fornecido para facilitar o gerenciamento, sendo mais rápido e conveniente do que usar os utilitários de linha de comando para executar a mesma ação. Uma das TUIs fornecidas é a TUI de gerenciamento de arquivos em painel único, que permite gerenciar seus arquivos com a pré-visualização do arquivo no painel direito. Isso é útil se você deseja ter uma pré-visualização rápida ao selecionar arquivos ou pastas."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_TITLE",
+      "text": "Gerenciador de arquivos de painel duplo"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_DESC",
+      "text": "Utilizando a interface de texto (TUI) do seletor de arquivos para gerenciar arquivos em dois painéis."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_FMTUI_DOUBLEPANE_HELP01_BODY",
+      "text": "Um subconjunto de interfaces de usuário de texto (TUIs) para gerenciamento de arquivos é fornecido para facilitar o gerenciamento, sendo mais rápido e conveniente do que usar os utilitários de linha de comando para executar a mesma ação. Uma das TUIs fornecidas é a TUI de gerenciamento de arquivos em painel duplo, que permite gerenciar seus arquivos de forma semelhante ao Total Commander. Ela permite realizar operações de arquivo rapidamente em qualquer um dos painéis, sem precisar especificar os caminhos manualmente."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_TITLE",
+      "text": "Gerenciando alarmes"
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_DESC",
+      "text": "Utilizando a interface de gerenciamento de alarmes (TUI) para gerenciar alarmes."
+    },
+    {
+      "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_HELP01_BODY",
+      "text": "Gerenciar seus alarmes é fácil com esta interface de usuário interativa. Esta interface permite adicionar e descartar alarmes. Os alarmes são acionados quando atingem o tempo limite, o que gera uma notificação."
+    },
+    {
+      "loc": "NKS_USERS_LOGIN_2FA_PROVIDECODE_CLASSIC",
+      "text": "Código de verificação"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_TITLE",
+      "text": "Testes interativos"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_DESC",
+      "text": "Como testar componentes do kernel de forma interativa"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_HELP01_BODY",
+      "text": "Você pode testar interativamente todos os componentes do kernel que podem ser testados aqui, selecionando uma seção de teste no painel esquerdo e um conjunto de testes no painel direito. Você receberá um relatório indicando se o teste foi aprovado ou reprovado."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTUNKNOWNERROR",
+      "text": "Erro desconhecido ao executar um teste de compatibilidade."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_RUNTEST",
+      "text": "Executar teste"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED",
+      "text": "Este teste foi bem-sucedido!"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTSUCCEEDED_MATCH",
+      "text": "O valor esperado corresponde ao valor real."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED",
+      "text": "Este teste falhou."
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MESSAGE",
+      "text": "Mensagem"
+    },
+    {
+      "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
+      "text": "O valor esperado não corresponde ao valor real."
     }
   ]
 }

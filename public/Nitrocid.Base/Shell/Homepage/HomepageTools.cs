@@ -70,7 +70,6 @@ namespace Nitrocid.Base.Shell.Homepage
         private static readonly Dictionary<string, Action> choiceActionsBuiltin = new()
         {
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_FILEMANAGER", () => FilesystemTools.OpenFileManagerTui() },
-            // TODO: NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE -> "File Manager (single pane)"
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_FILEMANAGERSINGLE", () => FilesystemTools.OpenFileManagerTui(true) },
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_ALARMMANAGER", AlarmCli.OpenAlarmCli },
             { /* Localizable */ "NKS_SHELL_HOMEPAGE_NOTIFICATIONS", NotificationsCli.OpenNotificationsCli },
@@ -82,14 +81,11 @@ namespace Nitrocid.Base.Shell.Homepage
             // Keyboard
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_EXECUTE"), ConsoleKey.Enter),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_LOGOUT"), ConsoleKey.Escape),
-            // TODO: NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN -> "Shut down"
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHUTDOWN"), ConsoleKey.Escape, ConsoleModifiers.Shift),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL"), ConsoleKey.S),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS"), ConsoleKey.K),
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_SWITCH"), ConsoleKey.Tab),
-            // TODO: NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE -> "Next page"
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_NEXTPAGE"), ConsoleKey.RightArrow),
-            // TODO: NKS_SHELL_HOMEPAGE_KEYBINDING_PrevPAGE -> "Previous page"
             new(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_PREVPAGE"), ConsoleKey.LeftArrow),
             new("Play...", ConsoleKey.P, true),
 
@@ -374,7 +370,6 @@ namespace Nitrocid.Base.Shell.Homepage
                                     int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
                                         new InputChoiceInfo("shutdown", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_SHUTDOWN")),
                                         new InputChoiceInfo("reboot", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RESTART")),
-                                        // TODO: NKS_USERS_LOGIN_MODERNLOGON_CLOSE -> "Close"
                                         new InputChoiceInfo("exit", LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_CLOSE")),
                                     ], LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_POWERACTION"));
                                     if (answer == 0)
