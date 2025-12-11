@@ -271,10 +271,12 @@ namespace Nitrocid.Base.Shell.Homepage
                         if (context.ButtonPress == PointerButtonPress.Moved)
                         {
                             if (isWithinSettings)
-                                buttonHighlight = 1;
-                            else if (isWithinAbout)
                                 buttonHighlight = 2;
-                            else
+                            else if (isWithinAbout)
+                                buttonHighlight = 3;
+                            else if (isWithinNotifications)
+                                buttonHighlight = 1;
+                            else if (isWithinOptions)
                                 buttonHighlight = 0;
                             render = true;
                         }
