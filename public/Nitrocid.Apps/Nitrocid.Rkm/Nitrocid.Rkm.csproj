@@ -20,8 +20,8 @@
 
   <!-- KS.Rkm Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="8.0.11" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Terminaux.Images" Version="8.0.11" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux" Version="8.0.12" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux.Images" Version="8.0.12" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
   </ItemGroup>
   <!-- KS.Rkm Non-private Dependencies Information End -->
 
