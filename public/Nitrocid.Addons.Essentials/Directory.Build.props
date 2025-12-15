@@ -26,6 +26,7 @@
     <ItemGroup>
         <ProjectReference Include="..\..\..\private\Nitrocid.LocaleChecker\Nitrocid.LocaleChecker.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
         <ProjectReference Include="..\..\Nitrocid.Base\Nitrocid.Base.csproj" Private="false" />
+        <ProjectReference Include="..\..\Nitrocid.Core\Nitrocid.Core.csproj" Private="false" />
     </ItemGroup>
     <!-- Addon Platform Information End -->
 </Project>
