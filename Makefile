@@ -72,7 +72,9 @@ invoke-doc-build:
 	bash tools/docgen.sh
 
 invoke-build-offline:
-	HOME=`pwd`"/debian/homedir" bash tools/build.sh Release $(BUILDARGS)
+	HOME=`pwd`"/debian/homedir" \
+	DOTNET_CLI_HOME=`pwd`"/debian/homedir" \
+	bash tools/build.sh Release $(BUILDARGS)
 
 invoke-init-offline:
 	bash tools/localize.sh
