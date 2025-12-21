@@ -40,7 +40,7 @@ clean:
 	bash tools/clean.sh
 
 all-offline:
-	$(MAKE) invoke-build-offline BUILDARGS="-p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true $(BUILDARGS)"
+	$(MAKE) invoke-build-offline ENVIRONMENT=Debug BUILDARGS="-p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true $(BUILDARGS)"
 
 init-offline:
 	$(MAKE) invoke-init-offline
@@ -74,7 +74,7 @@ invoke-doc-build:
 invoke-build-offline:
 	HOME=`pwd`"/debian/homedir" \
 	DOTNET_CLI_HOME=`pwd`"/debian/homedir" \
-	bash tools/build.sh Release $(BUILDARGS)
+	bash tools/build.sh "$(ENVIRONMENT)" $(BUILDARGS)
 
 invoke-init-offline:
 	bash tools/localize.sh
