@@ -2,7 +2,7 @@
     <!-- KS General Information -->
     <PropertyGroup>
         <!-- Versioning and some info to be installed to all the Nitrocid projects, including the addons -->
-        <Version>0.2.0.0-rc</Version>
+        <Version>0.2.0.0</Version>
         <Copyright>Copyright (c) Aptivi 2018-2025</Copyright>
         <Company>Aptivi</Company>
         <Product>Nitrocid</Product>
@@ -64,7 +64,7 @@
         <Optimize>true</Optimize>
         <Optimize Condition="'$(Configuration)' == 'Debug'">false</Optimize>
         <NitrocidReleaseSpecifier>REL</NitrocidReleaseSpecifier>
-        <NitrocidReleaseSpecifier Condition="'$(Configuration)' == 'Debug'">RC</NitrocidReleaseSpecifier>
+        <NitrocidReleaseSpecifier Condition="'$(Configuration)' == 'Debug'">DEV</NitrocidReleaseSpecifier>
         <DefineConstants>SPECIFIER$(NitrocidReleaseSpecifier);$(NitrocidFlags.Replace(",",";"))</DefineConstants>
         <DefineConstants Condition="'$(NKSLITE)' != 'true'">NKS_EXTENSIONS;$(DefineConstants)</DefineConstants>
         <NoWarn>$(NoWarn);NU1605</NoWarn>

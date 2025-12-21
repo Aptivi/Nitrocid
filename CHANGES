@@ -1,44 +1,15 @@
-We are very excited to introduce you the most customizable version of Nitrocid yet! With brand new powerful features that came to Nitrocid, you'll be able to customize your login screen and your homepage screen more freely. With the widgets no longer becoming exclusive to the login screen, you'll be able to place information on both your login screen and your home screen. Nitrocid 0.2.0 RC also packs more exciting features!
-
-Now, the most exciting thing is:
-
-**Nitrocid 0.2.0 Release Candidate brings attractive new look to the default splash screen, the modern logon screen, and The Nitrocid Homepage! This is the first step towards shaping the future of Nitrocid!**
-
-Please note that this is not the final version of 0.2.0, which will bring more awesome screensavers, along with many more features and commands. Feedback, suggestions, and issue reports are welcome.
+TBD
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added two-factor authentication for Nitrocid users
-- `[+]` Added Widget Canvas JSON
-- `[+]` Added configurable modern logon screen
-- `[+]` Added configurable Nitrocid homepage
-- `[+]` Added ambient sound FX intensity
-- `[+]` Added the Raspberry theme
-- `[+]` Added single-pane file manager TUI
-- `[+]` Added new widgets
-- `[+]` Added contact editing feature
-- `[+]` Added new RPC commands
-- `[+]` Added new Nitrocid application: Nitrocid.Rkm
-- `[+]` Added help pages for all interactive TUIs
-- `[*]` Migrated framework to .NET 10.0 `*`
-- `[*]` Updated to Terminaux 8.0 `+`
-- `[*]` Attractive new look
-- `[*]` Delegated navigation sounds to Terminaux
-- `[*]` Improved configuration verification
-- `[*]` SourceLink reverted to GitHub `*`
-- `[*]` Improved localization system
-- `[*]` Settings in The Nitrocid Homepage now lets you select configuration instances
-- `[*]` General improvements and bug fixes
-- `[-]` Removed the legacy settings app
+- `[*]` Populate condensed changelogs from both TP and RC changelogs
 
 Legend:
 
 - Changes highlighted with a `*` at the end indicate that they're backported for 0.1.0 and 0.1.2.
 - Changes highlighted with a `+` at the end indicate that they're backported for 0.1.2.
-
-Backported features that are listed here will make it to a future Nitrocid 0.1.0 and 0.1.2 point release once .NET 10.0 packages land to Ubuntu 24.04 LTS Noble Numbat.
 
 Review the commit history if you want to get a deep insight about the changes.
 
