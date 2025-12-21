@@ -40,6 +40,9 @@ clean:
 	bash tools/clean.sh
 
 all-offline:
+	$(MAKE) invoke-build-offline ENVIRONMENT=Release BUILDARGS="-p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true $(BUILDARGS)"
+
+all-offline-beta:
 	$(MAKE) invoke-build-offline ENVIRONMENT=Debug BUILDARGS="-p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true $(BUILDARGS)"
 
 init-offline:
