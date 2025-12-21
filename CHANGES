@@ -1,4 +1,4 @@
-We've released this version to migrate the whole codebase to .NET 10.0 to celebrate its general availability!
+We've released this version to update the native libraries within Nitrocid!
 
 This release will help you migrate your mods to .NET 10.0 prior to the Nitrocid 0.2.0 release expected February 2026!
 
@@ -6,9 +6,7 @@ This release will help you migrate your mods to .NET 10.0 prior to the Nitrocid 
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Migrated the framework to .NET 10.0
-- `[*]` Fixed unit tests being stuck due to the splash screen function
-- `[*]` Fixed some TUIs not starting
+- `[*]` Updated BassBoom, Terminaux, SpecProbe, and Magico
 
 Review the commit history if you want to get a deep insight about the changes.
 
