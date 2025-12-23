@@ -102,6 +102,7 @@ namespace Nitrocid.ScreensaverPacks
             { "numberscatter", new NumberScatterDisplay() },
             { "omen", new OmenDisplay() },
             { "particles", new ParticlesDisplay() },
+            { "pi", new PiDisplay() },
             { "pointtrack", new PointTrackDisplay() },
             { "progressclock", new ProgressClockDisplay() },
             { "progresses", new ProgressesDisplay() },
