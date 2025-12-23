@@ -17499,5 +17499,26 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region Raining
+        private int rainingDelay = 10;
+
+        /// <summary>
+        /// [Raining] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int RainingDelay
+        {
+            get
+            {
+                return rainingDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10;
+                rainingDelay = value;
+            }
+        }
+        #endregion
     }
 }
