@@ -34,6 +34,7 @@ namespace Nitrocid.ScreensaverPacks
             { "aberration", new AberrationDisplay() },
             { "analogclock", new AnalogClockDisplay() },
             { "aurora", new AuroraDisplay() },
+            { "backimplosion", new BackImplosionDisplay() },
             { "barrot", new BarRotDisplay() },
             { "barwave", new BarWaveDisplay() },
             { "beatfader", new BeatFaderDisplay() },
