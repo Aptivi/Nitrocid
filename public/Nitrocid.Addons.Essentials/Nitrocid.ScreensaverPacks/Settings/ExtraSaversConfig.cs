@@ -18489,5 +18489,26 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region Evaporate
+        private int evaporateDelay = 10;
+
+        /// <summary>
+        /// [Evaporate] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int EvaporateDelay
+        {
+            get
+            {
+                return evaporateDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10;
+                evaporateDelay = value;
+            }
+        }
+        #endregion
     }
 }

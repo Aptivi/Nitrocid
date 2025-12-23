@@ -8996,5 +8996,17 @@
                 ]
             }
         ]
+    },
+    {
+        "Name": "Evaporate",
+        "Desc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+                "Type": "SInt",
+                "Variable": "EvaporateDelay",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
+            }
+        ]
     }
 ]
