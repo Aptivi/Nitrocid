@@ -18090,5 +18090,195 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region LetterCycle
+        private bool letterCycleTrueColor = true;
+        private int letterCycleDelay = 1000;
+        private int letterCycleMinimumRedColorLevel = 0;
+        private int letterCycleMinimumGreenColorLevel = 0;
+        private int letterCycleMinimumBlueColorLevel = 0;
+        private int letterCycleMinimumColorLevel = 0;
+        private int letterCycleMaximumRedColorLevel = 255;
+        private int letterCycleMaximumGreenColorLevel = 255;
+        private int letterCycleMaximumBlueColorLevel = 255;
+        private int letterCycleMaximumColorLevel = 255;
+
+        /// <summary>
+        /// [LetterCycle] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool LetterCycleTrueColor
+        {
+            get
+            {
+                return letterCycleTrueColor;
+            }
+            set
+            {
+                letterCycleTrueColor = value;
+            }
+        }
+        /// <summary>
+        /// [LetterCycle] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int LetterCycleDelay
+        {
+            get
+            {
+                return letterCycleDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1000;
+                letterCycleDelay = value;
+            }
+        }
+        /// <summary>
+        /// [LetterCycle] The minimum red color level (true color)
+        /// </summary>
+        public int LetterCycleMinimumRedColorLevel
+        {
+            get
+            {
+                return letterCycleMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                letterCycleMinimumRedColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [LetterCycle] The minimum green color level (true color)
+        /// </summary>
+        public int LetterCycleMinimumGreenColorLevel
+        {
+            get
+            {
+                return letterCycleMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                letterCycleMinimumGreenColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [LetterCycle] The minimum blue color level (true color)
+        /// </summary>
+        public int LetterCycleMinimumBlueColorLevel
+        {
+            get
+            {
+                return letterCycleMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                letterCycleMinimumBlueColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [LetterCycle] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int LetterCycleMinimumColorLevel
+        {
+            get
+            {
+                return letterCycleMinimumColorLevel;
+            }
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value <= 0)
+                    value = 0;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                letterCycleMinimumColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [LetterCycle] The maximum red color level (true color)
+        /// </summary>
+        public int LetterCycleMaximumRedColorLevel
+        {
+            get
+            {
+                return letterCycleMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= letterCycleMinimumRedColorLevel)
+                    value = letterCycleMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                letterCycleMaximumRedColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [LetterCycle] The maximum green color level (true color)
+        /// </summary>
+        public int LetterCycleMaximumGreenColorLevel
+        {
+            get
+            {
+                return letterCycleMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= letterCycleMinimumGreenColorLevel)
+                    value = letterCycleMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                letterCycleMaximumGreenColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [LetterCycle] The maximum blue color level (true color)
+        /// </summary>
+        public int LetterCycleMaximumBlueColorLevel
+        {
+            get
+            {
+                return letterCycleMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= letterCycleMinimumBlueColorLevel)
+                    value = letterCycleMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                letterCycleMaximumBlueColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [LetterCycle] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int LetterCycleMaximumColorLevel
+        {
+            get
+            {
+                return letterCycleMaximumColorLevel;
+            }
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= letterCycleMinimumColorLevel)
+                    value = letterCycleMinimumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                letterCycleMaximumColorLevel = value;
+            }
+        }
+        #endregion
     }
 }
