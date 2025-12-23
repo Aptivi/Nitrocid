@@ -813,6 +813,32 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ])
                 ], new EncodeTextCommand()),
 
+            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP_DESC -> Returns IPv4 public address
+            new CommandInfo("extip", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC -> Quiet processing
+                        new SwitchInfo("quiet", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false,
+                        }),
+                    ], true)
+                ], new ExtIpCommand()),
+
+            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP6_DESC -> Returns IPv6 public address
+            new CommandInfo("extip6", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP6_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC -> Quiet processing
+                        new SwitchInfo("quiet", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false,
+                        }),
+                    ], true)
+                ], new ExtIp6Command()),
+
             new CommandInfo("fileinfo", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_FILEINFO_DESC",
                 [
                     new CommandArgumentInfo(
