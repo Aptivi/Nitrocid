@@ -93,7 +93,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 char StarSymbol = '*';
                 int StarX = Star.Item1;
                 int StarY = Star.Item2;
-                starsBuffer.Append(TextWriterWhereColor.RenderWhere(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White, ConsoleColors.Black));
+                starsBuffer.Append(TextWriterWhereColor.RenderWhereColor(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White));
             }
             if (ConsoleResizeHandler.WasResized(false))
             {
