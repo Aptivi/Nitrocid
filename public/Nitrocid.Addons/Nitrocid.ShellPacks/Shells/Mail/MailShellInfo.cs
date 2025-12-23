@@ -18,12 +18,13 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.ShellPacks.Shells.Mail.Presets;
 using Nitrocid.ShellPacks.Shells.Mail.Commands;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Shells;
-using Terminaux.Shell.Prompts;
+using Nitrocid.ShellPacks.Shells.Mail.Presets;
 using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.ShellPacks.Shells.Mail
 {
@@ -49,6 +50,23 @@ namespace Nitrocid.ShellPacks.Shells.Mail
                 ], new CdCommand()),
 
             new CommandInfo("detach", /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC", new DetachCommand()),
+
+            // TODO: NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC -> Gets ISP information
+            new CommandInfo("ispinfo", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "emailAddressOrHost", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC -> E-mail address or host name
+                            ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC"
+                        }),
+                    ],
+                    [
+                        // TODO: NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC -> Use host name instead of address
+                        new SwitchInfo("host", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC"),
+                    ])
+                ], new IspInfoCommand()),
 
             new CommandInfo("lsdirs", /* Localizable */ "NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC", new LsDirsCommand()),
 
