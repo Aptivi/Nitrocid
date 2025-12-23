@@ -108,6 +108,7 @@ namespace Nitrocid.ScreensaverPacks
             { "progresses", new ProgressesDisplay() },
             { "pulse", new PulseDisplay() },
             { "ramp", new RampDisplay() },
+            { "ripple", new RippleDisplay() },
             { "simplematrix", new SimpleMatrixDisplay() },
             { "siren", new SirenDisplay() },
             { "sirentheme", new SirenThemeDisplay() },
