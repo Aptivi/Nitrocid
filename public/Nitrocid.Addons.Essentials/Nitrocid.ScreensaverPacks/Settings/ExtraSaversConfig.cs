@@ -17900,5 +17900,195 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region ColorSpread
+        private bool colorSpreadTrueColor = true;
+        private int colorSpreadDelay = 20;
+        private int colorSpreadMinimumRedColorLevel = 0;
+        private int colorSpreadMinimumGreenColorLevel = 0;
+        private int colorSpreadMinimumBlueColorLevel = 0;
+        private int colorSpreadMinimumColorLevel = 0;
+        private int colorSpreadMaximumRedColorLevel = 255;
+        private int colorSpreadMaximumGreenColorLevel = 255;
+        private int colorSpreadMaximumBlueColorLevel = 255;
+        private int colorSpreadMaximumColorLevel = 255;
+
+        /// <summary>
+        /// [ColorSpread] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool ColorSpreadTrueColor
+        {
+            get
+            {
+                return colorSpreadTrueColor;
+            }
+            set
+            {
+                colorSpreadTrueColor = value;
+            }
+        }
+        /// <summary>
+        /// [ColorSpread] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int ColorSpreadDelay
+        {
+            get
+            {
+                return colorSpreadDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 20;
+                colorSpreadDelay = value;
+            }
+        }
+        /// <summary>
+        /// [ColorSpread] The minimum red color level (true color)
+        /// </summary>
+        public int ColorSpreadMinimumRedColorLevel
+        {
+            get
+            {
+                return colorSpreadMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                colorSpreadMinimumRedColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [ColorSpread] The minimum green color level (true color)
+        /// </summary>
+        public int ColorSpreadMinimumGreenColorLevel
+        {
+            get
+            {
+                return colorSpreadMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                colorSpreadMinimumGreenColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [ColorSpread] The minimum blue color level (true color)
+        /// </summary>
+        public int ColorSpreadMinimumBlueColorLevel
+        {
+            get
+            {
+                return colorSpreadMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                colorSpreadMinimumBlueColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [ColorSpread] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int ColorSpreadMinimumColorLevel
+        {
+            get
+            {
+                return colorSpreadMinimumColorLevel;
+            }
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value <= 0)
+                    value = 0;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                colorSpreadMinimumColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [ColorSpread] The maximum red color level (true color)
+        /// </summary>
+        public int ColorSpreadMaximumRedColorLevel
+        {
+            get
+            {
+                return colorSpreadMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= colorSpreadMinimumRedColorLevel)
+                    value = colorSpreadMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                colorSpreadMaximumRedColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [ColorSpread] The maximum green color level (true color)
+        /// </summary>
+        public int ColorSpreadMaximumGreenColorLevel
+        {
+            get
+            {
+                return colorSpreadMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= colorSpreadMinimumGreenColorLevel)
+                    value = colorSpreadMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                colorSpreadMaximumGreenColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [ColorSpread] The maximum blue color level (true color)
+        /// </summary>
+        public int ColorSpreadMaximumBlueColorLevel
+        {
+            get
+            {
+                return colorSpreadMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= colorSpreadMinimumBlueColorLevel)
+                    value = colorSpreadMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                colorSpreadMaximumBlueColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [ColorSpread] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int ColorSpreadMaximumColorLevel
+        {
+            get
+            {
+                return colorSpreadMaximumColorLevel;
+            }
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= colorSpreadMinimumColorLevel)
+                    value = colorSpreadMinimumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                colorSpreadMaximumColorLevel = value;
+            }
+        }
+        #endregion
     }
 }
