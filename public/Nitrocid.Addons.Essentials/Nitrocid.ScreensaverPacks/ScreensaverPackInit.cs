@@ -128,6 +128,7 @@ namespace Nitrocid.ScreensaverPacks
             { "starfield", new StarfieldDisplay() },
             { "starfieldwarp", new StarfieldWarpDisplay() },
             { "swivel", new SwivelDisplay() },
+            { "swivelreveal", new SwivelRevealDisplay() },
             { "text", new TextDisplay() },
             { "textbox", new TextBoxDisplay() },
             { "textwander", new TextWanderDisplay() },
