@@ -80,49 +80,9 @@
         "project": "Extras.Forecast"
     },
     {
-        "name": "ExtrasFtpShell",
-        "display": "NKS_KNOWNADDONS_EXTRAS_FTP",
-        "project": "Extras.FtpShell"
-    },
-    {
-        "name": "ExtrasGitShell",
-        "display": "NKS_KNOWNADDONS_EXTRAS_GIT",
-        "project": "Extras.GitShell"
-    },
-    {
-        "name": "ExtrasHttpShell",
-        "display": "NKS_KNOWNADDONS_EXTRAS_HTTP",
-        "project": "Extras.HttpShell"
-    },
-    {
-        "name": "ExtrasJsonShell",
-        "display": "NKS_KNOWNADDONS_EXTRAS_JSON",
-        "project": "Extras.JsonShell"
-    },
-    {
-        "name": "ExtrasMailShell",
-        "display": "NKS_KNOWNADDONS_EXTRAS_MAIL",
-        "project": "Extras.MailShell"
-    },
-    {
         "name": "ExtrasNotes",
         "display": "NKS_KNOWNADDONS_EXTRAS_NOTES",
         "project": "Extras.Notes"
-    },
-    {
-        "name": "ExtrasRssShell",
-        "display": "NKS_KNOWNADDONS_EXTRAS_RSS",
-        "project": "Extras.RssShell"
-    },
-    {
-        "name": "ExtrasSftpShell",
-        "display": "NKS_KNOWNADDONS_EXTRAS_SFTP",
-        "project": "Extras.SftpShell"
-    },
-    {
-        "name": "ExtrasSqlShell",
-        "display": "NKS_KNOWNADDONS_EXTRAS_SQL",
-        "project": "Extras.SqlShell"
     },
     {
         "name": "ExtrasThemeStudio",

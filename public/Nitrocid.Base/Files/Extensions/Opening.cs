@@ -51,8 +51,7 @@ namespace Nitrocid.Base.Files
 
 #if NKS_EXTENSIONS
             // Check the addons
-            bool hasJsonShell = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasJsonShell)) is not null;
-            bool hasSqlShell = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSqlShell)) is not null;
+            bool hasShells = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.AddonShellPacks)) is not null;
 #endif
 
             // Check to see if the file exists
@@ -92,12 +91,12 @@ namespace Nitrocid.Base.Files
                     break;
                 case OpeningMode.Json:
 #if NKS_EXTENSIONS
-                    if (hasJsonShell)
+                    if (hasShells)
                         ShellManager.StartShell("JsonShell", path);
                     else
                     {
-#endif
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_OPEN_NEEDSJSONSHELLADDON"), ThemeColorType.Warning);
+#endif
                         ShellManager.StartShell("TextShell", path);
 #if NKS_EXTENSIONS
                     }
@@ -105,12 +104,12 @@ namespace Nitrocid.Base.Files
                     break;
                 case OpeningMode.Sql:
 #if NKS_EXTENSIONS
-                    if (hasSqlShell)
+                    if (hasShells)
                         ShellManager.StartShell("SqlShell", path);
                     else
                     {
-#endif
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_OPEN_NEEDSSQLSHELLADDON"), ThemeColorType.Warning);
+#endif
                         ShellManager.StartShell("HexShell", path);
 #if NKS_EXTENSIONS
                     }
