@@ -62,6 +62,7 @@ namespace Nitrocid.ScreensaverPacks
             { "doorshift", new DoorShiftDisplay() },
             { "edgepulse", new EdgePulseDisplay() },
             { "equalizer", new EqualizerDisplay() },
+            { "evaporate", new EvaporateDisplay() },
             { "excalibeats", new ExcaliBeatsDisplay() },
             { "fader", new FaderDisplay() },
             { "faderback", new FaderBackDisplay() },

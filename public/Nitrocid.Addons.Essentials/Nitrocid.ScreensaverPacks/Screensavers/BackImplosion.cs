@@ -39,7 +39,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
         // TODO: NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC -> "Simulates the colored background fading out to black in circle starting from the middle"
         private static int currentOuterRadius = 0;
-        private static int currentInnerRadius = 0;
         private static Color colorStorage = Color.Empty;
 
         /// <inheritdoc/>
@@ -50,7 +49,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Reset values
-            currentOuterRadius = currentInnerRadius = 0;
+            currentOuterRadius = 0;
 
             // Select colors
             ResetColor();
