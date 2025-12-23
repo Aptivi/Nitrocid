@@ -1155,6 +1155,98 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ], true)
                 ], new MkFileCommand()),
 
+            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC -> Generates an XFree86 3.3.6 compatible modeline from display parameters for CRT monitors
+            new CommandInfo("modeline", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "horizontalPixels", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC -> How many pixels are there, horizontally (for example, 1280)?
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(true, "verticalPixels", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC -> How many pixels are there, vertically (for example, 960)?
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(true, "verticalFreq", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC -> Vertical refresh frequency in hertz (for example, 75 Hz)
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(false, "verticalSync", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC -> Vertical syncing in microseconds (for example, 0 microseconds)
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(false, "verticalBlanking", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC -> Vertical blanking in microseconds (for example, 500 microseconds)
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(false, "horizontalSync", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC -> Horizontal syncing in microseconds (for example, 1 microseconds)
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(false, "horizontalBlanking", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC -> Horizontal blanking in microseconds (for example, 3 microseconds)
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(false, "verticalRatioFrontPorch", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC -> Vertical front porch ratio (for example, 1)
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(false, "verticalRatioSync", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC -> Vertical sync ratio (for example, 1)
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(false, "verticalRatioBackPorch", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC -> Vertical back porch ratio (for example, 10)
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(false, "horizontalRatioFrontPorch", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC -> Horizontal front porch ratio (for example, 1)
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(false, "horizontalRatioSync", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC -> Horizontal sync ratio (for example, 4)
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC",
+                            IsNumeric = true,
+                        }),
+                        new CommandArgumentPart(false, "horizontalRatioBackPorch", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC -> Horizontal back porch ratio (for example, 7)
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC",
+                            IsNumeric = true,
+                        }),
+                    ],
+                    [
+                        new SwitchInfo("oneline", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false,
+                        })
+                    ])
+                ], new ModelineCommand()),
+
             new CommandInfo("move", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_MOVE_DESC",
                 [
                     new CommandArgumentInfo(
