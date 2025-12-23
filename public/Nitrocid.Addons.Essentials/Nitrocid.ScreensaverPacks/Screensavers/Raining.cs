@@ -93,7 +93,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 char dropletSymbol = '|';
                 int dropletX = droplet.Item1;
                 int dropletY = droplet.Item2;
-                dropletsBuffer.Append(TextWriterWhereColor.RenderWhere(Convert.ToString(dropletSymbol), dropletX, dropletY, false, ConsoleColors.Aqua, ConsoleColors.Black));
+                dropletsBuffer.Append(TextWriterWhereColor.RenderWhereColor(Convert.ToString(dropletSymbol), dropletX, dropletY, false, ConsoleColors.Aqua));
             }
             if (ConsoleResizeHandler.WasResized(false))
             {
