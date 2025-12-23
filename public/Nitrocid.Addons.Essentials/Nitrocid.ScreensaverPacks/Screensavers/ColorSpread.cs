@@ -29,27 +29,30 @@ using Terminaux.Base;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 using Terminaux.Colors.Transformation;
+using Terminaux.Base.Structures;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
     /// <summary>
-    /// Display code for Primus
+    /// Display code for ColorSpread
     /// </summary>
-    public class PrimusDisplay : BaseScreensaver, IScreensaver
+    public class ColorSpreadDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC -> "Shows a growing circle that fills the whole screen before another circle grows over it"
+        // TODO: NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC -> "Makes a spot somewhere in the screen and spreads it to the whole console (circle radius)"
         private static int currentOuterRadius = 0;
+        private static Coordinate coords = new();
         private static Color colorStorage = Color.Empty;
 
         /// <inheritdoc/>
         public override string ScreensaverName =>
-            "Primus";
+            "ColorSpread";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
             // Reset values
             currentOuterRadius = 0;
+            coords = new(RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth / 2), RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight / 2));
 
             // Select colors
             ResetColor();
@@ -60,10 +63,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            var primusBuffer = new StringBuilder();
+            var colorspreadBuffer = new StringBuilder();
             
             // Draw the arc based on start and end angles that were changed
-            var arc = new Arc(ConsoleWrapper.WindowHeight, 0, 0, shapeColor: colorStorage)
+            // TODO: Find a better way to move the "center" of the arc
+            var arc = new Arc(ConsoleWrapper.WindowHeight, coords.X, coords.Y, shapeColor: colorStorage)
             {
                 AngleStart = 0,
                 AngleEnd = 0,
@@ -73,8 +77,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             };
 
             // Render the arc
-            primusBuffer.Append(arc.Render());
-            TextWriterRaw.WriteRaw(primusBuffer.ToString());
+            colorspreadBuffer.Append(arc.Render());
+            TextWriterRaw.WriteRaw(colorspreadBuffer.ToString());
 
             // Change the radius
             currentOuterRadius++;
@@ -82,26 +86,27 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 currentOuterRadius = 0;
                 ResetColor();
+                coords = new(RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth / 2), RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight / 2));
             }
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.PrimusDelay);
+            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.ColorSpreadDelay);
         }
 
         private static void ResetColor()
         {
-            if (ScreensaverPackInit.SaversConfig.PrimusTrueColor)
+            if (ScreensaverPackInit.SaversConfig.ColorSpreadTrueColor)
             {
-                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.PrimusMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.PrimusMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.PrimusMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.PrimusMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.PrimusMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.PrimusMaximumBlueColorLevel);
+                int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorSpreadMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.ColorSpreadMaximumRedColorLevel);
+                int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorSpreadMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.ColorSpreadMaximumGreenColorLevel);
+                int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorSpreadMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.ColorSpreadMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 colorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
-                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.PrimusMinimumColorLevel, ScreensaverPackInit.SaversConfig.PrimusMaximumColorLevel);
+                int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ColorSpreadMinimumColorLevel, ScreensaverPackInit.SaversConfig.ColorSpreadMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                 colorStorage = new Color(ColorNum);
             }

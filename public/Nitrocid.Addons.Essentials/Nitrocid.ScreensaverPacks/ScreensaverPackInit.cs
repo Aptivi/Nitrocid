@@ -50,6 +50,7 @@ namespace Nitrocid.ScreensaverPacks
             { "clochromaanalog", new ClochromaAnalogDisplay() },
             { "colorbleed", new ColorBleedDisplay() },
             { "colormix", new ColorMixDisplay() },
+            { "colorspread", new ColorSpreadDisplay() },
             { "commitmilestone", new CommitMilestoneDisplay() },
             { "dancelines", new DanceLinesDisplay() },
             { "dancenumbers", new DanceNumbersDisplay() },
