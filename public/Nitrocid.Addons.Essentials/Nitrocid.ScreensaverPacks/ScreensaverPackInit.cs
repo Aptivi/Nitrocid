@@ -104,6 +104,7 @@ namespace Nitrocid.ScreensaverPacks
             { "particles", new ParticlesDisplay() },
             { "pi", new PiDisplay() },
             { "pointtrack", new PointTrackDisplay() },
+            { "primus", new PrimusDisplay() },
             { "progressclock", new ProgressClockDisplay() },
             { "progresses", new ProgressesDisplay() },
             { "pulse", new PulseDisplay() },
