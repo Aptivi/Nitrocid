@@ -107,6 +107,7 @@ namespace Nitrocid.ScreensaverPacks
             { "progressclock", new ProgressClockDisplay() },
             { "progresses", new ProgressesDisplay() },
             { "pulse", new PulseDisplay() },
+            { "raining", new RainingDisplay() },
             { "ramp", new RampDisplay() },
             { "ripple", new RippleDisplay() },
             { "simplematrix", new SimpleMatrixDisplay() },
