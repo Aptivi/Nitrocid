@@ -94,6 +94,7 @@ namespace Nitrocid.ScreensaverPacks
             { "lighter", new LighterDisplay() },
             { "lightning", new LightningDisplay() },
             { "lines", new LinesDisplay() },
+            { "lineup", new LineUpDisplay() },
             { "linotypo", new LinotypoDisplay() },
             { "marquee", new MarqueeDisplay() },
             { "matrix", new MatrixDisplay() },
