@@ -19444,5 +19444,199 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region BoxStitch
+        private int boxStitchDelay = 5000;
+        private int boxStitchLineDelay = 100;
+        private int boxStitchMinimumRedColorLevel = 0;
+        private int boxStitchMinimumGreenColorLevel = 0;
+        private int boxStitchMinimumBlueColorLevel = 0;
+        private int boxStitchMinimumColorLevel = 0;
+        private int boxStitchMaximumRedColorLevel = 255;
+        private int boxStitchMaximumGreenColorLevel = 255;
+        private int boxStitchMaximumBlueColorLevel = 255;
+        private int boxStitchMaximumColorLevel = 255;
+
+        /// <summary>
+        /// [BoxStitch] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int BoxStitchDelay
+        {
+            get
+            {
+                return boxStitchDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 5000;
+                boxStitchDelay = value;
+            }
+        }
+        /// <summary>
+        /// [BoxStitch] How many milliseconds to wait before adding a new line?
+        /// </summary>
+        // TODO: NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME -> Line delay
+        // TODO: NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC -> How many milliseconds to wait before adding a new line?
+        public int BoxStitchLineDelay
+        {
+            get
+            {
+                return boxStitchLineDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 100;
+                boxStitchLineDelay = value;
+            }
+        }
+        /// <summary>
+        /// [BoxStitch] The minimum red color level (true color)
+        /// </summary>
+        public int BoxStitchMinimumRedColorLevel
+        {
+            get
+            {
+                return boxStitchMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                boxStitchMinimumRedColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BoxStitch] The minimum green color level (true color)
+        /// </summary>
+        public int BoxStitchMinimumGreenColorLevel
+        {
+            get
+            {
+                return boxStitchMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                boxStitchMinimumGreenColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BoxStitch] The minimum blue color level (true color)
+        /// </summary>
+        public int BoxStitchMinimumBlueColorLevel
+        {
+            get
+            {
+                return boxStitchMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                boxStitchMinimumBlueColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BoxStitch] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int BoxStitchMinimumColorLevel
+        {
+            get
+            {
+                return boxStitchMinimumColorLevel;
+            }
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value <= 0)
+                    value = 0;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                boxStitchMinimumColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BoxStitch] The maximum red color level (true color)
+        /// </summary>
+        public int BoxStitchMaximumRedColorLevel
+        {
+            get
+            {
+                return boxStitchMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= boxStitchMinimumRedColorLevel)
+                    value = boxStitchMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                boxStitchMaximumRedColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BoxStitch] The maximum green color level (true color)
+        /// </summary>
+        public int BoxStitchMaximumGreenColorLevel
+        {
+            get
+            {
+                return boxStitchMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= boxStitchMinimumGreenColorLevel)
+                    value = boxStitchMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                boxStitchMaximumGreenColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BoxStitch] The maximum blue color level (true color)
+        /// </summary>
+        public int BoxStitchMaximumBlueColorLevel
+        {
+            get
+            {
+                return boxStitchMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= boxStitchMinimumBlueColorLevel)
+                    value = boxStitchMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                boxStitchMaximumBlueColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BoxStitch] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int BoxStitchMaximumColorLevel
+        {
+            get
+            {
+                return boxStitchMaximumColorLevel;
+            }
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= boxStitchMinimumColorLevel)
+                    value = boxStitchMinimumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                boxStitchMaximumColorLevel = value;
+            }
+        }
+        #endregion
     }
 }
