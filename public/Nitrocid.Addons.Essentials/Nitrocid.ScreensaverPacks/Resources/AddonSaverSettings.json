@@ -9198,10 +9198,10 @@
                 "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
             },
             {
-                "Name": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_LINECHAR_NAME",
+                "Name": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_NAME",
                 "Type": "SChar",
                 "Variable": "LineUpLineChar",
-                "Description": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_LINECHAR_DESC"
+                "Description": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_DESC"
             },
             {
                 "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
@@ -9279,6 +9279,136 @@
                         "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
                         "Type": "SIntSlider",
                         "Variable": "LineUpMaximumColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Name": "LineSaber",
+        "Desc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+                "Type": "SInt",
+                "Variable": "LineSaberDelay",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_NAME",
+                "Type": "SChar",
+                "Variable": "LineSaberLineChar",
+                "Description": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINECHAR_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+                "Type": "SChar",
+                "Variable": "LineSaberVerticalLineChar",
+                "Description": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+                "Type": "SIntSlider",
+                "Variable": "LineSaberLineDensity",
+                "Description": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+                "Type": "SIntSlider",
+                "Variable": "LineSaberVerticalLineDensity",
+                "Description": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+                "Type": "SIntSlider",
+                "Variable": "LineSaberReverseDensity",
+                "Description": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+                "Type": "SMultivar",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+                "Variables": [
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME",
+                        "Type": "SBoolean",
+                        "Variable": "LineSaberTrueColor",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC"
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_BGCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "LineSaberBackgroundColor"
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "LineSaberMinimumRedColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "LineSaberMinimumGreenColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "LineSaberMinimumBlueColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "LineSaberMinimumColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "LineSaberMaximumRedColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "LineSaberMaximumGreenColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "LineSaberMaximumBlueColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "LineSaberMaximumColorLevel",
                         "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
                         "MinimumValue": 0,
                         "MaximumValue": 255
