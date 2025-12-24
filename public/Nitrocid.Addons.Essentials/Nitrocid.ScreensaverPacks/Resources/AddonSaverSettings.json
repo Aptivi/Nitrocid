@@ -9097,5 +9097,94 @@
                 ]
             }
         ]
+    },
+    {
+        "Name": "WaveRun",
+        "Desc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+                "Type": "SInt",
+                "Variable": "WaveRunDelay",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_NAME",
+                "Type": "SDouble",
+                "Variable": "WaveRunFrequencyLevel",
+                "Description": "NKS_SCREENSAVERPACKS_BARWAVE_SETTINGS_FREQLEVEL_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+                "Type": "SMultivar",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+                "Variables": [
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "WaveRunMinimumRedColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "WaveRunMinimumGreenColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "WaveRunMinimumBlueColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "WaveRunMinimumColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "WaveRunMaximumRedColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "WaveRunMaximumGreenColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "WaveRunMaximumBlueColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "WaveRunMaximumColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    }
+                ]
+            }
+        ]
     }
 ]
