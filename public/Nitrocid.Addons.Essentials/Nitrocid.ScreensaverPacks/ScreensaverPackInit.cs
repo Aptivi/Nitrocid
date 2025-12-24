@@ -139,6 +139,7 @@ namespace Nitrocid.ScreensaverPacks
             { "typewriter", new TypewriterDisplay() },
             { "typo", new TypoDisplay() },
             { "wave", new WaveDisplay() },
+            { "waverun", new WaveRunDisplay() },
             { "windowslogo", new WindowsLogoDisplay() },
             { "wipe", new WipeDisplay() },
             { "wordhasher", new WordHasherDisplay() },
