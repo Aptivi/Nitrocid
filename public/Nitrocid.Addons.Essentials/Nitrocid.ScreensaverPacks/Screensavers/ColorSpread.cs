@@ -67,12 +67,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             
             // Draw the arc based on start and end angles that were changed
             // TODO: Find a better way to move the "center" of the arc
-            var arc = new Arc(ConsoleWrapper.WindowHeight, coords.X, coords.Y, shapeColor: colorStorage)
+            var arc = new Arc(ConsoleWrapper.WindowHeight, 0, 0, shapeColor: colorStorage)
             {
                 AngleStart = 0,
                 AngleEnd = 0,
                 OuterRadius = currentOuterRadius,
-                Width = ConsoleWrapper.WindowWidth / 2,
+                CenterPosX = coords.X,
+                CenterPosY = coords.Y,
+                Width = ConsoleWrapper.WindowWidth / 2 - 1,
                 Height = ConsoleWrapper.WindowHeight,
             };
 
