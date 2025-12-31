@@ -1,5 +1,5 @@
 //
-// Nitrocid KS  Copyright (C) 2018-2025  Aptivi
+// Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
 //
@@ -83,7 +83,7 @@ namespace Nitrocid.Base.Kernel.Starting
             $"""
             {LanguageTools.GetLocalized("NKS_KERNEL_STARTING_WELCOMEMESSAGE_LICENSE1")}
 
-                Nitrocid KS  Copyright (C) 2018-2025  Aptivi
+                Nitrocid KS  Copyright (C) 2018-2026  Aptivi
                 This program comes with ABSOLUTELY NO WARRANTY, not even
                 MERCHANTABILITY or FITNESS for particular purposes.
                 This is free software, and you are welcome to redistribute it
