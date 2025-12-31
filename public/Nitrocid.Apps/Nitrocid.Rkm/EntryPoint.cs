@@ -49,7 +49,7 @@ namespace Nitrocid.Rkm
             { "help", new("help", /* Localizable */ "NKS_RKM_ARGUMENTS_HELP_DESC",
                 [
                     new([
-                            new CommandArgumentPart(true, "argument", new()
+                            new CommandArgumentPart(false, "argument", new()
                             {
                                 ArgumentDescription = /* Localizable */ "NKS_RKM_ARGUMENTS_HELP_ARGUMENT_DESC"
                             })
