@@ -47,6 +47,7 @@ using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Power;
+using Terminaux.Base.Buffered;
 
 namespace Nitrocid.Base.Misc.Notifications
 {
@@ -93,167 +94,210 @@ namespace Nitrocid.Base.Misc.Notifications
                     if (dismissing)
                     {
                         dismissing = false;
-                        OldNotificationsList = new List<Notification>(NotifRecents);
+                        OldNotificationsList = [.. NotifRecents];
                         continue;
                     }
                     lock (NotifRecents)
                     {
                         NewNotificationsList = NotifRecents.Except(OldNotificationsList).ToList();
                     }
-                    if (NewNotificationsList.Count > 0 & !ScreensaverManager.InSaver)
+                    if (NewNotificationsList.Count > 0)
                     {
                         // Update the old notifications list
                         DebugWriter.WriteDebug(DebugLevel.W, "Notifications received! Recents count was {0}, Old count was {1}", vars: [NotifRecents.Count, OldNotificationsList.Count]);
-                        OldNotificationsList = new List<Notification>(NotifRecents);
+                        OldNotificationsList = [.. NotifRecents];
                         sent = false;
                         EventsManager.FireEvent(EventType.NotificationsReceived, NewNotificationsList);
 
                         // Iterate through new notifications. If we're on the booting stage, ensure that the notifications are only queued until the
-                        // kernel has finished booting and that the user is signed in.
-                        while (!SplashReport.KernelBooted || !Login.LoggedIn)
-                            SpinWait.SpinUntil(() => SplashReport.KernelBooted && Login.LoggedIn);
+                        // kernel has finished booting.
+                        while (!SplashReport.KernelBooted)
+                            SpinWait.SpinUntil(() => SplashReport.KernelBooted);
                         foreach (Notification NewNotification in NewNotificationsList)
                         {
                             EventsManager.FireEvent(EventType.NotificationReceived, NewNotification);
 
-                            // If do not disturb is enabled, don't show.
+                            // If do not disturb is enabled, don't show. However, fire event for other notifications
                             if (Config.MainConfig.DoNotDisturb)
-                                // However, fire event for other notifications
                                 continue;
 
-                            // Select how to display the notification
-                            bool useSimplified = Config.MainConfig.NotifyDisplayAsAsterisk && NewNotification.Type == NotificationType.Normal;
+                            // Make a dynamic global overlay and set it
+                            var notificationOverlay = new ScreenPart();
 
-                            // Populate title and description
-                            string Title, Desc;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Title: {0}", vars: [NewNotification.Title]);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Desc: {0}", vars: [NewNotification.Desc]);
-                            Title = useSimplified ? "*" : NewNotification.Title.Truncate(35);
-                            Desc = useSimplified ? "" : NewNotification.Desc.Truncate(35);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated title: {0}", vars: [Title]);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated desc: {0}", vars: [Desc]);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated title length: {0}", vars: [Title.Length]);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Truncated desc length: {0}", vars: [Desc.Length]);
-
-                            // Set the border color
-                            DebugWriter.WriteDebug(DebugLevel.I, "Priority: {0}", vars: [NewNotification.Priority]);
-                            var NotifyBorderColor = ThemeColorsTools.GetColor("LowPriorityBorderColor");
-                            var NotifyTitleColor = ThemeColorsTools.GetColor("NotificationTitleColor");
-                            var NotifyDescColor = ThemeColorsTools.GetColor("NotificationDescriptionColor");
-                            var NotifyProgressColor = ThemeColorsTools.GetColor("NotificationProgressColor");
-                            var NotifyProgressFailureColor = ThemeColorsTools.GetColor("NotificationFailureColor");
-                            var NotifyProgressSuccessColor = ThemeColorsTools.GetColor(ThemeColorType.Success);
-                            switch (NewNotification.Priority)
+                            // Only show the notification if we're on the GUI mode
+                            if (ScreenTools.IsOnScreen)
                             {
-                                case NotificationPriority.Medium:
-                                    NotifyBorderColor = ThemeColorsTools.GetColor("MediumPriorityBorderColor");
-                                    break;
-                                case NotificationPriority.High:
-                                    NotifyBorderColor = ThemeColorsTools.GetColor("HighPriorityBorderColor");
-                                    break;
-                                case NotificationPriority.Custom:
-                                    NotifyBorderColor = NewNotification.CustomColor;
-                                    NotifyTitleColor = NewNotification.CustomTitleColor;
-                                    NotifyDescColor = NewNotification.CustomDescriptionColor;
-                                    NotifyProgressColor = NewNotification.CustomProgressColor;
-                                    NotifyProgressFailureColor = NewNotification.CustomProgressFailureColor;
-                                    NotifyProgressSuccessColor = NewNotification.CustomProgressSuccessColor;
-                                    break;
-                            }
-
-                            // Use the custom border color if available
-                            if (NewNotification.NotificationBorderColor != Color.Empty)
-                                NotifyBorderColor = NewNotification.NotificationBorderColor;
-
-                            // Determine positions
-                            int notifLeftAgnostic = ConsoleWrapper.WindowWidth - 42;
-                            int notifTopAgnostic = 1;
-                            int notifLeft = useSimplified ? ConsoleWrapper.WindowWidth - 3 : notifLeftAgnostic;
-                            int notifTop = useSimplified ? 1 : notifTopAgnostic;
-                            int notifTitleTop = notifTopAgnostic + 1;
-                            int notifDescTop = notifTopAgnostic + 2;
-                            int notifTipTop = notifTopAgnostic + 3;
-                            int notifWipeTop = notifTopAgnostic + 4;
-                            int notifWidth = ConsoleWrapper.WindowWidth - 4 - notifLeftAgnostic;
-
-                            // Make a string builder for our buffer
-                            var printBuffer = new StringBuilder();
-                            var textColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
-                            var background = ThemeColorsTools.GetColor(ThemeColorType.Background);
-
-                            // Return to the original position
-                            (int x, int y) = (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
-
-                            // Optionally, draw a border
-                            if (Config.MainConfig.DrawBorderNotification && !useSimplified)
-                            {
-                                // Prepare the variables
-                                char CurrentNotifyUpperLeftCornerChar = Config.MainConfig.NotifyUpperLeftCornerChar;
-                                char CurrentNotifyUpperRightCornerChar = Config.MainConfig.NotifyUpperRightCornerChar;
-                                char CurrentNotifyLowerLeftCornerChar = Config.MainConfig.NotifyLowerLeftCornerChar;
-                                char CurrentNotifyLowerRightCornerChar = Config.MainConfig.NotifyLowerRightCornerChar;
-                                char CurrentNotifyUpperFrameChar = Config.MainConfig.NotifyUpperFrameChar;
-                                char CurrentNotifyLowerFrameChar = Config.MainConfig.NotifyLowerFrameChar;
-                                char CurrentNotifyLeftFrameChar = Config.MainConfig.NotifyLeftFrameChar;
-                                char CurrentNotifyRightFrameChar = Config.MainConfig.NotifyRightFrameChar;
-
-                                // Get custom corner characters
-                                if (NewNotification.Priority == NotificationPriority.Custom)
+                                notificationOverlay.AddDynamicText(() =>
                                 {
-                                    CurrentNotifyUpperLeftCornerChar = NewNotification.CustomUpperLeftCornerChar;
-                                    CurrentNotifyUpperRightCornerChar = NewNotification.CustomUpperRightCornerChar;
-                                    CurrentNotifyLowerLeftCornerChar = NewNotification.CustomLowerLeftCornerChar;
-                                    CurrentNotifyLowerRightCornerChar = NewNotification.CustomLowerRightCornerChar;
-                                    CurrentNotifyUpperFrameChar = NewNotification.CustomUpperFrameChar;
-                                    CurrentNotifyLowerFrameChar = NewNotification.CustomLowerFrameChar;
-                                    CurrentNotifyLeftFrameChar = NewNotification.CustomLeftFrameChar;
-                                    CurrentNotifyRightFrameChar = NewNotification.CustomRightFrameChar;
-                                }
+                                    // Select how to display the notification
+                                    bool useSimplified = Config.MainConfig.NotifyDisplayAsAsterisk && NewNotification.Type == NotificationType.Normal;
 
-                                // Just draw the border!
-                                var borderSettings = new BorderSettings()
-                                {
-                                    BorderUpperLeftCornerChar = CurrentNotifyUpperLeftCornerChar,
-                                    BorderLowerLeftCornerChar = CurrentNotifyLowerLeftCornerChar,
-                                    BorderUpperRightCornerChar = CurrentNotifyUpperRightCornerChar,
-                                    BorderLowerRightCornerChar = CurrentNotifyLowerRightCornerChar,
-                                    BorderUpperFrameChar = CurrentNotifyUpperFrameChar,
-                                    BorderLowerFrameChar = CurrentNotifyLowerFrameChar,
-                                    BorderLeftFrameChar = CurrentNotifyLeftFrameChar,
-                                    BorderRightFrameChar = CurrentNotifyRightFrameChar,
-                                };
-                                var border = new Border()
-                                {
-                                    Left = notifLeftAgnostic - 1,
-                                    Top = notifTopAgnostic,
-                                    Width = notifWidth,
-                                    Height = 3,
-                                    Color = NotifyBorderColor,
-                                    BackgroundColor = background,
-                                    Settings = borderSettings
-                                };
-                                printBuffer.Append(border.Render());
-                            }
+                                    // Populate title and description
+                                    string Title, Desc;
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Title: {0}", vars: [NewNotification.Title]);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Desc: {0}", vars: [NewNotification.Desc]);
+                                    Title = useSimplified ? "*" : NewNotification.Title.Truncate(38);
+                                    Desc = useSimplified ? "" : NewNotification.Desc.Truncate(38);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Truncated title: {0}", vars: [Title]);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Truncated desc: {0}", vars: [Desc]);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Truncated title length: {0}", vars: [Title.Length]);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Truncated desc length: {0}", vars: [Desc.Length]);
 
-                            // Write notification to console
-                            if (useSimplified)
-                            {
-                                // Simplified way
-                                DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1})", vars: [notifLeft, notifTop]);
-                                printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Title, notifLeft, notifTop, NotifyBorderColor, background));
-                            }
-                            else
-                            {
-                                // Normal way
-                                DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}, Wipe top: {4}, Tip top: {5}", vars: [notifLeft, notifTop, notifTitleTop, notifDescTop, notifWipeTop, notifTipTop]);
-                                printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Title + new string(' ', notifWidth - Title.Length), notifLeft, notifTitleTop, NotifyTitleColor, background));
-                                printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Desc + new string(' ', notifWidth - Desc.Length), notifLeft, notifDescTop, NotifyDescColor, background));
-                            }
+                                    // Set the border color
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Priority: {0}", vars: [NewNotification.Priority]);
+                                    var NotifyBorderColor = ThemeColorsTools.GetColor("LowPriorityBorderColor");
+                                    var NotifyTitleColor = ThemeColorsTools.GetColor("NotificationTitleColor");
+                                    var NotifyDescColor = ThemeColorsTools.GetColor("NotificationDescriptionColor");
+                                    var NotifyProgressColor = ThemeColorsTools.GetColor("NotificationProgressColor");
+                                    var NotifyProgressFailureColor = ThemeColorsTools.GetColor("NotificationFailureColor");
+                                    var NotifyProgressSuccessColor = ThemeColorsTools.GetColor(ThemeColorType.Success);
+                                    switch (NewNotification.Priority)
+                                    {
+                                        case NotificationPriority.Medium:
+                                            NotifyBorderColor = ThemeColorsTools.GetColor("MediumPriorityBorderColor");
+                                            break;
+                                        case NotificationPriority.High:
+                                            NotifyBorderColor = ThemeColorsTools.GetColor("HighPriorityBorderColor");
+                                            break;
+                                        case NotificationPriority.Custom:
+                                            NotifyBorderColor = NewNotification.CustomColor;
+                                            NotifyTitleColor = NewNotification.CustomTitleColor;
+                                            NotifyDescColor = NewNotification.CustomDescriptionColor;
+                                            NotifyProgressColor = NewNotification.CustomProgressColor;
+                                            NotifyProgressFailureColor = NewNotification.CustomProgressFailureColor;
+                                            NotifyProgressSuccessColor = NewNotification.CustomProgressSuccessColor;
+                                            break;
+                                    }
 
-                            // Go to the original position and print
-                            TextWriterRaw.WritePlain(printBuffer.ToString(), false);
-                            printBuffer.Clear();
-                            ConsoleWrapper.SetCursorPosition(x, y);
+                                    // Use the custom border color if available
+                                    if (NewNotification.NotificationBorderColor != Color.Empty)
+                                        NotifyBorderColor = NewNotification.NotificationBorderColor;
+
+                                    // Determine positions
+                                    int notifLeftAgnostic = ConsoleWrapper.WindowWidth - 42;
+                                    int notifTopAgnostic = 0;
+                                    int notifLeft = useSimplified ? ConsoleWrapper.WindowWidth - 1 : notifLeftAgnostic + 3;
+                                    int notifTop = useSimplified ? 0 : notifTopAgnostic;
+                                    int notifTitleTop = notifTopAgnostic + 1;
+                                    int notifDescTop = notifTopAgnostic + 2;
+                                    int notifTipTop = notifTopAgnostic + 3;
+                                    int notifWipeTop = notifTopAgnostic + 4;
+                                    int notifWidth = ConsoleWrapper.WindowWidth - 1 - notifLeft;
+
+                                    // Make a string builder for our buffer
+                                    var printBuffer = new StringBuilder();
+                                    var textColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
+                                    var background = ThemeColorsTools.GetColor(ThemeColorType.Background);
+
+                                    // Optionally, draw a border
+                                    if (Config.MainConfig.DrawBorderNotification && !useSimplified)
+                                    {
+                                        // Prepare the variables
+                                        char CurrentNotifyUpperLeftCornerChar = Config.MainConfig.NotifyUpperLeftCornerChar;
+                                        char CurrentNotifyUpperRightCornerChar = Config.MainConfig.NotifyUpperRightCornerChar;
+                                        char CurrentNotifyLowerLeftCornerChar = Config.MainConfig.NotifyLowerLeftCornerChar;
+                                        char CurrentNotifyLowerRightCornerChar = Config.MainConfig.NotifyLowerRightCornerChar;
+                                        char CurrentNotifyUpperFrameChar = Config.MainConfig.NotifyUpperFrameChar;
+                                        char CurrentNotifyLowerFrameChar = Config.MainConfig.NotifyLowerFrameChar;
+                                        char CurrentNotifyLeftFrameChar = Config.MainConfig.NotifyLeftFrameChar;
+                                        char CurrentNotifyRightFrameChar = Config.MainConfig.NotifyRightFrameChar;
+
+                                        // Get custom corner characters
+                                        if (NewNotification.Priority == NotificationPriority.Custom)
+                                        {
+                                            CurrentNotifyUpperLeftCornerChar = NewNotification.CustomUpperLeftCornerChar;
+                                            CurrentNotifyUpperRightCornerChar = NewNotification.CustomUpperRightCornerChar;
+                                            CurrentNotifyLowerLeftCornerChar = NewNotification.CustomLowerLeftCornerChar;
+                                            CurrentNotifyLowerRightCornerChar = NewNotification.CustomLowerRightCornerChar;
+                                            CurrentNotifyUpperFrameChar = NewNotification.CustomUpperFrameChar;
+                                            CurrentNotifyLowerFrameChar = NewNotification.CustomLowerFrameChar;
+                                            CurrentNotifyLeftFrameChar = NewNotification.CustomLeftFrameChar;
+                                            CurrentNotifyRightFrameChar = NewNotification.CustomRightFrameChar;
+                                        }
+
+                                        // Just draw the border!
+                                        var borderSettings = new BorderSettings()
+                                        {
+                                            BorderUpperLeftCornerChar = CurrentNotifyUpperLeftCornerChar,
+                                            BorderLowerLeftCornerChar = CurrentNotifyLowerLeftCornerChar,
+                                            BorderUpperRightCornerChar = CurrentNotifyUpperRightCornerChar,
+                                            BorderLowerRightCornerChar = CurrentNotifyLowerRightCornerChar,
+                                            BorderUpperFrameChar = CurrentNotifyUpperFrameChar,
+                                            BorderLowerFrameChar = CurrentNotifyLowerFrameChar,
+                                            BorderLeftFrameChar = CurrentNotifyLeftFrameChar,
+                                            BorderRightFrameChar = CurrentNotifyRightFrameChar,
+                                        };
+                                        var border = new Border()
+                                        {
+                                            Left = notifLeft - 1,
+                                            Top = notifTopAgnostic,
+                                            Width = notifWidth,
+                                            Height = 3,
+                                            Color = NotifyBorderColor,
+                                            BackgroundColor = background,
+                                            Settings = borderSettings
+                                        };
+                                        printBuffer.Append(border.Render());
+                                    }
+
+                                    // Write notification to console
+                                    if (useSimplified)
+                                    {
+                                        // Simplified way
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1})", vars: [notifLeft, notifTop]);
+                                        printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Title, notifLeft, notifTop, NotifyBorderColor, background));
+                                    }
+                                    else
+                                    {
+                                        // Normal way
+                                        DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}, Wipe top: {4}, Tip top: {5}", vars: [notifLeft, notifTop, notifTitleTop, notifDescTop, notifWipeTop, notifTipTop]);
+                                        printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Title + new string(' ', notifWidth - ConsoleChar.EstimateCellWidth(Title)), notifLeft, notifTitleTop, NotifyTitleColor, background));
+                                        printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Desc + new string(' ', notifWidth - ConsoleChar.EstimateCellWidth(Desc)), notifLeft, notifDescTop, NotifyDescColor, background));
+                                    }
+
+                                    // Show progress
+                                    if (NewNotification.Type == NotificationType.Progress)
+                                    {
+                                        // Some variables
+                                        bool indeterminate = NewNotification.ProgressIndeterminate;
+                                        string renderedProgressTitle = Title.Truncate(36);
+                                        string renderedProgressTitleSuccess = $"{Title} ({LanguageTools.GetLocalized("NKS_MISC_NOTIFICATIONS_PROGSUCCESS")})".Truncate(36);
+                                        string renderedProgressTitleFailure = $"{Title} ({LanguageTools.GetLocalized("NKS_MISC_NOTIFICATIONS_PROGFAILURE")})".Truncate(36);
+
+                                        // Loop until the progress is finished
+                                        var progress = new SimpleProgress(NewNotification.Progress, 100)
+                                        {
+                                            Indeterminate = indeterminate,
+                                            Width = 38,
+                                            ProgressActiveForegroundColor = NotifyProgressColor,
+                                            ProgressForegroundColor = TransformationTools.GetDarkBackground(NotifyProgressColor),
+                                        };
+
+                                        // Now, check to see if the progress failed or succeeded, or if still progressing
+                                        if (NewNotification.ProgressState == NotificationProgressState.Failure)
+                                            printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitleFailure, notifLeft, notifTitleTop, NotifyProgressFailureColor, background));
+                                        else if (NewNotification.ProgressState == NotificationProgressState.Success)
+                                            printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitleSuccess, notifLeft, notifTitleTop, NotifyProgressSuccessColor, background));
+                                        else
+                                        {
+                                            // Change the title according to the current progress percentage
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Where to store progress: {0},{1}", vars: [notifLeft, notifWipeTop]);
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Progress: {0}", vars: [NewNotification.Progress]);
+
+                                            // Write the title, the description, and the progress
+                                            printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Title + new string(' ', notifWidth - ConsoleChar.EstimateCellWidth(Title)), notifLeft, notifTitleTop, NotifyTitleColor, background));
+                                            printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Desc + new string(' ', notifWidth - ConsoleChar.EstimateCellWidth(Desc)), notifLeft, notifDescTop, NotifyDescColor, background));
+
+                                            // For indeterminate progresses, flash the box inside the progress bar
+                                            progress.Position = NewNotification.Progress;
+                                            printBuffer.Append(RendererTools.RenderRenderable(progress, new Coordinate(notifLeft, notifTipTop)));
+                                        }
+                                    }
+
+                                    // Return our buffer
+                                    return printBuffer.ToString();
+                                });
+                            }
 
                             // Beep according to priority
                             int BeepTimes = (int)NewNotification.Priority;
@@ -276,98 +320,36 @@ namespace Nitrocid.Base.Misc.Notifications
                                     break;
                             }
 
-                            // Show progress
-                            if (NewNotification.Type == NotificationType.Progress)
+                            // Render the screen, if it exists
+                            Screen.GlobalOverlayPart = notificationOverlay;
+                            if (ScreenTools.IsOnScreen && !ScreensaverManager.InSaver)
                             {
-                                // Some variables
-                                bool indeterminate = NewNotification.ProgressIndeterminate;
-                                string ProgressTitle = Title;
-                                string renderedProgressTitle = ProgressTitle.Truncate(36);
-                                string renderedProgressTitleSuccess = $"{ProgressTitle} ({LanguageTools.GetLocalized("NKS_MISC_NOTIFICATIONS_PROGSUCCESS")})".Truncate(36);
-                                string renderedProgressTitleFailure = $"{ProgressTitle} ({LanguageTools.GetLocalized("NKS_MISC_NOTIFICATIONS_PROGFAILURE")})".Truncate(36);
-
-                                // Loop until the progress is finished
-                                var progress = new SimpleProgress(NewNotification.Progress, 100)
+                                if (NewNotification.Type != NotificationType.Progress)
                                 {
-                                    Indeterminate = indeterminate,
-                                    Width = 42,
-                                    ProgressActiveForegroundColor = NotifyProgressColor,
-                                    ProgressForegroundColor = TransformationTools.GetDarkBackground(NotifyProgressColor),
-                                };
-                                while (NewNotification.ProgressState == NotificationProgressState.Progressing)
-                                {
-                                    // Change the title according to the current progress percentage
-                                    ProgressTitle =
-                                        !NewNotification.ProgressIndeterminate ?
-                                        Title + $" ({NewNotification.Progress}%) " :
-                                        Title + " (...%) ";
-                                    renderedProgressTitle = ProgressTitle.Truncate(36);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Where to store progress: {0},{1}", vars: [notifLeftAgnostic, notifWipeTop]);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Progress: {0}", vars: [NewNotification.Progress]);
-
-                                    // Write the title, the description, and the progress
-                                    printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitle, notifLeftAgnostic, notifTitleTop, NotifyTitleColor, background));
-                                    printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(Desc, notifLeftAgnostic, notifDescTop, NotifyDescColor, background));
-
-                                    // For indeterminate progresses, flash the box inside the progress bar
-                                    progress.Position = NewNotification.Progress;
-                                    TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(progress, new Coordinate(notifLeftAgnostic, notifTipTop)));
-                                    Thread.Sleep(indeterminate ? 250 : 1);
-
-                                    // Print the buffer
-                                    TextWriterRaw.WritePlain(printBuffer.ToString(), false);
-                                    printBuffer.Clear();
-                                    ConsoleWrapper.SetCursorPosition(x, y);
+                                    if (ScreenTools.IsOnScreen)
+                                        ScreenTools.Render();
                                 }
-
-                                // Now, check to see if the progress failed or succeeded
-                                if (NewNotification.ProgressState == NotificationProgressState.Failure)
-                                    printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitleFailure, notifLeftAgnostic, notifTitleTop, NotifyProgressFailureColor, background));
-                                else if (NewNotification.ProgressState == NotificationProgressState.Success)
-                                    printBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(renderedProgressTitleSuccess, notifLeftAgnostic, notifTitleTop, NotifyProgressSuccessColor, background));
-
-                                // Print the buffer
-                                TextWriterRaw.WritePlain(printBuffer.ToString(), false);
-                                printBuffer.Clear();
-                                ConsoleWrapper.SetCursorPosition(x, y);
+                                else
+                                {
+                                    while (NewNotification.ProgressState == NotificationProgressState.Progressing)
+                                    {
+                                        if (ScreenTools.IsOnScreen)
+                                            ScreenTools.Render();
+                                        Thread.Sleep(NewNotification.ProgressIndeterminate ? 250 : 1);
+                                    }
+                                }
                             }
-
-                            // Clear the area
-                            SpinWait.SpinUntil(() => sent, 5000);
-                            int left = ConsoleWrapper.WindowWidth - (Config.MainConfig.DrawBorderNotification ? 43 : 42);
-                            int width = Config.MainConfig.DrawBorderNotification ? 43 : 42;
-                            if (useSimplified)
-                                TextWriterWhereColor.WriteWhere(" ", notifLeft, notifTop, true);
                             else
                             {
-                                // Clear the area
-                                string spaces = new(' ', width);
-                                printBuffer.Append(
-                                    TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifTitleTop, textColor, background) +
-                                    TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifDescTop, textColor, background) +
-                                    TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifTipTop, textColor, background)
-                                );
-
-                                // Also, clear the border area
-                                if (Config.MainConfig.DrawBorderNotification)
-                                {
-                                    printBuffer.Append(
-                                        TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifTopAgnostic, textColor, background) +
-                                        TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifWipeTop, textColor, background)
-                                    );
-                                }
-
-                                // Also, clear the progress area
-                                if (NewNotification.Type == NotificationType.Progress)
-                                    printBuffer.Append(
-                                        TextWriterWhereColor.RenderWhereColorBack(spaces, left, notifWipeTop + 1, textColor, background)
-                                    );
-
-                                // Render it
-                                TextWriterRaw.WritePlain(printBuffer.ToString(), false);
-                                printBuffer.Clear();
-                                ConsoleWrapper.SetCursorPosition(x, y);
+                                // Provide visual feedback
+                                ConsoleMisc.Flash();
                             }
+
+                            // Wait 5 seconds and reset overlay
+                            SpinWait.SpinUntil(() => sent, 5000);
+                            Screen.GlobalOverlayPart = null;
+                            if (ScreenTools.IsOnScreen && !ScreensaverManager.InSaver)
+                                ScreenTools.Render();
                         }
                     }
                 }

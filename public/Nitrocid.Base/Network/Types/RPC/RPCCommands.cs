@@ -298,9 +298,17 @@ namespace Nitrocid.Base.Network.Types.RPC
 
         private static void HandlePing(string value)
         {
-            string IPAddr = value.Replace("PingConfirm, ", "").Replace(CharManager.NewLine, "");
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", vars: [IPAddr]);
-            NotificationManager.NotifySend(new Notification(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_PINGACK_TITLE"), TextTools.FormatString(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_PINGACK_DESC"), IPAddr), NotificationPriority.Low, NotificationType.Normal));
+            string ipAddr = value.Replace("PingConfirm, ", "").Replace(CharManager.NewLine, "");
+            var testNotification = new Notification(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_PINGACK_TITLE"), TextTools.FormatString(LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RPC_PINGACK_DESC"), ipAddr), NotificationPriority.Low, NotificationType.Normal);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", vars: [ipAddr]);
+            testNotification.Type = NotificationType.Progress;
+            NotificationManager.NotifySend(testNotification);
+            for (int i = 0; i <= 100; i++)
+            {
+                testNotification.Progress++;
+                Thread.Sleep(100);
+            }
+            testNotification.ProgressState = NotificationProgressState.Success;
         }
 
         private static void HandleVersion(IPEndPoint endpoint)
