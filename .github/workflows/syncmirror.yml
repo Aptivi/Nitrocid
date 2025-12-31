@@ -17,8 +17,6 @@ jobs:
           submodules: 'true'
           fetch-depth: 0
       - name: Add mirror auth info
-        run: |
-          echo REPO_NAME=$(echo "${{ github.repository }}" | cut -d "/" -f 2) >> $GITHUB_ENV
-          git remote add alternate https://AptiviCEO:${{ secrets.GL_APIKEY }}@gitlab.com/aptivi/main/${{ env.REPO_NAME }}.git
+        run: git remote add alternate https://AptiviCEO:${{ secrets.GL_APIKEY }}@gitlab.com/aptivi/main/$(echo "${{ github.repository }}" | cut -d "/" -f 2).git
       - name: Push to mirror
         run: git push alternate
