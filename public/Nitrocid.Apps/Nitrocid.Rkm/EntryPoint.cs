@@ -79,7 +79,8 @@ namespace Nitrocid.Rkm
                     new([
                             new CommandArgumentPart(true, "command", new()
                             {
-                                ArgumentDescription = /* Localizable */ "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC"
+                                ArgumentDescription = /* Localizable */ "NKS_RKM_ARGUMENTS_COMMAND_COMMAND_DESC",
+                                ExactWording = ["shutdown", "reboot", "rebootsafe", "rebootmaintenance", "rebootdebug", "savescr", "exec", "test", "ping", "version", "versioncode", "apiversion", "apiversioncode"]
                             }),
                             new CommandArgumentPart(false, "arguments", new()
                             {
@@ -176,6 +177,7 @@ namespace Nitrocid.Rkm
                         processReply = true;
                         break;
                     default:
+                        // We should not be there!
                         if (abstractLogger is not null)
                             LogTools.Debug(abstractLogger, "Unknown or unsupported command: {0}", command);
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_RKM_UNKNOWN_COMMAND") + $": {command}", ThemeColorType.Error);
