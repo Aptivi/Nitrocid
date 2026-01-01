@@ -19,13 +19,15 @@
 
 using System;
 using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Textify.General;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Files;
+using Textify.General.Structures;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -34,6 +36,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class TypewriterDisplay : BaseScreensaver, IScreensaver
     {
+        private int linesWritten = 0;
 
         /// <inheritdoc/>
         public override string ScreensaverName =>
@@ -43,6 +46,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
+            linesWritten = 0;
             ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.TypewriterTextColor));
             ConsoleWrapper.Clear();
         }
@@ -77,20 +81,23 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var IncompleteSentences = TextTools.GetWrappedSentences(Paragraph, ConsoleWrapper.WindowWidth - 2, 4);
 
                 // Prepare display (make a paragraph indentation)
-                if (ConsoleWrapper.CursorTop != ConsoleWrapper.WindowHeight - 2)
+                if (linesWritten != ConsoleWrapper.WindowHeight - 2)
                 {
+                    linesWritten++;
                     ConsoleWrapper.WriteLine();
                     ConsoleWrapper.Write("    ");
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in 4, {0}", vars: [linesWritten]);
                 }
 
                 // Get struck character and write it
                 for (int SentenceIndex = 0; SentenceIndex <= IncompleteSentences.Length - 1; SentenceIndex++)
                 {
                     string Sentence = IncompleteSentences[SentenceIndex];
+                    var wideChars = ConsoleChar.GetWideChars(Sentence);
+                    int processedWidth = 0;
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
-                    foreach (char StruckChar in Sentence)
+                    foreach (WideChar StruckChar in wideChars)
                     {
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
@@ -101,42 +108,36 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Delay for {0} CPM: {1} ms", vars: [SelectedCpm, WriteMs]);
 
                         // If we're at the end of the page, clear the screen
-                        if (ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 2)
+                        int indentTimes = SentenceIndex == 0 ? 4 : 1;
+                        if (linesWritten == ConsoleWrapper.WindowHeight - 2)
                         {
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", vars: [ConsoleWrapper.CursorTop, ConsoleWrapper.WindowHeight - 2]);
-                            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.TypewriterNewScreenDelay);
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", vars: [linesWritten, ConsoleWrapper.WindowHeight - 2]);
+                            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MirrorWriteNewScreenDelay);
                             ConsoleWrapper.Clear();
+                            linesWritten = 1;
                             ConsoleWrapper.WriteLine();
-                            if (SentenceIndex == 0)
-                            {
-                                ConsoleWrapper.Write("    ");
-                            }
-                            else
-                            {
-                                ConsoleWrapper.Write(" ");
-                            }
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
+                            ConsoleWrapper.Write(new string(' ', indentTimes));
+                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", vars: [SentenceIndex == 0 ? 4 : 1, linesWritten]);
                         }
+
+                        // Write the final character to the console and wait
+                        int charWidth = ConsoleChar.EstimateCellWidth(StruckChar);
+                        processedWidth += charWidth;
+                        ConsoleWrapper.Write(StruckChar);
 
                         // If we need to show the arrow indicator, update its position
                         if (ScreensaverPackInit.SaversConfig.TypewriterShowArrowPos)
                         {
-                            int OldTop = ConsoleWrapper.CursorTop;
-                            int OldLeft = ConsoleWrapper.CursorLeft;
-                            ConsoleWrapper.SetCursorPosition(OldLeft, ConsoleWrapper.WindowHeight - 1);
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Arrow drawn in {0}, {1}", vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
-                            ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K^" + Convert.ToString(CharManager.GetEsc()) + "[K");
-                            ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
-                            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Returned to {0}, {1}", vars: [OldLeft, OldTop]);
+                            ConsoleWrapper.Write(ConsolePositioning.RenderChangePosition(indentTimes + processedWidth - charWidth, ConsoleWrapper.WindowHeight - 1));
+                            ConsoleWrapper.Write("\x1b[1K" + "^" + "\x1b[K");
+                            ConsoleWrapper.Write(ConsolePositioning.RenderChangePosition(indentTimes + processedWidth, linesWritten));
                         }
-
-                        // Write the final character to the console and wait
-                        ConsoleWrapper.Write(StruckChar);
                         ScreensaverManager.Delay(WriteMs);
                     }
+                    linesWritten++;
                     ConsoleWrapper.WriteLine();
                     ConsoleWrapper.Write(" ");
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in 1, {0}", vars: [linesWritten]);
                 }
             }
 
