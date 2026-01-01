@@ -19638,5 +19638,109 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region MirrorWrite
+        private int mirrorWriteDelay = 50;
+        private int mirrorWriteNewScreenDelay = 3000;
+        private string mirrorWriteWrite = "Nitrocid KS";
+        private int mirrorWriteWritingSpeedMin = 50;
+        private int mirrorWriteWritingSpeedMax = 80;
+        private string mirrorWriteTextColor = new Color(ConsoleColors.White).PlainSequence;
+
+        /// <summary>
+        /// [MirrorWrite] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int MirrorWriteDelay
+        {
+            get
+            {
+                return mirrorWriteDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 50;
+                mirrorWriteDelay = value;
+            }
+        }
+        /// <summary>
+        /// [MirrorWrite] How many milliseconds to wait before writing the text in the new screen again?
+        /// </summary>
+        public int MirrorWriteNewScreenDelay
+        {
+            get
+            {
+                return mirrorWriteNewScreenDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 3000;
+                mirrorWriteNewScreenDelay = value;
+            }
+        }
+        /// <summary>
+        /// [MirrorWrite] Text for MirrorWrite. Longer is better.
+        /// </summary>
+        public string MirrorWriteWrite
+        {
+            get
+            {
+                return mirrorWriteWrite;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    value = "Nitrocid KS";
+                mirrorWriteWrite = value;
+            }
+        }
+        /// <summary>
+        /// [MirrorWrite] Minimum writing speed in WPM
+        /// </summary>
+        public int MirrorWriteWritingSpeedMin
+        {
+            get
+            {
+                return mirrorWriteWritingSpeedMin;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 50;
+                mirrorWriteWritingSpeedMin = value;
+            }
+        }
+        /// <summary>
+        /// [MirrorWrite] Maximum writing speed in WPM
+        /// </summary>
+        public int MirrorWriteWritingSpeedMax
+        {
+            get
+            {
+                return mirrorWriteWritingSpeedMax;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 80;
+                mirrorWriteWritingSpeedMax = value;
+            }
+        }
+        /// <summary>
+        /// [MirrorWrite] Text color
+        /// </summary>
+        public string MirrorWriteTextColor
+        {
+            get
+            {
+                return mirrorWriteTextColor;
+            }
+            set
+            {
+                mirrorWriteTextColor = new Color(value).PlainSequence;
+            }
+        }
+        #endregion
     }
 }

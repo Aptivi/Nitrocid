@@ -103,6 +103,7 @@ namespace Nitrocid.ScreensaverPacks
             { "mazer", new MazerDisplay() },
             { "memdump", new MemdumpDisplay() },
             { "mesmerize", new MesmerizeDisplay() },
+            { "mirrorwrite", new MirrorWriteDisplay() },
             { "multilines", new MultiLinesDisplay() },
             { "neons", new NeonsDisplay() },
             { "newyear", new NewYearDisplay() },
