@@ -70,11 +70,10 @@ namespace Nitrocid.Base.Kernel
         ;
 
         // Release support window info
-        internal readonly static DateTime supportWindow = new(2025, 11, 27);
+        internal readonly static DateTime supportWindow = new(2036, 2, 12);
         internal readonly static bool supportWindowPrimed =
 #if SPECIFIERREL
-            // This needs to stay false for now until we announce the next mod API version that 0.2.0 uses.
-            false;
+            true;
 #else
             false;
 #endif
