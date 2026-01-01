@@ -30,11 +30,11 @@ down.
 This release fixes the following CVEs found in the ImageMagick library that
 Terminaux.Images uses:
 
-  - CVE-2025-53015
-  - CVE-2025-55004
-  - CVE-2025-55154
-  - CVE-2025-55298
-  - CVE-2025-57803
+  - CVE-2026-53015
+  - CVE-2026-55004
+  - CVE-2026-55154
+  - CVE-2026-55298
+  - CVE-2026-57803
 
 0.1.2.8 - Service Pack 1 (April 24th, 2025)
 ===========================================

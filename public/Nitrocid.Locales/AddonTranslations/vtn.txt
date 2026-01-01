@@ -3547,7 +3547,7 @@ Thêm vào
 Miễn nhiệm
 Bỏ qua tất cả
 Giết
-Bản quyền (C) 2018-2025 Aptivi - Bảo lưu mọi quyền
+Bản quyền (C) 2018-2026 Aptivi - Bảo lưu mọi quyền
 Không thể lấy thông tin đối số cho lệnh hoặc đối số
 Các tham số của luồng không được chỉ định.
 Không thể lấy tham số luồng để thực thi quy trình.

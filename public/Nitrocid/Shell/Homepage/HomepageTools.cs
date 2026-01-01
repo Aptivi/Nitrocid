@@ -1,5 +1,5 @@
 ﻿//
-// Nitrocid KS  Copyright (C) 2018-2025  Aptivi
+// Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
 //
@@ -706,7 +706,7 @@ namespace Nitrocid.Shell.Homepage
                 Translate.DoTranslation("Nitrocid KS simulates our future kernel, the Nitrocid Kernel.") + "\n\n" +
                 Translate.DoTranslation("Version") + $": {KernelMain.VersionFullStr}" + "\n" +
                 Translate.DoTranslation("Mod API") + $": {KernelMain.ApiVersion}" + "\n\n" +
-                Translate.DoTranslation("Copyright (C) 2018-2025 Aptivi - All rights reserved") + " - https://aptivi.github.io", new InfoBoxSettings()
+                Translate.DoTranslation("Copyright (C) 2018-2026 Aptivi - All rights reserved") + " - https://aptivi.github.io", new InfoBoxSettings()
                 {
                     Title = Translate.DoTranslation("About Nitrocid"),
                 }

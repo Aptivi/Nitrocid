@@ -3547,7 +3547,7 @@ Tambah
 Tolak
 Tolak Semua
 Bunuh
-Hak Cipta (C) 2018-2025 Aptivi - Hak cipta terpelihara
+Hak Cipta (C) 2018-2026 Aptivi - Hak cipta terpelihara
 Tidak boleh mendapatkan maklumat hujah untuk arahan atau hujah
 Parameter benang tidak dinyatakan.
 Tidak boleh mendapatkan parameter benang untuk pelaksanaan proses.

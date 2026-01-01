@@ -3547,7 +3547,7 @@ Eklemek
 Azletmek
 Tümünü Reddet
 Öldürmek
-Telif Hakkı (C) 2018-2025 Aptivi - Tüm hakları saklıdır
+Telif Hakkı (C) 2018-2026 Aptivi - Tüm hakları saklıdır
 Komut veya argüman için argüman bilgisi alınamıyor
 İş parçacığı parametreleri belirtilmemiş.
 İşlem yürütme için iş parçacığı parametreleri alınamıyor.

@@ -3547,7 +3547,7 @@ Ajouter
 Rejeter
 Tout rejeter
 Tuer
-Copyright (C) 2018-2025 Aptivi - Tous droits réservés
+Copyright (C) 2018-2026 Aptivi - Tous droits réservés
 Impossible d'obtenir des informations sur l'argument pour la commande ou l'argument
 Les paramètres de thread ne sont pas spécifiés.
 Impossible d'obtenir les paramètres de thread pour l'exécution du processus.

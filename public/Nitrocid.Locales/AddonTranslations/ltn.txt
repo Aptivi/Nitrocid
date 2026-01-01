@@ -3547,7 +3547,7 @@ Add
 Dimitte
 Dimitte All
 Occidere
-Copyright (C) 2018-2025 Aptivi - All rights reserved
+Copyright (C) 2018-2026 Aptivi - All rights reserved
 Non potest argumentum info ad imperium vel argumentum
 Post parametri non specificatae sunt.
 Filum parametri ad processum executionis non potest.
