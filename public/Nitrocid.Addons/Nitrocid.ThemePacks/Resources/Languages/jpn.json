@@ -321,6 +321,10 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
       "text": "ニトロシドKSロゴの色（2022-2024年）"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVIOLD",
+      "text": "以前のブランドカラー"
     }
   ]
 }

@@ -324,6 +324,10 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
       "text": "Nitrocid KS 標誌的顏色（2022-2024）"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVIOLD",
+      "text": "早期品牌顏色"
     }
   ]
 }
