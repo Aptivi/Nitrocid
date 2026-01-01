@@ -49,7 +49,7 @@
 
   <ItemGroup>
     <PackageReference Include="Shouldly" Version="4.3.0" />
-    <PackageReference Include="Terminaux" Version="8.1.0-20251231162531" />
+    <PackageReference Include="Terminaux" Version="8.1.0-20260101140904" />
   </ItemGroup>
 
   <ItemGroup>
