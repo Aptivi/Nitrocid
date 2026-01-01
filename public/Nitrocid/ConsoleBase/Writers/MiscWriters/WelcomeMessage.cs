@@ -1,5 +1,5 @@
 ﻿//
-// Nitrocid KS  Copyright (C) 2018-2025  Aptivi
+// Nitrocid KS  Copyright (C) 2018-2026  Aptivi
 //
 // This file is part of Nitrocid KS
 //
@@ -106,7 +106,7 @@ namespace Nitrocid.ConsoleBase.Writers.MiscWriters
             $"""
             {Translate.DoTranslation("This program is licensed under GNU General Public License 3.0 or later.")}
 
-                Nitrocid KS  Copyright (C) 2018-2025  Aptivi
+                Nitrocid KS  Copyright (C) 2018-2026  Aptivi
                 This program comes with ABSOLUTELY NO WARRANTY, not even
                 MERCHANTABILITY or FITNESS for particular purposes.
                 This is free software, and you are welcome to redistribute it

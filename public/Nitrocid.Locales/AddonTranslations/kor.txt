@@ -3540,7 +3540,7 @@ chuga
 haeje
 modu haeje
 jonglyo
-jeojaggwon (C) 2018-2025 Aptivi - modeun gwonli boyu
+jeojaggwon (C) 2018-2026 Aptivi - modeun gwonli boyu
 myeonglyeong-eo ttoneun insue daehan insu jeongboleul gajyeool su eobs-seubnida.
 seuledeu maegaebyeonsuga jijeongdoeji anh-assseubnida.
 peuloseseu silhaeng-e daehan seuledeu maegaebyeonsuleul gajyeool su eobs-seubnida.

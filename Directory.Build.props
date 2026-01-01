@@ -3,7 +3,7 @@
     <PropertyGroup>
         <!-- Versioning and some info to be installed to all the Nitrocid projects, including the addons -->
         <Version>0.1.0.66</Version>
-        <Copyright>Copyright (c) Aptivi 2018-2025</Copyright>
+        <Copyright>Copyright (c) Aptivi 2018-2026</Copyright>
         <Company>Aptivi</Company>
         <Product>Nitrocid</Product>
         <LangVersion>latest</LangVersion>

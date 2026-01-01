@@ -5,7 +5,7 @@ end_of_line = crlf
 insert_final_newline = true
 indent_style = space
 indent_size = 4
-file_header_template = \nNitrocid KS  Copyright (C) 2018-2025  Aptivi\n\nThis file is part of Nitrocid KS\n\nNitrocid KS is free software: you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nNitrocid KS is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY, without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see <https://www.gnu.org/licenses/>.\n
+file_header_template = \nNitrocid KS  Copyright (C) 2018-2026  Aptivi\n\nThis file is part of Nitrocid KS\n\nNitrocid KS is free software: you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nNitrocid KS is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY, without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see <https://www.gnu.org/licenses/>.\n
 
 # IDE0060: Remove unused parameter
 dotnet_diagnostic.IDE0060.severity = warning
