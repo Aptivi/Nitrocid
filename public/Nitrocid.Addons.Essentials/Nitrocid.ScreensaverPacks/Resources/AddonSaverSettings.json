@@ -9505,5 +9505,54 @@
                 ]
             }
         ]
+    },
+    {
+        "Name": "MirrorWrite",
+        "Desc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+                "Type": "SInt",
+                "Variable": "MirrorWriteDelay",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_NAME",
+                "Type": "SInt",
+                "Variable": "MirrorWriteNewScreenDelay",
+                "Description": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_NEWSCREENDELAY_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_NAME",
+                "Type": "SString",
+                "Variable": "MirrorWriteWrite",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG",
+                "Tip": "This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME",
+                "Type": "SInt",
+                "Variable": "MirrorWriteWritingSpeedMin",
+                "Description": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MAXSPEED_NAME",
+                "Type": "SInt",
+                "Variable": "MirrorWriteWritingSpeedMax",
+                "Description": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MAXSPEED_NAME"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+                "Type": "SMultivar",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+                "Variables": [
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_TEXTCOLOR_NAME",
+                        "Type": "SColor",
+                        "Variable": "MirrorWriteTextColor"
+                    }
+                ]
+            }
+        ]
     }
 ]
