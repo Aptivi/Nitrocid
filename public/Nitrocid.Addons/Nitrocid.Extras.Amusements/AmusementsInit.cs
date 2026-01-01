@@ -42,6 +42,9 @@ namespace Nitrocid.Extras.Amusements
         [
             new CommandInfo("backrace", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_BACKRACE_DESC", new BackRaceCommand()),
 
+            // TODO: NKS_AMUSEMENTS_COMMAND_CLICKER_DESC -> "Press a number from the nine boxes to get coins, with all boxes locked and with auto increment"
+            new CommandInfo("clicker", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC", new ClickerCommand()),
+
             new CommandInfo("hangman", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_HANGMAN_DESC",
                 [
                     new CommandArgumentInfo([
@@ -68,6 +71,9 @@ namespace Nitrocid.Extras.Amusements
                     ])
                 ], new HangmanCommand()),
 
+            // TODO: NKS_AMUSEMENTS_COMMAND_INVADERS_DESC -> "Simulates the original Space Invaders game"
+            new CommandInfo("invaders", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_INVADERS_DESC", new InvadersCommand()),
+
             new CommandInfo("meteor", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_METEOR_DESC", new MeteorCommand()),
 
             new CommandInfo("meteordodge", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_METERORDODGE_DESC", new MeteorDodgeCommand()),
@@ -78,7 +84,29 @@ namespace Nitrocid.Extras.Amusements
 
             new CommandInfo("roulette", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_ROULETTE_DESC", new RouletteCommand()),
 
+            // TODO: NKS_AMUSEMENTS_COMMAND_SCORESIM_DESC -> "Simulates the scoreboard for sports games"
+            new CommandInfo("scoresim", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_DESC",
+                [
+                    new CommandArgumentInfo([
+                        // TODO: NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC -> "Simulates the soccer scoreboard"
+                        new SwitchInfo("soccer", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["basketball"],
+                            AcceptsValues = false
+                        }),
+                        // TODO: NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC -> "Simulates the basketball scoreboard"
+                        new SwitchInfo("basketball", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC", new SwitchOptions()
+                        {
+                            ConflictsWith = ["soccer"],
+                            AcceptsValues = false
+                        }),
+                    ])
+                ], new ScoreSimCommand()),
+
             new CommandInfo("shipduet", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SHIPDUET_DESC", new ShipDuetCommand()),
+
+            // TODO: NKS_AMUSEMENTS_COMMAND_SIMON_DESC -> "Simon Says game (Simon says Red, Green, Yellow, and Blue)"
+            new CommandInfo("simon", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SIMON_DESC", new SimonCommand()),
 
             new CommandInfo("snaker", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SNAKER_DESC", new SnakerCommand()),
 
@@ -114,6 +142,12 @@ namespace Nitrocid.Extras.Amusements
                         })
                     ])
                 ], new SpeedPressCommand()),
+
+            // TODO: NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC -> "A car that goes fast in a highway while dodging slow cars"
+            new CommandInfo("streetrun", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC", new StreetRunCommand()),
+
+            // TODO: NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC -> "Tic Tac Toe game (X for Player 1, and O for Player 2)"
+            new CommandInfo("tictactoe", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC", new TicTacToeCommand()),
 
             new CommandInfo("wordle", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_WORDLE_DESC",
                 [
