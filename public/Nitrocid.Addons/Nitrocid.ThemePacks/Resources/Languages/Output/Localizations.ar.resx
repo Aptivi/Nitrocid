@@ -354,5 +354,8 @@
   <data name="NKS_THEMEPACKS_THEME_DESC_LEGACY2022" xml:space="preserve">
     <value>ألوان شعار نيتروسيد كي إس (٢٠٢٢-٢٠٢٤)</value>
   </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_APTIVIOLD" xml:space="preserve">
+    <value>ألوان العلامة التجارية السابقة</value>
+  </data>
 
 </root>

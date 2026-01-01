@@ -325,6 +325,10 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
       "text": "Farger fra Nitrocid KS-logoen (2022-2024)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVIOLD",
+      "text": "Tidligere merkefarger"
     }
   ]
 }

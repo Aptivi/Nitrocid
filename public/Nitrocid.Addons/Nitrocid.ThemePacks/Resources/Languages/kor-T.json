@@ -322,6 +322,10 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
       "text": "Nitrocid KS 로고 색상 (2022-2024)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVIOLD",
+      "text": "이전 브랜드 색상"
     }
   ]
 }

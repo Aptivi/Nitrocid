@@ -320,6 +320,10 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
       "text": "Colours from the Nitrocid KS logo (2022-2024)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVIOLD",
+      "text": "Earlier branding colours"
     }
   ]
 }

@@ -354,5 +354,8 @@
   <data name="NKS_THEMEPACKS_THEME_DESC_LEGACY2022" xml:space="preserve">
     <value>Nitrocid KS 로고 색상 (2022-2024)</value>
   </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_APTIVIOLD" xml:space="preserve">
+    <value>이전 브랜드 색상</value>
+  </data>
 
 </root>

@@ -321,6 +321,10 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
       "text": "नाइट्रोसिड KS लोगो के रंग (2022-2024)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVIOLD",
+      "text": "पहले के ब्रांडिंग रंग"
     }
   ]
 }

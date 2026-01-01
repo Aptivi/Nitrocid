@@ -354,5 +354,8 @@
   <data name="NKS_THEMEPACKS_THEME_DESC_LEGACY2022" xml:space="preserve">
     <value>naitrosid ks logo ke rang (2022-2024)</value>
   </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_APTIVIOLD" xml:space="preserve">
+    <value>pahale ke braanding rang</value>
+  </data>
 
 </root>

@@ -354,5 +354,8 @@
   <data name="NKS_THEMEPACKS_THEME_DESC_LEGACY2022" xml:space="preserve">
     <value>Colors from the Nitrocid KS logo (2022-2024)</value>
   </data>
+  <data name="NKS_THEMEPACKS_THEME_DESC_APTIVIOLD" xml:space="preserve">
+    <value>Earlier branding colors</value>
+  </data>
 
 </root>

@@ -322,6 +322,10 @@
     {
       "loc": "NKS_THEMEPACKS_THEME_DESC_LEGACY2022",
       "text": "Χρώματα από το λογότυπο Nitrocid KS (2022-2024)"
+    },
+    {
+      "loc": "NKS_THEMEPACKS_THEME_DESC_APTIVIOLD",
+      "text": "Παλαιότερα χρώματα επωνυμίας"
     }
   ]
 }
