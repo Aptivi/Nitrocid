@@ -29,7 +29,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class TextRevealDisplay : BaseScreensaver, IScreensaver
     {
-
+        // TODO: NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC -> Reveals the text printed in the background
         private Animations.TextReveal.TextRevealSettings? TextRevealSettingsInstance;
 
         /// <inheritdoc/>

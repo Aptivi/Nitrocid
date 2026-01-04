@@ -109,6 +109,7 @@ namespace Nitrocid.ScreensaverPacks
             { "neons", new NeonsDisplay() },
             { "newyear", new NewYearDisplay() },
             { "noise", new NoiseDisplay() },
+            { "noisy", new NoisyDisplay() },
             { "numberscatter", new NumberScatterDisplay() },
             { "omen", new OmenDisplay() },
             { "particles", new ParticlesDisplay() },

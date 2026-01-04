@@ -9592,7 +9592,7 @@
     },
     {
         "Name": "TextReveal",
-        "Desc": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_DESC",
+        "Desc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
         "Keys": [
             {
                 "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
@@ -9678,6 +9678,24 @@
                         "MaximumValue": 255
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "Name": "Noisy",
+        "Desc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+                "Type": "SInt",
+                "Variable": "NoisyDelay",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+                "Type": "SBoolean",
+                "Variable": "NoisyColor",
+                "Description": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC"
             }
         ]
     }
