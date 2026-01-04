@@ -20016,5 +20016,43 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region Noisy
+        private int noisyDelay = 1;
+        private bool noisyColor = false;
+
+        /// <summary>
+        /// [Noisy] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int NoisyDelay
+        {
+            get
+            {
+                return noisyDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1;
+                noisyDelay = value;
+            }
+        }
+        /// <summary>
+        /// [Noisy] Whether to simulate noise in color televisions or monochrome televisions
+        /// </summary>
+        // TODO: NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME -> Color Noise
+        // TODO: NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC -> Whether to simulate noise in color televisions or monochrome televisions
+        public bool NoisyColor
+        {
+            get
+            {
+                return noisyColor;
+            }
+            set
+            {
+                noisyColor = value;
+            }
+        }
+        #endregion
     }
 }
