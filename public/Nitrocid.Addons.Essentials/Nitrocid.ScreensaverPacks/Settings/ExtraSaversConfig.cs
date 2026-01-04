@@ -32,6 +32,7 @@ using System.Runtime.Versioning;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Textify.Data.Figlet;
+using Nitrocid.ScreensaverPacks.Screensavers.Utilities;
 
 namespace Nitrocid.ScreensaverPacks.Settings
 {
@@ -19739,6 +19740,76 @@ namespace Nitrocid.ScreensaverPacks.Settings
             set
             {
                 mirrorWriteTextColor = new Color(value).PlainSequence;
+            }
+        }
+        #endregion
+
+        #region Colorology
+        private int colorologyDelay = 50;
+        private bool colorologyDarkColors;
+        private int colorologySteps = 100;
+        private ColorTransitionMethod colorologyMethod = ColorTransitionMethod.Rgb;
+
+        /// <summary>
+        /// [Colorology] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int ColorologyDelay
+        {
+            get
+            {
+                return colorologyDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 50;
+                colorologyDelay = value;
+            }
+        }
+        /// <summary>
+        /// [Colorology] Whether to use dark colors or not
+        /// </summary>
+        public bool ColorologyDarkColors
+        {
+            get
+            {
+                return colorologyDarkColors;
+            }
+            set
+            {
+                colorologyDarkColors = value;
+            }
+        }
+        /// <summary>
+        /// [Colorology] How many color steps for transitioning between two colors?
+        /// </summary>
+        public int ColorologySteps
+        {
+            get
+            {
+                return colorologySteps;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 100;
+                colorologySteps = value;
+            }
+        }
+        /// <summary>
+        /// [Colorology] How many color steps for transitioning between two colors?
+        /// </summary>
+        public ColorTransitionMethod ColorologyMethod
+        {
+            get
+            {
+                return colorologyMethod;
+            }
+            set
+            {
+                if (value < 0 || value > ColorTransitionMethod.PingPong)
+                    value = ColorTransitionMethod.Rgb;
+                colorologyMethod = value;
             }
         }
         #endregion
