@@ -37,6 +37,8 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
             // Make an introductory banner
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
+            string keyTip = LanguageTools.GetLocalized(key.Tip);
+            string finalDesc = $"{keyDesc}{(!string.IsNullOrEmpty(keyTip) ? $"\n\n{keyTip}" : "")}";
 
             // Write the prompt
             var arguments = SettingsAppTools.ParseParameters(key);
@@ -67,7 +69,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
                 ];
 
                 // Wait for an answer and handle it
-                int selectionAnswer = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices, .. altChoices], keyDesc, new InfoBoxSettings()
+                int selectionAnswer = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices, .. altChoices], finalDesc, new InfoBoxSettings()
                 {
                     Title = keyName,
                 });

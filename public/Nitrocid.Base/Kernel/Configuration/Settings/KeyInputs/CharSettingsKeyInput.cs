@@ -34,13 +34,15 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
             // Translate the key name and description
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
+            string keyTip = LanguageTools.GetLocalized(key.Tip);
+            string finalDesc = $"{keyDesc}{(!string.IsNullOrEmpty(keyTip) ? $"\n\n{keyTip}" : "")}";
 
             // Write the prompt
             var settings = new InfoBoxSettings()
             {
                 Title = keyName,
             };
-            string? AnswerString = InfoBoxInputColor.WriteInfoBoxInput($"{keyDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")} [{KeyDefaultValue}]", settings, InfoBoxInputType.Character);
+            string? AnswerString = InfoBoxInputColor.WriteInfoBoxInput($"{finalDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TEXT")} [{KeyDefaultValue}]", settings, InfoBoxInputType.Character);
 
             // Neutralize path if required with the assumption that the keytype is not list
             DebugWriter.WriteDebug(DebugLevel.I, "User answered {0}", vars: [AnswerString]);

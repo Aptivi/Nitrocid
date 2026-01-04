@@ -215,10 +215,12 @@ namespace Nitrocid.Base.Misc.Interactives
             var keys = FlattenSettingsKeys(entryIdx, configs[entryIdx].Keys);
             string entryName = entryNames[entryIdx].Item1;
             string keyDesc = LanguageTools.GetLocalized(keys[keyIdx].Description);
+            string keyTip = LanguageTools.GetLocalized(keys[keyIdx].Tip);
+            string finalDesc = $"{keyDesc}{(!string.IsNullOrEmpty(keyTip) ? $"\n\n{keyTip}" : "")}";
             string status =
                 $"""
                 {LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME").FormatString(entryName)} > {keyName}
-                {LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_DESCRIPTION")} {keyDesc}
+                {LanguageTools.GetLocalized("NKS_SHELL_BASE_HELP_DESCRIPTION")} {finalDesc}
                 """;
             return status;
         }
@@ -463,7 +465,12 @@ namespace Nitrocid.Base.Misc.Interactives
                         while (!bailLoop)
                         {
                             // Prompt for it
-                            var keysChoices = keys.Select((sk, idx) => new InputChoiceInfo($"{idx + 1}", $"{sk.Name} [{(sk.Masked ? "***" : ConfigTools.GetValueFromEntry(sk, config))}]: {sk.Description}")).ToList();
+                            var keysChoices = keys.Select((sk, idx) =>
+                            {
+                                string keyName = LanguageTools.GetLocalized(sk.Name);
+                                string keyDesc = LanguageTools.GetLocalized(sk.Description);
+                                return new InputChoiceInfo($"{idx + 1}", $"{keyName} [{(sk.Masked ? "***" : ConfigTools.GetValueFromEntry(sk, config))}]: {keyDesc}");
+                            }).ToList();
                             keysChoices.Add(new($"{keysChoices.Count + 1}", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_EXIT")));
                             int choiceIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. keysChoices], LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MULTIVAR_CHOOSE") + $" \"{key.Name}\"");
 

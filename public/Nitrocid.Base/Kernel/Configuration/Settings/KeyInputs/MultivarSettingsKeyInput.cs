@@ -37,9 +37,13 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
                 // Prompt for it
                 var keysChoices = keys.Select((sk, idx) =>
                 {
+                    string keyName = LanguageTools.GetLocalized(sk.Name);
+                    string keyDesc = LanguageTools.GetLocalized(sk.Description);
+                    string keyTip = LanguageTools.GetLocalized(sk.Tip);
+                    string finalDesc = $"{keyDesc}{(!string.IsNullOrEmpty(keyTip) ? $"\n\n{keyTip}" : "")}";
                     object? currentValue = sk.Masked ? "***" : ConfigTools.GetValueFromEntry(sk, configType);
-                    string finalKeyName = sk.Type == SettingsKeyType.SMultivar ? $"{LanguageTools.GetLocalized(sk.Name)}..." : $"{LanguageTools.GetLocalized(sk.Name)} [{currentValue}]";
-                    return new InputChoiceInfo($"{idx + 1}", finalKeyName, LanguageTools.GetLocalized(sk.Description));
+                    string finalKeyName = sk.Type == SettingsKeyType.SMultivar ? $"{keyName}..." : $"{keyName} [{currentValue}]";
+                    return new InputChoiceInfo($"{idx + 1}", finalKeyName, finalDesc);
                 }).ToList();
                 keysChoices.Add(new($"{keysChoices.Count + 1}", LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_EXIT")));
                 int choiceIdx = InfoBoxSelectionColor.WriteInfoBoxSelection([.. keysChoices], LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_MULTIVAR_CHOOSE") + $" \"{LanguageTools.GetLocalized(key.Name)}\"");

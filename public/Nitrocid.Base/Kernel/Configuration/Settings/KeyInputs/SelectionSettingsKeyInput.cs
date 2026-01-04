@@ -70,7 +70,9 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
             // Prompt user and check for input
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
-            int Answer = InfoBoxSelectionColor.WriteInfoBoxSelection(InputChoiceTools.GetInputChoices([.. items, .. altItems]), keyDesc, new InfoBoxSettings()
+            string keyTip = LanguageTools.GetLocalized(key.Tip);
+            string finalDesc = $"{keyDesc}{(!string.IsNullOrEmpty(keyTip) ? $"\n\n{keyTip}" : "")}";
+            int Answer = InfoBoxSelectionColor.WriteInfoBoxSelection(InputChoiceTools.GetInputChoices([.. items, .. altItems]), finalDesc, new InfoBoxSettings()
             {
                 Title = keyName,
             });

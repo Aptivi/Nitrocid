@@ -33,9 +33,11 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
             // Make an introductory banner
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
+            string keyTip = LanguageTools.GetLocalized(key.Tip);
+            string finalDesc = $"{keyDesc}{(!string.IsNullOrEmpty(keyTip) ? $"\n\n{keyTip}" : "")}";
 
             // Write the prompt
-            string AnswerString = InfoBoxInputColor.WriteInfoBoxInput($"{keyDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEINTEGER")} [{KeyDefaultValue}]", new InfoBoxSettings()
+            string AnswerString = InfoBoxInputColor.WriteInfoBoxInput($"{finalDesc}\n\n{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_WRITEINTEGER")} [{KeyDefaultValue}]", new InfoBoxSettings()
             {
                 Title = keyName,
             });
