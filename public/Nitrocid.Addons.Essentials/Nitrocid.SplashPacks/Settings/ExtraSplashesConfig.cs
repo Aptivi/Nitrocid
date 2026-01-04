@@ -89,5 +89,18 @@ namespace Nitrocid.SplashPacks.Settings
         /// </summary>
         public bool Welcome2024ShowProgress { get; set; }
         #endregion
+
+        #region Logbox
+        private bool logboxShowProgress = false;
+
+        /// <summary>
+        /// [Logbox] Show progress or not
+        /// </summary>
+        public bool LogboxShowProgress
+        {
+            get => logboxShowProgress;
+            set => logboxShowProgress = value;
+        }
+        #endregion
     }
 }
