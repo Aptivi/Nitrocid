@@ -138,6 +138,7 @@ namespace Nitrocid.ScreensaverPacks
             { "swivelreveal", new SwivelRevealDisplay() },
             { "text", new TextDisplay() },
             { "textbox", new TextBoxDisplay() },
+            { "textreveal", new TextRevealDisplay() },
             { "textwander", new TextWanderDisplay() },
             { "trails", new TrailsDisplay() },
             { "twospins", new TwoSpinsDisplay() },
