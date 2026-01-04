@@ -45,7 +45,6 @@ namespace Nitrocid.Base.Misc.Interactives
     {
         internal BaseKernelConfig? config;
         internal int lastFirstPaneIdx = -1;
-        internal bool legacyMultivarProcessing = false;
         internal List<(string, int)> entryNames = [];
         internal List<(string, string)> keyNames = [];
         internal List<(string, int)> toExpand = [];
@@ -244,7 +243,7 @@ namespace Nitrocid.Base.Misc.Interactives
                 var key = keys[keyTuple.Item2];
 
                 // Check for multivar
-                if (key.Type == SettingsKeyType.SMultivar && !legacyMultivarProcessing)
+                if (key.Type == SettingsKeyType.SMultivar)
                 {
                     // Add this multivar to the expansion list
                     if (!toExpand.Remove((keyTuple.Item2, entryIdx)))
@@ -526,13 +525,6 @@ namespace Nitrocid.Base.Misc.Interactives
                 finalInfoRendered.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG_FAILED") + TextTools.FormatString(": {0}", ex.Message));
                 InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), Settings.InfoBoxSettings);
             }
-        }
-
-        internal void EnableLegacyMultivarProcessing()
-        {
-            legacyMultivarProcessing = !legacyMultivarProcessing;
-            if (legacyMultivarProcessing)
-                InfoBoxModalColor.WriteInfoBoxModal("Please note that the legacy multivar processing support for the settings CLI will be removed in the final version of Nitrocid 0.2.0. Use this only when modern multivar processing is buggy.", Settings.InfoBoxSettings);
         }
 
         private Dictionary<string, SettingsKey> FlattenSettingsKeys(int entryIdx, SettingsKey[] keys, int level = 0, int[]? originalIndexes = null)
