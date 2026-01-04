@@ -63,5 +63,27 @@ namespace Nitrocid.Extras.Amusements.Screensavers.Utilities
         /// </list>
         /// </summary>
         Implicit,
+        /// <summary>
+        /// Birthday wishes to self, combined with the text type, will appear as:
+        /// <br></br>
+        /// <br></br>
+        /// <list type="bullet">
+        /// <item><see cref="BdayCardTextType.Simple"/>: “Happy birthday to me!”</item>
+        /// <item><see cref="BdayCardTextType.Superlative"/>: “Happiest birthday to me!”</item>
+        /// <item><see cref="BdayCardTextType.SuperAlt"/>: “Happiest one to me!”</item>
+        /// </list>
+        /// </summary>
+        ImplicitFirstPerson,
+        /// <summary>
+        /// Birthday wishes to the viewer, combined with the text type, will appear as:
+        /// <br></br>
+        /// <br></br>
+        /// <list type="bullet">
+        /// <item><see cref="BdayCardTextType.Simple"/>: “Happy birthday to you!”</item>
+        /// <item><see cref="BdayCardTextType.Superlative"/>: “Happiest birthday to you!”</item>
+        /// <item><see cref="BdayCardTextType.SuperAlt"/>: “Happiest one to you!”</item>
+        /// </list>
+        /// </summary>
+        ImplicitSecondPerson,
     }
 }

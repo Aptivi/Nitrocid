@@ -76,7 +76,6 @@ namespace Nitrocid.Extras.Amusements.Screensavers
             int width = ConsoleWrapper.WindowWidth - 8;
             int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
             int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
-            string versionStr = $"{KernelReleaseInfo.ApiVersion}";
             var border = new BoxFrame()
             {
                 Left = posX,
@@ -85,7 +84,6 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                 Height = height,
                 UseColors = true,
                 FrameColor = bannerColor,
-                Text = versionStr,
             };
             builder.Append(border.Render());
 
@@ -115,8 +113,9 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                     Alignment = TextAlignment.Middle,
                 }
             };
-            TextWriterRaw.WriteRaw(wordText.Render());
-            TextWriterWhereColor.WriteWhereColor(birthdayWish, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - ConsoleChar.EstimateCellWidth(birthdayWish) / 2d), hashY, ConsoleColors.White);
+            builder.Append(wordText.Render());
+            builder.Append(TextWriterWhereColor.RenderWhereColor(birthdayWish, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - ConsoleChar.EstimateCellWidth(birthdayWish) / 2d), hashY, ConsoleColors.White));
+            TextWriterRaw.WriteRaw(builder.ToString());
 
             // Delay
             ScreensaverManager.Delay(AmusementsInit.SaversConfig.BdayCardDelay);
@@ -149,6 +148,12 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                                     return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH");
                             }
                             break;
+                        case BdayCardNameType.ImplicitFirstPerson:
+                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH -> Happy birthday to me!
+                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH");
+                        case BdayCardNameType.ImplicitSecondPerson:
+                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH -> Happy birthday to you!
+                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH");
                     }
                     break;
                 case BdayCardTextType.Superlative:
@@ -174,6 +179,12 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                                     return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH");
                             }
                             break;
+                        case BdayCardNameType.ImplicitFirstPerson:
+                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH -> Happiest birthday to me!
+                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH");
+                        case BdayCardNameType.ImplicitSecondPerson:
+                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH -> Happiest birthday to you!
+                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH");
                     }
                     break;
                 case BdayCardTextType.SuperAlt:
@@ -199,6 +210,12 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                                     return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH");
                             }
                             break;
+                        case BdayCardNameType.ImplicitFirstPerson:
+                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH -> Happiest one to me!
+                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH");
+                        case BdayCardNameType.ImplicitSecondPerson:
+                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH -> Happiest one to you!
+                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH");
                     }
                     break;
             }
