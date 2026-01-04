@@ -35,8 +35,10 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
             // Make an introductory banner
             string keyName = LanguageTools.GetLocalized(key.Name);
             string keyDesc = LanguageTools.GetLocalized(key.Description);
+            string keyTip = LanguageTools.GetLocalized(key.Tip);
+            string finalDesc = $"{keyDesc}{(!string.IsNullOrEmpty(keyTip) ? $"\n\n{keyTip}" : "")}";
 
-            CurrentValue = InfoBoxSliderColor.WriteInfoBoxSlider(CurrentValue, key.MaximumValue, keyDesc, new InfoBoxSettings()
+            CurrentValue = InfoBoxSliderColor.WriteInfoBoxSlider(CurrentValue, key.MaximumValue, finalDesc, new InfoBoxSettings()
             {
                 Title = keyName,
             }, key.MinimumValue);

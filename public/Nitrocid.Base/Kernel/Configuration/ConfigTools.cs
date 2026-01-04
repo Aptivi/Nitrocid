@@ -141,7 +141,9 @@ namespace Nitrocid.Base.Kernel.Configuration
                         if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
                         {
                             string desc = LanguageTools.GetLocalized(Setting.Description);
-                            InputChoiceInfo ici = new($"{SectionIndex + 1}/{SettingIndex + 1}", KeyName, desc);
+                            string keyTip = LanguageTools.GetLocalized(Setting.Tip);
+                            string finalDesc = $"{desc}{(!string.IsNullOrEmpty(keyTip) ? $"\n\n{keyTip}" : "")}";
+                            InputChoiceInfo ici = new($"{SectionIndex + 1}/{SettingIndex + 1}", KeyName, finalDesc);
                             DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", vars: [KeyName, SectionIndex + 1, SettingIndex + 1]);
                             Results.Add(ici);
                         }
