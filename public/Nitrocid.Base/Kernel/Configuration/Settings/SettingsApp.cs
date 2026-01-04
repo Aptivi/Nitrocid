@@ -80,7 +80,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
             tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_RESETALL"), ConsoleKey.F8, (_, _, _, _) => tui.ResetAll()));
             tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_KEYBINDING_RESETENTRY"), ConsoleKey.R, ConsoleModifiers.Shift, (_, entryIdx, _, keyIdx) => tui.ResetEntry(entryIdx, keyIdx)));
             tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTCONFIG"), ConsoleKey.F9, (_, _, _, _) => tui.SelectConfig()));
-            tui.Bindings.Add(new InteractiveTuiBinding<(string, int), (string, string)>(LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING"), ConsoleKey.F10, (_, _, _, _) => tui.EnableLegacyMultivarProcessing()));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }
