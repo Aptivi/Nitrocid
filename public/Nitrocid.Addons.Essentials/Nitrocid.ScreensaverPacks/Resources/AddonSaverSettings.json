@@ -9554,5 +9554,40 @@
                 ]
             }
         ]
+    },
+    {
+        "Name": "Colorology",
+        "Desc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+                "Type": "SInt",
+                "Variable": "ColorologyDelay",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_NAME",
+                "Type": "SBoolean",
+                "Variable": "ColorologyDarkColors",
+                "Description": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_DARK_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_NAME",
+                "Type": "SInt",
+                "Variable": "ColorologySteps",
+                "Description": "NKS_SCREENSAVERPACKS_BLOOM_SETTINGS_STEPS_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+                "Type": "SSelection",
+                "Variable": "ColorologyMethod",
+                "IsEnumeration": true,
+                "EnumerationInternal": false,
+                "Enumeration": "Nitrocid.ScreensaverPacks.Screensavers.Utilities.ColorTransitionMethod",
+                "EnumerationAssembly": "Nitrocid.ScreensaverPacks",
+                "EnumerationZeroBased": true,
+                "Description": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC"
+            }
+        ]
     }
 ]
