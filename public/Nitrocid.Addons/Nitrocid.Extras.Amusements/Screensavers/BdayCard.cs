@@ -46,6 +46,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
     /// </summary>
     public class BdayCardDisplay : BaseScreensaver, IScreensaver
     {
+        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_DESC -> Shows a “birthday card” on the screen
         private string randomName = "";
 
         /// <inheritdoc/>

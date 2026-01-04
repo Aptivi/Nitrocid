@@ -20055,5 +20055,26 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region MarkScreen
+        private int markScreenDelay = 175;
+
+        /// <summary>
+        /// [MarkScreen] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int MarkScreenDelay
+        {
+            get
+            {
+                return markScreenDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 175;
+                markScreenDelay = value;
+            }
+        }
+        #endregion
     }
 }
