@@ -634,5 +634,20 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <returns>A list of tuples containing an affected line number, a line from the first file, and a line from the second file</returns>
         (int line, string one, string two)[] Compare(string pathOne, string pathTwo);
 
+        /// <summary>
+        /// Splits a single file to multiple chunks (identifiable with <c>&lt;FILENAME&gt;.&lt;EXT&gt;.C0000</c>, and secondaries with the suffix of <c>.C&lt;CHUNKNUM&gt;</c>)
+        /// </summary>
+        /// <param name="inputFile">Input file to split</param>
+        /// <param name="outputDirectory">Output directory</param>
+        /// <param name="chunkSize">Chunk size in bytes</param>
+        string[] SplitFile(string inputFile, string outputDirectory, long chunkSize = 104_857_600);
+
+        /// <summary>
+        /// Groups chunks to a single file
+        /// </summary>
+        /// <param name="inputFile">Input file to group</param>
+        /// <param name="outputDirectory">Output directory</param>
+        string GroupFile(string inputFile, string outputDirectory);
+
     }
 }

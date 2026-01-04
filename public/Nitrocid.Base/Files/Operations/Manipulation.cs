@@ -18,6 +18,11 @@
 //
 
 using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Security.Privacy;
+using Nitrocid.Base.Security.Privacy.Consents;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Base.Files
 {
@@ -72,5 +77,53 @@ namespace Nitrocid.Base.Files
         /// <param name="TargetInputs">The target inputs to merge</param>
         public static byte[] CombineBinaryFiles(string Input, string[] TargetInputs) =>
             DriverHandler.CurrentFilesystemDriverLocal.CombineBinaryFiles(Input, TargetInputs);
+
+        /// <summary>
+        /// Splits a single file to multiple chunks (identifiable with <c>&lt;FILENAME&gt;.&lt;EXT&gt;.C0000</c>, and secondaries with the suffix of <c>.C&lt;CHUNKNUM&gt;</c>)
+        /// </summary>
+        /// <param name="inputFile">Input file to split</param>
+        /// <param name="chunkSize">Chunk size in bytes</param>
+        public static string[] SplitFile(string inputFile, long chunkSize = 104_857_600)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
+            return SplitFile(inputFile, FilesystemTools.CurrentDir, chunkSize);
+        }
+
+        /// <summary>
+        /// Splits a single file to multiple chunks (identifiable with <c>&lt;FILENAME&gt;.&lt;EXT&gt;.C0000</c>, and secondaries with the suffix of <c>.C&lt;CHUNKNUM&gt;</c>)
+        /// </summary>
+        /// <param name="inputFile">Input file to split</param>
+        /// <param name="outputDirectory">Output directory</param>
+        /// <param name="chunkSize">Chunk size in bytes</param>
+        public static string[] SplitFile(string inputFile, string outputDirectory, long chunkSize = 104_857_600)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
+            return DriverHandler.CurrentFilesystemDriverLocal.SplitFile(inputFile, outputDirectory, chunkSize);
+        }
+
+        /// <summary>
+        /// Groups chunks to a single file
+        /// </summary>
+        /// <param name="inputFile">Input file name (automatically searches for chunk files identifiable with <c>&lt;FILENAME&gt;.&lt;EXT&gt;.C0000</c>)</param>
+        public static string GroupFile(string inputFile)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
+            return GroupFile(inputFile, FilesystemTools.CurrentDir);
+        }
+
+        /// <summary>
+        /// Groups chunks to a single file
+        /// </summary>
+        /// <param name="inputFile">Input file to group</param>
+        /// <param name="outputDirectory">Output directory</param>
+        public static string GroupFile(string inputFile, string outputDirectory)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_NOCONSENT"));
+            return DriverHandler.CurrentFilesystemDriverLocal.GroupFile(inputFile, outputDirectory);
+        }
     }
 }
