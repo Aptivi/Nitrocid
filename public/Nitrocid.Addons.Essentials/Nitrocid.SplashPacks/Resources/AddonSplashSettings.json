@@ -68,5 +68,17 @@
                 "Description": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC"
             }
         ]
+    },
+    {
+        "Name": "Logbox",
+        "Desc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_NAME",
+                "Type": "SBoolean",
+                "Variable": "LogboxShowProgress",
+                "Description": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC"
+            }
+        ]
     }
 ]
