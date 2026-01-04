@@ -83,7 +83,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Prepare the figlet font for writing
-            string text = "7,000!";
+            string text = "8,000!";
             string textDesc = LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_COMMITMILESTONE_CONGRATS");
             int figWidth = FigletTools.GetFigletWidth(text, figFontUsed) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFontUsed) / 2;
