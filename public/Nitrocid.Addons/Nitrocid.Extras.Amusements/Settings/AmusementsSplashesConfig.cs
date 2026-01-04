@@ -46,9 +46,11 @@ namespace Nitrocid.Extras.Amusements.Settings
             }
         }
 
+        #region Quote
         /// <summary>
         /// [Quote] The progress text location
         /// </summary>
         public int QuoteProgressTextLocation { get; set; } = (int)TextLocation.Top;
+        #endregion
     }
 }
