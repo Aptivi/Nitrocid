@@ -64,9 +64,9 @@ namespace Nitrocid.Extras.Stocks.Widgets
             else
             {
                 // Get the stock info
-                string stocksJson = NetworkTransfer.DownloadString($"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={StocksInit.StocksConfig.StocksCompany}&interval=60min&outputsize=full&apikey={StocksInit.StocksConfig.StocksApiKey}", false);
+                string stocksJson = NetworkTransfer.DownloadString($"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={StocksInit.StocksConfig.StocksCompany}&apikey={StocksInit.StocksConfig.StocksApiKey}", false);
                 var stocksToken = JToken.Parse(stocksJson);
-                var stocksIntervalToken = stocksToken["Time Series (60min)"];
+                var stocksIntervalToken = stocksToken["Time Series (Daily)"];
                 if (stocksIntervalToken is null)
                 {
                     displayer.Text = LanguageTools.GetLocalized("NKS_STOCKS_NODATA");
@@ -74,7 +74,7 @@ namespace Nitrocid.Extras.Stocks.Widgets
                 }
                 else
                 {
-                    string ianaTimeZone = (string?)stocksToken?["Meta Data"]?["6. Time Zone"] ?? "";
+                    string ianaTimeZone = (string?)stocksToken?["Meta Data"]?["5. Time Zone"] ?? "";
                     string? high = (string?)stocksIntervalToken?.First?.First?["2. high"];
                     string? low = (string?)stocksIntervalToken?.First?.First?["3. low"];
                     displayer.Text =
