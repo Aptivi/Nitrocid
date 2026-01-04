@@ -233,5 +233,140 @@
                 "MaximumValue": 100
             }
         ]
+    },
+    {
+        "Name": "BdayCard",
+        "Desc": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+                "Type": "SInt",
+                "Variable": "BdayCardDelay",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDSETTINGS_NAME",
+                "Type": "SMultivar",
+                "Description": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDSETTINGS_DESC",
+                "Variables": [
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDGENDER_NAME",
+                        "Type": "SSelection",
+                        "Variable": "BdayCardGender",
+                        "IsEnumeration": true,
+                        "EnumerationInternal": false,
+                        "Enumeration": "Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardGender",
+                        "EnumerationAssembly": "Nitrocid.Extras.Amusements",
+                        "EnumerationZeroBased": true,
+                        "Description": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDGENDER_DESC"
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME",
+                        "Type": "SSelection",
+                        "Variable": "BdayCardNameType",
+                        "IsEnumeration": true,
+                        "EnumerationInternal": false,
+                        "Enumeration": "Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardNameType",
+                        "EnumerationAssembly": "Nitrocid.Extras.Amusements",
+                        "EnumerationZeroBased": true,
+                        "Description": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC"
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME",
+                        "Type": "SSelection",
+                        "Variable": "BdayCardTextType",
+                        "IsEnumeration": true,
+                        "EnumerationInternal": false,
+                        "Enumeration": "Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardTextType",
+                        "EnumerationAssembly": "Nitrocid.Extras.Amusements",
+                        "EnumerationZeroBased": true,
+                        "Description": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC"
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_PERSONNAME_NAME",
+                        "Type": "SString",
+                        "Variable": "BdayCardPersonName",
+                        "Description": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_PERSONNAME_DESC"
+                    }
+                ]
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+                "Type": "SMultivar",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+                "Variables": [
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME",
+                        "Type": "SBoolean",
+                        "Variable": "BdayCardTrueColor",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC"
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "BdayCardMinimumRedColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "BdayCardMinimumGreenColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "BdayCardMinimumBlueColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "BdayCardMinimumColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "BdayCardMaximumRedColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "BdayCardMaximumGreenColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "BdayCardMaximumBlueColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    },
+                    {
+                        "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+                        "Type": "SIntSlider",
+                        "Variable": "BdayCardMaximumColorLevel",
+                        "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+                        "MinimumValue": 0,
+                        "MaximumValue": 255
+                    }
+                ]
+            }
+        ]
     }
 ]

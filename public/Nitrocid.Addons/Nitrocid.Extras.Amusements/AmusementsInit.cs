@@ -214,6 +214,7 @@ namespace Nitrocid.Extras.Amusements
             ScreensaverManager.AddonSavers.Add("shipduet", new ShipDuetDisplay());
             ScreensaverManager.AddonSavers.Add("snaker", new SnakerDisplay());
             ScreensaverManager.AddonSavers.Add("personlookup", new PersonLookupDisplay());
+            ScreensaverManager.AddonSavers.Add("bdaycard", new BdayCardDisplay());
             SplashManager.builtinSplashes.Add(quote);
 
             // Initialize configuration in a way that no mod can play with them
@@ -239,6 +240,7 @@ namespace Nitrocid.Extras.Amusements
             ScreensaverManager.AddonSavers.Remove("shipduet");
             ScreensaverManager.AddonSavers.Remove("snaker");
             ScreensaverManager.AddonSavers.Remove("personlookup");
+            ScreensaverManager.AddonSavers.Remove("bdaycard");
             SplashManager.builtinSplashes.Remove(quote);
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSplashesConfig));
