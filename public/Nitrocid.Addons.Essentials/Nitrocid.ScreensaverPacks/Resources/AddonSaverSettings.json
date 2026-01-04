@@ -9698,5 +9698,17 @@
                 "Description": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC"
             }
         ]
+    },
+    {
+        "Name": "MarkScreen",
+        "Desc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+                "Type": "SInt",
+                "Variable": "MarkScreenDelay",
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
+            }
+        ]
     }
 ]

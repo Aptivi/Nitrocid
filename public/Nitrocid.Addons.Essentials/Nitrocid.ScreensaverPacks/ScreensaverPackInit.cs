@@ -100,6 +100,7 @@ namespace Nitrocid.ScreensaverPacks
             { "linesaber", new LineSaberDisplay() },
             { "lineup", new LineUpDisplay() },
             { "linotypo", new LinotypoDisplay() },
+            { "markscreen", new MarkScreenDisplay() },
             { "marquee", new MarqueeDisplay() },
             { "matrix", new MatrixDisplay() },
             { "mazer", new MazerDisplay() },
