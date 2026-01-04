@@ -53,6 +53,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
+        // TODO: NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP -> This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately.
 
         #region Matrix
         private int matrixDelay = 10;

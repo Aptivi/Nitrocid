@@ -1950,7 +1950,7 @@
                 "Type": "SString",
                 "Variable": "LinotypoWrite",
                 "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG",
-                "Tip": "This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."
+                "Tip": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP"
             },
             {
                 "Name": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME",
@@ -2047,7 +2047,7 @@
                 "Type": "SString",
                 "Variable": "TypewriterWrite",
                 "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG",
-                "Tip": "This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."
+                "Tip": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP"
             },
             {
                 "Name": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME",
@@ -2196,7 +2196,7 @@
                 "Type": "SString",
                 "Variable": "SpotWriteWrite",
                 "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG",
-                "Tip": "This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."
+                "Tip": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP"
             },
             {
                 "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
@@ -9527,7 +9527,7 @@
                 "Type": "SString",
                 "Variable": "MirrorWriteWrite",
                 "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_DESC_LONG",
-                "Tip": "This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."
+                "Tip": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP"
             },
             {
                 "Name": "NKS_SCREENSAVERPACKS_TYPO_SETTINGS_MINSPEED_NAME",
