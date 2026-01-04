@@ -24,6 +24,7 @@ using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection.Internal;
+using Nitrocid.Extras.Amusements.Screensavers.Utilities;
 
 namespace Nitrocid.Extras.Amusements.Settings
 {
@@ -552,6 +553,266 @@ namespace Nitrocid.Extras.Amusements.Settings
                 if (value > 100)
                     value = 100;
                 personLookupMaximumAgeYears = value;
+            }
+        }
+        #endregion
+
+        #region BdayCard
+        private bool bdayCardTrueColor = true;
+        private int bdayCardDelay = 1000;
+        private BdayCardGender bdayCardGender = BdayCardGender.Male;
+        private BdayCardNameType bdayCardNameType = BdayCardNameType.Random;
+        private BdayCardTextType bdayCardTextType = BdayCardTextType.Simple;
+        private string bdayCardPersonName = "John";
+        private int bdayCardMinimumRedColorLevel = 0;
+        private int bdayCardMinimumGreenColorLevel = 0;
+        private int bdayCardMinimumBlueColorLevel = 0;
+        private int bdayCardMinimumColorLevel = 0;
+        private int bdayCardMaximumRedColorLevel = 255;
+        private int bdayCardMaximumGreenColorLevel = 255;
+        private int bdayCardMaximumBlueColorLevel = 255;
+        private int bdayCardMaximumColorLevel = 255;
+
+        /// <summary>
+        /// [BdayCard] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool BdayCardTrueColor
+        {
+            get
+            {
+                return bdayCardTrueColor;
+            }
+            set
+            {
+                bdayCardTrueColor = value;
+            }
+        }
+        /// <summary>
+        /// [BdayCard] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int BdayCardDelay
+        {
+            get
+            {
+                return bdayCardDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1000;
+                bdayCardDelay = value;
+            }
+        }
+        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDSETTINGS_NAME -> Birthday card settings
+        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDSETTINGS_DESC -> Provides a set of variables that allow you to configure your birthday card
+        /// <summary>
+        /// [BdayCard] Birthday card gender
+        /// </summary>
+        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDGENDER_NAME -> Birthday card gender
+        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDGENDER_DESC -> Specifies the gender of the person to wish happy birthday to
+        public BdayCardGender BdayCardGender
+        {
+            get
+            {
+                return bdayCardGender;
+            }
+            set
+            {
+                bdayCardGender = value;
+            }
+        }
+        /// <summary>
+        /// [BdayCard] Birthday card name type
+        /// </summary>
+        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME -> Birthday card name type
+        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC -> Randomly generated person name, your selected person name, or use pronouns
+        public BdayCardNameType BdayCardNameType
+        {
+            get
+            {
+                return bdayCardNameType;
+            }
+            set
+            {
+                bdayCardNameType = value;
+            }
+        }
+        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME -> Birthday card text type
+        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC -> Specifies whether to use the normal version of the wish, or to use the superlative version
+        /// <summary>
+        /// [BdayCard] Birthday card text type
+        /// </summary>
+        public BdayCardTextType BdayCardTextType
+        {
+            get
+            {
+                return bdayCardTextType;
+            }
+            set
+            {
+                bdayCardTextType = value;
+            }
+        }
+        /// <summary>
+        /// [BdayCard] Person name that will be on the birthday card
+        /// </summary>
+        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_PERSONNAME_NAME -> Birthday person name
+        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_PERSONNAME_DESC -> The name of the person to wish happy birthday to
+        public string BdayCardPersonName
+        {
+            get
+            {
+                return bdayCardPersonName;
+            }
+            set
+            {
+                bdayCardPersonName = value;
+            }
+        }
+        /// <summary>
+        /// [BdayCard] The minimum red color level (true color)
+        /// </summary>
+        public int BdayCardMinimumRedColorLevel
+        {
+            get
+            {
+                return bdayCardMinimumRedColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                bdayCardMinimumRedColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BdayCard] The minimum green color level (true color)
+        /// </summary>
+        public int BdayCardMinimumGreenColorLevel
+        {
+            get
+            {
+                return bdayCardMinimumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                bdayCardMinimumGreenColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BdayCard] The minimum blue color level (true color)
+        /// </summary>
+        public int BdayCardMinimumBlueColorLevel
+        {
+            get
+            {
+                return bdayCardMinimumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 0;
+                if (value > 255)
+                    value = 255;
+                bdayCardMinimumBlueColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BdayCard] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int BdayCardMinimumColorLevel
+        {
+            get
+            {
+                return bdayCardMinimumColorLevel;
+            }
+            set
+            {
+                int FinalMinimumLevel = 255;
+                if (value <= 0)
+                    value = 0;
+                if (value > FinalMinimumLevel)
+                    value = FinalMinimumLevel;
+                bdayCardMinimumColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BdayCard] The maximum red color level (true color)
+        /// </summary>
+        public int BdayCardMaximumRedColorLevel
+        {
+            get
+            {
+                return bdayCardMaximumRedColorLevel;
+            }
+            set
+            {
+                if (value <= bdayCardMinimumRedColorLevel)
+                    value = bdayCardMinimumRedColorLevel;
+                if (value > 255)
+                    value = 255;
+                bdayCardMaximumRedColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BdayCard] The maximum green color level (true color)
+        /// </summary>
+        public int BdayCardMaximumGreenColorLevel
+        {
+            get
+            {
+                return bdayCardMaximumGreenColorLevel;
+            }
+            set
+            {
+                if (value <= bdayCardMinimumGreenColorLevel)
+                    value = bdayCardMinimumGreenColorLevel;
+                if (value > 255)
+                    value = 255;
+                bdayCardMaximumGreenColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BdayCard] The maximum blue color level (true color)
+        /// </summary>
+        public int BdayCardMaximumBlueColorLevel
+        {
+            get
+            {
+                return bdayCardMaximumBlueColorLevel;
+            }
+            set
+            {
+                if (value <= bdayCardMinimumBlueColorLevel)
+                    value = bdayCardMinimumBlueColorLevel;
+                if (value > 255)
+                    value = 255;
+                bdayCardMaximumBlueColorLevel = value;
+            }
+        }
+        /// <summary>
+        /// [BdayCard] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int BdayCardMaximumColorLevel
+        {
+            get
+            {
+                return bdayCardMaximumColorLevel;
+            }
+            set
+            {
+                int FinalMaximumLevel = 255;
+                if (value <= bdayCardMinimumColorLevel)
+                    value = bdayCardMinimumColorLevel;
+                if (value > FinalMaximumLevel)
+                    value = FinalMaximumLevel;
+                bdayCardMaximumColorLevel = value;
             }
         }
         #endregion
