@@ -987,6 +987,23 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     ], true)
                 ], new GetKeyIvCommand()),
 
+            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC -> Groups chunks to a single file
+            new CommandInfo("groupfile", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC -> Split file name to group to file
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC"
+                        }),
+                    ],
+                    [
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC -> Directory to store grouped file
+                        new SwitchInfo("outputDir", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC"),
+                    ])
+                ], new GroupFileCommand()),
+
             new CommandInfo("host", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_HOST_DESC",
                 [
                     new CommandArgumentInfo(true)
@@ -1723,6 +1740,28 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                 ], new ShowTdZoneCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("shutdown", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SHUTDOWN_DESC", new ShutdownCommand()),
+
+            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_DESC -> Splits a file to a group of chunks
+            new CommandInfo("splitfile", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_DESC",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "file", new CommandArgumentPartOptions()
+                        {
+                            // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC -> File to split to chunks
+                            ArgumentDescription = /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC"
+                        }),
+                    ],
+                    [
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC -> Directory to store chunks
+                        // TODO: NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC -> Chunk size in bytes
+                        new SwitchInfo("outputDir", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC"),
+                        new SwitchInfo("chunkSize", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC", new SwitchOptions()
+                        {
+                            IsNumeric = true,
+                        })
+                    ])
+                ], new SplitFileCommand()),
 
             new CommandInfo("sudo", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_SUDO_DESC",
                 [

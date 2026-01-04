@@ -1841,5 +1841,90 @@ namespace Nitrocid.Base.Drivers.Filesystem
 
             return [.. affectedLines];
         }
+
+        /// <inheritdoc/>
+        public string[] SplitFile(string inputFile, string outputDirectory, long chunkSize = 104857600)
+        {
+            inputFile = FS.NeutralizePath(inputFile);
+            outputDirectory = FS.NeutralizePath(outputDirectory);
+
+            // Check the directory and the input file
+            if (!FS.FolderExists(outputDirectory))
+                FS.MakeDirectory(outputDirectory);
+            if (!FS.FileExists(inputFile))
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILENOTFOUND2"), inputFile);
+
+            // Check the chunk size
+            if (chunkSize < 4096)
+                chunkSize = 104857600;
+
+            // Check to see if this file needs splitting
+            var fileStream = File.OpenRead(inputFile);
+            if (fileStream.Length <= chunkSize)
+                // There is no need to make file chunks
+                return [];
+
+            // Open the file stream and read
+            string inputFileName = IOPath.GetFileName(inputFile);
+            string pathToChunk = FS.NeutralizePath(inputFileName + ".C0000", outputDirectory);
+            var chunkStream = File.Create(pathToChunk);
+            List<string> chunksMade = [pathToChunk];
+            int processedChunks = 0;
+            int chunkByte;
+            while ((chunkByte = fileStream.ReadByte()) != -1)
+            {
+                // Check to see if we need to create another chunk
+                if (chunkStream.Length >= chunkSize)
+                {
+                    // Another chunk is needed! Close the current chunk and create a new chunk file
+                    processedChunks++;
+                    pathToChunk = FS.NeutralizePath(inputFileName + $".C{processedChunks:0000}", outputDirectory);
+                    chunkStream.Flush();
+                    chunkStream.Close();
+                    chunkStream = File.Create(pathToChunk);
+                    chunksMade.Add(pathToChunk);
+                }
+
+                // Write this byte to the chunk
+                chunkStream.WriteByte((byte)chunkByte);
+            }
+
+            // Flush the last chunk written
+            chunkStream.Flush();
+            chunkStream.Close();
+            return [.. chunksMade];
+        }
+
+        /// <inheritdoc/>
+        public string GroupFile(string inputFile, string outputDirectory)
+        {
+            inputFile = FS.NeutralizePath(inputFile);
+            outputDirectory = FS.NeutralizePath(outputDirectory);
+
+            // Check the directory
+            if (!FS.FolderExists(outputDirectory))
+                FS.MakeDirectory(outputDirectory);
+
+            // Check the chunk files, but we need to sort those chunks logically in case we have more than 10000 chunks
+            string inputFileName = IOPath.GetFileName(inputFile);
+            var enumeratedChunks = FS.GetFilesystemEntries(inputFile + ".C*").OrderBy((fileName) => fileName, new LogicalComparer());
+            if (!enumeratedChunks.Any())
+                throw new KernelException(KernelExceptionType.Filesystem, LanguageTools.GetLocalized("NKS_FILES_EXCEPTION_FILENOTFOUND2"), inputFile + ".C0000");
+            string finalOutputFile = FS.NeutralizePath(inputFileName, outputDirectory);
+            using var fileStream = File.Create(finalOutputFile);
+            foreach (var chunk in enumeratedChunks)
+            {
+                // Open the chunk file and create the input file
+                using var chunkFile = File.OpenRead(chunk);
+
+                // Write the chunk bytes
+                int byteRead;
+                while ((byteRead = chunkFile.ReadByte()) != -1)
+                    fileStream.WriteByte((byte)byteRead);
+            }
+            fileStream.Flush();
+            fileStream.Close();
+            return finalOutputFile;
+        }
     }
 }
