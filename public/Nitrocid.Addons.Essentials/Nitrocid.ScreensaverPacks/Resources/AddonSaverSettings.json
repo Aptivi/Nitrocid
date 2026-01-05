@@ -9708,6 +9708,22 @@
                 "Type": "SInt",
                 "Variable": "MarkScreenDelay",
                 "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+                "Type": "SIntSlider",
+                "Variable": "MarkScreenMinimumGrade",
+                "Description": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+                "MinimumValue": 0,
+                "MaximumValue": 10000
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+                "Type": "SIntSlider",
+                "Variable": "MarkScreenMaximumGrade",
+                "Description": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+                "MinimumValue": 0,
+                "MaximumValue": 10000
             }
         ]
     }

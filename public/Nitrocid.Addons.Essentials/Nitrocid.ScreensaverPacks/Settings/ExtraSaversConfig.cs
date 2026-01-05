@@ -20058,6 +20058,8 @@ namespace Nitrocid.ScreensaverPacks.Settings
 
         #region MarkScreen
         private int markScreenDelay = 175;
+        private int markScreenMinimumGrade = 4000;
+        private int markScreenMaximumGrade = 10000;
 
         /// <summary>
         /// [MarkScreen] How many milliseconds to wait before making the next write?
@@ -20073,6 +20075,48 @@ namespace Nitrocid.ScreensaverPacks.Settings
                 if (value <= 0)
                     value = 175;
                 markScreenDelay = value;
+            }
+        }
+
+        /// <summary>
+        /// [MarkScreen] Minimum exam grade for subjects for a student
+        /// </summary>
+        // TODO: NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME -> Minimum grade
+        // TODO: NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC -> Minimum exam grade for subjects for a student
+        public int MarkScreenMinimumGrade
+        {
+            get
+            {
+                return markScreenMinimumGrade;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 4000;
+                if (value >= 10000)
+                    value = 10000;
+                markScreenMinimumGrade = value;
+            }
+        }
+
+        /// <summary>
+        /// [MarkScreen] Maximum exam grade for subjects for a student
+        /// </summary>
+        // TODO: NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME -> Maximum grade
+        // TODO: NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC -> Maximum exam grade for subjects for a student
+        public int MarkScreenMaximumGrade
+        {
+            get
+            {
+                return markScreenMaximumGrade;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 4000;
+                if (value >= 10000)
+                    value = 10000;
+                markScreenMaximumGrade = value;
             }
         }
         #endregion
