@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-
-  <!--
-      Unlocalized string (DoTranslation)
-  -->
   <data name="UnlocalizedStringAnalyzerTitle" xml:space="preserve">
     <value>You'll need to localize this string at the end of the development cycle</value>
   </data>
@@ -130,18 +126,19 @@
   <data name="UnlocalizedStringAnalyzerDescription" xml:space="preserve">
     <value>While Nitrocid KS accepts unlocalized strings and returns them as is, it's recommended to localize this string so that translations would be complete before the end of the development cycle.</value>
   </data>
-
-  <!--
-      Unlocalized string (Localizable comment)
-  -->
   <data name="UnlocalizedCommentStringAnalyzerMessageFormat" xml:space="preserve">
     <value>This string, "{0}", is marked as localizable, but is unlocalized for languages "{1}"</value>
   </data>
-
-  <!--
-      Unlocalized string (JSON resource)
-  -->
   <data name="UnlocalizedJsonStringAnalyzerMessageFormat" xml:space="preserve">
     <value>This string, "{0}", is in a localizable part of the JSON resource, but is unlocalized for languages "{1}"</value>
+  </data>
+  <data name="ExtraLocalizedJsonStringAnalyzerMessageFormat" xml:space="preserve">
+    <value>There might be potentially extra localization found in the JSON representation file "{0}" that is not found in the source code: {1}</value>
+  </data>
+  <data name="ExtraLocalizedJsonStringAnalyzerTitle" xml:space="preserve">
+    <value>You'll need to remove this string at the end of the development cycle</value>
+  </data>
+  <data name="ExtraLocalizedJsonStringAnalyzerDescription" xml:space="preserve">
+    <value>While Nitrocid KS accepts unlocalized strings and returns them as is, it's recommended to remove this string so that translations would be complete before the end of the development cycle.</value>
   </data>
 </root>

@@ -47,19 +47,26 @@ namespace Nitrocid.LocaleChecker.Localization
         public const string DiagnosticId = "NLOC0001";
         public const string DiagnosticIdComment = "NLOC0002";
         public const string DiagnosticIdJson = "NLOC0003";
+        public const string DiagnosticIdExtraJson = "NLOC0004";
         private const string Category = "Localization";
 
         // Some strings
         private static readonly LocalizableString Title =
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedStringAnalyzerTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString ExtraJsonTitle =
+            new LocalizableResourceString(nameof(AnalyzerResources.ExtraLocalizedJsonStringAnalyzerTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString MessageFormat =
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString MessageFormatComment =
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedCommentStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString MessageFormatJson =
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedJsonStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString MessageFormatExtraJson =
+            new LocalizableResourceString(nameof(AnalyzerResources.ExtraLocalizedJsonStringAnalyzerMessageFormat), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
         private static readonly LocalizableString Description =
             new LocalizableResourceString(nameof(AnalyzerResources.UnlocalizedStringAnalyzerDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString ExtraJsonDescription =
+            new LocalizableResourceString(nameof(AnalyzerResources.ExtraLocalizedJsonStringAnalyzerDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
 
         // A rule
         private static readonly DiagnosticDescriptor Rule =
@@ -68,6 +75,8 @@ namespace Nitrocid.LocaleChecker.Localization
             new(DiagnosticIdComment, Title, MessageFormatComment, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description, customTags: ["CompilationEnd"]);
         private static readonly DiagnosticDescriptor RuleJson =
             new(DiagnosticIdJson, Title, MessageFormatJson, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description, customTags: ["CompilationEnd"]);
+        private static readonly DiagnosticDescriptor RuleExtraJson =
+            new(DiagnosticIdExtraJson, ExtraJsonTitle, MessageFormatExtraJson, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: ExtraJsonDescription, customTags: ["CompilationEnd"]);
 
         // English localization list
         private readonly Dictionary<string, HashSet<string>> localizationList = [];
@@ -79,7 +88,7 @@ namespace Nitrocid.LocaleChecker.Localization
 
         // Supported diagnostics
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics =>
-            ImmutableArray.Create(Rule, RuleComment, RuleJson, assemblyLocsDbg);
+            ImmutableArray.Create(Rule, RuleComment, RuleJson, RuleExtraJson, assemblyLocsDbg);
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("MicrosoftCodeAnalysisCorrectness", "RS1026:Enable concurrent execution", Justification = "Concurrency causes false positives related to assembly locs")]
         public override void Initialize(AnalysisContext context)
@@ -129,7 +138,7 @@ namespace Nitrocid.LocaleChecker.Localization
             context.RegisterSyntaxNodeAction(AnalyzeLocalization, SyntaxKind.InvocationExpression);
             context.RegisterSyntaxNodeAction(AnalyzeImplicitLocalization, SyntaxKind.CompilationUnit);
             context.RegisterCompilationEndAction(AnalyzeResourceLocalization);
-            context.RegisterCompilationEndAction(DebugLocalizationFunctions);
+            context.RegisterCompilationEndAction(CheckExtraJsonLocalizations);
         }
 
         private void AnalyzeLocalization(SyntaxNodeAnalysisContext context)
@@ -462,34 +471,55 @@ namespace Nitrocid.LocaleChecker.Localization
             }
         }
 
-        private void DebugLocalizationFunctions(CompilationAnalysisContext context)
+        private void CheckExtraJsonLocalizations(CompilationAnalysisContext context)
         {
             #region Debug
 #if LOCALECHECK_DEBUG
-            // Debug diagnostic
-            var debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "DETECTED LOCALIZATIONS: assemblyLocs", string.Join(", ", assemblyLocs));
-            context.ReportDiagnostic(debugDiagnostic);
+            {
+                // Debug diagnostic
+                var debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "DETECTED LOCALIZATIONS: assemblyLocs", string.Join(", ", assemblyLocs));
+                context.ReportDiagnostic(debugDiagnostic);
+                string engLoc = "";
+                foreach (var localization in localizationList.Keys)
+                {
+                    var hashSet = localizationList[localization];
+                    if (localization.Contains("eng - "))
+                        engLoc = localization;
+                    debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, $"DETECTED JSON LOCALIZATIONS: localizationList[{localization}]", string.Join(", ", hashSet));
+                    context.ReportDiagnostic(debugDiagnostic);
+                }
+                if (string.IsNullOrEmpty(engLoc))
+                    return;
+
+                // List extras in Locs and JSON
+                var englishLocs = localizationList[engLoc];
+                var extrasInLocs = assemblyLocs.Except(englishLocs);
+                var extrasInJson = englishLocs.Except(assemblyLocs);
+                debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "EXTRA LOCALIZATIONS IN KERNEL SOURCE: extrasInLocs", string.Join(", ", extrasInLocs));
+                context.ReportDiagnostic(debugDiagnostic);
+                debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "EXTRA LOCALIZATIONS IN ENG JSON:      extrasInJson", string.Join(", ", extrasInJson));
+                context.ReportDiagnostic(debugDiagnostic);
+            }
+#endif
+
             string engLoc = "";
             foreach (var localization in localizationList.Keys)
             {
                 var hashSet = localizationList[localization];
                 if (localization.Contains("eng - "))
                     engLoc = localization;
-                debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, $"DETECTED JSON LOCALIZATIONS: localizationList[{localization}]", string.Join(", ", hashSet));
-                context.ReportDiagnostic(debugDiagnostic);
             }
             if (string.IsNullOrEmpty(engLoc))
                 return;
 
             // List extras in Locs and JSON
             var englishLocs = localizationList[engLoc];
-            var extrasInLocs = assemblyLocs.Except(englishLocs);
             var extrasInJson = englishLocs.Except(assemblyLocs);
-            debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "EXTRA LOCALIZATIONS IN KERNEL SOURCE: extrasInLocs", string.Join(", ", extrasInLocs));
-            context.ReportDiagnostic(debugDiagnostic);
-            debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "EXTRA LOCALIZATIONS IN ENG JSON:      extrasInJson", string.Join(", ", extrasInJson));
-            context.ReportDiagnostic(debugDiagnostic);
-#endif
+            foreach (var englishLoc in extrasInJson)
+            {
+                var diagnostic = Diagnostic.Create(RuleExtraJson, null, engLoc, englishLoc);
+                context.ReportDiagnostic(diagnostic);
+            }
             #endregion
         }
     }

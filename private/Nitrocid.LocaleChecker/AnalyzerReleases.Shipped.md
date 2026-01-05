@@ -7,3 +7,4 @@ Rule ID | Category | Severity | Notes
 NLOC0001 | Localization | Warning | UnlocalizedStringAnalyzer, AnalyzeLocalization
 NLOC0002 | Localization | Warning | UnlocalizedStringAnalyzer, AnalyzeImplicitLocalization
 NLOC0003 | Localization | Warning | UnlocalizedStringAnalyzer, AnalyzeResourceLocalization
+NLOC0004 | Localization | Warning | UnlocalizedStringAnalyzer, CheckExtraJsonLocalizations, ExtraJSON
