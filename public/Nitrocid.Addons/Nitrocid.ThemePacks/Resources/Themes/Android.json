@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Android",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_ANDROID",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_ANDROID"
     },
     "InputColor": "#A4C639",
     "LicenseColor": "#657A23",

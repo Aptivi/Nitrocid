@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Green Mix",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_GREENMIX",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_GREENMIX"
     },
     "InputColor": "179;95;68",
     "LicenseColor": "179;95;68",

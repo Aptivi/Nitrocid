@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Windows 11",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_WINDOWS11",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_WINDOWS11"
     },
     "InputColor": "0;120;212",
     "LicenseColor": "0;120;212",

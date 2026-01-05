@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Tealed",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_TEALED",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_TEALED"
     },
     "InputColor": "62;98;115",
     "LicenseColor": "62;98;115",

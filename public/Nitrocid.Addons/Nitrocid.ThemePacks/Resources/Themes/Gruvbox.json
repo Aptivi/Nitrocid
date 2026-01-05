@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Gruvbox",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_GRUVBOX",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_GRUVBOX"
     },
     "InputColor": "#3c3836",
     "LicenseColor": "#d65d0e",

@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Black on White",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_BLACKONWHITE"
     },
     "InputColor": "0",
     "LicenseColor": "0",

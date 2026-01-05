@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Grape Kiwi",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_GRAPEKIWI"
     },
     "InputColor": "147;77;191",
     "LicenseColor": "147;77;191",

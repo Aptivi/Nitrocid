@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Space Camp",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME"
     },
     "InputColor": "#DEDEDE",
     "LicenseColor": "#EEEEEE",

@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Solarized (dark)",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME"
     },
     "InputColor": "38;139;210",
     "LicenseColor": "211;54;130",

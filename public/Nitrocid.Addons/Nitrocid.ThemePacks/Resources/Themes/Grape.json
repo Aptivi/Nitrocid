@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Grape",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_GRAPE",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_GRAPE"
     },
     "InputColor": "85;7;173",
     "LicenseColor": "85;7;173",
