@@ -47,10 +47,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class MarkScreenDisplay : BaseScreensaver, IScreensaver
     {
         // TODO: NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC -> Shows an old-style terminal screen that features student names and grades for all subjects, similar to an old university grade book
-        private string[] names = [];
         private int gradeEntries = 0;
-        private List<(string, double[])> students = [];
-        private (double, string)[] averages =
+        private readonly List<(string, double[])> students = [];
+        private readonly (double, string)[] averages =
         [
             // Fail is below 60%
             (00.00d, "F"),
@@ -79,7 +78,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             int width = ConsoleWrapper.WindowWidth - 8;
-            names = NameGenerator.GenerateNames(1000);
             students.Clear();
             gradeEntries = (width - 19 - 7) / 7;
             base.ScreensaverPreparation();
