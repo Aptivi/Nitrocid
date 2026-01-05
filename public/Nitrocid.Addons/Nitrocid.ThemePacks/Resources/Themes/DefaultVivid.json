@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "DefaultVivid",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_DEFAULTVIVID"
     },
     "InputColor": "15",
     "LicenseColor": "15",

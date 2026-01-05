@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Wood",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_WOOD",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_WOOD"
     },
     "InputColor": "166",
     "LicenseColor": "130",

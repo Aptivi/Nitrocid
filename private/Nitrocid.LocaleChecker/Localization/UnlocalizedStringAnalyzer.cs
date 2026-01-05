@@ -17,20 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
-using System.Collections.Immutable;
-using Nitrocid.LocaleChecker.Resources;
-using System;
-using System.Linq;
-using System.IO;
-using System.Collections.Generic;
-using System.Reflection;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Nitrocid.Analyzers.Common;
+using Nitrocid.LocaleChecker.Resources;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Nitrocid.LocaleChecker.Localization
 {
@@ -68,11 +69,16 @@ namespace Nitrocid.LocaleChecker.Localization
             new(DiagnosticIdJson, Title, MessageFormatJson, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description, customTags: ["CompilationEnd"]);
 
         // English localization list
-        private static readonly Dictionary<string, HashSet<string>> localizationList = [];
+        private readonly Dictionary<string, HashSet<string>> localizationList = [];
+
+        // Found locs
+        private static readonly DiagnosticDescriptor assemblyLocsDbg =
+            new("DBG_NLOC", "Debug Diagnostic for localization", "DEBUG: {0} = {1}", Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, customTags: ["CompilationEnd"]);
+        private readonly List<string> assemblyLocs = [];
 
         // Supported diagnostics
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics =>
-            ImmutableArray.Create(Rule, RuleComment, RuleJson);
+            ImmutableArray.Create(Rule, RuleComment, RuleJson, assemblyLocsDbg);
 
         public override void Initialize(AnalysisContext context)
         {
@@ -83,6 +89,7 @@ namespace Nitrocid.LocaleChecker.Localization
 
         private void PopulateLocalizations(CompilationStartAnalysisContext context)
         {
+            assemblyLocs.Clear();
             foreach (string langStream in languageManifestNames)
             {
                 // Find the JSON stream and open it.
@@ -101,6 +108,8 @@ namespace Nitrocid.LocaleChecker.Localization
                 string[] splitLangStream = langStream.Split(' ');
                 string assemblyName = langStream.Contains("\\") ? splitLangStream[1].Split('\\')[4] : splitLangStream[1];
                 string finalLangStream = $"Nitrocid.Langs {assemblyName} {splitLangStream[2]}";
+                if (assemblyName != context.Compilation.AssemblyName)
+                    continue;
 
                 // Now, add all localizations to a separate array
                 var locHashSet = new HashSet<string>();
@@ -121,7 +130,7 @@ namespace Nitrocid.LocaleChecker.Localization
             context.RegisterCompilationEndAction(AnalyzeResourceLocalization);
         }
 
-        private static void AnalyzeLocalization(SyntaxNodeAnalysisContext context)
+        private void AnalyzeLocalization(SyntaxNodeAnalysisContext context)
         {
             // Check for argument
             var exp = (InvocationExpressionSyntax)context.Node;
@@ -140,7 +149,7 @@ namespace Nitrocid.LocaleChecker.Localization
                 var location = context.Node.GetLocation();
                 var idExpression = expIdentifier.Identifier.Text;
                 var idName = identifier.Identifier.Text;
-                if (idExpression == "LanguageTools" && idName == "GetLocalized")
+                if ((idExpression == "LanguageTools" || idExpression == "BaseLangTools") && idName == "GetLocalized")
                 {
                     // Now, get the string representation from the argument count and compare it with the list of translations.
                     // You'll notice that we sometimes call LanguageTools.GetLocalized() with a variable instead of a string, so
@@ -153,6 +162,7 @@ namespace Nitrocid.LocaleChecker.Localization
                         text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
                         if (!string.IsNullOrWhiteSpace(text))
                         {
+                            assemblyLocs.Add(text);
                             List<string> incompleteLangs = [];
                             foreach (var localization in localizationList.Keys)
                             {
@@ -202,6 +212,7 @@ namespace Nitrocid.LocaleChecker.Localization
                             text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
                             if (!string.IsNullOrWhiteSpace(text))
                             {
+                                assemblyLocs.Add(text);
                                 List<string> incompleteLangs = [];
                                 foreach (var localization in localizationList.Keys)
                                 {
@@ -284,9 +295,9 @@ namespace Nitrocid.LocaleChecker.Localization
                     // It's a theme. Get its description and its localizable boolean value
                     string descriptionOrig = (string?)themeMetadata["Description"] ?? "";
                     string description = descriptionOrig.Replace("\\\"", "\"");
-                    bool localizable = (bool?)themeMetadata["Localizable"] ?? false;
-                    if (!string.IsNullOrWhiteSpace(description) && localizable)
+                    if (!string.IsNullOrWhiteSpace(description))
                     {
+                        assemblyLocs.Add(description);
                         List<string> incompleteLangs = [];
                         foreach (var localization in localizationList.Keys)
                         {
@@ -316,6 +327,7 @@ namespace Nitrocid.LocaleChecker.Localization
                         string knownAddonDisplay = knownAddonDisplayOrig.Replace("\\\"", "\"");
                         if (!string.IsNullOrWhiteSpace(description))
                         {
+                            assemblyLocs.Add(description);
                             List<string> incompleteLangs = [];
                             foreach (var localization in localizationList.Keys)
                             {
@@ -332,6 +344,7 @@ namespace Nitrocid.LocaleChecker.Localization
                         }
                         if (!string.IsNullOrWhiteSpace(displayAs))
                         {
+                            assemblyLocs.Add(displayAs);
                             List<string> incompleteLangs = [];
                             foreach (var localization in localizationList.Keys)
                             {
@@ -348,6 +361,7 @@ namespace Nitrocid.LocaleChecker.Localization
                         }
                         if (!string.IsNullOrWhiteSpace(knownAddonDisplay))
                         {
+                            assemblyLocs.Add(knownAddonDisplay);
                             List<string> incompleteLangs = [];
                             foreach (var localization in localizationList.Keys)
                             {
@@ -377,6 +391,7 @@ namespace Nitrocid.LocaleChecker.Localization
                                 string keyTip = keyTipOrig.Replace("\\\"", "\"");
                                 if (!string.IsNullOrWhiteSpace(keyName))
                                 {
+                                    assemblyLocs.Add(keyName);
                                     List<string> incompleteLangs = [];
                                     foreach (var localization in localizationList.Keys)
                                     {
@@ -393,6 +408,7 @@ namespace Nitrocid.LocaleChecker.Localization
                                 }
                                 if (!string.IsNullOrWhiteSpace(keyDesc))
                                 {
+                                    assemblyLocs.Add(keyDesc);
                                     List<string> incompleteLangs = [];
                                     foreach (var localization in localizationList.Keys)
                                     {
@@ -409,6 +425,7 @@ namespace Nitrocid.LocaleChecker.Localization
                                 }
                                 if (!string.IsNullOrWhiteSpace(keyTip))
                                 {
+                                    assemblyLocs.Add(keyTip);
                                     List<string> incompleteLangs = [];
                                     foreach (var localization in localizationList.Keys)
                                     {
@@ -441,6 +458,34 @@ namespace Nitrocid.LocaleChecker.Localization
                     }
                 }
             }
+
+            #region Debug
+#if LOCALECHECK_DEBUG
+            // Debug diagnostic
+            var debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "DETECTED LOCALIZATIONS: assemblyLocs", string.Join(", ", assemblyLocs));
+            context.ReportDiagnostic(debugDiagnostic);
+            string engLoc = "";
+            foreach (var localization in localizationList.Keys)
+            {
+                var hashSet = localizationList[localization];
+                if (localization.Contains("eng - "))
+                    engLoc = localization;
+                debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, $"DETECTED JSON LOCALIZATIONS: localizationList[{localization}]", string.Join(", ", hashSet));
+                context.ReportDiagnostic(debugDiagnostic);
+            }
+            if (string.IsNullOrEmpty(engLoc))
+                return;
+
+            // List extras in Locs and JSON
+            var englishLocs = localizationList[engLoc];
+            var extrasInLocs = assemblyLocs.Except(englishLocs);
+            var extrasInJson = englishLocs.Except(assemblyLocs);
+            debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "EXTRA LOCALIZATIONS IN KERNEL SOURCE: extrasInLocs", string.Join(", ", extrasInLocs));
+            context.ReportDiagnostic(debugDiagnostic);
+            debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "EXTRA LOCALIZATIONS IN ENG JSON:      extrasInJson", string.Join(", ", extrasInJson));
+            context.ReportDiagnostic(debugDiagnostic);
+#endif
+            #endregion
         }
     }
 }

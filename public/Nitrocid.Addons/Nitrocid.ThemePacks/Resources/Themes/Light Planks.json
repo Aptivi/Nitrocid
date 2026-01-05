@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Light Planks",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_LIGHTPLANKS"
     },
     "InputColor": "184;129;62",
     "LicenseColor": "184;129;62",

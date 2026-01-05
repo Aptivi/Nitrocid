@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Neutralized",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_NEUTRALIZED"
     },
     "InputColor": "45;60;61",
     "LicenseColor": "45;60;61",

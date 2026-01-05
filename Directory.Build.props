@@ -45,6 +45,7 @@
       Supported constants (NitrocidFlags):
           - VSDEBUG: Enables immediate window debug in the "Output" pane
           - NKS_EXTENSIONS: Forces extension support
+          - LOCALECHECK_DEBUG: Lists all localizations detected, along with other debug output
       
       Supported configurations (build arguments can be passed with -p:CONFIG=VALUE):
           - NKSLITE: If "true", don't build addons and extension support

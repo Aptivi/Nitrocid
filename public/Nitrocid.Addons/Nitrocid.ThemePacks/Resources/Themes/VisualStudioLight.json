@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Visual Studio (light)",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_VISUALSTUDIO"
     },
     "InputColor": "15",
     "LicenseColor": "15",

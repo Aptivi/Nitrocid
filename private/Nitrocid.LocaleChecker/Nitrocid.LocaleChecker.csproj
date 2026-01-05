@@ -41,6 +41,9 @@
     <EmbeddedResource Include="..\..\public\Nitrocid.Core\Resources\Languages\*.json" Visible="false">
       <LogicalName>Nitrocid.Langs Nitrocid.Core %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Apps\**\Resources\Languages\*.json" Visible="false">
+      <LogicalName>Nitrocid.Langs %(EmbeddedResource.RelativeDir) %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
+    </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\**\Resources\Languages\*.json" Visible="false">
       <LogicalName>Nitrocid.Langs %(EmbeddedResource.RelativeDir) %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
     </EmbeddedResource>

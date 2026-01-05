@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Windows 95",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_WINDOWS95",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_WINDOWS95"
     },
     "InputColor": "15",
     "LicenseColor": "15",

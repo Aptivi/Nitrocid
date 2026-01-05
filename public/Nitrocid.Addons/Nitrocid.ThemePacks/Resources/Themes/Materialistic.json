@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Materialistic",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_MATERIALISTIC"
     },
     "InputColor": "105;158;62",
     "LicenseColor": "105;158;62",

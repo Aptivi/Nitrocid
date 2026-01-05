@@ -6,8 +6,7 @@
         "StartMonth": 8,
         "StartDay": 27,
         "EndMonth": 9,
-        "EndDay": 10,
-        "Localizable": true
+        "EndDay": 10
     },
     "InputColor": "15",
     "LicenseColor": "15",

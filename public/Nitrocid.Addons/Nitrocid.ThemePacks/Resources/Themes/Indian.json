@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Indian",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_INDIAN",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_INDIAN"
     },
     "InputColor": "255;116;0",
     "LicenseColor": "37;96;193",

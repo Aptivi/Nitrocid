@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Dracula",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_DRACULA",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_DRACULA"
     },
     "InputColor": "#629755",
     "LicenseColor": "#A9B7C6",

@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Papercolor",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_VIMTHEME"
     },
     "InputColor": "#005f87",
     "LicenseColor": "#000000",

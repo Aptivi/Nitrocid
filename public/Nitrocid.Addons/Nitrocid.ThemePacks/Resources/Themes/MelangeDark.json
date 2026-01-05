@@ -1,8 +1,7 @@
 {
     "Metadata": {
         "Name": "Melange (dark)",
-        "Description": "NKS_THEMEPACKS_THEME_DESC_MELANGE",
-        "Localizable": true
+        "Description": "NKS_THEMEPACKS_THEME_DESC_MELANGE"
     },
     "InputColor": "#E49B5D",
     "LicenseColor": "#EBC06D",
