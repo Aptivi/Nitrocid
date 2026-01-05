@@ -171,6 +171,7 @@ namespace Nitrocid.Base.Misc.Audio
                 { "thousands_nights", "00's Nights" },
                 { "the_night", "The Night" },
                 { "the_mirage_urban", "The Mirage (Urban)" },
+                { "implicit_rage", "Implicit Rage" },
             };
             Dictionary<string, AudioCueContainer> containers = [];
 
