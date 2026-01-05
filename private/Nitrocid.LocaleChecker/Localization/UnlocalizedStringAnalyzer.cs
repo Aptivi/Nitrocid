@@ -371,8 +371,10 @@ namespace Nitrocid.LocaleChecker.Localization
                                 string keyNameOrig = (string?)key["Name"] ?? "";
                                 string keyType = (string?)key["Type"] ?? "";
                                 string keyDescOrig = (string?)key["Description"] ?? "";
+                                string keyTipOrig = (string?)key["Tip"] ?? "";
                                 string keyName = keyNameOrig.Replace("\\\"", "\"");
                                 string keyDesc = keyDescOrig.Replace("\\\"", "\"");
+                                string keyTip = keyTipOrig.Replace("\\\"", "\"");
                                 if (!string.IsNullOrWhiteSpace(keyName))
                                 {
                                     List<string> incompleteLangs = [];
@@ -402,6 +404,22 @@ namespace Nitrocid.LocaleChecker.Localization
                                     {
                                         var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, absolutePath, false);
                                         var diagnostic = Diagnostic.Create(RuleJson, location, keyDesc, string.Join(", ", incompleteLangs));
+                                        context.ReportDiagnostic(diagnostic);
+                                    }
+                                }
+                                if (!string.IsNullOrWhiteSpace(keyTip))
+                                {
+                                    List<string> incompleteLangs = [];
+                                    foreach (var localization in localizationList.Keys)
+                                    {
+                                        var hashSet = localizationList[localization];
+                                        if (!hashSet.Contains(keyTip) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
+                                            incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                                    }
+                                    if (incompleteLangs.Count > 0)
+                                    {
+                                        var location = AnalyzerTools.GenerateLocation(key["Tip"], keyTipOrig, absolutePath, false);
+                                        var diagnostic = Diagnostic.Create(RuleJson, location, keyTip, string.Join(", ", incompleteLangs));
                                         context.ReportDiagnostic(diagnostic);
                                     }
                                 }
