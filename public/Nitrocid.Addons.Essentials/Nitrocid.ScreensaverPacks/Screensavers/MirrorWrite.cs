@@ -28,7 +28,6 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Files;
 using Terminaux.Base.Extensions;
 using Textify.General.Structures;
-using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

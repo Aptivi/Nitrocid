@@ -21,11 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Users.Login.Motd;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
@@ -35,7 +31,6 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
-using Textify.Data.Figlet;
 using Textify.General;
 
 namespace Nitrocid.SplashPacks.Splashes

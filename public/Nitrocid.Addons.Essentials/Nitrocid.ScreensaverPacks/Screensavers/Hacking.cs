@@ -19,29 +19,18 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Time;
-using Nitrocid.Base.Kernel.Time.Renderers;
-using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
-using Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations;
-using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using Terminaux.Base;
-using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.Data.Figlet;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

@@ -17,17 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using MailKit.Net.Imap;
 using Nettify.MailAddress;
-using Nitrocid.Base.Files;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.ShellPacks.Tools;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.Tools;
-using Textify.Versioning;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Commands
 {

@@ -27,8 +27,6 @@ using Nitrocid.Base.Kernel.Time;
 using Textify.Data.Figlet;
 using System;
 using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Writer.CyclicWriters.Simple;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

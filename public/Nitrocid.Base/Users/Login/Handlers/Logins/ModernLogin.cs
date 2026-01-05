@@ -19,10 +19,8 @@
 
 using System;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using Nitrocid.Base.Drivers.Encryption;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Power;
@@ -34,7 +32,6 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
-using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Base.Users.Login.Handlers.Logins
 {

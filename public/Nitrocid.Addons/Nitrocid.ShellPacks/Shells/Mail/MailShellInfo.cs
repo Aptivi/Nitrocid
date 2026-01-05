@@ -24,7 +24,6 @@ using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Prompts;
 using Terminaux.Shell.Shells;
-using Terminaux.Shell.Switches;
 
 namespace Nitrocid.ShellPacks.Shells.Mail
 {

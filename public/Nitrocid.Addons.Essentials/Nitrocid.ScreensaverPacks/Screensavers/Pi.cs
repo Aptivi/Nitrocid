@@ -24,7 +24,6 @@ using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Kernel.Configuration;
 using System.Text;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical.Shapes;

@@ -19,13 +19,9 @@
 
 using System;
 using System.Text;
-using Nitrocid.Base.Drivers;
-using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Drivers.RNG;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
-using Nitrocid.Extras.Amusements;
 using Nitrocid.Extras.Amusements.Screensavers.Utilities;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
@@ -36,7 +32,6 @@ using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Data.Figlet;
 using Textify.Data.NameGen;
-using Textify.Data.Words;
 using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Screensavers

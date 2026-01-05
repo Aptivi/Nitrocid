@@ -22,7 +22,6 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Security.Privacy;
 using Nitrocid.Base.Security.Privacy.Consents;
-using Terminaux.Inputs;
 
 namespace Nitrocid.Base.Files
 {

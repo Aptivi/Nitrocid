@@ -17,9 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
-
 namespace Nitrocid.ScreensaverPacks.Animations.TextReveal
 {
     /// <summary>

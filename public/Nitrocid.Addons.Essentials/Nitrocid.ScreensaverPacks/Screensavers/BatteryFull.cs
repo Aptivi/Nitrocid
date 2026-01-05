@@ -19,7 +19,6 @@
 
 using System.Text;
 using Nitrocid.Base.Drivers.RNG;
-using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
