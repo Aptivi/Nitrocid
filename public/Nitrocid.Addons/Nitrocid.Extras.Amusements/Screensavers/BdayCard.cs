@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
             switch (AmusementsInit.SaversConfig.BdayCardNameType)
             {
                 case BdayCardNameType.Random:
-                    randomName = NameGenerator.GenerateFirstNames()[0];
+                    randomName = NameGenerator.GenerateFirstNames(1)[0];
                     break;
             }
             base.ScreensaverPreparation();
