@@ -177,6 +177,8 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             cleared = false;
             delayRequired = false;
+            if (context == SplashContext.ShuttingDown || context == SplashContext.Rebooting)
+                progresses.Clear();
             return "";
         }
 
