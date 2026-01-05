@@ -61,6 +61,33 @@ namespace Nitrocid.LocaleChecker.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to While Nitrocid KS accepts unlocalized strings and returns them as is, it&apos;s recommended to remove this string so that translations would be complete before the end of the development cycle..
+        /// </summary>
+        internal static string ExtraLocalizedJsonStringAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("ExtraLocalizedJsonStringAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There might be potentially extra localization found in the JSON representation file &quot;{0}&quot; that is not found in the source code: {1}.
+        /// </summary>
+        internal static string ExtraLocalizedJsonStringAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ExtraLocalizedJsonStringAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You&apos;ll need to remove this string at the end of the development cycle.
+        /// </summary>
+        internal static string ExtraLocalizedJsonStringAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ExtraLocalizedJsonStringAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is marked as localizable, but is unlocalized for languages &quot;{1}&quot;.
         /// </summary>
         internal static string UnlocalizedCommentStringAnalyzerMessageFormat {
