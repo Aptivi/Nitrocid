@@ -48,7 +48,17 @@ namespace Nitrocid.Extras.Forecast.Forecast.Interactive
 #pragma warning disable NLOC0001
                     LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/extra-features/common-programs/weather",
 #pragma warning restore NLOC0001
-            }
+            },
+            new()
+            {
+                HelpTitle = /* Localizable */ "NKS_FORECAST_WEATHER_TUI_HELP02_TITLE",
+                HelpDescription = /* Localizable */ "NKS_FORECAST_WEATHER_TUI_HELP02_DESC",
+                HelpBody =
+                    LanguageTools.GetLocalized("NKS_FORECAST_WEATHER_TUI_HELP02_BODY") + "\n\n" +
+#pragma warning disable NLOC0001
+                    LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_COMMON_HELP_MOREINFO") + ": https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/fundamentals/simulated-kernel-features/extra-features/common-programs/weather",
+#pragma warning restore NLOC0001
+            },
         ];
 
         /// <inheritdoc/>
