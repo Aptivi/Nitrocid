@@ -37,6 +37,7 @@ namespace Nitrocid.ScreensaverPacks
             { "backimplosion", new BackImplosionDisplay() },
             { "barrot", new BarRotDisplay() },
             { "barwave", new BarWaveDisplay() },
+            { "batteryfull", new BatteryFullDisplay() },
             { "beatfader", new BeatFaderDisplay() },
             { "beatpulse", new BeatPulseDisplay() },
             { "beatedgepulse", new BeatEdgePulseDisplay() },
