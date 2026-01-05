@@ -18,14 +18,9 @@
 //
 
 using Nettify.MailAddress;
-using Nitrocid.Base.Files;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Terminaux.Colors.Themes.Colors;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.Tools;
-using Textify.Versioning;
 
 namespace Nitrocid.ShellPacks.Commands
 {

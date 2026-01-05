@@ -24,7 +24,6 @@ using Magico.Enumeration;
 using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Kernel.Debugging.Testing.Facades;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Interactives;
 using Terminaux.Base.Buffered;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Interactive;

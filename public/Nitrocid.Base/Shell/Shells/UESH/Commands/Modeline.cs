@@ -19,7 +19,6 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using Nitrocid.Base.Network.Transfer;
 using System.Text;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands

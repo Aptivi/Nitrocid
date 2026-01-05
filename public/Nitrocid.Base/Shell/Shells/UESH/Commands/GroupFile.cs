@@ -24,7 +24,6 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Base.Languages;
-using Textify.General;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {

@@ -20,14 +20,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Colors.Data;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 

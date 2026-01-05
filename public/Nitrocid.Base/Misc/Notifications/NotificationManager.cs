@@ -43,7 +43,6 @@ using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Misc.Audio;
 using Nitrocid.Base.Misc.Screensaver;
-using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Power;
