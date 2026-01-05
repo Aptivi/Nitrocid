@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -80,10 +81,10 @@ namespace Nitrocid.LocaleChecker.Localization
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics =>
             ImmutableArray.Create(Rule, RuleComment, RuleJson, assemblyLocsDbg);
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("MicrosoftCodeAnalysisCorrectness", "RS1026:Enable concurrent execution", Justification = "Concurrency causes false positives related to assembly locs")]
         public override void Initialize(AnalysisContext context)
         {
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
-            context.EnableConcurrentExecution();
             context.RegisterCompilationStartAction(PopulateLocalizations);
         }
 
@@ -128,6 +129,7 @@ namespace Nitrocid.LocaleChecker.Localization
             context.RegisterSyntaxNodeAction(AnalyzeLocalization, SyntaxKind.InvocationExpression);
             context.RegisterSyntaxNodeAction(AnalyzeImplicitLocalization, SyntaxKind.CompilationUnit);
             context.RegisterCompilationEndAction(AnalyzeResourceLocalization);
+            context.RegisterCompilationEndAction(DebugLocalizationFunctions);
         }
 
         private void AnalyzeLocalization(SyntaxNodeAnalysisContext context)
@@ -458,7 +460,10 @@ namespace Nitrocid.LocaleChecker.Localization
                     }
                 }
             }
+        }
 
+        private void DebugLocalizationFunctions(CompilationAnalysisContext context)
+        {
             #region Debug
 #if LOCALECHECK_DEBUG
             // Debug diagnostic
