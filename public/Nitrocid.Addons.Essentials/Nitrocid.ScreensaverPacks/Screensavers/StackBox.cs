@@ -44,13 +44,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             if (ConsoleResizeHandler.WasResized(false))
             {
                 ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
-
-                // Reset resize sync
-                ConsoleResizeHandler.WasResized();
             }
             else
             {

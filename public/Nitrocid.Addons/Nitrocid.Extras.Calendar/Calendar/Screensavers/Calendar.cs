@@ -53,7 +53,6 @@ namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
 
             // Define the color
             if (CalendarColor is null)
@@ -82,9 +81,6 @@ namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
                 };
                 TextWriterRaw.WriteRaw(calendar.Render());
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(CalendarInit.CalendarConfig.CalendarDelay);
         }
 

@@ -58,7 +58,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             var backimplosionBuffer = new StringBuilder();
             
             // Draw the arc based on start and end angles that were changed
@@ -83,9 +82,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ResetColor();
                 ColorTools.LoadBackDry(colorStorage);
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BackImplosionDelay);
         }
 

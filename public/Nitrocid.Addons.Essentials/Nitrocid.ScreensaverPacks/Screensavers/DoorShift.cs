@@ -41,14 +41,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DoorShiftBackgroundColor));
-            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Whether the door is closing or opening
             bool isClosing = RandomDriver.RandomChance(30);
 
@@ -142,8 +139,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.DoorShiftDelay);
                 }
             }
-
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.DoorShiftDelay);
         }
 

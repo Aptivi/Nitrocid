@@ -57,7 +57,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 BeatEdgePulseMaximumColorLevel = ScreensaverPackInit.SaversConfig.BeatEdgePulseMaximumColorLevel
             };
             ColorTools.LoadBackDry("0;0;0");
-            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>

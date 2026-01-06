@@ -120,9 +120,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             posIdx = cycle;
             if (blankAreas > 0)
                 blankAreas--;
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WaveRunDelay);
         }
     }

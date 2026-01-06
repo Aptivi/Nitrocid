@@ -50,8 +50,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // First, prepare how many bars to render according to the console size
             int BarHeight = ConsoleWrapper.WindowHeight - 4;
             int BarWidthOutside = 3;
@@ -95,9 +93,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(progress, new(ThisBarLeft, 0)));
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BarWaveDelay);
         }
 

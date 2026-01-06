@@ -57,8 +57,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Make two delay halves to make up one half for screen with text and one half for screen with no text to make a flashing effect
             int HalfDelay = (int)Math.Round(ScreensaverPackInit.SaversConfig.FlashTextDelay / 2d);
 
@@ -87,9 +85,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ScreensaverManager.Delay(HalfDelay);
             ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
             ScreensaverManager.Delay(HalfDelay);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
         }
 
     }

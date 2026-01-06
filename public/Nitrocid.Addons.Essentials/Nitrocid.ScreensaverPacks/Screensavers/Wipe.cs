@@ -192,7 +192,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.WipeBackgroundColor));
             }
 
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WipeDelay);
         }
 

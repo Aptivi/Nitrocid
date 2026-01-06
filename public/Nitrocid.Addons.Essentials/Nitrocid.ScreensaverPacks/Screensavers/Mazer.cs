@@ -43,13 +43,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
-            ConsoleWrapper.CursorVisible = false;
 
             // Use Kruskal's algorithm to generate a maze
             GenerateMaze();
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MazerNewMazeDelay);
         }
 

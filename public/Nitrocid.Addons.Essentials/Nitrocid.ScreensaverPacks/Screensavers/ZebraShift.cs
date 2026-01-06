@@ -84,8 +84,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Prepare the string buffer
             var zebraBuffer = new StringBuilder();
 
@@ -114,9 +112,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Write the shift buffer
             TextWriterRaw.WritePlain(zebraBuffer.ToString(), false);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.ZebraShiftDelay);
         }
 

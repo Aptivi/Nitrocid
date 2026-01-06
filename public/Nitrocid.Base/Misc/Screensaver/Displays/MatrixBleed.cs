@@ -47,7 +47,6 @@ namespace Nitrocid.Base.Misc.Screensaver.Displays
         {
             ColorTools.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
-            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>
@@ -100,9 +99,6 @@ namespace Nitrocid.Base.Misc.Screensaver.Displays
             string buffer = MatrixBleedState.bleedBuffer.ToString();
             MatrixBleedState.bleedBuffer.Clear();
             TextWriterRaw.WritePlain(buffer);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(Config.SaverConfig.MatrixBleedDelay);
         }
 

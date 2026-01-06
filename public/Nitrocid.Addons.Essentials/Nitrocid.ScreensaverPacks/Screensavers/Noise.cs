@@ -41,8 +41,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             double NoiseDense = (ScreensaverPackInit.SaversConfig.NoiseDensity > 100 ? 100 : ScreensaverPackInit.SaversConfig.NoiseDensity) / 100d;
-
-            ConsoleWrapper.CursorVisible = false;
             ColorTools.LoadBackDry(new Color(ConsoleColors.Grey));
             ConsoleWrapper.Clear();
             ColorTools.SetConsoleColorDry(ConsoleColors.Black, true);
@@ -65,9 +63,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (!CoveredBlocks.Contains(CoverX.ToString() + ", " + CoverY.ToString()))
                     CoveredBlocks.Add(CoverX.ToString() + ", " + CoverY.ToString());
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.NoiseNewScreenDelay);
         }
 

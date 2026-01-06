@@ -44,8 +44,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Select a color range for the ramp
             int RedColorNumFrom = RandomDriver.Random(ScreensaverPackInit.SaversConfig.GradientRotMinimumRedColorLevelStart, ScreensaverPackInit.SaversConfig.GradientRotMaximumRedColorLevelStart);
             int GreenColorNumFrom = RandomDriver.Random(ScreensaverPackInit.SaversConfig.GradientRotMinimumGreenColorLevelStart, ScreensaverPackInit.SaversConfig.GradientRotMaximumGreenColorLevelStart);
@@ -193,9 +191,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Clear the scene
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.GradientRotNextRampDelay);
             ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
         }
 
     }

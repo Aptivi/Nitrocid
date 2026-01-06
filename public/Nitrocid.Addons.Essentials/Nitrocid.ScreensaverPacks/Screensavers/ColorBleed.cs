@@ -49,7 +49,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             bleedStates.Clear();
             ColorTools.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
-            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>
@@ -102,9 +101,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             string buffer = BleedState.bleedBuffer.ToString();
             BleedState.bleedBuffer.Clear();
             TextWriterRaw.WritePlain(buffer);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.ColorBleedDelay);
         }
 

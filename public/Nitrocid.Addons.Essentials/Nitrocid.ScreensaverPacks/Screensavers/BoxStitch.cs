@@ -181,9 +181,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 TextWriterRaw.WriteRaw(box4.Render());
                 ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BoxStitchLineDelay);
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BoxStitchDelay);
         }
     }

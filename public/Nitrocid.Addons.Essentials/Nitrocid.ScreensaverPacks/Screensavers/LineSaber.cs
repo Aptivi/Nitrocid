@@ -93,9 +93,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     }
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LineSaberDelay);
 
             // Clear all lines and reset them

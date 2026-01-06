@@ -66,8 +66,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // First, prepare how many dots to render according to the console size
             int Height = ConsoleWrapper.WindowHeight - 4;
             int Width = ConsoleWrapper.WindowWidth - 4;
@@ -118,9 +116,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 TextWriterWhereColor.WriteWhereColorBack(" ", PosHorizontal, PosVertical, Color.Empty, targetColor);
             }
             clearCoords = new(PosHorizontal, PosVertical);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SwivelRevealDelay);
         }
 

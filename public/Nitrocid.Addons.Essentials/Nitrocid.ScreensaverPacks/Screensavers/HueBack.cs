@@ -39,8 +39,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Prepare the color
             var color = new Color($"hsl:{currentHueAngle};{ScreensaverPackInit.SaversConfig.HueBackSaturation};{ScreensaverPackInit.SaversConfig.HueBackLuminance}");
 
@@ -50,9 +48,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             currentHueAngle++;
             if (currentHueAngle > 360)
                 currentHueAngle = 0;
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
         }
 
         /// <inheritdoc/>

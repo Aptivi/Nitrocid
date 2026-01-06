@@ -41,8 +41,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Variables
             int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             int LaunchPositionX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
@@ -157,9 +155,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
         }
 
     }

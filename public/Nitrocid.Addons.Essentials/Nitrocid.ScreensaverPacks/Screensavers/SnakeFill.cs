@@ -40,8 +40,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Select a color
             if (ScreensaverPackInit.SaversConfig.SnakeFillTrueColor)
             {
@@ -103,8 +101,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     }
                 }
             }
-
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SnakeFillDelay);
         }
 

@@ -57,8 +57,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Draw a line
             string lineString = !string.IsNullOrWhiteSpace(ScreensaverPackInit.SaversConfig.LineUpLineChar) ? ScreensaverPackInit.SaversConfig.LineUpLineChar : "-";
             string line = new(lineString[0], ConsoleWrapper.WindowWidth);
@@ -70,9 +68,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (line2PosY < ConsoleWrapper.WindowHeight)
                     TextWriterWhereColor.WriteWhereColor(line, 0, line2PosY, line2Color);
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LineUpDelay);
             if (!ConsoleResizeHandler.WasResized(false))
             {

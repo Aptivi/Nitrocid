@@ -57,7 +57,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             moveUp = RandomDriver.RandomBoolean();
-            ConsoleWrapper.CursorVisible = false;
 
             // Move the stars left
             for (int Star = 0; Star <= Stars.Count - 1; Star++)
@@ -115,9 +114,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             else
                 TextWriterRaw.WritePlain(starsBuffer.ToString(), false);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SprayDelay);
             ColorTools.LoadBackDry(0);
         }

@@ -204,9 +204,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Delay
                 ScreensaverManager.Delay(batteryDrainSpeed);
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
         }
 
     }

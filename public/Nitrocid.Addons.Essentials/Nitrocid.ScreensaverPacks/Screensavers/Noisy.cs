@@ -51,9 +51,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             noiseBuilder.Append(ConsolePositioning.RenderChangePosition(0, 0));
             ConsoleWrapper.Write(noiseBuilder.ToString());
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.NoisyDelay);
         }
 

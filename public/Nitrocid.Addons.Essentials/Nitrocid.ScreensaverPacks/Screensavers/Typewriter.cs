@@ -59,7 +59,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             string TypeWrite = ScreensaverPackInit.SaversConfig.TypewriterWrite;
             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", vars: [ScreensaverPackInit.SaversConfig.TypewriterWritingSpeedMin, CpmSpeedMin]);
             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", vars: [ScreensaverPackInit.SaversConfig.TypewriterWritingSpeedMax, CpmSpeedMax]);
-            ConsoleWrapper.CursorVisible = false;
+
             // Typewriter can also deal with files written on the field that is used for storing text, so check to see if the path exists.
             DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", vars: [ScreensaverPackInit.SaversConfig.TypewriterWrite]);
             if (FilesystemTools.TryParsePath(ScreensaverPackInit.SaversConfig.TypewriterWrite) && FilesystemTools.FileExists(ScreensaverPackInit.SaversConfig.TypewriterWrite))
@@ -148,9 +148,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in 1, {0}", vars: [linesWritten]);
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.TypewriterDelay);
         }
 

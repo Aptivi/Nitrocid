@@ -47,7 +47,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DanceNumbersBackgroundColor));
 
             // Draw few numbers
@@ -88,9 +87,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     ConsoleWrapper.Write(line);
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.DanceNumbersDelay);
         }
 

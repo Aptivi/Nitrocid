@@ -57,8 +57,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Clear the old text position
             int diff = ColumnLastLetter - ColumnFirstLetter + 1;
             TextWriterWhereColor.WriteWhereColorBack(new string(' ', diff), lastLeft, lastTop, true, Color.Empty, ScreensaverPackInit.SaversConfig.BouncingTextBackgroundColor);
@@ -145,9 +143,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 Direction = Direction.Replace("Left", "Right");
                 BouncingColor = ChangeBouncingTextColor();
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BouncingTextDelay);
         }
 

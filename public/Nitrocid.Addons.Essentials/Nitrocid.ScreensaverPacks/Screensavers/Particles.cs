@@ -43,8 +43,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Get how many particles we need to draw
             int cells = ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight;
             int particlesNeeded = cells / ScreensaverPackInit.SaversConfig.ParticlesDensity;
@@ -78,9 +76,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 particlesBuffer.Append(' ');
             }
             TextWriterRaw.WritePlain(particlesBuffer.ToString(), false);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.ParticlesDelay);
             ThemeColorsTools.LoadBackground();
         }

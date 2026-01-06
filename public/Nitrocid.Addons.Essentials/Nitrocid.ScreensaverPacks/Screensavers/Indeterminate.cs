@@ -63,9 +63,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.IndeterminateMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.IndeterminateMaximumBlueColorLevel);
             int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.IndeterminateMinimumColorLevel, ScreensaverPackInit.SaversConfig.IndeterminateMaximumColorLevel);
 
-            // Console resizing can sometimes cause the cursor to remain visible. This happens on Windows 10's terminal.
-            ConsoleWrapper.CursorVisible = false;
-
             // Set start and end widths for the ramp frame
             int RampFrameStartWidth = 4;
             int RampFrameEndWidth = ConsoleWrapper.WindowWidth - RampFrameStartWidth;
@@ -192,7 +189,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset the background
             ThemeColorsTools.LoadBackground();
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.IndeterminateDelay);
         }
 

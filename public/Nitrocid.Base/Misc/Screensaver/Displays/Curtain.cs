@@ -49,9 +49,6 @@ namespace Nitrocid.Base.Misc.Screensaver.Displays
             // Now, render it to the screen
             string renderedScreen = ModernLogonScreen.PrintConfiguredLogonScreen(finalPage, canvases);
             TextWriterRaw.WriteRaw(renderedScreen);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(Config.SaverConfig.CurtainDelay);
         }
 

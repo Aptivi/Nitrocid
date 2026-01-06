@@ -53,7 +53,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.BouncingBlockForegroundColor));
             ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.BouncingBlockBackgroundColor));
             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", vars: [RowBlock, ColumnBlock]);
@@ -71,7 +70,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowBlock and ColumnBlock to its original position...");
                 RowBlock = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
                 ColumnBlock = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-                ConsoleResizeHandler.WasResized();
                 ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BouncingBlockDelay);
                 return;
             }
@@ -127,9 +125,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 RowBlock -= 1;
                 ColumnBlock -= 1;
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BouncingBlockDelay);
         }
 

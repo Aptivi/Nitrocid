@@ -55,8 +55,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Move the droplets down
             for (int droplet = 0; droplet <= droplets.Count - 1; droplet++)
             {
@@ -143,9 +141,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             else
                 TextWriterRaw.WriteRaw(dropletsBuffer.ToString());
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.EvaporateDelay);
             ColorTools.LoadBackDry(0);
         }

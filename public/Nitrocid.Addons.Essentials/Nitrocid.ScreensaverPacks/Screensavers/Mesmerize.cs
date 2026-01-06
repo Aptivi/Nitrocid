@@ -62,7 +62,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Clear the console
             ColorTools.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
-            ConsoleWrapper.CursorVisible = false;
 
             // Reset dot positions and color shades
             dotPositions.Clear();
@@ -94,7 +93,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 // Setting maximum and minimum limits for console height and width
@@ -188,9 +186,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Re-initializing...");
                 ScreensaverPreparation();
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MesmerizeDelay);
         }
 

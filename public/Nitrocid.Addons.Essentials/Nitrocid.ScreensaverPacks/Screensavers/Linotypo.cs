@@ -66,7 +66,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Variable preparations
             ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.LinotypoTextColor));
             ConsoleWrapper.Clear();
-            ConsoleWrapper.CursorVisible = false;
             CurrentColumn = 1;
             CurrentColumnRowConsole = 0;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
@@ -401,9 +400,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     HandleNextColumn(ref CurrentColumn, ref CurrentColumnRowConsole, ColumnRowConsoleThreshold);
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LinotypoDelay);
         }
 

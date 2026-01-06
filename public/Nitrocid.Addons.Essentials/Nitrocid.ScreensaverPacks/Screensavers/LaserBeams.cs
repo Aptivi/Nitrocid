@@ -54,7 +54,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LaserBeamsBackgroundColor));
 
             // Populate the laser ends
@@ -121,10 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Write the result
             TextWriterRaw.WritePlain(laserBeamsBuilder.ToString(), false);
-
-            // Reset resize sync
             laserEnds.Clear();
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LaserBeamsDelay);
         }
 

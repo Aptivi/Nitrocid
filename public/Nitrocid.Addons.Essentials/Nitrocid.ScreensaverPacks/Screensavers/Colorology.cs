@@ -209,10 +209,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     }
                     break;
             }
-
-            // Reset resize sync
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.ColorologyDelay);
-            ConsoleResizeHandler.WasResized();
         }
 
     }

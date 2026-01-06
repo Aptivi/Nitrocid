@@ -46,8 +46,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Select a color range for the aurora
             double RedFrequency = Math.PI / 24;
             double GreenFrequency = Math.PI / 16;
@@ -92,9 +90,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 TextWriterRaw.WriteRaw(builder.ToString());
             ConsoleWrapper.SetCursorPosition(0, 0);
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.AuroraDelay);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
         }
 
         /// <inheritdoc/>

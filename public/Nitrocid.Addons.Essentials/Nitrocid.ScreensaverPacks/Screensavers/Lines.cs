@@ -46,8 +46,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Select a color
             if (ScreensaverPackInit.SaversConfig.LinesTrueColor)
             {
@@ -77,9 +75,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ConsoleWrapper.SetCursorPosition(0, Top);
                 ConsoleWrapper.WriteLine(Line);
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LinesDelay);
         }
 
