@@ -35,6 +35,7 @@ using Nitrocid.Base.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {
@@ -75,7 +76,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             DebugWriter.WriteDebug(DebugLevel.I, "Lyric path is {0}", vars: [lyricPath]);
 
             // Visualize it!
-            VisualizeLyric(lyricPath);
+            VisualizeLyric(lyricPath, true);
             ScreensaverManager.Delay(Settings.LyricsDelay);
 
             // Reset resize sync
@@ -86,7 +87,10 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
         /// Visualizes the lyric
         /// </summary>
         /// <param name="path">Path to lyric file</param>
-        public static void VisualizeLyric(string path)
+        public static void VisualizeLyric(string path) =>
+            VisualizeLyric(path, false);
+
+        private static void VisualizeLyric(string path, bool simulation)
         {
             // Neutralize the path
             path = FilesystemTools.NeutralizePath(path);
@@ -102,7 +106,13 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             if (string.IsNullOrWhiteSpace(path) || !FilesystemTools.FileExists(path))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Lyrics file {0} not found!", vars: [path]);
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_BASSBOOM_LYRICFILENOTFOUND"), false);
+                if (simulation)
+                    TextWriterRaw.WriteRaw(new InfoBox()
+                    {
+                        Text = LanguageTools.GetLocalized("NKS_BASSBOOM_LYRICFILENOTFOUND")
+                    }.Render());
+                else
+                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_BASSBOOM_LYRICFILENOTFOUND"), false);
                 return;
             }
 
