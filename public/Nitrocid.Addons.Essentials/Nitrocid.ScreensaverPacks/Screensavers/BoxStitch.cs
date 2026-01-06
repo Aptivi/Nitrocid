@@ -123,6 +123,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             List<RulerInfo> box4Rulers = [];
             while (!box1Done && !box2Done && !box3Done && !box4Done)
             {
+                if (ScreensaverManager.Bailing)
+                    return;
                 bool makeLine1 = RandomDriver.RandomChance(RandomDriver.Random(25));
                 bool makeLine2 = RandomDriver.RandomChance(RandomDriver.Random(25));
                 bool makeLine3 = RandomDriver.RandomChance(RandomDriver.Random(25));

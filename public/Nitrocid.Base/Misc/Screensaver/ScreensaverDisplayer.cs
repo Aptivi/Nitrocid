@@ -66,7 +66,7 @@ namespace Nitrocid.Base.Misc.Screensaver
                 Screensaver.ScreensaverPreparation();
 
                 // Execute the actual screensaver logic
-                while (!ScreensaverDisplayerThread.IsStopping)
+                while (!ScreensaverDisplayerThread.IsStopping && !ScreensaverManager.bailing)
                 {
                     if (ConsoleWrapper.CursorVisible)
                         ConsoleWrapper.CursorVisible = false;
@@ -95,6 +95,7 @@ namespace Nitrocid.Base.Misc.Screensaver
         {
             if (ScreensaverManager.InSaver)
             {
+                ScreensaverManager.bailing = true;
                 ScreensaverDisplayerThread.Stop(false);
                 ScreensaverAmbienceThread.Stop(false);
                 ScreensaverManager.SaverAutoReset.WaitOne();
@@ -102,6 +103,7 @@ namespace Nitrocid.Base.Misc.Screensaver
                 // Raise event
                 DebugWriter.WriteDebug(DebugLevel.I, "Screensaver really stopped.");
                 EventsManager.FireEvent(EventType.PostShowScreensaver);
+                ScreensaverManager.bailing = false;
                 ScreensaverManager.inSaver = false;
                 ScreensaverManager.ScrnTimeReached = false;
                 ScreensaverDisplayerThread.Regen();
