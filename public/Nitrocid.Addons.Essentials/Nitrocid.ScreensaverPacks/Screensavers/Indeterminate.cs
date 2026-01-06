@@ -27,6 +27,8 @@ using Nitrocid.Base.Drivers.RNG;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using System.Text;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -111,6 +113,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     break;
                 if (ScreensaverManager.Bailing)
                     return;
+                var rampBuffer = new StringBuilder();
 
                 // Clear the ramp
                 if (IndeterminateCurrentBlockDirection == IndeterminateDirection.LeftToRight)
@@ -118,9 +121,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int start = IndeterminateCurrentBlockStart == RampFrameStartWidth + 1 ? IndeterminateCurrentBlockStart : IndeterminateCurrentBlockStart - 1;
                     for (int BlockPos = start; BlockPos <= IndeterminateCurrentBlockEnd; BlockPos++)
                     {
-                        TextWriterWhereColor.WriteWhereColorBack(" ", BlockPos, RampCenterPosition - 1, true, Color.Empty, ThemeColorsTools.GetColor(ThemeColorType.Background));
-                        TextWriterWhereColor.WriteWhereColorBack(" ", BlockPos, RampCenterPosition, true, Color.Empty, ThemeColorsTools.GetColor(ThemeColorType.Background));
-                        TextWriterWhereColor.WriteWhereColorBack(" ", BlockPos, RampCenterPosition + 1, true, Color.Empty, ThemeColorsTools.GetColor(ThemeColorType.Background));
+                        rampBuffer.Append(
+                            ConsolePositioning.RenderChangePosition(BlockPos, RampCenterPosition - 1) +
+                            " " +
+                            ConsolePositioning.RenderChangePosition(BlockPos, RampCenterPosition) +
+                            " " +
+                            ConsolePositioning.RenderChangePosition(BlockPos, RampCenterPosition + 1) +
+                            " "
+                        );
                     }
                 }
                 else
@@ -128,20 +136,31 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int end = IndeterminateCurrentBlockEnd == RampFrameEndWidth ? IndeterminateCurrentBlockEnd : IndeterminateCurrentBlockEnd + 1;
                     for (int BlockPos = IndeterminateCurrentBlockStart; BlockPos <= end; BlockPos++)
                     {
-                        TextWriterWhereColor.WriteWhereColorBack(" ", BlockPos, RampCenterPosition - 1, true, Color.Empty, ThemeColorsTools.GetColor(ThemeColorType.Background));
-                        TextWriterWhereColor.WriteWhereColorBack(" ", BlockPos, RampCenterPosition, true, Color.Empty, ThemeColorsTools.GetColor(ThemeColorType.Background));
-                        TextWriterWhereColor.WriteWhereColorBack(" ", BlockPos, RampCenterPosition + 1, true, Color.Empty, ThemeColorsTools.GetColor(ThemeColorType.Background));
+                        rampBuffer.Append(
+                            ConsolePositioning.RenderChangePosition(BlockPos, RampCenterPosition - 1) +
+                            " " +
+                            ConsolePositioning.RenderChangePosition(BlockPos, RampCenterPosition) +
+                            " " +
+                            ConsolePositioning.RenderChangePosition(BlockPos, RampCenterPosition + 1) +
+                            " "
+                        );
                     }
                 }
 
                 // Fill the ramp
-                ColorTools.SetConsoleColorDry(RampCurrentColorInstance, true);
+                rampBuffer.Append(ColorTools.RenderSetConsoleColor(RampCurrentColorInstance, true));
                 for (int BlockPos = IndeterminateCurrentBlockStart; BlockPos <= IndeterminateCurrentBlockEnd; BlockPos++)
                 {
-                    TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true);
-                    TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition, true);
-                    TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition + 1, true);
+                    rampBuffer.Append(
+                        ConsolePositioning.RenderChangePosition(BlockPos, RampCenterPosition - 1) +
+                        " " +
+                        ConsolePositioning.RenderChangePosition(BlockPos, RampCenterPosition) +
+                        " " +
+                        ConsolePositioning.RenderChangePosition(BlockPos, RampCenterPosition + 1) +
+                        " "
+                    );
                 }
+                TextWriterRaw.WriteRaw(rampBuffer.ToString());
 
                 // Change the start and end positions
                 switch (IndeterminateCurrentBlockDirection)
