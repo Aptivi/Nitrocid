@@ -112,6 +112,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Populate the variables for sub-gradients
                 int RampSubgradientRedColorNumFrom = RedColorNumFrom;

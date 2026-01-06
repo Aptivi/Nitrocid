@@ -111,6 +111,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
                 var droplet = droplets[dropletIndex];
                 char dropletSymbol = '|';
                 int dropletX = droplet.Item1;
@@ -123,6 +125,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
                 var evaporation = evaporations[evaporationIndex];
                 char evaporationSymbol = '*';
                 int evaporationX = evaporation.Item1;

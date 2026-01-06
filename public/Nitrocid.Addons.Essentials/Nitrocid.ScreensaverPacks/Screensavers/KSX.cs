@@ -76,6 +76,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 switch (step)
                 {
@@ -96,6 +98,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Add the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdR);
@@ -130,6 +134,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Get the final color by using the odd/even comparison
                             var finalCol = currentPulse % 2 == 0 ? green : darkGreen;
@@ -168,6 +174,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(darkGreen.RGB.R - thresholdR * currentStep);
@@ -203,9 +211,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         ConsoleWrapper.CursorTop = 0;
                         while (!printDone)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             // Keep writing 2018 until it reaches the end
                             for (int currentIdx = 0; currentIdx <= sample.Length - 1 && !printDone; currentIdx++)
                             {
+                                if (ConsoleResizeHandler.WasResized(false))
+                                    break;
+                                if (ScreensaverManager.Bailing)
+                                    return;
+
                                 // Write the current character
                                 TextWriterColor.WriteColorBack(sample[currentIdx].ToString(), false, darkGreen, black);
 
@@ -277,6 +295,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(darkGreen.RGB.R - thresholdR * currentStep);
@@ -313,6 +333,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int currentMove = 0;
                         while (!selectedFirst)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool movingTop = DriverHandler.CurrentRandomDriverLocal.RandomChance(30);
 
                             // Make a move
@@ -346,6 +371,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Render the selection
                             for (int i = 0; i < maxKernels; i++)
                             {
+                                if (ConsoleResizeHandler.WasResized(false))
+                                    break;
+                                if (ScreensaverManager.Bailing)
+                                    return;
+
                                 int idx = selectedKernel - 1;
                                 var ver = versions.ElementAt(i);
                                 TextWriterColor.WriteColorBack("- {0}: {1}", true, i == idx ? green : darkGreen, black, ver.Key, ver.Value);
@@ -374,6 +404,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         long tickDiff = currentTick - ksEpochTick;
                         for (int iteration = 0; iteration < maxProg; iteration++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             // Some power function to make the glitches intense
                             double currentProg = Math.Pow((double)iteration / maxProg * 10, 2);
                             var progress = new SimpleProgress((int)currentProg, 100)
@@ -402,6 +437,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             {
                                 for (int delayed = 0; delayed < 5000; delayed += 10)
                                 {
+                                    if (ConsoleResizeHandler.WasResized(false))
+                                        break;
+                                    if (ScreensaverManager.Bailing)
+                                        return;
+
                                     ScreensaverManager.Delay(10, true);
                                     if (RandomDriver.RandomChance(currentProg))
                                         Glitch.GlitchAt();
@@ -427,6 +467,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(s8Figlet, new(s8consoleX, s8consoleY)));
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             ScreensaverManager.Delay(10, true);
                             if (RandomDriver.RandomChance(90))
                                 Glitch.GlitchAt();
@@ -444,6 +489,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int sysWipeMaxProg = 800;
                         for (int iteration = 0; iteration < sysWipeMaxProg; iteration++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             // Some power function to make the glitches intense
                             double currentProg = (double)iteration / sysWipeMaxProg * 100;
                             var progress = new SimpleProgress((int)currentProg, 100)
@@ -463,6 +513,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             {
                                 for (int delayed = 0; delayed < 1000; delayed += 10)
                                 {
+                                    if (ConsoleResizeHandler.WasResized(false))
+                                        break;
+                                    if (ScreensaverManager.Bailing)
+                                        return;
+
                                     ScreensaverManager.Delay(10, true);
                                     if (RandomDriver.RandomChance(currentProg))
                                         Glitch.GlitchAt();
@@ -479,6 +534,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int height = ConsoleWrapper.CursorTop;
                         for (int dumpIter = 0; dumpIter < 22; dumpIter++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             if (dumpIter % 10 == 0)
                                 TextWriterWhereColor.WriteWhere("{0}", width, height, dumpIter);
                             ScreensaverManager.Delay(100, true);
@@ -488,6 +548,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     case 11:
                         for (int xIter = 0; xIter < 1000; xIter++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             int xwidth = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
                             int xheight = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
                             TextWriterWhereColor.WriteWhereColorBack("X", xwidth, xheight, white, black);
@@ -508,6 +573,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(white.RGB.R - thresholdR * currentStep);

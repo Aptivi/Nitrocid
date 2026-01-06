@@ -66,6 +66,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", vars: [Paragraph]);
 
                 // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
@@ -86,10 +89,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     string Sentence = IncompleteSentences[SentenceIndex];
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
+
                     foreach (char StruckChar in Sentence)
                     {
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
+                        if (ScreensaverManager.Bailing)
+                            return;
 
                         // If we're at the end of the page, clear the screen
                         if (ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 2)
@@ -99,13 +107,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             ConsoleWrapper.Clear();
                             ConsoleWrapper.WriteLine();
                             if (SentenceIndex == 0)
-                            {
                                 ConsoleWrapper.Write("    ");
-                            }
                             else
-                            {
                                 ConsoleWrapper.Write(" ");
-                            }
                             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
                         }
 

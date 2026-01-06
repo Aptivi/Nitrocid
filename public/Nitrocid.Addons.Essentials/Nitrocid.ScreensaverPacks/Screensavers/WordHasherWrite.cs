@@ -83,6 +83,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             StringBuilder builtWord = new();
             for (int i = 0; i < word.Length; i++)
             {
+                if (ConsoleResizeHandler.WasResized(false))
+                    break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 builtWord.Append(word[i]);
                 string finalWord = builtWord.ToString();
                 string wordHash = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").GetEncryptedString(finalWord);
@@ -111,6 +116,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Destruct word
             for (int i = builtWord.Length - 1; i >= 0; i--)
             {
+                if (ConsoleResizeHandler.WasResized(false))
+                    break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 builtWord.Remove(i, 1);
                 if (builtWord.Length == 0)
                     break;

@@ -84,17 +84,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             for (int i = 0; i < Count; i++)
             {
+                if (ConsoleResizeHandler.WasResized(false))
+                    break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 posIdx++;
                 if (posIdx >= CurrentPos.Count)
                     posIdx = 0;
                 int Pos = CurrentPos[posIdx] + Math.Abs(CurrentPos.Min()) + 2;
-                if (!ConsoleResizeHandler.WasResized(false))
-                {
-                    ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WaveDelay);
-                    for (int j = 0; j < ConsoleWrapper.WindowHeight; j++)
-                        TextWriterWhereColor.WriteWhereColorBack(" ", i, j, Color.Empty, ThemeColorsTools.GetColor(ThemeColorType.Background));
-                    TextWriterWhereColor.WriteWhereColorBack(" ", i, Pos, Color.Empty, ColorStorage);
-                }
+                ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.WaveDelay);
+                for (int j = 0; j < ConsoleWrapper.WindowHeight; j++)
+                    TextWriterWhereColor.WriteWhereColorBack(" ", i, j, Color.Empty, ThemeColorsTools.GetColor(ThemeColorType.Background));
+                TextWriterWhereColor.WriteWhereColorBack(" ", i, Pos, Color.Empty, ColorStorage);
             }
 
             // Reset resize sync

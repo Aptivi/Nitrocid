@@ -59,6 +59,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
                     var color = ColorTools.GetRandomColor(ColorType.TrueColor);
                     var border = new Border()
                     {

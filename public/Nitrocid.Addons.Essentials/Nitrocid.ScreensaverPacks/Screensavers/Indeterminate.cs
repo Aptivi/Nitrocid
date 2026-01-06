@@ -109,6 +109,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Clear the ramp
                 if (IndeterminateCurrentBlockDirection == IndeterminateDirection.LeftToRight)

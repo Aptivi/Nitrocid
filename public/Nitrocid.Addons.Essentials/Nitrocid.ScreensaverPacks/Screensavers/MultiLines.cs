@@ -55,6 +55,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int linesCount = RandomDriver.Random(1, 10);
             for (int i = 0; i < linesCount; i++)
             {
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 // Select a color
                 if (ScreensaverPackInit.SaversConfig.MultiLinesTrueColor)
                 {

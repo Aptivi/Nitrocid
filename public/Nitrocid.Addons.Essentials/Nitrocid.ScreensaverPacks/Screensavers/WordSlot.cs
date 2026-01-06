@@ -74,6 +74,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int steps = RandomDriver.Random(10, 100);
             for (int s = 0; s < steps; s++)
             {
+                if (ConsoleResizeHandler.WasResized(false))
+                    break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 ConsoleWrapper.Clear();
 
                 // Write word

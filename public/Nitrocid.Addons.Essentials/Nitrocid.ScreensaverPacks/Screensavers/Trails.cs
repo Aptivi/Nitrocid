@@ -124,17 +124,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             positions.Add(new(PosHorizontal, PosVertical));
             if (positions.Count > ScreensaverPackInit.SaversConfig.TrailsTrailLength)
                 positions.RemoveAt(0);
-            if (!ConsoleResizeHandler.WasResized(false))
+            for (int i = 0; i < positions.Count; i++)
             {
-                for (int i = 0; i < positions.Count; i++)
-                {
-                    Coordinate item = positions[i];
-                    int finalR = (int)(r - (thresholdRed * (positions.Count - i)));
-                    int finalG = (int)(g - (thresholdGreen * (positions.Count - i)));
-                    int finalB = (int)(b - (thresholdBlue * (positions.Count - i)));
-                    var ColorStorage = new Color(finalR, finalG, finalB);
-                    TextWriterWhereColor.WriteWhereColorBack(" ", item.X, item.Y, Color.Empty, ColorStorage);
-                }
+                if (ConsoleResizeHandler.WasResized(false))
+                    break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
+                Coordinate item = positions[i];
+                int finalR = (int)(r - (thresholdRed * (positions.Count - i)));
+                int finalG = (int)(g - (thresholdGreen * (positions.Count - i)));
+                int finalB = (int)(b - (thresholdBlue * (positions.Count - i)));
+                var ColorStorage = new Color(finalR, finalG, finalB);
+                TextWriterWhereColor.WriteWhereColorBack(" ", item.X, item.Y, Color.Empty, ColorStorage);
             }
 
             // Reset resize sync

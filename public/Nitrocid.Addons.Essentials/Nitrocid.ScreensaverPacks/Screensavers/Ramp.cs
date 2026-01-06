@@ -114,6 +114,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
+
                     ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1);
                     ConsoleWrapper.Write(' ');
                     ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition);
@@ -147,6 +150,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
+
                     ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1);
                     ConsoleWrapper.Write(' ');
                     ConsoleWrapper.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition);

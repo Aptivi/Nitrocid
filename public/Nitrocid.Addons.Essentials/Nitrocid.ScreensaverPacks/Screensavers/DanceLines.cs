@@ -53,6 +53,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             string lineString = !string.IsNullOrWhiteSpace(ScreensaverPackInit.SaversConfig.DanceLinesLineChar) ? ScreensaverPackInit.SaversConfig.DanceLinesLineChar : "-";
             for (int i = 0; i < ConsoleWrapper.WindowHeight; i++)
             {
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 // Draw a randomly-sized line
                 string line = new(lineString[0], RandomDriver.Random(ConsoleWrapper.WindowWidth));
 
