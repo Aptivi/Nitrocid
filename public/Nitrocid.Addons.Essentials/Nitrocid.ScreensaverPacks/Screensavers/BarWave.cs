@@ -85,11 +85,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     var progress = new SimpleProgress(Pos, 100)
                     {
                         Vertical = true,
-                        Height = 4,
+                        Height = ConsoleWrapper.WindowHeight,
                         ProgressActiveForegroundColor = ColorStorage,
                         ProgressForegroundColor = TransformationTools.GetDarkBackground(ColorStorage),
+                        ProgressBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background),
                     };
-                    TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(progress, new(ThisBarLeft, 1)));
+                    TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(progress, new(ThisBarLeft, 0)));
                 }
             }
 
