@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Extras.Amusements.Amusements.Games;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.Amusements.Commands
@@ -26,7 +27,8 @@ namespace Nitrocid.Extras.Amusements.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            // TODO: Populate the command with TicTacToe code
+            bool computerMode = parameters.ContainsSwitch("-computer");
+            TicTacToe.InitializeTicTacToe(computerMode);
             return 0;
         }
     }
