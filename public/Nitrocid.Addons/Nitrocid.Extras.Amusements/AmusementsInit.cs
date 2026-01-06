@@ -147,7 +147,16 @@ namespace Nitrocid.Extras.Amusements
             new CommandInfo("streetrun", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC", new StreetRunCommand()),
 
             // TODO: NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC -> "Tic Tac Toe game (X for Player 1, and O for Player 2)"
-            new CommandInfo("tictactoe", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC", new TicTacToeCommand()),
+            new CommandInfo("tictactoe", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC",
+                [
+                    new CommandArgumentInfo([
+                        // TODO: NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC -> "Play with CPU"
+                        new SwitchInfo("computer", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC", new SwitchOptions()
+                        {
+                            AcceptsValues = false
+                        }),
+                    ])
+                ], new TicTacToeCommand()),
 
             new CommandInfo("wordle", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_WORDLE_DESC",
                 [
