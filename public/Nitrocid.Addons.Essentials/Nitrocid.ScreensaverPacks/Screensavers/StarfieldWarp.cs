@@ -138,6 +138,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 var Star = Stars[StarIndex];
                 char StarSymbol = '*';
                 int StarX = (int)Star.Item1;

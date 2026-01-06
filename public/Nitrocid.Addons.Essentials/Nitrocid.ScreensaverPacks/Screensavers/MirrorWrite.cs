@@ -74,6 +74,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", vars: [Paragraph]);
 
                 // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
@@ -97,10 +100,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int processedWidth = 0;
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
+
                     foreach (WideChar StruckChar in wideChars)
                     {
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
+                        if (ScreensaverManager.Bailing)
+                            return;
 
                         // Calculate needed milliseconds from two WPM speeds (minimum and maximum)
                         int SelectedCpm = RandomDriver.RandomIdx(CpmSpeedMin, CpmSpeedMax);

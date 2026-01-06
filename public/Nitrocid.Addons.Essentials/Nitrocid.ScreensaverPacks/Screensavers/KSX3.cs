@@ -80,6 +80,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 switch (step)
                 {
@@ -110,6 +112,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdGR);
@@ -140,6 +144,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR - thresholdGR);
@@ -170,6 +176,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdRR);
@@ -200,6 +208,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR - thresholdRR);
@@ -230,6 +240,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdPR);
@@ -274,6 +286,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentBackR = (int)Math.Round(currentBackR + thresholdPR);
@@ -319,6 +333,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR - thresholdPR);
@@ -351,6 +367,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     case 4:
                         for (int xIter = 0; xIter < 1000; xIter++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             int xwidth = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
                             int xheight = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
                             TextWriterWhereColor.WriteWhereColorBack("X", xwidth, xheight, black, pink);
@@ -361,6 +382,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     case 5:
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             ScreensaverManager.Delay(10, true);
                             Glitch.GlitchAt();
                         }
@@ -370,6 +396,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int maxFlashes = 200;
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool showRed = flashes % 2 == 0;
                             if (showRed)
                                 ColorTools.LoadBackDry(red);
@@ -386,6 +417,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int selectorsPositionY = ConsoleWrapper.WindowHeight - 2;
                         for (int selections = 0; selections <= maxSelections; selections++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             ScreensaverManager.Delay(10, true);
                             int randomYear1 = RandomDriver.Random(2018, 2024);
                             int randomYear2 = RandomDriver.Random(2018, 2024);
@@ -454,6 +490,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         // Select a random date
                         for (int delayed = 0; delayed < 15000; delayed += 10)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             ScreensaverManager.Delay(10, true);
                             int selectedDateIdx = RandomDriver.RandomIdx(targetDates.Length);
                             var selectedDate = targetDates[selectedDateIdx];
@@ -480,6 +521,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 year = "2018";
                                 for (int delayed = 0; delayed < 5000; delayed += 10)
                                 {
+                                    if (ConsoleResizeHandler.WasResized(false))
+                                        break;
+                                    if (ScreensaverManager.Bailing)
+                                        return;
+
                                     int xwidth = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
                                     int xheight = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
                                     TextWriterWhereColor.WriteWhereColorBack("X", xwidth, xheight, green, black);
@@ -500,6 +546,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 year = "2021";
                                 for (int delayed = 0; delayed < 5000; delayed += 10)
                                 {
+                                    if (ConsoleResizeHandler.WasResized(false))
+                                        break;
+                                    if (ScreensaverManager.Bailing)
+                                        return;
+
                                     Glitch.GlitchAt();
                                     ScreensaverManager.Delay(10, true);
                                 }
@@ -542,6 +593,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Add the values according to the threshold
                             currentR = (int)Math.Round(currentR + transitionThresholdR);
@@ -559,6 +612,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Add the values according to the threshold
                             currentR = (int)Math.Round(currentR - thresholdR);
@@ -591,6 +646,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Add the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdR);
@@ -624,6 +681,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(selectedColor.RGB.R - thresholdR * currentStep);
@@ -660,9 +719,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         ConsoleWrapper.CursorTop = 0;
                         while (!printDone)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             // Keep writing the year until it reaches the end
                             for (int currentIdx = 0; currentIdx <= sample.Length - 1 && !printDone; currentIdx++)
                             {
+                                if (ConsoleResizeHandler.WasResized(false))
+                                    break;
+                                if (ScreensaverManager.Bailing)
+                                    return;
+
                                 // Write the current character
                                 TextWriterColor.WriteColorBack(sample[currentIdx].ToString(), false, selectedColor, black);
 
@@ -734,6 +803,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(selectedColor.RGB.R - thresholdR * currentStep);

@@ -53,20 +53,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             var CoveredBlocks = new ArrayList();
             while (CoveredBlocks.Count < BlocksToCover)
             {
-                if (!ConsoleResizeHandler.WasResized(false))
-                {
-                    int CoverX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
-                    int CoverY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-                    ConsoleWrapper.SetCursorPosition(CoverX, CoverY);
-                    ConsoleWrapper.Write(" ");
-                    if (!CoveredBlocks.Contains(CoverX.ToString() + ", " + CoverY.ToString()))
-                        CoveredBlocks.Add(CoverX.ToString() + ", " + CoverY.ToString());
-                }
-                else
-                {
-                    // We're resizing.
+                if (ConsoleResizeHandler.WasResized(false))
                     break;
-                }
+                if (ScreensaverManager.Bailing)
+                    return;
+
+                int CoverX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+                int CoverY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
+                ConsoleWrapper.SetCursorPosition(CoverX, CoverY);
+                ConsoleWrapper.Write(" ");
+                if (!CoveredBlocks.Contains(CoverX.ToString() + ", " + CoverY.ToString()))
+                    CoveredBlocks.Add(CoverX.ToString() + ", " + CoverY.ToString());
             }
 
             // Reset resize sync

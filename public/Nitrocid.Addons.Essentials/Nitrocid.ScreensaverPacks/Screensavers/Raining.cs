@@ -89,6 +89,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 var droplet = droplets[dropletIndex];
                 char dropletSymbol = '|';
                 int dropletX = droplet.Item1;

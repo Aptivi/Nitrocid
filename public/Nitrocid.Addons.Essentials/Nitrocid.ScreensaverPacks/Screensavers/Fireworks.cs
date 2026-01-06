@@ -88,6 +88,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Current position: {0}, {1}", vars: [CurrentX, CurrentY]);
                     ConsoleWrapper.SetCursorPosition((int)Math.Round(CurrentX), CurrentY);
                     ConsoleWrapper.Write(" ");
@@ -110,6 +112,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Variables
                     int UpperParticleY = IgnitePositionY + 1 + Radius;

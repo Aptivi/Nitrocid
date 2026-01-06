@@ -94,6 +94,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Check to see if user decided to resize
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Print a block and add the covered position to the list so fading down can be done
                 string renderedNumber = RandomDriver.Random(1).ToString();
@@ -113,6 +115,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Check to see if user decided to resize
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Set thresholds
                 double ThresholdRed = foreground.RGB.R / (double)25;
@@ -134,6 +138,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     // Check to see if user decided to resize
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Actually fade the line out
                     int PositionLeft = PositionTuple.Item1;

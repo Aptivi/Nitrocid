@@ -95,6 +95,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 TextWriterWhereColor.WriteWhereColorBack(" ", 0, y, Color.Empty, ThemeColorsTools.GetColor(ThemeColorType.Background));
             for (int i = 0; i < count - blankAreas; i++)
             {
+                if (ConsoleResizeHandler.WasResized(false))
+                    break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 int clearPosIdx = posIdx;
                 posIdx++;
                 if (posIdx >= currentPos.Count)
@@ -103,11 +108,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     clearPosIdx = 0;
                 int pos = currentPos[posIdx] + Math.Abs(currentPos.Min()) + 2;
                 int posClear = currentPos[clearPosIdx] + Math.Abs(currentPos.Min()) + 2;
-                if (!ConsoleResizeHandler.WasResized(false))
-                {
-                    TextWriterWhereColor.WriteWhereColorBack(" ", blankAreas + i + 1, posClear, Color.Empty, ThemeColorsTools.GetColor(ThemeColorType.Background));
-                    TextWriterWhereColor.WriteWhereColorBack(" ", blankAreas + i, pos, Color.Empty, waveColor);
-                }
+                TextWriterWhereColor.WriteWhereColorBack(" ", blankAreas + i + 1, posClear, Color.Empty, ThemeColorsTools.GetColor(ThemeColorType.Background));
+                TextWriterWhereColor.WriteWhereColorBack(" ", blankAreas + i, pos, Color.Empty, waveColor);
             }
             if (blankAreas == 0)
             {

@@ -88,6 +88,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MarqueeDelay);
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 if (ScreensaverPackInit.SaversConfig.MarqueeUseConsoleAPI)
                     ConsoleWrapper.Clear();
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Current left: {0} | Current left on other end: {1}", vars: [CurrentLeft, CurrentLeftOtherEnd]);
@@ -101,17 +104,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // written variable equals the base text variable. However, if we're on the left, take the substring so that the character which was
                 // shown previously won't be shown again.
                 if (CurrentLeft != 0)
-                {
                     MarqueeWritten = MarqueeWritten[..(CurrentLeftOtherEnd - CurrentLeft)];
-                }
                 else if (CurrentLeft == 0 & Middle)
-                {
                     MarqueeWritten = MarqueeWritten.Substring(CurrentCharacterNum - (CurrentLeftOtherEnd - CurrentLeft), CurrentLeftOtherEnd - CurrentLeft);
-                }
                 else
-                {
                     MarqueeWritten = MarqueeWritten[(ScreensaverPackInit.SaversConfig.MarqueeWrite.Length - (CurrentLeftOtherEnd - CurrentLeft))..];
-                }
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written result: {0}", vars: [MarqueeWritten]);
                 if (!ScreensaverPackInit.SaversConfig.MarqueeUseConsoleAPI)
                     MarqueeWritten += $"{ConsoleClearing.GetClearLineToRightSequence()}";
