@@ -26,6 +26,8 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Base.Kernel.Configuration;
+using Terminaux.Base.Extensions;
+using System.Text;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -117,10 +119,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Fill the entire screen
+                    var subgradientBuffer = new StringBuilder();
                     for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
-                        TextWriterWhereColor.WriteWhere(" ", RampCurrentPositionLeft, y);
+                    {
+                        subgradientBuffer.Append(ConsolePositioning.RenderChangePosition(RampCurrentPositionLeft, y));
+                        subgradientBuffer.Append(' ');
+                    }
+                    TextWriterRaw.WriteRaw(subgradientBuffer.ToString());
 
                     // Update left position
                     RampCurrentPositionLeft = ConsoleWrapper.CursorLeft;
