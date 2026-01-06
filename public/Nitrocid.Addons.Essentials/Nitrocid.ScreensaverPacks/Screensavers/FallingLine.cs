@@ -92,7 +92,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     return;
 
                 // Print a block and add the covered position to the list so fading down can be done
-                TextWriterWhereColor.WriteWhere(" ", ColumnLine, Fall, false);
+                TextWriterWhereColor.WriteWhereColorBack(" ", ColumnLine, Fall, false, Color.Empty, ColorStorage);
                 var PositionTuple = new Tuple<int, int>(ColumnLine, Fall);
                 CoveredPositions.Add(PositionTuple);
 
