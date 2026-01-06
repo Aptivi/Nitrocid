@@ -375,6 +375,7 @@ namespace Nitrocid.Base.Misc.Screensaver
             int finalDelay = Config.MainConfig.ScreensaverUnifiedDelay && !force ? Config.MainConfig.ScreensaverDelay : delay;
             SpinWait.SpinUntil(() =>
                 ScreensaverDisplayer.ScreensaverDisplayerThread.IsStopping ||
+                Bailing ||
                 ConsoleResizeHandler.WasResized(false)
             , finalDelay);
         }
