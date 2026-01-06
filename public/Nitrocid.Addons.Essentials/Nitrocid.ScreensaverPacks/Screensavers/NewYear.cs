@@ -48,7 +48,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
-            ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
 
@@ -141,7 +140,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset
             ScreensaverManager.Delay(500);
-            ConsoleResizeHandler.WasResized();
         }
 
     }

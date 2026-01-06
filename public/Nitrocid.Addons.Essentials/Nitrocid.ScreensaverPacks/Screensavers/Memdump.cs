@@ -40,8 +40,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Two boxes, one for the initial color, and one for the bit-shifted color
             var dumpInitialColorBorder = new Border()
             {
@@ -93,9 +91,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Print the hexes
             TextWriterWhereColor.WriteWhereColor(initialHex, initialInfoMargin, infoTop, initialColor);
             TextWriterWhereColor.WriteWhereColor(shiftedHex, shiftedInfoMargin, infoTop, shiftedColor);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MemdumpDelay);
         }
 

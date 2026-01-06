@@ -64,7 +64,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             ThemeColorsTools.LoadBackground();
 
             // First, prepare how many dots to render according to the console size
@@ -163,9 +162,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Render the bars
                 TextWriterRaw.WriteRaw(lineBuilder.ToString());
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.PointTrackDelay);
         }
 

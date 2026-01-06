@@ -53,8 +53,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Move the stars left
             for (int Star = 0; Star <= Stars.Count - 1; Star++)
             {
@@ -105,9 +103,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             else
                 TextWriterRaw.WritePlain(starsBuffer.ToString(), false);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.StarfieldDelay);
             ColorTools.LoadBackDry(0);
         }

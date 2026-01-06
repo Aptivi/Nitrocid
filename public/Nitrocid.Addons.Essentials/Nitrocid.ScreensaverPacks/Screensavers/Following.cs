@@ -73,8 +73,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Clear screen if necessary
             if (currentStep == 20)
             {
@@ -139,8 +137,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
                 ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.FollowingDelay);
             }
-
-            // Reset resize sync
             if (ConsoleResizeHandler.WasResized(false))
             {
                 start = (RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth), RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight));
@@ -152,7 +148,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 end = (RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth), RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight));
             }
             currentStep++;
-            ConsoleResizeHandler.WasResized();
         }
 
     }

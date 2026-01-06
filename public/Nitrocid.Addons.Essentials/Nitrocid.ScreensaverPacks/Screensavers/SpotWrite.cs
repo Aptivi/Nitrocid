@@ -50,7 +50,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             string TypeWrite = ScreensaverPackInit.SaversConfig.SpotWriteWrite;
-            ConsoleWrapper.CursorVisible = false;
 
             // SpotWrite can also deal with files written on the field that is used for storing text, so check to see if the path exists.
             DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", vars: [ScreensaverPackInit.SaversConfig.SpotWriteWrite]);
@@ -120,9 +119,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[1K");
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SpotWriteDelay);
         }
 

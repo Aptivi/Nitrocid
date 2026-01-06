@@ -54,7 +54,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int ConsoleMiddleWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
             int ConsoleMiddleHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             var FigletFontUsed = FigletTools.GetFigletFont(ScreensaverPackInit.SaversConfig.BigLetterFont);
-            ConsoleWrapper.CursorVisible = false;
             ConsoleWrapper.Clear();
 
             // Set colors
@@ -92,9 +91,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Actually write it
             if (!ConsoleResizeHandler.WasResized(false))
                 TextWriterWhereColor.WriteWhereColor(FigletWrite, FigletWidth, FigletHeight, true, ColorStorage);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             int delay = ScreensaverPackInit.SaversConfig.BigLetterRainbowMode ? 16 : ScreensaverPackInit.SaversConfig.BigLetterDelay;
             ScreensaverManager.Delay(delay);
         }

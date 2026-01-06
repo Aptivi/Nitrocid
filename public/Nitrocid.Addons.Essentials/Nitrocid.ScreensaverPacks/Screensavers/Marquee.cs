@@ -50,7 +50,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             ConsoleWrapper.Clear();
 
             // Ensure that the top position of the written text is always centered if AlwaysCentered is enabled. Else, select a random height.
@@ -133,9 +132,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "On left or entire text written. Decremented left other end position {0}", vars: [CurrentLeftOtherEnd]);
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MarqueeDelay);
         }
 

@@ -48,7 +48,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 ConsoleWrapper.Write(RandomDriver.Random(1).ToString());
@@ -58,9 +57,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
                 ConsoleWrapper.Clear();
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SimpleMatrixDelay);
         }
 

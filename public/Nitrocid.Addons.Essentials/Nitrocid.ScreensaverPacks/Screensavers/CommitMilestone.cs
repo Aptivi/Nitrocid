@@ -55,7 +55,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             var figFontUsed = FigletTools.GetFigletFont("Banner2");
             var figFontFallback = FigletTools.GetFigletFont("small");
-            ConsoleWrapper.CursorVisible = false;
             ConsoleWrapper.Clear();
 
             // Set colors
@@ -141,9 +140,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 };
                 TextWriterRaw.WriteRaw(descText.Render());
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             int delay = ScreensaverPackInit.SaversConfig.CommitMilestoneRainbowMode ? 16 : ScreensaverPackInit.SaversConfig.CommitMilestoneDelay;
             ScreensaverManager.Delay(delay);
         }

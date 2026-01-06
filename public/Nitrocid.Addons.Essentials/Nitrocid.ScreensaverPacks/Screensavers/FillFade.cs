@@ -129,9 +129,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ChangeColor();
                 ColorFilled = false;
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
         }
 
         private void ChangeColor()

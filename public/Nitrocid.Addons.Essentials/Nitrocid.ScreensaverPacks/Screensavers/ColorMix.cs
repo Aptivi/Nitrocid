@@ -42,7 +42,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.ColorMixBackgroundColor));
-            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>
@@ -88,9 +87,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.ColorMixBackgroundColor));
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.ColorMixDelay);
         }
 

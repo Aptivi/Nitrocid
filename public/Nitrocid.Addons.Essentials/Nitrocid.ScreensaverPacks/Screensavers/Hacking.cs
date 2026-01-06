@@ -54,7 +54,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             ColorTools.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
-            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>
@@ -157,9 +156,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset covered positions
             CoveredPositions.Clear();
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(10);
         }
 

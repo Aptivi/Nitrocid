@@ -112,8 +112,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Determine if we need to generate a new dot
             if (newDotGroup > 0)
             {
@@ -245,9 +243,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Write the spin buffer
             TextWriterRaw.WritePlain(spinBuffer.ToString(), false);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.TwoSpinsDelay);
 
             // Clear the printed dots

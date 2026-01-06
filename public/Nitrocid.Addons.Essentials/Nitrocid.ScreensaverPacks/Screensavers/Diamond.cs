@@ -265,7 +265,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Delay
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.DiamondDelay);
         }
 

@@ -78,7 +78,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             var rippleBuffer = new StringBuilder();
             
             // Draw the arc based on start and end angles that were changed
@@ -130,9 +129,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Change the radius
             ChangeRadius(ref currentOuterRadius, ref currentInnerRadius);
             ChangeRadius(ref currentOuterRadius2, ref currentInnerRadius2);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.RippleDelay);
         }
 

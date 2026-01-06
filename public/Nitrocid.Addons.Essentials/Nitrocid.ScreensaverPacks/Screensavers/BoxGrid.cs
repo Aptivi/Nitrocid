@@ -38,8 +38,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Get how many boxes to write
             int boxWidthExterior = 4;
             int boxHeightExterior = 3;
@@ -73,9 +71,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     TextWriterRaw.WriteRaw(border.Render());
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BoxGridDelay);
         }
 

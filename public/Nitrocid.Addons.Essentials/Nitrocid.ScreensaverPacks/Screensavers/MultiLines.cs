@@ -46,7 +46,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.MultiLinesBackgroundColor));
 
             // Draw few lines
@@ -84,9 +83,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     ConsoleWrapper.WriteLine(Line);
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MultiLinesDelay);
         }
 

@@ -64,8 +64,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Prepare colors
             int ProgressFillPositionFirst, ProgressFillPositionSecond, ProgressFillPositionThird;
             int InformationPositionFirst, InformationPositionSecond, InformationPositionThird;
@@ -265,9 +263,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             if (ScreensaverPackInit.SaversConfig.ProgressesCycleColors)
                 CurrentTicks += 1L;
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.ProgressesDelay);
         }
 

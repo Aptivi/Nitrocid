@@ -66,7 +66,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ThemeColorsTools.LoadBackground();
-            ConsoleWrapper.CursorVisible = false;
 
             // First, prepare how many dots to render according to the console size
             int Height = ConsoleWrapper.WindowHeight - 4;
@@ -138,9 +137,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var ColorStorage = new Color(finalR, finalG, finalB);
                 TextWriterWhereColor.WriteWhereColorBack(" ", item.X, item.Y, Color.Empty, ColorStorage);
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.TrailsDelay);
         }
 

@@ -50,7 +50,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             if (currentColor is null || nextColor is null)
                 return;
 
@@ -88,9 +87,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             currentColor = nextColor;
             nextColor = ColorTools.GetRandomColor(ColorType.TrueColor, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel);
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.BloomDelay);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
         }
 
     }

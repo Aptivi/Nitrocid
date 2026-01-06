@@ -49,7 +49,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
-            ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
 
@@ -144,9 +143,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     CoveredPositions.Clear();
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
         }
 
         /// <inheritdoc/>

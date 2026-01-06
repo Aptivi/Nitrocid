@@ -51,7 +51,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             ColorTools.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
-            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>
@@ -59,7 +58,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             ColorTools.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
-            ConsoleWrapper.CursorVisible = false;
 
             // Choose the column for the falling line
             ColumnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
@@ -133,9 +131,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset covered positions
             CoveredPositions.Clear();
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MatrixDelay);
         }
 

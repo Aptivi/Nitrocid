@@ -55,8 +55,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             var CapStrikes = new List<string>() { "Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:\"{_+}|", "?\":> ", "M<LKJN ", "VBHGFC ", "ZXDSA " };
             string CapSymbols = "~!@$#%&^*)(:\"{_+}|?><";
 
-            ConsoleWrapper.CursorVisible = false;
-
             // Prepare display (make a paragraph indentation)
             ConsoleWrapper.WriteLine();
             ConsoleWrapper.Write("    ");
@@ -140,9 +138,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.WriteLine();
             if (!ConsoleResizeHandler.WasResized(false))
                 ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.TypoWriteAgainDelay);
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.TypoDelay);
         }
 

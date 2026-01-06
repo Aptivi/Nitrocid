@@ -50,7 +50,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             CoveredPositions.Clear();
             ColorTools.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
-            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>
@@ -145,9 +144,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset covered positions
             CoveredPositions.Clear();
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.FallingLineDelay);
         }
 

@@ -51,8 +51,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Update stars if refreshing
             UpdateStars();
 
@@ -120,9 +118,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SkyCometDelay);
                 }
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SkyCometDelay);
         }
 

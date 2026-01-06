@@ -45,8 +45,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-
             // Move the blocks to the direction, depending on the move direction
             for (int Block = 0; Block <= Blocks.Count - 1; Block++)
             {
@@ -145,9 +143,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
                 Blocks.Clear();
             }
-
-            // Reset resize sync
-            ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SpecklesDelay);
             ThemeColorsTools.LoadBackground();
         }

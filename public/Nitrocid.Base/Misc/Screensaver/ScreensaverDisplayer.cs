@@ -71,6 +71,7 @@ namespace Nitrocid.Base.Misc.Screensaver
                     if (ConsoleWrapper.CursorVisible)
                         ConsoleWrapper.CursorVisible = false;
                     Screensaver.ScreensaverLogic();
+                    ConsoleResizeHandler.WasResized();
                 }
             }
             catch (ThreadInterruptedException)

@@ -44,13 +44,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
             if (ConsoleResizeHandler.WasResized(false))
             {
                 Drawn = false;
-
-                // Reset resize sync
-                ConsoleResizeHandler.WasResized();
             }
             else
             {

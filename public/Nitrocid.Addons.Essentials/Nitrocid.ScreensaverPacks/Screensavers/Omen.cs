@@ -46,7 +46,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             step = 0;
             ColorTools.LoadBackDry(ConsoleColors.Black);
-            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>
