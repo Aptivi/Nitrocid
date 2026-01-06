@@ -17,20 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Net.Http;
+using System.Text;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Network.Transfer;
-using System.Text;
 using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Quotes
 {
     internal static class RandomQuotes
     {
+        private static readonly HttpClient httpClientNoCertificateCheck = new(new HttpClientHandler
+        {
+            ServerCertificateCustomValidationCallback = (request, cert, chain, errors) =>
+            {
+                return true;
+            }
+        });
+
         internal static (string content, string author) GetRandomQuote()
         {
-            // Get a quote string from the API
-            string quoteString = NetworkTransfer.DownloadString("https://api.quotable.io/quotes/random", false);
+            // Get a quote string from the API. We'll need to ignore certificate errors since quotable.io didn't renew the license since September 2024.
+            string quoteString = httpClientNoCertificateCheck.GetStringAsync("https://api.quotable.io/quotes/random").Result;
             if (string.IsNullOrEmpty(quoteString))
                 return ("", "");
 
