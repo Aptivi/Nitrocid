@@ -34,6 +34,7 @@ using Textify.General;
 using Nitrocid.Base.Drivers.RNG;
 using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -79,6 +80,110 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 var gameBuffer = new StringBuilder();
                 gameBuffer.Append(boxFrame.Render());
 
+                // Print the X's and O's in their appropriate boxes
+                void PrintXO(int spotX, int spotY, int boxWidth, int boxHeight, int gridX, int gridY)
+                {
+                    int gridTurn = grid[gridX, gridY];
+                    if (gridTurn > 0)
+                    {
+                        if (gridTurn == 1)
+                        {
+                            // It's an X
+                            var firstStroke = new Line()
+                            {
+                                StartPos = new(spotX + 1, spotY),
+                                EndPos = new(spotX + 1 + boxWidth - 2, spotY + 1 + boxHeight - 2),
+                                DoubleWidth = false,
+                                Color = ConsoleColors.Red,
+                            };
+                            var secondStroke = new Line()
+                            {
+                                StartPos = new(spotX + 1 + boxWidth - 2, spotY),
+                                EndPos = new(spotX + 1, spotY + 1 + boxHeight - 2),
+                                DoubleWidth = false,
+                                Color = ConsoleColors.Red,
+                            };
+                            gameBuffer.Append(firstStroke.Render());
+                            gameBuffer.Append(secondStroke.Render());
+                        }
+                        else if (gridTurn == 2)
+                        {
+                            // It's an O
+                            var arcStroke = new Arc(boxHeight - 1, spotX + 3, spotY, ConsoleColors.Lime)
+                            {
+                                AngleStart = 360,
+                                AngleEnd = 360,
+                                OuterRadius = (boxHeight - 1) / 2,
+                                InnerRadius = (boxHeight - 1) / 2 - 4,
+                            };
+                            gameBuffer.Append(arcStroke.Render());
+                        }
+                    }
+                }
+                {
+                    int spotX = panelPosX + 1;
+                    int spotY = panelPosY + 1;
+                    int boxWidth = secondBoxPosX - panelPosX;
+                    int boxHeight = secondBoxPosY - panelPosY;
+                    PrintXO(spotX, spotY, boxWidth, boxHeight, 0, 0);
+                }
+                {
+                    int spotX = secondBoxPosX + 2;
+                    int spotY = panelPosY + 1;
+                    int boxWidth = secondBoxPosX - panelPosX - 1;
+                    int boxHeight = secondBoxPosY - panelPosY;
+                    PrintXO(spotX, spotY, boxWidth, boxHeight, 1, 0);
+                }
+                {
+                    int spotX = thirdBoxPosX + 2;
+                    int spotY = panelPosY + 1;
+                    int boxWidth = secondBoxPosX - panelPosX - 1;
+                    int boxHeight = secondBoxPosY - panelPosY;
+                    PrintXO(spotX, spotY, boxWidth, boxHeight, 2, 0);
+                }
+                {
+                    int spotX = panelPosX + 1;
+                    int spotY = secondBoxPosY + 2;
+                    int boxWidth = thirdBoxPosX - secondBoxPosX;
+                    int boxHeight = thirdBoxPosY - secondBoxPosY - 1;
+                    PrintXO(spotX, spotY, boxWidth, boxHeight, 0, 1);
+                }
+                {
+                    int spotX = secondBoxPosX + 2;
+                    int spotY = secondBoxPosY + 2;
+                    int boxWidth = thirdBoxPosX - secondBoxPosX - 1;
+                    int boxHeight = thirdBoxPosY - secondBoxPosY - 1;
+                    PrintXO(spotX, spotY, boxWidth, boxHeight, 1, 1);
+                }
+                {
+                    int spotX = thirdBoxPosX + 2;
+                    int spotY = secondBoxPosY + 2;
+                    int boxWidth = thirdBoxPosX - secondBoxPosX - 1;
+                    int boxHeight = thirdBoxPosY - secondBoxPosY - 1;
+                    PrintXO(spotX, spotY, boxWidth, boxHeight, 2, 1);
+                }
+                {
+                    int spotX = panelPosX + 1;
+                    int spotY = thirdBoxPosY + 2;
+                    int boxWidth = panelPosX + width - thirdBoxPosX;
+                    int boxHeight = height - thirdBoxPosY;
+                    PrintXO(spotX, spotY, boxWidth, boxHeight, 0, 2);
+                }
+                {
+                    int spotX = secondBoxPosX + 2;
+                    int spotY = thirdBoxPosY + 2;
+                    int boxWidth = panelPosX + width - thirdBoxPosX - 1;
+                    int boxHeight = height - thirdBoxPosY;
+                    PrintXO(spotX, spotY, boxWidth, boxHeight, 1, 2);
+                }
+                {
+                    int spotX = thirdBoxPosX + 2;
+                    int spotY = thirdBoxPosY + 2;
+                    int boxWidth = panelPosX + width - thirdBoxPosX - 1;
+                    int boxHeight = height - thirdBoxPosY;
+                    PrintXO(spotX, spotY, boxWidth, boxHeight, 2, 2);
+                }
+
                 // Print the winner here, or the instructions here
                 int instructionsPosY = ConsoleWrapper.WindowHeight - 2;
                 var message = new AlignedText()
@@ -92,10 +197,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // TODO: NKS_AMUSEMENTS_TICTACTOE_WHOSETURN -> Player {0} is currently playing.
                     // TODO: NKS_AMUSEMENTS_TICTACTOE_DRAW -> It's a draw.
                     // TODO: NKS_AMUSEMENTS_TICTACTOE_PLAYERWON -> Player {0} wins the game!
-                    Text =
-                        winner == 0 ? LanguageTools.GetLocalized("NKS_AMUSEMENTS_TICTACTOE_DRAW") :
-                        winner > 0 ? LanguageTools.GetLocalized("NKS_AMUSEMENTS_TICTACTOE_PLAYERWON").FormatString(winner) :
-                        LanguageTools.GetLocalized("NKS_AMUSEMENTS_TICTACTOE_WHOSETURN").FormatString(turnNumber),
+                    Text = "\x1b[1K" +
+                        (winner == 0 ? LanguageTools.GetLocalized("NKS_AMUSEMENTS_TICTACTOE_DRAW") :
+                         winner > 0 ? LanguageTools.GetLocalized("NKS_AMUSEMENTS_TICTACTOE_PLAYERWON").FormatString(winner) :
+                         LanguageTools.GetLocalized("NKS_AMUSEMENTS_TICTACTOE_WHOSETURN").FormatString(turnNumber)) + "\x1b[K",
                     Settings = new()
                     {
                         Alignment = TextAlignment.Middle
@@ -118,6 +223,31 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 if (turnNumber > 2)
                     turnNumber = 1;
             }
+            void CheckWinner(int player)
+            {
+                if (player == 0)
+                    return;
+                if (grid[0, 0] == player && grid[0, 1] == player && grid[0, 2] == player)
+                    winner = player;
+                if (grid[1, 0] == player && grid[1, 1] == player && grid[1, 2] == player)
+                    winner = player;
+                if (grid[2, 0] == player && grid[2, 1] == player && grid[2, 2] == player)
+                    winner = player;
+                if (grid[0, 0] == player && grid[1, 0] == player && grid[2, 0] == player)
+                    winner = player;
+                if (grid[0, 1] == player && grid[1, 1] == player && grid[2, 1] == player)
+                    winner = player;
+                if (grid[0, 2] == player && grid[1, 2] == player && grid[2, 2] == player)
+                    winner = player;
+                if (grid[0, 0] == player && grid[1, 1] == player && grid[2, 2] == player)
+                    winner = player;
+                if (grid[0, 2] == player && grid[1, 1] == player && grid[2, 0] == player)
+                    winner = player;
+                if (grid[0, 0] != 0 && grid[1, 0] != 0 && grid[2, 0] != 0 &&
+                    grid[0, 1] != 0 && grid[1, 1] != 0 && grid[2, 1] != 0 &&
+                    grid[0, 2] != 0 && grid[1, 2] != 0 && grid[2, 2] != 0)
+                    winner = 0;
+            }
 
             // Main loop
             while (!done)
@@ -137,62 +267,85 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             if (grid[gridX, gridY] == 0)
                             {
                                 grid[gridX, gridY] = turnNumber;
+                                CheckWinner(turnNumber);
+                                SwitchTurn();
                                 break;
                             }
                         }
                     }
-                    var pressedChar = Input.ReadKey();
-                    switch (pressedChar.Key)
+                    else
                     {
-                        case ConsoleKey.Escape:
-                            // User decided to escape
-                            done = true;
-                            break;
-                        case ConsoleKey.Q:
-                            // 1, 1
-                            grid[0, 0] = turnNumber;
-                            SwitchTurn();
-                            break;
-                        case ConsoleKey.W:
-                            // 2, 1
-                            grid[1, 0] = turnNumber;
-                            SwitchTurn();
-                            break;
-                        case ConsoleKey.E:
-                            // 3, 1
-                            grid[2, 0] = turnNumber;
-                            SwitchTurn();
-                            break;
-                        case ConsoleKey.A:
-                            // 1, 2
-                            grid[0, 1] = turnNumber;
-                            SwitchTurn();
-                            break;
-                        case ConsoleKey.S:
-                            // 2, 2
-                            grid[1, 1] = turnNumber;
-                            SwitchTurn();
-                            break;
-                        case ConsoleKey.D:
-                            // 3, 2
-                            grid[2, 1] = turnNumber;
-                            SwitchTurn();
-                            break;
-                        case ConsoleKey.Z:
-                            // 1, 3
-                            grid[0, 2] = turnNumber;
-                            SwitchTurn();
-                            break;
-                        case ConsoleKey.X:
-                            // 2, 3
-                            grid[1, 2] = turnNumber;
-                            SwitchTurn();
-                            break;
-                        case ConsoleKey.C:
-                            // 3, 3
-                            grid[2, 2] = turnNumber;
-                            SwitchTurn();
-                            break;
+                        var pressedChar = Input.ReadKey();
+                        switch (pressedChar.Key)
+                        {
+                            case ConsoleKey.Escape:
+                                // User decided to escape
+                                done = true;
+                                break;
+                            case ConsoleKey.Q:
+                                // 1, 1
+                                if (grid[0, 0] == 0)
+                                    grid[0, 0] = turnNumber;
+                                CheckWinner(turnNumber);
+                                SwitchTurn();
+                                break;
+                            case ConsoleKey.W:
+                                // 2, 1
+                                if (grid[1, 0] == 0)
+                                    grid[1, 0] = turnNumber;
+                                CheckWinner(turnNumber);
+                                SwitchTurn();
+                                break;
+                            case ConsoleKey.E:
+                                // 3, 1
+                                if (grid[2, 0] == 0)
+                                    grid[2, 0] = turnNumber;
+                                CheckWinner(turnNumber);
+                                SwitchTurn();
+                                break;
+                            case ConsoleKey.A:
+                                // 1, 2
+                                if (grid[0, 1] == 0)
+                                    grid[0, 1] = turnNumber;
+                                CheckWinner(turnNumber);
+                                SwitchTurn();
+                                break;
+                            case ConsoleKey.S:
+                                // 2, 2
+                                if (grid[1, 1] == 0)
+                                    grid[1, 1] = turnNumber;
+                                CheckWinner(turnNumber);
+                                SwitchTurn();
+                                break;
+                            case ConsoleKey.D:
+                                // 3, 2
+                                if (grid[2, 1] == 0)
+                                    grid[2, 1] = turnNumber;
+                                CheckWinner(turnNumber);
+                                SwitchTurn();
+                                break;
+                            case ConsoleKey.Z:
+                                // 1, 3
+                                if (grid[0, 2] == 0)
+                                    grid[0, 2] = turnNumber;
+                                CheckWinner(turnNumber);
+                                SwitchTurn();
+                                break;
+                            case ConsoleKey.X:
+                                // 2, 3
+                                if (grid[1, 2] == 0)
+                                    grid[1, 2] = turnNumber;
+                                CheckWinner(turnNumber);
+                                SwitchTurn();
+                                break;
+                            case ConsoleKey.C:
+                                // 3, 3
+                                if (grid[2, 2] == 0)
+                                    grid[2, 2] = turnNumber;
+                                CheckWinner(turnNumber);
+                                SwitchTurn();
+                                break;
+                        }
                     }
                 }
                 else if (winner > 0)
