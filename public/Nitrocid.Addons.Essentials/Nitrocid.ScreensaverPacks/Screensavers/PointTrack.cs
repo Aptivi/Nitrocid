@@ -117,7 +117,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 // Render the block
-                TextWriterWhereColor.WriteWhereColorBack(" ", PosHorizontal, PosVertical, Color.Empty, targetColor);
+                TextWriterWhereColor.WriteWhereColorBack(" ", PosHorizontal, PosVertical - 1, Color.Empty, targetColor);
 
                 // Now, make the position ruler writers
                 var lineBuilder = new StringBuilder();
