@@ -25,6 +25,7 @@ using Terminaux.Colors.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Threading;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Misc.Screensaver
 {
@@ -51,13 +52,17 @@ namespace Nitrocid.Base.Misc.Screensaver
         public virtual void ScreensaverSeizureWarning()
         {
             ThemeColorsTools.LoadBackground();
-            InfoBoxNonModalColor.WriteInfoBox(
-                LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_PSWARNING_TITLE") + CharManager.NewLine + CharManager.NewLine +
-                LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_PSWARNING_DESC"), new InfoBoxSettings()
+            var infoBox = new InfoBox()
+            {
+                Text = LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_PSWARNING_DESC"),
+                Settings = new InfoBoxSettings()
                 {
+                    Title = LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_PSWARNING_TITLE"),
                     ForegroundColor = ConsoleColors.White,
                     BackgroundColor = ConsoleColors.Red
-                });
+                }
+            };
+            TextWriterRaw.WriteRaw(infoBox.Render());
             ConsoleWrapper.CursorVisible = false;
             ThreadManager.SleepUntilInput(10000);
         }
