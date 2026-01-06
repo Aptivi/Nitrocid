@@ -603,13 +603,13 @@ namespace Nitrocid.Extras.Amusements.Settings
                 bdayCardDelay = value;
             }
         }
-        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDSETTINGS_NAME -> Birthday card settings
-        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDSETTINGS_DESC -> Provides a set of variables that allow you to configure your birthday card
+        // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_NAME -> Birthday card settings
+        // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_DESC -> Provides a set of variables that allow you to configure your birthday card
         /// <summary>
         /// [BdayCard] Birthday card gender
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDGENDER_NAME -> Birthday card gender
-        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDGENDER_DESC -> Specifies the gender of the person to wish happy birthday to
+        // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_NAME -> Birthday card gender
+        // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_DESC -> Specifies the gender of the person to wish happy birthday to
         public BdayCardGender BdayCardGender
         {
             get
@@ -624,8 +624,8 @@ namespace Nitrocid.Extras.Amusements.Settings
         /// <summary>
         /// [BdayCard] Birthday card name type
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME -> Birthday card name type
-        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC -> Randomly generated person name, your selected person name, or use pronouns
+        // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME -> Birthday card name type
+        // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC -> Randomly generated person name, your selected person name, or use pronouns
         public BdayCardNameType BdayCardNameType
         {
             get
@@ -637,8 +637,8 @@ namespace Nitrocid.Extras.Amusements.Settings
                 bdayCardNameType = value;
             }
         }
-        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME -> Birthday card text type
-        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC -> Specifies whether to use the normal version of the wish, or to use the superlative version
+        // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME -> Birthday card text type
+        // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC -> Specifies whether to use the normal version of the wish, or to use the superlative version
         /// <summary>
         /// [BdayCard] Birthday card text type
         /// </summary>
@@ -656,8 +656,8 @@ namespace Nitrocid.Extras.Amusements.Settings
         /// <summary>
         /// [BdayCard] Person name that will be on the birthday card
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_PERSONNAME_NAME -> Birthday person name
-        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_PERSONNAME_DESC -> The name of the person to wish happy birthday to
+        // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_NAME -> Birthday person name
+        // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC -> The name of the person to wish happy birthday to
         public string BdayCardPersonName
         {
             get

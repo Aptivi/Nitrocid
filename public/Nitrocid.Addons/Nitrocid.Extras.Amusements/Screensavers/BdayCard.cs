@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
     /// </summary>
     public class BdayCardDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_DESC -> Shows a “birthday card” on the screen
+        // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_DESC -> Shows a “birthday card” on the screen
         private string randomName = "";
 
         /// <inheritdoc/>
@@ -87,8 +87,8 @@ namespace Nitrocid.Extras.Amusements.Screensavers
             string birthdayWish = GetBirthdayWishMessage();
 
             // Write banner and wish
-            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_BDAY -> Happy birthday!
-            string word = LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_BDAY");
+            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_BDAY -> Happy birthday!
+            string word = LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_BDAY");
 
             // TODO: Remove this line once localization is ready
             word = "Happy birthday!";
@@ -125,93 +125,93 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                     switch (AmusementsInit.SaversConfig.BdayCardNameType)
                     {
                         case BdayCardNameType.Random:
-                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_NAMED_SIMPLE_BDAYWISH -> Happy birthday, {0}!
-                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_NAMED_SIMPLE_BDAYWISH").FormatString(randomName);
+                            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SIMPLE_BDAYWISH -> Happy birthday, {0}!
+                            return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SIMPLE_BDAYWISH").FormatString(randomName);
                         case BdayCardNameType.User:
-                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_NAMED_SIMPLE_BDAYWISH -> Happy birthday, {0}!
-                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_NAMED_SIMPLE_BDAYWISH").FormatString(AmusementsInit.SaversConfig.BdayCardPersonName);
+                            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SIMPLE_BDAYWISH -> Happy birthday, {0}!
+                            return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SIMPLE_BDAYWISH").FormatString(AmusementsInit.SaversConfig.BdayCardPersonName);
                         case BdayCardNameType.Implicit:
                             switch (AmusementsInit.SaversConfig.BdayCardGender)
                             {
                                 case BdayCardGender.Male:
-                                    // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_MALE_BDAYWISH -> Happy birthday to him!
-                                    return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_MALE_BDAYWISH");
+                                    // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_MALE_BDAYWISH -> Happy birthday to him!
+                                    return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_MALE_BDAYWISH");
                                 case BdayCardGender.Female:
-                                    // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_FEMALE_BDAYWISH -> Happy birthday to her!
-                                    return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_FEMALE_BDAYWISH");
+                                    // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FEMALE_BDAYWISH -> Happy birthday to her!
+                                    return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FEMALE_BDAYWISH");
                                 case BdayCardGender.Unspecific:
-                                    // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH -> Happy birthday to the most loyal one!
-                                    return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH");
+                                    // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH -> Happy birthday to the most loyal one!
+                                    return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH");
                             }
                             break;
                         case BdayCardNameType.ImplicitFirstPerson:
-                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH -> Happy birthday to me!
-                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH");
+                            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH -> Happy birthday to me!
+                            return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH");
                         case BdayCardNameType.ImplicitSecondPerson:
-                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH -> Happy birthday to you!
-                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH");
+                            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH -> Happy birthday to you!
+                            return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH");
                     }
                     break;
                 case BdayCardTextType.Superlative:
                     switch (AmusementsInit.SaversConfig.BdayCardNameType)
                     {
                         case BdayCardNameType.Random:
-                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_NAMED_SUPER_BDAYWISH -> Happiest birthday, {0}!
-                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_NAMED_SUPER_BDAYWISH").FormatString(randomName);
+                            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPER_BDAYWISH -> Happiest birthday, {0}!
+                            return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPER_BDAYWISH").FormatString(randomName);
                         case BdayCardNameType.User:
-                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_NAMED_SUPER_BDAYWISH -> Happiest birthday, {0}!
-                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_NAMED_SUPER_BDAYWISH").FormatString(AmusementsInit.SaversConfig.BdayCardPersonName);
+                            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPER_BDAYWISH -> Happiest birthday, {0}!
+                            return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPER_BDAYWISH").FormatString(AmusementsInit.SaversConfig.BdayCardPersonName);
                         case BdayCardNameType.Implicit:
                             switch (AmusementsInit.SaversConfig.BdayCardGender)
                             {
                                 case BdayCardGender.Male:
-                                    // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_MALE_BDAYWISH -> Happiest birthday to him!
-                                    return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_MALE_BDAYWISH");
+                                    // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_MALE_BDAYWISH -> Happiest birthday to him!
+                                    return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_MALE_BDAYWISH");
                                 case BdayCardGender.Female:
-                                    // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_FEMALE_BDAYWISH -> Happiest birthday to her!
-                                    return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_FEMALE_BDAYWISH");
+                                    // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FEMALE_BDAYWISH -> Happiest birthday to her!
+                                    return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FEMALE_BDAYWISH");
                                 case BdayCardGender.Unspecific:
-                                    // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH -> Happiest birthday to the most loyal one!
-                                    return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH");
+                                    // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH -> Happiest birthday to the most loyal one!
+                                    return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH");
                             }
                             break;
                         case BdayCardNameType.ImplicitFirstPerson:
-                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH -> Happiest birthday to me!
-                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH");
+                            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH -> Happiest birthday to me!
+                            return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH");
                         case BdayCardNameType.ImplicitSecondPerson:
-                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH -> Happiest birthday to you!
-                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH");
+                            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH -> Happiest birthday to you!
+                            return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH");
                     }
                     break;
                 case BdayCardTextType.SuperAlt:
                     switch (AmusementsInit.SaversConfig.BdayCardNameType)
                     {
                         case BdayCardNameType.Random:
-                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_NAMED_SUPERALT_BDAYWISH -> Happiest one, {0}!
-                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_NAMED_SUPERALT_BDAYWISH").FormatString(randomName);
+                            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPERALT_BDAYWISH -> Happiest one, {0}!
+                            return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPERALT_BDAYWISH").FormatString(randomName);
                         case BdayCardNameType.User:
-                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_NAMED_SUPERALT_BDAYWISH -> Happiest one, {0}!
-                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_NAMED_SUPERALT_BDAYWISH").FormatString(AmusementsInit.SaversConfig.BdayCardPersonName);
+                            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPERALT_BDAYWISH -> Happiest one, {0}!
+                            return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPERALT_BDAYWISH").FormatString(AmusementsInit.SaversConfig.BdayCardPersonName);
                         case BdayCardNameType.Implicit:
                             switch (AmusementsInit.SaversConfig.BdayCardGender)
                             {
                                 case BdayCardGender.Male:
-                                    // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_MALE_BDAYWISH -> Happiest one to him!
-                                    return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_MALE_BDAYWISH");
+                                    // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_MALE_BDAYWISH -> Happiest one to him!
+                                    return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_MALE_BDAYWISH");
                                 case BdayCardGender.Female:
-                                    // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_FEMALE_BDAYWISH -> Happiest one to her!
-                                    return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_FEMALE_BDAYWISH");
+                                    // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FEMALE_BDAYWISH -> Happiest one to her!
+                                    return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FEMALE_BDAYWISH");
                                 case BdayCardGender.Unspecific:
-                                    // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH -> Happiest one to the most loyal one!
-                                    return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH");
+                                    // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH -> Happiest one to the most loyal one!
+                                    return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH");
                             }
                             break;
                         case BdayCardNameType.ImplicitFirstPerson:
-                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH -> Happiest one to me!
-                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH");
+                            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH -> Happiest one to me!
+                            return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH");
                         case BdayCardNameType.ImplicitSecondPerson:
-                            // TODO: NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH -> Happiest one to you!
-                            return LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH");
+                            // TODO: NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH -> Happiest one to you!
+                            return LanguageTools.GetLocalized("NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH");
                     }
                     break;
             }

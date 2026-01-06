@@ -236,7 +236,7 @@
     },
     {
         "Name": "BdayCard",
-        "Desc": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_DESC",
+        "Desc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_DESC",
         "Keys": [
             {
                 "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
@@ -245,12 +245,12 @@
                 "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
             },
             {
-                "Name": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDSETTINGS_NAME",
+                "Name": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_NAME",
                 "Type": "SMultivar",
-                "Description": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDSETTINGS_DESC",
+                "Description": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_DESC",
                 "Variables": [
                     {
-                        "Name": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDGENDER_NAME",
+                        "Name": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_NAME",
                         "Type": "SSelection",
                         "Variable": "BdayCardGender",
                         "IsEnumeration": true,
@@ -258,10 +258,10 @@
                         "Enumeration": "Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardGender",
                         "EnumerationAssembly": "Nitrocid.Extras.Amusements",
                         "EnumerationZeroBased": true,
-                        "Description": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDGENDER_DESC"
+                        "Description": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_DESC"
                     },
                     {
-                        "Name": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME",
+                        "Name": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME",
                         "Type": "SSelection",
                         "Variable": "BdayCardNameType",
                         "IsEnumeration": true,
@@ -269,10 +269,10 @@
                         "Enumeration": "Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardNameType",
                         "EnumerationAssembly": "Nitrocid.Extras.Amusements",
                         "EnumerationZeroBased": true,
-                        "Description": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC"
+                        "Description": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC"
                     },
                     {
-                        "Name": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME",
+                        "Name": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME",
                         "Type": "SSelection",
                         "Variable": "BdayCardTextType",
                         "IsEnumeration": true,
@@ -280,13 +280,13 @@
                         "Enumeration": "Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardTextType",
                         "EnumerationAssembly": "Nitrocid.Extras.Amusements",
                         "EnumerationZeroBased": true,
-                        "Description": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC"
+                        "Description": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC"
                     },
                     {
-                        "Name": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_PERSONNAME_NAME",
+                        "Name": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_NAME",
                         "Type": "SString",
                         "Variable": "BdayCardPersonName",
-                        "Description": "NKS_SCREENSAVERPACKS_BDAYCARD_SETTINGS_PERSONNAME_DESC"
+                        "Description": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC"
                     }
                 ]
             },
