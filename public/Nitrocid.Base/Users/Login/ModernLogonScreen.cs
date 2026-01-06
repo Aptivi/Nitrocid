@@ -148,7 +148,7 @@ namespace Nitrocid.Base.Users.Login
             ScreenTools.UnsetCurrent(screen);
         }
 
-        internal static string PrintConfiguredLogonScreen(int screenNum, List<WidgetRenderInfo[]> canvases)
+        internal static string PrintConfiguredLogonScreen(int screenNum, List<WidgetRenderInfo[]> canvases, bool curtainMode = false)
         {
             int actualScreenNum = screenNum - 2;
             var builder = new StringBuilder();
@@ -243,18 +243,21 @@ namespace Nitrocid.Base.Users.Login
                 var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
                 builder.Append(notificationsWidget.Render(posX - 1, notificationsY, interiorWidth, 1));
 
-                // Print the instructions
-                string instStr = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PRESSKEY");
-                int consoleInstY = ConsoleWrapper.WindowHeight - 4;
-                var instText = new AlignedText()
+                // Print the instructions if we're not in screen curtain mode
+                if (!curtainMode)
                 {
-                    Left = interiorPosX,
-                    Top = consoleInstY,
-                    Width = interiorWidth,
-                    Text = instStr,
-                    OneLine = true,
-                };
-                builder.Append(instText.Render());
+                    string instStr = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PRESSKEY");
+                    int consoleInstY = ConsoleWrapper.WindowHeight - 4;
+                    var instText = new AlignedText()
+                    {
+                        Left = interiorPosX,
+                        Top = consoleInstY,
+                        Width = interiorWidth,
+                        Text = instStr,
+                        OneLine = true,
+                    };
+                    builder.Append(instText.Render());
+                }
             }
             else
             {
