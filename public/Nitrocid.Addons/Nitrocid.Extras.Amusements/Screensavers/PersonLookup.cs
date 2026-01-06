@@ -18,14 +18,19 @@
 //
 
 using System;
-using Textify.Data.NameGen;
-using Nitrocid.Base.Misc.Screensaver;
-using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Themes.Colors;
+using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.Data.NameGen;
+using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Screensavers
 {
@@ -45,19 +50,25 @@ namespace Nitrocid.Extras.Amusements.Screensavers
             base.ScreensaverPreparation();
 
             // Populate the names
-            InfoBoxNonModalColor.WriteInfoBox("Welcome to the database! Fetching identities...", new InfoBoxSettings()
+            // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_WELCOME -> "Welcome to the database! Fetching identities..."
+            var welcomeInfoBox = new InfoBox()
             {
-                ForegroundColor = ConsoleColors.Lime
-            });
+                Text = LanguageTools.GetLocalized("NKS_AMUSEMENTS_PERSONLOOKUP_WELCOME"),
+                Settings = new()
+                {
+                    ForegroundColor = ConsoleColors.Lime
+                }
+            };
+            TextWriterRaw.WriteRaw(welcomeInfoBox.Render());
             NameGenerator.PopulateNames();
+
+            // Prepare again
+            base.ScreensaverPreparation();
         }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.Clear();
-            ConsoleWrapper.CursorVisible = false;
-
             // Generate names
             int NumberOfPeople = RandomDriver.Random(AmusementsInit.SaversConfig.PersonLookupMinimumNames, AmusementsInit.SaversConfig.PersonLookupMaximumNames);
             var NamesToLookup = NameGenerator.GenerateNames(NumberOfPeople);
@@ -90,25 +101,29 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                 string LastName = GeneratedName[(GeneratedName.IndexOf(" ") + 1)..];
 
                 // Print all information
-                ConsoleWrapper.Clear();
-                InfoBoxNonModalColor.WriteInfoBox(
-                    "- Name:                  {0}\n" +
-                   $"{new string('=', $"- Name:                  {GeneratedName}".Length)}\n" +
-                    "\n" +
-                    "  - First Name:          {1}\n" +
-                    "  - Last Name / Surname: {2}\n" +
-                    "  - Age:                 {3} years old\n" +
-                    "  - Birth date:          {4}\n",
-
-                    // We don't want to wait for input as we're on the screensaver environment.
-                    new InfoBoxSettings()
+                // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_NAME -> "Name"
+                // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_FIRSTNAME -> "First Name"
+                // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_LASTNAME -> "Last Name"
+                // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_AGE -> "Age"
+                // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_AGE_YEARSOLD -> "{0} years old"
+                // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_BIRTHDATE -> "Birth date"
+                ThemeColorsTools.LoadBackground();
+                string header = ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_AMUSEMENTS_PERSONLOOKUP_NAME"), GeneratedName);
+                var infoBox = new InfoBox()
+                {
+                    Text =
+                        header + "\n" +
+                        new string('=', ConsoleChar.EstimateCellWidth(header)) + "\n\n" +
+                        ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_AMUSEMENTS_PERSONLOOKUP_FIRSTNAME"), FirstName) + "\n" +
+                        ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_AMUSEMENTS_PERSONLOOKUP_LASTNAME"), LastName) + "\n" +
+                        ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_AMUSEMENTS_PERSONLOOKUP_AGE"), LanguageTools.GetLocalized("NKS_AMUSEMENTS_PERSONLOOKUP_AGE_YEARSOLD").FormatString(FinalAge)) + "\n" +
+                        ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_AMUSEMENTS_PERSONLOOKUP_BIRTHDATE"), TimeDateRenderers.Render(Birthdate)),
+                    Settings = new InfoBoxSettings()
                     {
                         ForegroundColor = ConsoleColors.Lime
-                    },
-
-                    // Necessary variables to print
-                    GeneratedName, FirstName, LastName, FinalAge, TimeDateRenderers.Render(Birthdate)
-                );
+                    }
+                };
+                TextWriterRaw.WriteRaw(infoBox.Render());
 
                 // Lookup delay
                 ScreensaverManager.Delay(AmusementsInit.SaversConfig.PersonLookupDelay);
