@@ -89,6 +89,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         break;
                     coveredPositions.Add((currentPosX, currentPosY));
                     TextWriterWhereColor.WriteWhereColorBack(starChar, currentPosX, currentPosY, ConsoleColors.LightSkyBlue1, new Color(0, 0, 0));
+                    ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SkyCometDelay);
                 }
 
                 // Finally, fade out
@@ -116,6 +117,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     // Actually print things out
                     foreach (var pos in coveredPositions)
                         TextWriterWhereColor.WriteWhereColorBack(starChar, pos.Item1, pos.Item2, result, new Color(0, 0, 0));
+                    ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SkyCometDelay);
                 }
             }
 
