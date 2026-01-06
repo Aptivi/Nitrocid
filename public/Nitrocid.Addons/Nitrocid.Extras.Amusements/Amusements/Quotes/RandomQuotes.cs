@@ -21,6 +21,7 @@ using System.Net.Http;
 using System.Text;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Base.Languages;
+using Terminaux.Base.Extensions;
 using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Quotes
@@ -61,7 +62,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
             int maxWidth = 50 + padding * 2;
 
             // Get quote incomplete sentences
-            string[] quoteSentences = TextTools.GetWrappedSentences(content, maxQuoteWidth);
+            string[] quoteSentences = ConsoleMisc.GetWrappedSentencesByWords(content, maxQuoteWidth);
 
             // Render the sentences to the builder
             for (int i = 0; i < quoteSentences.Length; i++)
@@ -85,7 +86,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
             }
 
             // Now, write the name of the author
-            int authorPosition = maxWidth - author.Length;
+            int authorPosition = maxWidth - ConsoleChar.EstimateCellWidth(author);
             elegantQuote.AppendLine();
             elegantQuote.Append(new string(' ', authorPosition));
             elegantQuote.Append(author);
