@@ -223,6 +223,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             double factor = 1.0;
             while (!Dead)
             {
+                if (Simulation && ScreensaverManager.Bailing)
+                    break;
+
                 // Delay
                 if (Simulation)
                     ScreensaverManager.Delay((int)(AmusementsInit.SaversConfig.SnakerDelay * factor));
@@ -379,9 +382,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             ScreenTools.Render();
 
             // Show the stage for few seconds before wiping
-            if (Simulation)
+            if (Simulation && !ScreensaverManager.Bailing)
                 ScreensaverManager.Delay(AmusementsInit.SaversConfig.SnakerStageDelay);
-            else
+            else if (!Simulation)
                 Thread.Sleep(AmusementsInit.SaversConfig.SnakerStageDelay);
 
             // Reset mass and console display and screen
