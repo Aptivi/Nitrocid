@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Extras.Amusements.Amusements.Games;
 using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.Amusements.Commands
@@ -26,7 +27,12 @@ namespace Nitrocid.Extras.Amusements.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            // TODO: Populate the command with ScoreSim code
+            bool isSoccer = parameters.ContainsSwitch("-soccer");
+            bool isBasketball = parameters.ContainsSwitch("-basketball");
+            string firstTeamName = parameters.GetSwitchValue("-firstTeamName");
+            string secondTeamName = parameters.GetSwitchValue("-secondTeamName");
+            int mode = isSoccer ? 1 : isBasketball ? 2 : 0;
+            ScoreSim.InitializeScoreSim(mode, firstTeamName, secondTeamName);
             return 0;
         }
     }
