@@ -9726,5 +9726,31 @@
                 "MaximumValue": 10000
             }
         ]
+    },
+    {
+        "Name": "Hacking",
+        "Desc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+        "Keys": [
+            {
+                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME",
+                "Type": "SInt",
+                "Variable": "HackingDelay",
+                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_HACKING_MAXFADESTEPS_NAME",
+                "Type": "SInt",
+                "Variable": "HackingMaxSteps",
+                "Description": "NKS_SCREENSAVERPACKS_HACKING_MAXFADESTEPS_DESC"
+            },
+            {
+                "Name": "NKS_SCREENSAVERPACKS_HACKING_DROPCHANCE_NAME",
+                "Type": "SIntSlider",
+                "Variable": "HackingDropChance",
+                "Description": "NKS_SCREENSAVERPACKS_HACKING_DROPCHANCE_DESC",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            }
+        ]
     }
 ]

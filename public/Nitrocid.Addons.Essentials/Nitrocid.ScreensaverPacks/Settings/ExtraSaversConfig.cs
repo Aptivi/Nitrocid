@@ -20120,5 +20120,65 @@ namespace Nitrocid.ScreensaverPacks.Settings
             }
         }
         #endregion
+
+        #region Hacking
+        private int hackingDelay = 10;
+        private int hackingMaxSteps = 25;
+        private int hackingDropChance = 40;
+        // TODO: NKS_SCREENSAVERPACKS_HACKING_DESC -> Simulates a person hacking into systems
+
+        /// <summary>
+        /// [Hacking] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int HackingDelay
+        {
+            get
+            {
+                return hackingDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 10;
+                hackingDelay = value;
+            }
+        }
+        /// <summary>
+        /// [Hacking] How many fade steps to do?
+        /// </summary>
+        // TODO: Transfer NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_MAXFADESTEPS_NAME to NKS_SCREENSAVERPACKS_HACKING_MAXFADESTEPS_NAME
+        // TODO: Transfer NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_MAXFADESTEPS_DESC to NKS_SCREENSAVERPACKS_HACKING_MAXFADESTEPS_DESC
+        public int HackingMaxSteps
+        {
+            get
+            {
+                return hackingMaxSteps;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 25;
+                hackingMaxSteps = value;
+            }
+        }
+        /// <summary>
+        /// [Hacking] Chance to drop a new falling matrix
+        /// </summary>
+        // TODO: Transfer NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DROPCHANCE_NAME to NKS_SCREENSAVERPACKS_HACKING_DROPCHANCE_NAME
+        // TODO: Transfer NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DROPCHANCE_DESC to NKS_SCREENSAVERPACKS_HACKING_DROPCHANCE_DESC
+        public int HackingDropChance
+        {
+            get
+            {
+                return hackingDropChance;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 40;
+                hackingDropChance = value;
+            }
+        }
+        #endregion
     }
 }
