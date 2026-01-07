@@ -205,13 +205,31 @@ namespace Nitrocid.Extras.Amusements
         public void FinalizeAddon()
         {
             // Add the amusements to the homepage
+            // TODO: NKS_AMUSEMENTS_HOMEPAGE_CLICKER -> Box Clicker
+            // TODO: NKS_AMUSEMENTS_HOMEPAGE_INVADERS -> Terminal Invaders
+            // TODO: NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT -> Score Simulator (default)
+            // TODO: NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER -> Score Simulator (soccer)
+            // TODO: NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL -> Score Simulator (basketball)
+            // TODO: NKS_AMUSEMENTS_HOMEPAGE_SIMON -> Simon Says (colors)
+            // TODO: NKS_AMUSEMENTS_HOMEPAGE_STREETRUN -> Street Run
+            // TODO: NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU -> Tic-Tac-Toe (Player vs. CPU)
+            // TODO: NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P -> Tic-Tac-Toe (Player vs. Player)
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_BACKRACE", BackRace.OpenBackRace);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_CLICKER", Clicker.InitializeClicker);
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_HANGMAN", () => Hangman.InitializeHangman(HangmanDifficulty.None));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_INVADERS", Invaders.InitializeInvaders);
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE", () => MeteorShooter.InitializeMeteor(false, true));
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER", () => MeteorShooter.InitializeMeteor());
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_PONG", Pong.InitializePong);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT", () => ScoreSim.InitializeScoreSim(0, "", ""));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER", () => ScoreSim.InitializeScoreSim(1, "", ""));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL", () => ScoreSim.InitializeScoreSim(2, "", ""));
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET", () => ShipDuetShooter.InitializeShipDuet());
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SIMON", Simon.InitializeSimon);
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SNAKER", () => Snaker.InitializeSnaker(false));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_STREETRUN", StreetRun.InitializeStreetRun);
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU", () => TicTacToe.InitializeTicTacToe(true));
+            HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P", () => TicTacToe.InitializeTicTacToe(false));
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_WORDLE", () => Wordle.InitializeWordle());
             HomepageTools.RegisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG", () => Wordle.InitializeWordle(true));
         }
@@ -261,12 +279,21 @@ namespace Nitrocid.Extras.Amusements
 
             // Remove all options
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_BACKRACE");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_CLICKER");
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_HANGMAN");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_INVADERS");
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_METEORDODGE");
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_METEORSHOOTER");
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_PONG");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL");
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SHIPDUET");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SIMON");
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_SNAKER");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_STREETRUN");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU");
+            HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P");
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_WORDLE");
             HomepageTools.UnregisterBuiltinAction(/* Localizable */ "NKS_AMUSEMENTS_HOMEPAGE_WORDLEORIG");
         }
