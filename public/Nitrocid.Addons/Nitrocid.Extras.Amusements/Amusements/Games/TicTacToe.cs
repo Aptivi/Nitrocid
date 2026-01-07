@@ -348,7 +348,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         }
                     }
                 }
-                else if (winner > 0)
+                else if (winner >= 0)
                 {
                     done = true;
                     Thread.Sleep(5000);
@@ -356,6 +356,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             }
 
             // Clean up
+            ScreenTools.UnsetCurrent(ticTacToeScreen);
             ConsoleWrapper.Clear();
         }
     }
