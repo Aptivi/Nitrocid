@@ -306,6 +306,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             // Clean up
             ScreenTools.UnsetCurrentCyclic();
             ScreenTools.StopCyclicScreen();
+            ScreenTools.UnsetCurrent(clickerScreen);
             incrementerThread.Stop();
             ConsoleWrapper.Clear();
         }

@@ -218,6 +218,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             }
 
             // Clean up
+            ScreenTools.UnsetCurrent(scoreSimScreen);
             ConsoleWrapper.Clear();
         }
     }
