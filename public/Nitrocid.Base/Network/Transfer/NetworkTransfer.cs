@@ -40,16 +40,37 @@ namespace Nitrocid.Base.Network.Transfer
     /// </summary>
     public static class NetworkTransfer
     {
-
         internal static bool IsError;
         internal static Exception? ReasonError;
         internal static CancellationTokenSource CancellationToken = new();
-        internal static HttpClient WClient = new();
         internal static string DownloadedString = "";
         internal static Notification? DownloadNotif;
         internal static Notification? UploadNotif;
         internal static bool SuppressDownloadMessage;
         internal static bool SuppressUploadMessage;
+        internal static HttpClient httpClientNormal = new();
+        internal static HttpClient httpClientIgnoreCertErrors = new(new HttpClientHandler
+        {
+            ServerCertificateCustomValidationCallback = (request, cert, chain, errors) =>
+            {
+                return true;
+            }
+        });
+
+        internal static HttpClient HttpClient =>
+            Config.MainConfig.IgnoreCertificateErrors ? httpClientIgnoreCertErrors : httpClientNormal;
+
+        /// <summary>
+        /// Generates a new HTTP client
+        /// </summary>
+        public static HttpClient HttpClientNew =>
+            Config.MainConfig.IgnoreCertificateErrors ? new(new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = (request, cert, chain, errors) =>
+                {
+                    return true;
+                }
+            }) : new HttpClient();
 
         /// <summary>
         /// Downloads a file to the current working directory.

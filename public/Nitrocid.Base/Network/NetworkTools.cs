@@ -188,7 +188,7 @@ namespace Nitrocid.Base.Network
             try
             {
                 // Try to ping the connectivity check site
-                var status = NetworkTransfer.WClient.GetAsync("https://connectivitycheck.gstatic.com/generate_204").Result.StatusCode;
+                var status = NetworkTransfer.HttpClient.GetAsync("https://connectivitycheck.gstatic.com/generate_204").Result.StatusCode;
                 return status == HttpStatusCode.NoContent;
             }
             catch

@@ -98,7 +98,7 @@ namespace Nitrocid.Base.Drivers.Network
 
             // Send the GET request to the server for the file
             DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", vars: [FS.CurrentDir]);
-            var Response = NetworkTransfer.WClient.GetAsync(FileUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
+            var Response = NetworkTransfer.HttpClient.GetAsync(FileUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
             Response.EnsureSuccessStatusCode();
 
             // Get the file path
@@ -198,7 +198,7 @@ namespace Nitrocid.Base.Drivers.Network
 
             // Send the GET request to the server for the file
             DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", vars: [FS.CurrentDir]);
-            var Response = NetworkTransfer.WClient.GetAsync(StringUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
+            var Response = NetworkTransfer.HttpClient.GetAsync(StringUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
             Response.EnsureSuccessStatusCode();
 
             // Try to download the string asynchronously
@@ -308,7 +308,7 @@ namespace Nitrocid.Base.Drivers.Network
             {
                 var progressTask = new Task(() => { UploadProgress(FileStream, ref uploaded); });
                 progressTask.Start();
-                var Response = NetworkTransfer.WClient.PutAsync(URL, Content, NetworkTransfer.CancellationToken.Token).Result;
+                var Response = NetworkTransfer.HttpClient.PutAsync(URL, Content, NetworkTransfer.CancellationToken.Token).Result;
                 Response.EnsureSuccessStatusCode();
                 NetworkTransfer.UploadChecker(null);
             }
@@ -377,7 +377,7 @@ namespace Nitrocid.Base.Drivers.Network
             // Upload now
             try
             {
-                var Response = NetworkTransfer.WClient.PutAsync(URL, StringContent, NetworkTransfer.CancellationToken.Token).Result;
+                var Response = NetworkTransfer.HttpClient.PutAsync(URL, StringContent, NetworkTransfer.CancellationToken.Token).Result;
                 Response.EnsureSuccessStatusCode();
                 NetworkTransfer.UploadChecker(null);
             }

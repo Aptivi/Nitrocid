@@ -1036,6 +1036,12 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// If enabled, will use the notification system to notify the host of remote debug connection error. Otherwise, will use the default console writing.
         /// </summary>
         public bool NotifyOnRemoteDebugConnectionError { get; set; } = true;
+        /// <summary>
+        /// If enabled, will ignore certificate errors when making a connection. Otherwise, verifies the server certificate. This should, normally, be not enabled unless you're sure that you're trusting the server.
+        /// </summary>
+        // TODO: NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME -> Ignore certificate errors
+        // TODO: NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC -> If enabled, will ignore certificate errors when making a connection. Otherwise, verifies the server certificate. This should, normally, be not enabled unless you're sure that you're trusting the server.
+        public bool IgnoreCertificateErrors { get; set; }
         #endregion
 
         #region Screensaver
