@@ -296,6 +296,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             }
 
             // Clean up
+            ScreenTools.UnsetCurrent(simonScreen);
             ConsoleWrapper.Clear();
         }
     }
