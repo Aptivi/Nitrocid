@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 int panelPosX = width - height;
                 int panelPosY = 1;
                 var highlightBuffer = new StringBuilder();
-                var arcStroke = new Arc(height, panelPosX, panelPosY, lightColor ? TransformationTools.Lighten(color, 50) : color)
+                var arcStroke = new Arc(height, panelPosX, panelPosY, lightColor ? TransformationTools.Lighten(color, 30) : color)
                 {
                     AngleStart = angleStart,
                     AngleEnd = angleEnd,
