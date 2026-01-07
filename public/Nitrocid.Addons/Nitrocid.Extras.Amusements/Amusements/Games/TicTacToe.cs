@@ -229,23 +229,23 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     return;
                 if (grid[0, 0] == player && grid[0, 1] == player && grid[0, 2] == player)
                     winner = player;
-                if (grid[1, 0] == player && grid[1, 1] == player && grid[1, 2] == player)
+                else if (grid[1, 0] == player && grid[1, 1] == player && grid[1, 2] == player)
                     winner = player;
-                if (grid[2, 0] == player && grid[2, 1] == player && grid[2, 2] == player)
+                else if (grid[2, 0] == player && grid[2, 1] == player && grid[2, 2] == player)
                     winner = player;
-                if (grid[0, 0] == player && grid[1, 0] == player && grid[2, 0] == player)
+                else if (grid[0, 0] == player && grid[1, 0] == player && grid[2, 0] == player)
                     winner = player;
-                if (grid[0, 1] == player && grid[1, 1] == player && grid[2, 1] == player)
+                else if (grid[0, 1] == player && grid[1, 1] == player && grid[2, 1] == player)
                     winner = player;
-                if (grid[0, 2] == player && grid[1, 2] == player && grid[2, 2] == player)
+                else if (grid[0, 2] == player && grid[1, 2] == player && grid[2, 2] == player)
                     winner = player;
-                if (grid[0, 0] == player && grid[1, 1] == player && grid[2, 2] == player)
+                else if (grid[0, 0] == player && grid[1, 1] == player && grid[2, 2] == player)
                     winner = player;
-                if (grid[0, 2] == player && grid[1, 1] == player && grid[2, 0] == player)
+                else if (grid[0, 2] == player && grid[1, 1] == player && grid[2, 0] == player)
                     winner = player;
-                if (grid[0, 0] != 0 && grid[1, 0] != 0 && grid[2, 0] != 0 &&
-                    grid[0, 1] != 0 && grid[1, 1] != 0 && grid[2, 1] != 0 &&
-                    grid[0, 2] != 0 && grid[1, 2] != 0 && grid[2, 2] != 0)
+                else if (grid[0, 0] != 0 && grid[1, 0] != 0 && grid[2, 0] != 0 &&
+                         grid[0, 1] != 0 && grid[1, 1] != 0 && grid[2, 1] != 0 &&
+                         grid[0, 2] != 0 && grid[1, 2] != 0 && grid[2, 2] != 0)
                     winner = 0;
             }
 
