@@ -56,6 +56,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             // Helper function for variables
             static (int angleStart, int angleEnd, Color color, string colorString) GetArcInfo(int colorNumber)
             {
+                // TODO: NKS_AMUSEMENTS_SIMON_SIMONSAYS_GREEN -> Green
+                // TODO: NKS_AMUSEMENTS_SIMON_SIMONSAYS_RED -> Red
+                // TODO: NKS_AMUSEMENTS_SIMON_SIMONSAYS_BLUE -> Blue
+                // TODO: NKS_AMUSEMENTS_SIMON_SIMONSAYS_YELLOW -> Yellow
                 (int angleStart, int angleEnd) =
                     colorNumber == 1 ? (90, 180) :
                     colorNumber == 2 ? (360, 90) :
@@ -112,7 +116,6 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     Height = 1,
                     OneLine = true,
 
-                    // TODO: NKS_AMUSEMENTS_SIMON_SIMONSAYS -> Simon says: {0}
                     // TODO: NKS_AMUSEMENTS_SIMON_PENDING -> Go ahead!
                     Text = "\x1b[1K" +
                         (done ? LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_GAMEOVER") :
@@ -143,10 +146,6 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int i = 0; i < colorPresses; i++)
                     {
                         // Select one of 1 (Green), 2 (Red), 3 (Blue), 4 (Yellow)
-                        // TODO: NKS_AMUSEMENTS_SIMON_SIMONSAYS_GREEN -> Green
-                        // TODO: NKS_AMUSEMENTS_SIMON_SIMONSAYS_RED -> Red
-                        // TODO: NKS_AMUSEMENTS_SIMON_SIMONSAYS_BLUE -> Blue
-                        // TODO: NKS_AMUSEMENTS_SIMON_SIMONSAYS_YELLOW -> Yellow
                         expectedPatterns[i] = RandomDriver.Random(1, 4);
                         (int angleStart, int angleEnd, Color color, string colorString) = GetArcInfo(expectedPatterns[i]);
 
