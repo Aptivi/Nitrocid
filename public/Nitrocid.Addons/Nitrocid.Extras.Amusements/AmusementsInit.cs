@@ -100,6 +100,10 @@ namespace Nitrocid.Extras.Amusements
                             ConflictsWith = ["soccer"],
                             AcceptsValues = false
                         }),
+                        // TODO: NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC -> "First team name"
+                        new SwitchInfo("firstTeamName", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC"),
+                        // TODO: NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC -> "Second team name"
+                        new SwitchInfo("secondTeamName", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC"),
                     ])
                 ], new ScoreSimCommand()),
 
