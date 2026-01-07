@@ -22,6 +22,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Shell.Commands;
 using System.Net.Http;
+using Nitrocid.Base.Network.Transfer;
 
 namespace Nitrocid.ShellPacks.Commands
 {
@@ -39,7 +40,7 @@ namespace Nitrocid.ShellPacks.Commands
         {
             if (string.IsNullOrEmpty(address))
                 address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT") + " ");
-            return NetworkConnectionTools.EstablishConnection("HTTP connection", address, NetworkConnectionType.HTTP, new HttpClient());
+            return NetworkConnectionTools.EstablishConnection("HTTP connection", address, NetworkConnectionType.HTTP, NetworkTransfer.HttpClientNew);
         }
 
     }

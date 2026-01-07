@@ -52,7 +52,7 @@ namespace Nitrocid.Base.Kernel.Updates
             try
             {
                 // Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
-                NetworkTransfer.WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi");
+                NetworkTransfer.HttpClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi");
 
                 // Populate the following variables with information
                 string UpdateStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/Nitrocid/releases", false);
@@ -69,7 +69,7 @@ namespace Nitrocid.Base.Kernel.Updates
             }
             finally
             {
-                NetworkTransfer.WClient.DefaultRequestHeaders.Remove("User-Agent");
+                NetworkTransfer.HttpClient.DefaultRequestHeaders.Remove("User-Agent");
             }
             return null;
         }

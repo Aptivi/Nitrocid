@@ -916,6 +916,12 @@
                 "Description": "NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_DESC"
             },
             {
+                "Name": "NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME",
+                "Type": "SBoolean",
+                "Variable": "IgnoreCertificateErrors",
+                "Description": "NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC"
+            },
+            {
                 "Name": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_NAME",
                 "Type": "SMultivar",
                 "Description": "NKS_SETTINGS_KERNEL_NETWORK_REMOTEDEBUG_DESC",
