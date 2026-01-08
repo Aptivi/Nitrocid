@@ -116,7 +116,9 @@ namespace Nitrocid.LocaleChecker.Localization
                 string langFileName = langStream.Substring(langStream.LastIndexOf(" ") + 1);
                 string langName = langFileName.Remove(langFileName.IndexOf("."));
                 string[] splitLangStream = langStream.Split(' ');
-                string assemblyName = langStream.Contains("\\") ? splitLangStream[1].Split('\\')[4] : splitLangStream[1];
+                string assemblyName =
+                    langStream.Contains("\\") ? splitLangStream[1].Split('\\')[4] :
+                    langStream.Contains("/") ? splitLangStream[1].Split('/')[4] : splitLangStream[1];
                 string finalLangStream = $"Nitrocid.Langs {assemblyName} {splitLangStream[2]}";
                 if (assemblyName != context.Compilation.AssemblyName)
                     continue;
@@ -281,10 +283,10 @@ namespace Nitrocid.LocaleChecker.Localization
                 string relativePath = pathArgs[0];
                 string absolutePath = pathArgs[1];
                 string assemblyName = context.Compilation.AssemblyName ?? "";
-                if (relativePath.Contains("\\"))
+                if (relativePath.Contains("\\") || relativePath.Contains('/'))
                 {
                     // Split the path and find "Resources"
-                    string[] splitPath = relativePath.Split('\\');
+                    string[] splitPath = relativePath.Contains('/') ? relativePath.Split('/') : relativePath.Split('\\');
                     int asmNameIdx = splitPath.IndexOf("Resources") - 1;
                     assemblyName = splitPath[asmNameIdx];
                 }
