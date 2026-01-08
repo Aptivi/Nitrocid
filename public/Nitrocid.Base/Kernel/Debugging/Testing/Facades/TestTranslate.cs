@@ -30,7 +30,7 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             var spanish = LanguageManager.ListLanguages("es")["es"];
-            string str = LanguageTester.GetLocalized("NKS_KERNEL_DEBUGGING_TRANSLATE_TEST", spanish);
+            string str = LanguageTester.GetLocalized(/* Localizable */ "NKS_KERNEL_DEBUGGING_TRANSLATE_TEST", spanish);
             TextWriterColor.Write(str);
         }
     }

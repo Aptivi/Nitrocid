@@ -68,6 +68,7 @@ namespace Nitrocid.SplashPacks.Splashes
             }
 
 #pragma warning disable NLOC0001
+            // TODO: Move NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT{,_INIT,_SHUTDOWN,_RESTART} to here
             // Populate some text
             string text = $"{SplashReport.Progress}%";
             string bottomText =
