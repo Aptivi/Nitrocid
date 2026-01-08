@@ -99,7 +99,6 @@ namespace Nitrocid.LocaleChecker.Localization
 
         private void PopulateLocalizations(CompilationStartAnalysisContext context)
         {
-            assemblyLocs.Clear();
             foreach (string langStream in languageManifestNames)
             {
                 // Find the JSON stream and open it.
@@ -124,16 +123,16 @@ namespace Nitrocid.LocaleChecker.Localization
                     continue;
 
                 // Now, add all localizations to a separate array
-                var locHashSet = new HashSet<string>();
+                string finalKey = langName + " - " + finalLangStream;
+                if (!localizationList.ContainsKey(finalKey))
+                    localizationList.Add(finalKey, []);
                 foreach (var localization in localizations)
                 {
                     if (localization is null)
                         throw new Exception("There is no localization.");
                     string localizationString = localization.Localization.ToString();
-                    locHashSet.Add(localizationString);
+                    localizationList[finalKey].Add(localizationString);
                 }
-                if (!localizationList.ContainsKey(langName + " - " + finalLangStream))
-                    localizationList.Add(langName + " - " + finalLangStream, locHashSet);
             }
 
             // Register the localization analysis action
@@ -175,13 +174,14 @@ namespace Nitrocid.LocaleChecker.Localization
                         text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
                         if (!string.IsNullOrWhiteSpace(text))
                         {
-                            assemblyLocs.Add(text);
                             List<string> incompleteLangs = [];
                             foreach (var localization in localizationList.Keys)
                             {
                                 var hashSet = localizationList[localization];
                                 if (!hashSet.Contains(text) && localization.Contains($"Nitrocid.Langs {context.SemanticModel.Compilation.AssemblyName} "))
                                     incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                                else if (hashSet.Contains(text))
+                                    assemblyLocs.Add(text);
                             }
                             if (incompleteLangs.Count > 0)
                             {
@@ -225,13 +225,14 @@ namespace Nitrocid.LocaleChecker.Localization
                             text = text.Substring(1, text.Length - 2).Replace("\\\"", "\"");
                             if (!string.IsNullOrWhiteSpace(text))
                             {
-                                assemblyLocs.Add(text);
                                 List<string> incompleteLangs = [];
                                 foreach (var localization in localizationList.Keys)
                                 {
                                     var hashSet = localizationList[localization];
                                     if (!hashSet.Contains(text) && localization.Contains($"Nitrocid.Langs {context.SemanticModel.Compilation.AssemblyName} "))
                                         incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                                    else if (hashSet.Contains(text))
+                                        assemblyLocs.Add(text);
                                 }
                                 if (incompleteLangs.Count > 0)
                                 {
@@ -310,13 +311,14 @@ namespace Nitrocid.LocaleChecker.Localization
                     string description = descriptionOrig.Replace("\\\"", "\"");
                     if (!string.IsNullOrWhiteSpace(description))
                     {
-                        assemblyLocs.Add(description);
                         List<string> incompleteLangs = [];
                         foreach (var localization in localizationList.Keys)
                         {
                             var hashSet = localizationList[localization];
                             if (!hashSet.Contains(description) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                 incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                            else if (hashSet.Contains(description))
+                                assemblyLocs.Add(description);
                         }
                         if (incompleteLangs.Count > 0)
                         {
@@ -340,13 +342,14 @@ namespace Nitrocid.LocaleChecker.Localization
                         string knownAddonDisplay = knownAddonDisplayOrig.Replace("\\\"", "\"");
                         if (!string.IsNullOrWhiteSpace(description))
                         {
-                            assemblyLocs.Add(description);
                             List<string> incompleteLangs = [];
                             foreach (var localization in localizationList.Keys)
                             {
                                 var hashSet = localizationList[localization];
                                 if (!hashSet.Contains(description) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                     incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                                else if (hashSet.Contains(description))
+                                    assemblyLocs.Add(description);
                             }
                             if (incompleteLangs.Count > 0)
                             {
@@ -357,13 +360,14 @@ namespace Nitrocid.LocaleChecker.Localization
                         }
                         if (!string.IsNullOrWhiteSpace(displayAs))
                         {
-                            assemblyLocs.Add(displayAs);
                             List<string> incompleteLangs = [];
                             foreach (var localization in localizationList.Keys)
                             {
                                 var hashSet = localizationList[localization];
                                 if (!hashSet.Contains(displayAs) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                     incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                                else if (hashSet.Contains(displayAs))
+                                    assemblyLocs.Add(displayAs);
                             }
                             if (incompleteLangs.Count > 0)
                             {
@@ -374,13 +378,14 @@ namespace Nitrocid.LocaleChecker.Localization
                         }
                         if (!string.IsNullOrWhiteSpace(knownAddonDisplay))
                         {
-                            assemblyLocs.Add(knownAddonDisplay);
                             List<string> incompleteLangs = [];
                             foreach (var localization in localizationList.Keys)
                             {
                                 var hashSet = localizationList[localization];
                                 if (!hashSet.Contains(knownAddonDisplay) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                     incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                                else if (hashSet.Contains(knownAddonDisplay))
+                                    assemblyLocs.Add(knownAddonDisplay);
                             }
                             if (incompleteLangs.Count > 0)
                             {
@@ -404,13 +409,14 @@ namespace Nitrocid.LocaleChecker.Localization
                                 string keyTip = keyTipOrig.Replace("\\\"", "\"");
                                 if (!string.IsNullOrWhiteSpace(keyName))
                                 {
-                                    assemblyLocs.Add(keyName);
                                     List<string> incompleteLangs = [];
                                     foreach (var localization in localizationList.Keys)
                                     {
                                         var hashSet = localizationList[localization];
                                         if (!hashSet.Contains(keyName) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                             incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                                        else if (hashSet.Contains(keyName))
+                                            assemblyLocs.Add(keyName);
                                     }
                                     if (incompleteLangs.Count > 0)
                                     {
@@ -421,13 +427,14 @@ namespace Nitrocid.LocaleChecker.Localization
                                 }
                                 if (!string.IsNullOrWhiteSpace(keyDesc))
                                 {
-                                    assemblyLocs.Add(keyDesc);
                                     List<string> incompleteLangs = [];
                                     foreach (var localization in localizationList.Keys)
                                     {
                                         var hashSet = localizationList[localization];
                                         if (!hashSet.Contains(keyDesc) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                             incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                                        else if (hashSet.Contains(keyDesc))
+                                            assemblyLocs.Add(keyDesc);
                                     }
                                     if (incompleteLangs.Count > 0)
                                     {
@@ -438,13 +445,14 @@ namespace Nitrocid.LocaleChecker.Localization
                                 }
                                 if (!string.IsNullOrWhiteSpace(keyTip))
                                 {
-                                    assemblyLocs.Add(keyTip);
                                     List<string> incompleteLangs = [];
                                     foreach (var localization in localizationList.Keys)
                                     {
                                         var hashSet = localizationList[localization];
                                         if (!hashSet.Contains(keyTip) && localization.Contains($"Nitrocid.Langs {assemblyName} "))
                                             incompleteLangs.Add(localization.Substring(0, localization.IndexOf(" ")));
+                                        else if (hashSet.Contains(keyTip))
+                                            assemblyLocs.Add(keyTip);
                                     }
                                     if (incompleteLangs.Count > 0)
                                     {
@@ -475,33 +483,10 @@ namespace Nitrocid.LocaleChecker.Localization
 
         private void CheckExtraJsonLocalizations(CompilationAnalysisContext context)
         {
-            #region Debug
 #if LOCALECHECK_DEBUG
-            {
-                // Debug diagnostic
-                var debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "DETECTED LOCALIZATIONS: assemblyLocs", string.Join(", ", assemblyLocs));
-                context.ReportDiagnostic(debugDiagnostic);
-                string engLoc = "";
-                foreach (var localization in localizationList.Keys)
-                {
-                    var hashSet = localizationList[localization];
-                    if (localization.Contains("eng - "))
-                        engLoc = localization;
-                    debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, $"DETECTED JSON LOCALIZATIONS: localizationList[{localization}]", string.Join(", ", hashSet));
-                    context.ReportDiagnostic(debugDiagnostic);
-                }
-                if (string.IsNullOrEmpty(engLoc))
-                    return;
-
-                // List extras in Locs and JSON
-                var englishLocs = localizationList[engLoc];
-                var extrasInLocs = assemblyLocs.Except(englishLocs);
-                var extrasInJson = englishLocs.Except(assemblyLocs);
-                debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "EXTRA LOCALIZATIONS IN KERNEL SOURCE: extrasInLocs", string.Join(", ", extrasInLocs));
-                context.ReportDiagnostic(debugDiagnostic);
-                debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "EXTRA LOCALIZATIONS IN ENG JSON:      extrasInJson", string.Join(", ", extrasInJson));
-                context.ReportDiagnostic(debugDiagnostic);
-            }
+            // Debug diagnostic
+            var debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, "DETECTED LOCALIZATIONS: assemblyLocs", string.Join(", ", assemblyLocs));
+            context.ReportDiagnostic(debugDiagnostic);
 #endif
 
             string engLoc = "";
@@ -510,6 +495,10 @@ namespace Nitrocid.LocaleChecker.Localization
                 var hashSet = localizationList[localization];
                 if (localization.Contains("eng - "))
                     engLoc = localization;
+#if LOCALECHECK_DEBUG
+                debugDiagnostic = Diagnostic.Create(assemblyLocsDbg, null, $"DETECTED JSON LOCALIZATIONS: localizationList[{localization}]", string.Join(", ", hashSet));
+                context.ReportDiagnostic(debugDiagnostic);
+#endif
             }
             if (string.IsNullOrEmpty(engLoc))
                 return;
@@ -517,12 +506,14 @@ namespace Nitrocid.LocaleChecker.Localization
             // List extras in Locs and JSON
             var englishLocs = localizationList[engLoc];
             var extrasInJson = englishLocs.Except(assemblyLocs);
-            foreach (var englishLoc in extrasInJson)
+            foreach (var englishLoc in englishLocs)
             {
-                var diagnostic = Diagnostic.Create(RuleExtraJson, null, engLoc, englishLoc);
-                context.ReportDiagnostic(diagnostic);
+                if (!assemblyLocs.Contains(englishLoc))
+                {
+                    var diagnostic = Diagnostic.Create(RuleExtraJson, null, engLoc, englishLoc);
+                    context.ReportDiagnostic(diagnostic);
+                }
             }
-            #endregion
         }
     }
 }
