@@ -33,22 +33,22 @@
     </EmbeddedResource>
     
     <EmbeddedResource Include="..\..\public\Nitrocid\Resources\Languages\*.json" Visible="false">
-      <LogicalName>Nitrocid.Langs Nitrocid %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
+      <LogicalName>Nitrocid.Langs Nitrocid %(EmbeddedResource.Filename)%(EmbeddedResource.Extension) %(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Base\Resources\Languages\*.json" Visible="false">
-      <LogicalName>Nitrocid.Langs Nitrocid.Base %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
+      <LogicalName>Nitrocid.Langs Nitrocid.Base %(EmbeddedResource.Filename)%(EmbeddedResource.Extension) %(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Core\Resources\Languages\*.json" Visible="false">
-      <LogicalName>Nitrocid.Langs Nitrocid.Core %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
+      <LogicalName>Nitrocid.Langs Nitrocid.Core %(EmbeddedResource.Filename)%(EmbeddedResource.Extension) %(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Apps\**\Resources\Languages\*.json" Visible="false">
-      <LogicalName>Nitrocid.Langs %(EmbeddedResource.RelativeDir) %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
+      <LogicalName>Nitrocid.Langs %(EmbeddedResource.RelativeDir) %(EmbeddedResource.Filename)%(EmbeddedResource.Extension) %(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\**\Resources\Languages\*.json" Visible="false">
-      <LogicalName>Nitrocid.Langs %(EmbeddedResource.RelativeDir) %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
+      <LogicalName>Nitrocid.Langs %(EmbeddedResource.RelativeDir) %(EmbeddedResource.Filename)%(EmbeddedResource.Extension) %(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\**\Resources\Languages\*.json" Visible="false">
-      <LogicalName>Nitrocid.Langs %(EmbeddedResource.RelativeDir) %(EmbeddedResource.Filename)%(EmbeddedResource.Extension)</LogicalName>
+      <LogicalName>Nitrocid.Langs %(EmbeddedResource.RelativeDir) %(EmbeddedResource.Filename)%(EmbeddedResource.Extension) %(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     
     <EmbeddedResource Include="..\..\public\Nitrocid.Base\Resources\Settings\*.json" Visible="false">

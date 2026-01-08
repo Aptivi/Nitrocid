@@ -88,6 +88,24 @@ namespace Nitrocid.LocaleChecker.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This language, {0}, contains extraneous language descriptors: {1}.
+        /// </summary>
+        internal static string ExtraLocalizedJsonSummaryStringAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ExtraLocalizedJsonSummaryStringAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here&apos;s a list of languages that have extra localization descriptors.
+        /// </summary>
+        internal static string ExtraLocalizedJsonSummaryStringAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ExtraLocalizedJsonSummaryStringAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is marked as localizable, but is unlocalized for languages &quot;{1}&quot;.
         /// </summary>
         internal static string UnlocalizedCommentStringAnalyzerMessageFormat {
