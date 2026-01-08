@@ -8,3 +8,4 @@ NLOC0001 | Localization | Warning | UnlocalizedStringAnalyzer, AnalyzeLocalizati
 NLOC0002 | Localization | Warning | UnlocalizedStringAnalyzer, AnalyzeImplicitLocalization
 NLOC0003 | Localization | Warning | UnlocalizedStringAnalyzer, AnalyzeResourceLocalization
 NLOC0004 | Localization | Warning | UnlocalizedStringAnalyzer, CheckExtraJsonLocalizations, ExtraJSON
+NLOC0005 | Localization | Warning | UnlocalizedStringAnalyzer, CheckExtraJsonLocalizations, ExtraJSON

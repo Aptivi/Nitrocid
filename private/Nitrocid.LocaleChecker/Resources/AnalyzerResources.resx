@@ -141,4 +141,10 @@
   <data name="ExtraLocalizedJsonStringAnalyzerDescription" xml:space="preserve">
     <value>While Nitrocid KS accepts unlocalized strings and returns them as is, it's recommended to remove this string so that translations would be complete before the end of the development cycle.</value>
   </data>
+  <data name="ExtraLocalizedJsonSummaryStringAnalyzerTitle" xml:space="preserve">
+    <value>Here's a list of languages that have extra localization descriptors</value>
+  </data>
+  <data name="ExtraLocalizedJsonSummaryStringAnalyzerMessageFormat" xml:space="preserve">
+    <value>This language, {0}, contains extraneous language descriptors: {1}</value>
+  </data>
 </root>
