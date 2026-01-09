@@ -147,4 +147,10 @@
   <data name="ExtraLocalizedJsonSummaryStringAnalyzerMessageFormat" xml:space="preserve">
     <value>This language, {0}, contains extraneous language descriptors: {1}</value>
   </data>
+  <data name="UnlocalizedDisabledStringAnalyzerMessageFormat" xml:space="preserve">
+    <value>This string, "{0}", is in the DoTranslation() method, and is placed under conditional compiler preprocessor directive, but is unlocalized for languages "{1}"</value>
+  </data>
+  <data name="UnlocalizedDisabledCommentStringAnalyzerMessageFormat" xml:space="preserve">
+    <value>This string, "{0}", is marked as localizable, and is placed under conditional compiler preprocessor directive, but is unlocalized for languages "{1}"</value>
+  </data>
 </root>
