@@ -594,7 +594,7 @@ namespace Nitrocid.LocaleChecker.Localization
                         context.ReportDiagnostic(debugDiagnostic);
 #endif
                         var location = AnalyzerTools.GenerateLocation(locObj, loc, filePath);
-                        var diagnostic = Diagnostic.Create(RuleExtraJson, location, filePath, loc);
+                        var diagnostic = Diagnostic.Create(RuleExtraJson, location, loc);
                         context.ReportDiagnostic(diagnostic);
                     }
                 }
