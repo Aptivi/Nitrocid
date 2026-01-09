@@ -70,7 +70,7 @@ namespace Nitrocid.LocaleChecker.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There might be potentially extra localization found in the JSON representation file &quot;{0}&quot; that is not found in the source code: {1}.
+        ///   Looks up a localized string similar to There might be potentially extra localization found in the JSON representation file that is not found in the source code: {0}.
         /// </summary>
         internal static string ExtraLocalizedJsonStringAnalyzerMessageFormat {
             get {
