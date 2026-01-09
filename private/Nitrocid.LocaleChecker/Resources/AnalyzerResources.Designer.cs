@@ -115,6 +115,24 @@ namespace Nitrocid.LocaleChecker.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is marked as localizable, and is placed under conditional compiler preprocessor directive, but is unlocalized for languages &quot;{1}&quot;.
+        /// </summary>
+        internal static string UnlocalizedDisabledCommentStringAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("UnlocalizedDisabledCommentStringAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is in the DoTranslation() method, and is placed under conditional compiler preprocessor directive, but is unlocalized for languages &quot;{1}&quot;.
+        /// </summary>
+        internal static string UnlocalizedDisabledStringAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("UnlocalizedDisabledStringAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This string, &quot;{0}&quot;, is in a localizable part of the JSON resource, but is unlocalized for languages &quot;{1}&quot;.
         /// </summary>
         internal static string UnlocalizedJsonStringAnalyzerMessageFormat {
