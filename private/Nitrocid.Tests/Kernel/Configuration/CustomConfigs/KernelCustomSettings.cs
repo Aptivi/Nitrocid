@@ -105,7 +105,7 @@ namespace Nitrocid.Tests.Kernel.Configuration.CustomConfigs
                             "SelectionFunctionType": "LanguageManager",
                             "IsSelectionFunctionDict": true,
                             "SelectionFallback": [ "en-US" ],
-                            "Description": "Specifies the custom FilesystemTools."
+                            "Description": "Specifies the custom selection."
                         },
                         {
                             "Name": "Custom string",

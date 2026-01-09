@@ -977,7 +977,7 @@
                 "Variable": "DefaultSaverName",
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetScreensaverNames",
-                "SelectionFunctionType": "NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_NAME",
+                "SelectionFunctionType": "ScreensaverManager",
                 "SelectionFallback": [ "matrixbleed" ],
                 "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_DESC"
             },
