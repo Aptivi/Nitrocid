@@ -176,6 +176,10 @@ namespace Nitrocid.Base.Misc.Audio
                 { "the_mirage_edm", "The Mirage (Deep House Tech)" },
                 { "soothing_calm", "Soothing Calm" },
                 { "the_aptitude", "The Aptitude" },
+                { "crossing_limits", "Crossing Limits" },
+                { "future_prism", "Future Prism" },
+                { "the_mirage_indian", "The Mirage (Indian)" },
+                { "the_underground", "The Underground" },
             };
             Dictionary<string, AudioCueContainer> containers = [];
 
