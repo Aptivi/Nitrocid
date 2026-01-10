@@ -27,6 +27,7 @@ using Nitrocid.Base.Files.Editors.TextEdit;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
+using Terminaux.Colors;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Commands
 {
@@ -56,7 +57,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                         for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
                             char Character = text[charIndex];
-                            TextWriterColor.Write($"{(QueriedChars.Contains(charIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground : "")}{Character}", false, ThemeColorType.ListValue);
+                            TextWriterColor.Write($"{(QueriedChars.Contains(charIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground() : "")}{Character}", false, ThemeColorType.ListValue);
                         }
                         TextWriterRaw.Write();
                         return 0;
@@ -81,7 +82,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                         for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
                             char Character = text[charIndex];
-                            TextWriterColor.Write($"{(queried.Contains(charIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground : "")}{Character}", false, ThemeColorType.ListValue);
+                            TextWriterColor.Write($"{(queried.Contains(charIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground() : "")}{Character}", false, ThemeColorType.ListValue);
                         }
                         TextWriterRaw.Write();
                     }
@@ -108,7 +109,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                             for (int charIndex = 0; charIndex < text.Length; charIndex++)
                             {
                                 char Character = text[charIndex];
-                                TextWriterColor.Write($"{(QueriedChars.Contains(charIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground : "")}{Character}", false, ThemeColorType.ListValue);
+                                TextWriterColor.Write($"{(QueriedChars.Contains(charIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground() : "")}{Character}", false, ThemeColorType.ListValue);
                             }
                             TextWriterRaw.Write();
                         }

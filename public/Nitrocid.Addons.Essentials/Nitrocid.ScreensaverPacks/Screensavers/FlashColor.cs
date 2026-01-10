@@ -24,6 +24,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Nitrocid.Base.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -41,7 +42,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.FlashColorBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.FlashColorBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
 
@@ -52,7 +53,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
             int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", vars: [Left, Top]);
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
             ConsoleWrapper.SetCursorPosition(Left, Top);
 
             // Make a flash color
@@ -65,7 +66,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColorDry(ColorStorage, true);
+                    ConsoleColoring.SetConsoleColorDry(ColorStorage, true);
                     ConsoleWrapper.Write(" ");
                 }
             }
@@ -75,7 +76,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColorDry(new Color(ColorNum), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color(ColorNum), true);
                     ConsoleWrapper.Write(" ");
                 }
             }

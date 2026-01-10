@@ -22,6 +22,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
@@ -40,7 +41,7 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
         public override string Initialize(int left, int top, int width, int height)
         {
             clockColor = ChangeDateAndTimeColor();
-            backgroundColor = ColorTools.CurrentBackgroundColor;
+            backgroundColor = ConsoleColoring.CurrentBackgroundColor;
             return "";
         }
 

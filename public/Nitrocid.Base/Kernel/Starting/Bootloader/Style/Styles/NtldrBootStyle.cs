@@ -77,11 +77,11 @@ namespace Nitrocid.Base.Kernel.Starting.Bootloader.Style.Styles
                 """
             );
             builder.AppendLine(
-                $"{ColorTools.RenderSetConsoleColor(new Color(highlightedEntryForeground))}" +
-                $"{ColorTools.RenderSetConsoleColor(new Color(highlightedEntryBackground), true)}" +
+                $"{ConsoleColoring.RenderSetConsoleColor(new Color(highlightedEntryForeground))}" +
+                $"{ConsoleColoring.RenderSetConsoleColor(new Color(highlightedEntryBackground), true)}" +
                  "    " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_NTLDR_CONTINUE") +
-                $"{ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor)}" +
-                $"{ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)}"
+                $"{ConsoleColoring.RenderSetConsoleColor(ConsoleColoring.CurrentForegroundColor)}" +
+                $"{ConsoleColoring.RenderSetConsoleColor(ConsoleColoring.CurrentBackgroundColor, true)}"
             );
             builder.AppendLine("\n" + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BOOTLOADER_NTLDR_KEYBINDING1"));
             return builder.ToString();

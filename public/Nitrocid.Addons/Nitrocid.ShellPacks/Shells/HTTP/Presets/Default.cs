@@ -22,6 +22,7 @@ using Terminaux.Colors.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Presets
 {
@@ -51,17 +52,17 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('[');
 
             // HTTP site
-            PresetStringBuilder.Append(ThemeColorsTools.GetColor("HostNameShellColor").VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor("HostNameShellColor").VTSequenceForeground());
             PresetStringBuilder.AppendFormat("{0}", HTTPShellCommon.HTTPSite);
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -73,17 +74,17 @@ namespace Nitrocid.ShellPacks.Shells.HTTP.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('[');
 
             // HTTP site
-            PresetStringBuilder.Append(ThemeColorsTools.GetColor("HostNameShellColor").VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor("HostNameShellColor").VTSequenceForeground());
             PresetStringBuilder.AppendFormat(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_DEFAULTPRESET_SHOWCASE_SITE"));
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();

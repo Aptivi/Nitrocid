@@ -23,6 +23,7 @@ using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Nitrocid.Base.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -55,7 +56,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColorDry(ColorStorage, true);
+                    ConsoleColoring.SetConsoleColorDry(ColorStorage, true);
                     ConsoleWrapper.Write(" ");
                 }
             }
@@ -65,7 +66,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColorDry(new Color(ColorNum), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color(ColorNum), true);
                     ConsoleWrapper.Write(" ");
                 }
             }

@@ -61,7 +61,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            ColorTools.LoadBackDry("0;0;0");
+            ConsoleColoring.LoadBackDry("0;0;0");
             bleedStates.Clear();
             windows.Clear();
             hackingStage = 0;

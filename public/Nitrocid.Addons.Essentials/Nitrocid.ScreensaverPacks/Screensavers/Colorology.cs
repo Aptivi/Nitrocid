@@ -21,6 +21,7 @@ using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.ScreensaverPacks.Screensavers.Utilities;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -167,7 +168,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Now, make a color and fill the console with it
                     Color col = new((int)currentR, (int)currentG, (int)currentB);
-                    ColorTools.LoadBackDry(col);
+                    ConsoleColoring.LoadBackDry(col);
 
                     // Sleep
                     ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.ColorologyDelay);

@@ -28,6 +28,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -47,7 +48,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             Stars.Clear();
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
         }
 
         /// <inheritdoc/>
@@ -153,7 +154,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             else
                 TextWriterRaw.WritePlain(starsBuffer.ToString(), false);
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.StarfieldWarpDelay);
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
         }
 
         /// <inheritdoc/>

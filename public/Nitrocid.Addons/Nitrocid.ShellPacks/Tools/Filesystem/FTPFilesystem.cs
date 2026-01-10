@@ -33,6 +33,7 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.ShellPacks.Shells.FTP;
+using Terminaux.Colors;
 
 namespace Nitrocid.ShellPacks.Tools.Filesystem
 {
@@ -99,7 +100,7 @@ namespace Nitrocid.ShellPacks.Tools.Filesystem
                                 EntryBuilder.Append(": ");
                                 FileSize = instance.GetFileSize(finalDirListFTP.FullName);
                                 ModDate = instance.GetModifiedTime(finalDirListFTP.FullName);
-                                EntryBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.ListValue).VTSequenceForeground +
+                                EntryBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.ListValue).VTSequenceForeground() +
                                     $"{FileSize.SizeString()} | {LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_FSENTRY_MODIFIEDON")} {ModDate}");
                             }
                         }

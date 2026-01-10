@@ -26,6 +26,7 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
+using Terminaux.Colors;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -54,7 +55,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     var normalColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
                     foreach (Match match in matchCollection.Cast<Match>())
                     {
-                        string toReplaceWith = $"{matchColor.VTSequenceForeground}{match.Value}{normalColor.VTSequenceForeground}";
+                        string toReplaceWith = $"{matchColor.VTSequenceForeground()}{match.Value}{normalColor.VTSequenceForeground()}";
 
                         // We want to avoid repetitions here
                         if (!matchLine.Contains(toReplaceWith))

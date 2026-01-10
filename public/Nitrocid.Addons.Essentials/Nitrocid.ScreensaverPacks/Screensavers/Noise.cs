@@ -22,6 +22,7 @@ using System.Collections;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 
@@ -41,9 +42,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             double NoiseDense = (ScreensaverPackInit.SaversConfig.NoiseDensity > 100 ? 100 : ScreensaverPackInit.SaversConfig.NoiseDensity) / 100d;
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Grey));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Grey));
             ConsoleWrapper.Clear();
-            ColorTools.SetConsoleColorDry(ConsoleColors.Black, true);
+            ConsoleColoring.SetConsoleColorDry(ConsoleColors.Black, true);
 
             // Select random positions to generate noise
             int AmountOfBlocks = ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight;

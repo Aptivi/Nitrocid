@@ -58,14 +58,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ParticlesMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.ParticlesMaximumBlueColorLevel);
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                     ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                    particlesBuffer.Append(ColorStorage.VTSequenceBackgroundTrueColor);
+                    particlesBuffer.Append(ColorStorage.VTSequenceBackground);
                 }
                 else
                 {
                     int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.ParticlesMinimumColorLevel, ScreensaverPackInit.SaversConfig.ParticlesMaximumColorLevel);
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                     ColorStorage = new Color(ColorNum);
-                    particlesBuffer.Append(ColorStorage.VTSequenceBackgroundTrueColor);
+                    particlesBuffer.Append(ColorStorage.VTSequenceBackground);
                 }
 
                 // Select position to draw the particles

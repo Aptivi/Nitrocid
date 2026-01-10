@@ -51,8 +51,8 @@ namespace Nitrocid.SplashPacks.Splashes
 
                 // Make a spin buffer
                 builder.Append(
-                    new Color(ConsoleColors.White).VTSequenceForeground +
-                    new Color(ConsoleColors.Black).VTSequenceBackground
+                    new Color(ConsoleColors.White).VTSequenceForeground() +
+                    new Color(ConsoleColors.Black).VTSequenceBackground()
                 );
                 for (int x = 0; x < ConsoleWrapper.WindowWidth; x++)
                 {

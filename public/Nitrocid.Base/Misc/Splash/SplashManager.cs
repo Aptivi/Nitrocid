@@ -34,6 +34,7 @@ using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel;
 using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Base.Misc.Splash
 {
@@ -218,7 +219,7 @@ namespace Nitrocid.Base.Misc.Splash
                 bool initialBackgroundAllowed = Config.MainConfig.AllowBackgroundColor;
                 BaseSplash.initialBackgroundAllowed = initialBackgroundAllowed;
                 if (splash.RequiresBackground)
-                    ColorTools.AllowBackground = true;
+                    ConsoleColoring.AllowBackground = true;
 
                 // Finally, render it
                 ThemeColorsTools.LoadBackground();
@@ -334,7 +335,7 @@ namespace Nitrocid.Base.Misc.Splash
 
                     // Reset the background setting
                     if (splash.RequiresBackground)
-                        ColorTools.AllowBackground = BaseSplash.initialBackgroundAllowed;
+                        ConsoleColoring.AllowBackground = BaseSplash.initialBackgroundAllowed;
                     ThemeColorsTools.LoadBackground();
 
                     // Reset the cursor visibility

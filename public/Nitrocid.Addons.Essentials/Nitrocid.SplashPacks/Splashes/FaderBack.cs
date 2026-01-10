@@ -95,7 +95,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
                     DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
                     builder.Append(
-                        ColorTools.RenderSetConsoleColor(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), true) +
+                        ConsoleColoring.RenderSetConsoleColor(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), true) +
                         ConsoleClearing.GetClearWholeScreenSequence()
                     );
                     _currentStep++;
@@ -118,7 +118,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     CurrentColorBlueIn = (int)Math.Round((CurrentColorBlueIn + ThresholdBlue) * _currentStep);
                     DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", vars: [CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn]);
                     builder.Append(
-                        ColorTools.RenderSetConsoleColor(new Color($"{CurrentColorRedIn};{CurrentColorGreenIn};{CurrentColorBlueIn}"), true) +
+                        ConsoleColoring.RenderSetConsoleColor(new Color($"{CurrentColorRedIn};{CurrentColorGreenIn};{CurrentColorBlueIn}"), true) +
                         ConsoleClearing.GetClearWholeScreenSequence()
                     );
                     _currentStep++;

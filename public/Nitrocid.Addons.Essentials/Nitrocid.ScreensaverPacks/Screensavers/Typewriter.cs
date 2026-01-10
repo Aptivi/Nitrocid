@@ -47,7 +47,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             linesWritten = 0;
-            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.TypewriterTextColor));
+            ConsoleColoring.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.TypewriterTextColor));
             ConsoleWrapper.Clear();
         }
 

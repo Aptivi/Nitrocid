@@ -23,6 +23,7 @@ using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using System;
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
@@ -55,7 +56,7 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
             bezelColor = ChangeAnalogClockColor();
             handsColor = ChangeAnalogClockColor();
             secondsHandColor = ChangeAnalogClockColor();
-            backgroundColor = ColorTools.CurrentBackgroundColor;
+            backgroundColor = ConsoleColoring.CurrentBackgroundColor;
             showSecondsHand = Config.WidgetConfig.AnalogShowSecondsHand;
             lastCenter = new(0, 0);
             lastHours = new(0, 0);

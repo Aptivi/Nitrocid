@@ -25,6 +25,7 @@ using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Nitrocid.Base.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -42,7 +43,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.TypoTextColor));
+            ConsoleColoring.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.TypoTextColor));
             ConsoleWrapper.Clear();
         }
 

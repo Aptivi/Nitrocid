@@ -30,6 +30,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Text.Probers.Regexp;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Images;
@@ -224,7 +225,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             {
                 finalInfoRendered.AppendLine("\n");
                 finalInfoRendered.AppendLine(picture);
-                finalInfoRendered.Append(ColorTools.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.TuiBoxBackground), true));
+                finalInfoRendered.Append(ConsoleColoring.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.TuiBoxBackground), true));
             }
 
             // Now, render the info box

@@ -30,6 +30,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -51,7 +52,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(0, 0, 0));
+            ConsoleColoring.LoadBackDry(new Color(0, 0, 0));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
 
@@ -85,7 +86,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     // Step 1: Shows all the versions, but with 0.1.0.
                     case 1:
-                        ColorTools.LoadBackDry(black);
+                        ConsoleColoring.LoadBackDry(black);
 
                         // Get the color thresholds
                         double thresholdGR = green.RGB.R / (double)colorSteps;
@@ -450,9 +451,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             bool showGreen = flashes % 2 == 0;
                             if (showGreen)
-                                ColorTools.LoadBackDry(green);
+                                ConsoleColoring.LoadBackDry(green);
                             else
-                                ColorTools.LoadBackDry(white);
+                                ConsoleColoring.LoadBackDry(white);
                             ScreensaverManager.Delay(50, true);
                         }
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
@@ -464,9 +465,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             bool showRed = flashes % 2 == 0;
                             if (showRed)
-                                ColorTools.LoadBackDry(red);
+                                ConsoleColoring.LoadBackDry(red);
                             else
-                                ColorTools.LoadBackDry(white);
+                                ConsoleColoring.LoadBackDry(white);
                             ScreensaverManager.Delay(50, true);
                         }
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
@@ -478,9 +479,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             bool showPink = flashes % 2 == 0;
                             if (showPink)
-                                ColorTools.LoadBackDry(pink);
+                                ConsoleColoring.LoadBackDry(pink);
                             else
-                                ColorTools.LoadBackDry(white);
+                                ConsoleColoring.LoadBackDry(white);
                             ScreensaverManager.Delay(50, true);
                         }
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
@@ -492,15 +493,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             bool showBlue = flashes % 2 == 0;
                             if (showBlue)
-                                ColorTools.LoadBackDry(blue);
+                                ConsoleColoring.LoadBackDry(blue);
                             else
-                                ColorTools.LoadBackDry(white);
+                                ConsoleColoring.LoadBackDry(white);
                             ScreensaverManager.Delay(50, true);
                         }
                         break;
                     // Step 4: White background for a few seconds
                     case 4:
-                        ColorTools.LoadBackDry(white);
+                        ConsoleColoring.LoadBackDry(white);
                         ScreensaverManager.Delay(5000, true);
                         break;
                     // Step 5: "THE END" shows for a few seconds
@@ -557,7 +558,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
                             Color colBG = new(currentBGR, currentBGG, currentBGB);
-                            ColorTools.LoadBackDry(colBG);
+                            ConsoleColoring.LoadBackDry(colBG);
                             string theEnd = LanguageTools.GetLocalized("NKS_SCREENSAVERPACKS_KSX_THEEND").ToUpper();
                             int figHeight = FigletTools.GetFigletHeight(theEnd, font) / 2;
                             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
@@ -582,7 +583,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Reset
-            ColorTools.LoadBackDry(black);
+            ConsoleColoring.LoadBackDry(black);
         }
 
     }

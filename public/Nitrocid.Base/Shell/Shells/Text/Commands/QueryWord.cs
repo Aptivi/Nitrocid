@@ -26,6 +26,7 @@ using Nitrocid.Base.Files.Editors.TextEdit;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
+using Terminaux.Colors;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Commands
 {
@@ -56,7 +57,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                         for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                         {
                             string word = Words[wordIndex];
-                            TextWriterColor.Write($"{(QueriedChars.Contains(wordIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground : "")}{word} ", false, ThemeColorType.ListValue);
+                            TextWriterColor.Write($"{(QueriedChars.Contains(wordIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground() : "")}{word} ", false, ThemeColorType.ListValue);
                         }
                         TextWriterRaw.Write();
                         return 0;
@@ -82,7 +83,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                         for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                         {
                             string word = Words[wordIndex];
-                            TextWriterColor.Write($"{(QueriedChars.Contains(wordIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground : "")}{word} ", false, ThemeColorType.ListValue);
+                            TextWriterColor.Write($"{(QueriedChars.Contains(wordIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground() : "")}{word} ", false, ThemeColorType.ListValue);
                         }
                         TextWriterRaw.Write();
                     }
@@ -110,7 +111,7 @@ namespace Nitrocid.Base.Shell.Shells.Text.Commands
                             for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                             {
                                 string word = Words[wordIndex];
-                                TextWriterColor.Write($"{(QueriedChars.Contains(wordIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground : "")}{word} ", false, ThemeColorType.ListValue);
+                                TextWriterColor.Write($"{(QueriedChars.Contains(wordIndex) ? ThemeColorsTools.GetColor(ThemeColorType.Success).VTSequenceForeground() : "")}{word} ", false, ThemeColorType.ListValue);
                             }
                             TextWriterRaw.Write();
                         }

@@ -75,7 +75,7 @@ namespace Nitrocid.SplashPacks.Splashes
             progress.Indeterminate = !SplashPackInit.SplashConfig.LogboxShowProgress;
             progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor);
             progress.ProgressActiveForegroundColor = progressColor;
-            progress.ProgressBackgroundColor = ColorTools.CurrentBackgroundColor;
+            progress.ProgressBackgroundColor = ConsoleColoring.CurrentBackgroundColor;
             if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)

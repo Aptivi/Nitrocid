@@ -24,6 +24,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Themes.Colors;
 using Terminaux.Colors.Transformation;
@@ -74,7 +75,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             progress.Indeterminate = !Config.SplashConfig.WelcomeShowProgress;
             progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor);
             progress.ProgressActiveForegroundColor = progressColor;
-            progress.ProgressBackgroundColor = ColorTools.CurrentBackgroundColor;
+            progress.ProgressBackgroundColor = ConsoleColoring.CurrentBackgroundColor;
             if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)

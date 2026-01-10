@@ -22,6 +22,7 @@ using Nitrocid.Base.Drivers.RNG;
 using System;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {
@@ -41,7 +42,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             var black = new Color(ConsoleColors.Black);
 
             // Load the background
-            ColorTools.LoadBackDry(black);
+            ConsoleColoring.LoadBackDry(black);
 
             // Select a variant
             int excVariantInt = RandomDriver.RandomIdx(Enum.GetNames<Variant>().Length);

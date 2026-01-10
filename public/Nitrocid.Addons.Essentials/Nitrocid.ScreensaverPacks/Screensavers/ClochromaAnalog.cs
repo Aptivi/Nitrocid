@@ -27,6 +27,7 @@ using Nitrocid.Base.Misc.Widgets.Implementations;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Drivers.RNG;
 using System;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -66,7 +67,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Render the analog clock
             if (needsRefresh || ConsoleResizeHandler.WasResized(false))
             {
-                ColorTools.LoadBackDry(bgColor);
+                ConsoleColoring.LoadBackDry(bgColor);
                 needsRefresh = false;
             }
             string widgetSeq = widget.Render();

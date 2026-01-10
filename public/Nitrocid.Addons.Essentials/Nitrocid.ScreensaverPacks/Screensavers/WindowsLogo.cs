@@ -26,6 +26,7 @@ using Terminaux.Colors.Data;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -86,7 +87,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Draw the Windows 11 logo
                 if (!Drawn)
                 {
-                    ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+                    ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
                     var windows11Color = new Color($"0;120;212");
 
                     // First, draw the upper left box

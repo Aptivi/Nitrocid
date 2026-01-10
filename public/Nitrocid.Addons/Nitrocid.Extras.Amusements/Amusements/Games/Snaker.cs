@@ -33,6 +33,7 @@ using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Base.Languages;
 using Terminaux.Inputs;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -63,7 +64,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             // Draw the floor
             part.AddDynamicText(() =>
             {
-                StringBuilder floor = new(ColorTools.RenderSetConsoleColor(FloorColor, true));
+                StringBuilder floor = new(ConsoleColoring.RenderSetConsoleColor(FloorColor, true));
 
                 int FloorTopLeftEdge = 2;
                 int FloorBottomLeftEdge = 2;
@@ -124,8 +125,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Now, print the score
                 floor.Append(
                     CsiSequences.GenerateCsiCursorPosition(1, 1) +
-                    ColorTools.RenderRevertBackground() +
-                    ColorTools.RenderSetConsoleColor(FloorColor) +
+                    ConsoleColoring.RenderRevertBackground() +
+                    ConsoleColoring.RenderSetConsoleColor(FloorColor) +
                     LanguageTools.GetLocalized("NKS_AMUSEMENTS_PONG_SCORE") +
                     $": {SnakeLength - 1}"
                 );
@@ -172,9 +173,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Remove excess mass and set the snake color
                 buffer.Append(
                     CsiSequences.GenerateCsiCursorPosition(SnakeLastTailToWipeX + 1, SnakeLastTailToWipeY + 1) +
-                    $"{ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)} " +
-                    ColorTools.RenderSetConsoleColor(SnakeColor, true) +
-                    ColorTools.RenderSetConsoleColor(snakeForeColor)
+                    $"{ConsoleColoring.RenderSetConsoleColor(ConsoleColoring.CurrentBackgroundColor, true)} " +
+                    ConsoleColoring.RenderSetConsoleColor(SnakeColor, true) +
+                    ConsoleColoring.RenderSetConsoleColor(snakeForeColor)
                 );
 
                 // Draw an apple

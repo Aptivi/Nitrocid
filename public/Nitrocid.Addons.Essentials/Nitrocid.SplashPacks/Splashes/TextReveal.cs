@@ -81,7 +81,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 int GreenColorNum = _currentColor.RGB.G;
                 int BlueColorNum = _currentColor.RGB.B;
                 builder.Append(
-                    ColorTools.RenderSetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true) +
+                    ConsoleColoring.RenderSetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true) +
                     ConsoleClearing.GetClearWholeScreenSequence()
                 );
 
@@ -112,7 +112,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
                 var color = new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}");
                 builder.Append(
-                    color.VTSequenceForeground +
+                    color.VTSequenceForeground() +
                     TextWriterWhereColor.RenderWhere(_textRevealWrite, _left, _top, true)
                 );
                 _currentStep++;

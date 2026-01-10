@@ -159,8 +159,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
             {
                 var builder = new StringBuilder();
                 builder.Append(
-                    $"{ColorTools.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.TuiForeground))}" +
-                    $"{ColorTools.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Background), true)}" +
+                    $"{ConsoleColoring.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.TuiForeground))}" +
+                    $"{ConsoleColoring.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Background), true)}" +
                     $"{TextWriterWhereColor.RenderWhere(status + ConsoleClearing.GetClearLineToRightSequence(), 0, 0)}"
                 );
                 return builder.ToString();
@@ -267,8 +267,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
 
                 // Finalize everything
                 builder.Append(
-                    $"{ColorTools.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.TuiForeground))}" +
-                    $"{ColorTools.RenderSetConsoleColor(background, true)}"
+                    $"{ConsoleColoring.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.TuiForeground))}" +
+                    $"{ConsoleColoring.RenderSetConsoleColor(background, true)}"
                 );
                 return builder.ToString();
             });

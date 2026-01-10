@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -45,7 +46,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Get random stars
             UpdateStars();
-            ColorTools.LoadBackDry(new Color(0, 0, 0));
+            ConsoleColoring.LoadBackDry(new Color(0, 0, 0));
         }
 
         /// <inheritdoc/>

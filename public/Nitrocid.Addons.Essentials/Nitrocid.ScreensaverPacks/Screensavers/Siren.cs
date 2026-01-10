@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using Nitrocid.Base.Misc.Screensaver;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -64,7 +65,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 step = 0;
 
             // Set color
-            ColorTools.LoadBackDry(sirenColors[step]);
+            ConsoleColoring.LoadBackDry(sirenColors[step]);
 
             // Delay
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SirenDelay);

@@ -85,7 +85,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     Color =
                         ScreensaverPackInit.SaversConfig.IndeterminateUseBorderColors ?
                         new Color(ScreensaverPackInit.SaversConfig.IndeterminateLeftFrameColor) :
-                        ColorTools.GetGray(),
+                        ConsoleColoring.GetGray(),
                 };
                 TextWriterRaw.WriteRaw(border.Render());
             }
@@ -145,7 +145,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
 
                 // Fill the ramp
-                rampBuffer.Append(ColorTools.RenderSetConsoleColor(RampCurrentColorInstance, true));
+                rampBuffer.Append(ConsoleColoring.RenderSetConsoleColor(RampCurrentColorInstance, true));
                 for (int BlockPos = IndeterminateCurrentBlockStart; BlockPos <= IndeterminateCurrentBlockEnd; BlockPos++)
                 {
                     rampBuffer.Append(

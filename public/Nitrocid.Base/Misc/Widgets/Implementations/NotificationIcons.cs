@@ -56,9 +56,9 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
                     ThemeColorsTools.GetColor("LowPriorityBorderColor");
                 if (notification.NotificationBorderColor != Color.Empty)
                     notifyBorderColor = notification.NotificationBorderColor;
-                notificationListing.Append(ColorTools.RenderSetConsoleColor(notifyBorderColor));
+                notificationListing.Append(ConsoleColoring.RenderSetConsoleColor(notifyBorderColor));
                 notificationListing.Append(notification.IconEmoji.ToString());
-                notificationListing.Append(ColorTools.RenderRevertForeground());
+                notificationListing.Append(ConsoleColoring.RenderRevertForeground());
                 processedWidth += iconWidth;
 
                 // Add a space if we can process more notifications

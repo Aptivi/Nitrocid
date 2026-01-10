@@ -28,6 +28,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -49,7 +50,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             droplets.Clear();
             evaporations.Clear();
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
         }
 
         /// <inheritdoc/>
@@ -142,7 +143,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             else
                 TextWriterRaw.WriteRaw(dropletsBuffer.ToString());
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.EvaporateDelay);
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
         }
 
         /// <inheritdoc/>

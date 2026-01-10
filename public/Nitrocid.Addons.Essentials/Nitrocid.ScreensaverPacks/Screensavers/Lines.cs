@@ -23,6 +23,7 @@ using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Nitrocid.Base.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -49,20 +50,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Select a color
             if (ScreensaverPackInit.SaversConfig.LinesTrueColor)
             {
-                ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LinesBackgroundColor));
+                ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LinesBackgroundColor));
                 int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LinesMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.LinesMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LinesMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.LinesMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LinesMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.LinesMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                ColorTools.SetConsoleColor(ColorStorage);
+                ConsoleColoring.SetConsoleColor(ColorStorage);
             }
             else
             {
-                ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LinesBackgroundColor));
+                ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LinesBackgroundColor));
                 int color = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LinesMinimumColorLevel, ScreensaverPackInit.SaversConfig.LinesMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [color]);
-                ColorTools.SetConsoleColor(new Color(color));
+                ConsoleColoring.SetConsoleColor(new Color(color));
             }
 
             // Draw a line

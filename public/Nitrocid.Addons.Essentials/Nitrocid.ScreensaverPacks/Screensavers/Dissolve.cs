@@ -28,6 +28,7 @@ using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -48,7 +49,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
 
@@ -92,7 +93,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
                     goAhead = false;
-                    ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
+                    ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
                     CoveredPositions.Clear();
                 }
 
@@ -100,16 +101,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleWrapper.CursorLeft >= EndLeft && ConsoleWrapper.CursorTop >= EndTop)
                     {
-                        ColorTools.SetConsoleColorDry(Color.Empty);
-                        ColorTools.SetConsoleColorDry(colorStorage, true);
+                        ConsoleColoring.SetConsoleColorDry(Color.Empty);
+                        ConsoleColoring.SetConsoleColorDry(colorStorage, true);
                         TextWriterRaw.WritePlain(" ", false);
                         DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're now dissolving... L: {0} = {1} | T: {2} = {3}", vars: [ConsoleWrapper.CursorLeft, EndLeft, ConsoleWrapper.CursorTop, EndTop]);
                         ColorFilled = true;
                     }
                     else
                     {
-                        ColorTools.SetConsoleColorDry(Color.Empty);
-                        ColorTools.SetConsoleColorDry(colorStorage, true);
+                        ConsoleColoring.SetConsoleColorDry(Color.Empty);
+                        ConsoleColoring.SetConsoleColorDry(colorStorage, true);
                         TextWriterRaw.WritePlain(" ", false);
                     }
                 }
@@ -125,13 +126,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(Left, Top);
-                    ColorTools.SetConsoleColorDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor), true);
                     ConsoleWrapper.Write(" ");
                     if (CoveredPositions.Count == (EndLeft + 1) * (EndTop + 1))
                     {
                         DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                         ColorFilled = false;
-                        ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
+                        ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
                         CoveredPositions.Clear();
                     }
                 }
@@ -139,7 +140,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
-                    ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
+                    ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DissolveBackgroundColor));
                     CoveredPositions.Clear();
                 }
             }

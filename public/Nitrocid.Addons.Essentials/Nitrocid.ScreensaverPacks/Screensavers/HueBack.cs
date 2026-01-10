@@ -19,6 +19,7 @@
 
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -43,7 +44,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             var color = new Color($"hsl:{currentHueAngle};{ScreensaverPackInit.SaversConfig.HueBackSaturation};{ScreensaverPackInit.SaversConfig.HueBackLuminance}");
 
             // Now, change the background color accordingly
-            ColorTools.LoadBackDry(color);
+            ConsoleColoring.LoadBackDry(color);
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.HueBackDelay);
             currentHueAngle++;
             if (currentHueAngle > 360)
