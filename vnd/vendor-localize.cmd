@@ -4,7 +4,7 @@ set ROOTDIR=%~dp0\..
 set ROOTDIRFIND=%~dp0..
 
 echo Restoring NuGet packages...
-"%ProgramFiles%\dotnet\dotnet.exe" restore "%ROOTDIR%\Nitrocid.sln" --packages "%ROOTDIR%\nuget"
+"%ProgramFiles%\dotnet\dotnet.exe" restore "%ROOTDIR%\Nitrocid.slnx" --packages "%ROOTDIR%\nuget"
 if %errorlevel% == 0 goto :copy
 echo There was an error trying to restore packages (%errorlevel%).
 goto :finished
