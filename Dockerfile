@@ -8,7 +8,7 @@ COPY . ./
 RUN --mount=type=secret,id=github_token dotnet nuget add source --username AptiviCEO --password $(cat /run/secrets/github_token) --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aptivi/index.json"
 
 # Attempt to build Nitrocid KS
-RUN dotnet build "Nitrocid.sln" -p:Configuration=Release
+RUN dotnet build "Nitrocid.slnx" -p:Configuration=Release
 
 # Run the ASP.NET image
 FROM mcr.microsoft.com/dotnet/aspnet:10.0

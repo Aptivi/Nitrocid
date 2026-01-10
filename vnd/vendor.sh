@@ -11,7 +11,7 @@ localize() {
 
     # Restore the packages
     echo "Restoring NuGet packages..."
-    "$dotnetpath" restore "$ROOTDIR/Nitrocid.sln" --packages "$ROOTDIR/nuget"
+    "$dotnetpath" restore "$ROOTDIR/Nitrocid.slnx" --packages "$ROOTDIR/nuget"
     checkerror $? "Failed to restore NuGet packages"
 
     # Copy dependencies to the "deps" folder underneath the root directory
@@ -53,7 +53,7 @@ build() {
 
     # Now, build.
     echo Building with configuration $releaseconf...
-    "$dotnetpath" build "$ROOTDIR/Nitrocid.sln" -p:Configuration=$releaseconf ${@:2}
+    "$dotnetpath" build "$ROOTDIR/Nitrocid.slnx" -p:Configuration=$releaseconf ${@:2}
     checkvendorerror $?
 }
 
