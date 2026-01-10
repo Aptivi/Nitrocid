@@ -62,5 +62,8 @@
     "DisabledOptionColor": "#21201B",
     "TuiKeyBindingBuiltinBackgroundColor": "#121212",
     "TuiKeyBindingBuiltinColor": "#EEEEEE",
-    "TuiKeyBindingBuiltinForegroundColor": "#EEEEEE"
+    "TuiKeyBindingBuiltinForegroundColor": "#EEEEEE",
+    "ProgressFailedColor": "#821A1A",
+    "ProgressPausedColor": "#21201B",
+    "ProgressWarningColor": "#821A1A"
 }
