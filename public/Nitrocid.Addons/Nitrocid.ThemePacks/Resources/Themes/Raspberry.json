@@ -66,5 +66,5 @@
     "TuiKeyBindingBuiltinForegroundColor": "#cd1076",
     "ProgressPausedColor": "#cd1076",
     "ProgressFailedColor": "#8b0a50",
-    "ProgressWarningColor": "#8b0a50",
+    "ProgressWarningColor": "#8b0a50"
 }
