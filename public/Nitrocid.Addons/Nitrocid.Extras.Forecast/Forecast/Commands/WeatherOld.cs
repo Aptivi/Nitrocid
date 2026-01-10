@@ -18,7 +18,7 @@
 //
 
 using Nettify.Weather;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;

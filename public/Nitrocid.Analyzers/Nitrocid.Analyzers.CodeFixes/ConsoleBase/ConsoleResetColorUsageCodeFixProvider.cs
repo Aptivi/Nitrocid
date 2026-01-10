@@ -83,7 +83,7 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 // Check the imports
                 if (finalNode is not CompilationUnitSyntax compilation)
                     return document.Project.Solution;
-                if (compilation.Usings.Any(u => u.Name?.ToString() == $"Terminaux.Colors.Themes.Colors") == false)
+                if (compilation.Usings.Any(u => u.Name?.ToString() == $"Terminaux.Themes.Colors") == false)
                 {
                     var name =
                         SyntaxFactory.QualifiedName(

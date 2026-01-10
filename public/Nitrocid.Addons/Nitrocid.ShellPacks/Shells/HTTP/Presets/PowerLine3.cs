@@ -24,7 +24,7 @@ using Terminaux.Colors;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Presets
 {

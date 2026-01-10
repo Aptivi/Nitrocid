@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Inputs.Styles.Selection;
-using Terminaux.Colors.Themes;
+using Terminaux.Themes;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
@@ -26,7 +26,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Inputs.Styles;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands

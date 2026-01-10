@@ -31,7 +31,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Nitrocid.Base.Languages;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.ConsoleBase.Inputs;

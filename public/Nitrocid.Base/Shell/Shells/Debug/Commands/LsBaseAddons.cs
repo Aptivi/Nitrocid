@@ -24,7 +24,7 @@ using Terminaux.Writer.ConsoleWriters;
 using System;
 using Terminaux.Colors.Data;
 using Terminaux.Colors;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Extensions;
 

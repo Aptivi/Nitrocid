@@ -27,7 +27,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Base.Buffered;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Converters;

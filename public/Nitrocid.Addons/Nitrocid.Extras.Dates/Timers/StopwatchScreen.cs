@@ -23,7 +23,7 @@ using System.Diagnostics;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;

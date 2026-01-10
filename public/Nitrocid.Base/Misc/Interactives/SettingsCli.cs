@@ -24,7 +24,7 @@ using System.Text;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 using Textify.General;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Debugging;

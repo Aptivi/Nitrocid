@@ -26,7 +26,7 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Text;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

@@ -23,7 +23,7 @@ using Terminaux.Colors;
 using Nitrocid.ShellPacks.Tools;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Presets
 {

@@ -21,7 +21,7 @@ using System.Threading;
 using System;
 using Nitrocid.Base.Kernel.Starting;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Aptivestigate.CrashHandler;

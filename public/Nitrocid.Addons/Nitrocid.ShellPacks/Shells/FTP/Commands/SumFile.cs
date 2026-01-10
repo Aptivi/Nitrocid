@@ -19,7 +19,7 @@
 
 using System;
 using FluentFTP;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools.Filesystem;
 using Nitrocid.Base.Kernel.Exceptions;

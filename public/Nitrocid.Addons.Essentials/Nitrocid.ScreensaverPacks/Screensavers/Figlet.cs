@@ -28,7 +28,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Base;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

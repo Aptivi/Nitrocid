@@ -25,7 +25,7 @@ using System.Net.Sockets;
 using System.Threading;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Tools.Placeholder;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Renderers;

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Presentation;
 using Terminaux.Inputs.Presentation.Elements;
 using Nitrocid.Base.Languages;

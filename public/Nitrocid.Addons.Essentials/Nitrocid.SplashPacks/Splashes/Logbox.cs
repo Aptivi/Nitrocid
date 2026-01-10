@@ -25,7 +25,7 @@ using Nitrocid.Base.Misc.Splash;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;

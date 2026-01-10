@@ -18,7 +18,7 @@
 //
 
 using Newtonsoft.Json;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Nitrocid.Base.Kernel.Configuration.Settings;

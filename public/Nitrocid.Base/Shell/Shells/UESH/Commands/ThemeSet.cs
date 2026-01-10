@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Inputs.Styles.Selection;
-using Terminaux.Colors.Themes;
+using Terminaux.Themes;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
@@ -27,7 +27,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Textify.General;
 using Terminaux.Inputs.Styles;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Base.Languages;
 

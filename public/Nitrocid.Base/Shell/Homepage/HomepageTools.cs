@@ -43,7 +43,7 @@ using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;

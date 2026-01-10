@@ -25,7 +25,7 @@ using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Kernel.Debugging.Testing.Facades;
 using Nitrocid.Base.Languages;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.TestFixtures;
 using Terminaux.Inputs.TestFixtures.Tools;

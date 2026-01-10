@@ -19,7 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Textify.Tools.Placeholder;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;

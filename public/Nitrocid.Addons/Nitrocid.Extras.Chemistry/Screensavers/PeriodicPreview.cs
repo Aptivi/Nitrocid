@@ -31,7 +31,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Extensions;
 using Textify.Data.Figlet;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
 

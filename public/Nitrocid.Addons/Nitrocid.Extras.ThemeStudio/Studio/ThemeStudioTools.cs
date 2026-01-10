@@ -22,8 +22,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Terminaux.Colors.Themes.Colors;
-using Terminaux.Colors.Themes;
+using Terminaux.Themes.Colors;
+using Terminaux.Themes;
 using Nitrocid.Base.Files;
 using Terminaux.Colors;
 

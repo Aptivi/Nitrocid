@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Base.Buffered;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using System;
 using System.Text;

@@ -25,7 +25,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Network.SpeedDial;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;

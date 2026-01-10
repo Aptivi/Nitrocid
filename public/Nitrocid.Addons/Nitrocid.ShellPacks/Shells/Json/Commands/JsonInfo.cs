@@ -22,7 +22,7 @@ using System.Linq;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.ShellPacks.Shells.Json.Commands
 {

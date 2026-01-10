@@ -27,7 +27,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using System.Globalization;
 using Nitrocid.Base.Kernel.Time;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
 {

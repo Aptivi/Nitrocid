@@ -29,7 +29,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Renci.SshNet;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.ConsoleBase.Inputs;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP

@@ -25,7 +25,7 @@ using System.Linq;
 using System.Text;
 using FluentFTP;
 using FluentFTP.Helpers;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Debugging;

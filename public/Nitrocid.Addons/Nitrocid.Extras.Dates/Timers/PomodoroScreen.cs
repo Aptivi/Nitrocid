@@ -24,7 +24,7 @@ using Timer = System.Timers.Timer;
 using Textify.Data.Figlet;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Terminaux.Base.Buffered;

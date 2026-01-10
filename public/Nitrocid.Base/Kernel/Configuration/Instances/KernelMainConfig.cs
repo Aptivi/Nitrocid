@@ -25,7 +25,7 @@ using Nitrocid.Base.Files;
 using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs;
 using Terminaux.Reader;
 using System.Linq;

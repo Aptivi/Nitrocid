@@ -27,7 +27,7 @@ using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

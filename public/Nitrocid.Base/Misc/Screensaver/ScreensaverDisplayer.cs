@@ -21,7 +21,7 @@ using System;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using BassBoom.Basolia;
 using BassBoom.Basolia.File;
 using BassBoom.Basolia.Playback;

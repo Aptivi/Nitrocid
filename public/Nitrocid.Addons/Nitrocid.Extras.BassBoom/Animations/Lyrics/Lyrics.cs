@@ -26,7 +26,7 @@ using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Threading;

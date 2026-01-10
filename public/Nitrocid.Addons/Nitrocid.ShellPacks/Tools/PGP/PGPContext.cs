@@ -18,7 +18,7 @@
 //
 
 using MimeKit.Cryptography;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.ConsoleBase.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;

@@ -23,7 +23,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Tools.Placeholder;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Terminaux.Base;

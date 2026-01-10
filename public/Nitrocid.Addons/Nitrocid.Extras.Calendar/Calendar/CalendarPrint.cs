@@ -24,7 +24,7 @@ using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Converters;
 using Terminaux.Writer.ConsoleWriters;

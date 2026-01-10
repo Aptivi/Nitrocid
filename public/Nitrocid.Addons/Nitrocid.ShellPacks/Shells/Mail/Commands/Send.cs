@@ -18,7 +18,7 @@
 //
 
 using MimeKit;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools.Transfer;
 using Nitrocid.Base.Files;

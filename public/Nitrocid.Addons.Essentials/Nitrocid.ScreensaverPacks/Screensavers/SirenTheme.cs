@@ -18,7 +18,7 @@
 //
 
 using System.Collections.Generic;
-using Terminaux.Colors.Themes;
+using Terminaux.Themes;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base.Extensions;

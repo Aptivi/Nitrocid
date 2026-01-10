@@ -24,7 +24,7 @@ using Terminaux.Colors;
 using Newtonsoft.Json;
 using System.Linq;
 using Nitrocid.Base.Files;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration.Settings;

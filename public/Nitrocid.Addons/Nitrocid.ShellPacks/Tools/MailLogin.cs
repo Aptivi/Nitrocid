@@ -26,7 +26,7 @@ using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using MimeKit.Cryptography;
 using Nettify.MailAddress;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel;

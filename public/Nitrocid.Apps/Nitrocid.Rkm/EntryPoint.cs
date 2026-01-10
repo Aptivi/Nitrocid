@@ -28,7 +28,7 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Network.Types.RPC;
 using Nitrocid.Core.Languages;
 using Nitrocid.Rkm.Arguments;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Shell.Arguments;
 using Terminaux.Shell.Arguments.Base;
 using Terminaux.Writer.ConsoleWriters;

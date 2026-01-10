@@ -30,7 +30,7 @@ using MailKit.Search;
 using MimeKit;
 using MimeKit.Cryptography;
 using MimeKit.Text;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Tools.PGP;
 using Nitrocid.Base.Kernel.Debugging;

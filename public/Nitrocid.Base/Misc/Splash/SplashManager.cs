@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Base.Misc.Splash.Splashes;
 using Terminaux.Base;

@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;

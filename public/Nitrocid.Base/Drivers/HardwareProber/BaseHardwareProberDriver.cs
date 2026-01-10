@@ -23,7 +23,7 @@ using System.Linq;
 using HwProber = SpecProbe.HardwareProber;
 using Nitrocid.Base.Misc.Reflection;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using SpecProbe.Parts;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;

@@ -26,7 +26,7 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using Nitrocid.Base.Files;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using TextifyDep::Textify.Tools;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Debugging;

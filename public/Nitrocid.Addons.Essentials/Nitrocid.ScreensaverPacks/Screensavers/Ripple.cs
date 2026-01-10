@@ -25,7 +25,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 using Terminaux.Colors.Transformation;
 

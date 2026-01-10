@@ -18,7 +18,7 @@
 //
 
 using Nettify.Rss.Instance;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ShellPacks.Shells.RSS.Interactive;

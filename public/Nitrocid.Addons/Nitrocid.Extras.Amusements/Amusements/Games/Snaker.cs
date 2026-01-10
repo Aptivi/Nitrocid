@@ -32,7 +32,7 @@ using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Base.Languages;
 using Terminaux.Inputs;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games

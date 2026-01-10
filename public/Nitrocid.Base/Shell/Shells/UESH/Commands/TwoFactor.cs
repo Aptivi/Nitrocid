@@ -23,7 +23,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Users.TwoFactorAuth;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Help;
 using Terminaux.Writer.ConsoleWriters;

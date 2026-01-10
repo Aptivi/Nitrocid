@@ -23,7 +23,7 @@ using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Inputs.Styles.Choice;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Textify.General;
 
 namespace Nitrocid.ShellPacks.Shells.HTTP.Commands

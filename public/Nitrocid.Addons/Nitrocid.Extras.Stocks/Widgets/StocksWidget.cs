@@ -18,7 +18,7 @@
 //
 
 using Newtonsoft.Json.Linq;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Transfer;
 using Nitrocid.Base.Misc.Widgets;

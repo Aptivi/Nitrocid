@@ -27,7 +27,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Files.Paths;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Extras.Mods.Modifications;
 using Nitrocid.Extras.Mods.Modifications.Interactive;
 using Terminaux.Inputs.Interactive;
