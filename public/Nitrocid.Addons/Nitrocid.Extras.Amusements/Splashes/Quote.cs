@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.Amusements.Splashes
                     int currentY = halfConsoleY + i;
                     string str = quoteSplit[i];
                     builder.Append(
-                        _quoteColor.VTSequenceForeground +
+                        _quoteColor.VTSequenceForeground() +
                         TextWriterWhereColor.RenderWhere(str, quotePosX, currentY)
                     );
                 }

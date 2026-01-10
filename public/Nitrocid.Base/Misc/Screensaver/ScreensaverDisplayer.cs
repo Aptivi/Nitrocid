@@ -32,6 +32,7 @@ using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Misc.Audio;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Events;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Base.Misc.Screensaver
 {
@@ -55,13 +56,13 @@ namespace Nitrocid.Base.Misc.Screensaver
             if (Screensaver is null)
                 throw new KernelException(KernelExceptionType.ScreensaverManagement, LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_EXCEPTION_NEEDSSCREENSAVER"));
             bool initialVisible = ConsoleWrapper.CursorVisible;
-            bool initialBack = ColorTools.AllowBackground;
+            bool initialBack = ConsoleColoring.AllowBackground;
             bool initialPalette = ColorTools.GlobalSettings.UseTerminalPalette;
             try
             {
                 // Preparations
                 displayingSaver = Screensaver;
-                ColorTools.AllowBackground = true;
+                ConsoleColoring.AllowBackground = true;
                 ColorTools.GlobalSettings.UseTerminalPalette = false;
                 Screensaver.ScreensaverPreparation();
 
@@ -86,7 +87,7 @@ namespace Nitrocid.Base.Misc.Screensaver
             {
                 Screensaver.ScreensaverOutro();
                 ScreensaverManager.HandleSaverCancel(initialVisible);
-                ColorTools.AllowBackground = initialBack;
+                ConsoleColoring.AllowBackground = initialBack;
                 ColorTools.GlobalSettings.UseTerminalPalette = initialPalette;
                 ThemeColorsTools.LoadBackground();
             }

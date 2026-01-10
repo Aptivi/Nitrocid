@@ -47,7 +47,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 // Make a noise color
                 Color noiseColor = needsColor ? ColorTools.GetRandomColor() : new($"hsl:0;0;{RandomDriver.Random(100)}");
-                noiseBuilder.Append(noiseColor.VTSequenceBackgroundTrueColor + " ");
+                noiseBuilder.Append(noiseColor.VTSequenceBackground + " ");
             }
             noiseBuilder.Append(ConsolePositioning.RenderChangePosition(0, 0));
             ConsoleWrapper.Write(noiseBuilder.ToString());

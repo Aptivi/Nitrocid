@@ -61,7 +61,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         public static void InitializeInvaders()
         {
             // Clear screen
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
 
             // Clear all bullets, meteors, and enemies
             Bullets.Clear();
@@ -159,7 +159,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
                     // Show the score
                     buffer.Append(
-                        new Color(ConsoleColors.Green).VTSequenceForeground +
+                        new Color(ConsoleColors.Green).VTSequenceForeground() +
                         TextWriterWhereColor.RenderWhere($"{score}", ConsoleWrapper.WindowWidth - $"{score}".Length, 0)
                     );
 

@@ -21,6 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using System;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {
@@ -29,7 +30,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
         public override void Simulate()
         {
             // Clear the screen
-            ColorTools.LoadBackDry(new Color(0, 0, 0));
+            ConsoleColoring.LoadBackDry(new Color(0, 0, 0));
 
             // Render the header and footer
             int marginX = 2;
@@ -55,10 +56,10 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             TextWriterWhereColor.WriteWhereColor("2. Choose your language settings, and then click \"Next.\"", marginX + 2, failedHelpY + 4, new Color(hintColor));
             TextWriterWhereColor.WriteWhereColor("3. Click \"Repair your computer.\"", marginX + 2, failedHelpY + 5, new Color(hintColor));
             TextWriterWhereColor.WriteWhereColor("If you do not have this disc, contact your system administrator or computer\nmanufacturer for assistance.", marginX, failedHelpY + 7, new Color(hintColor));
-            TextWriterWhereColor.WriteWhereColor($"File: {new Color(promptColor).VTSequenceForeground}\\Boot\\BCD", marginX + 4, failedHelpY + 10, new Color(hintColor));
-            TextWriterWhereColor.WriteWhereColor($"Status: {new Color(promptColor).VTSequenceForeground}0xc000000f", marginX + 4, failedHelpY + 12, new Color(hintColor));
+            TextWriterWhereColor.WriteWhereColor($"File: {new Color(promptColor).VTSequenceForeground()}\\Boot\\BCD", marginX + 4, failedHelpY + 10, new Color(hintColor));
+            TextWriterWhereColor.WriteWhereColor($"Status: {new Color(promptColor).VTSequenceForeground()}0xc000000f", marginX + 4, failedHelpY + 12, new Color(hintColor));
             TextWriterWhereColor.WriteWhereColor($"Info: ", marginX + 4, failedHelpY + 14, new Color(hintColor));
-            TextWriterWhereColor.WriteWhereColor($"{new Color(promptColor).VTSequenceForeground}An error occurred while attempting to read the boot configuration\ndata.", marginX + 10, failedHelpY + 14, new Color(hintColor));
+            TextWriterWhereColor.WriteWhereColor($"{new Color(promptColor).VTSequenceForeground()}An error occurred while attempting to read the boot configuration\ndata.", marginX + 10, failedHelpY + 14, new Color(hintColor));
         }
     }
 }

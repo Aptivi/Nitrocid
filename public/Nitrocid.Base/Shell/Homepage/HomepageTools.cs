@@ -624,9 +624,9 @@ namespace Nitrocid.Base.Shell.Homepage
 
                 // Show bindings
                 var keybindingSequenceBuilder = new StringBuilder();
-                keybindingSequenceBuilder.Append(masterBorder.Settings.BorderRightHorizontalIntersectionEnabled ? $"{ColorTools.RenderSetConsoleColor(masterBorder.FrameColor)}{masterBorder.Settings.BorderRightHorizontalIntersectionChar} " : "");
-                keybindingSequenceBuilder.Append($"{ColorTools.RenderSetConsoleColor(masterBorder.TitleColor)}K: {LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS")}");
-                keybindingSequenceBuilder.Append(masterBorder.Settings.BorderLeftHorizontalIntersectionEnabled ? $"{ColorTools.RenderSetConsoleColor(masterBorder.FrameColor)} {masterBorder.Settings.BorderLeftHorizontalIntersectionChar}" : "");
+                keybindingSequenceBuilder.Append(masterBorder.Settings.BorderRightHorizontalIntersectionEnabled ? $"{ConsoleColoring.RenderSetConsoleColor(masterBorder.FrameColor)}{masterBorder.Settings.BorderRightHorizontalIntersectionChar} " : "");
+                keybindingSequenceBuilder.Append($"{ConsoleColoring.RenderSetConsoleColor(masterBorder.TitleColor)}K: {LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS")}");
+                keybindingSequenceBuilder.Append(masterBorder.Settings.BorderLeftHorizontalIntersectionEnabled ? $"{ConsoleColoring.RenderSetConsoleColor(masterBorder.FrameColor)} {masterBorder.Settings.BorderLeftHorizontalIntersectionChar}" : "");
                 string keybindingSequence = keybindingSequenceBuilder.ToString();
                 int keybindingSequenceWidth = ConsoleChar.EstimateCellWidth(keybindingSequence);
                 int keybindingSequencePanelWidth = width - 2;

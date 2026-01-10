@@ -28,6 +28,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver.Displays.Utilities;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Base.Misc.Screensaver.Displays
 {
@@ -45,7 +46,7 @@ namespace Nitrocid.Base.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            ColorTools.LoadBackDry("0;0;0");
+            ConsoleColoring.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
         }
 

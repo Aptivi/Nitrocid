@@ -58,7 +58,7 @@ namespace Nitrocid.SplashPacks.Splashes
             progress.Width = ConsoleWrapper.WindowWidth - 6;
             progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(ThemeColorsTools.GetColor(ThemeColorType.Progress));
             progress.ProgressActiveForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Progress);
-            progress.ProgressBackgroundColor = ColorTools.CurrentBackgroundColor;
+            progress.ProgressBackgroundColor = ConsoleColoring.CurrentBackgroundColor;
             if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)
@@ -214,7 +214,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 }
             };
             builder.Append(
-                col.VTSequenceForeground +
+                col.VTSequenceForeground() +
                 TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, progressTextY - 2, true) +
                 report.Render()
             );

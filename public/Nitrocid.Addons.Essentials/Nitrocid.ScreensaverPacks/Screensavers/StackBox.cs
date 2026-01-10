@@ -28,6 +28,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -46,7 +47,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             if (ConsoleResizeHandler.WasResized(false))
             {
-                ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+                ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
             }
             else
             {

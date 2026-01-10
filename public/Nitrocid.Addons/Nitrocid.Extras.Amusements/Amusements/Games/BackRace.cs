@@ -38,6 +38,7 @@ using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -135,7 +136,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         .ToArray();
                     List<string> positions = [];
                     for (int i = 0; i < horsesSorted.Length; i++)
-                        positions.Add($"{ColorTools.RenderSetConsoleColor(color)}#{i + 1}: {ColorTools.RenderSetConsoleColor(horsesSorted[i].HorseColor)}{LanguageTools.GetLocalized("NKS_AMUSEMENTS_BACKRACE_HORSEID")} {horsesSorted[i].HorseNumber}{ColorTools.RenderSetConsoleColor(color)}");
+                        positions.Add($"{ConsoleColoring.RenderSetConsoleColor(color)}#{i + 1}: {ConsoleColoring.RenderSetConsoleColor(horsesSorted[i].HorseColor)}{LanguageTools.GetLocalized("NKS_AMUSEMENTS_BACKRACE_HORSEID")} {horsesSorted[i].HorseNumber}{ConsoleColoring.RenderSetConsoleColor(color)}");
                     alignedText.Text = string.Join(" | ", positions);
                 }
                 builder.Append(

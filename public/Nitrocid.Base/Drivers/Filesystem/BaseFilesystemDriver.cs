@@ -20,33 +20,34 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using IOPath = System.IO.Path;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using FS = Nitrocid.Base.Files.FilesystemTools;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
-using Textify.General;
-using Terminaux.Base;
-using Terminaux.Colors;
-using Textify.General.Comparers;
+using Newtonsoft.Json.Linq;
 using Nitrocid.Base.Files;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Files.Folders;
+using Nitrocid.Base.Files.Instances;
+using Nitrocid.Base.Files.LineEndings;
+using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Misc.Reflection;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Progress;
+using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Text.Probers.Regexp;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Files.Instances;
-using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Files.LineEndings;
-using Nitrocid.Base.Kernel.Events;
-using Nitrocid.Base.Files.Folders;
+using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors;
+using Terminaux.Colors.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
+using Textify.General.Comparers;
+using FS = Nitrocid.Base.Files.FilesystemTools;
+using IOPath = System.IO.Path;
 
 namespace Nitrocid.Base.Drivers.Filesystem
 {
@@ -536,7 +537,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
                 var builder = new StringBuilder();
                 for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
                 {
-                    builder.Append($"{entryColor.VTSequenceForeground}0x{CurrentByteNumber - 1L:X8} ");
+                    builder.Append($"{entryColor.VTSequenceForeground()}0x{CurrentByteNumber - 1L:X8} ");
 
                     // Iterate these number of bytes for the ASCII codes
                     long byteNum;
@@ -544,7 +545,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
                     {
                         byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
                         DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", vars: [CurrentByte]);
-                        builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground}{CurrentByte:X2} ");
+                        builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground()}{CurrentByte:X2} ");
                     }
 
                     // Pad the remaining ASCII byte display
@@ -568,7 +569,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
                             RenderedByteChar = ProjectedByteChar;
                         }
                         DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", vars: [ProjectedByteChar]);
-                        builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground}{RenderedByteChar}");
+                        builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground()}{RenderedByteChar}");
                     }
                     builder.AppendLine();
                 }
@@ -606,7 +607,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
                 var builder = new StringBuilder();
                 for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
                 {
-                    builder.Append($"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}{entryColor.VTSequenceForeground}0x{CurrentByteNumber - 1L:X8} ");
+                    builder.Append($"{ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true)}{entryColor.VTSequenceForeground()}0x{CurrentByteNumber - 1L:X8} ");
 
                     // Iterate these number of bytes for the ASCII codes
                     long byteNum;
@@ -615,11 +616,11 @@ namespace Nitrocid.Base.Drivers.Filesystem
                         byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
                         DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", vars: [CurrentByte]);
                         builder.Append(
-                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground}" +
-                            $"{ColorTools.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
+                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground()}" +
+                            $"{ConsoleColoring.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
                             $"{CurrentByte:X2}" +
-                            $"{highlightedColorBackground.VTSequenceForeground}" +
-                            $"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
+                            $"{highlightedColorBackground.VTSequenceForeground()}" +
+                            $"{ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
                             $" "
                         );
                     }
@@ -646,8 +647,8 @@ namespace Nitrocid.Base.Drivers.Filesystem
                         }
                         DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", vars: [ProjectedByteChar]);
                         builder.Append(
-                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground}" +
-                            $"{ColorTools.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
+                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground()}" +
+                            $"{ConsoleColoring.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
                             $"{RenderedByteChar}"
                         );
                     }
@@ -1299,13 +1300,13 @@ namespace Nitrocid.Base.Drivers.Filesystem
                         for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
                         {
                             int spaces = digits - (ContentIndex + 1).GetDigits();
-                            builder.Append($"{entryColor.VTSequenceForeground}{new string(' ', spaces)}{ContentIndex + 1}: ");
-                            builder.AppendLine($"{valueColor.VTSequenceForeground}{Contents[ContentIndex]}");
+                            builder.Append($"{entryColor.VTSequenceForeground()}{new string(' ', spaces)}{ContentIndex + 1}: ");
+                            builder.AppendLine($"{valueColor.VTSequenceForeground()}{Contents[ContentIndex]}");
                         }
                     }
                     else
                     {
-                        builder.Append(valueColor.VTSequenceForeground);
+                        builder.Append(valueColor.VTSequenceForeground());
                         for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
                             builder.AppendLine(Contents[ContentIndex]);
                     }

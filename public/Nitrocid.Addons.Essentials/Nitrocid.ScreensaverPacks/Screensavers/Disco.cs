@@ -25,6 +25,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Nitrocid.Base.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -71,13 +72,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int BlueColorNum = RandomDriver.Random(255);
                         DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                         var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                        ColorTools.SetConsoleColorDry(ColorStorage, true);
+                        ConsoleColoring.SetConsoleColorDry(ColorStorage, true);
                     }
                     else
                     {
                         DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [CurrentColorR, CurrentColorG, CurrentColorB]);
                         var ColorStorage = new Color(CurrentColorR, CurrentColorG, CurrentColorB);
-                        ColorTools.SetConsoleColorDry(ColorStorage, true);
+                        ConsoleColoring.SetConsoleColorDry(ColorStorage, true);
                     }
                 }
                 else
@@ -86,12 +87,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         int color = RandomDriver.Random(255);
                         DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [color]);
-                        ColorTools.SetConsoleColorDry(new Color(color), true);
+                        ConsoleColoring.SetConsoleColorDry(new Color(color), true);
                     }
                     else
                     {
                         DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [CurrentColor]);
-                        ColorTools.SetConsoleColorDry(new Color(CurrentColor), true);
+                        ConsoleColoring.SetConsoleColorDry(new Color(CurrentColor), true);
                     }
                 }
             }
@@ -106,7 +107,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     CurrentColor = (int)ConsoleColors.Black;
                 }
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [CurrentColor]);
-                ColorTools.SetConsoleColorDry(new Color(CurrentColor), true);
+                ConsoleColoring.SetConsoleColorDry(new Color(CurrentColor), true);
             }
 
             // Make the disco effect!

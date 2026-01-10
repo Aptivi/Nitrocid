@@ -142,7 +142,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * _currentStep);
                 DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 builder.Append(
-                    ColorTools.RenderSetConsoleColor(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), true) +
+                    ConsoleColoring.RenderSetConsoleColor(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), true) +
                     ConsoleClearing.GetClearWholeScreenSequence()
                 );
                 _currentStep++;

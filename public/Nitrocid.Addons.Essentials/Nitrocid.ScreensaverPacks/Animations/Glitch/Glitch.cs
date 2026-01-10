@@ -22,6 +22,7 @@ using System.Collections;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 
@@ -156,44 +157,44 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
                 case GlitchType.RandomLetter:
                     {
                         if (ColorLetter)
-                            ColorTools.SetConsoleColorDry(ColorLetterInstance);
+                            ConsoleColoring.SetConsoleColorDry(ColorLetterInstance);
                         else
-                            ColorTools.SetConsoleColorDry(new Color(ConsoleColors.White));
+                            ConsoleColoring.SetConsoleColorDry(new Color(ConsoleColors.White));
                         ConsoleWrapper.Write(Letter);
                         break;
                     }
                 case GlitchType.RandomSymbol:
                     {
                         if (ColorLetter)
-                            ColorTools.SetConsoleColorDry(ColorLetterInstance);
+                            ConsoleColoring.SetConsoleColorDry(ColorLetterInstance);
                         else
-                            ColorTools.SetConsoleColorDry(new Color(ConsoleColors.White));
+                            ConsoleColoring.SetConsoleColorDry(new Color(ConsoleColors.White));
                         ConsoleWrapper.Write(Symbol);
                         break;
                     }
                 case GlitchType.RedGreenBlueColor:
                     {
-                        ColorTools.SetConsoleColorDry(ColorBlockInstance, true);
+                        ConsoleColoring.SetConsoleColorDry(ColorBlockInstance, true);
                         ConsoleWrapper.Write(" ");
                         break;
                     }
                 case GlitchType.RedGreenBlueColorWithRandomLetter:
                     {
                         if (ColorLetter)
-                            ColorTools.SetConsoleColorDry(ColorLetterInstance);
+                            ConsoleColoring.SetConsoleColorDry(ColorLetterInstance);
                         else
-                            ColorTools.SetConsoleColorDry(new Color(ConsoleColors.White));
-                        ColorTools.SetConsoleColorDry(ColorBlockInstance, true);
+                            ConsoleColoring.SetConsoleColorDry(new Color(ConsoleColors.White));
+                        ConsoleColoring.SetConsoleColorDry(ColorBlockInstance, true);
                         ConsoleWrapper.Write(Letter);
                         break;
                     }
                 case GlitchType.RedGreenBlueColorWithRandomSymbol:
                     {
                         if (ColorLetter)
-                            ColorTools.SetConsoleColorDry(ColorLetterInstance);
+                            ConsoleColoring.SetConsoleColorDry(ColorLetterInstance);
                         else
-                            ColorTools.SetConsoleColorDry(new Color(ConsoleColors.White));
-                        ColorTools.SetConsoleColorDry(ColorBlockInstance, true);
+                            ConsoleColoring.SetConsoleColorDry(new Color(ConsoleColors.White));
+                        ConsoleColoring.SetConsoleColorDry(ColorBlockInstance, true);
                         ConsoleWrapper.Write(Symbol);
                         break;
                     }

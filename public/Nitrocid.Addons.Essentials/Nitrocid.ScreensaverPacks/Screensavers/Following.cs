@@ -27,6 +27,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -81,13 +82,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Draw the start and the end position marker
-            ColorTools.SetConsoleColorDry(new(ConsoleColors.Lime), true);
+            ConsoleColoring.SetConsoleColorDry(new(ConsoleColors.Lime), true);
             TextWriterWhereColor.WriteWherePlain(" ", start.x, start.y);
             TextWriterWhereColor.WriteWherePlain(" ", end.x, end.y);
 
             // Select a color
             if (dotColor is not null)
-                ColorTools.SetConsoleColorDry(dotColor, true);
+                ConsoleColoring.SetConsoleColorDry(dotColor, true);
 
             // Draw a dot
             int posX = start.x;

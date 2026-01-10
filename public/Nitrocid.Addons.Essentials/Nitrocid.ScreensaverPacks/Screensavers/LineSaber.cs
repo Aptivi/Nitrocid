@@ -25,6 +25,7 @@ using Terminaux.Colors;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.ConsoleWriters;
 using System.Collections.Generic;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -128,7 +129,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             if (ScreensaverPackInit.SaversConfig.LineSaberTrueColor)
             {
-                ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LineSaberBackgroundColor));
+                ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LineSaberBackgroundColor));
                 int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LineSaberMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.LineSaberMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LineSaberMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.LineSaberMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LineSaberMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.LineSaberMaximumBlueColorLevel);
@@ -137,7 +138,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
             else
             {
-                ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LineSaberBackgroundColor));
+                ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LineSaberBackgroundColor));
                 int color = RandomDriver.Random(ScreensaverPackInit.SaversConfig.LineSaberMinimumColorLevel, ScreensaverPackInit.SaversConfig.LineSaberMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [color]);
                 return new Color(color);

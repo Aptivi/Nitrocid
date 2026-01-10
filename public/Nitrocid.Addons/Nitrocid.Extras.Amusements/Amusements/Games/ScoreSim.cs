@@ -39,6 +39,7 @@ using Textify.Data.Figlet;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Base.Structures;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -96,8 +97,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     OneLine = true,
 
                     Text =
-                        (supportsCards ? $"{ColorTools.RenderSetConsoleColor(ConsoleColors.Red, true)} {ColorTools.RenderResetBackground()} x{redCardsFirstTeam} | " : "") +
-                        (supportsCards ? $"{ColorTools.RenderSetConsoleColor(ConsoleColors.Yellow, true)} {ColorTools.RenderResetBackground()} x{yellowCardsFirstTeam} | " : "") +
+                        (supportsCards ? $"{ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red, true)} {ConsoleColoring.RenderResetBackground()} x{redCardsFirstTeam} | " : "") +
+                        (supportsCards ? $"{ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Yellow, true)} {ConsoleColoring.RenderResetBackground()} x{yellowCardsFirstTeam} | " : "") +
                         firstTeamName,
                     Settings = new()
                     {
@@ -115,8 +116,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     OneLine = true,
 
                     Text =
-                        (supportsCards ? $"{ColorTools.RenderSetConsoleColor(ConsoleColors.Red, true)} {ColorTools.RenderResetBackground()} x{redCardsSecondTeam} | " : "") +
-                        (supportsCards ? $"{ColorTools.RenderSetConsoleColor(ConsoleColors.Yellow, true)} {ColorTools.RenderResetBackground()} x{yellowCardsSecondTeam} | " : "") +
+                        (supportsCards ? $"{ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red, true)} {ConsoleColoring.RenderResetBackground()} x{redCardsSecondTeam} | " : "") +
+                        (supportsCards ? $"{ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Yellow, true)} {ConsoleColoring.RenderResetBackground()} x{yellowCardsSecondTeam} | " : "") +
                         secondTeamName,
                     Settings = new()
                     {

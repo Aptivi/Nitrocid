@@ -24,6 +24,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Time;
 using Terminaux.Colors.Transformation;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -53,7 +54,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int timePosX = ConsoleWrapper.WindowWidth / 2 - renderedTime.Length / 2;
 
             // Write date and time
-            ColorTools.LoadBackDry(bgColor);
+            ConsoleColoring.LoadBackDry(bgColor);
             TextWriterWhereColor.WriteWhereColorBack(renderedDate, datePosX, halfConsoleY, timeColor, bgColor);
             TextWriterWhereColor.WriteWhereColorBack(renderedTime, timePosX, halfConsoleY + 1, timeColor, bgColor);
 

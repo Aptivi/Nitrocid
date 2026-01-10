@@ -26,6 +26,7 @@ using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -46,7 +47,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
             ConsoleWrapper.Clear();
         }
 
@@ -79,7 +80,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         var strike = new StringBuilder();
 
                         // Draw the flashes first
-                        strike.Append(new Color(ConsoleColors.Yellow3Alt).VTSequenceBackground);
+                        strike.Append(new Color(ConsoleColors.Yellow3Alt).VTSequenceBackground());
                         for (int y = 0; y < boltFirstHalfEndY; y++)
                         {
                             int x = (int)Math.Round(boltTopEdgeX + boltFromTopToFirstHalfX * y, MidpointRounding.ToZero);
@@ -134,7 +135,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         }
 
                         // Draw the lightning!
-                        strike.Append(new Color(ConsoleColors.LightYellow3).VTSequenceBackground);
+                        strike.Append(new Color(ConsoleColors.LightYellow3).VTSequenceBackground());
                         for (int y = 0; y < boltFirstHalfEndY; y++)
                         {
                             int x = (int)Math.Round(boltTopEdgeX + boltFromTopToFirstHalfX * y, MidpointRounding.ToZero);
@@ -171,12 +172,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     else
                     {
                         // Show only the white background
-                        ColorTools.LoadBackDry(new Color(ConsoleColors.White));
+                        ConsoleColoring.LoadBackDry(new Color(ConsoleColors.White));
                         ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LightningDelay);
-                        ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+                        ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
                     }
                 }
-                ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+                ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
             }
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.LightningDelay);
         }

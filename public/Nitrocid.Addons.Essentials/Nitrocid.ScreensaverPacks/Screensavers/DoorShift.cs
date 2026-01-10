@@ -23,6 +23,7 @@ using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -40,7 +41,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DoorShiftBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DoorShiftBackgroundColor));
         }
 
         /// <inheritdoc/>
@@ -57,14 +58,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DoorShiftMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.DoorShiftMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
-                    ColorTools.SetConsoleColorDry(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DoorShiftMinimumColorLevel, ScreensaverPackInit.SaversConfig.DoorShiftMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
-                    ColorTools.SetConsoleColorDry(new Color(ColorNum), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color(ColorNum), true);
             }
 
             // Set max height and width

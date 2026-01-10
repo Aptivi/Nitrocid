@@ -71,7 +71,7 @@ namespace Nitrocid.Extras.Amusements.Commands
                                 [
                                     LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1") + " " +
                                     LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2") + " \n\n" +
-                                    new Color(ConsoleColors.Green3Alt).VTSequenceForeground + "Nitrocid KS 0.1.0!\n\n" + ThemeColorsTools.GetColor(ThemeColorType.NeutralText).VTSequenceForeground +
+                                    new Color(ConsoleColors.Green3Alt).VTSequenceForeground() + "Nitrocid KS 0.1.0!\n\n" + ThemeColorsTools.GetColor(ThemeColorType.NeutralText).VTSequenceForeground() +
                                     "< " + LanguageTools.GetLocalized("NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3") + " >\n\n" +
                                     "-- Aptivi"
                                 ]

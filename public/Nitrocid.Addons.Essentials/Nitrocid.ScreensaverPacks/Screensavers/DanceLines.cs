@@ -23,6 +23,7 @@ using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Nitrocid.Base.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -46,7 +47,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DanceLinesBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DanceLinesBackgroundColor));
 
             // Draw few lines
             string lineString = !string.IsNullOrWhiteSpace(ScreensaverPackInit.SaversConfig.DanceLinesLineChar) ? ScreensaverPackInit.SaversConfig.DanceLinesLineChar : "-";
@@ -66,13 +67,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DanceLinesMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.DanceLinesMaximumBlueColorLevel);
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                     var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                    ColorTools.SetConsoleColor(ColorStorage);
+                    ConsoleColoring.SetConsoleColor(ColorStorage);
                 }
                 else
                 {
                     int color = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DanceLinesMinimumColorLevel, ScreensaverPackInit.SaversConfig.DanceLinesMaximumColorLevel);
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [color]);
-                    ColorTools.SetConsoleColor(new Color(color));
+                    ConsoleColoring.SetConsoleColor(new Color(color));
                 }
 
                 // Now, draw a line

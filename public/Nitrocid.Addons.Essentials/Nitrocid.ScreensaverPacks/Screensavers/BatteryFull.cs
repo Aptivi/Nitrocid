@@ -71,12 +71,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             var gradientsDrainSpeed = ColorGradients.StageLevelSmooth(ConsoleColors.Red, ConsoleColors.Yellow, ConsoleColors.Lime, batteryDrainSpeed, 0, 500, false, 150, 250);
             var gradientsChargeSpeed = ColorGradients.StageLevelSmooth(ConsoleColors.Lime, ConsoleColors.Yellow, ConsoleColors.Red, batteryChargeSpeed, 0, 250, false, 125, 175);
             string batteryLifeDesc =
-                $"Le: {ColorTools.RenderSetConsoleColor(gradientsLevel)}{batteryLevel}%{ColorTools.RenderRevertForeground()}, " +
-                $"Li: {ColorTools.RenderSetConsoleColor(gradientsLife)}{batteryLife}%{ColorTools.RenderRevertForeground()}, " +
-                $"Cy: {ColorTools.RenderSetConsoleColor(gradientsCycles)}{batteryCycles}{ColorTools.RenderRevertForeground()}, " +
-                $"De: {ColorTools.RenderSetConsoleColor(gradientsDegradedCycles)}{batteryDegradedCycles}{ColorTools.RenderRevertForeground()}, " +
-                $"Ds: {ColorTools.RenderSetConsoleColor(gradientsDrainSpeed)}{batteryDrainSpeed} ms{ColorTools.RenderRevertForeground()}, " +
-                $"Ch: {ColorTools.RenderSetConsoleColor(gradientsChargeSpeed)}{batteryChargeSpeed} ms{ColorTools.RenderRevertForeground()}";
+                $"Le: {ConsoleColoring.RenderSetConsoleColor(gradientsLevel)}{batteryLevel}%{ConsoleColoring.RenderRevertForeground()}, " +
+                $"Li: {ConsoleColoring.RenderSetConsoleColor(gradientsLife)}{batteryLife}%{ConsoleColoring.RenderRevertForeground()}, " +
+                $"Cy: {ConsoleColoring.RenderSetConsoleColor(gradientsCycles)}{batteryCycles}{ConsoleColoring.RenderRevertForeground()}, " +
+                $"De: {ConsoleColoring.RenderSetConsoleColor(gradientsDegradedCycles)}{batteryDegradedCycles}{ConsoleColoring.RenderRevertForeground()}, " +
+                $"Ds: {ConsoleColoring.RenderSetConsoleColor(gradientsDrainSpeed)}{batteryDrainSpeed} ms{ConsoleColoring.RenderRevertForeground()}, " +
+                $"Ch: {ConsoleColoring.RenderSetConsoleColor(gradientsChargeSpeed)}{batteryChargeSpeed} ms{ConsoleColoring.RenderRevertForeground()}";
             var builder = new StringBuilder();
             var batteryLifeDescEraser = new Eraser()
             {
@@ -178,12 +178,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     else if (++batteryDegradedCycles >= 50)
                     {
                         batteryLifeDescRenderer.Text =
-                            $"Le: {ColorTools.RenderSetConsoleColor(ConsoleColors.Red)}-%{ColorTools.RenderRevertForeground()}, " +
-                            $"Li: {ColorTools.RenderSetConsoleColor(ConsoleColors.Red)}-%{ColorTools.RenderRevertForeground()}, " +
-                            $"Cy: {ColorTools.RenderSetConsoleColor(ConsoleColors.Red)}-{ColorTools.RenderRevertForeground()}, " +
-                            $"De: {ColorTools.RenderSetConsoleColor(ConsoleColors.Red)}-{ColorTools.RenderRevertForeground()}, " +
-                            $"Ds: {ColorTools.RenderSetConsoleColor(ConsoleColors.Red)}- ms{ColorTools.RenderRevertForeground()}, " +
-                            $"Ch: {ColorTools.RenderSetConsoleColor(ConsoleColors.Red)}- ms{ColorTools.RenderRevertForeground()}";
+                            $"Le: {ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red)}-%{ConsoleColoring.RenderRevertForeground()}, " +
+                            $"Li: {ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red)}-%{ConsoleColoring.RenderRevertForeground()}, " +
+                            $"Cy: {ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red)}-{ConsoleColoring.RenderRevertForeground()}, " +
+                            $"De: {ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red)}-{ConsoleColoring.RenderRevertForeground()}, " +
+                            $"Ds: {ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red)}- ms{ConsoleColoring.RenderRevertForeground()}, " +
+                            $"Ch: {ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red)}- ms{ConsoleColoring.RenderRevertForeground()}";
                         builder.Append(batteryLifeDescEraser.Render() + batteryLifeDescRenderer.Render());
                         TextWriterRaw.WriteRaw(builder.ToString());
                         ScreensaverManager.Delay(5000);

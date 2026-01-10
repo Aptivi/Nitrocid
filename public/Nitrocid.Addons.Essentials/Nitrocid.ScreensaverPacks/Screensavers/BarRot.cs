@@ -26,6 +26,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Colors.Themes.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -82,18 +83,18 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Draw the frame
             if (!ConsoleResizeHandler.WasResized(false))
             {
-                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotUpperLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition - 2, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotUpperLeftCornerColor) : ColorTools.GetGray());
-                TextWriterColor.WriteColor(new string(ScreensaverPackInit.SaversConfig.BarRotUpperFrameChar, RampFrameSpaces), false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotUpperFrameColor) : ColorTools.GetGray());
-                TextWriterColor.WriteColor(ScreensaverPackInit.SaversConfig.BarRotUpperRightCornerChar.ToString(), false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotUpperRightCornerColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition - 1, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition + 1, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition - 1, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition + 1, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotLowerLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition + 2, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLowerLeftCornerColor) : ColorTools.GetGray());
-                TextWriterColor.WriteColor(new string(ScreensaverPackInit.SaversConfig.BarRotLowerFrameChar, RampFrameSpaces), false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLowerFrameColor) : ColorTools.GetGray());
-                TextWriterColor.WriteColor(ScreensaverPackInit.SaversConfig.BarRotLowerRightCornerChar.ToString(), false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLowerRightCornerColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotUpperLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition - 2, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotUpperLeftCornerColor) : ConsoleColoring.GetGray());
+                TextWriterColor.WriteColor(new string(ScreensaverPackInit.SaversConfig.BarRotUpperFrameChar, RampFrameSpaces), false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotUpperFrameColor) : ConsoleColoring.GetGray());
+                TextWriterColor.WriteColor(ScreensaverPackInit.SaversConfig.BarRotUpperRightCornerChar.ToString(), false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotUpperRightCornerColor) : ConsoleColoring.GetGray());
+                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition - 1, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor) : ConsoleColoring.GetGray());
+                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor) : ConsoleColoring.GetGray());
+                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition + 1, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor) : ConsoleColoring.GetGray());
+                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition - 1, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor) : ConsoleColoring.GetGray());
+                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor) : ConsoleColoring.GetGray());
+                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition + 1, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor) : ConsoleColoring.GetGray());
+                TextWriterWhereColor.WriteWhereColor(ScreensaverPackInit.SaversConfig.BarRotLowerLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition + 2, false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLowerLeftCornerColor) : ConsoleColoring.GetGray());
+                TextWriterColor.WriteColor(new string(ScreensaverPackInit.SaversConfig.BarRotLowerFrameChar, RampFrameSpaces), false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLowerFrameColor) : ConsoleColoring.GetGray());
+                TextWriterColor.WriteColor(ScreensaverPackInit.SaversConfig.BarRotLowerRightCornerChar.ToString(), false, ScreensaverPackInit.SaversConfig.BarRotUseBorderColors ? new Color(ScreensaverPackInit.SaversConfig.BarRotLowerRightCornerColor) : ConsoleColoring.GetGray());
             }
 
             // Set the current colors
@@ -140,7 +141,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 // Make a new instance
                 var RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                ColorTools.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
+                ConsoleColoring.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
 
                 // Try to fill the ramp
                 int RampSubgradientStepsMade = 0;
@@ -163,7 +164,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     RampSubgradientCurrentColorBlue -= RampSubgradientColorBlueSteps;
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got new subgradient current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", vars: [RampSubgradientCurrentColorRed, RampSubgradientCurrentColorGreen, RampSubgradientCurrentColorBlue, RampSubgradientColorRedSteps, RampSubgradientColorGreenSteps, RampSubgradientColorBlueSteps]);
                     RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                    ColorTools.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
+                    ConsoleColoring.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
                 }
 
                 // Change the colors

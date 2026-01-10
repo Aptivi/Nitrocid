@@ -20,6 +20,7 @@
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {
@@ -27,8 +28,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
-            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a null pointer dereference
             TextWriterRaw.WritePlain(

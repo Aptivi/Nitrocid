@@ -99,18 +99,18 @@ namespace Nitrocid.SplashPacks.Splashes
             string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - 5);
 
             // Percentage
-            PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
+            PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground());
+            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground());
             PresetStringBuilder.AppendFormat(" {0:000}% ", Progress);
 
             // Transition
-            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceForeground);
-            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground);
+            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceForeground());
+            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground());
             PresetStringBuilder.AppendFormat("{0}", TransitionChar);
 
             // Progress text
-            PresetStringBuilder.Append(SecondColorSegmentForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground);
+            PresetStringBuilder.Append(SecondColorSegmentForeground.VTSequenceForeground());
+            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground());
             if (ProgressErrored)
                 PresetStringBuilder.AppendFormat(" [X]");
             if (ProgressWarning)
@@ -118,13 +118,13 @@ namespace Nitrocid.SplashPacks.Splashes
             PresetStringBuilder.AppendFormat(" {0} ", RenderedText);
 
             // Transition
-            PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground);
+            PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground());
+            PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Background).VTSequenceBackground());
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
 
             // Display the text and percentage
             builder.Append(
-                ThemeColorsTools.GetColor(ThemeColorType.Progress).VTSequenceForeground +
+                ThemeColorsTools.GetColor(ThemeColorType.Progress).VTSequenceForeground() +
                 TextWriterWhereColor.RenderWhere(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, ThemeColorType.Progress, Vars) +
                 ConsoleClearing.GetClearLineToRightSequence()
             );

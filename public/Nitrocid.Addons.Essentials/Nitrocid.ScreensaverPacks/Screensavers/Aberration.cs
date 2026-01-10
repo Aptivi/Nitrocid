@@ -25,6 +25,7 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -51,7 +52,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
         }
@@ -66,7 +67,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var glitch = new StringBuilder();
                 var color = glitchColors[RandomDriver.RandomIdx(glitchColors.Length)];
                 int x = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
-                glitch.Append(color.VTSequenceBackground);
+                glitch.Append(color.VTSequenceBackground());
                 for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
                 {
                     glitch.Append(
@@ -77,7 +78,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 TextWriterRaw.WriteRaw(glitch.ToString());
             }
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.AberrationDelay);
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
         }
 
     }

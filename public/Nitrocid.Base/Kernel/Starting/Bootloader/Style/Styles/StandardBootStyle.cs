@@ -26,6 +26,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using TextifyDep::Textify.General;
@@ -49,7 +50,7 @@ namespace Nitrocid.Base.Kernel.Starting.Bootloader.Style.Styles
             {
                 string bootApp = BootManager.GetBootAppNameByIndex(i);
                 bootEntryPositions.Add((0, 3 + i));
-                builder.AppendLine($"{ColorTools.RenderSetConsoleColor(new Color(bootEntry))} [{i + 1}] {bootApp}");
+                builder.AppendLine($"{ConsoleColoring.RenderSetConsoleColor(new Color(bootEntry))} [{i + 1}] {bootApp}");
             }
             return builder.ToString();
         }

@@ -20,6 +20,7 @@
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -56,7 +57,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 BeatEdgePulseMaximumBlueColorLevel = ScreensaverPackInit.SaversConfig.BeatEdgePulseMaximumBlueColorLevel,
                 BeatEdgePulseMaximumColorLevel = ScreensaverPackInit.SaversConfig.BeatEdgePulseMaximumColorLevel
             };
-            ColorTools.LoadBackDry("0;0;0");
+            ConsoleColoring.LoadBackDry("0;0;0");
         }
 
         /// <inheritdoc/>

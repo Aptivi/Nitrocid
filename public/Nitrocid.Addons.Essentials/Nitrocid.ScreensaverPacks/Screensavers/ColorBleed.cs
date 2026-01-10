@@ -28,6 +28,7 @@ using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -47,7 +48,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             bleedStates.Clear();
-            ColorTools.LoadBackDry("0;0;0");
+            ConsoleColoring.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
         }
 
@@ -130,8 +131,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Print a block and add the covered position to the list so fading down can be done
             bleedBuffer.Append(
                 $"{CsiSequences.GenerateCsiCursorPosition(ColumnLine + 1, fallStep + 1)}" +
-                $"{Color.Empty.VTSequenceForeground}" +
-                $"{ColorStorage.VTSequenceBackground}" +
+                $"{Color.Empty.VTSequenceForeground()}" +
+                $"{ColorStorage.VTSequenceBackground()}" +
                 $" "
             );
             TextWriterWhereColor.WriteWhereColorBack(" ", ColumnLine, fallStep, false, Color.Empty, ColorStorage);
@@ -170,8 +171,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int PositionTop = PositionTuple.Item2;
                 bleedBuffer.Append(
                     $"{CsiSequences.GenerateCsiCursorPosition(PositionLeft + 1, PositionTop + 1)}" +
-                    $"{Color.Empty.VTSequenceForeground}" +
-                    $"{CurrentFadeColor.VTSequenceBackground}" +
+                    $"{Color.Empty.VTSequenceForeground()}" +
+                    $"{CurrentFadeColor.VTSequenceBackground()}" +
                      " ");
             }
         }

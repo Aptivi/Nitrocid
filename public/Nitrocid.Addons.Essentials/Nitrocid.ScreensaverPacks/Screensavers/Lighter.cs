@@ -26,6 +26,7 @@ using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Nitrocid.Base.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -46,7 +47,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             CoveredPositions.Clear();
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LighterBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LighterBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
 
@@ -75,7 +76,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColorDry(ColorStorage, true);
+                    ConsoleColoring.SetConsoleColorDry(ColorStorage, true);
                     ConsoleWrapper.Write(" ");
                 }
                 else
@@ -90,7 +91,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColorDry(new Color(ColorNum), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color(ColorNum), true);
                     ConsoleWrapper.Write(" ");
                 }
                 else
@@ -110,7 +111,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(WipeLeft, WipeTop);
-                    ColorTools.SetConsoleColorDry(new Color(ScreensaverPackInit.SaversConfig.LighterBackgroundColor), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color(ScreensaverPackInit.SaversConfig.LighterBackgroundColor), true);
                     ConsoleWrapper.Write(" ");
                     CoveredPositions.RemoveAt(0);
                 }

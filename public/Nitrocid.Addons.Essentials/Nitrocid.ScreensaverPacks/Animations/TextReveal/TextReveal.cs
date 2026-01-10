@@ -45,7 +45,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.TextReveal
             int GreenColorNum = RandomDriver.Random(Settings.TextRevealMinimumGreenColorLevel, Settings.TextRevealMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Random(Settings.TextRevealMinimumBlueColorLevel, Settings.TextRevealMaximumBlueColorLevel);
             var backgroundColor = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-            ColorTools.LoadBackDry(backgroundColor);
+            ConsoleColoring.LoadBackDry(backgroundColor);
 
             // Check the text
             int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);

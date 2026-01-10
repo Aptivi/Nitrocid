@@ -22,6 +22,7 @@ using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {
@@ -29,8 +30,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
-            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a Yaboot failure
             TextWriterRaw.WritePlain("Welcome to yaboot version 1.3.17", true);

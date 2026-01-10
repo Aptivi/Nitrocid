@@ -54,7 +54,7 @@ namespace Nitrocid.Base.Misc.Splash
         {
             var builder = new StringBuilder();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            ColorTools.SetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Background), true);
+            ConsoleColoring.SetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Background), true);
             builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
             return builder.ToString();
         }
@@ -78,7 +78,7 @@ namespace Nitrocid.Base.Misc.Splash
         {
             var builder = new StringBuilder();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            ColorTools.SetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Background), true);
+            ConsoleColoring.SetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Background), true);
             builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
             delayRequired = false;
             return builder.ToString();

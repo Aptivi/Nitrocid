@@ -35,6 +35,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Interactive;
 using System;
 using Nitrocid.Base.Files;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
 {
@@ -215,7 +216,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 }
                 else
                 {
-                    ColorTools.LoadBackDry(0);
+                    ConsoleColoring.LoadBackDry(0);
                     SelectedColorInstance = colors[colors.Keys.ElementAt(response - 1)];
                     var finalColor = ColorSelector.OpenColorSelector(SelectedColorInstance);
                     colors[colors.Keys.ElementAt(response - 1)] = finalColor;

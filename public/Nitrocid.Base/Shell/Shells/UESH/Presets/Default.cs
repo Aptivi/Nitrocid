@@ -27,6 +27,7 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Presets
 {
@@ -56,36 +57,36 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Presets
             if (!KernelEntry.Maintenance)
             {
                 // Opening
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
                 PresetStringBuilder.AppendFormat($"[{(Config.MainConfig.ShowShellCount ? $"{ShellManager.ShellCount}:" : "")}");
 
                 // Current username
-                PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground());
                 PresetStringBuilder.AppendFormat("{0}", UserManagement.CurrentUser.Username);
 
                 // "At" sign
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
                 PresetStringBuilder.Append('@');
 
                 // Current hostname
-                PresetStringBuilder.Append(ThemeColorsTools.GetColor("HostNameShellColor").VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor("HostNameShellColor").VTSequenceForeground());
                 PresetStringBuilder.AppendFormat("{0}", Config.MainConfig.HostName);
 
                 // Current directory and shell stack
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
                 PresetStringBuilder.AppendFormat("]{0}:", FilesystemTools.CurrentDir);
 
                 // User dollar sign
-                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.UserDollar).VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.UserDollar).VTSequenceForeground());
                 PresetStringBuilder.AppendFormat(" {0} ", UserDollarSign);
-                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground());
             }
             else
             {
                 // Maintenance mode
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
                 PresetStringBuilder.Append(LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE") + "> ");
-                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground());
             }
 
             // Present final string
@@ -100,36 +101,36 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Presets
             if (!KernelEntry.Maintenance)
             {
                 // Opening
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
                 PresetStringBuilder.AppendFormat($"[{(Config.MainConfig.ShowShellCount ? $"1:" : "")}");
 
                 // Current username
-                PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor("UserNameShellColor").VTSequenceForeground());
                 PresetStringBuilder.AppendFormat("user");
 
                 // "At" sign
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
                 PresetStringBuilder.Append('@');
 
                 // Current hostname
-                PresetStringBuilder.Append(ThemeColorsTools.GetColor("HostNameShellColor").VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor("HostNameShellColor").VTSequenceForeground());
                 PresetStringBuilder.AppendFormat("host");
 
                 // Current directory and shell stack
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
                 PresetStringBuilder.AppendFormat("]/home/user:");
 
                 // User dollar sign
-                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.UserDollar).VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.UserDollar).VTSequenceForeground());
                 PresetStringBuilder.AppendFormat(" $ ");
-                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground());
             }
             else
             {
                 // Maintenance mode
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
                 PresetStringBuilder.Append(LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE") + "> ");
-                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(ThemeColorsTools.GetColor(ThemeColorType.Input).VTSequenceForeground());
             }
 
             // Present final string

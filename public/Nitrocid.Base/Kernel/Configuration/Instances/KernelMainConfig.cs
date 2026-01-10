@@ -156,8 +156,8 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// </summary>
         public bool ConsoleSupportsTrueColor
         {
-            get => ColorTools.ConsoleSupportsTrueColor;
-            set => ColorTools.ConsoleSupportsTrueColor = value;
+            get => ConsoleColoring.ConsoleSupportsTrueColor;
+            set => ConsoleColoring.ConsoleSupportsTrueColor = value;
         }
         /// <summary>
         /// Whether to use the operating system time zone or to use the kernel-wide time zone
@@ -251,8 +251,8 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
         /// </summary>
         public bool AllowBackgroundColor
         {
-            get => ColorTools.AllowBackground;
-            set => ColorTools.AllowBackground = value;
+            get => ConsoleColoring.AllowBackground;
+            set => ConsoleColoring.AllowBackground = value;
         }
         /// <summary>
         /// User Name Shell Color

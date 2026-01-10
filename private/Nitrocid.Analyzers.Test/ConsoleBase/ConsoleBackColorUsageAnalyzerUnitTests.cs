@@ -92,7 +92,7 @@ namespace Nitrocid.Analyzers.Test.ConsoleBase
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using Terminaux.Colors;
+                using Terminaux.Base.Extensions;
                 using Terminaux.Colors.Data;
 
                 namespace ConsoleApplication1
@@ -101,7 +101,7 @@ namespace Nitrocid.Analyzers.Test.ConsoleBase
                     {   
                         public static void Main()
                         {
-                            ColorTools.SetConsoleColor(ConsoleColors.White, true);
+                            ConsoleColoring.SetConsoleColor(ConsoleColors.White, true);
                         }
                     }
                 }

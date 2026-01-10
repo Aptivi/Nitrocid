@@ -36,6 +36,7 @@ using Terminaux.Inputs.Styles.Choice;
 using System.Collections.Generic;
 using Terminaux.Inputs.Styles;
 using Nitrocid.ShellPacks.Shells.FTP;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ShellPacks.Tools
 {
@@ -267,7 +268,7 @@ namespace Nitrocid.ShellPacks.Tools
                     while (!Answer.Equals("y", StringComparison.OrdinalIgnoreCase) || !Answer.Equals("n", StringComparison.OrdinalIgnoreCase))
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTP_VALIDATIONFAILED_PROMPT") + " (y/n) ", false, ThemeColorType.Question);
-                        ColorTools.SetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Input));
+                        ConsoleColoring.SetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.Input));
                         Answer = Convert.ToString(Input.ReadKey().KeyChar);
                         TextWriterRaw.Write();
                         DebugWriter.WriteDebug(DebugLevel.I, $"Answer is {Answer}");

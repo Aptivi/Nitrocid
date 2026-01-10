@@ -22,6 +22,7 @@ using System.Linq;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles;
@@ -71,7 +72,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 $"{LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_COLORNAME")}: {color.Name}\n" +
                 $"{LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_COLORHEX")}: {color.Hex}\n" +
                 $"{LanguageTools.GetLocalized("NKS_THEMESTUDIO_APP_TUI_COLORBRIGHT")}: {color.Brightness}\n\n" +
-                $"{ColorTools.RenderSetConsoleColor(color)}- Lorem ipsum dolor sit amet, consectetur adipiscing elit.{ColorTools.RenderRevertForeground()}";
+                $"{ConsoleColoring.RenderSetConsoleColor(color)}- Lorem ipsum dolor sit amet, consectetur adipiscing elit.{ConsoleColoring.RenderRevertForeground()}";
         }
 
         internal void Change(string colorType)

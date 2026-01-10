@@ -27,6 +27,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Stocks.Widgets
 {
@@ -78,9 +79,9 @@ namespace Nitrocid.Extras.Stocks.Widgets
                     string? high = (string?)stocksIntervalToken?.First?.First?["2. high"];
                     string? low = (string?)stocksIntervalToken?.First?.First?["3. low"];
                     displayer.Text =
-                        $"{ColorTools.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.NeutralText))}H: {ColorTools.RenderSetConsoleColor(ConsoleColors.Lime)}{high}" +
-                        $"{ColorTools.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.NeutralText))} | L: {ColorTools.RenderSetConsoleColor(ConsoleColors.Red)}{low}" +
-                        $"{ColorTools.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.NeutralText))}";
+                        $"{ConsoleColoring.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.NeutralText))}H: {ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Lime)}{high}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.NeutralText))} | L: {ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red)}{low}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(ThemeColorsTools.GetColor(ThemeColorType.NeutralText))}";
                     display.Append(displayer.Render());
                     if (top + (height / 2) + 1 <= top + height)
                     {

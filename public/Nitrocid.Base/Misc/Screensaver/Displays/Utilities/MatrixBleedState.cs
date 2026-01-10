@@ -51,8 +51,8 @@ namespace Nitrocid.Base.Misc.Screensaver.Displays.Utilities
             string renderedNumber = RandomDriver.Random(1).ToString();
             bleedBuffer.Append(
                 $"{CsiSequences.GenerateCsiCursorPosition(ColumnLine + 1, fallStep + 1)}" +
-                $"{foreground.VTSequenceForeground}" +
-                $"{background.VTSequenceBackground}" +
+                $"{foreground.VTSequenceForeground()}" +
+                $"{background.VTSequenceBackground()}" +
                 $"{renderedNumber}"
             );
             var PositionTuple = (ColumnLine, fallStep, renderedNumber);
@@ -91,8 +91,8 @@ namespace Nitrocid.Base.Misc.Screensaver.Displays.Utilities
                 string renderedNumber = PositionTuple.Item3;
                 bleedBuffer.Append(
                     $"{CsiSequences.GenerateCsiCursorPosition(PositionLeft + 1, PositionTop + 1)}" +
-                    $"{CurrentFadeColor.VTSequenceForeground}" +
-                    $"{background.VTSequenceBackground}" +
+                    $"{CurrentFadeColor.VTSequenceForeground()}" +
+                    $"{background.VTSequenceBackground()}" +
                     $"{renderedNumber}"
                 );
             }
