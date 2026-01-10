@@ -42,7 +42,7 @@ using Nitrocid.Base.Misc.Text.Probers.Regexp;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Textify.General.Comparers;

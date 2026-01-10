@@ -30,7 +30,7 @@ using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

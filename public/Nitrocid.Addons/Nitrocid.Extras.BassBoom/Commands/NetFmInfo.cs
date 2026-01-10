@@ -20,7 +20,7 @@
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Languages;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using BassBoom.Basolia.Radio;
 
 namespace Nitrocid.Extras.BassBoom.Commands

@@ -29,7 +29,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Files.Paths;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.ConsoleBase.Inputs;

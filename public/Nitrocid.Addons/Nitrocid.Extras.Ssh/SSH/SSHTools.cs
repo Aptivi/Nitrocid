@@ -29,7 +29,7 @@ using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel;
 using Textify.General;
 using Terminaux.Base;

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using System;
 using System.Collections.Generic;
 using System.Linq;

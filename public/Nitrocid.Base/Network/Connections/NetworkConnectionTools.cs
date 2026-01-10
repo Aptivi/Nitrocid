@@ -23,7 +23,7 @@ using System.Linq;
 using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Inputs.Styles.Selection;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;

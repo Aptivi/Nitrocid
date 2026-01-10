@@ -22,7 +22,7 @@ using GitCommand = LibGit2Sharp.Commands;
 using System;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 
 namespace Nitrocid.ShellPacks.Shells.Git.Commands

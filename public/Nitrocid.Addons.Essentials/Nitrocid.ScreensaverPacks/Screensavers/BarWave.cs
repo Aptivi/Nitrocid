@@ -27,7 +27,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Transformation;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

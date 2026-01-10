@@ -21,7 +21,7 @@
 using System.Linq;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Extensions;
 

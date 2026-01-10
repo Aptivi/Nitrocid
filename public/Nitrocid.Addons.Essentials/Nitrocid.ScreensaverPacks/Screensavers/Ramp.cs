@@ -25,7 +25,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Base.Extensions;
 

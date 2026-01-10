@@ -18,7 +18,7 @@
 //
 
 using Newtonsoft.Json;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using System;
 using Terminaux.Colors;
 using Textify.General.Structures;

@@ -27,7 +27,7 @@ using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;

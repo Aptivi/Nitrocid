@@ -22,7 +22,7 @@ using Textify.Data.Figlet;
 using System;
 using System.Text;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Textify.General;

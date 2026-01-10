@@ -34,7 +34,7 @@ using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Files.Extensions;
 using Textify.General;
 using Nitrocid.Base.Kernel.Exceptions;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using FluentFTP;
 using Nitrocid.ShellPacks.Tools.Filesystem;
 using Nitrocid.ShellPacks.Tools.Transfer;

@@ -20,7 +20,7 @@
 using System;
 using Terminaux.Shell.Commands;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
 

@@ -26,7 +26,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Textify.Tools.Placeholder;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Textify.General;
 using Terminaux.Colors;
 using Nitrocid.Base.ConsoleBase.Inputs;

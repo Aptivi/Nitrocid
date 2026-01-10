@@ -29,7 +29,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Structures;
 using Terminaux.Colors.Data;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

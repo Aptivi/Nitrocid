@@ -24,7 +24,7 @@ using Terminaux.Colors;
 using Terminaux.Shell.Shells;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;

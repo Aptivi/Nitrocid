@@ -24,7 +24,7 @@ using System.Threading;
 using System.Diagnostics;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Base.Buffered;
 using Nitrocid.Base.Misc.Screensaver.Displays;
 using Terminaux.Base;

@@ -20,7 +20,7 @@
 using Terminaux.Shell.Shells;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Tools.Placeholder;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Base.Checks;
 using Terminaux.Shell.Arguments.Base;
 using Nitrocid.Base.Kernel.Debugging;

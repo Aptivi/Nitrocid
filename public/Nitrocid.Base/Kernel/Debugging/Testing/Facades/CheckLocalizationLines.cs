@@ -20,7 +20,7 @@
 using Newtonsoft.Json.Linq;
 using System.Linq;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection.Internal;
 using Nitrocid.Base.Kernel.Exceptions;

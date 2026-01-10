@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Base.Users.Groups;
-using Terminaux.Colors.Themes;
+using Terminaux.Themes;
 using System.Linq;
 using Nitrocid.Base.Security.Permissions;
 using System.Collections.Generic;

@@ -33,7 +33,7 @@ using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Files.Paths;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Extras.Mods.Modifications.ManPages;
 

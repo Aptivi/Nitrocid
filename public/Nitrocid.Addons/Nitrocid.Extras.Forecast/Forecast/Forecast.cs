@@ -23,7 +23,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.Extras.Forecast.Forecast
 {

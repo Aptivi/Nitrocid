@@ -19,9 +19,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Styles.Selection;
-using Terminaux.Colors.Themes;
+using Terminaux.Themes;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Events;

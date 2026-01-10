@@ -22,7 +22,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Inputs.Interactive;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using System.IO;

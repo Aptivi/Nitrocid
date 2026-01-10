@@ -22,7 +22,7 @@ using System.Reflection;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Files;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Magico.Files;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Reflection;

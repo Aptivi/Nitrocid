@@ -18,7 +18,7 @@
 //
 
 #if NKS_EXTENSIONS
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using System;

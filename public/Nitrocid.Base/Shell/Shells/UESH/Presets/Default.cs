@@ -18,7 +18,7 @@
 //
 
 using System.Text;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Files;
 using Terminaux.Shell.Prompts;
 using Terminaux.Shell.Shells;

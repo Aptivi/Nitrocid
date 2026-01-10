@@ -22,7 +22,7 @@ using Nitrocid.Base.Files;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Textify.General;
 

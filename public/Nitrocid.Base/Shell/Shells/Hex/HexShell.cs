@@ -19,7 +19,7 @@
 
 using System;
 using System.Threading;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;

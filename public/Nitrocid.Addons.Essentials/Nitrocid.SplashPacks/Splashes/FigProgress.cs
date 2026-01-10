@@ -24,7 +24,7 @@ using System.Text;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Splash;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel;
 using Terminaux.Base;

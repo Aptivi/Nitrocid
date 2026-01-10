@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using Terminaux.Colors;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 
 namespace Nitrocid.Base.Shell.Shells.Hex.Presets
 {

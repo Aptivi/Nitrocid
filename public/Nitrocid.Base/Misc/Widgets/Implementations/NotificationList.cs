@@ -20,7 +20,7 @@
 using System.Text;
 using Nitrocid.Base.Misc.Notifications;
 using Terminaux.Colors;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Base.Misc.Widgets.Implementations

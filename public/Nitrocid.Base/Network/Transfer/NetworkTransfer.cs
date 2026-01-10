@@ -20,7 +20,7 @@
 using System;
 using System.Net.Http;
 using System.Threading;
-using Terminaux.Colors.Themes.Colors;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;
 using Textify.Tools.Placeholder;
