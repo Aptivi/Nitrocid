@@ -27,8 +27,8 @@ jobs:
       - name: Release Asset Preparation
         run: |
           cmd.exe /c "tools\build.cmd Debug -p:ContinuousIntegrationBuild=true"
-          dotnet build -p:Configuration=Debug -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.sln
-          dotnet build -p:Configuration=Debug -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.sln
+          dotnet build -p:Configuration=Debug -p:Platform=x64 public/Nitrocid.Installers/Nitrocid.Installer.slnx
+          dotnet build -p:Configuration=Debug -p:Platform=ARM64 public/Nitrocid.Installers/Nitrocid.Installer.slnx
           Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/x64/Debug/Nitrocid.InstallerBundle.exe vnd/nitrocid-win-x64-installer.exe
           Move-Item public/Nitrocid.Installers/Nitrocid.InstallerBundle/bin/ARM64/Debug/Nitrocid.InstallerBundle.exe vnd/nitrocid-win-arm64-installer.exe
       - uses: actions/upload-artifact@v4
