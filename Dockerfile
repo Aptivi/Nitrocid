@@ -5,7 +5,7 @@ WORKDIR /NKS
 COPY . ./
 
 # Attempt to build Nitrocid KS
-RUN dotnet build "Nitrocid.sln" -p:Configuration=Release -maxCpuCount:1
+RUN dotnet build "Nitrocid.slnx" -p:Configuration=Release -maxCpuCount:1
 
 # Run the ASP.NET image
 FROM mcr.microsoft.com/dotnet/aspnet:10.0

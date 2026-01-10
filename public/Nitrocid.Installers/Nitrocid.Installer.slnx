@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Nitrocid.Installer/Nitrocid.Installer.wixproj" Type="b7dd6f7e-def8-4e67-b5b7-07ef123db6f0" />
+  <Project Path="Nitrocid.InstallerBundle/Nitrocid.InstallerBundle.wixproj" Type="b7dd6f7e-def8-4e67-b5b7-07ef123db6f0" />
+</Solution>

@@ -1,0 +1,153 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Assets/">
+    <File Path="CHANGES" />
+    <File Path="CHANGES.TITLE" />
+    <File Path="Directory.Build.props" />
+    <File Path="vnd/changes.chg" />
+  </Folder>
+  <Folder Name="/Private/" />
+  <Folder Name="/Private/Benchmarks/">
+    <Project Path="private/Nitrocid.Benchmarks/Nitrocid.Benchmarks.csproj" />
+  </Folder>
+  <Folder Name="/Private/Generators/">
+    <Project Path="private/Nitrocid.Generators/Nitrocid.Generators.KnownAddons/Nitrocid.Generators.KnownAddons.csproj">
+      <BuildDependency Project="private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" />
+    </Project>
+  </Folder>
+  <Folder Name="/Private/Helpers/">
+    <Project Path="private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" />
+  </Folder>
+  <Folder Name="/Private/Locales/">
+    <Project Path="private/Nitrocid.LocaleChecker/Nitrocid.LocaleChecker.csproj" />
+  </Folder>
+  <Folder Name="/Private/Testing/">
+    <Project Path="private/Nitrocid.Analyzers.Test/Nitrocid.Analyzers.Test.csproj" />
+    <Project Path="private/Nitrocid.Tests/Nitrocid.Tests.csproj">
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Amusements/Nitrocid.Extras.Amusements.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.ArchiveShell/Nitrocid.Extras.ArchiveShell.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.BassBoom/Nitrocid.Extras.BassBoom.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.BeepSynth/Nitrocid.Extras.BeepSynth.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Caffeine/Nitrocid.Extras.Caffeine.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Calculators/Nitrocid.Extras.Calculators.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Calendar/Nitrocid.Extras.Calendar.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Chemistry/Nitrocid.Extras.Chemistry.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.ColorConvert/Nitrocid.Extras.ColorConvert.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Contacts/Nitrocid.Extras.Contacts.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Crc32/Nitrocid.Extras.Crc32.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Crc32Castagnoli/Nitrocid.Extras.Crc32Castagnoli.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Dictionary/Nitrocid.Extras.Dictionary.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Docking/Nitrocid.Extras.Docking.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Nitrocid.Extras.Forecast.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.FtpShell/Nitrocid.Extras.FtpShell.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.GitShell/Nitrocid.Extras.GitShell.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.HttpShell/Nitrocid.Extras.HttpShell.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.JsonShell/Nitrocid.Extras.JsonShell.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.LanguageStudio/Nitrocid.Extras.LanguageStudio.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.MailShell/Nitrocid.Extras.MailShell.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Md5/Nitrocid.Extras.Md5.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.NameGen/Nitrocid.Extras.NameGen.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Notes/Nitrocid.Extras.Notes.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Pastebin/Nitrocid.Extras.Pastebin.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.RssShell/Nitrocid.Extras.RssShell.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.SftpShell/Nitrocid.Extras.SftpShell.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Sha1/Nitrocid.Extras.Sha1.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Sha256Enhanced/Nitrocid.Extras.Sha256Enhanced.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Sha384/Nitrocid.Extras.Sha384.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Sha384Enhanced/Nitrocid.Extras.Sha384Enhanced.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Sha512Enhanced/Nitrocid.Extras.Sha512Enhanced.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.SqlShell/Nitrocid.Extras.SqlShell.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Ssh/Nitrocid.Extras.Ssh.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Stocks/Nitrocid.Extras.Stocks.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.ThemeStudio/Nitrocid.Extras.ThemeStudio.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.TimeInfo/Nitrocid.Extras.TimeInfo.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Timers/Nitrocid.Extras.Timers.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Tips/Nitrocid.Extras.Tips.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.ToDoList/Nitrocid.Extras.ToDoList.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.UnitConv/Nitrocid.Extras.UnitConv.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.ThemePacks/Nitrocid.ThemePacks.csproj" />
+    </Project>
+  </Folder>
+  <Folder Name="/Public/">
+    <Project Path="public/Nitrocid/Nitrocid.csproj">
+      <BuildDependency Project="private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" />
+    </Project>
+  </Folder>
+  <Folder Name="/Public/Addons/" />
+  <Folder Name="/Public/Addons/Essentials/">
+    <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Diagnostics/Nitrocid.Extras.Diagnostics.csproj" />
+    <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Images.Icons/Nitrocid.Extras.Images.Icons.csproj" />
+    <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Images/Nitrocid.Extras.Images.csproj" />
+    <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Mods/Nitrocid.Extras.Mods.csproj" />
+    <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.LanguagePacks/Nitrocid.LanguagePacks.csproj" />
+    <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.ScreensaverPacks/Nitrocid.ScreensaverPacks.csproj" />
+    <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.SplashPacks/Nitrocid.SplashPacks.csproj" />
+  </Folder>
+  <Folder Name="/Public/Addons/Extras/">
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Amusements/Nitrocid.Extras.Amusements.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.ArchiveShell/Nitrocid.Extras.ArchiveShell.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.BassBoom/Nitrocid.Extras.BassBoom.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.BeepSynth/Nitrocid.Extras.BeepSynth.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Caffeine/Nitrocid.Extras.Caffeine.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Calculators/Nitrocid.Extras.Calculators.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Calendar/Nitrocid.Extras.Calendar.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Chemistry/Nitrocid.Extras.Chemistry.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.ColorConvert/Nitrocid.Extras.ColorConvert.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Contacts/Nitrocid.Extras.Contacts.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Crc32/Nitrocid.Extras.Crc32.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Crc32Castagnoli/Nitrocid.Extras.Crc32Castagnoli.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Dictionary/Nitrocid.Extras.Dictionary.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Docking/Nitrocid.Extras.Docking.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Nitrocid.Extras.Forecast.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.FtpShell/Nitrocid.Extras.FtpShell.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.GitShell/Nitrocid.Extras.GitShell.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.HttpShell/Nitrocid.Extras.HttpShell.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.JsonShell/Nitrocid.Extras.JsonShell.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.LanguageStudio/Nitrocid.Extras.LanguageStudio.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.MailShell/Nitrocid.Extras.MailShell.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Md5/Nitrocid.Extras.Md5.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.NameGen/Nitrocid.Extras.NameGen.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Notes/Nitrocid.Extras.Notes.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Pastebin/Nitrocid.Extras.Pastebin.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.RssShell/Nitrocid.Extras.RssShell.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.SftpShell/Nitrocid.Extras.SftpShell.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Sha1/Nitrocid.Extras.Sha1.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Sha256Enhanced/Nitrocid.Extras.Sha256Enhanced.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Sha384/Nitrocid.Extras.Sha384.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Sha384Enhanced/Nitrocid.Extras.Sha384Enhanced.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Sha512Enhanced/Nitrocid.Extras.Sha512Enhanced.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.SqlShell/Nitrocid.Extras.SqlShell.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Ssh/Nitrocid.Extras.Ssh.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Stocks/Nitrocid.Extras.Stocks.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.ThemeStudio/Nitrocid.Extras.ThemeStudio.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.TimeInfo/Nitrocid.Extras.TimeInfo.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Timers/Nitrocid.Extras.Timers.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Tips/Nitrocid.Extras.Tips.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.ToDoList/Nitrocid.Extras.ToDoList.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.UnitConv/Nitrocid.Extras.UnitConv.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.ThemePacks/Nitrocid.ThemePacks.csproj" />
+  </Folder>
+  <Folder Name="/Public/Analyzers/">
+    <Project Path="public/Nitrocid.Analyzers/Nitrocid.Analyzers.CodeFixes/Nitrocid.Analyzers.CodeFixes.csproj" />
+    <Project Path="public/Nitrocid.Analyzers/Nitrocid.Analyzers.Package/Nitrocid.Analyzers.Package.csproj" />
+    <Project Path="public/Nitrocid.Analyzers/Nitrocid.Analyzers/Nitrocid.Analyzers.csproj">
+      <BuildDependency Project="private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" />
+    </Project>
+    <Project Path="public/Nitrocid.Analyzers/Nitrocid.StandaloneAnalyzer/Nitrocid.StandaloneAnalyzer.csproj">
+      <BuildDependency Project="public/Nitrocid.Analyzers/Nitrocid.Analyzers/Nitrocid.Analyzers.csproj" />
+    </Project>
+  </Folder>
+  <Folder Name="/Public/Locales/">
+    <Project Path="public/Nitrocid.Locales/Nitrocid.Locales.csproj" />
+  </Folder>
+  <Folder Name="/Public/Templates/">
+    <Project Path="public/Nitrocid.Templates/Nitrocid.Templates.csproj">
+      <BuildDependency Project="private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" />
+    </Project>
+  </Folder>
+</Solution>
