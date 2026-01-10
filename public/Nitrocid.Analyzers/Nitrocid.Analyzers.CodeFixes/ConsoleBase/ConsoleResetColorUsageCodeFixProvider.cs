@@ -88,9 +88,7 @@ namespace Nitrocid.Analyzers.ConsoleBase
                     var name =
                         SyntaxFactory.QualifiedName(
                             SyntaxFactory.QualifiedName(
-                                SyntaxFactory.QualifiedName(
-                                    SyntaxFactory.IdentifierName("Terminaux"),
-                                    SyntaxFactory.IdentifierName("Colors")),
+                                SyntaxFactory.IdentifierName("Terminaux"),
                                 SyntaxFactory.IdentifierName("Themes")
                             ), SyntaxFactory.IdentifierName("Colors")
                         );
