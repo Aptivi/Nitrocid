@@ -59,8 +59,6 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             bool done = false;
             var scoreSimScreen = new Screen();
             var scoreSimScreenPart = new ScreenPart();
-            // TODO: NKS_AMUSEMENTS_SCORESIM_FIRSTTEAM -> First Team
-            // TODO: NKS_AMUSEMENTS_SCORESIM_SECONDTEAM -> Second Team
             firstTeamName = string.IsNullOrEmpty(firstTeamName) ? LanguageTools.GetLocalized("NKS_AMUSEMENTS_SCORESIM_FIRSTTEAM") : firstTeamName;
             secondTeamName = string.IsNullOrEmpty(secondTeamName) ? LanguageTools.GetLocalized("NKS_AMUSEMENTS_SCORESIM_SECONDTEAM") : secondTeamName;
 
