@@ -618,6 +618,278 @@
     {
       "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
       "text": "¿Cuántos nombres generar?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC",
+      "text": "Presiona un número de las nueve casillas para obtener monedas, con todas las casillas bloqueadas y con incremento automático"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_INVADERS_DESC",
+      "text": "Simula el juego original de Space Invaders"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_DESC",
+      "text": "Simula el marcador para juegos deportivos"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC",
+      "text": "Simula el marcador de fútbol"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC",
+      "text": "Simula el marcador de baloncesto"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC",
+      "text": "Nombre del primer equipo"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC",
+      "text": "Nombre del segundo equipo"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SIMON_DESC",
+      "text": "Juego de Simón dice (Simón dice Rojo, Verde, Amarillo y Azul)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC",
+      "text": "Un coche que va rápido por una autopista esquivando coches lentos"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC",
+      "text": "Juego de Tres en raya (X para el Jugador 1 y O para el Jugador 2)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC",
+      "text": "Jugar contra la CPU"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_CLICKER",
+      "text": "Box Clicker"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_INVADERS",
+      "text": "Terminal Invaders"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT",
+      "text": "Simulador de puntuación (predeterminado)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER",
+      "text": "Simulador de puntuación (fútbol)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL",
+      "text": "Simulador de puntuación (baloncesto)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SIMON",
+      "text": "Simón dice (colores)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_STREETRUN",
+      "text": "Street Run"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU",
+      "text": "Tres en raya (Jugador contra CPU)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P",
+      "text": "Tres en raya (Jugador contra Jugador)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SCORESIM_FIRSTTEAM",
+      "text": "Primer equipo"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SCORESIM_SECONDTEAM",
+      "text": "Segundo equipo"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_GREEN",
+      "text": "Verde"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_RED",
+      "text": "Rojo"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_BLUE",
+      "text": "Azul"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_YELLOW",
+      "text": "Amarillo"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_PENDING",
+      "text": "¡Adelante!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS",
+      "text": "Simón dice: {0}"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_TICTACTOE_WHOSETURN",
+      "text": "El jugador {0} está jugando actualmente."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_TICTACTOE_DRAW",
+      "text": "Es un empate."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_TICTACTOE_PLAYERWON",
+      "text": "¡El jugador {0} gana el juego!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_DESC",
+      "text": "Muestra una \"tarjeta de cumpleaños\" en la pantalla"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_BDAY",
+      "text": "¡Feliz cumpleaños!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SIMPLE_BDAYWISH",
+      "text": "¡Feliz cumpleaños, {0}!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_MALE_BDAYWISH",
+      "text": "¡Feliz cumpleaños a él!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FEMALE_BDAYWISH",
+      "text": "¡Feliz cumpleaños a ella!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH",
+      "text": "¡Feliz cumpleaños al más leal!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH",
+      "text": "¡Feliz cumpleaños a mí!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH",
+      "text": "¡Feliz cumpleaños a ti!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPER_BDAYWISH",
+      "text": "¡El cumpleaños más feliz, {0}!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_MALE_BDAYWISH",
+      "text": "¡El cumpleaños más feliz para él!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FEMALE_BDAYWISH",
+      "text": "¡El cumpleaños más feliz para ella!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH",
+      "text": "¡El cumpleaños más feliz para el más leal!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH",
+      "text": "¡El cumpleaños más feliz para mí!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH",
+      "text": "¡El cumpleaños más feliz para ti!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPERALT_BDAYWISH",
+      "text": "¡El más feliz, {0}!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_MALE_BDAYWISH",
+      "text": "¡El más feliz para él!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FEMALE_BDAYWISH",
+      "text": "¡El más feliz para ella!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH",
+      "text": "¡El más feliz para el más leal!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH",
+      "text": "¡El más feliz para mí!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH",
+      "text": "¡El más feliz para ti!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_WELCOME",
+      "text": "¡Bienvenido a la base de datos! Obteniendo identidades..."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_NAME",
+      "text": "Nombre"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_FIRSTNAME",
+      "text": "Nombre de pila"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_LASTNAME",
+      "text": "Apellido"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_AGE",
+      "text": "Edad"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_AGE_YEARSOLD",
+      "text": "{0} años"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_BIRTHDATE",
+      "text": "Fecha de nacimiento"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_NAME",
+      "text": "Configuración de la tarjeta de cumpleaños"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_DESC",
+      "text": "Proporciona un conjunto de variables que le permiten configurar su tarjeta de cumpleaños"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_NAME",
+      "text": "Género de la persona a la que se felicita"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_DESC",
+      "text": "Especifica el género de la persona a la que se desea felicitar"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME",
+      "text": "Tipo de nombre en la tarjeta de cumpleaños"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC",
+      "text": "Nombre generado aleatoriamente, nombre de la persona seleccionada o uso de pronombres"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME",
+      "text": "Tipo de texto de la tarjeta de cumpleaños"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC",
+      "text": "Especifica si se utiliza la versión normal del saludo o la versión superlativa"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_NAME",
+      "text": "Nombre de la persona a la que se felicita"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC",
+      "text": "El nombre de la persona a la que se desea felicitar"
     }
   ]
 }

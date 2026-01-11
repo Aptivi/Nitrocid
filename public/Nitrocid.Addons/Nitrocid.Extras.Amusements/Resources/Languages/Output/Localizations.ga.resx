@@ -558,5 +558,209 @@
   <data name="NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
     <value>Cé mhéad ainm atá le giniúint?</value>
   </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_CLICKER_DESC" xml:space="preserve">
+    <value>Brúigh uimhir ó na naoi mbosca chun boinn a fháil, agus na boscaí go léir faoi ghlas agus le méadú uathoibríoch</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_INVADERS_DESC" xml:space="preserve">
+    <value>Insamhladh an cluiche Space Invaders bunaidh</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_DESC" xml:space="preserve">
+    <value>Insamhladh an scórchlár do chluichí spóirt</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC" xml:space="preserve">
+    <value>Insamhladh an scórchlár sacair</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC" xml:space="preserve">
+    <value>Insamhladh an scórchlár cispheile</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC" xml:space="preserve">
+    <value>Ainm na chéad fhoirne</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC" xml:space="preserve">
+    <value>Ainm na dara foirne</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SIMON_DESC" xml:space="preserve">
+    <value>Cluiche Simon Deir (deir Simon Dearg, Glas, Buí, agus Gorm)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC" xml:space="preserve">
+    <value>Carr a théann go gasta ar mhórbhealach agus é ag seachaint gluaisteán mall</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC" xml:space="preserve">
+    <value>Cluiche Tic Tac Toe (X d&apos;Imreoir 1, agus O d&apos;Imreoir 2)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC" xml:space="preserve">
+    <value>Imir le LAP</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_CLICKER" xml:space="preserve">
+    <value>Cliceáil Bosca</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_INVADERS" xml:space="preserve">
+    <value>Ionróirí Críochfoirt</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT" xml:space="preserve">
+    <value>Insamhlóir Scóir (réamhshocraithe)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER" xml:space="preserve">
+    <value>Insamhlóir Scóir (sacar)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL" xml:space="preserve">
+    <value>Insamhlóir Scóir (cispheil)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SIMON" xml:space="preserve">
+    <value>Deir Simon (dathanna)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_STREETRUN" xml:space="preserve">
+    <value>Rith Sráide</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU" xml:space="preserve">
+    <value>Tic-Tac-Toe (Imreoir vs. LAP)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P" xml:space="preserve">
+    <value>Tic-Tac-Toe (Imreoir vs. Imreoir)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SCORESIM_FIRSTTEAM" xml:space="preserve">
+    <value>An Chéad Fhoireann</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SCORESIM_SECONDTEAM" xml:space="preserve">
+    <value>An Dara Foireann</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_GREEN" xml:space="preserve">
+    <value>Glas</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_RED" xml:space="preserve">
+    <value>Dearg</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_BLUE" xml:space="preserve">
+    <value>Gorm</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_YELLOW" xml:space="preserve">
+    <value>Buí</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_PENDING" xml:space="preserve">
+    <value>Téigh ar aghaidh!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS" xml:space="preserve">
+    <value>Deir Simon: {0}</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_TICTACTOE_WHOSETURN" xml:space="preserve">
+    <value>Tá imreoir {0} ag imirt faoi láthair.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_TICTACTOE_DRAW" xml:space="preserve">
+    <value>Is comhscór é.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_TICTACTOE_PLAYERWON" xml:space="preserve">
+    <value>Buaileann imreoir {0} an cluiche!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_DESC" xml:space="preserve">
+    <value>Taispeánann sé &quot;cárta breithe&quot; ar an scáileán</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_BDAY" xml:space="preserve">
+    <value>Breithlá sona duit!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SIMPLE_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona duit, a {0}!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_MALE_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona dó!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FEMALE_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona di!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona don duine is dílse!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona domsa!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona duit!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPER_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona duit, a {0}!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_MALE_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona dó!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FEMALE_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona di!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona don duine is dílse!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona domsa!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona duit!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPERALT_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona duit, a {0}!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_MALE_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona dó!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FEMALE_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona di!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona don duine is dílse!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona domsa!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH" xml:space="preserve">
+    <value>Breithlá sona duit!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_WELCOME" xml:space="preserve">
+    <value>Fáilte go dtí an bunachar sonraí! Ag fáil céannachtaí...</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_NAME" xml:space="preserve">
+    <value>Ainm</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_FIRSTNAME" xml:space="preserve">
+    <value>Céadainm</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_LASTNAME" xml:space="preserve">
+    <value>Sloinne</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_AGE" xml:space="preserve">
+    <value>Aois</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_AGE_YEARSOLD" xml:space="preserve">
+    <value>{0} bliain d&apos;aois</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_BIRTHDATE" xml:space="preserve">
+    <value>Dáta breithe</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_NAME" xml:space="preserve">
+    <value>Socruithe cárta breithe</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_DESC" xml:space="preserve">
+    <value>Soláthraíonn sé sraith athróg a ligeann duit do chárta breithe a chumrú</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_NAME" xml:space="preserve">
+    <value>Inscne cárta breithe</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_DESC" xml:space="preserve">
+    <value>Sonraíonn sé inscne an duine ar mian leat breithlá sona a ghuí air</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME" xml:space="preserve">
+    <value>Cineál ainm cárta breithe</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC" xml:space="preserve">
+    <value>Ainm duine a ghintear go randamach, ainm an duine a roghnaigh tú, nó bain úsáid as forainmneacha</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME" xml:space="preserve">
+    <value>Cineál téacs cárta breithe</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC" xml:space="preserve">
+    <value>Sonraíonn sé an ngnáthleagan den mhian a úsáid, nó an leagan sárchéimneach a úsáid</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_NAME" xml:space="preserve">
+    <value>Ainm duine breithe</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC" xml:space="preserve">
+    <value>Ainm an duine ar mian leat breithlá sona a ghuí air</value>
+  </data>
 
 </root>

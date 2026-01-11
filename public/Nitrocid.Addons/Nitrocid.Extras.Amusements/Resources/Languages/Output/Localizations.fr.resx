@@ -558,5 +558,209 @@
   <data name="NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
     <value>Combien de noms générer ?</value>
   </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_CLICKER_DESC" xml:space="preserve">
+    <value>Appuyez sur un chiffre parmi les neuf cases pour obtenir des pièces, toutes les cases étant verrouillées et avec incrémentation automatique</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_INVADERS_DESC" xml:space="preserve">
+    <value>Simule le jeu original Space Invaders</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_DESC" xml:space="preserve">
+    <value>Simule le tableau d&apos;affichage des scores pour les jeux sportifs</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC" xml:space="preserve">
+    <value>Simule le tableau d&apos;affichage des scores de football</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC" xml:space="preserve">
+    <value>Simule le tableau d&apos;affichage des scores de basketball</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC" xml:space="preserve">
+    <value>Nom de la première équipe</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC" xml:space="preserve">
+    <value>Nom de la deuxième équipe</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SIMON_DESC" xml:space="preserve">
+    <value>Jeu Simon Says (Simon dit Rouge, Vert, Jaune et Bleu)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC" xml:space="preserve">
+    <value>Une voiture qui roule vite sur une autoroute en évitant les voitures lentes</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC" xml:space="preserve">
+    <value>Jeu de Tic Tac Toe (X pour le joueur 1 et O pour le joueur 2)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC" xml:space="preserve">
+    <value>Jouer contre l&apos;ordinateur</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_CLICKER" xml:space="preserve">
+    <value>Box Clicker</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_INVADERS" xml:space="preserve">
+    <value>Terminal Invaders</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT" xml:space="preserve">
+    <value>Simulateur de score (par défaut)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER" xml:space="preserve">
+    <value>Simulateur de score (football)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL" xml:space="preserve">
+    <value>Simulateur de score (basketball)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SIMON" xml:space="preserve">
+    <value>Simon Says (couleurs)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_STREETRUN" xml:space="preserve">
+    <value>Street Run</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU" xml:space="preserve">
+    <value>Tic-Tac-Toe (Joueur contre CPU)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P" xml:space="preserve">
+    <value>Tic-Tac-Toe (Joueur contre Joueur)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SCORESIM_FIRSTTEAM" xml:space="preserve">
+    <value>Première équipe</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SCORESIM_SECONDTEAM" xml:space="preserve">
+    <value>Deuxième équipe</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_GREEN" xml:space="preserve">
+    <value>Vert</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_RED" xml:space="preserve">
+    <value>Rouge</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_BLUE" xml:space="preserve">
+    <value>Bleu</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_YELLOW" xml:space="preserve">
+    <value>Jaune</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_PENDING" xml:space="preserve">
+    <value>Allez-y !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS" xml:space="preserve">
+    <value>Simon dit : {0}</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_TICTACTOE_WHOSETURN" xml:space="preserve">
+    <value>Le joueur {0} joue actuellement.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_TICTACTOE_DRAW" xml:space="preserve">
+    <value>C&apos;est un match nul.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_TICTACTOE_PLAYERWON" xml:space="preserve">
+    <value>Le joueur {0} gagne la partie !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_DESC" xml:space="preserve">
+    <value>Affiche une « carte d&apos;anniversaire » à l&apos;écran</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_BDAY" xml:space="preserve">
+    <value>Joyeux anniversaire !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SIMPLE_BDAYWISH" xml:space="preserve">
+    <value>Joyeux anniversaire, {0} !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_MALE_BDAYWISH" xml:space="preserve">
+    <value>Joyeux anniversaire à lui !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FEMALE_BDAYWISH" xml:space="preserve">
+    <value>Joyeux anniversaire à elle !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH" xml:space="preserve">
+    <value>Joyeux anniversaire à la personne la plus fidèle !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH" xml:space="preserve">
+    <value>Joyeux anniversaire à moi !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH" xml:space="preserve">
+    <value>Joyeux anniversaire à toi !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPER_BDAYWISH" xml:space="preserve">
+    <value>Très joyeux anniversaire, {0} !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_MALE_BDAYWISH" xml:space="preserve">
+    <value>Très joyeux anniversaire à lui !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FEMALE_BDAYWISH" xml:space="preserve">
+    <value>Très joyeux anniversaire à elle !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH" xml:space="preserve">
+    <value>Très joyeux anniversaire à la personne la plus fidèle !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH" xml:space="preserve">
+    <value>Très joyeux anniversaire à moi !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH" xml:space="preserve">
+    <value>Très joyeux anniversaire à toi !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPERALT_BDAYWISH" xml:space="preserve">
+    <value>Le plus joyeux des anniversaires, {0} !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_MALE_BDAYWISH" xml:space="preserve">
+    <value>Le plus joyeux des anniversaires à lui !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FEMALE_BDAYWISH" xml:space="preserve">
+    <value>Le plus joyeux des anniversaires à elle !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH" xml:space="preserve">
+    <value>Le plus joyeux des anniversaires à la personne la plus fidèle !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH" xml:space="preserve">
+    <value>Le plus joyeux des anniversaires à moi !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH" xml:space="preserve">
+    <value>Le plus joyeux des anniversaires à toi !</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_WELCOME" xml:space="preserve">
+    <value>Bienvenue dans la base de données ! Récupération des identités...</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_NAME" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_FIRSTNAME" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_LASTNAME" xml:space="preserve">
+    <value>Nom de famille</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_AGE" xml:space="preserve">
+    <value>Âge</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_AGE_YEARSOLD" xml:space="preserve">
+    <value>{0} ans</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_BIRTHDATE" xml:space="preserve">
+    <value>Date de naissance</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_NAME" xml:space="preserve">
+    <value>Paramètres de la carte d&apos;anniversaire</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_DESC" xml:space="preserve">
+    <value>Fournit un ensemble de variables vous permettant de configurer votre carte d&apos;anniversaire</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_NAME" xml:space="preserve">
+    <value>Genre de la personne à qui souhaiter l&apos;anniversaire</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_DESC" xml:space="preserve">
+    <value>Spécifie le genre de la personne à qui souhaiter un joyeux anniversaire</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME" xml:space="preserve">
+    <value>Type de nom pour la carte d&apos;anniversaire</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC" xml:space="preserve">
+    <value>Nom de personne généré aléatoirement, nom de personne sélectionné ou utilisation de pronoms</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME" xml:space="preserve">
+    <value>Type de texte pour la carte d&apos;anniversaire</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC" xml:space="preserve">
+    <value>Spécifie s&apos;il faut utiliser la version normale des vœux ou la version superlative</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_NAME" xml:space="preserve">
+    <value>Nom de la personne dont c&apos;est l&apos;anniversaire</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC" xml:space="preserve">
+    <value>Le nom de la personne à qui souhaiter un joyeux anniversaire</value>
+  </data>
 
 </root>

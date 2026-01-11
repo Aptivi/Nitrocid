@@ -699,6 +699,278 @@
     {
       "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
       "text": "How many names to generate?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC",
+      "text": "Press a number from the nine boxes to get coins, with all boxes locked and with auto increment"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_INVADERS_DESC",
+      "text": "Simulates the original Space Invaders game"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_DESC",
+      "text": "Simulates the scoreboard for sports games"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC",
+      "text": "Simulates the soccer scoreboard"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC",
+      "text": "Simulates the basketball scoreboard"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC",
+      "text": "First team name"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC",
+      "text": "Second team name"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SIMON_DESC",
+      "text": "Simon Says game (Simon says Red, Green, Yellow, and Blue)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC",
+      "text": "A car that goes fast in a highway while dodging slow cars"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC",
+      "text": "Tic Tac Toe game (X for Player 1, and O for Player 2)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC",
+      "text": "Play with CPU"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_CLICKER",
+      "text": "Box Clicker"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_INVADERS",
+      "text": "Terminal Invaders"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT",
+      "text": "Score Simulator (default)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER",
+      "text": "Score Simulator (soccer)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL",
+      "text": "Score Simulator (basketball)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SIMON",
+      "text": "Simon Says (colors)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_STREETRUN",
+      "text": "Street Run"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU",
+      "text": "Tic-Tac-Toe (Player vs. CPU)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P",
+      "text": "Tic-Tac-Toe (Player vs. Player)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SCORESIM_FIRSTTEAM",
+      "text": "First Team"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SCORESIM_SECONDTEAM",
+      "text": "Second Team"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_GREEN",
+      "text": "Green"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_RED",
+      "text": "Red"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_BLUE",
+      "text": "Blue"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_YELLOW",
+      "text": "Yellow"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_PENDING",
+      "text": "Go ahead!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS",
+      "text": "Simon says: {0}"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_TICTACTOE_WHOSETURN",
+      "text": "Player {0} is currently playing."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_TICTACTOE_DRAW",
+      "text": "It's a draw."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_TICTACTOE_PLAYERWON",
+      "text": "Player {0} wins the game!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_DESC",
+      "text": "Shows a \"birthday card\" on the screen"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_BDAY",
+      "text": "Happy birthday!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SIMPLE_BDAYWISH",
+      "text": "Happy birthday, {0}!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_MALE_BDAYWISH",
+      "text": "Happy birthday to him!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FEMALE_BDAYWISH",
+      "text": "Happy birthday to her!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH",
+      "text": "Happy birthday to the most loyal one!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH",
+      "text": "Happy birthday to me!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH",
+      "text": "Happy birthday to you!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPER_BDAYWISH",
+      "text": "Happiest birthday, {0}!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_MALE_BDAYWISH",
+      "text": "Happiest birthday to him!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FEMALE_BDAYWISH",
+      "text": "Happiest birthday to her!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH",
+      "text": "Happiest birthday to the most loyal one!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH",
+      "text": "Happiest birthday to me!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH",
+      "text": "Happiest birthday to you!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPERALT_BDAYWISH",
+      "text": "Happiest one, {0}!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_MALE_BDAYWISH",
+      "text": "Happiest one to him!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FEMALE_BDAYWISH",
+      "text": "Happiest one to her!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH",
+      "text": "Happiest one to the most loyal one!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH",
+      "text": "Happiest one to me!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH",
+      "text": "Happiest one to you!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_WELCOME",
+      "text": "Welcome to the database! Fetching identities..."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_NAME",
+      "text": "Name"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_FIRSTNAME",
+      "text": "First Name"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_LASTNAME",
+      "text": "Last Name"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_AGE",
+      "text": "Age"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_AGE_YEARSOLD",
+      "text": "{0} years old"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_BIRTHDATE",
+      "text": "Birth date"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_NAME",
+      "text": "Birthday card settings"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_DESC",
+      "text": "Provides a set of variables that allow you to configure your birthday card"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_NAME",
+      "text": "Birthday card gender"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_DESC",
+      "text": "Specifies the gender of the person to wish happy birthday to"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME",
+      "text": "Birthday card name type"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC",
+      "text": "Randomly generated person name, your selected person name, or use pronouns"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME",
+      "text": "Birthday card text type"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC",
+      "text": "Specifies whether to use the normal version of the wish, or to use the superlative version"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_NAME",
+      "text": "Birthday person name"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC",
+      "text": "The name of the person to wish happy birthday to"
     }
   ]
 }

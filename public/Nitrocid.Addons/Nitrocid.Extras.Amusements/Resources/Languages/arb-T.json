@@ -619,6 +619,278 @@
     {
       "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
       "text": "كم عدد الأسماء التي يجب توليدها؟"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC",
+      "text": "اضغط على رقم من المربعات التسعة للحصول على عملات، مع قفل جميع المربعات وزيادة تلقائية"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_INVADERS_DESC",
+      "text": "يحاكي لعبة Space Invaders الأصلية"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_DESC",
+      "text": "يحاكي لوحة نتائج الألعاب الرياضية"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC",
+      "text": "يحاكي لوحة نتائج كرة القدم"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC",
+      "text": "يحاكي لوحة نتائج كرة السلة"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC",
+      "text": "اسم الفريق الأول"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC",
+      "text": "اسم الفريق الثاني"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SIMON_DESC",
+      "text": "لعبة سيمون يقول (سيمون يقول أحمر، أخضر، أصفر، وأزرق)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC",
+      "text": "سيارة تسير بسرعة على طريق سريع مع تفادي السيارات البطيئة"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC",
+      "text": "لعبة إكس أو (X للاعب 1، و O للاعب 2)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC",
+      "text": "العب ضد الكمبيوتر"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_CLICKER",
+      "text": "لعبة النقر على المربعات"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_INVADERS",
+      "text": "غزاة المحطة الطرفية"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT",
+      "text": "محاكي النتائج (افتراضي)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER",
+      "text": "محاكي النتائج (كرة القدم)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL",
+      "text": "محاكي النتائج (كرة السلة)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SIMON",
+      "text": "سيمون يقول (الألوان)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_STREETRUN",
+      "text": "سباق الشارع"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU",
+      "text": "إكس أو (لاعب ضد الكمبيوتر)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P",
+      "text": "إكس أو (لاعب ضد لاعب)"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SCORESIM_FIRSTTEAM",
+      "text": "الفريق الأول"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SCORESIM_SECONDTEAM",
+      "text": "الفريق الثاني"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_GREEN",
+      "text": "أخضر"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_RED",
+      "text": "أحمر"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_BLUE",
+      "text": "أزرق"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_YELLOW",
+      "text": "أصفر"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_PENDING",
+      "text": "انطلق!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS",
+      "text": "سيمون يقول: {0}"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_TICTACTOE_WHOSETURN",
+      "text": "اللاعب {0} يلعب حاليًا."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_TICTACTOE_DRAW",
+      "text": "إنها تعادل."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_TICTACTOE_PLAYERWON",
+      "text": "اللاعب {0} يفوز باللعبة!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_DESC",
+      "text": "يعرض \"بطاقة عيد ميلاد\" على الشاشة"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_BDAY",
+      "text": "عيد ميلاد سعيد!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SIMPLE_BDAYWISH",
+      "text": "عيد ميلاد سعيد يا {0}!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_MALE_BDAYWISH",
+      "text": "عيد ميلاد سعيد له!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FEMALE_BDAYWISH",
+      "text": "عيد ميلاد سعيد لها!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH",
+      "text": "عيد ميلاد سعيد للأكثر وفاءً!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH",
+      "text": "عيد ميلاد سعيد لي!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH",
+      "text": "عيد ميلاد سعيد لك!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPER_BDAYWISH",
+      "text": "أسعد عيد ميلاد يا {0}!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_MALE_BDAYWISH",
+      "text": "أسعد عيد ميلاد له!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FEMALE_BDAYWISH",
+      "text": "أسعد عيد ميلاد لها!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH",
+      "text": "أسعد عيد ميلاد للأكثر وفاءً!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH",
+      "text": "أسعد عيد ميلاد لي!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH",
+      "text": "أسعد عيد ميلاد لك!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPERALT_BDAYWISH",
+      "text": "أسعد واحد يا {0}!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_MALE_BDAYWISH",
+      "text": "أسعد واحد له!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FEMALE_BDAYWISH",
+      "text": "أسعد واحد لها!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH",
+      "text": "أسعد واحد للأكثر وفاءً!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH",
+      "text": "أسعد واحد لي!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH",
+      "text": "أسعد واحد لك!"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_WELCOME",
+      "text": "مرحبًا بك في قاعدة البيانات! جاري جلب الهويات..."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_NAME",
+      "text": "الاسم"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_FIRSTNAME",
+      "text": "الاسم الأول"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_LASTNAME",
+      "text": "اسم العائلة"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_AGE",
+      "text": "العمر"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_AGE_YEARSOLD",
+      "text": "{0} سنة"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_BIRTHDATE",
+      "text": "تاريخ الميلاد"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_NAME",
+      "text": "إعدادات بطاقة عيد الميلاد"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_DESC",
+      "text": "توفر مجموعة من المتغيرات التي تسمح لك بتكوين بطاقة عيد ميلادك"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_NAME",
+      "text": "جنس صاحب بطاقة عيد الميلاد"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_DESC",
+      "text": "يحدد جنس الشخص الذي سيتم تهنئته بعيد ميلاده"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME",
+      "text": "نوع اسم صاحب بطاقة عيد الميلاد"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC",
+      "text": "اسم شخص تم إنشاؤه عشوائيًا، أو اسم الشخص الذي اخترته، أو استخدام الضمائر"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME",
+      "text": "نوع نص بطاقة عيد الميلاد"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC",
+      "text": "يحدد ما إذا كان سيتم استخدام النسخة العادية من التهنئة، أو النسخة المبالغ فيها"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_NAME",
+      "text": "اسم صاحب عيد الميلاد"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC",
+      "text": "اسم الشخص الذي سيتم تهنئته بعيد ميلاده"
     }
   ]
 }

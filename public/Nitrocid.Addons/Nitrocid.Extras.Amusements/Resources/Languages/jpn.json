@@ -593,6 +593,278 @@
     {
       "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
       "text": "生成する名前の数はいくつですか?"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC",
+      "text": "9つのボックスから数字を押してコインを獲得します。すべてのボックスはロックされており、自動的に数字が増加します。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_INVADERS_DESC",
+      "text": "オリジナルのスペースインベーダーゲームをシミュレートします"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_DESC",
+      "text": "スポーツゲームのスコアボードをシミュレートします"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC",
+      "text": "サッカーのスコアボードをシミュレートします"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC",
+      "text": "バスケットボールのスコアボードをシミュレートします"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC",
+      "text": "最初のチーム名"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC",
+      "text": "2番目のチーム名"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_SIMON_DESC",
+      "text": "サイモンセッズゲーム（サイモンは赤、緑、黄、青と言います）"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC",
+      "text": "高速道路で低速車を避けながら高速で走る車"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC",
+      "text": "三目並べゲーム（プレイヤー1はX、プレイヤー2はO）"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC",
+      "text": "CPUと対戦"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_CLICKER",
+      "text": "ボックスクリッカー"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_INVADERS",
+      "text": "ターミナルインベーダー"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT",
+      "text": "スコアシミュレーター（デフォルト）"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER",
+      "text": "スコアシミュレーター（サッカー）"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL",
+      "text": "スコアシミュレーター（バスケットボール）"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_SIMON",
+      "text": "サイモンセッズ（色）"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_STREETRUN",
+      "text": "ストリートラン"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU",
+      "text": "三目並べ（プレイヤー対CPU）"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P",
+      "text": "三目並べ（プレイヤー対プレイヤー）"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SCORESIM_FIRSTTEAM",
+      "text": "ファーストチーム"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SCORESIM_SECONDTEAM",
+      "text": "セカンドチーム"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_GREEN",
+      "text": "緑"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_RED",
+      "text": "赤"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_BLUE",
+      "text": "青"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS_YELLOW",
+      "text": "黄"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_PENDING",
+      "text": "さあ、どうぞ！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SIMON_SIMONSAYS",
+      "text": "サイモンは言います：{0}"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_TICTACTOE_WHOSETURN",
+      "text": "プレイヤー{0}がプレイ中です。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_TICTACTOE_DRAW",
+      "text": "引き分けです。"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_TICTACTOE_PLAYERWON",
+      "text": "プレイヤー{0}の勝ちです！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_DESC",
+      "text": "画面に「バースデーカード」を表示します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_BDAY",
+      "text": "お誕生日おめでとうございます！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SIMPLE_BDAYWISH",
+      "text": "お誕生日おめでとう、{0}！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_MALE_BDAYWISH",
+      "text": "彼にお誕生日おめでとう！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FEMALE_BDAYWISH",
+      "text": "彼女にお誕生日おめでとう！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH",
+      "text": "最も忠実な人にお誕生日おめでとう！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH",
+      "text": "私にお誕生日おめでとう！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH",
+      "text": "あなたにお誕生日おめでとう！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPER_BDAYWISH",
+      "text": "最高に幸せな誕生日、{0}！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_MALE_BDAYWISH",
+      "text": "彼に最高に幸せな誕生日！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FEMALE_BDAYWISH",
+      "text": "彼女に最高に幸せな誕生日！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH",
+      "text": "最も忠実な人に最高に幸せな誕生日！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH",
+      "text": "私に最高に幸せな誕生日！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH",
+      "text": "あなたに最高に幸せな誕生日！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPERALT_BDAYWISH",
+      "text": "最高に幸せな人、{0}！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_MALE_BDAYWISH",
+      "text": "彼に最高に幸せな人！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FEMALE_BDAYWISH",
+      "text": "彼女に最高に幸せな人！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH",
+      "text": "最も忠実な人に最高に幸せな人！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH",
+      "text": "私に最高に幸せな人！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH",
+      "text": "あなたに最高に幸せな人！"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_WELCOME",
+      "text": "データベースへようこそ！ ID情報を取得中..."
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_NAME",
+      "text": "名前"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_FIRSTNAME",
+      "text": "名"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_LASTNAME",
+      "text": "姓"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_AGE",
+      "text": "年齢"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_AGE_YEARSOLD",
+      "text": "{0}歳"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_PERSONLOOKUP_BIRTHDATE",
+      "text": "生年月日"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_NAME",
+      "text": "誕生日カード設定"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_DESC",
+      "text": "誕生日カードの設定をカスタマイズできる一連の変数を提供します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_NAME",
+      "text": "誕生日カードの性別"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_DESC",
+      "text": "誕生日を祝う相手の性別を指定します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME",
+      "text": "誕生日カードの名前の種類"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC",
+      "text": "ランダムに生成された名前、選択した名前、または代名詞を使用します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME",
+      "text": "誕生日カードのメッセージの種類"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC",
+      "text": "通常のメッセージ、または最上級の表現を使ったメッセージのどちらを使用するかを指定します"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_NAME",
+      "text": "誕生日を祝う相手の名前"
+    },
+    {
+      "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC",
+      "text": "誕生日を祝う相手の名前"
     }
   ]
 }

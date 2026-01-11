@@ -558,5 +558,209 @@
   <data name="NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
     <value>Hvor mange navn skal genereres?</value>
   </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_CLICKER_DESC" xml:space="preserve">
+    <value>Trykk på et tall fra de ni boksene for å få mynter, med alle boksene låst og med automatisk økning</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_INVADERS_DESC" xml:space="preserve">
+    <value>Simulerer det originale Space Invaders-spillet</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_DESC" xml:space="preserve">
+    <value>Simulerer resultattavlen for sportsspill</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC" xml:space="preserve">
+    <value>Simulerer fotballresultattavlen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC" xml:space="preserve">
+    <value>Simulerer basketballresultattavlen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC" xml:space="preserve">
+    <value>Første lagnavn</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC" xml:space="preserve">
+    <value>Andre lagnavn</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SIMON_DESC" xml:space="preserve">
+    <value>Simon sier-spill (Simon sier rød, grønn, gul og blå)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC" xml:space="preserve">
+    <value>En bil som kjører fort på en motorvei mens den unngår trege biler</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC" xml:space="preserve">
+    <value>Tic Tac Toe-spill (X for spiller 1 og O for spiller 2)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC" xml:space="preserve">
+    <value>Spill med CPU</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_CLICKER" xml:space="preserve">
+    <value>Box Clicker</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_INVADERS" xml:space="preserve">
+    <value>Terminal Invaders</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT" xml:space="preserve">
+    <value>Poengsumsimulator (standard)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER" xml:space="preserve">
+    <value>Poengsumsimulator (fotball)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL" xml:space="preserve">
+    <value>Poengsumsimulator (basketball)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SIMON" xml:space="preserve">
+    <value>Simon sier (farger)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_STREETRUN" xml:space="preserve">
+    <value>Gateløp</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU" xml:space="preserve">
+    <value>Tic-Tac-Toe (spiller vs. CPU)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P" xml:space="preserve">
+    <value>Tic-Tac-Toe (spiller vs. spiller)</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SCORESIM_FIRSTTEAM" xml:space="preserve">
+    <value>Førstelag</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SCORESIM_SECONDTEAM" xml:space="preserve">
+    <value>Andrelag</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_GREEN" xml:space="preserve">
+    <value>Grønn</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_RED" xml:space="preserve">
+    <value>Rød</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_BLUE" xml:space="preserve">
+    <value>Blå</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_YELLOW" xml:space="preserve">
+    <value>Gul</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_PENDING" xml:space="preserve">
+    <value>Kjør på!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS" xml:space="preserve">
+    <value>Simon sier: {0}</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_TICTACTOE_WHOSETURN" xml:space="preserve">
+    <value>Spiller {0} spiller for øyeblikket.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_TICTACTOE_DRAW" xml:space="preserve">
+    <value>Det er uavgjort.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_TICTACTOE_PLAYERWON" xml:space="preserve">
+    <value>Spiller {0} vinner spillet!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_DESC" xml:space="preserve">
+    <value>Viser et &quot;bursdagskort&quot; på skjermen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_BDAY" xml:space="preserve">
+    <value>Gratulerer med dagen!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SIMPLE_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen, {0}!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_MALE_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til ham!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FEMALE_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til henne!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til den mest lojale!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til meg!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til deg!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPER_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen, {0}!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_MALE_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til ham!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FEMALE_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til henne!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til den mest lojale!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til meg!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til deg!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPERALT_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen, {0}!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_MALE_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til ham!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FEMALE_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til henne!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til den mest lojale!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til meg!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH" xml:space="preserve">
+    <value>Gratulerer med dagen til deg!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_WELCOME" xml:space="preserve">
+    <value>Velkommen til databasen! Henter identiteter...</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_NAME" xml:space="preserve">
+    <value>Navn</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_FIRSTNAME" xml:space="preserve">
+    <value>Fornavn</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_LASTNAME" xml:space="preserve">
+    <value>Etternavn</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_AGE" xml:space="preserve">
+    <value>Alder</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_AGE_YEARSOLD" xml:space="preserve">
+    <value>{0} år gammel</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_BIRTHDATE" xml:space="preserve">
+    <value>Fødselsdato</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_NAME" xml:space="preserve">
+    <value>Innstillinger for bursdagskort</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_DESC" xml:space="preserve">
+    <value>Gir et sett med variabler som lar deg konfigurere bursdagskortet ditt</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_NAME" xml:space="preserve">
+    <value>Kjønn på bursdagskort</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_DESC" xml:space="preserve">
+    <value>Angir kjønnet til personen du skal ønske gratulerer med dagen til</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME" xml:space="preserve">
+    <value>Navnetype på bursdagskort</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC" xml:space="preserve">
+    <value>Tilfeldig generert personnavn, ditt valgte personnavn eller bruk pronomen</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME" xml:space="preserve">
+    <value>Teksttype på bursdagskort</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC" xml:space="preserve">
+    <value>Angir om den vanlige versjonen av ønsket skal brukes, eller superlativversjonen skal brukes</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_NAME" xml:space="preserve">
+    <value>Navn på bursdagsperson</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC" xml:space="preserve">
+    <value>Navnet på personen du skal ønske gratulerer med dagen til</value>
+  </data>
 
 </root>

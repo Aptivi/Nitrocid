@@ -558,5 +558,209 @@
   <data name="NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
     <value>Πόσα ονόματα να δημιουργήσετε;</value>
   </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_CLICKER_DESC" xml:space="preserve">
+    <value>Πατήστε έναν αριθμό από τα εννέα κουτιά για να πάρετε κέρματα, με όλα τα κουτιά κλειδωμένα και με αυτόματη αύξηση.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_INVADERS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει το αρχικό παιχνίδι Space Invaders.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_DESC" xml:space="preserve">
+    <value>Προσομοιώνει τον πίνακα αποτελεσμάτων για αθλητικά παιχνίδια.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SOCCER_DESC" xml:space="preserve">
+    <value>Προσομοιώνει τον πίνακα αποτελεσμάτων ποδοσφαίρου.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_BASKETBALL_DESC" xml:space="preserve">
+    <value>Προσομοιώνει τον πίνακα αποτελεσμάτων μπάσκετ.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_FIRSTTEAMNAME_DESC" xml:space="preserve">
+    <value>Όνομα πρώτης ομάδας.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SCORESIM_SWITCH_SECONDTEAMNAME_DESC" xml:space="preserve">
+    <value>Όνομα δεύτερης ομάδας.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_SIMON_DESC" xml:space="preserve">
+    <value>Παιχνίδι Simon Says (Ο Simon λέει Κόκκινο, Πράσινο, Κίτρινο και Μπλε).</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_STREETRUN_DESC" xml:space="preserve">
+    <value>Ένα αυτοκίνητο που πηγαίνει γρήγορα σε έναν αυτοκινητόδρομο αποφεύγοντας αργά αυτοκίνητα.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_TICTACTOE_DESC" xml:space="preserve">
+    <value>Παιχνίδι Tic Tac Toe (X για τον Παίκτη 1 και O για τον Παίκτη 2).</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_COMMAND_TICTACTOE_SWITCH_COMPUTER_DESC" xml:space="preserve">
+    <value>Παιχνίδι με CPU.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_CLICKER" xml:space="preserve">
+    <value>Κλικ κουτιού.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_INVADERS" xml:space="preserve">
+    <value>Terminal Invaders.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_DEFAULT" xml:space="preserve">
+    <value>Προσομοιωτής βαθμολογίας (προεπιλογή).</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_SOCCER" xml:space="preserve">
+    <value>Προσομοιωτής βαθμολογίας (ποδόσφαιρο).</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SCORESIM_BASKETBALL" xml:space="preserve">
+    <value>Προσομοιωτής βαθμολογίας (μπάσκετ).</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_SIMON" xml:space="preserve">
+    <value>Ο Simon Says (χρώματα).</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_STREETRUN" xml:space="preserve">
+    <value>Τρέξιμο στο δρόμο.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_CPU" xml:space="preserve">
+    <value>Tic-Tac-Toe (Παίκτης εναντίον CPU).</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_HOMEPAGE_TICTACTOE_2P" xml:space="preserve">
+    <value>Tic-Tac-Toe (Παίκτης εναντίον Παίκτη).</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SCORESIM_FIRSTTEAM" xml:space="preserve">
+    <value>Πρώτη ομάδα.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SCORESIM_SECONDTEAM" xml:space="preserve">
+    <value>Δεύτερη ομάδα.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_GREEN" xml:space="preserve">
+    <value>Πράσινο.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_RED" xml:space="preserve">
+    <value>Κόκκινο.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_BLUE" xml:space="preserve">
+    <value>Μπλε.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS_YELLOW" xml:space="preserve">
+    <value>Κίτρινο.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_PENDING" xml:space="preserve">
+    <value>Προχωρήστε!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SIMON_SIMONSAYS" xml:space="preserve">
+    <value>Ο Simon λέει: {0}</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_TICTACTOE_WHOSETURN" xml:space="preserve">
+    <value>Ο παίκτης {0} παίζει αυτήν τη στιγμή.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_TICTACTOE_DRAW" xml:space="preserve">
+    <value>Ισχύει ισοπαλία.</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_TICTACTOE_PLAYERWON" xml:space="preserve">
+    <value>Ο παίκτης {0} κερδίζει το παιχνίδι!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_DESC" xml:space="preserve">
+    <value>Δείχνει μια &quot;κάρτα γενεθλίων&quot; στην οθόνη</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_BDAY" xml:space="preserve">
+    <value>Χρόνια πολλά!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SIMPLE_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά, {0}!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_MALE_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά σε αυτόν!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FEMALE_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά σε αυτήν!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_UNSPECIFIC_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά στον πιο πιστό!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_FIRSTPERSON_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά σε μένα!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SIMPLE_SECONDPERSON_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά σε σένα!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPER_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά, {0}!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_MALE_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά σε αυτόν!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FEMALE_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά σε αυτήν!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_UNSPECIFIC_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά στον πιο πιστό!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_FIRSTPERSON_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά σε μένα!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPER_SECONDPERSON_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά σε σένα!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_NAMED_SUPERALT_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά, {0}!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_MALE_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά σε αυτόν!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FEMALE_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά σε αυτήν!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_UNSPECIFIC_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά στον πιο πιστό!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_FIRSTPERSON_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά σε μένα!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_UNNAMED_SUPERALT_SECONDPERSON_BDAYWISH" xml:space="preserve">
+    <value>Χρόνια πολλά σε σένα!</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_WELCOME" xml:space="preserve">
+    <value>Καλώς ήρθατε στη βάση δεδομένων! Ανάκτηση ταυτοτήτων...</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_NAME" xml:space="preserve">
+    <value>Όνομα</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_FIRSTNAME" xml:space="preserve">
+    <value>Όνομα</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_LASTNAME" xml:space="preserve">
+    <value>Επώνυμο</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_AGE" xml:space="preserve">
+    <value>Ηλικία</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_AGE_YEARSOLD" xml:space="preserve">
+    <value>{0} ετών</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_PERSONLOOKUP_BIRTHDATE" xml:space="preserve">
+    <value>Ημερομηνία γέννησης</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_NAME" xml:space="preserve">
+    <value>Ρυθμίσεις κάρτας γενεθλίων</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDSETTINGS_DESC" xml:space="preserve">
+    <value>Παρέχει ένα σύνολο μεταβλητών που σας επιτρέπουν να διαμορφώσετε την κάρτα γενεθλίων σας</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_NAME" xml:space="preserve">
+    <value>Φύλο κάρτας γενεθλίων</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDGENDER_DESC" xml:space="preserve">
+    <value>Καθορίζει το φύλο του ατόμου στο οποίο θα ευχηθείτε χρόνια πολλά</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_NAME" xml:space="preserve">
+    <value>Τύπος ονόματος κάρτας γενεθλίων</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDNAMETYPE_DESC" xml:space="preserve">
+    <value>Τυχαία δημιουργημένο όνομα ατόμου, το όνομα του ατόμου που έχετε επιλέξει ή χρήση αντωνυμιών</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_NAME" xml:space="preserve">
+    <value>Τύπος κειμένου κάρτας γενεθλίων</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_CARDTEXTTYPE_DESC" xml:space="preserve">
+    <value>Καθορίζει εάν θα χρησιμοποιηθεί η κανονική έκδοση της ευχής ή η υπερθετική έκδοση</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_NAME" xml:space="preserve">
+    <value>Όνομα ατόμου γενεθλίων</value>
+  </data>
+  <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC" xml:space="preserve">
+    <value>Το όνομα του ατόμου στο οποίο θα ευχηθούν χρόνια πολλά</value>
+  </data>
 
 </root>

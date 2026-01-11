@@ -193,10 +193,6 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     Width = ConsoleWrapper.WindowWidth,
                     Height = 1,
                     OneLine = true,
-
-                    // TODO: NKS_AMUSEMENTS_TICTACTOE_WHOSETURN -> Player {0} is currently playing.
-                    // TODO: NKS_AMUSEMENTS_TICTACTOE_DRAW -> It's a draw.
-                    // TODO: NKS_AMUSEMENTS_TICTACTOE_PLAYERWON -> Player {0} wins the game!
                     Text = "\x1b[1K" +
                         (winner == 0 ? LanguageTools.GetLocalized("NKS_AMUSEMENTS_TICTACTOE_DRAW") :
                          winner > 0 ? LanguageTools.GetLocalized("NKS_AMUSEMENTS_TICTACTOE_PLAYERWON").FormatString(winner) :

@@ -50,7 +50,6 @@ namespace Nitrocid.Extras.Amusements.Screensavers
             base.ScreensaverPreparation();
 
             // Populate the names
-            // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_WELCOME -> "Welcome to the database! Fetching identities..."
             var welcomeInfoBox = new InfoBox()
             {
                 Text = LanguageTools.GetLocalized("NKS_AMUSEMENTS_PERSONLOOKUP_WELCOME"),
@@ -101,12 +100,6 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                 string LastName = GeneratedName[(GeneratedName.IndexOf(" ") + 1)..];
 
                 // Print all information
-                // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_NAME -> "Name"
-                // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_FIRSTNAME -> "First Name"
-                // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_LASTNAME -> "Last Name"
-                // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_AGE -> "Age"
-                // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_AGE_YEARSOLD -> "{0} years old"
-                // TODO: NKS_AMUSEMENTS_PERSONLOOKUP_BIRTHDATE -> "Birth date"
                 ThemeColorsTools.LoadBackground();
                 string header = ListEntryWriterColor.RenderListEntry(LanguageTools.GetLocalized("NKS_AMUSEMENTS_PERSONLOOKUP_NAME"), GeneratedName);
                 var infoBox = new InfoBox()
