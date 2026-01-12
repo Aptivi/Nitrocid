@@ -29,6 +29,13 @@
   <Folder Name="/Private/Testing/">
     <Project Path="private/Nitrocid.Analyzers.Test/Nitrocid.Analyzers.Test.csproj" />
     <Project Path="private/Nitrocid.Tests/Nitrocid.Tests.csproj">
+      <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Diagnostics/Nitrocid.Extras.Diagnostics.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Images.Icons/Nitrocid.Extras.Images.Icons.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Images/Nitrocid.Extras.Images.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Mods/Nitrocid.Extras.Mods.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.LanguagePacks/Nitrocid.LanguagePacks.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.ScreensaverPacks/Nitrocid.ScreensaverPacks.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.SplashPacks/Nitrocid.SplashPacks.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Amusements/Nitrocid.Extras.Amusements.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.ArchiveShell/Nitrocid.Extras.ArchiveShell.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.BassBoom/Nitrocid.Extras.BassBoom.csproj" />
