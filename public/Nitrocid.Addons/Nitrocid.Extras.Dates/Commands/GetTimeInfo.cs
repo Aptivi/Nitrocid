@@ -22,7 +22,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time;
-using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
+using Calendrier;
 using Nitrocid.Base.Kernel.Time.Converters;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;

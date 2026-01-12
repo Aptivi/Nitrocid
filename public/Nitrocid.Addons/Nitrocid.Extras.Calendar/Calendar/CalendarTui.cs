@@ -24,7 +24,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Base.Kernel.Debugging;
-using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
+using Calendrier;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;

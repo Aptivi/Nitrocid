@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Terminaux.Images.Icons" Version="8.1.0-20260110132504" />
-    <PackageReference Include="Terminaux.Images" Version="8.1.0-20260110132504" />
-    <PackageReference Include="Terminaux" Version="8.1.0-20260110132504" />
+    <PackageReference Include="Terminaux.Images.Icons" Version="8.1.0-20260112075558" />
+    <PackageReference Include="Terminaux.Images" Version="8.1.0-20260112075558" />
+    <PackageReference Include="Terminaux" Version="8.1.0-20260112075558" />
   </ItemGroup>
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
