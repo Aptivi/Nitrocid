@@ -19,7 +19,7 @@
 
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
+using Calendrier;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;

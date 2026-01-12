@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
+using Calendrier;
 using Nitrocid.Base.Kernel.Time.Timezones;
 using System;
 using System.Globalization;

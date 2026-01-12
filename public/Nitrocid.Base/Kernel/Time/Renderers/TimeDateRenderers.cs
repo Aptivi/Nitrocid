@@ -20,7 +20,7 @@
 using System;
 using System.Globalization;
 using Nitrocid.Base.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters.Graphical.Calendaring;
+using Calendrier;
 using Nitrocid.Base.Languages;
 
 namespace Nitrocid.Base.Kernel.Time.Renderers
