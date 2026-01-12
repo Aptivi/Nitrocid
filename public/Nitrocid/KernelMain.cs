@@ -68,30 +68,23 @@ namespace Nitrocid
                 // Show development notice
                 if (!PowerManager.KernelShutdown)
                 {
-                    string devMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVMESSAGE");
-                    string alphaMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ALPHAMESSAGE");
-                    string betaMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BETAMESSAGE");
-                    string rcMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_RCMESSAGE");
-                    string unsupportedMessage = LanguageTools.GetLocalized("NKS_KERNEL_STARTING_UNSUPPORTED");
-                    string anyKey = LanguageTools.GetLocalized("NKS_COMMON_ANYKEY");
-
                     // Show the message
 #if !SPECIFIERREL
                     string message =
 #if SPECIFIERDEV
-                        devMessage
+                        LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVMESSAGE")
 #elif SPECIFIERRC
-                        rcMessage
+                        LanguageTools.GetLocalized("NKS_KERNEL_STARTING_RCMESSAGE")
 #elif SPECIFIERALPHA
-                        alphaMessage
+                        LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ALPHAMESSAGE")
 #elif SPECIFIERBETA
-                        betaMessage
+                        LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BETAMESSAGE")
 #else
-                        unsupportedMessage
+                        LanguageTools.GetLocalized("NKS_KERNEL_STARTING_UNSUPPORTED")
 #endif
                     ;
                     TextWriterColor.Write(message, true, ThemeColorType.Warning);
-                    TextWriterColor.Write(anyKey, true, ThemeColorType.Warning);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COMMON_ANYKEY"), true, ThemeColorType.Warning);
                     InputTools.DetectKeypress();
 #endif
                 }
