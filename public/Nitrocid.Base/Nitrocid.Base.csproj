@@ -47,8 +47,8 @@
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="8.1.0-20260112125448" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Terminaux.Images" Version="8.1.0-20260112125448" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux" Version="8.1.0-20260113130243" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux.Images" Version="8.1.0-20260113130243" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
     <PackageReference Include="Textify.Offline" Version="2.13.5" PrivateAssets="contentfiles;analyzers;build;runtime">
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
@@ -58,11 +58,17 @@
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
-  <!-- KS Manifest -->
+  <!-- KS Settings -->
   <ItemGroup>
     <EmbeddedResource Include="Resources\Settings\*.json" />
   </ItemGroup>
-  <!-- KS Manifest End -->
+  <!-- KS Settings End -->
+
+  <!-- KS Themes -->
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Themes\*.json" />
+  </ItemGroup>
+  <!-- KS Themes End -->
 
   <!-- KS Audio Themes -->
   <ItemGroup>

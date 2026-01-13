@@ -7146,5 +7146,14 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC" xml:space="preserve">
     <value>modalain ko ek lain mein print karen</value>
   </data>
+  <data name="NKS_THEMES_DEFAULT_DESC" xml:space="preserve">
+    <value>karnel ke lie difolt theem</value>
+  </data>
+  <data name="NKS_THEMES_DYNAMIC_DESC" xml:space="preserve">
+    <value>har jagah uchchaaran!</value>
+  </data>
+  <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
+    <value>rangaheen, dhunaadhaar aur atyadhik sankshaarak taral</value>
+  </data>
 
 </root>

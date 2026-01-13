@@ -9377,6 +9377,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "In dòng modeline thành một dòng duy nhất."
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "Chủ đề mặc định cho hạt nhân"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "Giọng điệu ở khắp mọi nơi!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Chất lỏng không màu, bốc khói và có tính ăn mòn cao"
     }
   ]
 }

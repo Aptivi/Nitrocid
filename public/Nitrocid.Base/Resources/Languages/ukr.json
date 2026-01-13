@@ -9377,6 +9377,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "Вивести модельну лінію одним рядком"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "Стандартна тема для ядра"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "Скрізь акценти!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Безбарвна, димляча та сильно корозійна рідина"
     }
   ]
 }

@@ -9377,6 +9377,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "modalain ko ek lain mein print karen"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "karnel ke lie difolt theem"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "har jagah uchchaaran!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "rangaheen, dhunaadhaar aur atyadhik sankshaarak taral"
     }
   ]
 }

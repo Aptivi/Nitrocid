@@ -7146,5 +7146,14 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC" xml:space="preserve">
     <value>Afișează linia modelului pe o singură linie</value>
   </data>
+  <data name="NKS_THEMES_DEFAULT_DESC" xml:space="preserve">
+    <value>Tema implicită pentru nucleu</value>
+  </data>
+  <data name="NKS_THEMES_DYNAMIC_DESC" xml:space="preserve">
+    <value>Accente peste tot!</value>
+  </data>
+  <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
+    <value>Lichid incolor, fumos și foarte coroziv</value>
+  </data>
 
 </root>

@@ -9378,6 +9378,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "Priontáil an mhúnla mar líne amháin"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "An téama réamhshocraithe don eithne"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "Accents i ngach áit!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Leacht gan dath, fuming, agus an-chreimneach"
     }
   ]
 }

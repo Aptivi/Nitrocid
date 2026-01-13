@@ -7146,5 +7146,14 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC" xml:space="preserve">
     <value>मोडलाइन को एक लाइन में प्रिंट करें</value>
   </data>
+  <data name="NKS_THEMES_DEFAULT_DESC" xml:space="preserve">
+    <value>कर्नेल के लिए डिफ़ॉल्ट थीम</value>
+  </data>
+  <data name="NKS_THEMES_DYNAMIC_DESC" xml:space="preserve">
+    <value>हर जगह उच्चारण!</value>
+  </data>
+  <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
+    <value>रंगहीन, धुआँदार और अत्यधिक संक्षारक तरल</value>
+  </data>
 
 </root>

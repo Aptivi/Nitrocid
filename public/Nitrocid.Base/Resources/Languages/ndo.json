@@ -9377,6 +9377,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "Cetak modeline sebagai satu garis."
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "Tema bawaan untuk kernel"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "Aksen di mana-mana!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Cairan tidak berwarna, berasap, dan sangat korosif"
     }
   ]
 }

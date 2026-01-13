@@ -9483,6 +9483,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "Print the modeline as one line"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "The default theme for the kernel"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "Accents everywhere!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Colorless, fuming, and highly corrosive liquid"
     }
   ]
 }

@@ -9377,6 +9377,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "モードラインを1行で印刷する"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "カーネルのデフォルトテーマ"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "どこにでもアクセントがあります！"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "無色で発煙性があり、非常に腐食性の高い液体"
     }
   ]
 }

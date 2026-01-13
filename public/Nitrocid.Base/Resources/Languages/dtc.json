@@ -9383,6 +9383,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "Print de modellijn als één regel."
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "Het standaardthema voor de kernel"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "Overal accenten!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Kleurloze, dampende en zeer bijtende vloeistof"
     }
   ]
 }
