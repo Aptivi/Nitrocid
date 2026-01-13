@@ -35,7 +35,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class BlockClockDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC -> Shows three blocks: one for hours, one for minutes, and one for seconds
         private Color blockColorHours = Color.Empty;
         private Color blockColorMinutes = Color.Empty;
         private Color blockColorSeconds = Color.Empty;

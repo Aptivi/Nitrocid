@@ -9264,6 +9264,114 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
       "text": "Expected value doesn't match actual value."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME",
+      "text": "Ignore certificate errors"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC",
+      "text": "If enabled, will ignore certificate errors when making a connection. Otherwise, verifies the server certificate. This should, normally, be not enabled unless you're sure that you're trusting the server."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP",
+      "text": "Key tip"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP_DESC",
+      "text": "Returns IPv4 public address"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC",
+      "text": "Quiet processing"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP6_DESC",
+      "text": "Returns IPv6 public address"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC",
+      "text": "Groups chunks to a single file"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC",
+      "text": "Split file name to group to file"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC",
+      "text": "Directory to store grouped file"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC",
+      "text": "Generates an XFree86 3.3.6 compatible modeline from display parameters for CRT monitors"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC",
+      "text": "How many pixels are there, horizontally (for example, 1280)?"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC",
+      "text": "How many pixels are there, vertically (for example, 960)?"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC",
+      "text": "Vertical refresh frequency in hertz (for example, 75 Hz)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC",
+      "text": "Vertical syncing in microseconds (for example, 0 microseconds)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC",
+      "text": "Vertical blanking in microseconds (for example, 500 microseconds)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC",
+      "text": "Horizontal syncing in microseconds (for example, 1 microseconds)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC",
+      "text": "Horizontal blanking in microseconds (for example, 3 microseconds)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC",
+      "text": "Vertical front porch ratio (for example, 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC",
+      "text": "Vertical sync ratio (for example, 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC",
+      "text": "Vertical back porch ratio (for example, 10)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC",
+      "text": "Horizontal front porch ratio (for example, 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC",
+      "text": "Horizontal sync ratio (for example, 4)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC",
+      "text": "Horizontal back porch ratio (for example, 7)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_DESC",
+      "text": "Splits a file to a group of chunks"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC",
+      "text": "File to split to chunks"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC",
+      "text": "Directory to store chunks"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC",
+      "text": "Chunk size in bytes"
     }
   ]
 }

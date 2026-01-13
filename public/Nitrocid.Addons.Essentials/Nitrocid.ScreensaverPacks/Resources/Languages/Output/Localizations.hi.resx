@@ -1467,5 +1467,110 @@
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
     <value>नया मेज़ बनाने से पहले कितने मिलीसेकंड इंतज़ार करना चाहिए?</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC" xml:space="preserve">
+    <value>रंगीन बैकग्राउंड को बीच से शुरू करके सर्कल में काला होने का दिखावा करता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>तीन ब्लॉक दिखाता है: एक घंटों के लिए, एक मिनटों के लिए, और एक सेकंड के लिए</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC" xml:space="preserve">
+    <value>धीरे-धीरे रंग बदलने और बदलने का दिखावा करता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC" xml:space="preserve">
+    <value>स्क्रीन में कहीं एक जगह बनाता है और उसे पूरे कंसोल (सर्कल रेडियस) में फैला देता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC" xml:space="preserve">
+    <value>बूंदों को भाप बनते हुए दिखाता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC" xml:space="preserve">
+    <value>फिगलेट के साथ इंग्लिश अक्षरों को साइकिल करता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC" xml:space="preserve">
+    <value>कंसोल को भरने वाली लाइनों का एक ग्रुप दिखाता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC" xml:space="preserve">
+    <value>कंसोल को भरते हुए नीचे से ऊपर की ओर आने वाली दो लाइनें दिखाता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC" xml:space="preserve">
+    <value>एक पुराने स्टाइल की टर्मिनल स्क्रीन दिखाता है जिसमें सभी सब्जेक्ट के लिए स्टूडेंट के नाम और ग्रेड होते हैं, जो एक पुरानी यूनिवर्सिटी ग्रेड बुक जैसा होता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC" xml:space="preserve">
+    <value>टेलीविज़न के शोर (या तो ग्रेस्केल शोर या रंगीन शोर) का दिखावा करता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC" xml:space="preserve">
+    <value>एक सर्कल आर्क दिखाता है जो कंसोल के बीच में खुद को भर लेता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC" xml:space="preserve">
+    <value>एक बढ़ता हुआ सर्कल दिखाता है जो पूरी स्क्रीन को भर देता है, इससे पहले कि उसके ऊपर एक और सर्कल बन जाए</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC" xml:space="preserve">
+    <value>कंसोल के ऊपर से पानी की बूंदें टपकती हुई दिखाता है, जैसे बाहर बारिश का मौसम हो</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC" xml:space="preserve">
+    <value>बीच से एक लाइव रिपल इफ़ेक्ट दिखाता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>एक बैकग्राउंड कलर दिखाता है जो ब्लॉक के पीछे दिखाया जाता है (जैसे अंधेरे कमरे में किसी चीज़ पर टॉर्च की रोशनी डालने पर)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>बैकग्राउंड में प्रिंटेड टेक्स्ट दिखाता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC" xml:space="preserve">
+    <value>कंसोल के दाईं ओर से बाईं ओर एक वेव डायग्राम दिखाता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP" xml:space="preserve">
+    <value>यह स्क्रीनसेवर फ़ाइल पर लिखे टेक्स्ट को सपोर्ट करता है। इस फ़ील्ड में पूरा फ़ाइल पाथ पास करें, और स्क्रीनसेवर फ़ाइल का कंटेंट सही तरीके से दिखाएगा।</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME" xml:space="preserve">
+    <value>वर्टिकल लाइन कैरेक्टर</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC" xml:space="preserve">
+    <value>एक वर्टिकल लाइन बनाने के लिए एक कैरेक्टर। पक्का करें कि सिर्फ़ एक कैरेक्टर ही डालें।</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME" xml:space="preserve">
+    <value>लाइन डेंसिटी</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC" xml:space="preserve">
+    <value>लाइन कितनी बार बनानी हैं?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME" xml:space="preserve">
+    <value>वर्टिकल लाइन डेंसिटी</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC" xml:space="preserve">
+    <value>वर्टिकल लाइन कितनी बार बनानी हैं?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME" xml:space="preserve">
+    <value>रिवर्स डायरेक्शन डेंसिटी</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC" xml:space="preserve">
+    <value>लाइन को अपनी दिशा कितनी बार उलटनी है (बाएं से दाएं के बजाय दाएं से बाएं, या ऊपर से नीचे के बजाय नीचे से ऊपर)?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME" xml:space="preserve">
+    <value>लाइन डिले</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC" xml:space="preserve">
+    <value>नई लाइन जोड़ने से पहले कितने मिलीसेकंड इंतज़ार करना है?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>कलर नॉइज़</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>कलर टेलीविज़न या मोनोक्रोम टेलीविज़न में नॉइज़ की नकल करनी है या नहीं</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME" xml:space="preserve">
+    <value>मिनिमम ग्रेड</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC" xml:space="preserve">
+    <value>स्टूडेंट के लिए सब्जेक्ट के लिए मिनिमम एग्जाम ग्रेड</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME" xml:space="preserve">
+    <value>मैक्सिमम ग्रेड</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC" xml:space="preserve">
+    <value>स्टूडेंट के लिए सब्जेक्ट के लिए मैक्सिमम एग्जाम ग्रेड</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
+    <value>सिस्टम में हैकिंग करने वाले व्यक्ति की नकल करता है</value>
+  </data>
 
 </root>

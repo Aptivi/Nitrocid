@@ -36,7 +36,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class RippleDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC -> "Shows a live ripple effect from the middle"
         private static int currentOuterRadius = 0;
         private static int currentInnerRadius = 0;
         private static int currentOuterRadius2 = -6;

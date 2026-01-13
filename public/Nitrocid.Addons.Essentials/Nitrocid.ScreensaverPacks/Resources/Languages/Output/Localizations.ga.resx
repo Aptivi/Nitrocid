@@ -1467,5 +1467,110 @@
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
     <value>Cé mhéad milleasoicind le fanacht sula ngintear labirint nua?</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC" xml:space="preserve">
+    <value>Insamhladh an cúlra daite ag céimniú amach go dubh i gciorcal ag tosú ón lár</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Taispeánann trí bhloc: ceann le haghaidh uaireanta, ceann le haghaidh nóiméad, agus ceann le haghaidh soicindí</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC" xml:space="preserve">
+    <value>Insamhladh lúbadh agus aistriú mall datha</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC" xml:space="preserve">
+    <value>Déanann spota áit éigin sa scáileán agus scaipeann sé é chuig an gconsól ar fad (ga an chiorcail)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC" xml:space="preserve">
+    <value>Insamhladh braoiníní ag galú</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC" xml:space="preserve">
+    <value>Timthriallaíonn litreacha Béarla le Figlet</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC" xml:space="preserve">
+    <value>Taispeánann grúpa línte a líonann an consól</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC" xml:space="preserve">
+    <value>Taispeánann dhá líne a thagann ón mbun go dtí an barr agus an consól á líonadh</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC" xml:space="preserve">
+    <value>Taispeánann scáileán críochfoirt seanstíl ina bhfuil ainmneacha mac léinn agus gráid do gach ábhar, cosúil le seanleabhar grád ollscoile</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC" xml:space="preserve">
+    <value>Insamhladh torann teilifíse (torann liathscála nó torann daite)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC" xml:space="preserve">
+    <value>Taispeánann stua ciorcail a líonann é féin i lár an chonsóil</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC" xml:space="preserve">
+    <value>Taispeánann ciorcal atá ag fás a líonann an scáileán ar fad sula bhfásann ciorcal eile thar a bharr</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC" xml:space="preserve">
+    <value>Taispeánann braoiníní uisce ag sileadh ó bharr an chonsóil, amhail is dá mbeadh an aimsir báistí amuigh</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC" xml:space="preserve">
+    <value>Taispeánann éifeacht tonnta beo ón lár</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>Nochtann dath cúlra a thaispeántar taobh thiar den bhloc (mar atá an tóirse á dhíriú ar mhír éigin i ndorchadas) (seomra)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>Nochtann sé an téacs atá priontáilte sa chúlra</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC" xml:space="preserve">
+    <value>Taispeánann sé léaráid tonnta ó dheis go clé an chonsóil</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP" xml:space="preserve">
+    <value>Tacaíonn an spárálaíscáileáin seo le téacs scríofa ar chomhad. Cuir an cosán comhaid iomlán chuig an réimse seo, agus taispeánfaidh an spárálaíscáileáin ábhar an chomhaid i gceart.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME" xml:space="preserve">
+    <value>Carachtar líne ingearach</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC" xml:space="preserve">
+    <value>Carachtar chun líne ingearach a chruthú. Bí cinnte nach gcuirfidh tú ach carachtar amháin isteach.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME" xml:space="preserve">
+    <value>Dlús líne</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC" xml:space="preserve">
+    <value>Cé chomh minic is ceart línte a ghiniúint?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME" xml:space="preserve">
+    <value>Dlús líne ingearach</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC" xml:space="preserve">
+    <value>Cé chomh minic is ceart línte ingearacha a ghiniúint?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME" xml:space="preserve">
+    <value>Dlús treo droim ar ais</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC" xml:space="preserve">
+    <value>Cé chomh minic is ceart an líne a droim ar ais (deas go clé in ionad clé go deas, nó bun go barr in ionad barr go bun)?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME" xml:space="preserve">
+    <value>Moill líne</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC" xml:space="preserve">
+    <value>Cé mhéad milleasoicind le fanacht sula gcuirtear líne nua leis?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>Torann Dath</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>An bhfuil torann le hinsamhladh i dteilifíseáin datha nó i dteilifíseáin mhonacrómacha</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME" xml:space="preserve">
+    <value>Grád íosta</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC" xml:space="preserve">
+    <value>Grád scrúdaithe íosta d&apos;ábhair do mhac léinn</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME" xml:space="preserve">
+    <value>Grád uasta</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC" xml:space="preserve">
+    <value>Grád scrúdaithe uasta d&apos;ábhair do mhac léinn</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
+    <value>Insamhladh duine ag hackáil isteach i gcórais</value>
+  </data>
 
 </root>

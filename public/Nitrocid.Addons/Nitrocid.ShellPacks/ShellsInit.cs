@@ -166,19 +166,16 @@ namespace Nitrocid.ShellPacks
                         }),
                     ])
                 ], new PopMailCommandExec()),
-            // TODO: NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC -> Gets ISP information
             new CommandInfo("ispinfo", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC",
                 [
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "emailAddressOrHost", new CommandArgumentPartOptions()
                         {
-                            // TODO: NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC -> E-mail address or host name
                             ArgumentDescription = /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC"
                         }),
                     ],
                     [
-                        // TODO: NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC -> Use host name instead of address
                         new SwitchInfo("host", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC"),
                     ])
                 ], new IspInfoCommand()),

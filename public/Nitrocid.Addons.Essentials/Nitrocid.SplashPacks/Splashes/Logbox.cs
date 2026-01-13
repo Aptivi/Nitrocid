@@ -37,7 +37,6 @@ namespace Nitrocid.SplashPacks.Splashes
 {
     class SplashLogbox : BaseSplash, ISplash
     {
-        // TODO: NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC -> Shows a box that gets filled with reports that this splash stores
         private List<string> progresses = [];
         private bool cleared = false;
         private SimpleProgress progress = new(0, 100);

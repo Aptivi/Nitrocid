@@ -37,7 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class EvaporateDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC -> Simulates droplets evaporating
         private readonly List<Tuple<int, int>> droplets = [];
         private readonly List<Tuple<int, int>> evaporations = [];
 

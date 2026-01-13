@@ -1805,6 +1805,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "Phải đợi bao nhiêu mili giây trước khi tạo ra một mê cung mới?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "Mô phỏng nền màu mờ dần thành màu đen theo hình tròn bắt đầu từ giữa"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "Hiển thị ba khối: một cho giờ, một cho phút và một cho giây"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "Mô phỏng sự biến đổi và uốn cong màu sắc chậm"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "Tạo một điểm nào đó trên màn hình và lan rộng nó ra toàn bộ bảng điều khiển (bán kính hình tròn)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "Mô phỏng các giọt nước bay hơi"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "Lặp lại các chữ cái tiếng Anh bằng Figlet"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "Hiển thị một nhóm các đường thẳng lấp đầy bảng điều khiển"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "Hiển thị hai đường thẳng từ dưới lên trên trong khi lấp đầy bảng điều khiển"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "Hiển thị màn hình thiết bị đầu cuối kiểu cũ có tên sinh viên và điểm số cho tất cả các môn học, tương tự như sổ điểm đại học cũ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "Mô phỏng nhiễu truyền hình (nhiễu thang độ xám hoặc nhiễu màu)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "Hiển thị một vòng cung tự lấp đầy ở giữa bảng điều khiển"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "Hiển thị một vòng tròn đang phát triển lấp đầy toàn bộ màn hình trước khi một vòng tròn khác phát triển chồng lên nó"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "Hiển thị các giọt nước nhỏ giọt từ trên cùng của bảng điều khiển, như thể trời đang mưa bên ngoài"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "Hiển thị hiệu ứng gợn sóng trực tiếp từ giữa"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "Tiết lộ màu nền được hiển thị phía sau khối (như khi chiếu đèn pin vào một vật nào đó trong bóng tối) (phòng)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "Hiển thị văn bản được in ở nền"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "Hiển thị biểu đồ sóng từ phải sang trái của bảng điều khiển"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "Trình bảo vệ màn hình này hỗ trợ văn bản được ghi trong tệp. Hãy nhập đường dẫn tệp đầy đủ vào trường này, và trình bảo vệ màn hình sẽ hiển thị nội dung của tệp một cách thích hợp."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "Ký tự đường thẳng đứng"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "Một ký tự để tạo thành một đường thẳng đứng. Hãy chắc chắn chỉ nhập một ký tự."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "Mật độ đường kẻ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "Tần suất tạo đường kẻ là bao nhiêu?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "Mật độ đường thẳng đứng"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "Tần suất tạo đường thẳng đứng là bao nhiêu?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "Mật độ đảo chiều"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "Tần suất đảo chiều đường kẻ (từ phải sang trái thay vì từ trái sang phải, hoặc từ dưới lên trên thay vì từ trên xuống dưới) là bao nhiêu?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "Độ trễ đường kẻ"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "Chờ bao nhiêu mili giây trước khi thêm một đường kẻ mới?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "Nhiễu màu"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "Có mô phỏng nhiễu trong tivi màu hay tivi đơn sắc không?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "Điểm tối thiểu"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "Điểm thi tối thiểu cho các môn học của một sinh viên"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "Điểm tối đa"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "Điểm thi tối đa cho các môn học của một sinh viên"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "Mô phỏng một người đang xâm nhập vào hệ thống"
     }
   ]
 }

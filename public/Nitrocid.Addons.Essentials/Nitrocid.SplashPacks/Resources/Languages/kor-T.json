@@ -98,6 +98,14 @@
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
       "text": "재시작 중"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
+      "text": "잠시 기다려 주세요."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
+      "text": "이 시작 화면에 저장된 보고서로 채워지는 상자를 보여줍니다."
     }
   ]
 }

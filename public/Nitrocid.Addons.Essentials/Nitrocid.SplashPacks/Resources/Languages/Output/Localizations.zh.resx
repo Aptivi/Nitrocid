@@ -186,5 +186,11 @@
   <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
     <value>重新启动</value>
   </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT" xml:space="preserve">
+    <value>請稍候</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC" xml:space="preserve">
+    <value>顯示一個方框，其中會填入有關此啟動畫面儲存的報告。</value>
+  </data>
 
 </root>

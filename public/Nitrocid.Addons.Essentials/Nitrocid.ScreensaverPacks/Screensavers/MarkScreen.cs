@@ -38,7 +38,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class MarkScreenDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC -> Shows an old-style terminal screen that features student names and grades for all subjects, similar to an old university grade book
         private int gradeEntries = 0;
         private readonly List<(string, double[])> students = [];
         private readonly (double, string)[] averages =

@@ -1806,6 +1806,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "Cé mhéad milleasoicind le fanacht sula ngintear labirint nua?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "Insamhladh an cúlra daite ag céimniú amach go dubh i gciorcal ag tosú ón lár"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "Taispeánann trí bhloc: ceann le haghaidh uaireanta, ceann le haghaidh nóiméad, agus ceann le haghaidh soicindí"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "Insamhladh lúbadh agus aistriú mall datha"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "Déanann spota áit éigin sa scáileán agus scaipeann sé é chuig an gconsól ar fad (ga an chiorcail)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "Insamhladh braoiníní ag galú"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "Timthriallaíonn litreacha Béarla le Figlet"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "Taispeánann grúpa línte a líonann an consól"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "Taispeánann dhá líne a thagann ón mbun go dtí an barr agus an consól á líonadh"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "Taispeánann scáileán críochfoirt seanstíl ina bhfuil ainmneacha mac léinn agus gráid do gach ábhar, cosúil le seanleabhar grád ollscoile"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "Insamhladh torann teilifíse (torann liathscála nó torann daite)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "Taispeánann stua ciorcail a líonann é féin i lár an chonsóil"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "Taispeánann ciorcal atá ag fás a líonann an scáileán ar fad sula bhfásann ciorcal eile thar a bharr"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "Taispeánann braoiníní uisce ag sileadh ó bharr an chonsóil, amhail is dá mbeadh an aimsir báistí amuigh"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "Taispeánann éifeacht tonnta beo ón lár"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "Nochtann dath cúlra a thaispeántar taobh thiar den bhloc (mar atá an tóirse á dhíriú ar mhír éigin i ndorchadas) (seomra)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "Nochtann sé an téacs atá priontáilte sa chúlra"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "Taispeánann sé léaráid tonnta ó dheis go clé an chonsóil"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "Tacaíonn an spárálaíscáileáin seo le téacs scríofa ar chomhad. Cuir an cosán comhaid iomlán chuig an réimse seo, agus taispeánfaidh an spárálaíscáileáin ábhar an chomhaid i gceart."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "Carachtar líne ingearach"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "Carachtar chun líne ingearach a chruthú. Bí cinnte nach gcuirfidh tú ach carachtar amháin isteach."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "Dlús líne"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "Cé chomh minic is ceart línte a ghiniúint?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "Dlús líne ingearach"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "Cé chomh minic is ceart línte ingearacha a ghiniúint?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "Dlús treo droim ar ais"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "Cé chomh minic is ceart an líne a droim ar ais (deas go clé in ionad clé go deas, nó bun go barr in ionad barr go bun)?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "Moill líne"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "Cé mhéad milleasoicind le fanacht sula gcuirtear líne nua leis?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "Torann Dath"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "An bhfuil torann le hinsamhladh i dteilifíseáin datha nó i dteilifíseáin mhonacrómacha"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "Grád íosta"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "Grád scrúdaithe íosta d'ábhair do mhac léinn"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "Grád uasta"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "Grád scrúdaithe uasta d'ábhair do mhac léinn"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "Insamhladh duine ag hackáil isteach i gcórais"
     }
   ]
 }

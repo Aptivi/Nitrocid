@@ -31,7 +31,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class NoisyDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC -> Simulates television noise (either grayscale noise or colored noise)
         /// <inheritdoc/>
         public override string ScreensaverName =>
             "Noisy";

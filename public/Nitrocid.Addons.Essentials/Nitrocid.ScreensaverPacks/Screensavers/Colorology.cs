@@ -31,7 +31,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class ColorologyDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC -> Simulates slow color bending and transitioning
         private Color? nextColor;
         private Color? currentColor;
         private int shadesHue = 0;

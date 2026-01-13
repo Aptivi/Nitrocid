@@ -123,6 +123,14 @@
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
       "text": "إعادة التشغيل"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
+      "text": "يرجى الانتظار"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
+      "text": "يظهر مربع يتم ملؤه بالتقارير التي يخزنها هذا النظام."
     }
   ]
 }

@@ -38,7 +38,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class SwivelRevealDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC -> Reveals a background color that is shown behind the block (as in pointing the flashlight at some item in a dark room)
         private Color targetColor = ConsoleColors.Lime;
         private List<int> currentPosVertical = [];
         private List<int> currentPosHorizontal = [];

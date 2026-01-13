@@ -37,7 +37,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class RainingDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC -> Shows water droplets dripping from the top of the console, as if the weather is rainy outside
         private readonly List<Tuple<int, int>> droplets = [];
 
         /// <inheritdoc/>

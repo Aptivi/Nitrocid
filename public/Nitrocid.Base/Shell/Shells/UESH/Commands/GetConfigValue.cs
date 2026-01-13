@@ -48,7 +48,6 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                 {
                     var key = ConfigTools.GetSettingsKey(config, varName);
                     var value = ConfigTools.GetValueFromEntry(key, config);
-                    // TODO: NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP -> Key tip
                     ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYNAME"), LanguageTools.GetLocalized(key.Name));
                     ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYDESC"), LanguageTools.GetLocalized(key.Description));
                     ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP"), LanguageTools.GetLocalized(key.Tip));

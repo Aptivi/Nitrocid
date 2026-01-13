@@ -186,5 +186,11 @@
   <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
     <value>Επανεκκίνηση</value>
   </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT" xml:space="preserve">
+    <value>Παρακαλώ περιμένετε</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC" xml:space="preserve">
+    <value>Εμφανίζει ένα πλαίσιο που γεμίζει με αναφορές που αποθηκεύει αυτό το splash</value>
+  </data>
 
 </root>

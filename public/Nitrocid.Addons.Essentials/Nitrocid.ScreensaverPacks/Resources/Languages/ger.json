@@ -1814,6 +1814,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "Wie viele Millisekunden soll gewartet werden, bevor ein neues Labyrinth generiert wird?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "Simuliert einen farbigen Hintergrund, der kreisförmig von der Mitte aus in Schwarz übergeht."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "Zeigt drei Blöcke an: einen für Stunden, einen für Minuten und einen für Sekunden."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "Simuliert langsame Farbverläufe und -übergänge."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "Erzeugt einen Punkt auf dem Bildschirm und breitet ihn über die gesamte Konsole aus (Kreisradius)."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "Simuliert verdunstende Wassertropfen."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "Zeichnet englische Buchstaben mit Figlet."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "Zeigt eine Gruppe von Linien, die die Konsole füllen."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "Zeigt zwei Linien, die von unten nach oben verlaufen und die Konsole füllen."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "Zeigt einen Bildschirm im alten Stil mit Studentennamen und Noten für alle Fächer, ähnlich einem alten Universitätsnotenbuch."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "Simuliert Fernsehrauschen (entweder Graustufenrauschen oder farbiges Rauschen)."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "Zeigt einen Kreisbogen, der sich in der Mitte der Konsole ausfüllt."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "Zeigt einen wachsenden Kreis, der den gesamten Bildschirm ausfüllt, bevor ein weiterer Kreis darüber wächst."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "Zeigt Wassertropfen, die von der Oberseite der Konsole tropfen, als ob es draußen regnen würde."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "Zeigt einen dynamischen Welleneffekt von der Mitte aus."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "Enthüllt eine Hintergrundfarbe, die hinter dem Block sichtbar ist. (Wie beim Anleuchten eines Gegenstands in einem dunklen Raum mit einer Taschenlampe)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "Zeigt den im Hintergrund gedruckten Text an."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "Zeigt ein Wellendiagramm von rechts nach links auf der Konsole an."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "Dieser Bildschirmschoner unterstützt geschriebenen Text aus einer Datei. Geben Sie den vollständigen Dateipfad in dieses Feld ein, und der Bildschirmschoner zeigt den Inhalt der Datei entsprechend an."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "Zeichen für vertikale Linie"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "Ein Zeichen zur Erzeugung einer vertikalen Linie. Geben Sie nur ein Zeichen ein."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "Liniendichte"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "Wie häufig sollen Linien erzeugt werden?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "Dichte vertikaler Linien"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "Wie häufig sollen vertikale Linien erzeugt werden?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "Dichte der Richtungsumkehr"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "Wie häufig soll die Linienrichtung umgekehrt werden (von rechts nach links statt von links nach rechts oder von unten nach oben statt von oben nach unten)?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "Zeilenverzögerung"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "Wie viele Millisekunden soll vor dem Hinzufügen einer neuen Zeile gewartet werden?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "Farbrauschen"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "Soll Rauschen in Farb- oder Schwarzweißfernsehern simuliert werden?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "Mindestnote"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "Mindestnote in einer Prüfung für einen Schüler/eine Schülerin."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "Höchstnote"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "Höchstnote in einer Prüfung für einen Schüler/eine Schülerin."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "Simuliert einen Hackerangriff auf Systeme."
     }
   ]
 }

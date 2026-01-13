@@ -35,7 +35,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class PiDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC -> "Shows a circle arc that fills itself in the middle of the console"
         private static int currentStartAngle = 360;
         private static int currentEndAngle = 0;
         private static bool reverting = true;

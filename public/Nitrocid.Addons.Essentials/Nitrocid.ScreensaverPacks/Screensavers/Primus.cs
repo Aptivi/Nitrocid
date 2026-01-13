@@ -34,7 +34,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class PrimusDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC -> "Shows a growing circle that fills the whole screen before another circle grows over it"
         private static int currentOuterRadius = 0;
         private static Color colorStorage = Color.Empty;
 
