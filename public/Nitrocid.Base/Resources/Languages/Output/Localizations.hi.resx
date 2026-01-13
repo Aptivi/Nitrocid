@@ -1404,15 +1404,6 @@
   <data name="NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_DESC" xml:space="preserve">
     <value>अपलोड प्रगति दिखाते हुए अधिसूचना दिखाता है।</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC" xml:space="preserve">
-    <value>यह देखने के लिए जांचता है कि केएस संसाधनों में अनुवाद योग्य स्ट्रिंग मौजूद है या नहीं</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND" xml:space="preserve">
-    <value>स्थानीयकरण संसाधनों में स्ट्रिंग मिली।</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND" xml:space="preserve">
-    <value>स्थानीयकरण संसाधनों में स्ट्रिंग नहीं मिली।</value>
-  </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_QUIET_DESC" xml:space="preserve">
     <value>कर्नेल को चुपचाप प्रारंभ करें</value>
   </data>
@@ -1502,9 +1493,6 @@
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT" xml:space="preserve">
     <value>आप वर्तमान कर्नेल सेटिंग्स को कहाँ से लोड करना चाहते हैं?</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC" xml:space="preserve">
-    <value>यह देखने के लिए जांचता है कि केएस संसाधनों में अनुवाद योग्य तार मौजूद हैं या नहीं</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC" xml:space="preserve">
     <value>आउटपुट फ़ाइल में दो या अधिक टेक्स्ट फ़ाइलों को जोड़ता है।</value>
@@ -1625,9 +1613,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC" xml:space="preserve">
     <value>स्प्लैश सेटिंग खोलता है</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC" xml:space="preserve">
-    <value>उपलब्ध UESH चरों की सूचियाँ</value>
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC" xml:space="preserve">
     <value>डिबग मोड सक्षम करता है</value>
@@ -3099,12 +3084,6 @@
   <data name="NKS_USERS_LOGIN_NOROOTACCOUNT" xml:space="preserve">
     <value>किसी दुर्भावनापूर्ण मॉड ने रूट खाता हटा दिया, या दुर्लभ स्थिति उत्पन्न हुई और वह चला गया।</value>
   </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM" xml:space="preserve">
-    <value>से</value>
-  </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED" xml:space="preserve">
-    <value>कोई चारा नहीं.</value>
-  </data>
   <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON" xml:space="preserve">
     <value>RSS शेल एक्स्ट्रा ऐडऑन इंस्टॉल करें!</value>
   </data>
@@ -3225,23 +3204,11 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS" xml:space="preserve">
     <value>उपयोगकर्ता परीक्षण</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN" xml:space="preserve">
-    <value>शट डाउन</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC" xml:space="preserve">
-    <value>परीक्षण मोड से बाहर निकलता है और कर्नेल को बंद कर देता है</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT" xml:space="preserve">
-    <value>चलाने के लिए एक परीक्षण अनुभाग चुनें</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_THEMESET_NO" xml:space="preserve">
     <value>नहीं</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE" xml:space="preserve">
     <value>स्टैक फ़्रेम संख्या फ़्रेम की वर्तमान मात्रा से अधिक नहीं होनी चाहिए या नकारात्मक नहीं होनी चाहिए।</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME" xml:space="preserve">
-    <value>नाइट्रोसिड के.एस</value>
   </data>
   <data name="NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART" xml:space="preserve">
     <value>कर्नेल थ्रेड पर्यवेक्षक ने ऐसे {0} महत्वपूर्ण थ्रेड का पता लगाया है जो अभी तक शुरू नहीं हुए हैं।</value>
@@ -3279,20 +3246,8 @@
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
     <value>आपके लिनक्स सिस्टम पर समय क्षेत्र सूचना पैकेज अभी तक स्थापित नहीं है। अपने वितरण के पैकेज प्रबंधक का उपयोग करके &apos;tzdata&apos; स्थापित करें।</value>
   </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT" xml:space="preserve">
-    <value>कृपया प्रतीक्षा करें</value>
-  </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>लोड हो रहा है</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT" xml:space="preserve">
-    <value>कृपया कर्नेल प्रारंभ होने तक प्रतीक्षा करें</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN" xml:space="preserve">
-    <value>कृपया कर्नेल बंद होने तक प्रतीक्षा करें</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART" xml:space="preserve">
-    <value>कृपया कर्नेल के पुनरारंभ होने तक प्रतीक्षा करें</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_STARTING" xml:space="preserve">
     <value>शुरुआत</value>
@@ -3477,9 +3432,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_DESC" xml:space="preserve">
     <value>एन्कोडेड टेक्स्ट को डीकोड करता है</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC" xml:space="preserve">
-    <value>BASE64 प्रतिनिधित्व से पाठ को डिकोड करता है</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC" xml:space="preserve">
     <value>डिस्क के बारे में जानकारी प्रदान करता है</value>
   </data>
@@ -3506,9 +3458,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC" xml:space="preserve">
     <value>पाठ को एनकोड करता है</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC" xml:space="preserve">
-    <value>टेक्स्ट को BASE64 प्रतिनिधित्व में एनकोड करता है</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC" xml:space="preserve">
     <value>किसी फ़ाइल को पुनरावर्ती रूप से खोजता है</value>
@@ -3554,9 +3503,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC" xml:space="preserve">
     <value>कर्नेल के लिए लाइसेंस जानकारी दिखाता है</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC" xml:space="preserve">
-    <value>सिंटैक्स त्रुटियों के लिए यूईएसएच स्क्रिप्ट की जाँच करता है</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC" xml:space="preserve">
     <value>किसी फ़ोल्डर को पुनरावर्ती रूप से सूचीबद्ध करता है</value>
@@ -3809,12 +3755,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE" xml:space="preserve">
     <value>अपनी भाषा चुनें</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT" xml:space="preserve">
-    <value>जाँचने के लिए एक अनुवाद योग्य स्ट्रिंग लिखें:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT" xml:space="preserve">
-    <value>जाँचने के लिए एक अनुवाद योग्य स्ट्रिंग सूची फ़ाइल पथ लिखें:</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC" xml:space="preserve">
     <value>दोहरे फलक इंटरेक्शन के साथ इंटरैक्टिव टीयूआई प्रणाली का परीक्षण करता है</value>
@@ -4245,15 +4185,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_GETKEYIV_NEEDSSYMMETRIC" xml:space="preserve">
     <value>केवल सममित एन्कोडिंग एल्गोरिदम जो कुंजी और आरंभीकरण वेक्टर दोनों का उपयोग करते हैं, समर्थित हैं।</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS" xml:space="preserve">
-    <value>स्क्रिप्ट लिंट सफल रही.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED" xml:space="preserve">
-    <value>स्क्रिप्ट लिंट विफल. सबसे अधिक संभावना है कि कोई सिंटैक्स त्रुटि है. त्रुटियों के लिए अपनी स्क्रिप्ट की जाँच करें और लिंटर चलाने का पुनः प्रयास करें।</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR" xml:space="preserve">
-    <value>स्क्रिप्ट लिंटर आपकी स्क्रिप्ट को पार्स करने का प्रयास करने में अप्रत्याशित रूप से विफल रहा।</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR" xml:space="preserve">
     <value>के लिए जानकारी</value>
   </data>
@@ -4506,12 +4437,6 @@
   <data name="NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_KERNELWIDETIMEZONE_DESC" xml:space="preserve">
     <value>उपयोग करने के लिए कर्नेल-व्यापी समय क्षेत्र</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME" xml:space="preserve">
-    <value>लाइसेंस सूचना बॉक्स दिखाएँ</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC" xml:space="preserve">
-    <value>प्रत्येक लॉगिन के बाद तीन सेकंड के लिए मोडल लाइसेंस सूचना बॉक्स दिखाना है या नहीं। इसे चालू रखने की अनुशंसा की जाती है.</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_DESC" xml:space="preserve">
     <value>यह अनुभाग आपको यह चुनने देता है कि आप किस प्रकार का रंग बदलना चाहते हैं।</value>
   </data>
@@ -4742,12 +4667,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME" xml:space="preserve">
     <value>लॉग-इन पर MAL दिखाएँ</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME" xml:space="preserve">
-    <value>आधुनिक लॉगऑन घड़ी के निचले भाग में एमओटीडी और हेडलाइन</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC" xml:space="preserve">
-    <value>क्या MOTD और हेडलाइन को घड़ी के नीचे या ऊपर दिखाना है</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME" xml:space="preserve">
     <value>लॉगिन हैंडलर</value>
@@ -5151,9 +5070,6 @@
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_KEYBINDING_BOOT" xml:space="preserve">
     <value>चयनित प्रविष्टि को बूट करता है</value>
   </data>
-  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_NOENV" xml:space="preserve">
-    <value>पर्यावरण निर्दिष्ट नहीं है</value>
-  </data>
   <data name="NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT" xml:space="preserve">
     <value>अलार्म की तारीख और समय अतीत में नहीं हो सकता है।</value>
   </data>
@@ -5354,24 +5270,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME" xml:space="preserve">
     <value>इंटरैक्टिव TUI अंतर्निहित कुंजी बाइंडिंग नाम रंग</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME" xml:space="preserve">
-    <value>विजेट सक्षम करें</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC" xml:space="preserve">
-    <value>आधुनिक लॉगऑन हैंडलर में विजेट और विजेट API का उपयोग करने वाले सभी हैंडलरों को सक्षम करता है।</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME" xml:space="preserve">
-    <value>पहला विजेट</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC" xml:space="preserve">
-    <value>आधुनिक लॉगऑन हैंडलर के लिए पहला विजेट। आप इस विजेट को इसके संबंधित सेटिंग प्रविष्टि में कॉन्फ़िगर कर सकते हैं।</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME" xml:space="preserve">
-    <value>दूसरा विजेट</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC" xml:space="preserve">
-    <value>आधुनिक लॉगऑन हैंडलर के लिए दूसरा विजेट। आप इस विजेट को इसके संबंधित सेटिंग प्रविष्टि में कॉन्फ़िगर कर सकते हैं।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME" xml:space="preserve">
     <value>माउस समर्थन</value>
@@ -6219,9 +6117,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_ARGUMENT_ENCODEDSTRING_DESC" xml:space="preserve">
     <value>एनकोडेड स्ट्रिंग प्रतिनिधित्व</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC" xml:space="preserve">
-    <value>एनकोडेड BASE64 स्ट्रिंग</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
     <value>निर्देशिका का पथ</value>
   </data>
@@ -6281,9 +6176,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC" xml:space="preserve">
     <value>दाएँ फलक के लिए निर्देशिका का पथ</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC" xml:space="preserve">
-    <value>UESH स्क्रिप्ट का पथ</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
     <value>सूची में निर्देशिका का पथ</value>
@@ -6477,12 +6369,6 @@
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_DESC" xml:space="preserve">
     <value>यह आपको एकाधिक कर्नेल रंग योजनाएँ सेट करने की अनुमति देता है</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME" xml:space="preserve">
-    <value>आधुनिक लॉगऑन हैंडलर सेटिंग्स</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC" xml:space="preserve">
-    <value>यह आपको आधुनिक लॉगऑन हैंडलर को कॉन्फ़िगर करने की अनुमति देता है</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME" xml:space="preserve">
     <value>सहायता प्रणाली</value>
   </data>
@@ -6567,12 +6453,6 @@
   <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_DESC" xml:space="preserve">
     <value>परिवेशीय स्क्रीनसेवर ध्वनि प्रभाव चलाना है या नहीं</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME" xml:space="preserve">
-    <value>परिवेशी स्क्रीनसेवर ध्वनि प्रभावों को तीव्र करें</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC" xml:space="preserve">
-    <value>परिवेशी स्क्रीनसेवर ध्वनि प्रभाव को तीव्र करना है या नहीं</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME" xml:space="preserve">
     <value>ऑडियो क्यू वॉल्यूम</value>
   </data>
@@ -6635,12 +6515,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC" xml:space="preserve">
     <value>महीनों के नाम, कैलेंडर इत्यादि बदलने के लिए किस संस्कृति का उपयोग किया जा रहा है?</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME" xml:space="preserve">
-    <value>&apos;द नाइट्रोसिड होमपेज&apos; विजेट सक्षम करें</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC" xml:space="preserve">
-    <value>&apos;द नाइट्रोसिड होमपेज&apos; विजेट स्क्रीन के दाईं ओर सक्षम करता है।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
     <value>&apos;द नाइट्रोसिड होमपेज&apos; RSS फ़ीड सक्षम करें</value>
@@ -6747,35 +6621,8 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_FORECAST" xml:space="preserve">
     <value>अतिरिक्त - पूर्वानुमान</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_FTP" xml:space="preserve">
-    <value>अतिरिक्त - एफ़टीपी शेल</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_GIT" xml:space="preserve">
-    <value>अतिरिक्त - गिट शैल</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_HTTP" xml:space="preserve">
-    <value>अतिरिक्त - HTTP शेल</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_JSON" xml:space="preserve">
-    <value>अतिरिक्त - JSON शेल</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO" xml:space="preserve">
-    <value>अतिरिक्त - भाषा स्टूडियो</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_MAIL" xml:space="preserve">
-    <value>अतिरिक्त - मेल शैल</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_NOTES" xml:space="preserve">
     <value>अतिरिक्त - नोट्स</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_RSS" xml:space="preserve">
-    <value>अतिरिक्त - आरएसएस शैल</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_SFTP" xml:space="preserve">
-    <value>अतिरिक्त - एसएफटीपी शेल</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_SQL" xml:space="preserve">
-    <value>अतिरिक्त - एसक्यूएल शेल</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO" xml:space="preserve">
     <value>अतिरिक्त - थीम स्टूडियो</value>
@@ -6887,12 +6734,6 @@
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC" xml:space="preserve">
     <value>आप किस सॉर्टिंग ड्राइवर का उपयोग करना चाहेंगे?</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME" xml:space="preserve">
-    <value>वर्तमान इनपुट ड्राइवर</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC" xml:space="preserve">
-    <value>आप किस इनपुट ड्राइवर का उपयोग करना चाहेंगे?</value>
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME" xml:space="preserve">
     <value>वर्तमान असममित एन्कोडिंग ड्राइवर</value>
@@ -7034,9 +6875,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
     <value>परिणाम को कंसोल पर प्रिंट करता है</value>
-  </data>
-  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
-    <value>विरासत बहुचर प्रसंस्करण</value>
   </data>
   <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
     <value>उपयोगकर्ता के पास 2FA प्रमाणीकरण संचालन करने के लिए कोई पासवर्ड नहीं है।</value>
