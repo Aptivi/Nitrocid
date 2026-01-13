@@ -60,6 +60,46 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
       "text": "是否顯示進度"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
+      "text": "維護模式"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME",
+      "text": "歡迎！"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_GOODBYE",
+      "text": "再見！"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_LOADING",
+      "text": "載入中"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_STARTING",
+      "text": "開始"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SAFEMODE",
+      "text": "安全模式"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_DEBUGMODE",
+      "text": "偵錯模式"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "初始化"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "关闭"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "重新启动"
     }
   ]
 }

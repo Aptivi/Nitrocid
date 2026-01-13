@@ -61,6 +61,46 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
       "text": "Vis fremgang eller ikke"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
+      "text": "Vedlikeholdsmodus"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME",
+      "text": "Velkomst!"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_GOODBYE",
+      "text": "Adjø!"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_LOADING",
+      "text": "Laster"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_STARTING",
+      "text": "Starter"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SAFEMODE",
+      "text": "Sikker modus"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_DEBUGMODE",
+      "text": "Feilsøkingsmodus"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "Initialiserer"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "Avslutter"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "Starter på nytt"
     }
   ]
 }

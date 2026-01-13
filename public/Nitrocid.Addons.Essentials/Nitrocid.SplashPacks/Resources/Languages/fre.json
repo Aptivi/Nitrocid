@@ -103,6 +103,46 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
       "text": "Montrer des progrès ou non"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
+      "text": "Mode de Maintenance"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME",
+      "text": "Bienvenue!"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_GOODBYE",
+      "text": "Au revoir!"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_LOADING",
+      "text": "Chargement"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_STARTING",
+      "text": "Départ"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SAFEMODE",
+      "text": "Mode sans échec"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_DEBUGMODE",
+      "text": "Mode débogage"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "Initialisation"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "Arrêt"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "Redémarrage"
     }
   ]
 }

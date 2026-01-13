@@ -57,6 +57,46 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
       "text": "Показувати прогрес чи ні"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
+      "text": "Режим обслуговування"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME",
+      "text": "Ласкаво просимо!"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_GOODBYE",
+      "text": "До побачення!"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_LOADING",
+      "text": "Завантаження"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_STARTING",
+      "text": "Запуск"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SAFEMODE",
+      "text": "Безпечний режим"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_DEBUGMODE",
+      "text": "Режим налагодження"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "Ініціалізація"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "Вимкнення"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "Перезапуск"
     }
   ]
 }

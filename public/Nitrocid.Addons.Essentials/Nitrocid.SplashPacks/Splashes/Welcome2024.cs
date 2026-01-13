@@ -37,8 +37,6 @@ using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
 
-#pragma warning disable NLOC0001
-
 namespace Nitrocid.SplashPacks.Splashes
 {
     class SplashWelcome2024 : BaseSplash, ISplash
@@ -76,9 +74,9 @@ namespace Nitrocid.SplashPacks.Splashes
                  LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_LOADING"))
                 .ToUpper();
             string bottomText =
-                context == SplashContext.Preboot ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT") :
-                context == SplashContext.ShuttingDown ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN") :
-                context == SplashContext.Rebooting ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART") :
+                context == SplashContext.Preboot ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_INITING") :
+                context == SplashContext.ShuttingDown ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN") :
+                context == SplashContext.Rebooting ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_RESTARTING") :
                 $"{LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_STARTING")} {KernelReleaseInfo.ConsoleTitle}";
             bottomText +=
                 KernelEntry.SafeMode ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_SAFEMODE")}"  :

@@ -57,6 +57,46 @@
     {
       "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC",
       "text": "प्रगति दिखाएं या नहीं"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_MAINTENANCE",
+      "text": "रखरखाव मोड"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME",
+      "text": "स्वागत!"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_GOODBYE",
+      "text": "अलविदा!"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_LOADING",
+      "text": "लोड हो रहा है"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_STARTING",
+      "text": "शुरुआत"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SAFEMODE",
+      "text": "सुरक्षित मोड"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_DEBUGMODE",
+      "text": "डिबग मोड"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_INITING",
+      "text": "शुरु कर रहा है"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN",
+      "text": "बंद करना"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
+      "text": "पुन: प्रारंभ हो"
     }
   ]
 }

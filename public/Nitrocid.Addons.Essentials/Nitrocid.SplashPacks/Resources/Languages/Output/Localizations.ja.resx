@@ -156,5 +156,35 @@
   <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC" xml:space="preserve">
     <value>進捗状況を表示するかどうか</value>
   </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_MAINTENANCE" xml:space="preserve">
+    <value>メンテナンスモード</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME" xml:space="preserve">
+    <value>いらっしゃいませ！</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_GOODBYE" xml:space="preserve">
+    <value>さようなら！</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
+    <value>読み込み中</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_STARTING" xml:space="preserve">
+    <value>起動</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SAFEMODE" xml:space="preserve">
+    <value>セーフモード</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_DEBUGMODE" xml:space="preserve">
+    <value>デバッグモード</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_INITING" xml:space="preserve">
+    <value>初期化中</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN" xml:space="preserve">
+    <value>シャットダウン</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
+    <value>再起動</value>
+  </data>
 
 </root>

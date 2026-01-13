@@ -156,5 +156,35 @@
   <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC" xml:space="preserve">
     <value>İlerleme gösterilsin mi gösterilmesin mi</value>
   </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_MAINTENANCE" xml:space="preserve">
+    <value>Bakım Modu</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME" xml:space="preserve">
+    <value>Hoş geldin!</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_GOODBYE" xml:space="preserve">
+    <value>Güle güle!</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
+    <value>Yükleniyor</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_STARTING" xml:space="preserve">
+    <value>Başlangıç</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SAFEMODE" xml:space="preserve">
+    <value>Güvenli Mod</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_DEBUGMODE" xml:space="preserve">
+    <value>Hata Ayıklama Modu</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_INITING" xml:space="preserve">
+    <value>Başlatılıyor</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN" xml:space="preserve">
+    <value>Kapatılıyor</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
+    <value>Yeniden Başlatılıyor</value>
+  </data>
 
 </root>

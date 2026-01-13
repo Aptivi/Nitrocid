@@ -156,5 +156,35 @@
   <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC" xml:space="preserve">
     <value>Taispeáin dul chun cinn nó ná bíodh</value>
   </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_MAINTENANCE" xml:space="preserve">
+    <value>Mód Cothabhála</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME" xml:space="preserve">
+    <value>Fáilte romhat!</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_GOODBYE" xml:space="preserve">
+    <value>Slán!</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
+    <value>Ag lódáil</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_STARTING" xml:space="preserve">
+    <value>Ag tosú</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SAFEMODE" xml:space="preserve">
+    <value>Mód Sábháilte</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_DEBUGMODE" xml:space="preserve">
+    <value>Mód Dífhabhtaithe</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_INITING" xml:space="preserve">
+    <value>Ag tosú</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN" xml:space="preserve">
+    <value>Ag múchadh</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
+    <value>Atosú</value>
+  </data>
 
 </root>

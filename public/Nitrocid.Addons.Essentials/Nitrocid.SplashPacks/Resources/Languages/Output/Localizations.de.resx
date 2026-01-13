@@ -156,5 +156,35 @@
   <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_WELCOME2024_PROGRESS_DESC" xml:space="preserve">
     <value>Fortschritt anzeigen oder nicht</value>
   </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_MAINTENANCE" xml:space="preserve">
+    <value>Wartungsmodus</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME" xml:space="preserve">
+    <value>Herzlich willkommen!</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_GOODBYE" xml:space="preserve">
+    <value>Auf Wiedersehen!</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
+    <value>Wird geladen</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_STARTING" xml:space="preserve">
+    <value>Beginnend</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SAFEMODE" xml:space="preserve">
+    <value>Sicherheitsmodus</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_DEBUGMODE" xml:space="preserve">
+    <value>Debug-Modus</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_INITING" xml:space="preserve">
+    <value>Initialisierung</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN" xml:space="preserve">
+    <value>Herunterfahren</value>
+  </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
+    <value>Neustart</value>
+  </data>
 
 </root>
