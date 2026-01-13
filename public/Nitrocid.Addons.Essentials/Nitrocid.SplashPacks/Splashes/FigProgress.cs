@@ -67,21 +67,18 @@ namespace Nitrocid.SplashPacks.Splashes
                 );
             }
 
-#pragma warning disable NLOC0001
-            // TODO: Move NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT{,_INIT,_SHUTDOWN,_RESTART} to here
             // Populate some text
             string text = $"{SplashReport.Progress}%";
             string bottomText =
-                context == SplashContext.Preboot ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT") :
-                context == SplashContext.ShuttingDown ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN") :
-                context == SplashContext.Rebooting ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART") :
+                context == SplashContext.Preboot ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_INITING") :
+                context == SplashContext.ShuttingDown ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_SHUTTINGDOWN") :
+                context == SplashContext.Rebooting ? LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_RESTARTING") :
                 $"{LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_STARTING")} {KernelReleaseInfo.ConsoleTitle}";
             bottomText +=
                 KernelEntry.SafeMode ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_SAFEMODE")}" :
                 KernelEntry.Maintenance ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_MAINTENANCE")}" :
                 KernelEntry.DebugMode ? $" - {LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME_DEBUGMODE")}" :
                 "";
-#pragma warning restore NLOC0001
 
             // Write a glorious Welcome screen
             Color col = ThemeColorsTools.GetColor(ThemeColorType.Stage);
