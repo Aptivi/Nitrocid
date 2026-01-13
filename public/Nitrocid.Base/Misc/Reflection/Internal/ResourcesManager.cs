@@ -19,6 +19,7 @@
 
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Languages;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -44,7 +45,14 @@ namespace Nitrocid.Base.Misc.Reflection.Internal
         {
             asm ??= Assembly.GetCallingAssembly();
             if (!DataExists(resource, type, out Stream? data, asm))
-                throw new KernelException(KernelExceptionType.Reflection, $"Resource {resource} not found for type {type} in {asm.FullName ?? "this unknown assembly"}");
+            {
+                // TODO: NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM -> Resource {0} not found for type {1} in {2}
+                // TODO: NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM -> Resource {0} not found for type {1} in this unknown assembly
+                string message = asm.FullName is not null ?
+                    /* Localizable */ "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM".FormatString(resource, type, asm.FullName) :
+                    /* Localizable */ "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM".FormatString(resource, type);
+                throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized(message));
+            }
             return data;
         }
 
