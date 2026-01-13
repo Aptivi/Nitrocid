@@ -1954,6 +1954,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "Simuliert einen Hackerangriff auf Systeme."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "Erzeugt vier Kästchen, die den gesamten Bildschirm ausfüllen, und legt dann ein „Fischernetz“ innerhalb der Kästchen aus."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "Zeigt links einen Text und rechts dessen gespiegelte Version an."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "Farbübergangsmethode"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "Wählt die Übergangsmethode und die Farben aus."
     }
   ]
 }

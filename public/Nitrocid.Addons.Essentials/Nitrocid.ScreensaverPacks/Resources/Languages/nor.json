@@ -1949,6 +1949,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "Simulerer en person som hacker seg inn i systemer"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "Lager fire bokser som fyller hele skjermen, og lager deretter et \"fiskenett\" inni boksene"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "Skriver en tekst til venstre og den speilvendte versjonen til høyre"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "Fargeovergangsmetode"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "Velger hvordan overgangen skal brukes og velger farger"
     }
   ]
 }

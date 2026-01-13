@@ -1946,6 +1946,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "Insamhladh duine ag hackáil isteach i gcórais"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "Cruthaíonn sé ceithre bhosca a líonann an scáileán ar fad, ansin cruthaíonn sé \"líontán éisc\" taobh istigh de na boscaí"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "Scríobhann sé téacs ar chlé agus a leagan scáthánaithe ar dheis"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "Modh aistrithe datha"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "Roghnaíonn sé conas aistriú agus dathanna a roghnú"
     }
   ]
 }

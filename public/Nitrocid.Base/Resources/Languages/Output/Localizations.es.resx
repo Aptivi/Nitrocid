@@ -7143,5 +7143,8 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC" xml:space="preserve">
     <value>Tamaño del fragmento en bytes</value>
   </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC" xml:space="preserve">
+    <value>Imprima la línea del modelo como una sola línea</value>
+  </data>
 
 </root>

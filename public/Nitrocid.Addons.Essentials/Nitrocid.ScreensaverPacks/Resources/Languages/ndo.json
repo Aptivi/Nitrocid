@@ -1945,6 +1945,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "Mensimulasikan seseorang yang meretas sistem"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "Membuat empat kotak yang memenuhi seluruh layar, lalu membuat \"jaring ikan\" di dalam kotak"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "Menulis teks di sebelah kiri dan versi cerminnya di sebelah kanan"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "Metode transisi warna"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "Memilih cara transisi dan memilih warna"
     }
   ]
 }

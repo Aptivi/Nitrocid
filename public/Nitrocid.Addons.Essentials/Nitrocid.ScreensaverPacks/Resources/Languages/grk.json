@@ -1946,6 +1946,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "Προσομοιώνει ένα άτομο που κάνει hacking σε συστήματα"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "Δημιουργεί τέσσερα πλαίσια που γεμίζουν ολόκληρη την οθόνη και στη συνέχεια δημιουργεί ένα \"δίκτυ ψαρέματος\" μέσα στα πλαίσια."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "Γράφει ένα κείμενο στα αριστερά και την κατοπτρική του έκδοση στα δεξιά."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "Μέθοδος μετάβασης χρώματος."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "Επιλέγει τον τρόπο μετάβασης και επιλογής χρωμάτων."
     }
   ]
 }

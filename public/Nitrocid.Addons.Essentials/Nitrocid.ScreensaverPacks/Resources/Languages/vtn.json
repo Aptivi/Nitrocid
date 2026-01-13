@@ -1945,6 +1945,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "Mô phỏng một người đang xâm nhập vào hệ thống"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "Tạo bốn ô vuông lấp đầy toàn bộ màn hình, sau đó tạo một \"lưới\" bên trong các ô vuông đó."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "Viết văn bản ở bên trái và phiên bản phản chiếu của nó ở bên phải."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "Phương pháp chuyển đổi màu sắc."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "Chọn cách chuyển đổi và chọn màu sắc."
     }
   ]
 }

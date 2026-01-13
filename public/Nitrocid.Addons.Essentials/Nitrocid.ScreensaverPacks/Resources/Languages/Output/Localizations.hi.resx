@@ -1572,5 +1572,17 @@
   <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
     <value>सिस्टम में हैकिंग करने वाले व्यक्ति की नकल करता है</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC" xml:space="preserve">
+    <value>चार बॉक्स बनाता है जो पूरी स्क्रीन को भर देते हैं, फिर बॉक्स के अंदर एक &quot;फिशनेट&quot; बनाता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC" xml:space="preserve">
+    <value>बाईं ओर एक टेक्स्ट लिखता है और दाईं ओर उसका मिरर्ड वर्शन लिखता है</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME" xml:space="preserve">
+    <value>कलर ट्रांज़िशन का तरीका</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC" xml:space="preserve">
+    <value>ट्रांज़िशन करने और कलर चुनने का तरीका चुनता है</value>
+  </data>
 
 </root>

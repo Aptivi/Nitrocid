@@ -1572,5 +1572,17 @@
   <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
     <value>Simula a una persona pirateando sistemas</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC" xml:space="preserve">
+    <value>Crea cuatro cuadros que llenan toda la pantalla y luego crea una &quot;red&quot; dentro de ellos.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC" xml:space="preserve">
+    <value>Escribe un texto a la izquierda y su versión reflejada a la derecha.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME" xml:space="preserve">
+    <value>Método de transición de color.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC" xml:space="preserve">
+    <value>Elige cómo realizar la transición y selecciona los colores.</value>
+  </data>
 
 </root>

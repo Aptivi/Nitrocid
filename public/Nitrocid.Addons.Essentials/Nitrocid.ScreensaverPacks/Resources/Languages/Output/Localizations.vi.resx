@@ -1572,5 +1572,17 @@
   <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
     <value>Mô phỏng một người đang xâm nhập vào hệ thống</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC" xml:space="preserve">
+    <value>Tạo bốn ô vuông lấp đầy toàn bộ màn hình, sau đó tạo một &quot;lưới&quot; bên trong các ô vuông đó.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC" xml:space="preserve">
+    <value>Viết văn bản ở bên trái và phiên bản phản chiếu của nó ở bên phải.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME" xml:space="preserve">
+    <value>Phương pháp chuyển đổi màu sắc.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC" xml:space="preserve">
+    <value>Chọn cách chuyển đổi và chọn màu sắc.</value>
+  </data>
 
 </root>
