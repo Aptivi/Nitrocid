@@ -1945,6 +1945,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "Hominem in systemata irrumpentem simulat"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "Quattuor quadrata facit quae totum scrinium implent, deinde \"rete piscatorium\" intra quadrata facit."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "Textum a sinistra et eius versionem specularem a dextra scribit."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "Modus transitionis colorum."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "Quomodo transitionem et colores eligere eligit."
     }
   ]
 }

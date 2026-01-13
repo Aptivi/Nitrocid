@@ -1946,6 +1946,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "시스템을 해킹하는 사람을 시뮬레이션합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "화면 전체를 채우는 네 개의 상자를 만들고, 그 상자 안에 그물 모양을 그립니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "왼쪽에 텍스트를 쓰고 오른쪽에는 좌우 반전된 텍스트를 씁니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "색상 전환 방식"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "전환 방식과 색상을 선택합니다."
     }
   ]
 }

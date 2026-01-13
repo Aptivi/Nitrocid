@@ -2100,5 +2100,41 @@
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC" xml:space="preserve">
     <value>주소 대신 호스트 이름을 사용하세요.</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME" xml:space="preserve">
+    <value>ISP 표시 이름</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME" xml:space="preserve">
+    <value>ISP 약칭</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN" xml:space="preserve">
+    <value>ISP 도메인</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMINATINGDOMAIN" xml:space="preserve">
+    <value>ISP 지배 도메인</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME" xml:space="preserve">
+    <value>수신 서버 호스트 이름</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_PORT" xml:space="preserve">
+    <value>수신 서버 포트</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_TYPE" xml:space="preserve">
+    <value>수신 서버 유형</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_SOCKETTYPE" xml:space="preserve">
+    <value>수신 서버 소켓 유형</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_HOSTNAME" xml:space="preserve">
+    <value>발신 서버 호스트 이름</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_PORT" xml:space="preserve">
+    <value>발신 서버 포트</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_TYPE" xml:space="preserve">
+    <value>발신 서버 유형</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE" xml:space="preserve">
+    <value>발신 서버 소켓 유형</value>
+  </data>
 
 </root>

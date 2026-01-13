@@ -1945,6 +1945,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "सिस्टम में हैकिंग करने वाले व्यक्ति की नकल करता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "चार बॉक्स बनाता है जो पूरी स्क्रीन को भर देते हैं, फिर बॉक्स के अंदर एक \"फिशनेट\" बनाता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "बाईं ओर एक टेक्स्ट लिखता है और दाईं ओर उसका मिरर्ड वर्शन लिखता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "कलर ट्रांज़िशन का तरीका"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "ट्रांज़िशन करने और कलर चुनने का तरीका चुनता है"
     }
   ]
 }

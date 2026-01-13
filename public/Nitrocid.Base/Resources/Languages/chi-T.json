@@ -9381,6 +9381,10 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC",
       "text": "块大小（字节）"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
+      "text": "将模型行打印为一行"
     }
   ]
 }

@@ -1572,5 +1572,17 @@
   <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
     <value>模擬有人入侵系統</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC" xml:space="preserve">
+    <value>建立四個填滿整個螢幕的方框，然後在方框內建立一個「漁網」圖案。</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC" xml:space="preserve">
+    <value>在左側顯示一段文字，並在右側顯示其鏡像版本。</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME" xml:space="preserve">
+    <value>顏色過渡方式</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC" xml:space="preserve">
+    <value>選擇過渡方式和顏色。</value>
+  </data>
 
 </root>

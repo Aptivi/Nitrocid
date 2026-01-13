@@ -2675,6 +2675,54 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC",
       "text": "استخدم اسم المضيف بدلاً من العنوان"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME",
+      "text": "اسم العرض لمزود خدمة الإنترنت"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME",
+      "text": "الاسم المختصر لمزود خدمة الإنترنت"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN",
+      "text": "نطاق مزود خدمة الإنترنت"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMINATINGDOMAIN",
+      "text": "النطاق المهيمن لمزود خدمة الإنترنت"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME",
+      "text": "اسم مضيف الخادم الوارد"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_PORT",
+      "text": "منفذ الخادم الوارد"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_TYPE",
+      "text": "نوع الخادم الوارد"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_SOCKETTYPE",
+      "text": "نوع مقبس الخادم الوارد"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_HOSTNAME",
+      "text": "اسم مضيف الخادم الصادر"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_PORT",
+      "text": "منفذ الخادم الصادر"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_TYPE",
+      "text": "نوع الخادم الصادر"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
+      "text": "نوع مقبس الخادم الصادر"
     }
   ]
 }

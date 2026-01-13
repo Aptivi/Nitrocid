@@ -9373,6 +9373,10 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC",
       "text": "Розмір фрагмента в байтах"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
+      "text": "Вивести модельну лінію одним рядком"
     }
   ]
 }

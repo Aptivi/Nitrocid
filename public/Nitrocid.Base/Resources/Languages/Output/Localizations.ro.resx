@@ -7143,5 +7143,8 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC" xml:space="preserve">
     <value>Dimensiunea bucății în octeți</value>
   </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC" xml:space="preserve">
+    <value>Afișează linia modelului pe o singură linie</value>
+  </data>
 
 </root>

@@ -2649,6 +2649,54 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC",
       "text": "Gunakan nama host sebagai pengganti alamat"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME",
+      "text": "Nama tampilan ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME",
+      "text": "Nama pendek ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN",
+      "text": "Domain ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMINATINGDOMAIN",
+      "text": "Domain dominan ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME",
+      "text": "Nama host server masuk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_PORT",
+      "text": "Port server masuk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_TYPE",
+      "text": "Tipe server masuk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_SOCKETTYPE",
+      "text": "Tipe soket server masuk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_HOSTNAME",
+      "text": "Nama host server keluar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_PORT",
+      "text": "Port server keluar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_TYPE",
+      "text": "Tipe server keluar"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
+      "text": "Tipe soket server keluar"
     }
   ]
 }

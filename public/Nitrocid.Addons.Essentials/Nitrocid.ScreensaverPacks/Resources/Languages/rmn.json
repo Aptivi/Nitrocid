@@ -1946,6 +1946,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "Simulează o persoană care intră în sisteme"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "Creează patru casete care umplu întregul ecran, apoi creează o „plasă” în interiorul casetelor"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "Scrie un text în stânga și versiunea sa oglindită în dreapta"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "Metodă de tranziție a culorilor"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "Alege cum se face tranziția și se selectează culorile"
     }
   ]
 }

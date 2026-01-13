@@ -2100,5 +2100,41 @@
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC" xml:space="preserve">
     <value>Nomen hospitis loco inscriptionis utere</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME" xml:space="preserve">
+    <value>Nomen ostentationis ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME" xml:space="preserve">
+    <value>Nomen breve ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN" xml:space="preserve">
+    <value>Dominium ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMINATINGDOMAIN" xml:space="preserve">
+    <value>Dominium dominans ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME" xml:space="preserve">
+    <value>Nomen hospitis servi ingressi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_PORT" xml:space="preserve">
+    <value>Portus servi ingressi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_TYPE" xml:space="preserve">
+    <value>Genus servi ingressi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_SOCKETTYPE" xml:space="preserve">
+    <value>Genus socci servi ingressi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_HOSTNAME" xml:space="preserve">
+    <value>Nomen hospitis servi egressi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_PORT" xml:space="preserve">
+    <value>Portus servi egressi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_TYPE" xml:space="preserve">
+    <value>Genus servi egressi</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE" xml:space="preserve">
+    <value>Genus socci servi egressi</value>
+  </data>
 
 </root>

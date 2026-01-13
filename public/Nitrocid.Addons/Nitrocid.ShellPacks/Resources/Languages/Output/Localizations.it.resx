@@ -2100,5 +2100,41 @@
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC" xml:space="preserve">
     <value>Utilizza il nome host anziché l&apos;indirizzo</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME" xml:space="preserve">
+    <value>Nome visualizzato dell&apos;ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME" xml:space="preserve">
+    <value>Nome abbreviato dell&apos;ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN" xml:space="preserve">
+    <value>Dominio dell&apos;ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMINATINGDOMAIN" xml:space="preserve">
+    <value>Dominio dominante dell&apos;ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME" xml:space="preserve">
+    <value>Nome host del server in entrata</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_PORT" xml:space="preserve">
+    <value>Porta del server in entrata</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_TYPE" xml:space="preserve">
+    <value>Tipo di server in entrata</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_SOCKETTYPE" xml:space="preserve">
+    <value>Tipo di socket del server in entrata</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_HOSTNAME" xml:space="preserve">
+    <value>Nome host del server in uscita</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_PORT" xml:space="preserve">
+    <value>Porta del server in uscita</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_TYPE" xml:space="preserve">
+    <value>Tipo di server in uscita</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE" xml:space="preserve">
+    <value>Tipo di socket del server in uscita</value>
+  </data>
 
 </root>

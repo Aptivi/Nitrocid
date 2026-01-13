@@ -1970,6 +1970,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "Simula a una persona pirateando sistemas"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "Crea cuatro cuadros que llenan toda la pantalla y luego crea una \"red\" dentro de ellos."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "Escribe un texto a la izquierda y su versión reflejada a la derecha."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "Método de transición de color."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "Elige cómo realizar la transición y selecciona los colores."
     }
   ]
 }

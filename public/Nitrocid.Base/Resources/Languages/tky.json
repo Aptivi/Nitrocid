@@ -9374,6 +9374,10 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC",
       "text": "Parça boyutu (bayt cinsinden)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
+      "text": "Model çizgisini tek satır olarak yazdırın."
     }
   ]
 }

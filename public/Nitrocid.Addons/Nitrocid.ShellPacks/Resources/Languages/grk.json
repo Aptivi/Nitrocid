@@ -2650,6 +2650,54 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC",
       "text": "Χρησιμοποιήστε όνομα κεντρικού υπολογιστή αντί για διεύθυνση"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME",
+      "text": "Εμφανιζόμενο όνομα ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME",
+      "text": "Σύντομο όνομα ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN",
+      "text": "Τομέας ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMINATINGDOMAIN",
+      "text": "Κυρίως τομέας ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME",
+      "text": "Όνομα κεντρικού υπολογιστή εισερχόμενου διακομιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_PORT",
+      "text": "Θύρα εισερχόμενου διακομιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_TYPE",
+      "text": "Τύπος εισερχόμενου διακομιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_SOCKETTYPE",
+      "text": "Τύπος υποδοχής εισερχόμενου διακομιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_HOSTNAME",
+      "text": "Όνομα κεντρικού υπολογιστή εξερχόμενου διακομιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_PORT",
+      "text": "Θύρα εξερχόμενου διακομιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_TYPE",
+      "text": "Τύπος εξερχόμενου διακομιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
+      "text": "Τύπος υποδοχής εξερχόμενου διακομιστή"
     }
   ]
 }

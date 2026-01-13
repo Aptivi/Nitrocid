@@ -9379,6 +9379,10 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC",
       "text": "Grootte van de chunk in bytes"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
+      "text": "Print de modellijn als één regel."
     }
   ]
 }

@@ -2652,6 +2652,54 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC",
       "text": "使用主機名稱代替位址"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME",
+      "text": "ISP 顯示名稱"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME",
+      "text": "ISP 簡稱"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN",
+      "text": "ISP 域名"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMINATINGDOMAIN",
+      "text": "ISP 主域名"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME",
+      "text": "入站伺服器主機名"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_PORT",
+      "text": "入站伺服器連接埠"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_TYPE",
+      "text": "入站伺服器類型"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_SOCKETTYPE",
+      "text": "入站伺服器套接字類型"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_HOSTNAME",
+      "text": "出站伺服器主機名"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_PORT",
+      "text": "出站伺服器連接埠"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_TYPE",
+      "text": "出站伺服器類型"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
+      "text": "出站伺服器套接字類型"
     }
   ]
 }

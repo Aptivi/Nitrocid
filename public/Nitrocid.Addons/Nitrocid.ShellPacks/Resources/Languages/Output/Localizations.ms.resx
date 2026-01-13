@@ -2100,5 +2100,41 @@
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC" xml:space="preserve">
     <value>Gunakan nama hos dan bukannya alamat</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME" xml:space="preserve">
+    <value>Nama paparan ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME" xml:space="preserve">
+    <value>Nama pendek ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN" xml:space="preserve">
+    <value>Domain ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMINATINGDOMAIN" xml:space="preserve">
+    <value>Domain yang dikuasai ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME" xml:space="preserve">
+    <value>Nama hos pelayan masuk</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_PORT" xml:space="preserve">
+    <value>Port pelayan masuk</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_TYPE" xml:space="preserve">
+    <value>Jenis pelayan masuk</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_SOCKETTYPE" xml:space="preserve">
+    <value>Jenis soket pelayan masuk</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_HOSTNAME" xml:space="preserve">
+    <value>Nama hos pelayan keluar</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_PORT" xml:space="preserve">
+    <value>Port pelayan keluar</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_TYPE" xml:space="preserve">
+    <value>Jenis pelayan keluar</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE" xml:space="preserve">
+    <value>Jenis soket pelayan keluar</value>
+  </data>
 
 </root>

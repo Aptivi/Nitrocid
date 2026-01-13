@@ -9373,6 +9373,10 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC",
       "text": "Ukuran bagian (chunk) dalam byte"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
+      "text": "Cetak modeline sebagai satu garis."
     }
   ]
 }

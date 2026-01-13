@@ -2649,6 +2649,54 @@
     {
       "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC",
       "text": "Nomen hospitis loco inscriptionis utere"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME",
+      "text": "Nomen ostentationis ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME",
+      "text": "Nomen breve ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN",
+      "text": "Dominium ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMINATINGDOMAIN",
+      "text": "Dominium dominans ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME",
+      "text": "Nomen hospitis servi ingressi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_PORT",
+      "text": "Portus servi ingressi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_TYPE",
+      "text": "Genus servi ingressi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_SOCKETTYPE",
+      "text": "Genus socci servi ingressi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_HOSTNAME",
+      "text": "Nomen hospitis servi egressi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_PORT",
+      "text": "Portus servi egressi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_TYPE",
+      "text": "Genus servi egressi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
+      "text": "Genus socci servi egressi"
     }
   ]
 }

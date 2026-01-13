@@ -1945,6 +1945,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "sistam mein haiking karane vaale vyakti kee nakal karata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "chaar boks banaata hai jo pooree skreen ko bhar dete hain, phir boks ke andar ek \"phishanet\" banaata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "baeen or ek tekst likhata hai aur daeen or usaka mirard varshan likhata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "kalar traanzishan ka tareeka"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "traanzishan karane aur kalar chunane ka tareeka chunata hai"
     }
   ]
 }

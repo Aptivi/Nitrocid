@@ -2100,5 +2100,41 @@
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC" xml:space="preserve">
     <value>Χρησιμοποιήστε όνομα κεντρικού υπολογιστή αντί για διεύθυνση</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME" xml:space="preserve">
+    <value>Εμφανιζόμενο όνομα ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME" xml:space="preserve">
+    <value>Σύντομο όνομα ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN" xml:space="preserve">
+    <value>Τομέας ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMINATINGDOMAIN" xml:space="preserve">
+    <value>Κυρίως τομέας ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME" xml:space="preserve">
+    <value>Όνομα κεντρικού υπολογιστή εισερχόμενου διακομιστή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_PORT" xml:space="preserve">
+    <value>Θύρα εισερχόμενου διακομιστή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_TYPE" xml:space="preserve">
+    <value>Τύπος εισερχόμενου διακομιστή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_SOCKETTYPE" xml:space="preserve">
+    <value>Τύπος υποδοχής εισερχόμενου διακομιστή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_HOSTNAME" xml:space="preserve">
+    <value>Όνομα κεντρικού υπολογιστή εξερχόμενου διακομιστή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_PORT" xml:space="preserve">
+    <value>Θύρα εξερχόμενου διακομιστή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_TYPE" xml:space="preserve">
+    <value>Τύπος εξερχόμενου διακομιστή</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE" xml:space="preserve">
+    <value>Τύπος υποδοχής εξερχόμενου διακομιστή</value>
+  </data>
 
 </root>

@@ -1946,6 +1946,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "Sistemlere sızan bir kişiyi simüle eder"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "Ekranın tamamını kaplayan dört kutu oluşturur, ardından kutuların içine \"balık ağı\" deseni çizer."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "Sol tarafa bir metin, sağ tarafa ise bunun aynalı halini yazar."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "Renk geçiş yöntemi"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "Geçiş şeklini ve renk seçimini belirler."
     }
   ]
 }

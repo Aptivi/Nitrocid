@@ -1951,6 +1951,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "Simuleert een persoon die in systemen inbreekt"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "Maakt vier vakken die het hele scherm vullen en vervolgens een \"visnet\" binnen de vakken."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "Schrijft tekst aan de linkerkant en de gespiegelde versie ervan aan de rechterkant."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "Kleurovergangsmethode"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "Kiest hoe de overgang moet verlopen en selecteert kleuren."
     }
   ]
 }

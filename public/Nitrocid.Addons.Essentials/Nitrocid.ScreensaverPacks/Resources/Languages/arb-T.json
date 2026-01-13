@@ -1971,6 +1971,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "يحاكي اختراق الأنظمة"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "يُنشئ أربعة مربعات تملأ الشاشة بالكامل، ثم يُنشئ شبكة داخل المربعات."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "يكتب نصًا على اليسار ونسخته المعكوسة على اليمين."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "طريقة انتقال الألوان."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "يختار كيفية الانتقال والألوان."
     }
   ]
 }

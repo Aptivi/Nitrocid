@@ -1944,6 +1944,22 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
       "text": "Simula uma pessoa invadindo sistemas"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC",
+      "text": "Cria quatro caixas que preenchem toda a tela e, em seguida, cria uma \"rede\" dentro das caixas."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC",
+      "text": "Escreve um texto à esquerda e sua versão espelhada à direita."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME",
+      "text": "Método de transição de cores."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC",
+      "text": "Escolhe como fazer a transição e seleciona as cores."
     }
   ]
 }

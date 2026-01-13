@@ -1572,5 +1572,17 @@
   <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
     <value>Simule une tentative de piratage informatique</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_DESC" xml:space="preserve">
+    <value>Crée quatre rectangles occupant tout l&apos;écran, puis un motif en forme de filet à l&apos;intérieur.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MIRRORWRITE_SETTINGS_DESC" xml:space="preserve">
+    <value>Affiche un texte à gauche et son image miroir à droite.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_NAME" xml:space="preserve">
+    <value>Méthode de transition des couleurs.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_METHOD_DESC" xml:space="preserve">
+    <value>Choix du mode de transition et des couleurs.</value>
+  </data>
 
 </root>
