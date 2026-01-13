@@ -506,10 +506,6 @@
       "text": "Berapa milisaat perlu menunggu sebelum menulis dalam skrin baharu?"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
-      "text": "Penjana nama dan nama keluarga"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
       "text": "Kiraan nama minimum"
     },
@@ -542,60 +538,8 @@
       "text": "Jumlah maksimum tahun umur untuk dijana"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
-      "text": "Pencari nama pertama"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
-      "text": "Hasilkan nama menggunakan senarai nama lelaki"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
-      "text": "Hasilkan nama menggunakan senarai nama perempuan"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
-      "text": "Hasilkan nama menggunakan senarai nama bersatu"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
-      "text": "Pencari nama keluarga"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
       "text": "Mensimulasikan carian pangkalan data untuk orang rawak."
-    },
-    {
-      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
-      "text": "Gagal mendapatkan entri tetapan."
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
-      "text": "Hasilkan tag nama (umlaut pada masa ini tidak disokong)"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
-      "text": "Istilah carian"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
-      "text": "Awalan nama untuk mencari"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
-      "text": "Akhiran nama untuk dicari"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
-      "text": "Awalan nama keluarga untuk mencari"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
-      "text": "Akhiran nama keluarga untuk mencari"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
-      "text": "Berapa banyak nama untuk dijana?"
     },
     {
       "loc": "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC",

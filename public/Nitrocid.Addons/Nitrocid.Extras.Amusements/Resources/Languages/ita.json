@@ -506,10 +506,6 @@
       "text": "Quanti millisecondi devono aspettare prima di scrivere nella nuova schermata?"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
-      "text": "Generatore di nomi e cognomi"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
       "text": "Conteggio nomi minimo"
     },
@@ -542,60 +538,8 @@
       "text": "Quantità massima di anni di età da generare"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
-      "text": "Cercatore di nomi"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
-      "text": "Genera nomi utilizzando l'elenco dei nomi maschili"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
-      "text": "Genera nomi utilizzando l'elenco dei nomi femminili"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
-      "text": "Genera nomi utilizzando l'elenco dei nomi unificati"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
-      "text": "Cercatore di cognomi"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
       "text": "Simula una ricerca nel database per una persona a caso."
-    },
-    {
-      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
-      "text": "Impossibile ottenere le voci delle impostazioni."
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
-      "text": "Generare etichette con i nomi (le dieresi non sono attualmente supportate)"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
-      "text": "Termine di ricerca"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
-      "text": "Prefisso del nome da cercare"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
-      "text": "Suffisso del nome da cercare"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
-      "text": "Prefisso del cognome da ricercare"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
-      "text": "Suffisso del cognome da ricercare"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
-      "text": "Quanti nomi generare?"
     },
     {
       "loc": "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC",

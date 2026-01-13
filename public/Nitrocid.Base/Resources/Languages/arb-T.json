@@ -1749,18 +1749,6 @@
       "text": "يظهر الإخطار الذي يظهر تقدم التحميل."
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC",
-      "text": "للتحقق مما إذا كانت السلسلة القابلة للترجمة موجودة في موارد KS"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND",
-      "text": "تم العثور على سلسلة في موارد الترجمة."
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND",
-      "text": "لم يتم العثور على سلسلة في موارد الترجمة."
-    },
-    {
       "loc": "NKS_ARGUMENTS_ARGUMENT_QUIET_DESC",
       "text": "يبدأ النواة بهدوء"
     },
@@ -1879,10 +1867,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT",
       "text": "من أين تريد تحميل إعدادات kernel الحالية؟"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC",
-      "text": "يتحقق لمعرفة ما إذا كانت السلاسل القابلة للترجمة موجودة في موارد KS"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC",
@@ -2043,10 +2027,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC",
       "text": "يفتح إعدادات البداية"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC",
-      "text": "يسرد متغيرات UESH المتاحة"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
@@ -4009,14 +3989,6 @@
       "text": "قامت بعض التعديلات الضارة بإزالة حساب الجذر، أو حدث موقف نادر ثم اختفى."
     },
     {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM",
-      "text": "من"
-    },
-    {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED",
-      "text": "لا يوجد رد فعل."
-    },
-    {
       "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON",
       "text": "قم بتثبيت الملحق RSS Shell Extras!"
     },
@@ -4177,28 +4149,12 @@
       "text": "اختبارات المستخدم"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN",
-      "text": "اغلق"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC",
-      "text": "يخرج من وضع الاختبار ويغلق النواة"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT",
-      "text": "اختر قسم اختبار لتشغيله"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_NO",
       "text": "لا"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE",
       "text": "يجب ألا يتجاوز رقم إطار المكدس الكمية الحالية من الإطارات أو يجب ألا يكون سالبًا."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
-      "text": "نيتروسيد كانساس"
     },
     {
       "loc": "NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART",
@@ -4249,24 +4205,8 @@
       "text": "لم يتم تثبيت حزمة معلومات المنطقة الزمنية بعد على نظام Linux الخاص بك. قم بتثبيت \"tzdata\" باستخدام مدير الحزم الخاص بالتوزيع."
     },
     {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
-      "text": "انتظر من فضلك"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_LOADING",
       "text": "تحميل"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT",
-      "text": "يرجى الانتظار حتى تتم تهيئة النواة"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN",
-      "text": "الرجاء الانتظار حتى يتم إيقاف تشغيل النواة"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART",
-      "text": "يرجى الانتظار حتى يتم إعادة تشغيل النواة"
     },
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_STARTING",
@@ -4513,10 +4453,6 @@
       "text": "يقوم بفك تشفير النص المشفر"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC",
-      "text": "يقوم بفك تشفير النص من تمثيل BASE64"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC",
       "text": "يوفر معلومات حول القرص"
     },
@@ -4551,10 +4487,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC",
       "text": "يشفر النص"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC",
-      "text": "يشفر النص إلى تمثيل BASE64"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC",
@@ -4615,10 +4547,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
       "text": "يعرض معلومات الترخيص للنواة"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC",
-      "text": "التحقق من البرنامج النصي UESH بحثًا عن أخطاء في بناء الجملة"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC",
@@ -4955,14 +4883,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE",
       "text": "اختر لغتك"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT",
-      "text": "اكتب سلسلة قابلة للترجمة للتحقق:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT",
-      "text": "اكتب مسار ملف قائمة سلسلة قابل للترجمة للتحقق:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC",
@@ -5537,18 +5457,6 @@
       "text": "يتم دعم خوارزميات التشفير المتماثلة التي تستخدم كلاً من المفتاح ومتجه التهيئة فقط."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS",
-      "text": "نجح الوبر النصي."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED",
-      "text": "فشل خط البرنامج النصي. على الأرجح هناك خطأ في بناء الجملة. تحقق من البرنامج النصي الخاص بك بحثًا عن الأخطاء وأعد محاولة تشغيل linter."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR",
-      "text": "فشل البرنامج النصي linter بشكل غير متوقع في محاولة تحليل البرنامج النصي الخاص بك."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR",
       "text": "معلومات ل"
     },
@@ -5885,14 +5793,6 @@
       "text": "المنطقة الزمنية على مستوى النواة المراد استخدامها"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME",
-      "text": "إظهار مربع معلومات الترخيص"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC",
-      "text": "ما إذا كان سيتم عرض مربع معلومات الترخيص المشروط لمدة ثلاث ثوانٍ بعد كل تسجيل دخول. يوصى بالاحتفاظ به."
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_DESC",
       "text": "يتيح لك هذا القسم اختيار نوع اللون الذي تريد تغييره."
     },
@@ -6199,14 +6099,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME",
       "text": "إظهار MAL عند تسجيل الدخول"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME",
-      "text": "MOTD والعنوان الرئيسي في أسفل ساعة تسجيل الدخول الحديثة"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC",
-      "text": "ما إذا كان سيتم إظهار MOTD والعنوان الرئيسي في الجزء السفلي أو العلوي من الساعة"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME",
@@ -6745,10 +6637,6 @@
       "text": "يقوم بتشغيل الإدخال المحدد"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
-      "text": "لم يتم تحديد البيئة"
-    },
-    {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "قد لا يكون تاريخ ووقت التنبيه في الماضي."
     },
@@ -7015,30 +6903,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME",
       "text": "لون اسم ربط مفتاح TUI التفاعلي"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME",
-      "text": "تمكين الحاجيات"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC",
-      "text": "لتمكين عناصر واجهة المستخدم في معالج تسجيل الدخول الحديث وجميع المعالجات التي تستخدم واجهة برمجة تطبيقات عناصر واجهة المستخدم."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME",
-      "text": "القطعة الأولى"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC",
-      "text": "القطعة الأولى لمعالج تسجيل الدخول الحديث. يمكنك تكوين هذه القطعة في إدخال الإعدادات الخاصة بها."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME",
-      "text": "القطعة الثانية"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC",
-      "text": "القطعة الثانية لمعالج تسجيل الدخول الحديث. يمكنك تكوين هذه القطعة في إدخال الإعدادات الخاصة بها."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME",
@@ -8169,10 +8033,6 @@
       "text": "تمثيل السلسلة المشفرة"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC",
-      "text": "سلسلة مشفرة بتنسيق BASE64"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC",
       "text": "المسار إلى الدليل"
     },
@@ -8251,10 +8111,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "المسار إلى الدليل للجزء الأيمن"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
-      "text": "المسار إلى البرنامج النصي UESH"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC",
@@ -8513,14 +8369,6 @@
       "text": "يتيح لك هذا تعيين أنظمة ألوان متعددة للنواة"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME",
-      "text": "إعدادات معالج تسجيل الدخول الحديث"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC",
-      "text": "يتيح لك هذا تكوين معالج تسجيل الدخول الحديث"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME",
       "text": "نظام المساعدة"
     },
@@ -8633,14 +8481,6 @@
       "text": "هل يجب تشغيل المؤثرات الصوتية لشاشة التوقف المحيطة أم لا"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME",
-      "text": "تكثيف تأثيرات صوت شاشة التوقف المحيطة"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC",
-      "text": "هل يجب تكثيف تأثيرات صوت شاشة التوقف المحيطة أم لا"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME",
       "text": "مستوى صوت الإشارة الصوتية"
     },
@@ -8723,14 +8563,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC",
       "text": "ما هي الثقافة التي يتم استخدامها لتغيير أسماء الأشهر والتقويم وما إلى ذلك؟"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME",
-      "text": "تمكين أدوات \"الصفحة الرئيسية لـ Nitrocid\""
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC",
-      "text": "تمكين أدوات \"الصفحة الرئيسية لـ Nitrocid\" على الجانب الأيمن من الشاشة."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME",
@@ -8873,44 +8705,8 @@
       "text": "إضافات - توقعات"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_FTP",
-      "text": "إضافات - شل بروتوكول نقل الملفات"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_GIT",
-      "text": "الإضافات - جيت شل"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_HTTP",
-      "text": "إضافات - HTTP شل"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_JSON",
-      "text": "الإضافات - JSON Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO",
-      "text": "الإضافات - استوديو اللغات"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_MAIL",
-      "text": "إضافات - شل البريد"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_NOTES",
       "text": "إضافات - ملاحظات"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_RSS",
-      "text": "إضافات - RSS شل"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_SFTP",
-      "text": "إضافات - شل SFTP"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_SQL",
-      "text": "إضافات - شل SQL"
     },
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
@@ -9059,14 +8855,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
       "text": "ما هو برنامج تشغيل الفرز الذي ترغب في استخدامه؟"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
-      "text": "برنامج تشغيل الإدخال الحالي"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
-      "text": "ما هو برنامج تشغيل الإدخال الذي ترغب في استخدامه؟"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
@@ -9255,10 +9043,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
       "text": "يطبع النتيجة على وحدة التحكم"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
-      "text": "معالجة المتغيرات المتعددة القديمة"
     },
     {
       "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",

@@ -503,10 +503,6 @@
       "text": "Скільки мілісекунд чекати, перш ніж писати на новому екрані?"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
-      "text": "Генератор імені та прізвища"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
       "text": "Мінімальна кількість імен"
     },
@@ -539,60 +535,8 @@
       "text": "Максимальна кількість років для створення"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
-      "text": "Пошук імені"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
-      "text": "Згенеруйте імена за допомогою списку чоловічих імен"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
-      "text": "Створіть імена за допомогою списку жіночих імен"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
-      "text": "Створення імен за допомогою уніфікованого списку імен"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
-      "text": "Пошук прізвищ"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
       "text": "Імітує пошук у базі даних для випадкової людини."
-    },
-    {
-      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
-      "text": "Не вдалося отримати записи налаштувань."
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
-      "text": "Створення тегів імен (умляути наразі не підтримуються)"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
-      "text": "Пошуковий термін"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
-      "text": "Префікс імені для пошуку"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
-      "text": "Суфікс імені для пошуку"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
-      "text": "Префікс прізвища для пошуку"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
-      "text": "Суфікс прізвища для пошуку"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
-      "text": "Скільки імен згенерувати?"
     },
     {
       "loc": "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC",

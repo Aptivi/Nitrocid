@@ -503,10 +503,6 @@
       "text": "Berapa milidetik yang harus ditunggu sebelum menulis di layar baru?"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
-      "text": "Generator nama dan nama keluarga"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
       "text": "Jumlah nama minimum"
     },
@@ -539,60 +535,8 @@
       "text": "Jumlah tahun usia maksimum untuk menghasilkan"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
-      "text": "Penemu nama depan"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
-      "text": "Hasilkan nama menggunakan daftar nama laki-laki"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
-      "text": "Hasilkan nama menggunakan daftar nama perempuan"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
-      "text": "Hasilkan nama menggunakan daftar nama terpadu"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
-      "text": "Penemu nama keluarga"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
       "text": "Mensimulasikan pencarian basis data untuk orang acak."
-    },
-    {
-      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
-      "text": "Gagal mendapatkan entri pengaturan."
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
-      "text": "Hasilkan tanda nama (umlaut saat ini tidak didukung)"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
-      "text": "Istilah pencarian"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
-      "text": "Nama awalan untuk pencarian"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
-      "text": "Nama akhiran untuk pencarian"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
-      "text": "Awalan nama keluarga untuk pencarian"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
-      "text": "Akhiran nama keluarga untuk pencarian"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
-      "text": "Berapa banyak nama yang akan dihasilkan?"
     },
     {
       "loc": "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC",

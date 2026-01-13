@@ -489,9 +489,6 @@
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC" xml:space="preserve">
     <value>Hvor mange millisekunder skal du vente før du skriver i den nye skjermen?</value>
   </data>
-  <data name="NKS_NAMEGEN_COMMAND_GENNAME_DESC" xml:space="preserve">
-    <value>Navne- og etternavnsgenerator</value>
-  </data>
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME" xml:space="preserve">
     <value>Minimumsnavn teller</value>
   </data>
@@ -516,47 +513,8 @@
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC" xml:space="preserve">
     <value>Maksimalt antall aldersår å generere</value>
   </data>
-  <data name="NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC" xml:space="preserve">
-    <value>Fornavnsøker</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC" xml:space="preserve">
-    <value>Generer navn ved å bruke listen over mannlige navn</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC" xml:space="preserve">
-    <value>Generer navn ved å bruke kvinnenavnlisten</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC" xml:space="preserve">
-    <value>Generer navn ved å bruke den enhetlige navnelisten</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC" xml:space="preserve">
-    <value>Etternavn finner</value>
-  </data>
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC" xml:space="preserve">
     <value>Simulerer et databaseoppslag for en tilfeldig person.</value>
-  </data>
-  <data name="NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
-    <value>Kunne ikke hente innstillingsoppføringer.</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_T_DESC" xml:space="preserve">
-    <value>Generer navnemerker (omlyd støttes for øyeblikket ikke)</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC" xml:space="preserve">
-    <value>Søkeord</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC" xml:space="preserve">
-    <value>Navneprefiks for å søke</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC" xml:space="preserve">
-    <value>Navnesuffiks for å søke</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC" xml:space="preserve">
-    <value>Etternavnsprefiks for å søke</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC" xml:space="preserve">
-    <value>Etternavnssuffiks for å søke</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
-    <value>Hvor mange navn skal genereres?</value>
   </data>
   <data name="NKS_AMUSEMENTS_COMMAND_CLICKER_DESC" xml:space="preserve">
     <value>Trykk på et tall fra de ni boksene for å få mynter, med alle boksene låst og med automatisk økning</value>

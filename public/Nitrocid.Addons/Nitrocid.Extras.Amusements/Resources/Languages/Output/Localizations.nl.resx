@@ -489,9 +489,6 @@
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC" xml:space="preserve">
     <value>Hoeveel milliseconden wachten voordat u in het nieuwe scherm schrijft?</value>
   </data>
-  <data name="NKS_NAMEGEN_COMMAND_GENNAME_DESC" xml:space="preserve">
-    <value>Naam- en achternaamgenerator</value>
-  </data>
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME" xml:space="preserve">
     <value>Minimum aantal namen</value>
   </data>
@@ -516,47 +513,8 @@
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC" xml:space="preserve">
     <value>Maximaal aantal te genereren leeftijdsjaren</value>
   </data>
-  <data name="NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC" xml:space="preserve">
-    <value>Voornaamzoeker</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC" xml:space="preserve">
-    <value>Genereer namen met behulp van de lijst met mannelijke namen</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC" xml:space="preserve">
-    <value>Genereer namen met behulp van de lijst met vrouwelijke namen</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC" xml:space="preserve">
-    <value>Genereer namen met behulp van de uniforme namenlijst</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC" xml:space="preserve">
-    <value>Achternaamzoeker</value>
-  </data>
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC" xml:space="preserve">
     <value>Simuleert het opzoeken van een database voor een willekeurig persoon.</value>
-  </data>
-  <data name="NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
-    <value>Het is niet gelukt om de instellingen op te halen.</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_T_DESC" xml:space="preserve">
-    <value>Genereer naamtags (umlauts worden momenteel niet ondersteund)</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC" xml:space="preserve">
-    <value>Zoekterm</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC" xml:space="preserve">
-    <value>Naamvoorvoegsel om te zoeken</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC" xml:space="preserve">
-    <value>Naamsuffix om te zoeken</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC" xml:space="preserve">
-    <value>Achternaamvoorvoegsel om te zoeken</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC" xml:space="preserve">
-    <value>Achternaamsuffix om te zoeken</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
-    <value>Hoeveel namen moeten er worden gegenereerd?</value>
   </data>
   <data name="NKS_AMUSEMENTS_COMMAND_CLICKER_DESC" xml:space="preserve">
     <value>Druk op een nummer in een van de negen vakjes om munten te krijgen, waarbij alle vakjes vergrendeld zijn en automatisch oplopen</value>

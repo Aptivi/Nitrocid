@@ -489,9 +489,6 @@
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC" xml:space="preserve">
     <value>Quanti millisecondi devono aspettare prima di scrivere nella nuova schermata?</value>
   </data>
-  <data name="NKS_NAMEGEN_COMMAND_GENNAME_DESC" xml:space="preserve">
-    <value>Generatore di nomi e cognomi</value>
-  </data>
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME" xml:space="preserve">
     <value>Conteggio nomi minimo</value>
   </data>
@@ -516,47 +513,8 @@
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC" xml:space="preserve">
     <value>Quantità massima di anni di età da generare</value>
   </data>
-  <data name="NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC" xml:space="preserve">
-    <value>Cercatore di nomi</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC" xml:space="preserve">
-    <value>Genera nomi utilizzando l&apos;elenco dei nomi maschili</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC" xml:space="preserve">
-    <value>Genera nomi utilizzando l&apos;elenco dei nomi femminili</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC" xml:space="preserve">
-    <value>Genera nomi utilizzando l&apos;elenco dei nomi unificati</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC" xml:space="preserve">
-    <value>Cercatore di cognomi</value>
-  </data>
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC" xml:space="preserve">
     <value>Simula una ricerca nel database per una persona a caso.</value>
-  </data>
-  <data name="NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
-    <value>Impossibile ottenere le voci delle impostazioni.</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_T_DESC" xml:space="preserve">
-    <value>Generare etichette con i nomi (le dieresi non sono attualmente supportate)</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC" xml:space="preserve">
-    <value>Termine di ricerca</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC" xml:space="preserve">
-    <value>Prefisso del nome da cercare</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC" xml:space="preserve">
-    <value>Suffisso del nome da cercare</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC" xml:space="preserve">
-    <value>Prefisso del cognome da ricercare</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC" xml:space="preserve">
-    <value>Suffisso del cognome da ricercare</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
-    <value>Quanti nomi generare?</value>
   </data>
   <data name="NKS_AMUSEMENTS_COMMAND_CLICKER_DESC" xml:space="preserve">
     <value>Premi un numero tra le nove caselle per ottenere monete, con tutte le caselle bloccate e con incremento automatico</value>

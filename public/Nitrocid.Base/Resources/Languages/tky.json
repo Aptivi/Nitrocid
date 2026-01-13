@@ -1724,18 +1724,6 @@
       "text": "Yükleme ilerlemesini gösteren bildirimi gösterir."
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC",
-      "text": "Çevrilebilir dizenin KS kaynaklarında mevcut olup olmadığını kontrol eder"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND",
-      "text": "Yerelleştirme kaynaklarında dize bulundu."
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND",
-      "text": "Yerelleştirme kaynaklarında dize bulunamadı."
-    },
-    {
       "loc": "NKS_ARGUMENTS_ARGUMENT_QUIET_DESC",
       "text": "Çekirdeği sessizce başlatır"
     },
@@ -1854,10 +1842,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT",
       "text": "Mevcut çekirdek ayarlarını nereden yüklemek istiyorsunuz?"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC",
-      "text": "Çevrilebilir dizelerin KS kaynaklarında mevcut olup olmadığını kontrol eder"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC",
@@ -2018,10 +2002,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC",
       "text": "Açılış ayarlarını açar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC",
-      "text": "Mevcut UESH değişkenlerini listeler"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
@@ -3984,14 +3964,6 @@
       "text": "Kötü niyetli bir mod root hesabını silmiş veya nadir bir durum yaşanmış ve root hesabı gitmiş."
     },
     {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM",
-      "text": "İtibaren"
-    },
-    {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED",
-      "text": "Besleme yok."
-    },
-    {
       "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON",
       "text": "RSS Shell Extras eklentisini yükleyin!"
     },
@@ -4152,28 +4124,12 @@
       "text": "Kullanıcı testleri"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN",
-      "text": "Kapat"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC",
-      "text": "Test modundan çıkar ve çekirdeği kapatır"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT",
-      "text": "Çalıştırılacak bir test bölümü seçin"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_NO",
       "text": "HAYIR"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE",
       "text": "Yığın kare sayısı mevcut kare sayısını aşmamalı veya negatif olmamalıdır."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
-      "text": "Nitrosit KS"
     },
     {
       "loc": "NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART",
@@ -4224,24 +4180,8 @@
       "text": "Saat dilimi bilgi paketi henüz Linux sisteminize yüklenmedi. Dağıtımınızın paket yöneticisini kullanarak 'tzdata'yı yükleyin."
     },
     {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
-      "text": "Lütfen bekleyin"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_LOADING",
       "text": "Yükleniyor"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT",
-      "text": "Çekirdek başlatılırken lütfen bekleyin"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN",
-      "text": "Çekirdek kapanırken lütfen bekleyin"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART",
-      "text": "Çekirdek yeniden başlatılırken lütfen bekleyin"
     },
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_STARTING",
@@ -4488,10 +4428,6 @@
       "text": "Kodlanmış metni çözer"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC",
-      "text": "BASE64 gösteriminden metni çözer"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC",
       "text": "Bir disk hakkında bilgi sağlar"
     },
@@ -4526,10 +4462,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC",
       "text": "Metni kodlar"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC",
-      "text": "Metni bir BASE64 gösterimine kodlar"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC",
@@ -4590,10 +4522,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
       "text": "Çekirdek için lisans bilgilerini gösterir"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC",
-      "text": "Bir UESH betiğini sözdizimi hataları açısından kontrol eder"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC",
@@ -4930,14 +4858,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE",
       "text": "Dilinizi seçin"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT",
-      "text": "Kontrol etmek için çevrilebilir bir dize yazın:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT",
-      "text": "Kontrol etmek için çevrilebilir bir dize listesi dosya yolu yazın:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC",
@@ -5512,18 +5432,6 @@
       "text": "Hem anahtarı hem de başlatma vektörünü kullanan yalnızca simetrik kodlama algoritmaları desteklenir."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS",
-      "text": "Komut dosyası ayıklaması başarılı oldu."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED",
-      "text": "Komut dosyası lint başarısız oldu. Büyük olasılıkla bir sözdizimi hatası var. Komut dosyanızda hata olup olmadığını kontrol edin ve linter'ı tekrar çalıştırmayı deneyin."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR",
-      "text": "Komut dosyanızı ayrıştırmaya çalışırken komut dosyası tarama aracı beklenmedik bir şekilde başarısız oldu."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR",
       "text": "Bilgi için"
     },
@@ -5860,14 +5768,6 @@
       "text": "Kullanılacak çekirdek genelindeki zaman dilimi"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME",
-      "text": "Lisans bilgi kutusunu göster"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC",
-      "text": "Her oturum açma işleminden sonra modal lisans bilgi kutusunun üç saniye boyunca gösterilip gösterilmeyeceği. Açık tutulması önerilir."
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_DESC",
       "text": "Bu bölüm, hangi renk türünü değiştirmek istediğinizi seçmenize olanak tanır."
     },
@@ -6174,14 +6074,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME",
       "text": "Girişte MAL'ı göster"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME",
-      "text": "Modern oturum açma saatinin altındaki MOTD ve Başlık"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC",
-      "text": "MOTD ve başlığın saatin alt kısmında mı yoksa üst kısmında mı gösterileceği"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME",
@@ -6720,10 +6612,6 @@
       "text": "Seçilen girişi başlat"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
-      "text": "Çevre belirtilmemiş"
-    },
-    {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "Alarmın tarihi ve saati geçmişte olmayabilir."
     },
@@ -6990,30 +6878,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME",
       "text": "Etkileşimli TUI yerleşik tuş bağlama adı rengi"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME",
-      "text": "Widget'ları etkinleştir"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC",
-      "text": "Modern oturum açma işleyicisindeki ve widget API'sini kullanan tüm işleyicilerdeki widget'ları etkinleştirir."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME",
-      "text": "İlk widget"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC",
-      "text": "Modern oturum açma işleyicisi için ilk widget. Bu widget'ı ilgili ayarlar girişinde yapılandırabilirsiniz."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME",
-      "text": "İkinci widget"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC",
-      "text": "Modern oturum açma işleyicisi için ikinci widget. Bu widget'ı ilgili ayarlar girişinde yapılandırabilirsiniz."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME",
@@ -8144,10 +8008,6 @@
       "text": "Kodlanmış dize gösterimi"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC",
-      "text": "Kodlanmış BASE64 dizesi"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC",
       "text": "Dizin yolu"
     },
@@ -8226,10 +8086,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "Sağ bölme için dizine giden yol"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
-      "text": "UESH betiğine giden yol"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC",
@@ -8488,14 +8344,6 @@
       "text": "Bu, birden fazla çekirdek renk şeması ayarlamanıza olanak tanır"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME",
-      "text": "Modern oturum açma işleyicisi ayarları"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC",
-      "text": "Bu, modern oturum açma işleyicisini yapılandırmanıza olanak tanır"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME",
       "text": "Yardım sistemi"
     },
@@ -8608,14 +8456,6 @@
       "text": "Ortam ekran koruyucu ses efektlerinin çalınıp çalınmayacağı"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME",
-      "text": "Ortam ekran koruyucu ses efektlerini yoğunlaştırın"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC",
-      "text": "Ortam ekran koruyucu ses efektlerinin yoğunlaştırılması gerekip gerekmediği"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME",
       "text": "Ses ipucu ses seviyesi"
     },
@@ -8698,14 +8538,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC",
       "text": "Ay adlarını, takvimi vb. değiştirmek için hangi kültür kullanılıyor?"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME",
-      "text": "'Nitrocid Ana Sayfası' widget'larını etkinleştir"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC",
-      "text": "Ekranın sağ tarafındaki 'Nitrocid Ana Sayfası' widget'larını etkinleştirir."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME",
@@ -8848,44 +8680,8 @@
       "text": "Ekstralar - Tahmin"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_FTP",
-      "text": "Ekstralar - FTP Kabuğu"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_GIT",
-      "text": "Ekstralar - Git Kabuğu"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_HTTP",
-      "text": "Ekstralar - HTTP Kabuğu"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_JSON",
-      "text": "Ekstralar - JSON Kabuğu"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO",
-      "text": "Ekstralar - Dil Stüdyosu"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_MAIL",
-      "text": "Ekstralar - Mail Shell"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_NOTES",
       "text": "Ekstralar - Notlar"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_RSS",
-      "text": "Ekstralar - RSS Kabuğu"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_SFTP",
-      "text": "Ekstralar - SFTP Kabuğu"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_SQL",
-      "text": "Ekstralar - SQL Kabuğu"
     },
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
@@ -9034,14 +8830,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
       "text": "Hangi sıralama sürücüsünü kullanmak istersiniz?"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
-      "text": "Mevcut giriş sürücüsü"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
-      "text": "Hangi giriş sürücüsünü kullanmak istersiniz?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
@@ -9230,10 +9018,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
       "text": "Sonucu konsola yazdırır."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
-      "text": "Eski Çok Değişkenli İşleme"
     },
     {
       "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",

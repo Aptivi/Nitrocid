@@ -1404,15 +1404,6 @@
   <data name="NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_DESC" xml:space="preserve">
     <value>Ostendit notificationem monstrans progressus onerationis.</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC" xml:space="preserve">
-    <value>Checks videre an filum translatabile in KS existat facultates</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND" xml:space="preserve">
-    <value>Fila localizationis inventa sunt in opibus.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND" xml:space="preserve">
-    <value>Filum non invenitur in opibus localizationis.</value>
-  </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_QUIET_DESC" xml:space="preserve">
     <value>Incipit nucleo quiete</value>
   </data>
@@ -1502,9 +1493,6 @@
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT" xml:space="preserve">
     <value>Ubi vis nucleum hodiernam uncinis onerare?</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC" xml:space="preserve">
-    <value>Checks videre an chordae translatabiles in KS sint facultates</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC" xml:space="preserve">
     <value>Componit duos fasciculos textus vel plures in lima output.</value>
@@ -1625,9 +1613,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC" xml:space="preserve">
     <value>Aperit adipiscing occasus</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC" xml:space="preserve">
-    <value>Lists available UESH variables</value>
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC" xml:space="preserve">
     <value>Dat lusione</value>
@@ -3099,12 +3084,6 @@
   <data name="NKS_USERS_LOGIN_NOROOTACCOUNT" xml:space="preserve">
     <value>Aliqui modd malitiose radicem remo- rati, vel rarae condicionis accidisse et com- isse.</value>
   </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM" xml:space="preserve">
-    <value>Ex</value>
-  </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED" xml:space="preserve">
-    <value>Nulla a lorem.</value>
-  </data>
   <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON" xml:space="preserve">
     <value>Instrue RSS Testa Extras addon!</value>
   </data>
@@ -3225,23 +3204,11 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS" xml:space="preserve">
     <value>User probat</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN" xml:space="preserve">
-    <value>Shutdown</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC" xml:space="preserve">
-    <value>Exit modus probatio et acinum claudit</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT" xml:space="preserve">
-    <value>Elige test currere ad sectionem</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_THEMESET_NO" xml:space="preserve">
     <value>No</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE" xml:space="preserve">
     <value>Stack frame numerus non excedat quantitatem tabularum currentium vel negativum non debet.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME" xml:space="preserve">
-    <value>Nitrocid KS</value>
   </data>
   <data name="NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART" xml:space="preserve">
     <value>Praefectum filum Kernel deprehensum est {0} relatorum criticorum quae nondum inceperunt.</value>
@@ -3279,20 +3246,8 @@
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
     <value>Tempus zonae informationis involucrum nondum in systemate Linux inauguratus est. Instrue &apos;tzdata&apos; utens involucrum distributionis tuae procurator.</value>
   </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT" xml:space="preserve">
-    <value>Please wait</value>
-  </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>Loading</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT" xml:space="preserve">
-    <value>Quaeso expectare dum nucleus est initializing</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN" xml:space="preserve">
-    <value>Quaeso expecta dum acinum claudit deorsum</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART" xml:space="preserve">
-    <value>Quaeso expecta dum acinum est restarting</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_STARTING" xml:space="preserve">
     <value>Satus</value>
@@ -3477,9 +3432,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_DESC" xml:space="preserve">
     <value>Decodes textus encoded</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC" xml:space="preserve">
-    <value>Textum e BASE64 repraesentatione decedit</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC" xml:space="preserve">
     <value>De orbe notitia praebet</value>
   </data>
@@ -3506,9 +3458,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC" xml:space="preserve">
     <value>Encodes textus</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC" xml:space="preserve">
-    <value>Encodes textum ad BASE64 representation</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC" xml:space="preserve">
     <value>Exquirit lima recursively</value>
@@ -3554,9 +3503,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC" xml:space="preserve">
     <value>Licentiam ostendit informationem pro nucleo</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC" xml:space="preserve">
-    <value>Checks a UESH scriptor pro syntaxi errores</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC" xml:space="preserve">
     <value>Folder recenset recursively</value>
@@ -3809,12 +3755,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE" xml:space="preserve">
     <value>Elige tibi lingua</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT" xml:space="preserve">
-    <value>Scribere translatable chorda sisto:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT" xml:space="preserve">
-    <value>Scribere translatable linea album lima iter ad reprimendam:</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC" xml:space="preserve">
     <value>TUI ratio interactive probat cum duplici pane commercium</value>
@@ -4245,15 +4185,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_GETKEYIV_NEEDSSYMMETRIC" xml:space="preserve">
     <value>Solum algorithmarum symmetriarum modum delatam, quae tum clavem et vectorem initializationem utuntur, sustentantur.</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS" xml:space="preserve">
-    <value>Script lint successit.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED" xml:space="preserve">
-    <value>Scriptum linteolum defuit. Verisimile est syntaxin erroris. Compesce scripturam tuam pro erroribus et retry currendo linter.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR" xml:space="preserve">
-    <value>Scriptum linter inopinato defecerunt ut scriptum tuum parse conatur.</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR" xml:space="preserve">
     <value>Info for</value>
   </data>
@@ -4506,12 +4437,6 @@
   <data name="NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_KERNELWIDETIMEZONE_DESC" xml:space="preserve">
     <value>Zona nucleus temporis spatiosus ad usum</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME" xml:space="preserve">
-    <value>Ostende licentiam notitia arca</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC" xml:space="preserve">
-    <value>Num licentia modalis indicandi capsam indicandi pro tribus secundis post singulas login. Suspendisse ut dictum est.</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_DESC" xml:space="preserve">
     <value>Hanc sectionem permittit vis ut genus coloris mutare vis.</value>
   </data>
@@ -4742,12 +4667,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME" xml:space="preserve">
     <value>Monstra MAL in Log-in</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME" xml:space="preserve">
-    <value>MOTD et Headline in fundo moderni logon horologium</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC" xml:space="preserve">
-    <value>Vivamus scelerisque in imo, vel in summo horologio ostendere MOTD</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME" xml:space="preserve">
     <value>Login tracto</value>
@@ -5151,9 +5070,6 @@
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_KEYBINDING_BOOT" xml:space="preserve">
     <value>Tabernus lectus vestibulum</value>
   </data>
-  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_NOENV" xml:space="preserve">
-    <value>Environment non certa</value>
-  </data>
   <data name="NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT" xml:space="preserve">
     <value>Metum date et tempus ne in praeteritum.</value>
   </data>
@@ -5354,24 +5270,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME" xml:space="preserve">
     <value>Interactive TUI builtin key binding name color</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME" xml:space="preserve">
-    <value>Admitte content</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC" xml:space="preserve">
-    <value>Media dat in logon recentiori tracto et omnibus tracto qui content API utuntur.</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME" xml:space="preserve">
-    <value>Primum image</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC" xml:space="preserve">
-    <value>Primum content pro tracto logon moderno. Hoc contentum in singulis uncinis viscus configurare potes.</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME" xml:space="preserve">
-    <value>Secundum image</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC" xml:space="preserve">
-    <value>Secundae instrumenti ad logon tractatorem modernum. Hoc contentum in singulis uncinis viscus configurare potes.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME" xml:space="preserve">
     <value>mus auxilium</value>
@@ -6219,9 +6117,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_ARGUMENT_ENCODEDSTRING_DESC" xml:space="preserve">
     <value>Encoded linea representation</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC" xml:space="preserve">
-    <value>Encoded BASE64 chorda</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
     <value>Iter ad Directory</value>
   </data>
@@ -6281,9 +6176,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC" xml:space="preserve">
     <value>Iter ad directorium pro pane dextro</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC" xml:space="preserve">
-    <value>Iter ad UESH scriptor</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
     <value>Iter ad Directory ut album</value>
@@ -6477,12 +6369,6 @@
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_DESC" xml:space="preserve">
     <value>Hoc tibi permittit ut plures nuclei coloris technas ponas</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME" xml:space="preserve">
-    <value>Modern logon tracto occasus</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC" xml:space="preserve">
-    <value>Hoc tibi permittit ut moderni logon tracto configurare</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME" xml:space="preserve">
     <value>Auxilium systema</value>
   </data>
@@ -6567,12 +6453,6 @@
   <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_DESC" xml:space="preserve">
     <value>Utrum ludere sonus effectus ambientium Screensaver vel non</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME" xml:space="preserve">
-    <value>Extendet sonus effectus ambientium Screensaver</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC" xml:space="preserve">
-    <value>Utrum augeatur sonus effectus in ambientium Screensaver vel non</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME" xml:space="preserve">
     <value>Audio cue volumen</value>
   </data>
@@ -6635,12 +6515,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC" xml:space="preserve">
     <value>Quae cultura adhibetur ut nomina, calendarium, mutare mensem, etc.?</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME" xml:space="preserve">
-    <value>Admitte &apos;Protocollum Nitrocidum&apos; contenta</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC" xml:space="preserve">
-    <value>Protocollum nitrocidum dat&apos; contenta in dextra parte tentorii.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
     <value>Admitte &apos;Protocollum Nitrocidum&apos; RSS feed</value>
@@ -6747,35 +6621,8 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_FORECAST" xml:space="preserve">
     <value>Extras - Data</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_FTP" xml:space="preserve">
-    <value>Extras - FTP Testa</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_GIT" xml:space="preserve">
-    <value>Extras - Git Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_HTTP" xml:space="preserve">
-    <value>Extras - HTTP Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_JSON" xml:space="preserve">
-    <value>Extras - JSON Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO" xml:space="preserve">
-    <value>Extras - Lingua Studio</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_MAIL" xml:space="preserve">
-    <value>Re - Mail Shell</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_NOTES" xml:space="preserve">
     <value>Extras - Notes</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_RSS" xml:space="preserve">
-    <value>Extras - RSS Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_SFTP" xml:space="preserve">
-    <value>Extras - SFTP Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_SQL" xml:space="preserve">
-    <value>Extras - SQL Crusta</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO" xml:space="preserve">
     <value>Susicivus - Puer Studio</value>
@@ -6887,12 +6734,6 @@
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC" xml:space="preserve">
     <value>Quod genus exactoris uti velis?</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME" xml:space="preserve">
-    <value>Current initus exactoris</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC" xml:space="preserve">
-    <value>Quod initus exactoris uti velis?</value>
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME" xml:space="preserve">
     <value>Current asymmetrica modum translitterandi exactoris</value>
@@ -7034,9 +6875,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
     <value>Resultatum in consolam imprimit</value>
-  </data>
-  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
-    <value>Processus Multivariabilis Legati</value>
   </data>
   <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
     <value>Usor nullam tesseram habet ad operationes authenticationis 2FA peragendas.</value>

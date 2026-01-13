@@ -489,9 +489,6 @@
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_SCREENDELAY_DESC" xml:space="preserve">
     <value>Quot milliseconds expectare antequam in novo scrinio scribebat?</value>
   </data>
-  <data name="NKS_NAMEGEN_COMMAND_GENNAME_DESC" xml:space="preserve">
-    <value>Nomen et cognomen generans</value>
-  </data>
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME" xml:space="preserve">
     <value>Nomina minimum numerare</value>
   </data>
@@ -516,47 +513,8 @@
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MAXAGE_DESC" xml:space="preserve">
     <value>Maximum amount of annis generate</value>
   </data>
-  <data name="NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC" xml:space="preserve">
-    <value>Primum nomen inventor</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC" xml:space="preserve">
-    <value>Genera nomina masculina nomina album</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC" xml:space="preserve">
-    <value>Genera nominibus utens in nominibus femininis album</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC" xml:space="preserve">
-    <value>Genera nomina utens nominibus unificatis</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC" xml:space="preserve">
-    <value>Surname inventor</value>
-  </data>
   <data name="NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC" xml:space="preserve">
     <value>Simulat database lookup pro temere persona.</value>
-  </data>
-  <data name="NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED" xml:space="preserve">
-    <value>Impetrare occasus viscus.</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_SWITCH_T_DESC" xml:space="preserve">
-    <value>Generate nametags (umlauts sunt currently non valet)</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC" xml:space="preserve">
-    <value>Quaerere terminum</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC" xml:space="preserve">
-    <value>Nomen praepositionem quaerere</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC" xml:space="preserve">
-    <value>Nomen que ad investigandum</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC" xml:space="preserve">
-    <value>Surname praepositionem quaerere</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC" xml:space="preserve">
-    <value>Surname que to search</value>
-  </data>
-  <data name="NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC" xml:space="preserve">
-    <value>quot nomina generant?</value>
   </data>
   <data name="NKS_AMUSEMENTS_COMMAND_CLICKER_DESC" xml:space="preserve">
     <value>Numerum ex novem capsulis preme ut nummos accipias, omnibus capsulis clausis et cum incremento automatico.</value>

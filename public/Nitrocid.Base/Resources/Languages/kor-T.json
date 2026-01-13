@@ -1724,18 +1724,6 @@
       "text": "업로드 진행 상황을 보여주는 알림을 표시합니다."
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC",
-      "text": "번역 가능한 문자열이 KS 리소스에 존재하는지 확인합니다."
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND",
-      "text": "현지화 리소스에서 찾은 문자열입니다."
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND",
-      "text": "현지화 리소스에서 문자열을 찾을 수 없습니다."
-    },
-    {
       "loc": "NKS_ARGUMENTS_ARGUMENT_QUIET_DESC",
       "text": "커널을 조용히 시작합니다."
     },
@@ -1854,10 +1842,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT",
       "text": "현재 커널 설정을 어디에서 로드하시겠습니까?"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC",
-      "text": "KS 리소스에 번역 가능한 문자열이 있는지 확인합니다."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC",
@@ -2018,10 +2002,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC",
       "text": "시작 설정을 엽니다."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC",
-      "text": "사용 가능한 UESH 변수를 나열합니다."
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
@@ -3984,14 +3964,6 @@
       "text": "일부 악성 모드가 루트 계정을 제거했거나 드문 상황이 발생하여 사라졌습니다."
     },
     {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM",
-      "text": "에서"
-    },
-    {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED",
-      "text": "피드가 없습니다."
-    },
-    {
       "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON",
       "text": "RSS Shell Extras 애드온을 설치하세요!"
     },
@@ -4152,28 +4124,12 @@
       "text": "사용자 테스트"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN",
-      "text": "일시 휴업"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC",
-      "text": "테스트 모드를 종료하고 커널을 종료합니다."
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT",
-      "text": "실행할 테스트 섹션을 선택하세요."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_NO",
       "text": "아니요"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE",
       "text": "스택 프레임 번호는 현재 프레임 양을 초과하거나 음수일 수 없습니다."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
-      "text": "질산 KS"
     },
     {
       "loc": "NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART",
@@ -4224,24 +4180,8 @@
       "text": "시간대 정보 패키지가 Linux 시스템에 아직 설치되지 않았습니다. 배포판의 패키지 관리자를 사용하여 'tzdata'를 설치하십시오."
     },
     {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
-      "text": "기다리세요"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_LOADING",
       "text": "로드 중"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT",
-      "text": "커널을 초기화하는 동안 잠시 기다려 주십시오."
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN",
-      "text": "커널이 종료되는 동안 잠시 기다려 주십시오."
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART",
-      "text": "커널을 다시 시작하는 동안 잠시 기다려 주십시오."
     },
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_STARTING",
@@ -4488,10 +4428,6 @@
       "text": "인코딩된 텍스트를 디코딩합니다."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC",
-      "text": "BASE64 표현의 텍스트를 디코딩합니다."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC",
       "text": "디스크에 대한 정보를 제공합니다."
     },
@@ -4526,10 +4462,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC",
       "text": "텍스트를 인코딩합니다."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC",
-      "text": "텍스트를 BASE64 표현으로 인코딩합니다."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC",
@@ -4590,10 +4522,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
       "text": "커널에 대한 라이센스 정보를 표시합니다."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC",
-      "text": "UESH 스크립트에서 구문 오류를 확인합니다."
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC",
@@ -4930,14 +4858,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE",
       "text": "당신의 언어를 고르시 오"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT",
-      "text": "확인할 번역 가능한 문자열을 작성하세요."
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT",
-      "text": "확인할 번역 가능한 문자열 목록 파일 경로를 작성하세요."
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC",
@@ -5512,18 +5432,6 @@
       "text": "키와 초기화 벡터를 모두 사용하는 대칭 인코딩 알고리즘만 지원됩니다."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS",
-      "text": "스크립트 린트가 성공했습니다."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED",
-      "text": "스크립트 린트에 실패했습니다. 구문 오류가 있을 가능성이 높습니다. 스크립트에 오류가 있는지 확인하고 linter를 다시 실행해 보세요."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR",
-      "text": "스크립트를 구문 분석하는 동안 스크립트 린터가 예기치 않게 실패했습니다."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR",
       "text": "다음에 대한 정보"
     },
@@ -5860,14 +5768,6 @@
       "text": "사용할 커널 전체 시간대"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME",
-      "text": "라이센스 정보 상자 표시"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC",
-      "text": "각 로그인 후 3초 동안 모달 라이센스 정보 상자를 표시할지 여부입니다. 계속 유지하는 것이 좋습니다."
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_DESC",
       "text": "이 섹션에서는 변경하려는 색상 유형을 선택할 수 있습니다."
     },
@@ -6174,14 +6074,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME",
       "text": "로그인 시 MAL 표시"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME",
-      "text": "현대 로그온 시계 하단의 MOTD 및 헤드라인"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC",
-      "text": "MOTD와 헤드라인을 시계 하단 또는 상단에 표시할지 여부"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME",
@@ -6720,10 +6612,6 @@
       "text": "선택한 항목을 부팅합니다."
     },
     {
-      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
-      "text": "환경이 지정되지 않았습니다."
-    },
-    {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "알람 날짜와 시간은 과거일 수 없습니다."
     },
@@ -6990,30 +6878,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME",
       "text": "대화형 TUI 내장 키 바인딩 이름 색상"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME",
-      "text": "위젯 활성화"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC",
-      "text": "최신 로그온 핸들러와 위젯 API를 사용하는 모든 핸들러에서 위젯을 활성화합니다."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME",
-      "text": "첫 번째 위젯"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC",
-      "text": "최신 로그온 핸들러의 첫 번째 위젯입니다. 해당 설정 항목에서 이 위젯을 구성할 수 있습니다."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME",
-      "text": "두 번째 위젯"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC",
-      "text": "최신 로그온 처리기를 위한 두 번째 위젯입니다. 해당 설정 항목에서 이 위젯을 구성할 수 있습니다."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME",
@@ -8144,10 +8008,6 @@
       "text": "인코딩된 문자열 표현"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC",
-      "text": "인코딩된 BASE64 문자열"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC",
       "text": "디렉토리 경로"
     },
@@ -8226,10 +8086,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "오른쪽 창의 디렉토리 경로"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
-      "text": "UESH 스크립트 경로"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC",
@@ -8488,14 +8344,6 @@
       "text": "이를 통해 여러 커널 색상 구성표를 설정할 수 있습니다."
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME",
-      "text": "최신 로그온 핸들러 설정"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC",
-      "text": "이를 통해 최신 로그온 핸들러를 구성할 수 있습니다."
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME",
       "text": "도움말 시스템"
     },
@@ -8608,14 +8456,6 @@
       "text": "주변 화면 보호기 사운드 효과를 재생할지 여부"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME",
-      "text": "주변 화면 보호기 사운드 효과를 강화합니다."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC",
-      "text": "주변 화면 보호기 사운드 효과를 강화할지 여부"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME",
       "text": "오디오 신호 볼륨"
     },
@@ -8698,14 +8538,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC",
       "text": "어떤 문화권을 사용하여 월 이름, 달력 등을 변경하고 있습니까?"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME",
-      "text": "'The Nitrocid Homepage' 위젯 활성화"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC",
-      "text": "화면 오른쪽에 'The Nitrocid Homepage' 위젯을 활성화합니다."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME",
@@ -8848,44 +8680,8 @@
       "text": "추가사항 - 일기예보"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_FTP",
-      "text": "추가 기능 - FTP 쉘"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_GIT",
-      "text": "추가 기능 - Git Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_HTTP",
-      "text": "추가 사항 - HTTP 쉘"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_JSON",
-      "text": "추가 사항 - JSON 쉘"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO",
-      "text": "추가 사항 - 언어 스튜디오"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_MAIL",
-      "text": "추가 사항 - 메일 셸"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_NOTES",
       "text": "추가 사항 - 메모"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_RSS",
-      "text": "추가 기능 - RSS 쉘"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_SFTP",
-      "text": "추가 사항 - SFTP 쉘"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_SQL",
-      "text": "추가 사항 - SQL 쉘"
     },
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
@@ -9034,14 +8830,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
       "text": "어떤 정렬 드라이버를 사용하시겠습니까?"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
-      "text": "현재 입력 드라이버"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
-      "text": "어떤 입력 드라이버를 사용하시겠습니까?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
@@ -9230,10 +9018,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
       "text": "결과를 콘솔에 출력합니다."
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
-      "text": "기존 다변수 처리"
     },
     {
       "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",

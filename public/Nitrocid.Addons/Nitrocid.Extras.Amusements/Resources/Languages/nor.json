@@ -507,10 +507,6 @@
       "text": "Hvor mange millisekunder skal du vente før du skriver i den nye skjermen?"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
-      "text": "Navne- og etternavnsgenerator"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
       "text": "Minimumsnavn teller"
     },
@@ -543,60 +539,8 @@
       "text": "Maksimalt antall aldersår å generere"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
-      "text": "Fornavnsøker"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
-      "text": "Generer navn ved å bruke listen over mannlige navn"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
-      "text": "Generer navn ved å bruke kvinnenavnlisten"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
-      "text": "Generer navn ved å bruke den enhetlige navnelisten"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
-      "text": "Etternavn finner"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
       "text": "Simulerer et databaseoppslag for en tilfeldig person."
-    },
-    {
-      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
-      "text": "Kunne ikke hente innstillingsoppføringer."
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
-      "text": "Generer navnemerker (omlyd støttes for øyeblikket ikke)"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
-      "text": "Søkeord"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
-      "text": "Navneprefiks for å søke"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
-      "text": "Navnesuffiks for å søke"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
-      "text": "Etternavnsprefiks for å søke"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
-      "text": "Etternavnssuffiks for å søke"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
-      "text": "Hvor mange navn skal genereres?"
     },
     {
       "loc": "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC",

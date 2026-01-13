@@ -1723,18 +1723,6 @@
       "text": "अपलोड प्रगति दिखाते हुए अधिसूचना दिखाता है।"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC",
-      "text": "यह देखने के लिए जांचता है कि केएस संसाधनों में अनुवाद योग्य स्ट्रिंग मौजूद है या नहीं"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND",
-      "text": "स्थानीयकरण संसाधनों में स्ट्रिंग मिली।"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND",
-      "text": "स्थानीयकरण संसाधनों में स्ट्रिंग नहीं मिली।"
-    },
-    {
       "loc": "NKS_ARGUMENTS_ARGUMENT_QUIET_DESC",
       "text": "कर्नेल को चुपचाप प्रारंभ करें"
     },
@@ -1853,10 +1841,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT",
       "text": "आप वर्तमान कर्नेल सेटिंग्स को कहाँ से लोड करना चाहते हैं?"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC",
-      "text": "यह देखने के लिए जांचता है कि केएस संसाधनों में अनुवाद योग्य तार मौजूद हैं या नहीं"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC",
@@ -2017,10 +2001,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC",
       "text": "स्प्लैश सेटिंग खोलता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC",
-      "text": "उपलब्ध UESH चरों की सूचियाँ"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
@@ -3983,14 +3963,6 @@
       "text": "किसी दुर्भावनापूर्ण मॉड ने रूट खाता हटा दिया, या दुर्लभ स्थिति उत्पन्न हुई और वह चला गया।"
     },
     {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM",
-      "text": "से"
-    },
-    {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED",
-      "text": "कोई चारा नहीं."
-    },
-    {
       "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON",
       "text": "RSS शेल एक्स्ट्रा ऐडऑन इंस्टॉल करें!"
     },
@@ -4151,28 +4123,12 @@
       "text": "उपयोगकर्ता परीक्षण"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN",
-      "text": "शट डाउन"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC",
-      "text": "परीक्षण मोड से बाहर निकलता है और कर्नेल को बंद कर देता है"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT",
-      "text": "चलाने के लिए एक परीक्षण अनुभाग चुनें"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_NO",
       "text": "नहीं"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE",
       "text": "स्टैक फ़्रेम संख्या फ़्रेम की वर्तमान मात्रा से अधिक नहीं होनी चाहिए या नकारात्मक नहीं होनी चाहिए।"
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
-      "text": "नाइट्रोसिड के.एस"
     },
     {
       "loc": "NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART",
@@ -4223,24 +4179,8 @@
       "text": "आपके लिनक्स सिस्टम पर समय क्षेत्र सूचना पैकेज अभी तक स्थापित नहीं है। अपने वितरण के पैकेज प्रबंधक का उपयोग करके 'tzdata' स्थापित करें।"
     },
     {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
-      "text": "कृपया प्रतीक्षा करें"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_LOADING",
       "text": "लोड हो रहा है"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT",
-      "text": "कृपया कर्नेल प्रारंभ होने तक प्रतीक्षा करें"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN",
-      "text": "कृपया कर्नेल बंद होने तक प्रतीक्षा करें"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART",
-      "text": "कृपया कर्नेल के पुनरारंभ होने तक प्रतीक्षा करें"
     },
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_STARTING",
@@ -4487,10 +4427,6 @@
       "text": "एन्कोडेड टेक्स्ट को डीकोड करता है"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC",
-      "text": "BASE64 प्रतिनिधित्व से पाठ को डिकोड करता है"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC",
       "text": "डिस्क के बारे में जानकारी प्रदान करता है"
     },
@@ -4525,10 +4461,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC",
       "text": "पाठ को एनकोड करता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC",
-      "text": "टेक्स्ट को BASE64 प्रतिनिधित्व में एनकोड करता है"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC",
@@ -4589,10 +4521,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
       "text": "कर्नेल के लिए लाइसेंस जानकारी दिखाता है"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC",
-      "text": "सिंटैक्स त्रुटियों के लिए यूईएसएच स्क्रिप्ट की जाँच करता है"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC",
@@ -4929,14 +4857,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE",
       "text": "अपनी भाषा चुनें"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT",
-      "text": "जाँचने के लिए एक अनुवाद योग्य स्ट्रिंग लिखें:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT",
-      "text": "जाँचने के लिए एक अनुवाद योग्य स्ट्रिंग सूची फ़ाइल पथ लिखें:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC",
@@ -5511,18 +5431,6 @@
       "text": "केवल सममित एन्कोडिंग एल्गोरिदम जो कुंजी और आरंभीकरण वेक्टर दोनों का उपयोग करते हैं, समर्थित हैं।"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS",
-      "text": "स्क्रिप्ट लिंट सफल रही."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED",
-      "text": "स्क्रिप्ट लिंट विफल. सबसे अधिक संभावना है कि कोई सिंटैक्स त्रुटि है. त्रुटियों के लिए अपनी स्क्रिप्ट की जाँच करें और लिंटर चलाने का पुनः प्रयास करें।"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR",
-      "text": "स्क्रिप्ट लिंटर आपकी स्क्रिप्ट को पार्स करने का प्रयास करने में अप्रत्याशित रूप से विफल रहा।"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR",
       "text": "के लिए जानकारी"
     },
@@ -5859,14 +5767,6 @@
       "text": "उपयोग करने के लिए कर्नेल-व्यापी समय क्षेत्र"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME",
-      "text": "लाइसेंस सूचना बॉक्स दिखाएँ"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC",
-      "text": "प्रत्येक लॉगिन के बाद तीन सेकंड के लिए मोडल लाइसेंस सूचना बॉक्स दिखाना है या नहीं। इसे चालू रखने की अनुशंसा की जाती है."
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_DESC",
       "text": "यह अनुभाग आपको यह चुनने देता है कि आप किस प्रकार का रंग बदलना चाहते हैं।"
     },
@@ -6173,14 +6073,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME",
       "text": "लॉग-इन पर MAL दिखाएँ"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME",
-      "text": "आधुनिक लॉगऑन घड़ी के निचले भाग में एमओटीडी और हेडलाइन"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC",
-      "text": "क्या MOTD और हेडलाइन को घड़ी के नीचे या ऊपर दिखाना है"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME",
@@ -6719,10 +6611,6 @@
       "text": "चयनित प्रविष्टि को बूट करता है"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
-      "text": "पर्यावरण निर्दिष्ट नहीं है"
-    },
-    {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "अलार्म की तारीख और समय अतीत में नहीं हो सकता है।"
     },
@@ -6989,30 +6877,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME",
       "text": "इंटरैक्टिव TUI अंतर्निहित कुंजी बाइंडिंग नाम रंग"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME",
-      "text": "विजेट सक्षम करें"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC",
-      "text": "आधुनिक लॉगऑन हैंडलर में विजेट और विजेट API का उपयोग करने वाले सभी हैंडलरों को सक्षम करता है।"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME",
-      "text": "पहला विजेट"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC",
-      "text": "आधुनिक लॉगऑन हैंडलर के लिए पहला विजेट। आप इस विजेट को इसके संबंधित सेटिंग प्रविष्टि में कॉन्फ़िगर कर सकते हैं।"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME",
-      "text": "दूसरा विजेट"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC",
-      "text": "आधुनिक लॉगऑन हैंडलर के लिए दूसरा विजेट। आप इस विजेट को इसके संबंधित सेटिंग प्रविष्टि में कॉन्फ़िगर कर सकते हैं।"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME",
@@ -8143,10 +8007,6 @@
       "text": "एनकोडेड स्ट्रिंग प्रतिनिधित्व"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC",
-      "text": "एनकोडेड BASE64 स्ट्रिंग"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC",
       "text": "निर्देशिका का पथ"
     },
@@ -8225,10 +8085,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "दाएँ फलक के लिए निर्देशिका का पथ"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
-      "text": "UESH स्क्रिप्ट का पथ"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC",
@@ -8487,14 +8343,6 @@
       "text": "यह आपको एकाधिक कर्नेल रंग योजनाएँ सेट करने की अनुमति देता है"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME",
-      "text": "आधुनिक लॉगऑन हैंडलर सेटिंग्स"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC",
-      "text": "यह आपको आधुनिक लॉगऑन हैंडलर को कॉन्फ़िगर करने की अनुमति देता है"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME",
       "text": "सहायता प्रणाली"
     },
@@ -8607,14 +8455,6 @@
       "text": "परिवेशीय स्क्रीनसेवर ध्वनि प्रभाव चलाना है या नहीं"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME",
-      "text": "परिवेशी स्क्रीनसेवर ध्वनि प्रभावों को तीव्र करें"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC",
-      "text": "परिवेशी स्क्रीनसेवर ध्वनि प्रभाव को तीव्र करना है या नहीं"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME",
       "text": "ऑडियो क्यू वॉल्यूम"
     },
@@ -8697,14 +8537,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC",
       "text": "महीनों के नाम, कैलेंडर इत्यादि बदलने के लिए किस संस्कृति का उपयोग किया जा रहा है?"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME",
-      "text": "'द नाइट्रोसिड होमपेज' विजेट सक्षम करें"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC",
-      "text": "'द नाइट्रोसिड होमपेज' विजेट स्क्रीन के दाईं ओर सक्षम करता है।"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME",
@@ -8847,44 +8679,8 @@
       "text": "अतिरिक्त - पूर्वानुमान"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_FTP",
-      "text": "अतिरिक्त - एफ़टीपी शेल"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_GIT",
-      "text": "अतिरिक्त - गिट शैल"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_HTTP",
-      "text": "अतिरिक्त - HTTP शेल"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_JSON",
-      "text": "अतिरिक्त - JSON शेल"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO",
-      "text": "अतिरिक्त - भाषा स्टूडियो"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_MAIL",
-      "text": "अतिरिक्त - मेल शैल"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_NOTES",
       "text": "अतिरिक्त - नोट्स"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_RSS",
-      "text": "अतिरिक्त - आरएसएस शैल"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_SFTP",
-      "text": "अतिरिक्त - एसएफटीपी शेल"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_SQL",
-      "text": "अतिरिक्त - एसक्यूएल शेल"
     },
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
@@ -9033,14 +8829,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
       "text": "आप किस सॉर्टिंग ड्राइवर का उपयोग करना चाहेंगे?"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
-      "text": "वर्तमान इनपुट ड्राइवर"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
-      "text": "आप किस इनपुट ड्राइवर का उपयोग करना चाहेंगे?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
@@ -9229,10 +9017,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
       "text": "परिणाम को कंसोल पर प्रिंट करता है"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
-      "text": "विरासत बहुचर प्रसंस्करण"
     },
     {
       "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",

@@ -1404,15 +1404,6 @@
   <data name="NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_DESC" xml:space="preserve">
     <value>Menampilkan pemberitahuan yang menunjukkan kemajuan unggahan.</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC" xml:space="preserve">
-    <value>Memeriksa apakah string yang dapat diterjemahkan ada di sumber daya KS</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND" xml:space="preserve">
-    <value>String ditemukan di sumber daya lokalisasi.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND" xml:space="preserve">
-    <value>String tidak ditemukan dalam sumber daya lokalisasi.</value>
-  </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_QUIET_DESC" xml:space="preserve">
     <value>Memulai kernel dengan tenang</value>
   </data>
@@ -1502,9 +1493,6 @@
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT" xml:space="preserve">
     <value>Dari mana Anda ingin memuat pengaturan kernel saat ini?</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC" xml:space="preserve">
-    <value>Memeriksa apakah string yang dapat diterjemahkan ada di sumber daya KS</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC" xml:space="preserve">
     <value>Menggabungkan dua berkas teks atau lebih menjadi berkas keluaran.</value>
@@ -1625,9 +1613,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC" xml:space="preserve">
     <value>Membuka pengaturan splash</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC" xml:space="preserve">
-    <value>Mencantumkan variabel UESH yang tersedia</value>
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC" xml:space="preserve">
     <value>Mengaktifkan mode debug</value>
@@ -3099,12 +3084,6 @@
   <data name="NKS_USERS_LOGIN_NOROOTACCOUNT" xml:space="preserve">
     <value>Beberapa mod jahat menghapus akun root, atau terjadi situasi langka dan akun tersebut hilang.</value>
   </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM" xml:space="preserve">
-    <value>Dari</value>
-  </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED" xml:space="preserve">
-    <value>Tidak ada umpan.</value>
-  </data>
   <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON" xml:space="preserve">
     <value>Pasang add-on RSS Shell Extras!</value>
   </data>
@@ -3225,23 +3204,11 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS" xml:space="preserve">
     <value>Tes pengguna</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN" xml:space="preserve">
-    <value>Penutupan</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC" xml:space="preserve">
-    <value>Keluar dari mode pengujian dan mematikan kernel</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT" xml:space="preserve">
-    <value>Pilih bagian pengujian untuk dijalankan</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_THEMESET_NO" xml:space="preserve">
     <value>TIDAK</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE" xml:space="preserve">
     <value>Jumlah bingkai tumpukan tidak boleh melebihi jumlah bingkai saat ini atau tidak boleh negatif.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME" xml:space="preserve">
-    <value>Nitrosida KS</value>
   </data>
   <data name="NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART" xml:space="preserve">
     <value>Pengawas utas kernel mendeteksi {0} utas kritis yang belum dimulai.</value>
@@ -3279,20 +3246,8 @@
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
     <value>Paket informasi zona waktu belum terpasang di sistem Linux Anda. Instal &apos;tzdata&apos; menggunakan pengelola paket distribusi Anda.</value>
   </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT" xml:space="preserve">
-    <value>Harap tunggu</value>
-  </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>Memuat</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT" xml:space="preserve">
-    <value>Harap tunggu sementara kernel sedang diinisialisasi</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN" xml:space="preserve">
-    <value>Harap tunggu sementara kernel dimatikan</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART" xml:space="preserve">
-    <value>Harap tunggu sementara kernel sedang direstart</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_STARTING" xml:space="preserve">
     <value>Memulai</value>
@@ -3477,9 +3432,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_DESC" xml:space="preserve">
     <value>Mendekodekan teks yang dikodekan</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC" xml:space="preserve">
-    <value>Mendekode teks dari representasi BASE64</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC" xml:space="preserve">
     <value>Memberikan informasi tentang disk</value>
   </data>
@@ -3506,9 +3458,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC" xml:space="preserve">
     <value>Mengkodekan teks</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC" xml:space="preserve">
-    <value>Mengkodekan teks ke representasi BASE64</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC" xml:space="preserve">
     <value>Mencari file secara rekursif</value>
@@ -3554,9 +3503,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC" xml:space="preserve">
     <value>Menampilkan informasi lisensi untuk kernel</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC" xml:space="preserve">
-    <value>Memeriksa skrip UESH untuk kesalahan sintaksis</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC" xml:space="preserve">
     <value>Mencantumkan folder secara rekursif</value>
@@ -3809,12 +3755,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE" xml:space="preserve">
     <value>Pilih bahasa Anda</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT" xml:space="preserve">
-    <value>Tulis string yang dapat diterjemahkan untuk memeriksa:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT" xml:space="preserve">
-    <value>Tulis jalur file daftar string yang dapat diterjemahkan untuk memeriksa:</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC" xml:space="preserve">
     <value>Menguji sistem TUI interaktif dengan interaksi panel ganda</value>
@@ -4245,15 +4185,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_GETKEYIV_NEEDSSYMMETRIC" xml:space="preserve">
     <value>Hanya algoritma pengodean simetris yang menggunakan kunci dan vektor inisialisasi yang didukung.</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS" xml:space="preserve">
-    <value>Skrip lint berhasil.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED" xml:space="preserve">
-    <value>Lint skrip gagal. Kemungkinan besar terjadi kesalahan sintaksis. Periksa skrip Anda untuk mengetahui kesalahannya dan coba jalankan linter lagi.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR" xml:space="preserve">
-    <value>Linter skrip gagal secara tak terduga saat mencoba mengurai skrip Anda.</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR" xml:space="preserve">
     <value>Info untuk</value>
   </data>
@@ -4506,12 +4437,6 @@
   <data name="NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_KERNELWIDETIMEZONE_DESC" xml:space="preserve">
     <value>Zona waktu di seluruh kernel yang akan digunakan</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME" xml:space="preserve">
-    <value>Tampilkan kotak informasi lisensi</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC" xml:space="preserve">
-    <value>Apakah akan menampilkan kotak informasi lisensi modal selama tiga detik setelah setiap login. Sebaiknya kotak tersebut tetap aktif.</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_DESC" xml:space="preserve">
     <value>Bagian ini memungkinkan Anda memilih jenis warna yang ingin Anda ubah.</value>
   </data>
@@ -4742,12 +4667,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME" xml:space="preserve">
     <value>Tampilkan MAL saat Log-in</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME" xml:space="preserve">
-    <value>MOTD dan Headline di bagian bawah jam logon modern</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC" xml:space="preserve">
-    <value>Apakah akan menampilkan MOTD dan judul di bagian bawah atau di bagian atas jam</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME" xml:space="preserve">
     <value>Penanganan login</value>
@@ -5151,9 +5070,6 @@
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_KEYBINDING_BOOT" xml:space="preserve">
     <value>Mem-boot entri yang dipilih</value>
   </data>
-  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_NOENV" xml:space="preserve">
-    <value>Lingkungan tidak ditentukan</value>
-  </data>
   <data name="NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT" xml:space="preserve">
     <value>Tanggal dan waktu alarm mungkin belum lewat.</value>
   </data>
@@ -5354,24 +5270,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME" xml:space="preserve">
     <value>Nama warna pengikatan kunci bawaan TUI interaktif</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME" xml:space="preserve">
-    <value>Aktifkan widget</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC" xml:space="preserve">
-    <value>Mengaktifkan widget di pengendali logon modern dan semua pengendali yang menggunakan API widget.</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME" xml:space="preserve">
-    <value>Widget pertama</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC" xml:space="preserve">
-    <value>Widget pertama untuk pengendali logon modern. Anda dapat mengonfigurasi widget ini di entri pengaturannya masing-masing.</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME" xml:space="preserve">
-    <value>Widget kedua</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC" xml:space="preserve">
-    <value>Widget kedua untuk pengendali logon modern. Anda dapat mengonfigurasi widget ini di entri pengaturannya masing-masing.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME" xml:space="preserve">
     <value>Dukungan mouse</value>
@@ -6219,9 +6117,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_ARGUMENT_ENCODEDSTRING_DESC" xml:space="preserve">
     <value>Representasi string yang dikodekan</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC" xml:space="preserve">
-    <value>String BASE64 yang dikodekan</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
     <value>Jalur ke direktori</value>
   </data>
@@ -6281,9 +6176,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC" xml:space="preserve">
     <value>Jalur ke direktori untuk panel kanan</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC" xml:space="preserve">
-    <value>Jalur menuju skrip UESH</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
     <value>Jalur ke direktori untuk dicantumkan</value>
@@ -6477,12 +6369,6 @@
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_DESC" xml:space="preserve">
     <value>Ini memungkinkan Anda untuk mengatur beberapa skema warna kernel</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME" xml:space="preserve">
-    <value>Pengaturan penanganan logon modern</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC" xml:space="preserve">
-    <value>Ini memungkinkan Anda untuk mengonfigurasi penangan logon modern</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME" xml:space="preserve">
     <value>Sistem bantuan</value>
   </data>
@@ -6567,12 +6453,6 @@
   <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_DESC" xml:space="preserve">
     <value>Apakah akan memainkan efek suara screensaver ambient atau tidak</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME" xml:space="preserve">
-    <value>Meningkatkan efek suara screensaver ambient</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC" xml:space="preserve">
-    <value>Apakah akan mengintensifkan efek suara screensaver ambient atau tidak</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME" xml:space="preserve">
     <value>Volume isyarat audio</value>
   </data>
@@ -6635,12 +6515,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC" xml:space="preserve">
     <value>Budaya mana yang digunakan untuk mengubah nama bulan, kalender, dll.?</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME" xml:space="preserve">
-    <value>Aktifkan widget &apos;Beranda Nitrocid&apos;</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC" xml:space="preserve">
-    <value>Mengaktifkan widget &apos;Beranda Nitrocid&apos; di sisi kanan layar.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
     <value>Aktifkan umpan RSS &apos;Halaman Depan Nitrocid&apos;</value>
@@ -6747,35 +6621,8 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_FORECAST" xml:space="preserve">
     <value>Ekstra - Prakiraan Cuaca</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_FTP" xml:space="preserve">
-    <value>Ekstra - FTP Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_GIT" xml:space="preserve">
-    <value>Ekstra - Git Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_HTTP" xml:space="preserve">
-    <value>Ekstra - HTTP Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_JSON" xml:space="preserve">
-    <value>Ekstra - JSON Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO" xml:space="preserve">
-    <value>Ekstra - Studio Bahasa</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_MAIL" xml:space="preserve">
-    <value>Ekstra - Mail Shell</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_NOTES" xml:space="preserve">
     <value>Tambahan - Catatan</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_RSS" xml:space="preserve">
-    <value>Ekstra - RSS Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_SFTP" xml:space="preserve">
-    <value>Ekstra - Shell SFTP</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_SQL" xml:space="preserve">
-    <value>Ekstra - SQL Shell</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO" xml:space="preserve">
     <value>Ekstra - Studio Tema</value>
@@ -6887,12 +6734,6 @@
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC" xml:space="preserve">
     <value>Driver penyortiran mana yang ingin Anda gunakan?</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME" xml:space="preserve">
-    <value>Driver masukan saat ini</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC" xml:space="preserve">
-    <value>Driver masukan mana yang ingin Anda gunakan?</value>
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME" xml:space="preserve">
     <value>Driver enkode asimetris saat ini</value>
@@ -7034,9 +6875,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
     <value>Mencetak hasilnya ke konsol.</value>
-  </data>
-  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
-    <value>Pemrosesan Multivariabel Warisan</value>
   </data>
   <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
     <value>Pengguna tidak memiliki kata sandi untuk melakukan operasi otentikasi 2FA.</value>

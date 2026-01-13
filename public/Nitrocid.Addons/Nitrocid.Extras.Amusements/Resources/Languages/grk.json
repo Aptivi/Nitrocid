@@ -504,10 +504,6 @@
       "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν γράψετε στη νέα οθόνη;"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
-      "text": "Γεννήτρια ονόματος και επωνύμου"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
       "text": "Τα ελάχιστα ονόματα μετράνε"
     },
@@ -540,60 +536,8 @@
       "text": "Μέγιστο ποσό ηλικίας ετών για δημιουργία"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
-      "text": "Ανιχνευτής ονόματος"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
-      "text": "Δημιουργήστε ονόματα χρησιμοποιώντας τη λίστα ανδρικών ονομάτων"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
-      "text": "Δημιουργήστε ονόματα χρησιμοποιώντας τη λίστα γυναικείων ονομάτων"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
-      "text": "Δημιουργήστε ονόματα χρησιμοποιώντας τη λίστα ενοποιημένων ονομάτων"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
-      "text": "Ανιχνευτής επωνύμου"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
       "text": "Προσομοιώνει μια αναζήτηση βάσης δεδομένων για ένα τυχαίο άτομο."
-    },
-    {
-      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
-      "text": "Αποτυχία λήψης καταχωρήσεων ρυθμίσεων."
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
-      "text": "Δημιουργία ετικετών ονομάτων (τα umlaut προς το παρόν δεν υποστηρίζονται)"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
-      "text": "Όρος αναζήτησης"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
-      "text": "Πρόθεμα ονόματος για αναζήτηση"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
-      "text": "Επίθημα ονόματος για αναζήτηση"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
-      "text": "Πρόθεμα επωνύμου για αναζήτηση"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
-      "text": "Επίθημα επωνύμου για αναζήτηση"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
-      "text": "Πόσα ονόματα να δημιουργήσετε;"
     },
     {
       "loc": "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC",

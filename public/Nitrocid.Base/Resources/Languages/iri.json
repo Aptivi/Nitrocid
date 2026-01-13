@@ -1724,18 +1724,6 @@
       "text": "Taispeánann sé an fógra a thaispeánann an dul chun cinn uaslódála."
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC",
-      "text": "Seiceálann sé féachaint an bhfuil an teaghrán inaistrithe sna hacmhainní KS"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND",
-      "text": "Teaghrán le fáil sna hacmhainní logánú."
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND",
-      "text": "Níl an teaghrán le fáil sna hacmhainní logánaithe."
-    },
-    {
       "loc": "NKS_ARGUMENTS_ARGUMENT_QUIET_DESC",
       "text": "Tosaíonn an eithne go ciúin"
     },
@@ -1854,10 +1842,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT",
       "text": "Cén áit ar mhaith leat na socruithe eithne reatha a lódáil?"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC",
-      "text": "Seiceálann sé féachaint an bhfuil na teaghráin inaistrithe sna hacmhainní KS"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC",
@@ -2018,10 +2002,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC",
       "text": "Osclaíonn sé na socruithe splanclainne"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC",
-      "text": "Liostaíonn sé na hathróga UESH atá ar fáil"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
@@ -3984,14 +3964,6 @@
       "text": "Bhain mod mailíseach éigin an bunchuntas, nó tharla cás annamh agus bhí sé imithe."
     },
     {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM",
-      "text": "Ó"
-    },
-    {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED",
-      "text": "Gan beatha."
-    },
-    {
       "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON",
       "text": "Suiteáil an breiseán RSS Shell Extras!"
     },
@@ -4152,28 +4124,12 @@
       "text": "Tástálacha úsáideora"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN",
-      "text": "Múchadh"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC",
-      "text": "Fágann sé an modh tástála agus stopann sé an t-eithne"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT",
-      "text": "Roghnaigh roinn tástála le rith"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_NO",
       "text": "Níl"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE",
       "text": "Níor chóir go mbeadh uimhir an fhráma cruachta níos mó ná méid reatha na bhfrámaí nó níor cheart go mbeadh sé diúltach."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
-      "text": "KS nítrigine"
     },
     {
       "loc": "NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART",
@@ -4224,24 +4180,8 @@
       "text": "Níl an pacáiste faisnéise crios ama suiteáilte fós ar do chóras Linux. Suiteáil 'tzdata' ag baint úsáide as bainisteoir pacáiste do dháileadh."
     },
     {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
-      "text": "Fan le do thoil"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_LOADING",
       "text": "Ag lódáil"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT",
-      "text": "Fan le do thoil agus an eithne ag tosú"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN",
-      "text": "Fan le do thoil agus an eithne ag múchadh"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART",
-      "text": "Fan le do thoil agus an eithne ag atosú"
     },
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_STARTING",
@@ -4488,10 +4428,6 @@
       "text": "Díchódaítear an téacs ionchódaithe"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC",
-      "text": "Díchódaíonn sé an téacs ón léiriú BASE64"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC",
       "text": "Soláthraíonn sé eolas faoi diosca"
     },
@@ -4526,10 +4462,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC",
       "text": "Ionchódaíonn an téacs"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC",
-      "text": "Ionchódaíonn sé an téacs chuig léiriú BASE64"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC",
@@ -4590,10 +4522,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
       "text": "Taispeánann sé faisnéis cheadúnais don eithne"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC",
-      "text": "Seiceálann sé script UESH le haghaidh earráidí comhréire"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC",
@@ -4930,14 +4858,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE",
       "text": "Roghnaigh do theanga"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT",
-      "text": "Scríobh teaghrán inaistrithe lena sheiceáil:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT",
-      "text": "Scríobh conair comhad liosta teaghrán inaistrithe le seiceáil:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC",
@@ -5512,18 +5432,6 @@
       "text": "Ní thacaítear ach le halgartaim ionchódaithe siméadracha a úsáideann an eochair agus an veicteoir tosaigh."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS",
-      "text": "D'éirigh le script lint."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED",
-      "text": "Theip ar lint script. Is dócha go bhfuil earráid chomhréire ann. Seiceáil do script le haghaidh earráidí agus bain triail eile as an línéar a rith."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR",
-      "text": "Theip ar línéar scripte gan choinne agus iarracht á déanamh agat do script a pharsáil."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR",
       "text": "Eolas le haghaidh"
     },
@@ -5860,14 +5768,6 @@
       "text": "An crios ama ar fud an eithne le húsáid"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME",
-      "text": "Taispeáin an bosca faisnéise ceadúnais"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC",
-      "text": "Cibé an dtaispeánfar an bosca faisnéise um cheadúnas módúil ar feadh trí soicind tar éis gach logáil isteach. Moltar é a choinneáil ar siúl."
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_DESC",
       "text": "Ligeann an chuid seo duit an cineál datha ar mhaith leat a athrú a roghnú."
     },
@@ -6174,14 +6074,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME",
       "text": "Taispeáin MAL ar Logáil-isteach"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME",
-      "text": "MOTD agus Ceannlíne ag bun an chloig logáil isteach nua-aimseartha"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC",
-      "text": "Cé acu an MOTD agus an ceannlíne a thaispeáint ag bun nó ag barr an chloig"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME",
@@ -6720,10 +6612,6 @@
       "text": "Buataisí an iontráil roghnaithe"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
-      "text": "Ní shonraítear an comhshaol"
-    },
-    {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "Seans nach bhfuil dáta agus am aláraim san am atá caite."
     },
@@ -6990,30 +6878,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME",
       "text": "TUI idirghníomhach insuite i ndath ainm ceangailteach eochair"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME",
-      "text": "Cumasaigh giuirléidí"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC",
-      "text": "Cumasaíonn sé na giuirléidí sa láimhseálaí logáil isteach nua-aimseartha agus na láimhseálaithe go léir a úsáideann an API giuirléidí."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME",
-      "text": "An chéad ghiuirléid"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC",
-      "text": "An chéad ghiuirléid don láimhseálaí logáil isteach nua-aimseartha. Is féidir leat an ghiuirléid seo a chumrú ina iontráil socruithe faoi seach."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME",
-      "text": "Dara ghiuirléid"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC",
-      "text": "An dara giuirléid don láimhseálaí logáil isteach nua-aimseartha. Is féidir leat an ghiuirléid seo a chumrú ina iontráil socruithe faoi seach."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME",
@@ -8144,10 +8008,6 @@
       "text": "Léiriú teaghrán ionchódaithe"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC",
-      "text": "Teaghrán BASE64 ionchódaithe"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC",
       "text": "Conair chuig an eolaire"
     },
@@ -8226,10 +8086,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "Conair chuig an eolaire don phána ceart"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
-      "text": "Conair chuig script UESH"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC",
@@ -8488,14 +8344,6 @@
       "text": "Ligeann sé seo duit scéimeanna datha iomadúla eithne a shocrú"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME",
-      "text": "Socruithe láimhseálaí logáil isteach nua-aimseartha"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC",
-      "text": "Ligeann sé seo duit an láimhseálaí logáil isteach nua-aimseartha a chumrú"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME",
       "text": "Córas cabhrach"
     },
@@ -8608,14 +8456,6 @@
       "text": "Cé acu a sheinm maisíochtaí fuaime spárálaíscáileáin comhthimpeallach nó nach"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME",
-      "text": "Neartaigh maisíochtaí fuaime an spárálaíscáileáin chomhthimpeallaigh"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC",
-      "text": "Cibé ar cheart maisíochtaí fuaime an spárálaíscáileáin chomhthimpeallaigh a threisiú nó nach bhfuil"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME",
       "text": "Toirt fuaime cue"
     },
@@ -8698,14 +8538,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC",
       "text": "Cén cultúr atá á úsáid chun ainmneacha na míosa, an fhéilire, srl. a athrú?"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME",
-      "text": "Cumasaigh giuirléidí 'The Nitrocid Homepage'"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC",
-      "text": "Cumasaíonn sé giuirléidí 'The Nitrocid Homepage' ar thaobh na láimhe deise den scáileán."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME",
@@ -8848,44 +8680,8 @@
       "text": "Extras - Réamhaisnéis"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_FTP",
-      "text": "Extras - FTP Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_GIT",
-      "text": "Extras - Git Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_HTTP",
-      "text": "Extras - HTTP Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_JSON",
-      "text": "Extras - JSON Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO",
-      "text": "Extras - Stiúideo Teanga"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_MAIL",
-      "text": "Extras - Mail Shell"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_NOTES",
       "text": "Extras - Nótaí"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_RSS",
-      "text": "Extras - RSS Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_SFTP",
-      "text": "Extras - SFTP Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_SQL",
-      "text": "Extras - SQL Shell"
     },
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
@@ -9034,14 +8830,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
       "text": "Cén tiománaí sórtála ar mhaith leat a úsáid?"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
-      "text": "Tiománaí ionchur reatha"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
-      "text": "Cén tiománaí ionchuir ar mhaith leat a úsáid?"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
@@ -9230,10 +9018,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
       "text": "Priontálann sé an toradh chuig an gconsól"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
-      "text": "Próiseáil Il-athraitheach Oidhreachta"
     },
     {
       "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",

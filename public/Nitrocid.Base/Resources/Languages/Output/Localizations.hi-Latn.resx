@@ -1404,15 +1404,6 @@
   <data name="NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_DESC" xml:space="preserve">
     <value>apalod pragati dikhaate hue adhisoochana dikhaata hai.</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC" xml:space="preserve">
-    <value>yah dekhane ke lie jaanchata hai ki kees sansaadhanon mein anuvaad yogy string maujood hai ya nahin</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND" xml:space="preserve">
-    <value>sthaaneeyakaran sansaadhanon mein string milee.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND" xml:space="preserve">
-    <value>sthaaneeyakaran sansaadhanon mein string nahin milee.</value>
-  </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_QUIET_DESC" xml:space="preserve">
     <value>karnel ko chupachaap praarambh karen</value>
   </data>
@@ -1502,9 +1493,6 @@
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT" xml:space="preserve">
     <value>aap vartamaan karnel setings ko kahaan se lod karana chaahate hain?</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC" xml:space="preserve">
-    <value>yah dekhane ke lie jaanchata hai ki kees sansaadhanon mein anuvaad yogy taar maujood hain ya nahin</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC" xml:space="preserve">
     <value>aautaput fail mein do ya adhik tekst failon ko jodata hai.</value>
@@ -1625,9 +1613,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC" xml:space="preserve">
     <value>splaish seting kholata hai</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC" xml:space="preserve">
-    <value>upalabdh uaish charon kee soochiyaan</value>
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC" xml:space="preserve">
     <value>dibag mod saksham karata hai</value>
@@ -3099,12 +3084,6 @@
   <data name="NKS_USERS_LOGIN_NOROOTACCOUNT" xml:space="preserve">
     <value>kisee durbhaavanaapoorn mod ne root khaata hata diya, ya durlabh sthiti huee aur yah chala gaya.</value>
   </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM" xml:space="preserve">
-    <value>se</value>
-  </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED" xml:space="preserve">
-    <value>koee feed nahin।</value>
-  </data>
   <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON" xml:space="preserve">
     <value>rss shel ekstra aidon instol karen!</value>
   </data>
@@ -3225,23 +3204,11 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS" xml:space="preserve">
     <value>upayogakarta pareekshan</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN" xml:space="preserve">
-    <value>shatadaun</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC" xml:space="preserve">
-    <value>pareekshan mod se baahar nikalata hai aur karnel ko band kar deta hai</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT" xml:space="preserve">
-    <value>chalaane ke lie ek pareekshan anubhaag chunen</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_THEMESET_NO" xml:space="preserve">
     <value>nahin</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE" xml:space="preserve">
     <value>staik frem sankhya frem kee vartamaan maatra se adhik nahin honee chaahie ya rnaatmak nahin honee chaahie.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME" xml:space="preserve">
-    <value>naitrosid kees</value>
   </data>
   <data name="NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART" xml:space="preserve">
     <value>karnel thred suparavaijar ne {0} mahatvapoorn threds ka pata lagaaya jo abhee tak shuroo nahin hue hain.</value>
@@ -3279,20 +3246,8 @@
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
     <value>samay kshetr soochana paikej abhee tak aapake linaks sistam par sthaapit nahin hai. apane vitaran ke paikej prabandhak ka upayog karake tzdat sthaapit karen.</value>
   </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT" xml:space="preserve">
-    <value>krpaya prateeksha karen</value>
-  </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>lod ho raha hai</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT" xml:space="preserve">
-    <value>krpaya karnel ke aarambh hone tak prateeksha karen</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN" xml:space="preserve">
-    <value>krpaya karnel ke band hone tak prateeksha karen</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART" xml:space="preserve">
-    <value>krpaya karnel ke punah aarambh hone tak prateeksha karen</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_STARTING" xml:space="preserve">
     <value>shuroo ho raha hai</value>
@@ -3477,9 +3432,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_DESC" xml:space="preserve">
     <value>enkod kie gae tekst ko dikod karata hai</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC" xml:space="preserve">
-    <value>basai64 pratinidhitv se tekst ko dikod karata hai</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC" xml:space="preserve">
     <value>disk ke baare mein jaanakaaree pradaan karata hai</value>
   </data>
@@ -3506,9 +3458,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC" xml:space="preserve">
     <value>tekst ko enakod karata hai</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC" xml:space="preserve">
-    <value>tekst ko basai64 pratinidhitv mein enakod karata hai</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC" xml:space="preserve">
     <value>fail ko punaraavartee roop se khojata hai</value>
@@ -3554,9 +3503,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC" xml:space="preserve">
     <value>karnel ke lie laisens jaanakaaree dikhaata hai</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC" xml:space="preserve">
-    <value>sintaiks trutiyon ke lie uaish skript kee jaanch karata hai</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC" xml:space="preserve">
     <value>punaraavartee roop se ek foldar soocheebaddh karata hai</value>
@@ -3809,12 +3755,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE" xml:space="preserve">
     <value>apanee bhaasha chunen</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT" xml:space="preserve">
-    <value>jaanchane ke lie ek anuvaad yogy string likhen:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT" xml:space="preserve">
-    <value>jaanchane ke lie ek anuvaad yogy string soochee fail path likhen:</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC" xml:space="preserve">
     <value>dabal pain intaraikshan ke saath intaraiktiv tui sistam ka pareekshan karata hai</value>
@@ -4245,15 +4185,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_GETKEYIV_NEEDSSYMMETRIC" xml:space="preserve">
     <value>keval samamit enkoding elgoridam jo kunjee aur aarambheekaran vektar donon ka upayog karate hain, samarthit hain.</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS" xml:space="preserve">
-    <value>skript lint saphal hua.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED" xml:space="preserve">
-    <value>skript lint viphal hua. sabase adhik sambhaavana hai ki koee sintaiks truti hai. trutiyon ke lie apanee skript kee jaanch karen aur lintar ko phir se chalaane ka prayaas karen.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR" xml:space="preserve">
-    <value>skript lintar aapakee skript ko paars karane ka prayaas karate samay apratyaashit roop se viphal ho gaya.</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR" xml:space="preserve">
     <value>isake lie jaanakaaree</value>
   </data>
@@ -4506,12 +4437,6 @@
   <data name="NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_KERNELWIDETIMEZONE_DESC" xml:space="preserve">
     <value>upayog karane ke lie karnel-vaid taim zon</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME" xml:space="preserve">
-    <value>laisens soochana boks dikhaen</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC" xml:space="preserve">
-    <value>pratyek login ke baad teen sekand ke lie modal laisens soochana boks dikhaana hai ya nahin. ise chaaloo rakhane kee anushansa kee jaatee hai.</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_DESC" xml:space="preserve">
     <value>yah anubhaag aapako yah chunane deta hai ki aap kis prakaar ka rang badalana chaahate hain.</value>
   </data>
@@ -4742,12 +4667,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME" xml:space="preserve">
     <value>log-in par mal dikhaen</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME" xml:space="preserve">
-    <value>aadhunik logon ghadee ke neeche motd aur hedalain</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC" xml:space="preserve">
-    <value>motd aur hedalain ko ghadee ke neeche ya oopar dikhaana hai ya nahin</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME" xml:space="preserve">
     <value>login haindalar</value>
@@ -5151,9 +5070,6 @@
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_KEYBINDING_BOOT" xml:space="preserve">
     <value>chayanit pravishti ko boot karata hai</value>
   </data>
-  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_NOENV" xml:space="preserve">
-    <value>paryaavaran nirdisht nahin hai</value>
-  </data>
   <data name="NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT" xml:space="preserve">
     <value>alaarm tithi aur samay ateet mein nahin ho sakata hai.</value>
   </data>
@@ -5354,24 +5270,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME" xml:space="preserve">
     <value>intaraiktiv tui bilt-in kunjee bainding naam rang</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME" xml:space="preserve">
-    <value>vijet saksham karen</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC" xml:space="preserve">
-    <value>aadhunik logon haindalar mein vijet aur vijet api ka upayog karane vaale sabhee haindalar ko saksham karata hai.</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME" xml:space="preserve">
-    <value>pahala vijet</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC" xml:space="preserve">
-    <value>aadhunik logon haindalar ke lie pahala vijet. aap is vijet ko isakee sambandhit seting pravishti mein konfigar kar sakate hain.</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME" xml:space="preserve">
-    <value>doosara vijet</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC" xml:space="preserve">
-    <value>aadhunik logon haindalar ke lie doosara vijet. aap is vijet ko isakee sambandhit seting pravishti mein konfigar kar sakate hain.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME" xml:space="preserve">
     <value>maus samarthan</value>
@@ -6219,9 +6117,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_ARGUMENT_ENCODEDSTRING_DESC" xml:space="preserve">
     <value>enkoded string pratinidhitv</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC" xml:space="preserve">
-    <value>enkoded basai64 string</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
     <value>nirdeshika ka path</value>
   </data>
@@ -6281,9 +6176,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC" xml:space="preserve">
     <value>daen phalak ke lie nirdeshika ka path</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC" xml:space="preserve">
-    <value>uaish skript ka path</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
     <value>soocheebaddh karane ke lie nirdeshika ka path</value>
@@ -6477,12 +6369,6 @@
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_DESC" xml:space="preserve">
     <value>yah aapako kaee karnel rang yojanaen set karane kee anumati deta hai</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME" xml:space="preserve">
-    <value>aadhunik logon haindalar seting</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC" xml:space="preserve">
-    <value>yah aapako aadhunik logon haindalar ko konfigar karane kee anumati deta hai</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME" xml:space="preserve">
     <value>sahaayata pranaalee</value>
   </data>
@@ -6567,12 +6453,6 @@
   <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_DESC" xml:space="preserve">
     <value>pariveshee skreenasevar dhvani prabhaav ko bajaana hai ya nahin</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME" xml:space="preserve">
-    <value>pariveshee skreenasevar dhvani prabhaav ko teevr karata hai</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC" xml:space="preserve">
-    <value>pariveshee skreenasevar dhvani prabhaav ko teevr karata hai ya nahin</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME" xml:space="preserve">
     <value>odiyo sanket volyoom</value>
   </data>
@@ -6635,12 +6515,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC" xml:space="preserve">
     <value>maheenon ke naam, kailendar ityaadi badalane ke lie kis sanskrti ka upayog kiya ja raha hai?</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME" xml:space="preserve">
-    <value>da naitrosid homapej vijet saksham karen</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC" xml:space="preserve">
-    <value>da naitrosid homapej vijet skreen ke daeen or saksham karata hai.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
     <value>da naitrosid homapej rss feed saksham karen</value>
@@ -6747,35 +6621,8 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_FORECAST" xml:space="preserve">
     <value>atirikt - poorvaanumaan</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_FTP" xml:space="preserve">
-    <value>atirikt - ftp shel</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_GIT" xml:space="preserve">
-    <value>atirikt - git shel</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_HTTP" xml:space="preserve">
-    <value>atirikt - http shel</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_JSON" xml:space="preserve">
-    <value>atirikt - json shel</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO" xml:space="preserve">
-    <value>atirikt - bhaasha stoodiyo</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_MAIL" xml:space="preserve">
-    <value>atirikt - mel shel</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_NOTES" xml:space="preserve">
     <value>atirikt - nots</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_RSS" xml:space="preserve">
-    <value>atirikt - rss shel</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_SFTP" xml:space="preserve">
-    <value>atirikt - sftp shel</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_SQL" xml:space="preserve">
-    <value>atirikt - sql shel</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO" xml:space="preserve">
     <value>atirikt - theem stoodiyo</value>
@@ -6887,12 +6734,6 @@
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC" xml:space="preserve">
     <value>aap kis sorting draivar ka upayog karana chaahenge?</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME" xml:space="preserve">
-    <value>vartamaan inaput draivar</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC" xml:space="preserve">
-    <value>aap kis inaput draivar ka upayog karana chaahenge?</value>
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME" xml:space="preserve">
     <value>vartamaan asamamit enkoding draivar</value>
@@ -7034,9 +6875,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
     <value>kansol par rizalt print karata hai</value>
-  </data>
-  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
-    <value>legesee malteevar prosesing</value>
   </data>
   <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
     <value>yoozar ke paas 2fa othentikeshan opareshan karane ke lie koee paasavard nahin hai.</value>

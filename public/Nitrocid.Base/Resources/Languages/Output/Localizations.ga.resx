@@ -1404,15 +1404,6 @@
   <data name="NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_DESC" xml:space="preserve">
     <value>Taispeánann sé an fógra a thaispeánann an dul chun cinn uaslódála.</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC" xml:space="preserve">
-    <value>Seiceálann sé féachaint an bhfuil an teaghrán inaistrithe sna hacmhainní KS</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND" xml:space="preserve">
-    <value>Teaghrán le fáil sna hacmhainní logánú.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND" xml:space="preserve">
-    <value>Níl an teaghrán le fáil sna hacmhainní logánaithe.</value>
-  </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_QUIET_DESC" xml:space="preserve">
     <value>Tosaíonn an eithne go ciúin</value>
   </data>
@@ -1502,9 +1493,6 @@
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT" xml:space="preserve">
     <value>Cén áit ar mhaith leat na socruithe eithne reatha a lódáil?</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC" xml:space="preserve">
-    <value>Seiceálann sé féachaint an bhfuil na teaghráin inaistrithe sna hacmhainní KS</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC" xml:space="preserve">
     <value>Comhcheanglaíonn sé an dá chomhad téacs nó níos mó isteach sa chomhad aschuir.</value>
@@ -1625,9 +1613,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC" xml:space="preserve">
     <value>Osclaíonn sé na socruithe splanclainne</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC" xml:space="preserve">
-    <value>Liostaíonn sé na hathróga UESH atá ar fáil</value>
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC" xml:space="preserve">
     <value>Cumasaíonn sé mód dífhabhtaithe</value>
@@ -3099,12 +3084,6 @@
   <data name="NKS_USERS_LOGIN_NOROOTACCOUNT" xml:space="preserve">
     <value>Bhain mod mailíseach éigin an bunchuntas, nó tharla cás annamh agus bhí sé imithe.</value>
   </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM" xml:space="preserve">
-    <value>Ó</value>
-  </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED" xml:space="preserve">
-    <value>Gan beatha.</value>
-  </data>
   <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON" xml:space="preserve">
     <value>Suiteáil an breiseán RSS Shell Extras!</value>
   </data>
@@ -3225,23 +3204,11 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS" xml:space="preserve">
     <value>Tástálacha úsáideora</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN" xml:space="preserve">
-    <value>Múchadh</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC" xml:space="preserve">
-    <value>Fágann sé an modh tástála agus stopann sé an t-eithne</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT" xml:space="preserve">
-    <value>Roghnaigh roinn tástála le rith</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_THEMESET_NO" xml:space="preserve">
     <value>Níl</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE" xml:space="preserve">
     <value>Níor chóir go mbeadh uimhir an fhráma cruachta níos mó ná méid reatha na bhfrámaí nó níor cheart go mbeadh sé diúltach.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME" xml:space="preserve">
-    <value>KS nítrigine</value>
   </data>
   <data name="NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART" xml:space="preserve">
     <value>Bhraith maoirseoir snáithe eithne {0} snáithe criticiúla nár thosaigh fós.</value>
@@ -3279,20 +3246,8 @@
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
     <value>Níl an pacáiste faisnéise crios ama suiteáilte fós ar do chóras Linux. Suiteáil &apos;tzdata&apos; ag baint úsáide as bainisteoir pacáiste do dháileadh.</value>
   </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT" xml:space="preserve">
-    <value>Fan le do thoil</value>
-  </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>Ag lódáil</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT" xml:space="preserve">
-    <value>Fan le do thoil agus an eithne ag tosú</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN" xml:space="preserve">
-    <value>Fan le do thoil agus an eithne ag múchadh</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART" xml:space="preserve">
-    <value>Fan le do thoil agus an eithne ag atosú</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_STARTING" xml:space="preserve">
     <value>Ag tosú</value>
@@ -3477,9 +3432,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_DESC" xml:space="preserve">
     <value>Díchódaítear an téacs ionchódaithe</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC" xml:space="preserve">
-    <value>Díchódaíonn sé an téacs ón léiriú BASE64</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC" xml:space="preserve">
     <value>Soláthraíonn sé eolas faoi diosca</value>
   </data>
@@ -3506,9 +3458,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC" xml:space="preserve">
     <value>Ionchódaíonn an téacs</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC" xml:space="preserve">
-    <value>Ionchódaíonn sé an téacs chuig léiriú BASE64</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC" xml:space="preserve">
     <value>Cuardaítear comhad go hathchúrsach</value>
@@ -3554,9 +3503,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC" xml:space="preserve">
     <value>Taispeánann sé faisnéis cheadúnais don eithne</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC" xml:space="preserve">
-    <value>Seiceálann sé script UESH le haghaidh earráidí comhréire</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC" xml:space="preserve">
     <value>Liostaítear fillteán go hathchúrsach</value>
@@ -3809,12 +3755,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE" xml:space="preserve">
     <value>Roghnaigh do theanga</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT" xml:space="preserve">
-    <value>Scríobh teaghrán inaistrithe lena sheiceáil:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT" xml:space="preserve">
-    <value>Scríobh conair comhad liosta teaghrán inaistrithe le seiceáil:</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC" xml:space="preserve">
     <value>Déanann sé an córas idirghníomhach TUI a thástáil le hidirghníomhaíocht phána dúbailte</value>
@@ -4245,15 +4185,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_GETKEYIV_NEEDSSYMMETRIC" xml:space="preserve">
     <value>Ní thacaítear ach le halgartaim ionchódaithe siméadracha a úsáideann an eochair agus an veicteoir tosaigh.</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS" xml:space="preserve">
-    <value>D&apos;éirigh le script lint.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED" xml:space="preserve">
-    <value>Theip ar lint script. Is dócha go bhfuil earráid chomhréire ann. Seiceáil do script le haghaidh earráidí agus bain triail eile as an línéar a rith.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR" xml:space="preserve">
-    <value>Theip ar línéar scripte gan choinne agus iarracht á déanamh agat do script a pharsáil.</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR" xml:space="preserve">
     <value>Eolas le haghaidh</value>
   </data>
@@ -4506,12 +4437,6 @@
   <data name="NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_KERNELWIDETIMEZONE_DESC" xml:space="preserve">
     <value>An crios ama ar fud an eithne le húsáid</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME" xml:space="preserve">
-    <value>Taispeáin an bosca faisnéise ceadúnais</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC" xml:space="preserve">
-    <value>Cibé an dtaispeánfar an bosca faisnéise um cheadúnas módúil ar feadh trí soicind tar éis gach logáil isteach. Moltar é a choinneáil ar siúl.</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_DESC" xml:space="preserve">
     <value>Ligeann an chuid seo duit an cineál datha ar mhaith leat a athrú a roghnú.</value>
   </data>
@@ -4742,12 +4667,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME" xml:space="preserve">
     <value>Taispeáin MAL ar Logáil-isteach</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME" xml:space="preserve">
-    <value>MOTD agus Ceannlíne ag bun an chloig logáil isteach nua-aimseartha</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC" xml:space="preserve">
-    <value>Cé acu an MOTD agus an ceannlíne a thaispeáint ag bun nó ag barr an chloig</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME" xml:space="preserve">
     <value>Láimhseálaí logáil isteach</value>
@@ -5151,9 +5070,6 @@
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_KEYBINDING_BOOT" xml:space="preserve">
     <value>Buataisí an iontráil roghnaithe</value>
   </data>
-  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_NOENV" xml:space="preserve">
-    <value>Ní shonraítear an comhshaol</value>
-  </data>
   <data name="NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT" xml:space="preserve">
     <value>Seans nach bhfuil dáta agus am aláraim san am atá caite.</value>
   </data>
@@ -5354,24 +5270,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME" xml:space="preserve">
     <value>TUI idirghníomhach insuite i ndath ainm ceangailteach eochair</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME" xml:space="preserve">
-    <value>Cumasaigh giuirléidí</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC" xml:space="preserve">
-    <value>Cumasaíonn sé na giuirléidí sa láimhseálaí logáil isteach nua-aimseartha agus na láimhseálaithe go léir a úsáideann an API giuirléidí.</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME" xml:space="preserve">
-    <value>An chéad ghiuirléid</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC" xml:space="preserve">
-    <value>An chéad ghiuirléid don láimhseálaí logáil isteach nua-aimseartha. Is féidir leat an ghiuirléid seo a chumrú ina iontráil socruithe faoi seach.</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME" xml:space="preserve">
-    <value>Dara ghiuirléid</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC" xml:space="preserve">
-    <value>An dara giuirléid don láimhseálaí logáil isteach nua-aimseartha. Is féidir leat an ghiuirléid seo a chumrú ina iontráil socruithe faoi seach.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME" xml:space="preserve">
     <value>Tacaíocht luch</value>
@@ -6219,9 +6117,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_ARGUMENT_ENCODEDSTRING_DESC" xml:space="preserve">
     <value>Léiriú teaghrán ionchódaithe</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC" xml:space="preserve">
-    <value>Teaghrán BASE64 ionchódaithe</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
     <value>Conair chuig an eolaire</value>
   </data>
@@ -6281,9 +6176,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC" xml:space="preserve">
     <value>Conair chuig an eolaire don phána ceart</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC" xml:space="preserve">
-    <value>Conair chuig script UESH</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
     <value>Conair chuig an eolaire chun an liosta</value>
@@ -6477,12 +6369,6 @@
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_DESC" xml:space="preserve">
     <value>Ligeann sé seo duit scéimeanna datha iomadúla eithne a shocrú</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME" xml:space="preserve">
-    <value>Socruithe láimhseálaí logáil isteach nua-aimseartha</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC" xml:space="preserve">
-    <value>Ligeann sé seo duit an láimhseálaí logáil isteach nua-aimseartha a chumrú</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME" xml:space="preserve">
     <value>Córas cabhrach</value>
   </data>
@@ -6567,12 +6453,6 @@
   <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_DESC" xml:space="preserve">
     <value>Cé acu a sheinm maisíochtaí fuaime spárálaíscáileáin comhthimpeallach nó nach</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME" xml:space="preserve">
-    <value>Neartaigh maisíochtaí fuaime an spárálaíscáileáin chomhthimpeallaigh</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC" xml:space="preserve">
-    <value>Cibé ar cheart maisíochtaí fuaime an spárálaíscáileáin chomhthimpeallaigh a threisiú nó nach bhfuil</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME" xml:space="preserve">
     <value>Toirt fuaime cue</value>
   </data>
@@ -6635,12 +6515,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC" xml:space="preserve">
     <value>Cén cultúr atá á úsáid chun ainmneacha na míosa, an fhéilire, srl. a athrú?</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME" xml:space="preserve">
-    <value>Cumasaigh giuirléidí &apos;The Nitrocid Homepage&apos;</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC" xml:space="preserve">
-    <value>Cumasaíonn sé giuirléidí &apos;The Nitrocid Homepage&apos; ar thaobh na láimhe deise den scáileán.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
     <value>Cumasaigh fotha RSS &apos;The Nitrocid Homepage&apos;</value>
@@ -6747,35 +6621,8 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_FORECAST" xml:space="preserve">
     <value>Extras - Réamhaisnéis</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_FTP" xml:space="preserve">
-    <value>Extras - FTP Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_GIT" xml:space="preserve">
-    <value>Extras - Git Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_HTTP" xml:space="preserve">
-    <value>Extras - HTTP Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_JSON" xml:space="preserve">
-    <value>Extras - JSON Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO" xml:space="preserve">
-    <value>Extras - Stiúideo Teanga</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_MAIL" xml:space="preserve">
-    <value>Extras - Mail Shell</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_NOTES" xml:space="preserve">
     <value>Extras - Nótaí</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_RSS" xml:space="preserve">
-    <value>Extras - RSS Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_SFTP" xml:space="preserve">
-    <value>Extras - SFTP Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_SQL" xml:space="preserve">
-    <value>Extras - SQL Shell</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO" xml:space="preserve">
     <value>Extras - Stiúideo Téama</value>
@@ -6887,12 +6734,6 @@
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC" xml:space="preserve">
     <value>Cén tiománaí sórtála ar mhaith leat a úsáid?</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME" xml:space="preserve">
-    <value>Tiománaí ionchur reatha</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC" xml:space="preserve">
-    <value>Cén tiománaí ionchuir ar mhaith leat a úsáid?</value>
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME" xml:space="preserve">
     <value>Tiománaí ionchódú neamhshiméadrach reatha</value>
@@ -7034,9 +6875,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
     <value>Priontálann sé an toradh chuig an gconsól</value>
-  </data>
-  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
-    <value>Próiseáil Il-athraitheach Oidhreachta</value>
   </data>
   <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
     <value>Níl aon phasfhocal ag an úsáideoir chun oibríochtaí fíordheimhnithe 2FA a dhéanamh.</value>

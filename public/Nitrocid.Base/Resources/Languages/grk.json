@@ -1724,18 +1724,6 @@
       "text": "Εμφανίζει την ειδοποίηση που δείχνει την πρόοδο της μεταφόρτωσης."
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC",
-      "text": "Ελέγχει για να δει εάν η μεταφράσιμη συμβολοσειρά υπάρχει στους πόρους KS"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND",
-      "text": "Βρέθηκε συμβολοσειρά στους πόρους τοπικής προσαρμογής."
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND",
-      "text": "Η συμβολοσειρά δεν βρέθηκε στους πόρους τοπικής προσαρμογής."
-    },
-    {
       "loc": "NKS_ARGUMENTS_ARGUMENT_QUIET_DESC",
       "text": "Ξεκινά τον πυρήνα αθόρυβα"
     },
@@ -1854,10 +1842,6 @@
     {
       "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT",
       "text": "Από πού θέλετε να φορτώσετε τις τρέχουσες ρυθμίσεις του πυρήνα;"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC",
-      "text": "Ελέγχει για να δει εάν οι μεταφράσιμες συμβολοσειρές υπάρχουν στους πόρους KS"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC",
@@ -2018,10 +2002,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC",
       "text": "Ανοίγει τις ρυθμίσεις εκτόξευσης"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC",
-      "text": "Εμφανίζει τις διαθέσιμες μεταβλητές UESH"
     },
     {
       "loc": "NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC",
@@ -3984,14 +3964,6 @@
       "text": "Κάποιο κακόβουλο mod αφαίρεσε τον λογαριασμό root ή συνέβη μια σπάνια κατάσταση και εξαφανίστηκε."
     },
     {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM",
-      "text": "Από"
-    },
-    {
-      "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED",
-      "text": "Χωρίς τροφοδοσία."
-    },
-    {
       "loc": "NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON",
       "text": "Εγκαταστήστε το πρόσθετο RSS Shell Extras!"
     },
@@ -4152,28 +4124,12 @@
       "text": "Δοκιμές χρήστη"
     },
     {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN",
-      "text": "ΤΕΡΜΑΤΙΣΜΟΣ ΛΕΙΤΟΥΡΓΙΑΣ"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC",
-      "text": "Έξοδος από τη λειτουργία δοκιμής και τερματισμός λειτουργίας του πυρήνα"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT",
-      "text": "Επιλέξτε μια δοκιμαστική ενότητα για εκτέλεση"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_THEMESET_NO",
       "text": "Οχι"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE",
       "text": "Ο αριθμός καρέ στοίβας δεν πρέπει να υπερβαίνει την τρέχουσα ποσότητα καρέ ή δεν πρέπει να είναι αρνητικός."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME",
-      "text": "Nitrocid KS"
     },
     {
       "loc": "NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART",
@@ -4224,24 +4180,8 @@
       "text": "Το πακέτο πληροφοριών ζώνης ώρας δεν έχει εγκατασταθεί ακόμα στο σύστημά σας Linux. Εγκαταστήστε το 'tzdata' χρησιμοποιώντας τον διαχειριστή πακέτων της διανομής σας."
     },
     {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
-      "text": "Παρακαλώ περιμένετε"
-    },
-    {
       "loc": "NKS_MISC_SPLASHES_WELCOME_LOADING",
       "text": "Φόρτωση"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT",
-      "text": "Περιμένετε όσο αρχικοποιείται ο πυρήνας"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN",
-      "text": "Περιμένετε όσο τερματίζεται η λειτουργία του πυρήνα"
-    },
-    {
-      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART",
-      "text": "Περιμένετε όσο γίνεται επανεκκίνηση του πυρήνα"
     },
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_STARTING",
@@ -4488,10 +4428,6 @@
       "text": "Αποκωδικοποιεί το κωδικοποιημένο κείμενο"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC",
-      "text": "Αποκωδικοποιεί το κείμενο από την αναπαράσταση BASE64"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC",
       "text": "Παρέχει πληροφορίες για έναν δίσκο"
     },
@@ -4526,10 +4462,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC",
       "text": "Κωδικοποιεί το κείμενο"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC",
-      "text": "Κωδικοποιεί το κείμενο σε μια αναπαράσταση BASE64"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC",
@@ -4590,10 +4522,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC",
       "text": "Εμφανίζει πληροφορίες άδειας χρήσης για τον πυρήνα"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC",
-      "text": "Ελέγχει μια δέσμη ενεργειών UESH για συντακτικά σφάλματα"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC",
@@ -4930,14 +4858,6 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE",
       "text": "Επιλέξτε τη γλώσσα σας"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT",
-      "text": "Γράψτε μια μεταφράσιμη συμβολοσειρά για να ελέγξετε:"
-    },
-    {
-      "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT",
-      "text": "Γράψτε μια μεταφράσιμη διαδρομή αρχείου λίστας συμβολοσειρών για έλεγχο:"
     },
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC",
@@ -5512,18 +5432,6 @@
       "text": "Υποστηρίζονται μόνο συμμετρικοί αλγόριθμοι κωδικοποίησης που χρησιμοποιούν και το κλειδί και το διάνυσμα αρχικοποίησης."
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS",
-      "text": "Το σενάριο πέτυχε."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED",
-      "text": "Το σενάριο απέτυχε. Το πιο πιθανό είναι να υπάρχει συντακτικό σφάλμα. Ελέγξτε το σενάριό σας για σφάλματα και δοκιμάστε ξανά να εκτελέσετε το linter."
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR",
-      "text": "Η δέσμη σεναρίων απέτυχε απροσδόκητα προσπαθώντας να αναλύσει το σενάριό σας."
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR",
       "text": "Πληροφορίες για"
     },
@@ -5860,14 +5768,6 @@
       "text": "Η ζώνη ώρας σε ολόκληρο τον πυρήνα προς χρήση"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME",
-      "text": "Εμφάνιση του πλαισίου πληροφοριών άδειας χρήσης"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC",
-      "text": "Εάν θα εμφανίζεται το πλαίσιο πληροφοριών άδειας χρήσης για τρία δευτερόλεπτα μετά από κάθε σύνδεση. Συνιστάται να το διατηρείτε αναμμένο."
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_DESC",
       "text": "Αυτή η ενότητα σάς επιτρέπει να επιλέξετε τον τύπο χρώματος που θέλετε να αλλάξετε."
     },
@@ -6174,14 +6074,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME",
       "text": "Εμφάνιση MAL κατά τη σύνδεση"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME",
-      "text": "MOTD και Επικεφαλίδα στο κάτω μέρος του σύγχρονου ρολογιού σύνδεσης"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC",
-      "text": "Είτε θα εμφανιστεί το MOTD και η επικεφαλίδα στο κάτω μέρος ή στην κορυφή του ρολογιού"
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME",
@@ -6720,10 +6612,6 @@
       "text": "Εκκινεί την επιλεγμένη καταχώρηση"
     },
     {
-      "loc": "NKS_KERNEL_STARTING_ENVIRONMENT_NOENV",
-      "text": "Το περιβάλλον δεν προσδιορίζεται"
-    },
-    {
       "loc": "NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT",
       "text": "Η ημερομηνία και η ώρα συναγερμού μπορεί να μην είναι παρελθόν."
     },
@@ -6990,30 +6878,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME",
       "text": "Χρώμα ονόματος βιβλιοδεσίας κλειδιού διαδραστικό ενσωματωμένο TUI"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME",
-      "text": "Ενεργοποίηση γραφικών στοιχείων"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC",
-      "text": "Ενεργοποιεί τα γραφικά στοιχεία στο σύγχρονο εργαλείο χειρισμού σύνδεσης και όλους τους χειριστές που χρησιμοποιούν το API γραφικών στοιχείων."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME",
-      "text": "Πρώτο widget"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC",
-      "text": "Πρώτο widget για τον σύγχρονο χειριστή σύνδεσης. Μπορείτε να διαμορφώσετε αυτό το γραφικό στοιχείο στην αντίστοιχη καταχώρηση ρυθμίσεων."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME",
-      "text": "Δεύτερο widget"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC",
-      "text": "Δεύτερο widget για τον σύγχρονο χειριστή σύνδεσης. Μπορείτε να διαμορφώσετε αυτό το γραφικό στοιχείο στην αντίστοιχη καταχώρηση ρυθμίσεων."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME",
@@ -8144,10 +8008,6 @@
       "text": "Κωδικοποιημένη αναπαράσταση συμβολοσειράς"
     },
     {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC",
-      "text": "Κωδικοποιημένη συμβολοσειρά BASE64"
-    },
-    {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC",
       "text": "Διαδρομή προς τον κατάλογο"
     },
@@ -8226,10 +8086,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC",
       "text": "Διαδρομή στον κατάλογο για το δεξί παράθυρο"
-    },
-    {
-      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC",
-      "text": "Διαδρομή προς το σενάριο UESH"
     },
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC",
@@ -8488,14 +8344,6 @@
       "text": "Αυτό σας επιτρέπει να ορίσετε πολλαπλούς συνδυασμούς χρωμάτων πυρήνα"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME",
-      "text": "Σύγχρονες ρυθμίσεις χειριστή σύνδεσης"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC",
-      "text": "Αυτό σας επιτρέπει να διαμορφώσετε τον σύγχρονο χειριστή σύνδεσης"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME",
       "text": "Σύστημα βοήθειας"
     },
@@ -8608,14 +8456,6 @@
       "text": "Είτε θα παίξει ηχητικά εφέ της προφύλαξης οθόνης περιβάλλοντος είτε όχι"
     },
     {
-      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME",
-      "text": "Ενισχύστε τα ηχητικά εφέ της προφύλαξης οθόνης περιβάλλοντος"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC",
-      "text": "Είτε θα ενταθούν τα ηχητικά εφέ της προφύλαξης οθόνης περιβάλλοντος είτε όχι"
-    },
-    {
       "loc": "NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME",
       "text": "Ένταση ήχου υπόδειξης"
     },
@@ -8698,14 +8538,6 @@
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC",
       "text": "Ποια κουλτούρα χρησιμοποιείται για την αλλαγή των ονομάτων των μηνών, του ημερολογίου κ.λπ.;"
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME",
-      "text": "Ενεργοποιήστε τα γραφικά στοιχεία «The Nitrocid Homepage»."
-    },
-    {
-      "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC",
-      "text": "Ενεργοποιεί τα γραφικά στοιχεία «The Nitrocid Homepage» στη δεξιά πλευρά της οθόνης."
     },
     {
       "loc": "NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME",
@@ -8848,44 +8680,8 @@
       "text": "Extras - Πρόβλεψη"
     },
     {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_FTP",
-      "text": "Extras - FTP Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_GIT",
-      "text": "Extras - Git Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_HTTP",
-      "text": "Extras - HTTP Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_JSON",
-      "text": "Extras - JSON Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO",
-      "text": "Extras - Language Studio"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_MAIL",
-      "text": "Extras - Mail Shell"
-    },
-    {
       "loc": "NKS_KNOWNADDONS_EXTRAS_NOTES",
       "text": "Extras - Σημειώσεις"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_RSS",
-      "text": "Extras - RSS Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_SFTP",
-      "text": "Extras - SFTP Shell"
-    },
-    {
-      "loc": "NKS_KNOWNADDONS_EXTRAS_SQL",
-      "text": "Extras - SQL Shell"
     },
     {
       "loc": "NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO",
@@ -9034,14 +8830,6 @@
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC",
       "text": "Ποιο πρόγραμμα οδήγησης ταξινόμησης θα θέλατε να χρησιμοποιήσετε;"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME",
-      "text": "Τρέχον πρόγραμμα οδήγησης εισόδου"
-    },
-    {
-      "loc": "NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC",
-      "text": "Ποιο πρόγραμμα οδήγησης εισόδου θα θέλατε να χρησιμοποιήσετε;"
     },
     {
       "loc": "NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME",
@@ -9230,10 +9018,6 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC",
       "text": "Εκτυπώνει το αποτέλεσμα στην κονσόλα"
-    },
-    {
-      "loc": "NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING",
-      "text": "Παλαιότερη επεξεργασία πολλαπλών μεταβλητών"
     },
     {
       "loc": "NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC",

@@ -1404,15 +1404,6 @@
   <data name="NKS_SETTINGS_KERNEL_NETWORK_SHOWNOTIFICATIONUPLOAD_DESC" xml:space="preserve">
     <value>Εμφανίζει την ειδοποίηση που δείχνει την πρόοδο της μεταφόρτωσης.</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_DESC" xml:space="preserve">
-    <value>Ελέγχει για να δει εάν η μεταφράσιμη συμβολοσειρά υπάρχει στους πόρους KS</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGFOUND" xml:space="preserve">
-    <value>Βρέθηκε συμβολοσειρά στους πόρους τοπικής προσαρμογής.</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_STRINGNOTFOUND" xml:space="preserve">
-    <value>Η συμβολοσειρά δεν βρέθηκε στους πόρους τοπικής προσαρμογής.</value>
-  </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_QUIET_DESC" xml:space="preserve">
     <value>Ξεκινά τον πυρήνα αθόρυβα</value>
   </data>
@@ -1502,9 +1493,6 @@
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LOADPROMPT" xml:space="preserve">
     <value>Από πού θέλετε να φορτώσετε τις τρέχουσες ρυθμίσεις του πυρήνα;</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_DESC" xml:space="preserve">
-    <value>Ελέγχει για να δει εάν οι μεταφράσιμες συμβολοσειρές υπάρχουν στους πόρους KS</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COMBINE_DESC" xml:space="preserve">
     <value>Συνδυάζει τα δύο αρχεία κειμένου ή περισσότερα στο αρχείο εξόδου.</value>
@@ -1625,9 +1613,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETTINGS_SWITCH_SPLASH_DESC" xml:space="preserve">
     <value>Ανοίγει τις ρυθμίσεις εκτόξευσης</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LSVARS_DESC" xml:space="preserve">
-    <value>Εμφανίζει τις διαθέσιμες μεταβλητές UESH</value>
   </data>
   <data name="NKS_ARGUMENTS_ARGUMENT_DEBUG_DESC" xml:space="preserve">
     <value>Ενεργοποιεί τη λειτουργία εντοπισμού σφαλμάτων</value>
@@ -3099,12 +3084,6 @@
   <data name="NKS_USERS_LOGIN_NOROOTACCOUNT" xml:space="preserve">
     <value>Κάποιο κακόβουλο mod αφαίρεσε τον λογαριασμό root ή συνέβη μια σπάνια κατάσταση και εξαφανίστηκε.</value>
   </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_FROM" xml:space="preserve">
-    <value>Από</value>
-  </data>
-  <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NOFEED" xml:space="preserve">
-    <value>Χωρίς τροφοδοσία.</value>
-  </data>
   <data name="NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON" xml:space="preserve">
     <value>Εγκαταστήστε το πρόσθετο RSS Shell Extras!</value>
   </data>
@@ -3225,23 +3204,11 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTION_USERS" xml:space="preserve">
     <value>Δοκιμές χρήστη</value>
   </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN" xml:space="preserve">
-    <value>ΤΕΡΜΑΤΙΣΜΟΣ ΛΕΙΤΟΥΡΓΙΑΣ</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_ALTCHOICE_SHUTDOWN_DESC" xml:space="preserve">
-    <value>Έξοδος από τη λειτουργία δοκιμής και τερματισμός λειτουργίας του πυρήνα</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTING_SECTIONPROMPT" xml:space="preserve">
-    <value>Επιλέξτε μια δοκιμαστική ενότητα για εκτέλεση</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_THEMESET_NO" xml:space="preserve">
     <value>Οχι</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TRACE_DEBUGSTACKFRAME_EXCEPTION_FRAMENUMOUTOFRANGE" xml:space="preserve">
     <value>Ο αριθμός καρέ στοίβας δεν πρέπει να υπερβαίνει την τρέχουσα ποσότητα καρέ ή δεν πρέπει να είναι αρνητικός.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME" xml:space="preserve">
-    <value>Nitrocid KS</value>
   </data>
   <data name="NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART" xml:space="preserve">
     <value>Ο επόπτης νήματος πυρήνα εντόπισε {0} κρίσιμα νήματα που δεν έχουν ξεκινήσει ακόμα.</value>
@@ -3279,20 +3246,8 @@
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
     <value>Το πακέτο πληροφοριών ζώνης ώρας δεν έχει εγκατασταθεί ακόμα στο σύστημά σας Linux. Εγκαταστήστε το &apos;tzdata&apos; χρησιμοποιώντας τον διαχειριστή πακέτων της διανομής σας.</value>
   </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT" xml:space="preserve">
-    <value>Παρακαλώ περιμένετε</value>
-  </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>Φόρτωση</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_INIT" xml:space="preserve">
-    <value>Περιμένετε όσο αρχικοποιείται ο πυρήνας</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_SHUTDOWN" xml:space="preserve">
-    <value>Περιμένετε όσο τερματίζεται η λειτουργία του πυρήνα</value>
-  </data>
-  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT_RESTART" xml:space="preserve">
-    <value>Περιμένετε όσο γίνεται επανεκκίνηση του πυρήνα</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_STARTING" xml:space="preserve">
     <value>Εκκίνηση</value>
@@ -3477,9 +3432,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_DESC" xml:space="preserve">
     <value>Αποκωδικοποιεί το κωδικοποιημένο κείμενο</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_DESC" xml:space="preserve">
-    <value>Αποκωδικοποιεί το κείμενο από την αναπαράσταση BASE64</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DISKINFO_DESC" xml:space="preserve">
     <value>Παρέχει πληροφορίες για έναν δίσκο</value>
   </data>
@@ -3506,9 +3458,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ENCODETEXT_DESC" xml:space="preserve">
     <value>Κωδικοποιεί το κείμενο</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ENCODEBASE64_DESC" xml:space="preserve">
-    <value>Κωδικοποιεί το κείμενο σε μια αναπαράσταση BASE64</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_FIND_SWITCH_RECURSIVE_DESC" xml:space="preserve">
     <value>Αναδρομικά αναζητά ένα αρχείο</value>
@@ -3554,9 +3503,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LICENSE_DESC" xml:space="preserve">
     <value>Εμφανίζει πληροφορίες άδειας χρήσης για τον πυρήνα</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_DESC" xml:space="preserve">
-    <value>Ελέγχει μια δέσμη ενεργειών UESH για συντακτικά σφάλματα</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_RECURSIVE_DESC" xml:space="preserve">
     <value>Εμφανίζει έναν φάκελο αναδρομικά</value>
@@ -3809,12 +3755,6 @@
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE" xml:space="preserve">
     <value>Επιλέξτε τη γλώσσα σας</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRING_PROMPT" xml:space="preserve">
-    <value>Γράψτε μια μεταφράσιμη συμβολοσειρά για να ελέγξετε:</value>
-  </data>
-  <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CHECKSTRINGS_PROMPT" xml:space="preserve">
-    <value>Γράψτε μια μεταφράσιμη διαδρομή αρχείου λίστας συμβολοσειρών για έλεγχο:</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_CLIDOUBLEPANETEST_DESC" xml:space="preserve">
     <value>Δοκιμάζει το διαδραστικό σύστημα TUI με αλληλεπίδραση διπλού υαλοπίνακα</value>
@@ -4245,15 +4185,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_GETKEYIV_NEEDSSYMMETRIC" xml:space="preserve">
     <value>Υποστηρίζονται μόνο συμμετρικοί αλγόριθμοι κωδικοποίησης που χρησιμοποιούν και το κλειδί και το διάνυσμα αρχικοποίησης.</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_SUCCESS" xml:space="preserve">
-    <value>Το σενάριο πέτυχε.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_FAILED" xml:space="preserve">
-    <value>Το σενάριο απέτυχε. Το πιο πιθανό είναι να υπάρχει συντακτικό σφάλμα. Ελέγξτε το σενάριό σας για σφάλματα και δοκιμάστε ξανά να εκτελέσετε το linter.</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_LINTSCRIPT_UNEXPECTEDERROR" xml:space="preserve">
-    <value>Η δέσμη σεναρίων απέτυχε απροσδόκητα προσπαθώντας να αναλύσει το σενάριό σας.</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_LSCONFIGS_INFOFOR" xml:space="preserve">
     <value>Πληροφορίες για</value>
   </data>
@@ -4506,12 +4437,6 @@
   <data name="NKS_SETTINGS_KERNEL_GENERAL_TIMEDATE_KERNELWIDETIMEZONE_DESC" xml:space="preserve">
     <value>Η ζώνη ώρας σε ολόκληρο τον πυρήνα προς χρήση</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_NAME" xml:space="preserve">
-    <value>Εμφάνιση του πλαισίου πληροφοριών άδειας χρήσης</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_LICENSEBOX_DESC" xml:space="preserve">
-    <value>Εάν θα εμφανίζεται το πλαίσιο πληροφοριών άδειας χρήσης για τρία δευτερόλεπτα μετά από κάθε σύνδεση. Συνιστάται να το διατηρείτε αναμμένο.</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_DESC" xml:space="preserve">
     <value>Αυτή η ενότητα σάς επιτρέπει να επιλέξετε τον τύπο χρώματος που θέλετε να αλλάξετε.</value>
   </data>
@@ -4742,12 +4667,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_SHOWMAL_NAME" xml:space="preserve">
     <value>Εμφάνιση MAL κατά τη σύνδεση</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_NAME" xml:space="preserve">
-    <value>MOTD και Επικεφαλίδα στο κάτω μέρος του σύγχρονου ρολογιού σύνδεσης</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_MOTDHEADLINE_DESC" xml:space="preserve">
-    <value>Είτε θα εμφανιστεί το MOTD και η επικεφαλίδα στο κάτω μέρος ή στην κορυφή του ρολογιού</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HANDLER_NAME" xml:space="preserve">
     <value>Χειριστής σύνδεσης</value>
@@ -5151,9 +5070,6 @@
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_KEYBINDING_BOOT" xml:space="preserve">
     <value>Εκκινεί την επιλεγμένη καταχώρηση</value>
   </data>
-  <data name="NKS_KERNEL_STARTING_ENVIRONMENT_NOENV" xml:space="preserve">
-    <value>Το περιβάλλον δεν προσδιορίζεται</value>
-  </data>
   <data name="NKS_KERNEL_TIME_ALARM_EXCEPTION_LESSTHANPRESENT" xml:space="preserve">
     <value>Η ημερομηνία και η ώρα συναγερμού μπορεί να μην είναι παρελθόν.</value>
   </data>
@@ -5354,24 +5270,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGNAMECOLOR_NAME" xml:space="preserve">
     <value>Χρώμα ονόματος βιβλιοδεσίας κλειδιού διαδραστικό ενσωματωμένο TUI</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_NAME" xml:space="preserve">
-    <value>Ενεργοποίηση γραφικών στοιχείων</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGETS_DESC" xml:space="preserve">
-    <value>Ενεργοποιεί τα γραφικά στοιχεία στο σύγχρονο εργαλείο χειρισμού σύνδεσης και όλους τους χειριστές που χρησιμοποιούν το API γραφικών στοιχείων.</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_NAME" xml:space="preserve">
-    <value>Πρώτο widget</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET1_DESC" xml:space="preserve">
-    <value>Πρώτο widget για τον σύγχρονο χειριστή σύνδεσης. Μπορείτε να διαμορφώσετε αυτό το γραφικό στοιχείο στην αντίστοιχη καταχώρηση ρυθμίσεων.</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_NAME" xml:space="preserve">
-    <value>Δεύτερο widget</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_WIDGET2_DESC" xml:space="preserve">
-    <value>Δεύτερο widget για τον σύγχρονο χειριστή σύνδεσης. Μπορείτε να διαμορφώσετε αυτό το γραφικό στοιχείο στην αντίστοιχη καταχώρηση ρυθμίσεων.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_MOUSE_SUPPORT_NAME" xml:space="preserve">
     <value>Υποστήριξη ποντικιού</value>
@@ -6219,9 +6117,6 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODETEXT_ARGUMENT_ENCODEDSTRING_DESC" xml:space="preserve">
     <value>Κωδικοποιημένη αναπαράσταση συμβολοσειράς</value>
   </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DECODEBASE64_ARGUMENT_ENCODED_DESC" xml:space="preserve">
-    <value>Κωδικοποιημένη συμβολοσειρά BASE64</value>
-  </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_DIRINFO_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
     <value>Διαδρομή προς τον κατάλογο</value>
   </data>
@@ -6281,9 +6176,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_ARGUMENT_SECONDPATH_DESC" xml:space="preserve">
     <value>Διαδρομή στον κατάλογο για το δεξί παράθυρο</value>
-  </data>
-  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LINTSCRIPT_ARGUMENT_SCRIPT_DESC" xml:space="preserve">
-    <value>Διαδρομή προς το σενάριο UESH</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_ARGUMENT_DIRECTORY_DESC" xml:space="preserve">
     <value>Διαδρομή προς τον κατάλογο στη λίστα</value>
@@ -6477,12 +6369,6 @@
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_DESC" xml:space="preserve">
     <value>Αυτό σας επιτρέπει να ορίσετε πολλαπλούς συνδυασμούς χρωμάτων πυρήνα</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_NAME" xml:space="preserve">
-    <value>Σύγχρονες ρυθμίσεις χειριστή σύνδεσης</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_LOGIN_MODERN_DESC" xml:space="preserve">
-    <value>Αυτό σας επιτρέπει να διαμορφώσετε τον σύγχρονο χειριστή σύνδεσης</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_SHELL_HELPSYSTEM_NAME" xml:space="preserve">
     <value>Σύστημα βοήθειας</value>
   </data>
@@ -6567,12 +6453,6 @@
   <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTS_DESC" xml:space="preserve">
     <value>Είτε θα παίξει ηχητικά εφέ της προφύλαξης οθόνης περιβάλλοντος είτε όχι</value>
   </data>
-  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_NAME" xml:space="preserve">
-    <value>Ενισχύστε τα ηχητικά εφέ της προφύλαξης οθόνης περιβάλλοντος</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_AUDIO_AMBIENTSCREENSAVEREFFECTSINTENSE_DESC" xml:space="preserve">
-    <value>Είτε θα ενταθούν τα ηχητικά εφέ της προφύλαξης οθόνης περιβάλλοντος είτε όχι</value>
-  </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUME_NAME" xml:space="preserve">
     <value>Ένταση ήχου υπόδειξης</value>
   </data>
@@ -6635,12 +6515,6 @@
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_CULTUREANDLANGUAGE_CULTURE_DESC" xml:space="preserve">
     <value>Ποια κουλτούρα χρησιμοποιείται για την αλλαγή των ονομάτων των μηνών, του ημερολογίου κ.λπ.;</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_NAME" xml:space="preserve">
-    <value>Ενεργοποιήστε τα γραφικά στοιχεία «The Nitrocid Homepage».</value>
-  </data>
-  <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEWIDGETS_DESC" xml:space="preserve">
-    <value>Ενεργοποιεί τα γραφικά στοιχεία «The Nitrocid Homepage» στη δεξιά πλευρά της οθόνης.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
     <value>Ενεργοποιήστε τη ροή RSS &quot;The Nitrocid Homepage&quot;.</value>
@@ -6747,35 +6621,8 @@
   <data name="NKS_KNOWNADDONS_EXTRAS_FORECAST" xml:space="preserve">
     <value>Extras - Πρόβλεψη</value>
   </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_FTP" xml:space="preserve">
-    <value>Extras - FTP Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_GIT" xml:space="preserve">
-    <value>Extras - Git Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_HTTP" xml:space="preserve">
-    <value>Extras - HTTP Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_JSON" xml:space="preserve">
-    <value>Extras - JSON Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_LANGSTUDIO" xml:space="preserve">
-    <value>Extras - Language Studio</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_MAIL" xml:space="preserve">
-    <value>Extras - Mail Shell</value>
-  </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_NOTES" xml:space="preserve">
     <value>Extras - Σημειώσεις</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_RSS" xml:space="preserve">
-    <value>Extras - RSS Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_SFTP" xml:space="preserve">
-    <value>Extras - SFTP Shell</value>
-  </data>
-  <data name="NKS_KNOWNADDONS_EXTRAS_SQL" xml:space="preserve">
-    <value>Extras - SQL Shell</value>
   </data>
   <data name="NKS_KNOWNADDONS_EXTRAS_THEMESTUDIO" xml:space="preserve">
     <value>Extras - Theme Studio</value>
@@ -6887,12 +6734,6 @@
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTSORTINGDRIVER_DESC" xml:space="preserve">
     <value>Ποιο πρόγραμμα οδήγησης ταξινόμησης θα θέλατε να χρησιμοποιήσετε;</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_NAME" xml:space="preserve">
-    <value>Τρέχον πρόγραμμα οδήγησης εισόδου</value>
-  </data>
-  <data name="NKS_SETTINGS_DRIVERS_CURRENTINPUTDRIVER_DESC" xml:space="preserve">
-    <value>Ποιο πρόγραμμα οδήγησης εισόδου θα θέλατε να χρησιμοποιήσετε;</value>
   </data>
   <data name="NKS_SETTINGS_DRIVERS_CURRENTENCODINGASYMMETRICDRIVER_NAME" xml:space="preserve">
     <value>Τρέχον πρόγραμμα οδήγησης ασύμμετρης κωδικοποίησης</value>
@@ -7034,9 +6875,6 @@
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ISMODE_ARGUMENT_VERBOSE_DESC" xml:space="preserve">
     <value>Εκτυπώνει το αποτέλεσμα στην κονσόλα</value>
-  </data>
-  <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_LEGACYMULTIVARPROCESSING" xml:space="preserve">
-    <value>Παλαιότερη επεξεργασία πολλαπλών μεταβλητών</value>
   </data>
   <data name="NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC" xml:space="preserve">
     <value>Ο χρήστης δεν έχει κωδικό πρόσβασης για την εκτέλεση λειτουργιών ελέγχου ταυτότητας 2FA.</value>

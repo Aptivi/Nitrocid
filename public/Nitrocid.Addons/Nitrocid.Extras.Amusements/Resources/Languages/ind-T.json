@@ -503,10 +503,6 @@
       "text": "नई स्क्रीन में लिखने से पहले कितने मिलीसेकंड प्रतीक्षा करनी है?"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_DESC",
-      "text": "नाम और उपनाम जनरेटर"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_MINNAMES_NAME",
       "text": "न्यूनतम नाम गिनती"
     },
@@ -539,60 +535,8 @@
       "text": "अधिकतम आयु वर्ष उत्पन्न करने के लिए"
     },
     {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDFIRSTNAME_DESC",
-      "text": "प्रथम नाम खोजक"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_MALE_DESC",
-      "text": "पुरुष नामों की सूची का उपयोग करके नाम बनाएं"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_FEMALE_DESC",
-      "text": "महिला नामों की सूची का उपयोग करके नाम बनाएं"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_UNIFIED_DESC",
-      "text": "एकीकृत नाम सूची का उपयोग करके नाम उत्पन्न करें"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_FINDSURNAME_DESC",
-      "text": "उपनाम खोजक"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_SETTINGS_PERSONLOOKUP_DESC",
       "text": "किसी यादृच्छिक व्यक्ति के लिए डेटाबेस लुकअप का अनुकरण करता है।"
-    },
-    {
-      "loc": "NKS_NAMEGEN_SETTINGS_EXCEPTION_ENTRIESFAILED",
-      "text": "सेटिंग प्रविष्टियाँ प्राप्त करने में विफल."
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_SWITCH_T_DESC",
-      "text": "नाम टैग उत्पन्न करें (उमलॉट वर्तमान में समर्थित नहीं हैं)"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_TERM_DESC",
-      "text": "जाँच अवधि"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMEPREFIX_DESC",
-      "text": "खोज के लिए नाम उपसर्ग"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_NAMESUFFIX_DESC",
-      "text": "खोज के लिए नाम प्रत्यय"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMEPREFIX_DESC",
-      "text": "खोज के लिए उपनाम उपसर्ग"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_ARGUMENT_SURNAMESUFFIX_DESC",
-      "text": "खोज करने के लिए उपनाम प्रत्यय"
-    },
-    {
-      "loc": "NKS_NAMEGEN_COMMAND_GENNAME_ARGUMENT_NAMESCOUNT_DESC",
-      "text": "कितने नाम उत्पन्न करने हैं?"
     },
     {
       "loc": "NKS_AMUSEMENTS_COMMAND_CLICKER_DESC",
