@@ -809,6 +809,94 @@
     {
       "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC",
       "text": "us vyakti ka naam jise janmadin kee shubhakaamanaen denee hain"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME",
+      "text": "sachche rangon ko sakriy karen"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+      "text": "mileesekand mein deree"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC",
+      "text": "agala lekhan karane se pahale kitane mileesekand tak prateeksha karanee hogee?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+      "text": "nyoonatam laal rang star"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "nyoonatam hara rang star"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "nyoonatam neela rang star"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+      "text": "nyoonatam rang star"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "adhikatam laal rang star"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "adhikatam hara rang star"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "adhikatam neela rang star"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+      "text": "adhikatam rang star"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+      "text": "nyoonatam laal rang star. nyoonatam sveekrt maan 0 hai aur adhikatam sveekrt maan 255 hai."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "nyoonatam hara rang star. nyoonatam sveekrt maan 0 hai aur adhikatam sveekrt maan 255 hai."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "nyoonatam neela rang star. nyoonatam sveekrt maan 0 hai aur adhikatam sveekrt maan 255 hai."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+      "text": "nyoonatam rang star. nyoonatam sveekrt maan 0 hai aur adhikatam sveekrt maan 255 rangon ke lie 255 ya 16 rangon ke lie 16 hai."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "adhikatam laal rang star. nyoonatam sveekrt maan 0 hai aur adhikatam sveekrt maan 255 hai."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "adhikatam hara rang star. nyoonatam sveekrt maan 0 hai aur adhikatam sveekrt maan 255 hai."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "adhikatam neela rang star. nyoonatam sveekrt maan 0 hai aur adhikatam sveekrt maan 255 hai."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+      "text": "adhikatam rang star. nyoonatam sveekrt maan 0 hai aur adhikatam sveekrt maan 255 rangon ke lie 255 ya 16 rangon ke lie 16 hai."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC",
+      "text": "asalee rang samarthan ko sakriy karata hai."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+      "text": "rang seting"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+      "text": "yah aapako rangon ko konfigar karane kee anumati deta hai"
     }
   ]
 }

@@ -818,6 +818,94 @@
     {
       "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC",
       "text": "Der Name der Person, der Sie zum Geburtstag gratulieren möchten"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME",
+      "text": "Aktivieren Sie echte Farben"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+      "text": "Verzögerung in Millisekunden"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC",
+      "text": "Wie viele Millisekunden müssen Sie warten, bevor Sie das nächste Mal schreiben?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+      "text": "Minimaler roter Farbpegel"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "Minimaler grüner Farbpegel"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "Minimaler blauer Farbpegel"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+      "text": "Minimales Farbniveau"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "Maximale rote Farbstufe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "Maximale grüne Farbstufe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "Maximale blaue Farbstufe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+      "text": "Maximale Farbstufe"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+      "text": "Minimaler roter Farbpegel. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "Minimaler grüner Farbpegel. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "Minimaler blauer Farbpegel. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+      "text": "Minimales Farbniveau. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255 für 255 Farben oder 16 für 16 Farben."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "Maximale rote Farbstufe. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "Maximale grüne Farbstufe. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "Maximale blaue Farbstufe. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+      "text": "Maximale Farbstufe. Der akzeptierte Mindestwert ist 0 und der maximal akzeptierte Wert ist 255 für 255 Farben oder 16 für 16 Farben."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC",
+      "text": "Aktiviert die True-Color-Unterstützung."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+      "text": "Farbeinstellungen"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+      "text": "Hiermit können Sie die Farben konfigurieren"
     }
   ]
 }

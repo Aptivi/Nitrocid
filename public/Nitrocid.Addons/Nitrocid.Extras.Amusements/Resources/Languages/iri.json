@@ -810,6 +810,94 @@
     {
       "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC",
       "text": "Ainm an duine ar mian leat breithlá sona a ghuí air"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME",
+      "text": "Gníomhachtaigh dathanna fíor"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+      "text": "Moill sna Milleasoicindí"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC",
+      "text": "Cé mhéad milleasoicind atá le fanacht roimh an gcéad cheann eile a scríobh?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+      "text": "Íosleibhéal dath dearg"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "Íosleibhéal dath glas"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "Íosleibhéal dath gorm"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+      "text": "Leibhéal dath íosta"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "Uasleibhéal dath dearg"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "Uasleibhéal dath glas"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "Uasleibhéal dath gorm"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+      "text": "Uasleibhéal datha"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+      "text": "Íosleibhéal dath dearg. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "Íosleibhéal dath glas. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "Íosleibhéal dath gorm. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+      "text": "Leibhéal dath íosta. Is é 0 an luach íosta a nglactar leis agus is é 255 le haghaidh 255 dathanna nó 16 le haghaidh 16 dathanna an t-uasluach a nglactar leis."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "Uasleibhéal dath dearg. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "Uasleibhéal dath glas. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "Uasleibhéal dath gorm. Is é 0 an luach íosta a nglactar leis agus is é 255 an t-uasluach a nglactar leis."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+      "text": "Uasleibhéal datha. Is é 0 an luach íosta a nglactar leis agus is é 255 le haghaidh 255 dathanna nó 16 le haghaidh 16 dathanna an t-uasluach a nglactar leis."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC",
+      "text": "Gníomhachtaigh an tacaíocht dath fíor."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+      "text": "Socruithe datha"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+      "text": "Ligeann sé seo duit na dathanna a chumrú"
     }
   ]
 }

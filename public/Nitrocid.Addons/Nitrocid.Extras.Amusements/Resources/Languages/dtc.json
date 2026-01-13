@@ -815,6 +815,94 @@
     {
       "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC",
       "text": "De naam van de persoon die u wilt feliciteren"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME",
+      "text": "Activeer echte kleuren"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+      "text": "Vertraging in milliseconden"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC",
+      "text": "Hoeveel milliseconden moet ik wachten voordat ik de volgende keer schrijf?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+      "text": "Minimaal rood kleurniveau"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "Minimaal groen kleurniveau"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "Minimaal blauw kleurniveau"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+      "text": "Minimaal kleurniveau"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "Maximaal rood kleurniveau"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "Maximaal groen kleurniveau"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "Maximaal blauw kleurniveau"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+      "text": "Maximaal kleurniveau"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+      "text": "Minimaal rood kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "Minimaal groen kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "Minimaal blauw kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+      "text": "Minimaal kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255 voor 255 kleuren of 16 voor 16 kleuren."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "Maximaal rood kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "Maximaal groen kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "Maximaal blauw kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+      "text": "Maximaal kleurniveau. De minimaal geaccepteerde waarde is 0 en de maximaal geaccepteerde waarde is 255 voor 255 kleuren of 16 voor 16 kleuren."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC",
+      "text": "Activeert de ondersteuning voor ware kleuren."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+      "text": "Kleurinstellingen"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+      "text": "Hiermee kunt u de kleuren configureren"
     }
   ]
 }

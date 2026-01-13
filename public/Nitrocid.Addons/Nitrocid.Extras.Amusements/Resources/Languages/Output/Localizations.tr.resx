@@ -720,5 +720,71 @@
   <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC" xml:space="preserve">
     <value>Doğum günü kutlanacak kişinin adı</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Gerçek renkleri etkinleştir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>Milisaniye Cinsinden Gecikme</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>Bir sonraki yazma işlemini yapmadan önce kaç milisaniye beklenmeli?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Minimum kırmızı renk seviyesi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Minimum yeşil renk seviyesi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Minimum mavi renk seviyesi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME" xml:space="preserve">
+    <value>Minimum renk seviyesi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Maksimum kırmızı renk seviyesi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Maksimum yeşil renk seviyesi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Maksimum mavi renk seviyesi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Maksimum renk seviyesi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Minimum kırmızı renk seviyesi. Kabul edilebilir minimum değer 0, kabul edilebilir maksimum değer 255&apos;tir.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Minimum yeşil renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Minimum mavi renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC" xml:space="preserve">
+    <value>Minimum renk seviyesi. Kabul edilebilir minimum değer 0&apos;dır ve kabul edilebilir maksimum değer 255 renk için 255 veya 16 renk için 16&apos;dır.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Maksimum kırmızı renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Maksimum yeşil renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Maksimum mavi renk seviyesi. Kabul edilebilir minimum değer 0 ve kabul edilebilir maksimum değer 255&apos;tir.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC" xml:space="preserve">
+    <value>Maksimum renk seviyesi. Kabul edilebilir minimum değer 0&apos;dır ve kabul edilebilir maksimum değer 255 renk için 255 veya 16 renk için 16&apos;dır.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Gerçek renk desteğini aktifleştirir.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME" xml:space="preserve">
+    <value>Renk ayarları</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Bu, renkleri yapılandırmanıza olanak tanır</value>
+  </data>
 
 </root>

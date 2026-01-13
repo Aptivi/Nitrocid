@@ -810,6 +810,94 @@
     {
       "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC",
       "text": "Το όνομα του ατόμου στο οποίο θα ευχηθούν χρόνια πολλά"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME",
+      "text": "Ενεργοποιήστε τα αληθινά χρώματα"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+      "text": "Καθυστέρηση σε χιλιοστά του δευτερολέπτου"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου να περιμένετε πριν κάνετε την επόμενη εγγραφή;"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+      "text": "Ελάχιστο επίπεδο κόκκινου χρώματος"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "Ελάχιστο επίπεδο πράσινου χρώματος"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "Ελάχιστο επίπεδο μπλε χρώματος"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+      "text": "Ελάχιστο επίπεδο χρώματος"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "Μέγιστο επίπεδο κόκκινου χρώματος"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "Μέγιστο επίπεδο πράσινου χρώματος"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "Μέγιστο επίπεδο μπλε χρώματος"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+      "text": "Μέγιστο επίπεδο χρώματος"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+      "text": "Ελάχιστο επίπεδο κόκκινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "Ελάχιστο επίπεδο πράσινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "Ελάχιστο επίπεδο μπλε χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+      "text": "Ελάχιστο επίπεδο χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255 για 255 χρώματα ή 16 για 16 χρώματα."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "Μέγιστο επίπεδο κόκκινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "Μέγιστο επίπεδο πράσινου χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "Μέγιστο επίπεδο μπλε χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+      "text": "Μέγιστο επίπεδο χρώματος. Η ελάχιστη αποδεκτή τιμή είναι 0 και η μέγιστη αποδεκτή τιμή είναι 255 για 255 χρώματα ή 16 για 16 χρώματα."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC",
+      "text": "Ενεργοποιεί την υποστήριξη πραγματικού χρώματος."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+      "text": "Ρυθμίσεις χρώματος"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+      "text": "Αυτό σας επιτρέπει να διαμορφώσετε τα χρώματα"
     }
   ]
 }

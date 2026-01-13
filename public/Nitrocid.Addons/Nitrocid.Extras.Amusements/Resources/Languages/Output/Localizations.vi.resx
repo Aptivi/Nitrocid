@@ -720,5 +720,71 @@
   <data name="NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC" xml:space="preserve">
     <value>Tên của người được chúc mừng sinh nhật</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME" xml:space="preserve">
+    <value>Kích hoạt màu sắc thực</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME" xml:space="preserve">
+    <value>Độ trễ tính bằng mili giây</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC" xml:space="preserve">
+    <value>Phải đợi bao nhiêu mili giây trước khi thực hiện lệnh ghi tiếp theo?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME" xml:space="preserve">
+    <value>Mức độ màu đỏ tối thiểu</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME" xml:space="preserve">
+    <value>Mức độ màu xanh lá cây tối thiểu</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME" xml:space="preserve">
+    <value>Mức độ màu xanh tối thiểu</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME" xml:space="preserve">
+    <value>Mức màu tối thiểu</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME" xml:space="preserve">
+    <value>Mức màu đỏ tối đa</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME" xml:space="preserve">
+    <value>Mức màu xanh lá cây tối đa</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME" xml:space="preserve">
+    <value>Mức màu xanh tối đa</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME" xml:space="preserve">
+    <value>Mức màu tối đa</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC" xml:space="preserve">
+    <value>Mức màu đỏ tối thiểu. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC" xml:space="preserve">
+    <value>Mức màu xanh lá cây tối thiểu. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC" xml:space="preserve">
+    <value>Mức màu xanh tối thiểu. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC" xml:space="preserve">
+    <value>Mức màu tối thiểu. Giá trị tối thiểu được chấp nhận là 0 và giá trị tối đa được chấp nhận là 255 cho 255 màu hoặc 16 cho 16 màu.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC" xml:space="preserve">
+    <value>Mức màu đỏ tối đa. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC" xml:space="preserve">
+    <value>Mức màu xanh lá cây tối đa. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC" xml:space="preserve">
+    <value>Mức màu xanh tối đa. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC" xml:space="preserve">
+    <value>Mức màu tối đa. Giá trị tối thiểu được chấp nhận là 0 và giá trị tối đa được chấp nhận là 255 cho 255 màu hoặc 16 cho 16 màu.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC" xml:space="preserve">
+    <value>Kích hoạt hỗ trợ màu sắc thực.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME" xml:space="preserve">
+    <value>Cài đặt màu sắc</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC" xml:space="preserve">
+    <value>Điều này cho phép bạn cấu hình màu sắc</value>
+  </data>
 
 </root>

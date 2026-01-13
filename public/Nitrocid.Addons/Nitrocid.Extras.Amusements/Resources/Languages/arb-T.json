@@ -835,6 +835,94 @@
     {
       "loc": "NKS_AMUSEMENTS_SAVER_BDAYCARD_SETTINGS_PERSONNAME_DESC",
       "text": "اسم الشخص الذي سيتم تهنئته بعيد ميلاده"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_NAME",
+      "text": "قم بتنشيط الألوان الحقيقية"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
+      "text": "التأخير في ميلي ثانية"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC",
+      "text": "كم ميلي ثانية يجب الانتظار قبل إجراء الكتابة التالية؟"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_NAME",
+      "text": "الحد الأدنى لمستوى اللون الأحمر"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_NAME",
+      "text": "أدنى مستوى للون الأخضر"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_NAME",
+      "text": "الحد الأدنى لمستوى اللون الأزرق"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_NAME",
+      "text": "الحد الأدنى لمستوى اللون"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_NAME",
+      "text": "الحد الأقصى لمستوى اللون الأحمر"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_NAME",
+      "text": "الحد الأقصى لمستوى اللون الأخضر"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_NAME",
+      "text": "الحد الأقصى لمستوى اللون الأزرق"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_NAME",
+      "text": "الحد الأقصى لمستوى اللون"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINREDCOLOR_DESC",
+      "text": "الحد الأدنى لمستوى اللون الأحمر. الحد الأدنى للقيمة المقبولة هو 0 والحد الأقصى للقيمة المقبولة هو 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINGREENCOLOR_DESC",
+      "text": "أدنى مستوى للون الأخضر. الحد الأدنى للقيمة المقبولة هو 0 والحد الأقصى للقيمة المقبولة هو 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINBLUECOLOR_DESC",
+      "text": "الحد الأدنى لمستوى اللون الأزرق. الحد الأدنى للقيمة المقبولة هو 0 والحد الأقصى للقيمة المقبولة هو 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MINCOLOR_DESC",
+      "text": "الحد الأدنى لمستوى اللون. أدنى قيمة مقبولة هي 0 وأقصى قيمة مقبولة هي 255 لـ 255 لونًا أو 16 لـ 16 لونًا."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXREDCOLOR_DESC",
+      "text": "الحد الأقصى لمستوى اللون الأحمر. الحد الأدنى للقيمة المقبولة هو 0 والحد الأقصى للقيمة المقبولة هو 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXGREENCOLOR_DESC",
+      "text": "الحد الأقصى لمستوى اللون الأخضر. الحد الأدنى للقيمة المقبولة هو 0 والحد الأقصى للقيمة المقبولة هو 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXBLUECOLOR_DESC",
+      "text": "الحد الأقصى لمستوى اللون الأزرق. الحد الأدنى للقيمة المقبولة هو 0 والحد الأقصى للقيمة المقبولة هو 255."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_MAXCOLOR_DESC",
+      "text": "الحد الأقصى لمستوى اللون. أدنى قيمة مقبولة هي 0 وأقصى قيمة مقبولة هي 255 لـ 255 لونًا أو 16 لـ 16 لونًا."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TRUECOLORS_DESC",
+      "text": "ينشط دعم اللون الحقيقي."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
+      "text": "إعدادات الألوان"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_DESC",
+      "text": "يتيح لك هذا تكوين الألوان"
     }
   ]
 }

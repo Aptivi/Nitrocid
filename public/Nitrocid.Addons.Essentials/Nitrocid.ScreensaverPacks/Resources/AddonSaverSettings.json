@@ -9732,10 +9732,10 @@
         "Desc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
         "Keys": [
             {
-                "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_NAME",
+                "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_NAME",
                 "Type": "SInt",
                 "Variable": "HackingDelay",
-                "Description": "NKS_SETTINGS_KERNEL_SCREENSAVER_DELAY_DESC"
+                "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
             },
             {
                 "Name": "NKS_SCREENSAVERPACKS_HACKING_MAXFADESTEPS_NAME",
