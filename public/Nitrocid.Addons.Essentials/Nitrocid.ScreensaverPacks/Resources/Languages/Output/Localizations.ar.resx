@@ -1467,5 +1467,110 @@
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
     <value>كم ميلي ثانية يجب الانتظار قبل إنشاء متاهة جديدة؟</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC" xml:space="preserve">
+    <value>يحاكي تلاشي الخلفية الملونة إلى اللون الأسود بشكل دائري بدءًا من المنتصف.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>يعرض ثلاثة مربعات: مربع للساعات، وآخر للدقائق، وثالث للثواني.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC" xml:space="preserve">
+    <value>يحاكي انحناء الألوان وانتقالها ببطء.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC" xml:space="preserve">
+    <value>ينشئ نقطة في مكان ما على الشاشة وينشرها لتغطي كامل الشاشة (نصف قطر الدائرة).</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC" xml:space="preserve">
+    <value>يحاكي تبخر القطرات.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC" xml:space="preserve">
+    <value>يُكرر الأحرف الإنجليزية باستخدام Figlet.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC" xml:space="preserve">
+    <value>يعرض مجموعة من الخطوط التي تملأ الشاشة.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC" xml:space="preserve">
+    <value>يعرض خطين يمتدان من الأسفل إلى الأعلى ويملآن الشاشة.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC" xml:space="preserve">
+    <value>يعرض شاشة طرفية قديمة الطراز تعرض أسماء الطلاب ودرجاتهم في جميع المواد، على غرار دفتر درجات جامعي قديم.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC" xml:space="preserve">
+    <value>يحاكي تشويش التلفزيون (تشويش رمادي أو تشويش ملون).</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC" xml:space="preserve">
+    <value>يعرض قوسًا دائريًا يملأ نفسه في منتصف الشاشة.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC" xml:space="preserve">
+    <value>يعرض دائرة متنامية تملأ الشاشة بالكامل قبل أن تنمو دائرة أخرى فوقها.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC" xml:space="preserve">
+    <value>يعرض قطرات ماء تتساقط من أعلى الشاشة، كما لو كان الجو ممطرًا في الخارج.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC" xml:space="preserve">
+    <value>يعرض تأثير تموج حي من المنتصف.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>يكشف عن لون الخلفية المعروض. خلف الكتلة (كما لو كنت تُسلط ضوءًا على شيء ما في غرفة مظلمة)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>يكشف النص المطبوع في الخلفية</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC" xml:space="preserve">
+    <value>يعرض مخططًا موجيًا من يمين الشاشة إلى يسارها</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP" xml:space="preserve">
+    <value>تدعم شاشة التوقف هذه النصوص المكتوبة في ملف. مرر مسار الملف بالكامل إلى هذا الحقل، وستعرض شاشة التوقف محتويات الملف بشكل مناسب.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME" xml:space="preserve">
+    <value>حرف الخط العمودي</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC" xml:space="preserve">
+    <value>حرف لرسم خط عمودي. تأكد من إدخال حرف واحد فقط.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME" xml:space="preserve">
+    <value>كثافة الخطوط</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC" xml:space="preserve">
+    <value>ما هو معدل تكرار إنشاء الخطوط؟</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME" xml:space="preserve">
+    <value>كثافة الخطوط العمودية</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC" xml:space="preserve">
+    <value>ما هو معدل تكرار إنشاء الخطوط العمودية؟</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME" xml:space="preserve">
+    <value>كثافة عكس الاتجاه</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC" xml:space="preserve">
+    <value>ما هو معدل عكس اتجاه الخط (من اليمين إلى اليسار بدلًا من اليسار إلى اليمين، أو من الأسفل إلى الأعلى بدلًا من الأعلى إلى الأسفل)؟</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME" xml:space="preserve">
+    <value>تأخير الخط</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC" xml:space="preserve">
+    <value>كم عدد المللي ثواني التي يجب الانتظار قبل إضافة خط جديد؟</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>ما هو الوقت بالمللي ثانية قبل إضافة خط جديد؟ ضوضاء الألوان</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>سواءً لمحاكاة الضوضاء في أجهزة التلفزيون الملونة أو أحادية اللون</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME" xml:space="preserve">
+    <value>الحد الأدنى للدرجة</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC" xml:space="preserve">
+    <value>الحد الأدنى لدرجة الامتحان في المواد الدراسية للطالب</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME" xml:space="preserve">
+    <value>الحد الأقصى للدرجة</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC" xml:space="preserve">
+    <value>الحد الأقصى لدرجة الامتحان في المواد الدراسية للطالب</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
+    <value>يحاكي اختراق الأنظمة</value>
+  </data>
 
 </root>

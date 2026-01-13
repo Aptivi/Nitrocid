@@ -101,6 +101,14 @@
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
       "text": "Starter på nytt"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
+      "text": "Vent litt"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
+      "text": "Viser en boks som fylles med rapporter som denne splash-meldingen lagrer"
     }
   ]
 }

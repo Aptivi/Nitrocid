@@ -1813,6 +1813,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "生成新迷宫前需要等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "模拟彩色背景从中心开始以圆形淡入黑色"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "显示三个方块：一个代表小时，一个代表分钟，一个代表秒"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "模拟缓慢的颜色弯曲和过渡"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "在屏幕的某个位置创建一个点，并将其扩散到整个控制台（以圆形半径为准）"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "模拟水滴蒸发"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "循环显示带有 Figlet 的英文字母"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "显示一组填充控制台的线条"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "显示两条从底部向上填充控制台的线条"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "显示一个老式终端屏幕，其中包含学生姓名和所有科目的成绩，类似于旧式大学成绩册"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "模拟电视噪声（灰度噪声或彩色噪声）"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "显示一个在控制台中心填充的圆弧"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "显示一个不断增大的圆，先填充整个屏幕，然后再显示另一个圆覆盖其上"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "显示水滴从控制台顶部滴落，就像外面下雨一样"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "显示从中心开始的实时涟漪效果"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "显示方块后面的背景颜色（如（在黑暗的房间里用手电筒照射某个物品）"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "显示背景中打印的文本"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "显示从控制台右侧到左侧的波形图"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "此屏幕保护程序支持文件中的文本。请将完整的文件路径传递给此字段，屏幕保护程序将相应地显示文件内容。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "竖线字符"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "用于形成竖线的字符。请确保只输入一个字符。"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "线条密度"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "生成线条的频率？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "垂直线密度"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "生成垂直线的频率？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "反转方向密度"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "使线条反转方向（从右到左而不是从左到右，或从下到上而不是从上到下）的频率？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "行延迟"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "添加新行之前等待多少毫秒？"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "彩色噪声"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "是否模拟彩色电视或单色电视中的噪声"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "最低分数"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "学生各科目的最低考试分数"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "最高分数"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "学生各科目的最高考试分数"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "模拟有人入侵系统"
     }
   ]
 }

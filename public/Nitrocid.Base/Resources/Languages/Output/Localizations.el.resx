@@ -7062,5 +7062,86 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
     <value>Η αναμενόμενη τιμή δεν ταιριάζει με την πραγματική τιμή.</value>
   </data>
+  <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME" xml:space="preserve">
+    <value>Αγνόηση σφαλμάτων πιστοποιητικών</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC" xml:space="preserve">
+    <value>Εάν είναι ενεργοποιημένη, θα αγνοήσει τα σφάλματα πιστοποιητικών κατά τη δημιουργία σύνδεσης. Διαφορετικά, επαληθεύει το πιστοποιητικό διακομιστή. Αυτό, κανονικά, δεν θα πρέπει να είναι ενεργοποιημένο, εκτός εάν είστε βέβαιοι ότι εμπιστεύεστε τον διακομιστή.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP" xml:space="preserve">
+    <value>Βασική συμβουλή</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP_DESC" xml:space="preserve">
+    <value>Επιστρέφει δημόσια διεύθυνση IPv4</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC" xml:space="preserve">
+    <value>Αθόρυβη επεξεργασία</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP6_DESC" xml:space="preserve">
+    <value>Επιστρέφει δημόσια διεύθυνση IPv6</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC" xml:space="preserve">
+    <value>Ομαδοποιεί κομμάτια σε ένα μόνο αρχείο</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Διαχωρίζει το όνομα αρχείου σε ομάδα σε αρχείο</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC" xml:space="preserve">
+    <value>Κατάλογο για την αποθήκευση του ομαδοποιημένου αρχείου</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC" xml:space="preserve">
+    <value>Δημιουργεί μια γραμμή μοντέλου συμβατή με XFree86 3.3.6 από παραμέτρους εμφάνισης για οθόνες CRT</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC" xml:space="preserve">
+    <value>Πόσα pixel υπάρχουν, οριζόντια (για παράδειγμα, 1280);</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC" xml:space="preserve">
+    <value>Πόσα pixel υπάρχουν, κάθετα (για παράδειγμα, 960);</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC" xml:space="preserve">
+    <value>Συχνότητα κατακόρυφης ανανέωσης σε hertz (για παράδειγμα, 75 Hz)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC" xml:space="preserve">
+    <value>Κάθετος συγχρονισμός σε μικροδευτερόλεπτα (για παράδειγμα, 0 μικροδευτερόλεπτα)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC" xml:space="preserve">
+    <value>Κάθετη ακύρωση σε μικροδευτερόλεπτα (για παράδειγμα, 500 μικροδευτερόλεπτα)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC" xml:space="preserve">
+    <value>Οριζόντιος συγχρονισμός σε μικροδευτερόλεπτα (για παράδειγμα, 1 μικροδευτερόλεπτο)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC" xml:space="preserve">
+    <value>Οριζόντια ακύρωση σε μικροδευτερόλεπτα (για παράδειγμα, 3 μικροδευτερόλεπτα)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC" xml:space="preserve">
+    <value>Αναλογία κατακόρυφης μπροστινής βεράντας (για παράδειγμα, 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC" xml:space="preserve">
+    <value>Αναλογία κατακόρυφου συγχρονισμού (για παράδειγμα, 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC" xml:space="preserve">
+    <value>Αναλογία κατακόρυφης πίσω βεράντας (για παράδειγμα, 10)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC" xml:space="preserve">
+    <value>Αναλογία οριζόντιας μπροστινής βεράντας (για παράδειγμα, 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC" xml:space="preserve">
+    <value>Αναλογία οριζόντιας συγχρονισμού (για παράδειγμα, 4)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC" xml:space="preserve">
+    <value>Αναλογία οριζόντιας πίσω βεράντας (για παράδειγμα, 7)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_DESC" xml:space="preserve">
+    <value>Διαχωρίζει ένα αρχείο σε μια ομάδα chunk</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Αρχείο για διαίρεση σε chunk</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC" xml:space="preserve">
+    <value>Κατάλογος για αποθήκευση chunk</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC" xml:space="preserve">
+    <value>Μέγεθος chunk σε byte</value>
+  </data>
 
 </root>

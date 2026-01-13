@@ -7062,5 +7062,86 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
     <value>अपेक्षित मान वास्तविक मान से मेल नहीं खाता।</value>
   </data>
+  <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME" xml:space="preserve">
+    <value>सर्टिफ़िकेट की गलतियों को नज़रअंदाज़ करें</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC" xml:space="preserve">
+    <value>अगर चालू है, तो कनेक्शन बनाते समय सर्टिफ़िकेट की गलतियों को नज़रअंदाज़ करेगा। नहीं तो, सर्वर सर्टिफ़िकेट को वेरिफ़ाई करता है। यह, आम तौर पर, तब तक चालू नहीं होना चाहिए जब तक आपको पक्का न हो कि आप सर्वर पर भरोसा कर रहे हैं।</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP" xml:space="preserve">
+    <value>खास टिप</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP_DESC" xml:space="preserve">
+    <value>IPv4 पब्लिक एड्रेस देता है</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC" xml:space="preserve">
+    <value>शांत प्रोसेसिंग</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP6_DESC" xml:space="preserve">
+    <value>IPv6 पब्लिक एड्रेस देता है</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC" xml:space="preserve">
+    <value>चंक्स को एक फ़ाइल में ग्रुप करता है</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>फ़ाइल नाम को फ़ाइल में ग्रुप करने के लिए बाँटता है</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC" xml:space="preserve">
+    <value>ग्रुप की गई फ़ाइल को स्टोर करने के लिए डायरेक्टरी</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC" xml:space="preserve">
+    <value>CRT मॉनिटर के लिए डिस्प्ले पैरामीटर से एक XFree86 3.3.6 कम्पैटिबल मॉडललाइन बनाता है</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC" xml:space="preserve">
+    <value>हॉरिजॉन्टली कितने पिक्सेल हैं (उदाहरण के लिए, 1280)?</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC" xml:space="preserve">
+    <value>वर्टिकलली कितने पिक्सेल हैं (उदाहरण के लिए, 960)?</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC" xml:space="preserve">
+    <value>हर्ट्ज़ में वर्टिकल रिफ्रेश फ़्रीक्वेंसी (उदाहरण के लिए, 75 Hz)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC" xml:space="preserve">
+    <value>माइक्रोसेकंड में वर्टिकल सिंकिंग (उदाहरण के लिए, 0 माइक्रोसेकंड)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC" xml:space="preserve">
+    <value>माइक्रोसेकंड में वर्टिकल ब्लैंकिंग (उदाहरण के लिए, 500 माइक्रोसेकंड)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC" xml:space="preserve">
+    <value>माइक्रोसेकंड में हॉरिजॉन्टल सिंकिंग (उदाहरण के लिए, 1 माइक्रोसेकंड)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC" xml:space="preserve">
+    <value>माइक्रोसेकंड में हॉरिजॉन्टल ब्लैंकिंग (उदाहरण के लिए, 3 माइक्रोसेकंड)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC" xml:space="preserve">
+    <value>वर्टिकल फ्रंट पोर्च रेश्यो (उदाहरण के लिए, 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC" xml:space="preserve">
+    <value>वर्टिकल सिंक रेश्यो (उदाहरण के लिए, 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC" xml:space="preserve">
+    <value>वर्टिकल बैक पोर्च रेश्यो (उदाहरण के लिए, 10)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC" xml:space="preserve">
+    <value>हॉरिजॉन्टल फ्रंट पोर्च रेश्यो (उदाहरण के लिए, 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC" xml:space="preserve">
+    <value>हॉरिजॉन्टल सिंक रेश्यो (उदाहरण के लिए, 4)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC" xml:space="preserve">
+    <value>हॉरिजॉन्टल बैक पोर्च रेश्यो (उदाहरण के लिए, 7)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_DESC" xml:space="preserve">
+    <value>फ़ाइल को चंक्स के ग्रुप में बांटता है</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>चंक्स में बांटने के लिए फ़ाइल</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC" xml:space="preserve">
+    <value>चंक्स स्टोर करने के लिए डायरेक्टरी</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC" xml:space="preserve">
+    <value>चंक साइज़ बाइट्स में</value>
+  </data>
 
 </root>

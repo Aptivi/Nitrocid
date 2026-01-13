@@ -1467,5 +1467,110 @@
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
     <value>Скільки мілісекунд чекати перед створенням нового лабіринту?</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC" xml:space="preserve">
+    <value>Імітує кольоровий фон, що переходить у чорний колір по колу, починаючи з середини</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Показує три блоки: один для годин, один для хвилин і один для секунд</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC" xml:space="preserve">
+    <value>Імітує повільне вигинання та перехід кольору</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC" xml:space="preserve">
+    <value>Створює пляму десь на екрані та поширює її на всю консоль (радіус кола)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC" xml:space="preserve">
+    <value>Імітує випаровування крапель</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC" xml:space="preserve">
+    <value>Перетворює англійські літери за допомогою Figlet</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC" xml:space="preserve">
+    <value>Показує групу ліній, що заповнюють консоль</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC" xml:space="preserve">
+    <value>Показує дві лінії, що йдуть знизу вгору, заповнюючи консоль</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC" xml:space="preserve">
+    <value>Показує екран терміналу в старовинному стилі, на якому відображаються імена студентів та оцінки з усіх предметів, подібно до старого університетського журналу оцінок</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC" xml:space="preserve">
+    <value>Імітує телевізійний шум (шум у градаціях сірого або кольоровий шум)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC" xml:space="preserve">
+    <value>Показує дугу кола, що заповнює себе посередині консолі</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC" xml:space="preserve">
+    <value>Показує зростаюче коло, яке заповнює весь екран, перш ніж над ним виросте інше коло</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC" xml:space="preserve">
+    <value>Показує краплі води, що капають з верхньої частини консолі, ніби на вулиці дощить</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC" xml:space="preserve">
+    <value>Показує живий ефект брижів від середини</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>Показує колір фону, який відображається за блоком (як при спрямуванні ліхтарика на якийсь предмет у темряві) кімната)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>Відображає текст, надрукований на фоні</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC" xml:space="preserve">
+    <value>Показує хвильову діаграму справа наліво консолі</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP" xml:space="preserve">
+    <value>Ця заставка підтримує письмовий текст у файлі. Передайте повний шлях до файлу в це поле, і заставка відобразить вміст файлу належним чином.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME" xml:space="preserve">
+    <value>Символ вертикальної лінії</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC" xml:space="preserve">
+    <value>Символ для формування вертикальної лінії. Переконайтеся, що введено лише один символ.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME" xml:space="preserve">
+    <value>Щільність ліній</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC" xml:space="preserve">
+    <value>Як часто генерувати лінії?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME" xml:space="preserve">
+    <value>Щільність вертикальних ліній</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC" xml:space="preserve">
+    <value>Як часто генерувати вертикальні лінії?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME" xml:space="preserve">
+    <value>Щільність зворотного напрямку</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC" xml:space="preserve">
+    <value>Як часто лінія має змінювати свій напрямок (справа наліво замість зліва направо або знизу вгору замість зверху вниз)?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME" xml:space="preserve">
+    <value>Затримка лінії</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC" xml:space="preserve">
+    <value>Скільки мілісекунд чекати перед додаванням нової лінії?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>Колірний шум</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>Чи імітувати шум у кольорових телевізорах чи монохромних телевізорах</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME" xml:space="preserve">
+    <value>Мінімальна оцінка</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC" xml:space="preserve">
+    <value>Мінімальна оцінка за іспит з предметів для студента</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME" xml:space="preserve">
+    <value>Максимальна оцінка</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC" xml:space="preserve">
+    <value>Максимальна оцінка за іспит з предметів для студента</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
+    <value>Сімулює злом системи особою</value>
+  </data>
 
 </root>

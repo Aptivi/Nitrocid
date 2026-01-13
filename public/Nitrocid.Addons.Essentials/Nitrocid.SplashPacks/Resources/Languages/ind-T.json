@@ -97,6 +97,14 @@
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
       "text": "पुन: प्रारंभ हो"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
+      "text": "कृपया इंतज़ार करें"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
+      "text": "एक बॉक्स दिखाता है जो उन रिपोर्ट से भर जाता है जिन्हें यह स्प्लैश स्टोर करता है"
     }
   ]
 }

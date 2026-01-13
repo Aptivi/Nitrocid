@@ -186,5 +186,11 @@
   <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
     <value>Opnieuw opstarten</value>
   </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT" xml:space="preserve">
+    <value>Even geduld alstublieft</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC" xml:space="preserve">
+    <value>Er verschijnt een venster dat gevuld wordt met rapporten die deze splash-opslag opslaat</value>
+  </data>
 
 </root>

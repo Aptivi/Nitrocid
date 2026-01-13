@@ -1467,5 +1467,110 @@
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
     <value>Hoeveel milliseconden moet ik wachten voordat ik een nieuw doolhof genereer?</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC" xml:space="preserve">
+    <value>Simuleert een gekleurde achtergrond die in een cirkel vanuit het midden naar zwart vervaagt</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Toont drie blokken: één voor uren, één voor minuten en één voor seconden</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC" xml:space="preserve">
+    <value>Simuleert langzame kleurverloop en -overgangen</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC" xml:space="preserve">
+    <value>Maakt een stip ergens op het scherm en verspreidt deze over de hele console (cirkelradius)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC" xml:space="preserve">
+    <value>Simuleert verdampende druppels</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC" xml:space="preserve">
+    <value>Verandert Engelse letters met Figlet</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC" xml:space="preserve">
+    <value>Toont een groep lijnen die de console vullen</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC" xml:space="preserve">
+    <value>Toont twee lijnen die van onder naar boven komen en de console vullen</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC" xml:space="preserve">
+    <value>Toont een ouderwets terminalscherm met studentennamen en cijfers voor alle vakken, vergelijkbaar met een oud cijferboek van een universiteit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC" xml:space="preserve">
+    <value>Simuleert televisieruis (grijswaardenruis of gekleurde ruis)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC" xml:space="preserve">
+    <value>Toont een cirkelboog die zichzelf vult in het midden van de console</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC" xml:space="preserve">
+    <value>Toont een groeiende cirkel die het hele scherm vult voordat er een andere cirkel overheen groeit</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC" xml:space="preserve">
+    <value>Toont waterdruppels die van de bovenkant van de console druipen, alsof het buiten regent</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC" xml:space="preserve">
+    <value>Toont een levendig rimpeleffect vanuit het midden</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>Onthult een achtergrondkleur die achter het blok wordt weergegeven (zoals bij het aanwijzen) (de zaklamp op een voorwerp in een donkere kamer)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>Onthult de tekst die op de achtergrond is afgedrukt</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC" xml:space="preserve">
+    <value>Toont een golfdiagram van rechts naar links op de console</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP" xml:space="preserve">
+    <value>Deze screensaver ondersteunt geschreven tekst uit een bestand. Voer het volledige bestandspad in dit veld in en de screensaver zal de inhoud van het bestand op de juiste manier weergeven.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME" xml:space="preserve">
+    <value>Teken voor verticale lijn</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC" xml:space="preserve">
+    <value>Een teken om een ​​verticale lijn te vormen. Zorg ervoor dat u slechts één teken invoert.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME" xml:space="preserve">
+    <value>Lijndichtheid</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC" xml:space="preserve">
+    <value>Hoe vaak moeten lijnen worden gegenereerd?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME" xml:space="preserve">
+    <value>Verticale lijndichtheid</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC" xml:space="preserve">
+    <value>Hoe vaak moeten verticale lijnen worden gegenereerd?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME" xml:space="preserve">
+    <value>Dichtheid van omgekeerde richting</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC" xml:space="preserve">
+    <value>Hoe vaak moet de lijn van richting veranderen (van rechts naar links in plaats van van links naar rechts, of van onder naar boven in plaats van van boven naar onder)?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME" xml:space="preserve">
+    <value>Lijnvertraging</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC" xml:space="preserve">
+    <value>Hoeveel milliseconden moet er worden gewacht voordat een nieuwe lijn wordt toegevoegd?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>Kleurruis</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>Of ruis in kleurentelevisies of zwart-wit televisies moet worden gesimuleerd</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME" xml:space="preserve">
+    <value>Minimumcijfer</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC" xml:space="preserve">
+    <value>Minimumcijfer voor een examen voor een student</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME" xml:space="preserve">
+    <value>Maximumcijfer</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC" xml:space="preserve">
+    <value>Maximumcijfer voor een examen voor een student</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
+    <value>Simuleert een persoon die in systemen inbreekt</value>
+  </data>
 
 </root>

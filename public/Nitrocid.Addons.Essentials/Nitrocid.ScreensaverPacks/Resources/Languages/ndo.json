@@ -1805,6 +1805,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "Berapa milidetik yang harus ditunggu sebelum membuat labirin baru?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "Mensimulasikan latar belakang berwarna yang memudar menjadi hitam dalam lingkaran yang dimulai dari tengah"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "Menampilkan tiga blok: satu untuk jam, satu untuk menit, dan satu untuk detik"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "Mensimulasikan pembengkokan dan transisi warna yang lambat"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "Membuat titik di suatu tempat di layar dan menyebarkannya ke seluruh konsol (radius lingkaran)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "Mensimulasikan tetesan air yang menguap"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "Mengubah huruf-huruf Inggris dengan Figlet"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "Menampilkan sekelompok garis yang memenuhi konsol"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "Menampilkan dua garis yang datang dari bawah ke atas sambil mengisi konsol"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "Menampilkan layar terminal gaya lama yang menampilkan nama siswa dan nilai untuk semua mata pelajaran, mirip dengan buku nilai universitas lama"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "Mensimulasikan noise televisi (baik noise skala abu-abu atau noise berwarna)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "Menampilkan busur lingkaran yang mengisi dirinya sendiri di tengah konsol"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "Menampilkan lingkaran yang membesar yang memenuhi seluruh layar sebelum lingkaran lain tumbuh di atasnya"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "Menampilkan tetesan air yang menetes dari bagian atas konsol, seolah-olah cuaca di luar hujan"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "Menampilkan efek riak langsung dari tengah"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "Mengungkapkan warna latar belakang yang ditampilkan di belakang blok (seperti pada menyorotkan senter ke suatu benda di ruangan gelap)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "Menampilkan teks yang tercetak di latar belakang"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "Menampilkan diagram gelombang dari kanan ke kiri konsol"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "Screensaver ini mendukung teks tertulis pada file. Berikan jalur file lengkap ke kolom ini, dan screensaver akan menampilkan isi file dengan tepat."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "Karakter garis vertikal"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "Karakter untuk membentuk garis vertikal. Pastikan hanya memasukkan satu karakter."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "Kepadatan garis"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "Seberapa sering garis dihasilkan?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "Kepadatan garis vertikal"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "Seberapa sering garis vertikal dihasilkan?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "Kepadatan arah terbalik"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "Seberapa sering garis dibalik arahnya (kanan ke kiri, bukan kiri ke kanan, atau bawah ke atas, bukan atas ke bawah)?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "Penundaan garis"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "Berapa milidetik yang harus ditunggu sebelum menambahkan garis baru?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "Kebisingan Warna"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "Apakah akan mensimulasikan kebisingan pada televisi berwarna atau televisi monokrom"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "Nilai minimum"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "Nilai ujian minimum untuk mata pelajaran bagi seorang siswa"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "Nilai maksimum"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "Nilai ujian maksimum untuk mata pelajaran bagi seorang siswa"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "Mensimulasikan seseorang yang meretas sistem"
     }
   ]
 }

@@ -2085,5 +2085,20 @@
   <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
     <value>Falha ao receber as últimas notícias.</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER" xml:space="preserve">
+    <value>Informações do fornecedor de internet para</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER" xml:space="preserve">
+    <value>Servidores do fornecedor de internet para</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC" xml:space="preserve">
+    <value>Obtém informações do fornecedor de internet</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC" xml:space="preserve">
+    <value>Endereço de e-mail ou nome do host</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC" xml:space="preserve">
+    <value>Utilize o nome do host em vez do endereço</value>
+  </data>
 
 </root>

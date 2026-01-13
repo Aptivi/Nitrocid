@@ -107,6 +107,14 @@
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
       "text": "Reiniciando"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
+      "text": "Aguarde."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
+      "text": "Mostra uma caixa que é preenchida com os relatórios armazenados nesta página inicial."
     }
   ]
 }

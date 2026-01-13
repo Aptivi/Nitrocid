@@ -7062,5 +7062,86 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
     <value>El valor esperado no coincide con el valor real.</value>
   </data>
+  <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME" xml:space="preserve">
+    <value>Ignorar errores de certificado</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC" xml:space="preserve">
+    <value>Si está habilitado, ignorará los errores de certificado al establecer una conexión. De lo contrario, verifica el certificado del servidor. Normalmente, esta opción no debería estar habilitada a menos que esté seguro de confiar en el servidor.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP" xml:space="preserve">
+    <value>Consejo clave</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP_DESC" xml:space="preserve">
+    <value>Devuelve la dirección pública IPv4</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC" xml:space="preserve">
+    <value>Procesamiento silencioso</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP6_DESC" xml:space="preserve">
+    <value>Devuelve la dirección pública IPv6</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC" xml:space="preserve">
+    <value>Agrupa fragmentos en un solo archivo</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Divide el nombre del archivo en grupo y archivo</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC" xml:space="preserve">
+    <value>Directorio para almacenar el archivo agrupado</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC" xml:space="preserve">
+    <value>Genera una línea de modelo compatible con XFree86 3.3.6 a partir de los parámetros de visualización para monitores CRT</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC" xml:space="preserve">
+    <value>¿Cuántos píxeles hay horizontalmente (por ejemplo, 1280)?</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC" xml:space="preserve">
+    <value>¿Cuántos píxeles hay verticalmente (por ejemplo, 960)?</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC" xml:space="preserve">
+    <value>Frecuencia de actualización vertical en hercios (por ejemplo, 75 Hz)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC" xml:space="preserve">
+    <value>Sincronización vertical en microsegundos (por ejemplo, 0 microsegundos)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC" xml:space="preserve">
+    <value>Blanqueo vertical en microsegundos (por ejemplo, 500 microsegundos)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC" xml:space="preserve">
+    <value>Sincronización horizontal en microsegundos (por ejemplo, 1 microsegundo)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC" xml:space="preserve">
+    <value>Blanqueo horizontal en microsegundos (por ejemplo, 3 microsegundos)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC" xml:space="preserve">
+    <value>Relación de pórtico frontal vertical (por ejemplo, 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC" xml:space="preserve">
+    <value>Relación de sincronización vertical (por ejemplo, 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC" xml:space="preserve">
+    <value>Relación de pórtico posterior vertical (por ejemplo, 10)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC" xml:space="preserve">
+    <value>Relación de pórtico frontal horizontal (por ejemplo, 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC" xml:space="preserve">
+    <value>Relación de sincronización horizontal (por ejemplo, 4)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC" xml:space="preserve">
+    <value>Relación de pórtico posterior horizontal (por ejemplo, 7)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_DESC" xml:space="preserve">
+    <value>Divide un archivo en un grupo de fragmentos</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Archivo para dividir en fragmentos</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC" xml:space="preserve">
+    <value>Directorio para almacenar fragmentos</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC" xml:space="preserve">
+    <value>Tamaño del fragmento en bytes</value>
+  </data>
 
 </root>

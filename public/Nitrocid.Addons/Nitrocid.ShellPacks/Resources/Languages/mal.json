@@ -2632,6 +2632,26 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
       "text": "Gagal mendapat berita terkini."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER",
+      "text": "Maklumat ISP untuk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER",
+      "text": "Pelayan ISP untuk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC",
+      "text": "Mendapatkan maklumat ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC",
+      "text": "Alamat e-mel atau nama hos"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC",
+      "text": "Gunakan nama hos dan bukannya alamat"
     }
   ]
 }

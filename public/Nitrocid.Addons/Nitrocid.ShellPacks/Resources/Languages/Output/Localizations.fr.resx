@@ -2085,5 +2085,20 @@
   <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
     <value>Impossible d&apos;obtenir les dernières nouvelles.</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER" xml:space="preserve">
+    <value>Informations FAI pour</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER" xml:space="preserve">
+    <value>Serveurs FAI pour</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC" xml:space="preserve">
+    <value>Obtenir des informations FAI</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC" xml:space="preserve">
+    <value>Adresse e-mail ou nom d&apos;hôte</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC" xml:space="preserve">
+    <value>Utiliser le nom d&apos;hôte plutôt que l&apos;adresse</value>
+  </data>
 
 </root>

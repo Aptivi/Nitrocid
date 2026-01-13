@@ -33,7 +33,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class LineUpDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC -> Shows two lines that come from the bottom to the top while filling the console
         private Color line1Color = Color.Empty;
         private Color line2Color = Color.Empty;
         private int line1PosY = -1;

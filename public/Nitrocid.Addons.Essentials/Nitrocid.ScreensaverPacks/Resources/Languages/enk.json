@@ -1804,6 +1804,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "How many milliseconds to wait before generating a new maze?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "Simulates the coloured background fading out to black in circle starting from the middle"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "Shows three blocks: one for hours, one for minutes, and one for seconds"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "Simulates slow colour bending and transitioning"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "Makes a spot somewhere in the screen and spreads it to the whole console (circle radius)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "Simulates droplets evaporating"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "Cycles English letters with Figlet"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "Shows a group of lines that fill the console"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "Shows two lines that come from the bottom to the top while filling the console"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "Shows an old-style terminal screen that features student names and grades for all subjects, similar to an old university grade book"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "Simulates television noise (either grayscale noise or coloured noise)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "Shows a circle arc that fills itself in the middle of the console"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "Shows a growing circle that fills the whole screen before another circle grows over it"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "Shows water droplets dripping from the top of the console, as if the weather is rainy outside"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "Shows a live ripple effect from the middle"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "Reveals a background colour that is shown behind the block (as in pointing the flashlight at some item in a dark room)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "Reveals the text printed in the background"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "Shows a wave diagram from the right to the left of the console"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "Vertical line character"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "A character to form a vertical line. Be sure to only input one character."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "Line density"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "How frequent to generate lines?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "Vertical line density"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "How frequent to generate vertical lines?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "Reverse direction density"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "How frequent to make the line reverse its direction (right to left instead of left to right, or bottom to top instead of top to bottom)?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "Line delay"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "How many milliseconds to wait before adding a new line?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "Colour Noise"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "Whether to simulate noise in colour televisions or monochrome televisions"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "Minimum grade"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "Minimum exam grade for subjects for a student"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "Maximum grade"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "Maximum exam grade for subjects for a student"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "Simulates a person hacking into systems"
     }
   ]
 }

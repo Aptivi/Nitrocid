@@ -1805,6 +1805,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "naya mez banaane se pahale kitane mileesekand intazaar karana chaahie?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "rangeen baikagraund ko beech se shuroo karake sarkal mein kaala hone ka dikhaava karata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "teen blok dikhaata hai: ek ghanton ke lie, ek minaton ke lie, aur ek sekand ke lie"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "dheere-dheere rang badalane aur badalane ka dikhaava karata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "skreen mein kaheen ek jagah banaata hai aur use poore kansol (sarkal rediyas) mein phaila deta hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "boondon ko bhaap banate hue dikhaata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "phigalet ke saath inglish aksharon ko saikil karata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "kansol ko bharane vaalee lainon ka ek grup dikhaata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "kansol ko bharate hue neeche se oopar kee or aane vaalee do lainen dikhaata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "ek puraane stail kee tarminal skreen dikhaata hai jisamen sabhee sabjekt ke lie stoodent ke naam aur gred hote hain, jo ek puraanee yoonivarsitee gred buk jaisa hota hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "teleevizan ke shor (ya to greskel shor ya rangeen shor) ka dikhaava karata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "ek sarkal aark dikhaata hai jo kansol ke beech mein khud ko bhar leta hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "ek badhata hua sarkal dikhaata hai jo pooree skreen ko bhar deta hai, isase pahale ki usake oopar ek aur sarkal ban jae"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "kansol ke oopar se paanee kee boonden tapakatee huee dikhaata hai, jaise baahar baarish ka mausam ho"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "beech se ek laiv ripal ifekt dikhaata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "ek baikagraund kalar dikhaata hai jo blok ke peechhe dikhaaya jaata hai (jaise andhere kamare mein kisee cheez par torch kee roshanee daalane par)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "baikagraund mein printed tekst dikhaata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "kansol ke daeen or se baeen or ek vev daayagraam dikhaata hai"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "yah skreenasevar fail par likhe tekst ko saport karata hai. is feeld mein poora fail paath paas karen, aur skreenasevar fail ka kantent sahee tareeke se dikhaega."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "vartikal lain kairektar"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "ek vartikal lain banaane ke lie ek kairektar. pakka karen ki sirf ek kairektar hee daalen."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "lain densitee"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "lain kitanee baar banaanee hain?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "vartikal lain densitee"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "vartikal lain kitanee baar banaanee hain?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "rivars daayarekshan densitee"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "lain ko apanee disha kitanee baar ulatanee hai (baen se daen ke bajaay daen se baen, ya oopar se neeche ke bajaay neeche se oopar)?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "lain dile"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "naee lain jodane se pahale kitane mileesekand intazaar karana hai?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "kalar noiz"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "kalar teleevizan ya monokrom teleevizan mein noiz kee nakal karanee hai ya nahin"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "minimam gred"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "stoodent ke lie sabjekt ke lie minimam egjaam gred"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "maiksimam gred"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "stoodent ke lie sabjekt ke lie maiksimam egjaam gred"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "sistam mein haiking karane vaale vyakti kee nakal karata hai"
     }
   ]
 }

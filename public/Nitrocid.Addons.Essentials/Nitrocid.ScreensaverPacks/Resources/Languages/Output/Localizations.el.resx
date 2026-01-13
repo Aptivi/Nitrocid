@@ -1467,5 +1467,110 @@
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
     <value>Πόσα χιλιοστά του δευτερολέπτου πρέπει να περιμένετε πριν δημιουργήσετε έναν νέο λαβύρινθο;</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοιώνει το έγχρωμο φόντο που ξεθωριάζει σε μαύρο σε κύκλο ξεκινώντας από τη μέση</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Εμφανίζει τρία μπλοκ: ένα για ώρες, ένα για λεπτά και ένα για δευτερόλεπτα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοίωση αργής χρωματικής κάμψης και μετάβασης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC" xml:space="preserve">
+    <value>Δημιουργεί ένα σημείο κάπου στην οθόνη και το απλώνει σε ολόκληρη την κονσόλα (ακτίνα κύκλου)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοίωση σταγονιδίων που εξατμίζονται</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC" xml:space="preserve">
+    <value>Κυκλοφορεί αγγλικά γράμματα με το Figlet</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC" xml:space="preserve">
+    <value>Εμφανίζει μια ομάδα γραμμών που γεμίζουν την κονσόλα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC" xml:space="preserve">
+    <value>Εμφανίζει δύο γραμμές που έρχονται από κάτω προς τα πάνω ενώ γεμίζουν την κονσόλα</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC" xml:space="preserve">
+    <value>Εμφανίζει μια οθόνη τερματικού παλαιού τύπου που εμφανίζει ονόματα μαθητών και βαθμούς για όλα τα μαθήματα, παρόμοια με ένα παλιό σχολικό βιβλιάριο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC" xml:space="preserve">
+    <value>Προσομοίωση τηλεοπτικού θορύβου (είτε θόρυβο κλίμακας του γκρι είτε έγχρωμο θόρυβο)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC" xml:space="preserve">
+    <value>Εμφανίζει ένα κυκλικό τόξο που γεμίζει στη μέση της κονσόλας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC" xml:space="preserve">
+    <value>Εμφανίζει έναν αυξανόμενο κύκλο που γεμίζει ολόκληρη την οθόνη πριν ένας άλλος κύκλος μεγαλώσει από πάνω του</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC" xml:space="preserve">
+    <value>Εμφανίζει σταγόνες νερού που στάζουν από την κορυφή της κονσόλας, σαν να βρέχει ο καιρός έξω</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC" xml:space="preserve">
+    <value>Εμφανίζει ένα ζωντανό εφέ κυματισμού από τη μέση</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>Αποκαλύπτει ένα χρώμα φόντου που εμφανίζεται πίσω από το μπλοκ (όπως όταν στρέφεις τον φακό σε κάποιο αντικείμενο σε ένα σκοτάδι δωμάτιο)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>Αποκαλύπτει το κείμενο που εκτυπώνεται στο φόντο</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC" xml:space="preserve">
+    <value>Εμφανίζει ένα διάγραμμα κύματος από τα δεξιά προς τα αριστερά της κονσόλας</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP" xml:space="preserve">
+    <value>Αυτή η προφύλαξη οθόνης υποστηρίζει γραπτό κείμενο στο αρχείο. Περάστε την πλήρη διαδρομή αρχείου σε αυτό το πεδίο και η προφύλαξη οθόνης θα εμφανίσει κατάλληλα τα περιεχόμενα του αρχείου.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME" xml:space="preserve">
+    <value>Χαρακτήρας κάθετης γραμμής</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC" xml:space="preserve">
+    <value>Ένας χαρακτήρας για να σχηματίσει μια κάθετη γραμμή. Βεβαιωθείτε ότι εισάγετε μόνο έναν χαρακτήρα.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME" xml:space="preserve">
+    <value>Πυκνότητα γραμμής</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC" xml:space="preserve">
+    <value>Πόσο συχνά δημιουργούνται γραμμές;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME" xml:space="preserve">
+    <value>Πυκνότητα κάθετης γραμμής</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC" xml:space="preserve">
+    <value>Πόσο συχνά δημιουργούνται κάθετες γραμμές;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME" xml:space="preserve">
+    <value>Πυκνότητα αντίστροφης κατεύθυνσης</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC" xml:space="preserve">
+    <value>Πόσο συχνά γίνεται η γραμμή να αντιστρέψει την κατεύθυνσή της (από δεξιά προς τα αριστερά αντί για αριστερά προς τα δεξιά ή από κάτω προς τα πάνω αντί για πάνω προς τα κάτω);</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME" xml:space="preserve">
+    <value>Καθυστέρηση γραμμής</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC" xml:space="preserve">
+    <value>Πόσα χιλιοστά του δευτερολέπτου πρέπει να περιμένετε πριν προσθέσετε μια νέα γραμμή;</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>Θόρυβος χρώματος</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>Εάν θα προσομοιωθεί θόρυβος σε έγχρωμες τηλεοράσεις ή μονόχρωμες τηλεοράσεις</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME" xml:space="preserve">
+    <value>Ελάχιστος βαθμός</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC" xml:space="preserve">
+    <value>Ελάχιστος βαθμός εξετάσεων για μαθήματα για έναν φοιτητή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME" xml:space="preserve">
+    <value>Μέγιστος βαθμός</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC" xml:space="preserve">
+    <value>Μέγιστος βαθμός εξετάσεων για μαθήματα για έναν φοιτητή</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
+    <value>Προσομοιώνει ένα άτομο που κάνει hacking σε συστήματα</value>
+  </data>
 
 </root>

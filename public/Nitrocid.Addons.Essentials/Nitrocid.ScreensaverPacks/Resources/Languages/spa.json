@@ -1830,6 +1830,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "¿Cuántos milisegundos hay que esperar antes de generar un nuevo laberinto?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "Simula el fondo de color desvaneciéndose a negro en un círculo que comienza desde el centro."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "Muestra tres bloques: uno para las horas, otro para los minutos y otro para los segundos."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "Simula una lenta flexión y transición de color."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "Crea un punto en algún lugar de la pantalla y lo extiende a toda la consola (radio del círculo)."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "Simula la evaporación de gotas."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "Reproduce letras inglesas en ciclos con Figlet."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "Muestra un grupo de líneas que llenan la consola."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "Muestra dos líneas que van de abajo a arriba mientras llenan la consola."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "Muestra una pantalla de terminal antigua con los nombres de los estudiantes y las calificaciones de todas las asignaturas, similar a un libro de calificaciones universitario antiguo."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "Simula ruido de televisión (ya sea ruido en escala de grises o ruido de color)."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "Muestra un arco circular que se llena solo en el centro de la consola."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "Muestra un círculo creciente que llena toda la pantalla antes de que otro círculo crezca sobre él."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "Muestra gotas de agua goteando desde la parte superior de la consola, como si lloviera afuera."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "Muestra un efecto de onda en vivo desde el centro."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "Revela un color de fondo que se muestra detrás. El bloque (como al apuntar la linterna a un objeto en una habitación oscura)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "Revela el texto impreso en el fondo"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "Muestra un diagrama de ondas de derecha a izquierda en la consola"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "Este protector de pantalla admite texto escrito en archivo. Pase la ruta completa del archivo a este campo y el protector de pantalla mostrará el contenido del archivo correctamente."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "Carácter de línea vertical"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "Un carácter para formar una línea vertical. Asegúrese de introducir solo un carácter."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "Densidad de línea"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "¿Con qué frecuencia se generan líneas?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "Densidad de línea vertical"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "¿Con qué frecuencia se generan líneas verticales?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "Densidad de dirección inversa"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "¿Con qué frecuencia se invierte la dirección de la línea (de derecha a izquierda en lugar de izquierda a derecha, o de abajo arriba en lugar de arriba abajo)?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "Retardo de línea"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "¿Cuántos milisegundos hay que esperar antes de añadir una nueva línea?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "Ruido de color"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "Si se simula ruido en televisores a color o monocromos"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "Calificación mínima"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "Calificación mínima del examen para las asignaturas de un estudiante"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "Calificación máxima"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "Calificación máxima del examen para las asignaturas de un estudiante"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "Simula a una persona pirateando sistemas"
     }
   ]
 }

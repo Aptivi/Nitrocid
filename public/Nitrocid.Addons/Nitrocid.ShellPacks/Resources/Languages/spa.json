@@ -2654,6 +2654,26 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
       "text": "Error al obtener las últimas noticias."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER",
+      "text": "Información del ISP para"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER",
+      "text": "Servidores ISP para"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC",
+      "text": "Obtiene información del ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC",
+      "text": "Dirección de correo electrónico o nombre de host"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC",
+      "text": "Usar el nombre de host en lugar de la dirección"
     }
   ]
 }

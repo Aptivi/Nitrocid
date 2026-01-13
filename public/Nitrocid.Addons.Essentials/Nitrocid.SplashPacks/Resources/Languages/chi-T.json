@@ -105,6 +105,14 @@
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
       "text": "重新啟動"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
+      "text": "请稍候"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
+      "text": "显示一个方框，其中会填充有关此启动画面存储的报告。"
     }
   ]
 }

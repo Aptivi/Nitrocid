@@ -9266,6 +9266,114 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
       "text": "Beklenen değer, gerçekleşen değerle uyuşmuyor."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME",
+      "text": "Sertifika hatalarını yok say"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC",
+      "text": "Etkinleştirilirse, bağlantı kurulurken sertifika hatalarını yok sayar. Aksi takdirde, sunucu sertifikasını doğrular. Normalde, sunucuya güvendiğinizden emin olmadığınız sürece bu etkinleştirilmemelidir."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP",
+      "text": "Önemli ipucu"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP_DESC",
+      "text": "IPv4 genel adresini döndürür"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC",
+      "text": "Sessiz işlem"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP6_DESC",
+      "text": "IPv6 genel adresini döndürür"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC",
+      "text": "Parçaları tek bir dosyada gruplandırır"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC",
+      "text": "Dosya adını gruba ve dosyaya böler"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC",
+      "text": "Gruplandırılmış dosyayı saklamak için dizin"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC",
+      "text": "CRT monitörler için ekran parametrelerinden XFree86 3.3.6 uyumlu bir model satırı oluşturur"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC",
+      "text": "Yatayda kaç piksel var (örneğin, 1280)?"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC",
+      "text": "Dikeyde kaç piksel var (örneğin, 960)?"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC",
+      "text": "Dikey yenileme frekansı (hertz cinsinden) (örneğin, 75 Hz)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC",
+      "text": "Dikey senkronizasyon (mikrosaniye cinsinden) (örneğin, 0 mikrosaniye)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC",
+      "text": "Dikey karartma (mikrosaniye cinsinden) (örneğin, 500 mikrosaniye)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC",
+      "text": "Yatay senkronizasyon (mikrosaniye cinsinden) (örneğin, 1 mikrosaniye)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC",
+      "text": "Yatay karartma (mikrosaniye cinsinden) (örneğin, 3 mikrosaniye)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC",
+      "text": "Dikey ön boşluk oranı (örneğin, 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC",
+      "text": "Dikey senkronizasyon oranı (örneğin, 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC",
+      "text": "Dikey arka boşluk oranı (örneğin, 10)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC",
+      "text": "Yatay ön boşluk oranı (örneğin, 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC",
+      "text": "Yatay senkronizasyon oranı (örneğin, 4)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC",
+      "text": "Yatay arka boşluk oranı (örneğin, 7)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_DESC",
+      "text": "Bir dosyayı bir grup parçaya böler"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC",
+      "text": "Parçalara bölünecek dosya"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC",
+      "text": "Parçaları depolayacak dizin"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC",
+      "text": "Parça boyutu (bayt cinsinden)"
     }
   ]
 }

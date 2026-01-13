@@ -1467,5 +1467,110 @@
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
     <value>Yeni bir labirent oluşturmadan önce kaç milisaniye beklenmelidir?</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC" xml:space="preserve">
+    <value>Ortadan başlayarak daire şeklinde siyaha doğru soluklaşan renkli arka planı simüle eder</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Üç blok gösterir: biri saatler, biri dakikalar ve biri saniyeler için</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC" xml:space="preserve">
+    <value>Yavaş renk bükülmesini ve geçişini simüle eder</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC" xml:space="preserve">
+    <value>Ekranın bir yerinde bir nokta oluşturur ve bunu tüm konsola yayar (daire yarıçapı)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC" xml:space="preserve">
+    <value>Buharlaşan damlacıkları simüle eder</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC" xml:space="preserve">
+    <value>Figlet ile İngilizce harfleri döngüsel olarak gösterir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC" xml:space="preserve">
+    <value>Konsolu dolduran bir grup çizgi gösterir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC" xml:space="preserve">
+    <value>Konsolu doldururken alttan üste doğru gelen iki çizgi gösterir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC" xml:space="preserve">
+    <value>Eski bir üniversite not defterine benzer şekilde, tüm dersler için öğrenci adlarını ve notlarını içeren eski tarz bir terminal ekranı gösterir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC" xml:space="preserve">
+    <value>Televizyon gürültüsünü (gri tonlamalı gürültü veya renkli gürültü) simüle eder</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC" xml:space="preserve">
+    <value>Konsolun ortasında kendini dolduran bir daire yayı gösterir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC" xml:space="preserve">
+    <value>Üzerine başka bir daire büyümeden önce tüm ekranı dolduran büyüyen bir daire gösterir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC" xml:space="preserve">
+    <value>Hava dışarıda yağmurluymuş gibi konsolun üstünden damlayan su damlacıklarını gösterir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC" xml:space="preserve">
+    <value>Ortadan canlı bir dalgalanma efekti gösterir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>Bloğun arkasında gösterilen bir arka plan rengini ortaya çıkarır (işaret eder gibi) (Karanlık bir odada bir nesneye el feneri tutmak gibi)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>Arka planda basılı metni gösterir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC" xml:space="preserve">
+    <value>Konsolun sağından soluna doğru bir dalga diyagramı gösterir</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP" xml:space="preserve">
+    <value>Bu ekran koruyucu, dosyadaki yazılı metni destekler. Bu alana dosyanın tam yolunu girin ve ekran koruyucu dosyanın içeriğini uygun şekilde gösterecektir.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME" xml:space="preserve">
+    <value>Dikey çizgi karakteri</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC" xml:space="preserve">
+    <value>Dikey bir çizgi oluşturmak için bir karakter. Yalnızca bir karakter girdiğinizden emin olun.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME" xml:space="preserve">
+    <value>Çizgi yoğunluğu</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC" xml:space="preserve">
+    <value>Çizgilerin ne sıklıkla oluşturulacağı?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME" xml:space="preserve">
+    <value>Dikey çizgi yoğunluğu</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC" xml:space="preserve">
+    <value>Dikey çizgilerin ne sıklıkla oluşturulacağı?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME" xml:space="preserve">
+    <value>Ters yön yoğunluğu</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC" xml:space="preserve">
+    <value>Çizginin yönünün ne sıklıkla tersine çevrileceği (soldan sağa yerine sağdan sola veya yukarıdan aşağıya yerine aşağıdan yukarıya)?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME" xml:space="preserve">
+    <value>Çizgi gecikmesi</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC" xml:space="preserve">
+    <value>Yeni bir çizgi eklemeden önce kaç milisaniye bekleneceği?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>Renk Gürültüsü</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>Renkli televizyonlarda mı yoksa tek renkli televizyonlarda mı gürültü simüle edileceği</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME" xml:space="preserve">
+    <value>Minimum not</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC" xml:space="preserve">
+    <value>Bir öğrenci için derslerdeki minimum sınav notu</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME" xml:space="preserve">
+    <value>Maksimum not</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC" xml:space="preserve">
+    <value>Bir öğrenci için derslerdeki maksimum sınav notu</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
+    <value>Sistemlere sızan bir kişiyi simüle eder</value>
+  </data>
 
 </root>

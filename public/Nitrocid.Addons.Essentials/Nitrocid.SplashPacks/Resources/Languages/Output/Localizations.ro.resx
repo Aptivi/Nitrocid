@@ -186,5 +186,11 @@
   <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
     <value>Repornire</value>
   </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT" xml:space="preserve">
+    <value>Vă rugăm să așteptați</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC" xml:space="preserve">
+    <value>Afișează o casetă care se umple cu rapoartele pe care le stochează acest splash</value>
+  </data>
 
 </root>

@@ -2635,6 +2635,26 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
       "text": "Het laatste nieuws is niet ontvangen."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER",
+      "text": "ISP-informatie voor"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER",
+      "text": "ISP-servers voor"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC",
+      "text": "Haalt ISP-informatie op"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC",
+      "text": "E-mailadres of hostnaam"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC",
+      "text": "Gebruik de hostnaam in plaats van het adres"
     }
   ]
 }

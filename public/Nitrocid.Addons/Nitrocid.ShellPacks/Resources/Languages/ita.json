@@ -2632,6 +2632,26 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
       "text": "Impossibile ricevere le ultime notizie."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER",
+      "text": "Informazioni ISP per"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER",
+      "text": "Server ISP per"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC",
+      "text": "Ottiene informazioni ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC",
+      "text": "Indirizzo e-mail o nome host"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC",
+      "text": "Utilizza il nome host anziché l'indirizzo"
     }
   ]
 }

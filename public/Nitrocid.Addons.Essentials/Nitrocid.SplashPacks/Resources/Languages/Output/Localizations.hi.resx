@@ -186,5 +186,11 @@
   <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
     <value>पुन: प्रारंभ हो</value>
   </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT" xml:space="preserve">
+    <value>कृपया इंतज़ार करें</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC" xml:space="preserve">
+    <value>एक बॉक्स दिखाता है जो उन रिपोर्ट से भर जाता है जिन्हें यह स्प्लैश स्टोर करता है</value>
+  </data>
 
 </root>

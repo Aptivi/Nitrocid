@@ -50,7 +50,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail
 
             new CommandInfo("detach", /* Localizable */ "NKS_SHELLPACKS_FTPSFTP_COMMAND_DETACH_DESC", new DetachCommand()),
 
-            // TODO: NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC -> Gets ISP information
             new CommandInfo("ispinfo", /* Localizable */ "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC", new IspInfoCommand()),
 
             new CommandInfo("lsdirs", /* Localizable */ "NKS_SHELLPACKS_MAIL_COMMAND_LSDIRS_DESC", new LsDirsCommand()),

@@ -203,6 +203,14 @@
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
       "text": "Restarting"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
+      "text": "Please wait"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
+      "text": "Shows a box that gets filled with reports that this splash stores"
     }
   ]
 }

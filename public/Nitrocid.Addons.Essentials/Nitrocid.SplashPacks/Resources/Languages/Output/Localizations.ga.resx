@@ -186,5 +186,11 @@
   <data name="NKS_MISC_SPLASHES_WELCOME_RESTARTING" xml:space="preserve">
     <value>Atosú</value>
   </data>
+  <data name="NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT" xml:space="preserve">
+    <value>Fan le do thoil</value>
+  </data>
+  <data name="NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC" xml:space="preserve">
+    <value>Taispeánann sé bosca a líontar le tuarascálacha a stórálann an splancscáileán seo</value>
+  </data>
 
 </root>

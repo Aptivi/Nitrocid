@@ -1467,5 +1467,110 @@
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
     <value>naya mez banaane se pahale kitane mileesekand intazaar karana chaahie?</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC" xml:space="preserve">
+    <value>rangeen baikagraund ko beech se shuroo karake sarkal mein kaala hone ka dikhaava karata hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>teen blok dikhaata hai: ek ghanton ke lie, ek minaton ke lie, aur ek sekand ke lie</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC" xml:space="preserve">
+    <value>dheere-dheere rang badalane aur badalane ka dikhaava karata hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC" xml:space="preserve">
+    <value>skreen mein kaheen ek jagah banaata hai aur use poore kansol (sarkal rediyas) mein phaila deta hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC" xml:space="preserve">
+    <value>boondon ko bhaap banate hue dikhaata hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC" xml:space="preserve">
+    <value>phigalet ke saath inglish aksharon ko saikil karata hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC" xml:space="preserve">
+    <value>kansol ko bharane vaalee lainon ka ek grup dikhaata hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC" xml:space="preserve">
+    <value>kansol ko bharate hue neeche se oopar kee or aane vaalee do lainen dikhaata hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC" xml:space="preserve">
+    <value>ek puraane stail kee tarminal skreen dikhaata hai jisamen sabhee sabjekt ke lie stoodent ke naam aur gred hote hain, jo ek puraanee yoonivarsitee gred buk jaisa hota hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC" xml:space="preserve">
+    <value>teleevizan ke shor (ya to greskel shor ya rangeen shor) ka dikhaava karata hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC" xml:space="preserve">
+    <value>ek sarkal aark dikhaata hai jo kansol ke beech mein khud ko bhar leta hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC" xml:space="preserve">
+    <value>ek badhata hua sarkal dikhaata hai jo pooree skreen ko bhar deta hai, isase pahale ki usake oopar ek aur sarkal ban jae</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC" xml:space="preserve">
+    <value>kansol ke oopar se paanee kee boonden tapakatee huee dikhaata hai, jaise baahar baarish ka mausam ho</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC" xml:space="preserve">
+    <value>beech se ek laiv ripal ifekt dikhaata hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>ek baikagraund kalar dikhaata hai jo blok ke peechhe dikhaaya jaata hai (jaise andhere kamare mein kisee cheez par torch kee roshanee daalane par)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>baikagraund mein printed tekst dikhaata hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC" xml:space="preserve">
+    <value>kansol ke daeen or se baeen or ek vev daayagraam dikhaata hai</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP" xml:space="preserve">
+    <value>yah skreenasevar fail par likhe tekst ko saport karata hai. is feeld mein poora fail paath paas karen, aur skreenasevar fail ka kantent sahee tareeke se dikhaega.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME" xml:space="preserve">
+    <value>vartikal lain kairektar</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC" xml:space="preserve">
+    <value>ek vartikal lain banaane ke lie ek kairektar. pakka karen ki sirf ek kairektar hee daalen.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME" xml:space="preserve">
+    <value>lain densitee</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC" xml:space="preserve">
+    <value>lain kitanee baar banaanee hain?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME" xml:space="preserve">
+    <value>vartikal lain densitee</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC" xml:space="preserve">
+    <value>vartikal lain kitanee baar banaanee hain?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME" xml:space="preserve">
+    <value>rivars daayarekshan densitee</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC" xml:space="preserve">
+    <value>lain ko apanee disha kitanee baar ulatanee hai (baen se daen ke bajaay daen se baen, ya oopar se neeche ke bajaay neeche se oopar)?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME" xml:space="preserve">
+    <value>lain dile</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC" xml:space="preserve">
+    <value>naee lain jodane se pahale kitane mileesekand intazaar karana hai?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>kalar noiz</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>kalar teleevizan ya monokrom teleevizan mein noiz kee nakal karanee hai ya nahin</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME" xml:space="preserve">
+    <value>minimam gred</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC" xml:space="preserve">
+    <value>stoodent ke lie sabjekt ke lie minimam egjaam gred</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME" xml:space="preserve">
+    <value>maiksimam gred</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC" xml:space="preserve">
+    <value>stoodent ke lie sabjekt ke lie maiksimam egjaam gred</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
+    <value>sistam mein haiking karane vaale vyakti kee nakal karata hai</value>
+  </data>
 
 </root>

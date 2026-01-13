@@ -1806,6 +1806,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "Πόσα χιλιοστά του δευτερολέπτου πρέπει να περιμένετε πριν δημιουργήσετε έναν νέο λαβύρινθο;"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "Προσομοιώνει το έγχρωμο φόντο που ξεθωριάζει σε μαύρο σε κύκλο ξεκινώντας από τη μέση"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "Εμφανίζει τρία μπλοκ: ένα για ώρες, ένα για λεπτά και ένα για δευτερόλεπτα"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "Προσομοίωση αργής χρωματικής κάμψης και μετάβασης"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "Δημιουργεί ένα σημείο κάπου στην οθόνη και το απλώνει σε ολόκληρη την κονσόλα (ακτίνα κύκλου)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "Προσομοίωση σταγονιδίων που εξατμίζονται"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "Κυκλοφορεί αγγλικά γράμματα με το Figlet"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "Εμφανίζει μια ομάδα γραμμών που γεμίζουν την κονσόλα"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "Εμφανίζει δύο γραμμές που έρχονται από κάτω προς τα πάνω ενώ γεμίζουν την κονσόλα"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "Εμφανίζει μια οθόνη τερματικού παλαιού τύπου που εμφανίζει ονόματα μαθητών και βαθμούς για όλα τα μαθήματα, παρόμοια με ένα παλιό σχολικό βιβλιάριο"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "Προσομοίωση τηλεοπτικού θορύβου (είτε θόρυβο κλίμακας του γκρι είτε έγχρωμο θόρυβο)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "Εμφανίζει ένα κυκλικό τόξο που γεμίζει στη μέση της κονσόλας"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "Εμφανίζει έναν αυξανόμενο κύκλο που γεμίζει ολόκληρη την οθόνη πριν ένας άλλος κύκλος μεγαλώσει από πάνω του"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "Εμφανίζει σταγόνες νερού που στάζουν από την κορυφή της κονσόλας, σαν να βρέχει ο καιρός έξω"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "Εμφανίζει ένα ζωντανό εφέ κυματισμού από τη μέση"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "Αποκαλύπτει ένα χρώμα φόντου που εμφανίζεται πίσω από το μπλοκ (όπως όταν στρέφεις τον φακό σε κάποιο αντικείμενο σε ένα σκοτάδι δωμάτιο)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "Αποκαλύπτει το κείμενο που εκτυπώνεται στο φόντο"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "Εμφανίζει ένα διάγραμμα κύματος από τα δεξιά προς τα αριστερά της κονσόλας"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "Αυτή η προφύλαξη οθόνης υποστηρίζει γραπτό κείμενο στο αρχείο. Περάστε την πλήρη διαδρομή αρχείου σε αυτό το πεδίο και η προφύλαξη οθόνης θα εμφανίσει κατάλληλα τα περιεχόμενα του αρχείου."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "Χαρακτήρας κάθετης γραμμής"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "Ένας χαρακτήρας για να σχηματίσει μια κάθετη γραμμή. Βεβαιωθείτε ότι εισάγετε μόνο έναν χαρακτήρα."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "Πυκνότητα γραμμής"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "Πόσο συχνά δημιουργούνται γραμμές;"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "Πυκνότητα κάθετης γραμμής"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "Πόσο συχνά δημιουργούνται κάθετες γραμμές;"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "Πυκνότητα αντίστροφης κατεύθυνσης"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "Πόσο συχνά γίνεται η γραμμή να αντιστρέψει την κατεύθυνσή της (από δεξιά προς τα αριστερά αντί για αριστερά προς τα δεξιά ή από κάτω προς τα πάνω αντί για πάνω προς τα κάτω);"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "Καθυστέρηση γραμμής"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "Πόσα χιλιοστά του δευτερολέπτου πρέπει να περιμένετε πριν προσθέσετε μια νέα γραμμή;"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "Θόρυβος χρώματος"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "Εάν θα προσομοιωθεί θόρυβος σε έγχρωμες τηλεοράσεις ή μονόχρωμες τηλεοράσεις"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "Ελάχιστος βαθμός"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "Ελάχιστος βαθμός εξετάσεων για μαθήματα για έναν φοιτητή"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "Μέγιστος βαθμός"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "Μέγιστος βαθμός εξετάσεων για μαθήματα για έναν φοιτητή"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "Προσομοιώνει ένα άτομο που κάνει hacking σε συστήματα"
     }
   ]
 }

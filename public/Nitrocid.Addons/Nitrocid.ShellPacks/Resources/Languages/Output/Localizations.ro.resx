@@ -2085,5 +2085,20 @@
   <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
     <value>Nu s-au putut obține cele mai recente știri.</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER" xml:space="preserve">
+    <value>Informații ISP pentru</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER" xml:space="preserve">
+    <value>Servere ISP pentru</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC" xml:space="preserve">
+    <value>Obține informații ISP</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC" xml:space="preserve">
+    <value>Adresă de e-mail sau nume de gazdă</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC" xml:space="preserve">
+    <value>Utilizați numele gazdei în loc de adresă</value>
+  </data>
 
 </root>

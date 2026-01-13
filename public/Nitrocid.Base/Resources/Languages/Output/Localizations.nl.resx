@@ -7062,5 +7062,86 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
     <value>De verwachte waarde komt niet overeen met de werkelijke waarde.</value>
   </data>
+  <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME" xml:space="preserve">
+    <value>Certificaatfouten negeren</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC" xml:space="preserve">
+    <value>Indien ingeschakeld, worden certificaatfouten genegeerd bij het maken van een verbinding. Anders wordt het servercertificaat gecontroleerd. Deze optie moet normaal gesproken niet ingeschakeld zijn, tenzij u er zeker van bent dat u de server vertrouwt.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP" xml:space="preserve">
+    <value>Belangrijke tip</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP_DESC" xml:space="preserve">
+    <value>Retourneert het openbare IPv4-adres</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC" xml:space="preserve">
+    <value>Stille verwerking</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP6_DESC" xml:space="preserve">
+    <value>Retourneert het openbare IPv6-adres</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC" xml:space="preserve">
+    <value>Groepeert chunks tot één bestand</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Splits de bestandsnaam naar groep in bestand</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC" xml:space="preserve">
+    <value>Map voor het opslaan van het gegroepeerde bestand</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC" xml:space="preserve">
+    <value>Genereert een XFree86 3.3.6-compatibele modeline op basis van weergaveparameters voor CRT-monitoren</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC" xml:space="preserve">
+    <value>Hoeveel pixels zijn er horizontaal (bijvoorbeeld 1280)?</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC" xml:space="preserve">
+    <value>Hoeveel pixels zijn er verticaal (bijvoorbeeld 960)?</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC" xml:space="preserve">
+    <value>Verticale verversingsfrequentie in hertz (bijvoorbeeld 75 Hz)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC" xml:space="preserve">
+    <value>Verticale synchronisatie in microseconden (bijvoorbeeld 0 microseconden)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC" xml:space="preserve">
+    <value>Verticale blanking in microseconden (bijvoorbeeld 500 microseconden)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC" xml:space="preserve">
+    <value>Horizontale synchronisatie in microseconden (bijvoorbeeld 1 microseconde)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC" xml:space="preserve">
+    <value>Horizontale blanking in microseconden (bijvoorbeeld 3 microseconden)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC" xml:space="preserve">
+    <value>Verticale front porch ratio (bijvoorbeeld 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC" xml:space="preserve">
+    <value>Verticale synchronisatieratio (bijvoorbeeld 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC" xml:space="preserve">
+    <value>Verticale back porch ratio (bijvoorbeeld 10)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC" xml:space="preserve">
+    <value>Horizontale front porch ratio (bijvoorbeeld 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC" xml:space="preserve">
+    <value>Horizontale synchronisatieratio (bijvoorbeeld 4)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC" xml:space="preserve">
+    <value>Horizontale back porch ratio (bijvoorbeeld 7)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_DESC" xml:space="preserve">
+    <value>Splitst een bestand in een groep chunks</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>Bestand dat in chunks moet worden gesplitst</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC" xml:space="preserve">
+    <value>Map waarin de chunks moeten worden opgeslagen</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC" xml:space="preserve">
+    <value>Grootte van de chunk in bytes</value>
+  </data>
 
 </root>

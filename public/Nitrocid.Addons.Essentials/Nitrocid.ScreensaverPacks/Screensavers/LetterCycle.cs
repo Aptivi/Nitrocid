@@ -35,7 +35,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class LetterCycleDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC -> Cycles English letters with Figlet
         /// <inheritdoc/>
         public override string ScreensaverName =>
             "LetterCycle";

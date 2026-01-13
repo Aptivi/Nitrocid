@@ -2085,5 +2085,20 @@
   <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
     <value>최신 뉴스를 가져오지 못했습니다.</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER" xml:space="preserve">
+    <value>ISP 정보</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER" xml:space="preserve">
+    <value>ISP 서버 정보</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC" xml:space="preserve">
+    <value>ISP 정보를 가져옵니다.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC" xml:space="preserve">
+    <value>이메일 주소 또는 호스트 이름</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC" xml:space="preserve">
+    <value>주소 대신 호스트 이름을 사용하세요.</value>
+  </data>
 
 </root>

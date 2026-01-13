@@ -1467,5 +1467,110 @@
   <data name="NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC" xml:space="preserve">
     <value>Berapa milisaat perlu menunggu sebelum menjana labirin baharu?</value>
   </data>
+  <data name="NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan latar belakang berwarna yang pudar menjadi hitam dalam bulatan bermula dari tengah</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan tiga blok: satu untuk jam, satu untuk minit, dan satu untuk saat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan lenturan dan peralihan warna yang perlahan</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC" xml:space="preserve">
+    <value>Membuat tempat di suatu tempat di skrin dan menyebarkannya ke seluruh konsol (jejari bulatan)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan titisan yang tersejat</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC" xml:space="preserve">
+    <value>Memutar huruf Inggeris dengan Figlet</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan sekumpulan garisan yang memenuhi konsol</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan dua garisan yang datang dari bawah ke atas sambil mengisi konsol</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan skrin terminal gaya lama yang menampilkan nama dan gred pelajar untuk semua subjek, serupa dengan buku gred universiti lama</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC" xml:space="preserve">
+    <value>Mensimulasikan hingar televisyen (sama ada hingar skala kelabu atau hingar berwarna)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan lengkungan bulatan yang mengisi dirinya sendiri di tengah konsol</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan bulatan yang semakin membesar yang memenuhi seluruh skrin sebelum bulatan lain tumbuh di atasnya</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan titisan air yang menitis dari bahagian atas konsol, seolah-olah cuaca hujan di luar</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan kesan riak langsung dari tengah</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>Mendedahkan warna latar belakang yang ditunjukkan di belakang blok (seperti menghalakan lampu suluh ke arah beberapa item dalam gelap bilik)</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC" xml:space="preserve">
+    <value>Mendedahkan teks yang dicetak di latar belakang</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC" xml:space="preserve">
+    <value>Menunjukkan gambar rajah gelombang dari kanan ke kiri konsol</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP" xml:space="preserve">
+    <value>Penjimat skrin ini menyokong teks bertulis pada fail. Serahkan laluan fail lengkap ke medan ini, dan penjimat skrin akan memaparkan kandungan fail dengan sewajarnya.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME" xml:space="preserve">
+    <value>Aksara garis menegak</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC" xml:space="preserve">
+    <value>Aksara untuk membentuk garis menegak. Pastikan hanya memasukkan satu aksara.</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME" xml:space="preserve">
+    <value>Ketumpatan baris</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC" xml:space="preserve">
+    <value>Berapa kerapkah untuk menjana garisan?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME" xml:space="preserve">
+    <value>Ketumpatan garis menegak</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC" xml:space="preserve">
+    <value>Berapa kerapkah untuk menjana garisan menegak?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME" xml:space="preserve">
+    <value>Ketumpatan arah songsang</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC" xml:space="preserve">
+    <value>Berapa kerapkah untuk membuat garisan songsang arahnya (kanan ke kiri dan bukannya kiri ke kanan, atau bawah ke atas dan bukannya atas ke bawah)?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME" xml:space="preserve">
+    <value>Kelewatan baris</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC" xml:space="preserve">
+    <value>Berapa milisaat untuk menunggu sebelum menambah baris baharu?</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME" xml:space="preserve">
+    <value>Hingar Warna</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC" xml:space="preserve">
+    <value>Sama ada untuk mensimulasikan hingar dalam televisyen berwarna atau televisyen monokrom</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME" xml:space="preserve">
+    <value>Gred minimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC" xml:space="preserve">
+    <value>Gred peperiksaan minimum untuk subjek untuk pelajar</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME" xml:space="preserve">
+    <value>Gred maksimum</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC" xml:space="preserve">
+    <value>Gred peperiksaan maksimum untuk subjek untuk pelajar</value>
+  </data>
+  <data name="NKS_SCREENSAVERPACKS_HACKING_DESC" xml:space="preserve">
+    <value>Mensimulasikan seseorang yang menggodam sistem</value>
+  </data>
 
 </root>

@@ -7062,5 +7062,86 @@
   <data name="NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH" xml:space="preserve">
     <value>القيمة المتوقعة لا تتطابق مع القيمة الفعلية.</value>
   </data>
+  <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME" xml:space="preserve">
+    <value>تجاهل أخطاء الشهادة</value>
+  </data>
+  <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC" xml:space="preserve">
+    <value>في حال التفعيل، سيتم تجاهل أخطاء الشهادة عند إنشاء الاتصال. وإلا، سيتم التحقق من شهادة الخادم. يُنصح عادةً بعدم تفعيل هذا الخيار إلا إذا كنت متأكدًا من موثوقية الخادم.</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP" xml:space="preserve">
+    <value>نصيحة مهمة</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP_DESC" xml:space="preserve">
+    <value>إرجاع عنوان IPv4 العام</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC" xml:space="preserve">
+    <value>معالجة صامتة</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP6_DESC" xml:space="preserve">
+    <value>إرجاع عنوان IPv6 العام</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC" xml:space="preserve">
+    <value>تجميع الأجزاء في ملف واحد</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>تقسيم اسم الملف لتجميعه في ملف واحد</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC" xml:space="preserve">
+    <value>مجلد لتخزين الملف المُجمّع</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC" xml:space="preserve">
+    <value>إنشاء نموذج XFree86 متوافق مع الإصدار 3.3.6 من معلمات العرض لشاشات CRT</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC" xml:space="preserve">
+    <value>كم عدد البكسلات أفقيًا (على سبيل المثال، 1280)؟</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC" xml:space="preserve">
+    <value>كم عدد البكسلات رأسيًا (على سبيل المثال، 960)؟</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC" xml:space="preserve">
+    <value>معدل التحديث الرأسي بالهرتز (مثال: 75 هرتز)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC" xml:space="preserve">
+    <value>المزامنة الرأسية بالمايكروثانية (مثال: 0 مايكروثانية)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC" xml:space="preserve">
+    <value>الإخفاء الرأسي بالمايكروثانية (مثال: 500 مايكروثانية)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC" xml:space="preserve">
+    <value>المزامنة الأفقية بالمايكروثانية (مثال: 1 مايكروثانية)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC" xml:space="preserve">
+    <value>الإخفاء الأفقي بالمايكروثانية (مثال: 3 مايكروثانية)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC" xml:space="preserve">
+    <value>نسبة العرض الأمامي الرأسي (مثال: 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC" xml:space="preserve">
+    <value>نسبة المزامنة الرأسية (مثال: 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC" xml:space="preserve">
+    <value>نسبة العرض الخلفي الرأسي (مثال: 10)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC" xml:space="preserve">
+    <value>نسبة العرض الأمامي الأفقي (مثال: 1)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC" xml:space="preserve">
+    <value>نسبة المزامنة الأفقية (مثال: 4)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC" xml:space="preserve">
+    <value>نسبة العرض الخلفي الأفقي (مثال: 7)</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_DESC" xml:space="preserve">
+    <value>تقسيم الملف إلى مجموعة من الأجزاء</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC" xml:space="preserve">
+    <value>الملف المراد تقسيمه إلى أجزاء</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC" xml:space="preserve">
+    <value>المجلد المراد تخزين الأجزاء فيه</value>
+  </data>
+  <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC" xml:space="preserve">
+    <value>حجم الجزء بالبايت</value>
+  </data>
 
 </root>

@@ -8913,16 +8913,16 @@
                 "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
             },
             {
-                "Name": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_HFREQ_NAME",
+                "Name": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_NAME",
                 "Type": "SDouble",
                 "Variable": "SwivelRevealHorizontalFrequencyLevel",
-                "Description": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_HFREQ_DESC"
+                "Description": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_HFREQ_DESC"
             },
             {
-                "Name": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_VFREQ_NAME",
+                "Name": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_NAME",
                 "Type": "SDouble",
                 "Variable": "SwivelRevealVerticalFrequencyLevel",
-                "Description": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_VFREQ_DESC"
+                "Description": "NKS_SCREENSAVERPACKS_SWIVEL_SETTINGS_VFREQ_DESC"
             },
             {
                 "Name": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_COLORSETTINGS_NAME",
@@ -9738,16 +9738,16 @@
                 "Description": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_DELAY_DESC"
             },
             {
-                "Name": "NKS_SCREENSAVERPACKS_HACKING_MAXFADESTEPS_NAME",
+                "Name": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_NAME",
                 "Type": "SInt",
                 "Variable": "HackingMaxSteps",
-                "Description": "NKS_SCREENSAVERPACKS_HACKING_MAXFADESTEPS_DESC"
+                "Description": "NKS_SCREENSAVERPACKS_FADER_SETTINGS_MAXFADESTEPS_DESC"
             },
             {
-                "Name": "NKS_SCREENSAVERPACKS_HACKING_DROPCHANCE_NAME",
+                "Name": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_NAME",
                 "Type": "SIntSlider",
                 "Variable": "HackingDropChance",
-                "Description": "NKS_SCREENSAVERPACKS_HACKING_DROPCHANCE_DESC",
+                "Description": "NKS_SCREENSAVERPACKS_COLORBLEED_SETTINGS_DROPCHANCE_DESC",
                 "MinimumValue": 0,
                 "MaximumValue": 100
             }

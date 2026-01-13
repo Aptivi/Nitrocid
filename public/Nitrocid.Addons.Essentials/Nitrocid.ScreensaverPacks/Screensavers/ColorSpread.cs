@@ -35,7 +35,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class ColorSpreadDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC -> "Makes a spot somewhere in the screen and spreads it to the whole console (circle radius)"
         private static int currentOuterRadius = 0;
         private static Coordinate coords = new();
         private static Color colorStorage = Color.Empty;

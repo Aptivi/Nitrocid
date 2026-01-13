@@ -2629,6 +2629,26 @@
     {
       "loc": "NKS_SHELLPACKS_RSS_FETCHFAILED",
       "text": "Không nhận được tin tức mới nhất."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER",
+      "text": "Thông tin ISP cho"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER",
+      "text": "Máy chủ ISP cho"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC",
+      "text": "Lấy thông tin ISP"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC",
+      "text": "Địa chỉ email hoặc tên máy chủ"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC",
+      "text": "Sử dụng tên máy chủ thay vì địa chỉ"
     }
   ]
 }

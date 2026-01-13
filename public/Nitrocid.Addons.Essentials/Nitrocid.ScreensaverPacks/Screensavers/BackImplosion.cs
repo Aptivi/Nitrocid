@@ -36,7 +36,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class BackImplosionDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC -> "Simulates the colored background fading out to black in circle starting from the middle"
         private static int currentOuterRadius = 0;
         private static Color colorStorage = Color.Empty;
 

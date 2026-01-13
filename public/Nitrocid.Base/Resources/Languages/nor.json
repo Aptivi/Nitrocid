@@ -9269,6 +9269,114 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
       "text": "Forventet verdi samsvarer ikke med faktisk verdi."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME",
+      "text": "Ignorer sertifikatfeil"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC",
+      "text": "Hvis aktivert, ignoreres sertifikatfeil når en tilkobling opprettes. Ellers verifiseres serversertifikatet. Dette skal normalt ikke være aktivert med mindre du er sikker på at du stoler på serveren."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP",
+      "text": "Nøkkeltips"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP_DESC",
+      "text": "Returnerer offentlig IPv4-adresse"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC",
+      "text": "Stille prosessering"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP6_DESC",
+      "text": "Returnerer offentlig IPv6-adresse"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC",
+      "text": "Grupperer deler til en enkelt fil"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC",
+      "text": "Del filnavn til gruppe til fil"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC",
+      "text": "Mappe for å lagre gruppert fil"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC",
+      "text": "Genererer en XFree86 3.3.6-kompatibel modelllinje fra skjermparametere for CRT-skjermer"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC",
+      "text": "Hvor mange piksler er det horisontalt (for eksempel 1280)?"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC",
+      "text": "Hvor mange piksler er det vertikalt (for eksempel 960)?"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC",
+      "text": "Vertikal oppdateringsfrekvens i hertz (for eksempel 75 Hz)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC",
+      "text": "Vertikal synkronisering i mikrosekunder (for eksempel 0 mikrosekunder)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC",
+      "text": "Vertikal blanking i mikrosekunder (for eksempel 500 mikrosekunder)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC",
+      "text": "Horisontal synkronisering i mikrosekunder (for eksempel 1 mikrosekund)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC",
+      "text": "Horisontal blanking i mikrosekunder (for eksempel 3 mikrosekunder)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC",
+      "text": "Vertikal veranda-forhold (for eksempel 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC",
+      "text": "Vertikal synkroniseringsforhold (for eksempel 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC",
+      "text": "Vertikal bakre veranda-forhold (for eksempel 10)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC",
+      "text": "Horisontalt foranre veranda-forhold (for eksempel 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC",
+      "text": "Horisontalt synkroniseringsforhold (for eksempel 4)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC",
+      "text": "Horisontalt bakre veranda-forhold (for eksempel 7)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_DESC",
+      "text": "Deler en fil til en gruppe med deler"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC",
+      "text": "Fil som skal deles til deler"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC",
+      "text": "Mappe for å lagre deler"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC",
+      "text": "Delstørrelse i byte"
     }
   ]
 }

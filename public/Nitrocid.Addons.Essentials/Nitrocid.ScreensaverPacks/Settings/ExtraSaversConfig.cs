@@ -53,7 +53,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-        // TODO: NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP -> This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately.
 
         #region Matrix
         private int matrixDelay = 10;
@@ -19198,8 +19197,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [LineSaber] Vertical line character
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME -> Vertical line character
-        // TODO: NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC -> A character to form a vertical line. Be sure to only input one character.
         public string LineSaberVerticalLineChar
         {
             get
@@ -19217,8 +19214,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [LineSaber] The density of lines
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME -> Line density
-        // TODO: NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC -> How frequent to generate lines?
         public int LineSaberLineDensity
         {
             get
@@ -19238,8 +19233,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [LineSaber] The density of vertical lines (if one is needed)
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME -> Vertical line density
-        // TODO: NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC -> How frequent to generate vertical lines?
         public int LineSaberVerticalLineDensity
         {
             get
@@ -19259,8 +19252,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [LineSaber] The density of reverse direction
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME -> Reverse direction density
-        // TODO: NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC -> How frequent to make the line reverse its direction (right to left instead of left to right, or bottom to top instead of top to bottom)?
         public int LineSaberReverseDensity
         {
             get
@@ -19478,8 +19469,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [BoxStitch] How many milliseconds to wait before adding a new line?
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME -> Line delay
-        // TODO: NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC -> How many milliseconds to wait before adding a new line?
         public int BoxStitchLineDelay
         {
             get
@@ -20041,8 +20030,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [Noisy] Whether to simulate noise in color televisions or monochrome televisions
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME -> Color Noise
-        // TODO: NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC -> Whether to simulate noise in color televisions or monochrome televisions
         public bool NoisyColor
         {
             get
@@ -20081,8 +20068,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [MarkScreen] Minimum exam grade for subjects for a student
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME -> Minimum grade
-        // TODO: NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC -> Minimum exam grade for subjects for a student
         public int MarkScreenMinimumGrade
         {
             get
@@ -20102,8 +20087,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [MarkScreen] Maximum exam grade for subjects for a student
         /// </summary>
-        // TODO: NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME -> Maximum grade
-        // TODO: NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC -> Maximum exam grade for subjects for a student
         public int MarkScreenMaximumGrade
         {
             get
@@ -20125,7 +20108,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         private int hackingDelay = 10;
         private int hackingMaxSteps = 25;
         private int hackingDropChance = 40;
-        // TODO: NKS_SCREENSAVERPACKS_HACKING_DESC -> Simulates a person hacking into systems
 
         /// <summary>
         /// [Hacking] How many milliseconds to wait before making the next write?
@@ -20146,8 +20128,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [Hacking] How many fade steps to do?
         /// </summary>
-        // TODO: Transfer NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_MAXFADESTEPS_NAME to NKS_SCREENSAVERPACKS_HACKING_MAXFADESTEPS_NAME
-        // TODO: Transfer NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_MAXFADESTEPS_DESC to NKS_SCREENSAVERPACKS_HACKING_MAXFADESTEPS_DESC
         public int HackingMaxSteps
         {
             get
@@ -20164,8 +20144,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [Hacking] Chance to drop a new falling matrix
         /// </summary>
-        // TODO: Transfer NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DROPCHANCE_NAME to NKS_SCREENSAVERPACKS_HACKING_DROPCHANCE_NAME
-        // TODO: Transfer NKS_SETTINGS_SCREENSAVER_MATRIXBLEED_DROPCHANCE_DESC to NKS_SCREENSAVERPACKS_HACKING_DROPCHANCE_DESC
         public int HackingDropChance
         {
             get

@@ -34,7 +34,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class LineSaberDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC -> Shows two lines that come from the bottom to the top while filling the console
         private List<(Color color, int position, bool vertical, bool reverse)> lines = [];
 
         /// <inheritdoc/>

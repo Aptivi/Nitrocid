@@ -97,6 +97,14 @@
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
       "text": "Memulai ulang"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
+      "text": "Mohon tunggu"
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
+      "text": "Menampilkan kotak yang terisi dengan laporan yang disimpan oleh splash screen ini"
     }
   ]
 }

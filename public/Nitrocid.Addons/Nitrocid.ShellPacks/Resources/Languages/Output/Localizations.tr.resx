@@ -2085,5 +2085,20 @@
   <data name="NKS_SHELLPACKS_RSS_FETCHFAILED" xml:space="preserve">
     <value>Son haberlere ulaşılamadı.</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER" xml:space="preserve">
+    <value>İnternet servis sağlayıcısı bilgileri için</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER" xml:space="preserve">
+    <value>İnternet servis sağlayıcısı sunucuları için</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_DESC" xml:space="preserve">
+    <value>İnternet servis sağlayıcısı bilgilerini alır</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC" xml:space="preserve">
+    <value>E-posta adresi veya sunucu adı</value>
+  </data>
+  <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC" xml:space="preserve">
+    <value>Adres yerine sunucu adını kullanın</value>
+  </data>
 
 </root>

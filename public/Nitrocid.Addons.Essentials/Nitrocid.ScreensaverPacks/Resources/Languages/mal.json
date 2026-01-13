@@ -1808,6 +1808,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "Berapa milisaat perlu menunggu sebelum menjana labirin baharu?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "Mensimulasikan latar belakang berwarna yang pudar menjadi hitam dalam bulatan bermula dari tengah"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "Menunjukkan tiga blok: satu untuk jam, satu untuk minit, dan satu untuk saat"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "Mensimulasikan lenturan dan peralihan warna yang perlahan"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "Membuat tempat di suatu tempat di skrin dan menyebarkannya ke seluruh konsol (jejari bulatan)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "Mensimulasikan titisan yang tersejat"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "Memutar huruf Inggeris dengan Figlet"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "Menunjukkan sekumpulan garisan yang memenuhi konsol"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "Menunjukkan dua garisan yang datang dari bawah ke atas sambil mengisi konsol"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "Menunjukkan skrin terminal gaya lama yang menampilkan nama dan gred pelajar untuk semua subjek, serupa dengan buku gred universiti lama"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "Mensimulasikan hingar televisyen (sama ada hingar skala kelabu atau hingar berwarna)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "Menunjukkan lengkungan bulatan yang mengisi dirinya sendiri di tengah konsol"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "Menunjukkan bulatan yang semakin membesar yang memenuhi seluruh skrin sebelum bulatan lain tumbuh di atasnya"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "Menunjukkan titisan air yang menitis dari bahagian atas konsol, seolah-olah cuaca hujan di luar"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "Menunjukkan kesan riak langsung dari tengah"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "Mendedahkan warna latar belakang yang ditunjukkan di belakang blok (seperti menghalakan lampu suluh ke arah beberapa item dalam gelap bilik)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "Mendedahkan teks yang dicetak di latar belakang"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "Menunjukkan gambar rajah gelombang dari kanan ke kiri konsol"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "Penjimat skrin ini menyokong teks bertulis pada fail. Serahkan laluan fail lengkap ke medan ini, dan penjimat skrin akan memaparkan kandungan fail dengan sewajarnya."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "Aksara garis menegak"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "Aksara untuk membentuk garis menegak. Pastikan hanya memasukkan satu aksara."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "Ketumpatan baris"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "Berapa kerapkah untuk menjana garisan?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "Ketumpatan garis menegak"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "Berapa kerapkah untuk menjana garisan menegak?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "Ketumpatan arah songsang"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "Berapa kerapkah untuk membuat garisan songsang arahnya (kanan ke kiri dan bukannya kiri ke kanan, atau bawah ke atas dan bukannya atas ke bawah)?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "Kelewatan baris"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "Berapa milisaat untuk menunggu sebelum menambah baris baharu?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "Hingar Warna"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "Sama ada untuk mensimulasikan hingar dalam televisyen berwarna atau televisyen monokrom"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "Gred minimum"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "Gred peperiksaan minimum untuk subjek untuk pelajar"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "Gred maksimum"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "Gred peperiksaan maksimum untuk subjek untuk pelajar"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "Mensimulasikan seseorang yang menggodam sistem"
     }
   ]
 }

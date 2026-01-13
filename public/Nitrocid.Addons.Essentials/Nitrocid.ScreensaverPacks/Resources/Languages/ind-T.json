@@ -1805,6 +1805,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "नया मेज़ बनाने से पहले कितने मिलीसेकंड इंतज़ार करना चाहिए?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "रंगीन बैकग्राउंड को बीच से शुरू करके सर्कल में काला होने का दिखावा करता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "तीन ब्लॉक दिखाता है: एक घंटों के लिए, एक मिनटों के लिए, और एक सेकंड के लिए"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "धीरे-धीरे रंग बदलने और बदलने का दिखावा करता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "स्क्रीन में कहीं एक जगह बनाता है और उसे पूरे कंसोल (सर्कल रेडियस) में फैला देता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "बूंदों को भाप बनते हुए दिखाता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "फिगलेट के साथ इंग्लिश अक्षरों को साइकिल करता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "कंसोल को भरने वाली लाइनों का एक ग्रुप दिखाता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "कंसोल को भरते हुए नीचे से ऊपर की ओर आने वाली दो लाइनें दिखाता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "एक पुराने स्टाइल की टर्मिनल स्क्रीन दिखाता है जिसमें सभी सब्जेक्ट के लिए स्टूडेंट के नाम और ग्रेड होते हैं, जो एक पुरानी यूनिवर्सिटी ग्रेड बुक जैसा होता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "टेलीविज़न के शोर (या तो ग्रेस्केल शोर या रंगीन शोर) का दिखावा करता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "एक सर्कल आर्क दिखाता है जो कंसोल के बीच में खुद को भर लेता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "एक बढ़ता हुआ सर्कल दिखाता है जो पूरी स्क्रीन को भर देता है, इससे पहले कि उसके ऊपर एक और सर्कल बन जाए"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "कंसोल के ऊपर से पानी की बूंदें टपकती हुई दिखाता है, जैसे बाहर बारिश का मौसम हो"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "बीच से एक लाइव रिपल इफ़ेक्ट दिखाता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "एक बैकग्राउंड कलर दिखाता है जो ब्लॉक के पीछे दिखाया जाता है (जैसे अंधेरे कमरे में किसी चीज़ पर टॉर्च की रोशनी डालने पर)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "बैकग्राउंड में प्रिंटेड टेक्स्ट दिखाता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "कंसोल के दाईं ओर से बाईं ओर एक वेव डायग्राम दिखाता है"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "यह स्क्रीनसेवर फ़ाइल पर लिखे टेक्स्ट को सपोर्ट करता है। इस फ़ील्ड में पूरा फ़ाइल पाथ पास करें, और स्क्रीनसेवर फ़ाइल का कंटेंट सही तरीके से दिखाएगा।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "वर्टिकल लाइन कैरेक्टर"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "एक वर्टिकल लाइन बनाने के लिए एक कैरेक्टर। पक्का करें कि सिर्फ़ एक कैरेक्टर ही डालें।"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "लाइन डेंसिटी"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "लाइन कितनी बार बनानी हैं?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "वर्टिकल लाइन डेंसिटी"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "वर्टिकल लाइन कितनी बार बनानी हैं?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "रिवर्स डायरेक्शन डेंसिटी"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "लाइन को अपनी दिशा कितनी बार उलटनी है (बाएं से दाएं के बजाय दाएं से बाएं, या ऊपर से नीचे के बजाय नीचे से ऊपर)?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "लाइन डिले"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "नई लाइन जोड़ने से पहले कितने मिलीसेकंड इंतज़ार करना है?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "कलर नॉइज़"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "कलर टेलीविज़न या मोनोक्रोम टेलीविज़न में नॉइज़ की नकल करनी है या नहीं"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "मिनिमम ग्रेड"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "स्टूडेंट के लिए सब्जेक्ट के लिए मिनिमम एग्जाम ग्रेड"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "मैक्सिमम ग्रेड"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "स्टूडेंट के लिए सब्जेक्ट के लिए मैक्सिमम एग्जाम ग्रेड"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "सिस्टम में हैकिंग करने वाले व्यक्ति की नकल करता है"
     }
   ]
 }

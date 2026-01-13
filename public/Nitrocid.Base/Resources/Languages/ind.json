@@ -9265,6 +9265,114 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
       "text": "ummeed kee gaee vailyoo asal vailyoo se mel nahin khaatee."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME",
+      "text": "sartifiket kee galatiyon ko nazarandaaz karen"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC",
+      "text": "agar chaaloo hai, to kanekshan banaate samay sartifiket kee galatiyon ko nazarandaaz karega. nahin to, sarvar sartifiket ko verifaee karata hai. yah, aam taur par, tab tak chaaloo nahin hona chaahie jab tak aapako pakka na ho ki aap sarvar par bharosa kar rahe hain."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP",
+      "text": "khaas tip"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP_DESC",
+      "text": "ipv4 pablik edres deta hai"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC",
+      "text": "shaant prosesing"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP6_DESC",
+      "text": "ipv6 pablik edres deta hai"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC",
+      "text": "chanks ko ek fail mein grup karata hai"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC",
+      "text": "fail naam ko fail mein grup karane ke lie baantata hai"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC",
+      "text": "grup kee gaee fail ko stor karane ke lie daayarektaree"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC",
+      "text": "chrt monitar ke lie disple pairaameetar se ek xfraiai86 3.3.6 kampaitibal modalalain banaata hai"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC",
+      "text": "horijontalee kitane piksel hain (udaaharan ke lie, 1280)?"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC",
+      "text": "vartikalalee kitane piksel hain (udaaharan ke lie, 960)?"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC",
+      "text": "hartz mein vartikal riphresh freekvensee (udaaharan ke lie, 75 hz)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC",
+      "text": "maikrosekand mein vartikal sinking (udaaharan ke lie, 0 maikrosekand)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC",
+      "text": "maikrosekand mein vartikal blainking (udaaharan ke lie, 500 maikrosekand)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC",
+      "text": "maikrosekand mein horijontal sinking (udaaharan ke lie, 1 maikrosekand)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC",
+      "text": "maikrosekand mein horijontal blainking (udaaharan ke lie, 3 maikrosekand)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC",
+      "text": "vartikal phrant porch reshyo (udaaharan ke lie, 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC",
+      "text": "vartikal sink reshyo (udaaharan ke lie, 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC",
+      "text": "vartikal baik porch reshyo (udaaharan ke lie, 10)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC",
+      "text": "horijontal phrant porch reshyo (udaaharan ke lie, 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC",
+      "text": "horijontal sink reshyo (udaaharan ke lie, 4)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC",
+      "text": "horijontal baik porch reshyo (udaaharan ke lie, 7)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_DESC",
+      "text": "fail ko chanks ke grup mein baantata hai"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC",
+      "text": "chanks mein baantane ke lie fail"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC",
+      "text": "chanks stor karane ke lie daayarektaree"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC",
+      "text": "chank saiz baits mein"
     }
   ]
 }

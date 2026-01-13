@@ -1806,6 +1806,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "Yeni bir labirent oluşturmadan önce kaç milisaniye beklenmelidir?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "Ortadan başlayarak daire şeklinde siyaha doğru soluklaşan renkli arka planı simüle eder"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "Üç blok gösterir: biri saatler, biri dakikalar ve biri saniyeler için"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "Yavaş renk bükülmesini ve geçişini simüle eder"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "Ekranın bir yerinde bir nokta oluşturur ve bunu tüm konsola yayar (daire yarıçapı)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "Buharlaşan damlacıkları simüle eder"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "Figlet ile İngilizce harfleri döngüsel olarak gösterir"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "Konsolu dolduran bir grup çizgi gösterir"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "Konsolu doldururken alttan üste doğru gelen iki çizgi gösterir"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "Eski bir üniversite not defterine benzer şekilde, tüm dersler için öğrenci adlarını ve notlarını içeren eski tarz bir terminal ekranı gösterir"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "Televizyon gürültüsünü (gri tonlamalı gürültü veya renkli gürültü) simüle eder"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "Konsolun ortasında kendini dolduran bir daire yayı gösterir"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "Üzerine başka bir daire büyümeden önce tüm ekranı dolduran büyüyen bir daire gösterir"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "Hava dışarıda yağmurluymuş gibi konsolun üstünden damlayan su damlacıklarını gösterir"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "Ortadan canlı bir dalgalanma efekti gösterir"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "Bloğun arkasında gösterilen bir arka plan rengini ortaya çıkarır (işaret eder gibi) (Karanlık bir odada bir nesneye el feneri tutmak gibi)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "Arka planda basılı metni gösterir"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "Konsolun sağından soluna doğru bir dalga diyagramı gösterir"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "Bu ekran koruyucu, dosyadaki yazılı metni destekler. Bu alana dosyanın tam yolunu girin ve ekran koruyucu dosyanın içeriğini uygun şekilde gösterecektir."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "Dikey çizgi karakteri"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "Dikey bir çizgi oluşturmak için bir karakter. Yalnızca bir karakter girdiğinizden emin olun."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "Çizgi yoğunluğu"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "Çizgilerin ne sıklıkla oluşturulacağı?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "Dikey çizgi yoğunluğu"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "Dikey çizgilerin ne sıklıkla oluşturulacağı?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "Ters yön yoğunluğu"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "Çizginin yönünün ne sıklıkla tersine çevrileceği (soldan sağa yerine sağdan sola veya yukarıdan aşağıya yerine aşağıdan yukarıya)?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "Çizgi gecikmesi"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "Yeni bir çizgi eklemeden önce kaç milisaniye bekleneceği?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "Renk Gürültüsü"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "Renkli televizyonlarda mı yoksa tek renkli televizyonlarda mı gürültü simüle edileceği"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "Minimum not"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "Bir öğrenci için derslerdeki minimum sınav notu"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "Maksimum not"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "Bir öğrenci için derslerdeki maksimum sınav notu"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "Sistemlere sızan bir kişiyi simüle eder"
     }
   ]
 }

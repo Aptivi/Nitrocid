@@ -9264,6 +9264,114 @@
     {
       "loc": "NKS_KERNEL_DEBUGGING_TESTING_TESTFAILED_MATCH",
       "text": "O valor esperado não corresponde ao valor real."
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME",
+      "text": "Ignorar erros de certificado"
+    },
+    {
+      "loc": "NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC",
+      "text": "Se ativado, ignorará erros de certificado ao estabelecer uma conexão. Caso contrário, verificará o certificado do servidor. Normalmente, isso não deve ser ativado, a menos que você tenha certeza de que confia no servidor."
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP",
+      "text": "Dica importante"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP_DESC",
+      "text": "Retorna o endereço público IPv4"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SWITCH_QUIET_DESC",
+      "text": "Processamento silencioso"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_EXTIP6_DESC",
+      "text": "Retorna o endereço público IPv6"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_DESC",
+      "text": "Agrupa blocos em um único arquivo"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC",
+      "text": "Dividir nome do arquivo para agrupar em um arquivo"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC",
+      "text": "Diretório para armazenar o arquivo agrupado"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_DESC",
+      "text": "Gera uma modeline compatível com XFree86 3.3.6 a partir dos parâmetros de exibição para monitores CRT"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALPIXELS_DESC",
+      "text": "Quantos pixels existem na horizontal (por exemplo, 1280)?"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALPIXELS_DESC",
+      "text": "Quantos pixels existem na vertical (por exemplo, 960)?"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALFREQ_DESC",
+      "text": "Frequência de atualização vertical em hertz (por exemplo, 75 Hz)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALSYNC_DESC",
+      "text": "Sincronização vertical em microssegundos (por exemplo, 0 microssegundos)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALBLANKING_DESC",
+      "text": "Apagamento vertical em microssegundos (por exemplo, 500 microssegundos)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALSYNC_DESC",
+      "text": "Sincronização horizontal em microssegundos (por exemplo, 1 microssegundo)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALBLANKING_DESC",
+      "text": "Apagamento horizontal em microssegundos (por exemplo, 3 microssegundos)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOFRONTPORCH_DESC",
+      "text": "Proporção de varanda frontal vertical (por exemplo, 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOSYNC_DESC",
+      "text": "Proporção de sincronização vertical (por exemplo, 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_VERTICALRATIOBACKPORCH_DESC",
+      "text": "Proporção de varanda traseira vertical (por exemplo, 10)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOFRONTPORCH_DESC",
+      "text": "Proporção de varanda frontal horizontal (por exemplo, 1)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOSYNC_DESC",
+      "text": "Proporção de sincronização horizontal (por exemplo, 4)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_ARGUMENT_HORIZONTALRATIOBACKPORCH_DESC",
+      "text": "Proporção de varanda traseira horizontal (por exemplo, 7)"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_DESC",
+      "text": "Divide um arquivo em um grupo de partes"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_FILE_DESC",
+      "text": "Arquivo a ser dividido em partes"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_OUTPUTDIR_DESC",
+      "text": "Diretório para armazenar as partes"
+    },
+    {
+      "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_SPLITFILE_ARGUMENT_CHUNKSIZE_DESC",
+      "text": "Tamanho da parte em bytes"
     }
   ]
 }

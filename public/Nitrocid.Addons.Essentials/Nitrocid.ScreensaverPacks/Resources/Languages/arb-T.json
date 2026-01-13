@@ -1831,6 +1831,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "كم ميلي ثانية يجب الانتظار قبل إنشاء متاهة جديدة؟"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "يحاكي تلاشي الخلفية الملونة إلى اللون الأسود بشكل دائري بدءًا من المنتصف."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "يعرض ثلاثة مربعات: مربع للساعات، وآخر للدقائق، وثالث للثواني."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "يحاكي انحناء الألوان وانتقالها ببطء."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "ينشئ نقطة في مكان ما على الشاشة وينشرها لتغطي كامل الشاشة (نصف قطر الدائرة)."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "يحاكي تبخر القطرات."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "يُكرر الأحرف الإنجليزية باستخدام Figlet."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "يعرض مجموعة من الخطوط التي تملأ الشاشة."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "يعرض خطين يمتدان من الأسفل إلى الأعلى ويملآن الشاشة."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "يعرض شاشة طرفية قديمة الطراز تعرض أسماء الطلاب ودرجاتهم في جميع المواد، على غرار دفتر درجات جامعي قديم."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "يحاكي تشويش التلفزيون (تشويش رمادي أو تشويش ملون)."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "يعرض قوسًا دائريًا يملأ نفسه في منتصف الشاشة."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "يعرض دائرة متنامية تملأ الشاشة بالكامل قبل أن تنمو دائرة أخرى فوقها."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "يعرض قطرات ماء تتساقط من أعلى الشاشة، كما لو كان الجو ممطرًا في الخارج."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "يعرض تأثير تموج حي من المنتصف."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "يكشف عن لون الخلفية المعروض. خلف الكتلة (كما لو كنت تُسلط ضوءًا على شيء ما في غرفة مظلمة)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "يكشف النص المطبوع في الخلفية"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "يعرض مخططًا موجيًا من يمين الشاشة إلى يسارها"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "تدعم شاشة التوقف هذه النصوص المكتوبة في ملف. مرر مسار الملف بالكامل إلى هذا الحقل، وستعرض شاشة التوقف محتويات الملف بشكل مناسب."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "حرف الخط العمودي"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "حرف لرسم خط عمودي. تأكد من إدخال حرف واحد فقط."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "كثافة الخطوط"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "ما هو معدل تكرار إنشاء الخطوط؟"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "كثافة الخطوط العمودية"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "ما هو معدل تكرار إنشاء الخطوط العمودية؟"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "كثافة عكس الاتجاه"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "ما هو معدل عكس اتجاه الخط (من اليمين إلى اليسار بدلًا من اليسار إلى اليمين، أو من الأسفل إلى الأعلى بدلًا من الأعلى إلى الأسفل)؟"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "تأخير الخط"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "كم عدد المللي ثواني التي يجب الانتظار قبل إضافة خط جديد؟"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "ما هو الوقت بالمللي ثانية قبل إضافة خط جديد؟ ضوضاء الألوان"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "سواءً لمحاكاة الضوضاء في أجهزة التلفزيون الملونة أو أحادية اللون"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "الحد الأدنى للدرجة"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "الحد الأدنى لدرجة الامتحان في المواد الدراسية للطالب"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "الحد الأقصى للدرجة"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "الحد الأقصى لدرجة الامتحان في المواد الدراسية للطالب"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "يحاكي اختراق الأنظمة"
     }
   ]
 }

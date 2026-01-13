@@ -97,6 +97,14 @@
     {
       "loc": "NKS_MISC_SPLASHES_WELCOME_RESTARTING",
       "text": "Reincipiens"
+    },
+    {
+      "loc": "NKS_MISC_SPLASHES_WELCOME_PLEASEWAIT",
+      "text": "Quaeso exspecta."
+    },
+    {
+      "loc": "NKS_SPLASHPACKS_SETTINGS_SPLASH_LOGBOX_DESC",
+      "text": "Ostendit arcam quae relationibus, quas haec pagina aperiens servat, impletur."
     }
   ]
 }

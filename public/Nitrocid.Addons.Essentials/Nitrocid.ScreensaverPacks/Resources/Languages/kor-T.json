@@ -1806,6 +1806,146 @@
     {
       "loc": "NKS_SCREENSAVERPACKS_MAZER_SETTINGS_NEWMAZE_DESC",
       "text": "새로운 미로를 생성하기 전에 몇 밀리초를 기다려야 합니까?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BACKIMPLOSION_SETTINGS_DESC",
+      "text": "중앙에서 시작하여 원형으로 색이 있는 배경이 점차 검은색으로 변하는 효과를 시뮬레이션합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BLOCKCLOCK_SETTINGS_DESC",
+      "text": "시간, 분, 초를 나타내는 세 개의 블록을 표시합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLOROLOGY_SETTINGS_DESC",
+      "text": "느린 색상 변화와 전환 효과를 시뮬레이션합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COLORSPREAD_SETTINGS_DESC",
+      "text": "화면 어딘가에 점을 찍고 콘솔 전체(원형 반지름)로 퍼뜨립니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_EVAPORATE_SETTINGS_DESC",
+      "text": "물방울이 증발하는 효과를 시뮬레이션합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LETTERCYCLE_SETTINGS_DESC",
+      "text": "Figlet을 사용하여 영문자를 순환 표시합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINESABER_SETTINGS_DESC",
+      "text": "콘솔을 채우는 여러 줄을 표시합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINEUP_SETTINGS_DESC",
+      "text": "콘솔을 채우면서 아래에서 위로 올라오는 두 줄을 표시합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_DESC",
+      "text": "옛날 대학 성적표처럼 학생 이름과 모든 과목의 성적이 표시되는 옛날식 터미널 화면을 표시합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_DESC",
+      "text": "텔레비전 노이즈(흑백 노이즈 또는 컬러 노이즈)를 시뮬레이션합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PI_SETTINGS_DESC",
+      "text": "콘솔 중앙을 채우는 원형 호를 표시합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_PRIMUS_SETTINGS_DESC",
+      "text": "화면 전체를 채우는 원이 커진 후 그 위에 또 다른 원이 커지는 효과를 표시합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RAINING_SETTINGS_DESC",
+      "text": "마치 비가 오는 것처럼 콘솔 상단에서 물방울이 떨어지는 효과를 표시합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_RIPPLE_SETTINGS_DESC",
+      "text": "중앙에서 시작되는 실시간 물결 효과를 표시합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_SWIVELREVEAL_SETTINGS_DESC",
+      "text": "블록 뒤에 표시되는 배경색을 보여줍니다. (어두운 방에서 손전등으로 어떤 물체를 비추는 것처럼)"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_TEXTREVEAL_SETTINGS_DESC",
+      "text": "배경에 인쇄된 텍스트를 보여줍니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC",
+      "text": "콘솔 오른쪽에서 왼쪽으로 파형을 표시합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_COMMON_SETTINGS_TEXTSHOWN_TIP",
+      "text": "이 화면 보호기는 파일에 저장된 텍스트를 지원합니다. 이 필드에 전체 파일 경로를 입력하면 화면 보호기가 파일 내용을 적절하게 표시합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_NAME",
+      "text": "세로선 문자"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINECHAR_DESC",
+      "text": "세로선을 만들 문자입니다. 한 문자만 입력해야 합니다."
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_NAME",
+      "text": "선 밀도"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_LINEDENSITY_DESC",
+      "text": "선을 얼마나 자주 생성합니까?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_NAME",
+      "text": "세로선 밀도"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_VERTICALLINEDENSITY_DESC",
+      "text": "세로선을 얼마나 자주 생성합니까?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_NAME",
+      "text": "선 방향 반전 밀도"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_LINES_SETTINGS_REVERSEDENSITY_DESC",
+      "text": "선의 방향을 얼마나 자주 반전시킵니까(왼쪽에서 오른쪽 대신 오른쪽으로, 또는 위에서 아래 대신 아래에서 아래로)?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_NAME",
+      "text": "선 지연"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_BOXSTITCH_SETTINGS_LINEDELAY_DESC",
+      "text": "새 줄을 추가하기 전에 몇 밀리초 동안 대기합니까?"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_NAME",
+      "text": "색상 노이즈"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_NOISY_SETTINGS_COLOR_DESC",
+      "text": "컬러 TV 또는 흑백 TV의 노이즈를 시뮬레이션할지 여부"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_NAME",
+      "text": "최소 점수"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MINGRADE_DESC",
+      "text": "학생의 과목별 최소 시험 점수"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_NAME",
+      "text": "최대 점수"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_MARKSCREEN_SETTINGS_MAXGRADE_DESC",
+      "text": "학생의 과목별 최대 시험 점수"
+    },
+    {
+      "loc": "NKS_SCREENSAVERPACKS_HACKING_DESC",
+      "text": "시스템을 해킹하는 사람을 시뮬레이션합니다."
     }
   ]
 }

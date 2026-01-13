@@ -36,7 +36,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     /// </summary>
     public class WaveRunDisplay : BaseScreensaver, IScreensaver
     {
-        // TODO: NKS_SCREENSAVERPACKS_WAVERUN_SETTINGS_DESC Shows a wave diagram from the right to the left of the console
         private Color waveColor = Color.Empty;
         private int posIdx = 0;
         private int blankAreas = 0;

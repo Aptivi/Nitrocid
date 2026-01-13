@@ -40,7 +40,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
             var ispInfo = IspTools.GetIspConfig(MailLogin.Authentication.UserName);
 
             // Print ISP info
-            // TODO: NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER -> ISP info for
             SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_HEADER") + $" {MailLogin.Authentication.UserName}", true);
             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME"), ispInfo.EmailProvider?.DisplayName ?? "");
             ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME"), ispInfo.EmailProvider?.DisplayShortName ?? "");
@@ -49,7 +48,6 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Commands
             TextWriterRaw.Write();
 
             // Print server info
-            // TODO: NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER -> ISP servers for
             SeparatorWriterColor.WriteSeparator(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_SERVERS_HEADER") + $" {MailLogin.Authentication.UserName}", true);
             foreach (var server in ispInfo.EmailProvider?.IncomingServer ?? [])
             {
