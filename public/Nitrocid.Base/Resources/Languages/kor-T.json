@@ -9378,6 +9378,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "모델라인을 한 줄로 출력하세요."
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "커널의 기본 테마"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "곳곳에 악센트가 있어요!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "무색, 연기가 나고 부식성이 강한 액체"
     }
   ]
 }

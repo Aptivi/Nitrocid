@@ -67,6 +67,8 @@ using Nitrocid.Base.Kernel.Threading.Watchdog;
 using Nitrocid.Base.Kernel.Time.Timezones;
 using Nitrocid.Base.Network.Types.RPC;
 using Nitrocid.Base.Shell.Shells;
+using Terminaux.Themes;
+using Nitrocid.Base.Misc.Reflection.Internal;
 
 #if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;
@@ -155,6 +157,14 @@ namespace Nitrocid.Base.Kernel.Starting
                 // A title
                 ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
                 ShellManager.InitialTitle = KernelReleaseInfo.ConsoleTitle;
+
+                // Override main themes for Terminaux
+                ThemeTools.EditTheme("Default", new(new StreamReader(ResourcesManager.GetData("Default.json", ResourcesType.Themes) ??
+                    throw new KernelException(KernelExceptionType.Color))));
+                ThemeTools.EditTheme("Dynamic", new(new StreamReader(ResourcesManager.GetData("Dynamic.json", ResourcesType.Themes) ??
+                    throw new KernelException(KernelExceptionType.Color))));
+                ThemeTools.EditTheme("NitricAcid", new(new StreamReader(ResourcesManager.GetData("NitricAcid.json", ResourcesType.Themes) ??
+                    throw new KernelException(KernelExceptionType.Color))));
 
                 // Initialize pre-boot splash (if enabled)
                 if (KernelEntry.PrebootSplash)
@@ -357,7 +367,7 @@ namespace Nitrocid.Base.Kernel.Starting
             if (Config.MainConfig.ShowAppInfoOnBoot & !Config.MainConfig.EnableSplash)
             {
                 SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVINFO"), ThemeColorsTools.GetColor(ThemeColorType.Stage));
-                TextWriterColor.Write("OS: " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_OS"), System.Environment.OSVersion.ToString());
+                TextWriterColor.Write("OS: " + LanguageTools.GetLocalized("NKS_KERNEL_STARTING_OS"), Environment.OSVersion.ToString());
                 TextWriterColor.Write("KSAPI: " + $"v{KernelReleaseInfo.ApiVersion}");
             }
         }
@@ -839,6 +849,11 @@ namespace Nitrocid.Base.Kernel.Starting
 
                 // Remove the shell completions
                 ShellCommon.UnregisterCompletions();
+
+                // Reset main themes
+                ThemeTools.ResetTheme("Default");
+                ThemeTools.ResetTheme("Dynamic");
+                ThemeTools.ResetTheme("NitricAcid");
 
                 // Check for errors
                 if (exceptions.Count > 0)

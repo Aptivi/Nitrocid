@@ -9402,6 +9402,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "Imprima la línea del modelo como una sola línea"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "El tema predeterminado para el kernel"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "Acentos por todas partes!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Líquido incoloro, humeante y altamente corrosivo."
     }
   ]
 }

@@ -9381,6 +9381,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "Skriv ut modellinen som én linje"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "Standardtemaet for kjernen"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "Aksenter overalt!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Fargeløs, rykende og sterkt etsende væske"
     }
   ]
 }

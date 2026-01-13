@@ -9423,6 +9423,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "Afficher la ligne de mode sur une seule ligne"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "Le thème par défaut du noyau"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "Des accents partout !"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Liquide incolore, fumant et hautement corrosif"
     }
   ]
 }

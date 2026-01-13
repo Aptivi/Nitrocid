@@ -9380,6 +9380,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "將模型行列印為一行"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "內核的預設主題"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "到處都是口音！"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "無色、發煙、高腐蝕性液體"
     }
   ]
 }

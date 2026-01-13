@@ -9403,6 +9403,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "اطبع سطر النموذج كسطر واحد"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "الموضوع الافتراضي للنواة"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "لهجات في كل مكان!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "سائل عديم اللون، دخاني، وشديد التآكل"
     }
   ]
 }

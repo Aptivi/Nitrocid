@@ -7146,5 +7146,14 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC" xml:space="preserve">
     <value>모델라인을 한 줄로 출력하세요.</value>
   </data>
+  <data name="NKS_THEMES_DEFAULT_DESC" xml:space="preserve">
+    <value>커널의 기본 테마</value>
+  </data>
+  <data name="NKS_THEMES_DYNAMIC_DESC" xml:space="preserve">
+    <value>곳곳에 악센트가 있어요!</value>
+  </data>
+  <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
+    <value>무색, 연기가 나고 부식성이 강한 액체</value>
+  </data>
 
 </root>

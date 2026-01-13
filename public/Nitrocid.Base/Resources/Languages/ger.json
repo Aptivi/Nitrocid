@@ -9386,6 +9386,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "Drucken Sie die Modellzeile als eine Zeile"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "Das Standarddesign für den Kernel"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "Überall Akzente!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Farblose, rauchende und stark ätzende Flüssigkeit"
     }
   ]
 }

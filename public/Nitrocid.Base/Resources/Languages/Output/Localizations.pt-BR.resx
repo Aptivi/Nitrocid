@@ -7146,5 +7146,14 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC" xml:space="preserve">
     <value>Imprima a modeline como uma única linha.</value>
   </data>
+  <data name="NKS_THEMES_DEFAULT_DESC" xml:space="preserve">
+    <value>O tema padrão para o kernel</value>
+  </data>
+  <data name="NKS_THEMES_DYNAMIC_DESC" xml:space="preserve">
+    <value>Sotaques em todos os lugares!</value>
+  </data>
+  <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
+    <value>Líquido incolor, fumegante e altamente corrosivo</value>
+  </data>
 
 </root>

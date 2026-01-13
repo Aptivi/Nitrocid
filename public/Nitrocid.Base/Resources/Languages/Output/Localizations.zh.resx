@@ -7146,5 +7146,14 @@
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC" xml:space="preserve">
     <value>將模型行列印為一行</value>
   </data>
+  <data name="NKS_THEMES_DEFAULT_DESC" xml:space="preserve">
+    <value>內核的預設主題</value>
+  </data>
+  <data name="NKS_THEMES_DYNAMIC_DESC" xml:space="preserve">
+    <value>到處都是口音！</value>
+  </data>
+  <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
+    <value>無色、發煙、高腐蝕性液體</value>
+  </data>
 
 </root>

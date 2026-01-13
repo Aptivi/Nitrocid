@@ -9377,6 +9377,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "Imprime lineam exemplaris ut unam lineam"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "The default theme pro nucleo"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "ubique accentum!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Hyalina, fumans et liquida valde mordax"
     }
   ]
 }

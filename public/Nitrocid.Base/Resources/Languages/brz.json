@@ -9376,6 +9376,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "Imprima a modeline como uma única linha."
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "O tema padrão para o kernel"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "Sotaques em todos os lugares!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Líquido incolor, fumegante e altamente corrosivo"
     }
   ]
 }

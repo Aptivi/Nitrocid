@@ -9378,6 +9378,18 @@
     {
       "loc": "NKS_SHELL_SHELLS_UESH_COMMAND_MODELINE_SWITCH_ONELINE_DESC",
       "text": "Εκτυπώστε τη γραμμή μοντέλου ως μία γραμμή"
+    },
+    {
+      "loc": "NKS_THEMES_DEFAULT_DESC",
+      "text": "Το προεπιλεγμένο θέμα για τον πυρήνα"
+    },
+    {
+      "loc": "NKS_THEMES_DYNAMIC_DESC",
+      "text": "Προφορές παντού!"
+    },
+    {
+      "loc": "NKS_THEMES_NITRICACID_DESC",
+      "text": "Άχρωμο, ατμίζον και εξαιρετικά διαβρωτικό υγρό"
     }
   ]
 }
