@@ -49,6 +49,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         internal static int invadersSpeed = 10;
         private static int SpaceshipLeft = 0;
         private static int score = 0;
+        private static int cycles = 0;
         private readonly static int MaxBullets = 10;
         private readonly static List<(int, int)> Bullets = [];
         private readonly static int MaxMeteors = 10;
@@ -68,7 +69,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             Meteors.Clear();
             enemies.Clear();
 
-            // Reset the score
+            // Reset the score and the cycles
+            cycles = 0;
             score = 0;
 
             // Make the spaceship width in the center
@@ -131,6 +133,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Important variables
                 bool reversing = false;
                 bool movingDown = false;
+                bool movedDown = false;
 
                 while (!GameEnded)
                 {
@@ -225,37 +228,42 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     }
 
                     // Draw the enemies, and move them, depending on if the last enemy or the first enemy is about to touch the right/left edges
-                    bool movedDown = false;
-                    for (int enemyIndex = enemies.Count - 1; enemyIndex >= 0; enemyIndex -= 1)
-                    {
-                        var enemy = enemies[enemyIndex];
-                        if (movingDown)
-                        {
-                            enemies[enemyIndex] = (enemy.Item1, enemy.Item2 + 1);
-                            buffer.Append(DrawEnemy(enemy.Item1, enemy.Item2));
-                        }
-                        else
-                            enemies[enemyIndex] = (enemy.Item1 + (reversing ? -1 : 1), enemy.Item2);
-                    }
-                    if (movingDown)
-                    {
-                        movingDown = false;
-                        movedDown = true;
-                    }
-                    if (!movedDown)
+                    if (cycles > 10)
                     {
                         for (int enemyIndex = enemies.Count - 1; enemyIndex >= 0; enemyIndex -= 1)
                         {
                             var enemy = enemies[enemyIndex];
-                            buffer.Append(DrawEnemy(enemy.Item1, enemy.Item2));
 
                             // Check if enemies need to reverse the direction and to move down once
-                            if ((enemy.Item1 + 24 >= ConsoleWrapper.WindowWidth - 3 || enemy.Item1 <= 3) && !movingDown)
+                            if ((enemy.Item1 + 24 > ConsoleWrapper.WindowWidth - 3 || enemy.Item1 < 3) && !movingDown && !movedDown)
                             {
                                 reversing = !reversing;
                                 movingDown = true;
                             }
                         }
+                        for (int enemyIndex = enemies.Count - 1; enemyIndex >= 0; enemyIndex -= 1)
+                        {
+                            var enemy = enemies[enemyIndex];
+
+                            // Check if enemies need to reverse the direction and to move down once
+                            if (movingDown)
+                            {
+                                enemies[enemyIndex] = (enemy.Item1, enemy.Item2 + 1);
+                                movedDown = true;
+                            }
+                            else if (movedDown || !movingDown)
+                            {
+                                enemies[enemyIndex] = (enemy.Item1 + (reversing ? -1 : 1), enemy.Item2);
+                                movedDown = false;
+                            }
+                        }
+                        movingDown = false;
+                        cycles = 0;
+                    }
+                    for (int enemyIndex = enemies.Count - 1; enemyIndex >= 0; enemyIndex -= 1)
+                    {
+                        var enemy = enemies[enemyIndex];
+                        buffer.Append(DrawEnemy(enemy.Item1, enemy.Item2));
                     }
 
                     // Check if the bullet has reached the enemy
@@ -265,7 +273,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         for (int BulletIndex = Bullets.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
                         {
                             var Bullet = Bullets[BulletIndex];
-                            if (Bullet.Item1 >= enemy.Item1 && Bullet.Item1 <= enemy.Item1 + 11 &&
+                            if (Bullet.Item1 >= enemy.Item1 && Bullet.Item1 <= enemy.Item1 + 22 &&
                                 Bullet.Item2 >= enemy.Item2 && Bullet.Item2 <= enemy.Item2 + 8)
                             {
                                 // The enemy got killed. Remove it, and remove the bullet.
@@ -280,13 +288,14 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int enemyIndex = enemies.Count - 1; enemyIndex >= 0; enemyIndex -= 1)
                     {
                         var enemy = enemies[enemyIndex];
-                        if (enemy.Item2 >= ConsoleWrapper.WindowHeight - 3)
+                        if (enemy.Item2 + 8 >= ConsoleWrapper.WindowHeight - 3)
                             GameEnded = true;
                     }
 
                     // Wait for a few milliseconds
                     TextWriterRaw.WritePlain(buffer.ToString(), false);
-                    ThreadManager.SleepNoBlock(100, InvadersDrawThread);
+                    ThreadManager.SleepNoBlock(10, InvadersDrawThread);
+                    cycles++;
                 }
             }
             catch (ThreadInterruptedException)
