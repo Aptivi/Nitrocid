@@ -164,7 +164,7 @@ namespace Nitrocid.Base.Users.Login
                 int width = ConsoleWrapper.WindowWidth - 8;
                 int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
                 int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
-                string versionStr = $"{KernelReleaseInfo.ApiVersion}";
+                string versionStr = $"Nitrocid v{KernelReleaseInfo.VersionFullStr} (API v{KernelReleaseInfo.ApiVersion})";
                 var border = new BoxFrame()
                 {
                     Left = posX,
@@ -176,10 +176,10 @@ namespace Nitrocid.Base.Users.Login
                 };
                 builder.Append(border.Render());
 
-                // Write the program name
+                // Welcome the user
                 int interiorPosX = posX + 3;
                 int interiorWidth = width - 6;
-                string text = $"Nitrocid KS {KernelReleaseInfo.VersionFullStr}";
+                string text = LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME");
                 var figFont = FigletTools.GetFigletFont("thin");
                 int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
                 int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2;

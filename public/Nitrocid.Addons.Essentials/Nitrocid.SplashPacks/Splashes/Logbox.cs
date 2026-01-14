@@ -69,7 +69,7 @@ namespace Nitrocid.SplashPacks.Splashes
             int width = ConsoleWrapper.WindowWidth - 8;
             int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
             int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
-            string versionStr = $"Nitrocid KS {KernelReleaseInfo.VersionFullStr} ({KernelReleaseInfo.ApiVersion})";
+            string versionStr = $"Nitrocid v{KernelReleaseInfo.VersionFullStr} (API v{KernelReleaseInfo.ApiVersion})";
             var border = new BoxFrame()
             {
                 Left = posX,
