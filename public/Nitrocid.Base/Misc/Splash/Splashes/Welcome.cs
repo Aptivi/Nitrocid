@@ -104,7 +104,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             int width = ConsoleWrapper.WindowWidth - 8;
             int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
             int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
-            string versionStr = $"{KernelReleaseInfo.ApiVersion}";
+            string versionStr = $"Nitrocid v{KernelReleaseInfo.VersionFullStr} (API v{KernelReleaseInfo.ApiVersion})";
             var border = new BoxFrame()
             {
                 Left = posX,
@@ -120,7 +120,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             int interiorPosX = posX + 3;
             int interiorWidth = width - 6;
             progress.Width = interiorWidth;
-            string text = $"Nitrocid KS {KernelReleaseInfo.VersionFullStr}";
+            string text = "Nitrocid";
             var figFont = FigletTools.GetFigletFont("thin");
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
@@ -180,7 +180,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             int width = ConsoleWrapper.WindowWidth - 8;
             int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
             int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
-            string versionStr = $"{KernelReleaseInfo.ApiVersion}";
+            string versionStr = $"Nitrocid v{KernelReleaseInfo.VersionFullStr} (API v{KernelReleaseInfo.ApiVersion})";
             var border = new BoxFrame()
             {
                 Left = posX,
@@ -213,23 +213,8 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             };
             builder.Append(figText.Render());
 
-            // Write the version
-            int versionPosY = ConsoleWrapper.WindowHeight / 2 + figHeight - 1;
-            var versionTextRenderer = new AlignedText()
-            {
-                Top = versionPosY,
-                UseColors = true,
-                OneLine = true,
-                Text = $"Nitrocid KS {KernelReleaseInfo.VersionFullStr} ({KernelReleaseInfo.ApiVersion})",
-                Settings = new()
-                {
-                    Alignment = TextAlignment.Middle,
-                }
-            };
-            builder.Append(versionTextRenderer.Render());
-
             // Print the welcome message
-            int welcomeMessagePosY = ConsoleWrapper.WindowHeight / 2 + figHeight + 1;
+            int welcomeMessagePosY = ConsoleWrapper.WindowHeight / 2 + figHeight - 1;
             var welcomeMessageTextRenderer = new AlignedText()
             {
                 Top = welcomeMessagePosY,

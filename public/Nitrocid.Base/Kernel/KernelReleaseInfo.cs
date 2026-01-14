@@ -63,7 +63,7 @@ namespace Nitrocid.Base.Kernel
         ;
 
         // Final console window title
-        internal readonly static string ConsoleTitle = $"Nitrocid v{VersionFullStr} (API v{ApiVersion})"
+        internal readonly static string ConsoleTitle = $"Nitrocid"
 #if !SPECIFIERREL
                                     + $" - {ReleaseSpecifier}"
 #endif
