@@ -49,9 +49,9 @@ namespace Nitrocid.Base.Misc.Reflection.Internal
                 // TODO: NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM -> Resource {0} not found for type {1} in {2}
                 // TODO: NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM -> Resource {0} not found for type {1} in this unknown assembly
                 string message = asm.FullName is not null ?
-                    /* Localizable */ "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM".FormatString(resource, type, asm.FullName) :
-                    /* Localizable */ "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM".FormatString(resource, type);
-                throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized(message));
+                    LanguageTools.GetLocalized("NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM").FormatString(resource, type, asm.FullName) :
+                    LanguageTools.GetLocalized("NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM").FormatString(resource, type);
+                throw new KernelException(KernelExceptionType.Reflection, message);
             }
             return data;
         }

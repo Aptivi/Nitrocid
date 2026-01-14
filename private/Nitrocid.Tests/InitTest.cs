@@ -20,19 +20,22 @@
 using System;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Kernel.Extensions;
-using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
-using Terminaux.Shell.Shells;
-using Nitrocid.Base.Shell.Shells.UESH;
-using Nitrocid.Base.Shell.Shells.Text;
-using Nitrocid.Base.Shell.Shells.Hex;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Kernel.Starting;
+using Nitrocid.Base.Misc.Reflection.Internal;
 using Nitrocid.Base.Shell.Shells.Admin;
 using Nitrocid.Base.Shell.Shells.Debug;
-using Nitrocid.Base.Kernel.Starting;
+using Nitrocid.Base.Shell.Shells.Hex;
+using Nitrocid.Base.Shell.Shells.Text;
+using Nitrocid.Base.Shell.Shells.UESH;
+using Terminaux.Shell.Shells;
+using Terminaux.Themes;
 using Textify.Tools.Placeholder;
 
 [assembly: DoNotParallelize]
@@ -71,6 +74,14 @@ namespace Nitrocid.Tests
             // Add the placeholders
             foreach (var placeholder in KernelInitializers.placeholders)
                 PlaceParse.RegisterCustomPlaceholder(placeholder.Placeholder, placeholder.PlaceholderAction);
+
+            // Override main themes for Terminaux
+            ThemeTools.EditTheme("Default", new(new StreamReader(ResourcesManager.GetData("Default.json", ResourcesType.Themes, typeof(ResourcesManager).Assembly) ??
+                throw new KernelException(KernelExceptionType.Color))));
+            ThemeTools.EditTheme("Dynamic", new(new StreamReader(ResourcesManager.GetData("Dynamic.json", ResourcesType.Themes, typeof(ResourcesManager).Assembly) ??
+                throw new KernelException(KernelExceptionType.Color))));
+            ThemeTools.EditTheme("NitricAcid", new(new StreamReader(ResourcesManager.GetData("NitricAcid.json", ResourcesType.Themes, typeof(ResourcesManager).Assembly) ??
+                throw new KernelException(KernelExceptionType.Color))));
 
             // Create config
             Config.CreateConfig();
