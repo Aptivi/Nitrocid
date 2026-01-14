@@ -9389,6 +9389,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Cairan tidak berwarna, berasap, dan sangat korosif"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "Sumber daya {0} tidak ditemukan untuk tipe {1} di {2}"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "Sumber daya {0} tidak ditemukan untuk tipe {1} di rakitan yang tidak dikenal ini"
     }
   ]
 }

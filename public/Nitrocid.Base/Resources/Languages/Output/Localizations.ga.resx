@@ -7155,5 +7155,11 @@
   <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
     <value>Leacht gan dath, fuming, agus an-chreimneach</value>
   </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM" xml:space="preserve">
+    <value>Acmhainn {0} gan aimsiú don chineál {1} ​​i {2}</value>
+  </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
+    <value>Acmhainn {0} gan aimsiú don chineál {1} ​​sa tionól anaithnid seo</value>
+  </data>
 
 </root>

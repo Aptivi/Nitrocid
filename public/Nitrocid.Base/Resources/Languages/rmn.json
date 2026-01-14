@@ -9390,6 +9390,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Lichid incolor, fumos și foarte coroziv"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "Resursa {0} nu a fost găsită pentru tipul {1} ​​în {2}"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "Resursa {0} nu a fost găsită pentru tipul {1} ​​în acest ansamblu necunoscut"
     }
   ]
 }

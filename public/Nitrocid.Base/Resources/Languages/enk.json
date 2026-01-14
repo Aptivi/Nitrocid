@@ -9388,6 +9388,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Colourless, fuming, and highly corrosive liquid"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "Resource {0} not found for type {1} in {2}"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "Resource {0} not found for type {1} in this unknown assembly"
     }
   ]
 }

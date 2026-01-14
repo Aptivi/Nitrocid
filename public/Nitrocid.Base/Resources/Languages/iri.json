@@ -9390,6 +9390,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Leacht gan dath, fuming, agus an-chreimneach"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "Acmhainn {0} gan aimsiú don chineál {1} ​​i {2}"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "Acmhainn {0} gan aimsiú don chineál {1} ​​sa tionól anaithnid seo"
     }
   ]
 }

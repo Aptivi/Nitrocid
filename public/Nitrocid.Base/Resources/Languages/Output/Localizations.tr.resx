@@ -7155,5 +7155,11 @@
   <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
     <value>Renksiz, dumanlı ve oldukça aşındırıcı sıvı</value>
   </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM" xml:space="preserve">
+    <value>{2} içinde {1} türü için {0} kaynağı bulunamadı.</value>
+  </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
+    <value>Bu bilinmeyen derlemede {1} türü için {0} kaynağı bulunamadı.</value>
+  </data>
 
 </root>

@@ -7155,5 +7155,11 @@
   <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
     <value>Chất lỏng không màu, bốc khói và có tính ăn mòn cao</value>
   </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM" xml:space="preserve">
+    <value>Không tìm thấy tài nguyên {0} cho loại {1} trong {2}</value>
+  </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
+    <value>Không tìm thấy tài nguyên {0} cho loại {1} trong cụm lắp ráp không xác định này</value>
+  </data>
 
 </root>

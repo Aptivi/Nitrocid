@@ -9395,6 +9395,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Kleurloze, dampende en zeer bijtende vloeistof"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "Bron {0} niet gevonden voor type {1} in {2}"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "Bron {0} niet gevonden voor type {1} in deze onbekende assembly"
     }
   ]
 }

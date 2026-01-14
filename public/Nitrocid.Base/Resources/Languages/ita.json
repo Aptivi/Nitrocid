@@ -9392,6 +9392,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Liquido incolore, fumante e altamente corrosivo"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "Risorsa {0} non trovata per il tipo {1} in {2}"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "Risorsa {0} non trovata per il tipo {1} in questo assembly sconosciuto"
     }
   ]
 }

@@ -9388,6 +9388,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Líquido incolor, fumegante e altamente corrosivo"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "Recurso {0} não encontrado para o tipo {1} em {2}"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "Recurso {0} não encontrado para o tipo {1} nesta montagem desconhecida"
     }
   ]
 }

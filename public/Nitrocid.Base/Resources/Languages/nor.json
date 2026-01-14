@@ -9393,6 +9393,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Fargeløs, rykende og sterkt etsende væske"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "Ressurs {0} ikke funnet for typen {1} i {2}"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "Ressurs {0} ikke funnet for typen {1} i denne ukjente samlingen"
     }
   ]
 }

@@ -9414,6 +9414,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Líquido incoloro, humeante y altamente corrosivo."
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "No se encontró el recurso {0} para el tipo {1} en {2}"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "No se encontró el recurso {0} para el tipo {1} en este ensamblado desconocido"
     }
   ]
 }
