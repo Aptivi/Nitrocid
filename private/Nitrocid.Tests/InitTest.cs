@@ -59,29 +59,8 @@ namespace Nitrocid.Tests
                 FilesystemTools.RemoveDirectory(PathsManagement.AppDataPath, false);
             FilesystemTools.MakeDirectory(PathsManagement.AppDataPath, false);
 
-            // Add necessary prompt presets
-            if (!ShellManager.ShellTypeExists("Shell"))
-                ShellManager.RegisterShell("Shell", new UESHShellInfo());
-            if (!ShellManager.ShellTypeExists("TextShell"))
-                ShellManager.RegisterShell("TextShell", new TextShellInfo());
-            if (!ShellManager.ShellTypeExists("HexShell"))
-                ShellManager.RegisterShell("HexShell", new HexShellInfo());
-            if (!ShellManager.ShellTypeExists("AdminShell"))
-                ShellManager.RegisterShell("AdminShell", new AdminShellInfo());
-            if (!ShellManager.ShellTypeExists("DebugShell"))
-                ShellManager.RegisterShell("DebugShell", new DebugShellInfo());
-
-            // Add the placeholders
-            foreach (var placeholder in KernelInitializers.placeholders)
-                PlaceParse.RegisterCustomPlaceholder(placeholder.Placeholder, placeholder.PlaceholderAction);
-
-            // Override main themes for Terminaux
-            ThemeTools.EditTheme("Default", new(new StreamReader(ResourcesManager.GetData("Default.json", ResourcesType.Themes, typeof(ResourcesManager).Assembly) ??
-                throw new KernelException(KernelExceptionType.Color))));
-            ThemeTools.EditTheme("Dynamic", new(new StreamReader(ResourcesManager.GetData("Dynamic.json", ResourcesType.Themes, typeof(ResourcesManager).Assembly) ??
-                throw new KernelException(KernelExceptionType.Color))));
-            ThemeTools.EditTheme("NitricAcid", new(new StreamReader(ResourcesManager.GetData("NitricAcid.json", ResourcesType.Themes, typeof(ResourcesManager).Assembly) ??
-                throw new KernelException(KernelExceptionType.Color))));
+            // Initialize themes, shells, and placeholders
+            KernelInitializers.InitializeEnvironmentComponents();
 
             // Create config
             Config.CreateConfig();
