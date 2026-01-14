@@ -158,13 +158,8 @@ namespace Nitrocid.Base.Kernel.Starting
                 ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
                 ShellManager.InitialTitle = KernelReleaseInfo.ConsoleTitle;
 
-                // Override main themes for Terminaux
-                ThemeTools.EditTheme("Default", new(new StreamReader(ResourcesManager.GetData("Default.json", ResourcesType.Themes) ??
-                    throw new KernelException(KernelExceptionType.Color))));
-                ThemeTools.EditTheme("Dynamic", new(new StreamReader(ResourcesManager.GetData("Dynamic.json", ResourcesType.Themes) ??
-                    throw new KernelException(KernelExceptionType.Color))));
-                ThemeTools.EditTheme("NitricAcid", new(new StreamReader(ResourcesManager.GetData("NitricAcid.json", ResourcesType.Themes) ??
-                    throw new KernelException(KernelExceptionType.Color))));
+                // Initialize themes, shells, and placeholders
+                InitializeEnvironmentComponents();
 
                 // Initialize pre-boot splash (if enabled)
                 if (KernelEntry.PrebootSplash)
@@ -188,27 +183,8 @@ namespace Nitrocid.Base.Kernel.Starting
                 KernelPanic.NotifyBootFailure();
 
                 // Initialize journal path
-                JournalManager.JournalPath = FilesystemTools.GetNumberedFileName(Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Journaling)), PathsManagement.GetKernelPath(KernelPathType.Journaling));
-
-                // Add the main shells
-                SplashReport.ResetProgressReportArea();
-                if (!ShellManager.ShellTypeExists("Shell"))
-                    ShellManager.RegisterShell("Shell", new UESHShellInfo());
-                if (!ShellManager.ShellTypeExists("TextShell"))
-                    ShellManager.RegisterShell("TextShell", new TextShellInfo());
-                if (!ShellManager.ShellTypeExists("HexShell"))
-                    ShellManager.RegisterShell("HexShell", new HexShellInfo());
-                if (!ShellManager.ShellTypeExists("AdminShell"))
-                    ShellManager.RegisterShell("AdminShell", new AdminShellInfo());
-                if (!ShellManager.ShellTypeExists("DebugShell"))
-                    ShellManager.RegisterShell("DebugShell", new DebugShellInfo());
-
-                // Add the placeholders
-                foreach (var placeholder in placeholders)
-                    PlaceParse.RegisterCustomPlaceholder(placeholder.Placeholder, placeholder.PlaceholderAction);
-
-                // Add the shell completions
-                ShellCommon.RegisterCompletions();
+                string journalingPath = PathsManagement.GetKernelPath(KernelPathType.Journaling);
+                JournalManager.JournalPath = FilesystemTools.GetNumberedFileName(Path.GetDirectoryName(journalingPath), journalingPath);
 
 #if NKS_EXTENSIONS
                 // Initialize addons
@@ -906,6 +882,37 @@ namespace Nitrocid.Base.Kernel.Starting
                 // Reset base state
                 KernelEntry.enteredBase = false;
             }
+        }
+
+        internal static void InitializeEnvironmentComponents()
+        {
+            // Add the main shells
+            SplashReport.ResetProgressReportArea();
+            if (!ShellManager.ShellTypeExists("Shell"))
+                ShellManager.RegisterShell("Shell", new UESHShellInfo());
+            if (!ShellManager.ShellTypeExists("TextShell"))
+                ShellManager.RegisterShell("TextShell", new TextShellInfo());
+            if (!ShellManager.ShellTypeExists("HexShell"))
+                ShellManager.RegisterShell("HexShell", new HexShellInfo());
+            if (!ShellManager.ShellTypeExists("AdminShell"))
+                ShellManager.RegisterShell("AdminShell", new AdminShellInfo());
+            if (!ShellManager.ShellTypeExists("DebugShell"))
+                ShellManager.RegisterShell("DebugShell", new DebugShellInfo());
+
+            // Add the shell completions
+            ShellCommon.RegisterCompletions();
+
+            // Add the placeholders
+            foreach (var placeholder in placeholders)
+                PlaceParse.RegisterCustomPlaceholder(placeholder.Placeholder, placeholder.PlaceholderAction);
+
+            // Override main themes for Terminaux
+            ThemeTools.EditTheme("Default", new(new StreamReader(ResourcesManager.GetData("Default.json", ResourcesType.Themes) ??
+                throw new KernelException(KernelExceptionType.Color))));
+            ThemeTools.EditTheme("Dynamic", new(new StreamReader(ResourcesManager.GetData("Dynamic.json", ResourcesType.Themes) ??
+                throw new KernelException(KernelExceptionType.Color))));
+            ThemeTools.EditTheme("NitricAcid", new(new StreamReader(ResourcesManager.GetData("NitricAcid.json", ResourcesType.Themes) ??
+                throw new KernelException(KernelExceptionType.Color))));
         }
 
         private static string PopulateExceptionText(List<Exception> exceptions)
