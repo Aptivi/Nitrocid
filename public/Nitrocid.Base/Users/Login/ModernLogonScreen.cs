@@ -154,7 +154,8 @@ namespace Nitrocid.Base.Users.Login
             var builder = new StringBuilder();
 
             // Clear the console
-            builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
+            if (ConsoleResizeHandler.WasResized() || (ScreenTools.CurrentScreen?.RefreshWasDone ?? false))
+                builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
 
             // Check the screen
             if (actualScreenNum < 0)
