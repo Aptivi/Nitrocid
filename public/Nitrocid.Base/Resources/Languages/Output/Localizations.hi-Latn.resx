@@ -7155,5 +7155,11 @@
   <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
     <value>rangaheen, dhunaadhaar aur atyadhik sankshaarak taral</value>
   </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM" xml:space="preserve">
+    <value>{2} mein taip {1} ke lie risors {0} nahin mila</value>
+  </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
+    <value>is anajaan asembalee mein taip {1} ke lie risors {0} nahin mila</value>
+  </data>
 
 </root>

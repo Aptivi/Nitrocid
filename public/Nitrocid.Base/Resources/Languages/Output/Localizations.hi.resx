@@ -7155,5 +7155,11 @@
   <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
     <value>रंगहीन, धुआँदार और अत्यधिक संक्षारक तरल</value>
   </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM" xml:space="preserve">
+    <value>{2} में टाइप {1} के लिए रिसोर्स {0} नहीं मिला</value>
+  </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
+    <value>इस अनजान असेंबली में टाइप {1} के लिए रिसोर्स {0} नहीं मिला</value>
+  </data>
 
 </root>

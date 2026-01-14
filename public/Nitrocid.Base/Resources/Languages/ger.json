@@ -9398,6 +9398,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Farblose, rauchende und stark ätzende Flüssigkeit"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "Ressource {0} für Typ {1} in {2} nicht gefunden"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "Ressource {0} für Typ {1} in dieser unbekannten Assembly nicht gefunden"
     }
   ]
 }

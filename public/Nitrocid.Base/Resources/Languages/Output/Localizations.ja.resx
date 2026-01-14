@@ -7155,5 +7155,11 @@
   <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
     <value>無色で発煙性があり、非常に腐食性の高い液体</value>
   </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM" xml:space="preserve">
+    <value>{2} 内のタイプ {1} のリソース {0} が見つかりません</value>
+  </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
+    <value>この不明なアセンブリ内のタイプ {1} のリソース {0} が見つかりません</value>
+  </data>
 
 </root>

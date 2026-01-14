@@ -7155,5 +7155,11 @@
   <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
     <value>سائل عديم اللون، دخاني، وشديد التآكل</value>
   </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM" xml:space="preserve">
+    <value>لم يتم العثور على المورد {0} للنوع {1} في {2}</value>
+  </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
+    <value>لم يتم العثور على المورد {0} للنوع {1} في هذا التجميع غير المعروف</value>
+  </data>
 
 </root>

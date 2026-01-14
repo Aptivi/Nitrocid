@@ -9392,6 +9392,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Cecair tidak berwarna, berasap dan sangat menghakis"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "Sumber {0} tidak ditemui untuk jenis {1} dalam {2}"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "Sumber {0} tidak ditemui untuk jenis {1} dalam pemasangan yang tidak diketahui ini"
     }
   ]
 }

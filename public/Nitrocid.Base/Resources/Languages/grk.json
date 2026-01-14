@@ -9390,6 +9390,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Άχρωμο, ατμίζον και εξαιρετικά διαβρωτικό υγρό"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "Δεν βρέθηκε πόρος {0} για τον τύπο {1} στο {2}"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "Δεν βρέθηκε πόρος {0} για τον τύπο {1} σε αυτήν την άγνωστη συναρμολόγηση"
     }
   ]
 }

@@ -9392,6 +9392,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "無色、發煙、高腐蝕性液體"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "在 {2} 中找不到類型為 {1} 的資源 {0}"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "在此未知程式集中找不到類型為 {1} 的資源 {0}"
     }
   ]
 }

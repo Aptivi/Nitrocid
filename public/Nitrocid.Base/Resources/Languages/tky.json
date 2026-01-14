@@ -9390,6 +9390,14 @@
     {
       "loc": "NKS_THEMES_NITRICACID_DESC",
       "text": "Renksiz, dumanlı ve oldukça aşındırıcı sıvı"
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM",
+      "text": "{2} içinde {1} türü için {0} kaynağı bulunamadı."
+    },
+    {
+      "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
+      "text": "Bu bilinmeyen derlemede {1} türü için {0} kaynağı bulunamadı."
     }
   ]
 }

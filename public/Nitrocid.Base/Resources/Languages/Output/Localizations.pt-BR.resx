@@ -7155,5 +7155,11 @@
   <data name="NKS_THEMES_NITRICACID_DESC" xml:space="preserve">
     <value>Líquido incolor, fumegante e altamente corrosivo</value>
   </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM" xml:space="preserve">
+    <value>Recurso {0} não encontrado para o tipo {1} em {2}</value>
+  </data>
+  <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
+    <value>Recurso {0} não encontrado para o tipo {1} nesta montagem desconhecida</value>
+  </data>
 
 </root>
