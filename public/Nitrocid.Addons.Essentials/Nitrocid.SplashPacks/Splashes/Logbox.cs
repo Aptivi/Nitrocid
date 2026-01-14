@@ -44,27 +44,6 @@ namespace Nitrocid.SplashPacks.Splashes
         // Standalone splash information
         public override string SplashName => "Logbox";
 
-        /*
-         *   The welcome splash will look like this (conceptual, 60x14 screen):
-         *   
-         *   :------------------------------- 60 -------------------------------
-         *   :
-         *   :    +----------------------------------------------------------+ (box frame color)
-         *   :    |                                                          |
-         *   :    |                        Nitrocid                          | (progress color, figlet, 5 blocks of height)
-         *   :    |                                                          |
-         *   1    |                        ModeText                          | (neutral color)
-         *   4    |                                                          |
-         *   :    |  ProgressReport                                          | (progress report color)
-         *   :    |  ------------------------------------------------- 100%  | (progress theme color)
-         *   :    |                                                          |
-         *   :    +----------------------------------------------------------+
-         *   :
-         *   :------------------------------- 60 -------------------------------
-         *   
-         *   This is adjusted, depending on the terminal size.
-         */
-
         // Actual logic
         public override string Opening(SplashContext context)
         {
@@ -90,7 +69,7 @@ namespace Nitrocid.SplashPacks.Splashes
             int width = ConsoleWrapper.WindowWidth - 8;
             int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
             int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
-            string versionStr = $"{KernelReleaseInfo.ApiVersion}";
+            string versionStr = $"Nitrocid KS {KernelReleaseInfo.VersionFullStr} ({KernelReleaseInfo.ApiVersion})";
             var border = new BoxFrame()
             {
                 Left = posX,
@@ -101,26 +80,6 @@ namespace Nitrocid.SplashPacks.Splashes
                 Text = versionStr,
             };
             builder.Append(border.Render());
-
-            // Write the version text
-            int interiorPosX = posX + 3;
-            int interiorWidth = width - 6;
-            int versionPosY = 3;
-            string text = $"Nitrocid KS {KernelReleaseInfo.VersionFullStr}";
-            var versionTextRenderer = new AlignedText()
-            {
-                Left = interiorPosX,
-                Top = versionPosY,
-                Width = interiorWidth,
-                UseColors = true,
-                OneLine = true,
-                Text = text,
-                Settings = new()
-                {
-                    Alignment = TextAlignment.Middle,
-                }
-            };
-            builder.Append(versionTextRenderer.Render());
             return builder.ToString();
         }
 
@@ -133,10 +92,10 @@ namespace Nitrocid.SplashPacks.Splashes
             int width = ConsoleWrapper.WindowWidth - 8;
             int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
             int posY = ConsoleWrapper.WindowHeight / 2 - height / 2 - 1;
-            int reportedProgressesHeight = height - 9;
+            int reportedProgressesHeight = height - 6;
             int reportedProgressesWidth = width - 8;
             int reportedProgressesPosX = posX + 4;
-            int reportedProgressesPosY = posY + 4;
+            int reportedProgressesPosY = posY + 2;
             var border = new BoxFrame()
             {
                 Left = reportedProgressesPosX,
@@ -182,13 +141,13 @@ namespace Nitrocid.SplashPacks.Splashes
         }
 
         public override string Report(int Progress, string ProgressReport, params object[] Vars) =>
-            ReportProgress(Progress, ProgressReport, ThemeColorType.Stage, Vars);
+            ReportProgress(Progress, "[I] " + ProgressReport, ThemeColorType.Stage, Vars);
 
         public override string ReportWarning(int Progress, string WarningReport, Exception? ExceptionInfo, params object[] Vars) =>
-            ReportProgress(Progress, WarningReport, ThemeColorType.Warning, Vars);
+            ReportProgress(Progress, "[W] " + WarningReport, ThemeColorType.Warning, Vars);
 
         public override string ReportError(int Progress, string ErrorReport, Exception? ExceptionInfo, params object[] Vars) =>
-            ReportProgress(Progress, ErrorReport, ThemeColorType.Error, Vars);
+            ReportProgress(Progress, "[E] " + ErrorReport, ThemeColorType.Error, Vars);
 
         private string ReportProgress(int Progress, string ProgressReport, ThemeColorType colorType, params object[] Vars)
         {
@@ -203,29 +162,6 @@ namespace Nitrocid.SplashPacks.Splashes
 
             // Write the progress report
             int interiorPosX = posX + 4;
-            int progressReportPosY = posY;
-            string reportedProgress = ProgressReport.FormatString(Vars);
-            var modeTextEraser = new Eraser()
-            {
-                Left = posX + 1,
-                Top = progressReportPosY,
-                Width = width - 2,
-                Height = 1,
-            };
-            var modeTextRenderer = new AlignedText()
-            {
-                Left = interiorPosX,
-                Top = progressReportPosY,
-                Width = width - 2,
-                UseColors = true,
-                OneLine = true,
-                Text = reportedProgress,
-                ForegroundColor = col,
-            };
-            builder.Append(
-                modeTextEraser.Render() +
-                modeTextRenderer.Render()
-            );
 
             // Write the progress bar
             int progressBarPosY = posY + 1;
@@ -236,6 +172,7 @@ namespace Nitrocid.SplashPacks.Splashes
             );
 
             // Return the resulting string
+            string reportedProgress = ConsoleColoring.RenderSetConsoleColor(col) + ProgressReport.FormatString(Vars);
             if ((progresses.Count > 0 && progresses[^1] != reportedProgress) || progresses.Count == 0)
                 progresses.Add(reportedProgress);
             return builder.ToString();
