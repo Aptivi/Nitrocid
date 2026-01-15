@@ -29,7 +29,6 @@ using Terminaux.Themes.Colors;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
 

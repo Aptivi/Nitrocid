@@ -19,25 +19,18 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
 using Nitrocid.Base.Drivers.RNG;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Misc.Screensaver.Displays.Utilities;
-using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using Nitrocid.ScreensaverPacks.Screensavers.Utilities;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.Data.Figlet;
 using Textify.General;

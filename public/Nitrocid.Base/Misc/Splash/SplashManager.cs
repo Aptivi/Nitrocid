@@ -33,7 +33,6 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel;
-using Terminaux.Colors;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Base.Misc.Splash

@@ -37,7 +37,6 @@ using Nitrocid.Base.Shell.Shells.Hex;
 using Nitrocid.Base.Shell.Shells.Admin;
 using Nitrocid.Base.Shell.Shells.Debug;
 using TextifyDep::Textify.Tools.Placeholder;
-using Terminaux.Colors;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Time;

@@ -21,7 +21,6 @@ using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Shell.Commands;
-using System.Net.Http;
 using Nitrocid.Base.Network.Transfer;
 
 namespace Nitrocid.ShellPacks.Commands

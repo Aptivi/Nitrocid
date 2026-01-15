@@ -20,12 +20,10 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using System.Xml.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -35,7 +33,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Analyzers.Common;
 using Nitrocid.LocaleChecker.Resources;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Nitrocid.LocaleChecker.Localization
 {

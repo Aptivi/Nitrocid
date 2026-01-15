@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Colors;

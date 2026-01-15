@@ -18,8 +18,6 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using Nitrocid.Base.Drivers.RNG;
@@ -30,12 +28,9 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation;
 using Terminaux.Inputs;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Textify.Data.Words;
 using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games

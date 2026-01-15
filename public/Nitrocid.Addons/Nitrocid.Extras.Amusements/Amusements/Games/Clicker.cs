@@ -17,24 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
 using System;
 using System.Threading;
-using Terminaux.Colors;
-using Textify.Data.Words;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Languages;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Base.Buffered;
 using System.Text;
-using Textify.General;
 using Nitrocid.Base.Drivers.RNG;
 using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Kernel.Debugging;
 
