@@ -59,7 +59,6 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
             }
         }
 
-        #region Drivers
         /// <summary>
         /// Current random number generator driver
         /// </summary>
@@ -140,6 +139,5 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
             get => DriverHandler.GetDriverName<IEncodingAsymmetricDriver>(DriverHandler.CurrentEncodingAsymmetricDriver);
             set => EncodingAsymmetricDriverTools.SetEncodingAsymmetricDriver(value);
         }
-        #endregion
     }
 }

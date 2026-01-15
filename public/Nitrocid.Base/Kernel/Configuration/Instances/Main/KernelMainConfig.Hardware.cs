@@ -17,12 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json;
-using Nitrocid.Base.Kernel.Configuration.Settings;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Reflection.Internal;
-using Nitrocid.Base.Kernel.Exceptions;
-
 namespace Nitrocid.Base.Kernel.Configuration.Instances
 {
     /// <summary>
@@ -30,22 +24,13 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
     /// </summary>
     public partial class KernelMainConfig : BaseKernelConfig
     {
-        /// <inheritdoc/>
-        [JsonIgnore]
-        public override string Name =>
-            LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_INSTANCES_MAINSETTINGS");
-
-        /// <inheritdoc/>
-        [JsonIgnore]
-        public override SettingsEntry[] SettingsEntries
-        {
-            get
-            {
-                var dataStream = ResourcesManager.GetData("SettingsEntries.json", ResourcesType.Settings) ??
-                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_ENTRIESFAILED_MAIN"));
-                string dataString = ResourcesManager.ConvertToString(dataStream);
-                return ConfigTools.GetSettingsEntries(dataString);
-            }
-        }
+        /// <summary>
+        /// Keep hardware probing messages silent.
+        /// </summary>
+        public bool QuietHardwareProbe { get; set; }
+        /// <summary>
+        /// Make hardware probing messages a bit talkative.
+        /// </summary>
+        public bool VerboseHardwareProbe { get; set; }
     }
 }
