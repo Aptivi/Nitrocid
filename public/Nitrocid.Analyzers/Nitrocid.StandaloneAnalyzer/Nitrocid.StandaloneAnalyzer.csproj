@@ -13,7 +13,7 @@
     <OutputPath>..\..\Nitrocid\KSAnalyzer\</OutputPath>
     <Description>Nitrocid KS Standalone Analyzer</Description>
     <AssemblyTitle>Nitrocid KS Standalone Analyzer</AssemblyTitle>
-    <ApplicationIcon>../../Nitrocid/OfficialAppIcon-NitrocidKS.ico</ApplicationIcon>
+    <ApplicationIcon>../../Nitrocid/OfficialAppIcon-Nitrocid.ico</ApplicationIcon>
   </PropertyGroup>
   <!-- LocaleGen General Information End -->
 

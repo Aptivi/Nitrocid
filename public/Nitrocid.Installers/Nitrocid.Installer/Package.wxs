@@ -10,7 +10,7 @@
             <ComponentRef Id="DesktopIcon" />
         </Feature>
 
-        <Icon Id="icon.ico" SourceFile="..\..\OfficialAppIcon-NitrocidKS.ico"/>
+        <Icon Id="icon.ico" SourceFile="..\..\OfficialAppIcon-Nitrocid.ico"/>
         <Property Id="ARPPRODUCTICON" Value="icon.ico" />
 
         <ui:WixUI
