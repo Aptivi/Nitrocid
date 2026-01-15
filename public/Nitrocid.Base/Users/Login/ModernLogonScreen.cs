@@ -17,16 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Threading;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users.Login.Motd;
@@ -45,108 +41,8 @@ namespace Nitrocid.Base.Users.Login
 {
     internal static class ModernLogonScreen
     {
-        internal static bool renderedFully = false;
         internal static int screenNum = 1;
         internal static List<WidgetRenderInfo[]> canvases = [];
-        internal readonly static KernelThread updateThread = new("Modern Logon Update Thread", true, ScreenHandler);
-
-        internal static void ScreenHandler()
-        {
-            // Make a screen
-            var screen = new Screen();
-            ScreenTools.SetCurrent(screen);
-
-            // Now, do the job
-            try
-            {
-                // Initialize the saved widget canvases
-                canvases = GetLogonPages();
-                int maxLogonScreens = canvases.Count + 1;
-
-                // Main screen loop
-                while (true)
-                {
-                    try
-                    {
-                        if (screenNum > 0 && screenNum <= maxLogonScreens)
-                        {
-                            screen.RemoveBufferedParts();
-                            var part = new ScreenPart();
-                            part.AddDynamicText(() => PrintConfiguredLogonScreen(screenNum, canvases));
-                            screen.AddBufferedPart($"Modern logon screen {screenNum} update part", part);
-
-                            // Render it now
-                            ScreenTools.Render();
-                        }
-                        else
-                        {
-                            // Unknown screen!
-                            screen.RemoveBufferedParts();
-                            var part = new ScreenPart();
-                            part.AddDynamicText(() =>
-                            {
-                                string text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_UNKNOWNSCREENNUM");
-                                string[] lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth);
-                                int top = ConsoleWrapper.WindowHeight / 2 - lines.Length / 2;
-                                var errorText = new AlignedText()
-                                {
-                                    Top = top,
-                                    Text = text,
-                                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error),
-                                    Settings = new()
-                                    {
-                                        Alignment = TextAlignment.Middle,
-                                    }
-                                };
-                                return errorText.Render();
-                            });
-                            screen.AddBufferedPart("Unknown widget updater", part);
-
-                            // Render it now
-                            ScreenTools.Render();
-                        }
-                    }
-                    catch (Exception ex) when (ex is not ThreadInterruptedException)
-                    {
-                        // An error occurred!
-                        screen.RemoveBufferedParts();
-                        var part = new ScreenPart();
-                        part.AddDynamicText(() =>
-                        {
-                            string text = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RENDERFAILED") + (KernelEntry.DebugMode ? $"\n\n{LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RENDERFAILTIP")}" : "");
-                            string[] lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth);
-                            int top = ConsoleWrapper.WindowHeight / 2 - lines.Length / 2;
-                            var errorText = new AlignedText()
-                            {
-                                Top = top,
-                                Text = text,
-                                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error),
-                                Settings = new()
-                                {
-                                    Alignment = TextAlignment.Middle,
-                                }
-                            };
-                            return errorText.Render();
-                        });
-                        DebugWriter.WriteDebug(DebugLevel.E, $"Error rendering the modern logon: {ex.Message}");
-                        DebugWriter.WriteDebugStackTrace(ex);
-                        screen.AddBufferedPart("Error updater", part);
-
-                        // Render it now
-                        ScreenTools.Render();
-                    }
-
-                    // Wait for 1 second
-                    renderedFully = true;
-                    Thread.Sleep(1000);
-                }
-            }
-            catch (ThreadInterruptedException)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "User pressed a key to exit the date and time update thread for modern logon. Proceeding...");
-            }
-            ScreenTools.UnsetCurrent(screen);
-        }
 
         internal static string PrintConfiguredLogonScreen(int screenNum, List<WidgetRenderInfo[]> canvases, bool curtainMode = false)
         {
