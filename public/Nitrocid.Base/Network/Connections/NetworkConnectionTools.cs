@@ -419,14 +419,14 @@ namespace Nitrocid.Base.Network.Connections
                         return;
 
                     // Now, check to see if the user selected "Create a new connection"
-                    if (selectedConnection == availableConnections + 1)
+                    if (selectedConnection == availableConnections)
                     {
                         // Prompt the user to provide connection information
                         DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
                         address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_ADDRESSPROMPT") + " ");
                         connection = establisher(address);
                     }
-                    else if (selectedConnection == availableConnections + 2)
+                    else if (selectedConnection == availableConnections + 1)
                     {
                         // Prompt the user to select a server to connect to from the speed dial
                         var speedDials = SpeedDialTools.ListSpeedDialEntriesByType(connectionType);
@@ -445,7 +445,7 @@ namespace Nitrocid.Base.Network.Connections
                             return;
 
                         // Now, check to see if we're going to connect
-                        if (selectedSpeedDial == speedDials.Length + 1)
+                        if (selectedSpeedDial == speedDials.Length)
                         {
                             // User selected to create a new connection
                             DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
@@ -455,7 +455,7 @@ namespace Nitrocid.Base.Network.Connections
                         else
                         {
                             // Get the address from the speed dial and connect to it
-                            var speedDialKvp = speedDials.ElementAt(selectedSpeedDial - 1);
+                            var speedDialKvp = speedDials.ElementAt(selectedSpeedDial);
                             address = speedDialKvp.Address;
                             DebugWriter.WriteDebug(DebugLevel.I, "Establishing connection to {0}...", vars: [address]);
                             connection = speedEstablisher(address, speedDialKvp);
@@ -465,7 +465,7 @@ namespace Nitrocid.Base.Network.Connections
                     {
                         // User selected connection
                         DebugWriter.WriteDebug(DebugLevel.I, "Establishing connection to {0}...", vars: [selectedConnection]);
-                        connection = availableConnectionInstances[selectedConnection - 1];
+                        connection = availableConnectionInstances[selectedConnection];
                     }
                 }
                 else
@@ -488,7 +488,7 @@ namespace Nitrocid.Base.Network.Connections
                         if (selectedConnectionNumber == -1)
                             return;
                         DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to selected connection number {0}...", vars: [selectedConnectionNumber]);
-                        connection = availableConnectionInstances[selectedConnectionNumber - 1];
+                        connection = availableConnectionInstances[selectedConnectionNumber];
                     }
                     else
                     {

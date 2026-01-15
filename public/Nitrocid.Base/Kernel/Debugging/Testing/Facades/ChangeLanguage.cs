@@ -30,7 +30,7 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             var langChoices = LanguageManager.Languages.Select(kvp => (kvp.Key, kvp.Value.EnglishName)).ToArray();
-            int langIndex = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE"), langChoices) - 1;
+            int langIndex = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_CHANGELANGUAGE_CHOOSE"), langChoices);
             if (langIndex < 0)
                 return;
             string lang = LanguageManager.Languages.Keys.ElementAt(langIndex);

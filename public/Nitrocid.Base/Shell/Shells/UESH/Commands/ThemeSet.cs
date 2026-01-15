@@ -78,11 +78,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                                 );
                                 themeCategoryChoices.Add(ici);
                             }
-                            categoryIndex = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_SELECTCATEGORY"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]) - 1;
-
-                            // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
-                            // even if that PromptSelection returned the abovementioned value, so bail if index is -2
-                            if (categoryIndex == -2 || categoryIndex >= categoryNames.Length)
+                            categoryIndex = SelectionStyle.PromptSelection(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_THEMEPREV_SELECTCATEGORY"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]);
+                            if (categoryIndex == -1 || categoryIndex >= categoryNames.Length)
                             {
                                 ThemeColorsTools.LoadBackground();
                                 return 3;
