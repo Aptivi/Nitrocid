@@ -271,6 +271,8 @@ namespace Nitrocid.Extras.Ssh.SSH
 
                 // Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
                 DebugWriter.WriteDebug(DebugLevel.I, "Opening shell...");
+                Console.InputEncoding = System.Text.Encoding.Default;
+                Console.OutputEncoding = System.Text.Encoding.Default;
                 var SSHS = SSHClient.CreateShell(
                     Console.OpenStandardInput(),
                     Console.OpenStandardOutput(),
@@ -278,7 +280,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                     KernelPlatform.IsOnUnix() ? KernelPlatform.GetTerminalType() : "vt100",
                     (uint)ConsoleWrapper.WindowWidth,
                     (uint)ConsoleWrapper.WindowHeight,
-                    (uint)Console.BufferWidth,
+                    (uint)ConsoleWrapper.BufferWidth,
                     (uint)ConsoleWrapper.BufferHeight,
                     new Dictionary<TerminalModes, uint>()
                 );
@@ -307,6 +309,8 @@ namespace Nitrocid.Extras.Ssh.SSH
                 DebugWriter.WriteDebug(DebugLevel.I, "Connected: {0}", vars: [SSHClient.IsConnected]);
                 TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SSH_DISCONNECTED"));
                 DisconnectionRequested = false;
+                Console.InputEncoding = System.Text.Encoding.Unicode;
+                Console.OutputEncoding = System.Text.Encoding.Unicode;
 
                 // Remove handler for SSH
                 CancellationHandlers.EndLocalCancelScope(SSHDisconnect);
