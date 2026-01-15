@@ -17,12 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json;
-using Nitrocid.Base.Kernel.Configuration.Settings;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Reflection.Internal;
-
 namespace Nitrocid.Base.Kernel.Configuration.Instances
 {
     /// <summary>
@@ -30,21 +24,40 @@ namespace Nitrocid.Base.Kernel.Configuration.Instances
     /// </summary>
     public partial class KernelSaverConfig : BaseKernelConfig
     {
-        /// <inheritdoc/>
-        [JsonIgnore]
-        public override string Name =>
-            LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_INSTANCES_SCREENAVERSETTINGS");
+        private int curtainDelay = 1000;
+        private int curtainPageNumber = 1;
 
-        /// <inheritdoc/>
-        [JsonIgnore]
-        public override SettingsEntry[] SettingsEntries
+        /// <summary>
+        /// [Curtain] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int CurtainDelay
         {
             get
             {
-                var dataStream = ResourcesManager.GetData("ScreensaverSettingsEntries.json", ResourcesType.Settings) ??
-                    throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_EXCEPTION_ENTRIESFAILED_SCREENSAVER"));
-                string dataString = ResourcesManager.ConvertToString(dataStream);
-                return ConfigTools.GetSettingsEntries(dataString);
+                return curtainDelay;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1000;
+                curtainDelay = value;
+            }
+        }
+
+        /// <summary>
+        /// [Curtain] Page number of the login screen to show
+        /// </summary>
+        public int CurtainPageNumber
+        {
+            get
+            {
+                return curtainPageNumber;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 1;
+                curtainPageNumber = value;
             }
         }
     }
