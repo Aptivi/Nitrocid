@@ -101,10 +101,13 @@ namespace Nitrocid.Base.Shell.Homepage
             if (isOnHomepage || !isHomepageEnabled)
                 return;
             isOnHomepage = true;
-            var homeScreen = new Screen();
             int choiceIdx = 0;
             int buttonHighlight = 0;
             var choices = PopulateChoices();
+            var homeScreen = new Screen
+            {
+                CycleFrequency = 1000
+            };
 
             // Handle paging
             List<WidgetRenderInfo[]> canvases = GetHomepagePages();
@@ -116,6 +119,7 @@ namespace Nitrocid.Base.Shell.Homepage
                 // Create a screen for the homepage
                 var homeScreenBuffer = new ScreenPart();
                 ScreenTools.SetCurrent(homeScreen);
+                ScreenTools.SetCurrentCyclic(homeScreen);
                 ThemeColorsTools.LoadBackground();
 
                 // Now, render the homepage
@@ -139,28 +143,18 @@ namespace Nitrocid.Base.Shell.Homepage
                     action.Invoke();
                 }
 
-                // Render the thing and wait for a keypress
+                // Main loop
+                ScreenTools.StartCyclicScreen();
                 bool exiting = false;
-                bool render = true;
+                bool hold = false;
                 while (!exiting)
                 {
+                    if (hold)
+                        ScreenTools.StartCyclicScreen();
+                    ScreenTools.Render();
+
                     // Render and wait for input for a second
-                    if (render)
-                    {
-                        ScreenTools.Render();
-                        render = false;
-                    }
-                    InputEventInfo? data = null;
-                    bool idle = !SpinWait.SpinUntil(() =>
-                    {
-                        data = Input.ReadPointerOrKeyNoBlock();
-                        return data.EventType == InputEventType.Keyboard || data.EventType == InputEventType.Mouse;
-                    }, 1000);
-                    if (idle)
-                    {
-                        render = true;
-                        continue;
-                    }
+                    var data = Input.ReadPointerOrKey();
 
                     // Read the available input
                     if (data?.PointerEventContext is PointerEventContext context)
@@ -216,14 +210,17 @@ namespace Nitrocid.Base.Shell.Homepage
                         if (isWithinSettings)
                         {
                             if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
+                            {
+                                ScreenTools.StopCyclicScreen();
+                                hold = true;
                                 SettingsApp.OpenMainPage();
-                            render = true;
+                                homeScreen.RequireRefresh();
+                            }
                         }
                         else if (isWithinAbout)
                         {
                             if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
                                 OpenAboutBox();
-                            render = true;
                         }
                         else if (isWithinOptions)
                         {
@@ -236,33 +233,39 @@ namespace Nitrocid.Base.Shell.Homepage
                                 {
                                     choiceIdx = finalPos;
                                     if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
+                                    {
+                                        ScreenTools.StopCyclicScreen();
+                                        hold = true;
                                         DoAction(choiceIdx);
+                                        homeScreen.RequireRefresh();
+                                    }
                                 }
-                                render = true;
                             }
                             else if (context.ButtonPress == PointerButtonPress.Scrolled)
                             {
                                 if (context.Button == PointerButton.WheelUp)
                                 {
-                                    choiceIdx--;
+                                    choiceIdx -= 3;
                                     if (choiceIdx < 0)
-                                        choiceIdx++;
-                                    render = true;
+                                        choiceIdx = 0;
                                 }
                                 else if (context.Button == PointerButton.WheelDown)
                                 {
-                                    choiceIdx++;
+                                    choiceIdx += 3;
                                     if (choiceIdx >= choices.Length)
-                                        choiceIdx--;
-                                    render = true;
+                                        choiceIdx = choices.Length - 1;
                                 }
                             }
                         }
                         else if (isWithinNotifications)
                         {
                             if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
+                            {
+                                ScreenTools.StopCyclicScreen();
+                                hold = true;
                                 NotificationsCli.OpenNotificationsCli();
-                            render = true;
+                                homeScreen.RequireRefresh();
+                            }
                         }
                         if (context.ButtonPress == PointerButtonPress.Moved)
                         {
@@ -274,12 +277,10 @@ namespace Nitrocid.Base.Shell.Homepage
                                 buttonHighlight = 1;
                             else if (isWithinOptions)
                                 buttonHighlight = 0;
-                            render = true;
                         }
                     }
                     else if (data?.ConsoleKeyInfo is ConsoleKeyInfo keypress)
                     {
-                        render = true;
                         int widgetHeight = ConsoleWrapper.WindowHeight - 10;
                         int currentPage = (choiceIdx - 1) / widgetHeight;
                         int startIndex = widgetHeight * currentPage;
@@ -293,7 +294,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                     break;
                                 choiceIdx++;
                                 if (choiceIdx >= choices.Length)
-                                    choiceIdx--;
+                                    choiceIdx = 0;
                                 break;
                             case ConsoleKey.UpArrow:
                                 if (pageNumber != 1)
@@ -302,7 +303,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                     break;
                                 choiceIdx--;
                                 if (choiceIdx < 0)
-                                    choiceIdx++;
+                                    choiceIdx = choices.Length - 1;
                                 break;
                             case ConsoleKey.Home:
                                 if (pageNumber != 1)
@@ -344,13 +345,28 @@ namespace Nitrocid.Base.Shell.Homepage
                                 if (pageNumber != 1)
                                     break;
                                 if (buttonHighlight == 1)
+                                {
+                                    ScreenTools.StopCyclicScreen();
+                                    hold = true;
                                     NotificationsCli.OpenNotificationsCli();
+                                    homeScreen.RequireRefresh();
+                                }
                                 else if (buttonHighlight == 2)
+                                {
+                                    ScreenTools.StopCyclicScreen();
+                                    hold = true;
                                     SettingsApp.OpenMainPage();
+                                    homeScreen.RequireRefresh();
+                                }
                                 else if (buttonHighlight == 3)
                                     OpenAboutBox();
                                 else
+                                {
+                                    ScreenTools.StopCyclicScreen();
+                                    hold = true;
                                     DoAction(choiceIdx);
+                                    homeScreen.RequireRefresh();
+                                }
                                 break;
                             case ConsoleKey.LeftArrow:
                                 pageNumber--;
@@ -385,6 +401,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                     exiting = true;
                                     Login.LogoutRequested = true;
                                 }
+                                homeScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.S:
                                 exiting = true;
@@ -397,12 +414,10 @@ namespace Nitrocid.Base.Shell.Homepage
                                         ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiBoxForeground),
                                         BackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiBoxBackground),
                                     });
+                                homeScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.P:
                                 AudioCuesTools.PlayThemeMusic();
-                                break;
-                            default:
-                                render = false;
                                 break;
                         }
                     }
@@ -419,6 +434,8 @@ namespace Nitrocid.Base.Shell.Homepage
             finally
             {
                 isOnHomepage = false;
+                ScreenTools.StopCyclicScreen();
+                ScreenTools.UnsetCurrentCyclic();
                 ScreenTools.UnsetCurrent(homeScreen);
                 ThemeColorsTools.LoadBackground();
             }
