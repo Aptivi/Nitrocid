@@ -5,7 +5,7 @@
 <br>
     
 <img
-  src = 'https://cdn.jsdelivr.net/gh/Aptivi/Nitrocid@main/public/Nitrocid/OfficialAppIcon-NitrocidKS-512.png'
+  src = 'https://cdn.jsdelivr.net/gh/Aptivi/Nitrocid@main/public/Nitrocid/OfficialAppIcon-Nitrocid-512.png'
   width = 256
   align = center
 />

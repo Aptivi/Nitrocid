@@ -7,7 +7,7 @@
     <AssemblyTitle>Nitrocid KS</AssemblyTitle>
     <Description>Simulates our future-planned kernel, Nitrocid Kernel</Description>
     <OutputPath>KSBuild\</OutputPath>
-    <ApplicationIcon>OfficialAppIcon-NitrocidKS.ico</ApplicationIcon>
+    <ApplicationIcon>OfficialAppIcon-Nitrocid.ico</ApplicationIcon>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>

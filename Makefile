@@ -5,7 +5,7 @@ OUTPUT = "$(ROOT_DIR)/public/Nitrocid/KSBuild/net10.0"
 BINARIES = "$(ROOT_DIR)/assets/ks" "$(ROOT_DIR)/assets/ks-rkm"
 MANUALS = "$(ROOT_DIR)/assets/ks.1" "$(ROOT_DIR)/assets/ks-rkm.1"
 DESKTOPS = "$(ROOT_DIR)/assets/ks.desktop"
-BRANDINGS = "$(ROOT_DIR)/public/Nitrocid/OfficialAppIcon-NitrocidKS-512.png"
+BRANDINGS = "$(ROOT_DIR)/public/Nitrocid/OfficialAppIcon-Nitrocid-512.png"
 
 ARCH := $(shell if [ `uname -m` = "x86_64" ]; then echo "linux-x64"; else echo "linux-arm64"; fi)
 

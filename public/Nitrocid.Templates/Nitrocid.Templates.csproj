@@ -9,7 +9,7 @@
     <PackageTags>dotnet-new;templats;ks;kernel;simulator</PackageTags>
     <!-- URL settings -->
     <PackageProjectUrl>https://github.com/Aptivi/Nitrocid</PackageProjectUrl>
-    <PackageIcon>OfficialAppIcon-NitrocidKS-512.png</PackageIcon>
+    <PackageIcon>OfficialAppIcon-Nitrocid-512.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series-2</PackageReleaseNotes>
     <!-- MSBuild Tags -->
@@ -34,7 +34,7 @@
 
   <!-- KS Package Files -->
   <ItemGroup>
-    <None Include="..\..\public\Nitrocid\OfficialAppIcon-NitrocidKS-512.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\public\Nitrocid\OfficialAppIcon-Nitrocid-512.png" Pack="true" PackagePath="\" />
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   <!-- KS Package Files End -->
