@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles.Infobox;
-using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Themes.Colors;

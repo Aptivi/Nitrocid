@@ -25,18 +25,8 @@ using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Kernel.Starting;
-using Nitrocid.Base.Misc.Reflection.Internal;
-using Nitrocid.Base.Shell.Shells.Admin;
-using Nitrocid.Base.Shell.Shells.Debug;
-using Nitrocid.Base.Shell.Shells.Hex;
-using Nitrocid.Base.Shell.Shells.Text;
-using Nitrocid.Base.Shell.Shells.UESH;
-using Terminaux.Shell.Shells;
-using Terminaux.Themes;
-using Textify.Tools.Placeholder;
 
 [assembly: DoNotParallelize]
 

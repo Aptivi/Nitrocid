@@ -33,7 +33,6 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Converters;
 using Nitrocid.Base.Kernel.Time;
 using Textify.General;
-using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Nitrocid.Base.Kernel.Time.Renderers;

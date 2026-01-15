@@ -17,12 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
 using System;
 using System.Threading;
-using Terminaux.Colors;
-using Textify.Data.Words;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Base;
 using Terminaux.Colors.Data;

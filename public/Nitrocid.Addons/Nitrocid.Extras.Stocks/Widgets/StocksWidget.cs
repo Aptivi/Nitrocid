@@ -23,7 +23,6 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Network.Transfer;
 using Nitrocid.Base.Misc.Widgets;
 using System.Text;
-using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Drivers.RNG;

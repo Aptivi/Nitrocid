@@ -28,7 +28,6 @@ using Nitrocid.Base.Languages;
 using Textify.Tools.Placeholder;
 using Terminaux.Themes.Colors;
 using Textify.General;
-using Terminaux.Colors;
 using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Inputs;

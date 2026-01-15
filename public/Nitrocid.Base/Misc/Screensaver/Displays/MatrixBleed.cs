@@ -17,14 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Collections.Generic;
-using System.Text;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
-using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver.Displays.Utilities;

@@ -20,25 +20,16 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading;
 using Nitrocid.Base.Drivers.RNG;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Threading;
-using Nitrocid.Base.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Gradients;
 using Terminaux.Inputs;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
-using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Textify.Data.Words;
-using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {

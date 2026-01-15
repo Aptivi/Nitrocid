@@ -37,7 +37,6 @@ using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Nitrocid.Base.Users.Login.Handlers.Logins
 {
