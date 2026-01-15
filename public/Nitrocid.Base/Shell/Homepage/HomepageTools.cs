@@ -356,13 +356,15 @@ namespace Nitrocid.Base.Shell.Homepage
                                 pageNumber--;
                                 if (pageNumber <= 0)
                                     pageNumber = 1;
-                                homeScreen.RequireRefresh();
+                                else
+                                    homeScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.RightArrow:
                                 pageNumber++;
                                 if (pageNumber >= maxScreens + 1)
                                     pageNumber = maxScreens;
-                                homeScreen.RequireRefresh();
+                                else
+                                    homeScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.Escape:
                                 if (keypress.Modifiers == ConsoleModifiers.Shift)
