@@ -118,13 +118,19 @@ namespace Nitrocid.LocaleChecker.Localization
 
         private void PopulateLocalizations(CompilationStartAnalysisContext context)
         {
+            lock (localizationList)
+            {
+                localizationList.Clear();
+                assemblyLocs.Clear();
+            }
+
             foreach (string langStream in languageManifestNames)
             {
                 // Find the JSON stream and open it.
-                var stream = thisAssembly.GetManifestResourceStream(langStream) ??
+                using var stream = thisAssembly.GetManifestResourceStream(langStream) ??
                     throw new Exception($"Opening the {langStream} resource stream has failed.");
-                var reader = new StreamReader(stream);
-                var jsonReader = new JsonTextReader(reader);
+                using var reader = new StreamReader(stream);
+                using var jsonReader = new JsonTextReader(reader);
                 var document = JToken.Load(jsonReader) ??
                     throw new Exception("Unable to parse JSON for localizations.");
                 var locs = document["locs"] ??
@@ -143,8 +149,12 @@ namespace Nitrocid.LocaleChecker.Localization
 
                 // Now, add all localizations to a separate array
                 string finalKey = langName + " - " + finalLangStream;
-                if (!localizationList.ContainsKey(finalKey))
-                    localizationList.Add(finalKey, ([], []));
+
+                lock (localizationList)
+                {
+                    if (!localizationList.ContainsKey(finalKey))
+                        localizationList.Add(finalKey, ([], []));
+                }
                 for (int i = 0; i < localizations.Length; i++)
                 {
                     LocalizationInfo? localization = localizations[i] ??
@@ -330,10 +340,8 @@ namespace Nitrocid.LocaleChecker.Localization
                     catch
                     {
                         // Plan B is to analyze this text using regex
-                        var explicitLocalizationPattern = @"LanguageTools\.GetLocalized\s*\(\s*""(NKS_[^""]+)""";
-                        var implicitLocalizationPattern = @"/\*\s*Localizable\s*\*/\s*""(NKS_[^""]+)""";
-                        var explicitLocalizationMatches = Regex.Matches(disabledText, explicitLocalizationPattern);
-                        var implicitLocalizationMatches = Regex.Matches(disabledText, implicitLocalizationPattern);
+                        var explicitLocalizationMatches = Regex.Matches(disabledText, @"LanguageTools\.GetLocalized\s*\(\s*""(NKS_[^""]+)""");
+                        var implicitLocalizationMatches = Regex.Matches(disabledText, @"/\*\s*Localizable\s*\*/\s*""(NKS_[^""]+)""");
                         void ProcessRegexLoc(Match match, bool implicitLoc)
                         {
                             var text = match.Groups[1].Value;
@@ -386,10 +394,10 @@ namespace Nitrocid.LocaleChecker.Localization
                     continue;
 
                 // Open the resource and load it to a JSON token instance
-                var stream = thisAssembly.GetManifestResourceStream(resourceName) ??
+                using var stream = thisAssembly.GetManifestResourceStream(resourceName) ??
                     throw new Exception($"Opening the {resourceName} resource stream has failed.");
-                var reader = new StreamReader(stream);
-                var jsonReader = new JsonTextReader(reader);
+                using var reader = new StreamReader(stream);
+                using var jsonReader = new JsonTextReader(reader);
                 var document = JToken.Load(jsonReader) ??
                     throw new Exception($"Unable to parse JSON for {resourceName}.");
 
@@ -616,6 +624,8 @@ namespace Nitrocid.LocaleChecker.Localization
             var hashSet = hashSets.Item1;
             var hashSetObjs = hashSets.Item2;
             found = false;
+            if (hashSet.Count != hashSetObjs.Count)
+                return;
             for (int i = 0; i < hashSetObjs.Count && !found; i++)
             {
                 var locLocalization = hashSet[i];
@@ -623,10 +633,13 @@ namespace Nitrocid.LocaleChecker.Localization
                 if (locLocalization == assemblyLoc)
                 {
                     var locLocation = AnalyzerTools.GenerateLocation(locLocalizationObj, locLocalization, localization.Substring(localization.LastIndexOf(" ")));
-                    if (assemblyLocs.ContainsKey(assemblyLoc))
-                        assemblyLocs[assemblyLoc].Add(locLocation);
-                    else
-                        assemblyLocs.Add(assemblyLoc, [locLocation]);
+                    lock (assemblyLocs)
+                    {
+                        if (assemblyLocs.ContainsKey(assemblyLoc))
+                            assemblyLocs[assemblyLoc].Add(locLocation);
+                        else
+                            assemblyLocs.Add(assemblyLoc, [locLocation]);
+                    }
                     found = true;
                 }
             }

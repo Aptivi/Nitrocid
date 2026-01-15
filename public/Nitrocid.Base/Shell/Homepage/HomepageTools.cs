@@ -170,7 +170,7 @@ namespace Nitrocid.Base.Shell.Homepage
                         // Prepare the common widget variables
                         int widgetLeft = ConsoleWrapper.WindowWidth / 2 + (ConsoleWrapper.WindowWidth % 2) + 1;
                         int widgetWidth = width / 2 - 4;
-                        int widgetHeight = height - 7;
+                        int widgetHeight = height - 8;
                         int widgetTop = posY + 1;
 
                         // Get the necessary positions
@@ -193,10 +193,10 @@ namespace Nitrocid.Base.Shell.Homepage
 
                         // Options
                         int optionsEndX = settingsButtonStartPosX + widgetWidth + 1 + ConsoleWrapper.WindowWidth % 2;
-                        int optionsEndY = widgetTop + widgetHeight - 1;
+                        int optionsEndY = widgetTop + widgetHeight;
 
                         // Notifications
-                        int notificationsEndY = widgetTop + widgetHeight + 2;
+                        int notificationsEndY = widgetTop + widgetHeight + 3;
 
                         // Check the ranges
                         bool isWithinSettings = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX, settingsButtonStartPosY), (settingsButtonEndPosX, settingsButtonEndPosY));
@@ -222,14 +222,15 @@ namespace Nitrocid.Base.Shell.Homepage
                         }
                         else if (isWithinOptions)
                         {
-                            int currentChoices = choices.Length;
+                            int currentPage = choiceIdx / widgetHeight;
+                            int startIndex = widgetHeight * currentPage;
                             if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left || context.ButtonPress == PointerButtonPress.Moved)
                             {
                                 int contextPosY = context.Coordinates.y;
-                                int finalPos = contextPosY - widgetTop - 1;
-                                if (finalPos < currentChoices)
+                                int finalChoiceIdx = startIndex + contextPosY - widgetTop - 1;
+                                if (finalChoiceIdx < choices.Length)
                                 {
-                                    choiceIdx = finalPos;
+                                    choiceIdx = finalChoiceIdx;
                                     if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
                                     {
                                         ScreenTools.StopCyclicScreen();
@@ -279,10 +280,7 @@ namespace Nitrocid.Base.Shell.Homepage
                     }
                     else if (data?.ConsoleKeyInfo is ConsoleKeyInfo keypress)
                     {
-                        int widgetHeight = ConsoleWrapper.WindowHeight - 10;
-                        int currentPage = (choiceIdx - 1) / widgetHeight;
-                        int startIndex = widgetHeight * currentPage;
-                        int endIndex = widgetHeight * (currentPage + 1);
+                        int widgetHeight = ConsoleWrapper.WindowHeight - 12;
                         switch (keypress.Key)
                         {
                             case ConsoleKey.DownArrow:
@@ -322,15 +320,18 @@ namespace Nitrocid.Base.Shell.Homepage
                                     break;
                                 if (buttonHighlight > 0)
                                     break;
-                                choiceIdx = startIndex;
+                                choiceIdx -= widgetHeight;
+                                if (choiceIdx < 0)
+                                    choiceIdx = 0;
                                 break;
                             case ConsoleKey.PageDown:
                                 if (pageNumber != 1)
                                     break;
                                 if (buttonHighlight > 0)
                                     break;
-                                choiceIdx = endIndex > choices.Length - 1 ? choices.Length - 1 : endIndex + 1;
-                                choiceIdx = endIndex == choices.Length - 1 ? endIndex : choiceIdx;
+                                choiceIdx += widgetHeight;
+                                if (choiceIdx > choices.Length - 1)
+                                    choiceIdx = choices.Length - 1;
                                 break;
                             case ConsoleKey.Tab:
                                 if (pageNumber != 1)
