@@ -313,7 +313,8 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// Prints the contents of a file to the console
         /// </summary>
         /// <param name="filename">Full path to file</param>
-        void PrintContents(string filename);
+        /// <param name="colors">Whether to use colors or not</param>
+        void PrintContents(string filename, bool colors = true);
 
         /// <summary>
         /// Prints the contents of a file to the console
@@ -321,13 +322,15 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <param name="filename">Full path to file with wildcards supported</param>
         /// <param name="PrintLineNumbers">Whether to also print the line numbers or not</param>
         /// <param name="ForcePlain">Forces binary files to be printed verbatim</param>
-        void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false);
+        /// <param name="colors">Whether to use colors or not</param>
+        void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false, bool colors = true);
 
         /// <summary>
         /// Renders the contents of a file
         /// </summary>
         /// <param name="filename">Full path to file</param>
-        string RenderContents(string filename);
+        /// <param name="colors">Whether to use colors or not</param>
+        string RenderContents(string filename, bool colors = true);
 
         /// <summary>
         /// Renders the contents of a file
@@ -335,7 +338,8 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <param name="filename">Full path to file with wildcards supported</param>
         /// <param name="PrintLineNumbers">Whether to also print the line numbers or not</param>
         /// <param name="ForcePlain">Forces binary files to be printed verbatim</param>
-        string RenderContents(string filename, bool PrintLineNumbers, bool ForcePlain = false);
+        /// <param name="colors">Whether to use colors or not</param>
+        string RenderContents(string filename, bool PrintLineNumbers, bool ForcePlain = false, bool colors = true);
 
         /// <summary>
         /// Renders the file in hex
@@ -343,43 +347,8 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <param name="StartByte">Start byte position</param>
         /// <param name="EndByte">End byte position</param>
         /// <param name="FileByte">File content in bytes</param>
-        void DisplayInHex(long StartByte, long EndByte, byte[] FileByte);
-
-        /// <summary>
-        /// Renders the file in hex
-        /// </summary>
-        /// <param name="ByteContent">Content to highlight</param>
-        /// <param name="HighlightResults">Whether to highlight the results. For querying.</param>
-        /// <param name="StartByte">Start byte position</param>
-        /// <param name="EndByte">End byte position</param>
-        /// <param name="FileByte">File content in bytes</param>
-        void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte);
-
-        /// <summary>
-        /// Renders the file in hex in dumb mode
-        /// </summary>
-        /// <param name="StartByte">Start byte position</param>
-        /// <param name="EndByte">End byte position</param>
-        /// <param name="FileByte">File content in bytes</param>
-        void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte);
-
-        /// <summary>
-        /// Renders the file in hex in dumb mode
-        /// </summary>
-        /// <param name="ByteContent">Content to highlight</param>
-        /// <param name="HighlightResults">Whether to highlight the results. For querying.</param>
-        /// <param name="StartByte">Start byte position</param>
-        /// <param name="EndByte">End byte position</param>
-        /// <param name="FileByte">File content in bytes</param>
-        void DisplayInHexDumbMode(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte);
-
-        /// <summary>
-        /// Renders the file in hex
-        /// </summary>
-        /// <param name="StartByte">Start byte position</param>
-        /// <param name="EndByte">End byte position</param>
-        /// <param name="FileByte">File content in bytes</param>
-        string RenderContentsInHex(long StartByte, long EndByte, byte[] FileByte);
+        /// <param name="colors">Whether to use colors or not</param>
+        void DisplayInHex(long StartByte, long EndByte, byte[] FileByte, bool colors = true);
 
         /// <summary>
         /// Renders the file in hex
@@ -389,7 +358,28 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <param name="StartByte">Start byte position</param>
         /// <param name="EndByte">End byte position</param>
         /// <param name="FileByte">File content in bytes</param>
-        string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte);
+        /// <param name="colors">Whether to use colors or not</param>
+        void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte, bool colors = true);
+
+        /// <summary>
+        /// Renders the file in hex
+        /// </summary>
+        /// <param name="StartByte">Start byte position</param>
+        /// <param name="EndByte">End byte position</param>
+        /// <param name="FileByte">File content in bytes</param>
+        /// <param name="colors">Whether to use colors or not</param>
+        string RenderContentsInHex(long StartByte, long EndByte, byte[] FileByte, bool colors = true);
+
+        /// <summary>
+        /// Renders the file in hex
+        /// </summary>
+        /// <param name="ByteContent">Content to highlight</param>
+        /// <param name="HighlightResults">Whether to highlight the results. For querying.</param>
+        /// <param name="StartByte">Start byte position</param>
+        /// <param name="EndByte">End byte position</param>
+        /// <param name="FileByte">File content in bytes</param>
+        /// <param name="colors">Whether to use colors or not</param>
+        string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte, bool colors = true);
 
         /// <summary>
         /// Renders the file in hex
@@ -398,7 +388,8 @@ namespace Nitrocid.Base.Drivers.Filesystem
         /// <param name="StartByte">Start byte position</param>
         /// <param name="EndByte">End byte position</param>
         /// <param name="FileByte">File content in bytes</param>
-        string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte);
+        /// <param name="colors">Whether to use colors or not</param>
+        string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte, bool colors = true);
 
         /// <summary>
         /// Checks to see if the file exists. Windows 10/11 bug aware.

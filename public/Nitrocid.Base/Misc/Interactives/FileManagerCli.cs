@@ -647,8 +647,8 @@ namespace Nitrocid.Base.Misc.Interactives
             }
 
             // Render the preview box
-            string preview = FilesystemTools.RenderContents(currentEntry.FilePath);
-            string filtered = VtSequenceTools.FilterVTSequences(preview);
+            string preview = FilesystemTools.RenderContents(currentEntry.FilePath, false);
+            string filtered = FilesystemTools.IsBinaryFile(currentEntry.FilePath) ? preview : VtSequenceTools.FilterVTSequences(preview);
             InfoBoxModalColor.WriteInfoBoxModal(filtered, Settings.InfoBoxSettings);
         }
     }

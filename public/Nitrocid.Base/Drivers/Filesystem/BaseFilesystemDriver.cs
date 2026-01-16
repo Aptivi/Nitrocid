@@ -400,95 +400,11 @@ namespace Nitrocid.Base.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual void DisplayInHex(long StartByte, long EndByte, byte[] FileByte) =>
-            DisplayInHex(0, false, StartByte, EndByte, FileByte);
+        public virtual void DisplayInHex(long StartByte, long EndByte, byte[] FileByte, bool colors = true) =>
+            DisplayInHex(0, false, StartByte, EndByte, FileByte, colors);
 
         /// <inheritdoc/>
-        public virtual void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
-        {
-            // First, check for dumb console
-            if (ConsoleWrapper.IsDumb)
-            {
-                // Go to dumb mode
-                DisplayInHexDumbMode(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
-                return;
-            }
-
-            // Get the un-highlighted and highlighted colors
-            var unhighlightedColor = ThemeColorsTools.GetColor(ThemeColorType.ListValue);
-            var highlightedColor = HighlightResults ? ThemeColorsTools.GetColor(ThemeColorType.Success) : unhighlightedColor;
-
-            // Go ahead...
-            DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [FileByte.LongLength]);
-            StartByte.SwapIfSourceLarger(ref EndByte);
-            if (StartByte < 1)
-            {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_BYTENUMISZERO"));
-                return;
-            }
-            if (StartByte <= FileByte.LongLength & EndByte <= FileByte.LongLength)
-            {
-                // We need to know how to write the bytes and their contents in this shape:
-                // -> 0x00000010  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-                //    0x00000020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-                //    0x00000030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-                // ... and so on.
-                TextWriterColor.Write($"0x{StartByte - 1L:X8}", false, ThemeColorType.ListEntry);
-                int ByteWritePositionX = $"0x{StartByte - 1L:X8}".Length + 2;
-                int ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
-                int ByteNumberEachSixteen = 1;
-                for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber++)
-                {
-                    // Write the byte and the contents
-                    DebugWriter.WriteDebug(DebugLevel.I, "Byte write position: {0}", vars: [ByteWritePositionX]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Byte char write position: {0}", vars: [ByteCharWritePositionX]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Byte number each sixteen: {0}", vars: [ByteNumberEachSixteen]);
-                    byte CurrentByte = FileByte[(int)(CurrentByteNumber - 1L)];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", vars: [CurrentByte]);
-                    char ProjectedByteChar = Convert.ToChar(CurrentByte);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Projected byte char: {0}", vars: [ProjectedByteChar]);
-                    char RenderedByteChar = '.';
-                    if (!char.IsWhiteSpace(ProjectedByteChar) & !char.IsControl(ProjectedByteChar) & !char.IsHighSurrogate(ProjectedByteChar) & !char.IsLowSurrogate(ProjectedByteChar))
-                    {
-                        // The renderer will actually render the character, not as a dot.
-                        DebugWriter.WriteDebug(DebugLevel.I, "Char is not a whitespace.");
-                        RenderedByteChar = ProjectedByteChar;
-                    }
-                    DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", vars: [ProjectedByteChar]);
-                    TextWriterWhereColor.WriteWhereColor($"{CurrentByte:X2}", ByteWritePositionX + 3 * (ByteNumberEachSixteen - 1), ConsoleWrapper.CursorTop, false, ByteContent == CurrentByte ? highlightedColor : unhighlightedColor);
-                    TextWriterWhereColor.WriteWhereColor($"{RenderedByteChar}", ByteCharWritePositionX + (ByteNumberEachSixteen - 1), ConsoleWrapper.CursorTop, false, ByteContent == CurrentByte ? highlightedColor : unhighlightedColor);
-
-                    // Increase the byte number
-                    ByteNumberEachSixteen += 1;
-
-                    // Check to see if we've exceeded 16 bytes
-                    if (ByteNumberEachSixteen > 16)
-                    {
-                        // OK, let's increase the byte iteration and get the next line ready
-                        TextWriterColor.Write(CharManager.NewLine + $"0x{CurrentByteNumber:X8}", false, ThemeColorType.ListEntry);
-                        ByteWritePositionX = $"0x{CurrentByteNumber:X8}".Length + 2;
-                        ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
-                        ByteNumberEachSixteen = 1;
-                    }
-                }
-                TextWriterRaw.Write();
-            }
-            else if (StartByte > FileByte.LongLength)
-            {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, ThemeColorType.Error);
-            }
-            else if (EndByte > FileByte.LongLength)
-            {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE"), true, ThemeColorType.Error);
-            }
-        }
-
-        /// <inheritdoc/>
-        public virtual void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte) =>
-            DisplayInHexDumbMode(0, false, StartByte, EndByte, FileByte);
-
-        /// <inheritdoc/>
-        public virtual void DisplayInHexDumbMode(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
+        public virtual void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte, bool colors = true)
         {
             // Now, do the job!
             DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [FileByte.LongLength]);
@@ -500,8 +416,8 @@ namespace Nitrocid.Base.Drivers.Filesystem
             }
             if (StartByte <= FileByte.LongLength && EndByte <= FileByte.LongLength)
             {
-                string rendered = RenderContentsInHex(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
-                TextWriterColor.Write(rendered, false, ThemeColorType.ListEntry);
+                string rendered = RenderContentsInHex(ByteContent, HighlightResults, StartByte, EndByte, FileByte, colors);
+                TextWriterRaw.WriteRaw(rendered);
             }
             else if (StartByte > FileByte.LongLength)
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE"), true, ThemeColorType.Error);
@@ -510,11 +426,11 @@ namespace Nitrocid.Base.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual string RenderContentsInHex(long StartByte, long EndByte, byte[] FileByte) =>
-            RenderContentsInHex(0, false, StartByte, EndByte, FileByte);
+        public virtual string RenderContentsInHex(long StartByte, long EndByte, byte[] FileByte, bool colors = true) =>
+            RenderContentsInHex(0, false, StartByte, EndByte, FileByte, colors);
 
         /// <inheritdoc/>
-        public virtual string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
+        public virtual string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte, bool colors = true)
         {
             // Get the un-highlighted and highlighted colors
             var entryColor = ThemeColorsTools.GetColor(ThemeColorType.ListEntry);
@@ -537,15 +453,20 @@ namespace Nitrocid.Base.Drivers.Filesystem
                 var builder = new StringBuilder();
                 for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
                 {
-                    builder.Append($"{entryColor.VTSequenceForeground()}0x{CurrentByteNumber - 1L:X8} ");
+                    if (colors)
+                        builder.Append(entryColor.VTSequenceForeground());
+                    builder.Append($"0x{CurrentByteNumber - 1L:X8} ");
 
                     // Iterate these number of bytes for the ASCII codes
                     long byteNum;
                     for (byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
                     {
                         byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
+                        var byteColor = ByteContent == CurrentByte ? highlightedColor : unhighlightedColor;
                         DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", vars: [CurrentByte]);
-                        builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground()}{CurrentByte:X2} ");
+                        if (colors)
+                            builder.Append(byteColor.VTSequenceForeground());
+                        builder.Append($"{CurrentByte:X2} ");
                     }
 
                     // Pad the remaining ASCII byte display
@@ -569,7 +490,10 @@ namespace Nitrocid.Base.Drivers.Filesystem
                             RenderedByteChar = ProjectedByteChar;
                         }
                         DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", vars: [ProjectedByteChar]);
-                        builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground()}{RenderedByteChar}");
+                        var byteColor = ByteContent == CurrentByte ? highlightedColor : unhighlightedColor;
+                        if (colors)
+                            builder.Append(byteColor.VTSequenceForeground());
+                        builder.Append($"{RenderedByteChar}");
                     }
                     builder.AppendLine();
                 }
@@ -584,7 +508,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte)
+        public virtual string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte, bool colors = true)
         {
             // Get the un-highlighted and highlighted colors
             var entryColor = ThemeColorsTools.GetColor(ThemeColorType.ListEntry);
@@ -607,22 +531,33 @@ namespace Nitrocid.Base.Drivers.Filesystem
                 var builder = new StringBuilder();
                 for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
                 {
-                    builder.Append($"{ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true)}{entryColor.VTSequenceForeground()}0x{CurrentByteNumber - 1L:X8} ");
+                    if (colors)
+                    {
+                        builder.Append(ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true));
+                        builder.Append(entryColor.VTSequenceForeground());
+                    }
+                    builder.Append($"0x{CurrentByteNumber - 1L:X8} ");
 
                     // Iterate these number of bytes for the ASCII codes
                     long byteNum;
                     for (byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
                     {
                         byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
+                        var byteColorFg = CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground;
+                        var byteColorBg = CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground;
                         DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", vars: [CurrentByte]);
-                        builder.Append(
-                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground()}" +
-                            $"{ConsoleColoring.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
-                            $"{CurrentByte:X2}" +
-                            $"{highlightedColorBackground.VTSequenceForeground()}" +
-                            $"{ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
-                            $" "
-                        );
+                        if (colors)
+                        {
+                            builder.Append(byteColorFg.VTSequenceForeground());
+                            builder.Append(ConsoleColoring.RenderSetConsoleColor(byteColorBg, true));
+                        }
+                        builder.Append($"{CurrentByte:X2}");
+                        if (colors)
+                        {
+                            builder.Append(highlightedColorBackground.VTSequenceForeground());
+                            builder.Append(ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true));
+                        }
+                        builder.Append(' ');
                     }
 
                     // Pad the remaining ASCII byte display
@@ -646,11 +581,14 @@ namespace Nitrocid.Base.Drivers.Filesystem
                             RenderedByteChar = ProjectedByteChar;
                         }
                         DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", vars: [ProjectedByteChar]);
-                        builder.Append(
-                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground()}" +
-                            $"{ConsoleColoring.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
-                            $"{RenderedByteChar}"
-                        );
+                        var byteColorFg = CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground;
+                        var byteColorBg = CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground;
+                        if (colors)
+                        {
+                            builder.Append(byteColorFg.VTSequenceForeground());
+                            builder.Append(ConsoleColoring.RenderSetConsoleColor(byteColorBg, true));
+                        }
+                        builder.Append($"{RenderedByteChar}");
                     }
                     builder.AppendLine();
                 }
@@ -1258,11 +1196,11 @@ namespace Nitrocid.Base.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual string RenderContents(string filename) =>
-            RenderContents(filename, Config.MainConfig.PrintLineNumbers);
+        public virtual string RenderContents(string filename, bool colors = true) =>
+            RenderContents(filename, Config.MainConfig.PrintLineNumbers, colors);
 
         /// <inheritdoc/>
-        public virtual string RenderContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)
+        public virtual string RenderContents(string filename, bool PrintLineNumbers, bool ForcePlain = false, bool colors = true)
         {
             // Some variables
             var builder = new StringBuilder();
@@ -1289,7 +1227,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
                 if (FS.IsBinaryFile(FilePath) && !ForcePlain)
                 {
                     byte[] bytes = ReadAllBytes(FilePath);
-                    builder.AppendLine(RenderContentsInHex(1, bytes.LongLength, bytes));
+                    builder.Append(RenderContentsInHex(1, bytes.LongLength, bytes, colors));
                 }
                 else
                 {
@@ -1300,13 +1238,18 @@ namespace Nitrocid.Base.Drivers.Filesystem
                         for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
                         {
                             int spaces = digits - (ContentIndex + 1).GetDigits();
-                            builder.Append($"{entryColor.VTSequenceForeground()}{new string(' ', spaces)}{ContentIndex + 1}: ");
-                            builder.AppendLine($"{valueColor.VTSequenceForeground()}{Contents[ContentIndex]}");
+                            if (colors)
+                                builder.Append(entryColor.VTSequenceForeground());
+                            builder.Append($"{new string(' ', spaces)}{ContentIndex + 1}: ");
+                            if (colors)
+                                builder.Append(valueColor.VTSequenceForeground());
+                            builder.AppendLine(Contents[ContentIndex]);
                         }
                     }
                     else
                     {
-                        builder.Append(valueColor.VTSequenceForeground());
+                        if (colors)
+                            builder.Append(valueColor.VTSequenceForeground());
                         for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
                             builder.AppendLine(Contents[ContentIndex]);
                     }
@@ -1318,18 +1261,18 @@ namespace Nitrocid.Base.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual void PrintContents(string filename) =>
-            PrintContents(filename, Config.MainConfig.PrintLineNumbers);
+        public virtual void PrintContents(string filename, bool colors = true) =>
+            PrintContents(filename, Config.MainConfig.PrintLineNumbers, colors);
 
         /// <inheritdoc/>
-        public virtual void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)
+        public virtual void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false, bool colors = true)
         {
             // Check the path
             filename = FS.NeutralizePath(filename);
 
             // Now, render the contents
-            string rendered = RenderContents(filename, PrintLineNumbers, ForcePlain);
-            TextWriterColor.Write(rendered, false);
+            string rendered = RenderContents(filename, PrintLineNumbers, ForcePlain, colors);
+            TextWriterRaw.WriteRaw(rendered);
         }
 
         /// <inheritdoc/>
