@@ -127,63 +127,49 @@ namespace Nitrocid.Base.Drivers.Filesystem.Bases
             return result;
         }
 
-        public override void DisplayInHex(long StartByte, long EndByte, byte[] FileByte)
+        public override void DisplayInHex(long StartByte, long EndByte, byte[] FileByte, bool colors = true)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHex)}({StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}]) entry");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHex)}({StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}], {colors}) entry");
             base.DisplayInHex(StartByte, EndByte, FileByte);
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHex)}({StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}]) exit");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHex)}({StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}], {colors}) exit");
         }
 
-        public override void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
+        public override void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte, bool colors = true)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHex)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}]) entry");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHex)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}], {colors}) entry");
             base.DisplayInHex(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHex)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}]) exit");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHex)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}], {colors}) exit");
         }
 
-        public override void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte)
+        public override string RenderContentsInHex(long StartByte, long EndByte, byte[] FileByte, bool colors = true)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHexDumbMode)}({StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}]) entry");
-            base.DisplayInHexDumbMode(StartByte, EndByte, FileByte);
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHexDumbMode)}({StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}]) exit");
-        }
-
-        public override void DisplayInHexDumbMode(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHexDumbMode)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}]) entry");
-            base.DisplayInHexDumbMode(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHexDumbMode)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}]) exit");
-        }
-
-        public override string RenderContentsInHex(long StartByte, long EndByte, byte[] FileByte)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({StartByte}, {EndByte}, byte[{FileByte.Length}]) entry");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({StartByte}, {EndByte}, byte[{FileByte.Length}], {colors}) entry");
             string result = RenderContentsInHex(StartByte, EndByte, FileByte);
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({StartByte}, {EndByte}, byte[{FileByte.Length}]) exit with result length [{result.Length}]");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({StartByte}, {EndByte}, byte[{FileByte.Length}], {colors}) exit with result length [{result.Length}]");
             return result;
         }
 
-        public override string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
+        public override string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte, bool colors = true)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, byte[{FileByte.Length}]) entry");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, byte[{FileByte.Length}], {colors}) entry");
             string result = RenderContentsInHex(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, byte[{FileByte.Length}]) exit with result length [{result.Length}]");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, byte[{FileByte.Length}], {colors}) exit with result length [{result.Length}]");
             return result;
         }
 
-        public override string RenderContents(string filename)
+        public override string RenderContents(string filename, bool colors = true)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}) entry");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}, {colors}) entry");
             string result = RenderContents(filename, Config.MainConfig.PrintLineNumbers);
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}) exit with result length [{result.Length}]");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}, {colors}) exit with result length [{result.Length}]");
             return result;
         }
 
-        public override string RenderContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)
+        public override string RenderContents(string filename, bool PrintLineNumbers, bool ForcePlain = false, bool colors = true)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}, {PrintLineNumbers}, {ForcePlain}) entry");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}, {PrintLineNumbers}, {ForcePlain}, {colors}) entry");
             string result = RenderContents(filename, PrintLineNumbers, ForcePlain);
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}, {PrintLineNumbers}, {ForcePlain}) exit with result length [{result.Length}]");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}, {PrintLineNumbers}, {ForcePlain}, {colors}) exit with result length [{result.Length}]");
             return result;
         }
 
@@ -371,18 +357,18 @@ namespace Nitrocid.Base.Drivers.Filesystem.Bases
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(MoveFileOrDir)}({Source}, {Destination}) exit");
         }
 
-        public override void PrintContents(string filename)
+        public override void PrintContents(string filename, bool colors = true)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(PrintContents)}({filename}) entry");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(PrintContents)}({filename}, {colors}) entry");
             base.PrintContents(filename);
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(PrintContents)}({filename}) exit");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(PrintContents)}({filename}, {colors}) exit");
         }
 
-        public override void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)
+        public override void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false, bool colors = true)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(PrintContents)}({filename}, {PrintLineNumbers}, {ForcePlain}) entry");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(PrintContents)}({filename}, {PrintLineNumbers}, {ForcePlain}, {colors}) entry");
             base.PrintContents(filename, PrintLineNumbers, ForcePlain);
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(PrintContents)}({filename}, {PrintLineNumbers}, {ForcePlain}) exit");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(PrintContents)}({filename}, {PrintLineNumbers}, {ForcePlain}, {colors}) exit");
         }
 
         public override void PrintDirectoryInfo(FileSystemEntry DirectoryInfo)
