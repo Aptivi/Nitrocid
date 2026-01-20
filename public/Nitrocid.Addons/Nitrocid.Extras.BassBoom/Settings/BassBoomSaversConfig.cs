@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.BassBoom.Settings
     /// <summary>
     /// Screensaver kernel configuration instance
     /// </summary>
-    public class BassBoomSaversConfig : BaseKernelConfig
+    public partial class BassBoomSaversConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -44,26 +44,5 @@ namespace Nitrocid.Extras.BassBoom.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-
-        #region Lyrics
-        private int lyricsDelay = 10000;
-
-        /// <summary>
-        /// [Lyrics] How many milliseconds to wait before the next lyric?
-        /// </summary>
-        public int LyricsDelay
-        {
-            get
-            {
-                return lyricsDelay;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 10000;
-                lyricsDelay = value;
-            }
-        }
-        #endregion
     }
 }

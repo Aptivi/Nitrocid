@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nettify.Weather;
 using Newtonsoft.Json;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Configuration.Instances;
@@ -31,7 +30,7 @@ namespace Nitrocid.Extras.Forecast.Settings
     /// <summary>
     /// Configuration instance for forecast
     /// </summary>
-    public class ForecastConfig : BaseKernelConfig
+    public partial class ForecastConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -45,10 +44,5 @@ namespace Nitrocid.Extras.Forecast.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-
-        /// <summary>
-        /// Select your preferred unit for temperature (this only applies to the "weather" command)
-        /// </summary>
-        public int PreferredUnit { get; set; } = (int)UnitMeasurement.Metric;
     }
 }

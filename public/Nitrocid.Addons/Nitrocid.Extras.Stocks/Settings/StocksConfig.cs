@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Stocks.Settings
     /// <summary>
     /// Configuration instance for stocks
     /// </summary>
-    public class StocksConfig : BaseKernelConfig
+    public partial class StocksConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -44,14 +44,5 @@ namespace Nitrocid.Extras.Stocks.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-
-        /// <summary>
-        /// Key for the AlphaVantage Stocks API
-        /// </summary>
-        public string StocksApiKey { get; set; } = "";
-        /// <summary>
-        /// Stocks company
-        /// </summary>
-        public string StocksCompany { get; set; } = "MSFT";
     }
 }

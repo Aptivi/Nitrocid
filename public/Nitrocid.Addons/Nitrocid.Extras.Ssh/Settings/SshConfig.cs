@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Ssh.Settings
     /// <summary>
     /// Configuration instance for SSH
     /// </summary>
-    public class SshConfig : BaseKernelConfig
+    public partial class SshConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -44,14 +44,5 @@ namespace Nitrocid.Extras.Ssh.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-
-        /// <summary>
-        /// Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed
-        /// </summary>
-        public string SSHUserPromptStyle { get; set; } = "";
-        /// <summary>
-        /// If enabled, adds a new connection to the SSH speed dial
-        /// </summary>
-        public bool SSHNewConnectionsToSpeedDial { get; set; } = true;
     }
 }

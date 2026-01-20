@@ -39,7 +39,6 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Progress;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Text.Probers.Regexp;
-using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Themes.Colors;

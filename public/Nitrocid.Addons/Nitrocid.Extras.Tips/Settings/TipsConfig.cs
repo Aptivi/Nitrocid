@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Tips.Settings
     /// <summary>
     /// Configuration instance for tips
     /// </summary>
-    public class TipsConfig : BaseKernelConfig
+    public partial class TipsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -44,10 +44,5 @@ namespace Nitrocid.Extras.Tips.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-
-        /// <summary>
-        /// Show the tip after logging in.
-        /// </summary>
-        public bool ShowTip { get; set; } = true;
     }
 }
