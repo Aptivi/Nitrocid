@@ -375,7 +375,7 @@ namespace Nitrocid.Extras.Dates.Timers
             // Now, get the normal time left and top position and update the values according to timer type
             TimeLeftPosition = (int)Math.Round(HalfWidth - RemainingTimeText.Length / 2d);
             TimeTopPosition = HalfHeight - 3;
-            if (DatesInit.DatesConfig.EnableFigletTimer)
+            if (DatesInit.DatesConfig.EnableFigletPomodoro)
             {
                 TimeLeftPosition = FigletTimeLeftPosition;
                 TimeTopPosition = FigletTimeTopPosition;
@@ -397,7 +397,7 @@ namespace Nitrocid.Extras.Dates.Timers
             int FigletTimeBottomPosition = (int)Math.Round(HalfHeight + FigletTools.GetFigletHeight(RemainingTimeText, FigletFont) / 2d);
 
             // If figlet is enabled, clear the display
-            if (DatesInit.DatesConfig.EnableFigletTimer)
+            if (DatesInit.DatesConfig.EnableFigletPomodoro)
             {
                 for (int FigletTimePosition = FigletTimeTopPosition; FigletTimePosition <= FigletTimeBottomPosition; FigletTimePosition++)
                 {

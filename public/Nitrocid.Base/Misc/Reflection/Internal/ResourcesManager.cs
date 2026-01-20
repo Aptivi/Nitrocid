@@ -46,8 +46,6 @@ namespace Nitrocid.Base.Misc.Reflection.Internal
             asm ??= Assembly.GetCallingAssembly();
             if (!DataExists(resource, type, out Stream? data, asm))
             {
-                // TODO: NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM -> Resource {0} not found for type {1} in {2}
-                // TODO: NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM -> Resource {0} not found for type {1} in this unknown assembly
                 string message = asm.FullName is not null ?
                     LanguageTools.GetLocalized("NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_KNOWNASM").FormatString(resource, type, asm.FullName) :
                     LanguageTools.GetLocalized("NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM").FormatString(resource, type);
