@@ -24,14 +24,13 @@ using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection.Internal;
-using Nitrocid.Base.Misc.Text;
 
 namespace Nitrocid.Extras.Amusements.Settings
 {
     /// <summary>
     /// Configuration instance for splashes (to be serialized)
     /// </summary>
-    public class AmusementsSplashesConfig : BaseKernelConfig
+    public partial class AmusementsSplashesConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -45,12 +44,5 @@ namespace Nitrocid.Extras.Amusements.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-
-        #region Quote
-        /// <summary>
-        /// [Quote] The progress text location
-        /// </summary>
-        public int QuoteProgressTextLocation { get; set; } = (int)TextLocation.Top;
-        #endregion
     }
 }

@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.ChatbotAI.Settings
     /// <summary>
     /// Configuration instance for Chatbot AI
     /// </summary>
-    public class ChatbotAIConfig : BaseKernelConfig
+    public partial class ChatbotAIConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -44,10 +44,5 @@ namespace Nitrocid.Extras.ChatbotAI.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-
-        /// <summary>
-        /// Specifies the API key for ChatGPT
-        /// </summary>
-        public string ChatGPTApiKey { get; set; } = "";
     }
 }

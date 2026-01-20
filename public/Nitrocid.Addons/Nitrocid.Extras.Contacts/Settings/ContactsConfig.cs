@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Contacts.Settings
     /// <summary>
     /// Configuration instance for contacts
     /// </summary>
-    public class ContactsConfig : BaseKernelConfig
+    public partial class ContactsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -44,10 +44,5 @@ namespace Nitrocid.Extras.Contacts.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-
-        /// <summary>
-        /// If enabled, shows contact images. Disabled by default to prevent misuse and for performance reasons.
-        /// </summary>
-        public bool ShowImages { get; set; }
     }
 }

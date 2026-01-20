@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Mods.Settings
     /// <summary>
     /// Configuration instance for Mods
     /// </summary>
-    public class ModsConfig : BaseKernelConfig
+    public partial class ModsConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -44,22 +44,5 @@ namespace Nitrocid.Extras.Mods.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-
-        /// <summary>
-        /// Automatically start the kernel modifications on boot.
-        /// </summary>
-        public bool StartKernelMods { get; set; }
-        /// <summary>
-        /// Allow untrusted mods
-        /// </summary>
-        public bool AllowUntrustedMods { get; set; }
-        /// <summary>
-        /// Write the filenames of the mods that will not run on startup. When you're finished, write "q". Write a minus sign next to the path to remove an existing mod.
-        /// </summary>
-        public string BlacklistedModsString { get; set; } = "";
-        /// <summary>
-        /// Show the mod commands count on help
-        /// </summary>
-        public bool ShowModCommandsCount { get; set; } = true;
     }
 }

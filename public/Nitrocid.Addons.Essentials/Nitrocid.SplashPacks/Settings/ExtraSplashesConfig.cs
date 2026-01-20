@@ -18,21 +18,19 @@
 //
 
 using Newtonsoft.Json;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Nitrocid.Base.Kernel.Configuration.Settings;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection.Internal;
-using Nitrocid.Base.Misc.Text;
 
 namespace Nitrocid.SplashPacks.Settings
 {
     /// <summary>
     /// Configuration instance for splashes (to be serialized)
     /// </summary>
-    public class ExtraSplashesConfig : BaseKernelConfig
+    public partial class ExtraSplashesConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -46,54 +44,5 @@ namespace Nitrocid.SplashPacks.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-
-        #region Simple
-        /// <summary>
-        /// [Simple] The progress text location
-        /// </summary>
-        public int SimpleProgressTextLocation { get; set; } = (int)TextLocation.Top;
-        #endregion
-
-        #region Progress
-        /// <summary>
-        /// [Progress] The progress color
-        /// </summary>
-        public string ProgressProgressColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Progress).PlainSequence;
-        /// <summary>
-        /// [Progress] The progress text location
-        /// </summary>
-        public int ProgressProgressTextLocation { get; set; } = (int)TextLocation.Top;
-        #endregion
-
-        #region PowerLineProgress
-        /// <summary>
-        /// [PowerLineProgress] The progress color
-        /// </summary>
-        public string PowerLineProgressProgressColor { get; set; } = ThemeColorsTools.GetColor(ThemeColorType.Progress).PlainSequence;
-        /// <summary>
-        /// [PowerLineProgress] The progress text location
-        /// </summary>
-        public int PowerLineProgressProgressTextLocation { get; set; } = (int)TextLocation.Top;
-        #endregion
-
-        #region Welcome2024
-        /// <summary>
-        /// [Welcome2024] Show progress or not
-        /// </summary>
-        public bool Welcome2024ShowProgress { get; set; }
-        #endregion
-
-        #region Logbox
-        private bool logboxShowProgress = false;
-
-        /// <summary>
-        /// [Logbox] Show progress or not
-        /// </summary>
-        public bool LogboxShowProgress
-        {
-            get => logboxShowProgress;
-            set => logboxShowProgress = value;
-        }
-        #endregion
     }
 }

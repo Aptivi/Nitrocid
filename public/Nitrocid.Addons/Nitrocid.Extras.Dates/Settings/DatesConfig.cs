@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Dates.Settings
     /// <summary>
     /// Configuration instance for date tools
     /// </summary>
-    public class DatesConfig : BaseKernelConfig
+    public partial class DatesConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -44,22 +44,5 @@ namespace Nitrocid.Extras.Dates.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-
-        /// <summary>
-        /// If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.
-        /// </summary>
-        public bool EnableFigletTimer { get; set; } = true;
-        /// <summary>
-        /// Write a figlet font that is supported by the Figlet library. Consult the library documentation for more information
-        /// </summary>
-        public string TimerFigletFont { get; set; } = "small";
-        /// <summary>
-        /// If enabled, will use figlet for pomodoro timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.
-        /// </summary>
-        public bool EnableFigletPomodoro { get; set; } = true;
-        /// <summary>
-        /// Write a figlet font that is supported by the Figlet library. Consult the library documentation for more information
-        /// </summary>
-        public string PomodoroFigletFont { get; set; } = "small";
     }
 }

@@ -18,7 +18,6 @@
 //
 
 using Newtonsoft.Json;
-using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Nitrocid.Base.Kernel.Configuration.Settings;
@@ -31,7 +30,7 @@ namespace Nitrocid.Extras.BassBoom.Settings
     /// <summary>
     /// Configuration instance for BassBoom
     /// </summary>
-    public class BassBoomConfig : BaseKernelConfig
+    public partial class BassBoomConfig : BaseKernelConfig
     {
         /// <inheritdoc/>
         [JsonIgnore]
@@ -45,10 +44,5 @@ namespace Nitrocid.Extras.BassBoom.Settings
                 return ConfigTools.GetSettingsEntries(dataString);
             }
         }
-
-        /// <summary>
-        /// Path to the lyrics
-        /// </summary>
-        public string LyricsPath { get; set; } = PathsManagement.HomePath + "/Music/";
     }
 }
