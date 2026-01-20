@@ -26,7 +26,6 @@ namespace Nitrocid.Extras.Dates.Settings
     /// </summary>
     public partial class DatesConfig : BaseKernelConfig
     {
-        // TODO: Make Pomodoro timer code use Pomodoro's config instead of Timer's config
         /// <summary>
         /// If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.
         /// </summary>
