@@ -221,31 +221,6 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
             return otpUrl.ToString();
         }
 
-        internal static QRCodeData GenerateQRCodeData(string user)
-        {
-            // Get the user info and re-call this function
-            var userInfo = UserManagement.GetUser(user) ??
-                throw new KernelException(KernelExceptionType.NoSuchUser);
-            return GenerateQRCodeData(userInfo);
-        }
-
-        internal static QRCodeData GenerateQRCodeData(UserInfo user)
-        {
-            // Check for user enrollment
-            if (!IsUserEnrolled(user) && !IsUserEnrolledLegacy(user))
-                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED"));
-
-            // Check the password
-            if (string.IsNullOrEmpty(user.Password) || user.Password == Encryption.GetEmptyHash("SHA256"))
-                throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC"));
-
-            // Generate the OTP auth QR code for scanning from phone
-            var otpUrl = GenerateOtpAuthUrl(user);
-            var otpGenerator = new QRCodeGenerator();
-            var otpQRData = otpGenerator.CreateQrCode(otpUrl, QRCodeGenerator.ECCLevel.Q);
-            return otpQRData;
-        }
-
         internal static string RenderQRCodeMatrix(string user)
         {
             // Get the user info and re-call this function
@@ -256,34 +231,12 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
 
         internal static string RenderQRCodeMatrix(UserInfo user)
         {
-            // Generate the code matrix
-            var codeData = GenerateQRCodeData(user);
-            var otpQRMatrix = codeData.ModuleMatrix;
-
-            // Now, we need to use this data to print QR code to the console
-            // TODO: In Terminaux 8.2, move this code to a simple writer, QrCode.
-            var qrBuilder = new StringBuilder();
-            for (int y = 0; y < otpQRMatrix.Count; y += 2)
+            var otpUrl = GenerateOtpAuthUrl(user);
+            var otpQRRenderer = new QrCode()
             {
-                for (int x = 0; x < otpQRMatrix[y].Count; x++)
-                {
-                    // Get the upper and the lower matrix of QR code to determine how to print the code
-                    bool upperMatrix = otpQRMatrix[y][x];
-                    bool lowerMatrix = y + 1 < otpQRMatrix.Count && otpQRMatrix[y + 1][x];
-
-                    // Now, use the block characters to print the QR code
-                    if (upperMatrix && lowerMatrix)
-                        qrBuilder.Append('█');
-                    else if (upperMatrix && !lowerMatrix)
-                        qrBuilder.Append('▀');
-                    else if (!upperMatrix && lowerMatrix)
-                        qrBuilder.Append('▄');
-                    else
-                        qrBuilder.Append(' ');
-                }
-                qrBuilder.AppendLine();
-            }
-            return qrBuilder.ToString();
+                Text = otpUrl,
+            };
+            return otpQRRenderer.Render();
         }
 
         private static bool IsValidBase32(string secret)
