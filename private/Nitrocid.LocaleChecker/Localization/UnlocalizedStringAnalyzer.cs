@@ -221,11 +221,16 @@ namespace Nitrocid.LocaleChecker.Localization
                             }
                             if (incompleteLangs.Count > 0)
                             {
-                                var diagnostic = Diagnostic.Create(Rule, location, text, string.Join(", ", incompleteLangs));
                                 if (contextNode is SyntaxNodeAnalysisContext snac)
+                                {
+                                    var diagnostic = Diagnostic.Create(Rule, location, text, string.Join(", ", incompleteLangs));
                                     snac.ReportDiagnostic(diagnostic);
+                                }
                                 else if (contextTree is SyntaxTreeAnalysisContext stac)
+                                {
+                                    var diagnostic = Diagnostic.Create(RuleDisabled, location, text, string.Join(", ", incompleteLangs));
                                     stac.ReportDiagnostic(diagnostic);
+                                }
                             }
                         }
                     }
@@ -302,11 +307,16 @@ namespace Nitrocid.LocaleChecker.Localization
                 }
                 if (incompleteLangs.Count > 0)
                 {
-                    var diagnostic = Diagnostic.Create(RuleComment, location, text, string.Join(", ", incompleteLangs));
                     if (contextNode is SyntaxNodeAnalysisContext snac)
+                    {
+                        var diagnostic = Diagnostic.Create(RuleComment, location, text, string.Join(", ", incompleteLangs));
                         snac.ReportDiagnostic(diagnostic);
+                    }
                     else if (contextTree is SyntaxTreeAnalysisContext stac)
+                    {
+                        var diagnostic = Diagnostic.Create(RuleDisabledComment, location, text, string.Join(", ", incompleteLangs));
                         stac.ReportDiagnostic(diagnostic);
+                    }
                 }
             }
         }
@@ -346,7 +356,7 @@ namespace Nitrocid.LocaleChecker.Localization
                         {
                             var text = match.Groups[1].Value;
                             var triviaSpan = trivia.Span;
-                            var location = Location.Create(context.Tree, new TextSpan(triviaSpan.Start + match.Index, text.Length + 2));
+                            var location = Location.Create(context.Tree, new TextSpan(triviaSpan.Start + match.Index, match.Length + 1));
                             List<string> incompleteLangs = [];
                             foreach (var localization in localizationList.Keys)
                             {
@@ -356,7 +366,7 @@ namespace Nitrocid.LocaleChecker.Localization
                             }
                             if (incompleteLangs.Count > 0)
                             {
-                                var diagnostic = Diagnostic.Create(implicitLoc ? RuleComment : Rule, location, text, string.Join(", ", incompleteLangs));
+                                var diagnostic = Diagnostic.Create(implicitLoc ? RuleDisabledComment : RuleDisabled, location, text, string.Join(", ", incompleteLangs));
                                 context.ReportDiagnostic(diagnostic);
                             }
                         }
