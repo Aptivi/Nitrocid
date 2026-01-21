@@ -268,58 +268,6 @@
       "text": "Παίξτε το παιχνίδι Wordle αρχικά"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "Εορτάζει την 5η επέτειο από την κυκλοφορία του πυρήνα"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "Εορτασμός της 5ης επετείου του πυρήνα"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "Πρώτη κυκλοφορία"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "Αυτός ο πυρήνας κυκλοφόρησε για πρώτη φορά στις 22 Φεβρουαρίου 2018 για να φτιάξει έναν μινιμαλιστικό προσομοιωτή που στην πραγματικότητα προσομοιώνει πώς λειτουργεί ο πυρήνας του πυρήνα."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "Παλαιότερα φιλοξενούσε μόνο ένα κέλυφος και μερικές εντολές και λειτουργούσε μόνο με τα Windows λόγω της χρήσης του εργαλείου Windows Management Instrumentation."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "Επίσης, δεν είχε τη δική του τεκμηρίωση."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "Βελτιστοποίηση πυρήνα"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "Κυκλοφόρησαν εκδόσεις του πυρήνα, όπως η δεύτερη σημαντική έκδοση για προσθήκη χρωματισμού και βασικών χαρακτηριστικών, και η τέταρτη κύρια έκδοση για προσθήκη διαμόρφωσης."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "Η τεκμηρίωση ξεκίνησε για την έκτη σημαντική κυκλοφορία και σιγά σιγά προστέθηκαν διάφορα ωραία πράγματα στον πυρήνα."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "Τρέχουσα έκδοση"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "Αυτή η έκδοση βελτιώνει πλέον τον πυρήνα σε σημείο που δεν συμπεριφέρεται πλέον όπως οι παλιές εκδόσεις."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "Επειδή κυκλοφόρησαν τα νέα πρωτοποριακά χαρακτηριστικά, αποφασίσαμε να ονομάσουμε αυτόν τον πυρήνα..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "Χρόνια πολλά για τα 5 χρόνια!"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "Αλογο"
     },

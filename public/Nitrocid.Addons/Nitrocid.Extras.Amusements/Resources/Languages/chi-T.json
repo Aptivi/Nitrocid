@@ -275,58 +275,6 @@
       "text": "最初玩 Wordle 游戏"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "纪念内核发布 5 周年"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "纪念内核诞生 5 周年"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "首次发布"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "该内核于 2018 年 2 月 22 日首次发布，旨在制作一个简约的模拟器，实际模拟内核核心的工作方式。"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "它过去只承载一个 shell 和一些命令，并且由于使用了 Windows Management Instrumentation 工具，因此它只能在 Windows 上运行。"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "它也没有自己的文档。"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "内核细化"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "内核版本已发布，例如第二个主要版本添加了颜色和基本功能，第四个主要版本添加了配置。"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "文档从第六个主要版本开始，各种好东西已经慢慢添加到内核中。"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "当前版本"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "该版本现在对内核进行了改进，使其行为不再像旧版本一样。"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "由于新的突破性功能已发布，我们决定将此内核命名为..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "五周年快乐！"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "马"
     },

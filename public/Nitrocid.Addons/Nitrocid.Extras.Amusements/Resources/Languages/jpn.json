@@ -267,58 +267,6 @@
       "text": "もともとWordleゲームをプレイする"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "カーネルリリース5周年を記念"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "カーネル5周年を記念して"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "史上初のリリース"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "このカーネルは、カーネルのコアがどのように動作するかを実際にシミュレートする最小限のシミュレーターを作成するために、2018 年 2 月 22 日に初めてリリースされました。"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "以前は 1 つのシェルといくつかのコマンドのみをホストしており、Windows Management Instrumentation ツールを使用していたため、Windows でのみ動作していました。"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "また、独自のドキュメントもありませんでした。"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "カーネルの改良"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "カラーリングと基本機能を追加する 2 番目のメジャー リリース、構成を追加する 4 番目のメジャー リリースなど、カーネルのバージョンがリリースされました。"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "6 番目のメジャー リリースでドキュメントの作成が開始され、さまざまな優れた機能が徐々にカーネルに追加されました。"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "現行版"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "このバージョンでは、カーネルが改良され、古いバージョンのように動作しなくなりました。"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "新しい画期的な機能がリリースされたため、このカーネルに名前を付けることにしました..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "5周年おめでとうございます！"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "馬"
     },

@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>Jouez au jeu Wordle de manière originale</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>Commémore le 5ème anniversaire de la sortie du noyau</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>Commémoration du 5ème anniversaire du noyau</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>Première sortie</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>Ce noyau a été publié pour la première fois le 22 février 2018 pour créer un simulateur minimaliste qui simule réellement le fonctionnement du cœur du noyau.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>Auparavant, il n&apos;hébergeait qu&apos;un seul shell et quelques commandes, et il ne fonctionnait qu&apos;avec Windows en raison de son utilisation de l&apos;outil Windows Management Instrumentation.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>Il ne disposait pas non plus de sa propre documentation.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>Raffinement du noyau</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>Des versions du noyau ont été publiées, comme la deuxième version majeure pour ajouter des couleurs et des fonctionnalités de base, et la quatrième version majeure pour ajouter une configuration.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>La documentation a commencé sur la sixième version majeure, et diverses choses intéressantes ont été lentement ajoutées au noyau.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>Version actuelle</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>Cette version affine désormais le noyau au point qu&apos;il ne se comporte plus comme les anciennes versions.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>Parce que les nouvelles fonctionnalités révolutionnaires ont été publiées, nous avons décidé de nommer ce noyau...</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>Joyeux 5ème anniversaire !</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>Cheval</value>
   </data>

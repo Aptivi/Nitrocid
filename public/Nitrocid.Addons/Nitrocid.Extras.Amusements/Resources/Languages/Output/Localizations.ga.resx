@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>Seinn an cluiche Wordle ar dtús</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>Déanann sé comóradh 5 bliana ar scaoileadh na heithne</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>Ag comóradh 5 bliana an eithne</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>An chéad scaoileadh riamh</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>Eisíodh an eithne seo den chéad uair ar 22 Feabhra, 2018 chun insamhlóir íostach a dhéanamh a shamhlaíonn go hiarbhír conas a oibríonn croí na heithne.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>Ní gnách leis ach blaosc amháin a óstáil, agus roinnt orduithe, agus níor oibrigh sé ach le Windows mar gheall ar an úsáid a bhain sé as uirlis Windows Management Instrumentation.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>Ní raibh a cháipéisíocht féin aige ach an oiread.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>Eithne scagadh</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>Scaoileadh leaganacha den eithne, mar shampla an dara scaoileadh mór chun dathú agus gnéithe bunúsacha a chur leis, agus an ceathrú scaoileadh mór chun cumraíocht a chur leis.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>Cuireadh tús le doiciméadú ar an séú mór-eisiúint, agus cuireadh rudaí deasa éagsúla leis an eithne go mall.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>Leagan reatha</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>Déanann an leagan seo an t-eithne a bheachtú anois go dtí an pointe nach n-iompraíonn sé mar na seanleaganacha a thuilleadh.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>Toisc gur scaoileadh na gnéithe úrnua nua, bheartaíomar an t-eithne seo a ainmniú...</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>Comóradh 5 bliana sona duit!</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>Capall</value>
   </data>

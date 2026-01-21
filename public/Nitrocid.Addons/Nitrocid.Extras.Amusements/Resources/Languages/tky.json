@@ -268,58 +268,6 @@
       "text": "Wordle oyununu orijinal olarak oyna"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "Çekirdek sürümünün 5. yıl dönümünü anıyor"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "Çekirdeğin 5. yıl dönümü anılıyor"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "İlk yayın"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "Bu çekirdek ilk olarak 22 Şubat 2018'de çekirdeğin nasıl çalıştığını gerçekten simüle eden minimalist bir simülatör yapmak için yayınlandı."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "Daha önce sadece bir kabuk ve birkaç komut barındırıyordu ve Windows Yönetim Araçları aracını kullanması nedeniyle sadece Windows ile çalışıyordu."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "Ayrıca kendine ait bir dokümantasyonu da yoktu."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "Çekirdek Rafine Etme"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "Çekirdek sürümleri yayınlandı; renklendirme ve temel özellikler ekleyen ikinci büyük sürüm ve yapılandırma ekleyen dördüncü büyük sürüm."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "Altıncı büyük sürümde dokümantasyon başladı ve çekirdeğe yavaş yavaş çeşitli güzel şeyler eklendi."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "Güncel versiyon"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "Bu sürüm artık çekirdeği eski sürümler gibi davranmayacak noktaya kadar geliştiriyor."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "Yeni çığır açan özellikler yayınlandığı için bu çekirdeğe... adını vermeye karar verdik."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "5. yıl dönümümüz kutlu olsun!"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "Atış"
     },

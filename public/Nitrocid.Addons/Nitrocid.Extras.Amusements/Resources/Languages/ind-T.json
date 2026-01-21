@@ -267,58 +267,6 @@
       "text": "मूल रूप से वर्डल गेम खेलें"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "कर्नेल रिलीज़ की 5वीं वर्षगांठ मनाता है"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "कर्नेल की 5वीं वर्षगाँठ का स्मरणोत्सव"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "पहली बार रिलीज"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "इस कर्नेल को पहली बार 22 फरवरी, 2018 को एक न्यूनतम सिम्युलेटर बनाने के लिए जारी किया गया था जो वास्तव में अनुकरण करता है कि कर्नेल का कोर कैसे काम करता है।"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "यह केवल एक शेल और कुछ कमांड को होस्ट करता था, और विंडोज मैनेजमेंट इंस्ट्रुमेंटेशन टूल के उपयोग के कारण यह केवल विंडोज के साथ काम करता था।"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "इसका अपना दस्तावेज भी नहीं था."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "कर्नेल शोधन"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "कर्नेल के संस्करण जारी किए गए, जैसे कि रंग और बुनियादी सुविधाओं को जोड़ने के लिए दूसरी प्रमुख रिलीज, और कॉन्फ़िगरेशन को जोड़ने के लिए चौथी प्रमुख रिलीज।"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "छठी प्रमुख रिलीज़ पर दस्तावेज़ीकरण शुरू हुआ, और विभिन्न अच्छी चीज़ें धीरे-धीरे कर्नेल में जोड़ी गईं।"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "वर्तमान संस्करण"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "यह संस्करण अब कर्नेल को इस हद तक परिष्कृत करता है कि यह अब पुराने संस्करणों की तरह व्यवहार नहीं करता है।"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "चूँकि नई अभूतपूर्व सुविधाएँ जारी हो गईं, इसलिए हमने इस कर्नेल को नाम देने का निर्णय लिया..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "5वीं सालगिरह मुबारक!"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "घोड़ा"
     },

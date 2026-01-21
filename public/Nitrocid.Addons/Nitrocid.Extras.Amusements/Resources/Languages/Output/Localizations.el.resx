@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>Παίξτε το παιχνίδι Wordle αρχικά</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>Εορτάζει την 5η επέτειο από την κυκλοφορία του πυρήνα</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>Εορτασμός της 5ης επετείου του πυρήνα</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>Πρώτη κυκλοφορία</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>Αυτός ο πυρήνας κυκλοφόρησε για πρώτη φορά στις 22 Φεβρουαρίου 2018 για να φτιάξει έναν μινιμαλιστικό προσομοιωτή που στην πραγματικότητα προσομοιώνει πώς λειτουργεί ο πυρήνας του πυρήνα.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>Παλαιότερα φιλοξενούσε μόνο ένα κέλυφος και μερικές εντολές και λειτουργούσε μόνο με τα Windows λόγω της χρήσης του εργαλείου Windows Management Instrumentation.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>Επίσης, δεν είχε τη δική του τεκμηρίωση.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>Βελτιστοποίηση πυρήνα</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>Κυκλοφόρησαν εκδόσεις του πυρήνα, όπως η δεύτερη σημαντική έκδοση για προσθήκη χρωματισμού και βασικών χαρακτηριστικών, και η τέταρτη κύρια έκδοση για προσθήκη διαμόρφωσης.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>Η τεκμηρίωση ξεκίνησε για την έκτη σημαντική κυκλοφορία και σιγά σιγά προστέθηκαν διάφορα ωραία πράγματα στον πυρήνα.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>Τρέχουσα έκδοση</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>Αυτή η έκδοση βελτιώνει πλέον τον πυρήνα σε σημείο που δεν συμπεριφέρεται πλέον όπως οι παλιές εκδόσεις.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>Επειδή κυκλοφόρησαν τα νέα πρωτοποριακά χαρακτηριστικά, αποφασίσαμε να ονομάσουμε αυτόν τον πυρήνα...</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>Χρόνια πολλά για τα 5 χρόνια!</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>Αλογο</value>
   </data>

@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>最初玩 Wordle 遊戲</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>紀念內核發布 5 週年</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>紀念內核誕生 5 週年</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>首次發布</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>該核心於 2018 年 2 月 22 日首次發布，旨在製作簡約的模擬器，實際模擬核心核心的工作方式。</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>它過去只承載一個 shell 和一些命令，並且由於使用了 Windows Management Instrumentation 工具，因此它只能在 Windows 上運行。</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>它也沒有自己的文檔。</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>內核細化</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>內核版本已發布，例如第二個主要版本添加了顏色和基本功能，第四個主要版本添加了配置。</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>文件從第六個主要版本開始，各種好東西已經慢慢添加到核心中。</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>目前版本</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>該版本現在對核心進行了改進，使其行為不再像舊版本一樣。</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>由於新的突破性功能已發布，我們決定將此核心命名為...</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>五週年快樂！</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>馬</value>
   </data>

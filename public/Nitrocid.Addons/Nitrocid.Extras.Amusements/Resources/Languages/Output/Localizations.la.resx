@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>Ludere Verbum primum ludum</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>Commemorat 5-annum anniversarium emissio nuclei</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>Commemoratur 5-annus anniversarius nuclei</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>Primum semper dimittis</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>Hoc nucleus primum emissus est die 22 mensis Februarii anno 2018 ut minimalistica simulator efficeretur actu simulat quomodo nucleus nuclei opera.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>Solum unum testam hospitem et pauca mandata solebat, et solum cum Fenestra laborat propter usum instrumenti Instrumenti Management Management Windows.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>Etiam documenta sua non habet.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>Kernel Expolitio</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>Versiones nuclei dimissae sunt, ut secunda maior missio ad colorandos et praecipuas notas addere, et quarta maioris remissionis configurationem addere.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>Documenta sexta maior emissio incepit, et variae res gratae paulatim ad nucleum additae sunt.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>Current version</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>Haec versio nunc nucleum ad punctum excolit ut non amplius cum antiquis versionibus se habeat.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>Quia novae notae solvendi solvebantur, hoc nucleum nominare decrevimus.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>Felix dies anniversarius V!</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>Equus</value>
   </data>

@@ -270,58 +270,6 @@
       "text": "Main permainan Wordle pada asalnya"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "Memperingati ulang tahun 5 tahun keluaran kernel"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "Memperingati ulang tahun 5 tahun kernel"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "Keluaran pertama"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "Kernel ini mula-mula dikeluarkan pada 22 Februari 2018 untuk membuat simulator minimalis yang sebenarnya mensimulasikan cara teras inti berfungsi."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "Ia digunakan untuk mengehoskan hanya satu shell, dan beberapa arahan, dan ia hanya berfungsi dengan Windows kerana penggunaan alat Instrumen Pengurusan Windows."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "Ia juga tidak mempunyai dokumentasi sendiri."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "Penapisan Kernel"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "Versi kernel telah dikeluarkan, seperti keluaran utama kedua untuk menambah ciri pewarna dan asas, dan keluaran utama keempat untuk menambah konfigurasi."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "Dokumentasi bermula pada keluaran utama keenam, dan pelbagai perkara menarik telah ditambahkan secara perlahan-lahan pada kernel."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "Versi semasa"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "Versi ini kini memperhalusi kernel sehingga ia tidak lagi berkelakuan seperti versi lama."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "Oleh kerana ciri terobosan baharu telah dikeluarkan, kami memutuskan untuk menamakan kernel ini..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "Selamat ulang tahun 5 tahun!"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "kuda"
     },

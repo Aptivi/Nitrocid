@@ -170,8 +170,6 @@ namespace Nitrocid.Extras.Amusements
                         }),
                     ])
                 ], new WordleCommand()),
-
-            new CommandInfo("2018", /* Localizable */ "NKS_AMUSEMENTS_COMMAND_2018_DESC", new AnniversaryCommand()),
         ];
 
         public string AddonName =>

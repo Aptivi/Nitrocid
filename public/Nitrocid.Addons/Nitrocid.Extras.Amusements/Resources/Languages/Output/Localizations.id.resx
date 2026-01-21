@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>Mainkan game Wordle aslinya</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>Memperingati ulang tahun ke-5 rilis kernel</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>Memperingati ulang tahun ke-5 kernel</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>Rilis pertama kalinya</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>Kernel ini pertama kali dirilis pada tanggal 22 Februari 2018 untuk membuat simulator minimalis yang benar-benar mensimulasikan cara kerja inti kernel.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>Dulu ia hanya menampung satu shell dan beberapa perintah, dan hanya berfungsi pada Windows karena menggunakan alat Windows Management Instrumentation.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>Ia juga tidak memiliki dokumentasinya sendiri.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>Penyempurnaan Kernel</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>Versi kernel dirilis, seperti rilis utama kedua untuk menambahkan pewarnaan dan fitur dasar, dan rilis utama keempat untuk menambahkan konfigurasi.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>Dokumentasi dimulai pada rilis utama keenam, dan berbagai hal bagus telah ditambahkan perlahan ke kernel.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>Versi saat ini</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>Versi ini sekarang menyempurnakan kernel hingga tidak lagi berperilaku seperti versi lama.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>Karena fitur-fitur inovatif baru telah dirilis, kami memutuskan untuk memberi nama kernel ini...</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>Selamat ulang tahun ke-5!</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>Kuda</value>
   </data>

@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>Spill Wordle-spillet opprinnelig</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>Til minne om 5-årsjubileet for kjerneutgivelsen</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>Til minne om 5-årsjubileet for kjernen</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>Første utgivelse noensinne</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>Denne kjernen ble først utgitt 22. februar 2018 for å lage en minimalistisk simulator som faktisk simulerer hvordan kjernen i kjernen fungerer.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>Det pleide bare å være vert for ett skall, og noen få kommandoer, og det fungerte bare med Windows på grunn av bruken av Windows Management Instrumentation-verktøyet.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>Den hadde heller ikke egen dokumentasjon.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>Kjerneraffinering</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>Versjoner av kjernen ble utgitt, for eksempel den andre store utgivelsen for å legge til farger og grunnleggende funksjoner, og den fjerde store utgivelsen for å legge til konfigurasjon.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>Dokumentasjonen startet på den sjette store utgivelsen, og forskjellige fine ting har sakte blitt lagt til kjernen.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>Gjeldende versjon</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>Denne versjonen avgrenser nå kjernen til det punktet at den ikke lenger oppfører seg som de gamle versjonene.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>Fordi de nye banebrytende funksjonene ble sluppet, bestemte vi oss for å navngi denne kjernen...</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>Gratulerer med 5-årsdagen!</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>Hest</value>
   </data>

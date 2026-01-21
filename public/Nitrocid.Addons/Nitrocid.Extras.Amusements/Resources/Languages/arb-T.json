@@ -293,58 +293,6 @@
       "text": "العب لعبة Wordle في الأصل"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "يحتفل بالذكرى السنوية الخامسة لإصدار النواة"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "إحياء الذكرى الخامسة للنواة"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "الإصدار الأول على الإطلاق"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "تم إصدار هذه النواة لأول مرة في 22 فبراير 2018 لإنشاء جهاز محاكاة بسيط يحاكي في الواقع كيفية عمل جوهر النواة."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "كان يستخدم لاستضافة غلاف واحد فقط، وعدد قليل من الأوامر، وكان يعمل فقط مع Windows بسبب استخدامه لأداة Windows Management Instrumentation."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "كما أنها لم يكن لديها وثائقها الخاصة."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "صقل النواة"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "تم إصدار إصدارات النواة، مثل الإصدار الرئيسي الثاني لإضافة الألوان والميزات الأساسية، والإصدار الرئيسي الرابع لإضافة التكوين."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "بدأ التوثيق في الإصدار الرئيسي السادس، وتمت إضافة العديد من الأشياء الرائعة ببطء إلى النواة."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "النسخة الحالية"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "يعمل هذا الإصدار الآن على تحسين النواة إلى درجة أنها لم تعد تتصرف مثل الإصدارات القديمة."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "نظرًا لإصدار الميزات الجديدة الرائدة، قررنا تسمية هذه النواة..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "ذكرى مرور 5 سنوات سعيدة!"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "حصان"
     },

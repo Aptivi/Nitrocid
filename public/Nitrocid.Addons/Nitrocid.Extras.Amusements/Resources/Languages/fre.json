@@ -313,58 +313,6 @@
       "text": "Jouez au jeu Wordle de manière originale"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "Commémore le 5ème anniversaire de la sortie du noyau"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "Commémoration du 5ème anniversaire du noyau"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "Première sortie"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "Ce noyau a été publié pour la première fois le 22 février 2018 pour créer un simulateur minimaliste qui simule réellement le fonctionnement du cœur du noyau."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "Auparavant, il n'hébergeait qu'un seul shell et quelques commandes, et il ne fonctionnait qu'avec Windows en raison de son utilisation de l'outil Windows Management Instrumentation."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "Il ne disposait pas non plus de sa propre documentation."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "Raffinement du noyau"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "Des versions du noyau ont été publiées, comme la deuxième version majeure pour ajouter des couleurs et des fonctionnalités de base, et la quatrième version majeure pour ajouter une configuration."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "La documentation a commencé sur la sixième version majeure, et diverses choses intéressantes ont été lentement ajoutées au noyau."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "Version actuelle"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "Cette version affine désormais le noyau au point qu'il ne se comporte plus comme les anciennes versions."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "Parce que les nouvelles fonctionnalités révolutionnaires ont été publiées, nous avons décidé de nommer ce noyau..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "Joyeux 5ème anniversaire !"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "Cheval"
     },

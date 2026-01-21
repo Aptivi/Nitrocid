@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>Wordle oyununu orijinal olarak oyna</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>Çekirdek sürümünün 5. yıl dönümünü anıyor</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>Çekirdeğin 5. yıl dönümü anılıyor</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>İlk yayın</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>Bu çekirdek ilk olarak 22 Şubat 2018&apos;de çekirdeğin nasıl çalıştığını gerçekten simüle eden minimalist bir simülatör yapmak için yayınlandı.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>Daha önce sadece bir kabuk ve birkaç komut barındırıyordu ve Windows Yönetim Araçları aracını kullanması nedeniyle sadece Windows ile çalışıyordu.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>Ayrıca kendine ait bir dokümantasyonu da yoktu.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>Çekirdek Rafine Etme</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>Çekirdek sürümleri yayınlandı; renklendirme ve temel özellikler ekleyen ikinci büyük sürüm ve yapılandırma ekleyen dördüncü büyük sürüm.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>Altıncı büyük sürümde dokümantasyon başladı ve çekirdeğe yavaş yavaş çeşitli güzel şeyler eklendi.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>Güncel versiyon</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>Bu sürüm artık çekirdeği eski sürümler gibi davranmayacak noktaya kadar geliştiriyor.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>Yeni çığır açan özellikler yayınlandığı için bu çekirdeğe... adını vermeye karar verdik.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>5. yıl dönümümüz kutlu olsun!</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>Atış</value>
   </data>

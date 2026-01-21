@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>العب لعبة Wordle في الأصل</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>يحتفل بالذكرى السنوية الخامسة لإصدار النواة</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>إحياء الذكرى الخامسة للنواة</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>الإصدار الأول على الإطلاق</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>تم إصدار هذه النواة لأول مرة في 22 فبراير 2018 لإنشاء جهاز محاكاة بسيط يحاكي في الواقع كيفية عمل جوهر النواة.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>كان يستخدم لاستضافة غلاف واحد فقط، وعدد قليل من الأوامر، وكان يعمل فقط مع Windows بسبب استخدامه لأداة Windows Management Instrumentation.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>كما أنها لم يكن لديها وثائقها الخاصة.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>صقل النواة</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>تم إصدار إصدارات النواة، مثل الإصدار الرئيسي الثاني لإضافة الألوان والميزات الأساسية، والإصدار الرئيسي الرابع لإضافة التكوين.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>بدأ التوثيق في الإصدار الرئيسي السادس، وتمت إضافة العديد من الأشياء الرائعة ببطء إلى النواة.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>النسخة الحالية</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>يعمل هذا الإصدار الآن على تحسين النواة إلى درجة أنها لم تعد تتصرف مثل الإصدارات القديمة.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>نظرًا لإصدار الميزات الجديدة الرائدة، قررنا تسمية هذه النواة...</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>ذكرى مرور 5 سنوات سعيدة!</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>حصان</value>
   </data>

@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>mool roop se vardal gem khelen</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>karnel rileez kee 5-varshagaanth ka smaran karata hai</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>karnel kee 5-varshagaanth kee smrti mein</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>pahalee rileez</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>yah karnel pahalee baar 22 pharavaree, 2018 ko ek nyoonatam simyuletar banaane ke lie rileez kiya gaya tha jo vaastav mein karnel ke kor ke kaam karane ke tareeke ka anukaran karata hai.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>yah keval ek shel aur kuchh kamaand host karata tha, aur yah keval windows prabandhan instroomenteshan tool ke upayog ke kaaran windows ke saath kaam karata tha.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>isaka apana dastaavezeekaran bhee nahin tha.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>karnel parishodhan</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>karnel ke sanskaran jaaree kie gae, jaise ki rang aur buniyaadee suvidhaen jodane ke lie doosara pramukh rileez, aur konfigareshan jodane ke lie chautha pramukh rileez.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>chhathe pramukh rileez par dastaavezeekaran shuroo hua, aur karnel mein dheere-dheere kaee achchhee cheezen jodee gaeen.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>vartamaan sanskaran</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>yah sanskaran ab karnel ko is had tak parishkrt karata hai ki yah ab puraane sanskaranon kee tarah vyavahaar nahin karata hai.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>choonki naee graundabreking suvidhaen rileez ho gaee hain, isalie hamane is karnel ka naam rakhane ka faisala kiya...</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>5-varshagaanth kee shubhakaamanaen!</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>ghoda</value>
   </data>
