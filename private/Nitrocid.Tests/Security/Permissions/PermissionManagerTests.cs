@@ -31,7 +31,7 @@ namespace Nitrocid.Tests.Security.Permissions
     public class PermissionManagerTests
     {
 
-        private static readonly UserInfo rootUser = new("root", Encryption.GetEncryptedString("", "SHA256"), [], "System account", "", "", [], UserFlags.Administrator, false, "", []);
+        private static readonly UserInfo rootUser = new("root", Encryption.GetEncryptedString("", "SHA256"), [], "System account", "", "", [], UserFlags.Administrator, false, "", "", "", []);
 
         /// <summary>
         /// Add necessary user for testing
