@@ -26,7 +26,7 @@ using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Base.Users.TwoFactorAuth
 {
-    internal class QrCode : SimpleCyclicWriter
+    internal class MicroQrCode : SimpleCyclicWriter
     {
         private Color foregroundColor = ThemeColorsTools.GetColor(ThemeColorType.NeutralText);
         private Color backgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background);
@@ -60,17 +60,17 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         }
 
         /// <summary>
-        /// Text to encode to QR code
+        /// Text to encode to Micro QR code
         /// </summary>
         public string Text { get; set; } = "Terminaux";
 
         /// <summary>
-        /// Specifies the QR code error correction level
+        /// Specifies the Micro QR code error correction level
         /// </summary>
-        public QRCodeGenerator.ECCLevel ErrorCorrection { get; set; } = QRCodeGenerator.ECCLevel.Q;
+        public QRCodeGenerator.ECCLevel ErrorCorrection { get; set; } = QRCodeGenerator.ECCLevel.L;
 
         /// <summary>
-        /// Renders a QR code
+        /// Renders a Micro QR code
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public override string Render()
@@ -78,12 +78,11 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
             if (string.IsNullOrEmpty(Text))
                 return "";
 
-            var qrGenerator = new QRCodeGenerator();
-            var qrData = qrGenerator.CreateQrCode(Text, ErrorCorrection);
+            var qrData = QRCodeGenerator.GenerateMicroQrCode(Text, ErrorCorrection);
             var qrMatrix = qrData.ModuleMatrix;
 
             // Now, we need to use this data to print QR code to the console
-            // TODO: In Terminaux 8.2, move this simple writer, QrCode, from Nitrocid.
+            // TODO: In Terminaux 8.2, move this simple writer, MicroQrCode, from Nitrocid.
             var qrBuilder = new StringBuilder();
             if (UseColors)
             {
@@ -116,9 +115,9 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         }
 
         /// <summary>
-        /// Makes a new instance of the QR code renderer
+        /// Makes a new instance of the Micro QR code renderer
         /// </summary>
-        public QrCode()
+        public MicroQrCode()
         { }
     }
 }
