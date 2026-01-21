@@ -17,27 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Threading;
 using System;
-using Nitrocid.Base.Kernel.Starting;
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Themes.Colors;
-using Terminaux.Base;
-using Terminaux.Base.Extensions;
+using System.Reflection;
+using System.Threading;
 using Aptivestigate.CrashHandler;
-using Terminaux.Inputs.Styles.Infobox.Tools;
-using Terminaux.Shell.Arguments.Base;
-using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Arguments;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Users.Windows;
-using Nitrocid.Base.Kernel.Power;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Core.Environment;
 using Nitrocid.Core.Languages;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid
 {
@@ -46,6 +35,8 @@ namespace Nitrocid
     /// </summary>
     public static class KernelMain
     {
+        private static bool kernelShutdown = false;
+
         /// <summary>
         /// Entry point
         /// </summary>
@@ -62,62 +53,27 @@ namespace Nitrocid
                 // Run unhandled crash handler
                 CrashTools.InstallCrashHandler();
 
-                // Show help / version prior to starting the kernel if help / version is passed
-                ArgumentParse.ParseArguments(Args, KernelArguments.outArgs);
-
-                // Show development notice
-                if (!PowerManager.KernelShutdown)
-                {
-                    // Show the message
-#if !SPECIFIERREL
-                    string message =
-#if SPECIFIERDEV
-                        LanguageTools.GetLocalized("NKS_KERNEL_STARTING_DEVMESSAGE")
-#elif SPECIFIERRC
-                        LanguageTools.GetLocalized("NKS_KERNEL_STARTING_RCMESSAGE")
-#elif SPECIFIERALPHA
-                        LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ALPHAMESSAGE")
-#elif SPECIFIERBETA
-                        LanguageTools.GetLocalized("NKS_KERNEL_STARTING_BETAMESSAGE")
-#else
-                        LanguageTools.GetLocalized("NKS_KERNEL_STARTING_UNSUPPORTED")
-#endif
-                    ;
-                    TextWriterColor.Write(message, true, ThemeColorType.Warning);
-                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_COMMON_ANYKEY"), true, ThemeColorType.Warning);
-                    InputTools.DetectKeypress();
-#endif
-                }
-
                 // This is a kernel entry point
                 EnvironmentTools.kernelArguments = Args;
                 EnvironmentTools.ResetEnvironment();
-                while (!PowerManager.KernelShutdown)
+                while (!kernelShutdown)
                 {
                     try
                     {
+                        // Execute initialization point
+                        EnvironmentTools.ExecuteInitEnvironment();
+
+                        // Execute the environment
                         EnvironmentTools.ExecuteEnvironment();
-                    }
-                    catch (KernelErrorException kee)
-                    {
-                        DebugWriter.WriteDebugStackTrace(kee);
-                        KernelEntry.SafeMode = false;
                     }
                     catch (Exception ex)
                     {
-                        KernelPanic.KernelError(KernelErrorLevel.U, true, 5, LanguageTools.GetLocalized("NKS_KERNEL_ENVERROR") + $" {ex.Message}", ex);
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_ENVERROR") + $" {ex.Message}", ThemeColorType.Error);
                     }
                     finally
                     {
-                        // Reset everything to their initial state
-                        if (!PowerManager.hardShutdown)
-                        {
-                            KernelInitializers.ResetEverything();
-                            PowerSignalHandlers.DisposeHandlers();
-
-                            // Clear the console
-                            ThemeColorsTools.LoadBackground();
-                        }
+                        // Execute exit point
+                        EnvironmentTools.ExecuteExitEnvironment();
 
                         // Always switch back to the main environment
                         if (EnvironmentTools.anotherEnvPending)
@@ -131,41 +87,18 @@ namespace Nitrocid
                             else
                                 EnvironmentTools.resetEnvironment = true;
                         }
+
+                        // Check to see if we're demanding a shutdown
+                        string typeName = typeof(EnvironmentTools).Assembly?.FullName?.Replace(".Core", ".Base") ?? "";
+                        var shutdownVar = Type.GetType($"Nitrocid.Base.Kernel.Power.PowerManager, {typeName}")?.GetField("KernelShutdown", BindingFlags.NonPublic | BindingFlags.Static);
+                        if ((bool)(shutdownVar?.GetValue(null) ?? false))
+                            kernelShutdown = true;
                     }
                 }
-
-                // If "No APM" is enabled, simply print the text
-                if (Config.MainConfig.SimulateNoAPM)
-                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_NOAPMSIMULATION"), new InfoBoxSettings()
-                    {
-                        ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Success)
-                    });
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_KERNEL_FATALERROR") + $" {ex.Message}", new InfoBoxSettings()
-                {
-                    ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
-                });
-            }
-            finally
-            {
-                // Load main buffer
-                if (!KernelPlatform.IsOnWindows() && KernelEntry.UseAltBuffer && ConsoleMisc.IsOnAltBuffer && !PowerManager.hardShutdown)
-                    ConsoleMisc.ShowMainBuffer();
-
-                // Reset colors and clear the console
-                if (!PowerManager.hardShutdown)
-                    ConsoleClearing.ResetAll();
-                else
-                    ThemeColorsTools.ResetColors();
-
-                // Reset cursor state
-                ConsoleWrapper.CursorVisible = true;
-
-                // Check to see if we're restarting Nitrocid with elevated permissions
-                if (PowerManager.elevating && KernelPlatform.IsOnWindows() && !WindowsUserTools.IsAdministrator())
-                    PowerManager.ElevateSelf();
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_FATALERROR") + $" {ex}", ThemeColorType.Error);
             }
         }
     }

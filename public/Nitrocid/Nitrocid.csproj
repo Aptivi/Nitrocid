@@ -67,7 +67,6 @@
 
   <!-- KS Base projects -->
   <ItemGroup>
-    <ProjectReference Include="..\Nitrocid.Base\Nitrocid.Base.csproj" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <ProjectReference Include="..\Nitrocid.Core\Nitrocid.Core.csproj" PrivateAssets="contentfiles;analyzers;build;runtime" />
   </ItemGroup>
   <!-- KS Base projects End -->

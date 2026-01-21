@@ -28,6 +28,8 @@ namespace Nitrocid.Core.Environment
     /// </summary>
     public abstract class BaseEnvironment : IEnvironment
     {
+        private Assembly? baseAsm = null;
+
         /// <summary>
         /// Arguments to provide this environment
         /// </summary>
@@ -38,14 +40,31 @@ namespace Nitrocid.Core.Environment
             LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_BASENAME");
 
         /// <inheritdoc/>
+        public Action EnvironmentInit =>
+            () => baseAsm = Assembly.LoadFrom("Nitrocid.Base.dll");
+
+        /// <inheritdoc/>
         public virtual Action EnvironmentEntry
         {
             get
             {
-                string typeName = typeof(EnvironmentTools).Assembly?.FullName?.Replace(".Core", ".Base") ?? "";
-                var entryPointMethod = Type.GetType($"Nitrocid.Base.Kernel.KernelEntry, {typeName}")?.GetMethod("EntryPoint", BindingFlags.NonPublic | BindingFlags.Static) ??
+                string typeName = baseAsm?.FullName ?? "";
+                string asmName = baseAsm?.GetName().Name ?? "";
+                var entryPointMethod = Type.GetType($"{asmName}.Kernel.KernelEntry, {typeName}")?.GetMethod("EntryPoint", BindingFlags.NonPublic | BindingFlags.Static) ??
                     throw new Exception(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT"));
                 return new(() => entryPointMethod.Invoke(null, [Arguments]));
+            }
+        }
+
+        /// <inheritdoc/>
+        public virtual Action EnvironmentExit
+        {
+            get
+            {
+                string typeName = baseAsm?.FullName ?? "";
+                string asmName = baseAsm?.GetName().Name ?? "";
+                var exitPointMethod = Type.GetType($"{asmName}.Kernel.KernelEntry, {typeName}")?.GetMethod("ExitPoint", BindingFlags.NonPublic | BindingFlags.Static);
+                return new(() => exitPointMethod?.Invoke(null, null));
             }
         }
     }
