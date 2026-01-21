@@ -27,6 +27,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Shell.Commands;
 using Terminaux.Shell.Help;
 using Terminaux.Writer.ConsoleWriters;
+using OtpNet;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -57,11 +58,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         var userInfo = UserManagement.GetUser(userName) ??
                             throw new KernelException(KernelExceptionType.NoSuchUser);
                         TwoFactorAuthTools.EnrollUser(userName);
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE") + $": {userInfo.TwoFactorSecret}");
+                        string secretDisplay = Base32Encoding.ToString(TwoFactorAuthTools.SecretToBytes(userInfo));
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE") + $": {secretDisplay}");
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE_QR"));
                         string qrCodeRendered = TwoFactorAuthTools.RenderQRCodeMatrix(userName);
                         TextWriterColor.Write(qrCodeRendered, false);
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER") + $": {userInfo.TwoFactorSecret}");
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_ENROLLMENTCOMPLETE_REMINDER") + $": {secretDisplay}");
                         break;
                     }
                 case "delete":
@@ -87,7 +89,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                         // Write the setup key
                         var userInfo = UserManagement.GetUser(userName) ??
                             throw new KernelException(KernelExceptionType.NoSuchUser);
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_SETUPKEY") + $": {userInfo.TwoFactorSecret}");
+                        string secretDisplay = Base32Encoding.ToString(TwoFactorAuthTools.SecretToBytes(userInfo));
+                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_2FA_SETUPKEY") + $": {secretDisplay}");
                         break;
                     }
                 case "setupqr":

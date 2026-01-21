@@ -17,13 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Text;
+using Nitrocid.Base.Drivers;
+using Nitrocid.Base.Drivers.Encoding;
 using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Text.Probers.Regexp;
 using OtpNet;
 using QRCoder;
+using Textify.General;
 
 namespace Nitrocid.Base.Users.TwoFactorAuth
 {
@@ -40,7 +44,32 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         internal static bool IsUserEnrolled(UserInfo user)
         {
             // Check to see if there is a valid secret and the enrollment is enabled
-            return user.TwoFactorEnabled && !string.IsNullOrEmpty(user.TwoFactorSecret) && RegexpTools.IsMatch(user.TwoFactorSecret, "(?:[A-Z2-7]{8})*(?:[A-Z2-7]{2}={6}|[A-Z2-7]{4}={4}|[A-Z2-7]{5}={3}|[A-Z2-7]{7}=)?");
+            try
+            {
+                if (!user.TwoFactorEnabled || string.IsNullOrEmpty(user.TwoFactorSecret))
+                    return false;
+                var secretBytes = SecretToBytesInternal(user);
+                string secretString = Base32Encoding.ToString(secretBytes);
+                return IsValidBase32(secretString);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        internal static bool IsUserEnrolledLegacy(string user)
+        {
+            // Get the user info and re-call this function
+            var userInfo = UserManagement.GetUser(user) ??
+                throw new KernelException(KernelExceptionType.NoSuchUser);
+            return IsUserEnrolledLegacy(userInfo);
+        }
+
+        internal static bool IsUserEnrolledLegacy(UserInfo user)
+        {
+            // Check to see if there is a valid secret and the enrollment is enabled
+            return user.TwoFactorEnabled && !string.IsNullOrEmpty(user.TwoFactorSecret) && IsValidBase32(user.TwoFactorSecret);
         }
 
         internal static void EnrollUser(string user)
@@ -54,7 +83,7 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         internal static void EnrollUser(UserInfo user)
         {
             // Check for user enrollment
-            if (IsUserEnrolled(user))
+            if (IsUserEnrolled(user) || IsUserEnrolledLegacy(user))
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERALREADYENROLLED"));
 
             // Check the lock
@@ -68,10 +97,13 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
             // Generate a random key
             var key = KeyGeneration.GenerateRandomKey(20);
             string keyString = Base32Encoding.ToString(key);
+            EncodeKey(keyString, out string keyAesEncoded, out string keyIvEncoded, out string keyEncoded);
 
             // Process the enrollment
             user.TwoFactorEnabled = true;
-            user.TwoFactorSecret = keyString;
+            user.TwoFactorSecret = keyEncoded;
+            user.TwoFactorKey = keyAesEncoded;
+            user.TwoFactorIv = keyIvEncoded;
             UserManagement.SaveUsers();
         }
 
@@ -86,7 +118,7 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         internal static void UnenrollUser(UserInfo user)
         {
             // Check for user enrollment
-            if (!IsUserEnrolled(user))
+            if (!IsUserEnrolled(user) && !IsUserEnrolledLegacy(user))
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED"));
 
             // Check the lock
@@ -100,6 +132,8 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
             // Cancel the enrollment
             user.TwoFactorEnabled = false;
             user.TwoFactorSecret = "";
+            user.TwoFactorKey = "";
+            user.TwoFactorIv = "";
             UserManagement.SaveUsers();
         }
 
@@ -114,15 +148,49 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         internal static byte[] SecretToBytes(UserInfo user)
         {
             // Check for user enrollment
-            if (!IsUserEnrolled(user))
+            if (!IsUserEnrolled(user) && !IsUserEnrolledLegacy(user))
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED"));
 
+            return SecretToBytesInternal(user);
+        }
+
+        internal static byte[] SecretToBytesInternal(UserInfo user)
+        {
             // Check the password
             if (string.IsNullOrEmpty(user.Password) || user.Password == Encryption.GetEmptyHash("SHA256"))
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERHASNOPASSWORD_MISC"));
 
+            // Upgrade the key if needed
+            UpgradeLegacyKey(user);
+
             // Get the secret bytes
-            return Base32Encoding.ToBytes(user.TwoFactorSecret);
+            var rsaDriver = DriverHandler.GetDriver<IEncodingDriver>("Default");
+            rsaDriver.Initialize();
+            byte[] keyAesEncoded = Convert.FromBase64String(user.TwoFactorKey);
+            byte[] keyIvEncoded = Convert.FromBase64String(user.TwoFactorIv);
+            string keyEncoded = rsaDriver.GetDecodedString(Convert.FromBase64String(user.TwoFactorSecret), keyAesEncoded, keyIvEncoded);
+            return Base32Encoding.ToBytes(keyEncoded);
+        }
+
+        internal static void EncodeKey(string keyString, out string keyAesEncoded, out string keyIvEncoded, out string keyEncoded)
+        {
+            var rsaDriver = DriverHandler.GetDriver<IEncodingDriver>("Default");
+            rsaDriver.Initialize();
+            keyAesEncoded = Convert.ToBase64String(rsaDriver.Key);
+            keyIvEncoded = Convert.ToBase64String(rsaDriver.Iv);
+            keyEncoded = Convert.ToBase64String(rsaDriver.GetEncodedString(keyString));
+        }
+
+        internal static void UpgradeLegacyKey(UserInfo user)
+        {
+            if (!IsUserEnrolledLegacy(user))
+                return;
+            EncodeKey(user.TwoFactorSecret, out string keyAesEncoded, out string keyIvEncoded, out string keyEncoded);
+            user.TwoFactorEnabled = true;
+            user.TwoFactorSecret = keyEncoded;
+            user.TwoFactorKey = keyAesEncoded;
+            user.TwoFactorIv = keyIvEncoded;
+            UserManagement.SaveUsers();
         }
 
         internal static string GenerateOtpAuthUrl(string user)
@@ -136,7 +204,7 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         internal static string GenerateOtpAuthUrl(UserInfo user)
         {
             // Check for user enrollment
-            if (!IsUserEnrolled(user))
+            if (!IsUserEnrolled(user) && !IsUserEnrolledLegacy(user))
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED"));
 
             // Check the password
@@ -146,7 +214,7 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
             // Generate the OTP auth URL for Google Authenticator
             var otpUrl = new OtpUri(
                 OtpType.Totp,
-                Base32Encoding.ToBytes(user.TwoFactorSecret),
+                SecretToBytes(user),
                 user.Username,
                 "Nitrocid"
             );
@@ -164,7 +232,7 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
         internal static QRCodeData GenerateQRCodeData(UserInfo user)
         {
             // Check for user enrollment
-            if (!IsUserEnrolled(user))
+            if (!IsUserEnrolled(user) && !IsUserEnrolledLegacy(user))
                 throw new KernelException(KernelExceptionType.UserManagement, LanguageTools.GetLocalized("NKS_USERS_2FA_EXCEPTION_USERNOTENROLLED"));
 
             // Check the password
@@ -193,6 +261,7 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
             var otpQRMatrix = codeData.ModuleMatrix;
 
             // Now, we need to use this data to print QR code to the console
+            // TODO: In Terminaux 8.2, move this code to a simple writer, QrCode.
             var qrBuilder = new StringBuilder();
             for (int y = 0; y < otpQRMatrix.Count; y += 2)
             {
@@ -215,6 +284,17 @@ namespace Nitrocid.Base.Users.TwoFactorAuth
                 qrBuilder.AppendLine();
             }
             return qrBuilder.ToString();
+        }
+
+        private static bool IsValidBase32(string secret)
+        {
+            for (int i = 0; i < secret.Length; i++)
+            {
+                char c = secret[i];
+                if ((c >= '[' || c <= '@') && (c >= '8' || c <= '1') && (c >= '{' || c <= '`'))
+                    return false;
+            }
+            return true;
         }
     }
 }

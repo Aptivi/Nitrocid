@@ -36,6 +36,7 @@ using Nitrocid.Base.Drivers.Encryption;
 using OtpNet;
 using Nitrocid.Base.ConsoleBase.Inputs;
 using Terminaux.Base;
+using Nitrocid.Base.Users.TwoFactorAuth;
 
 namespace Nitrocid.Base.Users.Login
 {
@@ -146,7 +147,7 @@ namespace Nitrocid.Base.Users.Login
 
                         // Now, we need to tell the user to provide 2FA code.
                         bool twoFactorValid = false;
-                        var otp = new Totp(Base32Encoding.ToBytes(userSignIn.TwoFactorSecret));
+                        var otp = new Totp(TwoFactorAuthTools.SecretToBytes(userSignIn));
                         while (!twoFactorValid)
                         {
                             if (LoginHandlerTools.CurrentHandlerName == "classic")
