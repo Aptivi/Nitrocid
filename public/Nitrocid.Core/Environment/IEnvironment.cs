@@ -31,8 +31,16 @@ namespace Nitrocid.Core.Environment
         /// </summary>
         string Name { get; }
         /// <summary>
+        /// Environment initialization point method
+        /// </summary>
+        Action EnvironmentInit { get; }
+        /// <summary>
         /// Environment entry point method
         /// </summary>
         Action EnvironmentEntry { get; }
+        /// <summary>
+        /// Environment exit point method
+        /// </summary>
+        Action EnvironmentExit { get; }
     }
 }

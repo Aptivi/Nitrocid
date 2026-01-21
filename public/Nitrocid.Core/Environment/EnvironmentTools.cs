@@ -68,7 +68,13 @@ namespace Nitrocid.Core.Environment
             SetEnvironmentArgs(mainEnvironment, kernelArguments);
         }
 
+        internal static void ExecuteInitEnvironment() =>
+            environment.EnvironmentInit();
+
         internal static void ExecuteEnvironment() =>
             environment.EnvironmentEntry();
+
+        internal static void ExecuteExitEnvironment() =>
+            environment.EnvironmentExit();
     }
 }
