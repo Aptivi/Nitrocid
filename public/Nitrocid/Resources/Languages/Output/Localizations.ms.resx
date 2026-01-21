@@ -117,32 +117,11 @@
     <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
-    <value>Tekan sebarang kekunci untuk meneruskan...</value>
-  </data>
-  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
-    <value>Kini selamat untuk mematikan komputer anda.</value>
-  </data>
-  <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
+      <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
     <value>Ralat persekitaran kernel:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
     <value>Nitrocid KS telah mengesan masalah dan ia telah ditutup.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
-    <value>Anda menjalankan versi pembangunan kernel. Walaupun anda boleh mengalami ciri akan datang yang mungkin wujud dalam keluaran akhir, anda mungkin menghadapi pepijat, ketidakstabilan atau kehilangan data. Kami mengesyorkan menggunakan versi stabil, jika boleh.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
-    <value>Anda menjalankan versi calon keluaran bagi kernel. Walaupun anda boleh mengalami sentuhan terakhir, anda mungkin menghadapi pepijat, ketidakstabilan, atau kehilangan data. Kami mengesyorkan menggunakan versi stabil, jika boleh.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
-    <value>Kami mengesyorkan agar anda tidak menjalankan versi kernel ini, kerana ia tidak disokong. Jika anda telah memuat turun kernel ini daripada sumber yang tidak diketahui, mesej ini mungkin muncul. Sila muat turun dari halaman muat turun rasmi kami.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
-    <value>Anda menjalankan versi alfa kernel. Anda mungkin menghadapi pepijat, ketidakstabilan, atau kehilangan data. Kami mengesyorkan menggunakan versi stabil, jika boleh.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
-    <value>Anda menjalankan versi beta kernel. Anda mungkin menghadapi pepijat, ketidakstabilan, atau kehilangan data. Kami mengesyorkan menggunakan versi stabil, jika boleh.</value>
   </data>
 
 </root>

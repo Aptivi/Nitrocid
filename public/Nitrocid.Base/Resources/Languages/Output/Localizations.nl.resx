@@ -7161,5 +7161,26 @@
   <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
     <value>Bron {0} niet gevonden voor type {1} in deze onbekende assembly</value>
   </data>
+  <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
+    <value>Druk op een toets om door te gaan...</value>
+  </data>
+  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
+    <value>Het is nu veilig om uw computer uit te zetten.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
+    <value>U gebruikt de ontwikkelingsversie van de kernel. Hoewel u toekomstige functies kunt ervaren die mogelijk al in de definitieve release aanwezig zijn, kunt u te maken krijgen met bugs, instabiliteiten of zelfs gegevensverlies. We raden aan om, indien mogelijk, de stabiele versie te gebruiken.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
+    <value>Je gebruikt de release candidate-versie van de kernel. Terwijl u nog de laatste hand kunt leggen, kunt u bugs, instabiliteiten of zelfs gegevensverlies tegenkomen. We raden aan om, indien mogelijk, de stabiele versie te gebruiken.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
+    <value>We raden u aan deze versie van de kernel niet uit te voeren, omdat deze niet wordt ondersteund. Als je deze kernel van onbekende bronnen hebt gedownload, kan dit bericht verschijnen. Download het van onze officiële downloadpagina.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
+    <value>U gebruikt de alfaversie van de kernel. U kunt bugs, instabiliteit of zelfs gegevensverlies tegenkomen. We raden u aan om, indien mogelijk, de stabiele versie te gebruiken.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
+    <value>U gebruikt de bètaversie van de kernel. U kunt bugs, instabiliteit of zelfs gegevensverlies tegenkomen. We raden u aan om, indien mogelijk, de stabiele versie te gebruiken.</value>
+  </data>
 
 </root>

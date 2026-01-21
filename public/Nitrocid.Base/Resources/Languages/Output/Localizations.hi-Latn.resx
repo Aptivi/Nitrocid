@@ -7161,5 +7161,26 @@
   <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
     <value>is anajaan asembalee mein taip {1} ke lie risors {0} nahin mila</value>
   </data>
+  <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
+    <value>jaaree rakhane ke lie koee bhee kunjee dabaen...</value>
+  </data>
+  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
+    <value>apane kampyootar ko band karana ab surakshit hai.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
+    <value>aap karnel ka vikaas sanskaran chala rahe hain. jabaki aap aane vaalee suvidhaon ka anubhav kar sakate hain jo antim rileez mein maujood ho sakatee hain, aap bag, asthirata ya yahaan tak ki deta haani ka saamana kar sakate hain. yadi sambhav ho to ham sthir sanskaran ka upayog karane kee salaah dete hain.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
+    <value>aap karnel ka rileez kaindidet varshan chala rahe hain. jab aap antim charan ka anubhav kar sakate hain, to aap bag, asthirata ya yahaan tak ki deta haani ka saamana kar sakate hain. yadi sambhav ho to ham sthir sanskaran ka upayog karane kee salaah dete hain.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
+    <value>ham karnel ke is sanskaran ko chalaane ke viruddh salaah dete hain, kyonki yah asamarthit hai. yadi aapane is karnel ko agyaat sroton se daunalod kiya hai, to yah sandesh dikhaee de sakata hai. krpaya hamaare aadhikaarik daunalod prshth se daunalod karen.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
+    <value>aap karnel ka alfa sanskaran chala rahe hain. aapako bag, asthirata ya deta haani ka saamana karana pad sakata hai. yadi sambhav ho, to ham sthir sanskaran ka upayog karane kee salaah dete hain.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
+    <value>aap karnel ka beeta sanskaran chala rahe hain. aapako bag, asthirata ya deta haani ka saamana karana pad sakata hai. yadi sambhav ho, to ham sthir sanskaran ka upayog karane kee salaah dete hain.</value>
+  </data>
 
 </root>

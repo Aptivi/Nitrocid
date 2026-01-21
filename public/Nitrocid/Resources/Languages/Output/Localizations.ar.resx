@@ -117,32 +117,11 @@
     <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
-    <value>اضغط على أي مفتاح للاستمرار...</value>
-  </data>
-  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
-    <value>يمكنك الآن إيقاف تشغيل جهاز الكمبيوتر الخاص بك بأمان.</value>
-  </data>
-  <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
+      <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
     <value>خطأ في بيئة النواة:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
     <value>اكتشف Nitrocid KS مشكلة وتم إغلاقه.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
-    <value>أنت تقوم بتشغيل الإصدار التطويري للنواة. بينما يمكنك تجربة الميزات القادمة التي قد تكون موجودة في الإصدار النهائي، فقد تواجه أخطاء أو عدم استقرار أو حتى فقدان البيانات. نوصي باستخدام الإصدار الثابت، إن أمكن.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
-    <value>أنت تقوم بتشغيل الإصدار المرشح للنواة. بينما يمكنك تجربة اللمسات الأخيرة، قد تواجه أخطاء أو عدم استقرار أو حتى فقدان البيانات. نوصي باستخدام الإصدار الثابت، إن أمكن.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
-    <value>نوصي بعدم تشغيل هذا الإصدار من النواة، لأنه غير مدعوم. إذا قمت بتنزيل هذا النواة من مصادر غير معروفة، فقد تظهر هذه الرسالة. يرجى التنزيل من صفحة التنزيلات الرسمية لدينا.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
-    <value>أنت تستخدم الإصدار التجريبي من النواة. قد تواجه أخطاءً أو عدم استقرار أو حتى فقدانًا للبيانات. نوصي باستخدام الإصدار المستقر إن أمكن.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
-    <value>أنت تستخدم الإصدار التجريبي من النواة. قد تواجه أخطاءً أو عدم استقرار أو حتى فقدانًا للبيانات. نوصي باستخدام الإصدار المستقر إن أمكن.</value>
   </data>
 
 </root>

@@ -113,40 +113,12 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "Press any key to continue..."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "It's now safe to turn off your computer."
-    },
-    {
       "loc": "NKS_KERNEL_ENVERROR",
       "text": "Kernel environment error:"
     },
     {
       "loc": "NKS_KERNEL_FATALERROR",
       "text": "Nitrocid KS has detected a problem and it has been shut down."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "You're running the release candidate version of the kernel. While you can experience the final touches, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
-      "text": "You're running the alpha version of the kernel. You may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
-      "text": "You're running the beta version of the kernel. You may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible."
     }
   ]
 }

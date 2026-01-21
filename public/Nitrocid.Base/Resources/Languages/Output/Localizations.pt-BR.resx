@@ -7161,5 +7161,26 @@
   <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
     <value>Recurso {0} não encontrado para o tipo {1} nesta montagem desconhecida</value>
   </data>
+  <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
+    <value>Pressione qualquer tecla para continuar...</value>
+  </data>
+  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
+    <value>Agora é seguro desligar seu computador.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
+    <value>Você está executando a versão de desenvolvimento do kernel. Embora você possa experimentar os próximos recursos que podem existir na versão final, você pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos usar a versão estável, se possível.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
+    <value>Você está executando a versão release candidate do kernel. Embora você possa experimentar os toques finais, você pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos usar a versão estável, se possível.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
+    <value>Não recomendamos executar esta versão do kernel, pois ela não é suportada. Se você baixou este kernel de fontes desconhecidas, esta mensagem pode aparecer. Por favor, baixe da nossa página oficial de downloads.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
+    <value>Você está executando a versão alfa do kernel. Você pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos usar a versão estável, se possível.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
+    <value>Você está executando a versão beta do kernel. Você pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos usar a versão estável, se possível.</value>
+  </data>
 
 </root>

@@ -7161,5 +7161,26 @@
   <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
     <value>Acmhainn {0} gan aimsiú don chineál {1} ​​sa tionól anaithnid seo</value>
   </data>
+  <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
+    <value>Brúigh aon eochair le leanúint ar aghaidh...</value>
+  </data>
+  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
+    <value>Tá sé sábháilte anois do ríomhaire a mhúchadh.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
+    <value>Tá an leagan forbartha den eithne á rith agat. Cé gur féidir leat taithí a fháil ar ghnéithe atá le teacht a d’fhéadfadh a bheith sa scaoileadh deiridh, d’fhéadfadh fabhtanna, éagobhsaíocht nó fiú caillteanas sonraí a bheith agat. Molaimid an leagan cobhsaí a úsáid, más féidir.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
+    <value>Tá leagan iarrthóra an eithne á rith agat. Cé gur féidir leat taithí a fháil ar na baint deiridh, féadfaidh tú fabhtanna, éagobhsaíocht, nó fiú cailliúint sonraí. Molaimid an leagan cobhsaí a úsáid, más féidir.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
+    <value>Molaimid gan an leagan seo den eithne a rith, toisc nach dtacaítear leis. Má d’íoslódáil tú an t-eithne seo ó fhoinsí anaithnide, seans go dtaispeánfar an teachtaireacht seo. Le do thoil a íoslódáil ónár leathanach íoslódálacha oifigiúil.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
+    <value>Tá leagan alfa an eithne á rith agat. D’fhéadfadh fabhtanna, éagobhsaíochtaí, nó fiú cailliúint sonraí teacht ort. Molaimid an leagan cobhsaí a úsáid, más féidir.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
+    <value>Tá leagan béite an eithne á rith agat. D’fhéadfadh fabhtanna, éagobhsaíochtaí, nó fiú cailliúint sonraí teacht ort. Molaimid an leagan cobhsaí a úsáid, más féidir.</value>
+  </data>
 
 </root>

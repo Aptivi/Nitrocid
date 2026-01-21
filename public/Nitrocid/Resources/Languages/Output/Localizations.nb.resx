@@ -117,32 +117,11 @@
     <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
-    <value>Trykk på en hvilken som helst tast for å fortsette...</value>
-  </data>
-  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
-    <value>Det er nå trygt å slå av datamaskinen.</value>
-  </data>
-  <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
+      <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
     <value>Kjernemiljøfeil:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
     <value>Nitrocid KS har oppdaget et problem, og det har blitt stengt.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
-    <value>Du kjører utviklingsversjonen av kjernen. Selv om du kan oppleve kommende funksjoner som kan eksistere i den endelige utgivelsen, kan du støte på feil, ustabilitet eller til og med tap av data. Vi anbefaler å bruke den stabile versjonen, hvis mulig.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
-    <value>Du kjører utgivelseskandidatversjonen av kjernen. Mens du kan oppleve siste finpuss, kan du støte på feil, ustabilitet eller til og med tap av data. Vi anbefaler å bruke den stabile versjonen, hvis mulig.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
-    <value>Vi anbefaler ikke å kjøre denne versjonen av kjernen, fordi den ikke støttes. Hvis du har lastet ned denne kjernen fra ukjente kilder, kan denne meldingen vises. Last ned fra vår offisielle nedlastingsside.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
-    <value>Du kjører alfaversjonen av kjernen. Du kan støte på feil, ustabilitet eller til og med datatap. Vi anbefaler å bruke den stabile versjonen hvis mulig.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
-    <value>Du kjører betaversjonen av kjernen. Du kan støte på feil, ustabilitet eller til og med datatap. Vi anbefaler å bruke den stabile versjonen hvis mulig.</value>
   </data>
 
 </root>

@@ -7161,5 +7161,26 @@
   <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
     <value>Ressource {0} für Typ {1} in dieser unbekannten Assembly nicht gefunden</value>
   </data>
+  <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
+    <value>Drücken Sie eine beliebige Taste, um fortzufahren ...</value>
+  </data>
+  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
+    <value>Sie können Ihren Computer jetzt sicher ausschalten.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
+    <value>Sie führen die Entwicklungsversion des Kernels aus. Während Sie bevorstehende Funktionen erleben können, die möglicherweise in der endgültigen Version enthalten sind, kann es zu Fehlern, Instabilitäten oder sogar Datenverlusten kommen. Wir empfehlen, wenn möglich die stabile Version zu verwenden.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
+    <value>Sie führen die Release Candidate-Version des Kernels aus. Während Sie den letzten Feinschliff vornehmen können, kann es zu Fehlern, Instabilitäten oder sogar Datenverlusten kommen. Wir empfehlen, wenn möglich die stabile Version zu verwenden.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
+    <value>Wir raten davon ab, diese Version des Kernels auszuführen, da sie nicht unterstützt wird. Wenn Sie diesen Kernel von unbekannten Quellen heruntergeladen haben, wird möglicherweise diese Meldung angezeigt. Bitte laden Sie es von unserer offiziellen Download-Seite herunter.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
+    <value>Sie verwenden die Alpha-Version des Kernels. Es können Fehler, Instabilitäten oder sogar Datenverlust auftreten. Wir empfehlen, wenn möglich, die stabile Version zu verwenden.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
+    <value>Sie verwenden die Beta-Version des Kernels. Es können Fehler, Instabilitäten oder sogar Datenverlust auftreten. Wir empfehlen, wenn möglich, die stabile Version zu verwenden.</value>
+  </data>
 
 </root>

@@ -7161,5 +7161,26 @@
   <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
     <value>इस अनजान असेंबली में टाइप {1} के लिए रिसोर्स {0} नहीं मिला</value>
   </data>
+  <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
+    <value>जारी रखने के लिए किसी भी कुंजी को दबाएं...</value>
+  </data>
+  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
+    <value>अपने कंप्यूटर को बंद करना अब सुरक्षित है।</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
+    <value>आप कर्नेल का विकास संस्करण चला रहे हैं. हालाँकि आप आगामी सुविधाओं का अनुभव कर सकते हैं जो अंतिम रिलीज़ में मौजूद हो सकती हैं, आपको बग, अस्थिरता या यहाँ तक कि डेटा हानि का भी सामना करना पड़ सकता है। यदि संभव हो तो हम स्थिर संस्करण का उपयोग करने की सलाह देते हैं।</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
+    <value>आप कर्नेल का रिलीज़ कैंडिडेट संस्करण चला रहे हैं। जब आप अंतिम स्पर्श का अनुभव कर सकते हैं, तो आपको बग, अस्थिरता या यहां तक कि डेटा हानि का सामना करना पड़ सकता है। यदि संभव हो तो हम स्थिर संस्करण का उपयोग करने की सलाह देते हैं।</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
+    <value>हम कर्नेल के इस संस्करण को न चलाने की अनुशंसा करते हैं, क्योंकि यह असमर्थित है। यदि आपने इस कर्नेल को अज्ञात स्रोतों से डाउनलोड किया है, तो यह संदेश दिखाई दे सकता है। कृपया हमारे आधिकारिक डाउनलोड पृष्ठ से डाउनलोड करें।</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
+    <value>आप कर्नेल का अल्फ़ा संस्करण चला रहे हैं। आपको बग, अस्थिरता या डेटा हानि का सामना करना पड़ सकता है। यदि संभव हो, तो हम स्थिर संस्करण का उपयोग करने की सलाह देते हैं।</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
+    <value>आप कर्नेल का बीटा संस्करण चला रहे हैं। आपको बग, अस्थिरता या डेटा हानि का सामना करना पड़ सकता है। यदि संभव हो, तो हम स्थिर संस्करण का उपयोग करने की सलाह देते हैं।</value>
+  </data>
 
 </root>

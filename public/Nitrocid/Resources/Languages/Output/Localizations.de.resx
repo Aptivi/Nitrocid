@@ -117,32 +117,11 @@
     <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
-    <value>Drücken Sie eine beliebige Taste, um fortzufahren ...</value>
-  </data>
-  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
-    <value>Sie können Ihren Computer jetzt sicher ausschalten.</value>
-  </data>
-  <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
+      <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
     <value>Fehler in der Kernelumgebung:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
     <value>Nitrocid KS hat ein Problem festgestellt und wurde abgeschaltet.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
-    <value>Sie führen die Entwicklungsversion des Kernels aus. Während Sie bevorstehende Funktionen erleben können, die möglicherweise in der endgültigen Version enthalten sind, kann es zu Fehlern, Instabilitäten oder sogar Datenverlusten kommen. Wir empfehlen, wenn möglich die stabile Version zu verwenden.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
-    <value>Sie führen die Release Candidate-Version des Kernels aus. Während Sie den letzten Feinschliff vornehmen können, kann es zu Fehlern, Instabilitäten oder sogar Datenverlusten kommen. Wir empfehlen, wenn möglich die stabile Version zu verwenden.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
-    <value>Wir raten davon ab, diese Version des Kernels auszuführen, da sie nicht unterstützt wird. Wenn Sie diesen Kernel von unbekannten Quellen heruntergeladen haben, wird möglicherweise diese Meldung angezeigt. Bitte laden Sie es von unserer offiziellen Download-Seite herunter.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
-    <value>Sie verwenden die Alpha-Version des Kernels. Es können Fehler, Instabilitäten oder sogar Datenverlust auftreten. Wir empfehlen, wenn möglich, die stabile Version zu verwenden.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
-    <value>Sie verwenden die Beta-Version des Kernels. Es können Fehler, Instabilitäten oder sogar Datenverlust auftreten. Wir empfehlen, wenn möglich, die stabile Version zu verwenden.</value>
   </data>
 
 </root>

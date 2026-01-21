@@ -9397,6 +9397,34 @@
     {
       "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
       "text": "Không tìm thấy tài nguyên {0} cho loại {1} trong cụm lắp ráp không xác định này"
+    },
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Nhấn phím bất kỳ để tiếp tục..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "Bây giờ bạn có thể tắt máy tính một cách an toàn."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "Bạn đang chạy phiên bản phát triển của hạt nhân. Mặc dù bạn có thể trải nghiệm các tính năng sắp ra mắt có thể có trong bản phát hành cuối cùng, bạn có thể gặp phải lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định, nếu có thể."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "Bạn đang chạy phiên bản ứng viên phát hành của hạt nhân. Mặc dù bạn có thể trải nghiệm những bước hoàn thiện cuối cùng, bạn có thể gặp phải lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định nếu có thể."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "Chúng tôi khuyên bạn không nên chạy phiên bản kernel này vì nó không được hỗ trợ. Nếu bạn đã tải xuống kernel này từ các nguồn không xác định, thông báo này có thể xuất hiện. Vui lòng tải xuống từ trang tải xuống chính thức của chúng tôi."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "Bạn đang chạy phiên bản alpha của kernel. Bạn có thể gặp lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định, nếu có thể."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "Bạn đang chạy phiên bản beta của kernel. Bạn có thể gặp lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định, nếu có thể."
     }
   ]
 }
