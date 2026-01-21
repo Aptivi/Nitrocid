@@ -7161,5 +7161,26 @@
   <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
     <value>Copia {0} non inventa pro genere {1} in hac congregatione ignota</value>
   </data>
+  <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
+    <value>Preme quamlibet clavem ut pergas...</value>
+  </data>
+  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
+    <value>Nunc tutum est ut computatrum tuum averte.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
+    <value>Progressio nuclei versionem curris. Dum experiri potes features venturas quae in ultima emissione possunt existere, in cimices, instabilitates, vel etiam damnum notitiarum incurrere potes. Commendamus utendo versione stabili, si fieri potest.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
+    <value>Remissionis candidatum nuclei versionem curris. Dum experiri potes ultimum tactum, incurras in cimices, instabilitates, vel etiam damna data. Commendamus utendo versione stabili, si fieri potest.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
+    <value>Commendamus contra currendum hanc versionem nuclei, quia sine suffragio est. Si hoc granum ex ignotis fontibus deiecisti, haec epistula potest apparere. Please download from our official downloads page.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
+    <value>Versionem alpha nuclei uteris. In errores, instabilitates, vel etiam iacturam datorum incidere potes. Versione stabili uti commendamus, si fieri potest.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
+    <value>Versionem beta nuclei uteris. In errores, instabilitates, vel etiam iacturam datorum incidere potes. Versione stabili uti commendamus, si fieri potest.</value>
+  </data>
 
 </root>

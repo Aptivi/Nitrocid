@@ -117,32 +117,11 @@
     <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
-    <value>Devam etmek için herhangi bir tuşa basın...</value>
-  </data>
-  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
-    <value>Artık bilgisayarınızı güvenle kapatabilirsiniz.</value>
-  </data>
-  <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
+      <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
     <value>Çekirdek ortam hatası:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
     <value>Nitrocid KS bir sorun tespit etti ve kapatıldı.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
-    <value>Çekirdeğin geliştirme sürümünü çalıştırıyorsunuz. Son sürümde bulunabilecek yaklaşan özellikleri deneyimleyebilmenize rağmen hatalarla, istikrarsızlıklarla veya hatta veri kaybıyla karşılaşabilirsiniz. Mümkünse kararlı sürümü kullanmanızı öneririz.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
-    <value>Çekirdeğin yayın adayı sürümünü çalıştırıyorsunuz. Son rötuşları deneyimlerken hatalarla, dengesizliklerle veya hatta veri kaybıyla karşılaşabilirsiniz. Mümkünse kararlı sürümü kullanmanızı öneririz.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
-    <value>Bu çekirdek sürümünü çalıştırmamanızı öneririz çünkü desteklenmiyor. Bu çekirdeği bilinmeyen kaynaklardan indirdiyseniz, bu mesaj görünebilir. Lütfen resmi indirmeler sayfamızdan indirin.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
-    <value>Çekirdeğin alfa sürümünü kullanıyorsunuz. Hatalarla, dengesizliklerle ve hatta veri kayıplarıyla karşılaşabilirsiniz. Mümkünse kararlı sürümü kullanmanızı öneririz.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
-    <value>Çekirdeğin beta sürümünü kullanıyorsunuz. Hatalarla, dengesizliklerle ve hatta veri kayıplarıyla karşılaşabilirsiniz. Mümkünse kararlı sürümü kullanmanızı öneririz.</value>
   </data>
 
 </root>

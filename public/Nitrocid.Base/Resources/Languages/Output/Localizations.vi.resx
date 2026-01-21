@@ -7161,5 +7161,26 @@
   <data name="NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM" xml:space="preserve">
     <value>Không tìm thấy tài nguyên {0} cho loại {1} trong cụm lắp ráp không xác định này</value>
   </data>
+  <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
+    <value>Nhấn phím bất kỳ để tiếp tục...</value>
+  </data>
+  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
+    <value>Bây giờ bạn có thể tắt máy tính một cách an toàn.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
+    <value>Bạn đang chạy phiên bản phát triển của hạt nhân. Mặc dù bạn có thể trải nghiệm các tính năng sắp ra mắt có thể có trong bản phát hành cuối cùng, bạn có thể gặp phải lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định, nếu có thể.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
+    <value>Bạn đang chạy phiên bản ứng viên phát hành của hạt nhân. Mặc dù bạn có thể trải nghiệm những bước hoàn thiện cuối cùng, bạn có thể gặp phải lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định nếu có thể.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
+    <value>Chúng tôi khuyên bạn không nên chạy phiên bản kernel này vì nó không được hỗ trợ. Nếu bạn đã tải xuống kernel này từ các nguồn không xác định, thông báo này có thể xuất hiện. Vui lòng tải xuống từ trang tải xuống chính thức của chúng tôi.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
+    <value>Bạn đang chạy phiên bản alpha của kernel. Bạn có thể gặp lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định, nếu có thể.</value>
+  </data>
+  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
+    <value>Bạn đang chạy phiên bản beta của kernel. Bạn có thể gặp lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định, nếu có thể.</value>
+  </data>
 
 </root>

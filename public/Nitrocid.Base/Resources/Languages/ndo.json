@@ -9397,6 +9397,34 @@
     {
       "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
       "text": "Sumber daya {0} tidak ditemukan untuk tipe {1} di rakitan yang tidak dikenal ini"
+    },
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Tekan tombol apa saja untuk melanjutkan..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "Sekarang aman untuk mematikan komputer Anda."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "Anda menjalankan kernel versi pengembangan. Meskipun Anda dapat mencoba fitur-fitur mendatang yang mungkin ada dalam rilis final, Anda mungkin mengalami bug, ketidakstabilan, atau bahkan kehilangan data. Kami sarankan untuk menggunakan versi stabil, jika memungkinkan."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "Anda menjalankan versi kandidat rilis kernel. Meskipun Anda dapat mencoba sentuhan akhir, Anda mungkin mengalami bug, ketidakstabilan, atau bahkan kehilangan data. Kami sarankan untuk menggunakan versi stabil, jika memungkinkan."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "Kami sarankan untuk tidak menjalankan versi kernel ini, karena tidak didukung. Jika Anda mengunduh kernel ini dari sumber yang tidak dikenal, pesan ini mungkin muncul. Silakan unduh dari halaman unduhan resmi kami."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "Anda menjalankan kernel versi alfa. Anda mungkin mengalami bug, ketidakstabilan, atau bahkan kehilangan data. Kami sarankan untuk menggunakan versi stabil, jika memungkinkan."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "Anda menjalankan kernel versi beta. Anda mungkin mengalami bug, ketidakstabilan, atau bahkan kehilangan data. Kami sarankan untuk menggunakan versi stabil, jika memungkinkan."
     }
   ]
 }

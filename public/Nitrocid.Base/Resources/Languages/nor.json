@@ -9401,6 +9401,34 @@
     {
       "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
       "text": "Ressurs {0} ikke funnet for typen {1} i denne ukjente samlingen"
+    },
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "Trykk på en hvilken som helst tast for å fortsette..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "Det er nå trygt å slå av datamaskinen."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "Du kjører utviklingsversjonen av kjernen. Selv om du kan oppleve kommende funksjoner som kan eksistere i den endelige utgivelsen, kan du støte på feil, ustabilitet eller til og med tap av data. Vi anbefaler å bruke den stabile versjonen, hvis mulig."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "Du kjører utgivelseskandidatversjonen av kjernen. Mens du kan oppleve siste finpuss, kan du støte på feil, ustabilitet eller til og med tap av data. Vi anbefaler å bruke den stabile versjonen, hvis mulig."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "Vi anbefaler ikke å kjøre denne versjonen av kjernen, fordi den ikke støttes. Hvis du har lastet ned denne kjernen fra ukjente kilder, kan denne meldingen vises. Last ned fra vår offisielle nedlastingsside."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "Du kjører alfaversjonen av kjernen. Du kan støte på feil, ustabilitet eller til og med datatap. Vi anbefaler å bruke den stabile versjonen hvis mulig."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "Du kjører betaversjonen av kjernen. Du kan støte på feil, ustabilitet eller til og med datatap. Vi anbefaler å bruke den stabile versjonen hvis mulig."
     }
   ]
 }

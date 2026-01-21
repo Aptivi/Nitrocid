@@ -9397,6 +9397,34 @@
     {
       "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
       "text": "is anajaan asembalee mein taip {1} ke lie risors {0} nahin mila"
+    },
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "jaaree rakhane ke lie koee bhee kunjee dabaen..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "apane kampyootar ko band karana ab surakshit hai."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "aap karnel ka vikaas sanskaran chala rahe hain. jabaki aap aane vaalee suvidhaon ka anubhav kar sakate hain jo antim rileez mein maujood ho sakatee hain, aap bag, asthirata ya yahaan tak ki deta haani ka saamana kar sakate hain. yadi sambhav ho to ham sthir sanskaran ka upayog karane kee salaah dete hain."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "aap karnel ka rileez kaindidet varshan chala rahe hain. jab aap antim charan ka anubhav kar sakate hain, to aap bag, asthirata ya yahaan tak ki deta haani ka saamana kar sakate hain. yadi sambhav ho to ham sthir sanskaran ka upayog karane kee salaah dete hain."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "ham karnel ke is sanskaran ko chalaane ke viruddh salaah dete hain, kyonki yah asamarthit hai. yadi aapane is karnel ko agyaat sroton se daunalod kiya hai, to yah sandesh dikhaee de sakata hai. krpaya hamaare aadhikaarik daunalod prshth se daunalod karen."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "aap karnel ka alfa sanskaran chala rahe hain. aapako bag, asthirata ya deta haani ka saamana karana pad sakata hai. yadi sambhav ho, to ham sthir sanskaran ka upayog karane kee salaah dete hain."
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "aap karnel ka beeta sanskaran chala rahe hain. aapako bag, asthirata ya deta haani ka saamana karana pad sakata hai. yadi sambhav ho, to ham sthir sanskaran ka upayog karane kee salaah dete hain."
     }
   ]
 }

@@ -117,32 +117,11 @@
     <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
-    <value>Prima qualquer tecla para continuar...</value>
-  </data>
-  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
-    <value>Agora é seguro desligar o computador.</value>
-  </data>
-  <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
+      <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
     <value>Erro no ambiente do kernel:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
     <value>Nitrocid KS detectou um problema e foi encerrado.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
-    <value>Você está executando a versão de desenvolvimento do kernel. Embora você possa experimentar os próximos recursos que podem existir na versão final, você pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos usar a versão estável, se possível.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
-    <value>Você está executando a versão candidata a lançamento do kernel. Embora você possa experimentar os retoques finais, poderá encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos usar a versão estável, se possível.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
-    <value>Não recomendamos executar esta versão do kernel, porque ela não é suportada. Se você baixou este kernel de fontes desconhecidas, esta mensagem pode aparecer. Faça o download em nossa página oficial de downloads.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
-    <value>Está a executar a versão alfa do kernel. Pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos a utilização da versão estável, se possível.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
-    <value>Está a executar a versão beta do kernel. Pode encontrar bugs, instabilidades ou até mesmo perda de dados. Recomendamos a utilização da versão estável, se possível.</value>
   </data>
 
 </root>

@@ -117,32 +117,11 @@
     <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
-    <value>Appuyez sur n&apos;importe quelle touche pour continuer...</value>
-  </data>
-  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
-    <value>Vous pouvez maintenant éteindre votre ordinateur en toute sécurité.</value>
-  </data>
-  <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
+      <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
     <value>Erreur d&apos;environnement du noyau :</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
     <value>Nitrocid KS a détecté un problème et a été arrêté.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
-    <value>Vous exécutez la version de développement du noyau. Bien que vous puissiez découvrir les fonctionnalités à venir qui peuvent exister dans la version finale, vous pouvez rencontrer des bugs, des instabilités ou même une perte de données. Nous vous recommandons d&apos;utiliser la version stable, si possible.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
-    <value>Vous exécutez la version release candidate du noyau. Même si vous pouvez expérimenter les touches finales, vous risquez de rencontrer des bugs, des instabilités ou même des pertes de données. Nous vous recommandons d&apos;utiliser la version stable, si possible.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
-    <value>Nous vous déconseillons d&apos;exécuter cette version du noyau, car elle n&apos;est pas prise en charge. Si vous avez téléchargé ce noyau à partir de sources inconnues, ce message peut apparaître. Veuillez télécharger depuis notre page de téléchargement officielle.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
-    <value>Vous utilisez la version alpha du noyau. Vous pourriez rencontrer des bugs, des instabilités, voire des pertes de données. Nous vous recommandons d&apos;utiliser la version stable, si possible.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
-    <value>Vous utilisez la version bêta du noyau. Vous pourriez rencontrer des bugs, des instabilités, voire des pertes de données. Nous vous recommandons d&apos;utiliser la version stable, si possible.</value>
   </data>
 
 </root>

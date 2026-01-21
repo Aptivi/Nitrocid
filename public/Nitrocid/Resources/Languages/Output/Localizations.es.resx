@@ -117,32 +117,11 @@
     <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
-    <value>Presione cualquier tecla para continuar...</value>
-  </data>
-  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
-    <value>Ahora es seguro apagar su computadora.</value>
-  </data>
-  <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
+      <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
     <value>Error del entorno del kernel:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
     <value>Nitrocid KS ha detectado un problema y se ha cerrado.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
-    <value>Estás ejecutando la versión de desarrollo del kernel. Si bien puede experimentar las próximas funciones que pueden existir en la versión final, es posible que se encuentre con errores, inestabilidades o incluso pérdida de datos. Recomendamos utilizar la versión estable, si es posible.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
-    <value>Estás ejecutando la versión candidata a lanzamiento del kernel. Si bien puedes experimentar los toques finales, es posible que te encuentres con errores, inestabilidades o incluso pérdida de datos. Recomendamos utilizar la versión estable, si es posible.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
-    <value>Recomendamos no ejecutar esta versión del kernel porque no es compatible. Si ha descargado este kernel de fuentes desconocidas, puede aparecer este mensaje. Descárguelo desde nuestra página de descargas oficial.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
-    <value>Estás ejecutando la versión alfa del kernel. Podrías experimentar errores, inestabilidades o incluso pérdida de datos. Recomendamos usar la versión estable, si es posible.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
-    <value>Estás ejecutando la versión beta del kernel. Podrías experimentar errores, inestabilidades o incluso pérdida de datos. Recomendamos usar la versión estable, si es posible.</value>
   </data>
 
 </root>

@@ -32,40 +32,12 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "Presione cualquier tecla para continuar..."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "Ahora es seguro apagar su computadora."
-    },
-    {
       "loc": "NKS_KERNEL_ENVERROR",
       "text": "Error del entorno del kernel:"
     },
     {
       "loc": "NKS_KERNEL_FATALERROR",
       "text": "Nitrocid KS ha detectado un problema y se ha cerrado."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "Estás ejecutando la versión de desarrollo del kernel. Si bien puede experimentar las próximas funciones que pueden existir en la versión final, es posible que se encuentre con errores, inestabilidades o incluso pérdida de datos. Recomendamos utilizar la versión estable, si es posible."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "Estás ejecutando la versión candidata a lanzamiento del kernel. Si bien puedes experimentar los toques finales, es posible que te encuentres con errores, inestabilidades o incluso pérdida de datos. Recomendamos utilizar la versión estable, si es posible."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "Recomendamos no ejecutar esta versión del kernel porque no es compatible. Si ha descargado este kernel de fuentes desconocidas, puede aparecer este mensaje. Descárguelo desde nuestra página de descargas oficial."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
-      "text": "Estás ejecutando la versión alfa del kernel. Podrías experimentar errores, inestabilidades o incluso pérdida de datos. Recomendamos usar la versión estable, si es posible."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
-      "text": "Estás ejecutando la versión beta del kernel. Podrías experimentar errores, inestabilidades o incluso pérdida de datos. Recomendamos usar la versión estable, si es posible."
     }
   ]
 }

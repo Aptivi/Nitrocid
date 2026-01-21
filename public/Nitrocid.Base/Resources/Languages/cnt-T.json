@@ -9400,6 +9400,34 @@
     {
       "loc": "NKS_MISC_REFLECTION_INTERNAL_EXCEPTION_RESNOTFOUND_UNKNOWNASM",
       "text": "在此未知程式集中找不到類型為 {1} 的資源 {0}"
+    },
+    {
+      "loc": "NKS_COMMON_ANYKEY",
+      "text": "按任意鍵繼續..."
+    },
+    {
+      "loc": "NKS_KERNEL_NOAPMSIMULATION",
+      "text": "現在可以安全地關閉計算機了。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
+      "text": "您正在運行內核的開發版本。雖然您可以體驗最終版本中可能存在的即將推出的功能，但您可能會遇到錯誤、不穩定甚至資料遺失。如果可能的話，我們建議使用穩定版本。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
+      "text": "您正在運行核心的候選版本。雖然您可以體驗最後的潤色，但您可能會遇到錯誤、不穩定，甚至資料遺失。如果可能的話，我們建議使用穩定版本。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
+      "text": "我們建議不要運行此版本的內核，因為它不受支援。如果您從未知來源下載了此內核，則可能會出現此訊息。請從我們的官方下載頁面下載。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
+      "text": "您正在運行內核的 Alpha 版本。您可能會遇到錯誤、不穩定甚至資料遺失。我們建議您盡可能使用穩定版本。"
+    },
+    {
+      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
+      "text": "您正在運行內核的 Beta 版本。您可能會遇到錯誤、不穩定甚至資料遺失。我們建議您盡可能使用穩定版本。"
     }
   ]
 }

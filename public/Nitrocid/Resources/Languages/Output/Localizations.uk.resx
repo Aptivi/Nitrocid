@@ -117,32 +117,11 @@
     <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-      <data name="NKS_COMMON_ANYKEY" xml:space="preserve">
-    <value>Натисніть будь-яку клавішу, щоб продовжити...</value>
-  </data>
-  <data name="NKS_KERNEL_NOAPMSIMULATION" xml:space="preserve">
-    <value>Тепер можна безпечно вимкнути комп’ютер.</value>
-  </data>
-  <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
+      <data name="NKS_KERNEL_ENVERROR" xml:space="preserve">
     <value>Помилка середовища ядра:</value>
   </data>
   <data name="NKS_KERNEL_FATALERROR" xml:space="preserve">
     <value>Nitrocid KS виявив проблему, і його було закрито.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_DEVMESSAGE" xml:space="preserve">
-    <value>Ви використовуєте розробну версію ядра. Хоча ви можете відчути майбутні функції, які можуть існувати в остаточному випуску, ви можете зіткнутися з помилками, нестабільністю або навіть втратою даних. Ми рекомендуємо використовувати стабільну версію, якщо це можливо.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_RCMESSAGE" xml:space="preserve">
-    <value>Ви використовуєте версію ядра-кандидата до випуску. Хоча ви можете відчути останні штрихи, ви можете зіткнутися з помилками, нестабільністю або навіть втратою даних. Ми рекомендуємо використовувати стабільну версію, якщо це можливо.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_UNSUPPORTED" xml:space="preserve">
-    <value>Ми рекомендуємо не запускати цю версію ядра, оскільки вона не підтримується. Якщо ви завантажили це ядро з невідомих джерел, це повідомлення може з’явитися. Будь ласка, завантажте з нашої офіційної сторінки завантажень.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_ALPHAMESSAGE" xml:space="preserve">
-    <value>Ви використовуєте альфа-версію ядра. Ви можете зіткнутися з помилками, нестабільністю або навіть втратою даних. Ми рекомендуємо використовувати стабільну версію, якщо це можливо.</value>
-  </data>
-  <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
-    <value>Ви використовуєте бета-версію ядра. Ви можете зіткнутися з помилками, нестабільністю або навіть втратою даних. Ми рекомендуємо використовувати стабільну версію, якщо це можливо.</value>
   </data>
 
 </root>

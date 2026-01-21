@@ -53,40 +53,12 @@
   ],
   "locs": [
     {
-      "loc": "NKS_COMMON_ANYKEY",
-      "text": "Appuyez sur n'importe quelle touche pour continuer..."
-    },
-    {
-      "loc": "NKS_KERNEL_NOAPMSIMULATION",
-      "text": "Vous pouvez maintenant éteindre votre ordinateur en toute sécurité."
-    },
-    {
       "loc": "NKS_KERNEL_ENVERROR",
       "text": "Erreur d'environnement du noyau :"
     },
     {
       "loc": "NKS_KERNEL_FATALERROR",
       "text": "Nitrocid KS a détecté un problème et a été arrêté."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_DEVMESSAGE",
-      "text": "Vous exécutez la version de développement du noyau. Bien que vous puissiez découvrir les fonctionnalités à venir qui peuvent exister dans la version finale, vous pouvez rencontrer des bugs, des instabilités ou même une perte de données. Nous vous recommandons d'utiliser la version stable, si possible."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_RCMESSAGE",
-      "text": "Vous exécutez la version release candidate du noyau. Même si vous pouvez expérimenter les touches finales, vous risquez de rencontrer des bugs, des instabilités ou même des pertes de données. Nous vous recommandons d'utiliser la version stable, si possible."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_UNSUPPORTED",
-      "text": "Nous vous déconseillons d'exécuter cette version du noyau, car elle n'est pas prise en charge. Si vous avez téléchargé ce noyau à partir de sources inconnues, ce message peut apparaître. Veuillez télécharger depuis notre page de téléchargement officielle."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_ALPHAMESSAGE",
-      "text": "Vous utilisez la version alpha du noyau. Vous pourriez rencontrer des bugs, des instabilités, voire des pertes de données. Nous vous recommandons d'utiliser la version stable, si possible."
-    },
-    {
-      "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
-      "text": "Vous utilisez la version bêta du noyau. Vous pourriez rencontrer des bugs, des instabilités, voire des pertes de données. Nous vous recommandons d'utiliser la version stable, si possible."
     }
   ]
 }
