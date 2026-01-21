@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>원래 Wordle 게임을 플레이하세요</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>커널 출시 5주년을 기념합니다.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>커널 5주년 기념</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>사상 최초 출시</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>이 커널은 커널 코어의 작동 방식을 실제로 시뮬레이션하는 최소한의 시뮬레이터를 만들기 위해 2018년 2월 22일에 처음 출시되었습니다.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>이전에는 하나의 셸과 몇 가지 명령만 호스팅했으며 Windows Management Instrumentation 도구 사용으로 인해 Windows에서만 작동했습니다.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>또한 자체 문서도 없었습니다.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>커널 개선</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>컬러링과 기본 기능을 추가한 두 번째 메이저 릴리즈, 구성을 추가한 네 번째 메이저 릴리즈 등 커널 버전이 출시됐다.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>문서화는 6번째 주요 릴리스부터 시작되었으며 다양한 좋은 것들이 커널에 천천히 추가되었습니다.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>현재 버전</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>이 버전은 이제 더 이상 이전 버전처럼 작동하지 않을 정도로 커널을 개선합니다.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>새로운 획기적인 기능이 출시되었기 때문에 우리는 이 커널의 이름을...</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>5주년 축하해요!</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>말</value>
   </data>

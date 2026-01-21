@@ -268,58 +268,6 @@
       "text": "Seinn an cluiche Wordle ar dtús"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "Déanann sé comóradh 5 bliana ar scaoileadh na heithne"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "Ag comóradh 5 bliana an eithne"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "An chéad scaoileadh riamh"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "Eisíodh an eithne seo den chéad uair ar 22 Feabhra, 2018 chun insamhlóir íostach a dhéanamh a shamhlaíonn go hiarbhír conas a oibríonn croí na heithne."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "Ní gnách leis ach blaosc amháin a óstáil, agus roinnt orduithe, agus níor oibrigh sé ach le Windows mar gheall ar an úsáid a bhain sé as uirlis Windows Management Instrumentation."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "Ní raibh a cháipéisíocht féin aige ach an oiread."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "Eithne scagadh"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "Scaoileadh leaganacha den eithne, mar shampla an dara scaoileadh mór chun dathú agus gnéithe bunúsacha a chur leis, agus an ceathrú scaoileadh mór chun cumraíocht a chur leis."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "Cuireadh tús le doiciméadú ar an séú mór-eisiúint, agus cuireadh rudaí deasa éagsúla leis an eithne go mall."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "Leagan reatha"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "Déanann an leagan seo an t-eithne a bheachtú anois go dtí an pointe nach n-iompraíonn sé mar na seanleaganacha a thuilleadh."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "Toisc gur scaoileadh na gnéithe úrnua nua, bheartaíomar an t-eithne seo a ainmniú..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "Comóradh 5 bliana sona duit!"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "Capall"
     },

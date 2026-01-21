@@ -273,58 +273,6 @@
       "text": "Speel het Wordle-spel oorspronkelijk"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "Herdenkt het 5-jarig jubileum van de kerneluitgave"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "Ter herdenking van het 5-jarig jubileum van de kernel"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "Eerste uitgave ooit"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "Deze kernel werd voor het eerst uitgebracht op 22 februari 2018 om een minimalistische simulator te maken die feitelijk simuleert hoe de kern van de kernel werkt."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "Vroeger hostte het slechts één shell en een paar opdrachten, en het werkte alleen met Windows vanwege het gebruik van de Windows Management Instrumentation-tool."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "Het had ook geen eigen documentatie."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "Kernelverfijning"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "Er zijn versies van de kernel uitgebracht, zoals de tweede grote release om kleuren en basisfuncties toe te voegen, en de vierde grote release om configuratie toe te voegen."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "De documentatie begon bij de zesde grote release en er zijn langzaam verschillende leuke dingen aan de kernel toegevoegd."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "Huidige versie"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "Deze versie verfijnt nu de kernel tot het punt dat deze zich niet langer gedraagt als de oude versies."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "Omdat de nieuwe baanbrekende functies zijn vrijgegeven, hebben we besloten deze kernel de naam te geven..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "Gelukkig 5-jarig jubileum!"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "Paard"
     },

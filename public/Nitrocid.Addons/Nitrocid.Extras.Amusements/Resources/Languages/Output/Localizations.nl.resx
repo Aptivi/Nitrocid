@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>Speel het Wordle-spel oorspronkelijk</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>Herdenkt het 5-jarig jubileum van de kerneluitgave</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>Ter herdenking van het 5-jarig jubileum van de kernel</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>Eerste uitgave ooit</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>Deze kernel werd voor het eerst uitgebracht op 22 februari 2018 om een minimalistische simulator te maken die feitelijk simuleert hoe de kern van de kernel werkt.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>Vroeger hostte het slechts één shell en een paar opdrachten, en het werkte alleen met Windows vanwege het gebruik van de Windows Management Instrumentation-tool.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>Het had ook geen eigen documentatie.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>Kernelverfijning</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>Er zijn versies van de kernel uitgebracht, zoals de tweede grote release om kleuren en basisfuncties toe te voegen, en de vierde grote release om configuratie toe te voegen.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>De documentatie begon bij de zesde grote release en er zijn langzaam verschillende leuke dingen aan de kernel toegevoegd.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>Huidige versie</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>Deze versie verfijnt nu de kernel tot het punt dat deze zich niet langer gedraagt als de oude versies.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>Omdat de nieuwe baanbrekende functies zijn vrijgegeven, hebben we besloten deze kernel de naam te geven...</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>Gelukkig 5-jarig jubileum!</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>Paard</value>
   </data>

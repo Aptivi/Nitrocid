@@ -270,58 +270,6 @@
       "text": "Gioca originariamente al gioco Wordle"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "Commemora il 5° anniversario del rilascio del kernel"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "Commemorazione del 5° anniversario del kernel"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "Prima uscita in assoluto"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "Questo kernel è stato rilasciato per la prima volta il 22 febbraio 2018 per creare un simulatore minimalista che simula effettivamente il funzionamento del nucleo del kernel."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "Ospitava solo una shell e alcuni comandi e funzionava solo con Windows grazie all'utilizzo dello strumento Strumentazione gestione Windows."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "Inoltre non aveva una propria documentazione."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "Perfezionamento del kernel"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "Sono state rilasciate versioni del kernel, come la seconda versione principale per aggiungere colorazione e funzionalità di base e la quarta versione principale per aggiungere configurazione."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "La documentazione è iniziata con la sesta major release, e varie cose carine sono state lentamente aggiunte al kernel."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "Versione attuale"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "Questa versione ora perfeziona il kernel al punto che non si comporta più come le vecchie versioni."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "Poiché sono state rilasciate nuove funzionalità rivoluzionarie, abbiamo deciso di chiamare questo kernel..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "Buon 5° anniversario!"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "Cavallo"
     },

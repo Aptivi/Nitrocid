@@ -268,58 +268,6 @@
       "text": "Joacă inițial jocul Wordle"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "Comemora 5 ani de la lansarea kernelului"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "Comemorarea a 5 ani de la kernel"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "Prima lansare"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "Acest nucleu a fost lansat pentru prima dată pe 22 februarie 2018 pentru a realiza un simulator minimalist care simulează de fapt modul în care funcționează nucleul nucleului."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "Obișnuia să găzduiască un singur shell și câteva comenzi și a funcționat doar cu Windows datorită utilizării instrumentului Windows Management Instrumentation."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "De asemenea, nu avea documentație proprie."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "Rafinarea nucleului"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "Au fost lansate versiuni ale nucleului, cum ar fi a doua versiune majoră pentru a adăuga colorare și caracteristici de bază și a patra versiune majoră pentru a adăuga configurație."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "Documentația a început cu cea de-a șasea lansare majoră și diverse lucruri frumoase au fost adăugate încet la nucleu."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "Versiune curentă"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "Această versiune rafinează acum nucleul până la punctul în care nu se mai comportă ca versiunile vechi."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "Deoarece noile caracteristici inovatoare au fost lansate, am decis să denumim acest nucleu..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "La mulți ani de 5 ani!"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "Cal"
     },

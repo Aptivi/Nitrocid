@@ -312,45 +312,6 @@
   <data name="NKS_AMUSEMENTS_COMMAND_WORDLE_SWITCH_ORIG_DESC" xml:space="preserve">
     <value>Spielen Sie das Wordle-Spiel ursprünglich</value>
   </data>
-  <data name="NKS_AMUSEMENTS_COMMAND_2018_DESC" xml:space="preserve">
-    <value>Gedenkt des 5-jährigen Jubiläums der Kernel-Veröffentlichung</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE" xml:space="preserve">
-    <value>Gedenken an das 5-jährige Jubiläum des Kernels</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE" xml:space="preserve">
-    <value>Erste Veröffentlichung überhaupt</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1" xml:space="preserve">
-    <value>Dieser Kernel wurde erstmals am 22. Februar 2018 veröffentlicht, um einen minimalistischen Simulator zu erstellen, der tatsächlich simuliert, wie der Kernel funktioniert.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2" xml:space="preserve">
-    <value>Früher beherbergte es nur eine Shell und einige Befehle und funktionierte aufgrund der Verwendung des Windows Management Instrumentation-Tools nur mit Windows.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3" xml:space="preserve">
-    <value>Es gab auch keine eigene Dokumentation.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE" xml:space="preserve">
-    <value>Kernel-Verfeinerung</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1" xml:space="preserve">
-    <value>Es wurden Versionen des Kernels veröffentlicht, beispielsweise die zweite Hauptversion, um Farbgebung und grundlegende Funktionen hinzuzufügen, und die vierte Hauptversion, um Konfiguration hinzuzufügen.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2" xml:space="preserve">
-    <value>Die Dokumentation begann mit der sechsten Hauptversion, und dem Kernel wurden nach und nach verschiedene nette Dinge hinzugefügt.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE" xml:space="preserve">
-    <value>Aktuelle Version</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1" xml:space="preserve">
-    <value>Diese Version verfeinert den Kernel nun so weit, dass er sich nicht mehr wie die alten Versionen verhält.</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2" xml:space="preserve">
-    <value>Da die neuen bahnbrechenden Funktionen veröffentlicht wurden, haben wir beschlossen, diesen Kernel zu benennen ...</value>
-  </data>
-  <data name="NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3" xml:space="preserve">
-    <value>Alles Gute zum 5-jährigen Jubiläum!</value>
-  </data>
   <data name="NKS_AMUSEMENTS_BACKRACE_HORSEID" xml:space="preserve">
     <value>Pferd</value>
   </data>

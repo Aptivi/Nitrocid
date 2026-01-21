@@ -267,58 +267,6 @@
       "text": "Chơi trò chơi Wordle ban đầu"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "Kỷ niệm 5 năm ngày phát hành kernel"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "Kỷ niệm 5 năm ngày thành lập hạt nhân"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "Lần đầu tiên phát hành"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "Hạt nhân này được phát hành lần đầu tiên vào ngày 22 tháng 2 năm 2018 để tạo ra một trình mô phỏng tối giản thực sự mô phỏng cách thức hoạt động của lõi hạt nhân."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "Trước đây nó chỉ lưu trữ một shell và một vài lệnh, và nó chỉ hoạt động với Windows do sử dụng công cụ Windows Management Instrumentation."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "Nó cũng không có tài liệu hướng dẫn riêng."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "Tinh chỉnh hạt nhân"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "Các phiên bản của hạt nhân đã được phát hành, chẳng hạn như bản phát hành chính thứ hai bổ sung tính năng tô màu và tính năng cơ bản, và bản phát hành chính thứ tư bổ sung tính năng cấu hình."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "Tài liệu bắt đầu được biên soạn từ bản phát hành chính thứ sáu và nhiều tính năng thú vị đã dần được thêm vào kernel."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "Phiên bản hiện tại"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "Phiên bản này hiện đã cải tiến hạt nhân đến mức nó không còn hoạt động giống như các phiên bản cũ nữa."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "Vì các tính năng đột phá mới đã được phát hành nên chúng tôi quyết định đặt tên cho hạt nhân này là..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "Chúc mừng kỷ niệm 5 năm!"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "Ngựa"
     },

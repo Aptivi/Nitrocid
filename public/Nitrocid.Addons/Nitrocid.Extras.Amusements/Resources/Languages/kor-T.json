@@ -268,58 +268,6 @@
       "text": "원래 Wordle 게임을 플레이하세요"
     },
     {
-      "loc": "NKS_AMUSEMENTS_COMMAND_2018_DESC",
-      "text": "커널 출시 5주년을 기념합니다."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_TITLE",
-      "text": "커널 5주년 기념"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_TITLE",
-      "text": "사상 최초 출시"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE1",
-      "text": "이 커널은 커널 코어의 작동 방식을 실제로 시뮬레이션하는 최소한의 시뮬레이터를 만들기 위해 2018년 2월 22일에 처음 출시되었습니다."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE2",
-      "text": "이전에는 하나의 셸과 몇 가지 명령만 호스팅했으며 Windows Management Instrumentation 도구 사용으로 인해 Windows에서만 작동했습니다."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE1_LINE3",
-      "text": "또한 자체 문서도 없었습니다."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_TITLE",
-      "text": "커널 개선"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE1",
-      "text": "컬러링과 기본 기능을 추가한 두 번째 메이저 릴리즈, 구성을 추가한 네 번째 메이저 릴리즈 등 커널 버전이 출시됐다."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE2_LINE2",
-      "text": "문서화는 6번째 주요 릴리스부터 시작되었으며 다양한 좋은 것들이 커널에 천천히 추가되었습니다."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_TITLE",
-      "text": "현재 버전"
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE1",
-      "text": "이 버전은 이제 더 이상 이전 버전처럼 작동하지 않을 정도로 커널을 개선합니다."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE2",
-      "text": "새로운 획기적인 기능이 출시되었기 때문에 우리는 이 커널의 이름을..."
-    },
-    {
-      "loc": "NKS_AMUSEMENTS_2018_ANNIVERSARY_PAGE3_LINE3",
-      "text": "5주년 축하해요!"
-    },
-    {
       "loc": "NKS_AMUSEMENTS_BACKRACE_HORSEID",
       "text": "말"
     },
