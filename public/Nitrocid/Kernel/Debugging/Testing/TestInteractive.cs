@@ -158,12 +158,12 @@ namespace Nitrocid.Kernel.Debugging.Testing
             {
                 // Now, prompt for the selection of the section
                 int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose a test section to run"), listFacades, listFacadesAlt, true);
-                if (sel <= sectionCount)
-                    OpenSection(listFacadesCodeNames[sel - 1]);
+                if (sel < sectionCount)
+                    OpenSection(listFacadesCodeNames[sel]);
                 else
                 {
                     // Selected alternative option
-                    if (sel == sectionCount + 1 || sel == -1)
+                    if (sel == sectionCount || sel == -1)
                         exiting = true;
                 }
             }

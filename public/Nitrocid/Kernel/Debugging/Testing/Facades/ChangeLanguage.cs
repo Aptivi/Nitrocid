@@ -30,7 +30,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             var langChoices = LanguageManager.Languages.Select(kvp => (kvp.Key, kvp.Value.FullLanguageName)).ToArray();
-            int langIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose your language"), langChoices) - 1;
+            int langIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose your language"), langChoices);
             if (langIndex < 0)
                 return;
             string lang = LanguageManager.Languages.Keys.ElementAt(langIndex);

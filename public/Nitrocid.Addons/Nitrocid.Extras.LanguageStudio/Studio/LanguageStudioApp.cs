@@ -165,7 +165,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 int selectedStringNum = SelectionStyle.PromptSelection("\n  * " + finalTitle + " " + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to translate:"), [.. choices], [.. altChoices]);
 
                 // Check the answer
-                if (selectedStringNum == englishLines.Count + 1)
+                if (selectedStringNum == englishLines.Count)
                 {
                     // User chose to make a new string.
                     string newString = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a new string") + ": ");
@@ -173,21 +173,21 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                     foreach (var translatedLang in translatedLines.Keys)
                         translatedLines[translatedLang].Add(translatedLang == "eng" ? newString : "???");
                 }
-                else if (selectedStringNum == englishLines.Count + 2)
+                else if (selectedStringNum == englishLines.Count + 1)
                 {
                     // User chose to remove a string.
                     finalTitle = Translate.DoTranslation("Remove string");
                     int selectedRemovedStringNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to remove:"), [.. choices], [.. altChoicesRemove]);
-                    if (selectedRemovedStringNum == englishLines.Count + 1 || selectedRemovedStringNum == -1)
+                    if (selectedRemovedStringNum == englishLines.Count || selectedRemovedStringNum == -1)
                         continue;
                     else
                     {
-                        englishLines.RemoveAt(selectedRemovedStringNum - 1);
+                        englishLines.RemoveAt(selectedRemovedStringNum);
                         foreach (var translatedLang in translatedLines.Keys)
-                            translatedLines[translatedLang].RemoveAt(selectedRemovedStringNum - 1);
+                            translatedLines[translatedLang].RemoveAt(selectedRemovedStringNum);
                     }
                 }
-                else if (selectedStringNum == englishLines.Count + 3)
+                else if (selectedStringNum == englishLines.Count + 2)
                 {
                     // User chose to save the translations.
                     InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving language..."));
@@ -200,7 +200,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                     }
                     InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Done! Please use the Nitrocid.Locales application with appropriate arguments to finalize the languages. You can use this path:") + $" {pathToTranslations}");
                 }
-                else if (selectedStringNum == englishLines.Count + 4 || selectedStringNum == -1)
+                else if (selectedStringNum == englishLines.Count + 3 || selectedStringNum == -1)
                 {
                     // User chose to exit.
                     break;
@@ -208,7 +208,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 else
                 {
                     // User chose a string to translate.
-                    HandleStringTranslation(englishLines, selectedStringNum - 1, finalLangs, ref translatedLines);
+                    HandleStringTranslation(englishLines, selectedStringNum, finalLangs, ref translatedLines);
                 }
             }
         }
@@ -234,11 +234,11 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 ];
                 string finalTitle = Translate.DoTranslation("Select language");
                 int selectedLangNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a language to translate this string to:"), [.. choices], [.. altChoices]);
-                if (selectedLangNum == targetLanguages.Length + 1 || selectedLangNum == -1)
+                if (selectedLangNum == targetLanguages.Length || selectedLangNum == -1)
                     return;
 
                 // Try to get a language and prompt the user for the translation
-                string selectedLang = targetLanguages[selectedLangNum - 1];
+                string selectedLang = targetLanguages[selectedLangNum];
                 string translated = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write your translation of") + $" \"{str}\": ");
                 translatedLines[selectedLang][index] = translated;
             }

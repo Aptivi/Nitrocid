@@ -17,20 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles.Selection;
-using Nitrocid.ConsoleBase.Themes;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files;
-using Nitrocid.Languages;
-using Terminaux.Shell.Commands;
-using Terminaux.Shell.Switches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Textify.General;
-using Terminaux.Inputs.Styles;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Themes;
+using Nitrocid.Files;
+using Nitrocid.Languages;
+using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -79,11 +80,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 );
                                 themeCategoryChoices.Add(ici);
                             }
-                            categoryIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a category"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]) - 1;
+                            categoryIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a category"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]);
 
-                            // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
-                            // even if that PromptSelection returned the abovementioned value, so bail if index is -2
-                            if (categoryIndex == -2 || categoryIndex >= categoryNames.Length)
+                            // If the color index is -1, exit.
+                            if (categoryIndex == -1 || categoryIndex >= categoryNames.Length)
                             {
                                 KernelColorTools.LoadBackground();
                                 return 3;
@@ -116,11 +116,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 );
                                 themeChoices.Add(ici);
                             }
-                            int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), [.. themeChoices], [.. themeAltChoices]) - 1;
+                            int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), [.. themeChoices], [.. themeAltChoices]);
 
-                            // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
-                            // even if that PromptSelection returned the abovementioned value, so bail if index is -2
-                            if (colorIndex == -2)
+                            // If the color index is -1, exit.
+                            if (colorIndex == -1)
                             {
                                 KernelColorTools.LoadBackground();
                                 return 3;

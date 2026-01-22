@@ -126,50 +126,50 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 string finalTitle = Translate.DoTranslation("Welcome to Settings!");
                 int Answer = SelectionStyle.PromptSelection(RenderHeader(finalTitle, TextTools.FormatString(Translate.DoTranslation("You're on the landing page of the {0} settings. Select a section or an option to get started. Depending on which settings you've changed, you might need to restart the kernel."), settingsType.GetType().Name)),
                     sections, altSections);
-                if (Answer >= 1 & Answer <= MaxSections)
+                if (Answer >= 0 & Answer < MaxSections)
                 {
                     // The selected answer is a section
                     InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Loading section..."));
-                    SettingsEntry SelectedSection = SettingsEntries[Answer - 1];
+                    SettingsEntry SelectedSection = SettingsEntries[Answer];
                     DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", vars: [SelectedSection.Name]);
                     OpenSection(SelectedSection.Name, SelectedSection, settingsType);
                 }
-                else if (Answer == MaxSections + 1)
+                else if (Answer == MaxSections)
                 {
                     // The selected answer is "Find an option"
                     VariableFinder(settingsType);
                 }
-                else if (Answer == MaxSections + 2)
+                else if (Answer == MaxSections + 1)
                 {
                     // The selected answer is "Save settings"
                     SettingsAppTools.SaveSettings();
                 }
-                else if (Answer == MaxSections + 3)
+                else if (Answer == MaxSections + 2)
                 {
                     // The selected answer is "Save settings as"
                     SettingsAppTools.SaveSettingsAs();
                 }
-                else if (Answer == MaxSections + 4)
+                else if (Answer == MaxSections + 3)
                 {
                     // The selected answer is "Load settings from"
                     SettingsAppTools.LoadSettingsFrom(settingsType);
                 }
-                else if (Answer == MaxSections + 5)
+                else if (Answer == MaxSections + 4)
                 {
                     // The selected answer is "Reload settings"
                     SettingsAppTools.ReloadConfig();
                 }
-                else if (Answer == MaxSections + 6)
+                else if (Answer == MaxSections + 5)
                 {
                     // The selected answer is "Check for system updates"
                     SettingsAppTools.CheckForSystemUpdates();
                 }
-                else if (Answer == MaxSections + 7)
+                else if (Answer == MaxSections + 6)
                 {
                     // The selected answer is "System information"
                     SettingsAppTools.SystemInformation();
                 }
-                else if (Answer == MaxSections + 8)
+                else if (Answer == MaxSections + 7)
                 {
                     // The selected answer is "Select configuration"
                     if (!ConfigMigration.MigrateAllConfig())
@@ -179,7 +179,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
                             });
                 }
-                else if (Answer == MaxSections + 9)
+                else if (Answer == MaxSections + 8)
                 {
                     // The selected answer is "Migrate old configuration"
                     var selectedConfig = SettingsAppTools.SelectConfig();
@@ -190,7 +190,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                         MaxSections = SettingsEntries.Length;
                     }
                 }
-                else if (Answer == MaxSections + 10 || Answer == -1)
+                else if (Answer == MaxSections + 9 || Answer == -1)
                 {
                     // The selected answer is "Exit"
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting...");
@@ -284,7 +284,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
                     // Check the answer
                     var allSections = sections.Union(altSections).ToArray();
-                    string answerChoice = allSections[Answer - 1].ChoiceName;
+                    string answerChoice = allSections[Answer].ChoiceName;
                     int finalAnswer = Answer < 0 ? 0 : Convert.ToInt32(answerChoice);
                     DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
                     if (finalAnswer >= 1 & finalAnswer <= MaxOptions)

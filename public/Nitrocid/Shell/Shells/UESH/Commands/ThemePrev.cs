@@ -75,11 +75,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 );
                                 themeCategoryChoices.Add(ici);
                             }
-                            categoryIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a category"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]) - 1;
+                            categoryIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a category"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]);
 
-                            // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
-                            // even if that PromptSelection returned the abovementioned value, so bail if index is -2
-                            if (categoryIndex == -2 || categoryIndex >= categoryNames.Length)
+                            // If the color index is -1, exit.
+                            if (categoryIndex == -1 || categoryIndex >= categoryNames.Length)
                             {
                                 KernelColorTools.LoadBackground();
                                 return 3;
@@ -112,11 +111,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 );
                                 themeChoices.Add(ici);
                             }
-                            int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), [.. themeChoices], [.. themeAltChoices]) - 1;
+                            int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), [.. themeChoices], [.. themeAltChoices]);
 
-                            // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
-                            // even if that PromptSelection returned the abovementioned value, so bail if index is -2
-                            if (colorIndex == -2)
+                            // If the color index is -1, exit.
+                            if (colorIndex == -1)
                             {
                                 KernelColorTools.LoadBackground();
                                 return 3;
