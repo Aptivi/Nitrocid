@@ -38,6 +38,8 @@ using Nitrocid.Base.Network.Connections;
 using Terminaux.Inputs;
 using System.Reflection;
 using Nitrocid.Base.Kernel.Exceptions;
+using Terminaux.Base.Extensions;
+using Terminaux.Base.Extensions.Data;
 
 namespace Nitrocid.Extras.Ssh.SSH
 {
@@ -271,8 +273,7 @@ namespace Nitrocid.Extras.Ssh.SSH
 
                 // Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
                 DebugWriter.WriteDebug(DebugLevel.I, "Opening shell...");
-                Console.InputEncoding = System.Text.Encoding.Default;
-                Console.OutputEncoding = System.Text.Encoding.Default;
+                ConsoleMisc.SetEncoding(ConsoleEncoding.Default);
                 var SSHS = SSHClient.CreateShell(
                     Console.OpenStandardInput(),
                     Console.OpenStandardOutput(),
@@ -309,8 +310,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                 DebugWriter.WriteDebug(DebugLevel.I, "Connected: {0}", vars: [SSHClient.IsConnected]);
                 TextWriterColor.Write(CharManager.NewLine + LanguageTools.GetLocalized("NKS_SSH_DISCONNECTED"));
                 DisconnectionRequested = false;
-                Console.InputEncoding = System.Text.Encoding.Unicode;
-                Console.OutputEncoding = System.Text.Encoding.Unicode;
+                ConsoleMisc.SetEncoding(ConsoleEncoding.UTF16);
 
                 // Remove handler for SSH
                 CancellationHandlers.EndLocalCancelScope(SSHDisconnect);
