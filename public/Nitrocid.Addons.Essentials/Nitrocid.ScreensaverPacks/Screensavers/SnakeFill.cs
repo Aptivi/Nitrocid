@@ -39,14 +39,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             "SnakeFill";
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation()
-        {
-            // Variable preparations
-            ConsoleWrapper.Clear();
-            ConsoleWrapper.CursorVisible = false;
-        }
-
-        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
@@ -88,7 +80,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
 
-                        TextWriterWhereColor.WriteWhere(" ", x, y);
+                        TextWriterWhereColor.WriteWherePlain(" ", x, y);
                         ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SnakeFillDelay);
                         reverseHeightAxis = false;
                     }
@@ -100,7 +92,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
 
-                        TextWriterWhereColor.WriteWhere(" ", x, y);
+                        TextWriterWhereColor.WriteWherePlain(" ", x, y);
                         ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SnakeFillDelay);
                         reverseHeightAxis = true;
                     }
