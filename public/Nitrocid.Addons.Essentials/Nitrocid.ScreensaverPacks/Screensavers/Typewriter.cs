@@ -120,7 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         if (linesWritten == ConsoleWrapper.WindowHeight - 2)
                         {
                             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", vars: [linesWritten, ConsoleWrapper.WindowHeight - 2]);
-                            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MirrorWriteNewScreenDelay);
+                            ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.TypewriterNewScreenDelay);
                             ConsoleWrapper.Clear();
                             linesWritten = 1;
                             ConsoleWrapper.WriteLine();
