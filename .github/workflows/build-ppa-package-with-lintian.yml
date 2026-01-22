@@ -55,6 +55,8 @@ jobs:
           name: Nitrocid-KS-Debian-Package
           path: "*.deb"
 
-      - name: Try to install
+      - name: Try to install and execute
         run: |
           sudo apt install ./nitrocid-28_*.deb
+          ks-28 --version
+          ks-28 --apiversion
