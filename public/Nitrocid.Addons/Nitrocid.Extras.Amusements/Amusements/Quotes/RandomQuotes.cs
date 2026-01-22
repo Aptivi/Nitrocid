@@ -29,8 +29,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
     {
         internal static (string content, string author) GetRandomQuote()
         {
-            // Get a quote string from the API
-            string quoteString = NetworkTransfer.DownloadString("https://api.quotable.io/quotes/random", false);
+            // Get a quote string from the API. We'll need to ignore certificate errors since quotable.io didn't renew the license since September 2024.
+            string quoteString = NetworkTransfer.httpClientIgnoreCertErrors.GetStringAsync("https://api.quotable.io/quotes/random").Result;
             if (string.IsNullOrEmpty(quoteString))
                 return ("", "");
 
