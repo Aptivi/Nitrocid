@@ -121,6 +121,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
                 TextWriterWhereColor.WriteWherePlain(" ", posX, posY);
                 determine += shortestLine;
                 if (determine >= longestLine)

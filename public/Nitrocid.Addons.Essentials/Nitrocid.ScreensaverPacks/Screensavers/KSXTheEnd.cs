@@ -17,20 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Screensaver;
-using Terminaux.Colors;
-using Terminaux.Base;
 using System;
-using Textify.Data.Figlet;
-using Nitrocid.ScreensaverPacks.Animations.Glitch;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ScreensaverPacks.Animations.Glitch;
+using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Base.Extensions;
+using Textify.Data.Figlet;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -80,6 +80,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 switch (step)
                 {
@@ -106,6 +108,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdGR);
@@ -150,6 +154,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR - thresholdGR);
@@ -194,6 +200,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdRR);
@@ -238,6 +246,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR - thresholdRR);
@@ -282,6 +292,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdPR);
@@ -326,6 +338,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR - thresholdPR);
@@ -370,6 +384,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdBR);
@@ -415,6 +431,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     case 2:
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             ScreensaverManager.Delay(10, true);
                             Glitch.GlitchAt();
                         }
@@ -424,6 +445,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int maxFlashes = 200;
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool showGreen = flashes % 2 == 0;
                             if (showGreen)
                                 ConsoleColoring.LoadBackDry(green);
@@ -433,6 +459,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         }
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool showRed = flashes % 2 == 0;
                             if (showRed)
                                 ConsoleColoring.LoadBackDry(red);
@@ -442,6 +473,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         }
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool showPink = flashes % 2 == 0;
                             if (showPink)
                                 ConsoleColoring.LoadBackDry(pink);
@@ -451,6 +487,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         }
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool showBlue = flashes % 2 == 0;
                             if (showBlue)
                                 ConsoleColoring.LoadBackDry(blue);
@@ -504,6 +545,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR - thresholdR);

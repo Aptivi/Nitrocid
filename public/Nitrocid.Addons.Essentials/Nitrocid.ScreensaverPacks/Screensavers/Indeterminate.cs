@@ -111,6 +111,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
                 var rampBuffer = new StringBuilder();
 
                 // Clear the ramp

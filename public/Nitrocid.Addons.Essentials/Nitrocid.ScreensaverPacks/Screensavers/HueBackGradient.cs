@@ -75,6 +75,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Write the background gradient!
                 var RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");

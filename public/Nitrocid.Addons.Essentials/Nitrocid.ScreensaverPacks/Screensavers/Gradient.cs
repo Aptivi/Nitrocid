@@ -76,6 +76,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Write the background gradient!
                 var RotCurrentColorInstance = new Color($"{Convert.ToInt32(RotCurrentColorRed)};{Convert.ToInt32(RotCurrentColorGreen)};{Convert.ToInt32(RotCurrentColorBlue)}");

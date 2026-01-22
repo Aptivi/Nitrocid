@@ -89,6 +89,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Check to see if user decided to resize
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Print a block and add the covered position to the list so fading down can be done
                 TextWriterWhereColor.WriteWhereColorBack(" ", ColumnLine, Fall, false, Color.Empty, ColorStorage);
@@ -105,6 +107,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Check to see if user decided to resize
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Set thresholds
                 double ThresholdRed = ColorStorage.RGB.R / (double)ScreensaverPackInit.SaversConfig.FallingLineMaxSteps;
@@ -126,6 +130,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     // Check to see if user decided to resize
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Actually fade the line out
                     int PositionLeft = PositionTuple.Item1;

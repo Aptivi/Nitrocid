@@ -54,6 +54,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Draw few numbers
             for (int i = 0; i < ConsoleWrapper.WindowHeight; i++)
             {
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 // Draw a randomly-sized line
                 int width = RandomDriver.Random(ConsoleWrapper.WindowWidth);
                 StringBuilder numbers = new();

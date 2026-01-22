@@ -81,10 +81,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
                     for (int Row = 0; Row <= MaxWindowHeight; Row++)
                     {
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
+                        if (ScreensaverManager.Bailing)
+                            return;
 
                         // Check the positions
                         int leftDoorPos = column;
@@ -111,10 +115,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
                     for (int Row = 0; Row <= MaxWindowHeight; Row++)
                     {
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
+                        if (ScreensaverManager.Bailing)
+                            return;
 
                         // Check the positions
                         int leftDoorPos = halfWidth - column;

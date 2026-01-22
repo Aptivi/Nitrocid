@@ -91,6 +91,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         bool drawingEdge = top == halfHeight - diff || top == halfHeight + diff;
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
+                        if (ScreensaverManager.Bailing)
+                            return;
 
                         // Determine the color by draw mode
                         var finalColor = drawingEdge ? selectedColor : colorShaded;
@@ -107,6 +109,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         bool drawingEdge = top == halfHeight - diff || top == halfHeight + diff;
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
+                        if (ScreensaverManager.Bailing)
+                            return;
 
                         // Determine the color by draw mode
                         var finalColor = drawingEdge ? selectedColor : colorShaded;
@@ -162,6 +166,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Add the values according to the threshold
                     currentBottomR -= thresholdBottomR;
@@ -210,6 +216,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Add the values according to the threshold
                     currentBottomR -= -thresholdBottomR;

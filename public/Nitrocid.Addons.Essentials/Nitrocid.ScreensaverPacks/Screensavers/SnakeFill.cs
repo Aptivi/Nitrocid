@@ -71,6 +71,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Select the height and fill the entire screen
                 if (reverseHeightAxis)
@@ -79,6 +81,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
+                        if (ScreensaverManager.Bailing)
+                            return;
 
                         TextWriterWhereColor.WriteWherePlain(" ", x, y);
                         ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SnakeFillDelay);
@@ -91,6 +95,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
+                        if (ScreensaverManager.Bailing)
+                            return;
 
                         TextWriterWhereColor.WriteWherePlain(" ", x, y);
                         ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SnakeFillDelay);

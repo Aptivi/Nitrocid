@@ -102,6 +102,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 var Star = Stars[StarIndex];
                 char StarSymbol = '*';
                 starsBuffer.Append(TextWriterWhereColor.RenderWhere(Convert.ToString(StarSymbol), Star.Item1, Star.Item2, false, ConsoleColors.White, ConsoleColors.Black));

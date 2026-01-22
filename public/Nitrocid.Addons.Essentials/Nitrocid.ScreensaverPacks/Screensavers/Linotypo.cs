@@ -120,6 +120,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", vars: [Paragraph]);
 
                 // Sometimes, a paragraph could consist of nothing, but prints its new line, so honor this by checking to see if we need to
@@ -153,6 +156,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     string IncompleteSentence = IncompleteSentences[IncompleteSentenceIndex];
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Check if we need to indent a sentence
                     if (!NewLineDone)
@@ -181,6 +186,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
+                        if (ScreensaverManager.Bailing)
+                            return;
 
                         // Sometimes, typing error can be made in the last line and the line is repeated on the first line in the different
                         // column, but it ruins the overall beautiful look of the paragraphs, considering how it is split in columns. We

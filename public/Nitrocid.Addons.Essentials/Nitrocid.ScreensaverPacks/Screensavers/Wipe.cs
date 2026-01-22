@@ -88,10 +88,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             for (int Row = 0; Row <= MaxWindowHeight; Row++)
                             {
                                 if (ConsoleResizeHandler.WasResized(false))
                                     break;
+                                if (ScreensaverManager.Bailing)
+                                    return;
 
                                 // Do the actual writing
                                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", vars: [Row]);
@@ -110,10 +115,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             for (int Row = 0; Row <= MaxWindowHeight; Row++)
                             {
                                 if (ConsoleResizeHandler.WasResized(false))
                                     break;
+                                if (ScreensaverManager.Bailing)
+                                    return;
 
                                 // Do the actual writing
                                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Setting position to {0}", vars: [Column - 1, Row]);
@@ -132,6 +142,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Do the actual writing
                             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", vars: [Row]);

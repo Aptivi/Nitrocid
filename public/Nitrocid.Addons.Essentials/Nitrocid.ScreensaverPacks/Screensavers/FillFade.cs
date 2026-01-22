@@ -105,6 +105,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Set the thresholds
                     int RedColorNum = currentColor.RGB.R;

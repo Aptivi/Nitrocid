@@ -72,6 +72,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Check to see if we can go ahead
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Calculate needed milliseconds from two WPM speeds (minimum and maximum)
                 int SelectedCpm = RandomDriver.Random(CpmSpeedMin, CpmSpeedMax);

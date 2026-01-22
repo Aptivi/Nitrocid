@@ -74,6 +74,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Render the bars
             for (int i = 0; i < BarCount; i++)
             {
+                if (ScreensaverManager.Bailing)
+                    return;
                 int ThisBarLeft = (BarWidthOutside + 1) * i + 1;
                 int Pos = (int)(100 * (CurrentPos[i] / (double)BarHeight));
                 int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BarWaveMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.BarWaveMaximumRedColorLevel);

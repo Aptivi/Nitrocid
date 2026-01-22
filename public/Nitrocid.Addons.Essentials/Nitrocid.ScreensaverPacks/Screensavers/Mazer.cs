@@ -118,6 +118,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Get necessary values for connections
                 int nx = x + directionX[direction];
@@ -130,6 +132,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Display the maze
                     DisplayMazeFromGrid(grid);
