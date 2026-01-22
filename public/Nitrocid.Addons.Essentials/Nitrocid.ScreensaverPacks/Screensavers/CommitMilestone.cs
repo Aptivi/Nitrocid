@@ -31,6 +31,7 @@ using Terminaux.Writer.CyclicWriters.Renderer;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Structures;
 using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -134,6 +135,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     Top = consoleY + 2,
                     Text = textDesc,
                     ForegroundColor = ColorStorage,
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    }
                 };
                 TextWriterRaw.WriteRaw(descText.Render());
             }
