@@ -73,7 +73,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 
             // Use RenderSegments to render our segments
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -96,7 +96,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 
             // Use RenderSegments to render our segments
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -115,7 +115,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 
             // Use RenderSegments to render our segments
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();

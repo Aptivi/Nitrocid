@@ -23,6 +23,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles;
@@ -57,7 +58,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
                 $"{Translate.DoTranslation("Color name")}: {color.Name}\n" +
                 $"{Translate.DoTranslation("Color hex")}: {color.Hex}\n" +
                 $"{Translate.DoTranslation("Color brightness")}: {color.Brightness}\n\n" +
-                $"{ColorTools.RenderSetConsoleColor(color)}- Lorem ipsum dolor sit amet, consectetur adipiscing elit.{ColorTools.RenderRevertForeground()}";
+                $"{ConsoleColoring.RenderSetConsoleColor(color)}- Lorem ipsum dolor sit amet, consectetur adipiscing elit.{ConsoleColoring.RenderRevertForeground()}";
         }
 
         internal void Change(object type)

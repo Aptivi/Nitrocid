@@ -30,6 +30,7 @@ using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Shell.Shells.UESH.Presets
 {
@@ -80,14 +81,14 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             {
                 // Use RenderSegments to render our segments
                 PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
             }
             else
             {
                 // Maintenance mode
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
-                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
             }
 
             // Present final string
@@ -116,14 +117,14 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             {
                 // Use RenderSegments to render our segments
                 PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
             }
             else
             {
                 // Maintenance mode
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
-                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
             }
 
             // Present final string
@@ -143,7 +144,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
 
             // Use RenderSegments to render our segments
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();

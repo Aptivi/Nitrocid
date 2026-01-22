@@ -156,8 +156,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool ConsoleSupportsTrueColor
         {
-            get => ColorTools.ConsoleSupportsTrueColor;
-            set => ColorTools.ConsoleSupportsTrueColor = value;
+            get => ConsoleColoring.ConsoleSupportsTrueColor;
+            set => ConsoleColoring.ConsoleSupportsTrueColor = value;
         }
         /// <summary>
         /// Set the language codepage upon switching languages (Windows only)
@@ -267,8 +267,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool AllowBackgroundColor
         {
-            get => ColorTools.AllowBackground;
-            set => ColorTools.AllowBackground = value;
+            get => ConsoleColoring.AllowBackground;
+            set => ConsoleColoring.AllowBackground = value;
         }
         /// <summary>
         /// User Name Shell Color

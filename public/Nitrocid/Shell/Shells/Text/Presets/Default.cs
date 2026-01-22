@@ -23,6 +23,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Editors.TextEdit;
 using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Shell.Shells.Text.Presets
 {
@@ -52,21 +53,21 @@ namespace Nitrocid.Shell.Shells.Text.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('[');
 
             // File name
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat(Path.GetFileName(TextEditShellCommon.FileStream?.Name) ?? "???");
 
             // Was file edited?
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat("{0}", TextEditTools.WasTextEdited() ? "*" : "");
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -78,21 +79,21 @@ namespace Nitrocid.Shell.Shells.Text.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('[');
 
             // File name
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat("text.txt");
 
             // Was file edited?
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat("*");
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();

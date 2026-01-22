@@ -162,7 +162,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Draw a dot
                 spinBuffer.Append(
                     CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1) +
-                    firstGroupDotsColor.VTSequenceBackground +
+                    firstGroupDotsColor.VTSequenceBackground() +
                     " "
                 );
 
@@ -207,7 +207,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Draw a dot
                 spinBuffer.Append(
                     CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1) +
-                    secondGroupDotsColor.VTSequenceBackground +
+                    secondGroupDotsColor.VTSequenceBackground() +
                     " "
                 );
 
@@ -257,7 +257,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Draw a cleared dot
                 clearBuffer.Append(
                     CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1) +
-                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground() +
                     " "
                 );
             }
@@ -266,7 +266,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Draw a cleared dot
                 clearBuffer.Append(
                     CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1) +
-                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground() +
                     " "
                 );
             }

@@ -49,9 +49,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                     var builder = new StringBuilder();
                     builder.Append(
                         ConsolePositioning.RenderChangePosition(0, 1) +
-                        ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Silver), true) +
+                        ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Silver), true) +
                         GenerateWidthStick() + GenerateHeightStick() +
-                        ColorTools.RenderResetColors()
+                        ConsoleColoring.RenderResetColors()
                     );
                     return builder.ToString();
                 });

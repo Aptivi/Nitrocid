@@ -55,7 +55,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(0, 0, 0));
+            ConsoleColoring.LoadBackDry(new Color(0, 0, 0));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
@@ -285,7 +285,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ColorTools.LoadBackDry(col);
+                            ConsoleColoring.LoadBackDry(col);
 
                             // Sleep
                             ScreensaverManager.Delay(100, true);
@@ -353,12 +353,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Sleep
                             ScreensaverManager.Delay(selectedFirst ? 3000 : 250, true);
-                            ColorTools.LoadBackDry(black);
+                            ConsoleColoring.LoadBackDry(black);
                         }
                         break;
                     case 7:
                         // Display time warp text
-                        ColorTools.LoadBackDry(darkGreen);
+                        ConsoleColoring.LoadBackDry(darkGreen);
                         string timeWarpText = $"Time machine... Warping to {TimeDateRenderers.RenderDate(new DateTime(2018, 2, 22))}...";
                         int textPosX = ConsoleWrapper.WindowWidth / 2 - timeWarpText.Length / 2;
                         int textPosY = ConsoleWrapper.WindowHeight - 8;
@@ -516,7 +516,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ColorTools.LoadBackDry(col);
+                            ConsoleColoring.LoadBackDry(col);
 
                             // Sleep
                             ScreensaverManager.Delay(100, true);
@@ -541,7 +541,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset
             ConsoleResizeHandler.WasResized();
-            ColorTools.LoadBackDry(black);
+            ConsoleColoring.LoadBackDry(black);
         }
     }
 }

@@ -28,6 +28,7 @@ using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -55,7 +56,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LaserBeamsBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LaserBeamsBackgroundColor));
 
             // Populate the laser ends
             laserEnds.AddRange(
@@ -111,13 +112,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     currentPosX = (int)(laserStartPosX - (laserPosThresholdX * step));
                     currentPosY = (int)(laserStartPosY - (laserPosThresholdY * step));
-                    laserBeamsBuilder.Append($"{colorStorage.VTSequenceBackground}{CsiSequences.GenerateCsiCursorPosition(currentPosX + 1, currentPosY + 1)} ");
+                    laserBeamsBuilder.Append($"{colorStorage.VTSequenceBackground()}{CsiSequences.GenerateCsiCursorPosition(currentPosX + 1, currentPosY + 1)} ");
                     step++;
                 }
             }
 
             // Make a beaming white particle to make it as if the lasers are fired
-            laserBeamsBuilder.Append($"{new Color(ConsoleColors.White).VTSequenceBackground}{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth + 1, ConsoleWrapper.WindowHeight + 1)} ");
+            laserBeamsBuilder.Append($"{new Color(ConsoleColors.White).VTSequenceBackground()}{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth + 1, ConsoleWrapper.WindowHeight + 1)} ");
 
             // Write the result
             TextWriterRaw.WritePlain(laserBeamsBuilder.ToString(), false);

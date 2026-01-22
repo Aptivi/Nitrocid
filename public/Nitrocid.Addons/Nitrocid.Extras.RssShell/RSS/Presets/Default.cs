@@ -22,6 +22,7 @@ using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.RssShell.RSS.Presets
 {
@@ -51,17 +52,17 @@ namespace Nitrocid.Extras.RssShell.RSS.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('[');
 
             // RSS site
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat("{0}", new Uri(RSSShellCommon.RSSFeedLink).Host);
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -73,17 +74,17 @@ namespace Nitrocid.Extras.RssShell.RSS.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('[');
 
             // RSS site
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat("rss.fabrikam.com/news/tech.rss");
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();

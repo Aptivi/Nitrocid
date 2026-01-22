@@ -25,6 +25,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -60,7 +61,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Clear the console
-            ColorTools.LoadBackDry("0;0;0");
+            ConsoleColoring.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
 

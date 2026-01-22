@@ -22,6 +22,7 @@ using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 {
@@ -51,21 +52,21 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('[');
 
             // File name
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat(Path.GetFileName(ArchiveShellCommon.FileStream?.Name ?? ""));
 
             // Current archive directory
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat("{0}", ArchiveShellCommon.CurrentArchiveDirectory ?? "");
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -77,21 +78,21 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('[');
 
             // File name
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat("archive.zip");
 
             // Current archive directory
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat("/dir");
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append("] > ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();

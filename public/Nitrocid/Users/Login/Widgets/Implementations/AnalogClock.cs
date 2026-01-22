@@ -180,7 +180,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
         }
 
         private Line GetLineFrom(Coordinate startPos, Coordinate endPos) =>
-            GetLineFrom((startPos.X, startPos.Y), (endPos.X, endPos.Y), ColorTools.CurrentBackgroundColor);
+            GetLineFrom((startPos.X, startPos.Y), (endPos.X, endPos.Y), ConsoleColoring.CurrentBackgroundColor);
 
         private Line GetLineFrom((int x, int y) startPos, (int x, int y) endPos, Color color)
         {

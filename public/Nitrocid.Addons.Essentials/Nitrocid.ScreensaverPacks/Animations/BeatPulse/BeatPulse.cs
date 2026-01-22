@@ -25,6 +25,7 @@ using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BeatPulse
 {
@@ -110,7 +111,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BeatPulse
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", vars: [CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn]);
                 if (!ConsoleResizeHandler.WasResized(false))
-                    ColorTools.LoadBackDry(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn));
+                    ConsoleColoring.LoadBackDry(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn));
             }
 
             // Fade out
@@ -125,7 +126,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BeatPulse
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
-                    ColorTools.LoadBackDry(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
+                    ConsoleColoring.LoadBackDry(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
             }
 
             // Reset resize sync

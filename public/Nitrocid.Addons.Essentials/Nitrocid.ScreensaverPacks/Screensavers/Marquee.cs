@@ -43,7 +43,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.MarqueeBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.MarqueeBackgroundColor));
             ScreensaverPackInit.SaversConfig.MarqueeWrite = ScreensaverPackInit.SaversConfig.MarqueeWrite.ReplaceAll([Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString()], " - ");
         }
 
@@ -73,13 +73,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MarqueeMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.MarqueeMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MarqueeMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.MarqueeMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
-                ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"));
+                ConsoleColoring.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"));
             }
             else
             {
                 int color = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MarqueeMinimumColorLevel, ScreensaverPackInit.SaversConfig.MarqueeMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [color]);
-                ColorTools.SetConsoleColor(new Color(color));
+                ConsoleColoring.SetConsoleColor(new Color(color));
             }
 
             // If the text is at the right and is longer than the console width, crop it until it's complete.

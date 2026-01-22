@@ -30,6 +30,7 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Renci.SshNet;
 using Renci.SshNet.Sftp;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
 {
@@ -85,7 +86,7 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
                         {
                             FileSize = DirListSFTP.Length;
                             ModDate = DirListSFTP.LastWriteTime;
-                            EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + $"{FileSize.SizeString()} | {Translate.DoTranslation("Modified:")} {ModDate}");
+                            EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground() + $"{FileSize.SizeString()} | {Translate.DoTranslation("Modified:")} {ModDate}");
                         }
                     }
                     else if (DirListSFTP.IsDirectory)

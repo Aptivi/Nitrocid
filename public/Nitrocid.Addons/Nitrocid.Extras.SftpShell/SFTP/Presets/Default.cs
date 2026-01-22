@@ -22,6 +22,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;
 using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.SftpShell.SFTP.Presets
 {
@@ -51,25 +52,25 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('[');
 
             // SFTP user
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat("{0}", SFTPShellCommon.SFTPUser);
 
             // "at" sign
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('@');
 
             // SFTP site
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat("{0}", SFTPShellCommon.SFTPSite);
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.AppendFormat("]{0}> ", SFTPShellCommon.SFTPCurrentRemoteDir ?? "");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -81,25 +82,25 @@ namespace Nitrocid.Extras.SftpShell.SFTP.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('[');
 
             // SFTP user
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat(Translate.DoTranslation("User"));
 
             // "at" sign
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('@');
 
             // SFTP site
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat(Translate.DoTranslation("Site"));
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.AppendFormat("]/path> ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();

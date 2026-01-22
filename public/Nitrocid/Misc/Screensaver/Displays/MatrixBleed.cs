@@ -27,6 +27,7 @@ using Nitrocid.Kernel.Debugging;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Misc.Screensaver.Displays
 {
@@ -45,7 +46,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            ColorTools.LoadBackDry("0;0;0");
+            ConsoleColoring.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
         }
@@ -134,8 +135,8 @@ namespace Nitrocid.Misc.Screensaver.Displays
             string renderedNumber = RandomDriver.Random(1).ToString();
             bleedBuffer.Append(
                 $"{CsiSequences.GenerateCsiCursorPosition(ColumnLine + 1, fallStep + 1)}" +
-                $"{foreground.VTSequenceForeground}" +
-                $"{background.VTSequenceBackground}" +
+                $"{foreground.VTSequenceForeground()}" +
+                $"{background.VTSequenceBackground()}" +
                 $"{renderedNumber}"
             );
             var PositionTuple = (ColumnLine, fallStep, renderedNumber);
@@ -174,8 +175,8 @@ namespace Nitrocid.Misc.Screensaver.Displays
                 string renderedNumber = PositionTuple.Item3;
                 bleedBuffer.Append(
                     $"{CsiSequences.GenerateCsiCursorPosition(PositionLeft + 1, PositionTop + 1)}" +
-                    $"{CurrentFadeColor.VTSequenceForeground}" +
-                    $"{background.VTSequenceBackground}" +
+                    $"{CurrentFadeColor.VTSequenceForeground()}" +
+                    $"{background.VTSequenceBackground()}" +
                     $"{renderedNumber}"
                 );
             }

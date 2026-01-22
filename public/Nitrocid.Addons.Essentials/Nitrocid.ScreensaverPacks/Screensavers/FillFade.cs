@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -84,14 +85,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleWrapper.CursorLeft >= EndLeft && ConsoleWrapper.CursorTop >= EndTop)
                     {
-                        ColorTools.SetConsoleColorDry(currentColor, true);
+                        ConsoleColoring.SetConsoleColorDry(currentColor, true);
                         TextWriterRaw.WritePlain(" ", false);
                         DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're now dissolving... L: {0} = {1} | T: {2} = {3}", vars: [ConsoleWrapper.CursorLeft, EndLeft, ConsoleWrapper.CursorTop, EndTop]);
                         ColorFilled = true;
                     }
                     else
                     {
-                        ColorTools.SetConsoleColorDry(currentColor, true);
+                        ConsoleColoring.SetConsoleColorDry(currentColor, true);
                         TextWriterRaw.WritePlain(" ", false);
                     }
                 }
@@ -122,7 +123,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
                     if (!ConsoleResizeHandler.WasResized(false))
-                        ColorTools.LoadBackDry(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
+                        ConsoleColoring.LoadBackDry(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut));
                 }
                 ChangeColor();
                 ColorFilled = false;

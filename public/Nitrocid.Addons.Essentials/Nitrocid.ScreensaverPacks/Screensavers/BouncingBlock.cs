@@ -25,6 +25,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -54,8 +55,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.BouncingBlockForegroundColor));
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.BouncingBlockBackgroundColor));
+            ConsoleColoring.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.BouncingBlockForegroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.BouncingBlockBackgroundColor));
             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", vars: [RowBlock, ColumnBlock]);
 
             // Initialize the color

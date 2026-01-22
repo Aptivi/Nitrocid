@@ -28,6 +28,7 @@ using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Nitrocid.Misc.Screensaver;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -49,7 +50,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            ColorTools.LoadBackDry("0;0;0");
+            ConsoleColoring.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
         }
@@ -57,7 +58,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ColorTools.LoadBackDry("0;0;0");
+            ConsoleColoring.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
 

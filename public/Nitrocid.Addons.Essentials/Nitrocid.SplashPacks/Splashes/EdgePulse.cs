@@ -99,7 +99,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
                     var color = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
                     builder.Append(
-                        color.VTSequenceBackground +
+                        color.VTSequenceBackground() +
                         FillIn()
                     );
                     _currentStep++;
@@ -123,7 +123,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", vars: [CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn]);
                     var color = new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
                     builder.Append(
-                        color.VTSequenceBackground +
+                        color.VTSequenceBackground() +
                         FillIn()
                     );
                     _currentStep++;

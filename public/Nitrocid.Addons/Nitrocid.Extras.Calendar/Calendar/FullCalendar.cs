@@ -290,8 +290,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 if (useColors)
                 {
                     calendarRendered.Append(
-                        $"{ColorTools.RenderSetConsoleColor(foreground)}" +
-                        $"{ColorTools.RenderSetConsoleColor(background, true)}"
+                        $"{ConsoleColoring.RenderSetConsoleColor(foreground)}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(background, true)}"
                     );
                 }
                 calendarRendered.Append(
@@ -311,8 +311,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 if (useColors)
                 {
                     calendarRendered.Append(
-                        $"{ColorTools.RenderSetConsoleColor(HeaderColor)}" +
-                        $"{ColorTools.RenderSetConsoleColor(background, true)}"
+                        $"{ConsoleColoring.RenderSetConsoleColor(HeaderColor)}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(background, true)}"
                     );
                 }
                 calendarRendered.Append(
@@ -325,8 +325,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
             if (useColors)
             {
                 calendarRendered.Append(
-                    ColorTools.RenderRevertForeground() +
-                    ColorTools.RenderRevertBackground()
+                    ConsoleColoring.RenderRevertForeground() +
+                    ConsoleColoring.RenderRevertBackground()
                 );
             }
             return calendarRendered.ToString();

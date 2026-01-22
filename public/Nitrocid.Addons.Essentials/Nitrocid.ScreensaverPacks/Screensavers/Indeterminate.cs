@@ -27,6 +27,7 @@ using Nitrocid.Drivers.RNG;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -86,7 +87,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     Color =
                         ScreensaverPackInit.SaversConfig.IndeterminateUseBorderColors ?
                         new Color(ScreensaverPackInit.SaversConfig.IndeterminateLeftFrameColor) :
-                        ColorTools.GetGray(),
+                        ConsoleColoring.GetGray(),
                 };
                 TextWriterRaw.WriteRaw(border.Render());
             }
@@ -133,7 +134,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
 
                 // Fill the ramp
-                ColorTools.SetConsoleColorDry(RampCurrentColorInstance, true);
+                ConsoleColoring.SetConsoleColorDry(RampCurrentColorInstance, true);
                 for (int BlockPos = IndeterminateCurrentBlockStart; BlockPos <= IndeterminateCurrentBlockEnd; BlockPos++)
                 {
                     TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true);

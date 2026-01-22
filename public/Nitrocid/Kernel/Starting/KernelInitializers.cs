@@ -337,7 +337,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // Show first-time color calibration for first-time run
                 if (KernelEntry.FirstTime)
-                    ColorTools.DetermineTrueColorFromUser();
+                    ConsoleColoring.DetermineTrueColorFromUser();
 
                 // Check for errors
                 if (exceptions.Count > 0)

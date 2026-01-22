@@ -73,7 +73,7 @@ namespace Nitrocid.ConsoleBase.Themes
                 var type = colors.Keys.ElementAt(key);
                 var color = colors.Values.ElementAt(key);
                 choices.Add(
-                    new(type.ToString(), $"[{color.PlainSequence}]{color.VTSequenceForeground} Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+                    new(type.ToString(), $"[{color.PlainSequence}]{color.VTSequenceForeground()} Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
                 );
             }
 

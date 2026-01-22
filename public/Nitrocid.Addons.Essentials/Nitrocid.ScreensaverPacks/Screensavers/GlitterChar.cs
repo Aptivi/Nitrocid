@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Textify.General;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -42,8 +43,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.GlitterCharForegroundColor));
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.GlitterCharBackgroundColor));
+            ConsoleColoring.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.GlitterCharForegroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.GlitterCharBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
 

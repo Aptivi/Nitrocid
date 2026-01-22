@@ -77,11 +77,11 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
                 """
             );
             builder.AppendLine(
-                $"{ColorTools.RenderSetConsoleColor(new Color(highlightedEntryForeground))}" +
-                $"{ColorTools.RenderSetConsoleColor(new Color(highlightedEntryBackground), true)}" +
+                $"{ConsoleColoring.RenderSetConsoleColor(new Color(highlightedEntryForeground))}" +
+                $"{ConsoleColoring.RenderSetConsoleColor(new Color(highlightedEntryBackground), true)}" +
                  "    " + Translate.DoTranslation("Continue") +
-                $"{ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor)}" +
-                $"{ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)}"
+                $"{ConsoleColoring.RenderSetConsoleColor(ConsoleColoring.CurrentForegroundColor)}" +
+                $"{ConsoleColoring.RenderSetConsoleColor(ConsoleColoring.CurrentBackgroundColor, true)}"
             );
             builder.AppendLine("\n" + Translate.DoTranslation("Use the up and down arrow keys to move the highlight to your choice."));
             return builder.ToString();

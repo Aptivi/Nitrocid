@@ -32,6 +32,7 @@ using Nitrocid.Misc.Audio;
 using BassBoom.Basolia;
 using BassBoom.Basolia.File;
 using BassBoom.Basolia.Playback;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -55,13 +56,13 @@ namespace Nitrocid.Misc.Screensaver
             if (Screensaver is null)
                 throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Screensaver instance is not specified"));
             bool initialVisible = ConsoleWrapper.CursorVisible;
-            bool initialBack = ColorTools.AllowBackground;
+            bool initialBack = ConsoleColoring.AllowBackground;
             bool initialPalette = ColorTools.GlobalSettings.UseTerminalPalette;
             try
             {
                 // Preparations
                 displayingSaver = Screensaver;
-                ColorTools.AllowBackground = true;
+                ConsoleColoring.AllowBackground = true;
                 ColorTools.GlobalSettings.UseTerminalPalette = false;
                 Screensaver.ScreensaverPreparation();
 
@@ -85,7 +86,7 @@ namespace Nitrocid.Misc.Screensaver
             {
                 Screensaver.ScreensaverOutro();
                 ScreensaverManager.HandleSaverCancel(initialVisible);
-                ColorTools.AllowBackground = initialBack;
+                ConsoleColoring.AllowBackground = initialBack;
                 ColorTools.GlobalSettings.UseTerminalPalette = initialPalette;
                 KernelColorTools.LoadBackground();
             }

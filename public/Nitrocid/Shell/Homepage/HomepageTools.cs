@@ -52,6 +52,7 @@ using Nitrocid.Files;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Shell.Homepage
 {
@@ -271,7 +272,7 @@ namespace Nitrocid.Shell.Homepage
 
                     // Populate the settings button
                     var foregroundSettings = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator);
-                    var backgroundSettings = buttonHighlight == 1 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
+                    var backgroundSettings = buttonHighlight == 1 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ConsoleColoring.CurrentBackgroundColor;
                     var foregroundSettingsText = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.NeutralText);
                     var settingsBorder = new Border()
                     {
@@ -302,7 +303,7 @@ namespace Nitrocid.Shell.Homepage
 
                     // Populate the about button
                     var foregroundAbout = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator);
-                    var backgroundAbout = buttonHighlight == 2 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
+                    var backgroundAbout = buttonHighlight == 2 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ConsoleColoring.CurrentBackgroundColor;
                     var foregroundAboutText = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.NeutralText);
                     var aboutBorder = new Border()
                     {

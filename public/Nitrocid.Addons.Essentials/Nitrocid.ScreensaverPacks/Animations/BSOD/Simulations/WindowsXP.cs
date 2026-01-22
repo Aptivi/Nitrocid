@@ -23,6 +23,7 @@ using Terminaux.Colors;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {
@@ -306,8 +307,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
         {
             // Windows 7's BSOD is the same as Windows XP's and Windows Vista's BSOD.
             var bugParams = BugChecks[BugCheckCode];
-            ColorTools.LoadBackDry(new Color(ConsoleColors.DarkBlue));
-            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.DarkBlue));
+            ConsoleColoring.SetConsoleColor(new Color(ConsoleColors.White));
 
             // First, write the introduction
             TextWriterRaw.WritePlain("\nA problem has been detected and Windows has been shut down to prevent damage\n" +

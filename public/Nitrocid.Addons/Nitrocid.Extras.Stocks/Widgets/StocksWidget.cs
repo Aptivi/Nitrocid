@@ -23,6 +23,7 @@ using Nitrocid.Languages;
 using Nitrocid.Network.Transfer;
 using Nitrocid.Users.Login.Widgets;
 using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.CyclicWriters.Graphical;
@@ -78,9 +79,9 @@ namespace Nitrocid.Extras.Stocks.Widgets
                     string? high = (string?)stocksIntervalToken?.First?.First?["2. high"];
                     string? low = (string?)stocksIntervalToken?.First?.First?["3. low"];
                     displayer.Text =
-                        $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))}H: {ColorTools.RenderSetConsoleColor(ConsoleColors.Lime)}{high}" +
-                        $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))} | L: {ColorTools.RenderSetConsoleColor(ConsoleColors.Red)}{low}" +
-                        $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))}";
+                        $"{ConsoleColoring.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))}H: {ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Lime)}{high}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))} | L: {ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red)}{low}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))}";
                     display.Append(displayer.Render());
                     if (top + (height / 2) + 1 <= top + height)
                     {

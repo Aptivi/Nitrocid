@@ -37,6 +37,7 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Choice;
 using System.Collections.Generic;
 using Terminaux.Inputs.Styles;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.FtpShell.Tools
 {
@@ -289,7 +290,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                     while (!Answer.Equals("y", StringComparison.OrdinalIgnoreCase) || !Answer.Equals("n", StringComparison.OrdinalIgnoreCase))
                     {
                         TextWriters.Write(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, KernelColorType.Question);
-                        ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Input));
+                        ConsoleColoring.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Input));
                         Answer = Convert.ToString(Input.ReadKey().KeyChar);
                         TextWriterRaw.Write();
                         DebugWriter.WriteDebug(DebugLevel.I, $"Answer is {Answer}");

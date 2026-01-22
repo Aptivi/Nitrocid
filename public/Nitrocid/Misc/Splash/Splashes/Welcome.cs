@@ -61,7 +61,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             progress.Width = ConsoleWrapper.WindowWidth - 6;
             progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(KernelColorTools.GetColor(KernelColorType.Progress));
             progress.ProgressActiveForegroundColor = KernelColorTools.GetColor(KernelColorType.Progress);
-            progress.ProgressBackgroundColor = ColorTools.CurrentBackgroundColor;
+            progress.ProgressBackgroundColor = ConsoleColoring.CurrentBackgroundColor;
             if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)
@@ -150,11 +150,11 @@ namespace Nitrocid.Misc.Splash.Splashes
 
                     // Write the three dots
                     string dots =
-                        $"{firstDotColor.VTSequenceForeground}* " +
-                        $"{secondDotColor.VTSequenceForeground}* " +
-                        $"{thirdDotColor.VTSequenceForeground}* " +
-                        $"{fourthDotColor.VTSequenceForeground}* " +
-                        $"{fifthDotColor.VTSequenceForeground}*";
+                        $"{firstDotColor.VTSequenceForeground()}* " +
+                        $"{secondDotColor.VTSequenceForeground()}* " +
+                        $"{thirdDotColor.VTSequenceForeground()}* " +
+                        $"{fourthDotColor.VTSequenceForeground()}* " +
+                        $"{fifthDotColor.VTSequenceForeground()}*";
                     int dotsPosX = ConsoleWrapper.WindowWidth / 2 - VtSequenceTools.FilterVTSequences(dots).Length / 2;
                     int dotsPosY = ConsoleWrapper.WindowHeight - 2;
                     builder.Append(TextWriterWhereColor.RenderWhere(dots, dotsPosX, dotsPosY));
@@ -269,7 +269,7 @@ namespace Nitrocid.Misc.Splash.Splashes
                 }
             };
             builder.Append(
-                col.VTSequenceForeground +
+                col.VTSequenceForeground() +
                 TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, consoleY - 2, true) +
                 report.Render()
             );

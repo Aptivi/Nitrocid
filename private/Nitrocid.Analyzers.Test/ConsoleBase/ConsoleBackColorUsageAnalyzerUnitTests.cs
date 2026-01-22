@@ -102,7 +102,7 @@ namespace Nitrocid.Analyzers.Test.ConsoleBase
                     {   
                         public static void Main()
                         {
-                            ColorTools.SetConsoleColor(ConsoleColors.White, true);
+                            ConsoleColoring.SetConsoleColor(ConsoleColors.White, true);
                         }
                     }
                 }

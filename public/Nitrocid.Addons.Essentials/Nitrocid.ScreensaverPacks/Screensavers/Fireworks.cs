@@ -25,6 +25,7 @@ using Nitrocid.Drivers.RNG;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -94,8 +95,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Delay writing
                     ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.FireworksDelay);
-                    ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
-                    ColorTools.SetConsoleColorDry(new Color(255, 255, 255), true);
+                    ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
+                    ConsoleColoring.SetConsoleColorDry(new Color(255, 255, 255), true);
 
                     // Change positions
                     CurrentX += FireworkStepsX;
@@ -122,7 +123,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Right particle position: {0}", vars: [RightParticleX]);
 
                     // Draw the explosion
-                    ColorTools.SetConsoleColorDry(IgniteColor, true);
+                    ConsoleColoring.SetConsoleColorDry(IgniteColor, true);
                     if (UpperParticleY < ConsoleWrapper.WindowHeight && UpperParticleY >= 0)
                     {
                         DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Making upper particle at {0}, {1}", vars: [IgnitePositionX, UpperParticleY]);
@@ -150,7 +151,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Delay writing
                     ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.FireworksDelay);
-                    ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+                    ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
                 }
             }
 

@@ -26,6 +26,7 @@ using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -45,7 +46,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.FlashTextBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.FlashTextBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
 
             // Select position
@@ -85,7 +86,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
             }
             ScreensaverManager.Delay(HalfDelay);
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
             ScreensaverManager.Delay(HalfDelay);
 
             // Reset resize sync

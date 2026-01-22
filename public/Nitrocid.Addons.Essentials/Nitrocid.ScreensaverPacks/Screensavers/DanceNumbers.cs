@@ -24,6 +24,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Nitrocid.Kernel.Configuration;
 using System.Text;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -48,7 +49,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DanceNumbersBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.DanceNumbersBackgroundColor));
 
             // Draw few numbers
             for (int i = 0; i < ConsoleWrapper.WindowHeight; i++)
@@ -68,13 +69,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DanceNumbersMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.DanceNumbersMaximumBlueColorLevel);
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                     var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                    ColorTools.SetConsoleColor(ColorStorage);
+                    ConsoleColoring.SetConsoleColor(ColorStorage);
                 }
                 else
                 {
                     int color = RandomDriver.Random(ScreensaverPackInit.SaversConfig.DanceNumbersMinimumColorLevel, ScreensaverPackInit.SaversConfig.DanceNumbersMaximumColorLevel);
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [color]);
-                    ColorTools.SetConsoleColor(new Color(color));
+                    ConsoleColoring.SetConsoleColor(new Color(color));
                 }
 
                 // Now, draw a line

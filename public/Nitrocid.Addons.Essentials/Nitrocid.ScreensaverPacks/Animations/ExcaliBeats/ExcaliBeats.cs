@@ -29,6 +29,7 @@ using Nitrocid.Kernel.Configuration;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
 {
@@ -103,9 +104,9 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
 
             // Flash!
-            ColorTools.LoadBackDry("255;255;255");
+            ConsoleColoring.LoadBackDry("255;255;255");
             ScreensaverManager.Delay(20);
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
 
             // Populate the text
             string exStr = Settings.ExcaliBeatsExplicit ? "EXCALIBUR" : "EXCALIBEATS";

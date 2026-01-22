@@ -22,6 +22,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.MailShell.Tools;
 using Terminaux.Shell.Prompts;
 using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.MailShell.Mail.Presets
 {
@@ -51,21 +52,21 @@ namespace Nitrocid.Extras.MailShell.Mail.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('[');
 
             // Mail username
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat("{0}", MailLogin.Authentication.UserName);
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append("] ");
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.AppendFormat("{0} > ", MailShellCommon.IMAP_CurrentDirectory);
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -77,21 +78,21 @@ namespace Nitrocid.Extras.MailShell.Mail.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Opening
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append('[');
 
             // Mail username
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground());
             PresetStringBuilder.AppendFormat("address@fabrikam.com");
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.Append("] ");
 
             // Closing
-            PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
             PresetStringBuilder.AppendFormat("Inbox > ");
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();

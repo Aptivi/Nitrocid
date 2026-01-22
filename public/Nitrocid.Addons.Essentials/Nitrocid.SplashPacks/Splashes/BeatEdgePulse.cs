@@ -127,7 +127,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 int RedColorNum = _currentColor.RGB.R;
                 int GreenColorNum = _currentColor.RGB.G;
                 int BlueColorNum = _currentColor.RGB.B;
-                builder.Append(_currentColor.VTSequenceBackground);
+                builder.Append(_currentColor.VTSequenceBackground());
 
                 // Set thresholds
                 double ThresholdRed = RedColorNum / (double)_beatedgepulseMaxSteps;
@@ -150,7 +150,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                     var color = new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}");
                     builder.Append(
-                        color.VTSequenceBackground +
+                        color.VTSequenceBackground() +
                         FillIn()
                     );
                     _currentStep++;
@@ -174,7 +174,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", vars: [CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn]);
                     var color = new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
                     builder.Append(
-                        color.VTSequenceBackground +
+                        color.VTSequenceBackground() +
                         FillIn()
                     );
                     _currentStep++;

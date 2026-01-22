@@ -28,6 +28,7 @@ using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -48,7 +49,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             CoveredPositions.Clear();
-            ColorTools.LoadBackDry("0;0;0");
+            ConsoleColoring.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
         }
@@ -72,14 +73,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.FallingLineMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.FallingLineMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                ColorTools.SetConsoleColorDry(ColorStorage, true);
+                ConsoleColoring.SetConsoleColorDry(ColorStorage, true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.FallingLineMinimumColorLevel, ScreensaverPackInit.SaversConfig.FallingLineMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                 ColorStorage = new Color(ColorNum);
-                ColorTools.SetConsoleColorDry(ColorStorage, true);
+                ConsoleColoring.SetConsoleColorDry(ColorStorage, true);
             }
 
             // Make the line fall down

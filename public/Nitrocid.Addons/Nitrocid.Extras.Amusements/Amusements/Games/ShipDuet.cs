@@ -32,6 +32,7 @@ using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Inputs;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -75,7 +76,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         public static void InitializeShipDuet(bool simulation = false)
         {
             // Clear screen
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
 
             // Clear all bullets
             BulletsPlayer1.Clear();
@@ -193,12 +194,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         if (y != SpaceshipHeightPlayer1)
                             buffer.Append(
-                                ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
+                                ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
                                 TextWriterWhereColor.RenderWhere(" ", 0, y)
                             );
                         if (y != SpaceshipHeightPlayer2)
                             buffer.Append(
-                                ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
+                                ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
                                 TextWriterWhereColor.RenderWhere(" ", ConsoleWrapper.WindowWidth - 1, y)
                             );
                     }
@@ -207,7 +208,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int Bullet = 0; Bullet <= BulletsPlayer1.Count - 1; Bullet++)
                     {
                         buffer.Append(
-                            ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
+                            ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
                             TextWriterWhereColor.RenderWhere(" ", BulletsPlayer1[Bullet].Item1, BulletsPlayer1[Bullet].Item2)
                         );
                         int BulletX = BulletsPlayer1[Bullet].Item1 + 1;
@@ -219,7 +220,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int Bullet = 0; Bullet <= BulletsPlayer2.Count - 1; Bullet++)
                     {
                         buffer.Append(
-                            ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
+                            ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
                             TextWriterWhereColor.RenderWhere(" ", BulletsPlayer2[Bullet].Item1, BulletsPlayer2[Bullet].Item2)
                         );
                         int BulletX = BulletsPlayer2[Bullet].Item1 - 1;
@@ -231,7 +232,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int Star = 0; Star <= Stars.Count - 1; Star++)
                     {
                         buffer.Append(
-                            ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
+                            ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
                             TextWriterWhereColor.RenderWhere(" ", Stars[Star].Item1, Stars[Star].Item2)
                         );
                         int StarX = Stars[Star].Item1 - 1;
@@ -298,8 +299,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         int StarX = Star.Item1;
                         int StarY = Star.Item2;
                         buffer.Append(
-                            new Color(ConsoleColors.White).VTSequenceForeground +
-                            ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
+                            new Color(ConsoleColors.White).VTSequenceForeground() +
+                            ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
                             TextWriterWhereColor.RenderWhere(Convert.ToString(StarSymbol), StarX, StarY, false)
                         );
                     }

@@ -25,6 +25,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -47,8 +48,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.BouncingTextForegroundColor));
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.BouncingTextBackgroundColor));
+            ConsoleColoring.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.BouncingTextForegroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.BouncingTextBackgroundColor));
             RowText = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             ColumnFirstLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - ScreensaverPackInit.SaversConfig.BouncingTextWrite.Length / 2d);
             ColumnLastLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + ScreensaverPackInit.SaversConfig.BouncingTextWrite.Length / 2d);

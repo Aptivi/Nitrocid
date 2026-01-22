@@ -26,6 +26,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -106,7 +107,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 // Make a new instance
                 var RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                ColorTools.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
+                ConsoleColoring.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
 
                 // Try to fill the ramp
                 int RampSubgradientStepsMade = 0;
@@ -147,7 +148,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         RampSubgradientCurrentColorBlue = 0;
                     }
                     RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                    ColorTools.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
+                    ConsoleColoring.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
                 }
 
                 // Change the colors
@@ -181,7 +182,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Clear the scene
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.GradientRotNextRampDelay);
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

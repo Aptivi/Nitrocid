@@ -37,6 +37,7 @@ using VisualCard.Parts.Enums;
 using Nitrocid.Files;
 using System.Linq;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {
@@ -234,7 +235,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             {
                 finalInfoRendered.AppendLine("\n");
                 finalInfoRendered.AppendLine(picture);
-                finalInfoRendered.Append(ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBoxBackground), true));
+                finalInfoRendered.Append(ConsoleColoring.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.TuiBoxBackground), true));
             }
 
             // Now, render the info box

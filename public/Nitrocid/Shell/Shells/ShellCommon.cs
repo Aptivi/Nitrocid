@@ -18,7 +18,6 @@
 //
 
 using Nitrocid.Users.Groups;
-using Terminaux.Colors.Themes;
 using System.Linq;
 using Nitrocid.Security.Permissions;
 using System.Collections.Generic;
@@ -27,6 +26,7 @@ using Nitrocid.Users;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Shell.Arguments;
+using Nitrocid.ConsoleBase.Themes;
 
 namespace Nitrocid.Shell.Shells
 {

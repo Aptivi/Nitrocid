@@ -141,7 +141,7 @@ namespace Nitrocid.Extras.Timers.Timers
                     Top = SeparatorMinimumHeight,
                     Width = SeparatorHalfConsoleWidthInterior,
                     Height = SeparatorMaximumHeightInterior,
-                    FrameColor = ColorTools.GetGray(),
+                    FrameColor = ConsoleColoring.GetGray(),
                     BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
                 };
                 var stopwatchBoxFrame = new BoxFrame()
@@ -150,7 +150,7 @@ namespace Nitrocid.Extras.Timers.Timers
                     Top = SeparatorMinimumHeight,
                     Width = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
                     Height = SeparatorMaximumHeightInterior,
-                    FrameColor = ColorTools.GetGray(),
+                    FrameColor = ConsoleColoring.GetGray(),
                     BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
                 };
                 builder.Append(
@@ -175,7 +175,7 @@ namespace Nitrocid.Extras.Timers.Timers
                 for (int LapIndex = BorderDifference; LapIndex <= Laps.Count - 1; LapIndex++)
                 {
                     var Lap = Laps[LapIndex];
-                    LapsListBuilder.AppendLine(Lap.LapColor.VTSequenceForeground + Translate.DoTranslation("Lap") + $" {LapIndex + 1}: {Lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture)}");
+                    LapsListBuilder.AppendLine(Lap.LapColor.VTSequenceForeground() + Translate.DoTranslation("Lap") + $" {LapIndex + 1}: {Lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture)}");
                 }
                 builder.Append(
                     TextWriterWhereColor.RenderWhereColorBack(LapsListBuilder.ToString(), LapsLapsListLeftPosition, LapsLapsListTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background))
@@ -287,7 +287,7 @@ namespace Nitrocid.Extras.Timers.Timers
             for (int i = 0; i < Laps.Count; i++)
             {
                 LapDisplayInfo? lap = Laps[i];
-                lapsListBuilder.AppendLine(lap.LapColor.VTSequenceForeground + Translate.DoTranslation("Lap") + $" {i + 1}: {lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture)}");
+                lapsListBuilder.AppendLine(lap.LapColor.VTSequenceForeground() + Translate.DoTranslation("Lap") + $" {i + 1}: {lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture)}");
             }
             if (Laps.Count == 0)
                 lapsListBuilder.AppendLine(Translate.DoTranslation("No laps yet..."));

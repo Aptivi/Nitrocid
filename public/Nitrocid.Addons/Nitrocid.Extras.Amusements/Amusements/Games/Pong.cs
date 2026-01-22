@@ -33,6 +33,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -64,7 +65,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             // Draw the field
             part.AddDynamicText(() =>
             {
-                StringBuilder field = new(ColorTools.RenderSetConsoleColor(fieldColor, true));
+                StringBuilder field = new(ConsoleColoring.RenderSetConsoleColor(fieldColor, true));
 
                 int FieldTopLeftEdge = 3;
                 int FieldBottomLeftEdge = 3;
@@ -137,7 +138,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     }
                 };
                 field.Append(
-                    ColorTools.RenderRevertBackground() +
+                    ConsoleColoring.RenderRevertBackground() +
                     scores.Render()
                 );
 
@@ -195,7 +196,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
                 // Make a ball
                 buffer.Append(
-                    ColorTools.RenderSetConsoleColor(ballColor, true) +
+                    ConsoleColoring.RenderSetConsoleColor(ballColor, true) +
                     CsiSequences.GenerateCsiCursorPosition(BallCurrentX + 1, BallCurrentY + 1) +
                     " "
                 );

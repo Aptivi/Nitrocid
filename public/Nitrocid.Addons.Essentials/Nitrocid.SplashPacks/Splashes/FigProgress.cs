@@ -71,7 +71,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 consoleX = ConsoleWrapper.WindowWidth / 2 - text.Length / 2;
                 consoleY = ConsoleWrapper.WindowHeight / 2;
                 builder.Append(
-                    col.VTSequenceForeground +
+                    col.VTSequenceForeground() +
                     TextWriterWhereColor.RenderWhere(text, consoleX, consoleY, true)
                 );
             }
@@ -127,11 +127,11 @@ namespace Nitrocid.SplashPacks.Splashes
 
                 // Write the three dots
                 string dots =
-                    $"{firstDotColor.VTSequenceForeground}* " +
-                    $"{secondDotColor.VTSequenceForeground}* " +
-                    $"{thirdDotColor.VTSequenceForeground}* " +
-                    $"{fourthDotColor.VTSequenceForeground}* " +
-                    $"{fifthDotColor.VTSequenceForeground}*";
+                    $"{firstDotColor.VTSequenceForeground()}* " +
+                    $"{secondDotColor.VTSequenceForeground()}* " +
+                    $"{thirdDotColor.VTSequenceForeground()}* " +
+                    $"{fourthDotColor.VTSequenceForeground()}* " +
+                    $"{fifthDotColor.VTSequenceForeground()}*";
                 int dotsPosX = (ConsoleWrapper.WindowWidth / 2) - (VtSequenceTools.FilterVTSequences(dots).Length / 2);
                 int dotsPosY = ConsoleWrapper.WindowHeight - 2;
                 builder.Append(TextWriterWhereColor.RenderWhere(dots, dotsPosX, dotsPosY));

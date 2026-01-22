@@ -24,6 +24,7 @@ using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Nitrocid.Misc.Screensaver;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
 {
@@ -68,7 +69,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", vars: [CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn]);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColorDry(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn), true);
                     FillIn();
                 }
             }
@@ -86,7 +87,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColorDry(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut), true);
                     FillIn();
                 }
             }

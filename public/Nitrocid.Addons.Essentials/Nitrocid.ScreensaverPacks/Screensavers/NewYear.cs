@@ -30,6 +30,7 @@ using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -47,7 +48,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }

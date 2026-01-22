@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using Nitrocid.ConsoleBase.Themes;
 using Nitrocid.Kernel.Debugging;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 
@@ -144,9 +145,9 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
         public static void SetConsoleColor(KernelColorType colorType, bool Background, bool resetBack = true)
         {
-            ColorTools.SetConsoleColor(GetColor(colorType), Background);
+            ConsoleColoring.SetConsoleColor(GetColor(colorType), Background);
             if (!Background && resetBack)
-                ColorTools.SetConsoleColor(GetColor(KernelColorType.Background), true);
+                ConsoleColoring.SetConsoleColor(GetColor(KernelColorType.Background), true);
         }
 
         /// <summary>
@@ -192,9 +193,9 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
         public static void SetConsoleColorDry(KernelColorType colorType, bool Background, bool resetBack = true)
         {
-            ColorTools.SetConsoleColorDry(GetColor(colorType), Background);
+            ConsoleColoring.SetConsoleColorDry(GetColor(colorType), Background);
             if (!Background && resetBack)
-                ColorTools.SetConsoleColorDry(GetColor(KernelColorType.Background), true);
+                ConsoleColoring.SetConsoleColorDry(GetColor(KernelColorType.Background), true);
         }
 
         /// <summary>
@@ -243,7 +244,7 @@ namespace Nitrocid.ConsoleBase.Colors
             if (useKernelColors)
                 SetConsoleColor(KernelColorType.Background, Background: true);
             else
-                ColorTools.ResetBackground();
+                ConsoleColoring.ResetBackground();
         }
 
         /// <summary>
@@ -255,13 +256,13 @@ namespace Nitrocid.ConsoleBase.Colors
             if (useKernelColors)
                 SetConsoleColor(KernelColorType.NeutralText);
             else
-                ColorTools.ResetForeground();
+                ConsoleColoring.ResetForeground();
         }
 
         /// <summary>
         /// Loads the background color by clearing the screen to the kernel background color
         /// </summary>
         public static void LoadBackground() =>
-            ColorTools.LoadBack(GetColor(KernelColorType.Background));
+            ConsoleColoring.LoadBack(GetColor(KernelColorType.Background));
     }
 }

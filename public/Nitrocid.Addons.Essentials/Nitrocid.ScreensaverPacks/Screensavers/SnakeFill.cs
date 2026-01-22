@@ -24,6 +24,7 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -58,14 +59,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.SnakeFillMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.SnakeFillMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
-                    ColorTools.SetConsoleColorDry(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.SnakeFillMinimumColorLevel, ScreensaverPackInit.SaversConfig.SnakeFillMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
-                    ColorTools.SetConsoleColorDry(new Color(ColorNum), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color(ColorNum), true);
             }
 
             // Set max height
