@@ -17,21 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Drivers.Encryption;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
+using System;
 using System.Linq;
 using System.Threading;
-using Terminaux.Base;
-using Terminaux.Inputs;
-using System;
-using Nitrocid.Kernel.Power;
-using Nitrocid.Users.Login.Widgets;
-using Terminaux.Inputs.Styles;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Drivers.Encryption;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Power;
+using Nitrocid.Languages;
+using Nitrocid.Users.Login.Widgets;
+using Terminaux.Base;
+using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Pointer;
+using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Users.Login.Handlers.Logins
 {
@@ -39,57 +46,150 @@ namespace Nitrocid.Users.Login.Handlers.Logins
     {
         public override bool LoginScreen()
         {
-            // Clear the console
-            ConsoleWrapper.CursorVisible = false;
-            ConsoleWrapper.Clear();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loading modern logon... This shouldn't take long.");
-
-            // Start the date and time update thread to show time and date in the modern way
-            ModernLogonScreen.updateThread.Start();
-
-            // Wait for the keypress
-            DebugWriter.WriteDebug(DebugLevel.I, "Rendering...");
-            SpinWait.SpinUntil(() => ModernLogonScreen.renderedFully);
-            DebugWriter.WriteDebug(DebugLevel.I, "Rendered fully!");
-            var key = Input.ReadKey().Key;
-
-            // Stop the thread if screen number indicates that we're on the main screen
-            ModernLogonScreen.updateThread.Stop();
-            ModernLogonScreen.renderedFully = false;
-
-            // Check to see if user requested power actions
+            var loginScreen = new Screen
+            {
+                CycleFrequency = 1000
+            };
             bool proceed = true;
-            if (key == ConsoleKey.Escape)
+
+            try
             {
-                int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
-                    new InputChoiceInfo("shutdown", Translate.DoTranslation("Shut down")),
-                    new InputChoiceInfo("reboot", Translate.DoTranslation("Restart")),
-                    new InputChoiceInfo("login", Translate.DoTranslation("Login")),
-                ], Translate.DoTranslation("You've entered the power action menu. Please enter a choice using the left and the right arrow keys and press ENTER, or press ESC to go back to the main screen."));
-                if (answer == 0)
-                    PowerManager.PowerManage(PowerMode.Shutdown);
-                else if (answer == 1)
-                    PowerManager.PowerManage(PowerMode.Reboot);
-                proceed = answer == 2;
+                // Clear the console
+                ConsoleWrapper.CursorVisible = false;
+                ConsoleWrapper.Clear();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loading modern logon... This shouldn't take long.");
+
+                // Create a screen for the login screen
+                var loginScreenBuffer = new ScreenPart();
+                ScreenTools.SetCurrent(loginScreen);
+                ScreenTools.SetCurrentCyclic(loginScreen);
+                ThemeColorsTools.LoadBackground();
+                loginScreenBuffer.AddDynamicText(() =>
+                {
+                    try
+                    {
+                        if (ModernLogonScreen.screenNum > 0 && ModernLogonScreen.screenNum <= 3)
+                            return ModernLogonScreen.PrintConfiguredLogonScreen(ModernLogonScreen.screenNum);
+                        else
+                        {
+                            // Unknown screen!
+                            string text = Translate.DoTranslation("Unknown screen number.");
+                            string[] lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth);
+                            int top = ConsoleWrapper.WindowHeight / 2 - lines.Length / 2;
+                            var errorText = new AlignedText()
+                            {
+                                Top = top,
+                                Text = text,
+                                ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error),
+                                Settings = new()
+                                {
+                                    Alignment = TextAlignment.Middle,
+                                }
+                            };
+                            return errorText.Render();
+                        }
+                    }
+                    catch (Exception ex) when (ex is not ThreadInterruptedException)
+                    {
+                        // An error occurred!
+                        DebugWriter.WriteDebug(DebugLevel.E, $"Error rendering the modern logon: {ex.Message}");
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        string text = Translate.DoTranslation("Failed to render the logon screen.") + (KernelEntry.DebugMode ? $"\n\n{Translate.DoTranslation("Investigate the debug logs for more information about the error.")}" : "");
+                        string[] lines = ConsoleMisc.GetWrappedSentencesByWords(text, ConsoleWrapper.WindowWidth);
+                        int top = ConsoleWrapper.WindowHeight / 2 - lines.Length / 2;
+                        var errorText = new AlignedText()
+                        {
+                            Top = top,
+                            Text = text,
+                            ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error),
+                            Settings = new()
+                            {
+                                Alignment = TextAlignment.Middle,
+                            }
+                        };
+                        return errorText.Render();
+                    }
+                });
+                loginScreen.AddBufferedPart("Modern Login", loginScreenBuffer);
+
+                // Main loop
+                ScreenTools.StartCyclicScreen();
+                bool exiting = false;
+                while (!exiting)
+                {
+                    ScreenTools.Render();
+
+                    // Get input
+                    var data = Input.ReadPointerOrKey();
+                    if (data?.PointerEventContext is PointerEventContext context)
+                    {
+                        if (context.ButtonPress == PointerButtonPress.Released)
+                            proceed = true;
+                        if (proceed)
+                            exiting = true;
+                    }
+                    else if (data?.ConsoleKeyInfo is ConsoleKeyInfo key)
+                    {
+                        // Check to see if user requested power actions
+                        if (key.Key == ConsoleKey.Escape)
+                        {
+                            int answer = InfoBoxButtonsColor.WriteInfoBoxButtons([
+                                new InputChoiceInfo("shutdown", Translate.DoTranslation("Shut down")),
+                                new InputChoiceInfo("reboot", Translate.DoTranslation("Restart")),
+                                new InputChoiceInfo("login", Translate.DoTranslation("Login")),
+                            ], Translate.DoTranslation("You've entered the power action menu. Please enter a choice using the left and the right arrow keys and press ENTER, or press ESC to go back to the main screen."));
+                            if (answer == 0)
+                                PowerManager.PowerManage(PowerMode.Shutdown);
+                            else if (answer == 1)
+                                PowerManager.PowerManage(PowerMode.Reboot);
+                            proceed = answer == 2;
+                            exiting = answer >= 0;
+                            loginScreen.RequireRefresh();
+                        }
+                        else if (key.Key == ConsoleKey.LeftArrow || key.Key == ConsoleKey.RightArrow)
+                        {
+                            proceed = false;
+                            if (!ModernLogonScreen.enableWidgets)
+                                return proceed;
+                            CleanWidgetsUp();
+                            if (key.Key == ConsoleKey.LeftArrow)
+                            {
+                                ModernLogonScreen.screenNum--;
+                                if (ModernLogonScreen.screenNum <= 0)
+                                    ModernLogonScreen.screenNum = 1;
+                                else
+                                    loginScreen.RequireRefresh();
+                            }
+                            else
+                            {
+                                ModernLogonScreen.screenNum++;
+                                if (ModernLogonScreen.screenNum >= 4)
+                                    ModernLogonScreen.screenNum = 3;
+                                else
+                                    loginScreen.RequireRefresh();
+                            }
+                        }
+                        else
+                            proceed = true;
+                        if (proceed)
+                            exiting = true;
+                    }
+                }
             }
-            else if (key == ConsoleKey.LeftArrow || key == ConsoleKey.RightArrow)
+            catch (Exception ex)
             {
-                proceed = false;
-                if (!ModernLogonScreen.enableWidgets)
-                    return proceed;
-                CleanWidgetsUp();
-                if (key == ConsoleKey.LeftArrow)
-                {
-                    ModernLogonScreen.screenNum--;
-                    if (ModernLogonScreen.screenNum <= 0)
-                        ModernLogonScreen.screenNum = 1;
-                }
-                else
-                {
-                    ModernLogonScreen.screenNum++;
-                    if (ModernLogonScreen.screenNum >= 4)
-                        ModernLogonScreen.screenNum = 3;
-                }
+                // An error occurred!
+                ScreenTools.StopCyclicScreen();
+                DebugWriter.WriteDebug(DebugLevel.E, $"Error rendering the modern logon: {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+                string text = Translate.DoTranslation("Failed to render the logon screen.") + (KernelEntry.DebugMode ? $"\n\n{Translate.DoTranslation("Investigate the debug logs for more information about the error.")}" : "");
+                InfoBoxModalColor.WriteInfoBoxModal(text);
+            }
+            finally
+            {
+                ScreenTools.StopCyclicScreen();
+                ScreenTools.UnsetCurrentCyclic();
+                ScreenTools.UnsetCurrent(loginScreen);
             }
             return proceed;
         }
@@ -150,6 +250,7 @@ namespace Nitrocid.Users.Login.Handlers.Logins
                 WidgetTools.CleanupWidget(WidgetTools.GetWidgetName(ModernLogonScreen.FirstWidget));
             else if (ModernLogonScreen.screenNum == 3)
                 WidgetTools.CleanupWidget(WidgetTools.GetWidgetName(ModernLogonScreen.SecondWidget));
+            ModernLogonScreen.headlineStr = "";
         }
     }
 }
