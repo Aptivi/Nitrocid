@@ -58,16 +58,16 @@ namespace Nitrocid.Extras.Stocks.Commands
             }
 
             // Now, get the stock info
-            string stocksJson = NetworkTransfer.DownloadString($"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={symbol}&interval=60min&outputsize=full&apikey={apiKey}", false);
+            string stocksJson = NetworkTransfer.DownloadString($"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={apiKey}", false);
             var stocksToken = JToken.Parse(stocksJson);
-            var stocksIntervalToken = stocksToken["Time Series (60min)"];
+            var stocksIntervalToken = stocksToken["Time Series (Daily)"];
             if (stocksIntervalToken is null)
             {
                 TextWriters.Write(Translate.DoTranslation("An error occurred while fetching the stocks data. Additional information can be found here") + ":", KernelColorType.Error);
                 TextWriters.Write(stocksJson, KernelColorType.NeutralText);
                 return 40;
             }
-            string? ianaTimeZone = (string?)stocksToken?["Meta Data"]?["6. Time Zone"];
+            string? ianaTimeZone = (string?)stocksToken?["Meta Data"]?["5. Time Zone"];
 
             // Construct the CLI to add the token
             var cli = new StocksCli()
