@@ -17,24 +17,25 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using BassBoom.Basolia.Lyrics;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files;
-using Nitrocid.Kernel.Exceptions;
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Paths;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Threading;
-using Nitrocid.Misc.Screensaver;
-using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Files;
+using Nitrocid.Files.Paths;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Threading;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
@@ -76,7 +77,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             DebugWriter.WriteDebug(DebugLevel.I, "Lyric path is {0}", vars: [lyricPath]);
 
             // Visualize it!
-            VisualizeLyric(lyricPath);
+            VisualizeLyric(lyricPath, true);
             ScreensaverManager.Delay(Settings.LyricsDelay);
 
             // Reset resize sync
@@ -87,7 +88,10 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
         /// Visualizes the lyric
         /// </summary>
         /// <param name="path">Path to lyric file</param>
-        public static void VisualizeLyric(string path)
+        public static void VisualizeLyric(string path) =>
+            VisualizeLyric(path, false);
+
+        private static void VisualizeLyric(string path, bool simulation)
         {
             // Neutralize the path
             path = FilesystemTools.NeutralizePath(path);
@@ -103,7 +107,13 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             if (string.IsNullOrWhiteSpace(path) || !FilesystemTools.FileExists(path))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Lyrics file {0} not found!", vars: [path]);
-                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files."));
+                if (simulation)
+                    TextWriterRaw.WriteRaw(new InfoBox()
+                    {
+                        Text = Translate.DoTranslation("Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files.")
+                    }.Render());
+                else
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files."));
                 return;
             }
 
