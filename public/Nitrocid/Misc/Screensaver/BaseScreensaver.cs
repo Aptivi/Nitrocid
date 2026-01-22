@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
-using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -50,14 +52,18 @@ namespace Nitrocid.Misc.Screensaver
         /// </summary>
         public virtual void ScreensaverSeizureWarning()
         {
-            KernelColorTools.LoadBackground();
-            InfoBoxNonModalColor.WriteInfoBox(
-                Translate.DoTranslation("Photosensitive seizure warning") + CharManager.NewLine + CharManager.NewLine +
-                Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. It's recommended to seek a medical specialist for more information about such seizure before continuing. If you want to get rid of this warning, you can turn this off from the screensaver settings."), new InfoBoxSettings()
+            ThemeColorsTools.LoadBackground();
+            var infoBox = new InfoBox()
+            {
+                Text = Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. It's recommended to seek a medical specialist for more information about such seizure before continuing. If you want to get rid of this warning, you can turn this off from the screensaver settings."),
+                Settings = new InfoBoxSettings()
                 {
+                    Title = Translate.DoTranslation("Photosensitive seizure warning"),
                     ForegroundColor = ConsoleColors.White,
-                    BackgroundColor = ConsoleColors.Red,
-                });
+                    BackgroundColor = ConsoleColors.Red
+                }
+            };
+            TextWriterRaw.WriteRaw(infoBox.Render());
             ConsoleWrapper.CursorVisible = false;
             ThreadManager.SleepUntilInput(10000);
         }
