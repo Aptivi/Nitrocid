@@ -67,7 +67,7 @@ namespace Nitrocid.Misc.Screensaver
                 Screensaver.ScreensaverPreparation();
 
                 // Execute the actual screensaver logic
-                while (!ScreensaverDisplayerThread.IsStopping)
+                while (!ScreensaverDisplayerThread.IsStopping && !ScreensaverManager.bailing)
                 {
                     if (ConsoleWrapper.CursorVisible)
                         ConsoleWrapper.CursorVisible = false;

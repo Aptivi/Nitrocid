@@ -69,6 +69,7 @@ namespace Nitrocid.Misc.Screensaver
         internal static bool ScrnTimeReached;
         internal static bool seizureAcknowledged;
         internal static bool noLock;
+        internal static bool bailing;
         internal static AutoResetEvent SaverAutoReset = new(false);
         internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout) { isCritical = true };
 
@@ -77,6 +78,12 @@ namespace Nitrocid.Misc.Screensaver
         /// </summary>
         public static bool InSaver =>
             inSaver;
+
+        /// <summary>
+        /// Whether the screensaver is stopping or not
+        /// </summary>
+        public static bool Bailing =>
+            bailing;
 
         /// <summary>
         /// Screen timeout interval
