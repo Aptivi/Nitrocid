@@ -411,9 +411,9 @@ namespace Nitrocid.Shell.Homepage
                         int aboutButtonEndPosY = aboutButtonStartPosY + buttonHeight + 1;
                         int widgetTop = 3;
                         int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
-                        int widgetHeight = ConsoleWrapper.WindowHeight - 13;
+                        int widgetHeight = ConsoleWrapper.WindowHeight - 9;
                         int optionsEndX = settingsButtonStartPosX + widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2;
-                        int optionsEndY = widgetTop + widgetHeight + 1;
+                        int optionsEndY = widgetTop + widgetHeight;
 
                         // Check the ranges
                         bool isWithinSettings = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX, settingsButtonStartPosY), (settingsButtonEndPosX, settingsButtonEndPosY));
@@ -443,7 +443,7 @@ namespace Nitrocid.Shell.Homepage
                             if ((context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left) || context.ButtonPress == PointerButtonPress.Moved)
                             {
                                 int contextPosY = context.Coordinates.y;
-                                int finalChoiceIdx = startIndex + contextPosY - widgetTop - 1;
+                                int finalChoiceIdx = startIndex + contextPosY - widgetTop;
                                 if (finalChoiceIdx < choices.Length)
                                 {
                                     choiceIdx = finalChoiceIdx;
@@ -484,10 +484,7 @@ namespace Nitrocid.Shell.Homepage
                     }
                     else if (data?.ConsoleKeyInfo is ConsoleKeyInfo keypress)
                     {
-                        int widgetHeight = ConsoleWrapper.WindowHeight - 10;
-                        int currentPage = (choiceIdx - 1) / widgetHeight;
-                        int startIndex = widgetHeight * currentPage;
-                        int endIndex = widgetHeight * (currentPage + 1);
+                        int widgetHeight = ConsoleWrapper.WindowHeight - 9;
                         switch (keypress.Key)
                         {
                             case ConsoleKey.DownArrow:
@@ -517,13 +514,16 @@ namespace Nitrocid.Shell.Homepage
                             case ConsoleKey.PageUp:
                                 if (buttonHighlight > 0)
                                     break;
-                                choiceIdx = startIndex;
+                                choiceIdx -= widgetHeight;
+                                if (choiceIdx < 0)
+                                    choiceIdx = 0;
                                 break;
                             case ConsoleKey.PageDown:
                                 if (buttonHighlight > 0)
                                     break;
-                                choiceIdx = endIndex > choices.Length - 1 ? choices.Length - 1 : endIndex + 1;
-                                choiceIdx = endIndex == choices.Length - 1 ? endIndex : choiceIdx;
+                                choiceIdx += widgetHeight;
+                                if (choiceIdx > choices.Length - 1)
+                                    choiceIdx = choices.Length - 1;
                                 break;
                             case ConsoleKey.Tab:
                                 buttonHighlight++;
