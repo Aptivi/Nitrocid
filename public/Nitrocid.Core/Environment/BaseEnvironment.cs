@@ -19,6 +19,7 @@
 
 using Nitrocid.Core.Languages;
 using System;
+using System.IO;
 using System.Reflection;
 
 namespace Nitrocid.Core.Environment
@@ -41,7 +42,7 @@ namespace Nitrocid.Core.Environment
 
         /// <inheritdoc/>
         public Action EnvironmentInit =>
-            () => baseAsm = Assembly.LoadFrom("Nitrocid.Base.dll");
+            () => baseAsm = Assembly.LoadFrom(Directory.GetParent(typeof(BaseEnvironment).Assembly.Location)?.FullName + "/Nitrocid.Base.dll");
 
         /// <inheritdoc/>
         public virtual Action EnvironmentEntry
