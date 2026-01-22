@@ -444,6 +444,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             var xText = new AlignedFigletText(s8figFont)
                             {
                                 Text = "...",
+                                Top = s8consoleY,
                                 Settings = new()
                                 {
                                     Alignment = TextAlignment.Middle,
