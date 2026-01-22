@@ -6,6 +6,16 @@ Ink-redible Hotness
 
 =============================================================================
 
+0.1.2.33 - Closing Release (January 22nd, 2026)
+===============================================
+
+This version was released to bring some improvements from 0.2.0. This is a
+closing release, which means that all features from 0.1.2 will be integrated
+to 0.1.0 once it reaches end of life by February 12th.
+
+No more releases will be made. Please upgrade to 0.2.0, or stay on 0.1.0, if
+you want continued support.
+
 0.1.2.25 - Service Pack 2 (September 7th, 2025)
 ===============================================
 

@@ -1,10 +1,11 @@
-We've released this version to update ImageMagick contained within Terminaux!
+We've released this version to update Terminaux and to improve screensavers!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated Terminaux
+- `[*]` Updated Terminaux to v8.1
+- `[*]` Made improvements to screensavers
 
 Review the commit history if you want to get a deep insight about the changes.
 
