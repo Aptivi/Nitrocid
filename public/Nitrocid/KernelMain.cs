@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using System.Reflection;
 using System.Threading;
 using Aptivestigate.CrashHandler;
@@ -54,8 +55,11 @@ namespace Nitrocid
                 CrashTools.InstallCrashHandler();
 
                 // This is a kernel entry point
+                int faultLevel = 0;
+                var uptime = new Stopwatch();
                 EnvironmentTools.kernelArguments = Args;
                 EnvironmentTools.ResetEnvironment();
+                uptime.Start();
                 while (!kernelShutdown)
                 {
                     try
@@ -68,7 +72,12 @@ namespace Nitrocid
                     }
                     catch (Exception ex)
                     {
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_ENVERROR") + $" {ex.Message}", ThemeColorType.Error);
+                        if (uptime.ElapsedMilliseconds <= 3000)
+                            faultLevel++;
+                        if (faultLevel == 3)
+                            Environment.FailFast(LanguageTools.GetLocalized("NKS_KERNEL_ENVERROR") + $" {ex.Message}", ex);
+                        else
+                            TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_ENVERROR") + $" {ex.Message}", ThemeColorType.Error);
                     }
                     finally
                     {
@@ -93,6 +102,7 @@ namespace Nitrocid
                         var shutdownVar = Type.GetType($"Nitrocid.Base.Kernel.Power.PowerManager, {typeName}")?.GetField("KernelShutdown", BindingFlags.NonPublic | BindingFlags.Static);
                         if ((bool)(shutdownVar?.GetValue(null) ?? false))
                             kernelShutdown = true;
+                        uptime.Restart();
                     }
                 }
             }
