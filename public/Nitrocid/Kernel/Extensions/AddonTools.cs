@@ -17,16 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Folders;
+using Nitrocid.Files;
 using Nitrocid.Files.Instances;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Modifications;
 using Nitrocid.Security.Signing;
 using System;
 using System.Collections.Generic;
@@ -58,10 +56,10 @@ namespace Nitrocid.Kernel.Extensions
         internal static void ProcessAddons(ModLoadPriority type)
         {
             var addonFolder = type == ModLoadPriority.Important ? PathsManagement.AddonsEssentialsPath : PathsManagement.AddonsPath;
-            if (!Checking.FolderExists(addonFolder))
+            if (!FilesystemTools.FolderExists(addonFolder))
                 return;
-            var addonFolders = Listing.GetFilesystemEntries(addonFolder);
-            DebugWriter.WriteDebug(DebugLevel.I, "Found {0} files under the addon folder {1}.", addonFolders.Length, addonFolder);
+            var addonFolders = FilesystemTools.GetFilesystemEntries(addonFolder);
+            DebugWriter.WriteDebug(DebugLevel.I, "Found {0} files under the addon folder {1}.", vars: [addonFolders.Length, addonFolder]);
             for (int i = 0; i < addonFolders.Length; i++)
             {
                 string addon = addonFolders[i];
@@ -77,67 +75,67 @@ namespace Nitrocid.Kernel.Extensions
             {
                 // First, check the platform
                 string windowsAddonPath = addon + windowsSuffix;
-                if (KernelPlatform.IsOnWindows() && Checking.FolderExists(windowsAddonPath))
+                if (KernelPlatform.IsOnWindows() && FilesystemTools.FolderExists(windowsAddonPath))
                     addon = windowsAddonPath;
                 if (addon.EndsWith(windowsSuffix) && !KernelPlatform.IsOnWindows())
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because it's built for Windows...", addon);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because it's built for Windows...", vars: [addon]);
                     return;
                 }
 
                 // Get the folder info and recurse through them to get actual addon file
-                DebugWriter.WriteDebug(DebugLevel.I, "Processing addon entry {0}...", addon);
+                DebugWriter.WriteDebug(DebugLevel.I, "Processing addon entry {0}...", vars: [addon]);
                 var folderInfo = new FileSystemEntry(addon);
                 if (folderInfo.Type != FileSystemEntryType.Directory)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0}...", addon);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0}...", vars: [addon]);
                     if (folderInfo.Type != FileSystemEntryType.Directory)
-                        DebugWriter.WriteDebug(DebugLevel.W, "Addon entry {0} is not a directory!", addon);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Addon entry {0} is not a directory!", vars: [addon]);
                     if (!folderInfo.Exists)
-                        DebugWriter.WriteDebug(DebugLevel.W, "Addon entry {0} doesn't exist!", addon);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Addon entry {0} doesn't exist!", vars: [addon]);
                     return;
                 }
 
                 // Now, guess and check the addon path
-                DebugWriter.WriteDebug(DebugLevel.I, "Guessing addon path {0}...", addon);
+                DebugWriter.WriteDebug(DebugLevel.I, "Guessing addon path {0}...", vars: [addon]);
                 string addonPath = $"{addon}/Nitrocid.{Path.GetFileName($"{addon}.dll")}";
-                DebugWriter.WriteDebug(DebugLevel.I, "Addon entry {0} is using path [{1}].", addon, addonPath);
-                if (!Checking.FileExists(addonPath))
+                DebugWriter.WriteDebug(DebugLevel.I, "Addon entry {0} is using path [{1}].", vars: [addon, addonPath]);
+                if (!FilesystemTools.FileExists(addonPath))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of nonexistent file [{1}]...", addon, addonPath);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of nonexistent file [{1}]...", vars: [addon, addonPath]);
                     return;
                 }
                 if (!ReflectionCommon.IsDotnetAssemblyFile(addonPath, out AssemblyName? asmName))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of invalid .NET assembly file [{1}]...", addon, addonPath);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of invalid .NET assembly file [{1}]...", vars: [addon, addonPath]);
                     return;
                 }
                 if (asmName is null)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of no assembly name [{1}]...", addon, addonPath);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of no assembly name [{1}]...", vars: [addon, addonPath]);
                     return;
                 }
 
                 // Verify that the addon holds the same key as the Nitrocid main executable
                 if (!AssemblySigning.IsStronglySigned(asmName))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of no public key signing [{1}]...", addon, addonPath);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of no public key signing [{1}]...", vars: [addon, addonPath]);
                     return;
                 }
                 var mainKey = AssemblySigning.PublicKeyToken(Assembly.GetExecutingAssembly());
                 var addonKey = AssemblySigning.PublicKeyToken(asmName);
                 if (!mainKey.SequenceEqual(addonKey))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of key mismatch [{1}]...", addon, addonPath);
-                    DebugWriter.WriteDebug(DebugLevel.W, "Expected key: {0}", string.Join(", ", mainKey));
-                    DebugWriter.WriteDebug(DebugLevel.W, "Actual key:   {1}", string.Join(", ", addonKey));
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of key mismatch [{1}]...", vars: [addon, addonPath]);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Expected key: {0}", vars: [string.Join(", ", mainKey)]);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Actual key:   {1}", vars: [string.Join(", ", addonKey)]);
                     return;
                 }
 
                 // Now, process the assembly
                 if (probedAddons.Contains(addonPath))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of conflicts with the already-loaded addon in the queue [{1}]...", addon, addonPath);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of conflicts with the already-loaded addon in the queue [{1}]...", vars: [addon, addonPath]);
                     return;
                 }
                 bool exists = addonInstances.ContainsKey(addonPath);
@@ -172,14 +170,14 @@ namespace Nitrocid.Kernel.Extensions
                 catch (Exception ex)
                 {
                     SplashReport.ReportProgressError($"[{current}/{length}] " + Translate.DoTranslation("Failed to start kernel addon") + " {0}.", addonInstance.AddonName);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to start addon {0}. {1}", addon, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to start addon {0}. {1}", vars: [addon, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             catch (Exception ex)
             {
                 SplashReport.ReportProgressError($"[{current}/{length}] " + Translate.DoTranslation("Failed to initialize kernel addon") + " {0}.", Path.GetFileName(addon));
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to load addon {0}. {1}", addon, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to load addon {0}. {1}", vars: [addon, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -191,13 +189,13 @@ namespace Nitrocid.Kernel.Extensions
             {
                 try
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Finalizing addon {0}...", addonInfo.AddonName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Finalizing addon {0}...", vars: [addonInfo.AddonName]);
                     addonInfo.Addon.FinalizeAddon();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Finalized addon {0}!", addonInfo.AddonName);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Finalized addon {0}!", vars: [addonInfo.AddonName]);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to finalize addon {0}. {1}", addonInfo.AddonName, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to finalize addon {0}. {1}", vars: [addonInfo.AddonName, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     errors.Add(addonInfo.AddonName, ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message);
                 }
@@ -219,7 +217,7 @@ namespace Nitrocid.Kernel.Extensions
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop addon {0}. {1}", addonInstance.AddonName, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop addon {0}. {1}", vars: [addonInstance.AddonName, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     errors.Add(addonInstance.AddonName, ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message);
                 }

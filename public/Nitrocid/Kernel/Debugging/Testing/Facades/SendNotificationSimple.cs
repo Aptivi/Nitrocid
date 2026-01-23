@@ -29,7 +29,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     internal class SendNotificationSimple : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Sends a notification as asterisk to test the receiver");
-        public override void Run(params string[] args)
+        public override void Run()
         {
             foreach (var value in Enum.GetValues(typeof(NotificationPriority)))
             {

@@ -2,7 +2,8 @@
     "Metadata": {
         "Name": "Debian",
         "Description": "Color schemes for Debian",
-        "Localizable": true
+        "Localizable": true,
+        "Category": "Linux"
     },
     "InputColor": "15",
     "LicenseColor": "15",

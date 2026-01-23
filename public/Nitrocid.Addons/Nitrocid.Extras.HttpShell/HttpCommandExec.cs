@@ -20,7 +20,7 @@
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Languages;
 using Nitrocid.Network.Connections;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Net.Http;
 
 namespace Nitrocid.Extras.HttpShell

@@ -20,14 +20,17 @@
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Linq;
+using Nitrocid.Files;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Users;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -44,6 +47,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
+                !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
+                TextWriters.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, parameters.CommandText);
+                return -4;
+            }
+
             string modPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             string finalSaverName = parameters.ArgumentsText.ToLower();
             if (ScreensaverManager.GetScreensaverNames().Contains(finalSaverName))
@@ -52,7 +63,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), finalSaverName);
                 return 0;
             }
-            else if (Checking.FileExists($"{modPath}{finalSaverName}") & !KernelEntry.SafeMode)
+            else if (FilesystemTools.FileExists($"{modPath}{finalSaverName}") & !KernelEntry.SafeMode)
             {
                 ScreensaverManager.SetDefaultScreensaver(finalSaverName);
                 TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), finalSaverName);

@@ -23,12 +23,10 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
-using Nitrocid.Files.Attributes;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -70,14 +68,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             string NeutralizedFilePath = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            if (Checking.FileExists(NeutralizedFilePath))
+            if (FilesystemTools.FileExists(NeutralizedFilePath))
             {
                 if (parameters.ArgumentsList[2] == "Normal" | parameters.ArgumentsList[2] == "ReadOnly" | parameters.ArgumentsList[2] == "Hidden" | parameters.ArgumentsList[2] == "Archive")
                 {
                     if (parameters.ArgumentsList[1] == "add")
                     {
                         FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), parameters.ArgumentsList[2]));
-                        if (AttributeManager.TryAddAttributeToFile(NeutralizedFilePath, Attrib))
+                        if (FilesystemTools.TryAddAttributeToFile(NeutralizedFilePath, Attrib))
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Attribute has been added successfully.") + " {0}", parameters.ArgumentsList[2]);
                             return 0;
@@ -91,7 +89,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     else if (parameters.ArgumentsList[1] == "rem")
                     {
                         FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), parameters.ArgumentsList[2]));
-                        if (AttributeManager.TryRemoveAttributeFromFile(NeutralizedFilePath, Attrib))
+                        if (FilesystemTools.TryRemoveAttributeFromFile(NeutralizedFilePath, Attrib))
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Attribute has been removed successfully.") + " {0}", parameters.ArgumentsList[2]);
                             return 0;

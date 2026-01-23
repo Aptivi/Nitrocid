@@ -20,13 +20,9 @@
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Modifications;
 using Nitrocid.ScreensaverPacks.Screensavers;
 using Nitrocid.ScreensaverPacks.Settings;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 
 namespace Nitrocid.ScreensaverPacks
 {
@@ -143,13 +139,7 @@ namespace Nitrocid.ScreensaverPacks
             InterAddonTranslations.GetAddonName(KnownAddons.AddonScreensaverPacks);
 
         internal static ExtraSaversConfig SaversConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(ExtraSaversConfig)) ? (ExtraSaversConfig)Config.baseConfigurations[nameof(ExtraSaversConfig)] : new ExtraSaversConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(ExtraSaversConfig)) ? (ExtraSaversConfig)Config.baseConfigurations[nameof(ExtraSaversConfig)] : Config.GetFallbackKernelConfig<ExtraSaversConfig>();
 
         void IAddon.StartAddon()
         {

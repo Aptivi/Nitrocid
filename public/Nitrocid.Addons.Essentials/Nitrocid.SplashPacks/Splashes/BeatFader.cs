@@ -81,12 +81,12 @@ namespace Nitrocid.SplashPacks.Splashes
                         GreenColorNum = ConsoleColor.RGB.G;
                         BlueColorNum = ConsoleColor.RGB.B;
                     }
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 }
                 else
                 {
                     // We're not cycling. Parse the color and then select the color mode, starting from true color
-                    DebugWriter.WriteDebug(DebugLevel.I, "Parsing colors... {0}", _beatFaderBeatColor);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Parsing colors... {0}", vars: [_beatFaderBeatColor]);
                     var UserColor = new Color(_beatFaderBeatColor);
                     if (UserColor.Type == ColorType.TrueColor)
                     {
@@ -101,7 +101,7 @@ namespace Nitrocid.SplashPacks.Splashes
                         GreenColorNum = ConsoleColor.RGB.G;
                         BlueColorNum = ConsoleColor.RGB.B;
                     }
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 }
 
                 _currentColor = new Color(RedColorNum, GreenColorNum, BlueColorNum);
@@ -119,8 +119,8 @@ namespace Nitrocid.SplashPacks.Splashes
                 ConsoleWrapper.CursorVisible = false;
                 int BeatInterval = (int)Math.Round(60000d / _beatFaderDelay);
                 int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)_beatFaderMaxSteps);
-                DebugWriter.WriteDebug(DebugLevel.I, "Beat interval from {0} BPM: {1}", _beatFaderDelay, BeatInterval);
-                DebugWriter.WriteDebug(DebugLevel.I, "Beat steps: {0} ms", _beatFaderDelay, BeatIntervalStep);
+                DebugWriter.WriteDebug(DebugLevel.I, "Beat interval from {0} BPM: {1}", vars: [_beatFaderDelay, BeatInterval]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Beat steps: {0} ms", vars: [_beatFaderDelay, BeatIntervalStep]);
                 ThreadManager.SleepNoBlock(BeatIntervalStep);
 
                 // If we're cycling colors, set them. Else, use the user-provided color
@@ -132,17 +132,17 @@ namespace Nitrocid.SplashPacks.Splashes
                 double ThresholdRed = RedColorNum / (double)_beatFaderMaxSteps;
                 double ThresholdGreen = GreenColorNum / (double)_beatFaderMaxSteps;
                 double ThresholdBlue = BlueColorNum / (double)_beatFaderMaxSteps;
-                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
 
                 // Fade out
-                DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1} each {2} ms", _currentStep, _beatFaderMaxSteps, BeatIntervalStep);
+                DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1} each {2} ms", vars: [_currentStep, _beatFaderMaxSteps, BeatIntervalStep]);
                 ThreadManager.SleepNoBlock(BeatIntervalStep);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * _currentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * _currentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * _currentStep);
-                DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 builder.Append(
-                    ColorTools.RenderSetConsoleColor(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), true) +
+                    ConsoleColoring.RenderSetConsoleColor(new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), true) +
                     ConsoleClearing.GetClearWholeScreenSequence()
                 );
                 _currentStep++;

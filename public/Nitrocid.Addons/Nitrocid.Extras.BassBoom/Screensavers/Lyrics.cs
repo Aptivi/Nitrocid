@@ -32,12 +32,13 @@ namespace Nitrocid.Extras.BassBoom.Screensavers
         private Animations.Lyrics.LyricsSettings? LyricsSettingsInstance;
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Lyrics";
+        public override string ScreensaverName =>
+            "Lyrics";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
             LyricsSettingsInstance = new Animations.Lyrics.LyricsSettings()
             {
                 LyricsDelay = BassBoomInit.SaversConfig.LyricsDelay

@@ -17,10 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Text;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Languages;
 using Nitrocid.Network.Transfer;
-using System.Text;
+using Terminaux.Base.Extensions;
 using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Quotes
@@ -29,8 +30,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
     {
         internal static (string content, string author) GetRandomQuote()
         {
-            // Get a quote string from the API
-            string quoteString = NetworkTransfer.DownloadString("https://api.quotable.io/quotes/random", false);
+            // Get a quote string from the API. We'll need to ignore certificate errors since quotable.io didn't renew the license since September 2024.
+            string quoteString = NetworkTransfer.httpClientIgnoreCertErrors.GetStringAsync("https://api.quotable.io/quotes/random").Result;
             if (string.IsNullOrEmpty(quoteString))
                 return ("", "");
 
@@ -53,7 +54,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
             int maxWidth = 50 + padding * 2;
 
             // Get quote incomplete sentences
-            string[] quoteSentences = TextTools.GetWrappedSentences(content, maxQuoteWidth);
+            string[] quoteSentences = ConsoleMisc.GetWrappedSentencesByWords(content, maxQuoteWidth);
 
             // Render the sentences to the builder
             for (int i = 0; i < quoteSentences.Length; i++)
@@ -77,7 +78,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
             }
 
             // Now, write the name of the author
-            int authorPosition = maxWidth - author.Length;
+            int authorPosition = maxWidth - ConsoleChar.EstimateCellWidth(author);
             elegantQuote.AppendLine();
             elegantQuote.Append(new string(' ', authorPosition));
             elegantQuote.Append(author);

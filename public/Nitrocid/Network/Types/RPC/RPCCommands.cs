@@ -26,7 +26,7 @@ using System.Threading;
 using System.Linq;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Languages;
@@ -105,11 +105,11 @@ namespace Nitrocid.Network.Types.RPC
             {
                 // Get the command and the argument
                 string Cmd = Request.Remove(Request.IndexOf("("));
-                DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Cmd);
+                DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", vars: [Cmd]);
                 string Arg = Request[(Request.IndexOf("(") + 1)..];
-                DebugWriter.WriteDebug(DebugLevel.I, "Prototype Arg: {0}", Arg);
+                DebugWriter.WriteDebug(DebugLevel.I, "Prototype Arg: {0}", vars: [Arg]);
                 Arg = Arg.Remove(Arg.Length - 1);
-                DebugWriter.WriteDebug(DebugLevel.I, "Finished Arg: {0}", Arg);
+                DebugWriter.WriteDebug(DebugLevel.I, "Finished Arg: {0}", vars: [Arg]);
 
                 // Check the command
                 if (RPCCommandsField.Any(Cmd.Contains))
@@ -121,7 +121,7 @@ namespace Nitrocid.Network.Types.RPC
                     var ByteMsg = Array.Empty<byte>();
 
                     // Populate the byte message to send the confirmation to
-                    DebugWriter.WriteDebug(DebugLevel.I, "Stream opened for device {0}", Arg);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Stream opened for device {0}", vars: [Arg]);
                     ByteMsg = Encoding.Default.GetBytes($"{RequestType}Confirm, " + Arg + CharManager.NewLine);
 
                     // Send the response
@@ -131,7 +131,7 @@ namespace Nitrocid.Network.Types.RPC
                 }
                 else
                     // Rare case reached. Drop it.
-                    DebugWriter.WriteDebug(DebugLevel.E, "Malformed request. {0}", Cmd);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Malformed request. {0}", vars: [Cmd]);
             }
             else
                 throw new KernelException(KernelExceptionType.RemoteProcedure, Translate.DoTranslation("Trying to send an RPC command while RPC didn't start."));
@@ -269,13 +269,13 @@ namespace Nitrocid.Network.Types.RPC
         private static void HandleAcknowledge(string value)
         {
             string IPAddr = value.Replace("AckConfirm, ", "").Replace(CharManager.NewLine, "");
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} says \"Hello.\"", IPAddr);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} says \"Hello.\"", vars: [IPAddr]);
         }
 
         private static void HandlePing(string value)
         {
             string IPAddr = value.Replace("PingConfirm, ", "").Replace(CharManager.NewLine, "");
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", IPAddr);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", vars: [IPAddr]);
             NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Ping!"), TextTools.FormatString(Translate.DoTranslation("{0} pinged you."), IPAddr), NotificationPriority.Low, NotificationType.Normal));
         }
     }

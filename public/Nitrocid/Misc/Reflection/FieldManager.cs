@@ -31,7 +31,6 @@ namespace Nitrocid.Misc.Reflection
     /// </summary>
     public static class FieldManager
     {
-
         /// <summary>
         /// Sets the value of a field to the new value dynamically
         /// </summary>
@@ -56,20 +55,29 @@ namespace Nitrocid.Misc.Reflection
                 TargetField = GetField(Variable);
 
             // Set the variable if found
-            if (TargetField is not null)
+            SetFieldValue(TargetField, VariableValue);
+        }
+
+        /// <summary>
+        /// Sets the value of a field to the new value dynamically
+        /// </summary>
+        /// <param name="Variable">Field info instance.</param>
+        /// <param name="VariableValue">New value</param>
+        public static void SetFieldValue(FieldInfo? Variable, object? VariableValue)
+        {
+            // Check the field
+            if (Variable is null)
             {
-                // The "obj" description says this: "The object whose field value will be set."
-                // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetField.Name, VariableValue);
-                TargetField.SetValue(Variable, VariableValue);
+                // Variable not found on any of the modules.
+                DebugWriter.WriteDebug(DebugLevel.E, "Field not found.");
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
             }
-            else
-            {
-                // Variable not found on any of the "flag" modules.
-                DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
-            }
+
+            // The "obj" description says this: "The object whose field value will be set."
+            // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
+            // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
+            DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", vars: [Variable.Name, VariableValue]);
+            Variable.SetValue(Variable, VariableValue);
         }
 
         /// <summary>
@@ -98,20 +106,28 @@ namespace Nitrocid.Misc.Reflection
                 TargetField = GetField(Variable);
 
             // Set the variable if found
-            if (TargetField is not null)
+            SetFieldValueInstance(instance, TargetField, VariableValue);
+        }
+
+        /// <summary>
+        /// Sets the value of a field to the new value dynamically
+        /// </summary>
+        /// <param name="instance">Instance class to make changes on</param>
+        /// <param name="Variable">Field info instance.</param>
+        /// <param name="VariableValue">New value</param>
+        public static void SetFieldValueInstance<T>(T instance, FieldInfo? Variable, object? VariableValue)
+        {
+            // Check the field
+            if (Variable is null)
             {
-                // The "obj" description says this: "The object whose field value will be returned."
-                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetField.Name, VariableValue);
-                TargetField.SetValue(instance, VariableValue);
+                // Variable not found on any of the modules.
+                DebugWriter.WriteDebug(DebugLevel.E, "Field not found in instance type {0}.", vars: [instance?.GetType().Name ?? "<unknown type>"]);
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
             }
-            else
-            {
-                // Variable not found on any of the "flag" modules.
-                DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
-            }
+
+            // This is how to set a value in instance variables.
+            DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1} in instance type {2}...", vars: [Variable.Name, VariableValue, instance?.GetType().Name ?? "<unknown type>"]);
+            Variable.SetValue(instance, VariableValue);
         }
 
         /// <summary>
@@ -129,20 +145,7 @@ namespace Nitrocid.Misc.Reflection
                 TargetField = GetField(Variable, VariableType);
 
             // Set the variable if found
-            if (TargetField is not null)
-            {
-                // The "obj" description says this: "The object whose field value will be returned."
-                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetField.Name, VariableValue);
-                TargetField.SetValue(instance, VariableValue);
-            }
-            else
-            {
-                // Variable not found on any of the "flag" modules.
-                DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
-            }
+            SetFieldValueInstance(instance, TargetField, VariableValue);
         }
 
         /// <summary>
@@ -158,34 +161,40 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Field type</param>
-        /// <param name="UseGeneral">Whether to use the general kernel types</param>
         /// <returns>Value of a field</returns>
-        public static object? GetFieldValue(string Variable, Type? VariableType, bool UseGeneral = false)
+        public static object? GetFieldValue(string Variable, Type? VariableType)
         {
             // Get field for specified variable
             FieldInfo? TargetField;
             if (VariableType is not null)
                 TargetField = GetField(Variable, VariableType);
-            else if (UseGeneral)
-                TargetField = GetFieldGeneral(Variable);
             else
                 TargetField = GetField(Variable);
 
             // Get the variable if found
-            if (TargetField is not null)
+            return GetFieldValue(TargetField);
+        }
+
+        /// <summary>
+        /// Gets the value of a field dynamically 
+        /// </summary>
+        /// <param name="Variable">Field info instance.</param>
+        /// <returns>Value of a field</returns>
+        public static object? GetFieldValue(FieldInfo? Variable)
+        {
+            // Check the field
+            if (Variable is null)
             {
-                // The "obj" description says this: "The object whose field value will be returned."
-                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetField.Name);
-                return TargetField.GetValue(Variable);
+                // Variable not found on any of the modules.
+                DebugWriter.WriteDebug(DebugLevel.E, "Field not found.");
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
             }
-            else
-            {
-                // Variable not found on any of the "flag" modules.
-                DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
-            }
+
+            // The "obj" description says this: "The object whose field value will be set."
+            // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
+            // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
+            DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", vars: [Variable.Name]);
+            return Variable.GetValue(Variable);
         }
 
         /// <summary>
@@ -214,20 +223,28 @@ namespace Nitrocid.Misc.Reflection
                 TargetField = GetField(Variable);
 
             // Get the variable if found
-            if (TargetField is not null)
+            return GetFieldValueInstance(instance, TargetField);
+        }
+
+        /// <summary>
+        /// Gets the value of a field dynamically 
+        /// </summary>
+        /// <param name="instance">Instance class to fetch value from</param>
+        /// <param name="Variable">Field info instance.</param>
+        /// <returns>Value of a field</returns>
+        public static object? GetFieldValueInstance<T>(T instance, FieldInfo? Variable)
+        {
+            // Check the field
+            if (Variable is null)
             {
-                // The "obj" description says this: "The object whose field value will be returned."
-                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetField.Name);
-                return TargetField.GetValue(instance);
+                // Variable not found on any of the modules.
+                DebugWriter.WriteDebug(DebugLevel.E, "Field not found.");
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
             }
-            else
-            {
-                // Variable not found on any of the "flag" modules.
-                DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
-            }
+
+            // This is how to get a value in instance variables.
+            DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", vars: [Variable.Name]);
+            return Variable.GetValue(instance);
         }
 
         /// <summary>
@@ -245,20 +262,7 @@ namespace Nitrocid.Misc.Reflection
                 TargetField = GetField(Variable, VariableType);
 
             // Get the variable if found
-            if (TargetField is not null && VariableType is not null)
-            {
-                // The "obj" description says this: "The object whose field value will be returned."
-                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetField.Name);
-                return TargetField.GetValue(Convert.ChangeType(instance, VariableType));
-            }
-            else
-            {
-                // Variable not found on any of the "flag" modules.
-                DebugWriter.WriteDebug(DebugLevel.I, "Field {0} not found.", Variable);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
-            }
+            return GetFieldValueInstance(instance, TargetField);
         }
 
         /// <summary>
@@ -284,29 +288,6 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
         /// <returns>Field information</returns>
         public static FieldInfo? GetField(string Variable)
-        {
-            Type[] PossibleTypes;
-            FieldInfo? PossibleField;
-
-            // Get types of possible flag locations
-            PossibleTypes = ReflectionCommon.KernelTypes;
-
-            // Get fields of flag modules
-            foreach (Type PossibleType in PossibleTypes)
-            {
-                PossibleField = PossibleType.GetField(Variable);
-                if (PossibleField is not null)
-                    return PossibleField;
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// Gets a field from variable name generally
-        /// </summary>
-        /// <param name="Variable">Field name. Use operator NameOf to get name.</param>
-        /// <returns>Field information</returns>
-        public static FieldInfo? GetFieldGeneral(string Variable)
         {
             Type[] PossibleTypes;
             FieldInfo? PossibleField;

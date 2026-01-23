@@ -26,6 +26,7 @@ using Terminaux.Colors;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -42,7 +43,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
             ConsoleWrapper.CursorVisible = false;
 
             // Use Kruskal's algorithm to generate a maze
@@ -117,6 +118,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Get necessary values for connections
                 int nx = x + directionX[direction];
@@ -129,6 +132,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Display the maze
                     DisplayMazeFromGrid(grid);

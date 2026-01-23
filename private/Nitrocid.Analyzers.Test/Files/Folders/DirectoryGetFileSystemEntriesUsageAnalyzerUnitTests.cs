@@ -99,7 +99,7 @@ namespace Nitrocid.Analyzers.Test.Files.Folders
                 using System.Threading.Tasks;
                 using System.Diagnostics;
                 using Nitrocid.Files.Paths;
-                using Nitrocid.Files.Folders;
+                using Nitrocid.Files;
 
                 namespace ConsoleApplication1
                 {
@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Folders
                     {   
                         public static void Main()
                         {
-                            var files = Listing.CreateList(PathsManagement.AppDataPath);
+                            var files = FilesystemTools.CreateList(PathsManagement.AppDataPath);
                         }
                     }
                 }

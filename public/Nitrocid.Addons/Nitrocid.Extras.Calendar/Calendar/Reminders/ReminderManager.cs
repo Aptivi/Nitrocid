@@ -25,9 +25,6 @@ using Newtonsoft.Json;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -71,7 +68,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
                             var CurrentDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
                             if (DateTime.Now >= ReminderInstance.ReminderDate)
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Reminder is due! {0} @ {1}", ReminderInstance.ReminderTitle, TimeDateRenderers.Render(ReminderInstance.ReminderDate));
+                                DebugWriter.WriteDebug(DebugLevel.I, "Reminder is due! {0} @ {1}", vars: [ReminderInstance.ReminderTitle, TimeDateRenderers.Render(ReminderInstance.ReminderDate)]);
                                 ReminderInstance.NotifyReminder();
                             }
                         }
@@ -104,7 +101,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
             if (string.IsNullOrWhiteSpace(ReminderTitle))
                 ReminderTitle = Translate.DoTranslation("Untitled reminder");
             var Reminder = new ReminderInfo(ReminderDate, ReminderTitle, ReminderImportance);
-            DebugWriter.WriteDebug(DebugLevel.I, "Adding reminder {0} @ {1} to list...", Reminder.ReminderTitle, TimeDateRenderers.Render(Reminder.ReminderDate));
+            DebugWriter.WriteDebug(DebugLevel.I, "Adding reminder {0} @ {1} to list...", vars: [Reminder.ReminderTitle, TimeDateRenderers.Render(Reminder.ReminderDate)]);
             AddReminder(Reminder);
         }
 
@@ -131,7 +128,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
             var Reminder = Reminders[ReminderIndex];
             if (Reminder.ReminderDate == ReminderDate)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Removing reminder {0} @ {1} to list...", Reminder.ReminderTitle, TimeDateRenderers.Render(Reminder.ReminderDate));
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing reminder {0} @ {1} to list...", vars: [Reminder.ReminderTitle, TimeDateRenderers.Render(Reminder.ReminderDate)]);
                 Reminders.Remove(Reminder);
             }
         }
@@ -153,15 +150,15 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// </summary>
         public static void LoadReminders()
         {
-            Making.MakeDirectory(PathsManagement.GetKernelPath(KernelPathType.Reminders), false);
-            var ReminderFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Reminders), "*", true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} reminders.", ReminderFiles.Length);
+            FilesystemTools.MakeDirectory(PathsManagement.GetKernelPath(KernelPathType.Reminders), false);
+            var ReminderFiles = FilesystemTools.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Reminders), "*", true);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} reminders.", vars: [ReminderFiles.Length]);
 
             // Load all the reminders
             foreach (string ReminderFile in ReminderFiles)
             {
                 var LoadedReminder = LoadReminder(ReminderFile);
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded event is null? {0} | Loaded from file {1}", LoadedReminder is null, ReminderFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded event is null? {0} | Loaded from file {1}", vars: [LoadedReminder is null, ReminderFile]);
                 AddReminder(LoadedReminder);
             }
         }
@@ -176,12 +173,12 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
             lock (ReminderManagerLock)
             {
                 ReminderFile = FilesystemTools.NeutralizePath(ReminderFile);
-                DebugWriter.WriteDebug(DebugLevel.I, "Loading reminder {0}...", ReminderFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Loading reminder {0}...", vars: [ReminderFile]);
 
                 // If file exists, convert the file to the reminder instance
-                if (Checking.FileExists(ReminderFile))
+                if (FilesystemTools.FileExists(ReminderFile))
                 {
-                    var reminderContents = Reading.ReadContentsText(ReminderFile);
+                    var reminderContents = FilesystemTools.ReadContentsText(ReminderFile);
                     ReminderInfo? ConvertedReminder = JsonConvert.DeserializeObject<ReminderInfo>(reminderContents);
                     DebugWriter.WriteDebug(DebugLevel.I, "Converted!");
                     return ConvertedReminder;
@@ -206,7 +203,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         public static void SaveReminders(string Path, bool Destructive)
         {
             Path = FilesystemTools.NeutralizePath(Path);
-            DebugWriter.WriteDebug(DebugLevel.I, "Saving reminders to {0}...", Path);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving reminders to {0}...", vars: [Path]);
 
             // Remove all events from path, if running destructively
             if (Destructive)
@@ -216,11 +213,11 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
 
                 // First, remove all files
                 foreach (string FilePath in ReminderFiles)
-                    Removing.RemoveFile(FilePath);
+                    FilesystemTools.RemoveFile(FilePath);
 
                 // Then, remove all empty folders
                 foreach (string FolderPath in ReminderFolders)
-                    Removing.RemoveDirectory(FolderPath);
+                    FilesystemTools.RemoveDirectory(FolderPath);
             }
 
             // Enumerate through every reminder and save them
@@ -228,9 +225,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
             {
                 var ReminderInstance = Reminders[ReminderIndex];
                 string ReminderFileName = $"[{ReminderIndex}] {ReminderInstance.ReminderTitle}.json";
-                DebugWriter.WriteDebug(DebugLevel.I, "Reminder file name: {0}...", ReminderFileName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Reminder file name: {0}...", vars: [ReminderFileName]);
                 string ReminderFilePath = FilesystemTools.NeutralizePath(ReminderFileName, Path);
-                DebugWriter.WriteDebug(DebugLevel.I, "Reminder file path: {0}...", ReminderFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Reminder file path: {0}...", vars: [ReminderFilePath]);
                 SaveReminder(ReminderInstance, ReminderFilePath);
             }
         }
@@ -247,9 +244,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         public static void SaveReminder(ReminderInfo ReminderInstance, string File)
         {
             File = FilesystemTools.NeutralizePath(File);
-            DebugWriter.WriteDebug(DebugLevel.I, "Saving reminder to {0}...", File);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving reminder to {0}...", vars: [File]);
             var contents = JsonConvert.SerializeObject(ReminderInstance, Formatting.Indented);
-            Writing.WriteContentsText(File, contents);
+            FilesystemTools.WriteContentsText(File, contents);
         }
 
     }

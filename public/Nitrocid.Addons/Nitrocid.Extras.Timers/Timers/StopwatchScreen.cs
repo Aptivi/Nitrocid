@@ -33,7 +33,9 @@ using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -86,7 +88,7 @@ namespace Nitrocid.Extras.Timers.Timers
                 int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
                 int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
                 var elapsed = Stopwatch.Elapsed;
-                string elapsedString = elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult);
+                string elapsedString = elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture);
                 int TimeLeftPosition = (int)Math.Round(HalfWidth * 1.5d - elapsedString.Length / 2d);
                 int TimeTopPosition = HalfHeight - 1;
                 int LapsCurrentLapLeftPosition = 2;
@@ -97,8 +99,6 @@ namespace Nitrocid.Extras.Timers.Timers
                 var keybindings = new Keybindings()
                 {
                     KeybindingList = keyBindings,
-                    Left = 0,
-                    Top = KeysTextTopPosition,
                     Width = ConsoleWrapper.WindowWidth - 1,
                     BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
                     BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
@@ -107,12 +107,12 @@ namespace Nitrocid.Extras.Timers.Timers
                     OptionForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
                     OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
                 };
-                builder.Append(keybindings.Render());
+                builder.Append(RendererTools.RenderRenderable(keybindings, new(0, KeysTextTopPosition)));
 
                 // Print the time interval and the current lap
                 builder.Append(
                     TextWriterWhereColor.RenderWhereColorBack(elapsedString, TimeLeftPosition, TimeTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background)) +
-                    TextWriterWhereColor.RenderWhereColorBack(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background), Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult))
+                    TextWriterWhereColor.RenderWhereColorBack(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background), Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture))
                 );
 
                 // Also, print the time difference of the last lap if required
@@ -123,7 +123,7 @@ namespace Nitrocid.Extras.Timers.Timers
                     int lapTopPosition = HalfHeight + 1;
                     var diff = secondLastLap.LapInterval - firstLastLap.LapInterval;
                     bool slower = diff < TimeSpan.Zero;
-                    string elapsedDiff = diff.ToString((slower ? "\\+" : "\\-") + @"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult);
+                    string elapsedDiff = diff.ToString((slower ? "\\+" : "\\-") + @"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture);
                     Color finalLapColor = slower ? new Color(ConsoleColors.Red) : new Color(ConsoleColors.Lime);
                     builder.Append(
                         TextWriterWhereColor.RenderWhereColorBack(elapsedDiff, TimeLeftPosition, lapTopPosition, true, finalLapColor, KernelColorTools.GetColor(KernelColorType.Background))
@@ -139,18 +139,18 @@ namespace Nitrocid.Extras.Timers.Timers
                 {
                     Left = 0,
                     Top = SeparatorMinimumHeight,
-                    InteriorWidth = SeparatorHalfConsoleWidthInterior,
-                    InteriorHeight = SeparatorMaximumHeightInterior,
-                    FrameColor = ColorTools.GetGray(),
+                    Width = SeparatorHalfConsoleWidthInterior,
+                    Height = SeparatorMaximumHeightInterior,
+                    FrameColor = ConsoleColoring.GetGray(),
                     BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
                 };
                 var stopwatchBoxFrame = new BoxFrame()
                 {
                     Left = SeparatorHalfConsoleWidth,
                     Top = SeparatorMinimumHeight,
-                    InteriorWidth = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
-                    InteriorHeight = SeparatorMaximumHeightInterior,
-                    FrameColor = ColorTools.GetGray(),
+                    Width = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
+                    Height = SeparatorMaximumHeightInterior,
+                    FrameColor = ConsoleColoring.GetGray(),
                     BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
                 };
                 builder.Append(
@@ -175,7 +175,7 @@ namespace Nitrocid.Extras.Timers.Timers
                 for (int LapIndex = BorderDifference; LapIndex <= Laps.Count - 1; LapIndex++)
                 {
                     var Lap = Laps[LapIndex];
-                    LapsListBuilder.AppendLine(Lap.LapColor.VTSequenceForeground + Translate.DoTranslation("Lap") + $" {LapIndex + 1}: {Lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult)}");
+                    LapsListBuilder.AppendLine(Lap.LapColor.VTSequenceForeground() + Translate.DoTranslation("Lap") + $" {LapIndex + 1}: {Lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture)}");
                 }
                 builder.Append(
                     TextWriterWhereColor.RenderWhereColorBack(LapsListBuilder.ToString(), LapsLapsListLeftPosition, LapsLapsListTopPosition, true, LapColor, KernelColorTools.GetColor(KernelColorType.Background))
@@ -287,7 +287,7 @@ namespace Nitrocid.Extras.Timers.Timers
             for (int i = 0; i < Laps.Count; i++)
             {
                 LapDisplayInfo? lap = Laps[i];
-                lapsListBuilder.AppendLine(lap.LapColor.VTSequenceForeground + Translate.DoTranslation("Lap") + $" {i + 1}: {lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult)}");
+                lapsListBuilder.AppendLine(lap.LapColor.VTSequenceForeground() + Translate.DoTranslation("Lap") + $" {i + 1}: {lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture)}");
             }
             if (Laps.Count == 0)
                 lapsListBuilder.AppendLine(Translate.DoTranslation("No laps yet..."));

@@ -24,9 +24,8 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Threading;
 
 namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
 {
@@ -90,7 +89,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", vars: [CurrentStep, Settings.SquareCornerMaxSteps]);
-                ThreadManager.SleepNoBlock(Settings.SquareCornerDelay, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(Settings.SquareCornerDelay);
                 CurrentColorRedIn = (int)Math.Round(CurrentColorRedIn + ThresholdRed);
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
@@ -100,8 +99,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
                 {
                     Left = left,
                     Top = top,
-                    InteriorWidth = width,
-                    InteriorHeight = height,
+                    Width = width,
+                    Height = height,
                     Color = new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn),
                 };
                 TextWriterRaw.WriteRaw(box.Render());
@@ -111,7 +110,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", vars: [Settings.SquareCornerFadeOutDelay]);
-                ThreadManager.SleepNoBlock(Settings.SquareCornerFadeOutDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(Settings.SquareCornerFadeOutDelay);
             }
 
             // Fade out
@@ -120,7 +119,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", vars: [CurrentStep, Settings.SquareCornerMaxSteps]);
-                ThreadManager.SleepNoBlock(Settings.SquareCornerDelay, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(Settings.SquareCornerDelay);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
@@ -130,8 +129,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
                 {
                     Left = left,
                     Top = top,
-                    InteriorWidth = width,
-                    InteriorHeight = height,
+                    Width = width,
+                    Height = height,
                     Color = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut),
                 };
                 TextWriterRaw.WriteRaw(box.Render());
@@ -139,7 +138,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.SquareCorner
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(Settings.SquareCornerDelay, System.Threading.Thread.CurrentThread);
+            ScreensaverManager.Delay(Settings.SquareCornerDelay);
         }
 
     }

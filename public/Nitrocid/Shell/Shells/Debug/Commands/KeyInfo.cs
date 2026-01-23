@@ -18,7 +18,7 @@
 //
 
 using System;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
@@ -62,7 +62,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
             // Keyboard shortcut
             TextWriters.Write("- " + Translate.DoTranslation("Keyboard shortcut") + ": ", false, KernelColorType.ListEntry);
-            TextWriters.Write($"{string.Join(" + ", KeyPress.Modifiers.ToString().Split(new string[] { ", " }, StringSplitOptions.None))} + {KeyPress.Key}", true, KernelColorType.ListValue);
+            TextWriters.Write($"{string.Join(" + ", KeyPress.Modifiers.ToString().Split([", "], StringSplitOptions.None))} + {KeyPress.Key}", true, KernelColorType.ListValue);
             return 0;
         }
 

@@ -17,17 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.Diagnostics.Commands;
-using Nitrocid.Extras.Diagnostics.Tools;
-using Nitrocid.Shell.ShellBase.Commands;
-using System;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
+using Terminaux.Shell.Shells;
 using System.Linq;
 
 namespace Nitrocid.Extras.Diagnostics
@@ -36,31 +30,19 @@ namespace Nitrocid.Extras.Diagnostics
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads",
-                [
-                    new CommandArgumentInfo()
-                ], new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            new CommandInfo("threadsbt", /* Localizable */ "Gets backtrace for all threads", new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
         ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasDiagnostics);
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(DiagnosticsTools.GetThreadBacktraces), DiagnosticsTools.GetThreadBacktraces }
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.FinalizeAddon()
         { }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.DebugShell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("DebugShell", [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.DebugShell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("DebugShell", [.. addonCommands.Select((ci) => ci.Command)]);
     }
 }

@@ -19,10 +19,9 @@
 
 using System.Linq;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -44,10 +43,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (ConfigTools.IsCustomSettingRegistered(configName))
             {
                 var config = configs.Single((bkc) => bkc.GetType().Name == configName);
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Configuration variables for") + $" {configName}", true);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Configuration variables for") + $" {configName}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 foreach (var entry in config.SettingsEntries ?? [])
                 {
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Entry name") + $": {entry.Name}");
+                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Entry name") + $": {entry.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                     foreach (var key in entry.Keys)
                     {
                         var value = ConfigTools.GetValueFromEntry(key, config);

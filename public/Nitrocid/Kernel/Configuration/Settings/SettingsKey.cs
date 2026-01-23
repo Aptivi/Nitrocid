@@ -21,6 +21,7 @@ using Newtonsoft.Json;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration.Settings.KeyInputs;
+using Nitrocid.Languages;
 using System;
 using System.Diagnostics;
 
@@ -55,6 +56,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
         internal string[]? selectionFallback;
         [JsonProperty(nameof(IsSelectionFunctionDict))]
         internal bool isSelectionFunctionDict;
+        [JsonProperty(nameof(SelectionFunctionArgs))]
+        internal SettingsFunctionArgs[] selectionFunctionArgs = [];
 
         // Enumeration
         [JsonProperty(nameof(IsEnumeration))]
@@ -81,6 +84,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
         // List
         [JsonProperty(nameof(DelimiterVariable))]
         internal string delimiterVariable = "";
+        [JsonProperty(nameof(DelimiterVariableType))]
+        internal string delimiterVariableType = "";
         [JsonProperty(nameof(Delimiter))]
         internal string delimiter = "";
 
@@ -108,7 +113,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
         /// Settings key name
         /// </summary>
         [JsonIgnore]
-        public string Name =>
+        public LocalizedString Name =>
             name;
 
         /// <summary>
@@ -134,10 +139,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
             variable;
 
         /// <summary>
-        /// Settings description (unlocalized)
+        /// Settings description
         /// </summary>
         [JsonIgnore]
-        public string Description =>
+        public LocalizedString Description =>
             description;
 
         /// <summary>
@@ -174,6 +179,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
         [JsonIgnore]
         public bool IsSelectionFunctionDict =>
             isSelectionFunctionDict;
+
+        /// <summary>
+        /// Specifies function arguments for selection
+        /// </summary>
+        [JsonIgnore]
+        public SettingsFunctionArgs[] SelectionFunctionArgs =>
+            selectionFunctionArgs;
 
         /// <summary>
         /// Fallback values for selection
@@ -244,6 +256,13 @@ namespace Nitrocid.Kernel.Configuration.Settings
         [JsonIgnore]
         public string DelimiterVariable =>
             delimiterVariable;
+
+        /// <summary>
+        /// The variable type that contains the <see cref="DelimiterVariable"/>
+        /// </summary>
+        [JsonIgnore]
+        public string DelimiterVariableType =>
+            delimiterVariableType;
 
         /// <summary>
         /// The shell type to work on (for shell-related settings)

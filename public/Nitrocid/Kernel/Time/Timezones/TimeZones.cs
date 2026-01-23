@@ -23,8 +23,8 @@ using System.Linq;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Time.Converters;
+using Nitrocid.Files;
 
 namespace Nitrocid.Kernel.Time.Timezones
 {
@@ -51,12 +51,12 @@ namespace Nitrocid.Kernel.Time.Timezones
             // Get all system time zones (IANA on Unix)
             var Zones = TimeZoneInfo.GetSystemTimeZones().ToArray();
             var ZoneTimes = new List<string>();
-            //DebugWriter.WriteDebug(DebugLevel.I, "Found {0} time zones.", Zones.Length);
+            //DebugWriter.WriteDebug(DebugLevel.I, "Found {0} time zones.", vars: [Zones.Length]);
 
             // Adds date and time to every single time zone to the list
             foreach (var Zone in Zones)
                 ZoneTimes.Add(Zone.Id);
-            //DebugWriter.WriteDebug(DebugLevel.I, "ZoneTimes = {0}", ZoneTimes.Count);
+            //DebugWriter.WriteDebug(DebugLevel.I, "ZoneTimes = {0}", vars: [ZoneTimes.Count]);
 
             // Return the populated array
             recognizedZones = [.. ZoneTimes];
@@ -73,7 +73,7 @@ namespace Nitrocid.Kernel.Time.Timezones
             // Get all system time zones (IANA on Unix)
             var Zones = GetTimeZoneNames();
             var ZoneTimes = new Dictionary<string, DateTime>();
-            DebugWriter.WriteDebug(DebugLevel.I, "Found {0} time zones.", Zones.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Found {0} time zones.", vars: [Zones.Length]);
 
             // Adds date and time to every single time zone to the list
             foreach (var Zone in Zones)
@@ -81,7 +81,7 @@ namespace Nitrocid.Kernel.Time.Timezones
                 var time = TimeDateConverters.GetDateTimeFromZone(TimeDateTools.KernelDateTime, Zone);
                 ZoneTimes.Add(Zone, time);
             }
-            DebugWriter.WriteDebug(DebugLevel.I, "ZoneTimes = {0}", ZoneTimes.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "ZoneTimes = {0}", vars: [ZoneTimes.Count]);
 
             // Return the populated array
             return ZoneTimes;
@@ -132,7 +132,7 @@ namespace Nitrocid.Kernel.Time.Timezones
         internal static void CheckZoneInfoDirectory()
         {
             // Check to see if tzdata is installed (only on Unix)
-            if (KernelPlatform.IsOnUnix() && !Checking.FolderExists("/usr/share/zoneinfo"))
+            if (KernelPlatform.IsOnUnix() && !FilesystemTools.FolderExists("/usr/share/zoneinfo"))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "System is on Unix but /usr/share/zoneinfo is not installed!");
                 throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The time zone information package is not installed yet on your Linux system. Install 'tzdata' using your distribution's package manager."));

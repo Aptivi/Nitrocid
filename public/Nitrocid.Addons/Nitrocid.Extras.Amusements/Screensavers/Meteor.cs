@@ -31,7 +31,8 @@ namespace Nitrocid.Extras.Amusements.Screensavers
     {
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Meteor";
+        public override string ScreensaverName =>
+            "Meteor";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation() => ConsoleWrapper.Clear();

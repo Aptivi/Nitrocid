@@ -21,12 +21,12 @@ using System.IO;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Configuration;
 
-namespace Nitrocid.Files.Operations.Querying
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Size getter module
     /// </summary>
-    public static class SizeGetter
+    public static partial class FilesystemTools
     {
 
         /// <summary>

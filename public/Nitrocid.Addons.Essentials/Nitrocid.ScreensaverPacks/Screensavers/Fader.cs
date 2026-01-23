@@ -20,6 +20,7 @@
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -40,7 +41,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             base.ScreensaverPreparation();
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.FaderBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.FaderBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
             FaderSettingsInstance = new Animations.Fader.FaderSettings()
             {

@@ -21,8 +21,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Operations;
-using Nitrocid.Shell.ShellBase.Commands;
+using Nitrocid.Files;
+using Terminaux.Shell.Commands;
 using Textify.Tools;
 
 namespace Nitrocid.Extras.JsonShell.Commands
@@ -35,8 +35,8 @@ namespace Nitrocid.Extras.JsonShell.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var source = JToken.Parse(Reading.ReadContentsText(parameters.ArgumentsList[0]));
-            var target = JToken.Parse(Reading.ReadContentsText(parameters.ArgumentsList[1]));
+            var source = JToken.Parse(FilesystemTools.ReadContentsText(parameters.ArgumentsList[0]));
+            var target = JToken.Parse(FilesystemTools.ReadContentsText(parameters.ArgumentsList[1]));
             var diff = JsonTools.FindDifferences(source, target);
             TextWriters.Write(diff.ToString(Formatting.Indented), KernelColorType.NeutralText);
             return 0;

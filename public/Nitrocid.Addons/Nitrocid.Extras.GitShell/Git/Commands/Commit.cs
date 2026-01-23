@@ -24,7 +24,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Timezones;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {

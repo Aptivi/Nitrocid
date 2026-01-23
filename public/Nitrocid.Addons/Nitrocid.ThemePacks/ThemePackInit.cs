@@ -20,11 +20,7 @@
 using Nitrocid.ConsoleBase.Themes;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Debugging;
-using System;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Modifications;
 using Nitrocid.Misc.Reflection.Internal;
 using Textify.General;
 using Nitrocid.Kernel.Exceptions;
@@ -37,12 +33,6 @@ namespace Nitrocid.ThemePacks
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.AddonThemePacks);
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.StartAddon()
         {
             // Add them all!
@@ -51,11 +41,11 @@ namespace Nitrocid.ThemePacks
             {
                 string key = resource.RemovePrefix("Themes.");
                 string themeName = key.RemoveSuffix(".json");
-                string? data = ResourcesManager.GetData(key, ResourcesType.Themes, typeof(ThemePackInit).Assembly) ??
-                    throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("Can't get necessary data to initialize this addon."));
+                string data = ResourcesManager.ConvertToString(ResourcesManager.GetData(key, ResourcesType.Themes, typeof(ThemePackInit).Assembly) ??
+                    throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("Can't get necessary data to initialize this addon.")));
                 var themeToken = JToken.Parse(data);
                 bool result = ThemeTools.themes.TryAdd(themeName, new ThemeInfo(themeToken));
-                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}: {1}", themeName, result);
+                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}: {1}", vars: [themeName, result]);
             }
         }
 
@@ -68,7 +58,7 @@ namespace Nitrocid.ThemePacks
                 string key = resource.RemovePrefix("Themes.");
                 string themeName = key.RemoveSuffix(".json");
                 bool result = ThemeTools.themes.Remove(themeName);
-                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", themeName, result);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", vars: [themeName, result]);
             }
         }
 

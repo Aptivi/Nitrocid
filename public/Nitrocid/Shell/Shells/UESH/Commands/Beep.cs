@@ -21,7 +21,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Terminaux.Base;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands

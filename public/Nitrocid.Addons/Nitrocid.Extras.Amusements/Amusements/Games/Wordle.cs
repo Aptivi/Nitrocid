@@ -27,7 +27,7 @@ using Nitrocid.Languages;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -135,8 +135,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         Left = currentX,
                         Top = currentY,
-                        InteriorWidth = 3,
-                        InteriorHeight = 1,
+                        Width = 3,
+                        Height = 1,
                         Color = finalColor,
                     };
                     TextWriterRaw.WriteRaw(border.Render());

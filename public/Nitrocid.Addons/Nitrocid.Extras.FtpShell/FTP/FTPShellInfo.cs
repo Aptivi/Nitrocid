@@ -20,20 +20,19 @@
 using System.Collections.Generic;
 using Nitrocid.Extras.FtpShell.FTP.Presets;
 using Nitrocid.Extras.FtpShell.FTP.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.FtpShell.FTP
 {
     /// <summary>
     /// Common FTP shell class
     /// </summary>
-    internal class FTPShellInfo : BaseShellInfo, IShellInfo
+    internal class FTPShellInfo : BaseShellInfo<FTPShell>, IShellInfo
     {
-
         /// <summary>
         /// FTP commands
         /// </summary>
@@ -98,10 +97,7 @@ namespace Nitrocid.Extras.FtpShell.FTP
                     ])
                 ], new DelCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                [
-                    new CommandArgumentInfo()
-                ], new DetachCommand()),
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
 
             new CommandInfo("execute", /* Localizable */ "Executes an FTP server command",
                 [
@@ -148,10 +144,9 @@ namespace Nitrocid.Extras.FtpShell.FTP
                     ])
                 ], new GetFolderCommand()),
 
-            new CommandInfo("info", /* Localizable */ "FTP server information",
-                [
-                    new CommandArgumentInfo()
-                ], new InfoCommand()),
+            new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager", new IfmCommand()),
+
+            new CommandInfo("info", /* Localizable */ "FTP server information", new InfoCommand()),
 
             new CommandInfo("lsl", /* Localizable */ "Lists local directory",
                 [
@@ -258,15 +253,9 @@ namespace Nitrocid.Extras.FtpShell.FTP
                     ])
                 ], new PutFolderCommand()),
 
-            new CommandInfo("pwdl", /* Localizable */ "Gets current local directory",
-                [
-                    new CommandArgumentInfo()
-                ], new PwdlCommand()),
+            new CommandInfo("pwdl", /* Localizable */ "Gets current local directory", new PwdlCommand()),
 
-            new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory",
-                [
-                    new CommandArgumentInfo()
-                ], new PwdrCommand()),
+            new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory", new PwdrCommand()),
 
             new CommandInfo("perm", /* Localizable */ "Sets file permissions. This is supported only on FTP servers that run Unix.",
                 [
@@ -337,11 +326,8 @@ namespace Nitrocid.Extras.FtpShell.FTP
             { "PowerLineBG3", new FtpPowerLineBG3Preset() }
         };
 
-        public override BaseShell ShellBase => new FTPShell();
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "FTP";
-
     }
 }

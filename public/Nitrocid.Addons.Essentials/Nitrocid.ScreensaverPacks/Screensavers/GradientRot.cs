@@ -18,14 +18,16 @@
 //
 
 using System;
-using Terminaux.Writer.ConsoleWriters;
+using System.Text;
 using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
-using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Nitrocid.Kernel.Configuration;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -78,6 +80,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Populate the variables for sub-gradients
                 int RampSubgradientRedColorNumFrom = RedColorNumFrom;
@@ -106,7 +110,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 // Make a new instance
                 var RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                ColorTools.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
+                ConsoleColoring.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
 
                 // Try to fill the ramp
                 int RampSubgradientStepsMade = 0;
@@ -117,8 +121,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         break;
 
                     // Fill the entire screen
+                    var subgradientBuffer = new StringBuilder();
                     for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
-                        TextWriterWhereColor.WriteWhere(" ", RampCurrentPositionLeft, y);
+                    {
+                        subgradientBuffer.Append(ConsolePositioning.RenderChangePosition(RampCurrentPositionLeft, y));
+                        subgradientBuffer.Append(' ');
+                    }
+                    TextWriterRaw.WriteRaw(subgradientBuffer.ToString());
 
                     // Update left position
                     RampCurrentPositionLeft = ConsoleWrapper.CursorLeft;
@@ -147,7 +156,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         RampSubgradientCurrentColorBlue = 0;
                     }
                     RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                    ColorTools.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
+                    ConsoleColoring.SetConsoleColorDry(RampSubgradientCurrentColorInstance, true);
                 }
 
                 // Change the colors
@@ -181,7 +190,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Clear the scene
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.GradientRotNextRampDelay);
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();

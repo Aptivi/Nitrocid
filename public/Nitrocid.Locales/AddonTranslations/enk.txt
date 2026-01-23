@@ -114,10 +114,12 @@ Debug log removal failed: {0}
 Changing directory has failed: {0}
 Specify the address
 Timezone is specified incorrectly.
+Invalid profile FilesystemTools.
 Trying to connect to {0} with profile {1}...
 Parsing mods not allowed on safe mode.
 The path is neither a file nor a directory.
 Creates another copy of a file under different directory or name.
+Moves a file to another directory
 Match {0} ({1}): {2}
 Match {0}: {1}
 Time spent: {0} milliseconds
@@ -618,6 +620,7 @@ Enable screensaver debugging
 Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.
 The manual page {0} is invalid.
 Consider filling this manual page.
+Mod manual
 Available kernel arguments:
 Unrecoverable error in argument:
 Encrypts a string using SHA512
@@ -1612,6 +1615,7 @@ Is a directory
 Is selected
 File size
 File path
+Selected '{0}'. Press ESC to exit and confirm your selection.
 Can't open folder or select file
 Enter a path or a full path to a local folder.
 Press SPACE for more info
@@ -3218,6 +3222,7 @@ This command has the below arguments that change how it works:
 Unspecified argument description
 Lists all available function parameters from a function
 Manage your alarms
+Manage your alarms in an interactive TUI
 Restarts a remote kernel instance
 The kernel in the remote instance will be shut down
 Uses the legacy settings style
@@ -3390,7 +3395,9 @@ Which asymmetric encoding driver would you like to use?
 Bootloader style
 Select a bootloader style to match your preference.
 Bootloader default selection timeout
+Timeout in seconds to boot to the default FilesystemTools.
 Bootloader default selection
+Default boot entry FilesystemTools. This number is zero-based, so the first element is index 0, and so on.
 Enable 'The Nitrocid Homepage'
 Enables 'The Nitrocid Homepage' that allows you to see what's happening in a glance.
 Interactive TUI builtin key binding background colour
@@ -3703,7 +3710,26 @@ Bring back nostalgia with this theme!
 Your terminal consists of wood planks
 Inspired from the Chinese pattern of different fruits
 Extras - CRC32C (Castagnoli)
+Prints the kernel version
+Prints the API version
 Can't wipe debug files
+Kernel configuration will not work properly. Consult the kernel debugger for more info.
+Can't check configuration variables when no base kernel configuration is specified.
+Can't check configuration variables when no keys are specified.
+Trying to register a custom setting with invalid content. Consult the kernel debugger for more info.
+Trying to register a base setting with invalid content. Consult the kernel debugger for more info
+Failed to obtain splash settings entries.
+The icons addon needs to be installed before being able to set this value.
+Choose an entry for
+Reset all
+Reset entry
+Specified argument type is not valid
+One or more of the configuration entries have invalid variables or enumerations and need to be fixed. Consult the kernel debugger for more info.
+There is no culture by this name.
+There was an error when processing your audio cue action.
+Can't return non-existent class type from addon assembly
+This class is not an addon class
+Playing shutdown sound...
 We'll no longer support this version of Nitrocid KS after this date
 Make sure that you upgrade to the supported version soon if you want to continue receiving support.
 This version of Nitrocid KS is no longer supported.
@@ -3720,9 +3746,12 @@ Failed to load aliases
 Failed to load speed dial entries
 Failed to load environment variables
 Failed to load alarm listener
+Failed to finalise addons
 Failed to load MOTD and MAL
 Failed to load shell command histories
 Failed to load extension handlers
+Loading mods...
+Failed to load mods
 There were errors when trying to initialise optional components.
 Failed to reset general variables
 Failed to save shell command histories
@@ -3744,12 +3773,26 @@ Failed to stop all kernel threads
 There were errors when trying to reset components.
 Exception
 Consult the kernel debug logs for more info.
+There is no such audio cue type.
+Can't get fallback settings
+Can't reset all settings entries for
+Can't reset this settings entry for
+Variable is not found on any of the modules.
+Can't get audio cue required for ambient screensavers.
+The network connection might not have been established properly due to an error.
+Can't buffer a command that is not set as wrappable.
 Unspecified switch description
 Path to a process
 Arguments to pass to a process
 Command to show help entry
+Pipes the command output to another command as parameters
+Source command to pipe its output to the target command as the last parameter
 Target command to execute upon building argument based on the source command output
+Whether to pass the output of the source command as one quoted argument or unquoted argument
 Command to wrap its output
+Source command execution failed.
+Target command execution failed. The contents may not have been populated properly. Command executed was
+Pipe is broken.
 Argument to show help entry
 Session number starting from zero
 User name to query
@@ -3757,14 +3800,25 @@ Permission type to grant or to deny
 False to deny, true to grant
 New display name, or 'clear' to erase the display name
 Three-letter language ID, or 'clear' to clear preferred language
+Changes the preferred user culture
+Culture ID, or 'clear' to clear preferred culture
+Preferred user culture set to {0}. You may want to log in again.
+Invalid culture
+Preferred culture
 Invalid session GUID
 No such session GUID
+Unknown type
+Unknown parameter
+List of types for
+Easily fetches the debug log information using the session GUID
 Session GUID to find
 Exception number
 Field name to query
 Property name to query
 Addon name to query
+Public static type name from addon
 Function name from the public static type to query
+Lists all available types from the specified addon
 Splash name to query
 Byte number ranging from 0 to 255
 Byte position number
@@ -3786,6 +3840,10 @@ A word or phrase to be replaced
 A word or phrase to replace with
 Line number (either singular or start of the range), or 'all' to replace in all lines
 A regular expression to match phrases that are to be replaced
+Invalid country
+Choose a language for country
+Invalid language selection for
+Yes
 New group name to add
 New user name to add
 New password to use
@@ -3812,8 +3870,12 @@ Path to file to print its contents
 Path to file
 Either addition or removal
 Attribute name
+Changes culture
+Culture ID to change to
+Changes the user culture instead of the system culture
 New host name to change to
 Language ID
+Changes the language using a country (you might get prompted to choose a language)
 New message to use
 Answers to split with a slash
 Question to print to the screen
@@ -3889,6 +3951,7 @@ Either the screensaver name or 'random'
 Regular expression to search
 Target file
 Word or phrase to search
+Opens the addon splash settings
 Value to set
 Configuration variable name
 Implementer name
@@ -3914,6 +3977,7 @@ Hash file or expected hash
 File to test
 ZIP file name to create
 Path to compress
+The icons addon needs to be installed before being able to display this emoji.
 Note contents to add
 Note number
 Path to a directory with Git repository
@@ -3953,6 +4017,8 @@ Lists all reminders
 Saves all reminders
 Either a path to a vCard contact file or a MeCard represnetation
 Contact number
+Edit...
+Enter new name for this contact
 Latitude to use
 Longitude to use
 Weather.com API key
@@ -3961,6 +4027,7 @@ OpenWeatherMap API key
 Whether to add, remove, mark as done, or unmark as done on a task
 Whether to list, save, or load all tasks
 Pomodoro timer
+Pomodoro
 Pomodoro timer is ready
 Pomodoro timer number {0} in four iterations
 Short break
@@ -4011,6 +4078,7 @@ Path to target file or directory
 Path to local file
 Permission numbers according to chmod
 Specifies whether the transfer type is ASCII or Binary
+Symbolic link to: {0}
 Header key
 Header value
 HTTP request
@@ -4018,12 +4086,39 @@ File to upload
 String to upload
 User agent string
 E-mail address to login to
+Create folder
+Move...
+Move all...
+Rename folder
+Remove folder
+Remove message
+Remove all...
+Can't open folder or message
+Write the new directory name.
+Creating directory...
+Can't make folder
+Select a new directory to move this message to.
+Moving message...
+Can't move message
+Select a new directory to move all messages by the same sender to.
+Moving messages by sender {0}...
+Can't move all messages by the same sender
+Write the new directory name to rename {0} to.
+Renaming directory...
+Can't rename folder
+Removing directory...
+Can't remove folder
+Removing message...
+Can't delete message
+Removing messages by sender {0}...
+Can't delete all messages by the same sender
 Mail directory name
 Page number
 Message ID
 Sender name
 Old mail directory name
 New mail directory name
+Interactive mail management
 SFTP server to connect to
 RSS feed link
 Feed number
@@ -4044,13 +4139,132 @@ Path to the synth file
 SSH server to connect to
 Username to authenticate with
 Command to remotely execute
+Prints information about a chemical substance to the console.
+Either a name, a symbol, or an atomic number of a substance
+Prints information about all chemical substances to the console.
+There is no substance with atomic number
+There is no substance with symbol or name
+Atomic number
+Atomic mass
+Symbol
+Summary
+Phase
+Position in the periodic table
+Position in coordinates
+Discoverer
+Named by
+Electron configuration
+Start mod (select)
+Start mod (input)
+Stop mod
+Reload mod
+Install mod (select)
+Install mod (input)
+Uninstall mod
+Start all
+Stop all
+Reload all
+Can't return non-existent class type from mod assembly
+Can't find function '{0}' in mod '{1}'.
+Can't find property '{0}' in mod '{1}'.
+Can't find field '{0}' in mod '{1}'.
+This class is not an mod class
+Languages
+Entry point
+Enter a path to the mod that you want to start
+Failed to start mod
+Enter a path to the mod that you want to install
+Failed to install mod
+Can't start or stop this mod!
+Whether to start, stop, get info out of, reload, install, or uninstall a mod
+Mod name or file name
+Whether to list, reload, stop, start, or interactively manage all mods
+Mod name
+Culture and language settings
+This allows you to configure the culture and language
+Time and date settings
+This allows you to configure the time and date
+Bootloader settings
+This allows you to configure the bootloader
+The Nitrocid Homepage
+This allows you to configure The Nitrocid Homepage
+Kernel update settings
+This allows you to configure the kernel updates
+Kernel error settings
+This allows you to configure the kernel errors
+Kernel power settings
+This allows you to configure the kernel power mechanism
+Kernel colour schemes
+This allows you to set multiple kernel colour schemes
+Modern logon handler settings
+This allows you to configure the modern logon handler
+Help system
+This allows you to configure the shell help system
+Shell presets
+This allows you to configure the shell presets
+Remote debugger settings
+This allows you to configure the remote debugger
 Unified delay
 If true, enables unified writing delay for all screensavers. Otherwise, it uses screensaver-specific configured delay values.
+This section lists all the audio settings.
+Audio settings
+Enable audio support
+Enables the whole audio system for system cues
+Enable keyboard cues
+Whether to play keyboard cues for each keypress or not
+Enable startup sounds
+Whether to play the startup sound or not
+Enable shutdown sounds
+Whether to play the shutdown sound or not
+Enable navigation sounds
+Whether to play the navigation sound for each keypress or not
+Enable low-priority notification sounds
+Whether to play the notification sound for low-priority alerts or not
+Enable medium-priority notification sounds
+Whether to play the notification sound for medium-priority alerts or not
+Enable high-priority notification sounds
+Whether to play the notification sound for high-priority alerts or not
+Enable ambient screensaver sound effects
+Whether to play ambient screensaver sound effects or not
+Intensify the ambient screensaver sound effects
+Whether to intensify the ambient screensaver sound effects or not
+Audio cue volume
+Specify how loud do you want the audio cues to be
+Audio theme
+Which audio theme do you want to use for audio cues?
+Text editor settings
+This allows you to configure the text editor
+Hex editor settings
+This allows you to configure the hex editor
+RSS headline settings
+This allows you to configure the RSS headlines
+Mouse settings
+This allows you to configure the mouse
+Debug settings
+This allows you to configure the debugging routine
+Aesthetics
+This allows you to configure the kernel aesthetics
+Shows a big Welcome word written in the middle of the console; similar to the welcome mats
+Show progress
+Show progress or not
+This allows you to configure the colours
+This section lets you configure Solver.
+This section lets you configure SpeedPress.
+This section lets you configure Meteor and ShipDuet.
+This section lets you configure how the kernel modification system works.
 This section lets you configure how the timer application works.
 This section lets you configure how the pomodoro timer application works.
 Enable Figlet for the pomodoro timer
 If enabled, will use figlet for the pomodoro timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.
 Figlet font for the pomodoro timer
+Hours ramp settings
+This allows you to configure the hours ramp
+Minutes ramp settings
+This allows you to configure the minutes ramp
+Seconds ramp settings
+This allows you to configure the seconds ramp
+Ramp settings
+This allows you to configure the ramps
 Shows you text below a line in a glooming red background.
 Random characters that spread randomly across the screen.
 Simple date and time in the middle of the screen and changes the colour based on the current time.
@@ -4064,7 +4278,64 @@ Block moving in a wave pattern with green rulers tracking its position.
 Shows you a single random character in a coloured figlet text.
 Shows you a word that is being selected just like a slot machine found in casinos.
 Shows you a coloured figlet text alternating between two neon colours: cyan and fuchsia.
+Culture settings
+This allows you to configure the culture used by the calendar screensaver
+First ramp settings
+This allows you to configure the first ramp
+Second ramp settings
+This allows you to configure the second ramp
+Third ramp settings
+This allows you to configure the third ramp
+Colour schemes from Alma Linux, a spinoff of a Linux operating system, Red Hat
+Colour schemes from a Linux operating system, Arch Linux
+Colour schemes from EndeavourOS, a spinoff of a Linux operating system, Arch Linux
+Colour schemes from Fedora, a spinoff of a Linux operating system, Red Hat
+Colour schemes from a Linux operating system, Gentoo
+Chiseled pattern colours forming a colourful mandala
+Colour schemes from Kubuntu, a spinoff of a popular Linux operating system, Ubuntu
+Colour schemes from Linux Mint, an unofficial spinoff of a popular Linux operating system, Ubuntu
+Colour schemes from Lubuntu, a spinoff of a popular Linux operating system, Ubuntu
+Colour schemes from Manjaro, a spinoff of a Linux operating system, Arch Linux
+Colour schemes from a Linux operating system, openSUSE
+Colour schemes from a Linux operating system, Red Hat
+Red shades with dynamic accent colours for attention-worthy text
+Colour schemes from Rocky Linux, a spinoff of a Linux operating system, Red Hat
+Colour schemes from a Linux operating system, Slackware
+Colour schemes from Xubuntu, a spinoff of a popular Linux operating system, Ubuntu
+Colour schemes from Zorin OS, an unofficial spinoff of a popular Linux operating system, Ubuntu
+Extras - Chemistry
+Extras - Mods
+Extras - Icons
 Which culture is being used to change the month names, calendar, etc.?
+Enable 'The Nitrocid Homepage' widgets
+Enables 'The Nitrocid Homepage' widgets at the right side of the screen.
+Enable 'The Nitrocid Homepage' RSS feed
+Enables 'The Nitrocid Homepage' RSS feed widget at the right side of the screen.
+'The Nitrocid Homepage' widget
+Selects a widget that will be displayed in 'The Nitrocid Homepage'.
+Notification border settings
+This allows you to configure the notification border
+General border settings
+This allows you to configure the general border
+Appearance settings
+This allows you to configure the hours ramp appearance
+This allows you to configure the hours ramp colour
+This allows you to configure the minutes ramp appearance
+This allows you to configure the minutes ramp colour
+This allows you to configure the seconds ramp appearance
+This allows you to configure the seconds ramp colour
+Start position colour settings
+This allows you to configure the start position colours
+End position colour settings
+This allows you to configure the end position colours
+Ramp bar settings
+This allows you to configure the ramp bar
+This allows you to configure the ramp appearance
+This allows you to configure the ramp colours
+Gradient start settings
+This allows you to configure the start gradient colours
+Gradient end settings
+This allows you to configure the end gradient colours
 Maximum background colour level
 Maximum background colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
 Maximum line colour level
@@ -4073,6 +4344,7 @@ Maximum text colour level
 Maximum text colour level. The minimum accepted value is 0 and the maximum accepted value is 255.
 Use the system culture
 Whether the screensaver uses the culture set by the main kernel settings or by this screensaver settings.
+This allows you to configure the first ramp appearance
 Information text for first
 Write how your information text for the current hour shows. {0} for current hour out of 24 first.
 Upper left corner character for the first bar
@@ -4083,6 +4355,7 @@ Upper frame character for the first bar
 Lower frame character for the first bar
 Left frame character for the first bar
 Right frame character for the first bar
+This allows you to configure the first ramp colour
 Colour of First Bar
 Minimum red colour level for first
 Minimum green colour level for first
@@ -4092,6 +4365,7 @@ Maximum red colour level for first
 Maximum green colour level for first
 Maximum blue colour level for first
 Maximum colour level for first
+This allows you to configure the second ramp appearance
 Information text for second
 Write how your information text for the current minute shows. {0} for current minute out of 60 second.
 Upper left corner character for the second bar
@@ -4102,6 +4376,7 @@ Upper frame character for the second bar
 Lower frame character for the second bar
 Left frame character for the second bar
 Right frame character for the second bar
+This allows you to configure the second ramp colour
 Colour of Second Bar
 Minimum red colour level for second
 Minimum green colour level for second
@@ -4111,6 +4386,7 @@ Maximum red colour level for second
 Maximum green colour level for second
 Maximum blue colour level for second
 Maximum colour level for second
+This allows you to configure the third ramp appearance
 Upper left corner character for the third bar
 Upper right corner character for the third bar
 Lower left corner character for the third bar
@@ -4121,6 +4397,7 @@ Left frame character for the third bar
 Right frame character for the third bar
 Information text for third
 Write how your information text for the current second shows. {0} for current second out of 60 third.
+This allows you to configure the third ramp colour
 Colour of Third Bar
 Minimum red colour level for third
 Minimum green colour level for third
@@ -4132,61 +4409,6 @@ Maximum blue colour level for third
 Maximum colour level for third
 Progresses will select random colours if it's enabled. Otherwise, use colours from config.
 If colour cycling is enabled, how many ticks before changing colours in Progresses? 1 tick = 0.5 third
-Done! Please use the Nitrocid.Locales application with appropriate arguments to finalise the languages. You can use this path:
-Kernel configuration will not work properly. The invalid keys are
-Trying to register a custom setting with invalid content. The invalid keys are
-Trying to register a base setting with invalid content. The invalid keys are
-Adds a mod to the blacklist
-Removes a mod from the blacklist
-These configuration entries have invalid variables or enumerations and need to be fixed:
-Starts all mods
-Print a separator to console with colour
-Print a separator to console with formatting and colour
-Reloads all mods
-Stats
-Shows the current test statistics
-Test All
-Tests all facades
-Goes back to the section selection
-Choose a test facade to run
-This test contains optional parameters. Enter the value of the parameter to add to the test parameters.
-Parameters count
-Yes!
-Retry
-Did the test run as expected?
-The test failed. Expected value is {0}, but actual value is {1}.
-The test failed unexpectedly.
-Successful tests:
-Failed tests:
-Tests to be run:
-Can't obtain list of functions
-Can't obtain list of properties
-Can't obtain list of fields
-Based on your language settings on your system, the appropriate language is
-Failed to load finalise addons
-Kernel modifications
-Selected '{0}'. Press ESC to exit and confirm selection.
-Variable {0} is not found on any of the modules.
-The method type is not defined in the base Nitrocid type list.
-Can't execute custom property with non-existent mod
-Can't execute custom field with non-existent mod
-Easily fetches the debug log information using the session number
-Yes, set it!
-No, don't set it.
-Uses the system language settings to try to infer the language from
-There is no property info for
-Pomodoro Timer
-Invalid profile selection.
-Change Culture when Switching Languages
-When switching languages, change the month names, calendar, etc.
-Which variant of the current language is being used to change the month names, calendar, etc.?
-Timeout in seconds to boot to the default selection.
-Default boot entry selection. This number is zero-based, so the first element is index 0, and so on.
-This section lists the shell preset settings.
-Shell preset settings
-Wrap list outputs
-Wraps the list outputs if it seems too long for the current console geometry.
-This section lets you configure how the amusements work.
 Production date is invalid
 Expiry time period is invalid
 Expiry date is invalid
@@ -4200,21 +4422,14 @@ Gets the product expiry information
 Production date (look at either the side or the bottom of the product)
 Expiry date or time period (either explicitly written in the same spot or time spans, such as 6 months or 1 year)
 Whether the target product doesn't specify the expiry date explicitly
-Screensaver settings...
-This allows you to configure the culture used by the calendar screensaver
 Select a configuration instance to switch to.
+Can't select configuration
 Select configuration
 Prompts you to select a configuration instance
-Can't check configuration variables when no base kernel configuration is specified.
-Kernel configuration will not work properly. Consult the kernel debugger for more info.
-Can't check configuration variables when no keys are specified.
-Trying to register a custom setting with invalid content. Consult the kernel debugger for more info.
-Trying to register a base setting with invalid content. Consult the kernel debugger for more info
-Choose an entry for
-Can't select configuration
-One or more of the configuration entries have invalid variables or enumerations and need to be fixed. Consult the kernel debugger for more info.
+Screensaver settings...
 Settings entry name may not be empty
 Settings entry description may not be empty
 Settings entry may not have empty settings key list
 Settings key name may not be empty
 Settings key may not hold invalid key type
+Available keys

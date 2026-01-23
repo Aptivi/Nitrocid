@@ -28,6 +28,7 @@ using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -50,7 +51,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             Stars.Clear();
             offsetY = 0;
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
         }
 
         /// <inheritdoc/>
@@ -101,6 +102,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 var Star = Stars[StarIndex];
                 char StarSymbol = '*';
                 starsBuffer.Append(TextWriterWhereColor.RenderWhere(Convert.ToString(StarSymbol), Star.Item1, Star.Item2, false, ConsoleColors.White, ConsoleColors.Black));
@@ -116,7 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SprayDelay);
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
         }
 
         /// <inheritdoc/>

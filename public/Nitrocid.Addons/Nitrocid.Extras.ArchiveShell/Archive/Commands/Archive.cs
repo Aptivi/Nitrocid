@@ -20,12 +20,11 @@
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Commands
 {
@@ -41,8 +40,8 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             parameters.ArgumentsList[0] = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", parameters.ArgumentsList[0], Checking.FileExists(parameters.ArgumentsList[0]));
-            if (Checking.FileExists(parameters.ArgumentsList[0]))
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", vars: [parameters.ArgumentsList[0], FilesystemTools.FileExists(parameters.ArgumentsList[0])]);
+            if (FilesystemTools.FileExists(parameters.ArgumentsList[0]))
             {
                 ShellManager.StartShell("ArchiveShell", parameters.ArgumentsList[0]);
             }

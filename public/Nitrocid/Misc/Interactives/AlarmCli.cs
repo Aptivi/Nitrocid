@@ -97,5 +97,13 @@ namespace Nitrocid.Misc.Interactives
             if (alarm is not null)
                 AlarmTools.StopAlarm(alarm);
         }
+
+        internal static void OpenAlarmCli()
+        {
+            var tui = new AlarmCli();
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Start(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.Delete, (alarm, _, _, _) => tui.Stop(alarm)));
+            InteractiveTuiTools.OpenInteractiveTui(tui);
+        }
     }
 }

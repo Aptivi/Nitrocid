@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Magico.Files;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using System.Collections.Generic;
@@ -603,6 +604,28 @@ namespace Nitrocid.Files.Extensions
             if (mimeTypes.TryGetValue(extension, out string? mimeType))
                 return mimeType;
             return mimeTypes[".bin"];
+        }
+
+        /// <summary>
+        /// Gets the extended MIME type based on file data
+        /// </summary>
+        /// <param name="path">A file that contains either text or binary data</param>
+        /// <returns>The MIME type for this file</returns>
+        public static string GetExtendedMimeType(string path)
+        {
+            path = FilesystemTools.NeutralizePath(path);
+            return MagicHandler.GetMagicMimeInfo(path);
+        }
+
+        /// <summary>
+        /// Gets the file magic info based on file data
+        /// </summary>
+        /// <param name="path">A file that contains either text or binary data</param>
+        /// <returns>Magic info for this file</returns>
+        public static string GetMagicInfo(string path)
+        {
+            path = FilesystemTools.NeutralizePath(path);
+            return MagicHandler.GetMagicInfo(path);
         }
     }
 }

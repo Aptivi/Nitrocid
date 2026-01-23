@@ -17,15 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using System;
 using Textify.General;
-using Terminaux.Base;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Misc.Reflection;
 
@@ -36,8 +31,8 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
             // Translate the key name and description
-            string keyName = Translate.DoTranslation(key.Name);
-            string keyDesc = Translate.DoTranslation(key.Description);
+            string keyName = key.Name;
+            string keyDesc = key.Description;
 
             // Write the prompt
             string? AnswerString = InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{keyDesc}\n\n{Translate.DoTranslation("Press any letter on your keyboard to set it to that character.")} [{KeyDefaultValue}]");
@@ -68,7 +63,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // We're dealing with characters
-            DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the Char (inferred from keytype {0}) type. Setting variable...", key.Type.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the Char (inferred from keytype {0}) type. Setting variable...", vars: [key.Type.ToString()]);
 
             // Check to see if written answer is empty
             char finalValue = value is char charValue ? charValue : '\0';

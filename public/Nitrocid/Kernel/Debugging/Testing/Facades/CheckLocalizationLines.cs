@@ -31,15 +31,15 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Checks all the localization text line numbers to see if they're all equal");
         public override TestSection TestSection => TestSection.Languages;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            var EnglishJson = JToken.Parse(ResourcesManager.GetData("eng.json", ResourcesType.Languages) ??
-                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't open the English localization resource")));
+            var EnglishJson = JToken.Parse(ResourcesManager.ConvertToString(ResourcesManager.GetData("eng.json", ResourcesType.Languages) ??
+                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't open the English localization resource"))));
             JToken LanguageJson;
             foreach (string LanguageName in LanguageManager.Languages.Keys)
             {
-                LanguageJson = JToken.Parse(ResourcesManager.GetData($"{LanguageName}.json", ResourcesType.Languages) ??
-                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't open the localization resource for") + $" {LanguageName}"));
+                LanguageJson = JToken.Parse(ResourcesManager.ConvertToString(ResourcesManager.GetData($"{LanguageName}.json", ResourcesType.Languages) ??
+                throw new KernelException(KernelExceptionType.LanguageManagement, Translate.DoTranslation("Can't open the localization resource for") + $" {LanguageName}")));
                 if (LanguageJson.Count() != EnglishJson.Count())
                     TextWriters.Write(Translate.DoTranslation("Line mismatch in") + " {0}: {1} <> {2}", true, KernelColorType.Warning, LanguageName, LanguageJson.Count(), EnglishJson.Count());
             }

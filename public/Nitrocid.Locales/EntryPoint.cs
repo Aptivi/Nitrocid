@@ -101,9 +101,6 @@ namespace Nitrocid.Locales
         /// </summary>
         public static void Main(string[] args)
         {
-            // Check console
-            ConsoleChecker.CheckConsole();
-
             // Check the arguments
             var arguments = argumentsMain.ToDictionary((ai) => ai.Argument, (ai) => ai);
             ArgumentParse.ParseArguments([string.Join(" ", args)], arguments);

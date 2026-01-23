@@ -26,53 +26,48 @@ using StdCalendar = System.Globalization.Calendar;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Calendar.Events;
+using Terminaux.Base.Extensions;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Writer;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
     /// <summary>
     /// Calendars renderable
     /// </summary>
-    public class FullCalendar : IStaticRenderable
+    public class FullCalendar : GraphicalCyclicWriter
     {
-        internal const int calendarWidth = 4 + (6 * 6);
+        internal const int calendarWidth = 5 + (6 * 6);
         internal const int calendarHeight = 13;
         private int year = 0;
         private int month = 0;
         private CultureInfo culture = new("en-US");
-        private Color headerColor = ColorTools.CurrentForegroundColor;
-        private Color weekendColor = ColorTools.CurrentForegroundColor;
-        private Color todayColor = ColorTools.CurrentForegroundColor;
-        private Color foregroundColor = ColorTools.CurrentForegroundColor;
-        private Color backgroundColor = ColorTools.CurrentBackgroundColor;
+        private Color headerColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
+        private Color weekendColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
+        private Color todayColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
+        private Color foregroundColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
+        private Color backgroundColor = KernelColorTools.GetColor(KernelColorType.Background);
         private BorderSettings borderSettings = new();
         private bool useColors = true;
 
         /// <summary>
-        /// Left position of the calendar
-        /// </summary>
-        public int Left { get; set; }
-
-        /// <summary>
-        /// Top position of the calendar
-        /// </summary>
-        public int Top { get; set; }
-
-        /// <summary>
         /// Full calendar width (constant)
         /// </summary>
-        public int Width =>
-            calendarWidth;
+        public override int Width
+        {
+            get => calendarWidth;
+        }
 
         /// <summary>
         /// Full calendar height (constant)
         /// </summary>
-        public int Height =>
-            calendarHeight;
+        public override int Height
+        {
+            get => calendarHeight;
+        }
 
         /// <summary>
         /// Year of the calendar
@@ -184,10 +179,11 @@ namespace Nitrocid.Extras.Calendar.Calendar
         /// Renders a calendar
         /// </summary>
         /// <returns>Rendered calendar that will be used by the renderer</returns>
-        public string Render()
+        public override string Render()
         {
             var calendarRendered = new StringBuilder();
             var calendarDays = culture.DateTimeFormat.DayNames;
+            var calendarAbbreviatedDays = culture.DateTimeFormat.AbbreviatedDayNames;
             var calendarMonths = culture.DateTimeFormat.MonthNames;
             var calendarWeek = culture.DateTimeFormat.FirstDayOfWeek;
             var maxDate = Calendar.GetDaysInMonth(year, month);
@@ -221,8 +217,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 Title = CalendarTitle,
                 Left = boxLeft,
                 Top = boxTop,
-                InteriorWidth = boxWidth,
-                InteriorHeight = boxHeight,
+                Width = boxWidth,
+                Height = boxHeight,
                 Color = boxForeground,
                 TextColor = boxForeground,
                 TextSettings = new()
@@ -246,7 +242,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     dayPosY += 2;
                 }
                 int currentDay = mappedDays[CurrentDate.DayOfWeek] + 1;
-                dayPosX = boxLeft + 1 + 6 * (currentDay - 1);
+                dayPosX = boxLeft + 1 + (6 * (currentDay - 1));
                 string CurrentDayMark;
 
                 // Some flags
@@ -294,8 +290,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 if (useColors)
                 {
                     calendarRendered.Append(
-                        $"{ColorTools.RenderSetConsoleColor(foreground)}" +
-                        $"{ColorTools.RenderSetConsoleColor(background, true)}"
+                        $"{ConsoleColoring.RenderSetConsoleColor(foreground)}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(background, true)}"
                     );
                 }
                 calendarRendered.Append(
@@ -309,18 +305,19 @@ namespace Nitrocid.Extras.Calendar.Calendar
             int dayIndicatorPosY = boxTop + 1;
             for (int i = 0; i < mappedDays.Count; i++)
             {
-                string dayName = $"{calendarDays[(int)mappedDays.Keys.ElementAt(i)]}";
-                char dayChar = char.ToUpper(dayName[0]);
+                string dayName = $"{calendarAbbreviatedDays[(int)mappedDays.Keys.ElementAt(i)]}".Truncate(3, false);
+                if (Culture.EnglishName.Contains("Chinese"))
+                    dayName = $"{calendarAbbreviatedDays[(int)mappedDays.Keys.ElementAt(i)]}";
                 if (useColors)
                 {
                     calendarRendered.Append(
-                        $"{ColorTools.RenderSetConsoleColor(HeaderColor)}" +
-                        $"{ColorTools.RenderSetConsoleColor(background, true)}"
+                        $"{ConsoleColoring.RenderSetConsoleColor(HeaderColor)}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(background, true)}"
                     );
                 }
                 calendarRendered.Append(
-                    CsiSequences.GenerateCsiCursorPosition(dayIndicatorPosX + 6 * i + 2, dayIndicatorPosY + 1) +
-                    dayChar
+                    CsiSequences.GenerateCsiCursorPosition(dayIndicatorPosX + (6 * i) + 2, dayIndicatorPosY + 1) +
+                    dayName
                 );
             }
 
@@ -328,8 +325,8 @@ namespace Nitrocid.Extras.Calendar.Calendar
             if (useColors)
             {
                 calendarRendered.Append(
-                    ColorTools.RenderRevertForeground() +
-                    ColorTools.RenderRevertBackground()
+                    ConsoleColoring.RenderRevertForeground() +
+                    ConsoleColoring.RenderRevertBackground()
                 );
             }
             return calendarRendered.ToString();

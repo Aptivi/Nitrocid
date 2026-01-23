@@ -31,8 +31,6 @@ namespace Nitrocid.Languages.Decoy
         private readonly bool transliterable;
         [JsonProperty(nameof(codepage))]
         private readonly int codepage;
-        [JsonProperty(nameof(culture))]
-        private readonly string culture;
         [JsonProperty(nameof(country))]
         private readonly string country;
 
@@ -49,20 +47,16 @@ namespace Nitrocid.Languages.Decoy
         public int Codepage =>
             codepage;
         [JsonIgnore]
-        public string Culture =>
-            culture;
-        [JsonIgnore]
         public string Country =>
             country;
 
         [JsonConstructor]
-        internal LanguageMetadata(string three, string name, bool transliterable, int codepage, string culture, string country)
+        internal LanguageMetadata(string three, string name, bool transliterable, int codepage, string country)
         {
             this.three = three;
             this.name = name;
             this.transliterable = transliterable;
             this.codepage = codepage;
-            this.culture = culture;
             this.country = country;
         }
     }

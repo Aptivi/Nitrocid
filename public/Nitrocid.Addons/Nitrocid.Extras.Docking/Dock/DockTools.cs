@@ -32,6 +32,7 @@ using Terminaux.Base;
 using System.Threading;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Extras.Docking.Dock
 {
@@ -99,7 +100,10 @@ namespace Nitrocid.Extras.Docking.Dock
                 KernelColorTools.LoadBackground();
                 DebugWriter.WriteDebug(DebugLevel.E, $"Screen dock crashed [{dockInstance.GetType().Name}]: {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Screen dock has crashed") + $": {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Screen dock has crashed") + $": {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                });
             }
             finally
             {

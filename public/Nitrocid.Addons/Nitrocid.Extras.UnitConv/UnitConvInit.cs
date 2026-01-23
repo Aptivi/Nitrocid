@@ -17,19 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 using Nitrocid.Extras.UnitConv.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using System;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reflection;
 using UnitsNet;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
+using Terminaux.Shell.Shells;
 using Nitrocid.Extras.UnitConv.Tools;
 using Nitrocid.Shell.Homepage;
 
@@ -41,14 +37,14 @@ namespace Nitrocid.Extras.UnitConv
         [
             new CommandInfo("listunits", /* Localizable */ "Lists all available units",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
                         {
                             AutoCompleter = (_) => Quantity.Infos.Select((src) => src.Name).ToArray(),
                             ArgumentDescription = /* Localizable */ "Unit type"
                         }),
-                    })
+                    ])
                 ], new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable),
 
             new CommandInfo("unitconv", /* Localizable */ "Unit converter",
@@ -87,18 +83,12 @@ namespace Nitrocid.Extras.UnitConv
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasUnitConv);
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             HomepageTools.UnregisterBuiltinAction("Unit Converter");
         }
 

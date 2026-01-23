@@ -24,10 +24,10 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Threading;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Misc.Screensaver.Displays
 {
@@ -40,12 +40,13 @@ namespace Nitrocid.Misc.Screensaver.Displays
         private static readonly List<MatrixBleedState> bleedStates = [];
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "MatrixBleed";
+        public override string ScreensaverName =>
+            "MatrixBleed";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            ColorTools.LoadBackDry("0;0;0");
+            ConsoleColoring.LoadBackDry("0;0;0");
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
         }
@@ -103,7 +104,7 @@ namespace Nitrocid.Misc.Screensaver.Displays
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(Config.SaverConfig.MatrixBleedDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(Config.SaverConfig.MatrixBleedDelay);
         }
 
         /// <inheritdoc/>
@@ -134,8 +135,8 @@ namespace Nitrocid.Misc.Screensaver.Displays
             string renderedNumber = RandomDriver.Random(1).ToString();
             bleedBuffer.Append(
                 $"{CsiSequences.GenerateCsiCursorPosition(ColumnLine + 1, fallStep + 1)}" +
-                $"{foreground.VTSequenceForeground}" +
-                $"{background.VTSequenceBackground}" +
+                $"{foreground.VTSequenceForeground()}" +
+                $"{background.VTSequenceBackground()}" +
                 $"{renderedNumber}"
             );
             var PositionTuple = (ColumnLine, fallStep, renderedNumber);
@@ -152,13 +153,13 @@ namespace Nitrocid.Misc.Screensaver.Displays
             double ThresholdRed = foreground.RGB.R / (double)Config.SaverConfig.MatrixBleedMaxSteps;
             double ThresholdGreen = foreground.RGB.G / (double)Config.SaverConfig.MatrixBleedMaxSteps;
             double ThresholdBlue = foreground.RGB.B / (double)Config.SaverConfig.MatrixBleedMaxSteps;
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
 
             // Set color fade steps
             int CurrentColorRedOut = (int)Math.Round(foreground.RGB.R - ThresholdRed * fadeStep);
             int CurrentColorGreenOut = (int)Math.Round(foreground.RGB.G - ThresholdGreen * fadeStep);
             int CurrentColorBlueOut = (int)Math.Round(foreground.RGB.B - ThresholdBlue * fadeStep);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
 
             // Get the positions and write the block with new color
             var CurrentFadeColor = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
@@ -174,8 +175,8 @@ namespace Nitrocid.Misc.Screensaver.Displays
                 string renderedNumber = PositionTuple.Item3;
                 bleedBuffer.Append(
                     $"{CsiSequences.GenerateCsiCursorPosition(PositionLeft + 1, PositionTop + 1)}" +
-                    $"{CurrentFadeColor.VTSequenceForeground}" +
-                    $"{background.VTSequenceBackground}" +
+                    $"{CurrentFadeColor.VTSequenceForeground()}" +
+                    $"{background.VTSequenceBackground()}" +
                     $"{renderedNumber}"
                 );
             }

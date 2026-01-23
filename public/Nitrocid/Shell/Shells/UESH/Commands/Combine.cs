@@ -22,12 +22,10 @@ using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -50,12 +48,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             // Check all inputs
             bool AreAllInputsBinary = false;
             bool AreAllInputsText = false;
-            bool IsInputBinary = Parsing.IsBinaryFile(InputPath);
+            bool IsInputBinary = FilesystemTools.IsBinaryFile(InputPath);
 
             // Get all the input states and make them true if all binary
             List<bool> InputStates = [];
             foreach (string CombineInputPath in CombineInputPaths)
-                InputStates.Add(Parsing.IsBinaryFile(CombineInputPath));
+                InputStates.Add(FilesystemTools.IsBinaryFile(CombineInputPath));
 
             // Check to see if all inputs are either binary or text.
             AreAllInputsBinary = InputStates.Count == InputStates.Where((binary) => binary).Count();
@@ -69,15 +67,15 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             // Make a combined content array
             if (AreAllInputsText)
             {
-                var CombinedContents = Manipulation.CombineTextFiles(InputPath, CombineInputPaths);
-                Making.MakeFile(OutputPath, false);
-                Writing.WriteContents(OutputPath, CombinedContents);
+                var CombinedContents = FilesystemTools.CombineTextFiles(InputPath, CombineInputPaths);
+                FilesystemTools.MakeFile(OutputPath, false);
+                FilesystemTools.WriteContents(OutputPath, CombinedContents);
             }
             else
             {
-                var CombinedContents = Manipulation.CombineBinaryFiles(InputPath, CombineInputPaths);
-                Making.MakeFile(OutputPath, false);
-                Writing.WriteAllBytes(OutputPath, CombinedContents);
+                var CombinedContents = FilesystemTools.CombineBinaryFiles(InputPath, CombineInputPaths);
+                FilesystemTools.MakeFile(OutputPath, false);
+                FilesystemTools.WriteAllBytes(OutputPath, CombinedContents);
             }
             return 0;
         }

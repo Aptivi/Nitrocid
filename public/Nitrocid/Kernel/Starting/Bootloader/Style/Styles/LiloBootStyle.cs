@@ -26,7 +26,7 @@ using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.Languages;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 {
@@ -66,8 +66,8 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             {
                 Left = halfX,
                 Top = startY,
-                InteriorWidth = interiorWidth,
-                InteriorHeight = interiorHeight,
+                Width = interiorWidth,
+                Height = interiorHeight,
                 Color = boxBorderColor,
                 BackgroundColor = boxBorderBackgroundColor,
                 Settings = borderSettings

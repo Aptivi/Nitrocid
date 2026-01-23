@@ -19,7 +19,7 @@
 
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {

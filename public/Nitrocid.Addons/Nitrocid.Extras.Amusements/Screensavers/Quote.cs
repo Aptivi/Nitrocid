@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
+using System.Linq;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Extras.Amusements.Amusements.Quotes;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
-using System.Linq;
-using Terminaux.Colors;
-using Textify.General;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Screensavers
 {
@@ -38,7 +38,8 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         private string lastQuote = "";
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Quote";
+        public override string ScreensaverName =>
+            "Quote";
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
@@ -47,13 +48,13 @@ namespace Nitrocid.Extras.Amusements.Screensavers
             Color quoteColor = ChangeQuoteColor();
             string renderedQuote = RandomQuotes.RenderQuote();
             string[] quoteSplit = renderedQuote.SplitNewLines();
-            int maxLength = quoteSplit.Max((quote) => quote.Length);
+            int maxLength = quoteSplit.Max(ConsoleChar.EstimateCellWidth);
             int halfConsoleY = ConsoleWrapper.WindowHeight / 2 - quoteSplit.Length / 2;
             int quotePosX = ConsoleWrapper.WindowWidth / 2 - maxLength / 2;
 
             // Clear old quote
-            string[] oldQuoteSplit = lastQuote.SplitNewLines().Select((str) => new string(' ', str.Length)).ToArray();
-            int maxOldLength = oldQuoteSplit.Max((quote) => quote.Length);
+            string[] oldQuoteSplit = [.. lastQuote.SplitNewLines().Select((str) => new string(' ', ConsoleChar.EstimateCellWidth(str)))];
+            int maxOldLength = oldQuoteSplit.Max(ConsoleChar.EstimateCellWidth);
             int oldHalfConsoleY = ConsoleWrapper.WindowHeight / 2 - oldQuoteSplit.Length / 2;
             int oldQuotePosX = ConsoleWrapper.WindowWidth / 2 - maxOldLength / 2;
             for (int i = 0; i < oldQuoteSplit.Length; i++)
@@ -73,7 +74,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
 
             // Delay
             lastQuote = renderedQuote;
-            ThreadManager.SleepNoBlock(AmusementsInit.SaversConfig.QuoteDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(AmusementsInit.SaversConfig.QuoteDelay);
         }
 
         /// <summary>

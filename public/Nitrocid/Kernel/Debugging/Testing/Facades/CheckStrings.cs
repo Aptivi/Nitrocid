@@ -19,8 +19,8 @@
 
 using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
+using Nitrocid.Files;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -30,11 +30,11 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Languages;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => false;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             string TextPath = InputTools.ReadLine(Translate.DoTranslation("Write a translatable string list file path to check:") + " ");
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
-            var Texts = Reading.ReadContents(TextPath);
+            var Texts = FilesystemTools.ReadContents(TextPath);
             bool hasMissingEntries = false;
             foreach (string Text in Texts)
             {

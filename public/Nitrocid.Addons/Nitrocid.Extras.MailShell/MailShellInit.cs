@@ -17,24 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using MailKit;
-using MimeKit;
 using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Extras.MailShell.Settings;
-using Nitrocid.Extras.MailShell.Tools.Directory;
-using Nitrocid.Extras.MailShell.Tools.Transfer;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Languages;
-using Nitrocid.Modifications;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using System;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reflection;
 
 namespace Nitrocid.Extras.MailShell
 {
@@ -68,40 +59,14 @@ namespace Nitrocid.Extras.MailShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMailShell);
 
         internal static MailConfig MailConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(MailConfig)) ? (MailConfig)Config.baseConfigurations[nameof(MailConfig)] : new MailConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(MailDirectory.CreateMailDirectory), new Action<string>(MailDirectory.CreateMailDirectory) },
-            { nameof(MailDirectory.DeleteMailDirectory), new Action<string>(MailDirectory.DeleteMailDirectory) },
-            { nameof(MailDirectory.RenameMailDirectory), new Action<string, string>(MailDirectory.RenameMailDirectory) },
-            { nameof(MailDirectory.OpenFolder), new Func<string, FolderAccess, MailFolder>(MailDirectory.OpenFolder) },
-            { nameof(MailDirectory.MailListDirectories), new Func<string>(MailDirectory.MailListDirectories) },
-            { nameof(MailManager.MailListMessages), new Action<int>(MailManager.MailListMessages) },
-            { nameof(MailManager.MailListMessages) + "2", new Action<int, int>(MailManager.MailListMessages) },
-            { nameof(MailManager.MailRemoveMessage), new Func<int, bool>(MailManager.MailRemoveMessage) },
-            { nameof(MailManager.MailRemoveAllBySender), new Func<string, bool>(MailManager.MailRemoveAllBySender) },
-            { nameof(MailManager.MailMoveAllBySender), new Func<string, string, bool>(MailManager.MailMoveAllBySender) },
-            { nameof(MailTransfer.DecryptMessage), new Func<MimeMessage, Dictionary<string, MimeEntity>>(MailTransfer.DecryptMessage) },
-            { nameof(MailTransfer.MailSendMessage), new Func<string, string, string, bool>(MailTransfer.MailSendMessage) },
-            { nameof(MailTransfer.MailSendMessage) + "2", new Func<string, string, MimeEntity, bool>(MailTransfer.MailSendMessage) },
-            { nameof(MailTransfer.MailSendEncryptedMessage), new Func<string, string, MimeEntity, bool>(MailTransfer.MailSendEncryptedMessage) },
-            { nameof(MailTransfer.PopulateMessages), new Action(MailTransfer.PopulateMessages) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => new(new Dictionary<string, PropertyInfo>()
-        {
-            { nameof(MailManager.ShowPreview), typeof(MailManager).GetProperty(nameof(MailManager.ShowPreview)) ?? throw new Exception(Translate.DoTranslation("There is no property info for") + $" {nameof(MailManager.ShowPreview)}") },
-        });
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(MailConfig)) ? (MailConfig)Config.baseConfigurations[nameof(MailConfig)] : Config.GetFallbackKernelConfig<MailConfig>();
 
         void IAddon.FinalizeAddon()
         {
             var config = new MailConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("MailShell", new MailShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            ShellManager.RegisterShell("MailShell", new MailShellInfo());
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -109,8 +74,8 @@ namespace Nitrocid.Extras.MailShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterAddonShell("MailShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            ShellManager.UnregisterShell("MailShell");
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(MailConfig));
         }
     }

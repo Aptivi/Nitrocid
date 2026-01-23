@@ -1,0 +1,14 @@
+[
+    {
+        "Name": "Welcome",
+        "Desc": "Shows a big Welcome word written in the middle of the console; similar to the welcome mats",
+        "Keys": [
+            {
+                "Name": "Show progress",
+                "Type": "SBoolean",
+                "Variable": "WelcomeShowProgress",
+                "Description": "Show progress or not"
+            }
+        ]
+    }
+]

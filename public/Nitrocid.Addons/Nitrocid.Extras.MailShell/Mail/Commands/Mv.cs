@@ -23,7 +23,7 @@ using Nitrocid.Extras.MailShell.Tools.Directory;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
 
@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Message number is numeric? {0}", TextTools.IsStringNumeric(parameters.ArgumentsList[0]));
+            DebugWriter.WriteDebug(DebugLevel.I, "Message number is numeric? {0}", vars: [TextTools.IsStringNumeric(parameters.ArgumentsList[0])]);
             if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {
                 MailManager.MailMoveMessage(Convert.ToInt32(parameters.ArgumentsList[0]), parameters.ArgumentsList[1]);

@@ -29,8 +29,8 @@ using Nitrocid.Misc.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors.Transformation;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -99,18 +99,18 @@ namespace Nitrocid.SplashPacks.Splashes
             string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - 5);
 
             // Percentage
-            PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
+            PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground());
+            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground());
             PresetStringBuilder.AppendFormat(" {0:000}% ", Progress);
 
             // Transition
-            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceForeground);
-            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground);
+            PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceForeground());
+            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground());
             PresetStringBuilder.AppendFormat("{0}", TransitionChar);
 
             // Progress text
-            PresetStringBuilder.Append(SecondColorSegmentForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground);
+            PresetStringBuilder.Append(SecondColorSegmentForeground.VTSequenceForeground());
+            PresetStringBuilder.Append(SecondColorSegmentBackground.VTSequenceBackground());
             if (ProgressErrored)
                 PresetStringBuilder.AppendFormat(" [X]");
             if (ProgressWarning)
@@ -118,13 +118,13 @@ namespace Nitrocid.SplashPacks.Splashes
             PresetStringBuilder.AppendFormat(" {0} ", RenderedText);
 
             // Transition
-            PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
+            PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground());
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground());
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
 
             // Display the text and percentage
             builder.Append(
-                KernelColorTools.GetColor(KernelColorType.Progress).VTSequenceForeground +
+                KernelColorTools.GetColor(KernelColorType.Progress).VTSequenceForeground() +
                 TextWriterWhereColor.RenderWhere(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, KernelColorType.Progress, Vars) +
                 ConsoleClearing.GetClearLineToRightSequence()
             );
@@ -136,13 +136,12 @@ namespace Nitrocid.SplashPacks.Splashes
                 KernelColorTools.GetColor(KernelColorType.Progress);
             var progress = new SimpleProgress(Progress, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 ProgressActiveForegroundColor = progressColor,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor),
                 ProgressBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
             };
-            builder.Append(ContainerTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 2)));
+            builder.Append(RendererTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 2)));
             return builder.ToString();
         }
 

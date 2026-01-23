@@ -26,7 +26,7 @@ using Nitrocid.Languages;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -49,9 +49,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Write loading
             string word = Translate.DoTranslation("Loading...");
             var figFont = FigletTools.GetFigletFont("small");
+            int figHeight = FigletTools.GetFigletHeight(word, figFont) / 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             var wordText = new AlignedFigletText(figFont)
             {
                 Text = word,
+                Top = consoleY,
                 ForegroundColor = ConsoleColors.Green,
                 Settings = new()
                 {
@@ -71,14 +74,22 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int steps = RandomDriver.Random(10, 100);
             for (int s = 0; s < steps; s++)
             {
+                if (ConsoleResizeHandler.WasResized(false))
+                    break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 ConsoleWrapper.Clear();
 
                 // Write word
                 string word = WordManager.GetRandomWord();
                 var figFont = FigletTools.GetFigletFont("small");
+                int figHeight = FigletTools.GetFigletHeight(word, figFont) / 2;
+                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                 var wordText = new AlignedFigletText(figFont)
                 {
                     Text = word,
+                    Top = consoleY,
                     ForegroundColor = hasherColor,
                     Settings = new()
                     {

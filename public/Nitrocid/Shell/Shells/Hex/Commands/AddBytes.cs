@@ -24,7 +24,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files.Editors.HexEdit;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.Hex.Commands
 {

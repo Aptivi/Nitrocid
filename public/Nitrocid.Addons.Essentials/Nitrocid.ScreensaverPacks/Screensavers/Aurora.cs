@@ -86,7 +86,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int blue = colorBand.Item3;
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Aurora drawing... {0}, {1}, {2}", vars: [red, green, blue]);
                 Color storage = new(red, green, blue);
-                builder.Append($"{storage.VTSequenceBackground}{new string(' ', ConsoleWrapper.WindowWidth)}");
+                builder.Append($"{storage.VTSequenceBackground()}{new string(' ', ConsoleWrapper.WindowWidth)}");
             }
             if (!ConsoleResizeHandler.WasResized(false))
                 TextWriterRaw.WriteRaw(builder.ToString());

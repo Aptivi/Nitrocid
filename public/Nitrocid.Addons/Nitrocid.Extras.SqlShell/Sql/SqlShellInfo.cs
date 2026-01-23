@@ -18,40 +18,29 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Shell.ShellBase.Arguments;
 using Nitrocid.Extras.SqlShell.Sql.Presets;
 using Nitrocid.Extras.SqlShell.Sql.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
 
 namespace Nitrocid.Extras.SqlShell.Sql
 {
     /// <summary>
     /// Common Sql shell class
     /// </summary>
-    internal class SqlShellInfo : BaseShellInfo, IShellInfo
+    internal class SqlShellInfo : BaseShellInfo<SqlShell>, IShellInfo
     {
-
         /// <summary>
         /// Sql commands
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("cmd", /* Localizable */ "Executes an SQL query",
-                [
-                    new CommandArgumentInfo()
-                ], new CmdCommand()),
+            new CommandInfo("cmd", /* Localizable */ "Executes an SQL query", new CmdCommand()),
 
-            new CommandInfo("dbinfo", /* Localizable */ "Database info",
-                [
-                    new CommandArgumentInfo()
-                ], new DbInfoCommand()),
+            new CommandInfo("dbinfo", /* Localizable */ "Database info", new DbInfoCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the SQL file in the interactive hex editor TUI",
-                [
-                    new CommandArgumentInfo()
-                ], new TuiCommand()),
+            new CommandInfo("tui", /* Localizable */ "Opens the SQL file in the interactive hex editor TUI", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
@@ -64,8 +53,5 @@ namespace Nitrocid.Extras.SqlShell.Sql
             { "PowerLineBG2", new SqlPowerLineBG2Preset() },
             { "PowerLineBG3", new SqlPowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new SqlShell();
-
     }
 }

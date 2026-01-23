@@ -24,7 +24,6 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Colors.Transformation;
 using Nitrocid.Languages;
 using System.Globalization;
 using Nitrocid.Kernel.Time;
@@ -64,8 +63,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
             }
             if (!ConsoleResizeHandler.WasResized(false))
             {
-                var cultures = CultureManager.GetCultureNamesFromCurrentLang();
-                var selectedCustomCulture = cultures.Contains(CalendarInit.CalendarConfig.CalendarCultureName) ? new CultureInfo(CalendarInit.CalendarConfig.CalendarCultureName) : CultureManager.CurrentCult;
+                var cultures = CultureManager.GetCulturesDictionary();
                 var calendar = new FullCalendar()
                 {
                     HeaderColor = KernelColorTools.GetColor(KernelColorType.TuiForeground),
@@ -78,7 +76,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Screensavers
                     Top = ConsoleWrapper.WindowHeight / 2 - FullCalendar.calendarHeight / 2 - 1,
                     Culture =
                         CalendarInit.CalendarConfig.CalendarUseSystemCulture ?
-                        CultureManager.CurrentCult : selectedCustomCulture,
+                        CultureManager.CurrentCulture :
+                        cultures.TryGetValue(CalendarInit.CalendarConfig.CalendarCultureName, out CultureInfo? value) ? value :
+                        CultureManager.CurrentCulture,
                 };
                 TextWriterRaw.WriteRaw(calendar.Render());
             }

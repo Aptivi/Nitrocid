@@ -19,12 +19,11 @@
 
 using System;
 using System.Net.NetworkInformation;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -50,7 +49,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string projectedTimes = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-times");
             if (!string.IsNullOrEmpty(projectedTimes) && TextTools.IsStringNumeric(projectedTimes))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Projected times {0} is numeric.", projectedTimes);
+                DebugWriter.WriteDebug(DebugLevel.I, "Projected times {0} is numeric.", vars: [projectedTimes]);
                 PingTimes = Convert.ToInt32(projectedTimes);
             }
 
@@ -59,7 +58,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (!string.IsNullOrEmpty(PingedAddress))
                 {
-                    SeparatorWriterColor.WriteSeparator(PingedAddress, true);
+                    SeparatorWriterColor.WriteSeparatorColor(PingedAddress, KernelColorTools.GetColor(KernelColorType.ListTitle));
                     for (int CurrentTime = 1; CurrentTime <= PingTimes; CurrentTime++)
                     {
                         try

@@ -25,7 +25,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     internal class DismissNotifications : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Dismisses all sent notifications");
-        public override void Run(params string[] args)
+        public override void Run()
         {
             for (int i = NotificationManager.NotifRecents.Count - 1; i >= 0; i--)
                 NotificationManager.NotifDismiss(i);

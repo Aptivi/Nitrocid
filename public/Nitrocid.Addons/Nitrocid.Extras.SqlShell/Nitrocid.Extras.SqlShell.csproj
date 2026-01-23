@@ -13,7 +13,6 @@
     <Description>Nitrocid KS Extras - SQL Shell</Description>
     <AssemblyTitle>Nitrocid KS Extras - SQL Shell</AssemblyTitle>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <!-- Extras.SqlShell addon General Information End -->
 
@@ -36,9 +35,5 @@
     <EmbeddedResource Include="Resources\*" />
   </ItemGroup>
   <!-- Extras.SqlShell addon Platform Information End -->
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.1" />
-  </ItemGroup>
 
 </Project>

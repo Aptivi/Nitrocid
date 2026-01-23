@@ -27,7 +27,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Enables the debugger");
         public override TestSection TestSection => TestSection.Kernel;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             TextWriterColor.Write(Translate.DoTranslation("Previous value") + ": {0}", KernelEntry.DebugMode);
             if (!KernelEntry.DebugMode)

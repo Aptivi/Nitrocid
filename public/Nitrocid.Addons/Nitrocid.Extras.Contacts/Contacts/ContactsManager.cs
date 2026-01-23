@@ -24,11 +24,8 @@ using System;
 using System.Linq;
 using System.IO;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
-using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Misc.Text.Probers.Regexp;
@@ -36,6 +33,7 @@ using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Contacts.Contacts.Interactives;
 using VisualCard.Extras.Converters;
 using VisualCard.Parts.Enums;
+using Nitrocid.Files;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {
@@ -56,15 +54,15 @@ namespace Nitrocid.Extras.Contacts.Contacts
         {
             // Get the contact files
             string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
-            if (!Checking.FolderExists(contactsPath))
-                Making.MakeDirectory(contactsPath);
-            var contactFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
-            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} contacts.", contactFiles.Length);
+            if (!FilesystemTools.FolderExists(contactsPath))
+                FilesystemTools.MakeDirectory(contactsPath);
+            var contactFiles = FilesystemTools.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} contacts.", vars: [contactFiles.Length]);
 
             // Now, enumerate through each contact file
             foreach (var contact in contactFiles)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Installing contact {0}...", contact);
+                DebugWriter.WriteDebug(DebugLevel.I, "Installing contact {0}...", vars: [contact]);
                 InstallContacts(contact, false);
             }
             return [.. cards];
@@ -77,23 +75,23 @@ namespace Nitrocid.Extras.Contacts.Contacts
         {
             // Get the contact files
             string contactsImportPath = PathsManagement.GetKernelPath(KernelPathType.ContactsImport);
-            if (!Checking.FolderExists(contactsImportPath))
-                Making.MakeDirectory(contactsImportPath);
-            var contactFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.ContactsImport) + "/*.vcf");
-            var androidContactFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.ContactsImport) + "/*.db");
-            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} contacts and {1} Android databases.", contactFiles.Length, androidContactFiles.Length);
+            if (!FilesystemTools.FolderExists(contactsImportPath))
+                FilesystemTools.MakeDirectory(contactsImportPath);
+            var contactFiles = FilesystemTools.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.ContactsImport) + "/*.vcf");
+            var androidContactFiles = FilesystemTools.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.ContactsImport) + "/*.db");
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} contacts and {1} Android databases.", vars: [contactFiles.Length, androidContactFiles.Length]);
 
             // Now, enumerate through each contact file
             foreach (var contact in contactFiles)
             {
                 try
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Installing contact {0}...", contact);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Installing contact {0}...", vars: [contact]);
                     InstallContacts(contact);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Contact installation {0} failed. {1}", contact, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Contact installation {0} failed. {1}", vars: [contact, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
@@ -103,12 +101,12 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 try
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Installing contact from Android contacts database {0}...", contact);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Installing contact from Android contacts database {0}...", vars: [contact]);
                     InstallContacts(contact);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Contact installation from Android contacts database {0} failed. {1}", contact, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Contact installation from Android contacts database {0} failed. {1}", vars: [contact, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
@@ -122,12 +120,12 @@ namespace Nitrocid.Extras.Contacts.Contacts
         public static void InstallContacts(string pathToContactFile, bool saveToPath = true)
         {
             // Check to see if we're dealing with the non-existent contacts file
-            if (!Checking.FileExists(pathToContactFile))
+            if (!FilesystemTools.FileExists(pathToContactFile))
                 throw new KernelException(KernelExceptionType.Contacts, pathToContactFile);
 
             // Check to see if we're given the Android contacts2.db file
             bool isAndroidContactDb = Path.GetFileName(pathToContactFile) == "contacts2.db";
-            DebugWriter.WriteDebug(DebugLevel.I, "Contact file came from Android's contact storage? {0}", isAndroidContactDb);
+            DebugWriter.WriteDebug(DebugLevel.I, "Contact file came from Android's contact storage? {0}", vars: [isAndroidContactDb]);
 
             // Now, ensure that the parser is able to return the base parsers required to parse contacts
             var parsers =
@@ -163,9 +161,9 @@ namespace Nitrocid.Extras.Contacts.Contacts
             try
             {
                 string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
-                if (!Checking.FolderExists(contactsPath))
-                    Making.MakeDirectory(contactsPath);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got {0} cards.", cards.Length);
+                if (!FilesystemTools.FolderExists(contactsPath))
+                    FilesystemTools.MakeDirectory(contactsPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got {0} cards.", vars: [cards.Length]);
                 if (cards is null || cards.Length == 0)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "There are no added cards. Marking contact file as invalid...");
@@ -175,14 +173,14 @@ namespace Nitrocid.Extras.Contacts.Contacts
                 // Debug.
                 foreach (var vcard in cards)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "VCard version: {0}", vcard.CardVersion);
+                    DebugWriter.WriteDebug(DebugLevel.I, "VCard version: {0}", vars: [vcard.CardVersion]);
                     DebugWriter.WriteDebug(DebugLevel.D, "Contents:");
-                    DebugWriter.WriteDebugPrivacy(DebugLevel.D, "{0}", [0], vcard.ToString());
+                    DebugWriter.WriteDebugPrivacy(DebugLevel.D, "{0}", [0], vars: [vcard.ToString()]);
                     if (!ContactsManager.cards.Contains(vcard))
                         ContactsManager.cards.Add(vcard);
-                    DebugWriter.WriteDebugPrivacy(DebugLevel.I, "Parser successfully processed contact {0}.", [0], vcard.GetString(CardStringsEnum.FullName)[0].Value);
+                    DebugWriter.WriteDebugPrivacy(DebugLevel.I, "Parser successfully processed contact {0}.", [0], vars: [vcard.GetString(CardStringsEnum.FullName)[0].Value]);
                 }
-                DebugWriter.WriteDebug(DebugLevel.I, "Cards: {0}", cards.Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "Cards: {0}", vars: [cards.Length]);
 
                 // Save the contacts to the contacts path if possible
                 if (saveToPath)
@@ -191,15 +189,15 @@ namespace Nitrocid.Extras.Contacts.Contacts
                     {
                         Card card = cards[i];
                         string path = contactsPath + $"/contact-{Encryption.GetEncryptedString(card.SaveToString(), "SHA256")}.vcf";
-                        DebugWriter.WriteDebug(DebugLevel.I, "Saving contact to {0}...", path);
-                        if (!Checking.FileExists(path))
+                        DebugWriter.WriteDebug(DebugLevel.I, "Saving contact to {0}...", vars: [path]);
+                        if (!FilesystemTools.FileExists(path))
                             card.SaveTo(path);
                     }
                 }
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse contacts: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse contacts: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Failed to parse contacts. See the error details for more information."), ex);
             }
@@ -216,25 +214,25 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 // Check to see if we're dealing with the non-existent index file
                 string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
-                if (!Checking.FolderExists(contactsPath))
-                    Making.MakeDirectory(contactsPath);
+                if (!FilesystemTools.FolderExists(contactsPath))
+                    FilesystemTools.MakeDirectory(contactsPath);
                 if (contactIndex < 0 || contactIndex >= cards.Count)
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Contact index is out of range. Maximum index is {0} while provided index is {1}."), cards.Count - 1, contactIndex);
 
                 // Now, remove the contact
-                DebugWriter.WriteDebug(DebugLevel.I, "Removing contact {0}... Cards: {1}", contactIndex, cards.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing contact {0}... Cards: {1}", vars: [contactIndex, cards.Count]);
                 string contactPath = contactsPath + $"/contact-{Encryption.GetEncryptedString(cards[contactIndex].SaveToString(), "SHA256")}.vcf";
                 cards.RemoveAt(contactIndex);
 
                 // Now, remove the contacts from the contacts path if possible
-                DebugWriter.WriteDebug(DebugLevel.I, "Removing contact {0} from filesystem since we've already removed contact {1} from the list, which caused the cards count to go to {2}... However, removeFromPath, {3}, judges whether to really remove this contact file or not.", contactPath, contactIndex, cards.Count, removeFromPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing contact {0} from filesystem since we've already removed contact {1} from the list, which caused the cards count to go to {2}... However, removeFromPath, {3}, judges whether to really remove this contact file or not.", vars: [contactPath, contactIndex, cards.Count, removeFromPath]);
                 if (removeFromPath)
-                    if (Checking.FileExists(contactPath))
-                        Removing.RemoveFile(contactPath);
+                    if (FilesystemTools.FileExists(contactPath))
+                        FilesystemTools.RemoveFile(contactPath);
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove contact {0}: {1}", contactIndex, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove contact {0}: {1}", vars: [contactIndex, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Contacts, contactIndex.ToString(), ex);
             }
@@ -250,30 +248,30 @@ namespace Nitrocid.Extras.Contacts.Contacts
             {
                 // Check to see if we're dealing with the non-existent index file
                 string contactsPath = PathsManagement.GetKernelPath(KernelPathType.Contacts);
-                if (!Checking.FolderExists(contactsPath))
-                    Making.MakeDirectory(contactsPath);
+                if (!FilesystemTools.FolderExists(contactsPath))
+                    FilesystemTools.MakeDirectory(contactsPath);
                 if (cards.Count <= 0)
                     return;
 
                 // Now, remove the contacts
-                DebugWriter.WriteDebug(DebugLevel.I, "Removing contacts... Cards: {0}", cards.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing contacts... Cards: {0}", vars: [cards.Count]);
                 cards.Clear();
 
                 // Now, remove the contacts from the contacts path if possible
-                DebugWriter.WriteDebug(DebugLevel.I, "Removing contacts from filesystem since we've already removed contacts from the list, which caused the cards count to go to 0... However, removeFromPath, {0}, judges whether to really remove this contact file or not.", removeFromPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing contacts from filesystem since we've already removed contacts from the list, which caused the cards count to go to 0... However, removeFromPath, {0}, judges whether to really remove this contact file or not.", vars: [removeFromPath]);
                 if (removeFromPath)
                 {
-                    if (Checking.FolderExists(contactsPath))
+                    if (FilesystemTools.FolderExists(contactsPath))
                     {
-                        var contactFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
+                        var contactFiles = FilesystemTools.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
                         foreach (var contactFile in contactFiles)
-                            Removing.RemoveFile(contactFile);
+                            FilesystemTools.RemoveFile(contactFile);
                     }
                 }
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove contacts: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to remove contacts: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Contacts, ex);
             }
@@ -298,7 +296,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get contact {0}: {1}", contactIndex, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get contact {0}: {1}", vars: [contactIndex, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Contacts, contactIndex.ToString(), ex);
             }
@@ -350,7 +348,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to search contact for {0}: {1}", expression, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to search contact for {0}: {1}", vars: [expression, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Contacts, expression, ex);
             }
@@ -402,7 +400,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to search contact for {0}: {1}", expression, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to search contact for {0}: {1}", vars: [expression, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.Contacts, expression, ex);
             }
@@ -421,6 +419,7 @@ namespace Nitrocid.Extras.Contacts.Contacts
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Search Back"), ConsoleKey.F8, (_, _, _, _) => tui.SearchPrevious()));
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Raw Info"), ConsoleKey.F9, (_, index, _, _) => tui.ShowContactRawInfo(index)));
             tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Import From MeCard"), ConsoleKey.F10, (_, _, _, _) => tui.ImportContactFromMeCard(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<Card>(Translate.DoTranslation("Edit..."), ConsoleKey.F11, (card, _, _, _) => tui.EditName(card), true));
             InteractiveTuiTools.OpenInteractiveTui(tui);
         }
     }

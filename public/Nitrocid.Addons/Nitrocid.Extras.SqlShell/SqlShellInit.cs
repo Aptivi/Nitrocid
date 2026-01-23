@@ -17,18 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Microsoft.Data.Sqlite;
 using Nitrocid.Extras.SqlShell.Settings;
 using Nitrocid.Extras.SqlShell.Sql;
-using Nitrocid.Extras.SqlShell.Tools;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Modifications;
-using Nitrocid.Shell.ShellBase.Shells;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.SqlShell
 {
@@ -38,25 +31,13 @@ namespace Nitrocid.Extras.SqlShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSqlShell);
 
         internal static SqlConfig SqlConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(SqlConfig)) ? (SqlConfig)Config.baseConfigurations[nameof(SqlConfig)] : new SqlConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(SqlShellCommon.IsSql), new Func<string, bool>(SqlShellCommon.IsSql) },
-            { nameof(SqlEditTools.SqlEdit_OpenSqlFile), new Func<string, bool>(SqlEditTools.SqlEdit_OpenSqlFile) },
-            { nameof(SqlEditTools.SqlEdit_CheckSqlFile), new Func<string, bool>(SqlEditTools.SqlEdit_CheckSqlFile) },
-            { nameof(SqlEditTools.SqlEdit_SqlCommand), new Func<string, string[], SqliteParameter[], bool>((query, replies, parameters) => SqlEditTools.SqlEdit_SqlCommand(query, ref replies, parameters)) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(SqlConfig)) ? (SqlConfig)Config.baseConfigurations[nameof(SqlConfig)] : Config.GetFallbackKernelConfig<SqlConfig>();
 
         void IAddon.FinalizeAddon()
         {
             var config = new SqlConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("SqlShell", new SqlShellInfo());
+            ShellManager.RegisterShell("SqlShell", new SqlShellInfo());
         }
 
         void IAddon.StartAddon()
@@ -64,7 +45,7 @@ namespace Nitrocid.Extras.SqlShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterAddonShell("SqlShell");
+            ShellManager.UnregisterShell("SqlShell");
             ConfigTools.UnregisterBaseSetting(nameof(SqlConfig));
         }
     }

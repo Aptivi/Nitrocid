@@ -22,11 +22,9 @@ using BassBoom.Basolia.Format;
 using BassBoom.Basolia.Playback;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 using System.IO;
 using System.Threading;
@@ -50,7 +48,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
             string path = parameters.ArgumentsList[0];
             var media = new BasoliaMedia();
             path = FilesystemTools.NeutralizePath(path);
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
             {
                 TextWriters.Write(Translate.DoTranslation("Can't play sound because the file is not found."), KernelColorType.Error);
                 return 29;
@@ -96,6 +94,8 @@ namespace Nitrocid.Extras.BassBoom.Commands
                         Translate.DoTranslation("Unknown Genre");
                     var totalSpan = AudioInfoTools.GetDurationSpanFromSamples(media, total);
                     string duration = totalSpan.ToString();
+
+                    // Write the entries
                     TextWriters.WriteListEntry(Translate.DoTranslation("Name"), musicName);
                     TextWriters.WriteListEntry(Translate.DoTranslation("Artist"), musicArtist);
                     TextWriters.WriteListEntry(Translate.DoTranslation("Genre"), musicGenre);

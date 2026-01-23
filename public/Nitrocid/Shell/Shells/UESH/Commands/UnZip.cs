@@ -21,9 +21,8 @@ using System;
 using System.IO;
 using System.IO.Compression;
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -53,7 +52,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (parameters.ArgumentsList.Length == 1)
             {
                 string ZipArchiveName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-                ZipFile.ExtractToDirectory(ZipArchiveName, CurrentDirectory.CurrentDir);
+                ZipFile.ExtractToDirectory(ZipArchiveName, FilesystemTools.CurrentDir);
             }
             else if (parameters.ArgumentsList.Length > 1)
             {

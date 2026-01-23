@@ -19,8 +19,7 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -100,7 +99,7 @@ namespace Nitrocid.Users.Groups
             if (userGroups.Contains(groupName))
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("User has already joined the group!"));
             userGroups.Add(groupName);
-            DebugWriter.WriteDebug(DebugLevel.I, "Added user {0} to group {1}.", user, groupName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Added user {0} to group {1}.", vars: [user, groupName]);
             UserManagement.Users[userIndex].Groups = [.. userGroups];
             UserManagement.SaveUsers();
         }
@@ -127,7 +126,7 @@ namespace Nitrocid.Users.Groups
             if (!userGroups.Contains(groupName))
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("User has already left the group!"));
             userGroups.Remove(groupName);
-            DebugWriter.WriteDebug(DebugLevel.I, "Removed user {0} from group {1}.", user, groupName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Removed user {0} from group {1}.", vars: [user, groupName]);
             UserManagement.Users[userIndex].Groups = [.. userGroups];
             UserManagement.SaveUsers();
         }
@@ -156,7 +155,7 @@ namespace Nitrocid.Users.Groups
             var userInstance = UserManagement.GetUser(user) ??
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't get user info for") + $" {user}");
             string[] groupNames = userInstance.Groups;
-            DebugWriter.WriteDebug(DebugLevel.I, "User {0} in group {1}? Refer to: [{2}]", user, groupName, string.Join(", ", groupNames));
+            DebugWriter.WriteDebug(DebugLevel.I, "User {0} in group {1}? Refer to: [{2}]", vars: [user, groupName, string.Join(", ", groupNames)]);
             return groupNames.Length > 0 && groupNames.Any((group) => group == groupName);
         }
 
@@ -175,7 +174,7 @@ namespace Nitrocid.Users.Groups
             var userInstance = UserManagement.GetUser(user) ??
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't get user info for") + $" {user}");
             string[] groupNames = userInstance.Groups;
-            DebugWriter.WriteDebug(DebugLevel.I, "User {0}'s groups: [{1}]", user, string.Join(", ", groupNames));
+            DebugWriter.WriteDebug(DebugLevel.I, "User {0}'s groups: [{1}]", vars: [user, string.Join(", ", groupNames)]);
             return AvailableGroups.Where((group) => groupNames.Contains(group.GroupName)).ToArray();
         }
 
@@ -210,11 +209,11 @@ namespace Nitrocid.Users.Groups
         internal static void InitializeGroups()
         {
             // First, check to see if we have the groups file
-            if (!Checking.FileExists(PathsManagement.UserGroupsPath))
+            if (!FilesystemTools.FileExists(PathsManagement.UserGroupsPath))
                 SaveGroups();
 
             // Get the group information instances to the user groups path
-            string groupInfosJson = Reading.ReadContentsText(PathsManagement.UserGroupsPath);
+            string groupInfosJson = FilesystemTools.ReadContentsText(PathsManagement.UserGroupsPath);
             JArray? groupInfoArrays = (JArray?)JsonConvert.DeserializeObject(groupInfosJson) ??
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't deserialize group info array"));
             List<GroupInfo> groups = [];
@@ -231,7 +230,7 @@ namespace Nitrocid.Users.Groups
         {
             // Make a JSON file to save all group information files
             string groupInfosSerialized = JsonConvert.SerializeObject(AvailableGroups.ToArray(), Formatting.Indented);
-            Writing.WriteContentsText(PathsManagement.UserGroupsPath, groupInfosSerialized);
+            FilesystemTools.WriteContentsText(PathsManagement.UserGroupsPath, groupInfosSerialized);
         }
 
         internal static void ChangePermissionInternal(string groupName, string[] newPermissions)

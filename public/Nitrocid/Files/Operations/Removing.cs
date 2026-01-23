@@ -26,12 +26,12 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Security.Privacy.Consents;
 using Nitrocid.Kernel.Configuration;
 
-namespace Nitrocid.Files.Operations
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Removing file operations module
     /// </summary>
-    public static class Removing
+    public static partial class FilesystemTools
     {
 
         /// <summary>

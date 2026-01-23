@@ -20,23 +20,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Textify.Data.Figlet;
+using Nitrocid.Drivers;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Screensaver;
 using Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations;
 using Nitrocid.ScreensaverPacks.Animations.Glitch;
-using Terminaux.Colors;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Drivers;
-using Nitrocid.Misc.Screensaver;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Time.Renderers;
-using Nitrocid.Kernel.Time;
-using Nitrocid.Drivers.RNG;
-using Nitrocid.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Textify.Data.Figlet;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -54,7 +55,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(0, 0, 0));
+            ConsoleColoring.LoadBackDry(new Color(0, 0, 0));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
@@ -75,6 +76,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 switch (step)
                 {
@@ -95,6 +98,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Add the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdR);
@@ -104,9 +109,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
                             var figFont = FigletTools.GetFigletFont("banner");
+                            int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(figFont)
                             {
                                 Text = "X",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = black,
                                 Settings = new()
@@ -117,7 +125,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                     case 2:
@@ -126,15 +134,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Get the final color by using the odd/even comparison
                             var finalCol = currentPulse % 2 == 0 ? green : darkGreen;
 
                             // Pulse the X character, alternating between darkGreen and Green colors
                             var figFont = FigletTools.GetFigletFont("banner");
+                            int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(figFont)
                             {
                                 Text = "X",
+                                Top = consoleY,
                                 ForegroundColor = finalCol,
                                 BackgroundColor = black,
                                 Settings = new()
@@ -145,7 +158,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                     case 3:
@@ -161,6 +174,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(darkGreen.RGB.R - thresholdR * currentStep);
@@ -170,9 +185,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
                             var figFont = FigletTools.GetFigletFont("banner");
+                            int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(figFont)
                             {
                                 Text = "X",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = black,
                                 Settings = new()
@@ -183,7 +201,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
 
                         // Print the 2018s
@@ -193,14 +211,24 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         ConsoleWrapper.CursorTop = 0;
                         while (!printDone)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             // Keep writing 2018 until it reaches the end
                             for (int currentIdx = 0; currentIdx <= sample.Length - 1 && !printDone; currentIdx++)
                             {
+                                if (ConsoleResizeHandler.WasResized(false))
+                                    break;
+                                if (ScreensaverManager.Bailing)
+                                    return;
+
                                 // Write the current character
                                 TextWriterColor.WriteColorBack(sample[currentIdx].ToString(), false, darkGreen, black);
 
                                 // Sleep
-                                ScreensaverManager.Delay(10);
+                                ScreensaverManager.Delay(10, true);
 
                                 // Check to see if we're at the end
                                 if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - 1)
@@ -250,8 +278,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             ForegroundColor = green,
                             BackgroundColor = black,
                         };
-                        TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(figlet, new(s4consoleX, s4consoleY)));
-                        ScreensaverManager.Delay(5000);
+                        TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(figlet, new(s4consoleX, s4consoleY)));
+                        ScreensaverManager.Delay(5000, true);
                         break;
                     case 5:
                         // Fade the console out
@@ -267,6 +295,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(darkGreen.RGB.R - thresholdR * currentStep);
@@ -275,10 +305,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ColorTools.LoadBackDry(col);
+                            ConsoleColoring.LoadBackDry(col);
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                     case 6:
@@ -303,6 +333,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int currentMove = 0;
                         while (!selectedFirst)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool movingTop = DriverHandler.CurrentRandomDriverLocal.RandomChance(30);
 
                             // Make a move
@@ -336,19 +371,24 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Render the selection
                             for (int i = 0; i < maxKernels; i++)
                             {
+                                if (ConsoleResizeHandler.WasResized(false))
+                                    break;
+                                if (ScreensaverManager.Bailing)
+                                    return;
+
                                 int idx = selectedKernel - 1;
                                 var ver = versions.ElementAt(i);
                                 TextWriterColor.WriteColorBack("- {0}: {1}", true, i == idx ? green : darkGreen, black, ver.Key, ver.Value);
                             }
 
                             // Sleep
-                            ScreensaverManager.Delay(selectedFirst ? 3000 : 250);
-                            ColorTools.LoadBackDry(black);
+                            ScreensaverManager.Delay(selectedFirst ? 3000 : 250, true);
+                            ConsoleColoring.LoadBackDry(black);
                         }
                         break;
                     case 7:
                         // Display time warp text
-                        ColorTools.LoadBackDry(darkGreen);
+                        ConsoleColoring.LoadBackDry(darkGreen);
                         string timeWarpText = $"Time machine... Warping to {TimeDateRenderers.RenderDate(new DateTime(2018, 2, 22))}...";
                         int textPosX = ConsoleWrapper.WindowWidth / 2 - timeWarpText.Length / 2;
                         int textPosY = ConsoleWrapper.WindowHeight - 8;
@@ -364,17 +404,21 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         long tickDiff = currentTick - ksEpochTick;
                         for (int iteration = 0; iteration < maxProg; iteration++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             // Some power function to make the glitches intense
                             double currentProg = Math.Pow((double)iteration / maxProg * 10, 2);
                             var progress = new SimpleProgress((int)currentProg, 100)
                             {
-                                LeftMargin = 5,
-                                RightMargin = 5,
+                                Width = ConsoleWrapper.WindowWidth - 10,
                                 ProgressActiveForegroundColor = green,
                                 ProgressForegroundColor = black,
                                 ProgressBackgroundColor = darkGreen,
                             };
-                            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(progress, new(progPosX, progPosY)));
+                            TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(progress, new(progPosX, progPosY)));
 
                             // Show current date
                             long travelledTicks = (long)Math.Round(tickDiff * ((double)currentProg / 100));
@@ -393,14 +437,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             {
                                 for (int delayed = 0; delayed < 5000; delayed += 10)
                                 {
-                                    ScreensaverManager.Delay(10);
+                                    if (ConsoleResizeHandler.WasResized(false))
+                                        break;
+                                    if (ScreensaverManager.Bailing)
+                                        return;
+
+                                    ScreensaverManager.Delay(10, true);
                                     if (RandomDriver.RandomChance(currentProg))
                                         Glitch.GlitchAt();
                                 }
                                 break;
                             }
                             else
-                                ScreensaverManager.Delay(10);
+                                ScreensaverManager.Delay(10, true);
                         }
                         break;
                     case 8:
@@ -415,10 +464,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             Text = "SYSTEM ERROR",
                             ForegroundColor = red,
                         };
-                        TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s8Figlet, new(s8consoleX, s8consoleY)));
+                        TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(s8Figlet, new(s8consoleX, s8consoleY)));
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
-                            ScreensaverManager.Delay(10);
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
+                            ScreensaverManager.Delay(10, true);
                             if (RandomDriver.RandomChance(90))
                                 Glitch.GlitchAt();
                         }
@@ -435,17 +489,21 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int sysWipeMaxProg = 800;
                         for (int iteration = 0; iteration < sysWipeMaxProg; iteration++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             // Some power function to make the glitches intense
                             double currentProg = (double)iteration / sysWipeMaxProg * 100;
                             var progress = new SimpleProgress((int)currentProg, 100)
                             {
-                                LeftMargin = 5,
-                                RightMargin = 5,
+                                Width = ConsoleWrapper.WindowWidth - 10,
                                 ProgressActiveForegroundColor = green,
                                 ProgressForegroundColor = black,
                                 ProgressBackgroundColor = darkGreen,
                             };
-                            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(progress, new(sysWipeProgPosX, sysWipeProgPosY)));
+                            TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(progress, new(sysWipeProgPosX, sysWipeProgPosY)));
 
                             // Now, do the glitch
                             Glitch.GlitchAt();
@@ -455,14 +513,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             {
                                 for (int delayed = 0; delayed < 1000; delayed += 10)
                                 {
-                                    ScreensaverManager.Delay(10);
+                                    if (ConsoleResizeHandler.WasResized(false))
+                                        break;
+                                    if (ScreensaverManager.Bailing)
+                                        return;
+
+                                    ScreensaverManager.Delay(10, true);
                                     if (RandomDriver.RandomChance(currentProg))
                                         Glitch.GlitchAt();
                                 }
                                 break;
                             }
                             else
-                                ScreensaverManager.Delay(10);
+                                ScreensaverManager.Delay(10, true);
                         }
                         break;
                     case 10:
@@ -471,19 +534,29 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int height = ConsoleWrapper.CursorTop;
                         for (int dumpIter = 0; dumpIter < 22; dumpIter++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             if (dumpIter % 10 == 0)
                                 TextWriterWhereColor.WriteWhere("{0}", width, height, dumpIter);
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         TextWriterWhereColor.WriteWhere("Physical memory dump FAILED with status 0xC0000010", 0, height);
                         break;
                     case 11:
                         for (int xIter = 0; xIter < 1000; xIter++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             int xwidth = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
                             int xheight = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
                             TextWriterWhereColor.WriteWhereColorBack("X", xwidth, xheight, white, black);
-                            ScreensaverManager.Delay(10);
+                            ScreensaverManager.Delay(10, true);
                         }
                         break;
                     case 12:
@@ -500,6 +573,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(white.RGB.R - thresholdR * currentStep);
@@ -508,33 +583,32 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ColorTools.LoadBackDry(col);
+                            ConsoleColoring.LoadBackDry(col);
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                     case 13:
                         string tbc = Translate.DoTranslation("To be continued...").ToUpper();
-                        ScreensaverManager.Delay(100);
+                        ScreensaverManager.Delay(100, true);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
-                        ScreensaverManager.Delay(40);
+                        ScreensaverManager.Delay(40, true);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, black, black);
-                        ScreensaverManager.Delay(100);
+                        ScreensaverManager.Delay(100, true);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
-                        ScreensaverManager.Delay(50);
+                        ScreensaverManager.Delay(50, true);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, black, black);
-                        ScreensaverManager.Delay(1000);
+                        ScreensaverManager.Delay(1000, true);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
-                        ScreensaverManager.Delay(5000);
+                        ScreensaverManager.Delay(5000, true);
                         break;
                 }
             }
 
             // Reset
             ConsoleResizeHandler.WasResized();
-            ColorTools.LoadBackDry(black);
+            ConsoleColoring.LoadBackDry(black);
         }
-
     }
 }

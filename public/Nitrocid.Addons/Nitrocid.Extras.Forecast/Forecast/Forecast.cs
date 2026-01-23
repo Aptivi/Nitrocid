@@ -20,10 +20,10 @@
 using System;
 using Nettify.Weather;
 using Nitrocid.Kernel.Debugging;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Extras.Forecast.Forecast
 {
@@ -89,7 +89,7 @@ namespace Nitrocid.Extras.Forecast.Forecast
 
             string WeatherSpecifier = "°";
             string WindSpeedSpecifier = "m.s";
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info --"));
+            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("-- Weather info --"), KernelColorTools.GetColor(KernelColorType.ListTitle));
             TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), WeatherInfo.Weather);
             if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)
                 WeatherSpecifier += "C";
@@ -190,8 +190,8 @@ namespace Nitrocid.Extras.Forecast.Forecast
             string name = (string?)WeatherInfo.WeatherToken["name"] ?? "";
             double feelsLike = (double?)WeatherInfo.WeatherToken?["main"]?["feels_like"] ?? 0d;
             double pressure = (double?)WeatherInfo.WeatherToken?["main"]?["pressure"] ?? 0d;
-            DebugWriter.WriteDebug(DebugLevel.I, "City name: {0}, City ID: {1}", name, CityID);
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info for {0} --"), true, name);
+            DebugWriter.WriteDebug(DebugLevel.I, "City name: {0}, City ID: {1}", vars: [name, CityID]);
+            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("-- Weather info for {0} --"), KernelColorTools.GetColor(KernelColorType.ListTitle), true, name);
             TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), WeatherInfo.Weather);
             if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)
                 WeatherSpecifier += "C";

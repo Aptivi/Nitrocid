@@ -24,7 +24,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
 
@@ -62,7 +62,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                 else
                 {
                     TextWriters.Write(Translate.DoTranslation("Specified Byte number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                 }
             }
@@ -87,7 +87,7 @@ namespace Nitrocid.Shell.Shells.Hex.Commands
                 else
                 {
                     TextWriters.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[1]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[1]]);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.HexEditor);
                 }
             }

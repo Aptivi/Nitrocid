@@ -5,160 +5,10 @@
         "DisplayAs": "General kernel settings",
         "Keys": [
             {
-                "Name": "Check for Updates on Startup",
-                "Type": "SBoolean",
-                "Variable": "CheckUpdateStart",
-                "Description": "Each startup, it will check for updates."
-            },
-            {
-                "Name": "Custom Startup Banner",
-                "Type": "SString",
-                "Variable": "CustomBanner",
-                "Description": "If specified, it will display customized startup banner with placeholder support. You can use {0} for kernel version."
-            },
-            {
-                "Name": "Change Culture when Switching Languages",
-                "Type": "SBoolean",
-                "Variable": "LangChangeCulture",
-                "Description": "When switching languages, change the month names, calendar, etc."
-            },
-            {
-                "Name": "Language",
-                "Type": "SSelection",
-                "Variable": "CurrentLanguage",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "ListAllLanguagesWithCountry",
-                "SelectionFunctionType": "LanguageManager",
-                "IsSelectionFunctionDict": true,
-                "SelectionFallback": [ "en-US" ],
-                "Description": "Specifies the kernel language."
-            },
-            {
-                "Name": "Culture",
-                "Type": "SSelection",
-                "Variable": "CurrentCultStr",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetCultureNamesFromCurrentLang",
-                "SelectionFunctionType": "CultureManager",
-                "SelectionFallback": [ "en-US" ],
-                "Description": "Which variant of the current language is being used to change the month names, calendar, etc.?"
-            },
-            {
-                "Name": "Show app information during boot",
-                "Type": "SBoolean",
-                "Variable": "ShowAppInfoOnBoot",
-                "Description": "Shows brief information about the application on boot."
-            },
-            {
-                "Name": "Show stage finish times",
-                "Type": "SBoolean",
-                "Variable": "ShowStageFinishTimes",
-                "Description": "Shows how much time did the kernel take to finish a stage."
-            },
-            {
-                "Name": "Start kernel modifications on boot",
-                "Type": "SBoolean",
-                "Variable": "StartKernelMods",
-                "Description": "Automatically start the kernel modifications on boot."
-            },
-            {
-                "Name": "Show current time before login",
-                "Type": "SBoolean",
-                "Variable": "ShowCurrentTimeBeforeLogin",
-                "Description": "Shows the current time, time zone, and date before logging in."
-            },
-            {
-                "Name": "Notify for any fault during boot",
-                "Type": "SBoolean",
-                "Variable": "NotifyFaultsBoot",
-                "Description": "If there is a minor fault during kernel boot, notifies the user about it."
-            },
-            {
-                "Name": "Show stack trace on kernel error",
-                "Type": "SBoolean",
-                "Variable": "ShowStackTraceOnKernelError",
-                "Description": "If there is any kernel error, choose whether or not to print the stack trace to the console."
-            },
-            {
-                "Name": "Enable event debugging",
-                "Type": "SBoolean",
-                "Variable": "EventDebug",
-                "Description": "Enables debugging for the kernel event system"
-            },
-            {
-                "Name": "Stylish splash screen",
-                "Type": "SBoolean",
-                "Variable": "EnableSplash",
-                "Description": "Enables the stylish splash screen on startup. Please note that it will disable argument prompt and test shell pre-boot."
-            },
-            {
-                "Name": "Splash name",
-                "Type": "SSelection",
-                "Variable": "SplashName",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetNamesOfSplashes",
-                "SelectionFunctionType": "SplashManager",
-                "SelectionFallback": [ "Simple" ],
-                "Description": "Splash name from the available splashes implemented in the kernel."
-            },
-            {
-                "Name": "Simulate No APM Mode",
-                "Type": "SBoolean",
-                "Variable": "SimulateNoAPM",
-                "Description": "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown."
-            },
-            {
-                "Name": "Beep on shutdown or reboot",
-                "Type": "SBoolean",
-                "Variable": "BeepOnShutdown",
-                "Description": "Enables beeping upon shutting down the kernel."
-            },
-            {
-                "Name": "Delay on shutdown or reboot",
-                "Type": "SBoolean",
-                "Variable": "DelayOnShutdown",
-                "Description": "Enables delaying upon shutting down the kernel."
-            },
-            {
-                "Name": "Console supports true color",
-                "Type": "SBoolean",
-                "Variable": "ConsoleSupportsTrueColor",
-                "Description": "If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value."
-            },
-            {
-                "Name": "Set codepage",
-                "Type": "SBoolean",
-                "Variable": "SetCodepage",
-                "Description": "Set the language codepage upon switching languages.",
-                "UnsupportedPlatforms": [ "Unix", "macOS" ]
-            },
-            {
                 "Name": "Development notice acknowledged",
                 "Type": "SBoolean",
                 "Variable": "DevNoticeConsented",
                 "Description": "If set to true, the kernel won't show you the development notice every time you boot to the kernel in development versions."
-            },
-            {
-                "Name": "Allow loading untrusted mods",
-                "Type": "SBoolean",
-                "Variable": "AllowUntrustedMods",
-                "Description": "If set to true, the kernel won't error out upon loading mods that don't have the signed public key."
-            },
-            {
-                "Name": "Use system time zone",
-                "Type": "SBoolean",
-                "Variable": "UseSystemTimeZone",
-                "Description": "If this option is enabled, the kernel uses the time zone from your computer settings. Else, uses the kernel-wide time zone that can be configured."
-            },
-            {
-                "Name": "Kernel-wide time zone",
-                "Type": "SSelection",
-                "Variable": "KernelWideTimeZone",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetTimeZoneNames",
-                "SelectionFunctionType": "TimeZones",
-                "SelectionFallback": [ "Etc/UTC", "GMT" ],
-                "Description": "The kernel-wide time zone to use"
             },
             {
                 "Name": "Show the license information box",
@@ -167,30 +17,187 @@
                 "Description": "Whether to show the modal license information box for three seconds after each login. It's recommended to keep it on."
             },
             {
-                "Name": "Bootloader style",
-                "Type": "SString",
-                "Variable": "BootStyle",
-                "Description": "Select a bootloader style to match your preference."
+                "Name": "Culture and language settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the culture and language",
+                "Variables": [
+                    {
+                        "Name": "Language",
+                        "Type": "SSelection",
+                        "Variable": "CurrentLanguage",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "ListAllLanguages",
+                        "SelectionFunctionType": "LanguageManager",
+                        "IsSelectionFunctionDict": true,
+                        "SelectionFunctionArgs": [
+                            {
+                                "ArgType": "System.Boolean",
+                                "ArgValue": "False"
+                            }
+                        ],
+                        "SelectionFallback": [ "eng" ],
+                        "Description": "Specifies the kernel language."
+                    },
+                    {
+                        "Name": "Culture",
+                        "Type": "SSelection",
+                        "Variable": "CurrentCultureName",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "GetCultureCodes",
+                        "SelectionFunctionType": "CultureManager",
+                        "SelectionFallback": [ "en-US" ],
+                        "Description": "Which culture is being used to change the month names, calendar, etc.?"
+                    },
+                    {
+                        "Name": "Set codepage",
+                        "Type": "SBoolean",
+                        "Variable": "SetCodepage",
+                        "Description": "Set the language codepage upon switching languages.",
+                        "UnsupportedPlatforms": [ "Unix", "macOS" ]
+                    }
+                ]
             },
             {
-                "Name": "Bootloader default selection timeout",
-                "Type": "SIntSlider",
-                "Variable": "BootSelectTimeoutSeconds",
-                "Description": "Timeout in seconds to boot to the default selection.",
-                "MinimumValue": 0,
-                "MaximumValue": 600
+                "Name": "Time and date settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the time and date",
+                "Variables": [
+                    {
+                        "Name": "Use system time zone",
+                        "Type": "SBoolean",
+                        "Variable": "UseSystemTimeZone",
+                        "Description": "If this option is enabled, the kernel uses the time zone from your computer settings. Else, uses the kernel-wide time zone that can be configured."
+                    },
+                    {
+                        "Name": "Kernel-wide time zone",
+                        "Type": "SSelection",
+                        "Variable": "KernelWideTimeZone",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "GetTimeZoneNames",
+                        "SelectionFunctionType": "TimeZones",
+                        "SelectionFallback": [ "Etc/UTC", "GMT" ],
+                        "Description": "The kernel-wide time zone to use"
+                    }
+                ]
             },
             {
-                "Name": "Bootloader default selection",
-                "Type": "SInt",
-                "Variable": "BootSelect",
-                "Description": "Default boot entry selection. This number is zero-based, so the first element is index 0, and so on."
+                "Name": "Bootloader settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the bootloader",
+                "Variables": [
+                    {
+                        "Name": "Bootloader style",
+                        "Type": "SString",
+                        "Variable": "BootStyle",
+                        "Description": "Select a bootloader style to match your preference."
+                    },
+                    {
+                        "Name": "Bootloader default selection timeout",
+                        "Type": "SIntSlider",
+                        "Variable": "BootSelectTimeoutSeconds",
+                        "Description": "Timeout in seconds to boot to the default FilesystemTools.",
+                        "MinimumValue": 0,
+                        "MaximumValue": 600
+                    },
+                    {
+                        "Name": "Bootloader default selection",
+                        "Type": "SInt",
+                        "Variable": "BootSelect",
+                        "Description": "Default boot entry FilesystemTools. This number is zero-based, so the first element is index 0, and so on."
+                    }
+                ]
             },
             {
-                "Name": "Enable 'The Nitrocid Homepage'",
-                "Type": "SBoolean",
-                "Variable": "EnableHomepage",
-                "Description": "Enables 'The Nitrocid Homepage' that allows you to see what's happening in a glance."
+                "Name": "The Nitrocid Homepage",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure The Nitrocid Homepage",
+                "Variables": [
+                    {
+                        "Name": "Enable 'The Nitrocid Homepage'",
+                        "Type": "SBoolean",
+                        "Variable": "EnableHomepage",
+                        "Description": "Enables 'The Nitrocid Homepage' that allows you to see what's happening in a glance."
+                    },
+                    {
+                        "Name": "Enable 'The Nitrocid Homepage' widgets",
+                        "Type": "SBoolean",
+                        "Variable": "EnableHomepageWidgets",
+                        "Description": "Enables 'The Nitrocid Homepage' widgets at the right side of the screen."
+                    },
+                    {
+                        "Name": "Enable 'The Nitrocid Homepage' RSS feed",
+                        "Type": "SBoolean",
+                        "Variable": "EnableHomepageRssFeed",
+                        "Description": "Enables 'The Nitrocid Homepage' RSS feed widget at the right side of the screen."
+                    },
+                    {
+                        "Name": "'The Nitrocid Homepage' widget",
+                        "Type": "SSelection",
+                        "Variable": "HomepageWidget",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "GetWidgetNames",
+                        "SelectionFunctionType": "WidgetTools",
+                        "SelectionFallback": [ "AnalogClock" ],
+                        "Description": "Selects a widget that will be displayed in 'The Nitrocid Homepage'."
+                    }
+                ]
+            },
+            {
+                "Name": "Kernel update settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the kernel updates",
+                "Variables": [
+                    {
+                        "Name": "Check for Updates on Startup",
+                        "Type": "SBoolean",
+                        "Variable": "CheckUpdateStart",
+                        "Description": "Each startup, it will check for updates."
+                    }
+                ]
+            },
+            {
+                "Name": "Kernel error settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the kernel errors",
+                "Variables": [
+                    {
+                        "Name": "Notify for any fault during boot",
+                        "Type": "SBoolean",
+                        "Variable": "NotifyFaultsBoot",
+                        "Description": "If there is a minor fault during kernel boot, notifies the user about it."
+                    },
+                    {
+                        "Name": "Show stack trace on kernel error",
+                        "Type": "SBoolean",
+                        "Variable": "ShowStackTraceOnKernelError",
+                        "Description": "If there is any kernel error, choose whether or not to print the stack trace to the console."
+                    }
+                ]
+            },
+            {
+                "Name": "Kernel power settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the kernel power mechanism",
+                "Variables": [
+                    {
+                        "Name": "Simulate No APM Mode",
+                        "Type": "SBoolean",
+                        "Variable": "SimulateNoAPM",
+                        "Description": "Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown."
+                    },
+                    {
+                        "Name": "Beep on shutdown or reboot",
+                        "Type": "SBoolean",
+                        "Variable": "BeepOnShutdown",
+                        "Description": "Enables beeping upon shutting down the kernel."
+                    },
+                    {
+                        "Name": "Delay on shutdown or reboot",
+                        "Type": "SBoolean",
+                        "Variable": "DelayOnShutdown",
+                        "Description": "Enables delaying upon shutting down the kernel."
+                    }
+                ]
             }
         ]
     },
@@ -230,304 +237,317 @@
                 "Description": "When this is set to true, the current background color is honored. Else, it uses your terminal's default colors."
             },
             {
-                "Name": "User Name Shell Color",
-                "Type": "SColor",
-                "Variable": "UserNameShellColor"
+                "Name": "Console supports true color",
+                "Type": "SBoolean",
+                "Variable": "ConsoleSupportsTrueColor",
+                "Description": "If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value."
             },
             {
-                "Name": "Host Name Shell Color",
-                "Type": "SColor",
-                "Variable": "HostNameShellColor"
-            },
-            {
-                "Name": "Continuable Kernel Error Color",
-                "Type": "SColor",
-                "Variable": "ContinuableKernelErrorColor"
-            },
-            {
-                "Name": "Uncontinuable Kernel Error Color",
-                "Type": "SColor",
-                "Variable": "UncontinuableKernelErrorColor"
-            },
-            {
-                "Name": "Text Color",
-                "Type": "SColor",
-                "Variable": "TextColor"
-            },
-            {
-                "Name": "License Color",
-                "Type": "SColor",
-                "Variable": "LicenseColor"
-            },
-            {
-                "Name": "Background Color",
-                "Type": "SColor",
-                "Variable": "BackgroundColor"
-            },
-            {
-                "Name": "Input Color",
-                "Type": "SColor",
-                "Variable": "InputColor"
-            },
-            {
-                "Name": "List Entry Color",
-                "Type": "SColor",
-                "Variable": "ListEntryColor"
-            },
-            {
-                "Name": "List Value Color",
-                "Type": "SColor",
-                "Variable": "ListValueColor"
-            },
-            {
-                "Name": "Kernel Stage Color",
-                "Type": "SColor",
-                "Variable": "KernelStageColor"
-            },
-            {
-                "Name": "Error Text Color",
-                "Type": "SColor",
-                "Variable": "ErrorTextColor"
-            },
-            {
-                "Name": "Warning Text Color",
-                "Type": "SColor",
-                "Variable": "WarningTextColor"
-            },
-            {
-                "Name": "Option Color",
-                "Type": "SColor",
-                "Variable": "OptionColor"
-            },
-            {
-                "Name": "Banner Color",
-                "Type": "SColor",
-                "Variable": "BannerColor"
-            },
-            {
-                "Name": "Notification Title Color",
-                "Type": "SColor",
-                "Variable": "NotificationTitleColor"
-            },
-            {
-                "Name": "Notification Description Color",
-                "Type": "SColor",
-                "Variable": "NotificationDescriptionColor"
-            },
-            {
-                "Name": "Notification Progress Color",
-                "Type": "SColor",
-                "Variable": "NotificationProgressColor"
-            },
-            {
-                "Name": "Notification Failure Color",
-                "Type": "SColor",
-                "Variable": "NotificationFailureColor"
-            },
-            {
-                "Name": "Question Color",
-                "Type": "SColor",
-                "Variable": "QuestionColor"
-            },
-            {
-                "Name": "Success Color",
-                "Type": "SColor",
-                "Variable": "SuccessColor"
-            },
-            {
-                "Name": "User Dollar Color",
-                "Type": "SColor",
-                "Variable": "UserDollarColor"
-            },
-            {
-                "Name": "Tip Color",
-                "Type": "SColor",
-                "Variable": "TipColor"
-            },
-            {
-                "Name": "Separator Text Color",
-                "Type": "SColor",
-                "Variable": "SeparatorTextColor"
-            },
-            {
-                "Name": "Separator Color",
-                "Type": "SColor",
-                "Variable": "SeparatorColor"
-            },
-            {
-                "Name": "List Title Color",
-                "Type": "SColor",
-                "Variable": "ListTitleColor"
-            },
-            {
-                "Name": "Development Warning Color",
-                "Type": "SColor",
-                "Variable": "DevelopmentWarningColor"
-            },
-            {
-                "Name": "Stage Time Color",
-                "Type": "SColor",
-                "Variable": "StageTimeColor"
-            },
-            {
-                "Name": "Progress Color",
-                "Type": "SColor",
-                "Variable": "ProgressColor"
-            },
-            {
-                "Name": "Back Option Color",
-                "Type": "SColor",
-                "Variable": "BackOptionColor"
-            },
-            {
-                "Name": "Low Priority Border Color",
-                "Type": "SColor",
-                "Variable": "LowPriorityBorderColor"
-            },
-            {
-                "Name": "Medium Priority Border Color",
-                "Type": "SColor",
-                "Variable": "MediumPriorityBorderColor"
-            },
-            {
-                "Name": "High Priority Border Color",
-                "Type": "SColor",
-                "Variable": "HighPriorityBorderColor"
-            },
-            {
-                "Name": "Table Separator Color",
-                "Type": "SColor",
-                "Variable": "TableSeparatorColor"
-            },
-            {
-                "Name": "Table Header Color",
-                "Type": "SColor",
-                "Variable": "TableHeaderColor"
-            },
-            {
-                "Name": "Table Value Color",
-                "Type": "SColor",
-                "Variable": "TableValueColor"
-            },
-            {
-                "Name": "Selected Option Color",
-                "Type": "SColor",
-                "Variable": "SelectedOptionColor"
-            },
-            {
-                "Name": "Alternative Option Color",
-                "Type": "SColor",
-                "Variable": "AlternativeOptionColor"
-            },
-            {
-                "Name": "Weekend Day Color",
-                "Type": "SColor",
-                "Variable": "WeekendDayColor"
-            },
-            {
-                "Name": "Event Day Color",
-                "Type": "SColor",
-                "Variable": "EventDayColor"
-            },
-            {
-                "Name": "Table Title Color",
-                "Type": "SColor",
-                "Variable": "TableTitleColor"
-            },
-            {
-                "Name": "Today Day Color",
-                "Type": "SColor",
-                "Variable": "TodayDayColor"
-            },
-            {
-                "Name": "Interactive TUI background color",
-                "Type": "SColor",
-                "Variable": "TuiBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI foreground color",
-                "Type": "SColor",
-                "Variable": "TuiForegroundColor"
-            },
-            {
-                "Name": "Interactive TUI pane background color",
-                "Type": "SColor",
-                "Variable": "TuiPaneBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI pane separator color",
-                "Type": "SColor",
-                "Variable": "TuiPaneSeparatorColor"
-            },
-            {
-                "Name": "Interactive TUI selected pane separator color",
-                "Type": "SColor",
-                "Variable": "TuiPaneSelectedSeparatorColor"
-            },
-            {
-                "Name": "Interactive TUI selected pane item foreground color",
-                "Type": "SColor",
-                "Variable": "TuiPaneSelectedItemForeColor"
-            },
-            {
-                "Name": "Interactive TUI selected pane item background color",
-                "Type": "SColor",
-                "Variable": "TuiPaneSelectedItemBackColor"
-            },
-            {
-                "Name": "Interactive TUI pane item foreground color",
-                "Type": "SColor",
-                "Variable": "TuiPaneItemForeColor"
-            },
-            {
-                "Name": "Interactive TUI pane item background color",
-                "Type": "SColor",
-                "Variable": "TuiPaneItemBackColor"
-            },
-            {
-                "Name": "Interactive TUI option background color",
-                "Type": "SColor",
-                "Variable": "TuiOptionBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI option foreground color",
-                "Type": "SColor",
-                "Variable": "TuiOptionForegroundColor"
-            },
-            {
-                "Name": "Interactive TUI option binding name color",
-                "Type": "SColor",
-                "Variable": "TuiKeyBindingOptionColor"
-            },
-            {
-                "Name": "Interactive TUI box background color",
-                "Type": "SColor",
-                "Variable": "TuiBoxBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI box foreground color",
-                "Type": "SColor",
-                "Variable": "TuiBoxForegroundColor"
-            },
-            {
-                "Name": "Disabled option color",
-                "Type": "SColor",
-                "Variable": "DisabledOptionColor"
-            },
-            {
-                "Name": "Interactive TUI builtin key binding background color",
-                "Type": "SColor",
-                "Variable": "TuiKeyBindingBuiltinBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI builtin key binding foreground color",
-                "Type": "SColor",
-                "Variable": "TuiKeyBindingBuiltinForegroundColor"
-            },
-            {
-                "Name": "Interactive TUI builtin key binding name color",
-                "Type": "SColor",
-                "Variable": "TuiKeyBindingBuiltinColor"
+                "Name": "Kernel color schemes",
+                "Type": "SMultivar",
+                "Description": "This allows you to set multiple kernel color schemes",
+                "Variables": [
+                    {
+                        "Name": "User Name Shell Color",
+                        "Type": "SColor",
+                        "Variable": "UserNameShellColor"
+                    },
+                    {
+                        "Name": "Host Name Shell Color",
+                        "Type": "SColor",
+                        "Variable": "HostNameShellColor"
+                    },
+                    {
+                        "Name": "Continuable Kernel Error Color",
+                        "Type": "SColor",
+                        "Variable": "ContinuableKernelErrorColor"
+                    },
+                    {
+                        "Name": "Uncontinuable Kernel Error Color",
+                        "Type": "SColor",
+                        "Variable": "UncontinuableKernelErrorColor"
+                    },
+                    {
+                        "Name": "Text Color",
+                        "Type": "SColor",
+                        "Variable": "TextColor"
+                    },
+                    {
+                        "Name": "License Color",
+                        "Type": "SColor",
+                        "Variable": "LicenseColor"
+                    },
+                    {
+                        "Name": "Background Color",
+                        "Type": "SColor",
+                        "Variable": "BackgroundColor"
+                    },
+                    {
+                        "Name": "Input Color",
+                        "Type": "SColor",
+                        "Variable": "InputColor"
+                    },
+                    {
+                        "Name": "List Entry Color",
+                        "Type": "SColor",
+                        "Variable": "ListEntryColor"
+                    },
+                    {
+                        "Name": "List Value Color",
+                        "Type": "SColor",
+                        "Variable": "ListValueColor"
+                    },
+                    {
+                        "Name": "Kernel Stage Color",
+                        "Type": "SColor",
+                        "Variable": "KernelStageColor"
+                    },
+                    {
+                        "Name": "Error Text Color",
+                        "Type": "SColor",
+                        "Variable": "ErrorTextColor"
+                    },
+                    {
+                        "Name": "Warning Text Color",
+                        "Type": "SColor",
+                        "Variable": "WarningTextColor"
+                    },
+                    {
+                        "Name": "Option Color",
+                        "Type": "SColor",
+                        "Variable": "OptionColor"
+                    },
+                    {
+                        "Name": "Banner Color",
+                        "Type": "SColor",
+                        "Variable": "BannerColor"
+                    },
+                    {
+                        "Name": "Notification Title Color",
+                        "Type": "SColor",
+                        "Variable": "NotificationTitleColor"
+                    },
+                    {
+                        "Name": "Notification Description Color",
+                        "Type": "SColor",
+                        "Variable": "NotificationDescriptionColor"
+                    },
+                    {
+                        "Name": "Notification Progress Color",
+                        "Type": "SColor",
+                        "Variable": "NotificationProgressColor"
+                    },
+                    {
+                        "Name": "Notification Failure Color",
+                        "Type": "SColor",
+                        "Variable": "NotificationFailureColor"
+                    },
+                    {
+                        "Name": "Question Color",
+                        "Type": "SColor",
+                        "Variable": "QuestionColor"
+                    },
+                    {
+                        "Name": "Success Color",
+                        "Type": "SColor",
+                        "Variable": "SuccessColor"
+                    },
+                    {
+                        "Name": "User Dollar Color",
+                        "Type": "SColor",
+                        "Variable": "UserDollarColor"
+                    },
+                    {
+                        "Name": "Tip Color",
+                        "Type": "SColor",
+                        "Variable": "TipColor"
+                    },
+                    {
+                        "Name": "Separator Text Color",
+                        "Type": "SColor",
+                        "Variable": "SeparatorTextColor"
+                    },
+                    {
+                        "Name": "Separator Color",
+                        "Type": "SColor",
+                        "Variable": "SeparatorColor"
+                    },
+                    {
+                        "Name": "List Title Color",
+                        "Type": "SColor",
+                        "Variable": "ListTitleColor"
+                    },
+                    {
+                        "Name": "Development Warning Color",
+                        "Type": "SColor",
+                        "Variable": "DevelopmentWarningColor"
+                    },
+                    {
+                        "Name": "Stage Time Color",
+                        "Type": "SColor",
+                        "Variable": "StageTimeColor"
+                    },
+                    {
+                        "Name": "Progress Color",
+                        "Type": "SColor",
+                        "Variable": "ProgressColor"
+                    },
+                    {
+                        "Name": "Back Option Color",
+                        "Type": "SColor",
+                        "Variable": "BackOptionColor"
+                    },
+                    {
+                        "Name": "Low Priority Border Color",
+                        "Type": "SColor",
+                        "Variable": "LowPriorityBorderColor"
+                    },
+                    {
+                        "Name": "Medium Priority Border Color",
+                        "Type": "SColor",
+                        "Variable": "MediumPriorityBorderColor"
+                    },
+                    {
+                        "Name": "High Priority Border Color",
+                        "Type": "SColor",
+                        "Variable": "HighPriorityBorderColor"
+                    },
+                    {
+                        "Name": "Table Separator Color",
+                        "Type": "SColor",
+                        "Variable": "TableSeparatorColor"
+                    },
+                    {
+                        "Name": "Table Header Color",
+                        "Type": "SColor",
+                        "Variable": "TableHeaderColor"
+                    },
+                    {
+                        "Name": "Table Value Color",
+                        "Type": "SColor",
+                        "Variable": "TableValueColor"
+                    },
+                    {
+                        "Name": "Selected Option Color",
+                        "Type": "SColor",
+                        "Variable": "SelectedOptionColor"
+                    },
+                    {
+                        "Name": "Alternative Option Color",
+                        "Type": "SColor",
+                        "Variable": "AlternativeOptionColor"
+                    },
+                    {
+                        "Name": "Weekend Day Color",
+                        "Type": "SColor",
+                        "Variable": "WeekendDayColor"
+                    },
+                    {
+                        "Name": "Event Day Color",
+                        "Type": "SColor",
+                        "Variable": "EventDayColor"
+                    },
+                    {
+                        "Name": "Table Title Color",
+                        "Type": "SColor",
+                        "Variable": "TableTitleColor"
+                    },
+                    {
+                        "Name": "Today Day Color",
+                        "Type": "SColor",
+                        "Variable": "TodayDayColor"
+                    },
+                    {
+                        "Name": "Interactive TUI background color",
+                        "Type": "SColor",
+                        "Variable": "TuiBackgroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI foreground color",
+                        "Type": "SColor",
+                        "Variable": "TuiForegroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI pane background color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneBackgroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI pane separator color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneSeparatorColor"
+                    },
+                    {
+                        "Name": "Interactive TUI selected pane separator color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneSelectedSeparatorColor"
+                    },
+                    {
+                        "Name": "Interactive TUI selected pane item foreground color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneSelectedItemForeColor"
+                    },
+                    {
+                        "Name": "Interactive TUI selected pane item background color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneSelectedItemBackColor"
+                    },
+                    {
+                        "Name": "Interactive TUI pane item foreground color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneItemForeColor"
+                    },
+                    {
+                        "Name": "Interactive TUI pane item background color",
+                        "Type": "SColor",
+                        "Variable": "TuiPaneItemBackColor"
+                    },
+                    {
+                        "Name": "Interactive TUI option background color",
+                        "Type": "SColor",
+                        "Variable": "TuiOptionBackgroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI option foreground color",
+                        "Type": "SColor",
+                        "Variable": "TuiOptionForegroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI option binding name color",
+                        "Type": "SColor",
+                        "Variable": "TuiKeyBindingOptionColor"
+                    },
+                    {
+                        "Name": "Interactive TUI box background color",
+                        "Type": "SColor",
+                        "Variable": "TuiBoxBackgroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI box foreground color",
+                        "Type": "SColor",
+                        "Variable": "TuiBoxForegroundColor"
+                    },
+                    {
+                        "Name": "Disabled option color",
+                        "Type": "SColor",
+                        "Variable": "DisabledOptionColor"
+                    },
+                    {
+                        "Name": "Interactive TUI builtin key binding background color",
+                        "Type": "SColor",
+                        "Variable": "TuiKeyBindingBuiltinBackgroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI builtin key binding foreground color",
+                        "Type": "SColor",
+                        "Variable": "TuiKeyBindingBuiltinForegroundColor"
+                    },
+                    {
+                        "Name": "Interactive TUI builtin key binding name color",
+                        "Type": "SColor",
+                        "Variable": "TuiKeyBindingBuiltinColor"
+                    }
+                ]
             }
         ]
     },
@@ -626,12 +646,6 @@
                 "Description": "Includes the disabled users in the list"
             },
             {
-                "Name": "MOTD and Headline at the bottom of the modern logon clock",
-                "Type": "SBoolean",
-                "Variable": "MotdHeadlineBottom",
-                "Description": "Whether to show the MOTD and the headline at the bottom or at the top of the clock"
-            },
-            {
                 "Name": "Login handler",
                 "Type": "SSelection",
                 "Variable": "CurrentLoginHandler",
@@ -642,30 +656,43 @@
                 "Description": "Login handler to use for sign-in prompts."
             },
             {
-                "Name": "Enable widgets",
-                "Type": "SBoolean",
-                "Variable": "EnableWidgets",
-                "Description": "Enables the widgets in the modern logon handler and all the handlers that use the widget API."
-            },
-            {
-                "Name": "First widget",
-                "Type": "SSelection",
-                "Variable": "FirstWidget",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetWidgetNames",
-                "SelectionFunctionType": "WidgetTools",
-                "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
-                "Description": "First widget for the modern logon handler. You can configure this widget in its respective settings entry."
-            },
-            {
-                "Name": "Second widget",
-                "Type": "SSelection",
-                "Variable": "SecondWidget",
-                "IsEnumeration": false,
-                "SelectionFunctionName": "GetWidgetNames",
-                "SelectionFunctionType": "WidgetTools",
-                "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
-                "Description": "Second widget for the modern logon handler. You can configure this widget in its respective settings entry."
+                "Name": "Modern logon handler settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the modern logon handler",
+                "Variables": [
+                    {
+                        "Name": "MOTD and Headline at the bottom of the modern logon clock",
+                        "Type": "SBoolean",
+                        "Variable": "MotdHeadlineBottom",
+                        "Description": "Whether to show the MOTD and the headline at the bottom or at the top of the clock"
+                    },
+                    {
+                        "Name": "Enable widgets",
+                        "Type": "SBoolean",
+                        "Variable": "EnableWidgets",
+                        "Description": "Enables the widgets in the modern logon handler and all the handlers that use the widget API."
+                    },
+                    {
+                        "Name": "First widget",
+                        "Type": "SSelection",
+                        "Variable": "FirstWidget",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "GetWidgetNames",
+                        "SelectionFunctionType": "WidgetTools",
+                        "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
+                        "Description": "First widget for the modern logon handler. You can configure this widget in its respective settings entry."
+                    },
+                    {
+                        "Name": "Second widget",
+                        "Type": "SSelection",
+                        "Variable": "SecondWidget",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "GetWidgetNames",
+                        "SelectionFunctionType": "WidgetTools",
+                        "SelectionFallback": [ "AnalogClock", "DigitalClock" ],
+                        "Description": "Second widget for the modern logon handler. You can configure this widget in its respective settings entry."
+                    }
+                ]
             }
         ]
     },
@@ -674,12 +701,6 @@
         "Desc": "This section lists the shell settings.",
         "DisplayAs": "General shell settings",
         "Keys": [
-            {
-                "Name": "Simplified Help Command",
-                "Type": "SBoolean",
-                "Variable": "SimHelp",
-                "Description": "Simplified help command for all the shells"
-            },
             {
                 "Name": "Current Directory",
                 "Type": "SString",
@@ -719,48 +740,97 @@
                 "Type": "SBoolean",
                 "Variable": "ShowShellCount",
                 "Description": "Shows the shell count in the normal UESH shell (depending on the preset)"
-            }
-        ]
-    },
-    {
-        "Name": "Shell Presets",
-        "Desc": "This section lists the shell preset settings.",
-        "DisplayAs": "Shell preset settings",
-        "Keys": [
-            {
-                "Name": "Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "PromptPreset",
-                "ShellType": "Shell",
-                "Description": ""
             },
             {
-                "Name": "Text Edit Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "TextEditPromptPreset",
-                "ShellType": "TextShell",
-                "Description": ""
+                "Name": "Input history enabled",
+                "Type": "SBoolean",
+                "Variable": "InputHistoryEnabled",
+                "Description": "Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys."
             },
             {
-                "Name": "Hex Edit Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "HexEditPromptPreset",
-                "ShellType": "HexShell",
-                "Description": ""
+                "Name": "Help system",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the shell help system",
+                "Variables": [
+                    {
+                        "Name": "Simplified Help Command",
+                        "Type": "SBoolean",
+                        "Variable": "SimHelp",
+                        "Description": "Simplified help command for all the shells"
+                    },
+                    {
+                        "Name": "Show the commands count on help",
+                        "Type": "SBoolean",
+                        "Variable": "ShowCommandsCount",
+                        "Description": "Shows the commands count in the command list, controlled by the count show switches for different kinds of commands."
+                    },
+                    {
+                        "Name": "Show the shell commands count on help",
+                        "Type": "SBoolean",
+                        "Variable": "ShowShellCommandsCount",
+                        "Description": "Show the count of shell commands when listing them in the help command"
+                    },
+                    {
+                        "Name": "Show the aliases count on help",
+                        "Type": "SBoolean",
+                        "Variable": "ShowShellAliasesCount",
+                        "Description": "Show the count of aliased commands when listing them in the help command"
+                    },
+                    {
+                        "Name": "Show the unified commands count on help",
+                        "Type": "SBoolean",
+                        "Variable": "ShowUnifiedCommandsCount",
+                        "Description": "Show the count of unified shell commands when listing them in the help command"
+                    },
+                    {
+                        "Name": "Show the addon commands count on help",
+                        "Type": "SBoolean",
+                        "Variable": "ShowAddonCommandsCount",
+                        "Description": "Show the count of kernel addon commands when listing them in the help command"
+                    }
+                ]
             },
             {
-                "Name": "Admin Shell Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "AdminShellPromptPreset",
-                "ShellType": "AdminShell",
-                "Description": ""
-            },
-            {
-                "Name": "Debug Shell Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "DebugShellPromptPreset",
-                "ShellType": "DebugShell",
-                "Description": ""
+                "Name": "Shell presets",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the shell presets",
+                "Variables": [
+                    {
+                        "Name": "Prompt Preset",
+                        "Type": "SPreset",
+                        "Variable": "PromptPreset",
+                        "ShellType": "Shell",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "Text Edit Prompt Preset",
+                        "Type": "SPreset",
+                        "Variable": "TextEditPromptPreset",
+                        "ShellType": "TextShell",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "Hex Edit Prompt Preset",
+                        "Type": "SPreset",
+                        "Variable": "HexEditPromptPreset",
+                        "ShellType": "HexShell",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "Admin Shell Prompt Preset",
+                        "Type": "SPreset",
+                        "Variable": "AdminShellPromptPreset",
+                        "ShellType": "AdminShell",
+                        "Description": ""
+                    },
+                    {
+                        "Name": "Debug Shell Prompt Preset",
+                        "Type": "SPreset",
+                        "Variable": "DebugShellPromptPreset",
+                        "ShellType": "DebugShell",
+                        "Description": ""
+                    }
+                ]
             }
         ]
     },
@@ -851,18 +921,6 @@
         "DisplayAs": "General networking settings",
         "Keys": [
             {
-                "Name": "Debug Port",
-                "Type": "SInt",
-                "Variable": "DebugPort",
-                "Description": "Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port."
-            },
-            {
-                "Name": "Debug Chat Port",
-                "Type": "SInt",
-                "Variable": "DebugChatPort",
-                "Description": "Write a remote debugger chat port. It must be numeric, and must not be already used. Otherwise, remote debugger chat will fail to open the port."
-            },
-            {
                 "Name": "Download Retry Times",
                 "Type": "SInt",
                 "Variable": "DownloadRetries",
@@ -881,12 +939,6 @@
                 "Description": "If true, it makes \"get\" or \"put\" show the progress bar while downloading or uploading."
             },
             {
-                "Name": "Record chat to debug log",
-                "Type": "SBoolean",
-                "Variable": "RecordChatToDebugLog",
-                "Description": "Records remote debug chat to debug log."
-            },
-            {
                 "Name": "Show SSH banner",
                 "Type": "SBoolean",
                 "Variable": "SSHBanner",
@@ -903,18 +955,6 @@
                 "Type": "SInt",
                 "Variable": "RPCPort",
                 "Description": "Write an RPC port. It must be numeric, and must not be already used. Otherwise, RPC will fail to open the port."
-            },
-            {
-                "Name": "Automatically start remote debug on startup",
-                "Type": "SBoolean",
-                "Variable": "RDebugAutoStart",
-                "Description": "If you want remote debug to start on boot, enable this."
-            },
-            {
-                "Name": "Remote debug message format",
-                "Type": "SString",
-                "Variable": "RDebugMessageFormat",
-                "Description": "Specifies the remote debug message format. {0} for name, {1} for message."
             },
             {
                 "Name": "Ping timeout",
@@ -947,10 +987,47 @@
                 "Description": "Shows the notification showing the upload progress."
             },
             {
-                "Name": "Notify on remote debug connection error",
-                "Type": "SBoolean",
-                "Variable": "NotifyOnRemoteDebugConnectionError",
-                "Description": "If enabled, will use the notification system to notify the host of remote debug connection error. Otherwise, will use the default console writing."
+                "Name": "Remote debugger settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the remote debugger",
+                "Variables": [
+                    {
+                        "Name": "Debug Port",
+                        "Type": "SInt",
+                        "Variable": "DebugPort",
+                        "Description": "Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port."
+                    },
+                    {
+                        "Name": "Debug Chat Port",
+                        "Type": "SInt",
+                        "Variable": "DebugChatPort",
+                        "Description": "Write a remote debugger chat port. It must be numeric, and must not be already used. Otherwise, remote debugger chat will fail to open the port."
+                    },
+                    {
+                        "Name": "Record chat to debug log",
+                        "Type": "SBoolean",
+                        "Variable": "RecordChatToDebugLog",
+                        "Description": "Records remote debug chat to debug log."
+                    },
+                    {
+                        "Name": "Automatically start remote debug on startup",
+                        "Type": "SBoolean",
+                        "Variable": "RDebugAutoStart",
+                        "Description": "If you want remote debug to start on boot, enable this."
+                    },
+                    {
+                        "Name": "Remote debug message format",
+                        "Type": "SString",
+                        "Variable": "RDebugMessageFormat",
+                        "Description": "Specifies the remote debug message format. {0} for name, {1} for message."
+                    },
+                    {
+                        "Name": "Notify on remote debug connection error",
+                        "Type": "SBoolean",
+                        "Variable": "NotifyOnRemoteDebugConnectionError",
+                        "Description": "If enabled, will use the notification system to notify the host of remote debug connection error. Otherwise, will use the default console writing."
+                    }
+                ]
             }
         ]
     },
@@ -1014,184 +1091,93 @@
         ]
     },
     {
+        "Name": "Audio",
+        "Desc": "This section lists all the audio settings.",
+        "DisplayAs": "Audio settings",
+        "Keys": [
+            {
+                "Name": "Enable audio support",
+                "Type": "SBoolean",
+                "Variable": "EnableAudio",
+                "Description": "Enables the whole audio system for system cues"
+            },
+            {
+                "Name": "Enable keyboard cues",
+                "Type": "SBoolean",
+                "Variable": "EnableKeyboardCues",
+                "Description": "Whether to play keyboard cues for each keypress or not"
+            },
+            {
+                "Name": "Enable startup sounds",
+                "Type": "SBoolean",
+                "Variable": "EnableStartupSounds",
+                "Description": "Whether to play the startup sound or not"
+            },
+            {
+                "Name": "Enable shutdown sounds",
+                "Type": "SBoolean",
+                "Variable": "EnableShutdownSounds",
+                "Description": "Whether to play the shutdown sound or not"
+            },
+            {
+                "Name": "Enable navigation sounds",
+                "Type": "SBoolean",
+                "Variable": "EnableNavigationSounds",
+                "Description": "Whether to play the navigation sound for each keypress or not"
+            },
+            {
+                "Name": "Enable low-priority notification sounds",
+                "Type": "SBoolean",
+                "Variable": "EnableLowPriorityNotificationSounds",
+                "Description": "Whether to play the notification sound for low-priority alerts or not"
+            },
+            {
+                "Name": "Enable medium-priority notification sounds",
+                "Type": "SBoolean",
+                "Variable": "EnableMediumPriorityNotificationSounds",
+                "Description": "Whether to play the notification sound for medium-priority alerts or not"
+            },
+            {
+                "Name": "Enable high-priority notification sounds",
+                "Type": "SBoolean",
+                "Variable": "EnableHighPriorityNotificationSounds",
+                "Description": "Whether to play the notification sound for high-priority alerts or not"
+            },
+            {
+                "Name": "Enable ambient screensaver sound effects",
+                "Type": "SBoolean",
+                "Variable": "EnableAmbientSoundFx",
+                "Description": "Whether to play ambient screensaver sound effects or not"
+            },
+            {
+                "Name": "Intensify the ambient screensaver sound effects",
+                "Type": "SBoolean",
+                "Variable": "EnableAmbientSoundFxIntense",
+                "Description": "Whether to intensify the ambient screensaver sound effects or not"
+            },
+            {
+                "Name": "Audio cue volume",
+                "Type": "SDouble",
+                "Variable": "AudioCueVolume",
+                "Description": "Specify how loud do you want the audio cues to be"
+            },
+            {
+                "Name": "Audio theme",
+                "Type": "SSelection",
+                "Variable": "AudioCueThemeName",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetAudioThemeNames",
+                "SelectionFunctionType": "AudioCuesTools",
+                "SelectionFallback": [ "the_mirage" ],
+                "Description": "Which audio theme do you want to use for audio cues?"
+            }
+        ]
+    },
+    {
         "Name": "Misc",
         "Desc": "Settings that don't fit in their appropriate sections land here.",
         "DisplayAs": "Miscellaneous settings",
         "Keys": [
-            {
-                "Name": "Marquee on startup",
-                "Type": "SBoolean",
-                "Variable": "StartScroll",
-                "Description": "Enables eyecandy on startup"
-            },
-            {
-                "Name": "Long Time and Date",
-                "Type": "SBoolean",
-                "Variable": "LongTimeDate",
-                "Description": "The time and date will be longer, showing full month names, etc."
-            },
-            {
-                "Name": "Enable text editor autosave",
-                "Type": "SBoolean",
-                "Variable": "TextEditAutoSaveFlag",
-                "Description": "Turns on or off the text editor autosave feature."
-            },
-            {
-                "Name": "Text editor autosave interval",
-                "Type": "SInt",
-                "Variable": "TextEditAutoSaveInterval",
-                "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
-            },
-            {
-                "Name": "Enable hex editor autosave",
-                "Type": "SBoolean",
-                "Variable": "HexEditAutoSaveFlag",
-                "Description": "Turns on or off the hex editor autosave feature."
-            },
-            {
-                "Name": "Hex editor autosave interval",
-                "Type": "SInt",
-                "Variable": "HexEditAutoSaveInterval",
-                "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
-            },
-            {
-                "Name": "Wrap list outputs",
-                "Type": "SBoolean",
-                "Variable": "WrapListOutputs",
-                "Description": "Wraps the list outputs if it seems too long for the current console geometry."
-            },
-            {
-                "Name": "Draw notification border",
-                "Type": "SBoolean",
-                "Variable": "DrawBorderNotification",
-                "Description": "Covers the notification with the border."
-            },
-            {
-                "Name": "Blacklisted mods",
-                "Type": "SList",
-                "Variable": "BlacklistedModsString",
-                "SelectionFunctionName": "GetBlacklistedMods",
-                "SelectionFunctionType": "ModManager",
-                "Delimiter": ";",
-                "IsValuePath": true,
-                "IsPathCurrentPath": false,
-                "ValuePathType": "Mods",
-                "Description": "Write the filenames of the mods that will not run on startup. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing mod."
-            },
-            {
-                "Name": "Upper left corner character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyUpperLeftCornerChar",
-                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
-            },
-            {
-                "Name": "Upper right corner character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyUpperRightCornerChar",
-                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
-            },
-            {
-                "Name": "Lower left corner character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyLowerLeftCornerChar",
-                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
-            },
-            {
-                "Name": "Lower right corner character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyLowerRightCornerChar",
-                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
-            },
-            {
-                "Name": "Upper frame character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyUpperFrameChar",
-                "Description": "A character that resembles the upper frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Lower frame character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyLowerFrameChar",
-                "Description": "A character that resembles the lower frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Left frame character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyLeftFrameChar",
-                "Description": "A character that resembles the left frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Right frame character for notification border",
-                "Type": "SChar",
-                "Variable": "NotifyRightFrameChar",
-                "Description": "A character that resembles the right frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Show latest RSS headline on login",
-                "Type": "SBoolean",
-                "Variable": "ShowHeadlineOnLogin",
-                "Description": "Each login, it will show the latest RSS headline from the selected headline URL."
-            },
-            {
-                "Name": "RSS headline URL",
-                "Type": "SString",
-                "Variable": "RssHeadlineUrl",
-                "Description": "RSS headline URL to be used when showing the latest headline. This is usually your favorite feed."
-            },
-            {
-                "Name": "Show the commands count on help",
-                "Type": "SBoolean",
-                "Variable": "ShowCommandsCount",
-                "Description": "Shows the commands count in the command list, controlled by the count show switches for different kinds of commands."
-            },
-            {
-                "Name": "Show the shell commands count on help",
-                "Type": "SBoolean",
-                "Variable": "ShowShellCommandsCount",
-                "Description": "Show the count of shell commands when listing them in the help command"
-            },
-            {
-                "Name": "Show the mod commands count on help",
-                "Type": "SBoolean",
-                "Variable": "ShowModCommandsCount",
-                "Description": "Show the count of kernel modification commands when listing them in the help command"
-            },
-            {
-                "Name": "Show the aliases count on help",
-                "Type": "SBoolean",
-                "Variable": "ShowShellAliasesCount",
-                "Description": "Show the count of aliased commands when listing them in the help command"
-            },
-            {
-                "Name": "Show the unified commands count on help",
-                "Type": "SBoolean",
-                "Variable": "ShowUnifiedCommandsCount",
-                "Description": "Show the count of unified shell commands when listing them in the help command"
-            },
-            {
-                "Name": "Show the addon commands count on help",
-                "Type": "SBoolean",
-                "Variable": "ShowAddonCommandsCount",
-                "Description": "Show the count of kernel addon commands when listing them in the help command"
-            },
-            {
-                "Name": "Password mask character",
-                "Type": "SChar",
-                "Variable": "CurrentMask",
-                "Description": "A character that masks the password. Leave blank for more security."
-            },
-            {
-                "Name": "Input history enabled",
-                "Type": "SBoolean",
-                "Variable": "InputHistoryEnabled",
-                "Description": "Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys."
-            },
-            {
-                "Name": "Enable scroll bar in selection",
-                "Type": "SBoolean",
-                "Variable": "EnableScrollBarInSelection",
-                "Description": "Enables the scroll bar in selection screens"
-            },
             {
                 "Name": "Do Not Disturb",
                 "Type": "SBoolean",
@@ -1199,108 +1185,324 @@
                 "Description": "If Do Not Disturb is enabled, all notifications received will be suppressed from the display. This means that you won't be able to see any notification to help you focus."
             },
             {
-                "Name": "Upper left corner character for general border",
-                "Type": "SChar",
-                "Variable": "BorderUpperLeftCornerChar",
-                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+                "Name": "Text editor settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the text editor",
+                "Variables": [
+                    {
+                        "Name": "Enable text editor autosave",
+                        "Type": "SBoolean",
+                        "Variable": "TextEditAutoSaveFlag",
+                        "Description": "Turns on or off the text editor autosave feature."
+                    },
+                    {
+                        "Name": "Text editor autosave interval",
+                        "Type": "SInt",
+                        "Variable": "TextEditAutoSaveInterval",
+                        "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+                    }
+                ]
             },
             {
-                "Name": "Upper right corner character for general border",
-                "Type": "SChar",
-                "Variable": "BorderUpperRightCornerChar",
-                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+                "Name": "Hex editor settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the hex editor",
+                "Variables": [
+                    {
+                        "Name": "Enable hex editor autosave",
+                        "Type": "SBoolean",
+                        "Variable": "HexEditAutoSaveFlag",
+                        "Description": "Turns on or off the hex editor autosave feature."
+                    },
+                    {
+                        "Name": "Hex editor autosave interval",
+                        "Type": "SInt",
+                        "Variable": "HexEditAutoSaveInterval",
+                        "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+                    }
+                ]
             },
             {
-                "Name": "Lower left corner character for general border",
-                "Type": "SChar",
-                "Variable": "BorderLowerLeftCornerChar",
-                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+                "Name": "RSS headline settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the RSS headlines",
+                "Variables": [
+                    {
+                        "Name": "Show latest RSS headline on login",
+                        "Type": "SBoolean",
+                        "Variable": "ShowHeadlineOnLogin",
+                        "Description": "Each login, it will show the latest RSS headline from the selected headline URL."
+                    },
+                    {
+                        "Name": "RSS headline URL",
+                        "Type": "SString",
+                        "Variable": "RssHeadlineUrl",
+                        "Description": "RSS headline URL to be used when showing the latest headline. This is usually your favorite feed."
+                    }
+                ]
             },
             {
-                "Name": "Lower right corner character for general border",
-                "Type": "SChar",
-                "Variable": "BorderLowerRightCornerChar",
-                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+                "Name": "Mouse settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the mouse",
+                "Variables": [
+                    {
+                        "Name": "Mouse support",
+                        "Type": "SBoolean",
+                        "Variable": "InitializeCursorHandler",
+                        "Description": "Whether to initialize the mouse support for the kernel or not, essentially enabling all mods to handle the mouse pointer."
+                    },
+                    {
+                        "Name": "Mouse movement support",
+                        "Type": "SBoolean",
+                        "Variable": "HandleCursorMovement",
+                        "Description": "Whether to also enable the movement events or not, improving the user experience of some interactive applications."
+                    }
+                ]
             },
             {
-                "Name": "Upper frame character for general border",
-                "Type": "SChar",
-                "Variable": "BorderUpperFrameChar",
-                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+                "Name": "Debug settings",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the debugging routine",
+                "Variables": [
+                    {
+                        "Name": "Censor private info on debug logs",
+                        "Type": "SBoolean",
+                        "Variable": "DebugCensorPrivateInfo",
+                        "Description": "Censor private information that may be printed to the debug logs."
+                    },
+                    {
+                        "Name": "CPU usage debug enabled",
+                        "Type": "SBoolean",
+                        "Variable": "CpuUsageDebugEnabled",
+                        "Description": "If enabled, prints the CPU usage between the two intervals as specified in the CPU usage debug update interval."
+                    },
+                    {
+                        "Name": "CPU usage debug update interval",
+                        "Type": "SIntSlider",
+                        "Variable": "CpuUsageUpdateInterval",
+                        "Description": "How many milliseconds to wait before updating the CPU usage and printing it to the debugger?",
+                        "MinimumValue": 1000,
+                        "MaximumValue": 1000000
+                    },
+                    {
+                        "Name": "Enable event debugging",
+                        "Type": "SBoolean",
+                        "Variable": "EventDebug",
+                        "Description": "Enables debugging for the kernel event system"
+                    }
+                ]
             },
             {
-                "Name": "Lower frame character for general border",
-                "Type": "SChar",
-                "Variable": "BorderLowerFrameChar",
-                "Description": "A character that resembles the lower frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Left frame character for general border",
-                "Type": "SChar",
-                "Variable": "BorderLeftFrameChar",
-                "Description": "A character that resembles the left frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Right frame character for general border",
-                "Type": "SChar",
-                "Variable": "BorderRightFrameChar",
-                "Description": "A character that resembles the right frame. Be sure to only input one character."
-            },
-            {
-                "Name": "Censor private info on debug logs",
-                "Type": "SBoolean",
-                "Variable": "DebugCensorPrivateInfo",
-                "Description": "Censor private information that may be printed to the debug logs."
-            },
-            {
-                "Name": "Display new notifications as asterisks",
-                "Type": "SBoolean",
-                "Variable": "NotifyDisplayAsAsterisk",
-                "Description": "Shows all new notifications as asterisks. This option is ignored in notifications with progress bar."
-            },
-            {
-                "Name": "Show file size in the file manager",
-                "Type": "SBoolean",
-                "Variable": "IfmShowFileSize",
-                "Description": "Whether to show the file size in the status."
-            },
-            {
-                "Name": "Use classic style of headers in the Settings app",
-                "Type": "SBoolean",
-                "Variable": "ClassicSettingsHeaderStyle",
-                "Description": "This provides you an option to switch to either the modern or the classic header look of the settings application."
-            },
-            {
-                "Name": "Default figlet font",
-                "Type": "SFiglet",
-                "Variable": "DefaultFigletFontName",
-                "Description": "The default figlet font for use with several areas of the kernel, including your modern login screen."
-            },
-            {
-                "Name": "CPU usage debug enabled",
-                "Type": "SBoolean",
-                "Variable": "CpuUsageDebugEnabled",
-                "Description": "If enabled, prints the CPU usage between the two intervals as specified in the CPU usage debug update interval."
-            },
-            {
-                "Name": "CPU usage debug update interval",
-                "Type": "SIntSlider",
-                "Variable": "CpuUsageUpdateInterval",
-                "Description": "How many milliseconds to wait before updating the CPU usage and printing it to the debugger?",
-                "MinimumValue": 1000,
-                "MaximumValue": 1000000
-            },
-            {
-                "Name": "Mouse support",
-                "Type": "SBoolean",
-                "Variable": "InitializeCursorHandler",
-                "Description": "Whether to initialize the mouse support for the kernel or not, essentially enabling all mods to handle the mouse pointer."
-            },
-            {
-                "Name": "Mouse movement support",
-                "Type": "SBoolean",
-                "Variable": "HandleCursorMovement",
-                "Description": "Whether to also enable the movement events or not, improving the user experience of some interactive applications."
+                "Name": "Aesthetics",
+                "Type": "SMultivar",
+                "Description": "This allows you to configure the kernel aesthetics",
+                "Variables": [
+                    {
+                        "Name": "Stylish splash screen",
+                        "Type": "SBoolean",
+                        "Variable": "EnableSplash",
+                        "Description": "Enables the stylish splash screen on startup. Please note that it will disable argument prompt and test shell pre-boot."
+                    },
+                    {
+                        "Name": "Splash name",
+                        "Type": "SSelection",
+                        "Variable": "SplashName",
+                        "IsEnumeration": false,
+                        "SelectionFunctionName": "GetNamesOfSplashes",
+                        "SelectionFunctionType": "SplashManager",
+                        "SelectionFallback": [ "Simple" ],
+                        "Description": "Splash name from the available splashes implemented in the kernel."
+                    },
+                    {
+                        "Name": "Custom Startup Banner",
+                        "Type": "SString",
+                        "Variable": "CustomBanner",
+                        "Description": "If specified, it will display customized startup banner with placeholder support. You can use {0} for kernel version."
+                    },
+                    {
+                        "Name": "Show app information during boot",
+                        "Type": "SBoolean",
+                        "Variable": "ShowAppInfoOnBoot",
+                        "Description": "Shows brief information about the application on boot."
+                    },
+                    {
+                        "Name": "Show stage finish times",
+                        "Type": "SBoolean",
+                        "Variable": "ShowStageFinishTimes",
+                        "Description": "Shows how much time did the kernel take to finish a stage."
+                    },
+                    {
+                        "Name": "Show current time before login",
+                        "Type": "SBoolean",
+                        "Variable": "ShowCurrentTimeBeforeLogin",
+                        "Description": "Shows the current time, time zone, and date before logging in."
+                    },
+                    {
+                        "Name": "Marquee on startup",
+                        "Type": "SBoolean",
+                        "Variable": "StartScroll",
+                        "Description": "Enables eyecandy on startup"
+                    },
+                    {
+                        "Name": "Long Time and Date",
+                        "Type": "SBoolean",
+                        "Variable": "LongTimeDate",
+                        "Description": "The time and date will be longer, showing full month names, etc."
+                    },
+                    {
+                        "Name": "Draw notification border",
+                        "Type": "SBoolean",
+                        "Variable": "DrawBorderNotification",
+                        "Description": "Covers the notification with the border."
+                    },
+                    {
+                        "Name": "Notification border settings",
+                        "Type": "SMultivar",
+                        "Description": "This allows you to configure the notification border",
+                        "Variables": [
+                            {
+                                "Name": "Upper left corner character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyUpperLeftCornerChar",
+                                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Upper right corner character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyUpperRightCornerChar",
+                                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Lower left corner character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyLowerLeftCornerChar",
+                                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Lower right corner character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyLowerRightCornerChar",
+                                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Upper frame character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyUpperFrameChar",
+                                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Lower frame character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyLowerFrameChar",
+                                "Description": "A character that resembles the lower frame. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Left frame character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyLeftFrameChar",
+                                "Description": "A character that resembles the left frame. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Right frame character for notification border",
+                                "Type": "SChar",
+                                "Variable": "NotifyRightFrameChar",
+                                "Description": "A character that resembles the right frame. Be sure to only input one character."
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Password mask character",
+                        "Type": "SChar",
+                        "Variable": "CurrentMask",
+                        "Description": "A character that masks the password. Leave blank for more security."
+                    },
+                    {
+                        "Name": "Enable scroll bar in selection",
+                        "Type": "SBoolean",
+                        "Variable": "EnableScrollBarInSelection",
+                        "Description": "Enables the scroll bar in selection screens"
+                    },
+                    {
+                        "Name": "General border settings",
+                        "Type": "SMultivar",
+                        "Description": "This allows you to configure the general border",
+                        "Variables": [
+                            {
+                                "Name": "Upper left corner character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderUpperLeftCornerChar",
+                                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Upper right corner character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderUpperRightCornerChar",
+                                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Lower left corner character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderLowerLeftCornerChar",
+                                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Lower right corner character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderLowerRightCornerChar",
+                                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Upper frame character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderUpperFrameChar",
+                                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Lower frame character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderLowerFrameChar",
+                                "Description": "A character that resembles the lower frame. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Left frame character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderLeftFrameChar",
+                                "Description": "A character that resembles the left frame. Be sure to only input one character."
+                            },
+                            {
+                                "Name": "Right frame character for general border",
+                                "Type": "SChar",
+                                "Variable": "BorderRightFrameChar",
+                                "Description": "A character that resembles the right frame. Be sure to only input one character."
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Display new notifications as asterisks",
+                        "Type": "SBoolean",
+                        "Variable": "NotifyDisplayAsAsterisk",
+                        "Description": "Shows all new notifications as asterisks. This option is ignored in notifications with progress bar."
+                    },
+                    {
+                        "Name": "Show file size in the file manager",
+                        "Type": "SBoolean",
+                        "Variable": "IfmShowFileSize",
+                        "Description": "Whether to show the file size in the status."
+                    },
+                    {
+                        "Name": "Use classic style of headers in the Settings app",
+                        "Type": "SBoolean",
+                        "Variable": "ClassicSettingsHeaderStyle",
+                        "Description": "This provides you an option to switch to either the modern or the classic header look of the settings application."
+                    },
+                    {
+                        "Name": "Default figlet font",
+                        "Type": "SFiglet",
+                        "Variable": "DefaultFigletFontName",
+                        "Description": "The default figlet font for use with several areas of the kernel, including your modern login screen."
+                    }
+                ]
             }
         ]
     }

@@ -29,7 +29,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using System.Text;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -117,7 +117,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 // Render the block
-                TextWriterWhereColor.WriteWhereColorBack(" ", PosHorizontal, PosVertical, Color.Empty, targetColor);
+                TextWriterWhereColor.WriteWhereColorBack(" ", PosHorizontal, PosVertical - 1, Color.Empty, targetColor);
 
                 // Now, make the position ruler writers
                 var lineBuilder = new StringBuilder();

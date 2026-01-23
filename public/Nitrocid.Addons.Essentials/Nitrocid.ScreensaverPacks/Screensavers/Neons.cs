@@ -21,9 +21,10 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Textify.Data.Figlet;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -44,9 +45,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Get the color and positions
             Color color = currentStep == 0 ? ConsoleColors.Fuchsia : ConsoleColors.Aqua;
             var figletFont = FigletTools.GetFigletFont(ScreensaverPackInit.SaversConfig.NeonsFont);
+            int figHeight = FigletTools.GetFigletHeight("Neon!", figletFont) / 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             var renderedText = new AlignedFigletText(figletFont)
             {
                 Text = "Neon!",
+                Top = consoleY,
                 ForegroundColor = color,
                 Settings = new()
                 {

@@ -21,12 +21,11 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Network.Connections;
+using Nitrocid.Files;
 
 namespace Nitrocid.Network.SpeedDial
 {
@@ -206,7 +205,7 @@ namespace Nitrocid.Network.SpeedDial
         /// Saves all the speed dial entries
         /// </summary>
         public static void SaveAll() =>
-            Writing.WriteContentsText(PathsManagement.GetKernelPath(KernelPathType.SpeedDial), JsonConvert.SerializeObject(speedDialEntries, Formatting.Indented));
+            FilesystemTools.WriteContentsText(PathsManagement.GetKernelPath(KernelPathType.SpeedDial), JsonConvert.SerializeObject(speedDialEntries, Formatting.Indented));
 
         /// <summary>
         /// Loads all the speed dial entries
@@ -214,9 +213,9 @@ namespace Nitrocid.Network.SpeedDial
         public static void LoadAll()
         {
             string path = PathsManagement.GetKernelPath(KernelPathType.SpeedDial);
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 return;
-            speedDialEntries = JsonConvert.DeserializeObject<List<SpeedDialEntry>>(Reading.ReadContentsText(path)) ?? [];
+            speedDialEntries = JsonConvert.DeserializeObject<List<SpeedDialEntry>>(FilesystemTools.ReadContentsText(path)) ?? [];
         }
     }
 }

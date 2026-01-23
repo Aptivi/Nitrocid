@@ -277,7 +277,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CultureManager.CurrentCultStr gives you a current culture that is set by the kernel settings without affecting the host system..
+        ///   Looks up a localized string similar to CultureManager.CurrentCultureName gives you a current culture that is set by the kernel settings without affecting the host system..
         /// </summary>
         internal static string CurrentUICultureGetNameUsageAnalyzerDescription {
             get {
@@ -286,7 +286,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultStr.
+        ///   Looks up a localized string similar to Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultureName.
         /// </summary>
         internal static string CurrentUICultureGetNameUsageAnalyzerMessageFormat {
             get {
@@ -295,7 +295,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use CultureManager.CurrentCultStr instead of CultureInfo.CurrentUICulture.Name.
+        ///   Looks up a localized string similar to Use CultureManager.CurrentCultureName instead of CultureInfo.CurrentUICulture.Name.
         /// </summary>
         internal static string CurrentUICultureGetNameUsageAnalyzerTitle {
             get {
@@ -304,7 +304,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CultureManager.CurrentCult gives you a current culture that is set by the kernel settings without affecting the host system..
+        ///   Looks up a localized string similar to CultureManager.CurrentCulture gives you a current culture that is set by the kernel settings without affecting the host system..
         /// </summary>
         internal static string CurrentUICultureGetUsageAnalyzerDescription {
             get {
@@ -313,7 +313,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCult.
+        ///   Looks up a localized string similar to Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCulture.
         /// </summary>
         internal static string CurrentUICultureGetUsageAnalyzerMessageFormat {
             get {
@@ -322,7 +322,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use CultureManager.CurrentCult instead of CultureInfo.CurrentUICulture.
+        ///   Looks up a localized string similar to Use CultureManager.CurrentCulture instead of CultureInfo.CurrentUICulture.
         /// </summary>
         internal static string CurrentUICultureGetUsageAnalyzerTitle {
             get {
@@ -358,7 +358,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Making.MakeDirectory() neutralizes the provided path to its absolute correct path, while Directory.CreateDirectory operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        ///   Looks up a localized string similar to FilesystemTools.MakeDirectory() neutralizes the provided path to its absolute correct path, while Directory.CreateDirectory operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
         /// </summary>
         internal static string DirectoryCreateDirectoryUsageAnalyzerDescription {
             get {
@@ -367,7 +367,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses Directory.CreateDirectory instead of Making.MakeDirectory().
+        ///   Looks up a localized string similar to Caller uses Directory.CreateDirectory instead of FilesystemTools.MakeDirectory().
         /// </summary>
         internal static string DirectoryCreateDirectoryUsageAnalyzerMessageFormat {
             get {
@@ -376,7 +376,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Making.MakeDirectory() instead of Directory.CreateDirectory.
+        ///   Looks up a localized string similar to Use FilesystemTools.MakeDirectory() instead of Directory.CreateDirectory.
         /// </summary>
         internal static string DirectoryCreateDirectoryUsageAnalyzerTitle {
             get {
@@ -385,7 +385,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Removing.RemoveDirectory() neutralizes the provided path to its absolute correct path, while Directory.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        ///   Looks up a localized string similar to FilesystemTools.RemoveDirectory() neutralizes the provided path to its absolute correct path, while Directory.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
         /// </summary>
         internal static string DirectoryDeleteUsageAnalyzerDescription {
             get {
@@ -394,7 +394,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses Directory.Delete instead of Removing.RemoveDirectory().
+        ///   Looks up a localized string similar to Caller uses Directory.Delete instead of FilesystemTools.RemoveDirectory().
         /// </summary>
         internal static string DirectoryDeleteUsageAnalyzerMessageFormat {
             get {
@@ -403,7 +403,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Removing.RemoveDirectory() instead of Directory.Delete.
+        ///   Looks up a localized string similar to Use FilesystemTools.RemoveDirectory() instead of Directory.Delete.
         /// </summary>
         internal static string DirectoryDeleteUsageAnalyzerTitle {
             get {
@@ -412,7 +412,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Checking.DirectoryExists() neutralizes the provided path to its absolute correct path, while Directory.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        ///   Looks up a localized string similar to FilesystemTools.DirectoryExists() neutralizes the provided path to its absolute correct path, while Directory.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
         /// </summary>
         internal static string DirectoryExistsUsageAnalyzerDescription {
             get {
@@ -421,7 +421,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses Directory.Exists instead of Checking.DirectoryExists().
+        ///   Looks up a localized string similar to Caller uses Directory.Exists instead of FilesystemTools.DirectoryExists().
         /// </summary>
         internal static string DirectoryExistsUsageAnalyzerMessageFormat {
             get {
@@ -430,7 +430,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Checking.DirectoryExists() instead of Directory.Exists.
+        ///   Looks up a localized string similar to Use FilesystemTools.DirectoryExists() instead of Directory.Exists.
         /// </summary>
         internal static string DirectoryExistsUsageAnalyzerTitle {
             get {
@@ -439,7 +439,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alternatively, Listing.GetFileSystemEntries() returns a list of paths to files or folders with better support for patterns. You can also use GetFilesystemEntriesRegex() for regular expression support..
+        ///   Looks up a localized string similar to Alternatively, FilesystemTools.GetFileSystemEntries() returns a list of paths to files or folders with better support for patterns. You can also use GetFilesystemEntriesRegex() for regular expression support..
         /// </summary>
         internal static string DirectoryGetFileSystemEntriesAltUsageAnalyzerDescription {
             get {
@@ -448,7 +448,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses Directory.GetFileSystemEntries instead of Listing.GetFileSystemEntries().
+        ///   Looks up a localized string similar to Caller uses Directory.GetFileSystemEntries instead of FilesystemTools.GetFileSystemEntries().
         /// </summary>
         internal static string DirectoryGetFileSystemEntriesAltUsageAnalyzerMessageFormat {
             get {
@@ -457,7 +457,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Listing.GetFileSystemEntries() instead of Directory.GetFileSystemEntries.
+        ///   Looks up a localized string similar to Use FilesystemTools.GetFileSystemEntries() instead of Directory.GetFileSystemEntries.
         /// </summary>
         internal static string DirectoryGetFileSystemEntriesAltUsageAnalyzerTitle {
             get {
@@ -466,7 +466,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Listing.CreateList() returns a list of FileSystemEntry instances that provides you information about a file, as well as a wrapper to the FileSystemInfo instance for that file..
+        ///   Looks up a localized string similar to FilesystemTools.CreateList() returns a list of FileSystemEntry instances that provides you information about a file, as well as a wrapper to the FileSystemInfo instance for that file..
         /// </summary>
         internal static string DirectoryGetFileSystemEntriesUsageAnalyzerDescription {
             get {
@@ -475,7 +475,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses Directory.GetFileSystemEntries instead of Listing.CreateList().
+        ///   Looks up a localized string similar to Caller uses Directory.GetFileSystemEntries instead of FilesystemTools.CreateList().
         /// </summary>
         internal static string DirectoryGetFileSystemEntriesUsageAnalyzerMessageFormat {
             get {
@@ -484,7 +484,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Listing.CreateList() instead of Directory.GetFileSystemEntries.
+        ///   Looks up a localized string similar to Use FilesystemTools.CreateList() instead of Directory.GetFileSystemEntries.
         /// </summary>
         internal static string DirectoryGetFileSystemEntriesUsageAnalyzerTitle {
             get {
@@ -493,7 +493,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copying.CopyFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Copy operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        ///   Looks up a localized string similar to FilesystemTools.CopyFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Copy operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
         /// </summary>
         internal static string FileCopyUsageAnalyzerDescription {
             get {
@@ -502,7 +502,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses File.Copy instead of Copying.CopyFileOrDir().
+        ///   Looks up a localized string similar to Caller uses File.Copy instead of FilesystemTools.CopyFileOrDir().
         /// </summary>
         internal static string FileCopyUsageAnalyzerMessageFormat {
             get {
@@ -511,7 +511,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Copying.CopyFileOrDir() instead of File.Copy.
+        ///   Looks up a localized string similar to Use FilesystemTools.CopyFileOrDir() instead of File.Copy.
         /// </summary>
         internal static string FileCopyUsageAnalyzerTitle {
             get {
@@ -520,7 +520,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Making.MakeFile() neutralizes the provided path to its absolute correct path, while File.Create operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        ///   Looks up a localized string similar to FilesystemTools.MakeFile() neutralizes the provided path to its absolute correct path, while File.Create operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
         /// </summary>
         internal static string FileCreateUsageAnalyzerDescription {
             get {
@@ -529,7 +529,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses File.Create instead of Making.MakeFile().
+        ///   Looks up a localized string similar to Caller uses File.Create instead of FilesystemTools.MakeFile().
         /// </summary>
         internal static string FileCreateUsageAnalyzerMessageFormat {
             get {
@@ -538,7 +538,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Making.MakeFile() instead of File.Create.
+        ///   Looks up a localized string similar to Use FilesystemTools.MakeFile() instead of File.Create.
         /// </summary>
         internal static string FileCreateUsageAnalyzerTitle {
             get {
@@ -547,7 +547,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Removing.RemoveFile() neutralizes the provided path to its absolute correct path, while File.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        ///   Looks up a localized string similar to FilesystemTools.RemoveFile() neutralizes the provided path to its absolute correct path, while File.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
         /// </summary>
         internal static string FileDeleteUsageAnalyzerDescription {
             get {
@@ -556,7 +556,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses File.Delete instead of Removing.RemoveFile().
+        ///   Looks up a localized string similar to Caller uses File.Delete instead of FilesystemTools.RemoveFile().
         /// </summary>
         internal static string FileDeleteUsageAnalyzerMessageFormat {
             get {
@@ -565,7 +565,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Removing.RemoveFile() instead of File.Delete.
+        ///   Looks up a localized string similar to Use FilesystemTools.RemoveFile() instead of File.Delete.
         /// </summary>
         internal static string FileDeleteUsageAnalyzerTitle {
             get {
@@ -574,7 +574,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Checking.FileExists() neutralizes the provided path to its absolute correct path, while File.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        ///   Looks up a localized string similar to FilesystemTools.FileExists() neutralizes the provided path to its absolute correct path, while File.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
         /// </summary>
         internal static string FileExistsUsageAnalyzerDescription {
             get {
@@ -583,7 +583,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses File.Exists instead of Checking.FileExists().
+        ///   Looks up a localized string similar to Caller uses File.Exists instead of FilesystemTools.FileExists().
         /// </summary>
         internal static string FileExistsUsageAnalyzerMessageFormat {
             get {
@@ -592,7 +592,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Checking.FileExists() instead of File.Exists.
+        ///   Looks up a localized string similar to Use FilesystemTools.FileExists() instead of File.Exists.
         /// </summary>
         internal static string FileExistsUsageAnalyzerTitle {
             get {
@@ -601,7 +601,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Moving.MoveFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Move operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
+        ///   Looks up a localized string similar to FilesystemTools.MoveFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Move operates at the executable directory (Environment.CurrentDirectory), which may not be what you want..
         /// </summary>
         internal static string FileMoveUsageAnalyzerDescription {
             get {
@@ -610,7 +610,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses File.Move instead of Moving.MoveFileOrDir().
+        ///   Looks up a localized string similar to Caller uses File.Move instead of FilesystemTools.MoveFileOrDir().
         /// </summary>
         internal static string FileMoveUsageAnalyzerMessageFormat {
             get {
@@ -619,7 +619,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Moving.MoveFileOrDir() instead of File.Move.
+        ///   Looks up a localized string similar to Use FilesystemTools.MoveFileOrDir() instead of File.Move.
         /// </summary>
         internal static string FileMoveUsageAnalyzerTitle {
             get {
@@ -1060,7 +1060,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Checking.Exists() neutralizes the provided path to its absolute correct path, while Path.Exists operates at the executable Path (Environment.CurrentPath), which may not be what you want..
+        ///   Looks up a localized string similar to FilesystemTools.Exists() neutralizes the provided path to its absolute correct path, while Path.Exists operates at the executable Path (Environment.CurrentPath), which may not be what you want..
         /// </summary>
         internal static string PathExistsUsageAnalyzerDescription {
             get {
@@ -1069,7 +1069,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses Path.Exists instead of Checking.Exists().
+        ///   Looks up a localized string similar to Caller uses Path.Exists instead of FilesystemTools.Exists().
         /// </summary>
         internal static string PathExistsUsageAnalyzerMessageFormat {
             get {
@@ -1078,7 +1078,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Checking.Exists() instead of Path.Exists.
+        ///   Looks up a localized string similar to Use FilesystemTools.Exists() instead of Path.Exists.
         /// </summary>
         internal static string PathExistsUsageAnalyzerTitle {
             get {
@@ -1114,7 +1114,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Parsing.GetInvalidPathChars() always returns invalid characters for Windows paths, regardless of the host operating system, while Path.GetInvalidPathChars returns a list of forbidden path characters for an operating system, which may be wrong in .NET 6.0 or later for the following characters: &apos;&quot;&apos;, &apos;&lt;&apos;, &apos;&gt;&apos;..
+        ///   Looks up a localized string similar to FilesystemTools.GetInvalidPathChars() always returns invalid characters for Windows paths, regardless of the host operating system, while Path.GetInvalidPathChars returns a list of forbidden path characters for an operating system, which may be wrong in .NET 6.0 or later for the following characters: &apos;&quot;&apos;, &apos;&lt;&apos;, &apos;&gt;&apos;..
         /// </summary>
         internal static string PathGetInvalidPathCharsUsageAnalyzerDescription {
             get {
@@ -1123,7 +1123,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses Path.GetInvalidPathChars instead of Parsing.GetInvalidPathChars().
+        ///   Looks up a localized string similar to Caller uses Path.GetInvalidPathChars instead of FilesystemTools.GetInvalidPathChars().
         /// </summary>
         internal static string PathGetInvalidPathCharsUsageAnalyzerMessageFormat {
             get {
@@ -1132,7 +1132,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Parsing.GetInvalidPathChars() instead of Path.GetInvalidPathChars.
+        ///   Looks up a localized string similar to Use FilesystemTools.GetInvalidPathChars() instead of Path.GetInvalidPathChars.
         /// </summary>
         internal static string PathGetInvalidPathCharsUsageAnalyzerTitle {
             get {
@@ -1141,7 +1141,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Checking.Rooted() uses the filesystem driver to call Path.IsPathRooted..
+        ///   Looks up a localized string similar to FilesystemTools.Rooted() uses the filesystem driver to call Path.IsPathRooted..
         /// </summary>
         internal static string PathIsPathRootedUsageAnalyzerDescription {
             get {
@@ -1150,7 +1150,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses Path.IsPathRooted instead of Checking.Rooted().
+        ///   Looks up a localized string similar to Caller uses Path.IsPathRooted instead of FilesystemTools.Rooted().
         /// </summary>
         internal static string PathIsPathRootedUsageAnalyzerMessageFormat {
             get {
@@ -1159,7 +1159,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Checking.Rooted() instead of Path.IsPathRooted.
+        ///   Looks up a localized string similar to Use FilesystemTools.Rooted() instead of Path.IsPathRooted.
         /// </summary>
         internal static string PathIsPathRootedUsageAnalyzerTitle {
             get {

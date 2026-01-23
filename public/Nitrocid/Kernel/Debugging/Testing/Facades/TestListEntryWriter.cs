@@ -27,7 +27,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the list entry writer");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             var NormalStringListEntries = new List<string>() { "String 1", "String 2", "String 3" };
             var NormalStringListValues = new List<string>() { "Value 1", "Value 2", "Value 3" };
@@ -36,10 +36,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                 ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i]);
             TextWriterColor.Write(Translate.DoTranslation("Indent 1:"));
             for (int i = 0; i < NormalStringListEntries.Count; i++)
-                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], 1);
+                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], indent: 1);
             TextWriterColor.Write(Translate.DoTranslation("Indent 2:"));
             for (int i = 0; i < NormalStringListEntries.Count; i++)
-                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], 2);
+                ListEntryWriterColor.WriteListEntry(NormalStringListEntries[i], NormalStringListValues[i], indent: 2);
         }
     }
 }

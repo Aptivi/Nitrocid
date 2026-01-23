@@ -27,14 +27,13 @@ using SharpCompress.Archives.Zip;
 using SharpCompress.Archives.GZip;
 using SharpCompress.Archives.SevenZip;
 using SharpCompress.Archives.Tar;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Files.Folders;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Debugging;
-using Textify.General;
+using Nitrocid.Files;
 using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
@@ -54,7 +53,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Set current directory for RAR shell
-            ArchiveShellCommon.CurrentDirectory = CurrentDirectory.CurrentDir;
+            ArchiveShellCommon.CurrentDirectory = FilesystemTools.CurrentDir;
 
             // Get file path
             string ArchiveFile = "";
@@ -110,7 +109,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

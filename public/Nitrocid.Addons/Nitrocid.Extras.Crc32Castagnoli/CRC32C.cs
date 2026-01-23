@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.Crc32Castagnoli
         /// <inheritdoc/>
         public override string GetEncryptedFile(Stream stream)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", stream.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", vars: [stream.Length]);
             var hashbyte = new Crc32CAlgorithm().ComputeHash(stream);
             return Encryption.GetArrayEnc(hashbyte);
         }
@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.Crc32Castagnoli
         /// <inheritdoc/>
         public override string GetEncryptedString(string str)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", vars: [str.Length]);
             var hashbyte = new Crc32CAlgorithm().ComputeHash(TextEncoding.UTF8.GetBytes(str));
             return Encryption.GetArrayEnc(hashbyte);
         }

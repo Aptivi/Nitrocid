@@ -18,22 +18,21 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 using Nitrocid.Extras.JsonShell.Json.Presets;
 using Nitrocid.Extras.JsonShell.Json.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
 
 namespace Nitrocid.Extras.JsonShell.Json
 {
     /// <summary>
     /// Common JSON shell class
     /// </summary>
-    internal class JsonShellInfo : BaseShellInfo, IShellInfo
+    internal class JsonShellInfo : BaseShellInfo<JsonShell>, IShellInfo
     {
-
         /// <summary>
         /// JSON commands
         /// </summary>
@@ -65,15 +64,9 @@ namespace Nitrocid.Extras.JsonShell.Json
                     ])
                 ], new AddCommand()),
 
-            new CommandInfo("clear", /* Localizable */ "Clears the JSON file",
-                [
-                    new CommandArgumentInfo()
-                ], new ClearCommand()),
+            new CommandInfo("clear", /* Localizable */ "Clears the JSON file", new ClearCommand()),
 
-            new CommandInfo("exitnosave", /* Localizable */ "Exits the JSON shell without saving the changes",
-                [
-                    new CommandArgumentInfo()
-                ], new ExitNoSaveCommand()),
+            new CommandInfo("exitnosave", /* Localizable */ "Exits the JSON shell without saving the changes", new ExitNoSaveCommand()),
 
             new CommandInfo("findproperty", /* Localizable */ "Finds a property",
                 [
@@ -172,10 +165,7 @@ namespace Nitrocid.Extras.JsonShell.Json
                     ])
                 ], new SetCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the JSON file in the interactive editor",
-                [
-                    new CommandArgumentInfo()
-                ], new TuiCommand()),
+            new CommandInfo("tui", /* Localizable */ "Opens the JSON file in the interactive editor", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
@@ -188,8 +178,5 @@ namespace Nitrocid.Extras.JsonShell.Json
             { "PowerLineBG2", new JsonPowerLineBG2Preset() },
             { "PowerLineBG3", new JsonPowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new JsonShell();
-
     }
 }

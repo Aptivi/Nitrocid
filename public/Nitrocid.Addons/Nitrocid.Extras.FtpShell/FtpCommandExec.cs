@@ -21,7 +21,7 @@ using FluentFTP;
 using Nitrocid.Extras.FtpShell.Tools;
 using Nitrocid.Network.Connections;
 using Nitrocid.Network.SpeedDial;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 
 namespace Nitrocid.Extras.FtpShell

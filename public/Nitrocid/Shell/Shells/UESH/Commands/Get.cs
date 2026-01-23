@@ -25,8 +25,8 @@ using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using Nitrocid.Network;
 using Nitrocid.Network.Transfer;
 using Nitrocid.Kernel.Configuration;
@@ -48,7 +48,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string URL = parameters.ArgumentsList[0];
             string outputPath = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-outputpath");
             int failCode = 0;
-            DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", URL);
+            DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", vars: [URL]);
             while (RetryCount <= Config.MainConfig.DownloadRetries)
             {
                 try
@@ -90,7 +90,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     NetworkTools.TransferFinished = false;
                     TextWriters.Write(Translate.DoTranslation("Download failed in try {0}: {1}"), true, KernelColorType.Error, RetryCount, ex.Message);
                     RetryCount += 1;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", RetryCount);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", vars: [RetryCount]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     failCode = ex.GetHashCode();
                 }

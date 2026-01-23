@@ -18,8 +18,8 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Folders;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
+using Nitrocid.Files;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -34,7 +34,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string currentDir = CurrentDirectory.CurrentDir;
+            string currentDir = FilesystemTools.CurrentDir;
             TextWriterColor.Write(currentDir);
             variableValue = currentDir;
             return 0;

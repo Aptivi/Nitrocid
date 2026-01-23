@@ -26,7 +26,7 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Splash;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -84,7 +84,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 double ThresholdRed = RedColorNum / (double)_squareCornerMaxSteps;
                 double ThresholdGreen = GreenColorNum / (double)_squareCornerMaxSteps;
                 double ThresholdBlue = BlueColorNum / (double)_squareCornerMaxSteps;
-                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
 
                 // Determine direction based on value
                 int width = 6;
@@ -121,19 +121,19 @@ namespace Nitrocid.SplashPacks.Splashes
                     int CurrentColorRedOut = RedColorNum;
                     int CurrentColorGreenOut = GreenColorNum;
                     int CurrentColorBlueOut = BlueColorNum;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", _currentStep, _squareCornerMaxSteps);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", vars: [_currentStep, _squareCornerMaxSteps]);
                     ThreadManager.SleepNoBlock(_squareCornerDelay);
                     CurrentColorRedOut = (int)Math.Round(CurrentColorRedOut - ThresholdRed * _currentStep);
                     CurrentColorGreenOut = (int)Math.Round(CurrentColorGreenOut - ThresholdGreen * _currentStep);
                     CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
                     DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
-
+                    
                     var box = new Box()
                     {
                         Left = left,
                         Top = top,
-                        InteriorWidth = width,
-                        InteriorHeight = height,
+                        Width = width,
+                        Height = height,
                         Color = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut),
                     };
                     builder.Append(box.Render());
@@ -152,7 +152,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     int CurrentColorRedIn = 0;
                     int CurrentColorGreenIn = 0;
                     int CurrentColorBlueIn = 0;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", _currentStep, _squareCornerMaxSteps);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", vars: [_currentStep, _squareCornerMaxSteps]);
                     ThreadManager.SleepNoBlock(_squareCornerDelay);
                     CurrentColorRedIn = (int)Math.Round((CurrentColorRedIn + ThresholdRed) * _currentStep);
                     CurrentColorGreenIn = (int)Math.Round((CurrentColorGreenIn + ThresholdGreen) * _currentStep);
@@ -163,8 +163,8 @@ namespace Nitrocid.SplashPacks.Splashes
                     {
                         Left = left,
                         Top = top,
-                        InteriorWidth = width,
-                        InteriorHeight = height,
+                        Width = width,
+                        Height = height,
                         Color = new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn),
                     };
                     builder.Append(box.Render());

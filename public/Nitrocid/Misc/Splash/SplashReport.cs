@@ -224,7 +224,7 @@ namespace Nitrocid.Misc.Splash
                     if (Config.MainConfig.EnableSplash && splash != null)
                     {
                         var openingPart = new ScreenPart();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Invoking splash to report {0}...", Text);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Invoking splash to report {0}...", vars: [Text]);
                         openingPart.AddDynamicText(() =>
                         {
                             return
@@ -239,7 +239,7 @@ namespace Nitrocid.Misc.Splash
                     }
                     else if (!KernelEntry.QuietKernel)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Kernel not booted and not quiet. Reporting {0}...", Text);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Kernel not booted and not quiet. Reporting {0}...", vars: [Text]);
                         TextWriters.Write($"[{_Progress}%] {Text}", true, finalColor, Vars);
                     }
                 }
@@ -250,7 +250,7 @@ namespace Nitrocid.Misc.Splash
             }
             else if (KernelBooted && !KernelEntry.QuietKernel && (Config.MainConfig.EnableSplash && !InSplash || !Config.MainConfig.EnableSplash))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted or not in splash. Reporting {0}...", Text);
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted or not in splash. Reporting {0}...", vars: [Text]);
                 TextWriters.Write(Text, true, finalColor, Vars);
             }
             JournalManager.WriteJournal(Text, Vars);

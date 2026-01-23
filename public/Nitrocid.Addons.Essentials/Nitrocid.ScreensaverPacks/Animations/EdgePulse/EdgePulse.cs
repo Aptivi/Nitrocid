@@ -20,10 +20,11 @@
 using System;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Nitrocid.Misc.Screensaver;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
 {
@@ -50,7 +51,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
             double ThresholdRed = RedColorNum / (double)Settings.EdgePulseMaxSteps;
             double ThresholdGreen = GreenColorNum / (double)Settings.EdgePulseMaxSteps;
             double ThresholdBlue = BlueColorNum / (double)Settings.EdgePulseMaxSteps;
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
 
             // Fade in
             int CurrentColorRedIn = 0;
@@ -60,15 +61,15 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.EdgePulseMaxSteps);
-                ThreadManager.SleepNoBlock(Settings.EdgePulseDelay, System.Threading.Thread.CurrentThread);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", vars: [CurrentStep, Settings.EdgePulseMaxSteps]);
+                ScreensaverManager.Delay(Settings.EdgePulseDelay);
                 CurrentColorRedIn = (int)Math.Round(CurrentColorRedIn + ThresholdRed);
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", vars: [CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn]);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColorDry(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn), true);
                     FillIn();
                 }
             }
@@ -78,47 +79,47 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.EdgePulseMaxSteps);
-                ThreadManager.SleepNoBlock(Settings.EdgePulseDelay, System.Threading.Thread.CurrentThread);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", vars: [CurrentStep, Settings.EdgePulseMaxSteps]);
+                ScreensaverManager.Delay(Settings.EdgePulseDelay);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColorDry(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut), true);
                     FillIn();
                 }
             }
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(Settings.EdgePulseDelay, System.Threading.Thread.CurrentThread);
+            ScreensaverManager.Delay(Settings.EdgePulseDelay);
         }
 
         private static void FillIn()
         {
             int FloorTopLeftEdge = 0;
             int FloorBottomLeftEdge = 0;
-            DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", FloorTopLeftEdge, FloorBottomLeftEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", vars: [FloorTopLeftEdge, FloorBottomLeftEdge]);
 
             int FloorTopRightEdge = ConsoleWrapper.WindowWidth - 1;
             int FloorBottomRightEdge = ConsoleWrapper.WindowWidth - 1;
-            DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", FloorTopRightEdge, FloorBottomRightEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", vars: [FloorTopRightEdge, FloorBottomRightEdge]);
 
             int FloorTopEdge = 0;
             int FloorBottomEdge = ConsoleWrapper.WindowHeight - 1;
-            DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", FloorTopEdge, FloorBottomEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", vars: [FloorTopEdge, FloorBottomEdge]);
 
             int FloorLeftEdge = 0;
             int FloorRightEdge = ConsoleWrapper.WindowWidth - 2;
-            DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", vars: [FloorLeftEdge, FloorRightEdge]);
 
             // First, draw the floor top edge
             for (int x = FloorTopLeftEdge; x <= FloorTopRightEdge; x++)
             {
                 ConsoleWrapper.SetCursorPosition(x, 0);
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 1);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", vars: [x, 1]);
                 ConsoleWrapper.Write(" ");
             }
 
@@ -126,7 +127,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
             for (int x = FloorBottomLeftEdge; x <= FloorBottomRightEdge; x++)
             {
                 ConsoleWrapper.SetCursorPosition(x, FloorBottomEdge);
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", vars: [x, FloorBottomEdge]);
                 ConsoleWrapper.Write(" ");
             }
 
@@ -134,7 +135,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
             for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
             {
                 ConsoleWrapper.SetCursorPosition(FloorLeftEdge, y);
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", vars: [FloorLeftEdge, y]);
                 ConsoleWrapper.Write("  ");
             }
 
@@ -142,7 +143,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.EdgePulse
             for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
             {
                 ConsoleWrapper.SetCursorPosition(FloorRightEdge, y);
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", vars: [FloorRightEdge, y]);
                 ConsoleWrapper.Write("  ");
             }
         }

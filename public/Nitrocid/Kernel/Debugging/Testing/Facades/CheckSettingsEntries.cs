@@ -19,11 +19,8 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
-using System.Collections.Generic;
-using Terminaux.Writer.CyclicWriters;
 using System.Linq;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
@@ -34,7 +31,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Kernel;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => false;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             var Results = ConfigTools.CheckConfigVariables();
             bool failed = Results.Any((res) => !res);

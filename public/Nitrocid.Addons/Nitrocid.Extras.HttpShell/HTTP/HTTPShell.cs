@@ -24,12 +24,11 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Network.Connections;
 using Nitrocid.Network.SpeedDial;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.HttpShell.HTTP
 {
@@ -67,7 +66,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

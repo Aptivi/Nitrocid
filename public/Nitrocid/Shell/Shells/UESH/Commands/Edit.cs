@@ -20,11 +20,9 @@
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Files.Extensions;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -46,8 +44,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             bool forceJson = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-json");
             bool forceHex = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hex");
             bool forceSql = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-sql");
-            if (Checking.FileExists(path))
-                Opening.OpenEditor(path, forceText, forceJson, forceHex, forceSql);
+            if (FilesystemTools.FileExists(path))
+                FilesystemTools.OpenEditor(path, forceText, forceJson, forceHex, forceSql);
             else
                 TextWriters.Write(Translate.DoTranslation("Can't edit file {0} because it's not found."), true, KernelColorType.Error, path);
             return 0;

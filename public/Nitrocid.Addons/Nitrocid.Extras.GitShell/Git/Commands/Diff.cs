@@ -18,13 +18,12 @@
 //
 
 using LibGit2Sharp;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Switches;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {

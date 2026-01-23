@@ -20,12 +20,10 @@
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -44,19 +42,19 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             string linkName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string target = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
-            if (!Checking.Exists(target))
+            if (!FilesystemTools.Exists(target))
             {
                 TextWriters.Write(Translate.DoTranslation("The target file or directory isn't found."), KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
-            if (Checking.Exists(linkName))
+            if (FilesystemTools.Exists(linkName))
             {
                 TextWriters.Write(Translate.DoTranslation("Can't overwrite an existing file or directory with a symbolic link."), KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Filesystem);
             }
             try
             {
-                Making.MakeSymlink(linkName, target);
+                FilesystemTools.MakeSymlink(linkName, target);
             }
             catch (Exception ex)
             {

@@ -18,8 +18,8 @@
 //
 
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Modifications;
-using System.Linq;
+using Nitrocid.Kernel.Extensions;
+using System;
 
 namespace Nitrocid.Languages
 {
@@ -56,21 +56,24 @@ namespace Nitrocid.Languages
 
             // If the language is available, translate
             if (LanguageManager.Languages.TryGetValue(lang, out LanguageInfo? langInfo))
-            {
                 return DoTranslation(text, langInfo);
-            }
             else
             {
-                // We might have this string from a mod
-                foreach (ModInfo mod in ModManager.ListMods().Values)
+                // We might have this language from a mod
+                DebugWriter.WriteDebug(DebugLevel.W, "\"{0}\" with string \"{1}\" isn't in language list. It might be a custom language in a mod.", vars: [lang]);
+                try
                 {
-                    if (mod.ModStrings.TryGetValue(lang, out string[]? localizations) && localizations.Contains(text))
-                        return localizations.Single((t) => t == text);
+                    var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+                    string result = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetLocalizedText", modManagerType, text, lang) ?? text;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got \"{0}\".", vars: [result]);
+                    return result;
                 }
-
-                // String wasn't found
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} isn't in language list", lang);
-                return text;
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to get string \"{0}\" from one of the mods: {1}", vars: [text, ex.Message]);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    return text;
+                }
             }
         }
 
@@ -96,21 +99,26 @@ namespace Nitrocid.Languages
             // Do translation
             if (lang.Strings.TryGetValue(text, out string? translated))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", langname, text);
+                DebugWriter.WriteDebug(DebugLevel.I, "Translating string to {0}: {1}", vars: [langname, text]);
                 return translated;
             }
             else
             {
-                // We might have this string from a mod
-                foreach (ModInfo mod in ModManager.ListMods().Values)
+                // We might have this language from a mod
+                DebugWriter.WriteDebug(DebugLevel.W, "\"{0}\" with string \"{1}\" isn't in language list. It might be a custom language in a mod.", vars: [lang]);
+                try
                 {
-                    if (mod.ModStrings.TryGetValue(langname, out string[]? localizations) && localizations.Contains(text))
-                        return localizations.Single((t) => t == text);
+                    var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+                    string result = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetLocalizedText", modManagerType, text, lang.ThreeLetterLanguageName) ?? text;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got \"{0}\".", vars: [result]);
+                    return result;
                 }
-
-                // String wasn't found
-                DebugWriter.WriteDebug(DebugLevel.W, "No string found in langlist. Lang: {0}, String: {1}", langname, text);
-                return text;
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to get string \"{0}\" from one of the mods: {1}", vars: [text, ex.Message]);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    return text;
+                }
             }
         }
 

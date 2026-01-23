@@ -18,21 +18,23 @@
 //
 
 using System;
-using Textify.Data.Figlet;
-using Nitrocid.ScreensaverPacks.Animations.Glitch;
-using Terminaux.Colors;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Screensaver;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Textify.Data.Figlet;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -54,7 +56,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
@@ -77,6 +79,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 switch (step)
                 {
@@ -95,6 +99,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             int currentRColor = (int)Math.Round(white.RGB.R - thresholdR * currentStep);
@@ -103,10 +109,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentRColor, currentGColor, currentBColor);
-                            ColorTools.LoadBackDry(col);
+                            ConsoleColoring.LoadBackDry(col);
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                     // Step 2: fade in slowly to dark green, then slowly change to dark red
@@ -129,6 +135,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Add the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdR);
@@ -137,15 +145,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ColorTools.LoadBackDry(col);
+                            ConsoleColoring.LoadBackDry(col);
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Add the values according to the threshold
                             currentR = (int)Math.Round(currentR + transitionThresholdR);
@@ -154,17 +164,22 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ColorTools.LoadBackDry(col);
+                            ConsoleColoring.LoadBackDry(col);
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                     // Step 3: Glitch for a bit
                     case 3:
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
-                            ScreensaverManager.Delay(10);
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
+                            ScreensaverManager.Delay(10, true);
                             Glitch.GlitchAt();
                         }
                         break;
@@ -186,6 +201,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int selectorsPositionY = ConsoleWrapper.WindowHeight - 2;
                         while (selector1Selection != 3 || selector2Selection != 3 || selector3Selection != 3)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             // Get the random indexes and the random versions
                             selector1Selection = RandomDriver.RandomIdx(versions.Length);
                             selector2Selection = RandomDriver.RandomIdx(versions.Length);
@@ -205,7 +225,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             TextWriterWhereColor.WriteWhereColorBack(selector3, selector3PositionX, selectorsPositionY, white, darkRed);
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                     // Step 5: Flash the red screen, alternating between the screen and a figlet text saying "2021"
@@ -213,10 +233,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int maxFlashes = 50;
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool showYear = flashes % 2 == 0;
                             if (showYear)
                             {
-                                ColorTools.LoadBackDry(black);
+                                ConsoleColoring.LoadBackDry(black);
                                 var s5figFont = FigletTools.GetFigletFont("banner");
                                 int s5figWidth = FigletTools.GetFigletWidth("2021", s5figFont) / 2;
                                 int s5figHeight = FigletTools.GetFigletHeight("2021", s5figFont) / 2;
@@ -228,19 +253,24 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                     ForegroundColor = darkRed,
                                     BackgroundColor = black,
                                 };
-                                TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s5Figlet, new(s5consoleX, s5consoleY)));
+                                TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(s5Figlet, new(s5consoleX, s5consoleY)));
                             }
                             else
-                                ColorTools.LoadBackDry(darkRed);
-                            ScreensaverManager.Delay(50);
+                                ConsoleColoring.LoadBackDry(darkRed);
+                            ScreensaverManager.Delay(50, true);
                         }
-                        ScreensaverManager.Delay(3000);
+                        ScreensaverManager.Delay(3000, true);
                         break;
                     // Step 6: Glitch for a bit again
                     case 6:
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
-                            ScreensaverManager.Delay(10);
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
+                            ScreensaverManager.Delay(10, true);
                             Glitch.GlitchAt();
                         }
                         break;
@@ -259,7 +289,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         // Select a random day and month of 2021
                         for (int delayed = 0; delayed < 15000; delayed += 10)
                         {
-                            ScreensaverManager.Delay(10);
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
+                            ScreensaverManager.Delay(10, true);
                             int randomMonth = RandomDriver.Random(1, 12);
                             int randomDay = RandomDriver.Random(1, 28);
                             var selectedDate = new DateTime(2021, randomMonth, randomDay);
@@ -277,11 +312,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             ForegroundColor = darkRed,
                             BackgroundColor = black,
                         };
-                        TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s7Figlet, new(s7consoleX, s7consoleY)));
+                        TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(s7Figlet, new(s7consoleX, s7consoleY)));
                         TextWriterWhereColor.WriteWhereColorBack(renderedTargetLong, ConsoleWrapper.WindowWidth / 2 - renderedTargetLong.Length / 2, s7consoleY + 5, darkRed, black);
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
-                            ScreensaverManager.Delay(10);
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
+                            ScreensaverManager.Delay(10, true);
                             Glitch.GlitchAt();
                         }
                         break;
@@ -289,10 +329,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     case 8:
                         for (int xIter = 0; xIter < 1000; xIter++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             int xwidth = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
                             int xheight = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
                             TextWriterWhereColor.WriteWhereColorBack("X", xwidth, xheight, darkRed, black);
-                            ScreensaverManager.Delay(10);
+                            ScreensaverManager.Delay(10, true);
                         }
                         break;
                     // Step 9: Show a figlet text "X" while flashing between yellow and red, the yellow color slowly changing to green
@@ -306,6 +351,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int currentRotB = yellow.RGB.B;
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool showRot = flashes % 2 != 0;
                             Color color = darkRed;
                             if (showRot)
@@ -315,7 +365,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 currentRotB = (int)Math.Round(currentRotB + toGreenThresholdB);
                                 color = new Color(currentRotR, currentRotG, currentRotB);
                             }
-                            ColorTools.LoadBackDry(color);
+                            ConsoleColoring.LoadBackDry(color);
                             var s9figFont = FigletTools.GetFigletFont("banner");
                             int s9figWidth = FigletTools.GetFigletWidth("X", s9figFont) / 2;
                             int s9figHeight = FigletTools.GetFigletHeight("X", s9figFont) / 2;
@@ -327,8 +377,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 ForegroundColor = darkRed,
                                 BackgroundColor = black,
                             };
-                            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(s9Figlet, new(s9consoleX, s9consoleY)));
-                            ScreensaverManager.Delay(50);
+                            TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(s9Figlet, new(s9consoleX, s9consoleY)));
+                            ScreensaverManager.Delay(50, true);
                         }
                         break;
                     // Step 10: Flash red and green for a few seconds
@@ -336,12 +386,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         maxFlashes = 200;
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool showRed = flashes % 2 == 0;
                             if (showRed)
-                                ColorTools.LoadBackDry(red);
+                                ConsoleColoring.LoadBackDry(red);
                             else
-                                ColorTools.LoadBackDry(green);
-                            ScreensaverManager.Delay(50);
+                                ConsoleColoring.LoadBackDry(green);
+                            ScreensaverManager.Delay(50, true);
                         }
                         break;
                     // Step 11: Show figlet text "0.0.16.0 M5" fading out to black
@@ -361,6 +416,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Add the values according to the threshold
                             currentFigletR = (int)Math.Round(currentFigletR + toBlackThresholdR);
@@ -370,9 +427,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and fill the console with it
                             Color col = new(currentFigletR, currentFigletG, currentFigletB);
                             var figFont = FigletTools.GetFigletFont("banner");
+                            int figHeight = FigletTools.GetFigletHeight("0.0.16.0 M5", figFont) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(figFont)
                             {
                                 Text = "0.0.16.0 M5",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = red,
                                 Settings = new()
@@ -383,7 +443,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             TextWriterRaw.WriteRaw(xText.Render());
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                     // Step 12: Fade the console from red to black
@@ -400,6 +460,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             int currentRColor = (int)Math.Round(red.RGB.R - thresholdR * currentStep);
@@ -408,34 +470,33 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentRColor, currentGColor, currentBColor);
-                            ColorTools.LoadBackDry(col);
+                            ConsoleColoring.LoadBackDry(col);
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                     // Step 13: Show "to be continued"
                     case 13:
                         string tbc = Translate.DoTranslation("To be continued...").ToUpper();
-                        ScreensaverManager.Delay(100);
+                        ScreensaverManager.Delay(100, true);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
-                        ScreensaverManager.Delay(40);
+                        ScreensaverManager.Delay(40, true);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, black, black);
-                        ScreensaverManager.Delay(100);
+                        ScreensaverManager.Delay(100, true);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
-                        ScreensaverManager.Delay(50);
+                        ScreensaverManager.Delay(50, true);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, black, black);
-                        ScreensaverManager.Delay(1000);
+                        ScreensaverManager.Delay(1000, true);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
-                        ScreensaverManager.Delay(5000);
+                        ScreensaverManager.Delay(5000, true);
                         break;
                 }
             }
 
             // Reset
             ConsoleResizeHandler.WasResized();
-            ColorTools.LoadBackDry(black);
+            ConsoleColoring.LoadBackDry(black);
         }
-
     }
 }

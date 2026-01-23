@@ -500,5 +500,13 @@ namespace Nitrocid.Kernel.Exceptions
         /// The homepage tools has encountered an error when trying to process your request. Please make sure that you've entered all the necessary data correctly.
         /// </summary>
         Homepage,
+        /// <summary>
+        /// There is no culture by this name.
+        /// </summary>
+        NoSuchCulture,
+        /// <summary>
+        /// There was an error when processing your audio cue action.
+        /// </summary>
+        AudioCue,
     }
 }

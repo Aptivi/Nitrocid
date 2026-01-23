@@ -34,9 +34,16 @@ namespace Nitrocid.Extras.Tips.Settings
     {
         /// <inheritdoc/>
         [JsonIgnore]
-        public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("TipsSettings.json", ResourcesType.Misc, typeof(TipsConfig).Assembly) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
+        public override SettingsEntry[] SettingsEntries
+        {
+            get
+            {
+                var dataStream = ResourcesManager.GetData("TipsSettings.json", ResourcesType.Misc, typeof(TipsConfig).Assembly) ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries."));
+                string dataString = ResourcesManager.ConvertToString(dataStream);
+                return ConfigTools.GetSettingsEntries(dataString);
+            }
+        }
 
         /// <summary>
         /// Show the tip after logging in.

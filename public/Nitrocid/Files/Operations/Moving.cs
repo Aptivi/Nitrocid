@@ -22,12 +22,12 @@ using System.IO;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Debugging;
 
-namespace Nitrocid.Files.Operations
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Moving file operations module
     /// </summary>
-    public static class Moving
+    public static partial class FilesystemTools
     {
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Nitrocid.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to move {0} to {1}: {2}", vars: [Source, Destination, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -85,7 +85,7 @@ namespace Nitrocid.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to move {0} to {1}: {2}", vars: [Source, Destination, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -117,7 +117,7 @@ namespace Nitrocid.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to move {0} to {1}: {2}", vars: [Source, Destination, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -147,7 +147,7 @@ namespace Nitrocid.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to move {0} to {1}: {2}", vars: [Source, Destination, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;

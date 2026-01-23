@@ -20,10 +20,6 @@
 using System.IO;
 using System.Text.RegularExpressions;
 using Nitrocid.Files;
-using Nitrocid.Files.Attributes;
-using Nitrocid.Files.Folders;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
@@ -49,7 +45,7 @@ namespace Nitrocid.Tests.Files
             Directory.CreateDirectory(InitTest.PathToTestSlotFolder + "/TestDir");
             string SourcePath = "TestDir";
             string TargetPath = "TestDir2";
-            Should.NotThrow(() => Copying.CopyFileOrDir(SourcePath, TargetPath));
+            Should.NotThrow(() => FilesystemTools.CopyFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
@@ -62,7 +58,7 @@ namespace Nitrocid.Tests.Files
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
             string TargetPath = "TestDir/";
-            Should.NotThrow(() => Copying.CopyFileOrDir(SourcePath, TargetPath));
+            Should.NotThrow(() => FilesystemTools.CopyFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
@@ -75,7 +71,7 @@ namespace Nitrocid.Tests.Files
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
             string TargetPath = "TestDir/Text.txt";
-            Should.NotThrow(() => Copying.CopyFileOrDir(SourcePath, TargetPath));
+            Should.NotThrow(() => FilesystemTools.CopyFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
@@ -86,7 +82,7 @@ namespace Nitrocid.Tests.Files
         public void TestMakeDirectory()
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
-            Should.NotThrow(() => Making.MakeDirectory("NewDirectory"));
+            Should.NotThrow(() => FilesystemTools.MakeDirectory("NewDirectory"));
         }
 
         /// <summary>
@@ -97,7 +93,7 @@ namespace Nitrocid.Tests.Files
         public void TestMakeFile()
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
-            Should.NotThrow(() => Making.MakeFile("NewFile.txt"));
+            Should.NotThrow(() => FilesystemTools.MakeFile("NewFile.txt"));
         }
 
         /// <summary>
@@ -108,7 +104,7 @@ namespace Nitrocid.Tests.Files
         public void TestMakeJsonFile()
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
-            Should.NotThrow(() => Making.MakeJsonFile("NewFile.json"));
+            Should.NotThrow(() => FilesystemTools.MakeJsonFile("NewFile.json"));
         }
 
         /// <summary>
@@ -122,7 +118,7 @@ namespace Nitrocid.Tests.Files
             Directory.CreateDirectory(InitTest.PathToTestSlotFolder + "/TestMovedDir");
             string SourcePath = "TestMovedDir";
             string TargetPath = "TestMovedDir2";
-            Should.NotThrow(() => Moving.MoveFileOrDir(SourcePath, TargetPath));
+            Should.NotThrow(() => FilesystemTools.MoveFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
@@ -135,7 +131,7 @@ namespace Nitrocid.Tests.Files
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string SourcePath = Path.GetFullPath("TestData/TestMove.txt");
             string TargetPath = "TestDir";
-            Should.NotThrow(() => Moving.MoveFileOrDir(SourcePath, TargetPath));
+            Should.NotThrow(() => FilesystemTools.MoveFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
@@ -148,7 +144,7 @@ namespace Nitrocid.Tests.Files
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string SourcePath = "TestDir/TestMove.txt";
             string TargetPath = Path.GetFullPath("TestData/TestMove.txt");
-            Should.NotThrow(() => Moving.MoveFileOrDir(SourcePath, TargetPath));
+            Should.NotThrow(() => FilesystemTools.MoveFileOrDir(SourcePath, TargetPath));
         }
 
         /// <summary>
@@ -173,7 +169,7 @@ namespace Nitrocid.Tests.Files
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string TargetPath = FilesystemTools.NeutralizePath("TestDir2");
-            Should.NotThrow(() => Removing.RemoveDirectory(TargetPath));
+            Should.NotThrow(() => FilesystemTools.RemoveDirectory(TargetPath));
         }
 
         /// <summary>
@@ -185,7 +181,7 @@ namespace Nitrocid.Tests.Files
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string TargetPath = "TestDir/Text.txt";
-            Should.NotThrow(() => Removing.RemoveFile(TargetPath));
+            Should.NotThrow(() => FilesystemTools.RemoveFile(TargetPath));
         }
 
         /// <summary>
@@ -197,7 +193,7 @@ namespace Nitrocid.Tests.Files
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string TargetPath = Path.GetFullPath("TestData/TestText.txt");
-            var Matches = Searching.SearchFileForString(TargetPath, "test");
+            var Matches = FilesystemTools.SearchFileForString(TargetPath, "test");
             Matches.ShouldNotBeNull();
             Matches.ShouldNotBeEmpty();
         }
@@ -211,7 +207,7 @@ namespace Nitrocid.Tests.Files
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string TargetPath = Path.GetFullPath("TestData/TestText.txt");
-            var Matches = Searching.SearchFileForStringRegexp(TargetPath, new Regex("test"));
+            var Matches = FilesystemTools.SearchFileForStringRegexp(TargetPath, new Regex("test"));
             Matches.ShouldNotBeNull();
             Matches.ShouldNotBeEmpty();
         }
@@ -225,7 +221,7 @@ namespace Nitrocid.Tests.Files
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
-            Should.NotThrow(() => AttributeManager.AddAttributeToFile(SourcePath, FileAttributes.Hidden));
+            Should.NotThrow(() => FilesystemTools.AddAttributeToFile(SourcePath, FileAttributes.Hidden));
         }
 
         /// <summary>
@@ -237,7 +233,7 @@ namespace Nitrocid.Tests.Files
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
-            Should.NotThrow(() => AttributeManager.RemoveAttributeFromFile(SourcePath, FileAttributes.Hidden));
+            Should.NotThrow(() => FilesystemTools.RemoveAttributeFromFile(SourcePath, FileAttributes.Hidden));
         }
 
         /// <summary>
@@ -248,7 +244,7 @@ namespace Nitrocid.Tests.Files
         public void TestReadAllLinesNoBlock()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            var LinesTestText = Reading.ReadAllLinesNoBlock(PathToTestText);
+            var LinesTestText = FilesystemTools.ReadAllLinesNoBlock(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string[]));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
@@ -262,7 +258,7 @@ namespace Nitrocid.Tests.Files
         public void TestReadContents()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            var LinesTestText = Reading.ReadContents(PathToTestText);
+            var LinesTestText = FilesystemTools.ReadContents(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string[]));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
@@ -276,7 +272,7 @@ namespace Nitrocid.Tests.Files
         public void TestReadAllTextNoBlock()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            string LinesTestText = Reading.ReadAllTextNoBlock(PathToTestText);
+            string LinesTestText = FilesystemTools.ReadAllTextNoBlock(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
@@ -290,7 +286,7 @@ namespace Nitrocid.Tests.Files
         public void TestReadContentsText()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            string LinesTestText = Reading.ReadContentsText(PathToTestText);
+            string LinesTestText = FilesystemTools.ReadContentsText(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
@@ -304,13 +300,13 @@ namespace Nitrocid.Tests.Files
         public void TestWriteAllLinesNoBlock()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            var LinesTestText = Reading.ReadContents(PathToTestText);
+            var LinesTestText = FilesystemTools.ReadContents(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string[]));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
             string PathToTestDestinationText = Path.GetFullPath($"TestData/{nameof(TestWriteAllLinesNoBlock)}.txt");
-            Writing.WriteAllLinesNoBlock(PathToTestDestinationText, LinesTestText);
-            var LinesTestText2 = Reading.ReadContents(PathToTestText);
+            FilesystemTools.WriteAllLinesNoBlock(PathToTestDestinationText, LinesTestText);
+            var LinesTestText2 = FilesystemTools.ReadContents(PathToTestText);
             LinesTestText2.ShouldBeOfType(typeof(string[]));
             LinesTestText2.ShouldNotBeNull();
             LinesTestText2.ShouldNotBeEmpty();
@@ -325,13 +321,13 @@ namespace Nitrocid.Tests.Files
         public void TestWriteContents()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            var LinesTestText = Reading.ReadContents(PathToTestText);
+            var LinesTestText = FilesystemTools.ReadContents(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string[]));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
             string PathToTestDestinationText = Path.GetFullPath($"TestData/{nameof(TestWriteContents)}.txt");
-            Writing.WriteContents(PathToTestDestinationText, LinesTestText);
-            var LinesTestText2 = Reading.ReadContents(PathToTestText);
+            FilesystemTools.WriteContents(PathToTestDestinationText, LinesTestText);
+            var LinesTestText2 = FilesystemTools.ReadContents(PathToTestText);
             LinesTestText2.ShouldBeOfType(typeof(string[]));
             LinesTestText2.ShouldNotBeNull();
             LinesTestText2.ShouldNotBeEmpty();
@@ -346,13 +342,13 @@ namespace Nitrocid.Tests.Files
         public void TestWriteAllTextNoBlock()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            string LinesTestText = Reading.ReadContentsText(PathToTestText);
+            string LinesTestText = FilesystemTools.ReadContentsText(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
             string PathToTestDestinationText = Path.GetFullPath($"TestData/{nameof(TestWriteAllTextNoBlock)}.txt");
-            Writing.WriteAllTextNoBlock(PathToTestDestinationText, LinesTestText);
-            string LinesTestText2 = Reading.ReadContentsText(PathToTestText);
+            FilesystemTools.WriteAllTextNoBlock(PathToTestDestinationText, LinesTestText);
+            string LinesTestText2 = FilesystemTools.ReadContentsText(PathToTestText);
             LinesTestText2.ShouldBeOfType(typeof(string));
             LinesTestText2.ShouldNotBeNull();
             LinesTestText2.ShouldNotBeEmpty();
@@ -367,13 +363,13 @@ namespace Nitrocid.Tests.Files
         public void TestWriteContentsText()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            string LinesTestText = Reading.ReadContentsText(PathToTestText);
+            string LinesTestText = FilesystemTools.ReadContentsText(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
             string PathToTestDestinationText = Path.GetFullPath($"TestData/{nameof(TestWriteContentsText)}.txt");
-            Writing.WriteContentsText(PathToTestDestinationText, LinesTestText);
-            string LinesTestText2 = Reading.ReadContentsText(PathToTestText);
+            FilesystemTools.WriteContentsText(PathToTestDestinationText, LinesTestText);
+            string LinesTestText2 = FilesystemTools.ReadContentsText(PathToTestText);
             LinesTestText2.ShouldBeOfType(typeof(string));
             LinesTestText2.ShouldNotBeNull();
             LinesTestText2.ShouldNotBeEmpty();
@@ -516,7 +512,7 @@ namespace Nitrocid.Tests.Files
         [Description("Manipulation")]
         public void TestCreateList()
         {
-            var CreatedList = Listing.CreateList(InitTest.PathToTestSlotFolder);
+            var CreatedList = FilesystemTools.CreateList(InitTest.PathToTestSlotFolder);
             CreatedList.ShouldNotBeEmpty();
         }
 
@@ -529,7 +525,7 @@ namespace Nitrocid.Tests.Files
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
             string PathToTestTextToBeCombined = Path.GetFullPath("TestData/TestText.txt");
-            var Combined = Manipulation.CombineTextFiles(PathToTestText, [PathToTestTextToBeCombined]);
+            var Combined = FilesystemTools.CombineTextFiles(PathToTestText, [PathToTestTextToBeCombined]);
             Combined.ShouldBeOfType(typeof(string[]));
             Combined.ShouldNotBeNull();
             Combined.ShouldNotBeEmpty();
@@ -543,7 +539,7 @@ namespace Nitrocid.Tests.Files
         [Description("Manipulation")]
         public void TestRemoveAttributeExtension()
         {
-            var CreatedList = AttributeManager.RemoveAttribute(FileAttributes.System, FileAttributes.System);
+            var CreatedList = FilesystemTools.RemoveAttribute(FileAttributes.System, FileAttributes.System);
             CreatedList.ShouldNotHaveFlag(FileAttributes.System);
         }
 

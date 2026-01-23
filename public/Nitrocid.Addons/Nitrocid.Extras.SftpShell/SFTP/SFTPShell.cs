@@ -28,8 +28,8 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Network.Connections;
 using Nitrocid.Network.SpeedDial;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Renci.SshNet;
 
 namespace Nitrocid.Extras.SftpShell.SFTP
@@ -61,7 +61,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP
 
             // Prepare to print current SFTP directory
             SFTPShellCommon.SFTPCurrentRemoteDir = client.WorkingDirectory;
-            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", SFTPShellCommon.SFTPCurrentRemoteDir ?? "");
+            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", vars: [SFTPShellCommon.SFTPCurrentRemoteDir ?? ""]);
             SFTPShellCommon.SFTPSite = client.ConnectionInfo.Host;
             SFTPShellCommon.SFTPUser = client.ConnectionInfo.Username;
 
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

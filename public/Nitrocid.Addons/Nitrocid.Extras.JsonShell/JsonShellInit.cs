@@ -17,23 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Nitrocid.Extras.JsonShell.Commands;
 using Nitrocid.Extras.JsonShell.Json;
 using Nitrocid.Extras.JsonShell.Settings;
-using Nitrocid.Extras.JsonShell.Tools;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Modifications;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using System;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reflection;
 
 namespace Nitrocid.Extras.JsonShell
 {
@@ -91,36 +84,14 @@ namespace Nitrocid.Extras.JsonShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasJsonShell);
 
         internal static JsonConfig JsonConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(JsonConfig)) ? (JsonConfig)Config.baseConfigurations[nameof(JsonConfig)] : new JsonConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(JsonTools.OpenJsonFile), new Func<string, bool>(JsonTools.OpenJsonFile) },
-            { nameof(JsonTools.CloseJsonFile), new Func<bool>(JsonTools.CloseJsonFile) },
-            { nameof(JsonTools.SaveFile), new Func<bool, bool>(JsonTools.SaveFile) },
-            { nameof(JsonTools.SaveFile) + "2", new Func<bool, Formatting, bool>(JsonTools.SaveFile) },
-            { nameof(JsonTools.WasJsonEdited), new Func<bool>(JsonTools.WasJsonEdited) },
-            { nameof(JsonTools.DetermineRootType), new Func<JTokenType>(JsonTools.DetermineRootType) },
-            { nameof(JsonTools.DetermineType), new Func<string, JTokenType>(JsonTools.DetermineType) },
-            { nameof(JsonTools.GetToken), new Func<string, JToken>(JsonTools.GetToken) },
-            { nameof(JsonTools.GetTokenSafe), new Func<string, JToken?>(JsonTools.GetTokenSafe) },
-            { nameof(JsonTools.GetTokenSafe) + "2", new Func<string, string, JToken?>(JsonTools.GetTokenSafe) },
-            { nameof(JsonTools.Add), new Action<string, string, string, string>(JsonTools.Add) },
-            { nameof(JsonTools.Set), new Action<string, string, string, string>(JsonTools.Set) },
-            { nameof(JsonTools.Remove), new Action<string>(JsonTools.Remove) },
-            { nameof(JsonTools.SerializeToString), new Func<string, string>(JsonTools.SerializeToString) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(JsonConfig)) ? (JsonConfig)Config.baseConfigurations[nameof(JsonConfig)] : Config.GetFallbackKernelConfig<JsonConfig>();
 
         void IAddon.FinalizeAddon()
         {
             var config = new JsonConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("JsonShell", new JsonShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            ShellManager.RegisterShell("JsonShell", new JsonShellInfo());
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -128,8 +99,8 @@ namespace Nitrocid.Extras.JsonShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterAddonShell("JsonShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            ShellManager.UnregisterShell("JsonShell");
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(JsonConfig));
         }
     }

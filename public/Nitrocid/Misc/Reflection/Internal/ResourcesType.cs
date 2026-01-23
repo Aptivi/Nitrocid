@@ -25,6 +25,7 @@ namespace Nitrocid.Misc.Reflection.Internal
         Themes,
         Settings,
         Languages,
+        Audio,
         Misc,
     }
 }

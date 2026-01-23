@@ -21,11 +21,9 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Textify.Tools;
 
 namespace Nitrocid.Extras.JsonShell.Commands
@@ -45,7 +43,7 @@ namespace Nitrocid.Extras.JsonShell.Commands
             string JsonOutputFile;
             string BeautifiedJson;
 
-            if (Checking.FileExists(JsonFile))
+            if (FilesystemTools.FileExists(JsonFile))
             {
                 // Beautify the JSON and display it on screen
                 BeautifiedJson = JsonTools.BeautifyJson(JsonFile);
@@ -55,7 +53,7 @@ namespace Nitrocid.Extras.JsonShell.Commands
                 if (parameters.ArgumentsList.Length > 1)
                 {
                     JsonOutputFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
-                    Writing.WriteContentsText(JsonOutputFile, BeautifiedJson);
+                    FilesystemTools.WriteContentsText(JsonOutputFile, BeautifiedJson);
                 }
                 variableValue = BeautifiedJson;
                 return 0;

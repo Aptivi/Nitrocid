@@ -27,7 +27,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the kernel update functionality");
         public override TestSection TestSection => TestSection.Kernel;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             var update = UpdateManager.FetchKernelUpdates(UpdateKind.Binary);
             if (update != null)

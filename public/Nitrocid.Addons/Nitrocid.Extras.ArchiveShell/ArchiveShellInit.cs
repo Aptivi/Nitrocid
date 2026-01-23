@@ -17,22 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.ArchiveShell.Archive.Commands;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell;
 using Nitrocid.Extras.ArchiveShell.Settings;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
-using System;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
+using Terminaux.Shell.Shells;
 using System.Linq;
-using Nitrocid.Extras.ArchiveShell.Archive;
-using SharpCompress.Archives;
 
 namespace Nitrocid.Extras.ArchiveShell
 {
@@ -56,35 +50,22 @@ namespace Nitrocid.Extras.ArchiveShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasArchiveShell);
 
         internal static ArchiveConfig ArchiveConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(ArchiveConfig)) ? (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)] : new ArchiveConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(ArchiveTools.ListArchiveEntries), new Func<string, List<IArchiveEntry>>(ArchiveTools.ListArchiveEntries) },
-            { nameof(ArchiveTools.ExtractFileEntry), new Func<string, string, bool, bool>(ArchiveTools.ExtractFileEntry) },
-            { nameof(ArchiveTools.PackFile), new Func<string, string, bool>(ArchiveTools.PackFile) },
-            { nameof(ArchiveTools.ChangeWorkingArchiveDirectory), new Func<string, bool>(ArchiveTools.ChangeWorkingArchiveDirectory) },
-            { nameof(ArchiveTools.ChangeWorkingArchiveLocalDirectory), new Func<string, bool>(ArchiveTools.ChangeWorkingArchiveLocalDirectory) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(ArchiveConfig)) ? (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)] : Config.GetFallbackKernelConfig<ArchiveConfig>();
 
         void IAddon.FinalizeAddon()
         {
             var config = new ArchiveConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("ArchiveShell", new ArchiveShellInfo());
+            ShellManager.RegisterShell("ArchiveShell", new ArchiveShellInfo());
         }
 
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterAddonShell("ArchiveShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            ShellManager.UnregisterShell("ArchiveShell");
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(ArchiveConfig));
         }
     }

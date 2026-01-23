@@ -1,6 +1,4 @@
 Imports Nitrocid.Modifications
-Imports System.Collections.ObjectModel
-Imports System.Reflection
 
 Namespace KSModVB
     Public Class ModClass
@@ -19,25 +17,7 @@ Namespace KSModVB
 
         Public ReadOnly Property MinimumSupportedApiVersion As Version Implements IMod.MinimumSupportedApiVersion
             Get
-                Return New Version(3, 0, 25, 526)
-            End Get
-        End Property
-
-        Public ReadOnly Property PubliclyAvailableFunctions As ReadOnlyDictionary(Of String, [Delegate]) Implements IMod.PubliclyAvailableFunctions
-            Get
-                Return Nothing
-            End Get
-        End Property
-
-        Public ReadOnly Property PubliclyAvailableProperties As ReadOnlyDictionary(Of String, PropertyInfo) Implements IMod.PubliclyAvailableProperties
-            Get
-                Return Nothing
-            End Get
-        End Property
-
-        Public ReadOnly Property PubliclyAvailableFields As ReadOnlyDictionary(Of String, FieldInfo) Implements IMod.PubliclyAvailableFields
-            Get
-                Return Nothing
+                Return New Version(3, 0, 25, 584)
             End Get
         End Property
 

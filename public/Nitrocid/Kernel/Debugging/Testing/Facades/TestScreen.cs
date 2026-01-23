@@ -29,6 +29,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
 using Terminaux.Base.Extensions;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -36,7 +37,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the screen feature for the console");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             // Show the screen measurement sticks
             var stickScreen = new Screen();
@@ -48,9 +49,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                     var builder = new StringBuilder();
                     builder.Append(
                         ConsolePositioning.RenderChangePosition(0, 1) +
-                        ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Silver), true) +
+                        ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Silver), true) +
                         GenerateWidthStick() + GenerateHeightStick() +
-                        ColorTools.RenderResetColors()
+                        ConsoleColoring.RenderResetColors()
                     );
                     return builder.ToString();
                 });
@@ -61,7 +62,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Screen failed to render:") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Screen failed to render:") + $" {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                });
             }
             finally
             {

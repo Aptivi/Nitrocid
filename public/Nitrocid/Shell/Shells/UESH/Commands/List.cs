@@ -18,10 +18,9 @@
 //
 
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -63,9 +62,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             if (parameters.ArgumentsList.Length == 0)
             {
                 if (tree)
-                    Listing.ListTree(CurrentDirectory.CurrentDir, SuppressUnauthorizedMessage, Config.MainConfig.SortList);
+                    FilesystemTools.ListTree(FilesystemTools.CurrentDir, SuppressUnauthorizedMessage, Config.MainConfig.SortList);
                 else
-                    Listing.List(CurrentDirectory.CurrentDir, ShowFileDetails, SuppressUnauthorizedMessage, Config.MainConfig.SortList, Recursive);
+                    FilesystemTools.List(FilesystemTools.CurrentDir, ShowFileDetails, SuppressUnauthorizedMessage, Config.MainConfig.SortList, Recursive);
             }
             else
             {
@@ -73,9 +72,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 {
                     string direct = FilesystemTools.NeutralizePath(Directory);
                     if (tree)
-                        Listing.ListTree(direct, SuppressUnauthorizedMessage, Config.MainConfig.SortList);
+                        FilesystemTools.ListTree(direct, SuppressUnauthorizedMessage, Config.MainConfig.SortList);
                     else
-                        Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage, Config.MainConfig.SortList, Recursive);
+                        FilesystemTools.List(direct, ShowFileDetails, SuppressUnauthorizedMessage, Config.MainConfig.SortList, Recursive);
                 }
             }
             return 0;

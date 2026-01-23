@@ -24,8 +24,8 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using UnitsNet;
 using Nitrocid.Extras.UnitConv.Tools;
 
@@ -58,8 +58,8 @@ namespace Nitrocid.Extras.UnitConv.Commands
                 var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
                 var InitialUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}");
                 var ConvertedUnit = InitialUnit.ToUnit(TargetUnitInstance);
-                TextWriters.Write("- {0} => ", false, KernelColorType.ListEntry, InitialUnit.ToString(CultureManager.CurrentCult.NumberFormat));
-                TextWriters.Write(ConvertedUnit.ToString(CultureManager.CurrentCult.NumberFormat), true, KernelColorType.ListValue);
+                TextWriters.Write("- {0} => ", false, KernelColorType.ListEntry, InitialUnit.ToString(CultureManager.CurrentCulture.NumberFormat));
+                TextWriters.Write(ConvertedUnit.ToString(CultureManager.CurrentCulture.NumberFormat), true, KernelColorType.ListValue);
             }
             return 0;
         }

@@ -23,7 +23,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
 
@@ -46,16 +46,16 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                 if (parameters.ArgumentsList.Length == 1)
                 {
                     // We've only provided one line number
-                    DebugWriter.WriteDebug(DebugLevel.I, "Line number provided: {0}", parameters.ArgumentsList[0]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(parameters.ArgumentsList[0]));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Line number provided: {0}", vars: [parameters.ArgumentsList[0]]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", vars: [TextTools.IsStringNumeric(parameters.ArgumentsList[0])]);
                     if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
                     {
                         LineNumber = Convert.ToInt32(parameters.ArgumentsList[0]);
-                        DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                        DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                         if (Convert.ToInt32(parameters.ArgumentsList[0]) <= TextEditShellCommon.FileLines.Count)
                         {
                             string Line = TextEditShellCommon.FileLines[LineNumber - 1];
-                            DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", vars: [LineNumber, Line]);
                             TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
                             TextWriters.Write(Line, true, KernelColorType.ListValue);
                             return 0;
@@ -69,27 +69,27 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                     else
                     {
                         TextWriters.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
-                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }
                 else
                 {
                     // We've provided two line numbers in the range
-                    DebugWriter.WriteDebug(DebugLevel.I, "Line numbers provided: {0}, {1}", parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(parameters.ArgumentsList[0]), TextTools.IsStringNumeric(parameters.ArgumentsList[1]));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Line numbers provided: {0}, {1}", vars: [parameters.ArgumentsList[0], parameters.ArgumentsList[1]]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", vars: [TextTools.IsStringNumeric(parameters.ArgumentsList[0]), TextTools.IsStringNumeric(parameters.ArgumentsList[1])]);
                     if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]) & TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                     {
                         int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[0]);
                         int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[1]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
-                        DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                        DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", vars: [TextEditShellCommon.FileLines.Count]);
                         if (LineNumberStart <= TextEditShellCommon.FileLines.Count & LineNumberEnd <= TextEditShellCommon.FileLines.Count)
                         {
                             for (LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                             {
                                 string Line = TextEditShellCommon.FileLines[LineNumber - 1];
-                                DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", vars: [LineNumber, Line]);
                                 TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
                                 TextWriters.Write(Line, true, KernelColorType.ListValue);
                             }
@@ -104,7 +104,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                     else
                     {
                         TextWriters.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
-                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[0]]);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                     }
                 }
@@ -113,7 +113,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
             {
                 foreach (string Line in TextEditShellCommon.FileLines)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", vars: [LineNumber, Line]);
                     TextWriters.Write("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
                     TextWriters.Write(Line, true, KernelColorType.ListValue);
                     LineNumber += 1;

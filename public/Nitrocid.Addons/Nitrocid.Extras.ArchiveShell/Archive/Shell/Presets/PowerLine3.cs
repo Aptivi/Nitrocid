@@ -22,7 +22,7 @@ using System.Text;
 using System.Collections.Generic;
 using Terminaux.Colors;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
         public override string PresetPromptCompletionShowcase =>
             PresetPromptCompletionBuilder();
 
-        internal override string PresetPromptBuilder()
+        private string PresetPromptBuilder()
         {
             // Segments
             List<PowerLineSegment> segments =
@@ -69,13 +69,13 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 
             // Use RenderSegments to render our segments
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptBuilderShowcase()
+        private string PresetPromptBuilderShowcase()
         {
             // Segments
             List<PowerLineSegment> segments =
@@ -89,13 +89,13 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 
             // Use RenderSegments to render our segments
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptCompletionBuilder()
+        private string PresetPromptCompletionBuilder()
         {
             // Segments
             List<PowerLineSegment> segments =
@@ -108,17 +108,11 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 
             // Use RenderSegments to render our segments
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();
         }
-
-        string IPromptPreset.PresetPromptBuilder() =>
-            PresetPromptBuilder();
-
-        string IPromptPreset.PresetPromptCompletionBuilder() =>
-            PresetPromptCompletionBuilder();
 
     }
 }

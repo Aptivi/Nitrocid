@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using Nitrocid.ConsoleBase.Themes;
 using Nitrocid.Kernel.Debugging;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 
@@ -31,7 +32,6 @@ namespace Nitrocid.ConsoleBase.Colors
     /// </summary>
     public static class KernelColorTools
     {
-
         // Variables for colors used by previous versions of the kernel.
         internal static Dictionary<KernelColorType, Color> KernelColors = PopulateColorsDefault();
         internal static Dictionary<KernelColorType, Color>? kernelDefaultColors = PopulateColorsCurrent();
@@ -41,9 +41,6 @@ namespace Nitrocid.ConsoleBase.Colors
         internal static Color accentForegroundColor = GetColor(KernelColorType.Warning);
         internal static Color accentBackgroundColor = GetColor(KernelColorType.Background);
 
-        // Variables to allow/disallow background color
-        internal static bool allowBackground = false;
-
         /// <summary>
         /// Gets a color from the color type
         /// </summary>
@@ -51,7 +48,7 @@ namespace Nitrocid.ConsoleBase.Colors
         public static Color GetColor(KernelColorType type)
         {
             string plainColorSeq = KernelColors[type].PlainSequence;
-            DebugWriter.WriteDebug(DebugLevel.I, "Getting color type {0}: {1}", type.ToString(), plainColorSeq);
+            DebugWriter.WriteDebug(DebugLevel.I, "Getting color type {0}: {1}", vars: [type.ToString(), plainColorSeq]);
             return new(plainColorSeq);
         }
 
@@ -62,7 +59,7 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="color">Color to be set</param>
         public static Color SetColor(KernelColorType type, Color color)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Setting color type {0} to color sequence {1}...", type.ToString(), color.PlainSequence);
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting color type {0} to color sequence {1}...", vars: [type.ToString(), color.PlainSequence]);
             return KernelColors[type] = color;
         }
 
@@ -115,20 +112,20 @@ namespace Nitrocid.ConsoleBase.Colors
                         themeInfo ??= new();
                         type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
                         color = themeInfo.GetColor(type);
-                        DebugWriter.WriteDebug(DebugLevel.I, "[DEFAULT] Adding color type {0} with color {1}...", type, color.PlainSequence);
+                        DebugWriter.WriteDebug(DebugLevel.I, "[DEFAULT] Adding color type {0} with color {1}...", vars: [type, color.PlainSequence]);
                         break;
                     case KernelColorPopulationType.Current:
                         // Population type is current colors
                         type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
                         color = GetColor(type);
-                        DebugWriter.WriteDebug(DebugLevel.I, "[CURRENT] Adding color type {0} with color {1}...", type, color.PlainSequence);
+                        DebugWriter.WriteDebug(DebugLevel.I, "[CURRENT] Adding color type {0} with color {1}...", vars: [type, color.PlainSequence]);
                         break;
                 }
                 colors.Add(type, color);
             }
 
             // Return it
-            DebugWriter.WriteDebug(DebugLevel.I, "Populated {0} colors.", colors.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Populated {0} colors.", vars: [colors.Count]);
             return colors;
         }
 
@@ -148,9 +145,9 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
         public static void SetConsoleColor(KernelColorType colorType, bool Background, bool resetBack = true)
         {
-            ColorTools.SetConsoleColor(GetColor(colorType), Background);
+            ConsoleColoring.SetConsoleColor(GetColor(colorType), Background);
             if (!Background && resetBack)
-                ColorTools.SetConsoleColor(GetColor(KernelColorType.Background), true);
+                ConsoleColoring.SetConsoleColor(GetColor(KernelColorType.Background), true);
         }
 
         /// <summary>
@@ -196,9 +193,9 @@ namespace Nitrocid.ConsoleBase.Colors
         /// <param name="resetBack">If the color is not a background, do we reset the background color?</param>
         public static void SetConsoleColorDry(KernelColorType colorType, bool Background, bool resetBack = true)
         {
-            ColorTools.SetConsoleColorDry(GetColor(colorType), Background);
+            ConsoleColoring.SetConsoleColorDry(GetColor(colorType), Background);
             if (!Background && resetBack)
-                ColorTools.SetConsoleColorDry(GetColor(KernelColorType.Background), true);
+                ConsoleColoring.SetConsoleColorDry(GetColor(KernelColorType.Background), true);
         }
 
         /// <summary>
@@ -229,9 +226,43 @@ namespace Nitrocid.ConsoleBase.Colors
         }
 
         /// <summary>
+        /// Resets the console colors without clearing screen
+        /// </summary>
+        /// <param name="useKernelColors">Whether to use the kernel colors or to use the default terminal colors</param>
+        public static void ResetColors(bool useKernelColors = false)
+        {
+            ResetBackground(useKernelColors);
+            ResetForeground(useKernelColors);
+        }
+
+        /// <summary>
+        /// Resets the background console color without clearing screen
+        /// </summary>
+        /// <param name="useKernelColors">Whether to use the kernel colors or to use the default terminal colors</param>
+        public static void ResetBackground(bool useKernelColors = false)
+        {
+            if (useKernelColors)
+                SetConsoleColor(KernelColorType.Background, Background: true);
+            else
+                ConsoleColoring.ResetBackground();
+        }
+
+        /// <summary>
+        /// Resets the foreground console color without clearing screen
+        /// </summary>
+        /// <param name="useKernelColors">Whether to use the kernel colors or to use the default terminal colors</param>
+        public static void ResetForeground(bool useKernelColors = false)
+        {
+            if (useKernelColors)
+                SetConsoleColor(KernelColorType.NeutralText);
+            else
+                ConsoleColoring.ResetForeground();
+        }
+
+        /// <summary>
         /// Loads the background color by clearing the screen to the kernel background color
         /// </summary>
         public static void LoadBackground() =>
-            ColorTools.LoadBack(GetColor(KernelColorType.Background));
+            ConsoleColoring.LoadBack(GetColor(KernelColorType.Background));
     }
 }

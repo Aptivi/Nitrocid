@@ -63,21 +63,21 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
 
                 // Show a message to download
                 EventsManager.FireEvent(EventType.FTPPreDownload, File);
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", vars: [File]);
 
                 // Try to download 3 times
                 string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
                 var Result = client.DownloadFile(LocalFilePath, File, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), FTPTransferProgress.FileProgress);
 
                 // Show a message that it's downloaded
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded file {0}.", vars: [File]);
                 EventsManager.FireEvent(EventType.FTPPostDownload, File, Result.IsSuccess());
                 return true;
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for file {0}: {1}", vars: [File, ex.Message]);
                 EventsManager.FireEvent(EventType.FTPPostDownload, File, false);
             }
             return false;
@@ -105,7 +105,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
 
                 // Show a message to download
                 EventsManager.FireEvent(EventType.FTPPreDownload, Folder);
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloading folder {0}...", Folder);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading folder {0}...", vars: [Folder]);
 
                 // Try to download folder
                 string LocalFolderPath = FilesystemTools.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
@@ -116,20 +116,20 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
                 DebugWriter.WriteDebug(DebugLevel.I, "Folder download result:");
                 foreach (FtpResult Result in Results)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "-- {0} --", Result.Name);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Success: {0}", Result.IsSuccess);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Skipped: {0}", Result.IsSkipped);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Failure: {0}", Result.IsFailed);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Size: {0}", Result.Size);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Type: {0}", Result.Type);
+                    DebugWriter.WriteDebug(DebugLevel.I, "-- {0} --", vars: [Result.Name]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Success: {0}", vars: [Result.IsSuccess]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Skipped: {0}", vars: [Result.IsSkipped]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Failure: {0}", vars: [Result.IsFailed]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Size: {0}", vars: [Result.Size]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Type: {0}", vars: [Result.Type]);
                     if (Result.IsFailed)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}", Result.Name);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}", vars: [Result.Name]);
 
                         // Download could fail with no exception in very rare cases.
                         if (Result.Exception is not null)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Exception {0}", Result.Exception.Message);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Exception {0}", vars: [Result.Exception.Message]);
                             DebugWriter.WriteDebugStackTrace(Result.Exception);
                         }
                         Failed = true;
@@ -140,11 +140,11 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
                 // Show a message that it's downloaded
                 if (!Failed)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0}.", Folder);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0}.", vars: [Folder]);
                 }
                 else
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0} partially due to failure.", Folder);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Downloaded folder {0} partially due to failure.", vars: [Folder]);
                 }
                 EventsManager.FireEvent(EventType.FTPPostDownload, Folder, !Failed);
                 return !Failed;
@@ -152,7 +152,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for folder {0}: {1}", Folder, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for folder {0}: {1}", vars: [Folder, ex.Message]);
                 EventsManager.FireEvent(EventType.FTPPostDownload, Folder, false);
             }
             return false;
@@ -178,13 +178,13 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
 
             // Show a message to download
             EventsManager.FireEvent(EventType.FTPPreUpload, File);
-            DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", LocalFile);
-            DebugWriter.WriteDebug(DebugLevel.I, "Where in the remote: {0}", File);
+            DebugWriter.WriteDebug(DebugLevel.I, "Uploading file {0}...", vars: [LocalFile]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Where in the remote: {0}", vars: [File]);
 
             // Try to upload
             string LocalFilePath = FilesystemTools.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
             bool Success = Convert.ToBoolean(client.UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, true, FtpVerify.Retry, FTPTransferProgress.FileProgress));
-            DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", LocalFile, File, Success);
+            DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", vars: [LocalFile, File, Success]);
             EventsManager.FireEvent(EventType.FTPPostUpload, File, Success);
             return Success;
         }
@@ -209,7 +209,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
 
             // Show a message to download
             EventsManager.FireEvent(EventType.FTPPreUpload, Folder);
-            DebugWriter.WriteDebug(DebugLevel.I, "Uploading folder {0}...", Folder);
+            DebugWriter.WriteDebug(DebugLevel.I, "Uploading folder {0}...", vars: [Folder]);
 
             // Try to upload
             string LocalFolderPath = FilesystemTools.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
@@ -220,20 +220,20 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Folder upload result:");
             foreach (FtpResult Result in Results)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "-- {0} --", Result.Name);
-                DebugWriter.WriteDebug(DebugLevel.I, "Success: {0}", Result.IsSuccess);
-                DebugWriter.WriteDebug(DebugLevel.I, "Skipped: {0}", Result.IsSkipped);
-                DebugWriter.WriteDebug(DebugLevel.I, "Failure: {0}", Result.IsFailed);
-                DebugWriter.WriteDebug(DebugLevel.I, "Size: {0}", Result.Size);
-                DebugWriter.WriteDebug(DebugLevel.I, "Type: {0}", Result.Type);
+                DebugWriter.WriteDebug(DebugLevel.I, "-- {0} --", vars: [Result.Name]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Success: {0}", vars: [Result.IsSuccess]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Skipped: {0}", vars: [Result.IsSkipped]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Failure: {0}", vars: [Result.IsFailed]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Size: {0}", vars: [Result.Size]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Type: {0}", vars: [Result.Type]);
                 if (Result.IsFailed)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Upload failed for {0}", Result.Name);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Upload failed for {0}", vars: [Result.Name]);
 
                     // Upload could fail with no exception in very rare cases.
                     if (Result.Exception is not null)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Exception {0}", Result.Exception.Message);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Exception {0}", vars: [Result.Exception.Message]);
                         DebugWriter.WriteDebugStackTrace(Result.Exception);
                     }
                     Failed = true;
@@ -244,11 +244,11 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
             // Show a message that it's downloaded
             if (!Failed)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0}.", Folder);
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0}.", vars: [Folder]);
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0} partially due to failure.", Folder);
+                DebugWriter.WriteDebug(DebugLevel.I, "Uploaded folder {0} partially due to failure.", vars: [Folder]);
             }
             EventsManager.FireEvent(EventType.FTPPostUpload, Folder, !Failed);
             return !Failed;
@@ -268,7 +268,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
 
                 // Show a message to download
                 EventsManager.FireEvent(EventType.FTPPreDownload, File);
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", vars: [File]);
 
                 // Try to download 3 times
                 var DownloadedBytes = Array.Empty<byte>();
@@ -278,14 +278,14 @@ namespace Nitrocid.Extras.FtpShell.Tools.Transfer
                     DownloadedContent.Append(Convert.ToChar(DownloadedByte));
 
                 // Show a message that it's downloaded
-                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded {0}.", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded {0}.", vars: [File]);
                 EventsManager.FireEvent(EventType.FTPPostDownload, File, Downloaded);
                 return DownloadedContent.ToString();
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", File, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", vars: [File, ex.Message]);
                 EventsManager.FireEvent(EventType.FTPPostDownload, File, false);
                 throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Download failed for file {0}.") + " {1}", File, ex.Message);
             }

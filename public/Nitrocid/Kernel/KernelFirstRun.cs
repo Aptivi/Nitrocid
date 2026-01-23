@@ -27,11 +27,11 @@ using Nitrocid.Users;
 using System;
 using Textify.General;
 using Terminaux.Base;
-using Terminaux.Inputs.Presentation.Inputs;
 using Terminaux.Inputs;
 using System.Linq;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Modules;
 
 namespace Nitrocid.Kernel
 {
@@ -73,13 +73,13 @@ namespace Nitrocid.Kernel
 
                             // Page inputs
                             [
-                                new InputInfo(
+                                new PresentationInputInfo(
                                     Translate.DoTranslation("Language"), Translate.DoTranslation("Select your language."),
-                                    new SelectionInputMethod()
+                                    new ComboBoxModule()
                                     {
-                                        Question = Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here.") + " " +
-                                                   Translate.DoTranslation("Based on your language settings on your system, the appropriate language is") + $" {LanguageManager.InferLanguageFromSystem()}. ",
-                                        Choices = LanguageManager.Languages.Select((kvp) => new InputChoiceInfo(kvp.Key, kvp.Value.FullLanguageName)).ToArray()
+                                        Name = Translate.DoTranslation("Select your language."),
+                                        Description = Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here."),
+                                        Choices = [new("Language", [new("Language group", LanguageManager.Languages.Select((kvp) => new InputChoiceInfo(kvp.Key, kvp.Value.FullLanguageName)).ToArray())])]
                                     }, true
                                 )
                             ]
@@ -92,10 +92,10 @@ namespace Nitrocid.Kernel
                 DebugWriter.WriteDebug(DebugLevel.I, "Out of introductory run. Going straight to the rest once language configuration has been saved.");
 
                 // Save all the changes
-                InfoBoxNonModalColor.WriteInfoBoxPlain(Translate.DoTranslation("Saving settings..."));
-                int selectedLanguageIdx = (int?)firstRunPres.Pages[0].Inputs[0].InputMethod.Input ?? 0;
+                InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving settings..."));
+                int selectedLanguageIdx = firstRunPres.Pages[0].Inputs[0].InputMethod.GetValue<int?>() ?? 0;
                 string selectedLanguage = LanguageManager.Languages.ElementAt(selectedLanguageIdx).Key;
-                DebugWriter.WriteDebug(DebugLevel.I, "Got selectedLanguage {0}.", selectedLanguage);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got selectedLanguage {0}.", vars: [selectedLanguage]);
                 LanguageManager.SetLang(selectedLanguage);
 
                 // Now, go to the first-run.
@@ -103,7 +103,7 @@ namespace Nitrocid.Kernel
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error in introductory run: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error in introductory run: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 ConsoleWrapper.Clear();
                 TextWriterColor.Write(Translate.DoTranslation("We apologize for your inconvenience, but the out-of-box experience has crashed. If you're sure that this is a defect in the experience, please report the crash to us with debugging logs.") + " {0}", ex.Message);
@@ -158,18 +158,21 @@ namespace Nitrocid.Kernel
 
                             // Page inputs
                             [
-                                new InputInfo(
+                                new PresentationInputInfo(
                                     Translate.DoTranslation("Username"), Translate.DoTranslation("Enter the username"),
-                                    new TextInputMethod()
+                                    new TextBoxModule()
                                     {
-                                        Question = Translate.DoTranslation("Enter your new username. You should enter a new username that doesn't already exist."),
+                                        Name = Translate.DoTranslation("Enter the username"),
+                                        Description = Translate.DoTranslation("Enter your new username. You should enter a new username that doesn't already exist."),
                                     }, true
                                 ),
-                                new InputInfo(
+                                new PresentationInputInfo(
                                     Translate.DoTranslation("Password"), Translate.DoTranslation("Enter the password"),
-                                    new MaskedTextInputMethod()
+                                    new MaskedTextBoxModule()
                                     {
-                                        Question = Translate.DoTranslation("Enter your user password. You should choose a strong password for increased security."),
+                                        Name = Translate.DoTranslation("Enter the password"),
+                                        Description = Translate.DoTranslation("Enter your user password. You should choose a strong password for increased security."),
+                                        Mask = !string.IsNullOrEmpty(Config.MainConfig.CurrentMask) ? Config.MainConfig.CurrentMask[0] : '\0',
                                     }
                                 )
                             ]
@@ -180,9 +183,9 @@ namespace Nitrocid.Kernel
                 while (!moveOn)
                 {
                     PresentationTools.Present(firstRunPresUser, true, true);
-                    string inputUser = (string?)firstRunPresUser.Pages[0].Inputs[0].InputMethod.Input ?? user;
+                    string inputUser = firstRunPresUser.Pages[0].Inputs[0].InputMethod.GetValue<string?>() ?? user;
                     user = string.IsNullOrEmpty(inputUser) ? user : inputUser;
-                    string pass = (string?)firstRunPresUser.Pages[0].Inputs[1].InputMethod.Input ?? "";
+                    string pass = firstRunPresUser.Pages[0].Inputs[1].InputMethod.GetValue<string?>() ?? "";
                     try
                     {
                         UserManagement.AddUser(user, pass);
@@ -193,7 +196,7 @@ namespace Nitrocid.Kernel
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "We shouldn't move on. Failed to create username. {0}", ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.I, "We shouldn't move on. Failed to create username. {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                         userStepFailureReason = Translate.DoTranslation("Failed to create username. Please ensure that your username doesn't contain spaces and special characters.");
                     }
@@ -225,16 +228,16 @@ namespace Nitrocid.Kernel
 
                             // Page inputs
                             [
-                                new InputInfo(
+                                new PresentationInputInfo(
                                     Translate.DoTranslation("Automatic Update Check"), Translate.DoTranslation("Automatic Update Check"),
-                                    new SelectionInputMethod()
+                                    new ComboBoxModule()
                                     {
-                                        Question = Translate.DoTranslation("Do you want Nitrocid KS to automatically check for updates?"),
-                                        Choices =
-                                        [
+                                        Name = Translate.DoTranslation("Automatic Update Check"),
+                                        Description = Translate.DoTranslation("Do you want Nitrocid KS to automatically check for updates?"),
+                                        Choices = [new("Choices", [new("Choices", [
                                             new InputChoiceInfo("y", Translate.DoTranslation("Yes, I do!")),
                                             new InputChoiceInfo("n", Translate.DoTranslation("No, thanks.")),
-                                        ]
+                                        ])])]
                                     }
                                 ),
                             ]
@@ -242,7 +245,7 @@ namespace Nitrocid.Kernel
                     ]
                 );
                 PresentationTools.Present(firstRunPresUpdates, true, true);
-                bool needsAutoCheck = (int?)firstRunPresUpdates.Pages[0].Inputs[0].InputMethod.Input == 0;
+                bool needsAutoCheck = firstRunPresUpdates.Pages[0].Inputs[0].InputMethod.GetValue<int?>() == 0;
                 Config.MainConfig.CheckUpdateStart = needsAutoCheck;
 
                 Slideshow firstRunPresOutro = new(
@@ -281,7 +284,7 @@ namespace Nitrocid.Kernel
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error in first run: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error in first run: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 ConsoleWrapper.Clear();
                 TextWriterColor.Write(Translate.DoTranslation("We apologize for your inconvenience, but the out-of-box experience has crashed. If you're sure that this is a defect in the experience, please report the crash to us with debugging logs.") + " {0}", ex.Message);

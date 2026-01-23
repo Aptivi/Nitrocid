@@ -21,7 +21,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.Docking.Dock;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Users.Login.Widgets;
 
 namespace Nitrocid.Extras.Docking.Commands

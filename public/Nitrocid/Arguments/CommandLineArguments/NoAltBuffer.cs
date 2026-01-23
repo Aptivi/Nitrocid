@@ -17,7 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase;
+using Nitrocid.Kernel;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {
@@ -25,7 +26,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
     {
 
         public override void Execute(ArgumentParameters parameters) =>
-            ConsoleTools.UseAltBuffer = false;
+            KernelEntry.UseAltBuffer = false;
 
     }
 }

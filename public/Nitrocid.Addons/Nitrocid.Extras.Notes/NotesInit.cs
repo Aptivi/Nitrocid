@@ -17,17 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Notes.Commands;
 using Nitrocid.Extras.Notes.Management;
-using Nitrocid.Shell.ShellBase.Commands;
-using System;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Shell.Homepage;
 
@@ -50,14 +46,14 @@ namespace Nitrocid.Extras.Notes
 
             new CommandInfo("removenote", /* Localizable */ "Removes a note",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Note number"
                         })
-                    }),
+                    ]),
                 ], new RemoveNote()),
 
             new CommandInfo("removenotes", /* Localizable */ "Removes all notes",
@@ -89,18 +85,12 @@ namespace Nitrocid.Extras.Notes
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasNotes);
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             HomepageTools.UnregisterBuiltinAction("Notes");
         }
 

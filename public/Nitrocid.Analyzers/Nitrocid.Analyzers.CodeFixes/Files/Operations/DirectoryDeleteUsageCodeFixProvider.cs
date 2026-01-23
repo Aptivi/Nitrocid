@@ -68,8 +68,8 @@ namespace Nitrocid.Analyzers.Files.Operations
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls Removing.RemoveDirectory
-                var classSyntax = SyntaxFactory.IdentifierName("Removing");
+                // We need to have a syntax that calls FilesystemTools.RemoveDirectory
+                var classSyntax = SyntaxFactory.IdentifierName("FilesystemTools");
                 var methodSyntax = SyntaxFactory.IdentifierName("RemoveDirectory");
                 var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var replacedSyntax = resultSyntax
@@ -83,13 +83,11 @@ namespace Nitrocid.Analyzers.Files.Operations
                 // Check the imports
                 if (finalNode is not CompilationUnitSyntax compilation)
                     return document.Project.Solution;
-                if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Files.Operations") == false)
+                if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Files") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.QualifiedName(
-                            SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
-                            SyntaxFactory.IdentifierName("Files")),
-                        SyntaxFactory.IdentifierName("Operations"));
+                        SyntaxFactory.IdentifierName(AnalysisTools.rootNameSpace),
+                        SyntaxFactory.IdentifierName("Files"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
                 }

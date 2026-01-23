@@ -157,13 +157,13 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                         // Check the name
                         RDebugName = deviceInfo.Name;
                         if (string.IsNullOrEmpty(RDebugName))
-                            DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} has no name. Prompting for name...", RDebugIP);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} has no name. Prompting for name...", vars: [RDebugIP]);
 
                         // Check to see if the device is blocked
                         if (deviceInfo.Blocked)
                         {
                             // Blocked! Disconnect it.
-                            DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) tried to join remote debug, but blocked.", RDebugName, RDebugIP);
+                            DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) tried to join remote debug, but blocked.", vars: [RDebugName, RDebugIP]);
                             RDebugClient.Disconnect(true);
                         }
                         else
@@ -178,7 +178,7 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug
                                 RDebugSWriter.Write(Translate.DoTranslation(">> Your name is {0}.") + "\r\n", RDebugName);
 
                             // Acknowledge the debugger
-                            DebugWriter.WriteDebug(DebugLevel.I, "Debug device \"{0}\" ({1}) connected.", RDebugName, RDebugIP);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Debug device \"{0}\" ({1}) connected.", vars: [RDebugName, RDebugIP]);
                             RDebugSWriter.Flush();
                             RDebugThread.Start(RDebugInstance);
                             EventsManager.FireEvent(EventType.RemoteDebugConnectionAccepted, RDebugIP);

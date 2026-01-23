@@ -23,13 +23,12 @@ using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Renderers;
 using System;
 using System.Text;
-using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters.Shapes;
 
 namespace Nitrocid.Users.Login.Widgets.Implementations
 {
@@ -86,8 +85,8 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                 {
                     Text = new string(' ', ConsoleChar.EstimateCellWidth(lastRendered)),
                     Top = posY,
-                    LeftMargin = left,
-                    RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                    Left = left,
+                    Width = width,
                     ForegroundColor = timeColor
                 };
                 builder.Append(timeDateClear.Render());
@@ -105,8 +104,8 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             {
                 Text = rendered,
                 Top = posY,
-                LeftMargin = left,
-                RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                Left = left,
+                Width = width,
                 ForegroundColor = timeColor,
                 Settings = new()
                 {
@@ -181,7 +180,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
         }
 
         private Line GetLineFrom(Coordinate startPos, Coordinate endPos) =>
-            GetLineFrom((startPos.X, startPos.Y), (endPos.X, endPos.Y), ColorTools.CurrentBackgroundColor);
+            GetLineFrom((startPos.X, startPos.Y), (endPos.X, endPos.Y), ConsoleColoring.CurrentBackgroundColor);
 
         private Line GetLineFrom((int x, int y) startPos, (int x, int y) endPos, Color color)
         {

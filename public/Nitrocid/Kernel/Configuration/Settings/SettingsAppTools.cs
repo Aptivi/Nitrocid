@@ -20,7 +20,6 @@
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -30,6 +29,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles;
+using Nitrocid.Kernel.Exceptions;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 #if SPECIFIERREL
 using Nitrocid.Kernel.Updates;
@@ -68,31 +69,6 @@ namespace Nitrocid.Kernel.Configuration.Settings
             return [.. sections];
         }
 
-        internal static BaseKernelConfig? SelectConfig()
-        {
-            var configs = Config.GetKernelConfigs();
-            var choices = configs.Select((bkc, idx) => new InputChoiceInfo($"{idx + 1}", bkc.GetType().Name)).ToArray();
-
-            // Prompt user to provide the base kernel config
-            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, Translate.DoTranslation("Select a configuration instance to switch to."));
-
-            // Check the index
-            if (selected == -1)
-                return null;
-            else
-            {
-                // Check for settings entries
-                var selectedConfig = configs[selected];
-                SettingsEntry[]? settingsEntries = selectedConfig.SettingsEntries;
-                if (settingsEntries is null || settingsEntries.Length == 0)
-                {
-                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Settings entries are not found."));
-                    return null;
-                }
-                return configs[selected];
-            }
-        }
-
         internal static void SaveSettings()
         {
             // Just a wrapper for CreateConfig() that SettingsApp uses
@@ -104,7 +80,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(ex.Message, KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(ex.Message, new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -120,27 +99,39 @@ namespace Nitrocid.Kernel.Configuration.Settings
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(ex.Message, KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(ex.Message, new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 
         internal static void SaveSettingsAs()
         {
-            string Location = InfoBoxInputColor.WriteInfoBoxInputColor(Translate.DoTranslation("Where do you want to save the current kernel settings?"), KernelColorTools.GetColor(KernelColorType.Question));
+            string Location = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Where do you want to save the current kernel settings?"), new InfoBoxSettings()
+            {
+                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Question)
+            });
             Location = FilesystemTools.NeutralizePath(Location);
             ConsoleWrapper.CursorVisible = false;
-            if (!Checking.FileExists(Location))
+            if (!FilesystemTools.FileExists(Location))
                 SaveSettings(Location);
             else
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Can't save kernel settings on top of existing file."), KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't save kernel settings on top of existing file."), new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
         }
 
         internal static void LoadSettingsFrom(BaseKernelConfig config)
         {
-            string Location = InfoBoxInputColor.WriteInfoBoxInputColor(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), KernelColorTools.GetColor(KernelColorType.Question));
+            string Location = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), new InfoBoxSettings()
+            {
+                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Question)
+            });
             Location = FilesystemTools.NeutralizePath(Location);
-            if (Checking.FileExists(Location))
+            if (FilesystemTools.FileExists(Location))
             {
                 try
                 {
@@ -151,12 +142,18 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 }
                 catch (Exception ex)
                 {
-                    InfoBoxModalColor.WriteInfoBoxModalColor(ex.Message, KernelColorTools.GetColor(KernelColorType.Error));
+                    InfoBoxModalColor.WriteInfoBoxModal(ex.Message, new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    });
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("File not found."), KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("File not found."), new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
         }
 
         internal static void ReloadConfig()
@@ -204,6 +201,31 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 $"{Translate.DoTranslation("Host ID")}: {KernelPlatform.GetCurrentRid()}\n" +
                 $"{Translate.DoTranslation("Host Generic ID")}: {KernelPlatform.GetCurrentGenericRid()}"
             );
+        }
+
+        internal static BaseKernelConfig? SelectConfig()
+        {
+            var configs = Config.GetKernelConfigs();
+            var choices = configs.Select((bkc, idx) => new InputChoiceInfo($"{idx + 1}", bkc.GetType().Name)).ToArray();
+
+            // Prompt user to provide the base kernel config
+            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, Translate.DoTranslation("Select a configuration instance to switch to."));
+
+            // Check the index
+            if (selected == -1)
+                return null;
+            else
+            {
+                // Check for settings entries
+                var selectedConfig = configs[selected];
+                SettingsEntry[]? settingsEntries = selectedConfig.SettingsEntries;
+                if (settingsEntries is null || settingsEntries.Length == 0)
+                {
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Settings entries are not found."));
+                    return null;
+                }
+                return configs[selected];
+            }
         }
 
         internal static bool IsUnsupported(SettingsKey settings)
@@ -267,26 +289,53 @@ namespace Nitrocid.Kernel.Configuration.Settings
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section.");
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                InfoBoxModalColor.WriteInfoBoxModalColor(
+                InfoBoxModalColor.WriteInfoBoxModal(
                     $"  * {finalSection}\n\n" +
                     $"{message}\n\n" +
-                    $"{Translate.DoTranslation("If you're sure that you've opened the right section, turn on the kernel debugger, reproduce, and try to investigate the logs.")}",
-                    KernelColorTools.GetColor(KernelColorType.Error)
+                    $"{Translate.DoTranslation("If you're sure that you've opened the right section, turn on the kernel debugger, reproduce, and try to investigate the logs.")}", new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    }
                 );
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", vars: [ex.Message]);
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                InfoBoxModalColor.WriteInfoBoxModalColor(
+                InfoBoxModalColor.WriteInfoBoxModal(
                     $"  * {finalSection}\n\n" +
                     $"{message}\n\n" +
                     $"{Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:")}\n" +
                     $"  - {ex.Message}\n\n" +
-                    $"{Translate.DoTranslation("If you don't understand the above message, turn on the kernel debugger, reproduce, and try to investigate the logs.")}",
-                    KernelColorTools.GetColor(KernelColorType.Error)
+                    $"{Translate.DoTranslation("If you don't understand the above message, turn on the kernel debugger, reproduce, and try to investigate the logs.")}", new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    }
                 );
             }
+        }
+
+        internal static object[] ParseParameters(SettingsKey key)
+        {
+            // Don't do anything if we don't have arguments
+            if (key.SelectionFunctionArgs is null || key.SelectionFunctionArgs.Length == 0)
+                return [];
+
+            // Check the parameters and convert them
+            object[] objects = new object[key.SelectionFunctionArgs.Length];
+            for (int i = 0; i < key.SelectionFunctionArgs.Length; i++)
+            {
+                SettingsFunctionArgs? arg = key.SelectionFunctionArgs[i];
+
+                // Try to get the type
+                Type type = Type.GetType(arg.ArgType) ??
+                    throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("Specified argument type is not valid") + $": {arg.ArgType}");
+
+                // Use this type to convert the string value to that type
+                var converted = Convert.ChangeType(arg.ArgValue, type);
+                objects[i] = converted;
+            }
+            return objects;
         }
     }
 }

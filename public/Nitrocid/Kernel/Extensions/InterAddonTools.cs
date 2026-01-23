@@ -20,9 +20,11 @@
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using Nitrocid.Misc.Reflection;
 using Nitrocid.Security.Permissions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace Nitrocid.Kernel.Extensions
@@ -32,279 +34,667 @@ namespace Nitrocid.Kernel.Extensions
     /// </summary>
     public static class InterAddonTools
     {
+        /// <summary>
+        /// Lists all the available types from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <returns>List of function names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Type[] ListAvailableTypes(KnownAddons addonName) =>
+            ListAvailableTypes(InterAddonTranslations.GetAddonName(addonName));
+
+        /// <summary>
+        /// Lists all the available types from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <returns>List of function names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Type[] ListAvailableTypes(string addonName)
+        {
+            var asm = GetAddonAssembly(addonName);
+            var types = asm.GetTypes().Where((type) => type.IsPublic && type.IsVisible);
+            return types.ToArray();
+        }
+
+        /// <summary>
+        /// Gets a type from an addon
+        /// </summary>
+        /// <param name="addonName">Addon name</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <returns>List of function names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Type GetTypeFromAddon(KnownAddons addonName, string typeName) =>
+            GetTypeFromAddon(InterAddonTranslations.GetAddonName(addonName), typeName);
+
+        /// <summary>
+        /// Gets a type from an addon
+        /// </summary>
+        /// <param name="addonName">Addon name</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <returns>List of function names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Type GetTypeFromAddon(string addonName, string typeName)
+        {
+            // Get the addon types and get the type
+            var types = ListAvailableTypes(addonName);
+            var type = types.SingleOrDefault(t => t.FullName == typeName) ??
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't return non-existent class type from addon assembly"));
+            return type;
+        }
 
         /// <summary>
         /// Lists all the available functions from the addon name
         /// </summary>
         /// <param name="addonName">Addon name to check</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <returns>List of function names</returns>
         /// <exception cref="KernelException"></exception>
-        public static string[] ListAvailableFunctions(string addonName)
+        public static Dictionary<string, MethodInfo> ListAvailableFunctions(KnownAddons addonName, string typeName) =>
+            ListAvailableFunctions(InterAddonTranslations.GetAddonName(addonName), typeName);
+
+        /// <summary>
+        /// Lists all the available functions from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <returns>List of function names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Dictionary<string, MethodInfo> ListAvailableFunctions(KnownAddons addonName, Type type) =>
+            ListAvailableFunctions(InterAddonTranslations.GetAddonName(addonName), type);
+
+        /// <summary>
+        /// Lists all the available functions from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <returns>List of function names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Dictionary<string, MethodInfo> ListAvailableFunctions(string addonName, string typeName)
         {
-            var funcs = new List<string>();
+            // Get the type
+            var type = GetTypeFromAddon(addonName, typeName);
+            return ListAvailableFunctions(addonName, type);
+        }
 
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
+        /// <summary>
+        /// Lists all the available functions from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <returns>List of function names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Dictionary<string, MethodInfo> ListAvailableFunctions(string addonName, Type type)
+        {
+            // Verify the type before proceeding
+            VerifyType(addonName, type);
 
-            // Get the addon
-            var addonInfo = AddonTools.GetAddon(addonName) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't obtain list of functions"));
+            // Now, get the methods from the type
+            var methods = type.GetMethods();
 
-            // Get a list of functions
-            var functions = addonInfo.Addon.PubliclyAvailableFunctions;
-            if (functions is null || functions.Count == 0)
-                return [];
+            // Convert this array to the dictionary
+            Dictionary<string, MethodInfo> functions = [];
+            foreach (var method in methods)
+            {
+                string name = method.Name;
+                string finalName = name;
 
-            // Add all of the functions!
-            funcs.AddRange(functions.Keys);
-            return [.. funcs];
+                // Make sure that overloaded methods that have the same name don't conflict with another method
+                int iter = 1;
+                while (functions.ContainsKey(finalName))
+                {
+                    iter++;
+                    finalName = name + iter;
+                }
+
+                // Add the entry
+                functions.Add(finalName, method);
+            }
+            return functions;
         }
 
         /// <summary>
         /// Lists all the available properties from the addon name
         /// </summary>
         /// <param name="addonName">Addon name to check</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <returns>List of property names</returns>
         /// <exception cref="KernelException"></exception>
-        public static string[] ListAvailableProperties(string addonName)
+        public static Dictionary<string, PropertyInfo> ListAvailableProperties(KnownAddons addonName, string typeName) =>
+            ListAvailableProperties(InterAddonTranslations.GetAddonName(addonName), typeName);
+
+        /// <summary>
+        /// Lists all the available properties from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <returns>List of property names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Dictionary<string, PropertyInfo> ListAvailableProperties(KnownAddons addonName, Type type) =>
+            ListAvailableProperties(InterAddonTranslations.GetAddonName(addonName), type);
+
+        /// <summary>
+        /// Lists all the available properties from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <returns>List of property names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Dictionary<string, PropertyInfo> ListAvailableProperties(string addonName, string typeName)
         {
-            var funcs = new List<string>();
+            // Get the type
+            var type = GetTypeFromAddon(addonName, typeName);
+            return ListAvailableProperties(addonName, type);
+        }
 
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
+        /// <summary>
+        /// Lists all the available properties from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <returns>List of property names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Dictionary<string, PropertyInfo> ListAvailableProperties(string addonName, Type type)
+        {
+            // Verify the type before proceeding
+            VerifyType(addonName, type);
 
-            // Get the addon
-            var addonInfo = AddonTools.GetAddon(addonName) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't obtain list of properties"));
+            // Now, get the properties from the type
+            var properties = type.GetProperties();
 
-            // Get a list of properties
-            var properties = addonInfo.Addon.PubliclyAvailableProperties;
-            if (properties is null || properties.Count == 0)
-                return [];
-
-            // Add all of the properties!
-            funcs.AddRange(properties.Keys);
-            return [.. funcs];
+            // Convert this array to the dictionary
+            Dictionary<string, PropertyInfo> finalProperties = [];
+            foreach (var property in properties)
+            {
+                string name = property.Name;
+                finalProperties.Add(name, property);
+            }
+            return finalProperties;
         }
 
         /// <summary>
         /// Lists all the available fields from the addon name
         /// </summary>
         /// <param name="addonName">Addon name to check</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
         /// <returns>List of field names</returns>
         /// <exception cref="KernelException"></exception>
-        public static string[] ListAvailableFields(string addonName)
+        public static Dictionary<string, FieldInfo> ListAvailableFields(KnownAddons addonName, string typeName) =>
+            ListAvailableFields(InterAddonTranslations.GetAddonName(addonName), typeName);
+
+        /// <summary>
+        /// Lists all the available fields from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <returns>List of field names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Dictionary<string, FieldInfo> ListAvailableFields(KnownAddons addonName, Type type) =>
+            ListAvailableFields(InterAddonTranslations.GetAddonName(addonName), type);
+
+        /// <summary>
+        /// Lists all the available fields from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <returns>List of field names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Dictionary<string, FieldInfo> ListAvailableFields(string addonName, string typeName)
         {
-            var funcs = new List<string>();
+            // Get the type
+            var type = GetTypeFromAddon(addonName, typeName);
+            return ListAvailableFields(addonName, type);
+        }
 
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
+        /// <summary>
+        /// Lists all the available fields from the addon name
+        /// </summary>
+        /// <param name="addonName">Addon name to check</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <returns>List of field names</returns>
+        /// <exception cref="KernelException"></exception>
+        public static Dictionary<string, FieldInfo> ListAvailableFields(string addonName, Type type)
+        {
+            // Verify the type before proceeding
+            VerifyType(addonName, type);
 
-            // Get the addon
-            var addonInfo = AddonTools.GetAddon(addonName) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't obtain list of fields"));
+            // Now, get the fields from the type
+            var fields = type.GetFields();
 
-            // Get a list of fields
-            var fields = addonInfo.Addon.PubliclyAvailableFields;
-            if (fields is null || fields.Count == 0)
-                return [];
-
-            // Add all of the fields!
-            funcs.AddRange(fields.Keys);
-            return [.. funcs];
+            // Convert this array to the dictionary
+            Dictionary<string, FieldInfo> finalFields = [];
+            foreach (var field in fields)
+            {
+                string name = field.Name;
+                finalFields.Add(name, field);
+            }
+            return finalFields;
         }
 
         /// <summary>
         /// Executes a custom addon function
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="functionName">Function name defined in the <see cref="IAddon.PubliclyAvailableFunctions"/> dictionary to query</param>
-        public static object? ExecuteCustomAddonFunction(KnownAddons addonName, string functionName) =>
-            ExecuteCustomAddonFunction(InterAddonTranslations.GetAddonName(addonName), functionName, null);
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        public static object? ExecuteCustomAddonFunction(KnownAddons addonName, string functionName, string typeName) =>
+            ExecuteCustomAddonFunction(InterAddonTranslations.GetAddonName(addonName), functionName, typeName, null);
 
         /// <summary>
         /// Executes a custom addon function
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="functionName">Function name defined in the <see cref="IAddon.PubliclyAvailableFunctions"/> dictionary to query</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
         /// <param name="parameters">Parameters to execute the function with</param>
-        public static object? ExecuteCustomAddonFunction(KnownAddons addonName, string functionName, params object?[]? parameters) =>
-            ExecuteCustomAddonFunction(InterAddonTranslations.GetAddonName(addonName), functionName, parameters);
+        public static object? ExecuteCustomAddonFunction(KnownAddons addonName, string functionName, string typeName, params object?[]? parameters) =>
+            ExecuteCustomAddonFunction(InterAddonTranslations.GetAddonName(addonName), functionName, typeName, parameters);
 
         /// <summary>
         /// Executes a custom addon function
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="functionName">Function name defined in the <see cref="IAddon.PubliclyAvailableFunctions"/> dictionary to query</param>
-        public static object? ExecuteCustomAddonFunction(string addonName, string functionName) =>
-            ExecuteCustomAddonFunction(addonName, functionName, null);
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        public static object? ExecuteCustomAddonFunction(string addonName, string functionName, string typeName) =>
+            ExecuteCustomAddonFunction(addonName, functionName, typeName, null);
 
         /// <summary>
         /// Executes a custom addon function
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="functionName">Function name defined in the <see cref="IAddon.PubliclyAvailableFunctions"/> dictionary to query</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
         /// <param name="parameters">Parameters to execute the function with</param>
-        public static object? ExecuteCustomAddonFunction(string addonName, string functionName, params object?[]? parameters)
+        public static object? ExecuteCustomAddonFunction(string addonName, string functionName, string typeName, params object?[]? parameters)
+        {
+            // Get the type
+            var type = GetTypeFromAddon(addonName, typeName);
+            return ExecuteCustomAddonFunction(addonName, functionName, type, parameters);
+        }
+
+        /// <summary>
+        /// Executes a custom addon function
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        public static object? ExecuteCustomAddonFunction(KnownAddons addonName, string functionName, Type type) =>
+            ExecuteCustomAddonFunction(InterAddonTranslations.GetAddonName(addonName), functionName, type, null);
+
+        /// <summary>
+        /// Executes a custom addon function
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        /// <param name="parameters">Parameters to execute the function with</param>
+        public static object? ExecuteCustomAddonFunction(KnownAddons addonName, string functionName, Type type, params object?[]? parameters) =>
+            ExecuteCustomAddonFunction(InterAddonTranslations.GetAddonName(addonName), functionName, type, parameters);
+
+        /// <summary>
+        /// Executes a custom addon function
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        public static object? ExecuteCustomAddonFunction(string addonName, string functionName, Type type) =>
+            ExecuteCustomAddonFunction(addonName, functionName, type, null);
+
+        /// <summary>
+        /// Executes a custom addon function
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        /// <param name="parameters">Parameters to execute the function with</param>
+        public static object? ExecuteCustomAddonFunction(string addonName, string functionName, Type type, params object?[]? parameters)
         {
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
+            // Verify the type before proceeding
+            VerifyType(addonName, type);
+
             // Get a function
-            var function = GetFunctionDelegate(addonName, functionName);
+            var function = GetFunctionInfo(addonName, functionName, type);
             if (function is null)
                 return null;
 
             // The function instance is valid. Try to dynamically invoke it.
-            return function.DynamicInvoke(args: parameters);
+            return MethodManager.InvokeMethodStatic(function, parameters);
         }
 
         /// <summary>
         /// Gets a value from the custom addon property
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="propertyName">Property name defined in the <see cref="IAddon.PubliclyAvailableProperties"/> dictionary to query</param>
-        public static object? GetCustomAddonPropertyValue(KnownAddons addonName, string propertyName) =>
-            GetCustomAddonPropertyValue(InterAddonTranslations.GetAddonName(addonName), propertyName);
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        public static object? GetCustomAddonPropertyValue(KnownAddons addonName, string propertyName, string typeName) =>
+            GetCustomAddonPropertyValue(InterAddonTranslations.GetAddonName(addonName), propertyName, typeName);
 
         /// <summary>
         /// Gets a value from the custom addon property
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="propertyName">Property name defined in the <see cref="IAddon.PubliclyAvailableProperties"/> dictionary to query</param>
-        public static object? GetCustomAddonPropertyValue(string addonName, string propertyName)
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        public static object? GetCustomAddonPropertyValue(string addonName, string propertyName, string typeName)
+        {
+            // Get the type
+            var type = GetTypeFromAddon(addonName, typeName);
+            return GetCustomAddonPropertyValue(addonName, propertyName, type);
+        }
+
+        /// <summary>
+        /// Gets a value from the custom addon property
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        public static object? GetCustomAddonPropertyValue(KnownAddons addonName, string propertyName, Type type) =>
+            GetCustomAddonPropertyValue(InterAddonTranslations.GetAddonName(addonName), propertyName, type);
+
+        /// <summary>
+        /// Gets a value from the custom addon property
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        public static object? GetCustomAddonPropertyValue(string addonName, string propertyName, Type type)
         {
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
+            // Verify the type before proceeding
+            VerifyType(addonName, type);
+
             // Get the property
-            var property = GetPropertyInfo(addonName, propertyName);
+            var property = GetPropertyInfo(addonName, propertyName, type);
             if (property is null)
                 return null;
 
-            // Check to see if this property is static
-            var get = property.GetGetMethod();
-            if (get is null)
-                return null;
-
-            // The property instance is valid. Try to get a value from it.
-            return get.Invoke(null, null);
+            // Try to get a value from it.
+            return PropertyManager.GetPropertyValue(property);
         }
 
         /// <summary>
         /// Sets a value from the custom addon property
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="propertyName">Property name defined in the <see cref="IAddon.PubliclyAvailableProperties"/> dictionary to query</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
         /// <param name="value">Value to set the property to</param>
-        public static void SetCustomAddonPropertyValue(KnownAddons addonName, string propertyName, object? value) =>
-            SetCustomAddonPropertyValue(InterAddonTranslations.GetAddonName(addonName), propertyName, value);
+        public static void SetCustomAddonPropertyValue(KnownAddons addonName, string propertyName, string typeName, object? value) =>
+            SetCustomAddonPropertyValue(InterAddonTranslations.GetAddonName(addonName), propertyName, typeName, value);
 
         /// <summary>
         /// Sets a value from the custom addon property
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="propertyName">Property name defined in the <see cref="IAddon.PubliclyAvailableProperties"/> dictionary to query</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
         /// <param name="value">Value to set the property to</param>
-        public static void SetCustomAddonPropertyValue(string addonName, string propertyName, object? value)
+        public static void SetCustomAddonPropertyValue(string addonName, string propertyName, string typeName, object? value)
+        {
+            // Get the type
+            var type = GetTypeFromAddon(addonName, typeName);
+            SetCustomAddonPropertyValue(addonName, propertyName, type, value);
+        }
+
+        /// <summary>
+        /// Sets a value from the custom addon property
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        /// <param name="value">Value to set the property to</param>
+        public static void SetCustomAddonPropertyValue(KnownAddons addonName, string propertyName, Type type, object? value) =>
+            SetCustomAddonPropertyValue(InterAddonTranslations.GetAddonName(addonName), propertyName, type, value);
+
+        /// <summary>
+        /// Sets a value from the custom addon property
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        /// <param name="value">Value to set the property to</param>
+        public static void SetCustomAddonPropertyValue(string addonName, string propertyName, Type type, object? value)
         {
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
+            // Verify the type before proceeding
+            VerifyType(addonName, type);
+
             // Get the property
-            var property = GetPropertyInfo(addonName, propertyName);
+            var property = GetPropertyInfo(addonName, propertyName, type);
             if (property is null)
                 return;
 
-            // Check to see if this property is static
-            var set = property.GetSetMethod();
-            if (set is null)
-                return;
-
-            // The property instance is valid. Try to get a value from it.
-            set.Invoke(null, [value]);
+            // Try to set a value in it.
+            PropertyManager.SetPropertyValue(property, value);
         }
 
         /// <summary>
         /// Gets a value from the custom addon field
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="fieldName">Field name defined in the <see cref="IAddon.PubliclyAvailableFields"/> dictionary to query</param>
-        public static object? GetCustomAddonFieldValue(KnownAddons addonName, string fieldName) =>
-            GetCustomAddonFieldValue(InterAddonTranslations.GetAddonName(addonName), fieldName);
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
+        public static object? GetCustomAddonFieldValue(KnownAddons addonName, string fieldName, string typeName) =>
+            GetCustomAddonFieldValue(InterAddonTranslations.GetAddonName(addonName), fieldName, typeName);
 
         /// <summary>
         /// Gets a value from the custom addon field
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="fieldName">Field name defined in the <see cref="IAddon.PubliclyAvailableFields"/> dictionary to query</param>
-        public static object? GetCustomAddonFieldValue(string addonName, string fieldName)
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
+        public static object? GetCustomAddonFieldValue(string addonName, string fieldName, string typeName)
+        {
+            // Get the type
+            var type = GetTypeFromAddon(addonName, typeName);
+            return GetCustomAddonFieldValue(addonName, fieldName, type);
+        }
+
+        /// <summary>
+        /// Gets a value from the custom addon field
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
+        public static object? GetCustomAddonFieldValue(KnownAddons addonName, string fieldName, Type type) =>
+            GetCustomAddonFieldValue(InterAddonTranslations.GetAddonName(addonName), fieldName, type);
+
+        /// <summary>
+        /// Gets a value from the custom addon field
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
+        public static object? GetCustomAddonFieldValue(string addonName, string fieldName, Type type)
         {
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
+            // Verify the type before proceeding
+            VerifyType(addonName, type);
+
             // Get the field
-            var field = GetFieldInfo(addonName, fieldName) ??
+            var field = GetFieldInfo(addonName, fieldName, type) ??
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't get field info for") + $" {addonName} -> {fieldName}");
 
-            // The field instance is valid. Try to get a value from it.
-            var get = field.GetValue(null);
-            return get;
+            // Try to get a value from it.
+            return FieldManager.GetFieldValue(field);
         }
 
         /// <summary>
         /// Sets a value from the custom addon field
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="fieldName">Field name defined in the <see cref="IAddon.PubliclyAvailableFields"/> dictionary to query</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
         /// <param name="value">Value to set the field to</param>
-        public static void SetCustomAddonFieldValue(KnownAddons addonName, string fieldName, object? value) =>
-            SetCustomAddonFieldValue(InterAddonTranslations.GetAddonName(addonName), fieldName, value);
+        public static void SetCustomAddonFieldValue(KnownAddons addonName, string fieldName, string typeName, object? value) =>
+            SetCustomAddonFieldValue(InterAddonTranslations.GetAddonName(addonName), fieldName, typeName, value);
 
         /// <summary>
         /// Sets a value from the custom addon field
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="fieldName">Field name defined in the <see cref="IAddon.PubliclyAvailableFields"/> dictionary to query</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
         /// <param name="value">Value to set the field to</param>
-        public static void SetCustomAddonFieldValue(string addonName, string fieldName, object? value)
+        public static void SetCustomAddonFieldValue(string addonName, string fieldName, string typeName, object? value)
+        {
+            // Get the type
+            var type = GetTypeFromAddon(addonName, typeName);
+            SetCustomAddonFieldValue(addonName, fieldName, type, value);
+        }
+
+        /// <summary>
+        /// Sets a value from the custom addon field
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
+        /// <param name="value">Value to set the field to</param>
+        public static void SetCustomAddonFieldValue(KnownAddons addonName, string fieldName, Type type, object? value) =>
+            SetCustomAddonFieldValue(InterAddonTranslations.GetAddonName(addonName), fieldName, type, value);
+
+        /// <summary>
+        /// Sets a value from the custom addon field
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="fieldName">Field name to query. You can use the <see cref="ListAvailableFields(string, Type)"/> method to query all available addon fields from an addon type.</param>
+        /// <param name="value">Value to set the field to</param>
+        public static void SetCustomAddonFieldValue(string addonName, string fieldName, Type type, object? value)
         {
             // Check the user permission
             PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
 
+            // Verify the type before proceeding
+            VerifyType(addonName, type);
+
             // Get the field
-            var field = GetFieldInfo(addonName, fieldName) ??
+            var field = GetFieldInfo(addonName, fieldName, type) ??
                 throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't get field info for") + $" {addonName} -> {fieldName}");
 
-            // The field instance is valid. Try to set a value.
-            field.SetValue(null, value);
+            // Try to set a value in it.
+            FieldManager.SetFieldValue(field, value);
         }
 
         /// <summary>
         /// Gets the function parameters from a function
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="functionName">Function name defined in the <see cref="IAddon.PubliclyAvailableFunctions"/> dictionary to query</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
         /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no function</returns>
-        public static ParameterInfo[]? GetFunctionParameters(string addonName, string functionName)
+        public static ParameterInfo[]? GetFunctionParameters(KnownAddons addonName, string functionName, string typeName) =>
+            GetFunctionParameters(InterAddonTranslations.GetAddonName(addonName), functionName, typeName);
+
+        /// <summary>
+        /// Gets the function parameters from a function
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no function</returns>
+        public static ParameterInfo[]? GetFunctionParameters(KnownAddons addonName, string functionName, Type type) =>
+            GetFunctionParameters(InterAddonTranslations.GetAddonName(addonName), functionName, type);
+
+        /// <summary>
+        /// Gets the function parameters from a function
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no function</returns>
+        public static ParameterInfo[]? GetFunctionParameters(string addonName, string functionName, string typeName)
         {
-            var function = GetFunctionDelegate(addonName, functionName);
+            // Get the type
+            var type = GetTypeFromAddon(addonName, typeName);
+            return GetFunctionParameters(addonName, functionName, type);
+        }
+
+        /// <summary>
+        /// Gets the function parameters from a function
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="functionName">Function name to query. You can use the <see cref="ListAvailableFunctions(string, Type)"/> method to query all available addon functions from an addon type.</param>
+        /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no function</returns>
+        public static ParameterInfo[]? GetFunctionParameters(string addonName, string functionName, Type type)
+        {
+            // Check the user permission
+            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
+
+            // Verify the type before proceeding
+            VerifyType(addonName, type);
+
+            // Get the parameters
+            var function = GetFunctionInfo(addonName, functionName, type);
             if (function is null)
                 return null;
 
             // Get the function parameters
-            return function.Method.GetParameters();
+            return function.GetParameters();
         }
 
         /// <summary>
         /// Gets the property setter parameters from a property
         /// </summary>
         /// <param name="addonName">The addon name to query</param>
-        /// <param name="propertyName">Property name defined in the <see cref="IAddon.PubliclyAvailableProperties"/> dictionary to query</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
         /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no property</returns>
-        public static ParameterInfo[]? GetSetPropertyParameters(string addonName, string propertyName)
+        public static ParameterInfo[]? GetSetPropertyParameters(KnownAddons addonName, string propertyName, string typeName) =>
+            GetSetPropertyParameters(InterAddonTranslations.GetAddonName(addonName), propertyName, typeName);
+
+        /// <summary>
+        /// Gets the property setter parameters from a property
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no property</returns>
+        public static ParameterInfo[]? GetSetPropertyParameters(KnownAddons addonName, string propertyName, Type type) =>
+            GetSetPropertyParameters(InterAddonTranslations.GetAddonName(addonName), propertyName, type);
+
+        /// <summary>
+        /// Gets the property setter parameters from a property
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="typeName">Full name of the type found in an addon (must be public and static)</param>
+        /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no property</returns>
+        public static ParameterInfo[]? GetSetPropertyParameters(string addonName, string propertyName, string typeName)
         {
-            var property = GetPropertyInfo(addonName, propertyName);
+            // Get the type
+            var type = GetTypeFromAddon(addonName, typeName);
+            return GetSetPropertyParameters(addonName, propertyName, type);
+        }
+
+        /// <summary>
+        /// Gets the property setter parameters from a property
+        /// </summary>
+        /// <param name="addonName">The addon name to query</param>
+        /// <param name="type">Type found in an addon (must be public and static). You can get this type using <see cref="GetTypeFromAddon(string, string)"/>.</param>
+        /// <param name="propertyName">Property name to query. You can use the <see cref="ListAvailableProperties(string, Type)"/> method to query all available addon properties from an addon type.</param>
+        /// <returns>An array of <see cref="ParameterInfo"/> if there are any; null if there is no property</returns>
+        public static ParameterInfo[]? GetSetPropertyParameters(string addonName, string propertyName, Type type)
+        {
+            // Check the user permission
+            PermissionsTools.Demand(PermissionTypes.InteraddonCommunication);
+
+            // Verify the type before proceeding
+            VerifyType(addonName, type);
+
+            // Get the parameters
+            var property = GetPropertyInfo(addonName, propertyName, type);
             if (property is null)
                 return null;
 
@@ -315,72 +705,41 @@ namespace Nitrocid.Kernel.Extensions
             return get.GetParameters();
         }
 
-        private static Delegate? GetFunctionDelegate(string addonName, string functionName)
+        private static MethodInfo? GetFunctionInfo(string addonName, string functionName, Type type)
         {
-            // Get the addon
-            var addonInfo = AddonTools.GetAddon(addonName) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't execute custom function with non-existent addon"));
-
-            // Now, check the list of available functions
-            var addon = addonInfo.Addon;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from addon {0}...", addonInfo.AddonName);
-
-            // Get a list of functions
-            var functions = addon.PubliclyAvailableFunctions;
-            if (functions is null || functions.Count == 0)
-                return null;
+            // Get the addon functions
+            var functions = ListAvailableFunctions(addonName, type);
 
             // Assuming that we have functions, get a single function containing that name
-            if (!functions.TryGetValue(functionName, out Delegate? @delegate))
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find function '{0}' in addon '{1}'."), functionName, addonInfo.AddonName);
+            if (!functions.TryGetValue(functionName, out MethodInfo? methodInfo))
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find function '{0}' in addon '{1}'."), functionName, addonName);
 
             // Assuming that we have that function, get a single function delegate
-            var function = @delegate;
-            return function;
+            return methodInfo;
         }
 
-        private static PropertyInfo? GetPropertyInfo(string addonName, string propertyName)
+        private static PropertyInfo? GetPropertyInfo(string addonName, string propertyName, Type type)
         {
-            // Get the addon
-            var addonInfo = AddonTools.GetAddon(addonName) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't execute custom function with non-existent addon"));
-
-            // Now, check the list of available properties
-            var addon = addonInfo.Addon;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available properties from addon {0}...", addonInfo.AddonName);
-
-            // Get a list of properties
-            var properties = addon.PubliclyAvailableProperties;
-            if (properties is null || properties.Count == 0)
-                return null;
+            // Get the addon properties
+            var properties = ListAvailableProperties(addonName, type);
 
             // Assuming that we have properties, get a single property containing that name
             if (!properties.TryGetValue(propertyName, out PropertyInfo? propertyInfo))
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find property '{0}' in addon '{1}'."), propertyName, addonInfo.AddonName);
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find property '{0}' in addon '{1}'."), propertyName, addonName);
 
             // Assuming that we have that property, get a single property delegate
             var property = propertyInfo;
             return property;
         }
 
-        private static FieldInfo? GetFieldInfo(string addonName, string fieldName)
+        private static FieldInfo? GetFieldInfo(string addonName, string fieldName, Type type)
         {
-            // Get the addon
-            var addonInfo = AddonTools.GetAddon(addonName) ??
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't execute custom function with non-existent addon"));
-
-            // Now, check the list of available fields
-            var addon = addonInfo.Addon;
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available fields from addon {0}...", addonInfo.AddonName);
-
-            // Get a list of fields
-            var fields = addon.PubliclyAvailableFields;
-            if (fields is null || fields.Count == 0)
-                return null;
+            // Get the addon fields
+            var fields = ListAvailableFields(addonName, type);
 
             // Assuming that we have fields, get a single field containing that name
             if (!fields.TryGetValue(fieldName, out FieldInfo? fieldInfo))
-                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find field '{0}' in addon '{1}'."), fieldName, addonInfo.AddonName);
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't find field '{0}' in addon '{1}'."), fieldName, addonName);
 
             // Assuming that we have that field, get a single field delegate
             var field = fieldInfo;
@@ -393,5 +752,26 @@ namespace Nitrocid.Kernel.Extensions
             return field;
         }
 
+        private static Assembly GetAddonAssembly(string addonName)
+        {
+            // Get the addon
+            var addonInfo = AddonTools.GetAddon(addonName) ??
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Can't execute custom function with non-existent addon"));
+
+            // Now, check the list of available functions
+            var addon = addonInfo.Addon;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from addon {0}...", vars: [addonInfo.AddonName]);
+
+            // Get an assembly
+            return addon.GetType().Assembly;
+        }
+
+        private static void VerifyType(string addonName, Type type)
+        {
+            // Check to see if this type is a valid addon type
+            var addonTypes = ListAvailableTypes(addonName);
+            if (!addonTypes.Contains(type))
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("This class is not an addon class") + $": {type.FullName}");
+        }
     }
 }

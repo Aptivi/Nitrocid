@@ -28,9 +28,8 @@ using System.Linq;
 using System.Text;
 using Textify.General;
 using Nitrocid.Network.Connections;
-using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
-using Nitrocid.Kernel;
 using Nitrocid.ConsoleBase.Colors;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Extras.RssShell.RSS.Interactive
 {
@@ -122,7 +121,7 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
             finalInfoRendered.AppendLine(finalRenderedArticleVars);
 
             // Now, render the info box
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            InfoBoxModalColor.WriteInfoBoxModal(finalInfoRendered.ToString(), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
         }
 
         internal void OpenArticleLink(RSSArticle? item)
@@ -132,21 +131,19 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
                 return;
             bool hasLink = !string.IsNullOrEmpty(item.ArticleLink);
             if (!hasLink)
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("This article doesn't have a link."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+            {
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("This article doesn't have a link."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                return;
+            }
 
             // Now, open the host browser
             try
             {
-                if (KernelPlatform.IsOnWindows())
-                    ProcessExecutor.ExecuteProcess("cmd.exe", $"/c \"start {item.ArticleLink}\"");
-                else if (KernelPlatform.IsOnMacOS())
-                    ProcessExecutor.ExecuteProcess("open", item.ArticleLink);
-                else
-                    ProcessExecutor.ExecuteProcess("xdg-open", item.ArticleLink);
+                PlatformHelper.PlatformOpen(item.ArticleLink);
             }
             catch (Exception e)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Can't open the host browser to the article link.") + $" {e.Message}", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't open the host browser to the article link.") + $" {e.Message}", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
             }
         }
 

@@ -133,7 +133,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use CultureManager.CurrentCultStr.
+        ///   Looks up a localized string similar to Use CultureManager.CurrentCultureName.
         /// </summary>
         internal static string CurrentUICultureGetNameUsageCodeFixTitle {
             get {
@@ -142,7 +142,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use CultureManager.CurrentCult.
+        ///   Looks up a localized string similar to Use CultureManager.CurrentCulture.
         /// </summary>
         internal static string CurrentUICultureGetUsageCodeFixTitle {
             get {
@@ -160,7 +160,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Making.MakeDirectory().
+        ///   Looks up a localized string similar to Use FilesystemTools.MakeDirectory().
         /// </summary>
         internal static string DirectoryCreateDirectoryUsageCodeFixTitle {
             get {
@@ -169,7 +169,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Removing.RemoveDirectory().
+        ///   Looks up a localized string similar to Use FilesystemTools.RemoveDirectory().
         /// </summary>
         internal static string DirectoryDeleteUsageCodeFixTitle {
             get {
@@ -178,7 +178,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Checking.FolderExists().
+        ///   Looks up a localized string similar to Use FilesystemTools.FolderExists().
         /// </summary>
         internal static string DirectoryExistsUsageCodeFixTitle {
             get {
@@ -187,7 +187,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Listing.GetFileSystemEntries().
+        ///   Looks up a localized string similar to Use FilesystemTools.GetFileSystemEntries().
         /// </summary>
         internal static string DirectoryGetFileSystemEntriesAltUsageCodeFixTitle {
             get {
@@ -196,7 +196,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Listing.CreateList().
+        ///   Looks up a localized string similar to Use FilesystemTools.CreateList().
         /// </summary>
         internal static string DirectoryGetFileSystemEntriesUsageCodeFixTitle {
             get {
@@ -205,7 +205,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Copying.CopyFileOrDir().
+        ///   Looks up a localized string similar to Use FilesystemTools.CopyFileOrDir().
         /// </summary>
         internal static string FileCopyUsageCodeFixTitle {
             get {
@@ -214,7 +214,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Making.MakeFile().
+        ///   Looks up a localized string similar to Use FilesystemTools.MakeFile().
         /// </summary>
         internal static string FileCreateUsageCodeFixTitle {
             get {
@@ -223,7 +223,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Removing.RemoveFile().
+        ///   Looks up a localized string similar to Use FilesystemTools.RemoveFile().
         /// </summary>
         internal static string FileDeleteUsageCodeFixTitle {
             get {
@@ -232,7 +232,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Checking.FileExists().
+        ///   Looks up a localized string similar to Use FilesystemTools.FileExists().
         /// </summary>
         internal static string FileExistsUsageCodeFixTitle {
             get {
@@ -241,7 +241,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Moving.MoveFileOrDir().
+        ///   Looks up a localized string similar to Use FilesystemTools.MoveFileOrDir().
         /// </summary>
         internal static string FileMoveUsageCodeFixTitle {
             get {
@@ -439,7 +439,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Checking.Exists().
+        ///   Looks up a localized string similar to Use FilesystemTools.Exists().
         /// </summary>
         internal static string PathExistsUsageCodeFixTitle {
             get {
@@ -457,7 +457,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Parsing.GetInvalidPathChars().
+        ///   Looks up a localized string similar to Use FilesystemTools.GetInvalidPathChars().
         /// </summary>
         internal static string PathGetInvalidPathCharsUsageCodeFixTitle {
             get {
@@ -466,7 +466,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use Checking.Rooted().
+        ///   Looks up a localized string similar to Use FilesystemTools.Rooted().
         /// </summary>
         internal static string PathIsPathRootedUsageCodeFixTitle {
             get {

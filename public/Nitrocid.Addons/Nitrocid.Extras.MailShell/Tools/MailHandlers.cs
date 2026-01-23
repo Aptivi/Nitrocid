@@ -29,8 +29,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Textify.General;
-using Nitrocid.Kernel;
-using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Extras.MailShell.Tools
 {
@@ -55,15 +54,10 @@ namespace Nitrocid.Extras.MailShell.Tools
         /// </summary>
         public static void HandleWebAlert(object? sender, WebAlertEventArgs e)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", e.WebUri.AbsoluteUri);
+            DebugWriter.WriteDebug(DebugLevel.I, "WebAlert URI: {0}", vars: [e.WebUri.AbsoluteUri]);
             TextWriters.Write(e.Message, true, KernelColorType.Warning);
             TextWriterColor.Write(Translate.DoTranslation("Opening URL... Make sure to follow the steps shown on the screen."));
-            if (KernelPlatform.IsOnWindows())
-                ProcessExecutor.ExecuteProcess("cmd.exe", $"/c \"start {e.WebUri.AbsoluteUri}\"");
-            else if (KernelPlatform.IsOnMacOS())
-                ProcessExecutor.ExecuteProcess("open", e.WebUri.AbsoluteUri);
-            else
-                ProcessExecutor.ExecuteProcess("xdg-open", e.WebUri.AbsoluteUri);
+            PlatformHelper.PlatformOpen(e.WebUri.AbsoluteUri);
         }
 
         /// <summary>

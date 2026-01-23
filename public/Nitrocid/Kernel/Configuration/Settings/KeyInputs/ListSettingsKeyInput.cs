@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -26,8 +25,8 @@ using Nitrocid.Misc.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Base;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -36,11 +35,16 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
             // Make an introductory banner
-            string keyName = Translate.DoTranslation(key.Name);
-            string keyDesc = Translate.DoTranslation(key.Description);
+            string keyName = key.Name;
+            string keyDesc = key.Description;
 
             // Write the prompt
-            var TargetEnum = (IEnumerable<object>?)MethodManager.InvokeMethodStatic(key.SelectionFunctionName);
+            var arguments = SettingsAppTools.ParseParameters(key);
+            var type = Type.GetType(key.SelectionFunctionType);
+            var TargetEnum =
+                type is not null ?
+                (IEnumerable<object>?)MethodManager.InvokeMethodStatic(key.SelectionFunctionName, type, args: arguments) :
+                (IEnumerable<object>?)MethodManager.InvokeMethodStatic(key.SelectionFunctionName, args: arguments);
             var TargetList = TargetEnum?.ToList() ?? [];
             bool promptBail = false;
             while (!promptBail)
@@ -63,7 +67,10 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 ];
 
                 // Wait for an answer and handle it
-                int selectionAnswer = InfoBoxSelectionColor.WriteInfoBoxSelection(keyName, [.. choices, .. altChoices], keyDesc);
+                int selectionAnswer = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices, .. altChoices], keyDesc, new InfoBoxSettings()
+                {
+                    Title = keyName,
+                });
                 if (selectionAnswer == choices.Count || selectionAnswer == -1)
                     promptBail = true;
                 else
@@ -139,11 +146,12 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string? FinalDelimiter;
             string ListJoinString = key.Delimiter;
             string ListJoinStringVariable = key.DelimiterVariable;
+            var type = Type.GetType(key.DelimiterVariableType);
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the List type. Adding answers to the list...");
 
             // Get the delimiter
-            if (ListJoinString is null)
-                FinalDelimiter = Convert.ToString(PropertyManager.GetPropertyValue(ListJoinStringVariable, null, true));
+            if (string.IsNullOrEmpty(ListJoinString))
+                FinalDelimiter = Convert.ToString(PropertyManager.GetPropertyValue(ListJoinStringVariable, type));
             else
                 FinalDelimiter = ListJoinString;
             return FinalDelimiter ?? ";";

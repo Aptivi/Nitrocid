@@ -20,16 +20,13 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;
-using System.Threading;
 using Terminaux.Inputs.Pointer;
 using System;
 using Terminaux.Inputs;
-using Terminaux.Writer.CyclicWriters;
-using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -74,22 +71,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             if (ScreensaverManager.inSaver)
             {
-                SpinWait.SpinUntil(() => Input.InputAvailable);
-                while (Input.InputAvailable)
+                InputEventInfo eventInfo = Input.ReadPointerOrKey();
+                if (eventInfo.PointerEventContext is not null && eventInfo.PointerEventContext.ButtonPress == PointerButtonPress.Clicked)
                 {
-                    var descriptor = Input.ReadPointerOrKey();
-                    if (descriptor.Item1 is not null)
-                    {
-                        switch (descriptor.Item1.Button)
-                        {
-                            case PointerButton.Left:
-                            case PointerButton.Right:
-                            case PointerButton.Middle:
-                                if (descriptor.Item1.ButtonPress == PointerButtonPress.Clicked)
-                                    Input.ReadPointer();
-                                break;
-                        }
-                    }
+                    while (eventInfo.PointerEventContext is not null && eventInfo.PointerEventContext.ButtonPress != PointerButtonPress.Released)
+                        eventInfo = Input.ReadPointerOrKey(InputEventType.Mouse);
                 }
                 ScreensaverDisplayer.BailFromScreensaver();
             }

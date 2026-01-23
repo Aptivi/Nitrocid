@@ -22,16 +22,14 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Files;
 using Nitrocid.Drivers;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -55,12 +53,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 @out = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
             }
-            if (Checking.FolderExists(folder))
+            if (FilesystemTools.FolderExists(folder))
             {
                 foreach (string file in Directory.GetFiles(folder, "*", SearchOption.TopDirectoryOnly))
                 {
                     string finalFile = FilesystemTools.NeutralizePath(file);
-                    SeparatorWriterColor.WriteSeparator(finalFile, true);
+                    SeparatorWriterColor.WriteSeparatorColor(finalFile, KernelColorTools.GetColor(KernelColorType.ListTitle));
                     if (DriverHandler.IsRegistered(DriverTypes.Encryption, parameters.ArgumentsList[0]))
                     {
                         // Time when you're on a breakpoint is counted

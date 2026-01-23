@@ -33,11 +33,9 @@ using Nitrocid.Drivers.DebugLogger;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Drivers.Input;
 using Nitrocid.Drivers.Regexp;
-using Nitrocid.Drivers.Console;
 using Nitrocid.Drivers.Network.Bases;
 using Nitrocid.Drivers.RNG.Bases;
 using Nitrocid.Drivers.Filesystem.Bases;
-using Nitrocid.Drivers.Console.Bases;
 using Nitrocid.Drivers.Encryption.Bases;
 using Nitrocid.Drivers.Regexp.Bases;
 using Nitrocid.Drivers.DebugLogger.Bases;
@@ -59,21 +57,6 @@ namespace Nitrocid.Drivers
         internal static bool begunLocal = false;
         internal static Dictionary<DriverTypes, List<IDriver>> drivers = new()
         {
-            {
-                DriverTypes.Console, new()
-                {
-                    new Terminal(),
-                    new File(),
-                    new FileSequence(),
-                    new Null(),
-                    new Buffered(),
-
-#if !SPECIFIERREL
-                    // Below are excluded from the final release
-                    new TerminalDebug()
-#endif
-                }
-            },
             {
                 DriverTypes.RNG, new()
                 {
@@ -164,7 +147,6 @@ namespace Nitrocid.Drivers
 
         internal static Dictionary<DriverTypes, List<IDriver>> customDrivers = new()
         {
-            { DriverTypes.Console,              new() },
             { DriverTypes.RNG,                  new() },
             { DriverTypes.Network,              new() },
             { DriverTypes.Filesystem,           new() },
@@ -180,7 +162,6 @@ namespace Nitrocid.Drivers
 
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
         {
-            { DriverTypes.Console,              drivers[DriverTypes.Console][0] },
             { DriverTypes.RNG,                  drivers[DriverTypes.RNG][0] },
             { DriverTypes.Network,              drivers[DriverTypes.Network][0] },
             { DriverTypes.Filesystem,           drivers[DriverTypes.Filesystem][0] },
@@ -196,7 +177,6 @@ namespace Nitrocid.Drivers
 
         internal static Dictionary<Type, DriverTypes> knownTypes = new()
         {
-            { typeof(IConsoleDriver),               DriverTypes.Console },
             { typeof(IRandomDriver),                DriverTypes.RNG },
             { typeof(INetworkDriver),               DriverTypes.Network },
             { typeof(IFilesystemDriver),            DriverTypes.Filesystem },
@@ -217,12 +197,6 @@ namespace Nitrocid.Drivers
         /// </summary>
         public static IRandomDriver CurrentRandomDriverLocal =>
             begunLocal ? (IRandomDriver)currentDriversLocal[DriverTypes.RNG] : CurrentRandomDriver;
-
-        /// <summary>
-        /// Gets the current console driver (use this when possible)
-        /// </summary>
-        public static IConsoleDriver CurrentConsoleDriverLocal =>
-            begunLocal ? (IConsoleDriver)currentDriversLocal[DriverTypes.Console] : CurrentConsoleDriver;
 
         /// <summary>
         /// Gets the current network driver (use this when possible)
@@ -289,12 +263,6 @@ namespace Nitrocid.Drivers
         /// </summary>
         public static IRandomDriver CurrentRandomDriver =>
             (IRandomDriver)currentDrivers[DriverTypes.RNG];
-
-        /// <summary>
-        /// Gets the system-wide current console driver
-        /// </summary>
-        public static IConsoleDriver CurrentConsoleDriver =>
-            (IConsoleDriver)currentDrivers[DriverTypes.Console];
 
         /// <summary>
         /// Gets the system-wide current network driver
@@ -384,21 +352,21 @@ namespace Nitrocid.Drivers
             if (IsBuiltin(driverType, name))
             {
                 // Found a driver under the kernel driver list
-                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, found under the built-in driver list.", name, driverType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, found under the built-in driver list.", vars: [name, driverType.ToString()]);
                 int idx = GetIndexFromBuiltinDriverName(driverType, name);
                 return drivers[driverType][idx];
             }
             else if (IsRegistered(driverType, name))
             {
                 // Found a driver under the custom driver list
-                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, found under the custom driver list.", name, driverType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, found under the custom driver list.", vars: [name, driverType.ToString()]);
                 int idx = GetIndexFromCustomDriverName(driverType, name);
                 return customDrivers[driverType][idx];
             }
             else
             {
                 // Found no driver under both lists
-                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, not found in any list.", name, driverType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, not found in any list.", vars: [name, driverType.ToString()]);
                 return GetFallbackDriver(driverType);
             }
         }
@@ -431,21 +399,21 @@ namespace Nitrocid.Drivers
             if (IsBuiltin(driverType, driver))
             {
                 // Found a driver under the kernel driver list
-                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver of type {0}, type {1}, found under the built-in driver list.", driver.GetType().Name, driverType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver of type {0}, type {1}, found under the built-in driver list.", vars: [driver.GetType().Name, driverType.ToString()]);
                 return drivers[driverType]
                     .Single((kvp) => kvp == driver).DriverName;
             }
             else if (IsRegistered(driverType, driver))
             {
                 // Found a driver under the custom driver list
-                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver of type {0}, type {1}, found under the custom driver list.", driver.GetType().Name, driverType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver of type {0}, type {1}, found under the custom driver list.", vars: [driver.GetType().Name, driverType.ToString()]);
                 return customDrivers[driverType]
                     .Single((kvp) => kvp == driver).DriverName;
             }
             else
             {
                 // Found no driver under both lists
-                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver of type {0}, type {1}, not found in any list.", driver.GetType().Name, driverType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver of type {0}, type {1}, not found in any list.", vars: [driver.GetType().Name, driverType.ToString()]);
                 return GetFallbackDriverName(driverType);
             }
         }
@@ -475,9 +443,9 @@ namespace Nitrocid.Drivers
             // Exclude internal drivers from the list
             var filteredDrivers = drivers[driverType].Where((kvp) => !kvp.DriverInternal);
             var filteredCustomDrivers = customDrivers[driverType].Where((kvp) => !kvp.DriverInternal);
-            DebugWriter.WriteDebug(DebugLevel.I, "For type {0}, driver counts:", driverType.ToString());
-            DebugWriter.WriteDebug(DebugLevel.I, "Initial drivers: {0}, custom: {1}", drivers[driverType].Count, customDrivers[driverType].Count);
-            DebugWriter.WriteDebug(DebugLevel.I, "Filtered drivers: {0}, custom: {1}", filteredDrivers.Count(), filteredCustomDrivers.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "For type {0}, driver counts:", vars: [driverType.ToString()]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Initial drivers: {0}, custom: {1}", vars: [drivers[driverType].Count, customDrivers[driverType].Count]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Filtered drivers: {0}, custom: {1}", vars: [filteredDrivers.Count(), filteredCustomDrivers.Count()]);
 
             // Then, get the list of drivers
             DebugWriter.WriteDebug(DebugLevel.I, "Returning unified driver list");
@@ -534,12 +502,12 @@ namespace Nitrocid.Drivers
             // Get the fallback (default) driver from name
             if (IsBuiltin(driverType, "Default"))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver, type {0}, fallback.", driverType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver, type {0}, fallback.", vars: [driverType.ToString()]);
                 return drivers[driverType][0];
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Kernel driver, type {0}, no fallback found!", driverType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.E, "Kernel driver, type {0}, no fallback found!", vars: [driverType.ToString()]);
                 throw new KernelException(KernelExceptionType.Hardware, Translate.DoTranslation("No fallback driver found."));
             }
         }
@@ -569,12 +537,12 @@ namespace Nitrocid.Drivers
             // Get the fallback (default) driver from name
             if (IsBuiltin(driverType, "Default"))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver, type {0}, fallback.", driverType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver, type {0}, fallback.", vars: [driverType.ToString()]);
                 return "Default";
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Kernel driver, type {0}, no fallback found!", driverType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.E, "Kernel driver, type {0}, no fallback found!", vars: [driverType.ToString()]);
                 throw new KernelException(KernelExceptionType.Hardware, Translate.DoTranslation("No fallback driver found."));
             }
         }
@@ -660,7 +628,7 @@ namespace Nitrocid.Drivers
             string name = driver.DriverName;
             if (!IsRegistered(type, name) && driver.DriverType == type)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Registered driver {0} [{1}] under type {2}", name, driver.GetType().Name, type.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Registered driver {0} [{1}] under type {2}", vars: [name, driver.GetType().Name, type.ToString()]);
                 customDrivers[type].Add(driver);
             }
         }
@@ -693,7 +661,7 @@ namespace Nitrocid.Drivers
                 var driver = customDrivers[type][idx];
                 if (driver.DriverType == type)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Unregistered driver {0} [{1}] under type {2}", name, driver.GetType().Name, type.ToString());
+                    DebugWriter.WriteDebug(DebugLevel.I, "Unregistered driver {0} [{1}] under type {2}", vars: [name, driver.GetType().Name, type.ToString()]);
                     customDrivers[type].Remove(driver);
                 }
             }
@@ -740,7 +708,7 @@ namespace Nitrocid.Drivers
         public static bool IsBuiltin(DriverTypes type, string name)
         {
             bool registered = drivers[type].Any((drv) => drv.DriverName == name);
-            DebugWriter.WriteDebug(DebugLevel.I, "Registered built-in {0} for {1}? {2}", name, type.ToString(), registered);
+            DebugWriter.WriteDebug(DebugLevel.I, "Registered built-in {0} for {1}? {2}", vars: [name, type.ToString(), registered]);
             return registered;
         }
 
@@ -753,7 +721,7 @@ namespace Nitrocid.Drivers
         public static bool IsBuiltin(DriverTypes type, IDriver driver)
         {
             bool registered = drivers[type].Any((drv) => drv == driver);
-            DebugWriter.WriteDebug(DebugLevel.I, "Registered built-in {0} for {1}? {2}", driver.GetType().Name, type.ToString(), registered);
+            DebugWriter.WriteDebug(DebugLevel.I, "Registered built-in {0} for {1}? {2}", vars: [driver.GetType().Name, type.ToString(), registered]);
             return registered;
         }
 
@@ -798,7 +766,7 @@ namespace Nitrocid.Drivers
         public static bool IsRegistered(DriverTypes type, string name)
         {
             bool registered = customDrivers[type].Any((drv) => drv.DriverName == name) || IsBuiltin(type, name);
-            DebugWriter.WriteDebug(DebugLevel.I, "Registered {0} for {1}? {2}", name, type.ToString(), registered);
+            DebugWriter.WriteDebug(DebugLevel.I, "Registered {0} for {1}? {2}", vars: [name, type.ToString(), registered]);
             return registered;
         }
 
@@ -811,7 +779,7 @@ namespace Nitrocid.Drivers
         public static bool IsRegistered(DriverTypes type, IDriver driver)
         {
             bool registered = customDrivers[type].Any((drv) => drv == driver) || IsBuiltin(type, driver);
-            DebugWriter.WriteDebug(DebugLevel.I, "Registered {0} for {1}? {2}", driver.GetType().Name, type.ToString(), registered);
+            DebugWriter.WriteDebug(DebugLevel.I, "Registered {0} for {1}? {2}", vars: [driver.GetType().Name, type.ToString(), registered]);
             return registered;
         }
 
@@ -839,7 +807,7 @@ namespace Nitrocid.Drivers
         public static void SetDriver(DriverTypes driverType, string name)
         {
             // Try to set the driver
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to set driver to {0} for type {1}...", name, driverType.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to set driver to {0} for type {1}...", vars: [name, driverType.ToString()]);
             currentDrivers[driverType] = GetDriver(driverType, name);
             SetDriverLocal(driverType, name);
         }
@@ -871,13 +839,13 @@ namespace Nitrocid.Drivers
             var drivers = GetDrivers(driverType);
             if (!drivers.Any((drv) => drv.DriverName == name))
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Nonexistent driver {0} for type {1}, so setting to default...", name, driverType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.W, "Nonexistent driver {0} for type {1}, so setting to default...", vars: [name, driverType.ToString()]);
                 currentDrivers[driverType] = GetDriver(driverType, "Default");
                 SetDriverLocal(driverType, "Default");
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Setting driver to {0} for type {1}...", name, driverType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting driver to {0} for type {1}...", vars: [name, driverType.ToString()]);
                 currentDrivers[driverType] = GetDriver(driverType, name);
                 SetDriverLocal(driverType, name);
             }
@@ -913,7 +881,7 @@ namespace Nitrocid.Drivers
             // Try to set the driver
             begunLocal = true;
             SetDriverLocal(driverType, name);
-            DebugWriter.WriteDebug(DebugLevel.I, "Local driver {0} has begun.", name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Local driver {0} has begun.", vars: [name]);
         }
 
         /// <summary>
@@ -950,7 +918,7 @@ namespace Nitrocid.Drivers
                 SetDriverLocal(driverType, "Default");
             else
                 SetDriverLocal(driverType, name);
-            DebugWriter.WriteDebug(DebugLevel.I, "Local driver {0} has begun.", name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Local driver {0} has begun.", vars: [name]);
         }
 
         /// <summary>
@@ -981,13 +949,6 @@ namespace Nitrocid.Drivers
             // Try to set the driver
             currentDriversLocal[driverType] = currentDrivers[driverType];
             begunLocal = false;
-
-            // Edge case for terminal drivers: Reset the Terminaux handler
-            if (driverType == DriverTypes.Console)
-            {
-                InputTools.isWrapperInitialized = false;
-                InputTools.InitializeTerminauxWrappers();
-            }
             DebugWriter.WriteDebug(DebugLevel.I, "Local driver has ended.");
         }
 
@@ -1004,15 +965,8 @@ namespace Nitrocid.Drivers
         internal static void SetDriverLocal(DriverTypes driverType, string name)
         {
             // Try to set the driver
-            DebugWriter.WriteDebug(DebugLevel.I, "Trying to set driver to {0} for type {1}...", name, driverType.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to set driver to {0} for type {1}...", vars: [name, driverType.ToString()]);
             currentDriversLocal[driverType] = GetDriver(driverType, name);
-
-            // Edge case for terminal drivers: Reset the Terminaux handler
-            if (driverType == DriverTypes.Console)
-            {
-                InputTools.isWrapperInitialized = false;
-                InputTools.InitializeTerminauxWrappers();
-            }
         }
 
         internal static DriverTypes InferDriverTypeFromDriverInterfaceType<T>()
@@ -1027,7 +981,7 @@ namespace Nitrocid.Drivers
 
             // Now, actually infer the type from the driver interface type
             driverType = driverTypes;
-            DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", driverType.ToString(), type.Name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", vars: [driverType.ToString(), type.Name]);
             return driverType;
         }
 
@@ -1041,7 +995,7 @@ namespace Nitrocid.Drivers
 
             // Now, actually infer the type from the name
             driverType = driverTypes;
-            DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", driverType.ToString(), name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", vars: [driverType.ToString(), name]);
             return driverType;
         }
 
@@ -1061,7 +1015,7 @@ namespace Nitrocid.Drivers
             string name = driver.DriverName;
             if (!IsRegistered(type, name) && driver.DriverType == type)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Registered driver {0} [{1}] under type {2}", name, driver.GetType().Name, type.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Registered driver {0} [{1}] under type {2}", vars: [name, driver.GetType().Name, type.ToString()]);
                 drivers[type].Add(driver);
             }
         }
@@ -1084,7 +1038,7 @@ namespace Nitrocid.Drivers
                 var driver = drivers[type][idx];
                 if (driver.DriverType == type)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Unregistered driver {0} [{1}] under type {2}", name, driver.GetType().Name, type.ToString());
+                    DebugWriter.WriteDebug(DebugLevel.I, "Unregistered driver {0} [{1}] under type {2}", vars: [name, driver.GetType().Name, type.ToString()]);
                     drivers[type].Remove(driver);
                 }
             }

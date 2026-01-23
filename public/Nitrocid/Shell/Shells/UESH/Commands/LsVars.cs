@@ -19,8 +19,8 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Scripting;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Scripting;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -35,10 +35,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            foreach (string VarName in UESHVariables.Variables.Keys)
+            foreach (string VarName in MESHVariables.Variables.Keys)
             {
                 TextWriters.Write($"- {VarName}: ", false, KernelColorType.ListEntry);
-                TextWriters.Write(UESHVariables.Variables[VarName], true, KernelColorType.ListValue);
+                TextWriters.Write(MESHVariables.Variables[VarName], true, KernelColorType.ListValue);
             }
             return 0;
         }

@@ -20,10 +20,6 @@
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Modifications;
-using System;
-using System.Collections.ObjectModel;
-using System.Reflection;
 
 namespace Nitrocid.Extras.Sha384Enhanced
 {
@@ -33,12 +29,6 @@ namespace Nitrocid.Extras.Sha384Enhanced
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSha384Enhanced);
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         { }

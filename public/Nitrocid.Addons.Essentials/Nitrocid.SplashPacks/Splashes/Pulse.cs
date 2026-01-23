@@ -80,7 +80,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 double ThresholdRed = RedColorNum / (double)_pulseMaxSteps;
                 double ThresholdGreen = GreenColorNum / (double)_pulseMaxSteps;
                 double ThresholdBlue = BlueColorNum / (double)_pulseMaxSteps;
-                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
 
                 // Fade in or out
                 if (_isFadingOut)
@@ -89,14 +89,14 @@ namespace Nitrocid.SplashPacks.Splashes
                     int CurrentColorRedOut = RedColorNum;
                     int CurrentColorGreenOut = GreenColorNum;
                     int CurrentColorBlueOut = BlueColorNum;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", _currentStep, _pulseMaxSteps);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", vars: [_currentStep, _pulseMaxSteps]);
                     ThreadManager.SleepNoBlock(_pulseDelay);
                     CurrentColorRedOut = (int)Math.Round(CurrentColorRedOut - ThresholdRed * _currentStep);
                     CurrentColorGreenOut = (int)Math.Round(CurrentColorGreenOut - ThresholdGreen * _currentStep);
                     CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
                     builder.Append(
-                        ColorTools.RenderSetConsoleColor(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut), true) +
+                        ConsoleColoring.RenderSetConsoleColor(new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut), true) +
                         ConsoleClearing.GetClearWholeScreenSequence()
                     );
                     _currentStep++;
@@ -112,14 +112,14 @@ namespace Nitrocid.SplashPacks.Splashes
                     int CurrentColorRedIn = 0;
                     int CurrentColorGreenIn = 0;
                     int CurrentColorBlueIn = 0;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", _currentStep, _pulseMaxSteps);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", vars: [_currentStep, _pulseMaxSteps]);
                     ThreadManager.SleepNoBlock(_pulseDelay);
                     CurrentColorRedIn = (int)Math.Round((CurrentColorRedIn + ThresholdRed) * _currentStep);
                     CurrentColorGreenIn = (int)Math.Round((CurrentColorGreenIn + ThresholdGreen) * _currentStep);
                     CurrentColorBlueIn = (int)Math.Round((CurrentColorBlueIn + ThresholdBlue) * _currentStep);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", vars: [CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn]);
                     builder.Append(
-                        ColorTools.RenderSetConsoleColor(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn), true) +
+                        ConsoleColoring.RenderSetConsoleColor(new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn), true) +
                         ConsoleClearing.GetClearWholeScreenSequence()
                     );
                     _currentStep++;

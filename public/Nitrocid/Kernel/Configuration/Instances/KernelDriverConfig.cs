@@ -29,7 +29,6 @@ using Nitrocid.Drivers.Sorting;
 using Nitrocid.Drivers.DebugLogger;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Drivers.Regexp;
-using Nitrocid.Drivers.Console;
 using Nitrocid.Drivers.Input;
 using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Drivers.EncodingAsymmetric;
@@ -45,19 +44,18 @@ namespace Nitrocid.Kernel.Configuration.Instances
     {
         /// <inheritdoc/>
         [JsonIgnore]
-        public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("DriverSettingsEntries.json", ResourcesType.Settings) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain driver settings entries.")));
+        public override SettingsEntry[] SettingsEntries
+        {
+            get
+            {
+                var dataStream = ResourcesManager.GetData("DriverSettingsEntries.json", ResourcesType.Settings) ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain driver settings entries."));
+                string dataString = ResourcesManager.ConvertToString(dataStream);
+                return ConfigTools.GetSettingsEntries(dataString);
+            }
+        }
 
         #region Drivers
-        /// <summary>
-        /// Current console driver
-        /// </summary>
-        public string CurrentConsoleDriver
-        {
-            get => DriverHandler.GetDriverName<IConsoleDriver>(DriverHandler.CurrentConsoleDriver);
-            set => ConsoleDriverTools.SetConsoleDriver(value);
-        }
         /// <summary>
         /// Current random number generator driver
         /// </summary>

@@ -23,23 +23,21 @@ using System.Linq;
 using IOPath = System.IO.Path;
 using System.Threading;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Instances;
-using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 using Nitrocid.Misc.Text.Probers.Regexp;
-using Nitrocid.Files.Paths;
 using Nitrocid.Misc.Interactives;
 using Terminaux.Inputs.Interactive;
+using Nitrocid.Files.Paths;
 
 namespace Nitrocid.Files
 {
     /// <summary>
     /// Filesystem module
     /// </summary>
-    public static class FilesystemTools
+    public static partial class FilesystemTools
     {
 
         private const int maxLockTimeoutMs = 300000;
@@ -52,7 +50,7 @@ namespace Nitrocid.Files
         /// <returns>Absolute path</returns>
         /// <exception cref="FileNotFoundException"></exception>
         public static string NeutralizePath(string? Path, bool Strict = false) =>
-            NeutralizePath(Path, CurrentDirectory.CurrentDir, Strict);
+            NeutralizePath(Path, FilesystemTools.CurrentDir, Strict);
 
         /// <summary>
         /// Simplifies the path to the correct one. It converts the path format to the unified format.
@@ -73,7 +71,7 @@ namespace Nitrocid.Files
             Source = RegexpTools.Unescape(Source.Replace(@"\", "/"));
 
             // Append current directory to path
-            if (!Checking.Rooted(Path))
+            if (!FilesystemTools.Rooted(Path))
                 if (!Source.EndsWith("/"))
                     Path = $"{Source}/{Path}";
                 else
@@ -89,7 +87,7 @@ namespace Nitrocid.Files
 
             // If strict, checks for existence of file
             if (Strict)
-                if (Checking.Exists(Path))
+                if (FilesystemTools.Exists(Path))
                     return Path;
                 else
                     throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Neutralized a non-existent path.") + " {0}", Path);
@@ -107,7 +105,7 @@ namespace Nitrocid.Files
             Path = NeutralizePath(Path);
 
             // We can't perform this operation on nonexistent file
-            if (!Checking.FileExists(Path))
+            if (!FilesystemTools.FileExists(Path))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File {0} not found."), Path);
 
             // Try to open the file exclusively to check to see if we can open the file or just error out with sharing violation
@@ -121,7 +119,7 @@ namespace Nitrocid.Files
             }
             catch (IOException ex) when ((ex.HResult & 0x0000FFFF) == 32)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "File {0} is locked: {1}", Path, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.W, "File {0} is locked: {1}", vars: [Path, ex.Message]);
                 return true;
             }
         }
@@ -136,11 +134,11 @@ namespace Nitrocid.Files
             Path = NeutralizePath(Path);
 
             // We can't perform this operation on nonexistent folder
-            if (!Checking.FolderExists(Path))
+            if (!FilesystemTools.FolderExists(Path))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found."), Path);
 
             // Check every file inside the folder and its subdirectories for lock
-            var files = Listing.GetFilesystemEntries(Path, false, true);
+            var files = FilesystemTools.GetFilesystemEntries(Path, false, true);
             foreach (string file in files)
             {
                 if (IsLocked(file))
@@ -159,7 +157,7 @@ namespace Nitrocid.Files
             Path = NeutralizePath(Path);
 
             // We can't perform this operation on nonexistent file
-            if (!Checking.Exists(Path))
+            if (!FilesystemTools.Exists(Path))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File or folder {0} not found."), Path);
 
             // Wait until the lock is released
@@ -177,7 +175,7 @@ namespace Nitrocid.Files
             Path = NeutralizePath(Path);
 
             // We can't perform this operation on nonexistent path
-            if (!Checking.Exists(Path))
+            if (!FilesystemTools.Exists(Path))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File or folder {0} not found."), Path);
 
             // We also can't wait for lock too little or too much
@@ -209,7 +207,7 @@ namespace Nitrocid.Files
             Path = NeutralizePath(Path);
 
             // We can't perform this operation on nonexistent file
-            if (!Checking.Exists(Path))
+            if (!FilesystemTools.Exists(Path))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File or folder {0} not found."), Path);
 
             // Wait until the lock is released
@@ -224,8 +222,8 @@ namespace Nitrocid.Files
         {
             var tui = new FileManagerCli
             {
-                firstPanePath = Checking.FolderExists(firstPanePath) ? firstPanePath : PathsManagement.HomePath,
-                secondPanePath = Checking.FolderExists(secondPanePath) ? secondPanePath : PathsManagement.HomePath,
+                firstPanePath = FolderExists(firstPanePath) ? firstPanePath : PathsManagement.HomePath,
+                secondPanePath = FolderExists(secondPanePath) ? secondPanePath : PathsManagement.HomePath,
             };
             tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, entry2, _) => tui.Open(entry1, entry2)));
             tui.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, entry2, _) => tui.CopyFileOrDir(entry1, entry2)));

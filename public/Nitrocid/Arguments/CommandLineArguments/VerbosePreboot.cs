@@ -18,6 +18,7 @@
 //
 
 using Nitrocid.Kernel;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {

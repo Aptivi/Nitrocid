@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Operations;
 using Nitrocid.Files.Paths;
 using Nitrocid.Users.Login.Motd;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using System.IO;
+using Nitrocid.Files;
 
 namespace Nitrocid.Tests.Misc.Probers
 {
@@ -66,7 +66,7 @@ namespace Nitrocid.Tests.Misc.Probers
         public void TestReadMOTDFromFile()
         {
             MotdParse.ReadMotd();
-            string MOTDLine = Reading.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.MOTD));
+            string MOTDLine = FilesystemTools.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.MOTD));
             MOTDLine.ShouldBe(MotdParse.MotdMessage);
         }
 
@@ -78,7 +78,7 @@ namespace Nitrocid.Tests.Misc.Probers
         public void TestReadMALFromFile()
         {
             MalParse.ReadMal();
-            string MALLine = Reading.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.MAL));
+            string MALLine = FilesystemTools.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.MAL));
             MALLine.ShouldBe(MalParse.MalMessage);
         }
 

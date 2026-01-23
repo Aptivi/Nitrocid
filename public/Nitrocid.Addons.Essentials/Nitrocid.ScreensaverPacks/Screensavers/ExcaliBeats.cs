@@ -20,6 +20,7 @@
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -61,7 +62,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ExcaliBeatsMaximumBlueColorLevel = ScreensaverPackInit.SaversConfig.ExcaliBeatsMaximumBlueColorLevel,
                 ExcaliBeatsMaximumColorLevel = ScreensaverPackInit.SaversConfig.ExcaliBeatsMaximumColorLevel
             };
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
             ConsoleWrapper.Clear();
         }
 

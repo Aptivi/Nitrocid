@@ -26,7 +26,8 @@ namespace Nitrocid.Misc.Screensaver.Displays
     {
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "Plain";
+        public override string ScreensaverName =>
+            "Plain";
 
     }
 }

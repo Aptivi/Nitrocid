@@ -29,49 +29,13 @@ namespace Nitrocid.Tests.Languages
     {
 
         /// <summary>
-        /// Tests getting cultures from current language
+        /// Tests getting cultures
         /// </summary>
         [TestMethod]
         [Description("Querying")]
-        public void TestGetCulturesFromCurrentLang()
+        public void TestGetCultures()
         {
-            var cultures = CultureManager.GetCulturesFromCurrentLang();
-            cultures.ShouldNotBeNull();
-            cultures.ShouldNotBeEmpty();
-        }
-
-        /// <summary>
-        /// Tests getting cultures from specific language
-        /// </summary>
-        [TestMethod]
-        [Description("Querying")]
-        public void TestGetCulturesFromLang()
-        {
-            var cultures = CultureManager.GetCulturesFromLang("spa");
-            cultures.ShouldNotBeNull();
-            cultures.ShouldNotBeEmpty();
-        }
-
-        /// <summary>
-        /// Tests getting cultures from current language
-        /// </summary>
-        [TestMethod]
-        [Description("Querying")]
-        public void TestGetCultureNamesFromCurrentLang()
-        {
-            var cultures = CultureManager.GetCultureNamesFromCurrentLang();
-            cultures.ShouldNotBeNull();
-            cultures.ShouldNotBeEmpty();
-        }
-
-        /// <summary>
-        /// Tests getting cultures from specific language
-        /// </summary>
-        [TestMethod]
-        [Description("Querying")]
-        public void TestGetCultureNamesFromLang()
-        {
-            var cultures = CultureManager.GetCultureNamesFromLang("spa");
+            var cultures = CultureManager.GetCultures();
             cultures.ShouldNotBeNull();
             cultures.ShouldNotBeEmpty();
         }

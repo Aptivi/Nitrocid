@@ -114,10 +114,12 @@ Rimozione del registro di debug non riuscita: {0}
 Modifica directory non riuscita: {0}
 Specifica l'indirizzo
 Il fuso orario non è specificato correttamente.
+Selezione profilo non valida.
 Tentativo di connessione a {0} con il profilo {1} ...
 Mod di analisi non consentite in modalità provvisoria.
 Il percorso non è né un file né una directory.
 Crea un'altra copia di un file con directory o nome diversi.
+Sposta un file in un'altra directory
 Corrispondenza {0} ({1}): {2}
 Corrispondenza {0}: {1}
 Tempo trascorso: {0} millisecondi
@@ -618,6 +620,7 @@ Abilita il debug del salvaschermo
 Abilita il debug per gli screensaver. Si noti che potrebbe riempire rapidamente il registro di debug e rallentare leggermente lo screensaver, a seconda dello screensaver utilizzato. Funziona solo se il debug del kernel è abilitato per scopi diagnostici.
 La pagina di manuale {0} non è valida.
 Considera di riempire questa pagina di manuale.
+Manuale del modulo
 Argomenti del kernel disponibili:
 Errore irreversibile nell'argomento:
 Crittografa una stringa utilizzando SHA512
@@ -1612,6 +1615,7 @@ Nome del file
 È selezionato
 Dimensione del file
 Percorso del file
+Selezionato '{0}'. Premere ESC per uscire e confermare la selezione.
 Impossibile aprire la cartella o selezionare il file
 Immettere un percorso o un percorso completo per una cartella locale.
 Premi SPAZIO per maggiori informazioni
@@ -3218,6 +3222,7 @@ Questo comando ha gli argomenti seguenti che cambiano il modo in cui funziona:
 Descrizione dell'argomento non specificata
 Elenca tutti i parametri di funzione disponibili da una funzione
 Gestisci i tuoi allarmi
+Gestisci i tuoi allarmi in un'interfaccia utente interattiva
 Riavvia un'istanza remota del kernel
 Il kernel nell'istanza remota verrà arrestato
 Utilizza lo stile delle impostazioni legacy
@@ -3390,7 +3395,9 @@ Quale driver di codifica asimmetrica desideri utilizzare?
 Stile bootloader
 Seleziona uno stile di bootloader in base alle tue preferenze.
 Timeout della selezione predefinita del bootloader
+Timeout in secondi per l'avvio con la selezione predefinita.
 Selezione predefinita del bootloader
+Selezione della voce di avvio predefinita. Questo numero è in base zero, quindi il primo elemento è l'indice 0 e così via.
 Abilita "La home page di Nitrocid"
 Abilita "The Nitrocid Homepage" che ti consente di vedere cosa sta succedendo in un colpo d'occhio.
 Colore di sfondo dell'associazione dei tasti incorporata della TUI interattiva
@@ -3703,7 +3710,26 @@ Riportate indietro la nostalgia con questo tema!
 Il tuo terminale è costituito da assi di legno
 Ispirato al modello cinese di diversi frutti
 Extra - CRC32C (Castagnoli)
+Stampa la versione del kernel
+Stampa la versione API
 Impossibile cancellare i file di debug
+La configurazione del kernel non funzionerà correttamente. Consulta il debugger del kernel per maggiori informazioni.
+Impossibile controllare le variabili di configurazione se non è specificata alcuna configurazione di base del kernel.
+Impossibile controllare le variabili di configurazione se non è specificata alcuna chiave.
+Tentativo di registrare un'impostazione personalizzata con contenuto non valido. Consulta il debugger del kernel per maggiori informazioni.
+Tentativo di registrare un'impostazione di base con contenuto non valido. Consultare il debugger del kernel per maggiori informazioni
+Impossibile ottenere le voci delle impostazioni splash.
+Prima di poter impostare questo valore, è necessario installare il componente aggiuntivo delle icone.
+Scegli una voce per
+Reimposta tutto
+Reimposta voce
+Il tipo di argomento specificato non è valido
+Una o più voci di configurazione hanno variabili o enumerazioni non valide e devono essere corrette. Consulta il debugger del kernel per maggiori informazioni.
+Non esiste alcuna cultura con questo nome.
+Si è verificato un errore durante l'elaborazione dell'azione del segnale audio.
+Impossibile restituire un tipo di classe inesistente dall'assembly del componente aggiuntivo
+Questa classe non è una classe aggiuntiva
+Riproduzione del suono di spegnimento...
 Non supporteremo più questa versione di Nitrocid KS dopo questa data
 Se desideri continuare a ricevere supporto, assicurati di effettuare quanto prima l'aggiornamento alla versione supportata.
 Questa versione di Nitrocid KS non è più supportata.
@@ -3720,9 +3746,12 @@ Impossibile caricare gli alias
 Impossibile caricare le voci di selezione rapida
 Impossibile caricare le variabili di ambiente
 Impossibile caricare l'ascoltatore di allarme
+Impossibile finalizzare i componenti aggiuntivi
 Impossibile caricare MOTD e MAL
 Impossibile caricare le cronologie dei comandi shell
 Impossibile caricare i gestori delle estensioni
+Caricamento mod...
+Impossibile caricare le mod
 Si sono verificati errori durante il tentativo di inizializzare i componenti facoltativi.
 Impossibile reimpostare le variabili generali
 Impossibile salvare la cronologia dei comandi shell
@@ -3744,12 +3773,26 @@ Impossibile arrestare tutti i thread del kernel
 Si sono verificati degli errori durante il tentativo di reimpostare i componenti.
 Eccezione
 Per maggiori informazioni, consultare i log di debug del kernel.
+Non esiste alcun tipo di segnale audio.
+Impossibile ottenere le impostazioni di fallback
+Impossibile reimpostare tutte le voci delle impostazioni per
+Non è possibile reimpostare questa voce di impostazione per
+La variabile non è presente in nessuno dei moduli.
+Non riesco a ottenere il segnale audio necessario per gli screensaver ambientali.
+La connessione di rete potrebbe non essere stata stabilita correttamente a causa di un errore.
+Non è possibile mettere nel buffer un comando che non è impostato come wrappabile.
 Descrizione dell'interruttore non specificata
 Percorso verso un processo
 Argomenti da passare a un processo
 Comando per mostrare la voce di aiuto
+Inoltra l'output del comando a un altro comando come parametri
+Comando sorgente per inoltrare il suo output al comando di destinazione come ultimo parametro
 Comando di destinazione da eseguire durante la creazione dell'argomento in base all'output del comando sorgente
+Se passare l'output del comando sorgente come argomento tra virgolette o argomento senza virgolette
 Comando per racchiudere il suo output
+Esecuzione del comando sorgente non riuscita.
+Esecuzione del comando di destinazione non riuscita. Il contenuto potrebbe non essere stato popolato correttamente. Il comando eseguito è stato
+Il tubo è rotto.
 Argomento per mostrare la voce di aiuto
 Numero di sessione a partire da zero
 Nome utente da interrogare
@@ -3757,14 +3800,25 @@ Tipo di autorizzazione da concedere o negare
 Falso nel negare, vero nel concedere
 Nuovo nome visualizzato o 'cancella' per cancellare il nome visualizzato
 ID lingua di tre lettere o 'cancella' per cancellare la lingua preferita
+Cambia la cultura preferita dell'utente
+ID cultura o 'cancella' per cancellare la cultura preferita
+Cultura utente preferita impostata su {0}. Potresti voler effettuare nuovamente l'accesso.
+Cultura non valida
+Cultura preferita
 GUID di sessione non valido
 Nessun GUID di sessione
+Tipo sconosciuto
+Parametro sconosciuto
+Elenco dei tipi per
+Recupera facilmente le informazioni del registro di debug utilizzando il GUID di sessione
 GUID di sessione da trovare
 Numero di eccezione
 Nome del campo da interrogare
 Nome della proprietà da interrogare
 Nome del componente aggiuntivo da interrogare
+Nome del tipo statico pubblico dall'addon
 Nome della funzione dal tipo statico pubblico da interrogare
+Elenca tutti i tipi disponibili dall'addon specificato
 Nome splash da interrogare
 Numero di byte compreso tra 0 e 255
 Numero di posizione del byte
@@ -3786,6 +3840,10 @@ Una parola o una frase da sostituire
 Una parola o una frase da sostituire con
 Numero di riga (singolare o inizio dell'intervallo) o 'tutto' per sostituire in tutte le righe
 Un'espressione regolare per abbinare le frasi che devono essere sostituite
+Paese non valido
+Scegli una lingua per il paese
+Selezione della lingua non valida per
+SÌ
 Nuovo nome di gruppo da aggiungere
 Nuovo nome utente da aggiungere
 Nuova password da utilizzare
@@ -3812,8 +3870,12 @@ Percorso del file per stamparne il contenuto
 Percorso al file
 Sia aggiunta che rimozione
 Nome attributo
+Cambia la cultura
+ID cultura da modificare
+Cambia la cultura dell'utente invece della cultura del sistema
 Nuovo nome host da modificare
 ID lingua
+Cambia la lingua utilizzando un paese (potrebbe venirti chiesto di scegliere una lingua)
 Nuovo messaggio da utilizzare
 Risposte a dividere con una barra
 Domanda da stampare sullo schermo
@@ -3889,6 +3951,7 @@ O il nome dello screensaver o 'casuale'
 Espressione regolare per la ricerca
 File di destinazione
 Parola o frase da cercare
+Apre le impostazioni di splash del componente aggiuntivo
 Valore da impostare
 Nome della variabile di configurazione
 Nome dell'implementatore
@@ -3914,6 +3977,7 @@ File hash o hash previsto
 File da testare
 Nome del file ZIP da creare
 Percorso da comprimere
+Per poter visualizzare questa emoji è necessario installare l'addon delle icone.
 Nota contenuto da aggiungere
 Numero di nota
 Percorso verso una directory con repository Git
@@ -3953,6 +4017,8 @@ Elenca tutti i promemoria
 Salva tutti i promemoria
 Un percorso verso un file di contatto vCard o una rappresentazione MeCard
 Numero di contatto
+Modificare...
+Inserisci un nuovo nome per questo contatto
 Latitudine da utilizzare
 Longitudine da utilizzare
 Chiave API Weather.com
@@ -3961,6 +4027,7 @@ Chiave API OpenWeatherMap
 Se aggiungere, rimuovere, contrassegnare come fatto o deselezionare come fatto un'attività
 Se elencare, salvare o caricare tutte le attività
 Timer per pomodori
+Pomodoro
 Il timer del pomodoro è pronto
 Timer pomodoro numero {0} in quattro iterazioni
 Breve pausa
@@ -4011,6 +4078,7 @@ Percorso al file o alla directory di destinazione
 Percorso al file locale
 Numeri di autorizzazione secondo chmod
 Specifica se il tipo di trasferimento è ASCII o binario
+Collegamento simbolico a: {0}
 Tasto intestazione
 Valore dell'intestazione
 Richiesta HTTP
@@ -4018,12 +4086,39 @@ File da caricare
 Stringa da caricare
 Stringa dell'agente utente
 Indirizzo e-mail per effettuare l'accesso
+Crea cartella
+Mossa...
+Sposta tutto...
+Rinomina cartella
+Rimuovi cartella
+Rimuovi messaggio
+Rimuovi tutto...
+Impossibile aprire la cartella o il messaggio
+Scrivi il nome della nuova directory.
+Creazione directory...
+Impossibile creare la cartella
+Seleziona una nuova directory in cui spostare questo messaggio.
+Messaggio commovente...
+Impossibile spostare il messaggio
+Seleziona una nuova directory in cui spostare tutti i messaggi dello stesso mittente.
+Spostamento dei messaggi in base al mittente {0}...
+Non è possibile spostare tutti i messaggi dello stesso mittente
+Scrivi il nome della nuova directory in cui rinominare {0}.
+Ridenominazione della directory...
+Impossibile rinominare la cartella
+Rimozione della directory...
+Impossibile rimuovere la cartella
+Rimozione del messaggio...
+Impossibile eliminare il messaggio
+Rimozione dei messaggi da parte del mittente {0}...
+Non è possibile eliminare tutti i messaggi dello stesso mittente
 Nome della directory di posta
 Numero di pagina
 ID messaggio
 Nome del mittente
 Vecchio nome della directory di posta
 Nuovo nome della directory di posta
+Gestione interattiva della posta
 Server SFTP a cui connettersi
 Collegamento al feed RSS
 Numero di feed
@@ -4044,13 +4139,132 @@ Percorso al file synth
 Server SSH a cui connettersi
 Nome utente con cui autenticarsi
 Comando da eseguire in remoto
+Stampa sulla console informazioni su una sostanza chimica.
+Un nome, un simbolo o un numero atomico di una sostanza
+Stampa sulla console informazioni su tutte le sostanze chimiche.
+Non esiste sostanza con numero atomico
+Non esiste sostanza con simbolo o nome
+Numero atomico
+Massa atomica
+Simbolo
+Riepilogo
+Fase
+Posizione nella tavola periodica
+Posizione in coordinate
+Scopritore
+Nominato da
+Configurazione elettronica
+Avvia mod (seleziona)
+Avvia mod (input)
+Interrompere la modalità
+Ricarica mod
+Installa mod (seleziona)
+Installa mod (input)
+Disinstalla mod
+Inizia tutto
+Fermare tutto
+Ricarica tutto
+Impossibile restituire un tipo di classe inesistente dall'assemblaggio mod
+Impossibile trovare la funzione '{0}' nel mod '{1}'.
+Impossibile trovare la proprietà '{0}' nel mod '{1}'.
+Impossibile trovare il campo '{0}' nel mod '{1}'.
+Questa classe non è una classe mod
+Lingue
+Punto di ingresso
+Inserisci un percorso per la mod che vuoi avviare
+Impossibile avviare la mod
+Inserisci un percorso per la mod che vuoi installare
+Impossibile installare la mod
+Impossibile avviare o interrompere questa mod!
+Se avviare, interrompere, ottenere informazioni, ricaricare, installare o disinstallare una mod
+Nome mod o nome file
+Se elencare, ricaricare, interrompere, avviare o gestire interattivamente tutte le mod
+Nome mod
+Contesti culturali e linguistici
+Ciò consente di configurare la cultura e la lingua
+Impostazioni di data e ora
+Questo consente di configurare l'ora e la data
+Impostazioni del bootloader
+Questo ti permette di configurare il bootloader
+La homepage di Nitrocid
+Questo ti consente di configurare la homepage di Nitrocid
+Impostazioni di aggiornamento del kernel
+Ciò consente di configurare gli aggiornamenti del kernel
+Impostazioni di errore del kernel
+Questo consente di configurare gli errori del kernel
+Impostazioni di alimentazione del kernel
+Ciò consente di configurare il meccanismo di alimentazione del kernel
+Schemi di colori del kernel
+Ciò consente di impostare più schemi di colori del kernel
+Impostazioni del gestore di accesso moderno
+Ciò consente di configurare il gestore di accesso moderno
+Sistema di aiuto
+Ciò consente di configurare il sistema di aiuto della shell
+Preimpostazioni della shell
+Ciò consente di configurare i preset della shell
+Impostazioni del debugger remoto
+Ciò consente di configurare il debugger remoto
 Ritardo unificato
 Se è vero, abilita il ritardo di scrittura unificato per tutti gli screensaver. Altrimenti, utilizza valori di ritardo configurati specifici per lo screensaver.
+Questa sezione elenca tutte le impostazioni audio.
+Impostazioni audio
+Abilita il supporto audio
+Abilita l'intero sistema audio per i segnali di sistema
+Abilita i suggerimenti della tastiera
+Se riprodurre o meno i suggerimenti della tastiera per ogni pressione di tasto
+Abilita i suoni di avvio
+Se riprodurre o meno il suono di avvio
+Abilita i suoni di spegnimento
+Se riprodurre o meno il suono di spegnimento
+Abilita i suoni di navigazione
+Se riprodurre o meno il suono di navigazione per ogni pressione di un tasto
+Abilita i suoni di notifica a bassa priorità
+Se riprodurre o meno il suono di notifica per gli avvisi a bassa priorità
+Abilita i suoni di notifica di media priorità
+Se riprodurre o meno il suono di notifica per gli avvisi di media priorità
+Abilita i suoni di notifica ad alta priorità
+Se riprodurre o meno il suono di notifica per gli avvisi ad alta priorità
+Abilita gli effetti sonori dello screensaver ambientale
+Se riprodurre o meno gli effetti sonori dello screensaver ambientale
+Intensifica gli effetti sonori dello screensaver ambientale
+Se intensificare o meno gli effetti sonori dello screensaver ambientale
+Volume del segnale audio
+Specifica quanto devono essere forti i segnali audio
+Tema audio
+Quale tema audio vuoi utilizzare per i segnali audio?
+Impostazioni dell'editor di testo
+Questo consente di configurare l'editor di testo
+Impostazioni dell'editor esadecimale
+Questo consente di configurare l'editor esadecimale
+Impostazioni titolo RSS
+Questo ti consente di configurare i titoli RSS
+Impostazioni del mouse
+Questo consente di configurare il mouse
+Impostazioni di debug
+Ciò consente di configurare la routine di debug
+Estetica
+Ciò consente di configurare l'estetica del kernel
+Mostra una grande parola di benvenuto scritta al centro della console; simile ai tappetini di benvenuto
+Mostra progressi
+Mostrare progressi o no
+Questo ti permette di configurare i colori
+Questa sezione consente di configurare Solver.
+Questa sezione consente di configurare SpeedPress.
+Questa sezione consente di configurare Meteor e ShipDuet.
+Questa sezione consente di configurare il funzionamento del sistema di modifica del kernel.
 Questa sezione consente di configurare il funzionamento dell'applicazione timer.
 Questa sezione consente di configurare il funzionamento dell'applicazione Pomodoro Timer.
 Abilita Figlet per il timer pomodoro
 Se abilitato, utilizzerà figlet per il timer pomodoro. Nota che è necessario uno schermo di console grande per visualizzare correttamente l'ora con Figlet abilitato.
 Font Figlet per il timer pomodoro
+Impostazioni rampa ore
+Ciò consente di configurare la rampa oraria
+Impostazioni rampa minuti
+Ciò consente di configurare la rampa dei minuti
+Impostazioni rampa secondi
+Ciò consente di configurare la rampa dei secondi
+Impostazioni rampa
+Ciò consente di configurare le rampe
 Mostra il testo sotto una riga su uno sfondo rosso cupo.
 Personaggi casuali che si diffondono casualmente sullo schermo.
 Data e ora semplici al centro dello schermo, con colore variabile in base all'ora corrente.
@@ -4064,7 +4278,64 @@ Blocco che si muove seguendo uno schema ondulatorio con righelli verdi che ne tr
 Mostra un singolo carattere casuale in un testo colorato.
 Ti mostra una parola che viene selezionata proprio come in una slot machine dei casinò.
 Mostra un testo in formato figlet colorato che alterna due colori neon: ciano e fucsia.
+Impostazioni culturali
+Ciò consente di configurare la cultura utilizzata dallo screensaver del calendario
+Impostazioni della prima rampa
+Ciò consente di configurare la prima rampa
+Impostazioni della seconda rampa
+Ciò consente di configurare la seconda rampa
+Impostazioni terza rampa
+Ciò consente di configurare la terza rampa
+Combinazioni di colori di Alma Linux, uno spin-off del sistema operativo Linux, Red Hat
+Combinazioni di colori da un sistema operativo Linux, Arch Linux
+Combinazioni di colori di EndeavourOS, uno spin-off del sistema operativo Linux, Arch Linux
+Schemi di colori di Fedora, uno spin-off del sistema operativo Linux, Red Hat
+Combinazioni di colori da un sistema operativo Linux, Gentoo
+Colori del motivo cesellato che formano un mandala colorato
+Schemi di colori di Kubuntu, uno spin-off di un popolare sistema operativo Linux, Ubuntu
+Combinazioni di colori di Linux Mint, uno spin-off non ufficiale di un popolare sistema operativo Linux, Ubuntu
+Combinazioni di colori di Lubuntu, uno spin-off di un popolare sistema operativo Linux, Ubuntu
+Combinazioni di colori di Manjaro, uno spin-off del sistema operativo Linux, Arch Linux
+Combinazioni di colori da un sistema operativo Linux, openSUSE
+Combinazioni di colori da un sistema operativo Linux, Red Hat
+Tonalità rosse con colori di accento dinamici per testi degni di attenzione
+Combinazioni di colori di Rocky Linux, uno spin-off del sistema operativo Linux, Red Hat
+Combinazioni di colori da un sistema operativo Linux, Slackware
+Schemi di colori di Xubuntu, uno spin-off di un popolare sistema operativo Linux, Ubuntu
+Combinazioni di colori di Zorin OS, uno spin-off non ufficiale di un popolare sistema operativo Linux, Ubuntu
+Extra - Chimica
+Extra - Mod
+Extra - Icone
 Quale cultura viene utilizzata per modificare i nomi dei mesi, il calendario, ecc.?
+Abilita i widget 'The Nitrocid Homepage'
+Abilita i widget 'The Nitrocid Homepage' sul lato destro dello schermo.
+Abilita il feed RSS 'The Nitrocid Homepage'
+Abilita il widget feed RSS 'The Nitrocid Homepage' sul lato destro dello schermo.
+Widget 'The Nitrocid Homepage'
+Seleziona un widget che verrà visualizzato in 'The Nitrocid Homepage'.
+Impostazioni bordo notifica
+Consente di configurare il bordo notifica
+Impostazioni bordo generale
+Consente di configurare il bordo generale
+Impostazioni aspetto
+Consente di configurare l'aspetto della rampa delle ore
+Consente di configurare il colore della rampa delle ore
+Consente di configurare l'aspetto della rampa dei minuti
+Consente di configurare il colore della rampa dei minuti
+Consente di configurare l'aspetto della rampa dei secondi
+Consente di configurare il colore della rampa dei secondi
+Impostazioni colore posizione iniziale
+Consente di configurare i colori della posizione iniziale
+Impostazioni colore posizione finale
+Consente di configurare i colori della posizione finale
+Impostazioni barra rampa
+Consente di configurare la barra rampa
+Consente di configurare l'aspetto della rampa
+Consente di configurare i colori della rampa
+Impostazioni inizio gradiente
+Consente di configurare i colori inizio gradiente
+Impostazioni fine gradiente
+Consente di configurare i colori fine gradiente
 Livello massimo colore sfondo
 Livello massimo colore sfondo. Il valore minimo accettato è 0 e il valore massimo accettato è 255.
 Livello massimo colore linea
@@ -4073,6 +4344,7 @@ Livello massimo di colore del testo
 Livello massimo di colore del testo. Il valore minimo accettato è 0 e il valore massimo accettato è 255.
 Utilizza la cultura di sistema
 Se lo screensaver utilizza la cultura impostata dalle impostazioni del kernel principale o da queste impostazioni dello screensaver.
+Questo consente di configurare l'aspetto della prima rampa
 Testo informativo per il primo
 Scrivi come viene visualizzato il testo informativo per l'ora corrente. {0} per l'ora corrente su 24 per primo. Carattere angolo superiore sinistro per la prima barra
 Carattere angolo superiore sinistro per la prima battuta
@@ -4083,6 +4355,7 @@ Carattere cornice superiore per la prima battuta
 Carattere cornice inferiore per la prima battuta
 Carattere cornice sinistra per la prima battuta
 Carattere cornice destra per la prima battuta
+Questo consente di configurare il colore della prima rampa
 Colore della prima barra
 Livello minimo di colore rosso per la prima
 Livello minimo di colore verde per la prima
@@ -4092,6 +4365,7 @@ Livello massimo di colore rosso per la prima
 Livello massimo di colore verde per la prima
 Livello massimo di colore blu per la prima
 Livello massimo di colore per la prima
+Questo consente di configurare l'aspetto della seconda rampa
 Testo informativo per la seconda
 Scrivi come viene visualizzato il testo informativo per il minuto corrente. {0} per il minuto corrente su 60 secondi. Carattere angolo superiore sinistro per la seconda barra
 Carattere angolo superiore sinistro per la seconda barra
@@ -4102,6 +4376,7 @@ Carattere cornice superiore per la seconda barra
 Carattere cornice inferiore per la seconda barra
 Carattere cornice sinistra per la seconda barra
 Carattere cornice destra per la seconda barra
+Questo consente di configurare il colore della seconda rampa
 Colore della seconda barra
 Livello minimo di colore rosso per la seconda
 Livello minimo di colore verde per la seconda
@@ -4111,6 +4386,7 @@ Livello massimo di colore rosso per la seconda
 Livello massimo di colore verde per la seconda
 Livello massimo di colore blu per la seconda
 Livello massimo di colore per la seconda
+Questo consente di configurare l'aspetto della terza rampa
 Carattere angolo superiore sinistro per la terza barra
 Carattere angolo superiore destro per la terza barra
 Carattere angolo inferiore sinistro per la terza barra
@@ -4121,6 +4397,7 @@ Carattere cornice sinistra per la terza barra
 Carattere cornice destra per la terza bar
 Testo informativo per il terzo
 Scrivi come viene visualizzato il testo informativo per il secondo corrente. {0} per il secondo corrente su 60 terzi.
+Ciò consente di configurare il colore della terza rampa
 Colore della terza barra
 Livello minimo di colore rosso per il terzo
 Livello minimo di colore verde per il terzo
@@ -4132,61 +4409,6 @@ Livello massimo di colore blu per il terzo
 Livello massimo di colore per il terzo
 Progresses selezionerà colori casuali se è abilitato. In caso contrario, utilizza i colori dalla configurazione.
 Se il ciclo di colori è abilitato, quanti tick prima di cambiare colore in Progresses? 1 tick = 0,5 terzi
-Fatto! Si prega di utilizzare l'applicazione Nitrocid.Locales con argomenti appropriati per finalizzare le lingue. È possibile utilizzare questo percorso:
-La configurazione del kernel non funzionerà correttamente. Le chiavi non valide sono
-Tentativo di registrare un'impostazione personalizzata con contenuto non valido. Le chiavi non valide sono
-Tentativo di registrare un'impostazione di base con contenuto non valido. Le chiavi non valide sono
-Aggiunge una mod alla blacklist
-Rimuove una mod dalla blacklist
-Queste voci di configurazione hanno variabili o enumerazioni non valide e devono essere corrette:
-Avvia tutte le mod
-Stampa un separatore sulla console con colore
-Stampa un separatore sulla console con formattazione e colore
-Ricarica tutte le mod
-Statistiche
-Mostra le statistiche di test correnti
-Testa tutto
-Testa tutte le facciate
-Torna alla selezione della sezione
-Scegli una facciata di test da eseguire
-Questo test contiene parametri facoltativi. Inserisci il valore del parametro da aggiungere ai parametri di test.
-Conteggio parametri
-Sì!
-Riprova
-Il test è stato eseguito come previsto?
-Il test non è riuscito. Il valore previsto è {0}, ma il valore effettivo è {1}.
-Il test non è riuscito in modo imprevisto.
-Test riusciti:
-Test non riusciti:
-Test da eseguire:
-Impossibile ottenere l'elenco delle funzioni
-Impossibile ottenere l'elenco delle proprietà
-Impossibile ottenere l'elenco dei campi
-In base alle impostazioni della lingua sul sistema, la lingua appropriata è
-Impossibile caricare i componenti aggiuntivi finali
-Modifiche al kernel
-Selezionato '{0}'. Premi ESC per uscire e confermare la selezione.
-La variabile {0} non è stata trovata in nessuno dei moduli.
-Il tipo di metodo non è definito nell'elenco dei tipi di base Nitrocid.
-Impossibile eseguire la proprietà personalizzata con mod inesistente
-Impossibile eseguire il campo personalizzato con mod inesistente
-Recupera facilmente le informazioni del registro di debug utilizzando il numero di sessione
-Sì, impostalo!
-No, non impostarlo.
-Utilizza le impostazioni della lingua di sistema per provare a dedurre la lingua da
-Non ci sono informazioni sulla proprietà per
-Pomodoro Timer
-Selezione del profilo non valida.
-Cambia cultura quando cambi lingua
-Quando cambi lingua, cambia i nomi dei mesi, il calendario, ecc.
-Quale variante della lingua corrente viene utilizzata per cambiare i nomi dei mesi, il calendario, ecc.?
-Timeout in secondi per avviare la selezione predefinita.
-Selezione predefinita della voce di avvio. Questo numero è basato su zero, quindi il primo elemento è indice 0 e così via.
-Questa sezione elenca le impostazioni predefinite della shell.
-Impostazioni predefinite della shell
-Esegui wrap list output
-Esegue wrap list output se sembra troppo lungo per la geometria della console corrente.
-Questa sezione consente di configurare il funzionamento dei divertimenti.
 Data di produzione non valida
 Periodo di scadenza non valido
 Data di scadenza non valida
@@ -4200,21 +4422,14 @@ Ottiene le informazioni sulla scadenza del prodotto
 Data di produzione (guardare sul lato o sul fondo del prodotto)
 Data o periodo di scadenza (scritto esplicitamente nello stesso punto o in intervalli di tempo, come 6 mesi o 1 anno)
 Se il prodotto di destinazione non specifica esplicitamente la data di scadenza
-Impostazioni salvaschermo...
-Consente di configurare la cultura utilizzata dallo screensaver del calendario.
 Seleziona un'istanza di configurazione a cui passare.
+Impossibile selezionare la configurazione
 Seleziona configurazione
 Ti chiede di selezionare un'istanza di configurazione
-Impossibile controllare le variabili di configurazione se non è specificata alcuna configurazione di base del kernel.
-La configurazione del kernel non funzionerà correttamente. Consulta il debugger del kernel per ulteriori informazioni.
-Impossibile controllare le variabili di configurazione se non sono specificate chiavi.
-Tentativo di registrare un'impostazione personalizzata con contenuto non valido. Consulta il debugger del kernel per ulteriori informazioni.
-Tentativo di registrare un'impostazione di base con contenuto non valido. Consulta il debugger del kernel per ulteriori informazioni
-Scegli una voce per
-Impossibile selezionare la configurazione
-Una o più voci di configurazione contengono variabili o enumerazioni non valide e devono essere corrette. Consulta il debugger del kernel per ulteriori informazioni.
+Impostazioni dello screensaver...
 Il nome della voce Impostazioni non può essere vuoto
 La descrizione della voce Impostazioni non può essere vuota
 La voce Impostazioni non può avere un elenco di chiavi Impostazioni vuoto
 Il nome della chiave Impostazioni non può essere vuoto
 La chiave Impostazioni non può contenere un tipo di chiave non valido
+Chiavi disponibili

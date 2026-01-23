@@ -1,4 +1,4 @@
-using Nitrocid.Modifications;
+using Nitrocid.Kernel.Extensions;
 using System;
 using System.Collections.ObjectModel;
 using System.Reflection;
@@ -11,13 +11,7 @@ namespace KSMod
 
         public string Version => "1.0.0";
 
-        public Version MinimumSupportedApiVersion => new(3, 0, 25, 526);
-
-        public ReadOnlyDictionary<string, Delegate> PubliclyAvailableFunctions => null;
-
-        public ReadOnlyDictionary<string, PropertyInfo> PubliclyAvailableProperties => null;
-
-        public ReadOnlyDictionary<string, FieldInfo> PubliclyAvailableFields => null;
+        public Version MinimumSupportedApiVersion => new(3, 0, 25, 584);
 
         public ModLoadPriority LoadPriority => ModLoadPriority.Optional;
 

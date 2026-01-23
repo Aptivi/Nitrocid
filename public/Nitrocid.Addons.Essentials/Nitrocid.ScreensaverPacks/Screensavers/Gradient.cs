@@ -76,11 +76,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Write the background gradient!
                 var RotCurrentColorInstance = new Color($"{Convert.ToInt32(RotCurrentColorRed)};{Convert.ToInt32(RotCurrentColorGreen)};{Convert.ToInt32(RotCurrentColorBlue)}");
                 for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
-                    gradientBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1)}{RotCurrentColorInstance.VTSequenceBackgroundTrueColor} ");
+                    gradientBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1)}{RotCurrentColorInstance.VTSequenceBackgroundTrueColor()} ");
 
                 // Change the colors
                 RotCurrentColorRed -= RotColorRedSteps;

@@ -25,7 +25,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Gradients;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -45,7 +45,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             step = 0;
-            ColorTools.LoadBackDry(ConsoleColors.Black);
+            ConsoleColoring.LoadBackDry(ConsoleColors.Black);
             ConsoleWrapper.CursorVisible = false;
         }
 
@@ -75,10 +75,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     i == firstLinePosY && wrapped.Length > 0 ? wrapped[0] :
                     i == linePosY ? line : "";
                 var gradient = bgGradient[i];
-                ColorTools.SetConsoleColorDry(currentLineColor);
-                ColorTools.SetConsoleColorDry(gradient.IntermediateColor, true, true);
+                ConsoleColoring.SetConsoleColorDry(currentLineColor);
+                ConsoleColoring.SetConsoleColorDry(gradient.IntermediateColor, true, true);
                 TextWriterWhereColor.WriteWherePlain(new(' ', ConsoleWrapper.WindowWidth), 0, i);
-                ColorTools.SetConsoleColorDry(currentTextColor);
+                ConsoleColoring.SetConsoleColorDry(currentTextColor);
                 var omenText = new AlignedText()
                 {
                     Top = i,

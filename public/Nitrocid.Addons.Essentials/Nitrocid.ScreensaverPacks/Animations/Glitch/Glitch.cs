@@ -20,9 +20,9 @@
 using System;
 using System.Collections;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 
@@ -46,7 +46,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
             int AmountOfBlocks = ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight - 1;
             int BlocksToCover = (int)Math.Round(AmountOfBlocks * GlitchDense);
             var CoveredBlocks = new ArrayList();
-            while (CoveredBlocks.Count != BlocksToCover || !ConsoleResizeHandler.WasResized(false))
+            while (CoveredBlocks.Count != BlocksToCover && !ConsoleResizeHandler.WasResized(false) && !ScreensaverManager.Bailing)
             {
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
@@ -67,7 +67,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
                     ConsoleWrapper.CursorVisible = false;
                     break;
                 }
-                ThreadManager.SleepNoBlock(Settings.GlitchDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(Settings.GlitchDelay);
             }
 
             // Reset resize sync
@@ -157,44 +157,44 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
                 case GlitchType.RandomLetter:
                     {
                         if (ColorLetter)
-                            ColorTools.SetConsoleColorDry(ColorLetterInstance);
+                            ConsoleColoring.SetConsoleColorDry(ColorLetterInstance);
                         else
-                            ColorTools.SetConsoleColorDry(new Color(ConsoleColors.White));
+                            ConsoleColoring.SetConsoleColorDry(new Color(ConsoleColors.White));
                         ConsoleWrapper.Write(Letter);
                         break;
                     }
                 case GlitchType.RandomSymbol:
                     {
                         if (ColorLetter)
-                            ColorTools.SetConsoleColorDry(ColorLetterInstance);
+                            ConsoleColoring.SetConsoleColorDry(ColorLetterInstance);
                         else
-                            ColorTools.SetConsoleColorDry(new Color(ConsoleColors.White));
+                            ConsoleColoring.SetConsoleColorDry(new Color(ConsoleColors.White));
                         ConsoleWrapper.Write(Symbol);
                         break;
                     }
                 case GlitchType.RedGreenBlueColor:
                     {
-                        ColorTools.SetConsoleColorDry(ColorBlockInstance, true);
+                        ConsoleColoring.SetConsoleColorDry(ColorBlockInstance, true);
                         ConsoleWrapper.Write(" ");
                         break;
                     }
                 case GlitchType.RedGreenBlueColorWithRandomLetter:
                     {
                         if (ColorLetter)
-                            ColorTools.SetConsoleColorDry(ColorLetterInstance);
+                            ConsoleColoring.SetConsoleColorDry(ColorLetterInstance);
                         else
-                            ColorTools.SetConsoleColorDry(new Color(ConsoleColors.White));
-                        ColorTools.SetConsoleColorDry(ColorBlockInstance, true);
+                            ConsoleColoring.SetConsoleColorDry(new Color(ConsoleColors.White));
+                        ConsoleColoring.SetConsoleColorDry(ColorBlockInstance, true);
                         ConsoleWrapper.Write(Letter);
                         break;
                     }
                 case GlitchType.RedGreenBlueColorWithRandomSymbol:
                     {
                         if (ColorLetter)
-                            ColorTools.SetConsoleColorDry(ColorLetterInstance);
+                            ConsoleColoring.SetConsoleColorDry(ColorLetterInstance);
                         else
-                            ColorTools.SetConsoleColorDry(new Color(ConsoleColors.White));
-                        ColorTools.SetConsoleColorDry(ColorBlockInstance, true);
+                            ConsoleColoring.SetConsoleColorDry(new Color(ConsoleColors.White));
+                        ConsoleColoring.SetConsoleColorDry(ColorBlockInstance, true);
                         ConsoleWrapper.Write(Symbol);
                         break;
                     }

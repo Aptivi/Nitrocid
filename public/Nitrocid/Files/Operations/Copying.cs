@@ -22,12 +22,12 @@ using System.IO;
 using Nitrocid.Drivers;
 using Nitrocid.Kernel.Debugging;
 
-namespace Nitrocid.Files.Operations
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Copying file operations module
     /// </summary>
-    public static class Copying
+    public static partial class FilesystemTools
     {
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Nitrocid.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", vars: [Source, Destination, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -85,7 +85,7 @@ namespace Nitrocid.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", vars: [Source, Destination, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -117,7 +117,7 @@ namespace Nitrocid.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", vars: [Source, Destination, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -147,7 +147,7 @@ namespace Nitrocid.Files.Operations
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to copy {0} to {1}: {2}", vars: [Source, Destination, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;

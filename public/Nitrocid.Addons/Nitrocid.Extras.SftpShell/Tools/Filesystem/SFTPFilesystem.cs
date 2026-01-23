@@ -23,13 +23,14 @@ using System.Reflection;
 using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.SftpShell.SFTP;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
 using Renci.SshNet;
 using Renci.SshNet.Sftp;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
 {
@@ -85,7 +86,7 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
                         {
                             FileSize = DirListSFTP.Length;
                             ModDate = DirListSFTP.LastWriteTime;
-                            EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + $"{FileSize.SizeString()} | {Translate.DoTranslation("Modified:")} {ModDate}");
+                            EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground() + $"{FileSize.SizeString()} | {Translate.DoTranslation("Modified:")} {ModDate}");
                         }
                     }
                     else if (DirListSFTP.IsDirectory)
@@ -113,20 +114,20 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
         {
             var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
-            DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", vars: [Target]);
 
             // Delete a file or folder
             if (client.Exists(Target))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", vars: [Target]);
                 client.Delete(Target);
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Target);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [Target]);
                 throw new KernelException(KernelExceptionType.SFTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Target);
             }
-            DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", Target);
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", vars: [Target]);
             return true;
         }
 
@@ -162,13 +163,20 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
             }
         }
 
+        /// <summary>
+        /// Changes FTP local directory
+        /// </summary>
+        /// <param name="Directory">Local directory</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        /// <exception cref="InvalidOperationException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public static bool SFTPChangeLocalDir(string Directory)
         {
             string targetDir;
-            targetDir = $"{SFTPShellCommon.SFTPCurrDirect}/{Directory}";
+            targetDir = FilesystemTools.NeutralizePath(Directory, SFTPShellCommon.SFTPCurrDirect);
 
             // Check if folder exists
-            if (Checking.FolderExists(targetDir))
+            if (FilesystemTools.FolderExists(targetDir))
             {
                 // Parse written directory
                 var parser = new System.IO.DirectoryInfo(targetDir);
@@ -200,7 +208,7 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
             if (SFTPSessionCanon is null)
                 return "";
             string CanonicalPath = Convert.ToString(SFTPSessionCanon.Invoke(SFTPSession, [Path])) ?? "";
-            DebugWriter.WriteDebug(DebugLevel.I, "Canonical path: {0}", CanonicalPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Canonical path: {0}", vars: [CanonicalPath]);
             return CanonicalPath;
         }
 
@@ -226,5 +234,54 @@ namespace Nitrocid.Extras.SftpShell.Tools.Filesystem
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if an SFTP file or directory exists
+        /// </summary>
+        /// <param name="name">Path to file or directory</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool SFTPExists(string name) =>
+            SFTPFileExists(name) || SFTPDirectoryExists(name);
+
+        /// <summary>
+        /// Checks to see if an SFTP file exists
+        /// </summary>
+        /// <param name="name">Path to file</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool SFTPFileExists(string name)
+        {
+            try
+            {
+                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+                return client.Exists(name) && !client.Get(name).IsDirectory;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error getting file state {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks to see if an SFTP directory exists
+        /// </summary>
+        /// <param name="name">Path to file</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool SFTPDirectoryExists(string name)
+        {
+            try
+            {
+                var client = (SftpClient?)SFTPShellCommon.ClientSFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.SFTPShell, Translate.DoTranslation("Client is not connected yet"));
+                return client.Exists(name) && client.Get(name).IsDirectory;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error getting file state {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
     }
 }

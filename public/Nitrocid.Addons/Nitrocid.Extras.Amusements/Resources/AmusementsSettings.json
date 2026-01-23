@@ -1,7 +1,7 @@
 [
     {
-        "Name": "Amusements",
-        "Desc": "This section lets you configure how the amusements work.",
+        "Name": "Solver",
+        "Desc": "This section lets you configure Solver.",
         "Keys": [
             {
                 "Name": "Solver minimum number",
@@ -20,7 +20,13 @@
                 "Type": "SBoolean",
                 "Variable": "SolverShowInput",
                 "Description": "Whether to show what's written in the input prompt."
-            },
+            }
+        ]
+    },
+    {
+        "Name": "SpeedPress",
+        "Desc": "This section lets you configure SpeedPress.",
+        "Keys": [
             {
                 "Name": "Default difficulty for SpeedPress",
                 "Type": "SIntSlider",
@@ -34,7 +40,13 @@
                 "Type": "SInt",
                 "Variable": "SpeedPressTimeout",
                 "Description": "How many milliseconds to wait for the keypress before the timeout? (In custom difficulty)"
-            },
+            }
+        ]
+    },
+    {
+        "Name": "Meteor and ShipDuet",
+        "Desc": "This section lets you configure Meteor and ShipDuet.",
+        "Keys": [
             {
                 "Name": "Use PowerLine for rendering spaceship",
                 "Type": "SBoolean",

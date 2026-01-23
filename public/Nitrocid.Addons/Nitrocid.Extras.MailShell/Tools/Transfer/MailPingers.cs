@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to keep connection to IMAP server alive: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to keep connection to IMAP server alive: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -87,7 +87,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to keep connection to SMTP server alive: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to keep connection to SMTP server alive: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }

@@ -18,15 +18,16 @@
 //
 
 using Nitrocid.Drivers;
+using Nitrocid.Files.LineEndings;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 
-namespace Nitrocid.Files.LineEndings
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Line endings conversion module
     /// </summary>
-    public static class LineEndingsConverter
+    public static partial class FilesystemTools
     {
 
         /// <summary>

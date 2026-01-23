@@ -28,8 +28,9 @@ using Nitrocid.Languages;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -47,7 +48,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
@@ -70,9 +71,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 string currentYearStr = currentYear.ToString();
                 var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
                 int figHeight = FigletTools.GetFigletHeight(currentYearStr, figFont) / 2;
+                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                 var yearText = new AlignedFigletText(figFont)
                 {
                     Text = currentYearStr,
+                    Top = consoleY,
                     ForegroundColor = green,
                     BackgroundColor = black,
                     Settings = new()
@@ -104,9 +107,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 string nextYearStr = $"{currentYear + 1}";
                 var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
                 int figHeight = FigletTools.GetFigletHeight(nextYearStr, figFont) / 2;
+                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                 var yearText = new AlignedFigletText(figFont)
                 {
                     Text = nextYearStr,
+                    Top = consoleY,
                     ForegroundColor = darkGreen,
                     BackgroundColor = black,
                     Settings = new()

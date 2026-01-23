@@ -25,6 +25,7 @@ using Nitrocid.Kernel.Configuration;
 using System.Collections.Generic;
 using Terminaux.Colors;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -47,8 +48,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             characters.Clear();
-            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.LetterScatterForegroundColor));
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LetterScatterBackgroundColor));
+            ConsoleColoring.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.LetterScatterForegroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.LetterScatterBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
 

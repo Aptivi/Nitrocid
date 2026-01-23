@@ -114,10 +114,12 @@ Tiáoshì rìzhì shānchú shībài:{0}
 Gēnggǎi mùlù shībài:{0}
 Zhǐdìng dìzhǐ
 Shíqū zhǐdìng bù zhèngquè.
+Pèizhì wénjiàn xuǎnzé wúxiào.
 Zhèngzài chángshì shǐyòng pèizhì wénjiàn {1} liánjiē dào {0}...
 Zài ānquán móshì xià bù yǔnxǔ jiěxī mó zǔ.
 Lùjìng jì bùshì wénjiàn yě bùshì mùlù.
 Zài bùtóng de mùlù huò míngchēng xià chuàngjiàn wénjiàn de lìng yīgè fùběn.
+Jiāng wénjiàn yídòng dào lìng yīgè mùlù
 pǐpèi {0} ({1}):{2}
 Pǐpèi {0}:{1}
 Huāfèi de shíjiān:{0} Háomiǎo
@@ -618,6 +620,7 @@ qǐyòng píngmù bǎohù chéngxù tiáoshì
 qǐyòng píngmù bǎohù chéngxù tiáoshì. Qǐng zhùyì, tā kěnéng huì xùnsù tián mǎn tiáoshì rìzhì bìng shāowéi jiǎn màn píngmù bǎohù chéngxù de sùdù, jùtǐ qǔjué yú suǒ shǐyòng de píngmù bǎohù chéngxù. Zhǐyǒu zài wèi zhěnduàn mùdì qǐyòng nèihé tiáoshì shí cái yǒuxiào.
 Shǒucè yè {0} wúxiào.
 Kǎolǜ tiánxiě běn shǒucè yè.
+Mó zǔ shǒucè
 Kěyòng de nèihé cānshù:
 Cānshù zhōng de bùkě huīfù cuòwù:
 Shǐyòng SHA512 jiāmì zìfú chuàn
@@ -1612,6 +1615,7 @@ shì yī gè mù lù
 yǐ xuǎn zhōng
 wén jiàn dà xiǎo
 wén jiàn lù jìng
+xuǎn zé “{0}”。 àn ESC tuì chū bìng què rèn xuǎn zé 。
 wú fǎ dǎ kāi wén jiàn jiā huò xuǎn zé wén jiàn
 shū rù běn dì wén jiàn jiā de lù jìng huò wán zhěng lù jìng 。
 àn kōng gé jiàn liǎo jiě gēng duō xìn xī
@@ -3218,6 +3222,7 @@ gāi mìnglìng jùyǒu yǐxià cānshù, kěyǐ gēnggǎi qí gōngzuò fāngsh
 Wèi zhǐdìng de cānshù miáoshù
 liè chū hánshù zhōng suǒyǒu kěyòng de hánshù cānshù
 guǎnlǐ nín de nàozhōng
+zài hùdòng shì TUI zhōng guǎnlǐ nín de nàozhōng
 chóngxīn qǐdòng yuǎn duān héxīn shílì
 yuǎn duān shílì zhōng de héxīn jiāng bèi guānbì
 shǐyòng jiù shèdìng fēnggé
@@ -3390,7 +3395,9 @@ nín xiǎng shǐyòng nǎ zhǒng fēi duìchèn biānmǎ qūdòng chéngshì?
 Yǐndǎo chéngshì fēnggé
 xuǎnzé fúhé nín piānhào de yǐndǎo chéngshì yàngshì.
 Yǐndǎo chéngshì yù shè xuǎnzé chāo shí
+qǐdòng dào yù shè xuǎnzé de chāo shí (yǐ miǎo wèi dānwèi).
 Yǐndǎo chéngshì yù shè xuǎnzé
+yù shè qǐdòng xiàng xuǎnzé. Zhège shùzì cóng líng kāishǐ, yīncǐ dì yī gè yuánsù de suǒyǐn wéi 0, yī cǐ lèituī.
 Qǐyòng “xiāohuà jì zhǔyè”
 qǐyòng “xiāo jī shā chóng jì zhǔyè”, ràng nín yīmùliǎorán dì liǎojiě zhèngzài fāshēng de qíngkuàng.
 Hùdòng shì TUI nèi jiàn jiàn bǎng dìng bèijǐng yánsè
@@ -3703,7 +3710,26 @@ yòng zhège zhǔtí dài huí huáijiù zhī qíng!
 Nín de zhōngduān yóu mùbǎn zǔchéng
 línggǎn yuán zì bùtóng shuǐguǒ de zhōngguó tú'àn
 fùjiā gōngnéng - CRC32C(kǎ sī tǎ ní ào lì)
+Liè yìn héxīn bǎnběn
+liè yìn API bǎnběn
 wúfǎ cā chú zhēn cuò wénjiàn
+nèihé pèizhì jiāng wúfǎ zhèngcháng yùnzuò. Qǐng cháyuè nèihé tiáoshì qì yǐ huòqǔ gèng duō zīxùn.
+Dāng méiyǒu zhǐdìng jīběn nèihé pèizhì shí wúfǎ jiǎnchá pèizhì biànshù.
+Dāng méiyǒu zhǐdìng jiàn shí wúfǎ jiǎnchá pèizhì biànshù.
+Chángshì zhùcè jùyǒu wúxiào nèiróng de zì dìng shèdìng. Qǐng cháyuè nèihé tiáoshì qì yǐ huòqǔ gèng duō zīxùn.
+Chángshì zhùcè jùyǒu wúxiào nèiróng de jīběn shèdìng. Cháyuè nèihé tiáoshì qì yǐ liǎojiě gèng duō xìnxī
+wúfǎ qǔdé qǐdòng huàmiàn shèdìng tiáomù.
+Xūyào xiān ānzhuāng tú shì chājiàn cáinéng shèdìng cǐ zhí.
+Xuǎnzé yīgè tiáomù
+quánbù chóng zhì
+chóng zhì tiáomù
+zhǐdìng de cānshù lèixíng wúxiào
+yīgè huò duō gè pèizhì tiáomù bāohán wúxiào biànshù huò méi jǔ, xūyào xiūfù. Qǐng cháyuè nèihé tiáoshì qì yǐ huòqǔ gèng duō zīxùn.
+Bù cúnzài yǐ cǐ míngchēng mìngmíng de wénhuà.
+Chǔlǐ nín de yīnxùn tíshì cāozuò shí fāshēng cuòwù.
+Wúfǎ cóng wàiguà chéngshì jí chuán huí bù cúnzài de lèibié lèixíng
+cǐ lèibié bùshì fùjiā lèibié
+zhèngzài bòfàng guānjī shēngyīn...
 Cǐ rìqí zhīhòu, wǒmen jiāng bù zài zhīyuán cǐ bǎnběn de Nitrocid KS
 rúguǒ nín xiǎng jìxù huòdé zhīchí, qǐng quèbǎo jǐnkuài shēngjí dào zhīyuán de bǎnběn.
 Cǐ bǎnběn de Nitrocid KS bù zài shòu zhīyuán.
@@ -3720,9 +3746,12 @@ zài rù biémíng shībài
 wúfǎ zài rù kuàisù bōhào tiáomù
 wúfǎ zài rù huánjìng biànshù
 wúfǎ zài rù jǐngbào jiāntīng qì
+wúfǎ wánchéng chājiàn
 wúfǎ zài rù MOTD hé MAL
 wúfǎ zài rù shell mìnglìng lìshǐ jìlù
 wúfǎ zài rù kuòchōng chǔlǐ chéngxù
+zhèngzài jiāzài mó zǔ...
+Wúfǎ zài rù mó zǔ
 chángshì chūshǐhuà kě xuǎn zǔjiàn shí fāshēng cuòwù.
 Wúfǎ chóng zhì tōngyòng biànshù
 wúfǎ bǎocún shell zhǐlìng lìshǐ jìlù
@@ -3744,12 +3773,26 @@ wúfǎ tíngzhǐ suǒyǒu héxīn xiànchéng
 chángshì chóng zhì zǔjiàn shí chūxiàn cuòwù.
 Lìwài
 qǐng cānyuè nèihé tiáoshì rìzhì yǐ huòqǔ gèng duō zīxùn.
+Méiyǒu cǐ lèi yīnxùn tíshì lèixíng.
+Wúfǎ qǔdé hòubèi shèzhì
+wúfǎ chóng zhì suǒyǒu shèdìng tiáomù
+wúfǎ chóng zhì cǐ shèdìng tiáomù
+zài rènhé mó zǔ shàng dū wèi zhǎodào biànshù.
+Wúfǎ qǔdé huánjìng yíngmù bǎohù chéngshì suǒ xū de yīnxùn tíshì.
+Yóuyú cuòwù, wǎng lù lián xiàn kěnéng wèi zhèngquè jiànlì.
+Wúfǎ huǎnchōng wèi shèdìng wèi kě bāozhuāng de mìnglìng.
 Wèi zhǐdìng de kāiguān miáoshù
 liúchéng lùjìng
 chuándì gěi jìnchéng de cānshù
 xiǎnshì bāngzhù tiáomù dì mìnglìng
+jiāng mìnglìng shūchū zuòwéi cānshù tòuguò guǎndào chuánsòng gěi lìng yīgè mìnglìng
+láiyuán mìnglìng jiāng qí shūchū zuòwéi zuìhòu yīgè cānshù chuándì gěi mùbiāo mìnglìng
 gēnjù láiyuán mìnglìng shūchū jiàn zhì cānshù hòu zhíxíng de mùbiāo mìnglìng
+shìfǒu jiāng láiyuán mìnglìng de shūchū zuòwéi yīgè dài yǐnhào de cānshù huò bù dài yǐnhào de cānshù chuándì
 bāozhuāng qí shūchū de mìnglìng
+yuán mìnglìng zhíxíng shībài.
+Mùbiāo mìnglìng zhíxíng shībài. Nèiróng kěnéng wèi zhèngquè tiánchōng. Zhíxíng de mìnglìng shì
+guǎnzǐ pòle.
 Xiǎnshì bāngzhù tiáomù dì cānshù
 huìhuà biānhào cóng líng kāishǐ
 xūyào cháxún de shǐyòng zhě míng
@@ -3757,14 +3800,25 @@ shòuyǔ huò jùjué de quánxiàn lèixíng
 jiǎ zé fǒurèn, zhēn zé chéngrèn
 xīn de xiǎnshì míngchēng, huò `qīngchú'yǐ shānchú xiǎnshì míngchēng
 sān gè zìmǔ de yǔyán ID, huò “clear” yǐ qīngchú shǒuxuǎn yǔyán
+gēnggǎi shǒuxuǎn shǐyòng zhě wénhuà
+wénhuà ID, huò “clear” yǐ qīngchú shǒuxuǎn wénhuà
+shǒuxuǎn shǐyòng zhě wénhuà shèdìng wèi {0}. Nín kěnéng xūyào zàicì dēngrù.
+Wénhuà wúxiào
+shǒuxuǎn wénhuà
 huìhuà GUID wúxiào
 méiyǒu cǐ lèi huìhuà GUID
+wèizhī lèixíng
+wèizhī cānshù
+lèixíng qīngdān
+Shǐyòng huìhuà GUID qīngsōng qǔdé zhēn cuò rìzhì xùnxí
 yào xúnzhǎo de huìhuà GUID
 lìwài biānhào
 cháxún de lán wèi míng
 yào cháxún de shǔxìng míngchēng
 yào cháxún de chājiàn míngchēng
+láizì chājiàn de gōnggòng jìngtài lèixíng míngchēng
 yào cháxún de gōnggòng jìngtài lèixíng de hán shǔ míngchēng
+liè chū zhǐdìng chājiàn de suǒyǒu kěyòng lèixíng
 yào cháxún de Splash míngchēng
 wèi yuán zǔ shù fànwéi wèi 0 zhì 255
 wèi yuán zǔ wèizhì biānhào
@@ -3786,6 +3840,10 @@ yào tìhuàn de dānzì huò duǎn yǔ
 yào tìhuàn de dānzì huò duǎn yǔ
 xíng hào (dānshù huò fànwéi de qǐ shǐ xíng), huò `quánbù'biǎoshì zài suǒyǒu xíng zhōng jìnxíng tìhuàn
 yòng yú pǐpèi yào tìhuàn de duǎn yǔ de zhèngguī biǎoshì shì
+guójiā wúxiào
+xuǎnzé guójiā de yǔyán
+yǔyán xuǎnzé wúxiào
+shì de
 yào xīn zēng de xīn qún zǔ míng
 yào xīn zēng de yònghù míng
 yào shǐyòng de xīn mìmǎ
@@ -3812,8 +3870,12 @@ liè yìn qí nèiróng de wénjiàn lùjìng
 wénjiàn lùjìng
 xīn zēng huò shānchú
 shǔxìng míngchēng
+gǎibiàn wénhuà
+yào gēnggǎi wèi de wénhuà ID
+gǎibiàn shǐyòng zhě wénhuà ér bùshì xìtǒng wénhuà
 yào gēnggǎi wèi de xīn zhǔjī míng
 yǔyán shìbié
+shǐyòng guójiā/dìqū biàngēng yǔyán (xìtǒng kěnéng huì tíshì nín xuǎnzé yǔyán)
 yào shǐyòng de xīn xùnxí
 yòng xiéxiàn fēngē de dá'àn
 liè yìn dào yíngmù shàng de wèntí
@@ -3889,6 +3951,7 @@ yíngmù bǎohù chéngshì míngchēng huò “suíjī”
 zhèngguī biǎoshì shì sōuxún
 mùbiāo wénjiàn
 yào sōuxún dì dānzì huò piàn yǔ
+kāiqǐ chājiàn qǐdòng huàmiàn shèdìng
 yào shèdìng de zhí
 pèizhì biàn shǔ míngchēng
 shíshī zhě míngchēng
@@ -3914,6 +3977,7 @@ hā xī wénjiàn huò yùqí hā xī
 yào cèshì de wénjiàn
 yào jiànlì de ZIP dǎng'àn míngchēng
 yāsuō lùjìng
+xūyào xiān ānzhuāng tú shì chājiàn cáinéng xiǎnshì cǐ biǎoqíng fúhào.
 Zhùyì yào xīn zēng de nèiróng
 zhùshì biānhào
 Git chúcún kù mùlù de lùjìng
@@ -3953,6 +4017,8 @@ liè chū suǒyǒu tíxǐng
 chúcún suǒyǒu tíxǐng
 vCard liánluò rén dǎng'àn de lùjìng huò MeCard biǎoshì
 liánluò diànhuà
+biānjí...
+Shūrù cǐ liánluò rén de xīn míngchēng
 shǐyòng fànwéi
 yào shǐyòng de jīngdù
 Weather.Com API jīn yào
@@ -3960,6 +4026,7 @@ OpenWeatherMap yǐ zhī de chéngshì ID huò chéngshì míngchēng
 OpenWeatherMap API jīn yào
 shìfǒu xīn zēng, shānchú, biāojì wéi yǐ wánchéng huò qǔxiāo biāojì wéi yǐ wánchéng de rènwù
 shìfǒu liè chū, chúcún huò zài rù suǒyǒu rènwù
+fānqié gōngzuò fǎ
 fānqié gōngzuò fǎ
 fānqié gōngzuò fǎ yǐ zhǔnbèi jiùxù
 fānqié gōngzuò fǎ jìshí qì biānhào wèi {0}, gòng sì cì diédài
@@ -4011,6 +4078,7 @@ mùbiāo dǎng'àn huò mùlù de lùjìng
 běndì dǎng'àn lùjìng
 gēnjù chmod de quánxiàn biānhào
 zhǐdìng chuánshū lèixíng shì ASCII háishì èr jìnwèi
+fúhào liánjié dào:{0}
 Biāotí jiàn
 biāo tóu zhí
 HTTP qǐngqiú
@@ -4018,12 +4086,39 @@ yào shàngchuán de wénjiàn
 yào shàngchuán de zì chuàn
 yònghù dàilǐ zì chuàn
 dēngrù diànzǐ yóujiàn dìzhǐ
+jiànlì zīliào jiā
+yídòng...
+Quánbù yídòng...
+Chóngxīn mìngmíng zīliào jiā
+shānchú zīliào jiā
+shānchú xùnxí
+quánbù shānchú...
+Wúfǎ kāiqǐ zīliào jiā huò yóujiàn
+xiě rù xīn mùlù míngchēng.
+Jiànlì mùlù...
+Wúfǎ jiànlì zīliào jiā
+xuǎnzé jiāng cǐ xùnxí yí zhì de xīn mùlù.
+Zhèngzài yídòng de xùnxí...
+Wúfǎ yídòng xùnxí
+xuǎnzé yī gè xīn mùlù, jiāng tóngyī jì jiàn zhě de suǒyǒu yóujiàn yí zhì qízhōng.
+Àn jì jiàn zhě {0} xíngdòng yóujiàn...
+Wúfǎ yídòng tóngyī jì jiàn zhě de suǒyǒu yóujiàn
+xiě rù yào jiāng {0} chóngxīn mìngmíng wèi de xīn mùlù míngchēng.
+Chóngxīn mìngmíng mùlù...
+Wúfǎ chóngxīn mìngmíng zīliào jiā
+zhèngzài shānchú mùlù...
+Wúfǎ shānchú zīliào jiā
+zhèngzài shānchú xùnxí...
+Wúfǎ shānchú xùnxí
+zhèngzài shānchú jì jiàn zhě {0} de yóujiàn...
+Wúfǎ shānchú tóngyī jì jiàn zhě de suǒyǒu yóujiàn
 yóujiàn mùlù míngchēng
 yèmǎ
 xùnxí ID
 jì jiàn rén xìngmíng
 jiù yóujiàn mùlù míngchēng
 xīn yóujiàn mùlù míngchēng
+hùdòng shì yóujiàn guǎnlǐ
 yào liánjiē de SFTP sìfú qì
 RSS dìngyuè liànjiē
 jìn gěi shùliàng
@@ -4044,13 +4139,132 @@ héchéng dǎng'àn de lùjìng
 yào liánjiē de SSH sìfú qì
 yào yànzhèng de yònghù míng
 yuǎn duān zhíxíng mìnglìng
+jiāng yǒuguān huàxué wùzhí de zīxùn liè yìn dào kòngzhì tái.
+Wùzhí de míngchēng, fúhào huò yuánzǐ xùshù
+jiāng suǒyǒu huàxué wùzhí de zīxùn liè yìn dào kòngzhì tái.
+Méiyǒu jùyǒu yuánzǐ xù shǔ de wùzhí
+méiyǒu jùyǒu fúhào huò míngchēng de wùzhí
+yuánzǐ xùshù
+yuánzǐ zhìliàng
+xiàngzhǐ
+gàikuò
+jiēduàn
+zài yuánsù zhōuqí biǎo zhōng de wèizhì
+zuòbiāo wèizhì
+fāxiàn zhě
+mìngmíng zhě
+diànzǐ pái bù
+kāishǐ móshì (xuǎnzé)
+qǐdòng móshì (shūrù)
+tíngzhǐ móshì
+chóngxīn zài rù móshì
+ānzhuāng mó zǔ (xuǎnzé)
+ānzhuāng mó zǔ (shūrù)
+jiěchú ānzhuāng mó zǔ
+quánbù kāishǐ
+quánbù tíngzhǐ
+chóngxīn jiāzài quánbù
+wúfǎ cóng mod zǔjiàn chuán huí bù cúnzài de lèibié lèixíng
+zài mó zǔ `{1}'zhōng zhǎo bù dào hánshù `{0}'.
+Zài mó zǔ `{1}'zhōng zhǎo bù dào shǔxìng `{0}'.
+Zài móxíng `{1}'zhōng zhǎo bù dào lán wèi `{0}'.
+Cǐ lèi bùshì mod lèi
+yǔyán
+rùkǒu diǎn
+shūrù yào qǐdòng de mó zǔ de lùjìng
+wúfǎ qǐdòng mó zǔ
+shūrù yào ānzhuāng de mó zǔ de lùjìng
+wúfǎ ānzhuāng mó zǔ
+wúfǎ qǐdòng huò tíngzhǐ cǐ móshì!
+Shìfǒu qǐdòng, tíngzhǐ, qǔdé zīxùn, chóngxīn zài rù, ānzhuāng huò xièzài mó zǔ
+mó zǔ míngchēng huò dàng míng
+shìfǒu liè chū, chóngxīn zài rù, tíngzhǐ, qǐdòng huò yǐ hùdòng fāngshì guǎnlǐ suǒyǒu mó zǔ
+mó zǔ míngchēng
+wénhuà hé yǔyán huánjìng
+zhè shǐ nín kěyǐ pèizhì wénhuà hé yǔyán
+shíjiān hé rìqí shèdìng
+zhè shǐ nín kěyǐ pèizhì shíjiān hé rìqí
+yǐndǎo chéngshì shèdìng
+zhè yǔnxǔ nín pèizhì yǐndǎo chéngshì
+Nitrocid shǒuyè
+zhè yǔnxǔ nín pèizhì Nitrocid zhǔyè
+héxīn gēngxīn shèdìng
+zhè yǔnxǔ nín pèizhì héxīn gēngxīn
+nèihé cuòwù shèdìng
+zhè yǔnxǔ nín pèizhì nèihé cuòwù
+nèihé diànyuán shèdìng
+zhè yǔnxǔ nín pèizhì nèihé diànyuán jīzhì
+nèihé pèisè fāng'àn
+zhè shǐ nǐ kěyǐ shèdìng duō gè nèihé pèisè fāng'àn
+xiàndài dēngrù chǔlǐ chéngxù shèdìng
+zhè yǔnxǔ nín pèizhì xiàndài dēngrù chǔlǐ chéngxù
+bāngzhù xìtǒng
+zhè yǔnxǔ nín pèizhì shell bāngzhù xìtǒng
+wàiké yù shè
+zhè yǔnxǔ nín pèizhì shell yù shè
+yuǎn duān tiáoshì qì shèdìng
+zhè yǔnxǔ nín pèizhì yuǎn duān tiáoshì qì
 tǒngyī yánchí
 rúguǒ wéi zhēn, zé wéi suǒyǒu yíngmù bǎohù chéngshì qǐyòng tǒngyī de xiě rù yánchí. Fǒuzé, tā jiāng shǐyòng yíngmù bǎohù chéngshì tèdìng de pèizhì yánchí zhí.
+Běnjié liè chūle suǒyǒu yīnxùn shèdìng.
+Yīnxùn shèdìng
+qǐyòng yīnxùn zhīyuán
+Qǐyòng zhěnggè yīnxùn xìtǒng de xìtǒng tíshì
+qǐyòng jiànpán tíshì
+shìfǒu zài měi cì ànjiàn shí bòfàng jiànpán tíshì
+qǐyòng qǐdòng shēngyīn
+shìfǒu bòfàng qǐdòng shēngyīn
+qǐyòng guānjī shēngyīn
+shìfǒu bòfàng guānjī shēngyīn
+qǐyòng dǎoháng shēngyīn
+shìfǒu zài měi cì ànjiàn shí bòfàng dǎoháng shēngyīn
+qǐyòng dī yōuxiān quán tōngzhī shēngyīn
+shìfǒu bòfàng dī yōuxiān jǐngbào de tōngzhī shēngyīn
+qǐyòng zhōng yōuxiān quán tōngzhī shēngyīn
+shìfǒu bòfàng zhōng yōuxiān jǐngbào de tōngzhī shēngyīn
+qǐyòng gāo yōuxiān quán tōngzhī shēngyīn
+shìfǒu bòfàng gāo yōuxiān jǐngbào de tōngzhī shēngyīn
+qǐyòng huánjìng yíngmù bǎohù chéngshì yīnxiào
+shìfǒu bòfàng huánjìng yíngmù bǎo yīnxiào
+zēngqiáng yíngmù bǎohù chéngshì de huánjìng yīnxiào
+shìfǒu zēngqiáng yíngmù bǎohù chéngshì de huánjìng yīnxiào
+yīnxùn tíshì yīnliàng
+zhǐdìng nǐ xiǎng yào de yīnxùn tíshì yǒu duōdà
+yīnxùn zhǔtí
+nín xiǎng shǐyòng nǎge yīnxùn zhǔtí zuòwéi yīnxùn tíshì?
+Wénzì biānjí qì shèdìng
+zhè yǔnxǔ nín pèizhì wénzì biānjí qì
+shíliù jìnwèi biānjí qì shèdìng
+zhè yǔnxǔ nín pèizhì shíliù jìnwèi biānjí qì
+RSS biāotí shèdìng
+zhè yǔnxǔ nín shèdìng RSS biāotí
+huá shǔ shèdìng
+zhè yǔnxǔ nín pèizhì huá shǔ
+zhēn cuò shèdìng
+zhè shǐ nín kěyǐ pèizhì tiáoshì lì chéng
+měixué
+zhè shǐ nǐ kěyǐ pèizhì nèihé měixué
+zài kòngzhì tái zhōngjiān xiǎnshì yīgè dàdà de `huānyíng'zìyàng; lèisì yú yíngbīn diàn
+xiǎnshì jìndù
+shìfǒu xiǎnshì jìndù
+zhè shǐ nǐ kěyǐ pèizhì yánsè
+cǐ bùfèn kě ràng nín pèizhì guīhuà qiújiě.
+Cǐ bùfèn ràng nín pèizhì SpeedPress.
+Běn bùfèn ràng nín pèizhì Meteor hé ShipDuet.
+Běnjié ràng nín pèizhì héxīn xiūgǎi xìtǒng de gōngzuò fāngshì.
 Cǐ bùfèn ràng nín pèizhì jìshí qì yìngyòng chéngshì de gōngzuò fāngshì.
 Cǐ bùfèn ràng nín pèizhì fānqié gōngzuò fǎ jìshí qì yìngyòng chéngshì de gōngzuò fāngshì.
 Wèi fānqié zhōng qǐyòng Figlet
 rúguǒ qǐyòng, jiāng shǐyòng figlet zuòwéi fānqié gōngzuò fǎ jìshí qì. Qǐng zhùyì, zài qǐyòng Figlet de qíngkuàng xià, xūyào yīgè dà de kòngzhì tái yíngmù cáinéng zhèngquè chéngxiàn shíjiān.
 Fānqié gōngzuò fǎ jìshí qì de Figlet zìtǐ
+xiǎoshí shù xiépō shèdìng
+zhè shǐ nín kěyǐ pèizhì xiǎoshí shù xiépō
+fēnzhōng xiépō shèzhì
+zhè shǐ nín kěyǐ pèizhì fēnzhōng xiépō
+miǎo xiépō shèdìng
+zhè shǐ nín kěyǐ pèizhì miǎo shù xiépō
+xiépō shèzhì
+zhè yǔnxǔ nín pèizhì pō dào
 zài yīn'àn de hóngsè bèijǐng zhōng xiǎnshì xiàn xià wénzì.
 Suíjī zì yuán zài yíngmù shàng suíjī fēnbù.
 Yíngmù zhōngjiān xiǎnshì jiǎndān de rìqí hé shíjiān, bìng gēnjù dāngqián shíjiān gǎibiàn yánsè.
@@ -4064,7 +4278,64 @@ Kuài yǐ bōlàng xíng yídòng, lǜsè biāochǐ gēnzōng qí wèizhì.
 Zài cǎisè de figlet wénzì zhōng xiǎnshì yīgè suíjī zì yuán.
 Xiàng nín xiǎnshì zhèngzài xuǎnzé de dāncí, jiù xiàng dǔchǎng zhōng de lǎohǔjī yīyàng.
 Xiàng nín xiǎnshì zài liǎng zhǒng ní hóngsè (qīngsè hé zǐ hóngsè) zhī jiān jiāotì de cǎisè figlet wénzì.
+Wénhuà shèdìng
+zhè yǔnxǔ nín pèizhì rìlì yíngmù bǎohù chéngshì shǐyòng de wénhuà
+dì yī gè pō dào shèzhì
+zhè yǔnxǔ nín pèizhì dì yī gè pō dào
+dì èr pō dào shèzhì
+zhè yǔnxǔ nín pèizhì dì èr gè pō dào
+dì sān pō dào shèzhì
+zhè yǔnxǔ nín pèizhì dì sān gè pō dào
+Red Hat Linux zuòyè xìtǒng de yǎnshēng chǎnpǐn Alma Linux de yánsè fāng'àn
+Linux zuòyè xìtǒng Arch Linux de yánsè fāng'àn
+EndeavourOS de pèisè fāng'àn, tā shì Linux zuòyè xìtǒng Arch Linux de yǎnshēng chǎnpǐn
+Fedora de pèisè fāng'àn,Linux zuòyè xìtǒng Red Hat de yǎnshēng chǎnpǐn
+Linux zuòyè xìtǒng Gentoo de pèisè fāng'àn
+záo kè de tú'àn yánsè xíngchéng duōcǎi de màntuóluó
+Kubuntu de pèisè fāng'àn,Kubuntu shì liúxíng Linux zuòyè xìtǒng Ubuntu de yǎnshēng chǎnpǐn
+Linux Mint de pèisè fāng'àn, tā shì liúxíng Linux zuòyè xìtǒng Ubuntu de fēi guānfāng yǎnshēng chǎnpǐn
+Lubuntu de pèisè fāng'àn, tā shì liúxíng Linux zuòyè xìtǒng Ubuntu de yǎnshēng chǎnpǐn
+Manjaro de pèisè fāng'àn (Linux zuòyè xìtǒng Arch Linux de yǎnshēng chǎnpǐn)
+Linux zuòyè xìtǒng openSUSE de pèisè fāng'àn
+Linux zuòyè xìtǒng Red Hat de pèisè fāng'àn
+hóng sè yīnyǐng dāpèi dòngtài qiáng tiáo sè, dǎzào yǐn rén zhùmù dì wénběn
+Rocky Linux de yánsè fāng'àn, zhè shì Linux zuòyè xìtǒng Red Hat de yǎnshēng chǎnpǐn
+Linux zuòyè xìtǒng Slackware de pèisè fāng'àn
+Xubuntu de pèisè fāng'àn, tā shì liúxíng Linux zuòyè xìtǒng Ubuntu de yǎnshēng chǎnpǐn
+Zorin OS de pèisè fāng'àn,Zorin OS shì liúxíng Linux zuòyè xìtǒng Ubuntu de fēi guānfāng yǎnshēng chǎnpǐn
+fùjiā nèiróng——huàxué
+fùjiā gōngnéng - mó zǔ
+fùjiā gōngnéng——túbiāo
 Nǎ yīzhǒng wénhuà bèi yòng lái gǎibiàn yuèfèn míngchēng, rìlì děng?
+Qǐyòng “Nitrocid zhǔyè” xiǎo gōngjù
+zài yíngmù yòucè qǐyòng `Nitrocid zhǔyè'xiǎo gōngjù.
+Qǐyòng `Nitrocid shǒuyè'RSS láiyuán
+zài yíngmù yòucè qǐyòng `Nitrocid zhǔyè'RSS tíyào xiǎo gōngjù.
+“Nitrocid zhǔyè” xiǎo gōngjù
+xuǎnzé jiāng xiǎnshì zài `Nitrocid zhǔyè'zhōng de xiǎo gōngjù.
+Tōngzhī biānkuàng shèdìng
+zhè shǐ nǐ kěyǐ pèizhì tōngzhī biānkuàng
+chángguī biānkuàng shèzhì
+zhè yǔnxǔ nín pèizhì yībān biānkuàng
+wàiguān shèdìng
+zhè shǐ nín kěyǐ pèizhì xiǎoshí shù xiépō wàiguān
+zhè shǐ nín kěyǐ pèizhì xiǎoshí shù jiàn céng yánsè
+zhè shǐ nín kěyǐ pèizhì fēnzhōng xiépō wàiguān
+zhè shǐ nǐ kěyǐ pèizhì fēnzhōng jiàn céng yánsè
+zhè shǐ nín kěyǐ pèizhì miǎo xiépō wàiguān
+zhè yǔnxǔ nín pèizhì miǎo shù jiàn céng yánsè
+qǐ shǐ wèizhì yánsè shèdìng
+zhè yǔnxǔ nín pèizhì qǐ shǐ wèizhì yánsè
+jiéshù wèizhì yánsè shèdìng
+zhè shǐ nín kěyǐ pèizhì jiéshù wèizhì yánsè
+pō dào lán shèzhì
+zhè yǔnxǔ nín pèizhì pō dào lán
+zhè yǔnxǔ nín pèizhì pō dào wàiguān
+zhè yǔnxǔ nín pèizhì jiàn céng yánsè
+tīdù kāishǐ shèdìng
+zhè yǔnxǔ nín pèizhì kāishǐ jiàn céng yánsè
+jiànbiàn jiéshù shèdìng
+zhè shǐ nǐ kěyǐ pèizhì zuìzhōng jiàn céng yánsè
 zuìdà bèijǐng yánsè jíbié
 zuìdà bèijǐng sècǎi děngjí. Kě jiēshòu de zuìxiǎo zhí wèi 0, kě jiēshòu de zuìdà zhí wèi 255.
 Zuìdà xiàntiáo sècǎi děngjí
@@ -4073,6 +4344,7 @@ Zuìdà wénzì yánsè jíbié
 zuìdà wénzì yánsè děngjí. Kě jiēshòu de zuìxiǎo zhí wèi 0, kě jiēshòu de zuìdà zhí wèi 255.
 Shǐyòng xìtǒng wénhuà
 yíngmù bǎohù chéngshì shìfǒu shǐyòng yóu zhǔ héxīn shèdìng huò cǐ yíngmù bǎohù chéngshì shèdìng suǒ shèdìng de wénhuà.
+Zhè yǔnxǔ nín pèizhì dì yī gè pō dào wàiguān
 dì yī gè zīxùn wénběn
 xiě xià mùqián xiǎoshí de zīxùn wénzì rúhé xiǎnshì. Mùqián xiǎoshí wèi {0}(gòng 24 xiǎoshí).
 Dì yī xiǎojié de zuǒshàng jiǎo zìfú
@@ -4083,6 +4355,7 @@ dì yī xiǎojié de shàng kuàng zìfú
 dì yī xiǎojié de xià kuàng zìfú
 dì yī xiǎojié de zuǒ kuàngjià zìfú
 dì yī xiǎojié de yòubiān kuàngjià zìfú
+zhè yǔnxǔ nín pèizhì dì yī gè jiàn céng yánsè
 dì yī gēn zhù xiàn de yánsè
 dì yī gè zuìdī hóngsè děngjí
 dì yī gè zuìdī lǜsè děngjí
@@ -4092,6 +4365,7 @@ dì yī gè zuìdà hóngsè děngjí
 dì yī gè lǜsè zuìgāo děngjí
 dì yī gè zuìdà lán sè děngjí
 dì yī gè zuìdà yánsè jíbié
+zhè yǔnxǔ nín pèizhì dì èr gè pō dào wàiguān
 dì èr gè zīxùn wénběn
 xiě xià dāngqián fēnzhōng de zīxùn wénzì rúhé xiǎnshì. Dāngqián fēnzhōng wèi {0}(gòng 60 miǎo).
 Dì èr xiǎojié de zuǒshàng jiǎo zìfú
@@ -4102,6 +4376,7 @@ dì èr tiáo de shàng kuàng zìfú
 dì èr xiǎojié de xià kuàng zìfú
 dì èr xiǎojié de zuǒ kuàng zìfú
 dì èr xiǎojié de yòubiān kuàngjià zìfú
+zhè yǔnxǔ nín pèizhì dì èr gè jiàn céng yánsè
 dì èr tiáo zhù de yánsè
 dì èr gè de zuìdī hóngsè děngjí
 dì èr gè de zuìdī lǜsè děngjí
@@ -4111,6 +4386,7 @@ zuìdà hóngsè děngjí wèi miǎo
 dì èr gè zuìdà lǜsè děngjí
 zuìdà lán sè děngjí
 zuìdà sècǎi děngjí
+zhè yǔnxǔ nín pèizhì dì sān gè pō dào wàiguān
 dì sān lán zuǒshàng jiǎo de zìfú
 dì sān lán yòushàng jiǎo de zìfú
 dì sān xiǎojié de zuǒxià jiǎo zìfú
@@ -4121,6 +4397,7 @@ dì sān xiǎojié de zuǒ kuàng zìfú
 dì sān xiǎojié de yòubiān kuàngjià zìfú
 dì sānfāng zīxùn wénzì
 xiě xià mùqián miǎo de xùnxí wénzì rúhé xiǎnshì. Mùqián páimíng dì èr (gòng 60 gè dì sān míng) de shì {0}.
+Zhè yǔnxǔ nín pèizhì dì sān gè jiàn céng yánsè
 dì sān tiáo héng xiàn de yánsè
 dì sān gè de zuìdī hóngsè děngjí
 dì sān gè lǜsè děngjí zuìdī
@@ -4132,61 +4409,6 @@ dì sān gè lán sè zuìgāo děngjí
 dì sān gè zuìdà yánsè jí bié
 rúguǒ qǐyòng, jìndù jiāng xuǎnzé suíjī yánsè. Fǒuzé, qǐng shǐyòng pèizhì zhōng de yánsè.
 Rúguǒ qǐyòngle yánsè xúnhuán, nàme zài jìndù zhòng xūyào duōshǎo gè kèdù cáinéng gǎibiàn yánsè? 1 Kè = 0.5 Miǎo
-Wánbì! Qǐng shǐyòng Nitrocid.Locales yìngyòng chéngshì hé shìdàng de cān shǔ lái quèdìng yǔyán. Nín kěyǐ shǐyòng zhège lùjìng:
-Nèihé pèizhì jiāng wúfǎ zhèngcháng yùnzuò. Wúxiào de mì yào shì
-chángshì zhùcè jùyǒu wúxiào nèiróng de zì dìng shèdìng. Wúxiào de mì yào shì
-chángshì zhùcè jùyǒu wúxiào nèiróng de jīběn shèdìng. Wúxiào de mì yào shì
-jiāng mó zǔ jiārù hēi míngdān
-cóng hēi míngdān zhōng shānchú mó zǔ
-zhèxiē pèizhì tiáomù jùyǒu wúxiào de biànshù huò méi jǔ, xūyào xiūfù:
-Qǐdòng suǒyǒu mó zǔ
-yòng yánsè jiāng fēngé fúhào liè yìn dào kòngzhì tái
-shǐyòng géshì hé yánsè jiāng fēngé fúhào liè yìn dào kòngzhì tái
-chóngxīn jiāzài suǒyǒu mó zǔ
-tǒngjì zīliào
-xiǎnshì mùqián cèshì tǒngjìshùjù
-cèshì quánbù
-cèshì suǒyǒu wàiguān
-fǎnhuí bùfèn xuǎnzé
-xuǎnzé yào yùnxíng de cèshì wàiguān
-cǐ cèshì bāohán kě xuǎn cānshù. Shūrù yào xīn zēng dào cèshì cān shǔ de cānshù zhí.
-Cān shǔ jì shù
-shì de!
-Chóng shì
-cèshì shìfǒu rú yùqí jìnxíng?
-Cèshì shībài. Yùqí zhí wèi {0}, dàn shíjì zhí wèi {1}.
-Cèshì yìwài shībài.
-Chénggōng cèshì:
-Cèshì shībài:
-Yào yùnxíng de cèshì:
-Wúfǎ qǔdé hánshù lièbiǎo
-wúfǎ qǔdé shǔxìng lièbiǎo
-wúfǎ qǔdé lán wèi lièbiǎo
-gēnjù nín xìtǒng shàng de yǔyán shèzhì, xiāngyìng de yǔyán shì
-wúfǎ zài rù zuìzhōng chājiàn
-nèihé xiūgǎi
-yǐ xuǎnzé “{0}”. Àn ESC tuìchū bìng quèrèn xuǎnzé.
-Rènhé mó zǔ shàng jūn wèi zhǎodào biànshù {0}.
-Cǐ fāngfǎ lèixíng wèi zài jīběn Nitrocid lèixíng qīngdān zhōng dìngyì.
-Wúfǎ shǐyòng bù cúnzài de mod zhíxíng zì dìng shǔxìng
-wúfǎ shǐyòng bù cúnzài de móshì zhíxíng zì dìng zìduàn
-shǐyòng huìhuà hàomǎ qīngsōng huòqǔ tiáoshì rìzhì xìnxī
-shì de, shèdìng yīxià!
-Bù, bùyào shèdìng tā.
-Shǐyòng xìtǒng yǔyán shèdìng chángshì tuīduàn yǔyán
-zàn wú fángchǎn zīxùn
-fānqié gōngzuò fǎ
-shèdìng dàng xuǎnzé wúxiào.
-Zhuǎnhuàn yǔyán shí gǎibiàn wénhuà
-qiēhuàn yǔyán shí, biàngēng yuèfèn míngchēng, rìlì děng.
-Dāngqián yǔyán de nǎ zhǒng biàn tǐ yòng yú gēnggǎi yuèfèn míngchēng, rìlì děng?
-Qǐdòng dào yù shè xuǎnzé de chāo shí shíjiān (miǎo).
-Yù shè qǐdòng xiàng xuǎnzé. Zhège shùzì cóng líng kāishǐ, yīncǐ dì yī gè yuánsù shì suǒyǐn 0, yī cǐ lèituī.
-Běnjié liè chūle shell yù shè shèdìng.
-Ké yù shè shèdìng
-bāozhuāng lièbiǎo shūchū
-rúguǒ qīngdān shūchū duìyú mùqián kòngzhì tái jǐhé lái shuō tài zhǎng, zé jiāng qí huànháng.
-Cǐ bùfèn kě ràng nín pèizhì yúlè huódòng de gōngzuò fāngshì.
 Shēngchǎn rìqí wúxiào
 dào qí shíduàn wúxiào
 dào qí rì wúxiào
@@ -4200,21 +4422,14 @@ huòqǔ chǎnpǐn dào qí xìnxī
 shēngchǎn rìqí (chákàn chǎnpǐn cèmiàn huò dǐbù)
 dào qí rì huò shíduàn (míngquè xiě zài tóngyī wèizhì huò shíjiān kuàdù, lìrú 6 gè yuè huò 1 nián)
 mùbiāo chǎnpǐn shìfǒu wèi míngquè zhǐdìng yǒuxiào qíxiàn
-Yíngmù bǎohù chéngshì shèdìng...
-Zhè yǔnxǔ nín pèizhì rìlì yíngmù bǎohù chéngshì shǐyòng de wénhuà
 Xuǎnzé yào qiēhuàn dào de pèizhì shílì.
-Xuǎnzé pèizhì
+Wúfǎ xuǎnzé pèizhì
+xuǎnzé pèizhì
 tíshì nín xuǎnzé pèizhì shílì
-wèi zhǐdìng jīběn nèihé pèizhì shí wúfǎ jiǎnchá pèizhì biànshù.
-Nèihé pèizhì jiāng wúfǎ zhèngcháng yùnzuò. Qǐng cháyuè nèihé tiáoshì qì yǐ huòqǔ gèng duō zīxùn.
-Dāng méiyǒu zhǐdìng jiàn shí wúfǎ jiǎnchá pèizhì biànshù.
-Chángshì zhùcè jùyǒu wúxiào nèiróng de zì dìng shèdìng. Qǐng cháyuè nèihé tiáoshì qì yǐ huòqǔ gèng duō zīxùn.
-Chángshì zhùcè jùyǒu wúxiào nèiróng de jīběn shèdìng. Cháyuè nèihé tiáoshì qì yǐ huòqǔ gèng duō xìnxī
-xuǎnzé yīgè tiáomù
-wúfǎ xuǎnzé pèizhì
-yīgè huò duō gè pèizhì tiáomù jùyǒu wúxiào biànshù huò méi jǔ, xūyào xiūfù. Qǐng cháyuè nèihé tiáoshì qì yǐ huòqǔ gèng duō zīxùn.
+Yíngmù bǎohù chéngshì shèdìng...
 Shèdìng tiáomù míngchēng bùnéng wéi kōng
 shèdìng tiáomù miáoshù bùnéng wéi kōng
 shèdìng tiáomù kěnéng méiyǒu kòng de shèdìng jiàn lièbiǎo
 shèdìng jiàn míngchēng bùnéng wéi kōng
 shèdìng jiàn kěnéng bù bāohán wúxiào de jiàn lèixíng
+Kěyòng jiàn

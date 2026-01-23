@@ -18,7 +18,7 @@
 //
 
 using Newtonsoft.Json.Linq;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.JsonShell.Json.Commands
 {

@@ -94,7 +94,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Apps
             if (string.IsNullOrWhiteSpace(name))
                 throw new KernelException(KernelExceptionType.Bootloader, Translate.DoTranslation("Boot app name is not specified"));
             bootApps.TryGetValue(name, out var info);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got boot app {0}!", name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got boot app {0}!", vars: [name]);
             return info;
         }
 
@@ -107,12 +107,12 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Apps
             {
                 if (i == index)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got boot app at index {0}!", index);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got boot app at index {0}!", vars: [index]);
                     return bootApps.ElementAt(index).Key;
                 }
             }
 
-            DebugWriter.WriteDebug(DebugLevel.W, "No boot app at index {0}. Returning empty string...", index);
+            DebugWriter.WriteDebug(DebugLevel.W, "No boot app at index {0}. Returning empty string...", vars: [index]);
             return "";
         }
     }

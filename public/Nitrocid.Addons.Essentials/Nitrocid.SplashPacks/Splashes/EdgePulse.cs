@@ -82,7 +82,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 double ThresholdRed = RedColorNum / (double)_edgepulseMaxSteps;
                 double ThresholdGreen = GreenColorNum / (double)_edgepulseMaxSteps;
                 double ThresholdBlue = BlueColorNum / (double)_edgepulseMaxSteps;
-                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
 
                 // Fade in or out
                 if (_isFadingOut)
@@ -91,15 +91,15 @@ namespace Nitrocid.SplashPacks.Splashes
                     int CurrentColorRedOut = RedColorNum;
                     int CurrentColorGreenOut = GreenColorNum;
                     int CurrentColorBlueOut = BlueColorNum;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", _currentStep, _edgepulseMaxSteps);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", vars: [_currentStep, _edgepulseMaxSteps]);
                     ThreadManager.SleepNoBlock(_edgepulseDelay);
                     CurrentColorRedOut = (int)Math.Round(CurrentColorRedOut - ThresholdRed * _currentStep);
                     CurrentColorGreenOut = (int)Math.Round(CurrentColorGreenOut - ThresholdGreen * _currentStep);
                     CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
                     var color = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
                     builder.Append(
-                        color.VTSequenceBackground +
+                        color.VTSequenceBackground() +
                         FillIn()
                     );
                     _currentStep++;
@@ -115,15 +115,15 @@ namespace Nitrocid.SplashPacks.Splashes
                     int CurrentColorRedIn = 0;
                     int CurrentColorGreenIn = 0;
                     int CurrentColorBlueIn = 0;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", _currentStep, _edgepulseMaxSteps);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", vars: [_currentStep, _edgepulseMaxSteps]);
                     ThreadManager.SleepNoBlock(_edgepulseDelay);
                     CurrentColorRedIn = (int)Math.Round((CurrentColorRedIn + ThresholdRed) * _currentStep);
                     CurrentColorGreenIn = (int)Math.Round((CurrentColorGreenIn + ThresholdGreen) * _currentStep);
                     CurrentColorBlueIn = (int)Math.Round((CurrentColorBlueIn + ThresholdBlue) * _currentStep);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", vars: [CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn]);
                     var color = new Color(CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
                     builder.Append(
-                        color.VTSequenceBackground +
+                        color.VTSequenceBackground() +
                         FillIn()
                     );
                     _currentStep++;
@@ -147,24 +147,24 @@ namespace Nitrocid.SplashPacks.Splashes
 
             int FloorTopLeftEdge = 0;
             int FloorBottomLeftEdge = 0;
-            DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", FloorTopLeftEdge, FloorBottomLeftEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Top left edge: {0}, Bottom left edge: {1}", vars: [FloorTopLeftEdge, FloorBottomLeftEdge]);
 
             int FloorTopRightEdge = ConsoleWrapper.WindowWidth - 1;
             int FloorBottomRightEdge = ConsoleWrapper.WindowWidth - 1;
-            DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", FloorTopRightEdge, FloorBottomRightEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Top right edge: {0}, Bottom right edge: {1}", vars: [FloorTopRightEdge, FloorBottomRightEdge]);
 
             int FloorTopEdge = 0;
             int FloorBottomEdge = ConsoleWrapper.WindowHeight - 1;
-            DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", FloorTopEdge, FloorBottomEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Top edge: {0}, Bottom edge: {1}", vars: [FloorTopEdge, FloorBottomEdge]);
 
             int FloorLeftEdge = 0;
             int FloorRightEdge = ConsoleWrapper.WindowWidth - 2;
-            DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
+            DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", vars: [FloorLeftEdge, FloorRightEdge]);
 
             // First, draw the floor top edge
             for (int x = FloorTopLeftEdge; x <= FloorTopRightEdge; x++)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", x, 0);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor top edge ({0}, {1})", vars: [x, 0]);
                 filled.Append(
                     CsiSequences.GenerateCsiCursorPosition(x + 1, 1) +
                     " "
@@ -174,7 +174,7 @@ namespace Nitrocid.SplashPacks.Splashes
             // Second, draw the floor bottom edge
             for (int x = FloorBottomLeftEdge; x <= FloorBottomRightEdge; x++)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", x, FloorBottomEdge);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor bottom edge ({0}, {1})", vars: [x, FloorBottomEdge]);
                 filled.Append(
                     CsiSequences.GenerateCsiCursorPosition(x + 1, FloorBottomEdge + 1) +
                     " "
@@ -184,7 +184,7 @@ namespace Nitrocid.SplashPacks.Splashes
             // Third, draw the floor left edge
             for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", FloorLeftEdge, y);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor left edge ({0}, {1})", vars: [FloorLeftEdge, y]);
                 filled.Append(
                     CsiSequences.GenerateCsiCursorPosition(FloorLeftEdge + 1, y + 1) +
                     " "
@@ -194,7 +194,7 @@ namespace Nitrocid.SplashPacks.Splashes
             // Finally, draw the floor right edge
             for (int y = FloorTopEdge; y <= FloorBottomEdge; y++)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", FloorRightEdge, y);
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing floor right edge ({0}, {1})", vars: [FloorRightEdge, y]);
                 filled.Append(
                     CsiSequences.GenerateCsiCursorPosition(FloorRightEdge + 2, y + 1) +
                     " "

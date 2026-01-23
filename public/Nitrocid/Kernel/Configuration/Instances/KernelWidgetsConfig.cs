@@ -20,10 +20,9 @@
 using Newtonsoft.Json;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
-using System.Linq;
-using Terminaux.Images.Icons;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -34,9 +33,16 @@ namespace Nitrocid.Kernel.Configuration.Instances
     {
         /// <inheritdoc/>
         [JsonIgnore]
-        public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("WidgetsSettingsEntries.json", ResourcesType.Settings) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain widget settings entries.")));
+        public override SettingsEntry[] SettingsEntries
+        {
+            get
+            {
+                var dataStream = ResourcesManager.GetData("WidgetsSettingsEntries.json", ResourcesType.Settings) ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain widget settings entries."));
+                string dataString = ResourcesManager.ConvertToString(dataStream);
+                return ConfigTools.GetSettingsEntries(dataString);
+            }
+        }
 
         #region Analog
         private bool analogShowSecondsHand = true;
@@ -455,7 +461,17 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string EmojiWidgetEmoticonName
         {
             get => emojiWidgetCurrentEmoticon;
-            set => emojiWidgetCurrentEmoticon = IconsManager.GetIconNames().Contains(value) ? value : emojiWidgetCurrentEmoticon;
+            set
+            {
+                if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons)) is null)
+                {
+                    emojiWidgetCurrentEmoticon = value;
+                    return;
+                }
+                var type = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasImagesIcons, "Nitrocid.Extras.Images.Icons.Tools.IconsTools");
+                var hasIcon = (bool?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "HasIcon", type, value) ?? false;
+                emojiWidgetCurrentEmoticon = hasIcon ? value : emojiWidgetCurrentEmoticon;
+            }
         }
         #endregion
     }

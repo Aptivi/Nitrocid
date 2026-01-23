@@ -13,7 +13,7 @@
 <br>
 
 # Nitrocid KS
-    
+
 *A simulator for our future-planned kernel, Nitrocid Kernel!*
 
 <br>
@@ -54,13 +54,12 @@
 
 <!----------------------------------[ Badges ]--------------------------------->
 
-[Badge Downloads]: https://img.shields.io/github/downloads/Aptivi/NitrocidKS/total?color=217346&label=Downloads&style=for-the-badge&logoColor=white&logo=DocuSign&labelColor=2d9d5f
+[Badge Downloads]: https://img.shields.io/github/downloads/Aptivi/Nitrocid/total?color=217346&label=Downloads&style=for-the-badge&logoColor=white&logo=DocuSign&labelColor=2d9d5f
 [Badge NuGet]: https://img.shields.io/nuget/vpre/KS?color=012f52&style=for-the-badge&logoColor=white&logo=NuGet&labelColor=004880
-[Badge Size]: https://img.shields.io/github/repo-size/Aptivi/NitrocidKS?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
+[Badge Size]: https://img.shields.io/github/repo-size/Aptivi/Nitrocid?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
 
 [Badge Main Debug]: https://github.com/Aptivi/Nitrocid/actions/workflows/build.yml/badge.svg
 [Badge Main Release]: https://github.com/Aptivi/Nitrocid/actions/workflows/build-rel.yml/badge.svg
-
 
 <!---------------------------------[ Buttons ]--------------------------------->
 

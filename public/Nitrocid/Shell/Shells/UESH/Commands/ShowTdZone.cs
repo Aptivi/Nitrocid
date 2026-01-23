@@ -23,8 +23,8 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Time.Timezones;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Interactives;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -62,7 +62,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             bool ShowAll = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
             bool useTui = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-selection");
             if (useTui)
-                InteractiveTuiTools.OpenInteractiveTui(new TimeZoneShowCli());
+            {
+                var tui = new TimeZoneShowCli();
+                InteractiveTuiTools.OpenInteractiveTui(tui);
+            }
             else
             {
                 if (ShowAll)

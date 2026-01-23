@@ -19,20 +19,12 @@
 
 using Nitrocid.Extras.HttpShell.HTTP;
 using Nitrocid.Extras.HttpShell.Settings;
-using Nitrocid.Extras.HttpShell.Tools;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Modifications;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using System;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Net.Http;
-using System.Reflection;
-using System.Threading.Tasks;
 
 namespace Nitrocid.Extras.HttpShell
 {
@@ -40,45 +32,21 @@ namespace Nitrocid.Extras.HttpShell
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("http", /* Localizable */ "Starts the HTTP shell",
-                [
-                    new CommandArgumentInfo()
-                ], new HttpCommandExec())
+            new CommandInfo("http", /* Localizable */ "Starts the HTTP shell", new HttpCommandExec())
         ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasHttpShell);
 
         internal static HttpConfig HttpConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(HttpConfig)) ? (HttpConfig)Config.baseConfigurations[nameof(HttpConfig)] : new HttpConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(HttpTools.HttpDelete), new Func<string, Task>(HttpTools.HttpDelete) },
-            { nameof(HttpTools.HttpGetString), new Func<string, Task<string>>(HttpTools.HttpGetString) },
-            { nameof(HttpTools.HttpGet), new Func<string, Task<HttpResponseMessage>>(HttpTools.HttpGet) },
-            { nameof(HttpTools.HttpPutString), new Func<string, string, Task<HttpResponseMessage>>(HttpTools.HttpPutString) },
-            { nameof(HttpTools.HttpPutFile), new Func<string, string, Task<HttpResponseMessage>>(HttpTools.HttpPutFile) },
-            { nameof(HttpTools.HttpPostString), new Func<string, string, Task<HttpResponseMessage>>(HttpTools.HttpPostString) },
-            { nameof(HttpTools.HttpPostFile), new Func<string, string, Task<HttpResponseMessage>>(HttpTools.HttpPostFile) },
-            { nameof(HttpTools.HttpAddHeader), new Action<string, string>(HttpTools.HttpAddHeader) },
-            { nameof(HttpTools.HttpRemoveHeader), new Action<string>(HttpTools.HttpRemoveHeader) },
-            { nameof(HttpTools.HttpListHeaders), new Func<(string, string)[]>(HttpTools.HttpListHeaders) },
-            { nameof(HttpTools.HttpGetCurrentUserAgent), new Func<string>(HttpTools.HttpGetCurrentUserAgent) },
-            { nameof(HttpTools.HttpSetUserAgent), new Action<string>(HttpTools.HttpSetUserAgent) },
-            { nameof(HttpTools.NeutralizeUri), new Func<string, string>(HttpTools.NeutralizeUri) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(HttpConfig)) ? (HttpConfig)Config.baseConfigurations[nameof(HttpConfig)] : Config.GetFallbackKernelConfig<HttpConfig>();
 
         void IAddon.FinalizeAddon()
         {
             var config = new HttpConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("HTTPShell", new HTTPShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            ShellManager.RegisterShell("HTTPShell", new HTTPShellInfo());
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -86,8 +54,8 @@ namespace Nitrocid.Extras.HttpShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterAddonShell("HTTPShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            ShellManager.UnregisterShell("HTTPShell");
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(HttpConfig));
         }
     }

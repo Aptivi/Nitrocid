@@ -34,10 +34,11 @@ using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -70,7 +71,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 consoleX = ConsoleWrapper.WindowWidth / 2 - text.Length / 2;
                 consoleY = ConsoleWrapper.WindowHeight / 2;
                 builder.Append(
-                    col.VTSequenceForeground +
+                    col.VTSequenceForeground() +
                     TextWriterWhereColor.RenderWhere(text, consoleX, consoleY, true)
                 );
             }
@@ -85,7 +86,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     ForegroundColor = col,
                 };
                 builder.Append(
-                    ContainerTools.RenderRenderable(figletText, new(consoleX, consoleY))
+                    RendererTools.RenderRenderable(figletText, new(consoleX, consoleY))
                 );
                 consoleY += figHeight * 2;
             }
@@ -126,11 +127,11 @@ namespace Nitrocid.SplashPacks.Splashes
 
                 // Write the three dots
                 string dots =
-                    $"{firstDotColor.VTSequenceForeground}* " +
-                    $"{secondDotColor.VTSequenceForeground}* " +
-                    $"{thirdDotColor.VTSequenceForeground}* " +
-                    $"{fourthDotColor.VTSequenceForeground}* " +
-                    $"{fifthDotColor.VTSequenceForeground}*";
+                    $"{firstDotColor.VTSequenceForeground()}* " +
+                    $"{secondDotColor.VTSequenceForeground()}* " +
+                    $"{thirdDotColor.VTSequenceForeground()}* " +
+                    $"{fourthDotColor.VTSequenceForeground()}* " +
+                    $"{fifthDotColor.VTSequenceForeground()}*";
                 int dotsPosX = (ConsoleWrapper.WindowWidth / 2) - (VtSequenceTools.FilterVTSequences(dots).Length / 2);
                 int dotsPosY = ConsoleWrapper.WindowHeight - 2;
                 builder.Append(TextWriterWhereColor.RenderWhere(dots, dotsPosX, dotsPosY));
@@ -200,7 +201,7 @@ namespace Nitrocid.SplashPacks.Splashes
                     // Write the figlet.
                     figletText.Font = figFontFallback;
                     builder.Append(
-                        ContainerTools.RenderRenderable(figletText, new(consoleX, consoleY))
+                        RendererTools.RenderRenderable(figletText, new(consoleX, consoleY))
                     );
                     consoleY += figHeightFallback * 2;
                 }
@@ -209,7 +210,7 @@ namespace Nitrocid.SplashPacks.Splashes
             {
                 // Write the figlet.
                 builder.Append(
-                    ContainerTools.RenderRenderable(figletText, new(consoleX, consoleY))
+                    RendererTools.RenderRenderable(figletText, new(consoleX, consoleY))
                 );
                 consoleY += figHeight * 2;
             }

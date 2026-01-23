@@ -24,12 +24,12 @@ using System;
 using Nitrocid.Languages;
 using Nitrocid.Files.Instances;
 
-namespace Nitrocid.Files.Operations
+namespace Nitrocid.Files
 {
     /// <summary>
     /// File and folder selection class
     /// </summary>
-    public static class Selection
+    public static partial class FilesystemTools
     {
         /// <summary>
         /// Opens the file selector
@@ -50,7 +50,7 @@ namespace Nitrocid.Files.Operations
                 firstPanePath =
                     string.IsNullOrEmpty(path) ?
                     PathsManagement.HomePath :
-                    FilesystemTools.NeutralizePath(path)
+                    FilesystemTools.NeutralizePath(path),
             };
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Select"), ConsoleKey.Enter, (entry1, _, _, _) => selector.SelectOrGoTo(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, _, _) => selector.CopyTo(entry1)));
@@ -88,7 +88,7 @@ namespace Nitrocid.Files.Operations
                 firstPanePath =
                     string.IsNullOrEmpty(path) ?
                     PathsManagement.HomePath :
-                    FilesystemTools.NeutralizePath(path)
+                    FilesystemTools.NeutralizePath(path),
             };
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Select"), ConsoleKey.Enter, (entry1, _, _, _) => selector.SelectOrGoTo(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, _, _) => selector.CopyTo(entry1)));
@@ -127,9 +127,10 @@ namespace Nitrocid.Files.Operations
                 firstPanePath =
                     string.IsNullOrEmpty(path) ?
                     PathsManagement.HomePath :
-                    FilesystemTools.NeutralizePath(path)
+                    FilesystemTools.NeutralizePath(path),
             };
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, _, _) => selector.Open(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Select"), ConsoleKey.Spacebar, (entry1, _, _, _) => selector.Select(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, _, _) => selector.CopyTo(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, _, _) => selector.MoveTo(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, _, _) => selector.RemoveFileOrDir(entry1)));
@@ -165,9 +166,10 @@ namespace Nitrocid.Files.Operations
                 firstPanePath =
                     string.IsNullOrEmpty(path) ?
                     PathsManagement.HomePath :
-                    FilesystemTools.NeutralizePath(path)
+                    FilesystemTools.NeutralizePath(path),
             };
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Open"), ConsoleKey.Enter, (entry1, _, _, _) => selector.Open(entry1)));
+            selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Select"), ConsoleKey.Spacebar, (entry1, _, _, _) => selector.Select(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Copy"), ConsoleKey.F1, (entry1, _, _, _) => selector.CopyTo(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Move"), ConsoleKey.F2, (entry1, _, _, _) => selector.MoveTo(entry1)));
             selector.Bindings.Add(new InteractiveTuiBinding<FileSystemEntry>(Translate.DoTranslation("Delete"), ConsoleKey.F3, (entry1, _, _, _) => selector.RemoveFileOrDir(entry1)));

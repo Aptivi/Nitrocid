@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Nitrocid KS
-Source: https://github.com/Aptivi/Nitrocid/blob/master/LICENSE
+Source: https://github.com/Aptivi/Nitrocid/blob/main/LICENSE
 
 Files: *
 Copyright: 2018-2026 Aptivi <eoflaoevicecity@gmail.com>

@@ -239,169 +239,169 @@
       GetFileSystemEntries usage analyzer
   -->
   <data name="DirectoryGetFileSystemEntriesUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Listing.CreateList() instead of Directory.GetFileSystemEntries</value>
+    <value>Use FilesystemTools.CreateList() instead of Directory.GetFileSystemEntries</value>
   </data>
   <data name="DirectoryGetFileSystemEntriesUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses Directory.GetFileSystemEntries instead of Listing.CreateList()</value>
+    <value>Caller uses Directory.GetFileSystemEntries instead of FilesystemTools.CreateList()</value>
   </data>
   <data name="DirectoryGetFileSystemEntriesUsageAnalyzerDescription" xml:space="preserve">
-    <value>Listing.CreateList() returns a list of FileSystemEntry instances that provides you information about a file, as well as a wrapper to the FileSystemInfo instance for that file.</value>
+    <value>FilesystemTools.CreateList() returns a list of FileSystemEntry instances that provides you information about a file, as well as a wrapper to the FileSystemInfo instance for that file.</value>
   </data>
 
   <!--
       GetFileSystemEntries usage analyzer
   -->
   <data name="DirectoryGetFileSystemEntriesAltUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Listing.GetFileSystemEntries() instead of Directory.GetFileSystemEntries</value>
+    <value>Use FilesystemTools.GetFileSystemEntries() instead of Directory.GetFileSystemEntries</value>
   </data>
   <data name="DirectoryGetFileSystemEntriesAltUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses Directory.GetFileSystemEntries instead of Listing.GetFileSystemEntries()</value>
+    <value>Caller uses Directory.GetFileSystemEntries instead of FilesystemTools.GetFileSystemEntries()</value>
   </data>
   <data name="DirectoryGetFileSystemEntriesAltUsageAnalyzerDescription" xml:space="preserve">
-    <value>Alternatively, Listing.GetFileSystemEntries() returns a list of paths to files or folders with better support for patterns. You can also use GetFilesystemEntriesRegex() for regular expression support.</value>
+    <value>Alternatively, FilesystemTools.GetFileSystemEntries() returns a list of paths to files or folders with better support for patterns. You can also use GetFilesystemEntriesRegex() for regular expression support.</value>
   </data>
 
   <!--
       FileCopy usage analyzer
   -->
   <data name="FileCopyUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Copying.CopyFileOrDir() instead of File.Copy</value>
+    <value>Use FilesystemTools.CopyFileOrDir() instead of File.Copy</value>
   </data>
   <data name="FileCopyUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses File.Copy instead of Copying.CopyFileOrDir()</value>
+    <value>Caller uses File.Copy instead of FilesystemTools.CopyFileOrDir()</value>
   </data>
   <data name="FileCopyUsageAnalyzerDescription" xml:space="preserve">
-    <value>Copying.CopyFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Copy operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+    <value>FilesystemTools.CopyFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Copy operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
   </data>
 
   <!--
       DirectoryCreateDirectory usage analyzer
   -->
   <data name="DirectoryCreateDirectoryUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Making.MakeDirectory() instead of Directory.CreateDirectory</value>
+    <value>Use FilesystemTools.MakeDirectory() instead of Directory.CreateDirectory</value>
   </data>
   <data name="DirectoryCreateDirectoryUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses Directory.CreateDirectory instead of Making.MakeDirectory()</value>
+    <value>Caller uses Directory.CreateDirectory instead of FilesystemTools.MakeDirectory()</value>
   </data>
   <data name="DirectoryCreateDirectoryUsageAnalyzerDescription" xml:space="preserve">
-    <value>Making.MakeDirectory() neutralizes the provided path to its absolute correct path, while Directory.CreateDirectory operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+    <value>FilesystemTools.MakeDirectory() neutralizes the provided path to its absolute correct path, while Directory.CreateDirectory operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
   </data>
 
   <!--
       FileCreate usage analyzer
   -->
   <data name="FileCreateUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Making.MakeFile() instead of File.Create</value>
+    <value>Use FilesystemTools.MakeFile() instead of File.Create</value>
   </data>
   <data name="FileCreateUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses File.Create instead of Making.MakeFile()</value>
+    <value>Caller uses File.Create instead of FilesystemTools.MakeFile()</value>
   </data>
   <data name="FileCreateUsageAnalyzerDescription" xml:space="preserve">
-    <value>Making.MakeFile() neutralizes the provided path to its absolute correct path, while File.Create operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+    <value>FilesystemTools.MakeFile() neutralizes the provided path to its absolute correct path, while File.Create operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
   </data>
 
   <!--
       FileMove usage analyzer
   -->
   <data name="FileMoveUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Moving.MoveFileOrDir() instead of File.Move</value>
+    <value>Use FilesystemTools.MoveFileOrDir() instead of File.Move</value>
   </data>
   <data name="FileMoveUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses File.Move instead of Moving.MoveFileOrDir()</value>
+    <value>Caller uses File.Move instead of FilesystemTools.MoveFileOrDir()</value>
   </data>
   <data name="FileMoveUsageAnalyzerDescription" xml:space="preserve">
-    <value>Moving.MoveFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Move operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+    <value>FilesystemTools.MoveFileOrDir() neutralizes the provided paths to their absolute correct paths, while File.Move operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
   </data>
 
   <!--
       FileDelete usage analyzer
   -->
   <data name="FileDeleteUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Removing.RemoveFile() instead of File.Delete</value>
+    <value>Use FilesystemTools.RemoveFile() instead of File.Delete</value>
   </data>
   <data name="FileDeleteUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses File.Delete instead of Removing.RemoveFile()</value>
+    <value>Caller uses File.Delete instead of FilesystemTools.RemoveFile()</value>
   </data>
   <data name="FileDeleteUsageAnalyzerDescription" xml:space="preserve">
-    <value>Removing.RemoveFile() neutralizes the provided path to its absolute correct path, while File.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+    <value>FilesystemTools.RemoveFile() neutralizes the provided path to its absolute correct path, while File.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
   </data>
 
   <!--
       DirectoryDelete usage analyzer
   -->
   <data name="DirectoryDeleteUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Removing.RemoveDirectory() instead of Directory.Delete</value>
+    <value>Use FilesystemTools.RemoveDirectory() instead of Directory.Delete</value>
   </data>
   <data name="DirectoryDeleteUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses Directory.Delete instead of Removing.RemoveDirectory()</value>
+    <value>Caller uses Directory.Delete instead of FilesystemTools.RemoveDirectory()</value>
   </data>
   <data name="DirectoryDeleteUsageAnalyzerDescription" xml:space="preserve">
-    <value>Removing.RemoveDirectory() neutralizes the provided path to its absolute correct path, while Directory.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+    <value>FilesystemTools.RemoveDirectory() neutralizes the provided path to its absolute correct path, while Directory.Delete operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
   </data>
 
   <!--
       FileExists usage analyzer
   -->
   <data name="FileExistsUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Checking.FileExists() instead of File.Exists</value>
+    <value>Use FilesystemTools.FileExists() instead of File.Exists</value>
   </data>
   <data name="FileExistsUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses File.Exists instead of Checking.FileExists()</value>
+    <value>Caller uses File.Exists instead of FilesystemTools.FileExists()</value>
   </data>
   <data name="FileExistsUsageAnalyzerDescription" xml:space="preserve">
-    <value>Checking.FileExists() neutralizes the provided path to its absolute correct path, while File.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+    <value>FilesystemTools.FileExists() neutralizes the provided path to its absolute correct path, while File.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
   </data>
 
   <!--
       DirectoryExists usage analyzer
   -->
   <data name="DirectoryExistsUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Checking.DirectoryExists() instead of Directory.Exists</value>
+    <value>Use FilesystemTools.DirectoryExists() instead of Directory.Exists</value>
   </data>
   <data name="DirectoryExistsUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses Directory.Exists instead of Checking.DirectoryExists()</value>
+    <value>Caller uses Directory.Exists instead of FilesystemTools.DirectoryExists()</value>
   </data>
   <data name="DirectoryExistsUsageAnalyzerDescription" xml:space="preserve">
-    <value>Checking.DirectoryExists() neutralizes the provided path to its absolute correct path, while Directory.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
+    <value>FilesystemTools.DirectoryExists() neutralizes the provided path to its absolute correct path, while Directory.Exists operates at the executable directory (Environment.CurrentDirectory), which may not be what you want.</value>
   </data>
 
   <!--
       PathExists usage analyzer
   -->
   <data name="PathExistsUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Checking.Exists() instead of Path.Exists</value>
+    <value>Use FilesystemTools.Exists() instead of Path.Exists</value>
   </data>
   <data name="PathExistsUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses Path.Exists instead of Checking.Exists()</value>
+    <value>Caller uses Path.Exists instead of FilesystemTools.Exists()</value>
   </data>
   <data name="PathExistsUsageAnalyzerDescription" xml:space="preserve">
-    <value>Checking.Exists() neutralizes the provided path to its absolute correct path, while Path.Exists operates at the executable Path (Environment.CurrentPath), which may not be what you want.</value>
+    <value>FilesystemTools.Exists() neutralizes the provided path to its absolute correct path, while Path.Exists operates at the executable Path (Environment.CurrentPath), which may not be what you want.</value>
   </data>
 
   <!--
       PathIsPathRooted usage analyzer
   -->
   <data name="PathIsPathRootedUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Checking.Rooted() instead of Path.IsPathRooted</value>
+    <value>Use FilesystemTools.Rooted() instead of Path.IsPathRooted</value>
   </data>
   <data name="PathIsPathRootedUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses Path.IsPathRooted instead of Checking.Rooted()</value>
+    <value>Caller uses Path.IsPathRooted instead of FilesystemTools.Rooted()</value>
   </data>
   <data name="PathIsPathRootedUsageAnalyzerDescription" xml:space="preserve">
-    <value>Checking.Rooted() uses the filesystem driver to call Path.IsPathRooted.</value>
+    <value>FilesystemTools.Rooted() uses the filesystem driver to call Path.IsPathRooted.</value>
   </data>
 
   <!--
       PathGetInvalidPathChars usage analyzer
   -->
   <data name="PathGetInvalidPathCharsUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use Parsing.GetInvalidPathChars() instead of Path.GetInvalidPathChars</value>
+    <value>Use FilesystemTools.GetInvalidPathChars() instead of Path.GetInvalidPathChars</value>
   </data>
   <data name="PathGetInvalidPathCharsUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses Path.GetInvalidPathChars instead of Parsing.GetInvalidPathChars()</value>
+    <value>Caller uses Path.GetInvalidPathChars instead of FilesystemTools.GetInvalidPathChars()</value>
   </data>
   <data name="PathGetInvalidPathCharsUsageAnalyzerDescription" xml:space="preserve">
-    <value>Parsing.GetInvalidPathChars() always returns invalid characters for Windows paths, regardless of the host operating system, while Path.GetInvalidPathChars returns a list of forbidden path characters for an operating system, which may be wrong in .NET 6.0 or later for the following characters: '"', '&lt;', '&gt;'.</value>
+    <value>FilesystemTools.GetInvalidPathChars() always returns invalid characters for Windows paths, regardless of the host operating system, while Path.GetInvalidPathChars returns a list of forbidden path characters for an operating system, which may be wrong in .NET 6.0 or later for the following characters: '"', '&lt;', '&gt;'.</value>
   </data>
 
   <!--
@@ -629,26 +629,26 @@
       CurrentUICultureGet usage analyzer
   -->
   <data name="CurrentUICultureGetUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use CultureManager.CurrentCult instead of CultureInfo.CurrentUICulture</value>
+    <value>Use CultureManager.CurrentCulture instead of CultureInfo.CurrentUICulture</value>
   </data>
   <data name="CurrentUICultureGetUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCult</value>
+    <value>Caller uses CultureInfo.CurrentUICulture instead of CultureManager.CurrentCulture</value>
   </data>
   <data name="CurrentUICultureGetUsageAnalyzerDescription" xml:space="preserve">
-    <value>CultureManager.CurrentCult gives you a current culture that is set by the kernel settings without affecting the host system.</value>
+    <value>CultureManager.CurrentCulture gives you a current culture that is set by the kernel settings without affecting the host system.</value>
   </data>
 
   <!--
       CurrentUICultureGetName usage analyzer
   -->
   <data name="CurrentUICultureGetNameUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use CultureManager.CurrentCultStr instead of CultureInfo.CurrentUICulture.Name</value>
+    <value>Use CultureManager.CurrentCultureName instead of CultureInfo.CurrentUICulture.Name</value>
   </data>
   <data name="CurrentUICultureGetNameUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultStr</value>
+    <value>Caller uses CultureInfo.CurrentUICulture.Name instead of CultureManager.CurrentCultureName</value>
   </data>
   <data name="CurrentUICultureGetNameUsageAnalyzerDescription" xml:space="preserve">
-    <value>CultureManager.CurrentCultStr gives you a current culture that is set by the kernel settings without affecting the host system.</value>
+    <value>CultureManager.CurrentCultureName gives you a current culture that is set by the kernel settings without affecting the host system.</value>
   </data>
 
   <!--

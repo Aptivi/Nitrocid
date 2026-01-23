@@ -46,6 +46,20 @@
                         "IsSelectionFunctionDict": {
                             "type": "boolean"
                         },
+                        "SelectionFunctionArgs": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "ArgType": {
+                                        "type": "string"
+                                    },
+                                    "ArgValue": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
                         "SelectionFallback": {
                             "type": "array",
                             "items": {
@@ -77,6 +91,9 @@
                             "type": "boolean"
                         },
                         "DelimiterVariable": {
+                            "type": "string"
+                        },
+                        "DelimiterVariableType": {
                             "type": "string"
                         },
                         "ShellType": {

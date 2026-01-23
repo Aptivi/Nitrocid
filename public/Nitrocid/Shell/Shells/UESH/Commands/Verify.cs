@@ -23,11 +23,10 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -66,7 +65,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             try
             {
                 string HashFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
-                if (Checking.FileExists(HashFile))
+                if (FilesystemTools.FileExists(HashFile))
                 {
                     if (HashVerifier.VerifyHashFromHashesFile(parameters.ArgumentsList[3], parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]))
                     {

@@ -34,10 +34,9 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// Tests registering a custom config
         /// </summary>
         [ClassInitialize]
-#pragma warning disable IDE0060
         public static void InitRegisterConfig(TestContext tc)
-#pragma warning restore IDE0060
         {
+            tc.WriteLine("Entering config registration tests...");
             var customSettings = new KernelCustomSettings();
             ConfigTools.RegisterCustomSetting(customSettings);
         }
@@ -49,6 +48,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [DataRow(nameof(KernelDriverConfig))]
         [DataRow(nameof(KernelMainConfig))]
         [DataRow(nameof(KernelSaverConfig))]
+        [DataRow(nameof(KernelSplashConfig))]
         [DataRow(nameof(KernelWidgetsConfig))]
         [Description("Management")]
         public void TestCheckBuiltinConfig(string name)
@@ -75,6 +75,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [DataRow(nameof(KernelDriverConfig))]
         [DataRow(nameof(KernelMainConfig))]
         [DataRow(nameof(KernelSaverConfig))]
+        [DataRow(nameof(KernelSplashConfig))]
         [DataRow(nameof(KernelWidgetsConfig))]
         [Description("Management")]
         public void TestCheckBuiltinSettingsResourcesShallow(string name)
@@ -94,6 +95,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [DataRow(nameof(KernelDriverConfig))]
         [DataRow(nameof(KernelMainConfig))]
         [DataRow(nameof(KernelSaverConfig))]
+        [DataRow(nameof(KernelSplashConfig))]
         [DataRow(nameof(KernelWidgetsConfig))]
         [Description("Management")]
         public void TestCheckBuiltinSettingsResourcesDeep(string name)
@@ -123,6 +125,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [DataRow(nameof(KernelDriverConfig))]
         [DataRow(nameof(KernelMainConfig))]
         [DataRow(nameof(KernelSaverConfig))]
+        [DataRow(nameof(KernelSplashConfig))]
         [DataRow(nameof(KernelWidgetsConfig))]
         [Description("Management")]
         public void TestCheckBuiltinSettingsResourcesDeepEval(string name)

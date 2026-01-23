@@ -22,10 +22,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles.Choice;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
@@ -33,7 +30,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Textify.General;
 using Terminaux.Base;
-using Nitrocid.ConsoleBase.Inputs;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles;
 using System;
@@ -53,18 +49,18 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             string englishFile = $"{pathToTranslations}/eng.txt";
 
             // Check the translations path and the two necessary files
-            if (!Checking.FolderExists(pathToTranslations))
+            if (!FilesystemTools.FolderExists(pathToTranslations))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Path to translations, {0}, is going to be created", pathToTranslations);
-                Making.MakeDirectory(pathToTranslations);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path to translations, {0}, is going to be created", vars: [pathToTranslations]);
+                FilesystemTools.MakeDirectory(pathToTranslations);
             }
-            if (!Checking.FileExists(manifestFile))
+            if (!FilesystemTools.FileExists(manifestFile))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Manifest file, {0}, is going to be copied", manifestFile);
-                Copying.CopyFileOrDir(initialManifestFile, manifestFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Manifest file, {0}, is going to be copied", vars: [manifestFile]);
+                FilesystemTools.CopyFileOrDir(initialManifestFile, manifestFile);
             }
 
-            if (!Checking.FileExists(englishFile))
+            if (!FilesystemTools.FileExists(englishFile))
             {
                 string answer = ChoiceStyle.PromptChoice(
                     Translate.DoTranslation("The base English strings file doesn't exist. Do you want to create an empty one? Or do you want to use Nitrocid's English strings?"), [("e", "Empty"), ("n", "Nitrocid's English strings")]
@@ -73,25 +69,25 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 {
                     case "E":
                         // User chose Nitrocid's English strings
-                        DebugWriter.WriteDebug(DebugLevel.I, "English strings, {0}, is going to be copied", englishFile);
-                        Copying.CopyFileOrDir(initialEnglishFile, englishFile);
+                        DebugWriter.WriteDebug(DebugLevel.I, "English strings, {0}, is going to be copied", vars: [englishFile]);
+                        FilesystemTools.CopyFileOrDir(initialEnglishFile, englishFile);
                         break;
                     default:
                         // User chose to create a new one
                         DebugWriter.WriteDebug(DebugLevel.I, "Empty English strings file...");
-                        Making.MakeFile(englishFile, false);
+                        FilesystemTools.MakeFile(englishFile, false);
                         break;
                 }
             }
 
             // Check the provided languages
-            string metadataStr = Reading.ReadContentsText(manifestFile);
+            string metadataStr = FilesystemTools.ReadContentsText(manifestFile);
             JArray metadata = JArray.Parse(metadataStr);
             string[] finalLangs = metadata
                 .Select((token) => token["three"]?.ToString() ?? "")
                 .Where(LanguageManager.Languages.ContainsKey)
                 .ToArray();
-            DebugWriter.WriteDebug(DebugLevel.I, "finalLangs = {0}.", finalLangs.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "finalLangs = {0}.", vars: [finalLangs.Length]);
             if (finalLangs.Length == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "No languages!");
@@ -100,16 +96,16 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             }
 
             // Populate the English strings and fill the translated lines
-            List<string> englishLines = [.. Reading.ReadContents(englishFile)];
+            List<string> englishLines = [.. FilesystemTools.ReadContents(englishFile)];
             Dictionary<string, List<string>> translatedLines = [];
             foreach (string language in finalLangs)
             {
                 // Populate the existing translations
                 string languagePath = $"{pathToTranslations}/{language}.txt";
                 List<string> finalLangLines = [];
-                DebugWriter.WriteDebug(DebugLevel.I, "Language path is {0}", languagePath);
-                if (Checking.FileExists(languagePath))
-                    finalLangLines.AddRange(Reading.ReadContents(languagePath));
+                DebugWriter.WriteDebug(DebugLevel.I, "Language path is {0}", vars: [languagePath]);
+                if (FilesystemTools.FileExists(languagePath))
+                    finalLangLines.AddRange(FilesystemTools.ReadContents(languagePath));
                 else
                     finalLangLines.AddRange(new string[englishLines.Count]);
 
@@ -121,7 +117,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                     finalLangLines.RemoveRange(englishLines.Count, finalLangLines.Count - englishLines.Count);
 
                 // Now, add the translated lines
-                DebugWriter.WriteDebug(DebugLevel.I, "Final lines {0}", finalLangLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Final lines {0}", vars: [finalLangLines.Count]);
                 translatedLines.Add(language, finalLangLines);
             }
 
@@ -169,7 +165,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 int selectedStringNum = SelectionStyle.PromptSelection("\n  * " + finalTitle + " " + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to translate:"), [.. choices], [.. altChoices]);
 
                 // Check the answer
-                if (selectedStringNum == englishLines.Count + 1)
+                if (selectedStringNum == englishLines.Count)
                 {
                     // User chose to make a new string.
                     string newString = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a new string") + ": ");
@@ -177,21 +173,21 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                     foreach (var translatedLang in translatedLines.Keys)
                         translatedLines[translatedLang].Add(translatedLang == "eng" ? newString : "???");
                 }
-                else if (selectedStringNum == englishLines.Count + 2)
+                else if (selectedStringNum == englishLines.Count + 1)
                 {
                     // User chose to remove a string.
                     finalTitle = Translate.DoTranslation("Remove string");
                     int selectedRemovedStringNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to remove:"), [.. choices], [.. altChoicesRemove]);
-                    if (selectedRemovedStringNum == englishLines.Count + 1 || selectedRemovedStringNum == -1)
+                    if (selectedRemovedStringNum == englishLines.Count || selectedRemovedStringNum == -1)
                         continue;
                     else
                     {
-                        englishLines.RemoveAt(selectedRemovedStringNum - 1);
+                        englishLines.RemoveAt(selectedRemovedStringNum);
                         foreach (var translatedLang in translatedLines.Keys)
-                            translatedLines[translatedLang].RemoveAt(selectedRemovedStringNum - 1);
+                            translatedLines[translatedLang].RemoveAt(selectedRemovedStringNum);
                     }
                 }
-                else if (selectedStringNum == englishLines.Count + 3)
+                else if (selectedStringNum == englishLines.Count + 2)
                 {
                     // User chose to save the translations.
                     InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Saving language..."));
@@ -200,11 +196,11 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                         string language = translatedLine.Key;
                         List<string> localizations = translatedLine.Value;
                         string languagePath = $"{pathToTranslations}/{language}.txt";
-                        Writing.WriteContents(languagePath, [.. localizations]);
+                        FilesystemTools.WriteContents(languagePath, [.. localizations]);
                     }
                     InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Done! Please use the Nitrocid.Locales application with appropriate arguments to finalize the languages. You can use this path:") + $" {pathToTranslations}");
                 }
-                else if (selectedStringNum == englishLines.Count + 4 || selectedStringNum == -1)
+                else if (selectedStringNum == englishLines.Count + 3 || selectedStringNum == -1)
                 {
                     // User chose to exit.
                     break;
@@ -212,7 +208,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 else
                 {
                     // User chose a string to translate.
-                    HandleStringTranslation(englishLines, selectedStringNum - 1, finalLangs, ref translatedLines);
+                    HandleStringTranslation(englishLines, selectedStringNum, finalLangs, ref translatedLines);
                 }
             }
         }
@@ -238,11 +234,11 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 ];
                 string finalTitle = Translate.DoTranslation("Select language");
                 int selectedLangNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a language to translate this string to:"), [.. choices], [.. altChoices]);
-                if (selectedLangNum == targetLanguages.Length + 1 || selectedLangNum == -1)
+                if (selectedLangNum == targetLanguages.Length || selectedLangNum == -1)
                     return;
 
                 // Try to get a language and prompt the user for the translation
-                string selectedLang = targetLanguages[selectedLangNum - 1];
+                string selectedLang = targetLanguages[selectedLangNum];
                 string translated = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Write your translation of") + $" \"{str}\": ");
                 translatedLines[selectedLang][index] = translated;
             }

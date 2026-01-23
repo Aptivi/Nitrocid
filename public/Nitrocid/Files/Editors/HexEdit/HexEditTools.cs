@@ -24,7 +24,6 @@ using System.Threading;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers;
-using Nitrocid.Files.Operations.Printing;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -49,9 +48,9 @@ namespace Nitrocid.Files.Editors.HexEdit
         {
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", vars: [File]);
                 HexEditShellCommon.FileStream = new FileStream(File, FileMode.Open);
-                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, HexEditShellCommon.FileStream.Length, HexEditShellCommon.FileStream.Position);
+                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", vars: [File, HexEditShellCommon.FileStream.Length, HexEditShellCommon.FileStream.Position]);
 
                 // Read the file
                 var FileBytes = new byte[(int)(HexEditShellCommon.FileStream.Length + 1)];
@@ -65,7 +64,7 @@ namespace Nitrocid.Files.Editors.HexEdit
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Open file {0} failed: {1}", File, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Open file {0} failed: {1}", vars: [File, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -89,7 +88,7 @@ namespace Nitrocid.Files.Editors.HexEdit
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Closing file failed: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Closing file failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -118,7 +117,7 @@ namespace Nitrocid.Files.Editors.HexEdit
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Saving file failed: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Saving file failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -186,14 +185,14 @@ namespace Nitrocid.Files.Editors.HexEdit
 
                 var FileBytesList = HexEditShellCommon.FileBytes.ToList();
                 long ByteIndex = pos - 1L;
-                DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", ByteIndex, pos);
-                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", HexEditShellCommon.FileBytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", vars: [ByteIndex, pos]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", vars: [HexEditShellCommon.FileBytes.LongLength]);
 
                 // Actually remove a byte
                 if (pos <= HexEditShellCommon.FileBytes.LongLength)
                 {
                     FileBytesList.Insert((int)ByteIndex, Content);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Inserted {0}. Result: {1}", ByteIndex, HexEditShellCommon.FileBytes.LongLength);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Inserted {0}. Result: {1}", vars: [ByteIndex, HexEditShellCommon.FileBytes.LongLength]);
                     HexEditShellCommon.FileBytes = [.. FileBytesList];
                 }
                 else
@@ -232,14 +231,14 @@ namespace Nitrocid.Files.Editors.HexEdit
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
                 var FileBytesList = HexEditShellCommon.FileBytes.ToList();
                 long ByteIndex = ByteNumber - 1L;
-                DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", ByteIndex, ByteNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", HexEditShellCommon.FileBytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", vars: [ByteIndex, ByteNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", vars: [HexEditShellCommon.FileBytes.LongLength]);
 
                 // Actually remove a byte
                 if (ByteNumber <= HexEditShellCommon.FileBytes.LongLength)
                 {
                     FileBytesList.RemoveAt((int)ByteIndex);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", ByteIndex, HexEditShellCommon.FileBytes.LongLength);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", vars: [ByteIndex, HexEditShellCommon.FileBytes.LongLength]);
                     HexEditShellCommon.FileBytes = [.. FileBytesList];
                 }
                 else
@@ -277,17 +276,17 @@ namespace Nitrocid.Files.Editors.HexEdit
                 long StartByteNumberIndex = StartByteNumber - 1L;
                 long EndByteNumberIndex = EndByteNumber - 1L;
                 var FileBytesList = HexEditShellCommon.FileBytes.ToList();
-                DebugWriter.WriteDebug(DebugLevel.I, "Start byte number: {0}, end: {1}", StartByteNumber, EndByteNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got start byte index: {0}", StartByteNumberIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got end byte index: {0}", EndByteNumberIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", HexEditShellCommon.FileBytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "Start byte number: {0}, end: {1}", vars: [StartByteNumber, EndByteNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got start byte index: {0}", vars: [StartByteNumberIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got end byte index: {0}", vars: [EndByteNumberIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", vars: [HexEditShellCommon.FileBytes.LongLength]);
 
                 // Actually remove the bytes
                 if (StartByteNumber <= HexEditShellCommon.FileBytes.LongLength & EndByteNumber <= HexEditShellCommon.FileBytes.LongLength)
                 {
                     for (long ByteNumber = EndByteNumber; ByteNumber >= StartByteNumber; ByteNumber -= 1)
                         FileBytesList.RemoveAt((int)(ByteNumber - 1L));
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0} to {1}. New length: {2}", StartByteNumber, EndByteNumber, HexEditShellCommon.FileBytes.LongLength);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0} to {1}. New length: {2}", vars: [StartByteNumber, EndByteNumber, HexEditShellCommon.FileBytes.LongLength]);
                     HexEditShellCommon.FileBytes = [.. FileBytesList];
                 }
                 else if (StartByteNumber > HexEditShellCommon.FileBytes.LongLength)
@@ -330,7 +329,7 @@ namespace Nitrocid.Files.Editors.HexEdit
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
                 if (StartByte < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
-                FileContentPrinter.DisplayInHex(StartByte, EndByte, HexEditShellCommon.FileBytes);
+                FilesystemTools.DisplayInHex(StartByte, EndByte, HexEditShellCommon.FileBytes);
             }
             else
                 throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
@@ -365,7 +364,7 @@ namespace Nitrocid.Files.Editors.HexEdit
             {
                 if (HexEditShellCommon.FileBytes is null)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
-                DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", HexEditShellCommon.FileBytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [HexEditShellCommon.FileBytes.LongLength]);
                 if (StartByte < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
                 if (StartByte <= HexEditShellCommon.FileBytes.LongLength & EndByte <= HexEditShellCommon.FileBytes.LongLength)
@@ -427,15 +426,15 @@ namespace Nitrocid.Files.Editors.HexEdit
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Hex file is not open yet."));
                 if (StartByte < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
-                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", FromByte, WithByte);
-                DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", HexEditShellCommon.FileBytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", vars: [FromByte, WithByte]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [HexEditShellCommon.FileBytes.LongLength]);
                 if (StartByte <= HexEditShellCommon.FileBytes.LongLength & EndByte <= HexEditShellCommon.FileBytes.LongLength)
                 {
                     for (long ByteNumber = StartByte; ByteNumber <= EndByte; ByteNumber++)
                     {
                         if (HexEditShellCommon.FileBytes[(int)(ByteNumber - 1L)] == FromByte)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in byte {2}", FromByte, WithByte, ByteNumber);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in byte {2}", vars: [FromByte, WithByte, ByteNumber]);
                             HexEditShellCommon.FileBytes[(int)(ByteNumber - 1L)] = WithByte;
                         }
                     }
@@ -482,14 +481,14 @@ namespace Nitrocid.Files.Editors.HexEdit
 
                 var FileBytesList = bytes.ToList();
                 long ByteIndex = pos - 1L;
-                DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", ByteIndex, pos);
-                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", bytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", vars: [ByteIndex, pos]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", vars: [bytes.LongLength]);
 
                 // Actually remove a byte
                 if (pos <= bytes.LongLength)
                 {
                     FileBytesList.Insert((int)ByteIndex, Content);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Inserted {0}. Result: {1}", ByteIndex, bytes.LongLength);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Inserted {0}. Result: {1}", vars: [ByteIndex, bytes.LongLength]);
                     bytes = [.. FileBytesList];
                 }
                 else
@@ -530,14 +529,14 @@ namespace Nitrocid.Files.Editors.HexEdit
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
                 var FileBytesList = bytes.ToList();
                 long ByteIndex = ByteNumber - 1L;
-                DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", ByteIndex, ByteNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", bytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", vars: [ByteIndex, ByteNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", vars: [bytes.LongLength]);
 
                 // Actually remove a byte
                 if (ByteNumber <= bytes.LongLength)
                 {
                     FileBytesList.RemoveAt((int)ByteIndex);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", ByteIndex, bytes.LongLength);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", vars: [ByteIndex, bytes.LongLength]);
                     bytes = [.. FileBytesList];
                 }
                 else
@@ -572,17 +571,17 @@ namespace Nitrocid.Files.Editors.HexEdit
                 long StartByteNumberIndex = StartByteNumber - 1L;
                 long EndByteNumberIndex = EndByteNumber - 1L;
                 var FileBytesList = bytes.ToList();
-                DebugWriter.WriteDebug(DebugLevel.I, "Start byte number: {0}, end: {1}", StartByteNumber, EndByteNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got start byte index: {0}", StartByteNumberIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got end byte index: {0}", EndByteNumberIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", bytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "Start byte number: {0}, end: {1}", vars: [StartByteNumber, EndByteNumber]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got start byte index: {0}", vars: [StartByteNumberIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got end byte index: {0}", vars: [EndByteNumberIndex]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", vars: [bytes.LongLength]);
 
                 // Actually remove the bytes
                 if (StartByteNumber <= bytes.LongLength & EndByteNumber <= bytes.LongLength)
                 {
                     for (long ByteNumber = EndByteNumber; ByteNumber >= StartByteNumber; ByteNumber -= 1)
                         FileBytesList.RemoveAt((int)(ByteNumber - 1L));
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0} to {1}. New length: {2}", StartByteNumber, EndByteNumber, bytes.LongLength);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0} to {1}. New length: {2}", vars: [StartByteNumber, EndByteNumber, bytes.LongLength]);
                     bytes = [.. FileBytesList];
                 }
                 else if (StartByteNumber > bytes.LongLength)
@@ -622,7 +621,7 @@ namespace Nitrocid.Files.Editors.HexEdit
             {
                 if (StartByte < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
-                FileContentPrinter.DisplayInHex(StartByte, EndByte, bytes);
+                FilesystemTools.DisplayInHex(StartByte, EndByte, bytes);
             }
             else
                 throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Can't perform this operation on a null array."));
@@ -656,7 +655,7 @@ namespace Nitrocid.Files.Editors.HexEdit
         {
             if (bytes is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", bytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [bytes.LongLength]);
                 if (StartByte < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
                 if (StartByte <= bytes.LongLength & EndByte <= bytes.LongLength)
@@ -703,15 +702,15 @@ namespace Nitrocid.Files.Editors.HexEdit
             {
                 if (StartByte < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
-                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", FromByte, WithByte);
-                DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", bytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", vars: [FromByte, WithByte]);
+                DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [bytes.LongLength]);
                 if (StartByte <= bytes.LongLength & EndByte <= bytes.LongLength)
                 {
                     for (long ByteNumber = StartByte; ByteNumber <= EndByte; ByteNumber++)
                     {
                         if (bytes[(int)(ByteNumber - 1L)] == FromByte)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in byte {2}", FromByte, WithByte, ByteNumber);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in byte {2}", vars: [FromByte, WithByte, ByteNumber]);
                             bytes[(int)(ByteNumber - 1L)] = WithByte;
                         }
                     }

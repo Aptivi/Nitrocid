@@ -25,9 +25,8 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Textify.General;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Shell.Shells.Text
 {
@@ -66,7 +65,7 @@ namespace Nitrocid.Shell.Shells.Text
             // Open file if not open
             if (TextEditShellCommon.FileStream is null)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
+                DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
                 if (!TextEditTools.OpenTextFile(FilePath))
                 {
                     TextWriters.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
@@ -85,7 +84,7 @@ namespace Nitrocid.Shell.Shells.Text
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

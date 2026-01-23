@@ -31,8 +31,9 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Splash.Splashes;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors;
+using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Misc.Splash
 {
@@ -217,7 +218,7 @@ namespace Nitrocid.Misc.Splash
                 bool initialBackgroundAllowed = Config.MainConfig.AllowBackgroundColor;
                 BaseSplash.initialBackgroundAllowed = initialBackgroundAllowed;
                 if (splash.RequiresBackground)
-                    ColorTools.AllowBackground = true;
+                    ConsoleColoring.AllowBackground = true;
 
                 // Finally, render it
                 KernelColorTools.LoadBackground();
@@ -312,7 +313,10 @@ namespace Nitrocid.Misc.Splash
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, $"Splash closing failed to display: {ex.Message}");
                     DebugWriter.WriteDebugStackTrace(ex);
-                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("The closing splash has failed to display") + $".\n  - {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The closing splash has failed to display") + $".\n  - {ex.Message}", new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                    });
                 }
                 finally
                 {
@@ -330,7 +334,7 @@ namespace Nitrocid.Misc.Splash
 
                     // Reset the background setting
                     if (splash.RequiresBackground)
-                        ColorTools.AllowBackground = BaseSplash.initialBackgroundAllowed;
+                        ConsoleColoring.AllowBackground = BaseSplash.initialBackgroundAllowed;
                     KernelColorTools.LoadBackground();
 
                     // Reset the cursor visibility

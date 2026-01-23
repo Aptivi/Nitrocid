@@ -23,6 +23,7 @@ namespace Nitrocid.Tests.Misc.Screensaver
 {
     internal class CustomSaverTest : BaseScreensaver, IScreensaver
     {
-        public override string ScreensaverName { get; set; } = "CustomSaverTest";
+        public override string ScreensaverName =>
+            "CustomSaverTest";
     }
 }

@@ -17,13 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Switches;
 using System.Linq;
 using Textify.General;
 using Nitrocid.ConsoleBase.Writers;
@@ -42,27 +40,21 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string FileToSearch = parameters.ArgumentsList[0];
-            string DirectoryToSearch = CurrentDirectory.CurrentDir;
+            string DirectoryToSearch = FilesystemTools.CurrentDir;
             bool isRecursive = parameters.SwitchesList.Contains("-recursive");
             string command = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-exec").ReleaseDoubleQuotes();
             if (parameters.ArgumentsList.Length > 1)
                 DirectoryToSearch = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
 
             // Print the results if found
-            var FileEntries = Listing.GetFilesystemEntries(DirectoryToSearch, FileToSearch, isRecursive);
+            var FileEntries = FilesystemTools.GetFilesystemEntries(DirectoryToSearch, FileToSearch, isRecursive);
 
             // Print or exec, depending on the command
             if (!string.IsNullOrWhiteSpace(command))
             {
                 foreach (var file in FileEntries)
                 {
-                    var AltThreads = ShellManager.ShellStack[^1].AltCommandThreads;
-                    if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
-                    {
-                        var WrappedCommand = new KernelThread($"Find Shell Command Thread for file {file}", false, (cmdThreadParams) =>
-                            CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
-                        ShellManager.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
-                    }
+                    ShellManager.AddAlternateThread();
                     ShellManager.GetLine($"{command} \"{file}\"");
                 }
             }

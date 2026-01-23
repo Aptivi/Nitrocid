@@ -20,8 +20,6 @@
 using Newtonsoft.Json;
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encryption;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -42,7 +40,7 @@ namespace Nitrocid.Files.Extensions
         };
         internal static readonly List<ExtensionHandler> extensionHandlers =
         [
-            new ExtensionHandler(".bin", "NitrocidBin", (path) => Opening.OpenEditor(path, false, false, true), (path) => $"{Translate.DoTranslation("File hash sum")}: {Encryption.GetEncryptedFile(path, DriverHandler.CurrentEncryptionDriver.DriverName)}"),
+            new ExtensionHandler(".bin", "NitrocidBin", (path) => FilesystemTools.OpenEditor(path, false, false, true), (path) => $"{Translate.DoTranslation("File hash sum")}: {Encryption.GetEncryptedFile(path, DriverHandler.CurrentEncryptionDriver.DriverName)}"),
         ];
         internal static readonly List<ExtensionHandler> customHandlers = [];
 
@@ -358,14 +356,14 @@ namespace Nitrocid.Files.Extensions
         internal static void SaveAllHandlers()
         {
             string serialized = JsonConvert.SerializeObject(defaultHandlers);
-            Writing.WriteContentsText(PathsManagement.ExtensionHandlersPath, serialized);
+            FilesystemTools.WriteContentsText(PathsManagement.ExtensionHandlersPath, serialized);
         }
 
         internal static void LoadAllHandlers()
         {
-            if (!Checking.FileExists(PathsManagement.ExtensionHandlersPath))
+            if (!FilesystemTools.FileExists(PathsManagement.ExtensionHandlersPath))
                 SaveAllHandlers();
-            string contents = Reading.ReadContentsText(PathsManagement.ExtensionHandlersPath);
+            string contents = FilesystemTools.ReadContentsText(PathsManagement.ExtensionHandlersPath);
             defaultHandlers = JsonConvert.DeserializeObject<Dictionary<string, string>>(contents) ??
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Loading default handlers failed."));
         }

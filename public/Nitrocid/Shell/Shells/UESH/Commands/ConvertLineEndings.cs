@@ -19,11 +19,11 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files;
 using Nitrocid.Files.LineEndings;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -59,7 +59,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string TargetTextFile = parameters.ArgumentsList[0];
-            var TargetLineEnding = LineEndingsTools.NewlineStyle;
+            var TargetLineEnding = FilesystemTools.NewlineStyle;
             bool force = false;
             if (parameters.SwitchesList.Length != 0)
             {
@@ -74,12 +74,12 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
 
             // Convert the line endings
-            if (Parsing.IsBinaryFile(TargetTextFile) && !force)
+            if (FilesystemTools.IsBinaryFile(TargetTextFile) && !force)
             {
                 TextWriters.Write(Translate.DoTranslation("Can't convert line endings on a binary file since it results in file corruption."), true, KernelColorType.Error);
                 return 7;
             }
-            LineEndingsConverter.ConvertLineEndings(TargetTextFile, TargetLineEnding, force);
+            FilesystemTools.ConvertLineEndings(TargetTextFile, TargetLineEnding, force);
             return 0;
         }
 

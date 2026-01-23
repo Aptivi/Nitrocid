@@ -20,29 +20,25 @@
 using System.Collections.Generic;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets;
-using Nitrocid.Shell.ShellBase.Switches;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {
     /// <summary>
     /// Common archive shell class
     /// </summary>
-    internal class ArchiveShellInfo : BaseShellInfo, IShellInfo
+    internal class ArchiveShellInfo : BaseShellInfo<ArchiveShell>, IShellInfo
     {
-
         /// <summary>
         /// Archive commands
         /// </summary>
         public override List<CommandInfo> Commands =>
         [
-            new CommandInfo("cdir", /* Localizable */ "Gets current local directory",
-                [
-                    new CommandArgumentInfo()
-                ], new CDirCommand()),
+            new CommandInfo("cdir", /* Localizable */ "Gets current local directory", new CDirCommand()),
 
             new CommandInfo("chdir", /* Localizable */ "Changes directory",
                 [
@@ -121,8 +117,5 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
             { "PowerLineBG2", new ArchivePowerLineBG2Preset() },
             { "PowerLineBG3", new ArchivePowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new ArchiveShell();
-
     }
 }

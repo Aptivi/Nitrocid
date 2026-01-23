@@ -28,10 +28,10 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Misc.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Textify.General;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -110,9 +110,9 @@ namespace Nitrocid.SplashPacks.Splashes
                 "    ";
             string RenderedText = ProgressReport.FormatString(Vars).Truncate(ConsoleWrapper.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
             PresetStringBuilder.Append(
-                KernelColorTools.GetColor(KernelColorType.Progress).VTSequenceForeground +
+                KernelColorTools.GetColor(KernelColorType.Progress).VTSequenceForeground() +
                 TextWriterWhereColor.RenderWhere("{0,4:##0\\%}", ProgressWritePositionX, ProgressWritePositionY, true, vars: Progress) +
-                finalColor.VTSequenceForeground +
+                finalColor.VTSequenceForeground() +
                 TextWriterWhereColor.RenderWhere($"{indicator}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false) +
                 ConsoleClearing.GetClearLineToRightSequence()
             );
@@ -124,14 +124,13 @@ namespace Nitrocid.SplashPacks.Splashes
                 KernelColorTools.GetColor(KernelColorType.Progress);
             var progress = new SimpleProgress(Progress, 100)
             {
-                LeftMargin = 4,
-                RightMargin = 4,
+                Width = ConsoleWrapper.WindowWidth - 8,
                 ProgressActiveForegroundColor = progressColor,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(progressColor),
                 ProgressBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
                 ShowPercentage = false,
             };
-            PresetStringBuilder.Append(ContainerTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 2)));
+            PresetStringBuilder.Append(RendererTools.RenderRenderable(progress, new(3, ConsoleWrapper.WindowHeight - 2)));
             return PresetStringBuilder.ToString();
         }
 

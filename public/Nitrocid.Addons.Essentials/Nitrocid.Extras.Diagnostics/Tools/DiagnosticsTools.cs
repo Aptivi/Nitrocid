@@ -26,7 +26,10 @@ using System.Linq;
 
 namespace Nitrocid.Extras.Diagnostics.Tools
 {
-    internal static class DiagnosticsTools
+    /// <summary>
+    /// Diagnostics tools
+    /// </summary>
+    public static class DiagnosticsTools
     {
         /// <summary>
         /// Gets all thread backtraces

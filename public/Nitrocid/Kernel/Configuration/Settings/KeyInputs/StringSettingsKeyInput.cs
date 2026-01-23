@@ -17,10 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
@@ -28,6 +25,7 @@ using Nitrocid.Languages;
 using System;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -38,11 +36,18 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             ConsoleWrapper.Clear();
 
             // Translate the key name and description
-            string keyName = Translate.DoTranslation(key.Name);
-            string keyDesc = Translate.DoTranslation(key.Description);
+            string keyName = key.Name;
+            string keyDesc = key.Description;
 
             // Write the prompt
-            string? AnswerString = InfoBoxInputColor.WriteInfoBoxInput(keyName, $"{keyDesc}\n\n{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]");
+            var settings = new InfoBoxSettings()
+            {
+                Title = keyName,
+            };
+            string? AnswerString =
+                key.Masked ?
+                InfoBoxInputColor.WriteInfoBoxInput($"{keyDesc}\n\n{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")}", settings, InfoBoxInputType.Password) :
+                InfoBoxInputColor.WriteInfoBoxInput($"{keyDesc}\n\n{Translate.DoTranslation("Write any text to use. Remember, follow the description of the option that you've chosen.")} [{KeyDefaultValue}]", settings);
 
             // Neutralize path if required with the assumption that the keytype is not list
             AnswerString = (string?)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);
@@ -55,7 +60,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Neutralize path if required with the assumption that the keytype is not list
             if (key.IsValuePath)
             {
-                string NeutralizeRootPath = key.IsPathCurrentPath ? CurrentDirectory.CurrentDir : PathsManagement.GetKernelPath(key.ValuePathType);
+                string NeutralizeRootPath = key.IsPathCurrentPath ? FilesystemTools.CurrentDir : PathsManagement.GetKernelPath(key.ValuePathType);
                 value = FilesystemTools.NeutralizePath(value, NeutralizeRootPath);
             }
             return value;
@@ -66,7 +71,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // Neutralize path if required with the assumption that the keytype is not list
             if (key.IsValuePath)
             {
-                string NeutralizeRootPath = key.IsPathCurrentPath ? CurrentDirectory.CurrentDir : PathsManagement.GetKernelPath(key.ValuePathType);
+                string NeutralizeRootPath = key.IsPathCurrentPath ? FilesystemTools.CurrentDir : PathsManagement.GetKernelPath(key.ValuePathType);
                 value = FilesystemTools.NeutralizePath(value, NeutralizeRootPath);
             }
 
@@ -75,7 +80,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             {
                 if (KeyDefaultValue is string KeyValue)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Answer is nothing. Setting to {0}...", KeyValue);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Answer is nothing. Setting to {0}...", vars: [KeyValue]);
                     value = Convert.ToString(KeyValue);
                 }
             }
@@ -85,7 +90,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
         public void SetValue(SettingsKey key, object? value, BaseKernelConfig configType)
         {
             // We're dealing with integers
-            DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", key.Type.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", vars: [key.Type.ToString()]);
 
             // Check to see if written answer is empty
             if (value is not string AnswerString)

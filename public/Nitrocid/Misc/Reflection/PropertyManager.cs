@@ -31,13 +31,12 @@ namespace Nitrocid.Misc.Reflection
     /// </summary>
     public static class PropertyManager
     {
-
         /// <summary>
         /// Sets the value of a property to the new value dynamically
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
-        public static void SetPropertyValue(string Variable, object VariableValue) =>
+        public static void SetPropertyValue(string Variable, object? VariableValue) =>
             SetPropertyValue(Variable, VariableValue, null);
 
         /// <summary>
@@ -46,7 +45,7 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableValue">New value</param>
         /// <param name="VariableType">Property type</param>
-        public static void SetPropertyValue(string Variable, object VariableValue, Type? VariableType)
+        public static void SetPropertyValue(string Variable, object? VariableValue, Type? VariableType)
         {
             // Get property for specified variable
             PropertyInfo? TargetProperty;
@@ -56,20 +55,29 @@ namespace Nitrocid.Misc.Reflection
                 TargetProperty = GetProperty(Variable);
 
             // Set the variable if found
-            if (TargetProperty is not null)
+            SetPropertyValue(TargetProperty, VariableValue);
+        }
+
+        /// <summary>
+        /// Sets the value of a property to the new value dynamically
+        /// </summary>
+        /// <param name="Variable">Property info instance.</param>
+        /// <param name="VariableValue">New value</param>
+        public static void SetPropertyValue(PropertyInfo? Variable, object? VariableValue)
+        {
+            // Check the property
+            if (Variable is null)
             {
-                // The "obj" description says this: "The object whose property value will be set."
-                // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
-                TargetProperty.SetValue(Variable, VariableValue);
+                // Variable not found on any of the modules.
+                DebugWriter.WriteDebug(DebugLevel.E, "Property not found.");
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
             }
-            else
-            {
-                // Variable not found on any of the "flag" modules.
-                DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
-            }
+
+            // The "obj" description says this: "The object whose property value will be set."
+            // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
+            // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
+            DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}. Setting to {1}...", vars: [Variable.Name, VariableValue]);
+            Variable.SetValue(Variable, VariableValue);
         }
 
         /// <summary>
@@ -98,20 +106,28 @@ namespace Nitrocid.Misc.Reflection
                 TargetProperty = GetProperty(Variable);
 
             // Set the variable if found
-            if (TargetProperty is not null)
+            SetPropertyValueInstance(instance, TargetProperty, VariableValue);
+        }
+
+        /// <summary>
+        /// Sets the value of a property to the new value dynamically
+        /// </summary>
+        /// <param name="instance">Instance class to make changes on</param>
+        /// <param name="Variable">Property info instance.</param>
+        /// <param name="VariableValue">New value</param>
+        public static void SetPropertyValueInstance<T>(T instance, PropertyInfo? Variable, object? VariableValue)
+        {
+            // Check the property
+            if (Variable is null)
             {
-                // The "obj" description says this: "The object whose property value will be returned."
-                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}. Setting to {1}...", TargetProperty.Name, VariableValue ?? "<null>");
-                TargetProperty.SetValue(instance, VariableValue);
+                // Variable not found on any of the modules.
+                DebugWriter.WriteDebug(DebugLevel.E, "Property not found in instance type {0}.", vars: [instance?.GetType().Name ?? "<unknown type>"]);
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
             }
-            else
-            {
-                // Variable not found on any of the "flag" modules.
-                DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
-            }
+
+            // This is how to set a value in instance variables.
+            DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}. Setting to {1} in instance type {2}...", vars: [Variable.Name, VariableValue, instance?.GetType().Name ?? "<unknown type>"]);
+            Variable.SetValue(instance, VariableValue);
         }
 
         /// <summary>
@@ -129,20 +145,7 @@ namespace Nitrocid.Misc.Reflection
                 TargetProperty = GetProperty(Variable, VariableType);
 
             // Set the variable if found
-            if (TargetProperty is not null)
-            {
-                // The "obj" description says this: "The object whose property value will be returned."
-                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}. Setting to {1}...", TargetProperty.Name, VariableValue ?? "<null>");
-                TargetProperty.SetValue(instance, VariableValue);
-            }
-            else
-            {
-                // Variable not found on any of the "flag" modules.
-                DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
-            }
+            SetPropertyValueInstance(instance, TargetProperty, VariableValue);
         }
 
         /// <summary>
@@ -158,34 +161,40 @@ namespace Nitrocid.Misc.Reflection
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <param name="VariableType">Property type</param>
-        /// <param name="UseGeneral">Whether to use the general kernel types</param>
         /// <returns>Value of a property</returns>
-        public static object? GetPropertyValue(string Variable, Type? VariableType, bool UseGeneral = false)
+        public static object? GetPropertyValue(string Variable, Type? VariableType)
         {
             // Get property for specified variable
             PropertyInfo? TargetProperty;
             if (VariableType is not null)
                 TargetProperty = GetProperty(Variable, VariableType);
-            else if (UseGeneral)
-                TargetProperty = GetPropertyGeneral(Variable);
             else
                 TargetProperty = GetProperty(Variable);
 
             // Get the variable if found
-            if (TargetProperty is not null)
+            return GetPropertyValue(TargetProperty);
+        }
+
+        /// <summary>
+        /// Gets the value of a property dynamically 
+        /// </summary>
+        /// <param name="Variable">Property info instance.</param>
+        /// <returns>Value of a property</returns>
+        public static object? GetPropertyValue(PropertyInfo? Variable)
+        {
+            // Check the property
+            if (Variable is null)
             {
-                // The "obj" description says this: "The object whose property value will be returned."
-                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}.", TargetProperty.Name);
-                return TargetProperty.GetValue(Variable);
+                // Variable not found on any of the modules.
+                DebugWriter.WriteDebug(DebugLevel.E, "Property not found.");
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
             }
-            else
-            {
-                // Variable not found on any of the "flag" modules.
-                DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
-            }
+
+            // The "obj" description says this: "The object whose property value will be set."
+            // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
+            // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
+            DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}.", vars: [Variable.Name]);
+            return Variable.GetValue(Variable);
         }
 
         /// <summary>
@@ -214,20 +223,28 @@ namespace Nitrocid.Misc.Reflection
                 TargetProperty = GetProperty(Variable);
 
             // Get the variable if found
-            if (TargetProperty is not null)
+            return GetPropertyValueInstance(instance, TargetProperty);
+        }
+
+        /// <summary>
+        /// Gets the value of a property dynamically 
+        /// </summary>
+        /// <param name="instance">Instance class to fetch value from</param>
+        /// <param name="Variable">Property info instance.</param>
+        /// <returns>Value of a property</returns>
+        public static object? GetPropertyValueInstance<T>(T instance, PropertyInfo? Variable)
+        {
+            // Check the property
+            if (Variable is null)
             {
-                // The "obj" description says this: "The object whose property value will be returned."
-                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}.", TargetProperty.Name);
-                return TargetProperty.GetValue(instance);
+                // Variable not found on any of the modules.
+                DebugWriter.WriteDebug(DebugLevel.E, "Property not found.");
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable is not found on any of the modules."));
             }
-            else
-            {
-                // Variable not found on any of the "flag" modules.
-                DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
-            }
+
+            // This is how to get a value in instance variables.
+            DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}.", vars: [Variable.Name]);
+            return Variable.GetValue(instance);
         }
 
         /// <summary>
@@ -245,20 +262,7 @@ namespace Nitrocid.Misc.Reflection
                 TargetProperty = GetProperty(Variable, VariableType);
 
             // Get the variable if found
-            if (TargetProperty is not null && VariableType is not null)
-            {
-                // The "obj" description says this: "The object whose property value will be returned."
-                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
-                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}.", TargetProperty.Name);
-                return TargetProperty.GetValue(Convert.ChangeType(instance, VariableType));
-            }
-            else
-            {
-                // Variable not found on any of the "flag" modules.
-                DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
-                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
-            }
+            return GetPropertyValueInstance(instance, TargetProperty);
         }
 
         /// <summary>
@@ -284,29 +288,6 @@ namespace Nitrocid.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         /// <returns>Property information</returns>
         public static PropertyInfo? GetProperty(string Variable)
-        {
-            Type[] PossibleTypes;
-            PropertyInfo? PossibleProperty;
-
-            // Get types of possible flag locations
-            PossibleTypes = ReflectionCommon.KernelTypes;
-
-            // Get properties of flag modules
-            foreach (Type PossibleType in PossibleTypes)
-            {
-                PossibleProperty = PossibleType.GetProperty(Variable);
-                if (PossibleProperty is not null)
-                    return PossibleProperty;
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// Gets a property from variable name generally
-        /// </summary>
-        /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
-        /// <returns>Property information</returns>
-        public static PropertyInfo? GetPropertyGeneral(string Variable)
         {
             Type[] PossibleTypes;
             PropertyInfo? PossibleProperty;
@@ -365,26 +346,17 @@ namespace Nitrocid.Misc.Reflection
             // Get the properties and get their values
             foreach (PropertyInfo VarProperty in Properties)
             {
-                var PropertyValue = VarProperty.GetValue(VariableType);
-                PropertyDict.Add(VarProperty.Name, PropertyValue);
+                try
+                {
+                    var PropertyValue = VarProperty.GetValue(VariableType);
+                    PropertyDict.Add(VarProperty.Name, PropertyValue);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Error getting property value {VarProperty.Name} for {VariableType.Name}: {ex.Message}");
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
             }
-            return PropertyDict;
-        }
-
-        /// <summary>
-        /// Gets the properties from the type without evaluation
-        /// </summary>
-        /// <param name="VariableType">Variable type</param>
-        /// <returns>Dictionary containing all properties</returns>
-        public static Dictionary<string, Type> GetPropertiesNoEvaluation(Type VariableType)
-        {
-            // Get property for specified variable
-            var Properties = VariableType.GetProperties();
-            var PropertyDict = new Dictionary<string, Type>();
-
-            // Get the properties and get their values
-            foreach (PropertyInfo VarProperty in Properties)
-                PropertyDict.Add(VarProperty.Name, VarProperty.PropertyType);
             return PropertyDict;
         }
 
@@ -403,9 +375,34 @@ namespace Nitrocid.Misc.Reflection
             // Get the properties and get their values
             foreach (PropertyInfo VarProperty in Properties)
             {
-                var PropertyValue = VarProperty.GetValue(instance);
-                PropertyDict.Add(VarProperty.Name, PropertyValue);
+                try
+                {
+                    var PropertyValue = VarProperty.GetValue(instance);
+                    PropertyDict.Add(VarProperty.Name, PropertyValue);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Error getting property value {VarProperty.Name} for {VariableType.Name}: {ex.Message}");
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
             }
+            return PropertyDict;
+        }
+
+        /// <summary>
+        /// Gets the properties from the type without evaluation
+        /// </summary>
+        /// <param name="VariableType">Variable type</param>
+        /// <returns>Dictionary containing all properties</returns>
+        public static Dictionary<string, Type> GetPropertiesNoEvaluation(Type VariableType)
+        {
+            // Get property for specified variable
+            var Properties = VariableType.GetProperties();
+            var PropertyDict = new Dictionary<string, Type>();
+
+            // Get the properties and get their values
+            foreach (PropertyInfo VarProperty in Properties)
+                PropertyDict.Add(VarProperty.Name, VarProperty.PropertyType);
             return PropertyDict;
         }
 

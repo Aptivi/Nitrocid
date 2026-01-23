@@ -228,5 +228,20 @@
         "name": "ExtrasSsh",
         "display": "Extras - SSH",
         "project": "Extras.Ssh"
+    },
+    {
+        "name": "ExtrasChemistry",
+        "display": "Extras - Chemistry",
+        "project": "Extras.Chemistry"
+    },
+    {
+        "name": "ExtrasMods",
+        "display": "Extras - Mods",
+        "project": "Extras.Mods"
+    },
+    {
+        "name": "ExtrasImagesIcons",
+        "display": "Extras - Icons",
+        "project": "Extras.Images.Icons"
     }
 ]

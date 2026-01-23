@@ -18,16 +18,18 @@
 //
 
 using Nitrocid.Kernel;
-using Nitrocid.Shell.ShellBase.Help;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Help;
+using Terminaux.Shell.Commands;
 using Nitrocid.Files;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Files.Paths;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
+using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Users;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -44,6 +46,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
+                !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
+                TextWriters.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, parameters.CommandText);
+                return -4;
+            }
+
             if (!KernelEntry.SafeMode)
             {
                 string CommandMode = parameters.ArgumentsList[0].ToLower();
@@ -62,7 +72,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                             {
                                 TargetLanguage = parameters.ArgumentsList[1];
                                 TargetLanguagePath = FilesystemTools.NeutralizePath(TargetLanguage + ".json", PathsManagement.GetKernelPath(KernelPathType.CustomLanguages));
-                                if (!(Parsing.TryParsePath(TargetLanguagePath) && Checking.FileExists(TargetLanguagePath)) && !LanguageManager.Languages.ContainsKey(TargetLanguage))
+                                if (!(FilesystemTools.TryParsePath(TargetLanguagePath) && FilesystemTools.FileExists(TargetLanguagePath)) && !LanguageManager.Languages.ContainsKey(TargetLanguage))
                                 {
                                     TextWriters.Write(Translate.DoTranslation("Language not found or file has invalid characters."), true, KernelColorType.Error);
                                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
@@ -110,7 +120,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         {
                             foreach (string Language in LanguageManager.ListLanguages(LanguageListTerm).Keys)
                             {
-                                SeparatorWriterColor.WriteSeparator(Language, true);
+                                SeparatorWriterColor.WriteSeparatorColor(Language, KernelColorTools.GetColor(KernelColorType.ListTitle));
                                 TextWriters.Write("- " + Translate.DoTranslation("Language short name:") + " ", false, KernelColorType.ListEntry);
                                 TextWriters.Write(LanguageManager.Languages[Language].ThreeLetterLanguageName, true, KernelColorType.ListValue);
                                 TextWriters.Write("- " + Translate.DoTranslation("Language full name:") + " ", false, KernelColorType.ListEntry);

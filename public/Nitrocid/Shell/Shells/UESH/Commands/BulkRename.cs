@@ -18,11 +18,8 @@
 //
 
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Security.Permissions;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.IO;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -44,19 +41,19 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             string newName = parameters.ArgumentsList[2];
 
             // Get the list of files from the pattern
-            var files = Listing.GetFilesystemEntries(targetDir, pattern);
+            var files = FilesystemTools.GetFilesystemEntries(targetDir, pattern);
 
             // Enumerate the files and rename them
             int fileNo = 1;
             foreach (var file in files)
             {
                 // Check to see if the path is really a file
-                if (!Checking.FileExists(file))
+                if (!FilesystemTools.FileExists(file))
                     continue;
 
                 // Now, construct the file name and rename it to that
                 string finalName = $"{newName}-{fileNo}{Path.GetExtension(file)}";
-                Moving.MoveFileOrDir(file, FilesystemTools.NeutralizePath(finalName, targetDir));
+                FilesystemTools.MoveFileOrDir(file, FilesystemTools.NeutralizePath(finalName, targetDir));
 
                 // Increment the number
                 fileNo += 1;

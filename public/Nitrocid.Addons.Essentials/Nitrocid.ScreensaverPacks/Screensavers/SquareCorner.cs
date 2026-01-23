@@ -20,6 +20,7 @@
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
@@ -53,7 +54,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 SquareCornerMaximumGreenColorLevel = ScreensaverPackInit.SaversConfig.SquareCornerMaximumGreenColorLevel,
                 SquareCornerMaximumBlueColorLevel = ScreensaverPackInit.SaversConfig.SquareCornerMaximumBlueColorLevel,
             };
-            ColorTools.LoadBackDry(0);
+            ConsoleColoring.LoadBackDry(0);
         }
 
         /// <inheritdoc/>

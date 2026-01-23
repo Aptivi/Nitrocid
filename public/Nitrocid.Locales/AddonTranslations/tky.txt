@@ -114,10 +114,12 @@ Hata ayıklama günlüğü kaldırma başarısız oldu: {0}
 Dizin değiştirme başarısız oldu: {0}
 Adresi belirtin
 Zaman dilimi yanlış belirtildi.
+Geçersiz profil seçimi.
 {0} profiline {1} ile bağlanmaya çalışılıyor...
 Güvenli modda modların ayrıştırılmasına izin verilmez.
 Yol ne bir dosya ne de bir dizindir.
 Bir dosyanın farklı bir dizin veya ad altında başka bir kopyasını oluşturur.
+Bir dosyayı başka bir dizine taşır
 {0} ({1}) ile eşleş: {2}
 {0} ile Eşleş: {1}
 Harcanan zaman: {0} milisaniye
@@ -618,6 +620,7 @@ Ekran koruyucu hata ayıklamasını etkinleştir
 Ekran koruyucular için hata ayıklamayı etkinleştirir. Lütfen hata ayıklama günlüğünü hızla doldurabileceğini ve kullanılan ekran koruyucuya bağlı olarak ekran koruyucuyu biraz yavaşlatabileceğini unutmayın. Yalnızca çekirdek hata ayıklaması tanılama amaçları için etkinleştirildiğinde çalışır.
 {0} kılavuz sayfası geçersiz.
 Bu kılavuz sayfasını doldurmayı düşünün.
+Mod kılavuzu
 Kullanılabilir çekirdek argümanları:
 Argümanda kurtarılamaz hata:
 Bir dizeyi SHA512 kullanarak şifreler
@@ -1612,6 +1615,7 @@ Bir dizindir
 Seçildi
 Dosya boyutu
 Dosya yolu
+'{0}' seçildi. Çıkmak ve seçimi onaylamak için ESC'ye basın.
 Klasör açılamıyor veya dosya seçilemiyor
 Yerel bir klasöre giden yolu veya tam yolu girin.
 Daha fazla bilgi için SPACE tuşuna basın
@@ -3218,6 +3222,7 @@ Bu komutun çalışma şeklini değiştiren aşağıdaki argümanları vardır:
 Belirtilmemiş argüman açıklaması
 Bir fonksiyondan tüm kullanılabilir fonksiyon parametrelerini listeler
 Alarmlarınızı yönetin
+Alarmlarınızı etkileşimli bir TUI'de yönetin
 Uzak bir çekirdek örneğini yeniden başlatır
 Uzak örnekteki çekirdek kapatılacak
 Eski ayarlar stilini kullanır
@@ -3390,7 +3395,9 @@ Hangi asimetrik kodlama sürücüsünü kullanmak istersiniz?
 Önyükleyici stili
 Tercihlerinize uygun bir önyükleyici stili seçin.
 Önyükleyici varsayılan seçim zaman aşımı
+Varsayılan seçime önyükleme yapmak için saniye cinsinden zaman aşımı.
 Önyükleyici varsayılan seçimi
+Varsayılan önyükleme girişi seçimi. Bu sayı sıfır tabanlıdır, bu nedenle ilk öğe dizin 0'dır, vb.
 'Nitrocid Ana Sayfasını' etkinleştirin
 Neler olup bittiğini bir bakışta görebilmenizi sağlayan 'Nitrocid Ana Sayfası'nı etkinleştirir.
 Etkileşimli TUI yerleşik tuş bağlama arka plan rengi
@@ -3703,7 +3710,26 @@ Bu tema ile nostaljiyi geri getirin!
 Terminaliniz ahşap plakalardan oluşmaktadır
 Farklı meyvelerin Çin desenlerinden esinlenilmiştir
 Ekstralar - CRC32C (Castagnoli)
+Çekirdek sürümünü yazdırır
+API sürümünü yazdırır
 Hata ayıklama dosyaları silinemiyor
+Çekirdek yapılandırması düzgün çalışmayacaktır. Daha fazla bilgi için çekirdek hata ayıklayıcısına bakın.
+Hiçbir temel çekirdek yapılandırması belirtilmediğinde yapılandırma değişkenleri kontrol edilemez.
+Hiçbir anahtar belirtilmediğinde yapılandırma değişkenleri kontrol edilemez.
+Geçersiz içerikle özel bir ayar kaydedilmeye çalışılıyor. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın.
+Geçersiz içerikle bir temel ayarı kaydetmeye çalışılıyor. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın
+Açılış ayarları girişleri alınamadı.
+Bu değeri ayarlayabilmek için öncelikle ikon eklentisinin kurulu olması gerekiyor.
+Bir giriş seçin
+Tümünü sıfırla
+Girişi sıfırla
+Belirtilen argüman türü geçerli değil
+Yapılandırma girdilerinden bir veya daha fazlası geçersiz değişkenlere veya numaralandırmalara sahip ve düzeltilmesi gerekiyor. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın.
+Bu isimde bir kültür bulunmamaktadır.
+Sesli ipucu eyleminizi işlerken bir hata oluştu.
+Eklenti derlemesinden varolmayan sınıf türü döndürülemez
+Bu sınıf bir eklenti sınıfı değildir
+Kapatma sesi çalınıyor...
 Bu tarihten sonra Nitrocid KS'nin bu sürümünü desteklemeyeceğiz
 Desteğe devam etmek istiyorsanız, desteklenen sürüme en kısa sürede yükseltme yaptığınızdan emin olun.
 Nitrocid KS'nin bu sürümü artık desteklenmiyor.
@@ -3720,9 +3746,12 @@ Takma adlar yüklenemedi
 Hızlı arama girişleri yüklenemedi
 Ortam değişkenleri yüklenemedi
 Alarm dinleyicisi yüklenemedi
+Eklentiler sonlandırılamadı
 MOTD ve MAL yüklenemedi
 Kabuk komut geçmişleri yüklenemedi
 Uzantı işleyicileri yüklenemedi
+Modlar yükleniyor...
+Modlar yüklenemedi
 İsteğe bağlı bileşenleri başlatmaya çalışırken hatalar oluştu.
 Genel değişkenleri sıfırlama başarısız oldu
 Kabuk komut geçmişleri kaydedilemedi
@@ -3744,12 +3773,26 @@ Tüm çekirdek iş parçacıklarını durdurma başarısız oldu
 Bileşenleri sıfırlamaya çalışırken hatalar oluştu.
 İstisna
 Daha fazla bilgi için çekirdek hata ayıklama günlüklerine bakın.
+Böyle bir sesli ipucu türü bulunmamaktadır.
+Yedek ayarlara ulaşılamıyor
+Tüm ayar girişleri sıfırlanamıyor
+Bu ayarlar girişi için sıfırlanamıyor
+Modüllerin hiçbirinde değişken bulunamadı.
+Ortam ekran koruyucular için gerekli olan sesli ipucu alınamıyor.
+Bir hata nedeniyle ağ bağlantısı düzgün bir şekilde kurulmamış olabilir.
+Sarmalanabilir olarak ayarlanmamış bir komut arabelleğe alınamaz.
 Belirtilmemiş anahtar açıklaması
 Bir sürece giden yol
 Bir işleme geçirilecek argümanlar
 Yardım girişini gösterme komutu
+Komut çıktısını parametre olarak başka bir komuta iletir
+Kaynak komutu, çıktısını hedef komuta son parametre olarak iletir
 Kaynak komut çıktısına dayalı olarak argüman oluştururken yürütülecek hedef komut
+Kaynak komutunun çıktısının tek tırnaklı argüman olarak mı yoksa tırnaksız argüman olarak mı geçirileceği
 Çıktısını sarma komutu
+Kaynak komut yürütme başarısız oldu.
+Hedef komut yürütme başarısız oldu. İçerikler düzgün bir şekilde doldurulmamış olabilir. Yürütülen komut
+Boru kırıldı.
 Yardım girişini göstermek için argüman
 Sıfırdan başlayan oturum numarası
 Sorgulanacak kullanıcı adı
@@ -3757,14 +3800,25 @@ Verilecek veya reddedilecek izin türü
 İnkar etmek yanlış, kabul etmek doğrudur
 Yeni görüntü adı veya görüntü adını silmek için 'temizle'
 Üç harfli dil kimliği veya tercih edilen dili temizlemek için 'temizle'
+Tercih edilen kullanıcı kültürünü değiştirir
+Kültür Kimliği veya tercih edilen kültürü temizlemek için 'temizle'
+Tercih edilen kullanıcı kültürü {0} olarak ayarlandı. Tekrar oturum açmak isteyebilirsiniz.
+Geçersiz kültür
+Tercih edilen kültür
 Geçersiz oturum GUID'si
 Böyle bir oturum GUID'si yok
+Bilinmeyen tip
+Bilinmeyen parametre
+Türlerin listesi
+Oturum GUID'sini kullanarak hata ayıklama günlüğü bilgilerini kolayca getirir
 Bulunacak Oturum GUID'i
 İstisna numarası
 Sorgulanacak alan adı
 Sorgulanacak özellik adı
 Sorgulanacak eklenti adı
+Eklentiden genel statik tür adı
 Sorgulanacak genel statik türden fonksiyon adı
+Belirtilen eklentiden tüm kullanılabilir türleri listeler
 Sorgu için açılış adı
 0 ile 255 arasında değişen bayt sayısı
 Bayt pozisyon numarası
@@ -3786,6 +3840,10 @@ Değiştirilecek bir kelime veya ifade
 Yerine konulacak bir kelime veya ifade
 Satır numarası (tekil veya aralığın başlangıcı) veya tüm satırlarda değiştirilecek 'tümü'
 Değiştirilecek ifadeleri eşleştirmek için düzenli bir ifade
+Geçersiz ülke
+Ülke için bir dil seçin
+Geçersiz dil seçimi
+Evet
 Eklenecek yeni grup adı
 Eklenecek yeni kullanıcı adı
 Kullanılacak yeni şifre
@@ -3812,8 +3870,12 @@ Bulunan tüm dosyaların adını değiştirmek için Yeni ad
 Dosyaya giden yol
 Ya ekleme ya da çıkarma
 Öznitelik adı
+Kültürü değiştirir
+Kültür Kimliği değiştirilecek
+Sistem kültürü yerine kullanıcı kültürünü değiştirir
 Değiştirilecek yeni ana bilgisayar adı
 Dil Kimliği
+Ülkeyi kullanarak dili değiştirir (bir dil seçmeniz istenebilir)
 Kullanılacak yeni mesaj
 Eğik çizgiyle bölmeye cevaplar
 Ekrana yazdırılacak soru
@@ -3889,6 +3951,7 @@ Ekran koruyucu adı veya 'rastgele'
 Arama yapmak için düzenli ifade
 Hedef dosya
 Aranacak kelime veya ifade
+Eklenti açılış ayarlarını açar
 Ayarlanacak değer
 Yapılandırma değişken adı
 Uygulayıcı adı
@@ -3914,6 +3977,7 @@ Karma dosyası veya beklenen karma
 Test edilecek dosya
 Oluşturulacak ZIP dosya adı
 Sıkıştırılacak yol
+Bu emojiyi görüntüleyebilmek için öncelikle ikon eklentisinin kurulması gerekiyor.
 Eklenecek not içerikleri
 Not numarası
 Git deposuna sahip bir dizine giden yol
@@ -3953,6 +4017,8 @@ Tüm hatırlatıcıları listeler
 Tüm hatırlatıcıları kaydeder
 Bir vCard iletişim dosyasına veya bir MeCard temsiline giden bir yol
 İletişim numarası
+Düzenlemek...
+Bu kişi için yeni bir ad girin
 Kullanılacak enlem
 Kullanılacak boylam
 Weather.com API anahtarı
@@ -3961,6 +4027,7 @@ OpenWeatherMap API anahtarı
 Bir göreve ekleme, kaldırma, tamamlanmış olarak işaretleme veya tamamlanmış olarak işaretini kaldırma
 Tüm görevleri listelemek, kaydetmek veya yüklemek isteyip istemediğiniz
 Pomodoro zamanlayıcısı
+Pomodoro
 Pomodoro zamanlayıcısı hazır
 Dört yinelemede Pomodoro zamanlayıcı numarası {0}
 Kısa bir mola
@@ -4011,6 +4078,7 @@ Hedef dosya veya dizine giden yol
 Yerel dosyaya giden yol
 Chmod'a göre izin numaraları
 Aktarım türünün ASCII mi yoksa İkili mi olduğunu belirtir
+{0} için sembolik bağlantı
 Başlık anahtarı
 Başlık değeri
 HTTP isteği
@@ -4018,12 +4086,39 @@ Yüklenecek dosya
 Yüklenecek dize
 Kullanıcı aracısı dizesi
 Giriş yapmak için e-posta adresi
+Klasör oluştur
+Taşınmak...
+Hepsini taşı...
+Klasörün adını değiştir
+Klasörü kaldır
+Mesajı kaldır
+Tümünü kaldır...
+Klasör veya mesaj açılamıyor
+Yeni dizin adını yazın.
+Dizin oluşturuluyor...
+Klasör oluşturulamıyor
+Bu mesajı taşımak için yeni bir dizin seçin.
+Mesaj taşınıyor...
+Mesaj taşınamıyor
+Aynı göndericiye ait tüm mesajları taşımak için yeni bir dizin seçin.
+Mesajlar göndericiye göre taşınıyor {0}...
+Aynı göndericiye ait tüm iletiler taşınamıyor
+{0} dizininin yeniden adlandırılacağı yeni dizin adını yazın.
+Dizin yeniden adlandırılıyor...
+Klasörün adı değiştirilemiyor
+Dizin kaldırılıyor...
+Klasör kaldırılamıyor
+Mesaj kaldırılıyor...
+Mesaj silinemiyor
+{0} göndericisine ait mesajlar kaldırılıyor...
+Aynı göndericiden gelen tüm mesajlar silinemez
 Posta dizin adı
 Sayfa numarası
 Mesaj Kimliği
 Gönderen adı
 Eski posta dizini adı
 Yeni posta dizini adı
+Etkileşimli posta yönetimi
 Bağlanılacak SFTP sunucusu
 RSS besleme bağlantısı
 Besleme numarası
@@ -4044,13 +4139,132 @@ Synth dosyasının yolu
 Bağlanılacak SSH sunucusu
 Kimlik doğrulaması için kullanıcı adı
 Uzaktan yürütme komutu
+Konsola bir kimyasal madde hakkında bilgi yazdırır.
+Bir maddenin adı, sembolü veya atom numarası
+Tüm kimyasal maddelere ait bilgileri konsola yazdırır.
+Atom numarası olan hiçbir madde yoktur
+Sembolü veya ismi olan bir madde yoktur
+Atom numarası
+Atom kütlesi
+Sembol
+Özet
+Faz
+Periyodik tablodaki konumu
+Koordinatlarda pozisyon
+Keşifçi
+Tarafından adlandırıldı
+Elektron konfigürasyonu
+Modu başlat (seç)
+Mod başlat (giriş)
+Durdurma modu
+Modu yeniden yükle
+Modu yükle (seç)
+Mod kurulumu (giriş)
+Modu kaldır
+Tümünü başlat
+Hepsini durdur
+Tümünü yeniden yükle
+Mod derlemesinden varolmayan sınıf türü döndürülemez
+'{1}' modunda '{0}' fonksiyonu bulunamadı.
+'{1}' modunda '{0}' özelliği bulunamadı.
+'{1}' modunda '{0}' alanı bulunamadı.
+Bu sınıf bir mod sınıfı değildir
+Diller
+Giriş noktası
+Başlatmak istediğiniz moda giden bir yol girin
+Mod başlatılamadı
+Yüklemek istediğiniz modun yolunu girin
+Mod kurulumu başarısız oldu
+Bu mod başlatılamıyor veya durdurulamıyor!
+Bir modun başlatılması, durdurulması, bilgi alınması, yeniden yüklenmesi, kurulması veya kaldırılması gerekip gerekmediği
+Mod adı veya dosya adı
+Tüm modları listelemek, yeniden yüklemek, durdurmak, başlatmak veya etkileşimli olarak yönetmek
+Mod adı
+Kültür ve dil ayarları
+Bu, kültürü ve dili yapılandırmanıza olanak tanır
+Saat ve tarih ayarları
+Bu, saati ve tarihi yapılandırmanıza olanak tanır
+Önyükleyici ayarları
+Bu, önyükleyiciyi yapılandırmanıza olanak tanır
+Nitrocid Ana Sayfası
+Bu, Nitrocid Ana Sayfasını yapılandırmanıza olanak tanır
+Çekirdek güncelleme ayarları
+Bu, çekirdek güncellemelerini yapılandırmanıza olanak tanır
+Çekirdek hata ayarları
+Bu, çekirdek hatalarını yapılandırmanıza olanak tanır
+Çekirdek güç ayarları
+Bu, çekirdek güç mekanizmasını yapılandırmanıza olanak tanır
+Çekirdek renk şemaları
+Bu, birden fazla çekirdek renk şeması ayarlamanıza olanak tanır
+Modern oturum açma işleyicisi ayarları
+Bu, modern oturum açma işleyicisini yapılandırmanıza olanak tanır
+Yardım sistemi
+Bu, kabuk yardım sistemini yapılandırmanıza olanak tanır
+Kabuk ön ayarları
+Bu, kabuk ön ayarlarını yapılandırmanıza olanak tanır
+Uzaktan hata ayıklayıcı ayarları
+Bu, uzaktan hata ayıklayıcıyı yapılandırmanıza olanak tanır
 Birleşik gecikme
 Doğruysa, tüm ekran koruyucular için birleşik yazma gecikmesini etkinleştirir. Aksi takdirde, ekran koruyucuya özgü yapılandırılmış gecikme değerlerini kullanır.
+Bu bölümde tüm ses ayarları listelenmektedir.
+Ses ayarları
+Ses desteğini etkinleştir
+Sistem ipuçları için tüm ses sistemini etkinleştirir
+Klavye ipuçlarını etkinleştir
+Her tuş vuruşunda klavye ipuçlarının çalınıp çalınmayacağı
+Başlangıç seslerini etkinleştir
+Başlangıç sesinin çalınıp çalınmayacağı
+Kapatma seslerini etkinleştir
+Kapatma sesinin çalınıp çalınmayacağı
+Navigasyon seslerini etkinleştir
+Her tuşa basıldığında navigasyon sesinin çalınıp çalınmayacağı
+Düşük öncelikli bildirim seslerini etkinleştir
+Düşük öncelikli uyarılar için bildirim sesinin çalınıp çalınmayacağı
+Orta öncelikli bildirim seslerini etkinleştir
+Orta öncelikli uyarılar için bildirim sesinin çalınıp çalınmayacağı
+Yüksek öncelikli bildirim seslerini etkinleştir
+Yüksek öncelikli uyarılar için bildirim sesinin çalınıp çalınmayacağı
+Ortam ekran koruyucu ses efektlerini etkinleştir
+Ortam ekran koruyucu ses efektlerinin çalınıp çalınmayacağı
+Ortam ekran koruyucu ses efektlerini yoğunlaştırın
+Ortam ekran koruyucu ses efektlerinin yoğunlaştırılması gerekip gerekmediği
+Ses ipucu ses seviyesi
+Sesli ipuçlarının ne kadar yüksek olmasını istediğinizi belirtin
+Ses teması
+Sesli ipuçları için hangi ses temasını kullanmak istiyorsunuz?
+Metin düzenleyici ayarları
+Bu, metin düzenleyicisini yapılandırmanıza olanak tanır
+Hex düzenleyici ayarları
+Bu, hex düzenleyiciyi yapılandırmanıza olanak tanır
+RSS başlık ayarları
+Bu, RSS başlıklarını yapılandırmanıza olanak tanır
+Fare ayarları
+Bu, fareyi yapılandırmanıza olanak tanır
+Hata ayıklama ayarları
+Bu, hata ayıklama rutinini yapılandırmanıza olanak tanır
+Estetik
+Bu, çekirdek estetiğini yapılandırmanıza olanak tanır
+Konsolun ortasına yazılmış büyük bir Hoş Geldiniz sözcüğünü gösterir; hoş geldiniz paspaslarına benzer
+İlerlemeyi göster
+İlerleme gösterilsin mi gösterilmesin mi
+Bu, renkleri yapılandırmanıza olanak tanır
+Bu bölüm Solver'ı yapılandırmanıza olanak tanır.
+Bu bölüm SpeedPress'i yapılandırmanızı sağlar.
+Bu bölüm Meteor ve ShipDuet'i yapılandırmanızı sağlar.
+Bu bölüm çekirdek değişiklik sisteminin nasıl çalışacağını yapılandırmanızı sağlar.
 Bu bölüm zamanlayıcı uygulamasının nasıl çalışacağını yapılandırmanızı sağlar.
 Bu bölüm pomodoro zamanlayıcı uygulamasının nasıl çalışacağını yapılandırmanızı sağlar.
 Pomodoro zamanlayıcısı için Figlet'i etkinleştirin
 Etkinleştirilirse, pomodoro zamanlayıcısı için figlet kullanılacaktır. Figlet etkinleştirildiğinde zamanı düzgün bir şekilde gösterebilmek için büyük bir konsol ekranına ihtiyaç duyduğunu lütfen unutmayın.
 Pomodoro zamanlayıcısı için Figlet yazı tipi
+Saat rampası ayarları
+Bu, saat rampasını yapılandırmanıza olanak tanır
+Dakika rampa ayarları
+Bu, dakika rampasını yapılandırmanıza olanak tanır
+Saniye rampa ayarları
+Bu, saniye rampasını yapılandırmanıza olanak tanır
+Rampa ayarları
+Bu, rampaları yapılandırmanıza olanak tanır
 Metninizi koyu kırmızı bir arka planda, satır altında gösterir.
 Ekranda rastgele dağılan rastgele karakterler.
 Ekranın ortasında basit bir tarih ve saat bulunur ve güncel zamana göre rengi değişir.
@@ -4064,7 +4278,64 @@ Yeşil cetvellerin konumunu takip ettiği, dalga şeklinde hareket eden blok.
 Renkli bir figür metninde rastgele tek bir karakter gösterir.
 Kumarhanelerde bulunan slot makineleri gibi seçilen bir kelimeyi size gösterir.
 Size iki neon renk (camgöbeği ve fuşya) arasında değişen renkli bir yazı gösterir.
+Kültür ayarları
+Bu, takvim ekran koruyucusu tarafından kullanılan kültürü yapılandırmanıza olanak tanır
+İlk rampa ayarları
+Bu, ilk rampayı yapılandırmanıza olanak tanır
+İkinci rampa ayarları
+Bu, ikinci rampayı yapılandırmanıza olanak tanır
+Üçüncü rampa ayarları
+Bu, üçüncü rampayı yapılandırmanıza olanak tanır
+Red Hat Linux işletim sisteminin bir yan ürünü olan Alma Linux'tan renk şemaları
+Bir Linux işletim sistemi olan Arch Linux'tan renk şemaları
+EndeavourOS'den renk şemaları, bir Linux işletim sistemi olan Arch Linux'un bir yan ürünüdür
+Fedora'dan renk şemaları, Linux işletim sistemi Red Hat'in bir yan ürünüdür
+Bir Linux işletim sistemi olan Gentoo'dan renk şemaları
+Renkli bir mandala oluşturan yontulmuş desen renkleri
+Popüler bir Linux işletim sistemi olan Ubuntu'nun yan ürünü olan Kubuntu'dan renk şemaları
+Popüler bir Linux işletim sistemi olan Ubuntu'nun resmi olmayan bir yan ürünü olan Linux Mint'ten renk şemaları
+Popüler bir Linux işletim sistemi olan Ubuntu'nun yan ürünü olan Lubuntu'dan renk şemaları
+Manjaro'dan renk şemaları, bir Linux işletim sistemi olan Arch Linux'un bir yan ürünüdür
+Bir Linux işletim sistemi olan openSUSE'den renk şemaları
+Bir Linux işletim sistemi olan Red Hat'ten renk şemaları
+Dikkat çekici metinler için dinamik vurgu renklerine sahip kırmızı tonlar
+Linux işletim sistemi Red Hat'in bir yan ürünü olan Rocky Linux'tan renk şemaları
+Bir Linux işletim sistemi olan Slackware'den renk şemaları
+Popüler bir Linux işletim sistemi olan Ubuntu'nun bir yan ürünü olan Xubuntu'dan renk şemaları
+Popüler bir Linux işletim sistemi olan Ubuntu'nun resmi olmayan bir yan ürünü olan Zorin OS'den renk şemaları
+Ekstralar - Kimya
+Ekstralar - Modlar
+Ekstralar - Simgeler
 Ay adlarını, takvimi vb. değiştirmek için hangi kültür kullanılıyor?
+'Nitrocid Ana Sayfası' widget'larını etkinleştir
+Ekranın sağ tarafındaki 'Nitrocid Ana Sayfası' widget'larını etkinleştirir.
+'Nitrocid Ana Sayfası' RSS beslemesini etkinleştir
+Ekranın sağ tarafındaki 'Nitrocid Ana Sayfası' RSS besleme widget'ını etkinleştirir.
+'Nitrocid Ana Sayfası' widget'ı
+'Nitrocid Ana Sayfası'nda görüntülenecek bir widget'ı seçer.
+Bildirim kenarlığı ayarları
+Bu, bildirim kenarlığını yapılandırmanıza olanak tanır
+Genel kenarlık ayarları
+Bu, genel kenarlığı yapılandırmanıza olanak tanır
+Görünüm ayarları
+Bu, saat rampa görünümünü yapılandırmanıza olanak tanır
+Bu, saat rampa rengini yapılandırmanıza olanak tanır
+Bu, dakika rampa görünümünü yapılandırmanıza olanak tanır
+Bu, dakika rampa rengini yapılandırmanıza olanak tanır
+Bu, saniye rampa görünümünü yapılandırmanıza olanak tanır
+Bu, saniye rampa rengini yapılandırmanıza olanak tanır
+Başlangıç konumu renk ayarları
+Bu, başlangıç konumu renklerini yapılandırmanıza olanak tanır
+Bitiş konumu renk ayarları
+Bu, bitiş konumu renklerini yapılandırmanıza olanak tanır
+Rampa çubuğu ayarları
+Bu, rampa çubuğunu yapılandırmanıza olanak tanır
+Bu, rampa görünümünü yapılandırmanıza olanak tanır
+Bu, rampa renklerini yapılandırmanıza olanak tanır
+Degrade başlangıç ayarları
+Bu, başlangıç degrade renklerini yapılandırmanıza olanak tanır
+Degrade bitiş ayarları
+Bu, bitiş degrade renklerini yapılandırmanıza olanak tanır
 Maksimum arka plan renk seviyesi
 Maksimum arka plan renk seviyesi. Kabul edilen minimum değer 0 ve kabul edilen maksimum değer 255'tir.
 Maksimum çizgi renk seviyesi
@@ -4073,6 +4344,7 @@ Maksimum metin renk seviyesi
 Maksimum metin renk seviyesi. Kabul edilen en düşük değer 0 ve kabul edilen en yüksek değer 255'tir.
 Sistem kültürünü kullan
 Ekran koruyucunun ana çekirdek ayarları veya bu ekran koruyucu ayarları tarafından ayarlanan kültürü kullanıp kullanmadığı.
+Bu, ilk rampa görünümünü yapılandırmanıza olanak tanır
 İlk için bilgi metni
 Geçerli saat için bilgi metninizin nasıl gösterildiğini yazın. 24'ten {0} geçerli saat için. İlk çubuk için sol üst köşe karakteri
 İlk çubuk için sol üst köşe karakteri
@@ -4083,6 +4355,7 @@ Geçerli saat için bilgi metninizin nasıl gösterildiğini yazın. 24'ten {0} 
 İlk çubuk için alt çerçeve karakteri
 İlk çubuk için sol çerçeve karakteri
 İlk çubuk için sağ çerçeve karakteri
+Bu, ilk rampa rengini yapılandırmanıza olanak tanır
 İlk Çubuğun Rengi
 İlk için minimum kırmızı renk seviyesi
 İlk için minimum yeşil renk seviyesi
@@ -4092,6 +4365,7 @@ Geçerli saat için bilgi metninizin nasıl gösterildiğini yazın. 24'ten {0} 
 İlk için maksimum yeşil renk seviyesi
 İlk için maksimum mavi renk seviyesi
 İlk için maksimum renk seviyesi
+Bu, ikinci rampa görünümünü yapılandırmanıza olanak tanır
 İkinci için bilgi metni
 Geçerli dakika için bilgi metninizin nasıl gösterildiğini yazın. 60 saniyeden geçerli dakika için {0}. İkinci çubuk için sol üst köşe karakteri
 İkinci çubuk için sol üst köşe karakteri
@@ -4102,6 +4376,7 @@ Geçerli dakika için bilgi metninizin nasıl gösterildiğini yazın. 60 saniye
 İkinci çubuk için alt çerçeve karakteri
 İkinci çubuk için sol çerçeve karakteri
 İkinci çubuk için sağ çerçeve karakteri
+Bu, ikinci rampa rengini yapılandırmanıza olanak tanır
 İkinci Çubuğun Rengi
 İkinci için minimum kırmızı renk seviyesi
 İkinci için minimum yeşil renk seviyesi
@@ -4111,6 +4386,7 @@ Geçerli dakika için bilgi metninizin nasıl gösterildiğini yazın. 60 saniye
 İkinci için maksimum yeşil renk seviyesi
 İkinci için maksimum mavi renk seviyesi
 İkinci için maksimum renk seviyesi
+Bu, üçüncü rampa görünümünü yapılandırmanıza olanak tanır
 Üçüncü çubuk için sol üst köşe karakteri
 Üçüncü çubuk için sağ üst köşe karakteri
 Üçüncü çubuk için sol alt köşe karakteri
@@ -4121,6 +4397,7 @@ Geçerli dakika için bilgi metninizin nasıl gösterildiğini yazın. 60 saniye
 Üçüncü çubuk için sağ çerçeve karakteri
 Üçüncü için bilgi metni
 Geçerli saniye için bilgi metninizin nasıl gösterildiğini yazın. 60 üçüncüden geçerli saniye için {0}.
+Bu, üçüncü rampa rengini yapılandırmanıza olanak tanır
 Üçüncü Çubuğun Rengi
 Üçüncü için minimum kırmızı renk seviyesi
 Üçüncü için minimum yeşil renk seviyesi
@@ -4132,61 +4409,6 @@ Geçerli saniye için bilgi metninizin nasıl gösterildiğini yazın. 60 üçü
 Üçüncü için maksimum renk seviyesi
 Progresses, etkinleştirilirse rastgele renkler seçecektir. Aksi takdirde, yapılandırmadaki renkleri kullanın.
 Renk döngüsü etkinleştirilirse, Progresses'ta renkleri değiştirmeden önce kaç tik var? 1 tik = 0,5 üçüncü
-Tamamlandı! Lütfen dilleri sonlandırmak için uygun argümanlarla Nitrocid.Locales uygulamasını kullanın. Bu yolu kullanabilirsiniz:
-Çekirdek yapılandırması düzgün çalışmayacak. Geçersiz anahtarlar
-Geçersiz içerikle özel bir ayar kaydetmeye çalışıyor. Geçersiz anahtarlar
-Geçersiz içerikle temel bir ayar kaydetmeye çalışıyor. Geçersiz anahtarlar
-Kara listeye bir mod ekler
-Kara listeden bir mod kaldırır
-Bu yapılandırma girişleri geçersiz değişkenlere veya numaralandırmalara sahiptir ve düzeltilmesi gerekir:
-Tüm modları başlatır
-Konsolda renkli bir ayırıcı yazdırır
-Konsolda biçimlendirme ve renkle bir ayırıcı yazdırır
-Tüm modları yeniden yükler
-İstatistikler
-Geçerli test istatistiklerini gösterir
-Hepsini test eder
-Tüm cepheleri test eder
-Bölüm seçimine geri döner
-Çalıştırılacak bir test cephesi seçer
-Bu test isteğe bağlı parametreler içerir. Test parametrelerine eklenecek parametrenin değerini girin.
-Parametre sayısı
-Evet!
-Tekrar dene
-Test beklendiği gibi çalıştı mı?
-Test başarısız oldu. Beklenen değer {0}, ancak gerçek değer {1}.
-Test beklenmedik şekilde başarısız oldu.
-Başarılı testler:
-Başarısız testler:
-Çalıştırılacak testler:
-Fonksiyonlar listesi alınamıyor
-Özellikler listesi alınamıyor
-Alanlar listesi alınamıyor
-Sisteminizdeki dil ayarlarınıza göre uygun dil
-Sonlandırma eklentileri yüklenemedi
-Çekirdek değişiklikleri
-Seçilen '{0}'. Çıkmak ve seçimi onaylamak için ESC tuşuna basın.
-Değişken {0} modüllerin hiçbirinde bulunamadı.
-Metot türü temel Nitrocid tür listesinde tanımlı değil.
-Var olmayan mod ile özel özellik yürütülemiyor
-Var olmayan mod ile özel alan yürütülemiyor
-Oturum numarasını kullanarak hata ayıklama günlüğü bilgilerini kolayca getirir
-Evet, ayarlayın!
-Hayır, ayarlamayın.
-Dilden çıkarım yapmak için sistem dil ayarlarını kullanır
-Için özellik bilgisi yok
-Pomodoro Zamanlayıcısı
-Geçersiz profil seçimi.
-Dil Değiştirirken Kültürü Değiştir
-Dil değiştirirken ay adlarını, takvimi vb. değiştirin.
-Ay adlarını, takvimi vb. değiştirmek için geçerli dilin hangi çeşidi kullanılıyor?
-Varsayılan seçime önyükleme yapmak için saniye cinsinden zaman aşımı.
-Varsayılan önyükleme girişi seçimi. Bu sayı sıfır tabanlıdır, bu nedenle ilk öğe dizin 0'dır, vb.
-Bu bölüm kabuk ön ayar ayarlarını listeler.
-Kabuk ön ayar ayarları
-Sarma listesi çıktıları
-Geçerli konsol geometrisi için çok uzun görünüyorsa liste çıktılarını sarar.
-Bu bölüm eğlencelerin nasıl çalıştığını yapılandırmanıza olanak tanır.
 Üretim tarihi geçersiz
 Son kullanma tarihi geçersiz
 Son kullanma tarihi geçersiz
@@ -4200,21 +4422,14 @@ Son kullanma süresi aralığı
 Üretim tarihi (ürünün yan tarafına veya altına bakın)
 Son kullanma tarihi veya zaman aralığı (aynı yerde açıkça yazılmış veya 6 ay veya 1 yıl gibi zaman aralıkları)
 Hedef ürünün son kullanma tarihini açıkça belirtip belirtmediği
-Ekran koruyucu ayarları...
-Bu, takvim ekran koruyucusu tarafından kullanılan kültürü yapılandırmanıza olanak tanır
 Geçiş yapmak için bir yapılandırma örneği seçin.
+Yapılandırma seçilemiyor
 Yapılandırmayı seçin
 Bir yapılandırma örneği seçmenizi ister
-Temel çekirdek yapılandırması belirtilmediğinde yapılandırma değişkenleri kontrol edilemez.
-Çekirdek yapılandırması düzgün çalışmayacaktır. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın.
-Anahtar belirtilmediğinde yapılandırma değişkenleri kontrol edilemez.
-Geçersiz içerikle özel bir ayar kaydedilmeye çalışılıyor. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın.
-Geçersiz içerikle temel bir ayar kaydedilmeye çalışılıyor. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın
-Şunun için bir giriş seçin
-Yapılandırma seçilemiyor
-Yapılandırma girişlerinden bir veya daha fazlasında geçersiz değişkenler veya numaralandırmalar var ve bunların düzeltilmesi gerekiyor. Daha fazla bilgi için çekirdek hata ayıklayıcısına danışın.
+Ekran koruyucu ayarları...
 Ayarlar giriş adı boş olmayabilir
 Ayarlar giriş açıklaması boş olmayabilir
 Ayarlar girişi boş ayarlar anahtar listesine sahip olmayabilir
 Ayarlar anahtar adı boş olmayabilir
 Ayarlar anahtarı geçersiz anahtar türünü tutamayabilir
+Mevcut anahtarlar

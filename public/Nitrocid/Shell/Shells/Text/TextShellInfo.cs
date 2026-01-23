@@ -18,10 +18,10 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Shell.Shells.Text.Commands;
 using Nitrocid.Shell.Shells.Text.Presets;
 
@@ -30,9 +30,8 @@ namespace Nitrocid.Shell.Shells.Text
     /// <summary>
     /// Common text shell class
     /// </summary>
-    internal class TextShellInfo : BaseShellInfo, IShellInfo
+    internal class TextShellInfo : BaseShellInfo<TextShell>, IShellInfo
     {
-
         /// <summary>
         /// Text commands
         /// </summary>
@@ -49,20 +48,14 @@ namespace Nitrocid.Shell.Shells.Text
                     ])
                 ], new AddLineCommand()),
 
-            new CommandInfo("addlines", /* Localizable */ "Adds the new lines at the end of the file",
-                [
-                    new CommandArgumentInfo()
-                ], new AddLinesCommand()),
+            new CommandInfo("addlines", /* Localizable */ "Adds the new lines at the end of the file", new AddLinesCommand()),
 
-            new CommandInfo("clear", /* Localizable */ "Clears the text file",
-                [
-                    new CommandArgumentInfo()
-                ], new ClearCommand()),
+            new CommandInfo("clear", /* Localizable */ "Clears the text file", new ClearCommand()),
 
             new CommandInfo("delcharnum", /* Localizable */ "Deletes a character from character number in specified line",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "charNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
@@ -73,13 +66,13 @@ namespace Nitrocid.Shell.Shells.Text
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Line number"
                         })
-                    })
+                    ])
                 ], new DelCharNumCommand()),
 
             new CommandInfo("delline", /* Localizable */ "Removes the specified line number",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
@@ -90,7 +83,7 @@ namespace Nitrocid.Shell.Shells.Text
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Line number ending range"
                         })
-                    })
+                    ])
                 ], new DelLineCommand()),
 
             new CommandInfo("delword", /* Localizable */ "Deletes a word or phrase from line number",
@@ -116,25 +109,22 @@ namespace Nitrocid.Shell.Shells.Text
 
             new CommandInfo("editline", /* Localizable */ "Edits the specified line",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "linenumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Line number"
                         })
-                    })
+                    ])
                 ], new EditLineCommand()),
 
-            new CommandInfo("exitnosave", /* Localizable */ "Exits the text editor",
-                [
-                    new CommandArgumentInfo()
-                ], new ExitNoSaveCommand()),
+            new CommandInfo("exitnosave", /* Localizable */ "Exits the text editor", new ExitNoSaveCommand()),
 
             new CommandInfo("print", /* Localizable */ "Prints the contents of the file with line numbers to the console",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "lineNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
@@ -145,7 +135,7 @@ namespace Nitrocid.Shell.Shells.Text
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Line number ending range"
                         })
-                    })
+                    ])
                 ], new PrintCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("querychar", /* Localizable */ "Queries a character in a specified line or all lines",
@@ -286,15 +276,9 @@ namespace Nitrocid.Shell.Shells.Text
                     ])
                 ], new ReplaceInlineRegexCommand()),
 
-            new CommandInfo("save", /* Localizable */ "Saves the file",
-                [
-                    new CommandArgumentInfo()
-                ], new SaveCommand()),
+            new CommandInfo("save", /* Localizable */ "Saves the file", new SaveCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the interactive editor",
-                [
-                    new CommandArgumentInfo()
-                ], new TuiCommand()),
+            new CommandInfo("tui", /* Localizable */ "Opens the interactive editor", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
@@ -307,8 +291,5 @@ namespace Nitrocid.Shell.Shells.Text
             { "PowerLineBG2", new TextPowerLineBG2Preset() },
             { "PowerLineBG3", new TextPowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new TextShell();
-
     }
 }

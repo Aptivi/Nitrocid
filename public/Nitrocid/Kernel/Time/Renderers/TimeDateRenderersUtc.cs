@@ -37,8 +37,8 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <returns>A long or short time</returns>
         public static string RenderTimeUtc() =>
             Config.MainConfig.LongTimeDate
-            ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult)
-            : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
+            ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.LongTimePattern, CultureManager.CurrentCulture)
+            : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the current time based on kernel config (long or short) and current culture
@@ -47,8 +47,8 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <returns>A long or short time</returns>
         public static string RenderTimeUtc(FormatType FormatType) =>
             FormatType == FormatType.Long
-            ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult)
-            : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
+            ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.LongTimePattern, CultureManager.CurrentCulture)
+            : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the current time based on specified culture
@@ -99,8 +99,8 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <returns>A long or short time</returns>
         public static string RenderTimeUtc(DateTime DT) =>
             Config.MainConfig.LongTimeDate
-            ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult)
-            : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
+            ? DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.LongTimePattern, CultureManager.CurrentCulture)
+            : DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the time based on specified time using the kernel config (long or short) and current culture
@@ -110,8 +110,8 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <returns>A long or short time</returns>
         public static string RenderTimeUtc(DateTime DT, FormatType FormatType) =>
             FormatType == FormatType.Long
-            ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult)
-            : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
+            ? DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.LongTimePattern, CultureManager.CurrentCulture)
+            : DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the time based on specified date and culture using the kernel config (long or short)
@@ -165,8 +165,8 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <returns>A long or short date</returns>
         public static string RenderDateUtc() =>
             Config.MainConfig.LongTimeDate
-            ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult)
-            : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
+            ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.LongDatePattern, CultureManager.CurrentCulture)
+            : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the current date based on kernel config (long or short) and current culture
@@ -175,8 +175,8 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <returns>A long or short date</returns>
         public static string RenderDateUtc(FormatType FormatType) =>
             FormatType == FormatType.Long
-            ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult)
-            : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
+            ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.LongDatePattern, CultureManager.CurrentCulture)
+            : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the current date based on specified culture
@@ -227,8 +227,8 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <returns>A long or short date</returns>
         public static string RenderDateUtc(DateTime DT) =>
             Config.MainConfig.LongTimeDate
-            ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult)
-            : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
+            ? DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.LongDatePattern, CultureManager.CurrentCulture)
+            : DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the date based on specified date using the kernel config (long or short) and current culture
@@ -238,8 +238,8 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <returns>A long or short date</returns>
         public static string RenderDateUtc(DateTime DT, FormatType FormatType) =>
             FormatType == FormatType.Long
-            ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult)
-            : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
+            ? DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.LongDatePattern, CultureManager.CurrentCulture)
+            : DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the date based on specified date and culture using the kernel config (long or short)
@@ -293,8 +293,8 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <returns>A long or short time and date</returns>
         public static string RenderUtc() =>
             Config.MainConfig.LongTimeDate
-            ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult)
-            : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
+            ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCulture)
+            : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCulture) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the current time and date based on kernel config (long or short) and current culture
@@ -303,8 +303,8 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <returns>A long or short time and date</returns>
         public static string RenderUtc(FormatType FormatType) =>
             FormatType == FormatType.Long
-            ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult)
-            : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
+            ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCulture)
+            : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCulture) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the current time and date based on specified culture
@@ -354,7 +354,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="CustomFormat">A custom format for rendering the time</param>
         /// <returns>A time</returns>
         public static string RenderUtc(string CustomFormat) =>
-            TimeDateTools.KernelDateTimeUtc.ToString(CustomFormat, CultureManager.CurrentCult);
+            TimeDateTools.KernelDateTimeUtc.ToString(CustomFormat, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the current time based on specified culture and custom format
@@ -381,8 +381,8 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <returns>A long or short time and date</returns>
         public static string RenderUtc(DateTime DT) =>
             Config.MainConfig.LongTimeDate
-            ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult)
-            : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
+            ? DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCulture)
+            : DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCulture) + " - " + DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the time and date based on specified time using the kernel config (long or short) and current culture
@@ -392,8 +392,8 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <returns>A long or short time and date</returns>
         public static string RenderUtc(DateTime DT, FormatType FormatType) =>
             FormatType == FormatType.Long
-            ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult)
-            : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
+            ? DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCulture)
+            : DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCulture) + " - " + DT.ToUniversalTime().ToString(CultureManager.CurrentCulture.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the time and date based on specified date and culture using the kernel config (long or short)
@@ -448,7 +448,7 @@ namespace Nitrocid.Kernel.Time.Renderers
         /// <param name="CustomFormat">A custom format for rendering the time</param>
         /// <returns>A time</returns>
         public static string RenderUtc(DateTime DT, string CustomFormat) =>
-            DT.ToUniversalTime().ToString(CustomFormat, CultureManager.CurrentCult);
+            DT.ToUniversalTime().ToString(CustomFormat, CultureManager.CurrentCulture);
 
         /// <summary>
         /// Renders the current time based on specified date and culture using the custom format

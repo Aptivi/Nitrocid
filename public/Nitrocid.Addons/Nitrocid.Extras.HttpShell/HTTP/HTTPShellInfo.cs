@@ -20,19 +20,18 @@
 using System.Collections.Generic;
 using Nitrocid.Extras.HttpShell.HTTP.Presets;
 using Nitrocid.Extras.HttpShell.HTTP.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Extras.HttpShell.HTTP
 {
     /// <summary>
     /// Common HTTP shell class
     /// </summary>
-    internal class HTTPShellInfo : BaseShellInfo, IShellInfo
+    internal class HTTPShellInfo : BaseShellInfo<HTTPShell>, IShellInfo
     {
-
         /// <summary>
         /// HTTP commands
         /// </summary>
@@ -53,10 +52,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                     ])
                 ], new AddHeaderCommand()),
 
-            new CommandInfo("curragent", /* Localizable */ "Gets current user agent",
-                [
-                    new CommandArgumentInfo()
-                ], new CurrAgentCommand()),
+            new CommandInfo("curragent", /* Localizable */ "Gets current user agent", new CurrAgentCommand()),
 
             new CommandInfo("delete", /* Localizable */ "Deletes content from HTTP server",
                 [
@@ -69,10 +65,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                     ])
                 ], new DeleteCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                [
-                    new CommandArgumentInfo()
-                ], new DetachCommand()),
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
 
             new CommandInfo("editheader", /* Localizable */ "Edits a key on the header to all the upcoming requests",
                 [
@@ -111,10 +104,7 @@ namespace Nitrocid.Extras.HttpShell.HTTP
                     ])
                 ], new GetStringCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("lsheader", /* Localizable */ "Lists the request headers",
-                [
-                    new CommandArgumentInfo()
-                ], new LsHeaderCommand(), CommandFlags.Wrappable),
+            new CommandInfo("lsheader", /* Localizable */ "Lists the request headers", new LsHeaderCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("put", /* Localizable */ "Puts the file to the HTTP server using the specified request",
                 [
@@ -210,11 +200,8 @@ namespace Nitrocid.Extras.HttpShell.HTTP
             { "PowerLineBG3", new HTTPPowerLineBG3Preset() }
         };
 
-        public override BaseShell ShellBase => new HTTPShell();
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "HTTP";
-
     }
 }

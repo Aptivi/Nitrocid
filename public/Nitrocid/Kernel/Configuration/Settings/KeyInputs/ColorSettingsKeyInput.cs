@@ -22,6 +22,7 @@ using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Misc.Reflection;
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles;
@@ -41,7 +42,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
                 keyColorValue = new Color(keyColorString);
 
             // Get the color value from the color wheel
-            ColorTools.LoadBackDry(new Color(ConsoleColors.Black));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.Black));
             string ColorValue = ColorSelector.OpenColorSelector(keyColorValue).PlainSequence;
 
             // Bail and return

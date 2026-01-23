@@ -19,8 +19,6 @@
 
 using Newtonsoft.Json;
 using Terminaux.Inputs.Styles.Choice;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -32,6 +30,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Textify.General;
+using Nitrocid.Files;
 
 namespace Nitrocid.Security.Privacy
 {
@@ -104,11 +103,11 @@ namespace Nitrocid.Security.Privacy
             string consentsPath = PathsManagement.ConsentsPath;
 
             // Check to see if we have the file
-            if (!Checking.FileExists(consentsPath))
+            if (!FilesystemTools.FileExists(consentsPath))
                 SaveConsents();
 
             // Now, load all the consents
-            string serialized = Reading.ReadContentsText(consentsPath);
+            string serialized = FilesystemTools.ReadContentsText(consentsPath);
             consentedPermissions = JsonConvert.DeserializeObject<List<ConsentedPermission>>(serialized) ?? [];
         }
 
@@ -117,7 +116,7 @@ namespace Nitrocid.Security.Privacy
             // Save all the consents to JSON
             string consentsPath = PathsManagement.ConsentsPath;
             string serialized = JsonConvert.SerializeObject(consentedPermissions, Formatting.Indented);
-            Writing.WriteContentsText(consentsPath, serialized);
+            FilesystemTools.WriteContentsText(consentsPath, serialized);
         }
     }
 }

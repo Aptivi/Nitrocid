@@ -36,7 +36,8 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Extras.Timers.Timers
 {
@@ -128,7 +129,7 @@ namespace Nitrocid.Extras.Timers.Timers
                     TimeDateMiscRenderers.GetRemainingTimeFromNow((int)Math.Round(TimerInterval));
                 int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
                 int HalfHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
-                string UntilText = Until.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult);
+                string UntilText = Until.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCulture);
                 int TimeLeftPosition = 0;
                 int TimeTopPosition = 0;
 
@@ -150,8 +151,6 @@ namespace Nitrocid.Extras.Timers.Timers
                 var keybindings = new Keybindings()
                 {
                     KeybindingList = keyBindings,
-                    Left = 0,
-                    Top = KeysTextTopPosition,
                     Width = ConsoleWrapper.WindowWidth - 1,
                     BuiltinColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin),
                     BuiltinForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground),
@@ -160,7 +159,7 @@ namespace Nitrocid.Extras.Timers.Timers
                     OptionForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
                     OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
                 };
-                builder.Append(keybindings.Render());
+                builder.Append(RendererTools.RenderRenderable(keybindings, new(0, KeysTextTopPosition)));
 
                 // Print the time interval
                 if (TimersInit.TimersConfig.EnableFigletTimer)
@@ -171,7 +170,7 @@ namespace Nitrocid.Extras.Timers.Timers
                         ForegroundColor = timerColor,
                         BackgroundColor = KernelColorTools.GetColor(KernelColorType.Background),
                     };
-                    builder.Append(ContainerTools.RenderRenderable(figlet, new(TimeLeftPosition, TimeTopPosition)));
+                    builder.Append(RendererTools.RenderRenderable(figlet, new(TimeLeftPosition, TimeTopPosition)));
                 }
                 else
                 {
@@ -223,12 +222,18 @@ namespace Nitrocid.Extras.Timers.Timers
                             break;
 
                         // Try to parse the interval
-                        string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInputColor(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", KernelColorTools.GetColor(KernelColorType.Question), TimerInterval);
+                        string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", new InfoBoxSettings()
+                        {
+                            ForegroundColor = KernelColorTools.GetColor(KernelColorType.Question),
+                        }, InfoBoxInputType.Text, TimerInterval);
                         if (!double.TryParse(UnparsedInterval, out TimerInterval))
                         {
                             // Not numeric.
                             timerScreen.RequireRefresh();
-                            InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Indicated timeout is not numeric."), KernelColorTools.GetColor(KernelColorType.Error));
+                            InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Indicated timeout is not numeric."), new InfoBoxSettings()
+                            {
+                                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                            });
                             TimerInterval = 60000d;
                         }
                         timerScreen.RequireRefresh();

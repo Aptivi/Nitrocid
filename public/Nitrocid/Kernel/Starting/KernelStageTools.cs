@@ -25,7 +25,6 @@ using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Kernel.Starting
 {
@@ -39,9 +38,8 @@ namespace Nitrocid.Kernel.Starting
             new KernelStage( /* Localizable */ "Hardware detection", KernelStageActions.Stage03HardwareProbe),
             new KernelStage( /* Localizable */ "Optional components", KernelStageActions.Stage04OptionalComponents, false, false),
             new KernelStage( /* Localizable */ "User initialization", KernelStageActions.Stage05UserInitialization, true, false),
-            new KernelStage( /* Localizable */ "Kernel modifications", KernelStageActions.Stage06KernelModifications, false, false),
-            new KernelStage( /* Localizable */ "System integrity verification", KernelStageActions.Stage07SysIntegrity),
-            new KernelStage( /* Localizable */ "Multiple environments", KernelStageActions.Stage08Bootables, false, false),
+            new KernelStage( /* Localizable */ "System integrity verification", KernelStageActions.Stage06SysIntegrity),
+            new KernelStage( /* Localizable */ "Multiple environments", KernelStageActions.Stage07Bootables, false, false),
         ];
 
         internal static void RunKernelStage(int stageNum)
@@ -70,11 +68,6 @@ namespace Nitrocid.Kernel.Starting
                 ReportNewStage(stageNum, "");
         }
 
-        /// <summary>
-        /// Reports the new kernel stage
-        /// </summary>
-        /// <param name="StageNumber">The stage number</param>
-        /// <param name="StageText">The stage text</param>
         internal static void ReportNewStage(int StageNumber, string StageText)
         {
             // Show the stage finish times

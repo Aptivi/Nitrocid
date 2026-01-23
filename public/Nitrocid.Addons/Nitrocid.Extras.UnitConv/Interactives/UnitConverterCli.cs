@@ -28,6 +28,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Languages;
 using Magico.Enumeration;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Extras.UnitConv.Interactives
 {
@@ -61,15 +62,27 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             try
             {
                 // Open a dialog box asking for number to convert
-                string answer = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a number to convert..."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                string answer = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a number to convert..."), new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
+                    BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
+                });
                 if (string.IsNullOrEmpty(answer))
                 {
-                    InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("You haven't entered a number to convert."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You haven't entered a number to convert."), new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
+                        BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
+                    });
                     return;
                 }
                 else if (!answer.IsNumeric())
                 {
-                    InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("The entered number is invalid."), KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The entered number is invalid."), new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
+                        BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
+                    });
                     return;
                 }
                 else
@@ -87,14 +100,22 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                     var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
                     var InitialUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}");
                     var ConvertedUnit = InitialUnit.ToUnit(TargetUnitInstance);
-                    InfoBoxModalColor.WriteInfoBoxModalColorBack("{0} => {1}", KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
-                        InitialUnit.ToString(CultureManager.CurrentCult.NumberFormat),
-                        ConvertedUnit.ToString(CultureManager.CurrentCult.NumberFormat));
+                    InfoBoxModalColor.WriteInfoBoxModal("{0} => {1}", new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
+                        BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
+                    },
+                        InitialUnit.ToString(CultureManager.CurrentCulture.NumberFormat),
+                        ConvertedUnit.ToString(CultureManager.CurrentCulture.NumberFormat));
                 }
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColorBack(Translate.DoTranslation("Can't convert unit.") + ex.Message, KernelColorTools.GetColor(KernelColorType.TuiBoxForeground), KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Can't convert unit.") + ex.Message, new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
+                    BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
+                });
             }
         }
 

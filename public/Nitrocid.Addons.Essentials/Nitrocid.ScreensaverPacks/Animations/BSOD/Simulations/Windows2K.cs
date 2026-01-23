@@ -21,6 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {
@@ -28,8 +29,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            ColorTools.LoadBackDry(new Color(ConsoleColors.DarkBlue));
-            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            ConsoleColoring.LoadBackDry(new Color(ConsoleColors.DarkBlue));
+            ConsoleColoring.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Display technical information
             TextWriterRaw.WritePlain($"\n*** STOP: 0x0000007B (0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8})\n", true);

@@ -19,7 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.FtpShell.Tools.Transfer;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {

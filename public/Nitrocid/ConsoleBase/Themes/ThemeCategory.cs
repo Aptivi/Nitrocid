@@ -48,5 +48,9 @@ namespace Nitrocid.ConsoleBase.Themes
         /// Standard themes (usually housing the first themes ever released)
         /// </summary>
         Standard,
+        /// <summary>
+        /// Linux distribution themes
+        /// </summary>
+        Linux,
     }
 }

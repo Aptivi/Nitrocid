@@ -20,7 +20,7 @@
 using Nitrocid.Extras.MailShell.Tools;
 using Nitrocid.Network.Connections;
 using Nitrocid.Network.SpeedDial;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.MailShell
 {

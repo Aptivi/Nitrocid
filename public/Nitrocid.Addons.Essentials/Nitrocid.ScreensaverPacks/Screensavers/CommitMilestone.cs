@@ -25,10 +25,13 @@ using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Base.Structures;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -117,14 +120,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         // Write the figlet.
                         figletText.Font = figFontFallback;
-                        ContainerTools.WriteRenderable(figletText, new(consoleX, consoleY));
+                        RendererTools.WriteRenderable(figletText, new Coordinate(consoleX, consoleY));
                         consoleY += figHeightFallback * 2;
                     }
                 }
                 else
                 {
                     // Write the figlet.
-                    ContainerTools.WriteRenderable(figletText, new(consoleX, consoleY));
+                    RendererTools.WriteRenderable(figletText, new Coordinate(consoleX, consoleY));
                     consoleY += figHeight * 2;
                 }
                 var descText = new AlignedText()
@@ -132,6 +135,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     Top = consoleY + 2,
                     Text = textDesc,
                     ForegroundColor = ColorStorage,
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    }
                 };
                 TextWriterRaw.WriteRaw(descText.Render());
             }

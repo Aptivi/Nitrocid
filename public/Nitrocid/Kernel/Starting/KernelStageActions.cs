@@ -25,10 +25,8 @@ using Nitrocid.Kernel.Updates;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Modifications;
 using Nitrocid.Users;
 using Nitrocid.Users.Groups;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Nitrocid.Network.Types.RPC;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Kernel.Starting.Bootloader;
@@ -37,8 +35,7 @@ using Nitrocid.Kernel.Power;
 
 #if SPECIFIERREL
 using Nitrocid.Files.Paths;
-using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Files.Operations;
+using Nitrocid.Files;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles;
 #endif
@@ -89,9 +86,9 @@ namespace Nitrocid.Kernel.Starting
                 UpdateManager.CheckKernelUpdates();
 #if SPECIFIERREL
             string upgradedPath = PathsManagement.TempPath + "/.upgraded";
-            if (!Checking.FileExists(upgradedPath) || Reading.ReadContents(upgradedPath)[0] != KernelMain.Version?.ToString())
+            if (!FilesystemTools.FileExists(upgradedPath) || FilesystemTools.ReadContents(upgradedPath)[0] != KernelMain.Version?.ToString())
             {
-                Writing.WriteContentsText(upgradedPath, KernelMain.Version?.ToString() ?? "0.0.0.0");
+                FilesystemTools.WriteContentsText(upgradedPath, KernelMain.Version?.ToString() ?? "0.0.0.0");
                 SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
                 string changes = UpdateManager.FetchCurrentChangelogsFromResources();
                 InfoBoxButtonsColor.WriteInfoBoxButtons([
@@ -121,13 +118,7 @@ namespace Nitrocid.Kernel.Starting
             SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5);
         }
 
-        internal static void Stage06KernelModifications()
-        {
-            if (Config.MainConfig.StartKernelMods)
-                ModManager.StartMods();
-        }
-
-        internal static void Stage07SysIntegrity()
+        internal static void Stage06SysIntegrity()
         {
             SplashReport.ReportProgress(Translate.DoTranslation("Verifying system integrity"), 5);
 
@@ -150,7 +141,7 @@ namespace Nitrocid.Kernel.Starting
             ThreadWatchdog.EnsureAllCriticalThreadsStarted();
         }
 
-        internal static void Stage08Bootables()
+        internal static void Stage07Bootables()
         {
             SplashReport.ReportProgress(Translate.DoTranslation("Checking for multiple installed environments"), 5);
 

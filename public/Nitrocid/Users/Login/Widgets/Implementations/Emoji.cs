@@ -17,10 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Languages;
 using System.Text;
-using Terminaux.Images.Icons;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Users.Login.Widgets.Implementations
 {
@@ -40,9 +44,26 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             int iconTop = top;
 
             // Render the icon, caching it in the process
-            string[] emojiList = IconsManager.GetIconNames();
+            if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons)) is null)
+            {
+                var message = new AlignedText()
+                {
+                    Text = Translate.DoTranslation("The icons addon needs to be installed before being able to display this emoji."),
+                    Top = iconTop,
+                    Left = left,
+                    Width = width,
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                    Settings = new()
+                    {
+                        Alignment = TextAlignment.Middle
+                    },
+                };
+                return message.Render();
+            }
+            var type = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasImagesIcons, "Nitrocid.Extras.Images.Icons.Tools.IconsTools");
+            string[] emojiList = (string[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "GetIconNames", type) ?? [];
             string finalEmojiName = Config.WidgetConfig.EmojiWidgetCycleEmoticons ? emojiList[RandomDriver.RandomIdx(emojiList.Length)] : Config.WidgetConfig.EmojiWidgetEmoticonName;
-            cachedIcon = IconsManager.RenderIcon(finalEmojiName, iconWidth, iconHeight, iconLeft, iconTop);
+            cachedIcon = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "RenderIcon", type, finalEmojiName, iconWidth, iconHeight, iconLeft, iconTop) ?? "";
             return "";
         }
 

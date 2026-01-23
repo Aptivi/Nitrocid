@@ -114,10 +114,12 @@ Fehler beim Entfernen des Debug-Protokolls: {0}
 Das Ändern des Verzeichnisses ist fehlgeschlagen: {0}
 Geben Sie die Adresse an
 Die Zeitzone ist falsch angegeben.
+Ungültige Profilauswahl.
 Es wird versucht, eine Verbindung zu {0} mit dem Profil {1} herzustellen ...
 Parsing-Mods im abgesicherten Modus nicht erlaubt.
 Der Pfad ist weder eine Datei noch ein Verzeichnis.
 Erstellt eine weitere Kopie einer Datei unter einem anderen Verzeichnis oder Namen.
+Verschiebt eine Datei in ein anderes Verzeichnis
 Übereinstimmung {0} ({1}): {2}
 Übereinstimmung {0}: {1}
 Zeitaufwand: {0} Millisekunden
@@ -618,6 +620,7 @@ Bildschirmschoner-Debugging aktivieren
 Aktiviert das Debuggen für Bildschirmschoner. Bitte beachten Sie, dass es je nach verwendetem Bildschirmschoner das Debug-Protokoll schnell füllen und den Bildschirmschoner etwas verlangsamen kann. Funktioniert nur, wenn das Kernel-Debugging für Diagnosezwecke aktiviert ist.
 Die Handbuchseite {0} ist ungültig.
 Ziehen Sie in Betracht, diese Handbuchseite auszufüllen.
+Mod-Handbuch
 Verfügbare Kernel-Argumente:
 Nicht behebbarer Fehler im Argument:
 Verschlüsselt eine Zeichenfolge mit SHA512
@@ -1612,6 +1615,7 @@ Ist ein Verzeichnis
 Ist ausgewählt
 Dateigröße
 Dateipfad
+„{0}“ ausgewählt. Drücken Sie ESC, um den Vorgang zu beenden und die Auswahl zu bestätigen.
 Der Ordner kann nicht geöffnet oder die Datei nicht ausgewählt werden
 Geben Sie einen Pfad oder einen vollständigen Pfad zu einem lokalen Ordner ein.
 Drücken Sie die LEERTASTE, um weitere Informationen zu erhalten
@@ -3218,6 +3222,7 @@ Dieser Befehl hat die folgenden Argumente, die seine Funktionsweise ändern:
 Nicht angegebene Argumentbeschreibung
 Listet alle verfügbaren Funktionsparameter einer Funktion auf
 Verwalten Sie Ihre Alarme
+Verwalten Sie Ihre Alarme in einer interaktiven TUI
 Startet eine Remote-Kernel-Instanz neu
 Der Kernel in der Remote-Instanz wird heruntergefahren
 Verwendet den alten Einstellungsstil
@@ -3390,7 +3395,9 @@ Welchen asymmetrischen Kodierungstreiber möchten Sie verwenden?
 Bootloader-Stil
 Wählen Sie einen Bootloader-Stil aus, der Ihren Wünschen entspricht.
 Timeout für die Standardauswahl des Bootloaders
+Timeout in Sekunden zum Booten mit der Standardauswahl.
 Bootloader-Standardauswahl
+Standardmäßige Auswahl des Starteintrags. Diese Nummer ist nullbasiert, das erste Element hat also den Index 0 und so weiter.
 Aktivieren Sie „Die Nitrocid-Homepage“.
 Aktiviert die „Nitrocid-Homepage“, sodass Sie auf einen Blick sehen können, was los ist.
 Interaktive TUI integrierte Tastenbelegungs-Hintergrundfarbe
@@ -3703,7 +3710,26 @@ Bringen Sie mit diesem Thema Nostalgie zurück!
 Ihr Terminal besteht aus Holzbrettern
 Inspiriert vom chinesischen Muster verschiedener Früchte
 Extras - CRC32C (Castagnoli)
+Gibt die Kernelversion aus
+Druckt die API-Version
 Debugdateien können nicht gelöscht werden
+Die Kernelkonfiguration funktioniert nicht ordnungsgemäß. Weitere Informationen erhalten Sie im Kernel-Debugger.
+Konfigurationsvariablen können nicht überprüft werden, wenn keine Basiskernelkonfiguration angegeben ist.
+Konfigurationsvariablen können nicht überprüft werden, wenn keine Schlüssel angegeben sind.
+Es wird versucht, eine benutzerdefinierte Einstellung mit ungültigem Inhalt zu registrieren. Weitere Informationen erhalten Sie im Kernel-Debugger.
+Es wird versucht, eine Basiseinstellung mit ungültigem Inhalt zu registrieren. Weitere Informationen finden Sie im Kernel-Debugger.
+Einträge für die Splash-Einstellungen konnten nicht abgerufen werden.
+Das Symbol-Add-on muss installiert werden, bevor dieser Wert festgelegt werden kann.
+Wählen Sie einen Eintrag für
+Alles zurücksetzen
+Eintrag zurücksetzen
+Der angegebene Argumenttyp ist ungültig
+Einer oder mehrere Konfigurationseinträge haben ungültige Variablen oder Aufzählungen und müssen korrigiert werden. Weitere Informationen finden Sie im Kernel-Debugger.
+Es gibt keine Kultur dieses Namens.
+Beim Verarbeiten Ihrer Audio-Cue-Aktion ist ein Fehler aufgetreten.
+Nicht vorhandener Klassentyp kann nicht aus Add-On-Assembly zurückgegeben werden
+Diese Klasse ist keine Add-On-Klasse
+Herunterfahrton wird abgespielt ...
 Wir werden diese Version von Nitrocid KS nach diesem Datum nicht mehr unterstützen.
 Stellen Sie sicher, dass Sie bald auf die unterstützte Version aktualisieren, wenn Sie weiterhin Support erhalten möchten.
 Diese Version von Nitrocid KS wird nicht mehr unterstützt.
@@ -3720,9 +3746,12 @@ Aliase konnten nicht geladen werden
 Kurzwahleinträge konnten nicht geladen werden
 Umgebungsvariablen konnten nicht geladen werden
 Alarm-Listener konnte nicht geladen werden
+Add-Ons konnten nicht abgeschlossen werden
 MOTD und MAL konnten nicht geladen werden
 Shell-Befehlshistorien konnten nicht geladen werden
 Fehler beim Laden der Erweiterungshandler
+Mods werden geladen …
+Mods konnten nicht geladen werden
 Beim Versuch, optionale Komponenten zu initialisieren, sind Fehler aufgetreten.
 Allgemeine Variablen konnten nicht zurückgesetzt werden
 Shell-Befehlshistorien konnten nicht gespeichert werden
@@ -3744,12 +3773,26 @@ Es konnten nicht alle Kernel-Threads gestoppt werden
 Beim Versuch, Komponenten zurückzusetzen, sind Fehler aufgetreten.
 Ausnahme
 Weitere Informationen finden Sie in den Kernel-Debugprotokollen.
+Es gibt keinen solchen Audio-Cue-Typ.
+Fallback-Einstellungen können nicht abgerufen werden
+Es können nicht alle Einstellungseinträge zurückgesetzt werden für
+Dieser Einstellungseintrag kann nicht zurückgesetzt werden für
+Die Variable wurde in keinem der Module gefunden.
+Für Umgebungsbildschirmschoner erforderliches Audiosignal kann nicht abgerufen werden.
+Aufgrund eines Fehlers konnte die Netzwerkverbindung möglicherweise nicht ordnungsgemäß hergestellt werden.
+Ein Befehl, der nicht als umschließbar festgelegt ist, kann nicht gepuffert werden.
 Nicht angegebene Schalterbeschreibung
 Pfad zu einem Prozess
 An einen Prozess zu übergebende Argumente
 Befehl zum Anzeigen des Hilfeeintrags
+Leitet die Befehlsausgabe als Parameter an einen anderen Befehl weiter
+Quellbefehl, um seine Ausgabe als letzten Parameter an den Zielbefehl weiterzuleiten
 Zielbefehl, der beim Erstellen des Arguments basierend auf der Ausgabe des Quellbefehls ausgeführt werden soll
+Ob die Ausgabe des Quellbefehls als ein Argument in Anführungszeichen oder ein Argument ohne Anführungszeichen übergeben werden soll
 Befehl zum Umschließen der Ausgabe
+Die Ausführung des Quellbefehls ist fehlgeschlagen.
+Die Ausführung des Zielbefehls ist fehlgeschlagen. Der Inhalt wurde möglicherweise nicht richtig ausgefüllt. Der ausgeführte Befehl war
+Das Rohr ist kaputt.
 Argument zum Anzeigen des Hilfeeintrags
 Sitzungsnummer, beginnend bei Null
 Abzufragender Benutzername
@@ -3757,14 +3800,25 @@ Berechtigungstyp zum Erteilen oder Verweigern
 Falsch zu leugnen, wahr zu gewähren
 Neuer Anzeigename oder „Löschen“, um den Anzeigenamen zu löschen
 Dreistellige Sprachkennung oder „clear“, um die bevorzugte Sprache zu löschen
+Ändert die bevorzugte Benutzerkultur
+Kultur-ID oder „clear“, um die bevorzugte Kultur zu löschen
+Bevorzugte Benutzerkultur auf {0} eingestellt. Möglicherweise möchten Sie sich erneut anmelden.
+Ungültige Kultur
+Bevorzugte Kultur
 Ungültige Sitzungs-GUID
 Keine solche Sitzungs-GUID
+Unbekannter Typ
+Unbekannter Parameter
+Liste der Typen für
+Ruft die Debug-Protokollinformationen einfach mithilfe der Sitzungs-GUID ab
 Zu suchende Sitzungs-GUID
 Ausnahmenummer
 Abzufragender Feldname
 Abzufragender Eigenschaftsname
 Abzufragender Addon-Name
+Öffentlicher statischer Typname vom Add-on
 Funktionsname vom öffentlichen statischen Typ zur Abfrage
+Listet alle verfügbaren Typen des angegebenen Add-Ons auf
 Abzufragender Splash-Name
 Byte-Nummer im Bereich von 0 bis 255
 Byte-Positionsnummer
@@ -3786,6 +3840,10 @@ Ein zu ersetzendes Wort oder eine zu ersetzende Phrase
 Ein Wort oder eine Phrase zum Ersetzen durch
 Zeilennummer (entweder Singular oder Beginn des Bereichs) oder „all“ zum Ersetzen in allen Zeilen
 Ein regulärer Ausdruck zum Abgleichen von Phrasen, die ersetzt werden sollen
+Ungültiges Land
+Wählen Sie eine Sprache für das Land
+Ungültige Sprachauswahl für
+Ja
 Neuer hinzuzufügender Gruppenname
 Neuer Benutzername zum Hinzufügen
 Neues zu verwendendes Passwort
@@ -3812,8 +3870,12 @@ Pfad zur Datei, deren Inhalt gedruckt werden soll
 Pfad zur Datei
 Entweder Hinzufügen oder Entfernen
 Attributname
+Ändert die Kultur
+Zu ändernde Kultur-ID
+Ändert die Benutzerkultur statt der Systemkultur
 Neuer Hostname, der geändert werden soll
 Sprachen-ID
+Ändert die Sprache anhand eines Landes (Sie werden möglicherweise aufgefordert, eine Sprache auszuwählen)
 Neue zu verwendende Nachricht
 Antworten zum Teilen mit einem Schrägstrich
 Frage zum Drucken auf dem Bildschirm
@@ -3889,6 +3951,7 @@ Entweder der Name des Bildschirmschoners oder 'random'
 Regulärer Ausdruck für die Suche
 Zieldatei
 Zu suchendes Wort oder Phrase
+Öffnet die Add-on-Splash-Einstellungen
 Einzustellender Wert
 Name der Konfigurationsvariablen
 Name des Implementierers
@@ -3914,6 +3977,7 @@ Hash-Datei oder erwarteter Hash
 Zu testende Datei
 Zu erstellender ZIP-Dateiname
 Zu komprimierender Pfad
+Das Symbol-Add-on muss installiert werden, bevor dieses Emoji angezeigt werden kann.
 Hinweis: Der hinzuzufügende Inhalt
 Notiznummer
 Pfad zu einem Verzeichnis mit Git-Repository
@@ -3953,6 +4017,8 @@ Listet alle Erinnerungen auf
 Speichert alle Erinnerungen
 Entweder ein Pfad zu einer vCard-Kontaktdatei oder einer MeCard-Darstellung
 Kontaktnummer
+Bearbeiten...
+Geben Sie einen neuen Namen für diesen Kontakt ein
 Nutzungsspielraum
 Zu verwendender Längengrad
 Weather.com API-Schlüssel
@@ -3961,6 +4027,7 @@ OpenWeatherMap API-Schlüssel
 Ob eine Aufgabe hinzugefügt, entfernt, als erledigt markiert oder die Markierung als erledigt aufgehoben werden soll
 Ob alle Aufgaben aufgelistet, gespeichert oder geladen werden sollen
 Pomodoro-Timer
+Pomodoro
 Der Pomodoro-Timer ist bereit
 Pomodoro-Timer Nummer {0} in vier Iterationen
 Kurzurlaub
@@ -4011,6 +4078,7 @@ Pfad zur Zieldatei oder zum Zielverzeichnis
 Pfad zur lokalen Datei
 Berechtigungsnummern gemäß chmod
 Gibt an, ob der Übertragungstyp ASCII oder Binär ist
+Symbolischer Link zu: {0}
 Kopfzeilenschlüssel
 Header-Wert
 HTTP-Anforderung
@@ -4018,12 +4086,39 @@ Hochzuladende Datei
 Hochzuladende Zeichenfolge
 Benutzer-Agent-Zeichenfolge
 E-Mail-Adresse zum Anmelden
+Ordner erstellen
+Bewegen...
+Alles verschieben...
+Ordner umbenennen
+Ordner entfernen
+Nachricht entfernen
+Alle entfernen...
+Ordner oder Nachricht können nicht geöffnet werden
+Geben Sie den neuen Verzeichnisnamen ein.
+Verzeichnis wird erstellt...
+Ordner kann nicht erstellt werden
+Wählen Sie ein neues Verzeichnis aus, in das diese Nachricht verschoben werden soll.
+Bewegende Nachricht...
+Nachricht kann nicht verschoben werden
+Wählen Sie ein neues Verzeichnis aus, in das alle Nachrichten desselben Absenders verschoben werden sollen.
+Verschieben von Nachrichten nach Absender {0}...
+Es können nicht alle Nachrichten desselben Absenders verschoben werden
+Schreiben Sie den neuen Verzeichnisnamen, in den {0} umbenannt werden soll.
+Verzeichnis umbenennen...
+Ordner kann nicht umbenannt werden
+Verzeichnis wird entfernt...
+Ordner kann nicht entfernt werden
+Nachricht wird gelöscht...
+Nachricht kann nicht gelöscht werden
+Nachrichten werden nach Absender {0} gelöscht...
+Es können nicht alle Nachrichten vom selben Absender gelöscht werden
 Name des Mail-Verzeichnisses
 Seitenzahl
 Nachrichten-ID
 Absendername
 Alter Name des Mail-Verzeichnisses
 Neuer Name des Mail-Verzeichnisses
+Interaktives Mailmanagement
 SFTP-Server für die Verbindung
 Link zum RSS-Feed
 Feednummer
@@ -4044,13 +4139,132 @@ Pfad zur Synth-Datei
 SSH-Server für die Verbindung
 Benutzername zur Authentifizierung
 Befehl zur Remote-Ausführung
+Druckt Informationen über eine chemische Substanz auf die Konsole.
+Entweder ein Name, ein Symbol oder eine Ordnungszahl einer Substanz
+Druckt Informationen zu allen chemischen Substanzen auf die Konsole.
+Es gibt keine Substanz mit Ordnungszahl
+Es gibt keine Substanz mit Symbol oder Namen
+Ordnungszahl
+Atommasse
+Symbol
+Zusammenfassung
+Phase
+Position im Periodensystem
+Position in Koordinaten
+Entdecker
+Benannt von
+Elektronenkonfiguration
+Mod starten (auswählen)
+Startmod (Eingabe)
+Mod stoppen
+Mod neu laden
+Mod installieren (auswählen)
+Mod installieren (Eingabe)
+Mod deinstallieren
+Alle starten
+Stoppen Sie alle
+Alle neu laden
+Nicht vorhandener Klassentyp kann nicht aus Mod-Assembly zurückgegeben werden
+Funktion „{0}“ kann im Mod „{1}“ nicht gefunden werden.
+Die Eigenschaft „{0}“ kann im Mod „{1}“ nicht gefunden werden.
+Feld „{0}“ kann im Mod „{1}“ nicht gefunden werden.
+Diese Klasse ist keine Mod-Klasse
+Sprachen
+Einstiegspunkt
+Geben Sie einen Pfad zu dem Mod ein, den Sie starten möchten
+Mod konnte nicht gestartet werden
+Geben Sie einen Pfad zu dem Mod ein, den Sie installieren möchten
+Mod konnte nicht installiert werden
+Dieser Mod kann nicht gestartet oder gestoppt werden!
+Ob ein Mod gestartet, gestoppt, Informationen abgerufen, neu geladen, installiert oder deinstalliert werden soll
+Modname oder Dateiname
+Ob alle Mods aufgelistet, neu geladen, gestoppt, gestartet oder interaktiv verwaltet werden sollen
+Mod-Name
+Kultur- und Spracheinstellungen
+Hier können Sie die Kultur und Sprache konfigurieren
+Uhrzeit- und Datumseinstellungen
+Hiermit können Sie Uhrzeit und Datum konfigurieren
+Bootloader-Einstellungen
+Damit können Sie den Bootloader konfigurieren
+Die Nitrocid Homepage
+Hiermit können Sie die Nitrocid Homepage konfigurieren
+Kernel-Update-Einstellungen
+Damit können Sie die Kernel-Updates konfigurieren
+Kernel-Fehlereinstellungen
+Damit können Sie die Kernel-Fehler konfigurieren
+Kernel-Energieeinstellungen
+Damit können Sie den Kernel-Power-Mechanismus konfigurieren
+Kernel-Farbschemata
+Damit können Sie mehrere Kernel-Farbschemata festlegen
+Moderne Anmeldehandlereinstellungen
+Damit können Sie den modernen Logon-Handler konfigurieren
+Hilfesystem
+Hiermit können Sie das Shell-Hilfesystem konfigurieren
+Shell-Voreinstellungen
+Hiermit können Sie die Shell-Voreinstellungen konfigurieren
+Remotedebugger-Einstellungen
+Damit können Sie den Remote-Debugger konfigurieren
 Einheitliche Verzögerung
 Wenn „true“, wird eine einheitliche Schreibverzögerung für alle Bildschirmschoner aktiviert. Andernfalls werden bildschirmschonerspezifische, konfigurierte Verzögerungswerte verwendet.
+In diesem Abschnitt sind alle Audioeinstellungen aufgelistet.
+Audioeinstellungen
+Audio-Unterstützung aktivieren
+Aktiviert das gesamte Audiosystem für Systemhinweise
+Tastaturhinweise aktivieren
+Ob bei jedem Tastendruck Tastaturhinweise abgespielt werden sollen oder nicht
+Startsounds aktivieren
+Ob der Startton abgespielt werden soll oder nicht
+Herunterfahren-Töne aktivieren
+Ob der Abschaltton abgespielt werden soll oder nicht
+Navigationstöne aktivieren
+Ob bei jedem Tastendruck der Navigationston abgespielt werden soll oder nicht
+Aktivieren Sie Benachrichtigungstöne mit niedriger Priorität
+Ob der Benachrichtigungston für Warnungen mit niedriger Priorität abgespielt werden soll oder nicht
+Benachrichtigungstöne mittlerer Priorität aktivieren
+Ob der Benachrichtigungston für Warnungen mittlerer Priorität abgespielt werden soll oder nicht
+Aktivieren Sie Benachrichtigungstöne mit hoher Priorität
+Ob der Benachrichtigungston für Warnungen mit hoher Priorität abgespielt werden soll oder nicht
+Aktivieren Sie Umgebungssoundeffekte für den Bildschirmschoner
+Ob Umgebungsgeräusche für den Bildschirmschoner abgespielt werden sollen oder nicht
+Intensivieren Sie die Umgebungssoundeffekte des Bildschirmschoners
+Ob die Umgebungsgeräusche des Bildschirmschoners verstärkt werden sollen oder nicht
+Lautstärke des Audiosignals
+Geben Sie an, wie laut die Audiohinweise sein sollen
+Audiothema
+Welches Audiothema möchten Sie für Audiohinweise verwenden?
+Texteditor-Einstellungen
+Hiermit können Sie den Texteditor konfigurieren
+Hex-Editor-Einstellungen
+Hiermit können Sie den Hex-Editor konfigurieren
+RSS-Überschrifteneinstellungen
+Hier können Sie die RSS-Überschriften konfigurieren
+Mauseinstellungen
+Hiermit können Sie die Maus konfigurieren
+Debug-Einstellungen
+Damit können Sie die Debugroutine konfigurieren
+Ästhetik
+Damit können Sie die Kernelästhetik konfigurieren
+Zeigt ein großes Willkommenswort in der Mitte der Konsole; ähnlich wie die Willkommensmatten
+Fortschritt anzeigen
+Fortschritt anzeigen oder nicht
+Hiermit können Sie die Farben konfigurieren
+In diesem Abschnitt können Sie Solver konfigurieren.
+In diesem Abschnitt können Sie SpeedPress konfigurieren.
+In diesem Abschnitt können Sie Meteor und ShipDuet konfigurieren.
+In diesem Abschnitt können Sie die Funktionsweise des Kernel-Änderungssystems konfigurieren.
 In diesem Abschnitt können Sie die Funktionsweise der Timer-Anwendung konfigurieren.
 In diesem Abschnitt können Sie die Funktionsweise der Pomodoro-Timer-Anwendung konfigurieren.
 Figlet für den Pomodoro-Timer aktivieren
 Wenn aktiviert, wird Figlet für den Pomodoro-Timer verwendet. Bitte beachten Sie, dass ein großer Konsolenbildschirm erforderlich ist, um die Zeit bei aktiviertem Figlet richtig darzustellen.
 Figlet-Schriftart für den Pomodoro-Timer
+Stundenrampeneinstellungen
+Hiermit können Sie die Stundenrampe konfigurieren
+Minutenrampeneinstellungen
+Hiermit können Sie die Minutenrampe konfigurieren
+Sekunden Rampeneinstellungen
+Hiermit können Sie die Sekundenrampe konfigurieren
+Rampeneinstellungen
+Damit können Sie die Rampen konfigurieren
 Zeigt Ihnen Text unterhalb einer Zeile auf einem düsteren roten Hintergrund.
 Zufällige Zeichen, die sich zufällig über den Bildschirm verteilen.
 Einfaches Datum und Uhrzeit in der Mitte des Bildschirms und ändert die Farbe basierend auf der aktuellen Uhrzeit.
@@ -4064,7 +4278,64 @@ Block, der sich in einem Wellenmuster bewegt, wobei grüne Lineale seine Positio
 Zeigt Ihnen ein einzelnes zufälliges Zeichen in einem farbigen Figlet-Text.
 Zeigt Ihnen ein Wort, das ausgewählt wird, genau wie bei einem Spielautomaten im Casino.
 Zeigt Ihnen einen farbigen Figlet-Text, der zwischen zwei Neonfarben wechselt: Cyan und Fuchsia.
+Kultureinstellungen
+Hier können Sie die Kultur konfigurieren, die vom Kalender-Bildschirmschoner verwendet wird
+Erste Rampeneinstellungen
+Damit können Sie die erste Rampe konfigurieren
+Zweite Rampeneinstellungen
+Damit können Sie die zweite Rampe konfigurieren
+Dritte Rampeneinstellungen
+Damit können Sie die dritte Rampe konfigurieren
+Farbschemata von Alma Linux, einem Spinoff des Linux-Betriebssystems Red Hat
+Farbschemata aus einem Linux-Betriebssystem, Arch Linux
+Farbschemata von EndeavourOS, einem Spinoff des Linux-Betriebssystems Arch Linux
+Farbschemata von Fedora, einem Spinoff des Linux-Betriebssystems, Red Hat
+Farbschemata aus einem Linux-Betriebssystem, Gentoo
+Gemeißelte Musterfarben bilden ein buntes Mandala
+Farbschemata von Kubuntu, einem Spinoff des beliebten Linux-Betriebssystems Ubuntu
+Farbschemata von Linux Mint, einem inoffiziellen Spinoff des beliebten Linux-Betriebssystems Ubuntu
+Farbschemata von Lubuntu, einem Spinoff des beliebten Linux-Betriebssystems Ubuntu
+Farbschemata von Manjaro, einem Spinoff des Linux-Betriebssystems Arch Linux
+Farbschemata aus einem Linux-Betriebssystem, openSUSE
+Farbschemata aus einem Linux-Betriebssystem, Red Hat
+Rottöne mit dynamischen Akzentfarben für aufmerksamkeitsstarken Text
+Farbschemata von Rocky Linux, einem Spinoff des Linux-Betriebssystems Red Hat
+Farbschemata aus einem Linux-Betriebssystem, Slackware
+Farbschemata von Xubuntu, einem Spinoff des beliebten Linux-Betriebssystems Ubuntu
+Farbschemata von Zorin OS, einem inoffiziellen Spinoff des beliebten Linux-Betriebssystems Ubuntu
+Extras - Chemie
+Extras - Mods
+Extras - Symbole
 Welche Kultur wird zum Ändern der Monatsnamen, des Kalenders usw. verwendet?
+„The Nitrocid Homepage“-Widgets aktivieren
+Aktiviert „The Nitrocid Homepage“-Widgets auf der rechten Seite des Bildschirms.
+„The Nitrocid Homepage“-RSS-Feed aktivieren
+Aktiviert „The Nitrocid Homepage“-RSS-Feed-Widget auf der rechten Seite des Bildschirms.
+„The Nitrocid Homepage“-Widget
+Wählt ein Widget aus, das auf „The Nitrocid Homepage“ angezeigt wird.
+Einstellungen für Benachrichtigungsrahmen
+Hiermit können Sie den Benachrichtigungsrahmen konfigurieren.
+Allgemeine Rahmeneinstellungen
+Hiermit können Sie den allgemeinen Rahmen konfigurieren.
+Darstellungseinstellungen
+Hiermit können Sie das Erscheinungsbild der Stundenrampe konfigurieren.
+Hiermit können Sie die Farbe der Stundenrampe konfigurieren.
+Hiermit können Sie das Erscheinungsbild der Minutenrampe konfigurieren.
+Hiermit können Sie die Farbe der Minutenrampe konfigurieren.
+Hiermit können Sie das Erscheinungsbild der Sekundenrampe konfigurieren.
+Hiermit können Sie die Farbe der Sekundenrampe konfigurieren.
+Farbeinstellungen für Startposition
+Hiermit können Sie die Farben der Startposition konfigurieren.
+Farbeinstellungen für Endposition
+Hiermit können Sie die Farben der Endposition konfigurieren.
+Rampenleisteneinstellungen
+Hiermit können Sie die Rampenleiste konfigurieren.
+Hiermit können Sie das Erscheinungsbild der Rampe konfigurieren.
+Hiermit können Sie die Rampenfarben konfigurieren.
+Einstellungen für den Farbverlaufsstart
+Hiermit können Sie die Farben des Farbverlaufsstarts konfigurieren.
+Einstellungen für das Farbverlaufsende
+Hiermit können Sie die Farben des Farbverlaufsendes konfigurieren.
 Maximale Hintergrundfarbstufe
 Maximale Hintergrundfarbstufe. Der minimal akzeptierte Wert ist 0 und der maximal akzeptierte Wert ist 255.
 Maximale Linienfarbstufe
@@ -4073,6 +4344,7 @@ Maximale Textfarbstufe
 Maximale Textfarbstufe. Der minimal akzeptierte Wert ist 0 und der maximal akzeptierte Wert ist 255.
 Systemkultur verwenden
 Gibt an, ob der Bildschirmschoner die Kultur verwendet, die durch die Hauptkerneleinstellungen oder durch diese Bildschirmschonereinstellungen festgelegt wurde.
+Auf diese Weise können Sie das Erscheinungsbild der ersten Rampe konfigurieren.
 Informationstext für die erste
 Schreiben Sie, wie Ihr Informationstext für die aktuelle Stunde angezeigt wird. {0} für die aktuelle Stunde von 24 zuerst.
 Zeichen in der oberen linken Ecke für den ersten Balken
@@ -4083,6 +4355,7 @@ Oberes Rahmenzeichen für den ersten Balken
 Unteres Rahmenzeichen für den ersten Balken
 Linkes Rahmenzeichen für den ersten Balken
 Rechtes Rahmenzeichen für den ersten Balken
+Hiermit können Sie die Farbe der ersten Rampe konfigurieren
 Farbe des ersten Balkens
 Minimale Rot-Farbstufe für den ersten
 Minimale Grün-Farbstufe für den ersten
@@ -4092,6 +4365,7 @@ Maximale Rot-Farbstufe für den ersten
 Maximale Grün-Farbstufe für den ersten
 Maximale Blau-Farbstufe für den ersten
 Maximale Farbstufe für den ersten
+Hiermit können Sie das Erscheinungsbild der zweiten Rampe konfigurieren
 Informationstext für die Sekunde
 Schreiben Sie, wie Ihr Informationstext für die aktuelle Minute angezeigt wird. {0} für die aktuelle Minute von 60 Sekunden.
 Zeichen in der oberen linken Ecke für den zweiten Balken
@@ -4102,6 +4376,7 @@ Zeichen im oberen Rahmen für den zweiten Balken
 Zeichen im unteren Rahmen für den zweiten Balken
 Zeichen im linken Rahmen für den zweiten Balken
 Zeichen im rechten Rahmen für den zweiten Balken
+Hier können Sie die Farbe der zweiten Rampe konfigurieren
 Farbe des zweiten Balkens
 Minimale Rot-Farbstufe für den zweiten
 Minimale Grün-Farbstufe für den zweiten
@@ -4111,6 +4386,7 @@ Maximale Rot-Farbstufe für den zweiten
 Maximale Grün-Farbstufe für den zweiten
 Maximale Blau-Farbstufe für den zweiten
 Maximale Farbstufe für den zweiten
+Hier können Sie das Erscheinungsbild der dritten Rampe konfigurieren
 Zeichen in der oberen linken Ecke für den dritten Balken
 Zeichen in der oberen rechten Ecke für den dritten Balken
 Zeichen in der unteren linken Ecke für den dritten Balken
@@ -4121,6 +4397,7 @@ Zeichen im linken Rahmen für den dritten Balken
 Zeichen im rechten Rahmen für den dritten Balken
 Informationstext für dritte
 Schreiben Sie, wie Ihr Informationstext für die aktuelle Sekunde angezeigt wird. {0} für aktuelle Sekunde von 60 Dritteln.
+Damit können Sie die Farbe der dritten Rampe konfigurieren
 Farbe des dritten Balkens
 Minimales Rot-Farbniveau für dritte
 Minimales Grün-Farbniveau für dritte
@@ -4132,61 +4409,6 @@ Maximales Blau-Farbniveau für dritte
 Maximales Farbniveau für dritte
 Progresses wählt zufällige Farben aus, wenn es aktiviert ist. Andernfalls verwenden Sie Farben aus der Konfiguration.
 Wenn Farbwechsel aktiviert ist, wie viele Ticks vergehen, bevor die Farben in Progresses geändert werden? 1 Tick = 0,5 Drittel
-Fertig! Bitte verwenden Sie die Anwendung Nitrocid.Locales mit entsprechenden Argumenten, um die Sprachen festzulegen. Sie können diesen Pfad verwenden:
-Die Kernelkonfiguration funktioniert nicht richtig. Die ungültigen Schlüssel sind
-Versuch, eine benutzerdefinierte Einstellung mit ungültigem Inhalt zu registrieren. Die ungültigen Schlüssel sind
-Versuch, eine Basiseinstellung mit ungültigem Inhalt zu registrieren. Die ungültigen Schlüssel sind
-Fügt einen Mod zur Blacklist hinzu
-Entfernt einen Mod von der Blacklist
-Diese Konfigurationseinträge haben ungültige Variablen oder Aufzählungen und müssen behoben werden:
-Startet alle Mods
-Druckt einen Trenner mit Farbe auf der Konsole
-Druckt einen Trenner mit Formatierung und Farbe auf der Konsole
-Lädt alle Mods neu
-Statistiken
-Zeigt die aktuellen Teststatistiken an
-Alle testen
-Testet alle Fassaden
-Geht zurück zur Abschnittsauswahl
-Wählt eine auszuführende Testfassade aus
-Dieser Test enthält optionale Parameter. Geben Sie den Wert des Parameters ein, der den Testparametern hinzugefügt werden soll.
-Parameteranzahl
-Ja!
-Erneut versuchen
-Ist der Test wie erwartet gelaufen?
-Der Test ist fehlgeschlagen. Der erwartete Wert ist {0}, aber der tatsächliche Wert ist {1}.
-Der Test ist unerwartet fehlgeschlagen.
-Erfolgreiche Tests:
-Fehlgeschlagene Tests:
-Auszuführende Tests:
-Funktionsliste kann nicht abgerufen werden
-Eigenschaftenliste kann nicht abgerufen werden
-Felderliste kann nicht abgerufen werden
-Basierend auf den Spracheinstellungen Ihres Systems ist die entsprechende Sprache
-Finalisierte Add-ons konnten nicht geladen werden
-Kernelmodifikationen
-Ausgewählt ist „{0}“. Drücken Sie ESC, um zu beenden und die Auswahl zu bestätigen.
-Variable {0} wurde in keinem der Module gefunden.
-Der Methodentyp ist in der Basis-Nitrocid-Typliste nicht definiert.
-Benutzerdefinierte Eigenschaft kann mit nicht vorhandenem Mod nicht ausgeführt werden
-Benutzerdefiniertes Feld kann mit nicht vorhandenem Mod nicht ausgeführt werden
-Die Debug-Protokollinformationen werden einfach mithilfe der Sitzungsnummer abgerufen
-Ja, legen Sie sie fest!
-Nein, legen Sie sie nicht fest.
-Verwendet die Systemspracheinstellungen, um zu versuchen, die Sprache abzuleiten
-Es gibt keine Eigenschaftsinformationen für
-Pomodoro-Timer
-Ungültige Profilauswahl.
-Kultur beim Sprachenwechsel ändern
-Beim Sprachenwechsel Monatsnamen, Kalender usw. ändern.
-Welche Variante der aktuellen Sprache wird zum Ändern der Monatsnamen, Kalender usw. verwendet?
-Zeitüberschreitung in Sekunden zum Booten mit der Standardauswahl.
-Standardmäßige Booteintragauswahl. Diese Zahl ist nullbasiert, das erste Element hat also den Index 0 und so weiter.
-In diesem Abschnitt sind die Shell-Vorgabeeinstellungen aufgeführt.
-Shell-Vorgabeeinstellungen
-Listenausgaben umbrechen
-Umbricht die Listenausgaben, wenn sie für die aktuelle Konsolengeometrie zu lang erscheinen.
-In diesem Abschnitt können Sie konfigurieren, wie die Unterhaltungen funktionieren.
 Ungültiges Produktionsdatum
 Ungültiger Ablaufzeitraum
 Ungültiges Ablaufdatum
@@ -4200,21 +4422,14 @@ Ablaufinformationen werden abgerufen
 Produktionsdatum (siehe Seite oder Unterseite des Produkts)
 Ablaufdatum oder -zeitraum (entweder explizit an derselben Stelle angegeben oder Zeitspannen, z. B. 6 Monate oder 1 Jahr)
 Ob das Zielprodukt das Ablaufdatum nicht explizit angibt
-Schermbeveiligingsinstellingen...
-Hiermee kunt u de cultuur configureren die door de kalenderschermbeveiliging wordt gebruikt.
-Wählen Sie eine Konfigurationsinstanz aus, zu der gewechselt werden soll.
-Konfiguration auswählen
-Fordert Sie auf, eine Konfigurationsinstanz auszuwählen.
-Konfigurationsvariablen können nicht überprüft werden, wenn keine Kernel-Basiskonfiguration angegeben ist.
-Die Kernelkonfiguration funktioniert nicht ordnungsgemäß. Weitere Informationen finden Sie im Kernel-Debugger.
-Konfigurationsvariablen können nicht überprüft werden, wenn keine Schlüssel angegeben sind.
-Es wird versucht, eine benutzerdefinierte Einstellung mit ungültigem Inhalt zu registrieren. Weitere Informationen finden Sie im Kernel-Debugger.
-Es wird versucht, eine Basiseinstellung mit ungültigem Inhalt zu registrieren. Weitere Informationen finden Sie im Kernel-Debugger.
-Wählen Sie einen Eintrag für
+Wählen Sie eine Konfigurationsinstanz zum Wechseln aus.
 Konfiguration kann nicht ausgewählt werden.
-Ein oder mehrere Konfigurationseinträge enthalten ungültige Variablen oder Enumerationen und müssen korrigiert werden. Weitere Informationen finden Sie im Kernel-Debugger.
+Konfiguration auswählen.
+Sie werden aufgefordert, eine Konfigurationsinstanz auszuwählen.
+Bildschirmschonereinstellungen...
 Der Name des Einstellungseintrags darf nicht leer sein.
 Die Beschreibung des Einstellungseintrags darf nicht leer sein.
 Die Liste der Einstellungsschlüssel darf nicht leer sein.
 Der Name des Einstellungsschlüssels darf nicht leer sein.
 Der Einstellungsschlüssel darf keinen ungültigen Schlüsseltyp enthalten.
+Verfügbare Schlüssel

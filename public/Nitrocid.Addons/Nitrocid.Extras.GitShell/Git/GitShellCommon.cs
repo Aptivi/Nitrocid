@@ -18,7 +18,7 @@
 //
 
 using LibGit2Sharp;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using System.IO;
 
 namespace Nitrocid.Extras.GitShell.Git
@@ -68,12 +68,12 @@ namespace Nitrocid.Extras.GitShell.Git
         public static bool OpenRepository(string path)
         {
             // Check to see if the specified path exists
-            if (!Checking.FolderExists(path))
+            if (!FilesystemTools.FolderExists(path))
                 return false;
 
             // Now, check to see if we have the .git folder
             string repoGitPath = path + "/.git";
-            if (!Checking.FolderExists(repoGitPath))
+            if (!FilesystemTools.FolderExists(repoGitPath))
                 return false;
 
             // Initialize the repository

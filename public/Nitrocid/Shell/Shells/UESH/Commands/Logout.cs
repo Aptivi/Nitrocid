@@ -21,9 +21,11 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Users.Login;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -40,10 +42,17 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ShellManager.ShellStack.Count == 1)
+            if (KernelEntry.Maintenance)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", vars: [parameters.CommandText]);
+                TextWriters.Write(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, KernelColorType.Error, parameters.CommandText);
+                return -3;
+            }
+
+            if (ShellManager.ShellCount == 1)
             {
                 Login.LogoutRequested = true;
-                ShellManager.KillShellInternal();
+                ShellManager.KillShell();
                 return 0;
             }
             else

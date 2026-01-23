@@ -36,6 +36,7 @@ using Terminaux.Inputs.Interactive;
 using Nitrocid.Misc.Interactives;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Kernel.Exceptions;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings
 {
@@ -76,9 +77,9 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 var tui = new SettingsCli
                 {
                     config = settingsType,
-                    lastFirstPaneIdx = -1
+                    lastFirstPaneIdx = -1,
                 };
-                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Set"), ConsoleKey.Enter, (_, _, _, _) => tui.Set(tui.FirstPaneCurrentSelection - 1, tui.SecondPaneCurrentSelection - 1)));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Set"), ConsoleKey.Enter, (_, entryIdx, _, keyIdx) => tui.Set(entryIdx, keyIdx)));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Save"), ConsoleKey.F1, (_, _, _, _) => tui.Save()));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Save as"), ConsoleKey.F2, (_, _, _, _) => tui.SaveAs()));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Load from"), ConsoleKey.F3, (_, _, _, _) => tui.LoadFrom()));
@@ -86,6 +87,8 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Migrate"), ConsoleKey.F5, (_, _, _, _) => tui.Migrate()));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Check for system updates"), ConsoleKey.F6, (_, _, _, _) => tui.CheckUpdates()));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("System information"), ConsoleKey.F7, (_, _, _, _) => tui.SystemInfo()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Reset all"), ConsoleKey.F8, (_, _, _, _) => tui.ResetAll()));
+                tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Reset entry"), ConsoleKey.R, ConsoleModifiers.Shift, (_, entryIdx, _, keyIdx) => tui.ResetEntry(entryIdx, keyIdx)));
                 tui.Bindings.Add(new InteractiveTuiBinding<(string, int)>(Translate.DoTranslation("Select configuration"), ConsoleKey.F9, (_, _, _, _) => tui.SelectConfig()));
                 InteractiveTuiTools.OpenInteractiveTui(tui);
                 return;
@@ -123,68 +126,71 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 string finalTitle = Translate.DoTranslation("Welcome to Settings!");
                 int Answer = SelectionStyle.PromptSelection(RenderHeader(finalTitle, TextTools.FormatString(Translate.DoTranslation("You're on the landing page of the {0} settings. Select a section or an option to get started. Depending on which settings you've changed, you might need to restart the kernel."), settingsType.GetType().Name)),
                     sections, altSections);
-                if (Answer >= 1 & Answer <= MaxSections)
+                if (Answer >= 0 & Answer < MaxSections)
                 {
                     // The selected answer is a section
                     InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Loading section..."));
-                    SettingsEntry SelectedSection = SettingsEntries[Answer - 1];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", SelectedSection.Name);
+                    SettingsEntry SelectedSection = SettingsEntries[Answer];
+                    DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", vars: [SelectedSection.Name]);
                     OpenSection(SelectedSection.Name, SelectedSection, settingsType);
                 }
-                else if (Answer == MaxSections + 1)
+                else if (Answer == MaxSections)
                 {
                     // The selected answer is "Find an option"
                     VariableFinder(settingsType);
                 }
-                else if (Answer == MaxSections + 2)
+                else if (Answer == MaxSections + 1)
                 {
                     // The selected answer is "Save settings"
                     SettingsAppTools.SaveSettings();
                 }
-                else if (Answer == MaxSections + 3)
+                else if (Answer == MaxSections + 2)
                 {
                     // The selected answer is "Save settings as"
                     SettingsAppTools.SaveSettingsAs();
                 }
-                else if (Answer == MaxSections + 4)
+                else if (Answer == MaxSections + 3)
                 {
                     // The selected answer is "Load settings from"
                     SettingsAppTools.LoadSettingsFrom(settingsType);
                 }
-                else if (Answer == MaxSections + 5)
+                else if (Answer == MaxSections + 4)
                 {
                     // The selected answer is "Reload settings"
                     SettingsAppTools.ReloadConfig();
                 }
-                else if (Answer == MaxSections + 6)
+                else if (Answer == MaxSections + 5)
                 {
                     // The selected answer is "Check for system updates"
                     SettingsAppTools.CheckForSystemUpdates();
                 }
-                else if (Answer == MaxSections + 7)
+                else if (Answer == MaxSections + 6)
                 {
                     // The selected answer is "System information"
                     SettingsAppTools.SystemInformation();
                 }
+                else if (Answer == MaxSections + 7)
+                {
+                    // The selected answer is "Select configuration"
+                    if (!ConfigMigration.MigrateAllConfig())
+                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.") + " " +
+                            Translate.DoTranslation("Press any key to go back."), new InfoBoxSettings()
+                            {
+                                ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                            });
+                }
                 else if (Answer == MaxSections + 8)
                 {
                     // The selected answer is "Migrate old configuration"
-                    if (!ConfigMigration.MigrateAllConfig())
-                        InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Configuration migration may not have been completed successfully. If you're sure that your configuration files are valid, investigate the debug logs for more info.") + " " +
-                            Translate.DoTranslation("Press any key to go back."), KernelColorTools.GetColor(KernelColorType.Error));
-                }
-                else if (Answer == MaxSections + 9)
-                {
-                    // The selected answer is "Select configuration"
                     var selectedConfig = SettingsAppTools.SelectConfig();
                     if (selectedConfig is not null && selectedConfig.SettingsEntries is not null)
                     {
                         settingsType = selectedConfig;
-                        SettingsEntries = settingsType.SettingsEntries ?? [];
+                        SettingsEntries = settingsType.SettingsEntries;
                         MaxSections = SettingsEntries.Length;
                     }
                 }
-                else if (Answer == MaxSections + 10 || Answer == -1)
+                else if (Answer == MaxSections + 9 || Answer == -1)
                 {
                     // The selected answer is "Exit"
                     DebugWriter.WriteDebug(DebugLevel.W, "Exiting...");
@@ -195,7 +201,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 {
                     // Invalid selection
                     DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Specified option {0} is invalid.") + " " + Translate.DoTranslation("Press any key to go back."), KernelColorTools.GetColor(KernelColorType.Error), Answer);
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Specified option {0} is invalid.") + " " + Translate.DoTranslation("Press any key to go back."), new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    }, Answer);
                 }
             }
         }
@@ -227,7 +236,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                     // Check for platform compatibility
                     string Notes = "";
                     var unsupportedConfigs = SectionToken.Where((sk) => sk.Unsupported).ToArray();
-                    var unsupportedConfigNames = unsupportedConfigs.Select((sk) => Translate.DoTranslation(sk.Name)).ToArray();
+                    var unsupportedConfigNames = unsupportedConfigs.Select((sk) => sk.Name.Localized).ToArray();
                     bool hasUnsupportedConfigs = unsupportedConfigs.Length > 0;
                     if (hasUnsupportedConfigs)
                         Notes = Translate.DoTranslation("One or more of the following settings found in this section are unsupported in your platform:") + $" {string.Join(", ", unsupportedConfigNames)}";
@@ -240,10 +249,11 @@ namespace Nitrocid.Kernel.Configuration.Settings
                             continue;
 
                         // Now, populate the input choice info
-                        object? CurrentValue = ConfigTools.GetValueFromEntry(Setting, settingsType);
+                        object? CurrentValue =
+                            Setting.Masked ? "***" : ConfigTools.GetValueFromEntry(Setting, settingsType);
                         string choiceName = $"{SectionIndex + 1}";
-                        string choiceTitle = $"{Translate.DoTranslation(Setting.Name)} [{CurrentValue}]";
-                        string choiceDesc = Translate.DoTranslation(Setting.Description);
+                        string choiceTitle = $"{Setting.Name} [{CurrentValue}]";
+                        string choiceDesc = Setting.Description;
                         var ici = new InputChoiceInfo(
                             choiceName,
                             choiceTitle,
@@ -251,7 +261,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
                         );
                         sections.Add(ici);
                     }
-                    DebugWriter.WriteDebug(DebugLevel.W, "Section {0} has {1} selections.", Section, MaxOptions);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Section {0} has {1} selections.", vars: [Section, MaxOptions]);
 
                     // Populate the alt sections correctly
                     var altSections = new List<InputChoiceInfo>()
@@ -274,12 +284,12 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
                     // Check the answer
                     var allSections = sections.Union(altSections).ToArray();
-                    string answerChoice = allSections[Answer - 1].ChoiceName;
+                    string answerChoice = allSections[Answer].ChoiceName;
                     int finalAnswer = Answer < 0 ? 0 : Convert.ToInt32(answerChoice);
                     DebugWriter.WriteDebug(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...");
                     if (finalAnswer >= 1 & finalAnswer <= MaxOptions)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", finalAnswer, Section);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", vars: [finalAnswer, Section]);
                         OpenKey(finalAnswer, SettingsSection, settingsType);
                     }
                     else if (finalAnswer == MaxOptions + 1)
@@ -341,7 +351,10 @@ namespace Nitrocid.Kernel.Configuration.Settings
 
                     // Now, set the value if input is provided correctly
                     if (KeyFinished)
+                    {
                         keyInput.SetValue(KeyToken, keyInputUser, settingsType);
+                        SettingsAppTools.SaveSettings();
+                    }
                 }
             }
             catch (Exception ex)
@@ -399,12 +412,18 @@ namespace Nitrocid.Kernel.Configuration.Settings
                 }
                 else
                 {
-                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), KernelColorTools.GetColor(KernelColorType.Error));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                    });
                 }
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error)
+                });
             }
         }
 

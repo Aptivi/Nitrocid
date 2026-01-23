@@ -20,8 +20,8 @@
 using Nitrocid.Drivers;
 using Nitrocid.Drivers.Encoding;
 using Nitrocid.Files;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

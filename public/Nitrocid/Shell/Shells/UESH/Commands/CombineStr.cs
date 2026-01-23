@@ -19,8 +19,8 @@
 
 using System.Linq;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Operations;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
+using Nitrocid.Files;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -39,7 +39,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             var CombineInputPaths = parameters.ArgumentsList.Skip(1).ToArray();
 
             // Make a combined content array
-            var CombinedContents = Manipulation.CombineTextFiles(InputPath, CombineInputPaths);
+            var CombinedContents = FilesystemTools.CombineTextFiles(InputPath, CombineInputPaths);
             string combinedContentsStr = string.Join("\n", CombinedContents);
             TextWriterColor.Write(combinedContentsStr);
             variableValue = combinedContentsStr;

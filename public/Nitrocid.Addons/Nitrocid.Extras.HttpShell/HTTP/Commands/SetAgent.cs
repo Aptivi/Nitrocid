@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Extras.HttpShell.Tools;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.HttpShell.HTTP.Commands
 {

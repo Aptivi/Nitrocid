@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the child kernel thread");
         public override TestSection TestSection => TestSection.Kernel;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             KernelThread thread = new("Test thread", true, KernelThreadTestData.WriteHello);
             thread.AddChild("Test child thread", true, KernelThreadTestData.WriteHello);

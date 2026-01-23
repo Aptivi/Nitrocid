@@ -19,18 +19,15 @@
 
 using System.IO;
 using System.Reflection;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
-using Nitrocid.Files.LineEndings;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Extensions;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 using Magico.Files;
 using Nitrocid.Kernel.Exceptions;
@@ -51,9 +48,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             foreach (string FileName in parameters.ArgumentsList)
             {
                 string FilePath = FilesystemTools.NeutralizePath(FileName);
-                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, Checking.FileExists(FilePath));
-                SeparatorWriterColor.WriteSeparator(FileName, true);
-                if (Checking.FileExists(FilePath))
+                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", vars: [FilePath, FilesystemTools.FileExists(FilePath)]);
+                SeparatorWriterColor.WriteSeparatorColor(FileName, KernelColorTools.GetColor(KernelColorType.ListTitle));
+                if (FilesystemTools.FileExists(FilePath))
                 {
                     var FileInfo = new FileInfo(FilePath);
 
@@ -66,19 +63,19 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(FileInfo.LastWriteTime));
                     TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), FileInfo.Attributes);
                     TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), FilesystemTools.NeutralizePath(FileInfo.DirectoryName));
-                    TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", $"{Parsing.IsBinaryFile(FileInfo.FullName)}");
+                    TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", $"{FilesystemTools.IsBinaryFile(FileInfo.FullName)}");
                     TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(FileInfo.Extension));
                     TextWriterColor.Write(Translate.DoTranslation("MIME metadata (extended)") + ": {0}", MagicHandler.GetMagicMimeInfo(FileInfo.FullName));
                     TextWriterColor.Write(Translate.DoTranslation("File type") + ": {0}\n", MagicHandler.GetMagicInfo(FileInfo.FullName));
-                    if (!Parsing.IsBinaryFile(FileInfo.FullName))
+                    if (!FilesystemTools.IsBinaryFile(FileInfo.FullName))
                     {
-                        var Style = LineEndingsTools.GetLineEndingFromFile(FilePath);
+                        var Style = FilesystemTools.GetLineEndingFromFile(FilePath);
                         TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString());
                     }
                     TextWriterRaw.Write();
 
                     // .NET managed info
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(".NET assembly info"), true);
+                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation(".NET assembly info"), KernelColorTools.GetColor(KernelColorType.ListTitle));
                     if (ReflectionCommon.IsDotnetAssemblyFile(FilePath, out AssemblyName? asmName) && asmName is not null)
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), asmName.Name ?? "");
@@ -88,13 +85,11 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                         TextWriterColor.Write(Translate.DoTranslation("Content type") + ": {0}", asmName.ContentType.ToString());
                     }
                     else
-                    {
                         TextWriterColor.Write(Translate.DoTranslation("File is not a valid .NET assembly."));
-                    }
                     TextWriterRaw.Write();
 
                     // Other info handled by the extension handler
-                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Extra info"), true);
+                    SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Extra info"), KernelColorTools.GetColor(KernelColorType.ListTitle));
                     if (ExtensionHandlerTools.IsHandlerRegistered(FileInfo.Extension))
                     {
                         var handler = ExtensionHandlerTools.GetExtensionHandler(FileInfo.Extension) ??

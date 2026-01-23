@@ -64,7 +64,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             // Sanity checks for the page number
             if (PageNum <= 0)
                 PageNum = 1;
-            DebugWriter.WriteDebug(DebugLevel.I, "Page number {0}", PageNum);
+            DebugWriter.WriteDebug(DebugLevel.I, "Page number {0}", vars: [PageNum]);
 
             int MsgsLimitForPg = MessagesInPage;
             int FirstIndex = MsgsLimitForPg * PageNum - 10;
@@ -72,7 +72,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             var messages = MailShellCommon.IMAP_Messages ?? [];
             int MaxMessagesIndex = messages.Count() - 1;
             var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
-            DebugWriter.WriteDebug(DebugLevel.I, "10 messages shown in each page. First message number in page {0} is {1} and last message number in page {0} is {2}", MsgsLimitForPg, FirstIndex, LastIndex);
+            DebugWriter.WriteDebug(DebugLevel.I, "10 messages shown in each page. First message number in page {0} is {1} and last message number in page {0} is {2}", vars: [MsgsLimitForPg, FirstIndex, LastIndex]);
             for (int i = FirstIndex; i <= LastIndex; i++)
             {
                 if (i <= MaxMessagesIndex)
@@ -82,7 +82,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                     string MsgPreview = "";
 
                     // Getting information about the message is vital to display them.
-                    DebugWriter.WriteDebug(DebugLevel.I, "Getting message {0}...", i);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Getting message {0}...", vars: [i]);
                     lock (client.SyncRoot)
                     {
                         MimeMessage Msg;
@@ -99,7 +99,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                         MsgSubject = Msg.Subject;
                         MsgPreview = Msg.GetTextBody(MimeKit.Text.TextFormat.Text).Truncate(200);
                     }
-                    DebugWriter.WriteDebug(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject);
+                    DebugWriter.WriteDebug(DebugLevel.I, "From {0}: {1}", vars: [MsgFrom, MsgSubject]);
 
                     // Display them now.
                     TextWriters.Write($"- [{i + 1}/{MaxMessagesIndex + 1}] {MsgFrom}: ", false, KernelColorType.ListEntry);
@@ -116,7 +116,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 }
                 else
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Reached max message limit. Message number {0}", i);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Reached max message limit. Message number {0}", vars: [i]);
                 }
             }
         }
@@ -133,7 +133,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             var messages = MailShellCommon.IMAP_Messages ?? [];
             int MaxMessagesIndex = messages.Count() - 1;
             var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
-            DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", Message);
+            DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", vars: [Message]);
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to remove message 0 or less than 0.");
@@ -141,7 +141,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             }
             else if (Message > MaxMessagesIndex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", vars: [Message, MaxMessagesIndex]);
                 throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Message specified is not found."));
             }
 
@@ -151,7 +151,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 {
                     // Remove message
                     var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Removing {1}...", MailShellCommon.IMAP_CurrentDirectory, MsgNumber);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Removing {1}...", vars: [MailShellCommon.IMAP_CurrentDirectory, MsgNumber]);
                     Dir.Store(messages.ElementAtOrDefault(Message), new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
                     Dir.Expunge();
@@ -160,7 +160,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 {
                     // Remove message
                     client.Inbox.Open(FolderAccess.ReadWrite);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removing {0}...", MsgNumber);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removing {0}...", vars: [MsgNumber]);
                     client.Inbox.Store(messages.ElementAtOrDefault(Message), new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
                     client.Inbox.Expunge();
@@ -176,7 +176,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool MailRemoveAllBySender(string Sender)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "All mail by {0} will be removed.", Sender);
+            DebugWriter.WriteDebug(DebugLevel.I, "All mail by {0} will be removed.", vars: [Sender]);
             int DeletedMsgNumber = 1;
             int SteppedMsgNumber = 0;
             var messages = MailShellCommon.IMAP_Messages ?? [];
@@ -209,22 +209,22 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                                     var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
 
                                     // Remove message
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Removing {1}...", MailShellCommon.IMAP_CurrentDirectory, Sender);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Removing {1}...", vars: [MailShellCommon.IMAP_CurrentDirectory, Sender]);
                                     Dir.Store(MessageId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
                                     DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
                                     Dir.Expunge();
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber]);
                                     TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} deleted from {2}. {3} messages remaining to parse."), DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber);
                                 }
                                 else
                                 {
                                     // Remove message
                                     client.Inbox.Open(FolderAccess.ReadWrite);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Removing {0}...", Sender);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Removing {0}...", vars: [Sender]);
                                     client.Inbox.Store(MessageId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
                                     DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
                                     client.Inbox.Expunge();
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber]);
                                     TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse."), DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
                                 }
                                 DeletedMsgNumber += 1;
@@ -254,7 +254,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             var messages = MailShellCommon.IMAP_Messages ?? [];
             int MaxMessagesIndex = messages.Count() - 1;
             var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
-            DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", Message);
+            DebugWriter.WriteDebug(DebugLevel.I, "Message number {0}", vars: [Message]);
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to move message 0 or less than 0.");
@@ -262,7 +262,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
             }
             else if (Message > MaxMessagesIndex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", vars: [Message, MaxMessagesIndex]);
                 throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Message specified is not found."));
             }
 
@@ -273,7 +273,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                     // Move message
                     var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Moving {1}...", MailShellCommon.IMAP_CurrentDirectory, MsgNumber);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Moving {1}...", vars: [MailShellCommon.IMAP_CurrentDirectory, MsgNumber]);
                     Dir.MoveTo(messages.ElementAtOrDefault(Message), TargetF);
                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
                 }
@@ -281,7 +281,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 {
                     // Move message
                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Moving {0}...", MsgNumber);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Moving {0}...", vars: [MsgNumber]);
                     client.Inbox.Open(FolderAccess.ReadWrite);
                     client.Inbox.MoveTo(messages.ElementAtOrDefault(Message), TargetF);
                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
@@ -298,7 +298,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool MailMoveAllBySender(string Sender, string TargetFolder)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "All mail by {0} will be moved.", Sender);
+            DebugWriter.WriteDebug(DebugLevel.I, "All mail by {0} will be moved.", vars: [Sender]);
             int DeletedMsgNumber = 1;
             int SteppedMsgNumber = 0;
             var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
@@ -331,21 +331,21 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                                     var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
                                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
                                     // Remove message
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Moving {1}...", MailShellCommon.IMAP_CurrentDirectory, Sender);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Moving {1}...", vars: [MailShellCommon.IMAP_CurrentDirectory, Sender]);
                                     Dir.MoveTo(MessageId, TargetF);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} moved from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} moved from {2}. {3} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber]);
                                     TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} moved from {2}. {3} messages remaining to parse."), DeletedMsgNumber, Sender, MailShellCommon.IMAP_CurrentDirectory, messages.Count() - SteppedMsgNumber);
                                 }
                                 else
                                 {
                                     // Remove message
                                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Moving {0}...", Sender);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Moving {0}...", vars: [Sender]);
                                     client.Inbox.Open(FolderAccess.ReadWrite);
                                     client.Inbox.MoveTo(MessageId, TargetF);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} moved. {2} messages remaining to parse.", DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} moved. {2} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber]);
                                     TextWriterColor.Write(Translate.DoTranslation("Message {0} from {1} moved. {2} messages remaining to parse."), DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
                                 }
                                 DeletedMsgNumber += 1;

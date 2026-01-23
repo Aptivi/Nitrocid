@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
-using Nitrocid.Modifications;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Arguments.CommandLineArguments
 {
@@ -31,7 +31,7 @@ namespace Nitrocid.Arguments.CommandLineArguments
         public override void Execute(ArgumentParameters parameters)
         {
             string langPacksAddonPath = PathsManagement.AddonsEssentialsPath + "/LanguagePacks";
-            if (Checking.FolderExists(langPacksAddonPath))
+            if (FilesystemTools.FolderExists(langPacksAddonPath))
             {
                 AddonTools.ProcessAddon(langPacksAddonPath);
                 LanguageManager.SetLangDry(parameters.ArgumentsList[0]);

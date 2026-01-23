@@ -18,13 +18,14 @@
 //
 
 using System.Linq;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using System;
 using Terminaux.Colors.Data;
+using Terminaux.Colors;
+using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -39,7 +40,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of base addons"), true);
+            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of base addons"), KernelColorTools.GetColor(KernelColorType.ListTitle));
 
             // List all the available addons
             foreach (var enumValue in Enum.GetValues<KnownAddons>())
@@ -50,10 +51,9 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
                 // Now, check the status
                 string[] addons = AddonTools.GetAddons();
-                if (addons.Contains(name))
-                    ListEntryWriterColor.WriteListEntry(enumValue.ToString(), localizedName, ConsoleColors.DarkGreen, ConsoleColors.Green);
-                else
-                    ListEntryWriterColor.WriteListEntry(enumValue.ToString(), localizedName, ConsoleColors.DarkRed, ConsoleColors.Red);
+                Color finalKeyColor = addons.Contains(name) ? ConsoleColors.DarkGreen : ConsoleColors.DarkRed;
+                Color finalValueColor = addons.Contains(name) ? ConsoleColors.Green : ConsoleColors.Red;
+                ListEntryWriterColor.WriteListEntry(enumValue.ToString(), localizedName, finalKeyColor, finalValueColor);
             }
             return 0;
         }

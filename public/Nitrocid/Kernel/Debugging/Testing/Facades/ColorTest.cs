@@ -28,10 +28,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the VT sequence for 255 colors");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override int TestOptionalParameters => 1;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string Text = args.Length > 0 ? args[0] : "";
+            string Text = "";
             if (string.IsNullOrEmpty(Text))
                 Text = InputTools.ReadLine(Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
             if (int.TryParse(Text, out int color))

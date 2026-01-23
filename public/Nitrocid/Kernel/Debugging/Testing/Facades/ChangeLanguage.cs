@@ -27,10 +27,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests changing the language to your preferred language");
         public override TestSection TestSection => TestSection.Languages;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             var langChoices = LanguageManager.Languages.Select(kvp => (kvp.Key, kvp.Value.FullLanguageName)).ToArray();
-            int langIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose your language"), langChoices) - 1;
+            int langIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose your language"), langChoices);
             if (langIndex < 0)
                 return;
             string lang = LanguageManager.Languages.Keys.ElementAt(langIndex);

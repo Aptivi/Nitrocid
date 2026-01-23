@@ -34,7 +34,6 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Drivers.Console;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Events;
 using Terminaux.Base.Buffered;
@@ -70,6 +69,7 @@ namespace Nitrocid.Misc.Screensaver
         internal static bool ScrnTimeReached;
         internal static bool seizureAcknowledged;
         internal static bool noLock;
+        internal static bool bailing;
         internal static AutoResetEvent SaverAutoReset = new(false);
         internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout) { isCritical = true };
 
@@ -78,6 +78,12 @@ namespace Nitrocid.Misc.Screensaver
         /// </summary>
         public static bool InSaver =>
             inSaver;
+
+        /// <summary>
+        /// Whether the screensaver is stopping or not
+        /// </summary>
+        public static bool Bailing =>
+            bailing;
 
         /// <summary>
         /// Screen timeout interval
@@ -134,7 +140,7 @@ namespace Nitrocid.Misc.Screensaver
             // Check to see if there is a screensaver with this name
             if (!IsScreensaverRegistered(saver))
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", saver);
+                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", vars: [saver]);
                 throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver);
             }
 
@@ -174,11 +180,11 @@ namespace Nitrocid.Misc.Screensaver
 
                 // Check to see if the scrensaver exists
                 EventsManager.FireEvent(EventType.PreShowScreensaver);
-                DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", saver);
+                DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", vars: [saver]);
                 if (!IsScreensaverRegistered(saver))
                 {
                     TextWriters.Write(Translate.DoTranslation("The requested screensaver {0} is not found."), true, KernelColorType.Error, saver);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Screensaver {0} not found in the dictionary.", saver);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Screensaver {0} not found in the dictionary.", vars: [saver]);
                     return;
                 }
 
@@ -200,7 +206,11 @@ namespace Nitrocid.Misc.Screensaver
                     inSaver = true;
                     ScrnTimeReached = true;
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(BaseSaver);
-                    DebugWriter.WriteDebug(DebugLevel.I, "{0} started", saver);
+
+                    // Play the ambience sound if needed
+                    if (Config.MainConfig.EnableAmbientSoundFx)
+                        ScreensaverDisplayer.ScreensaverAmbienceThread.Start();
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} started", vars: [saver]);
                 }
             }
             catch (Exception ex)
@@ -220,7 +230,7 @@ namespace Nitrocid.Misc.Screensaver
             {
                 // Show the screensaver and wait for input
                 ShowSavers();
-                SpinWait.SpinUntil(() => Input.InputAvailable);
+                InputEventInfo eventInfo = Input.ReadPointerOrKey();
                 EventsManager.FireEvent(EventType.PreUnlock, DefaultSaverName);
 
                 // Bail from screensaver and optionally prompt for password
@@ -231,21 +241,10 @@ namespace Nitrocid.Misc.Screensaver
                 // we need to make sure that we ignore the Clicked event and listen to the Released event to ensure that
                 // there are no more mouse events left, or the screensaver would exit instantly, causing info to be displayed
                 // longer than the set duration.
-                while (Input.InputAvailable)
+                if (eventInfo.PointerEventContext is not null && eventInfo.PointerEventContext.ButtonPress == PointerButtonPress.Clicked)
                 {
-                    var descriptor = Input.ReadPointerOrKey();
-                    if (descriptor.Item1 is not null)
-                    {
-                        switch (descriptor.Item1.Button)
-                        {
-                            case PointerButton.Left:
-                            case PointerButton.Right:
-                            case PointerButton.Middle:
-                                if (descriptor.Item1.ButtonPress == PointerButtonPress.Clicked)
-                                    Input.ReadPointer();
-                                break;
-                        }
-                    }
+                    while (eventInfo.PointerEventContext is not null && eventInfo.PointerEventContext.ButtonPress != PointerButtonPress.Released)
+                        eventInfo = Input.ReadPointerOrKey(InputEventType.Mouse);
                 }
 
                 // Now, show the password prompt
@@ -258,7 +257,7 @@ namespace Nitrocid.Misc.Screensaver
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to lock screen: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to lock screen: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             LockMode = false;
@@ -273,13 +272,13 @@ namespace Nitrocid.Misc.Screensaver
             // Check to see if there is a screensaver with this name
             if (!IsScreensaverRegistered(saver))
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", saver);
+                DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", vars: [saver]);
                 throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver);
             }
 
             // Now, set the default screensaver.
             saver = saver.ToLower();
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} is found. Setting it to default...", saver);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} is found. Setting it to default...", vars: [saver]);
             Config.MainConfig.DefaultSaverName = saver;
             Config.CreateConfig();
         }
@@ -376,6 +375,7 @@ namespace Nitrocid.Misc.Screensaver
             int finalDelay = Config.MainConfig.ScreensaverUnifiedDelay && !force ? Config.MainConfig.ScreensaverDelay : delay;
             SpinWait.SpinUntil(() =>
                 ScreensaverDisplayer.ScreensaverDisplayerThread.IsStopping ||
+                Bailing ||
                 ConsoleResizeHandler.WasResized(false)
             , finalDelay);
         }
@@ -387,7 +387,7 @@ namespace Nitrocid.Misc.Screensaver
         {
             if (Exception is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Screensaver experienced an error: {0}.", Exception.Message);
+                DebugWriter.WriteDebug(DebugLevel.W, "Screensaver experienced an error: {0}.", vars: [Exception.Message]);
                 DebugWriter.WriteDebugStackTrace(Exception);
                 HandleSaverCancel(initialVisible);
                 TextWriters.Write(Translate.DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), true, KernelColorType.Error, Exception.Message);
@@ -425,11 +425,9 @@ namespace Nitrocid.Misc.Screensaver
         {
             try
             {
-                var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
                 SpinWait.SpinUntil(() => SplashReport.KernelBooted);
                 while (!PowerManager.KernelShutdown)
                 {
-                    int OldCursorLeft = termDriver.CursorLeft;
                     SpinWait.SpinUntil(() => !noLock);
                     SpinWait.SpinUntil(() => !ScrnTimeReached || PowerManager.KernelShutdown || noLock);
                     if (!ScrnTimeReached)
@@ -442,7 +440,7 @@ namespace Nitrocid.Misc.Screensaver
                         bool hasMoved = false;
                         SpinWait.SpinUntil(() =>
                         {
-                            hasMoved = termDriver.MovementDetected;
+                            hasMoved = ConsoleWrapper.MovementDetected;
                             return hasMoved || PowerManager.KernelShutdown;
                         }, ScreenTimeout);
 
@@ -462,7 +460,7 @@ namespace Nitrocid.Misc.Screensaver
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Shutting down screensaver timeout thread: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Shutting down screensaver timeout thread: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }

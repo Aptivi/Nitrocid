@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Exceptions;
 using System;
@@ -38,7 +38,7 @@ namespace Nitrocid.Misc.Reflection
         /// <returns>True if it's a real assembly; false otherwise</returns>
         public static bool IsDotnetAssemblyFile(string path, out AssemblyName? asmName)
         {
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 throw new KernelException(KernelExceptionType.Reflection);
 
             try

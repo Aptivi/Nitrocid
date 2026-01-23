@@ -18,10 +18,10 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Shell.Shells.Hex.Commands;
 using Nitrocid.Shell.Shells.Hex.Presets;
 
@@ -30,7 +30,7 @@ namespace Nitrocid.Shell.Shells.Hex
     /// <summary>
     /// Common hex shell class
     /// </summary>
-    internal class HexShellInfo : BaseShellInfo, IShellInfo
+    internal class HexShellInfo : BaseShellInfo<HexShell>, IShellInfo
     {
 
         /// <summary>
@@ -49,10 +49,7 @@ namespace Nitrocid.Shell.Shells.Hex
                     ])
                 ], new AddByteCommand()),
 
-            new CommandInfo("addbytes", /* Localizable */ "Adds the new bytes at the end of the file",
-                [
-                    new CommandArgumentInfo()
-                ], new AddBytesCommand()),
+            new CommandInfo("addbytes", /* Localizable */ "Adds the new bytes at the end of the file", new AddBytesCommand()),
 
             new CommandInfo("addbyteto", /* Localizable */ "Adds a new byte to the specified position",
                 [
@@ -70,27 +67,24 @@ namespace Nitrocid.Shell.Shells.Hex
                     ])
                 ], new AddByteToCommand()),
 
-            new CommandInfo("clear", /* Localizable */ "Clears the binary file",
-                [
-                    new CommandArgumentInfo()
-                ], new ClearCommand()),
+            new CommandInfo("clear", /* Localizable */ "Clears the binary file", new ClearCommand()),
 
             new CommandInfo("delbyte", /* Localizable */ "Deletes a byte using the byte number",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "bytenumber", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Byte position number"
                         })
-                    })
+                    ])
                 ], new DelByteCommand()),
 
             new CommandInfo("delbytes", /* Localizable */ "Deletes the range of bytes",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "startbyte", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
@@ -101,18 +95,15 @@ namespace Nitrocid.Shell.Shells.Hex
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Byte ending position number"
                         })
-                    })
+                    ])
                 ], new DelBytesCommand()),
 
-            new CommandInfo("exitnosave", /* Localizable */ "Exits the hex editor",
-                [
-                    new CommandArgumentInfo()
-                ], new ExitNoSaveCommand()),
+            new CommandInfo("exitnosave", /* Localizable */ "Exits the hex editor", new ExitNoSaveCommand()),
 
             new CommandInfo("print", /* Localizable */ "Prints the contents of the file with byte numbers to the console",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
@@ -123,7 +114,7 @@ namespace Nitrocid.Shell.Shells.Hex
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Byte ending position number"
                         })
-                    })
+                    ])
                 ], new PrintCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("querybyte", /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
@@ -162,15 +153,9 @@ namespace Nitrocid.Shell.Shells.Hex
                     ])
                 ], new ReplaceCommand()),
 
-            new CommandInfo("save", /* Localizable */ "Saves the file",
-                [
-                    new CommandArgumentInfo()
-                ], new SaveCommand()),
+            new CommandInfo("save", /* Localizable */ "Saves the file", new SaveCommand()),
 
-            new CommandInfo("tui", /* Localizable */ "Opens the interactive hex editor TUI",
-                [
-                    new CommandArgumentInfo()
-                ], new TuiCommand()),
+            new CommandInfo("tui", /* Localizable */ "Opens the interactive hex editor TUI", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
@@ -183,8 +168,5 @@ namespace Nitrocid.Shell.Shells.Hex
             { "PowerLineBG2", new HexPowerLineBG2Preset() },
             { "PowerLineBG3", new HexPowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new HexShell();
-
     }
 }

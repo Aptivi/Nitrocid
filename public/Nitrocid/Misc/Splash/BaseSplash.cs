@@ -22,6 +22,7 @@ using System.Text;
 using System.Threading;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Debugging;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 
@@ -46,9 +47,6 @@ namespace Nitrocid.Misc.Splash
 
         internal static bool initialBackgroundAllowed = false;
 
-        /// <inheritdoc/>
-        public virtual bool SplashDisplaysProgress => Info.DisplaysProgress;
-
         internal virtual SplashInfo Info => SplashManager.GetSplashFromName(SplashName);
 
         // Actual logic
@@ -57,7 +55,7 @@ namespace Nitrocid.Misc.Splash
         {
             var builder = new StringBuilder();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+            ConsoleColoring.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
             builder.Append(
                 CsiSequences.GenerateCsiCursorPosition(1, 1) +
                 CsiSequences.GenerateCsiEraseInDisplay(0)
@@ -84,7 +82,7 @@ namespace Nitrocid.Misc.Splash
         {
             var builder = new StringBuilder();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
+            ConsoleColoring.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Background), true);
             builder.Append(
                 CsiSequences.GenerateCsiCursorPosition(1, 1) +
                 CsiSequences.GenerateCsiEraseInDisplay(0)

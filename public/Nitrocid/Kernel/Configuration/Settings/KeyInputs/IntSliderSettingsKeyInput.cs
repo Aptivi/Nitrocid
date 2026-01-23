@@ -17,15 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
 using System;
-using Terminaux.Base;
-using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -39,7 +35,10 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             string keyName = key.Name;
             string keyDesc = key.Description;
 
-            CurrentValue = InfoBoxSliderColor.WriteInfoBoxSlider(keyName, CurrentValue, key.MaximumValue, keyDesc, key.MinimumValue);
+            CurrentValue = InfoBoxSliderColor.WriteInfoBoxSlider(CurrentValue, key.MaximumValue, keyDesc, new InfoBoxSettings()
+            {
+                Title = keyName,
+            }, key.MinimumValue);
 
             // Bail and use selected value
             bail = true;
@@ -69,7 +68,7 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
             // We're dealing with integers with limits
             if (value is not int AnswerInt)
                 return;
-            DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", key.Variable, AnswerInt);
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", vars: [key.Variable, AnswerInt]);
             SettingsAppTools.SetPropertyValue(key.Variable, AnswerInt, configType);
         }
 

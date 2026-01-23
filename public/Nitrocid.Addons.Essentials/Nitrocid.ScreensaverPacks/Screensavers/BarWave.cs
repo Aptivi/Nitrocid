@@ -18,17 +18,18 @@
 //
 
 using System;
+using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
-using Terminaux.Colors;
 using Terminaux.Base;
-using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters;
-using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Colors;
 using Terminaux.Colors.Transformation;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -73,6 +74,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Render the bars
             for (int i = 0; i < BarCount; i++)
             {
+                if (ScreensaverManager.Bailing)
+                    return;
                 int ThisBarLeft = (BarWidthOutside + 1) * i + 1;
                 int Pos = (int)(100 * (CurrentPos[i] / (double)BarHeight));
                 int RedColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.BarWaveMinimumRedColorLevel, ScreensaverPackInit.SaversConfig.BarWaveMaximumRedColorLevel);
@@ -85,11 +88,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     var progress = new SimpleProgress(Pos, 100)
                     {
                         Vertical = true,
-                        Height = 4,
+                        Height = ConsoleWrapper.WindowHeight,
                         ProgressActiveForegroundColor = ColorStorage,
                         ProgressForegroundColor = TransformationTools.GetDarkBackground(ColorStorage),
+                        ProgressBackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.Background),
                     };
-                    TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(progress, new(ThisBarLeft, 1)));
+                    TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(progress, new(ThisBarLeft, 0)));
                 }
             }
 

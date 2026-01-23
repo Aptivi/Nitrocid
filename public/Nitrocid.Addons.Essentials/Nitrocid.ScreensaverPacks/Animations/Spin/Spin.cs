@@ -20,9 +20,9 @@
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel.Threading;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Nitrocid.Misc.Screensaver;
 
 namespace Nitrocid.ScreensaverPacks.Animations.Spin
 {
@@ -65,7 +65,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Spin
             if (!ConsoleResizeHandler.WasResized(false))
             {
                 TextWriterWhereColor.WriteWhereColorBack(spinBuffer.ToString(), 0, 0, true, new Color(ConsoleColors.White), new Color(ConsoleColors.Black));
-                ThreadManager.SleepNoBlock(Settings.SpinDelay, System.Threading.Thread.CurrentThread);
+                ScreensaverManager.Delay(Settings.SpinDelay);
             }
 
             // Step the current spin step forward

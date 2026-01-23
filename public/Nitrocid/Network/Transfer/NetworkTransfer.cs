@@ -29,7 +29,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 
@@ -44,12 +44,19 @@ namespace Nitrocid.Network.Transfer
         internal static bool IsError;
         internal static Exception? ReasonError;
         internal static CancellationTokenSource CancellationToken = new();
-        internal static HttpClient WClient = new();
         internal static string DownloadedString = "";
         internal static Notification? DownloadNotif;
         internal static Notification? UploadNotif;
         internal static bool SuppressDownloadMessage;
         internal static bool SuppressUploadMessage;
+        internal static HttpClient WClient = new();
+        internal static HttpClient httpClientIgnoreCertErrors = new(new HttpClientHandler
+        {
+            ServerCertificateCustomValidationCallback = (request, cert, chain, errors) =>
+            {
+                return true;
+            }
+        });
 
         /// <summary>
         /// Downloads a file to the current working directory.
@@ -149,7 +156,7 @@ namespace Nitrocid.Network.Transfer
         {
             if (e is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Download complete. Error: {0}", e.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Download complete. Error: {0}", vars: [e.Message]);
                 if (Config.MainConfig.DownloadNotificationProvoke && DownloadNotif is not null)
                     DownloadNotif.ProgressState = NotificationProgressState.Failure;
                 ReasonError = e;
@@ -168,7 +175,7 @@ namespace Nitrocid.Network.Transfer
         {
             if (e is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Upload complete. Error: {0}", e.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Upload complete. Error: {0}", vars: [e.Message]);
                 if (Config.MainConfig.UploadNotificationProvoke && UploadNotif is not null)
                     UploadNotif.ProgressState = NotificationProgressState.Failure;
                 ReasonError = e;
@@ -238,7 +245,7 @@ namespace Nitrocid.Network.Transfer
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to report transfer progress: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to report transfer progress: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }

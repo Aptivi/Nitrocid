@@ -114,10 +114,12 @@ Falha na remoção do log de depuração: {0}
 A alteração do diretório falhou: {0}
 Especifique o endereço
 O fuso horário está especificado incorretamente.
+Seleção de perfil inválida.
 Tentando conectar-se a {0} com o perfil {1}...
 Mods de análise não permitidos no modo de segurança.
 O caminho não é um arquivo nem um diretório.
 Cria outra cópia de um arquivo em um diretório ou nome diferente.
+Move um arquivo para outro diretório
 Partida {0} ({1}): {2}
 Partida {0}: {1}
 Tempo gasto: {0} milissegundos
@@ -618,6 +620,7 @@ Habilitar depuração do protetor de tela
 Habilita a depuração para protetores de tela. Observe que isso pode preencher rapidamente o log de depuração e deixar o protetor de tela um pouco mais lento, dependendo do protetor de tela usado. Só funciona se a depuração do kernel estiver habilitada para fins de diagnóstico.
 A página do manual {0} é inválida.
 Considere preencher esta página do manual.
+Manual do Mod
 Argumentos de kernel disponíveis:
 Erro irrecuperável no argumento:
 Criptografa uma string usando SHA512
@@ -1612,6 +1615,7 @@ Nome do arquivo
 Está selecionado
 Tamanho do arquivo
 Caminho do arquivo
+Selecionado '{0}'. Pressione ESC para sair e confirmar a seleção.
 Não é possível abrir a pasta ou selecionar o arquivo
 Insira um caminho ou um caminho completo para uma pasta local.
 Pressione ESPAÇO para mais informações
@@ -3218,6 +3222,7 @@ Este comando tem os argumentos abaixo que alteram seu funcionamento:
 Descrição de argumento não especificado
 Lista todos os parâmetros de função disponíveis de uma função
 Gerencie seus alarmes
+Gerencie seus alarmes em um TUI interativo
 Reinicia uma instância remota do kernel
 O kernel na instância remota será desligado
 Usa o estilo de configurações legado
@@ -3390,7 +3395,9 @@ Qual driver de codificação assimétrica você gostaria de usar?
 Estilo bootloader
 Selecione um estilo de bootloader que corresponda à sua preferência.
 Tempo limite de seleção padrão do bootloader
+Tempo limite em segundos para inicializar a seleção padrão.
 Seleção padrão do bootloader
+Seleção de entrada de boot padrão. Esse número é baseado em zero, então o primeiro elemento é índice 0, e assim por diante.
 Habilitar 'The Nitrocid Homepage'
 Habilita a 'Página inicial do Nitrocid', que permite que você veja o que está acontecendo rapidamente.
 Cor de fundo da vinculação de tecla integrada do TUI interativo
@@ -3703,7 +3710,26 @@ Traga de volta a nostalgia com este tema!
 Seu terminal é composto por tábuas de madeira
 Inspirado no padrão chinês de diferentes frutas
 Extras - CRC32C (Castagnoli)
+Imprime a versão do kernel
+Imprime a versão da API
 Não é possível limpar os arquivos de depuração
+A configuração do kernel não funcionará corretamente. Consulte o depurador do kernel para mais informações.
+Não é possível verificar variáveis de configuração quando nenhuma configuração de kernel base é especificada.
+Não é possível verificar variáveis de configuração quando nenhuma chave é especificada.
+Tentando registrar uma configuração personalizada com conteúdo inválido. Consulte o depurador do kernel para obter mais informações.
+Tentando registrar uma configuração base com conteúdo inválido. Consulte o depurador do kernel para obter mais informações
+Falha ao obter entradas de configurações de splash.
+O complemento de ícones precisa ser instalado antes de poder definir esse valor.
+Escolha uma entrada para
+Redefinir tudo
+Reiniciar entrada
+O tipo de argumento especificado não é válido
+Uma ou mais entradas de configuração têm variáveis ou enumerações inválidas e precisam ser corrigidas. Consulte o depurador do kernel para obter mais informações.
+Não existe cultura com esse nome.
+Ocorreu um erro ao processar sua ação de sinal de áudio.
+Não é possível retornar um tipo de classe inexistente do assembly do complemento
+Esta classe não é uma classe complementar
+Reproduzindo som de desligamento...
 Não ofereceremos mais suporte a esta versão do Nitrocid KS após esta data
 Certifique-se de atualizar para a versão compatível em breve se quiser continuar recebendo suporte.
 Esta versão do Nitrocid KS não é mais suportada.
@@ -3720,9 +3746,12 @@ Falha ao carregar aliases
 Falha ao carregar entradas de discagem rápida
 Falha ao carregar variáveis de ambiente
 Falha ao carregar o ouvinte de alarme
+Falha ao finalizar os complementos
 Falha ao carregar MOTD e MAL
 Falha ao carregar históricos de comandos do shell
 Falha ao carregar os manipuladores de extensão
+Carregando mods...
+Falha ao carregar mods
 Ocorreram erros ao tentar inicializar componentes opcionais.
 Falha ao redefinir variáveis gerais
 Falha ao salvar históricos de comandos do shell
@@ -3744,12 +3773,26 @@ Falha ao parar todos os threads do kernel
 Ocorreram erros ao tentar redefinir componentes.
 Exceção
 Consulte os logs de depuração do kernel para mais informações.
+Não existe esse tipo de sinal de áudio.
+Não é possível obter as configurações de fallback
+Não é possível redefinir todas as entradas de configuração para
+Não é possível redefinir esta entrada de configuração para
+A variável não foi encontrada em nenhum dos módulos.
+Não é possível obter o sinal de áudio necessário para protetores de tela de ambiente.
+A conexão de rede pode não ter sido estabelecida corretamente devido a um erro.
+Não é possível armazenar em buffer um comando que não esteja definido como encapsulável.
 Descrição do switch não especificado
 Caminho para um processo
 Argumentos para passar para um processo
 Comando para mostrar a entrada de ajuda
+Envia a saída do comando para outro comando como parâmetros
+Comando de origem para canalizar sua saída para o comando de destino como o último parâmetro
 Comando de destino a ser executado ao construir o argumento com base na saída do comando de origem
+Se deve passar a saída do comando de origem como um argumento entre aspas ou sem aspas
 Comando para encapsular sua saída
+Falha na execução do comando de origem.
+A execução do comando de destino falhou. O conteúdo pode não ter sido preenchido corretamente. O comando executado foi
+O cano está quebrado.
 Argumento para mostrar entrada de ajuda
 Número da sessão começando do zero
 Nome de usuário para consulta
@@ -3757,14 +3800,25 @@ Tipo de permissão para conceder ou negar
 Falso para negar, verdadeiro para conceder
 Novo nome de exibição ou 'limpar' para apagar o nome de exibição
 ID de idioma de três letras ou "limpar" para limpar o idioma preferido
+Altera a cultura do usuário preferencial
+ID da cultura ou 'limpar' para limpar a cultura preferida
+Cultura de usuário preferencial definida como {0}. Talvez você queira fazer login novamente.
+Cultura inválida
+Cultura preferida
 GUID de sessão inválido
 Não existe GUID de sessão
+Tipo desconhecido
+Parâmetro desconhecido
+Lista de tipos para
+Obtém facilmente as informações do log de depuração usando o GUID da sessão
 GUID de sessão para encontrar
 Número de exceção
 Nome do campo a consultar
 Nome da propriedade a ser consultada
 Nome do complemento para consulta
+Nome do tipo estático público do complemento
 Nome da função do tipo estático público para consulta
+Lista todos os tipos disponíveis do complemento especificado
 Nome do splash para consulta
 Número de bytes variando de 0 a 255
 Número da posição do byte
@@ -3786,6 +3840,10 @@ Uma palavra ou frase a ser substituída
 Uma palavra ou frase para substituir
 Número da linha (singular ou início do intervalo) ou 'all' para substituir em todas as linhas
 Uma expressão regular para corresponder a frases que devem ser substituídas
+País inválido
+Escolha um idioma para o país
+Seleção de idioma inválida para
+Sim
 Novo nome de grupo para adicionar
 Novo nome de usuário para adicionar
 Nova senha para usar
@@ -3812,8 +3870,12 @@ Caminho para o arquivo para imprimir seu conteúdo
 Caminho para o arquivo
 Adição ou remoção
 Nome do atributo
+Muda a cultura
+ID de cultura para mudar para
+Altera a cultura do usuário em vez da cultura do sistema
 Novo nome de host para alterar
 ID do idioma
+Altera o idioma usando um país (você pode ser solicitado a escolher um idioma)
 Nova mensagem para usar
 Respostas para dividir com uma barra
 Pergunta para imprimir na tela
@@ -3889,6 +3951,7 @@ O nome do protetor de tela ou 'aleatório'
 Expressão regular para pesquisar
 Arquivo de destino
 Palavra ou frase para pesquisar
+Abre as configurações iniciais do complemento
 Valor a definir
 Nome da variável de configuração
 Nome do implementador
@@ -3914,6 +3977,7 @@ Arquivo hash ou hash esperado
 Arquivo para testar
 Nome do arquivo ZIP a ser criado
 Caminho para compactar
+O complemento de ícones precisa ser instalado antes de poder exibir este emoji.
 Conteúdo da nota a ser adicionado
 Número da nota
 Caminho para um diretório com repositório Git
@@ -3953,6 +4017,8 @@ Lista todos os lembretes
 Salva todos os lembretes
 Um caminho para um arquivo de contato vCard ou uma representação MeCard
 Número de contato
+Editar...
+Insira um novo nome para este contato
 Latitude para usar
 Longitude a usar
 Chave API do Weather.com
@@ -3961,6 +4027,7 @@ Chave da API OpenWeatherMap
 Se deseja adicionar, remover, marcar como concluído ou desmarcar como concluído em uma tarefa
 Se deve listar, salvar ou carregar todas as tarefas
 Temporizador Pomodoro
+Pomodoro
 O temporizador Pomodoro está pronto
 Número do temporizador Pomodoro {0} em quatro iterações
 Pequena pausa
@@ -4011,6 +4078,7 @@ Caminho para o arquivo ou diretório de destino
 Caminho para o arquivo local
 Números de permissão de acordo com chmod
 Especifica se o tipo de transferência é ASCII ou Binário
+Link simbólico para: {0}
 Chave de cabeçalho
 Valor do cabeçalho
 Solicitação HTTP
@@ -4018,12 +4086,39 @@ Arquivo para upload
 String para carregar
 Cadeia de caracteres do agente do usuário
 Endereço de e-mail para efetuar login
+Criar pasta
+Mover...
+Mova tudo...
+Renomear pasta
+Remover pasta
+Remover mensagem
+Remover tudo...
+Não é possível abrir pasta ou mensagem
+Escreva o novo nome do diretório.
+Criando diretório...
+Não é possível criar pasta
+Selecione um novo diretório para mover esta mensagem.
+Mensagem comovente...
+Não é possível mover a mensagem
+Selecione um novo diretório para mover todas as mensagens do mesmo remetente.
+Movendo mensagens pelo remetente {0}...
+Não é possível mover todas as mensagens do mesmo remetente
+Escreva o novo nome do diretório para renomear {0}.
+Renomeando diretório...
+Não é possível renomear a pasta
+Removendo diretório...
+Não é possível remover a pasta
+Removendo mensagem...
+Não é possível excluir a mensagem
+Removendo mensagens do remetente {0}...
+Não é possível excluir todas as mensagens do mesmo remetente
 Nome do diretório de e-mail
 Número da página
 ID da mensagem
 Nome do remetente
 Nome antigo do diretório de e-mail
 Novo nome do diretório de e-mail
+Gerenciamento de correio interativo
 Servidor SFTP para conectar
 Link do feed RSS
 Número do feed
@@ -4044,13 +4139,132 @@ Caminho para o arquivo de sintetizador
 Servidor SSH para conectar
 Nome de usuário para autenticação
 Comando para executar remotamente
+Imprime informações sobre uma substância química no console.
+Um nome, um símbolo ou um número atômico de uma substância
+Imprime informações sobre todas as substâncias químicas no console.
+Não existe substância com número atômico
+Não há substância com símbolo ou nome
+Número atômico
+Massa atômica
+Símbolo
+Resumo
+Fase
+Posição na tabela periódica
+Posição em coordenadas
+Descobridor
+Nomeado por
+Configuração eletrônica
+Iniciar mod (selecionar)
+Iniciar mod (entrada)
+Parar mod
+Recarregar mod
+Instalar mod (selecionar)
+Instalar mod (entrada)
+Desinstalar mod
+Começar tudo
+Pare tudo
+Recarregar tudo
+Não é possível retornar um tipo de classe inexistente do assembly do mod
+Não é possível encontrar a função '{0}' no mod '{1}'.
+Não é possível encontrar a propriedade '{0}' no mod '{1}'.
+Não é possível encontrar o campo '{0}' no mod '{1}'.
+Esta classe não é uma classe mod
+Idiomas
+Ponto de entrada
+Insira um caminho para o mod que você deseja iniciar
+Falha ao iniciar o mod
+Digite um caminho para o mod que você deseja instalar
+Falha ao instalar o mod
+Não é possível iniciar ou parar este mod!
+Seja para iniciar, parar, obter informações, recarregar, instalar ou desinstalar um mod
+Nome do mod ou nome do arquivo
+Se deseja listar, recarregar, parar, iniciar ou gerenciar interativamente todos os mods
+Nome do mod
+Contextos culturais e linguísticos
+Isso permite que você configure a cultura e o idioma
+Configurações de hora e data
+Isso permite que você configure a hora e a data
+Configurações do bootloader
+Isso permite que você configure o bootloader
+A página inicial do Nitrocid
+Isso permite que você configure a página inicial do Nitrocid
+Configurações de atualização do kernel
+Isso permite que você configure as atualizações do kernel
+Configurações de erro do kernel
+Isso permite que você configure os erros do kernel
+Configurações de energia do kernel
+Isso permite que você configure o mecanismo de energia do kernel
+Esquemas de cores do kernel
+Isso permite que você defina vários esquemas de cores do kernel
+Configurações do manipulador de logon moderno
+Isso permite que você configure o manipulador de logon moderno
+Sistema de ajuda
+Isso permite que você configure o sistema de ajuda do shell
+Predefinições de shell
+Isso permite que você configure as predefinições do shell
+Configurações do depurador remoto
+Isso permite que você configure o depurador remoto
 Atraso unificado
 Se verdadeiro, habilita atraso de escrita unificado para todos os protetores de tela. Caso contrário, ele usa valores de atraso configurados específicos do protetor de tela.
+Esta seção lista todas as configurações de áudio.
+Configurações de áudio
+Habilitar suporte de áudio
+Habilita todo o sistema de áudio para sinais do sistema
+Habilitar dicas de teclado
+Se deve ou não reproduzir as dicas do teclado para cada pressionamento de tecla
+Habilitar sons de inicialização
+Se deve ou não reproduzir o som de inicialização
+Habilitar sons de desligamento
+Se deve ou não reproduzir o som de desligamento
+Habilitar sons de navegação
+Se deve ou não reproduzir o som de navegação para cada pressionamento de tecla
+Habilitar sons de notificação de baixa prioridade
+Se deve ou não reproduzir o som de notificação para alertas de baixa prioridade
+Habilitar sons de notificação de prioridade média
+Se deve ou não reproduzir o som de notificação para alertas de prioridade média
+Habilitar sons de notificação de alta prioridade
+Se deve ou não reproduzir o som de notificação para alertas de alta prioridade
+Habilitar efeitos sonoros de proteção de tela ambiente
+Se deve ou não reproduzir efeitos sonoros de proteção de tela ambiente
+Intensifique os efeitos sonoros do protetor de tela ambiente
+Se deve ou não intensificar os efeitos sonoros do protetor de tela ambiente
+Volume do sinal de áudio
+Especifique o quão alto você deseja que os sinais de áudio sejam
+Tema de áudio
+Qual tema de áudio você deseja usar para dicas de áudio?
+Configurações do editor de texto
+Isso permite que você configure o editor de texto
+Configurações do editor hexadecimal
+Isso permite que você configure o editor hexadecimal
+Configurações de título RSS
+Isso permite que você configure os títulos RSS
+Configurações do mouse
+Isso permite que você configure o mouse
+Configurações de depuração
+Isso permite que você configure a rotina de depuração
+Estética
+Isso permite que você configure a estética do kernel
+Mostra uma grande palavra de boas-vindas escrita no meio do console; semelhante aos tapetes de boas-vindas
+Mostrar progresso
+Mostrar progresso ou não
+Isso permite que você configure as cores
+Esta seção permite que você configure o Solver.
+Esta seção permite que você configure o SpeedPress.
+Esta seção permite que você configure o Meteor e o ShipDuet.
+Esta seção permite que você configure como o sistema de modificação do kernel funciona.
 Esta seção permite que você configure como o aplicativo de timer funciona.
 Esta seção permite que você configure como o aplicativo temporizador Pomodoro funciona.
 Habilitar Figlet para o timer pomodoro
 Se habilitado, usará o figlet para o timer pomodoro. Observe que ele precisa de uma tela de console grande para renderizar o tempo corretamente com o Figlet habilitado.
 Fonte Figlet para o cronômetro pomodoro
+Configurações de rampa de horas
+Isso permite que você configure a rampa de horas
+Configurações de rampa de minutos
+Isso permite que você configure a rampa de minutos
+Configurações de rampa de segundos
+Isso permite que você configure a rampa de segundos
+Configurações de rampa
+Isso permite que você configure as rampas
 Mostra o texto abaixo de uma linha em um fundo vermelho escuro.
 Personagens aleatórios que se espalham aleatoriamente pela tela.
 Data e hora simples no meio da tela e muda a cor com base na hora atual.
@@ -4064,7 +4278,64 @@ Bloco se movendo em um padrão de onda com réguas verdes rastreando sua posiç�
 Mostra um único caractere aleatório em um texto colorido.
 Mostra uma palavra que está sendo selecionada, assim como uma máquina caça-níqueis encontrada em cassinos.
 Mostra um texto colorido alternando entre duas cores neon: ciano e fúcsia.
+Configurações de cultura
+Isso permite que você configure a cultura usada pelo protetor de tela do calendário
+Primeiras configurações de rampa
+Isso permite que você configure a primeira rampa
+Configurações da segunda rampa
+Isso permite que você configure a segunda rampa
+Configurações da terceira rampa
+Isso permite que você configure a terceira rampa
+Esquemas de cores do Alma Linux, um spinoff de um sistema operacional Linux, Red Hat
+Esquemas de cores de um sistema operacional Linux, Arch Linux
+Esquemas de cores do EndeavourOS, um spinoff de um sistema operacional Linux, o Arch Linux
+Esquemas de cores do Fedora, um spinoff de um sistema operacional Linux, o Red Hat
+Esquemas de cores de um sistema operacional Linux, Gentoo
+Cores de padrões cinzelados formando uma mandala colorida
+Esquemas de cores do Kubuntu, um spinoff de um popular sistema operacional Linux, o Ubuntu
+Esquemas de cores do Linux Mint, um spinoff não oficial de um popular sistema operacional Linux, o Ubuntu
+Esquemas de cores do Lubuntu, um spinoff de um popular sistema operacional Linux, o Ubuntu
+Esquemas de cores do Manjaro, um spinoff de um sistema operacional Linux, o Arch Linux
+Esquemas de cores de um sistema operacional Linux, openSUSE
+Esquemas de cores de um sistema operacional Linux, Red Hat
+Tons de vermelho com cores de destaque dinâmicas para texto que chama a atenção
+Esquemas de cores do Rocky Linux, um spinoff de um sistema operacional Linux, Red Hat
+Esquemas de cores de um sistema operacional Linux, Slackware
+Esquemas de cores do Xubuntu, um spinoff de um popular sistema operacional Linux, o Ubuntu
+Esquemas de cores do Zorin OS, um spinoff não oficial de um popular sistema operacional Linux, o Ubuntu
+Extras - Química
+Extras - Mods
+Extras - Ícones
 Qual cultura está sendo usada para alterar os nomes dos meses, calendário, etc.?
+Habilitar widgets 'The Nitrocid Homepage'
+Habilita os widgets 'The Nitrocid Homepage' no lado direito da tela.
+Habilitar o feed RSS 'The Nitrocid Homepage'
+Habilita o widget de feed RSS 'The Nitrocid Homepage' no lado direito da tela.
+Widget 'The Nitrocid Homepage'
+Seleciona um widget que será exibido em 'The Nitrocid Homepage'.
+Configurações de borda de notificação
+Isso permite que você configure a borda de notificação
+Configurações gerais de borda
+Isso permite que você configure a borda geral
+Configurações de aparência
+Isso permite que você configure a aparência da rampa de horas
+Isso permite que você configure a cor da rampa de horas
+Isso permite que você configure a aparência da rampa de minutos
+Isso permite que você configure a cor da rampa de minutos
+Isso permite que você configure a aparência da rampa de segundos
+Isso permite que você configure a cor da rampa de segundos
+Configurações de cor da posição inicial
+Isso permite que você configure as cores da posição inicial
+Configurações de cor da posição final
+Isso permite que você configure as cores da posição final
+Configurações da barra de rampa
+Isso permite que você configure a barra de rampa
+Isso permite que você configure a aparência da rampa
+Isso permite que você configure as cores da rampa
+Configurações iniciais do gradiente
+Isso permite que você configure as cores do gradiente inicial
+Configurações finais do gradiente
+Isso permite que você configure as cores do gradiente final
 Nível máximo de cor de fundo
 Nível máximo de cor de fundo. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
 Nível máximo de cor da linha
@@ -4073,6 +4344,7 @@ Nível máximo de cor do texto
 Nível máximo de cor do texto. O valor mínimo aceito é 0 e o valor máximo aceito é 255.
 Use a cultura do sistema
 Se o protetor de tela usa a cultura definida pelas configurações principais do kernel ou por essas configurações do protetor de tela.
+Isso permite que você configure a primeira aparência da rampa
 Texto informativo para o primeiro
 Escreva como seu texto informativo para a hora atual é exibido. {0} para a hora atual de 24 primeiro.
 Caractere do canto superior esquerdo para a primeira barra
@@ -4083,6 +4355,7 @@ Caractere do quadro superior para a primeira barra
 Caractere do quadro inferior para a primeira barra
 Caractere do quadro esquerdo para a primeira barra
 Caractere do quadro direito para a primeira barra
+Isso permite que você configure a primeira cor da rampa
 Cor da primeira barra
 Nível mínimo de cor vermelha para a primeira
 Nível mínimo de cor verde para a primeira
@@ -4092,6 +4365,7 @@ Nível máximo de cor vermelha para a primeira
 Nível máximo de cor verde para a primeira
 Nível máximo de cor azul para a primeira
 Nível máximo de cor para a primeira
+Isso permite que você configure a segunda aparência da rampa
 Texto informativo para a segunda
 Escreva como seu texto informativo para o minuto atual é exibido. {0} para o minuto atual de 60 segundos.
 Caractere do canto superior esquerdo para a segunda barra
@@ -4102,6 +4376,7 @@ Caractere do quadro superior para a segunda barra
 Caractere do quadro inferior para a segunda barra
 Caractere do quadro esquerdo para a segunda barra
 Caractere do quadro direito para a segunda barra
+Isso permite que você configure a segunda cor da rampa
 Cor da segunda barra
 Nível mínimo de cor vermelha para a segunda
 Nível mínimo de cor verde para a segunda
@@ -4111,6 +4386,7 @@ Nível máximo de cor vermelha para a segunda
 Nível máximo de cor verde para a segunda
 Nível máximo de cor azul para a segunda
 Nível máximo de cor para a segunda
+Isso permite que você configure a terceira aparência da rampa
 Caractere do canto superior esquerdo para a terceira barra
 Caractere do canto superior direito para a terceira barra
 Caractere do canto inferior esquerdo para a terceira barra
@@ -4121,6 +4397,7 @@ Caractere do quadro esquerdo para a terceira barra
 Caractere do quadro direito para a terceira barra
 Texto informativo para o terceiro
 Escreva como seu texto informativo para o segundo atual é exibido. {0} para o segundo atual de 60 terceiros.
+Isso permite que você configure a cor da terceira rampa
 Cor da terceira barra
 Nível mínimo de cor vermelha para o terceiro
 Nível mínimo de cor verde para o terceiro
@@ -4132,61 +4409,6 @@ Nível máximo de cor azul para o terceiro
 Nível máximo de cor para o terceiro
 O Progresses selecionará cores aleatórias se estiver habilitado. Caso contrário, use cores da configuração.
 Se o ciclo de cores estiver habilitado, quantos tiques antes de alterar as cores no Progresses? 1 tique = 0,5 terço
-Pronto! Por favor, use o aplicativo Nitrocid.Locales com argumentos apropriados para finalizar os idiomas. Você pode usar este caminho:
-A configuração do kernel não funcionará corretamente. As chaves inválidas são
-Tentando registrar uma configuração personalizada com conteúdo inválido. As chaves inválidas são
-Tentando registrar uma configuração base com conteúdo inválido. As chaves inválidas são
-Adiciona um mod à lista negra
-Remove um mod da lista negra
-Estas entradas de configuração têm variáveis ou enumerações inválidas e precisam ser corrigidas:
-Inicia todos os mods
-Imprime um separador no console com cor
-Imprime um separador no console com formatação e cor
-Recarrega todos os mods
-Estatísticas
-Mostra as estatísticas de teste atuais
-Testar tudo
-Testa todas as fachadas
-Volta para a seleção de seção
-Escolha uma fachada de teste para executar
-Este teste contém parâmetros opcionais. Insira o valor do parâmetro para adicionar aos parâmetros de teste.
-Contagem de parâmetros
-Sim!
-Tentar novamente
-O teste foi executado conforme o esperado?
-O teste falhou. O valor esperado é {0}, mas o valor real é {1}.
-O teste falhou inesperadamente.
-Testes bem-sucedidos:
-Testes com falha:
-Testes a serem executados:
-Não é possível obter a lista de funções
-Não é possível obter a lista de propriedades
-Não é possível obter a lista de campos
-Com base nas configurações de idioma do seu sistema, o idioma apropriado é
-Falha ao carregar complementos de finalização
-Modificações do kernel
-Selecionado '{0}'. Pressione ESC para sair e confirmar a seleção.
-A variável {0} não foi encontrada em nenhum dos módulos.
-O tipo de método não está definido na lista de tipos base do Nitrocid.
-Não é possível executar a propriedade personalizada com mod inexistente
-Não é possível executar o campo personalizado com mod inexistente
-Busca facilmente as informações do log de depuração usando o número da sessão
-Sim, defina!
-Não, não defina.
-Usa as configurações de idioma do sistema para tentar inferir o idioma de
-Não há informações de propriedade para
-Pomodoro Timer
-Seleção de perfil inválida.
-Alterar cultura ao alternar idiomas
-Ao alternar idiomas, altere os nomes dos meses, calendário, etc.
-Qual variante do idioma atual está sendo usada para alterar os nomes dos meses, calendário, etc.?
-Tempo limite em segundos para inicializar a seleção padrão.
-Seleção de entrada de inicialização padrão. Este número é baseado em zero, então o primeiro elemento é índice 0, e assim por diante.
-Esta seção lista as configurações predefinidas do shell.
-Configurações predefinidas do shell
-Saídas da lista de encapsulamento
-Encapsula as saídas da lista se parecerem muito longas para a geometria atual do console.
-Esta seção permite que você configure como as diversões funcionam.
 Data de produção inválida
 Período de validade inválido
 Data de validade inválida
@@ -4200,21 +4422,14 @@ Obtém as informações de validade do produto
 Data de produção (consulte a lateral ou a parte inferior do produto)
 Data ou período de validade (explicitamente escrito no mesmo local ou em períodos de tempo, como 6 meses ou 1 ano)
 Se o produto-alvo não especifica explicitamente a data de validade
-Configurações do protetor de tela...
-Isso permite que você configure a cultura usada pelo protetor de tela do calendário.
 Selecione uma instância de configuração para alternar.
+Não é possível selecionar a configuração
 Selecionar configuração
 Solicita que você selecione uma instância de configuração
-Não é possível verificar as variáveis de configuração quando nenhuma configuração base do kernel é especificada.
-A configuração do kernel não funcionará corretamente. Consulte o depurador do kernel para obter mais informações.
-Não é possível verificar as variáveis de configuração quando nenhuma chave é especificada.
-Tentando registrar uma configuração personalizada com conteúdo inválido. Consulte o depurador do kernel para obter mais informações.
-Tentando registrar uma configuração base com conteúdo inválido. Consulte o depurador do kernel para obter mais informações
-Escolha uma entrada para
-Não é possível selecionar a configuração
-Uma ou mais entradas de configuração têm variáveis ou enumerações inválidas e precisam ser corrigidas. Consulte o depurador do kernel para obter mais informações.
+Configurações do protetor de tela...
 O nome da entrada de configurações não pode estar vazio.
 A descrição da entrada de configurações não pode estar vazia.
 A entrada de configurações não pode ter uma lista de chaves de configurações vazia.
 O nome da chave de configurações não pode estar vazio.
 A chave de configurações não pode conter um tipo de chave inválido.
+Chaves disponíveis

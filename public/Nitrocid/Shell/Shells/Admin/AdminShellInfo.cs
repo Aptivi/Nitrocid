@@ -18,11 +18,11 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Arguments;
-using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Shell.Shells.Admin.Commands;
 using Nitrocid.Shell.Shells.Admin.Presets;
 
@@ -31,9 +31,8 @@ namespace Nitrocid.Shell.Shells.Admin
     /// <summary>
     /// Common admin shell class
     /// </summary>
-    internal class AdminShellInfo : BaseShellInfo, IShellInfo
+    internal class AdminShellInfo : BaseShellInfo<AdminShell>, IShellInfo
     {
-
         /// <summary>
         /// Admin commands
         /// </summary>
@@ -41,57 +40,42 @@ namespace Nitrocid.Shell.Shells.Admin
         [
             new CommandInfo("arghelp", /* Localizable */ "Kernel arguments help system",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
                         {
-                            AutoCompleter = (_) => [.. ArgumentParse.AvailableCMDLineArgs.Keys],
+                            AutoCompleter = (_) => [.. KernelArguments.AvailableCMDLineArgs.Keys],
                             ArgumentDescription = /* Localizable */ "Argument to show help entry"
                         })
-                    })
+                    ])
                 ], new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("bootlog", /* Localizable */ "Prints the boot log",
-                [
-                    new CommandArgumentInfo()
-                ], new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("bootlog", /* Localizable */ "Prints the boot log", new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("cdbglog", /* Localizable */ "Deletes everything in debug log",
-                [
-                    new CommandArgumentInfo()
-                ], new CdbgLogCommand()),
+            new CommandInfo("cdbglog", /* Localizable */ "Deletes everything in debug log", new CdbgLogCommand()),
 
-            new CommandInfo("clearfiredevents", /* Localizable */ "Clears all fired events",
-                [
-                    new CommandArgumentInfo()
-                ], new ClearFiredEventsCommand()),
+            new CommandInfo("clearfiredevents", /* Localizable */ "Clears all fired events", new ClearFiredEventsCommand()),
 
             new CommandInfo("journal", /* Localizable */ "Gets current kernel journal log",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "sessionNum", new()
                         {
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Session number starting from zero"
                         }),
-                    })
+                    ])
                 ], new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
-            new CommandInfo("lsevents", /* Localizable */ "Lists all fired events",
-                [
-                    new CommandArgumentInfo()
-                ], new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
+            new CommandInfo("lsevents", /* Localizable */ "Lists all fired events", new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported),
 
             new CommandInfo("lsusers", /* Localizable */ "Lists the users",
                 [
                     new CommandArgumentInfo(true)
                 ], new LsUsersCommand()),
 
-            new CommandInfo("savenotifs", /* Localizable */ "Saves the recent notifications",
-                [
-                    new CommandArgumentInfo()
-                ], new SaveNotifsCommand()),
+            new CommandInfo("savenotifs", /* Localizable */ "Saves the recent notifications", new SaveNotifsCommand()),
 
             new CommandInfo("userflag", /* Localizable */ "Manipulates with the user main flags",
                 [
@@ -152,6 +136,21 @@ namespace Nitrocid.Shell.Shells.Admin
                         })
                     ])
                 ], new UserLangCommand()),
+
+            new CommandInfo("userculture", /* Localizable */ "Changes the preferred user culture",
+                [
+                    new CommandArgumentInfo(
+                    [
+                        new CommandArgumentPart(true, "user", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "User name to query"
+                        }),
+                        new CommandArgumentPart(true, "culture/clear", new()
+                        {
+                            ArgumentDescription = /* Localizable */ "Culture ID, or 'clear' to clear preferred culture"
+                        })
+                    ])
+                ], new UserCultureCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
@@ -164,8 +163,5 @@ namespace Nitrocid.Shell.Shells.Admin
             { "PowerLineBG2", new AdminPowerLineBG2Preset() },
             { "PowerLineBG3", new AdminPowerLineBG3Preset() }
         };
-
-        public override BaseShell ShellBase => new AdminShell();
-
     }
 }

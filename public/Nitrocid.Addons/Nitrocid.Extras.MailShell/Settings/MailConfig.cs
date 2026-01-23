@@ -26,7 +26,7 @@ using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection.Internal;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 
 namespace Nitrocid.Extras.MailShell.Settings
 {
@@ -37,9 +37,16 @@ namespace Nitrocid.Extras.MailShell.Settings
     {
         /// <inheritdoc/>
         [JsonIgnore]
-        public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("MailSettings.json", ResourcesType.Misc, typeof(MailConfig).Assembly) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
+        public override SettingsEntry[] SettingsEntries
+        {
+            get
+            {
+                var dataStream = ResourcesManager.GetData("MailSettings.json", ResourcesType.Misc, typeof(MailConfig).Assembly) ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries."));
+                string dataString = ResourcesManager.ConvertToString(dataStream);
+                return ConfigTools.GetSettingsEntries(dataString);
+            }
+        }
 
 
         /// <summary>

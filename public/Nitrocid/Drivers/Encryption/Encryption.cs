@@ -39,10 +39,10 @@ namespace Nitrocid.Drivers.Encryption
             string hash = "";
             for (int i = 0; i <= encrypted.Length - 1; i++)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Appending {0} to hash", encrypted[i]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Appending {0} to hash", vars: [encrypted[i]]);
                 hash += $"{encrypted[i]:X2}";
             }
-            DebugWriter.WriteDebug(DebugLevel.I, "Final hash: {0}", hash);
+            DebugWriter.WriteDebug(DebugLevel.I, "Final hash: {0}", vars: [hash]);
             return hash;
         }
 
@@ -54,8 +54,8 @@ namespace Nitrocid.Drivers.Encryption
         /// <returns>Encrypted hash sum</returns>
         public static string GetEncryptedString(string str, string algorithm)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Selected algorithm: {0}", algorithm);
-            DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Selected algorithm: {0}", vars: [algorithm]);
+            DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", vars: [str.Length]);
 
             // Get the encryptor
             return DriverHandler.GetDriver<IEncryptionDriver>(algorithm).GetEncryptedString(str);
@@ -69,8 +69,8 @@ namespace Nitrocid.Drivers.Encryption
         /// <returns>Encrypted hash sum</returns>
         public static string GetEncryptedFile(Stream str, string algorithm)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Selected algorithm: {0}", algorithm);
-            DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", str.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Selected algorithm: {0}", vars: [algorithm]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", vars: [str.Length]);
 
             // Get the encryptor
             return DriverHandler.GetDriver<IEncryptionDriver>(algorithm).GetEncryptedFile(str);

@@ -18,12 +18,12 @@
 //
 
 using FluentFTP;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Exceptions;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {
@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
             var client = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance;
             if (client is null)
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.FTPShell);
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("FTP server information"), true);
+            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("FTP server information"), KernelColorTools.GetColor(KernelColorType.ListTitle));
             TextWriters.Write(Translate.DoTranslation("Server address:") + " ", false, KernelColorType.ListEntry);
             TextWriters.Write(client.Host, true, KernelColorType.ListValue);
             TextWriters.Write(Translate.DoTranslation("Server port:") + " ", false, KernelColorType.ListEntry);

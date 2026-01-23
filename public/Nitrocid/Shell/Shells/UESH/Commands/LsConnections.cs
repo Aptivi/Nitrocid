@@ -18,11 +18,14 @@
 //
 
 using System;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Network.Connections;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Users;
+using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -38,18 +41,26 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
+                !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
+                TextWriters.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, parameters.CommandText);
+                return -4;
+            }
+
             var shellTypes = Enum.GetNames<NetworkConnectionType>();
             foreach (var shellType in shellTypes)
             {
                 var connections = NetworkConnectionTools.GetNetworkConnections(shellType);
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Connections for type") + $" {shellType}", true);
+                SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Connections for type") + $" {shellType}", KernelColorTools.GetColor(KernelColorType.ListTitle));
                 foreach (var connection in connections)
                 {
                     TextWriterColor.Write($"- {connection.ConnectionName} -> {connection.ConnectionOriginalUrl}");
                     TextWriterColor.Write($"  {connection.ConnectionUri}");
                     if (!connection.ConnectionIsInstance)
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Alive"), $"{connection.ConnectionAlive}", indent: 1);
-                    TextWriters.WriteListEntry(Translate.DoTranslation("Instance"), $"{connection.ConnectionInstance}", indent: 1);
+                        ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Alive"), $"{connection.ConnectionAlive}", indent: 1);
+                    ListEntryWriterColor.WriteListEntry(Translate.DoTranslation("Instance"), $"{connection.ConnectionInstance}", indent: 1);
                 }
             }
             return 0;

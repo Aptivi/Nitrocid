@@ -21,7 +21,7 @@ using LibGit2Sharp;
 using GitCommand = LibGit2Sharp.Commands;
 using System.Linq;
 using System;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;

@@ -18,9 +18,6 @@
 //
 
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files;
-using Nitrocid.Files.Instances;
-using Nitrocid.Files.Paths;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Configuration.Settings;
@@ -29,7 +26,6 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Interactives;
-using Nitrocid.Misc.Notifications;
 using Nitrocid.Users;
 using Nitrocid.Users.Login;
 using Nitrocid.Users.Login.Widgets;
@@ -44,15 +40,19 @@ using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
-using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Nitrocid.Files;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Shell.Homepage
 {
@@ -62,15 +62,18 @@ namespace Nitrocid.Shell.Homepage
     public static class HomepageTools
     {
         internal static bool isHomepageEnabled = true;
+        internal static bool isHomepageWidgetEnabled = true;
+        internal static bool isHomepageRssFeedEnabled = true;
+        internal static string homepageWidgetName = nameof(AnalogClock);
         private static bool isOnHomepage = false;
-        private static Dictionary<string, Action> choiceActionsAddons = [];
-        private static Dictionary<string, Action> choiceActionsCustom = [];
-        private static Dictionary<string, Action> choiceActionsBuiltin = new()
+        private static readonly Dictionary<string, Action> choiceActionsAddons = [];
+        private static readonly Dictionary<string, Action> choiceActionsCustom = [];
+        private static readonly Dictionary<string, Action> choiceActionsBuiltin = new()
         {
             { /* Localizable */ "File Manager", FilesystemTools.OpenFileManagerTui },
-            { /* Localizable */ "Alarm Manager", OpenAlarmCli },
-            { /* Localizable */ "Notifications", OpenNotificationsCli },
-            { /* Localizable */ "Task Manager", OpenTaskManagerCli },
+            { /* Localizable */ "Alarm Manager", AlarmCli.OpenAlarmCli },
+            { /* Localizable */ "Notifications", NotificationsCli.OpenNotificationsCli },
+            { /* Localizable */ "Task Manager", TaskManagerCli.OpenTaskManagerCli },
         };
         private static readonly Keybinding[] bindings =
         [
@@ -93,10 +96,13 @@ namespace Nitrocid.Shell.Homepage
             if (isOnHomepage || !isHomepageEnabled)
                 return;
             isOnHomepage = true;
-            var homeScreen = new Screen();
             int choiceIdx = 0;
             int buttonHighlight = 0;
             var choices = PopulateChoices();
+            var homeScreen = new Screen
+            {
+                CycleFrequency = 1000
+            };
 
             try
             {
@@ -104,16 +110,23 @@ namespace Nitrocid.Shell.Homepage
                 var homeScreenBuffer = new ScreenPart();
                 string rssSequence = "";
                 ScreenTools.SetCurrent(homeScreen);
+                ScreenTools.SetCurrentCyclic(homeScreen);
                 KernelColorTools.LoadBackground();
 
                 // Prepare the widget
-                var widget = WidgetTools.GetWidget(nameof(AnalogClock));
-                int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
-                int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
-                int widgetHeight = ConsoleWrapper.WindowHeight - 11;
-                int widgetTop = 2;
-                string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
-                TextWriterRaw.WriteRaw(widgetInit);
+                var widget =
+                    WidgetTools.CheckWidget(Config.MainConfig.HomepageWidget) ?
+                    WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
+                    WidgetTools.GetWidget(nameof(AnalogClock));
+                if (Config.MainConfig.EnableHomepageWidgets)
+                {
+                    int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
+                    int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
+                    int widgetHeight = ConsoleWrapper.WindowHeight - 11;
+                    int widgetTop = 2;
+                    string widgetInit = widget.Initialize(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
+                    TextWriterRaw.WriteRaw(widgetInit);
+                }
 
                 // Now, render the homepage
                 homeScreenBuffer.AddDynamicText(() =>
@@ -125,8 +138,8 @@ namespace Nitrocid.Shell.Homepage
                     {
                         Left = 0,
                         Top = 1,
-                        InteriorWidth = ConsoleWrapper.WindowWidth - 2,
-                        InteriorHeight = ConsoleWrapper.WindowHeight - 4,
+                        Width = ConsoleWrapper.WindowWidth - 2,
+                        Height = ConsoleWrapper.WindowHeight - 4,
                         Color = KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator),
                     };
                     builder.Append(masterBorder.Render());
@@ -157,11 +170,9 @@ namespace Nitrocid.Shell.Homepage
                         OptionColor = KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption),
                         OptionForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionForeground),
                         OptionBackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiOptionBackground),
-                        Left = 0,
-                        Top = ConsoleWrapper.WindowHeight - 1,
                         Width = ConsoleWrapper.WindowWidth - 1,
                     };
-                    builder.Append(keybindings.Render());
+                    builder.Append(RendererTools.RenderRenderable(keybindings, new(0, ConsoleWrapper.WindowHeight - 1)));
 
                     // Make a border for a widget and the first three RSS feeds (if the addon is installed)
                     int widgetLeft = ConsoleWrapper.WindowWidth / 2 + ConsoleWrapper.WindowWidth % 2;
@@ -174,16 +185,16 @@ namespace Nitrocid.Shell.Homepage
                     {
                         Left = widgetLeft,
                         Top = widgetTop,
-                        InteriorWidth = widgetWidth,
-                        InteriorHeight = widgetHeight,
+                        Width = widgetWidth,
+                        Height = widgetHeight,
                         Color = KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator),
                     };
                     var rssBorder = new Border()
                     {
                         Left = widgetLeft,
                         Top = rssTop,
-                        InteriorWidth = widgetWidth,
-                        InteriorHeight = rssHeight,
+                        Width = widgetWidth,
+                        Height = rssHeight,
                         Color = KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator),
                     };
                     builder.Append(
@@ -192,60 +203,67 @@ namespace Nitrocid.Shell.Homepage
                     );
 
                     // Render the widget
-                    string widgetSeq = widget.Render(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
-                    builder.Append(widgetSeq);
-
-                    // Render the first three RSS feeds
-                    if (string.IsNullOrEmpty(rssSequence))
+                    if (Config.MainConfig.EnableHomepageWidgets)
                     {
-                        var rssSequenceBuilder = new StringBuilder();
-                        try
-                        {
-                            if (!Config.MainConfig.ShowHeadlineOnLogin)
-                                rssSequenceBuilder.Append(Translate.DoTranslation("Enable headlines on login to show RSS feeds"));
-                            else
-                            {
-                                var feedsObject = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetArticles", Config.MainConfig.RssHeadlineUrl);
-                                bool found = false;
-                                if (feedsObject is (string feedTitle, string articleTitle)[] feeds)
-                                {
-                                    for (int i = 0; i < 3; i++)
-                                    {
-                                        if (i >= feeds.Length)
-                                            break;
-                                        (string _, string articleTitle) = feeds[i];
-                                        rssSequenceBuilder.AppendLine(articleTitle);
-                                        found = true;
-                                    }
-                                }
-                                if (!found)
-                                    rssSequenceBuilder.Append(Translate.DoTranslation("No feed."));
-                            }
-                        }
-                        catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
-                            DebugWriter.WriteDebugStackTrace(ex);
-                            rssSequenceBuilder.Append(Translate.DoTranslation("Install the RSS Shell Extras addon!"));
-                        }
-                        catch (Exception ex)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
-                            DebugWriter.WriteDebugStackTrace(ex);
-                            rssSequenceBuilder.Append(Translate.DoTranslation("Failed to get the latest news."));
-                        }
-                        rssSequence = rssSequenceBuilder.ToString();
+                        string widgetSeq = widget.Render(widgetLeft + 1, widgetTop + 1, widgetWidth, widgetHeight);
+                        builder.Append(widgetSeq);
                     }
 
-                    // Render the RSS feed sequence
-                    var sequences = rssSequence.GetWrappedSentencesByWords(widgetWidth);
-                    for (int i = 0; i < 3; i++)
+                    // Render the first three RSS feeds
+                    if (Config.MainConfig.EnableHomepageRssFeed)
                     {
-                        if (i >= sequences.Length)
-                            break;
-                        string sequence = sequences[i];
-                        builder.Append(CsiSequences.GenerateCsiCursorPosition(widgetLeft + 2, rssTop + 2 + i));
-                        builder.Append(sequence);
+                        if (string.IsNullOrEmpty(rssSequence))
+                        {
+                            var rssSequenceBuilder = new StringBuilder();
+                            try
+                            {
+                                if (!Config.MainConfig.ShowHeadlineOnLogin)
+                                    rssSequenceBuilder.Append(Translate.DoTranslation("Enable headlines on login to show RSS feeds"));
+                                else
+                                {
+                                    var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
+                                    var feedsObject = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetArticles", addonType, Config.MainConfig.RssHeadlineUrl);
+                                    bool found = false;
+                                    if (feedsObject is (string feedTitle, string articleTitle)[] feeds)
+                                    {
+                                        for (int i = 0; i < 3; i++)
+                                        {
+                                            if (i >= feeds.Length)
+                                                break;
+                                            (string _, string articleTitle) = feeds[i];
+                                            rssSequenceBuilder.AppendLine(articleTitle);
+                                            found = true;
+                                        }
+                                    }
+                                    if (!found)
+                                        rssSequenceBuilder.Append(Translate.DoTranslation("No feed."));
+                                }
+                            }
+                            catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
+                                DebugWriter.WriteDebugStackTrace(ex);
+                                rssSequenceBuilder.Append(Translate.DoTranslation("Install the RSS Shell Extras addon!"));
+                            }
+                            catch (Exception ex)
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
+                                DebugWriter.WriteDebugStackTrace(ex);
+                                rssSequenceBuilder.Append(Translate.DoTranslation("Failed to get the latest news."));
+                            }
+                            rssSequence = rssSequenceBuilder.ToString();
+                        }
+
+                        // Render the RSS feed sequence
+                        var sequences = rssSequence.GetWrappedSentencesByWords(widgetWidth);
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (i >= sequences.Length)
+                                break;
+                            string sequence = sequences[i];
+                            builder.Append(CsiSequences.GenerateCsiCursorPosition(widgetLeft + 2, rssTop + 2 + i));
+                            builder.Append(sequence);
+                        }
                     }
 
                     // Populate the button positions
@@ -258,25 +276,25 @@ namespace Nitrocid.Shell.Homepage
 
                     // Populate the settings button
                     var foregroundSettings = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator);
-                    var backgroundSettings = buttonHighlight == 1 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
+                    var backgroundSettings = buttonHighlight == 1 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ConsoleColoring.CurrentBackgroundColor;
                     var foregroundSettingsText = buttonHighlight == 1 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.NeutralText);
                     var settingsBorder = new Border()
                     {
                         Left = settingsButtonPosX,
                         Top = buttonPanelPosY,
-                        InteriorWidth = buttonWidth,
-                        InteriorHeight = buttonHeight,
+                        Width = buttonWidth,
+                        Height = buttonHeight,
                         Color = foregroundSettings,
                         BackgroundColor = backgroundSettings,
                     };
                     var settingsText = new AlignedText()
                     {
+                        Left = settingsButtonPosX + 1,
                         Top = buttonPanelPosY + 1,
                         Text = Translate.DoTranslation("Settings"),
                         ForegroundColor = foregroundSettingsText,
                         BackgroundColor = backgroundSettings,
-                        LeftMargin = settingsButtonPosX + 1,
-                        RightMargin = buttonPanelWidth + settingsButtonPosX + aboutButtonPosX + 2 - ConsoleWrapper.WindowWidth % 2,
+                        Width = buttonWidth,
                         Settings = new()
                         {
                             Alignment = TextAlignment.Middle
@@ -289,25 +307,25 @@ namespace Nitrocid.Shell.Homepage
 
                     // Populate the about button
                     var foregroundAbout = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator);
-                    var backgroundAbout = buttonHighlight == 2 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ColorTools.CurrentBackgroundColor;
+                    var backgroundAbout = buttonHighlight == 2 ? KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator) : ConsoleColoring.CurrentBackgroundColor;
                     var foregroundAboutText = buttonHighlight == 2 ? new Color(ConsoleColors.Black) : KernelColorTools.GetColor(KernelColorType.NeutralText);
                     var aboutBorder = new Border()
                     {
                         Left = aboutButtonPosX,
                         Top = buttonPanelPosY,
-                        InteriorWidth = aboutButtonPosX + buttonWidth == buttonPanelWidth ? buttonWidth + 1 : buttonWidth,
-                        InteriorHeight = buttonHeight,
+                        Width = aboutButtonPosX + buttonWidth == buttonPanelWidth ? buttonWidth + 1 : buttonWidth,
+                        Height = buttonHeight,
                         Color = foregroundAbout,
                         BackgroundColor = backgroundAbout,
                     };
                     var aboutText = new AlignedText()
                     {
+                        Left = aboutButtonPosX + 1,
                         Top = buttonPanelPosY + 1,
                         Text = Translate.DoTranslation("About"),
                         ForegroundColor = foregroundAboutText,
                         BackgroundColor = backgroundAbout,
-                        LeftMargin = aboutButtonPosX + 1,
-                        RightMargin = buttonWidth + aboutButtonPosX + 4 - ConsoleWrapper.WindowWidth % 2,
+                        Width = buttonWidth,
                         Settings = new()
                         {
                             Alignment = TextAlignment.Middle
@@ -324,8 +342,8 @@ namespace Nitrocid.Shell.Homepage
                     {
                         Left = settingsButtonPosX,
                         Top = widgetTop,
-                        InteriorWidth = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
-                        InteriorHeight = widgetHeight + 2,
+                        Width = widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2,
+                        Height = widgetHeight + 2,
                         Color = KernelColorTools.GetColor(buttonHighlight == 0 ? KernelColorType.TuiPaneSelectedSeparator : KernelColorType.TuiPaneSeparator),
                     };
                     var choicesSelection = new Selection(availableChoices)
@@ -362,31 +380,22 @@ namespace Nitrocid.Shell.Homepage
                     var action = choices[choiceIdx].Item2;
                     action.Invoke();
                 }
-
-                // Render the thing and wait for a keypress
+                // Main loop
+                ScreenTools.StartCyclicScreen();
                 bool exiting = false;
-                bool render = true;
+                bool hold = false;
                 while (!exiting)
                 {
+                    if (hold)
+                        ScreenTools.StartCyclicScreen();
+                    ScreenTools.Render();
+
                     // Render and wait for input for a second
-                    if (render)
-                    {
-                        ScreenTools.Render();
-                        render = false;
-                    }
-                    if (!SpinWait.SpinUntil(() => Input.InputAvailable, 1000))
-                    {
-                        render = true;
-                        continue;
-                    }
+                    var data = Input.ReadPointerOrKey();
 
                     // Read the available input
-                    if (Input.MouseInputAvailable)
+                    if (data?.PointerEventContext is PointerEventContext context)
                     {
-                        var context = Input.ReadPointer();
-                        if (context is null)
-                            continue;
-
                         // Get the necessary positions
                         int buttonPanelPosY = ConsoleWrapper.WindowHeight - 5;
                         int buttonPanelWidth = ConsoleWrapper.WindowWidth / 2 - 5 + ConsoleWrapper.WindowWidth % 2;
@@ -400,61 +409,66 @@ namespace Nitrocid.Shell.Homepage
                         int aboutButtonStartPosY = ConsoleWrapper.WindowHeight - 5;
                         int aboutButtonEndPosX = aboutButtonStartPosX + buttonWidth + 1;
                         int aboutButtonEndPosY = aboutButtonStartPosY + buttonHeight + 1;
-                        int clockTop = 3;
-                        widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
-                        widgetHeight = ConsoleWrapper.WindowHeight - 13;
+                        int widgetTop = 3;
+                        int widgetWidth = ConsoleWrapper.WindowWidth / 2 - 4;
+                        int widgetHeight = ConsoleWrapper.WindowHeight - 9;
                         int optionsEndX = settingsButtonStartPosX + widgetWidth - 1 + ConsoleWrapper.WindowWidth % 2;
-                        int optionsEndY = clockTop + widgetHeight + 1;
+                        int optionsEndY = widgetTop + widgetHeight;
 
                         // Check the ranges
                         bool isWithinSettings = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX, settingsButtonStartPosY), (settingsButtonEndPosX, settingsButtonEndPosY));
                         bool isWithinAbout = PointerTools.PointerWithinRange(context, (aboutButtonStartPosX, aboutButtonStartPosY), (aboutButtonEndPosX, aboutButtonEndPosY));
-                        bool isWithinOptions = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, clockTop), (optionsEndX, optionsEndY));
+                        bool isWithinOptions = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, widgetTop), (optionsEndX, optionsEndY));
 
                         // If the mouse pointer is within the settings, check for left release
                         if (isWithinSettings)
                         {
                             if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
+                            {
+                                ScreenTools.StopCyclicScreen();
+                                hold = true;
                                 SettingsApp.OpenMainPage(Config.MainConfig);
-                            render = true;
+                                homeScreen.RequireRefresh();
+                            }
                         }
                         else if (isWithinAbout)
                         {
                             if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
                                 OpenAboutBox();
-                            render = true;
                         }
                         else if (isWithinOptions)
                         {
-                            int selectionChoices = widgetHeight + 2;
-                            int currentChoices = choices.Length;
+                            int currentPage = choiceIdx / widgetHeight;
+                            int startIndex = widgetHeight * currentPage;
                             if ((context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left) || context.ButtonPress == PointerButtonPress.Moved)
                             {
-                                int posY = context.Coordinates.y;
-                                int finalPos = posY - clockTop;
-                                if (finalPos < currentChoices)
+                                int contextPosY = context.Coordinates.y;
+                                int finalChoiceIdx = startIndex + contextPosY - widgetTop;
+                                if (finalChoiceIdx < choices.Length)
                                 {
-                                    choiceIdx = finalPos;
+                                    choiceIdx = finalChoiceIdx;
                                     if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
+                                    {
+                                        ScreenTools.StopCyclicScreen();
+                                        hold = true;
                                         DoAction(choiceIdx);
+                                        homeScreen.RequireRefresh();
+                                    }
                                 }
-                                render = true;
                             }
                             else if (context.ButtonPress == PointerButtonPress.Scrolled)
                             {
                                 if (context.Button == PointerButton.WheelUp)
                                 {
-                                    choiceIdx--;
+                                    choiceIdx -= 3;
                                     if (choiceIdx < 0)
-                                        choiceIdx++;
-                                    render = true;
+                                        choiceIdx = 0;
                                 }
                                 else if (context.Button == PointerButton.WheelDown)
                                 {
-                                    choiceIdx++;
+                                    choiceIdx += 3;
                                     if (choiceIdx >= choices.Length)
-                                        choiceIdx--;
-                                    render = true;
+                                        choiceIdx = choices.Length - 1;
                                 }
                             }
                         }
@@ -466,17 +480,11 @@ namespace Nitrocid.Shell.Homepage
                                 buttonHighlight = 2;
                             else
                                 buttonHighlight = 0;
-                            render = true;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
+                    else if (data?.ConsoleKeyInfo is ConsoleKeyInfo keypress)
                     {
-                        render = true;
-                        var keypress = Input.ReadKey();
-                        widgetHeight = ConsoleWrapper.WindowHeight - 10;
-                        int currentPage = (choiceIdx - 1) / widgetHeight;
-                        int startIndex = widgetHeight * currentPage;
-                        int endIndex = widgetHeight * (currentPage + 1);
+                        int widgetHeight = ConsoleWrapper.WindowHeight - 9;
                         switch (keypress.Key)
                         {
                             case ConsoleKey.DownArrow:
@@ -484,14 +492,14 @@ namespace Nitrocid.Shell.Homepage
                                     break;
                                 choiceIdx++;
                                 if (choiceIdx >= choices.Length)
-                                    choiceIdx--;
+                                    choiceIdx = 0;
                                 break;
                             case ConsoleKey.UpArrow:
                                 if (buttonHighlight > 0)
                                     break;
                                 choiceIdx--;
                                 if (choiceIdx < 0)
-                                    choiceIdx++;
+                                    choiceIdx = choices.Length - 1;
                                 break;
                             case ConsoleKey.Home:
                                 if (buttonHighlight > 0)
@@ -506,13 +514,16 @@ namespace Nitrocid.Shell.Homepage
                             case ConsoleKey.PageUp:
                                 if (buttonHighlight > 0)
                                     break;
-                                choiceIdx = startIndex;
+                                choiceIdx -= widgetHeight;
+                                if (choiceIdx < 0)
+                                    choiceIdx = 0;
                                 break;
                             case ConsoleKey.PageDown:
                                 if (buttonHighlight > 0)
                                     break;
-                                choiceIdx = endIndex > choices.Length - 1 ? choices.Length - 1 : endIndex + 1;
-                                choiceIdx = endIndex == choices.Length - 1 ? endIndex : choiceIdx;
+                                choiceIdx += widgetHeight;
+                                if (choiceIdx > choices.Length - 1)
+                                    choiceIdx = choices.Length - 1;
                                 break;
                             case ConsoleKey.Tab:
                                 buttonHighlight++;
@@ -521,11 +532,21 @@ namespace Nitrocid.Shell.Homepage
                                 break;
                             case ConsoleKey.Enter:
                                 if (buttonHighlight == 1)
+                                {
+                                    ScreenTools.StopCyclicScreen();
+                                    hold = true;
                                     SettingsApp.OpenMainPage(Config.MainConfig);
+                                    homeScreen.RequireRefresh();
+                                }
                                 else if (buttonHighlight == 2)
                                     OpenAboutBox();
                                 else
+                                {
+                                    ScreenTools.StopCyclicScreen();
+                                    hold = true;
                                     DoAction(choiceIdx);
+                                    homeScreen.RequireRefresh();
+                                }
                                 break;
                             case ConsoleKey.Escape:
                                 exiting = true;
@@ -535,14 +556,14 @@ namespace Nitrocid.Shell.Homepage
                                 exiting = true;
                                 break;
                             case ConsoleKey.K:
-                                InfoBoxModalColor.WriteInfoBoxModalColorBack(
-                                    "Available keys",
-                                    KeybindingTools.RenderKeybindingHelpText(bindings),
-                                    KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
-                                    KernelColorTools.GetColor(KernelColorType.TuiBoxBackground));
-                                break;
-                            default:
-                                render = false;
+                                InfoBoxModalColor.WriteInfoBoxModal(
+                                    KeybindingTools.RenderKeybindingHelpText(bindings), new InfoBoxSettings()
+                                    {
+                                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxForeground),
+                                        BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
+                                        Title = Translate.DoTranslation("Available keys"),
+                                    });
+                                homeScreen.RequireRefresh();
                                 break;
                         }
                     }
@@ -551,11 +572,16 @@ namespace Nitrocid.Shell.Homepage
             catch (Exception ex)
             {
                 KernelColorTools.LoadBackground();
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("The Nitrocid Homepage has crashed and needs to revert back to the shell.") + $": {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The Nitrocid Homepage has crashed and needs to revert back to the shell.") + $": {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                });
             }
             finally
             {
                 isOnHomepage = false;
+                ScreenTools.StopCyclicScreen();
+                ScreenTools.UnsetCurrentCyclic();
                 ScreenTools.UnsetCurrent(homeScreen);
                 KernelColorTools.LoadBackground();
             }
@@ -566,53 +592,33 @@ namespace Nitrocid.Shell.Homepage
             // Variables
             var choices = new List<(InputChoiceInfo, Action)>();
 
-            // First, deal with the builtin choices that are added by the core kernel
-            foreach (var choiceAction in choiceActionsBuiltin)
+            // Helper function
+            void AddChoices(Dictionary<string, Action> choiceActions)
             {
-                // Sanity checks
-                string key = choiceAction.Key;
-                var action = choiceAction.Value;
-                if (action is null)
-                    continue;
-                if (string.IsNullOrEmpty(key))
-                    continue;
+                foreach (var choiceAction in choiceActions)
+                {
+                    // Sanity checks
+                    string key = choiceAction.Key;
+                    var action = choiceAction.Value;
+                    if (action is null)
+                        continue;
+                    if (string.IsNullOrEmpty(key))
+                        continue;
 
-                // Add this action
-                var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation(key));
-                choices.Add((inputChoiceInfo, action));
+                    // Add this action
+                    var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation(key));
+                    choices.Add((inputChoiceInfo, action));
+                }
             }
+
+            // First, deal with the builtin choices that are added by the core kernel
+            AddChoices(choiceActionsBuiltin);
 
             // Then, deal with the choices that are added by the addons
-            foreach (var choiceAction in choiceActionsAddons)
-            {
-                // Sanity checks
-                string key = choiceAction.Key;
-                var action = choiceAction.Value;
-                if (action is null)
-                    continue;
-                if (string.IsNullOrEmpty(key))
-                    continue;
-
-                // Add this action
-                var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation(key));
-                choices.Add((inputChoiceInfo, action));
-            }
+            AddChoices(choiceActionsAddons);
 
             // Now, deal with the custom choices that are added by the mods
-            foreach (var choiceAction in choiceActionsCustom)
-            {
-                // Sanity checks
-                string key = choiceAction.Key;
-                var action = choiceAction.Value;
-                if (action is null)
-                    continue;
-                if (string.IsNullOrEmpty(key))
-                    continue;
-
-                // Add this action
-                var inputChoiceInfo = new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation(key));
-                choices.Add((inputChoiceInfo, action));
-            }
+            AddChoices(choiceActionsCustom);
 
             // Finally, return the result for the homepage to recognize them
             return [.. choices];
@@ -701,38 +707,16 @@ namespace Nitrocid.Shell.Homepage
             choiceActionsAddons.Remove(actionName);
         }
 
-        private static void OpenAlarmCli()
-        {
-            var tui = new AlarmCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Start(), true));
-            tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.Delete, (alarm, _, _, _) => tui.Stop(alarm)));
-            InteractiveTuiTools.OpenInteractiveTui(tui);
-        }
-
-        private static void OpenNotificationsCli()
-        {
-            var tui = new NotificationsCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss"), ConsoleKey.Delete, (notif, _, _, _) => tui.Dismiss(notif)));
-            tui.Bindings.Add(new InteractiveTuiBinding<Notification>(Translate.DoTranslation("Dismiss All"), ConsoleKey.Delete, ConsoleModifiers.Control, (_, _, _, _) => tui.DismissAll()));
-            InteractiveTuiTools.OpenInteractiveTui(tui);
-        }
-
-        private static void OpenTaskManagerCli()
-        {
-            var tui = new TaskManagerCli();
-            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Kill"), ConsoleKey.F1, (thread, _, _, _) => tui.KillThread(thread)));
-            tui.Bindings.Add(new InteractiveTuiBinding<(int, object)>(Translate.DoTranslation("Switch"), ConsoleKey.F2, (_, _, _, _) => tui.SwitchMode()));
-            InteractiveTuiTools.OpenInteractiveTui(tui);
-        }
-
         private static void OpenAboutBox()
         {
             InfoBoxModalColor.WriteInfoBoxModal(
-                Translate.DoTranslation("About Nitrocid"),
                 Translate.DoTranslation("Nitrocid KS simulates our future kernel, the Nitrocid Kernel.") + "\n\n" +
                 Translate.DoTranslation("Version") + $": {KernelMain.VersionFullStr}" + "\n" +
                 Translate.DoTranslation("Mod API") + $": {KernelMain.ApiVersion}" + "\n\n" +
-                Translate.DoTranslation("Copyright (C) 2018-2026 Aptivi - All rights reserved") + " - https://aptivi.github.io"
+                Translate.DoTranslation("Copyright (C) 2018-2026 Aptivi - All rights reserved") + " - https://aptivi.github.io", new InfoBoxSettings()
+                {
+                    Title = Translate.DoTranslation("About Nitrocid"),
+                }
             );
         }
     }

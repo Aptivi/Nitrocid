@@ -18,13 +18,13 @@
 //
 
 using Nitrocid.Drivers;
-using Nitrocid.Drivers.Console;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Tests.Drivers.DriverData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
+using Nitrocid.Drivers.Encoding;
 
 namespace Nitrocid.Tests.Kernel.Debugging
 {
@@ -39,7 +39,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [TestMethod]
         [Description("Misc")]
         public void TestAssertNormal() =>
-            Should.NotThrow(() => DebugCheck.Assert(true));
+            Should.NotThrow(() => DebugCheck.Assert(true, ""));
 
         /// <summary>
         /// Tests assertion...
@@ -48,9 +48,9 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Description("Misc")]
         public void TestAssertNormalFailing()
         {
-            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
-            DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
-            Should.Throw(() => DebugCheck.Assert(false), typeof(KernelException));
+            DriverHandler.RegisterDriver(DriverTypes.Encoding, new MyCustomEncodingDriver());
+            DriverHandler.SetDriver<IEncodingDriver>("MyCustom");
+            Should.Throw(() => DebugCheck.Assert(false, ""), typeof(KernelException));
         }
 
         /// <summary>
@@ -68,8 +68,8 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Description("Misc")]
         public void TestAssertNormalMessageFailing()
         {
-            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
-            DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
+            DriverHandler.RegisterDriver(DriverTypes.Encoding, new MyCustomEncodingDriver());
+            DriverHandler.SetDriver<IEncodingDriver>("MyCustom");
             Should.Throw(() => DebugCheck.Assert(false, "Always false"), typeof(KernelException));
         }
 
@@ -79,7 +79,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [TestMethod]
         [Description("Misc")]
         public void TestAssertNotNormal() =>
-            Should.NotThrow(() => DebugCheck.AssertNot(false));
+            Should.NotThrow(() => DebugCheck.AssertNot(false, ""));
 
         /// <summary>
         /// Tests assertion...
@@ -88,9 +88,9 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Description("Misc")]
         public void TestAssertNotNormalFailing()
         {
-            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
-            DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
-            Should.Throw(() => DebugCheck.AssertNot(true), typeof(KernelException));
+            DriverHandler.RegisterDriver(DriverTypes.Encoding, new MyCustomEncodingDriver());
+            DriverHandler.SetDriver<IEncodingDriver>("MyCustom");
+            Should.Throw(() => DebugCheck.AssertNot(true, ""), typeof(KernelException));
         }
 
         /// <summary>
@@ -108,8 +108,8 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Description("Misc")]
         public void TestAssertNotNormalMessageFailing()
         {
-            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
-            DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
+            DriverHandler.RegisterDriver(DriverTypes.Encoding, new MyCustomEncodingDriver());
+            DriverHandler.SetDriver<IEncodingDriver>("MyCustom");
             Should.Throw(() => DebugCheck.AssertNot(true, "Always true"), typeof(KernelException));
         }
 
@@ -119,7 +119,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [TestMethod]
         [Description("Misc")]
         public void TestAssertNull() =>
-            Should.NotThrow(() => DebugCheck.AssertNull(Array.Empty<string>()));
+            Should.NotThrow(() => DebugCheck.AssertNull(Array.Empty<string>(), ""));
 
         /// <summary>
         /// Tests assertion...
@@ -128,9 +128,9 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Description("Misc")]
         public void TestAssertNullFailing()
         {
-            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
-            DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
-            Should.Throw(() => DebugCheck.AssertNull<string[]?>(null), typeof(KernelException));
+            DriverHandler.RegisterDriver(DriverTypes.Encoding, new MyCustomEncodingDriver());
+            DriverHandler.SetDriver<IEncodingDriver>("MyCustom");
+            Should.Throw(() => DebugCheck.AssertNull<string[]?>(null, ""), typeof(KernelException));
         }
 
         /// <summary>
@@ -148,8 +148,8 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Description("Misc")]
         public void TestAssertNullMessageFailing()
         {
-            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
-            DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
+            DriverHandler.RegisterDriver(DriverTypes.Encoding, new MyCustomEncodingDriver());
+            DriverHandler.SetDriver<IEncodingDriver>("MyCustom");
             Should.Throw(() => DebugCheck.AssertNull<string[]?>(null, "Always false"), typeof(KernelException));
         }
 
@@ -159,7 +159,7 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [TestMethod]
         [Description("Misc")]
         public void TestAssertNotNull() =>
-            Should.NotThrow(() => DebugCheck.AssertNotNull<string[]?>(null));
+            Should.NotThrow(() => DebugCheck.AssertNotNull<string[]?>(null, ""));
 
         /// <summary>
         /// Tests assertion...
@@ -168,9 +168,9 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Description("Misc")]
         public void TestAssertNotNullFailing()
         {
-            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
-            DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
-            Should.Throw(() => DebugCheck.AssertNotNull(Array.Empty<string>()), typeof(KernelException));
+            DriverHandler.RegisterDriver(DriverTypes.Encoding, new MyCustomEncodingDriver());
+            DriverHandler.SetDriver<IEncodingDriver>("MyCustom");
+            Should.Throw(() => DebugCheck.AssertNotNull(Array.Empty<string>(), ""), typeof(KernelException));
         }
 
         /// <summary>
@@ -188,8 +188,8 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Description("Misc")]
         public void TestAssertNotNullMessageFailing()
         {
-            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
-            DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
+            DriverHandler.RegisterDriver(DriverTypes.Encoding, new MyCustomEncodingDriver());
+            DriverHandler.SetDriver<IEncodingDriver>("MyCustom");
             Should.Throw(() => DebugCheck.AssertNotNull(Array.Empty<string>(), "Always false"), typeof(KernelException));
         }
 
@@ -200,16 +200,16 @@ namespace Nitrocid.Tests.Kernel.Debugging
         [Description("Misc")]
         public void TestAssertForceFail()
         {
-            DriverHandler.RegisterDriver(DriverTypes.Console, new MyCustomConsoleDriver());
-            DriverHandler.SetDriver<IConsoleDriver>("MyCustom");
+            DriverHandler.RegisterDriver(DriverTypes.Encoding, new MyCustomEncodingDriver());
+            DriverHandler.SetDriver<IEncodingDriver>("MyCustom");
             Should.Throw(() => DebugCheck.AssertFail("Always false"), typeof(KernelException));
         }
 
         [ClassCleanup]
         public static void RestoreSettings()
         {
-            DriverHandler.SetDriver<IConsoleDriver>("Default");
-            DriverHandler.UnregisterDriver(DriverTypes.Console, "MyCustom");
+            DriverHandler.SetDriver<IEncodingDriver>("Default");
+            DriverHandler.UnregisterDriver(DriverTypes.Encoding, "MyCustom");
         }
 
     }

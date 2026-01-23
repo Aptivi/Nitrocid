@@ -17,23 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
-using System;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Extras.Ssh.Settings;
 using Nitrocid.Extras.Ssh.Commands;
-using Nitrocid.Extras.Ssh.SSH;
-using Renci.SshNet;
-using static Nitrocid.Extras.Ssh.SSH.SSHTools;
-using Nitrocid.Network.Connections;
 
 namespace Nitrocid.Extras.Ssh
 {
@@ -80,28 +72,13 @@ namespace Nitrocid.Extras.Ssh
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSsh);
 
         internal static SshConfig SshConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(SshConfig)) ? (SshConfig)Config.baseConfigurations[nameof(SshConfig)] : new SshConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(SSHTools.PromptConnectionInfo), new Func<string, int, string, ConnectionInfo>(SSHTools.PromptConnectionInfo) },
-            { nameof(SSHTools.GetConnectionInfo), new Func<string, int, string, List<AuthenticationMethod>, ConnectionInfo>(SSHTools.GetConnectionInfo) },
-            { nameof(SSHTools.InitializeSSH), new Action<string, int, string, ConnectionType, string>(SSHTools.InitializeSSH) },
-            { nameof(SSHTools.OpenShell), new Action<NetworkConnection>(SSHTools.OpenShell) },
-            { nameof(SSHTools.OpenShell) + "2", new Action<SshClient>(SSHTools.OpenShell) },
-            { nameof(SSHTools.OpenCommand), new Action<NetworkConnection, string>(SSHTools.OpenCommand) },
-            { nameof(SSHTools.OpenCommand) + "2", new Action<SshClient, string>(SSHTools.OpenCommand) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(SshConfig)) ? (SshConfig)Config.baseConfigurations[nameof(SshConfig)] : Config.GetFallbackKernelConfig<SshConfig>();
 
         void IAddon.FinalizeAddon()
         {
             var config = new SshConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -109,7 +86,7 @@ namespace Nitrocid.Extras.Ssh
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(SshConfig));
         }
     }

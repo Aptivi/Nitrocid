@@ -21,6 +21,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -28,9 +29,14 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the colored input box in the informational box (titled)");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string answer = InfoBoxInputColor.WriteInfoBoxInputColorBack(nameof(TestInputInfoBoxColoredInputTitled), "Write your text.", ConsoleColors.Yellow, ConsoleColors.DarkBlue);
+            string answer = InfoBoxInputColor.WriteInfoBoxInput("Write your text.", new InfoBoxSettings()
+            {
+                ForegroundColor = ConsoleColors.Yellow,
+                BackgroundColor = ConsoleColors.DarkBlue,
+                Title = nameof(TestInputInfoBoxColoredInputTitled),
+            });
             TextWriterWhereColor.WriteWhere(answer, 0, 0);
         }
     }

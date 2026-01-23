@@ -9,7 +9,7 @@
       <ComponentGroupName>FullComponent</ComponentGroupName>
       <DirectoryRefId>INSTALLFOLDER</DirectoryRefId>
       <SuppressRootDirectory>true</SuppressRootDirectory>
-
+        
       <!--
         Do not remove below item, because registry harvesting in WiX toolset means that Heat will have to
         load every single assembly. However, this usually fails because Nitrocid KS is using the modern

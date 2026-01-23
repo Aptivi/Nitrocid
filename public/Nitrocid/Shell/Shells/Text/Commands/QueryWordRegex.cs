@@ -24,9 +24,10 @@ using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
+using Terminaux.Colors;
 
 namespace Nitrocid.Shell.Shells.Text.Commands
 {
@@ -57,7 +58,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                         for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                         {
                             string word = Words[wordIndex];
-                            TextWriters.Write($"{(QueriedChars.Contains(wordIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{word} ", false, KernelColorType.ListValue);
+                            TextWriters.Write($"{(QueriedChars.Contains(wordIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground() : "")}{word} ", false, KernelColorType.ListValue);
                         }
                         TextWriterRaw.Write();
                         return 0;
@@ -83,7 +84,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                         for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                         {
                             string word = Words[wordIndex];
-                            TextWriters.Write($"{(QueriedChars.Contains(wordIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{word} ", false, KernelColorType.ListValue);
+                            TextWriters.Write($"{(QueriedChars.Contains(wordIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground() : "")}{word} ", false, KernelColorType.ListValue);
                         }
                         TextWriterRaw.Write();
                     }
@@ -111,7 +112,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                             for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                             {
                                 string word = Words[wordIndex];
-                                TextWriters.Write($"{(QueriedChars.Contains(wordIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{word} ", false, KernelColorType.ListValue);
+                                TextWriters.Write($"{(QueriedChars.Contains(wordIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground() : "")}{word} ", false, KernelColorType.ListValue);
                             }
                             TextWriterRaw.Write();
                         }

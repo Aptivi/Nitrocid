@@ -26,9 +26,6 @@ using Newtonsoft.Json;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Files.Folders;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -75,7 +72,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
                             if ((EventInstance.IsYearly && TimeDateTools.KernelDateTime >= EventInstance.Start && TimeDateTools.KernelDateTime <= EventInstance.End) ||
                                 (!EventInstance.IsYearly && TimeDateTools.KernelDateTime == EventInstance.EventDate))
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Event is due! {0} @ {1}", EventInstance.EventTitle, TimeDateRenderers.Render(EventInstance.EventDate));
+                                DebugWriter.WriteDebug(DebugLevel.I, "Event is due! {0} @ {1}", vars: [EventInstance.EventTitle, TimeDateRenderers.Render(EventInstance.EventDate)]);
                                 EventInstance.NotifyEvent();
                             }
                         }
@@ -99,7 +96,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
             if (string.IsNullOrWhiteSpace(EventTitle))
                 EventTitle = Translate.DoTranslation("Untitled event");
             var EventInstance = new EventInfo(EventDate, EventTitle);
-            DebugWriter.WriteDebug(DebugLevel.I, "Adding event {0} @ {1} to list...", EventInstance.EventTitle, TimeDateRenderers.Render(EventInstance.EventDate));
+            DebugWriter.WriteDebug(DebugLevel.I, "Adding event {0} @ {1} to list...", vars: [EventInstance.EventTitle, TimeDateRenderers.Render(EventInstance.EventDate)]);
             AddEvent(EventInstance);
         }
 
@@ -123,7 +120,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
             var EventInstance = CalendarEvents[EventIndex];
             if (EventInstance.EventDate == EventDate)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Removing event {0} @ {1} from list...", EventInstance.EventTitle, TimeDateRenderers.Render(EventInstance.EventDate));
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing event {0} @ {1} from list...", vars: [EventInstance.EventTitle, TimeDateRenderers.Render(EventInstance.EventDate)]);
                 CalendarEvents.Remove(EventInstance);
             }
         }
@@ -145,15 +142,15 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// </summary>
         public static void LoadEvents()
         {
-            Making.MakeDirectory(PathsManagement.GetKernelPath(KernelPathType.Events), false);
-            var EventFiles = Listing.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Events), "*", true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} events.", EventFiles.Length);
+            FilesystemTools.MakeDirectory(PathsManagement.GetKernelPath(KernelPathType.Events), false);
+            var EventFiles = FilesystemTools.GetFilesystemEntries(PathsManagement.GetKernelPath(KernelPathType.Events), "*", true);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} events.", vars: [EventFiles.Length]);
 
             // Load all the events
             foreach (string EventFile in EventFiles)
             {
                 var LoadedEvent = LoadEvent(EventFile);
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded event is null? {0} | Loaded from file {1}", LoadedEvent is null, EventFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded event is null? {0} | Loaded from file {1}", vars: [LoadedEvent is null, EventFile]);
                 if (LoadedEvent is not null)
                     AddEvent(LoadedEvent);
             }
@@ -169,12 +166,12 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
             lock (EventManagerLock)
             {
                 EventFile = FilesystemTools.NeutralizePath(EventFile);
-                DebugWriter.WriteDebug(DebugLevel.I, "Loading event {0}...", EventFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Loading event {0}...", vars: [EventFile]);
 
                 // If file exists, convert the file to the event instance
-                if (Checking.FileExists(EventFile))
+                if (FilesystemTools.FileExists(EventFile))
                 {
-                    var eventContents = Reading.ReadContentsText(EventFile);
+                    var eventContents = FilesystemTools.ReadContentsText(EventFile);
                     EventInfo? ConvertedEvent = JsonConvert.DeserializeObject<EventInfo>(eventContents);
                     DebugWriter.WriteDebug(DebugLevel.I, "Converted!");
                     return ConvertedEvent;
@@ -199,7 +196,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         public static void SaveEvents(string Path, bool Destructive)
         {
             Path = FilesystemTools.NeutralizePath(Path);
-            DebugWriter.WriteDebug(DebugLevel.I, "Saving events to {0}...", Path);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving events to {0}...", vars: [Path]);
 
             // Remove all events from path, if running destructively
             if (Destructive)
@@ -209,11 +206,11 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
 
                 // First, remove all files
                 foreach (string FilePath in EventFiles)
-                    Removing.RemoveFile(FilePath);
+                    FilesystemTools.RemoveFile(FilePath);
 
                 // Then, remove all empty folders
                 foreach (string FolderPath in EventFolders)
-                    Removing.RemoveDirectory(FolderPath);
+                    FilesystemTools.RemoveDirectory(FolderPath);
             }
 
             // Enumerate through every event and save them
@@ -221,9 +218,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
             {
                 var EventInstance = CalendarEvents[EventIndex];
                 string EventFileName = $"{EventIndex,0000}-{EventInstance.EventTitle}.json";
-                DebugWriter.WriteDebug(DebugLevel.I, "Event file name: {0}...", EventFileName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Event file name: {0}...", vars: [EventFileName]);
                 string EventFilePath = FilesystemTools.NeutralizePath(EventFileName, Path);
-                DebugWriter.WriteDebug(DebugLevel.I, "Event file path: {0}...", EventFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Event file path: {0}...", vars: [EventFilePath]);
                 SaveEvent(EventInstance, EventFilePath);
             }
         }
@@ -240,9 +237,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         public static void SaveEvent(EventInfo EventInstance, string File)
         {
             File = FilesystemTools.NeutralizePath(File);
-            DebugWriter.WriteDebug(DebugLevel.I, "Saving event to {0}...", File);
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving event to {0}...", vars: [File]);
             var contents = JsonConvert.SerializeObject(EventInstance, Formatting.Indented);
-            Writing.WriteContentsText(File, contents);
+            FilesystemTools.WriteContentsText(File, contents);
         }
 
     }

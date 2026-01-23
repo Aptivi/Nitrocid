@@ -19,12 +19,12 @@
 
 using Nitrocid.Drivers;
 
-namespace Nitrocid.Files.Operations.Querying
+namespace Nitrocid.Files
 {
     /// <summary>
     /// File parsing module
     /// </summary>
-    public static class Parsing
+    public static partial class FilesystemTools
     {
 
         /// <summary>

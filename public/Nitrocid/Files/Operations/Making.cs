@@ -20,14 +20,13 @@
 using System;
 using System.IO;
 using Nitrocid.Drivers;
-using Nitrocid.Files.Operations.Querying;
 
-namespace Nitrocid.Files.Operations
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Making file operations module
     /// </summary>
-    public static class Making
+    public static partial class FilesystemTools
     {
 
         /// <summary>
@@ -151,19 +150,19 @@ namespace Nitrocid.Files.Operations
         /// Makes a randomized file name
         /// </summary>
         public static void MakeRandomFile() =>
-            MakeFile(Getting.GetRandomFileName());
+            MakeFile(FilesystemTools.GetRandomFileName());
 
         /// <summary>
         /// Makes a randomized folder name
         /// </summary>
         public static void MakeRandomFolder() =>
-            MakeDirectory(Getting.GetRandomFolderName());
+            MakeDirectory(FilesystemTools.GetRandomFolderName());
 
         /// <summary>
         /// Makes a randomized JSON file name
         /// </summary>
         public static void MakeRandomJsonFile() =>
-            MakeJsonFile(Getting.GetRandomFileName());
+            MakeJsonFile(FilesystemTools.GetRandomFileName());
 
     }
 }

@@ -25,6 +25,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -42,7 +43,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.TypoTextColor));
+            ConsoleColoring.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.TypoTextColor));
             ConsoleWrapper.Clear();
         }
 
@@ -71,6 +72,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Check to see if we can go ahead
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Calculate needed milliseconds from two WPM speeds (minimum and maximum)
                 int SelectedCpm = RandomDriver.Random(CpmSpeedMin, CpmSpeedMax);

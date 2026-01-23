@@ -19,7 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Amusements.Amusements.Quotes;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {

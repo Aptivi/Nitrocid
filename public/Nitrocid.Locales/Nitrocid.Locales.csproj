@@ -58,7 +58,7 @@
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="[5.0.0]" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="[5.0.0]" />
     <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="[5.0.0]" />
-    <PackageReference Include="Terminaux" Version="6.1.35" />
+    <PackageReference Include="Terminaux" Version="8.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -67,6 +67,9 @@
       <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid\Resources\Themes\*.json" Visible="false">
+      <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\public\Nitrocid.Addons.Essentials\**\Resources\*Settings.json" Visible="false">
       <LogicalName>%(EmbeddedResource.FullPath)</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\public\Nitrocid.Addons\**\Resources\*Settings.json" Visible="false">

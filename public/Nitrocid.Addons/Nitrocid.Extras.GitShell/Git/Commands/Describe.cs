@@ -20,7 +20,7 @@
 using LibGit2Sharp;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Linq;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands

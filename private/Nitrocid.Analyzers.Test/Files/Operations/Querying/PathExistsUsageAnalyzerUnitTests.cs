@@ -99,7 +99,7 @@ namespace Nitrocid.Analyzers.Test.Files.Operations.Querying
                 using System.Threading.Tasks;
                 using System.Diagnostics;
                 using Nitrocid.Files.Paths;
-                using Nitrocid.Files.Operations.Querying;
+                using Nitrocid.Files;
 
                 namespace ConsoleApplication1
                 {
@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Operations.Querying
                     {   
                         public static void Main()
                         {
-                            Checking.Exists("test.txt");
+                            FilesystemTools.Exists("test.txt");
                         }
                     }
                 }

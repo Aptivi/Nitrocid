@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Operations;
+using Nitrocid.Files;
 using Nitrocid.Security.Permissions;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -35,7 +35,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            Moving.MoveFileOrDir(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            FilesystemTools.MoveFileOrDir(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             return 0;
         }
     }

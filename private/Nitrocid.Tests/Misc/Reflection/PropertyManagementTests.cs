@@ -120,19 +120,6 @@ namespace Nitrocid.Tests.Misc.Reflection
         }
 
         /// <summary>
-        /// Tests getting property
-        /// </summary>
-        [TestMethod]
-        [Description("Management")]
-        public void TestGetPropertyGeneral()
-        {
-            var Property = PropertyManager.GetPropertyGeneral(nameof(KernelMainConfig.CheckUpdateStart));
-            Property.ShouldNotBeNull();
-            Property.Name.ShouldBe(nameof(KernelMainConfig.CheckUpdateStart));
-            Property.DeclaringType.ShouldBe(typeof(KernelMainConfig));
-        }
-
-        /// <summary>
         /// Tests getting properties
         /// </summary>
         [TestMethod]

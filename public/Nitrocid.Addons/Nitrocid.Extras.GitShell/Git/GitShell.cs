@@ -24,9 +24,8 @@ using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Textify.General;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 
 namespace Nitrocid.Extras.GitShell.Git
 {
@@ -65,7 +64,7 @@ namespace Nitrocid.Extras.GitShell.Git
             // Open repo
             if (GitShellCommon.repo is null)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Repo not open yet. Trying to open {0}...", RepoPath);
+                DebugWriter.WriteDebug(DebugLevel.W, "Repo not open yet. Trying to open {0}...", vars: [RepoPath]);
                 if (!GitShellCommon.OpenRepository(RepoPath))
                 {
                     TextWriters.Write(Translate.DoTranslation("Failed to open repository. Exiting shell..."), true, KernelColorType.Error);
@@ -83,7 +82,7 @@ namespace Nitrocid.Extras.GitShell.Git
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

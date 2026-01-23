@@ -19,11 +19,10 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Drivers;
-using Nitrocid.Drivers.Console;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
 using System;
 using System.Threading;
+using Terminaux.Base.Extensions;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ConsoleBase.Writers
@@ -43,7 +42,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorType, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (TextWriters.WriteLock)
             {
                 try
                 {
@@ -72,7 +71,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (TextWriters.WriteLock)
             {
                 try
                 {
@@ -132,7 +131,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, KernelColorType colorType, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (TextWriters.WriteLock)
             {
                 try
                 {
@@ -194,7 +193,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (TextWriters.WriteLock)
             {
                 try
                 {
@@ -222,7 +221,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWrapped(string Text, bool Line, KernelColorType colorType, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (TextWriters.WriteLock)
             {
                 try
                 {
@@ -230,7 +229,7 @@ namespace Nitrocid.ConsoleBase.Writers
                     KernelColorTools.SetConsoleColorDry(colorType);
 
                     // Write wrapped output
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
+                    WrappedWriter.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -250,7 +249,7 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWrapped(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (TextWriters.WriteLock)
             {
                 try
                 {
@@ -259,7 +258,7 @@ namespace Nitrocid.ConsoleBase.Writers
                     KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
 
                     // Write wrapped output
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
+                    WrappedWriter.WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {

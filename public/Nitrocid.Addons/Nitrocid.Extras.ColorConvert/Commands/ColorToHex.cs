@@ -22,7 +22,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.ColorConvert.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {

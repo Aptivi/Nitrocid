@@ -75,11 +75,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Write the background gradient!
                 var RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
                 for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
-                    gradientBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1)}{RampCurrentColorInstance.VTSequenceBackgroundTrueColor} ");
+                    gradientBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1)}{RampCurrentColorInstance.VTSequenceBackgroundTrueColor()} ");
 
                 // Change the colors
                 RampCurrentColorRed -= RampColorRedSteps;

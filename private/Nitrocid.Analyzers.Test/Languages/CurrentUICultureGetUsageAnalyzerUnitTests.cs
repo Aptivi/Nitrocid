@@ -103,7 +103,7 @@ namespace Nitrocid.Analyzers.Test.Languages
                     {   
                         public static void Main()
                         {
-                            var culture = CultureManager.CurrentCult;
+                            var culture = CultureManager.CurrentCulture;
                         }
                     }
                 }

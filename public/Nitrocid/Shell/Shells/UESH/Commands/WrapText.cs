@@ -19,10 +19,10 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Operations;
+using Nitrocid.Files;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -47,7 +47,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     return 20;
                 }
             }
-            Manipulation.WrapTextFile(parameters.ArgumentsList[0], columns);
+            FilesystemTools.WrapTextFile(parameters.ArgumentsList[0], columns);
             return 0;
         }
 

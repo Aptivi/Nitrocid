@@ -26,16 +26,15 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers;
-using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Security.Permissions;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Misc.Text.Probers.Regexp;
 using Textify.General;
+using Nitrocid.Files;
 
 namespace Nitrocid.Users
 {
@@ -45,7 +44,7 @@ namespace Nitrocid.Users
     public static class UserManagement
     {
 
-        internal static readonly UserInfo fallbackRootAccount = new("root", Encryption.GetEncryptedString("", "SHA256"), [], "System Account", "", [], UserFlags.Administrator, []);
+        internal static readonly UserInfo fallbackRootAccount = new("root", Encryption.GetEncryptedString("", "SHA256"), [], "System Account", "", "", [], UserFlags.Administrator, []);
         internal static UserInfo CurrentUserInfo = fallbackRootAccount;
         internal static List<UserInfo> Users = [CurrentUserInfo];
         private static readonly List<UserInfo> LockedUsers = [];
@@ -90,15 +89,15 @@ namespace Nitrocid.Users
                 }
 
                 // Add user locally
-                var initedUser = new UserInfo(uninitUser, unpassword, [], "", "", [], UserFlags.None, []);
+                var initedUser = new UserInfo(uninitUser, unpassword, [], "", "", "", [], UserFlags.None, []);
                 if (!UserExists(uninitUser))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Added user {0}!", uninitUser);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Added user {0}!", vars: [uninitUser]);
                     Users.Add(initedUser);
                 }
                 else if (UserExists(uninitUser) & ModifyExisting)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Modifying user {0}...", uninitUser);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Modifying user {0}...", vars: [uninitUser]);
                     int userIndex = GetUserIndex(uninitUser);
                     Users[userIndex] = initedUser;
                 }
@@ -107,7 +106,7 @@ namespace Nitrocid.Users
                 SaveUsers();
 
                 // Ready permissions
-                DebugWriter.WriteDebug(DebugLevel.I, "Username {0} added. Readying permissions...", uninitUser);
+                DebugWriter.WriteDebug(DebugLevel.I, "Username {0} added. Readying permissions...", vars: [uninitUser]);
                 return true;
             }
             catch (Exception ex)
@@ -127,11 +126,11 @@ namespace Nitrocid.Users
 
             // First, check to see if we have the file
             string UsersPath = PathsManagement.GetKernelPath(KernelPathType.Users);
-            if (!Checking.FileExists(UsersPath))
+            if (!FilesystemTools.FileExists(UsersPath))
                 SaveUsers();
 
             // Get the content and parse it
-            string UsersTokenContent = Reading.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Users));
+            string UsersTokenContent = FilesystemTools.ReadContentsText(PathsManagement.GetKernelPath(KernelPathType.Users));
             JArray? userInfoArrays = (JArray?)JsonConvert.DeserializeObject(UsersTokenContent) ??
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't deserialize the user info array"));
 
@@ -179,7 +178,7 @@ namespace Nitrocid.Users
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
 
             // Adds user
-            DebugWriter.WriteDebug(DebugLevel.I, "Creating user {0}...", newUser);
+            DebugWriter.WriteDebug(DebugLevel.I, "Creating user {0}...", vars: [newUser]);
             if (ValidateUsername(newUser, false) && !UserExists(newUser))
             {
                 try
@@ -198,7 +197,7 @@ namespace Nitrocid.Users
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to create user {0}: {1}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to create user {0}: {1}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     throw new KernelException(KernelExceptionType.UserCreation, Translate.DoTranslation("usrmgr: Failed to create username {0}: {1}"), ex, newUser, ex.Message);
                 }
@@ -241,7 +240,7 @@ namespace Nitrocid.Users
                     DebugWriter.WriteDebug(DebugLevel.I, "Removing permissions...");
 
                     // Remove user
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", user);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removing username {0}...", vars: [user]);
                     var userInfo = GetUser(user) ??
                         throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {user}");
                     Users.Remove(userInfo);
@@ -301,7 +300,7 @@ namespace Nitrocid.Users
                         // Store user info
                         var oldInfo = GetUser(OldName) ??
                             throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Failed to get user") + $" {OldName}");
-                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage ?? "", oldInfo.Groups, oldInfo.Flags, oldInfo.CustomSettings);
+                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage ?? "", oldInfo.PreferredCulture ?? "", oldInfo.Groups, oldInfo.Flags, oldInfo.CustomSettings);
 
                         // Rename username in dictionary
                         Users.Remove(oldInfo);
@@ -648,7 +647,7 @@ namespace Nitrocid.Users
         {
             // Make a JSON file to save all user information files
             string userInfosSerialized = JsonConvert.SerializeObject(Users.ToArray(), Formatting.Indented);
-            Writing.WriteContentsText(PathsManagement.UsersPath, userInfosSerialized);
+            FilesystemTools.WriteContentsText(PathsManagement.UsersPath, userInfosSerialized);
         }
     }
 }

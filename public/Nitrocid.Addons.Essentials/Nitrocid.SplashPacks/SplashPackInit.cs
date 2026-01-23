@@ -20,12 +20,8 @@
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Modifications;
 using Nitrocid.SplashPacks.Settings;
 using Nitrocid.SplashPacks.Splashes;
-using System;
-using System.Collections.ObjectModel;
-using System.Reflection;
 
 namespace Nitrocid.SplashPacks
 {
@@ -54,13 +50,7 @@ namespace Nitrocid.SplashPacks
             InterAddonTranslations.GetAddonName(KnownAddons.AddonSplashPacks);
 
         internal static ExtraSplashesConfig SplashConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(ExtraSplashesConfig)) ? (ExtraSplashesConfig)Config.baseConfigurations[nameof(ExtraSplashesConfig)] : new ExtraSplashesConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(ExtraSplashesConfig)) ? (ExtraSplashesConfig)Config.baseConfigurations[nameof(ExtraSplashesConfig)] : Config.GetFallbackKernelConfig<ExtraSplashesConfig>();
 
         void IAddon.StartAddon()
         {

@@ -24,7 +24,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
 
@@ -60,7 +60,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                 else
                 {
                     TextWriters.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[2]);
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[2]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", vars: [parameters.ArgumentsList[2]]);
                     return KernelExceptionTools.GetErrorCode(KernelExceptionType.TextEditor);
                 }
             }

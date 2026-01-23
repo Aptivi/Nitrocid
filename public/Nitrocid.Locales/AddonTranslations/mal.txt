@@ -114,10 +114,12 @@ Penyingkiran log nyahpepijat gagal: {0}
 Menukar direktori telah gagal: {0}
 Nyatakan alamat
 Zon waktu dinyatakan secara salah.
+Pemilihan profil tidak sah.
 Cuba menyambung ke {0} dengan profil {1}...
 Menghuraikan mod tidak dibenarkan pada mod selamat.
 Laluan itu bukan fail mahupun direktori.
 Mencipta satu lagi salinan fail di bawah direktori atau nama yang berbeza.
+Memindahkan fail ke direktori lain
 Padankan {0} ({1}): {2}
 Padanan {0}: {1}
 Masa yang diluangkan: {0} milisaat
@@ -618,6 +620,7 @@ Dayakan penyahpepijatan skrin
 Mendayakan penyahpepijatan untuk penyelamat skrin. Sila ambil perhatian bahawa ia mungkin mengisi log nyahpepijat dengan cepat dan memperlahankan sedikit penyelamat skrin, bergantung pada penyelamat skrin yang digunakan. Hanya berfungsi jika penyahpepijatan kernel didayakan untuk tujuan diagnostik.
 Halaman manual {0} tidak sah.
 Pertimbangkan untuk mengisi halaman manual ini.
+Manual mod
 Argumen kernel yang tersedia:
 Ralat yang tidak dapat dipulihkan dalam hujah:
 Menyulitkan rentetan menggunakan SHA512
@@ -1612,6 +1615,7 @@ Merupakan direktori
 Dipilih
 Saiz fail
 Laluan fail
+'{0}' dipilih. Tekan ESC untuk keluar dan mengesahkan pemilihan.
 Tidak dapat membuka folder atau memilih fail
 Masukkan laluan atau laluan penuh ke folder setempat.
 Tekan SPACE untuk maklumat lanjut
@@ -3218,6 +3222,7 @@ Perintah ini mempunyai hujah di bawah yang mengubah cara ia berfungsi:
 Penerangan hujah yang tidak ditentukan
 Menyenaraikan semua parameter fungsi yang tersedia daripada fungsi
 Urus penggera anda
+Urus penggera anda dalam TUI interaktif
 Memulakan semula contoh kernel jauh
 Kernel dalam contoh jauh akan ditutup
 Menggunakan gaya tetapan lama
@@ -3390,7 +3395,9 @@ Pemacu pengekodan asimetri manakah yang ingin anda gunakan?
 Gaya pemuat but
 Pilih gaya pemuat but untuk dipadankan dengan pilihan anda.
 Tamat masa pemilihan lalai pemuat but
+Tamat masa dalam beberapa saat untuk boot ke pilihan lalai.
 Pemilihan lalai pemuat but
+Pemilihan entri but lalai. Nombor ini berasaskan sifar, jadi elemen pertama ialah indeks 0, dan seterusnya.
 Dayakan 'The Nitrocid Homepage'
 Mendayakan 'The Nitrocid Homepage' yang membolehkan anda melihat perkara yang berlaku dengan pantas.
 Warna latar belakang mengikat kunci terbina dalam TUI interaktif
@@ -3703,7 +3710,26 @@ Kembalikan nostalgia dengan tema ini!
 Terminal anda terdiri daripada papan kayu
 Diinspirasikan daripada corak buah-buahan Cina yang berbeza
 Tambahan - CRC32C (Castagnoli)
+Mencetak versi kernel
+Mencetak versi API
 Tidak boleh memadam fail nyahpepijat
+Konfigurasi kernel tidak akan berfungsi dengan betul. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.
+Tidak dapat menyemak pembolehubah konfigurasi apabila tiada konfigurasi kernel asas ditentukan.
+Tidak dapat menyemak pembolehubah konfigurasi apabila tiada kunci ditentukan.
+Cuba mendaftar tetapan tersuai dengan kandungan yang tidak sah. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.
+Cuba mendaftarkan tetapan asas dengan kandungan yang tidak sah. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut
+Gagal mendapatkan entri tetapan percikan.
+Addon ikon perlu dipasang sebelum dapat menetapkan nilai ini.
+Pilih entri untuk
+Tetapkan semula semua
+Tetapkan semula entri
+Jenis hujah yang ditentukan tidak sah
+Satu atau lebih entri konfigurasi mempunyai pembolehubah atau penghitungan yang tidak sah dan perlu diperbaiki. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.
+Tidak ada budaya dengan nama ini.
+Terdapat ralat semasa memproses tindakan isyarat audio anda.
+Tidak dapat mengembalikan jenis kelas yang tidak wujud daripada pemasangan addon
+Kelas ini bukan kelas tambahan
+Memainkan bunyi penutupan...
 Kami tidak akan menyokong versi Nitrocid KS ini lagi selepas tarikh ini
 Pastikan anda menaik taraf kepada versi yang disokong tidak lama lagi jika anda ingin terus menerima sokongan.
 Versi Nitrocid KS ini tidak lagi disokong.
@@ -3720,9 +3746,12 @@ Gagal memuatkan alias
 Gagal memuatkan entri dail pantas
 Gagal memuatkan pembolehubah persekitaran
 Gagal memuatkan pendengar penggera
+Gagal memuktamadkan tambahan
 Gagal memuatkan MOTD dan MAL
 Gagal memuatkan sejarah perintah shell
 Gagal memuatkan pengendali sambungan
+Memuatkan mod...
+Gagal memuatkan mod
 Terdapat ralat semasa cuba memulakan komponen pilihan.
 Gagal menetapkan semula pembolehubah umum
 Gagal menyimpan sejarah arahan shell
@@ -3744,12 +3773,26 @@ Gagal menghentikan semua utas kernel
 Terdapat ralat semasa cuba menetapkan semula komponen.
 Pengecualian
 Rujuk log nyahpepijat kernel untuk mendapatkan maklumat lanjut.
+Tiada jenis isyarat audio sedemikian.
+Tidak boleh mendapatkan tetapan sandaran
+Tidak dapat menetapkan semula semua entri tetapan untuk
+Tidak dapat menetapkan semula entri tetapan ini untuk
+Pembolehubah tidak ditemui pada mana-mana modul.
+Tidak boleh mendapatkan isyarat audio yang diperlukan untuk penyelamat skrin ambien.
+Sambungan rangkaian mungkin tidak diwujudkan dengan betul kerana ralat.
+Tidak dapat menimbal perintah yang tidak ditetapkan sebagai boleh dibalut.
 Perihalan suis tidak ditentukan
 Laluan ke proses
 Hujah untuk diteruskan ke proses
 Perintah untuk menunjukkan kemasukan bantuan
+Paipkan output arahan ke arahan lain sebagai parameter
+Perintah sumber untuk menyalurkan outputnya ke arahan sasaran sebagai parameter terakhir
 Arahan sasaran untuk dilaksanakan semasa membina hujah berdasarkan output arahan sumber
+Sama ada untuk meluluskan output arahan sumber sebagai satu hujah yang dipetik atau hujah yang tidak disebut
 Perintah untuk membalut keluarannya
+Pelaksanaan arahan sumber gagal.
+Pelaksanaan arahan sasaran gagal. Kandungan mungkin tidak diisi dengan betul. Perintah dilaksanakan ialah
+Paip rosak.
 Hujah untuk menunjukkan entri bantuan
 Nombor sesi bermula dari sifar
 Nama pengguna untuk pertanyaan
@@ -3757,14 +3800,25 @@ Jenis kebenaran untuk memberikan atau menafikan
 Palsu untuk dinafikan, benar untuk diberikan
 Nama paparan baharu, atau 'kosongkan' untuk memadamkan nama paparan
 ID bahasa tiga huruf, atau 'jelas' untuk mengosongkan bahasa pilihan
+Mengubah budaya pengguna pilihan
+ID budaya, atau 'jelas' untuk mengosongkan budaya pilihan
+Budaya pengguna pilihan ditetapkan kepada {0}. Anda mungkin mahu log masuk semula.
+Budaya tidak sah
+Budaya pilihan
 GUID sesi tidak sah
 Tiada GUID sesi sedemikian
+Jenis tidak diketahui
+Parameter tidak diketahui
+Senarai jenis untuk
+Mengambil maklumat log nyahpepijat dengan mudah menggunakan GUID sesi
 GUID Sesi untuk mencari
 Nombor pengecualian
 Nama medan untuk pertanyaan
 Nama harta untuk pertanyaan
 Nama tambah untuk pertanyaan
+Nama jenis statik awam daripada addon
 Nama fungsi daripada jenis statik awam kepada pertanyaan
+Menyenaraikan semua jenis yang tersedia daripada addon yang ditentukan
 Nama percikan untuk pertanyaan
 Nombor bait antara 0 hingga 255
 Nombor kedudukan bait
@@ -3786,6 +3840,10 @@ Satu perkataan atau frasa untuk diganti
 Satu perkataan atau frasa untuk digantikan dengan
 Nombor baris (sama ada tunggal atau permulaan julat), atau 'semua' untuk menggantikan dalam semua baris
 Ungkapan biasa untuk memadankan frasa yang akan diganti
+Negara tidak sah
+Pilih bahasa untuk negara
+Pemilihan bahasa tidak sah untuk
+ya
 Nama kumpulan baharu untuk ditambah
 Nama pengguna baharu untuk ditambah
 Kata laluan baharu untuk digunakan
@@ -3812,8 +3870,12 @@ Laluan ke fail untuk mencetak kandungannya
 Laluan ke fail
 Sama ada penambahan atau penyingkiran
 Nama atribut
+Mengubah budaya
+ID budaya untuk ditukar kepada
+Mengubah budaya pengguna dan bukannya budaya sistem
 Nama hos baharu untuk ditukar
 ID Bahasa
+Menukar bahasa menggunakan negara (anda mungkin akan digesa untuk memilih bahasa)
 Mesej baharu untuk digunakan
 Jawapan untuk berpecah dengan garis miring
 Soalan untuk dicetak ke skrin
@@ -3889,6 +3951,7 @@ Sama ada nama penyelamat skrin atau 'rawak'
 Ungkapan biasa untuk dicari
 Fail sasaran
 Perkataan atau frasa untuk dicari
+Membuka tetapan percikan addon
 Nilai untuk ditetapkan
 Nama pembolehubah konfigurasi
 Nama pelaksana
@@ -3914,6 +3977,7 @@ Fail cincang atau cincang yang dijangkakan
 Failkan untuk diuji
 ZIP nama fail untuk dibuat
 Laluan untuk memampatkan
+Addon ikon perlu dipasang sebelum dapat memaparkan emoji ini.
 Nota kandungan untuk ditambah
 Nombor nota
 Laluan ke direktori dengan repositori Git
@@ -3953,6 +4017,8 @@ Menyenaraikan semua peringatan
 Menyimpan semua peringatan
 Sama ada laluan ke fail kenalan vCard atau represnetation MeCard
 Nombor hubungan
+Edit...
+Masukkan nama baharu untuk kenalan ini
 Latitud untuk digunakan
 Longitud untuk digunakan
 Kunci API Weather.com
@@ -3961,6 +4027,7 @@ Kunci API OpenWeatherMap
 Sama ada untuk menambah, mengalih keluar, menandai sebagai selesai atau menyahtanda sebagai selesai pada tugasan
 Sama ada untuk menyenaraikan, menyimpan atau memuatkan semua tugasan
 Pemasa Pomodoro
+Pomodoro
 Pemasa Pomodoro sudah sedia
 Nombor pemasa Pomodoro {0} dalam empat lelaran
 Rehat sekejap
@@ -4011,6 +4078,7 @@ Laluan ke fail atau direktori sasaran
 Laluan ke fail tempatan
 Nombor kebenaran mengikut chmod
 Menentukan sama ada jenis pemindahan ialah ASCII atau Binari
+Pautan simbolik ke: {0}
 Kekunci pengepala
 Nilai pengepala
 Permintaan HTTP
@@ -4018,12 +4086,39 @@ Fail untuk dimuat naik
 Rentetan untuk dimuat naik
 Rentetan ejen pengguna
 Alamat e-mel untuk log masuk
+Buat folder
+Bergerak...
+Gerakkan semua...
+Namakan semula folder
+Alih keluar folder
+Alih keluar mesej
+Alih keluar semua...
+Tidak dapat membuka folder atau mesej
+Tulis nama direktori baharu.
+Mencipta direktori...
+Tidak boleh membuat folder
+Pilih direktori baharu untuk mengalihkan mesej ini.
+Mesej bergerak...
+Tidak dapat mengalihkan mesej
+Pilih direktori baharu untuk mengalihkan semua mesej oleh pengirim yang sama.
+Mengalihkan mesej oleh pengirim {0}...
+Tidak dapat mengalihkan semua mesej oleh pengirim yang sama
+Tulis nama direktori baharu untuk menamakan semula {0} kepada.
+Menamakan semula direktori...
+Tidak boleh menamakan semula folder
+Mengalih keluar direktori...
+Tidak dapat mengalih keluar folder
+Mengalih keluar mesej...
+Tidak dapat memadam mesej
+Mengalih keluar mesej oleh pengirim {0}...
+Tidak boleh memadam semua mesej oleh pengirim yang sama
 Nama direktori mel
 Nombor halaman
 ID mesej
 Nama penghantar
 Nama direktori mel lama
 Nama direktori mel baharu
+Pengurusan mel interaktif
 Pelayan SFTP untuk disambungkan
 Pautan suapan RSS
 Nombor suapan
@@ -4044,13 +4139,132 @@ Laluan ke fail synth
 Pelayan SSH untuk disambungkan
 Nama pengguna untuk mengesahkan dengan
 Perintah untuk melaksanakan dari jauh
+Mencetak maklumat tentang bahan kimia ke konsol.
+Sama ada nama, simbol atau nombor atom sesuatu bahan
+Mencetak maklumat tentang semua bahan kimia ke konsol.
+Tiada bahan dengan nombor atom
+Tiada bahan dengan simbol atau nama
+Nombor atom
+Jisim atom
+Simbol
+Ringkasan
+fasa
+Kedudukan dalam jadual berkala
+Kedudukan dalam koordinat
+Penemu
+Dinamakan oleh
+Konfigurasi elektron
+Mulakan mod (pilih)
+Mulakan mod (input)
+Hentikan mod
+Muat semula mod
+Pasang mod (pilih)
+Pasang mod (input)
+Nyahpasang mod
+Mulakan semua
+Hentikan semua
+Muat semula semua
+Tidak dapat mengembalikan jenis kelas yang tidak wujud daripada pemasangan mod
+Tidak dapat mencari fungsi '{0}' dalam mod '{1}'.
+Tidak dapat mencari harta '{0}' dalam mod '{1}'.
+Tidak dapat mencari medan '{0}' dalam mod '{1}'.
+Kelas ini bukan kelas mod
+Bahasa
+Titik masuk
+Masukkan laluan ke mod yang anda mahu mulakan
+Gagal memulakan mod
+Masukkan laluan ke mod yang anda ingin pasang
+Gagal memasang mod
+Tidak boleh memulakan atau menghentikan mod ini!
+Sama ada untuk memulakan, menghentikan, mendapatkan maklumat daripada, memuat semula, memasang atau menyahpasang mod
+Nama mod atau nama fail
+Sama ada untuk menyenaraikan, memuat semula, menghentikan, memulakan atau mengurus semua mod secara interaktif
+Nama mod
+Tetapan budaya dan bahasa
+Ini membolehkan anda mengkonfigurasi budaya dan bahasa
+Tetapan masa dan tarikh
+Ini membolehkan anda mengkonfigurasi masa dan tarikh
+Tetapan pemuat but
+Ini membolehkan anda mengkonfigurasi pemuat but
+Laman Utama Nitrocid
+Ini membolehkan anda mengkonfigurasi The Nitrocid Homepage
+Tetapan kemas kini kernel
+Ini membolehkan anda mengkonfigurasi kemas kini kernel
+Tetapan ralat kernel
+Ini membolehkan anda mengkonfigurasi ralat kernel
+Tetapan kuasa kernel
+Ini membolehkan anda mengkonfigurasi mekanisme kuasa kernel
+Skim warna kernel
+Ini membolehkan anda menetapkan berbilang skema warna kernel
+Tetapan pengendali log masuk moden
+Ini membolehkan anda mengkonfigurasi pengendali log masuk moden
+Sistem bantuan
+Ini membolehkan anda mengkonfigurasi sistem bantuan shell
+Pratetap Shell
+Ini membolehkan anda mengkonfigurasi pratetap shell
+Tetapan penyahpepijat jauh
+Ini membolehkan anda mengkonfigurasi penyahpepijat jauh
 Kelewatan bersatu
 Jika benar, dayakan kelewatan penulisan bersatu untuk semua penyelamat skrin. Jika tidak, ia menggunakan nilai kelewatan yang dikonfigurasikan khusus screensaver.
+Bahagian ini menyenaraikan semua tetapan audio.
+Tetapan audio
+Dayakan sokongan audio
+Mendayakan keseluruhan sistem audio untuk isyarat sistem
+Dayakan isyarat papan kekunci
+Sama ada mahu memainkan isyarat papan kekunci untuk setiap tekan kekunci atau tidak
+Dayakan bunyi permulaan
+Sama ada mahu memainkan bunyi permulaan atau tidak
+Dayakan bunyi penutupan
+Sama ada mahu memainkan bunyi penutupan atau tidak
+Dayakan bunyi navigasi
+Sama ada hendak memainkan bunyi navigasi untuk setiap tekan kekunci atau tidak
+Dayakan bunyi pemberitahuan keutamaan rendah
+Sama ada mahu memainkan bunyi pemberitahuan untuk makluman keutamaan rendah atau tidak
+Dayakan bunyi pemberitahuan keutamaan sederhana
+Sama ada mahu memainkan bunyi pemberitahuan untuk makluman keutamaan sederhana atau tidak
+Dayakan bunyi pemberitahuan keutamaan tinggi
+Sama ada mahu memainkan bunyi pemberitahuan untuk makluman keutamaan tinggi atau tidak
+Dayakan kesan bunyi penyelamat skrin ambien
+Sama ada mahu memainkan kesan bunyi penyelamat skrin ambien atau tidak
+Perhebatkan kesan bunyi penyelamat skrin ambien
+Sama ada untuk memperhebatkan kesan bunyi penyelamat skrin ambien atau tidak
+Kelantangan isyarat audio
+Tentukan betapa kuatnya isyarat audio yang anda mahukan
+Tema audio
+Tema audio yang manakah ingin anda gunakan untuk isyarat audio?
+Tetapan editor teks
+Ini membolehkan anda mengkonfigurasi editor teks
+Tetapan editor hex
+Ini membolehkan anda mengkonfigurasi editor heks
+Tetapan tajuk RSS
+Ini membolehkan anda mengkonfigurasi tajuk RSS
+Tetapan tetikus
+Ini membolehkan anda mengkonfigurasi tetikus
+Tetapan nyahpepijat
+Ini membolehkan anda mengkonfigurasi rutin penyahpepijatan
+Estetika
+Ini membolehkan anda mengkonfigurasi estetika kernel
+Menunjukkan kata alu-aluan besar yang ditulis di tengah konsol; serupa dengan tikar selamat datang
+Tunjukkan kemajuan
+Tunjukkan kemajuan atau tidak
+Ini membolehkan anda mengkonfigurasi warna
+Bahagian ini membolehkan anda mengkonfigurasi Solver.
+Bahagian ini membolehkan anda mengkonfigurasi SpeedPress.
+Bahagian ini membolehkan anda mengkonfigurasi Meteor dan ShipDuet.
+Bahagian ini membolehkan anda mengkonfigurasi cara sistem pengubahsuaian kernel berfungsi.
 Bahagian ini membolehkan anda mengkonfigurasi cara aplikasi pemasa berfungsi.
 Bahagian ini membolehkan anda mengkonfigurasi cara aplikasi pemasa pomodoro berfungsi.
 Dayakan Figlet untuk pemasa pomodoro
 Jika didayakan, akan menggunakan figlet untuk pemasa pomodoro. Sila ambil perhatian bahawa ia memerlukan skrin konsol yang besar untuk memaparkan masa dengan betul dengan Figlet didayakan.
 Fon figlet untuk pemasa pomodoro
+Tetapan tanjakan jam
+Ini membolehkan anda mengkonfigurasi tanjakan jam
+Tetapan tanjakan minit
+Ini membolehkan anda mengkonfigurasi tanjakan minit
+Tetapan tanjakan saat
+Ini membolehkan anda mengkonfigurasi tanjakan saat
+Tetapan tanjakan
+Ini membolehkan anda mengkonfigurasi tanjakan
 Menunjukkan teks kepada anda di bawah garisan dalam latar belakang merah yang suram.
 Watak rawak yang tersebar secara rawak merentasi skrin.
 Tarikh dan masa ringkas di tengah-tengah skrin dan menukar warna berdasarkan masa semasa.
@@ -4064,7 +4278,64 @@ Sekat bergerak dalam corak gelombang dengan pembaris hijau menjejaki kedudukanny
 Menunjukkan kepada anda satu aksara rawak dalam teks figlet berwarna.
 Menunjukkan kepada anda perkataan yang sedang dipilih sama seperti mesin slot yang terdapat di kasino.
 Menunjukkan kepada anda teks figlet berwarna berselang-seli antara dua warna neon: cyan dan fuchsia.
+Tetapan budaya
+Ini membolehkan anda mengkonfigurasi budaya yang digunakan oleh penyelamat skrin kalendar
+Tetapan tanjakan pertama
+Ini membolehkan anda mengkonfigurasi tanjakan pertama
+Tetapan tanjakan kedua
+Ini membolehkan anda mengkonfigurasi tanjakan kedua
+Tetapan tanjakan ketiga
+Ini membolehkan anda mengkonfigurasi tanjakan ketiga
+Skim warna daripada Alma Linux, spin-off sistem pengendalian Linux, Red Hat
+Skim warna daripada sistem pengendalian Linux, Arch Linux
+Skim warna daripada EndeavourOS, spin-off sistem pengendalian Linux, Arch Linux
+Skim warna daripada Fedora, spin-off sistem pengendalian Linux, Red Hat
+Skim warna daripada sistem pengendalian Linux, Gentoo
+Warna corak pahat membentuk mandala berwarna-warni
+Skim warna daripada Kubuntu, spin-off sistem pengendalian Linux yang popular, Ubuntu
+Skim warna daripada Linux Mint, spin-off tidak rasmi sistem pengendalian Linux yang popular, Ubuntu
+Skim warna daripada Lubuntu, spin-off sistem pengendalian Linux yang popular, Ubuntu
+Skim warna daripada Manjaro, spin-off sistem pengendalian Linux, Arch Linux
+Skim warna daripada sistem pengendalian Linux, openSUSE
+Skim warna daripada sistem pengendalian Linux, Red Hat
+Warna merah dengan warna aksen dinamik untuk teks yang menarik perhatian
+Skim warna daripada Rocky Linux, spin-off sistem pengendalian Linux, Red Hat
+Skim warna daripada sistem pengendalian Linux, Slackware
+Skim warna daripada Xubuntu, spin-off sistem pengendalian Linux yang popular, Ubuntu
+Skim warna daripada Zorin OS, spinoff tidak rasmi sistem pengendalian Linux yang popular, Ubuntu
+Tambahan - Kimia
+Tambahan - Mod
+Tambahan - Ikon
 Budaya manakah yang digunakan untuk menukar nama bulan, kalendar, dsb.?
+Dayakan widget 'The Nitrocid Homepage'
+Mendayakan widget 'The Nitrocid Homepage' di sebelah kanan skrin.
+Dayakan suapan RSS 'The Nitrocid Homepage'
+Mendayakan widget suapan RSS 'The Nitrocid Homepage' di sebelah kanan skrin.
+Widget 'The Nitrocid Homepage'
+Memilih widget yang akan dipaparkan dalam 'The Nitrocid Homepage'.
+Tetapan sempadan pemberitahuan
+Ini membolehkan anda mengkonfigurasi sempadan pemberitahuan
+Tetapan sempadan am
+Ini membolehkan anda mengkonfigurasi sempadan umum
+Tetapan penampilan
+Ini membolehkan anda mengkonfigurasi penampilan tanjakan jam
+Ini membolehkan anda mengkonfigurasi warna tanjakan jam
+Ini membolehkan anda mengkonfigurasi penampilan tanjakan minit
+Ini membolehkan anda mengkonfigurasi warna tanjakan minit
+Ini membolehkan anda mengkonfigurasi penampilan tanjakan saat
+Ini membolehkan anda mengkonfigurasi warna tanjakan saat
+Mulakan tetapan warna kedudukan
+Ini membolehkan anda mengkonfigurasi warna kedudukan mula
+Tetapan warna kedudukan tamat
+Ini membolehkan anda mengkonfigurasi warna kedudukan akhir
+Tetapan bar tanjakan
+Ini membolehkan anda mengkonfigurasi bar tanjakan
+Ini membolehkan anda mengkonfigurasi rupa tanjakan
+Ini membolehkan anda mengkonfigurasi warna tanjakan
+Tetapan permulaan kecerunan
+Ini membolehkan anda mengkonfigurasi warna kecerunan permulaan
+Tetapan akhir kecerunan
+Ini membolehkan anda mengkonfigurasi warna kecerunan akhir
 Tahap warna latar belakang maksimum
 Tahap warna latar belakang maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.
 Tahap warna garisan maksimum
@@ -4073,6 +4344,7 @@ Tahap warna teks maksimum
 Tahap warna teks maksimum. Nilai minimum yang diterima ialah 0 dan nilai maksimum yang diterima ialah 255.
 Gunakan budaya sistem
 Sama ada penyelamat skrin menggunakan budaya yang ditetapkan oleh tetapan kernel utama atau oleh tetapan penyelamat skrin ini.
+Ini membolehkan anda mengkonfigurasi penampilan ramp pertama
 Teks maklumat untuk pertama
 Tulis bagaimana teks maklumat anda untuk jam semasa ditunjukkan. {0} untuk jam semasa daripada 24 dahulu.
 Aksara sudut kiri atas untuk bar pertama
@@ -4083,6 +4355,7 @@ Aksara bingkai atas untuk bar pertama
 Aksara bingkai bawah untuk bar pertama
 Watak bingkai kiri untuk bar pertama
 Watak bingkai kanan untuk bar pertama
+Ini membolehkan anda mengkonfigurasi warna tanjakan pertama
 Warna Bar Pertama
 Tahap warna merah minimum untuk pertama
 Tahap warna hijau minimum untuk pertama
@@ -4092,6 +4365,7 @@ Tahap warna merah maksimum untuk yang pertama
 Tahap warna hijau maksimum untuk pertama
 Tahap warna biru maksimum untuk pertama
 Tahap warna maksimum untuk pertama
+Ini membolehkan anda mengkonfigurasi penampilan tanjakan kedua
 Teks maklumat untuk kedua
 Tulis bagaimana teks maklumat anda untuk minit semasa ditunjukkan. {0} untuk minit semasa daripada 60 saat.
 Aksara sudut kiri atas untuk bar kedua
@@ -4102,6 +4376,7 @@ Aksara bingkai atas untuk bar kedua
 Aksara bingkai bawah untuk bar kedua
 Watak bingkai kiri untuk bar kedua
 Watak bingkai kanan untuk bar kedua
+Ini membolehkan anda mengkonfigurasi warna tanjakan kedua
 Warna Bar Kedua
 Tahap warna merah minimum untuk saat
 Tahap warna hijau minimum untuk saat
@@ -4111,6 +4386,7 @@ Tahap warna merah maksimum untuk saat
 Tahap warna hijau maksimum untuk saat
 Tahap warna biru maksimum untuk saat
 Tahap warna maksimum untuk saat
+Ini membolehkan anda mengkonfigurasi penampilan tanjakan ketiga
 Aksara sudut kiri atas untuk bar ketiga
 Aksara sudut kanan atas untuk bar ketiga
 Aksara sudut kiri bawah untuk bar ketiga
@@ -4121,6 +4397,7 @@ Watak bingkai kiri untuk bar ketiga
 Watak bingkai kanan untuk bar ketiga
 Teks maklumat untuk ketiga
 Tulis bagaimana teks maklumat anda untuk detik semasa ditunjukkan. {0} untuk kedua semasa daripada 60 pertiga.
+Ini membolehkan anda mengkonfigurasi warna tanjakan ketiga
 Warna Bar Ketiga
 Tahap warna merah minimum untuk ketiga
 Tahap warna hijau minimum untuk ketiga
@@ -4132,61 +4409,6 @@ Tahap warna biru maksimum untuk ketiga
 Tahap warna maksimum untuk ketiga
 Kemajuan akan memilih warna rawak jika didayakan. Jika tidak, gunakan warna daripada config.
 Jika kitaran warna didayakan, berapa tanda kutu sebelum menukar warna dalam Progress? 1 tanda = 0.5 pertiga
-Selesai! Sila gunakan aplikasi Nitrocid.Locales dengan hujah yang sesuai untuk memuktamadkan bahasa. Anda boleh menggunakan laluan ini:
-Konfigurasi kernel tidak akan berfungsi dengan betul. Kekunci yang tidak sah ialah
-Cuba mendaftar tetapan tersuai dengan kandungan yang tidak sah. Kekunci yang tidak sah ialah
-Cuba mendaftar tetapan asas dengan kandungan tidak sah. Kekunci yang tidak sah ialah
-Menambah mod pada senarai hitam
-Mengalih keluar mod daripada senarai hitam
-Entri konfigurasi ini mempunyai pembolehubah atau penghitungan yang tidak sah dan perlu diperbaiki:
-Memulakan semua mod
-Cetak pemisah untuk konsol dengan warna
-Cetak pemisah untuk konsol dengan pemformatan dan warna
-Muat semula semua mod
-Statistik
-Menunjukkan statistik ujian semasa
-Uji Semua
-Menguji semua fasad
-Kembali ke pemilihan bahagian
-Pilih fasad ujian untuk dijalankan
-Ujian ini mengandungi parameter pilihan. Masukkan nilai parameter untuk ditambahkan pada parameter ujian.
-Kiraan parameter
-Ya!
-Cuba semula
-Adakah ujian berjalan seperti yang diharapkan?
-Ujian itu gagal. Nilai yang dijangkakan ialah {0}, tetapi nilai sebenar ialah {1}.
-Ujian itu gagal tanpa diduga.
-Ujian yang berjaya:
-Ujian gagal:
-Ujian yang akan dijalankan:
-Tidak boleh mendapatkan senarai fungsi
-Tidak boleh mendapatkan senarai hartanah
-Tidak boleh mendapatkan senarai medan
-Berdasarkan tetapan bahasa anda pada sistem anda, bahasa yang sesuai ialah
-Gagal memuatkan tambahan akhir
-Pengubahsuaian kernel
-'{0}' dipilih. Tekan ESC untuk keluar dan mengesahkan pemilihan.
-Pembolehubah {0} tidak ditemui pada mana-mana modul.
-Jenis kaedah tidak ditakrifkan dalam senarai jenis Nitrocid asas.
-Tidak dapat melaksanakan sifat tersuai dengan mod yang tidak wujud
-Tidak dapat melaksanakan medan tersuai dengan mod yang tidak wujud
-Mengambil maklumat log nyahpepijat dengan mudah menggunakan nombor sesi
-Ya, tetapkan!
-Tidak, jangan tetapkannya.
-Menggunakan tetapan bahasa sistem untuk cuba membuat kesimpulan bahasa
-Tiada maklumat hartanah untuk
-Pemasa Pomodoro
-Pemilihan profil tidak sah.
-Ubah Budaya apabila Bertukar Bahasa
-Apabila menukar bahasa, tukar nama bulan, kalendar, dsb.
-Varian bahasa semasa yang manakah digunakan untuk menukar nama bulan, kalendar, dsb.?
-Tamat masa dalam beberapa saat untuk boot ke pilihan lalai.
-Pemilihan entri but lalai. Nombor ini berasaskan sifar, jadi elemen pertama ialah indeks 0, dan seterusnya.
-Bahagian ini menyenaraikan tetapan pratetap shell.
-Tetapan pratetap Shell
-Balut keluaran senarai
-Membungkus keluaran senarai jika kelihatan terlalu panjang untuk geometri konsol semasa.
-Bahagian ini membolehkan anda mengkonfigurasi cara hiburan berfungsi.
 Tarikh pengeluaran tidak sah
 Tempoh masa tamat adalah tidak sah
 Tarikh luput tidak sah
@@ -4200,21 +4422,14 @@ Mendapat maklumat tamat tempoh produk
 Tarikh pengeluaran (lihat sama ada sisi atau bahagian bawah produk)
 Tarikh luput atau tempoh masa (sama ada ditulis secara eksplisit pada tempat atau jangka masa yang sama, seperti 6 bulan atau 1 tahun)
 Sama ada produk sasaran tidak menyatakan tarikh luput dengan jelas
-Tetapan penyelamat skrin...
-Ini membolehkan anda mengkonfigurasi budaya yang digunakan oleh penyelamat skrin kalendar
 Pilih contoh konfigurasi untuk ditukar.
+Tidak dapat memilih konfigurasi
 Pilih konfigurasi
 Mengesa anda untuk memilih contoh konfigurasi
-Tidak dapat menyemak pembolehubah konfigurasi apabila tiada konfigurasi kernel asas ditentukan.
-Konfigurasi kernel tidak akan berfungsi dengan betul. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.
-Tidak dapat menyemak pembolehubah konfigurasi apabila tiada kunci ditentukan.
-Cuba mendaftar tetapan tersuai dengan kandungan yang tidak sah. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.
-Cuba mendaftar tetapan asas dengan kandungan tidak sah. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut
-Pilih entri untuk
-Tidak dapat memilih konfigurasi
-Satu atau lebih entri konfigurasi mempunyai pembolehubah atau penghitungan yang tidak sah dan perlu diperbaiki. Rujuk penyahpepijat kernel untuk mendapatkan maklumat lanjut.
+Tetapan penyelamat skrin...
 Nama masukan tetapan mungkin tidak kosong
 Perihalan entri tetapan mungkin tidak kosong
 Entri tetapan mungkin tidak mempunyai senarai kunci tetapan kosong
 Nama kunci tetapan mungkin tidak kosong
 Kunci tetapan mungkin tidak menyimpan jenis kunci yang tidak sah
+Kekunci yang tersedia

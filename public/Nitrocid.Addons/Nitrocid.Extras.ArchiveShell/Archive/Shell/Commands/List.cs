@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using SharpCompress.Archives;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
@@ -42,7 +42,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
             List<IArchiveEntry> Entries;
             if (parameters.ArgumentsList.Length > 0)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Listing entries with {0} as target directory", parameters.ArgumentsList[0]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Listing entries with {0} as target directory", vars: [parameters.ArgumentsList[0]]);
                 Entries = ArchiveTools.ListArchiveEntries(parameters.ArgumentsList[0]);
             }
             else

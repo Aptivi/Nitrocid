@@ -34,9 +34,16 @@ namespace Nitrocid.Extras.Calendar.Settings
     {
         /// <inheritdoc/>
         [JsonIgnore]
-        public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("CalendarSettings.json", ResourcesType.Misc, typeof(CalendarConfig).Assembly) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries.")));
+        public override SettingsEntry[] SettingsEntries
+        {
+            get
+            {
+                var dataStream = ResourcesManager.GetData("CalendarSettings.json", ResourcesType.Misc, typeof(CalendarConfig).Assembly) ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain settings entries."));
+                string dataString = ResourcesManager.ConvertToString(dataStream);
+                return ConfigTools.GetSettingsEntries(dataString);
+            }
+        }
 
         /// <summary>
         /// If enabled, deletes all events and/or reminders before saving all of them using the calendar command
@@ -88,7 +95,7 @@ namespace Nitrocid.Extras.Calendar.Settings
             }
         }
         /// <summary>
-        /// [Calendar] Whether to use the system culture assigned by <see cref="KernelMainConfig.CurrentCultStr"/> or by <see cref="CalendarCultureName"/>.
+        /// [Calendar] Whether to use the system culture assigned by <see cref="KernelMainConfig.CurrentCultureName"/> or by <see cref="CalendarCultureName"/>.
         /// </summary>
         public bool CalendarUseSystemCulture
         {

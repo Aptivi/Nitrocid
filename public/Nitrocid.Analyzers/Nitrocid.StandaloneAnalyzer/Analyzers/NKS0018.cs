@@ -53,7 +53,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var idName = name.Identifier.Text;
                         if (idName == nameof(File.Exists))
                         {
-                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses File.Exists instead of Checking.FileExists()");
+                            AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses File.Exists instead of FilesystemTools.FileExists()");
                             found = true;
                         }
                     }
@@ -80,7 +80,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (idName.Identifier.Text != nameof(File.Exists))
                         continue;
 
-                    // We need to have a syntax that calls Checking.FileExists
+                    // We need to have a syntax that calls FilesystemTools.FileExists
                     var classSyntax = SyntaxFactory.IdentifierName("FilesystemTools");
                     var methodSyntax = SyntaxFactory.IdentifierName("FileExists");
                     var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);

@@ -70,20 +70,20 @@ namespace Nitrocid.Kernel.Debugging.RemoteDebug.Command
             int index = CommandText.IndexOf(" ");
             if (index == -1)
                 index = CommandText.Length;
-            DebugWriter.WriteDebug(DebugLevel.I, "Index: {0}", index);
+            DebugWriter.WriteDebug(DebugLevel.I, "Index: {0}", vars: [index]);
 
             // Split the requested command string into words
             var words = CommandText.Split([' ']);
             for (int i = 0; i <= words.Length - 1; i++)
-                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", vars: [i + 1, words[i]]);
             Command = words[0];
 
             // Get the string of arguments
             string strArgs = CommandText[index..];
-            DebugWriter.WriteDebug(DebugLevel.I, "Prototype strArgs: {0}", strArgs);
+            DebugWriter.WriteDebug(DebugLevel.I, "Prototype strArgs: {0}", vars: [strArgs]);
             if (index != CommandText.Length)
                 strArgs = strArgs[1..];
-            DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
+            DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", vars: [strArgs]);
             ArgumentsTextOrig = strArgs;
 
             // Split the arguments with enclosed quotes

@@ -21,7 +21,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Nitrocid.Files;
 using Nitrocid.Files.Paths;
-using Nitrocid.Modifications;
+using Nitrocid.Kernel.Extensions;
+using System.Collections.Generic;
 
 namespace Nitrocid.Tests.Modifications
 {
@@ -37,8 +38,10 @@ namespace Nitrocid.Tests.Modifications
         [Description("Management")]
         public void TestAddModToBlacklist()
         {
-            ModManager.AddModToBlacklist("MaliciousMod.dll");
-            ModManager.GetBlacklistedMods().ShouldContain(FilesystemTools.NeutralizePath("MaliciousMod.dll", PathsManagement.GetKernelPath(KernelPathType.Mods)));
+            var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+            InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "AddModToBlacklist", modManagerType, "MaliciousMod.dll");
+            var blacklistedMods = (IEnumerable<string>?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetBlacklistedMods", modManagerType) ?? [];
+            blacklistedMods.ShouldContain(FilesystemTools.NeutralizePath("MaliciousMod.dll", PathsManagement.GetKernelPath(KernelPathType.Mods)));
         }
 
         /// <summary>
@@ -48,8 +51,10 @@ namespace Nitrocid.Tests.Modifications
         [Description("Management")]
         public void TestRemoveModFromBlacklist()
         {
-            ModManager.RemoveModFromBlacklist("MaliciousMod.dll");
-            ModManager.GetBlacklistedMods().ShouldNotContain(FilesystemTools.NeutralizePath("MaliciousMod.dll", PathsManagement.GetKernelPath(KernelPathType.Mods)));
+            var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+            InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "RemoveModFromBlacklist", modManagerType, "MaliciousMod.dll");
+            var blacklistedMods = (IEnumerable<string>?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "GetBlacklistedMods", modManagerType) ?? [];
+            blacklistedMods.ShouldNotContain(FilesystemTools.NeutralizePath("MaliciousMod.dll", PathsManagement.GetKernelPath(KernelPathType.Mods)));
         }
 
     }

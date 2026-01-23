@@ -21,7 +21,7 @@ using System;
 using System.IO.Compression;
 using System.Linq;
 using Nitrocid.Files;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

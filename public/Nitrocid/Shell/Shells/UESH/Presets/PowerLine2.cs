@@ -24,12 +24,13 @@ using Terminaux.Colors;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Files.Folders;
+using Terminaux.Shell.Shells;
 using Nitrocid.Languages;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Files;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Shell.Shells.UESH.Presets
 {
@@ -58,7 +59,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
         public override string PresetPromptCompletionShowcase =>
             PresetPromptCompletionBuilder();
 
-        internal override string PresetPromptBuilder()
+        private string PresetPromptBuilder()
         {
             // PowerLine glyphs
             char PadlockChar = Convert.ToChar(0xE0A2);
@@ -68,7 +69,7 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             [
                 new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), UserManagement.CurrentUser.Username),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 85, 255), Config.MainConfig.HostName, PadlockChar),
-                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), $"{CurrentDirectory.CurrentDir}{(Config.MainConfig.ShowShellCount ? $" [{ShellManager.ShellStack.Count}]" : "")}"),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), $"{FilesystemTools.CurrentDir}{(Config.MainConfig.ShowShellCount ? $" [{ShellManager.ShellCount}]" : "")}"),
             ];
 
             // Builder
@@ -79,21 +80,21 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             {
                 // Use RenderSegments to render our segments
                 PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
             }
             else
             {
                 // Maintenance mode
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
-                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
             }
 
             // Present final string
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptBuilderShowcase()
+        private string PresetPromptBuilderShowcase()
         {
             // PowerLine glyphs
             char PadlockChar = Convert.ToChar(0xE0A2);
@@ -114,21 +115,21 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
             {
                 // Use RenderSegments to render our segments
                 PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
             }
             else
             {
                 // Maintenance mode
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(ConsoleColoring.GetGray().VTSequenceForeground());
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
-                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
             }
 
             // Present final string
             return PresetStringBuilder.ToString();
         }
 
-        internal override string PresetPromptCompletionBuilder()
+        private string PresetPromptCompletionBuilder()
         {
             // Segments
             List<PowerLineSegment> segments =
@@ -141,17 +142,11 @@ namespace Nitrocid.Shell.Shells.UESH.Presets
 
             // Use RenderSegments to render our segments
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground());
 
             // Present final string
             return PresetStringBuilder.ToString();
         }
-
-        string IPromptPreset.PresetPromptBuilder() =>
-            PresetPromptBuilder();
-
-        string IPromptPreset.PresetPromptCompletionBuilder() =>
-            PresetPromptCompletionBuilder();
 
     }
 }

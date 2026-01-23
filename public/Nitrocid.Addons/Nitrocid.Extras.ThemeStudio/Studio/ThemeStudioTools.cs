@@ -25,7 +25,6 @@ using Newtonsoft.Json.Linq;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Themes;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
 using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ThemeStudio.Studio
@@ -46,7 +45,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         public static void SaveThemeToCurrentDirectory(string Theme)
         {
             var ThemeJson = GetThemeJson();
-            Writing.WriteContentsText(FilesystemTools.NeutralizePath(Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented));
+            FilesystemTools.WriteContentsText(FilesystemTools.NeutralizePath(Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented));
         }
 
         /// <summary>
@@ -57,7 +56,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         public static void SaveThemeToAnotherDirectory(string Theme, string Path)
         {
             var ThemeJson = GetThemeJson();
-            Writing.WriteContentsText(FilesystemTools.NeutralizePath(Path + "/" + Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented));
+            FilesystemTools.WriteContentsText(FilesystemTools.NeutralizePath(Path + "/" + Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented));
         }
 
         /// <summary>

@@ -28,12 +28,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the VT sequence for true color");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override int TestOptionalParameters => 3;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string TextR = args.Length > 0 ? args[0] : "";
-            string TextG = args.Length > 1 ? args[1] : "";
-            string TextB = args.Length > 2 ? args[2] : "";
+            string TextR = "", TextG = "", TextB = "";
             if (string.IsNullOrEmpty(TextR))
                 TextR = InputTools.ReadLine("R - " + Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
             if (string.IsNullOrEmpty(TextG))

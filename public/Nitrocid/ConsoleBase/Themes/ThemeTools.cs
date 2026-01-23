@@ -42,9 +42,9 @@ namespace Nitrocid.ConsoleBase.Themes
 
         internal readonly static Dictionary<string, ThemeInfo> themes = new()
         {
-            { "Default", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("Default.json", ResourcesType.Themes) ?? "[]")) },
-            { "Dynamic", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("Dynamic.json", ResourcesType.Themes) ?? "[]")) },
-            { "NitricAcid", new ThemeInfo(JToken.Parse(ResourcesManager.GetData("NitricAcid.json", ResourcesType.Themes) ?? "[]")) },
+            { "Default", new ThemeInfo(JToken.Parse(ResourcesManager.ConvertToString(ResourcesManager.GetData("Default.json", ResourcesType.Themes)) ?? "[]")) },
+            { "Dynamic", new ThemeInfo(JToken.Parse(ResourcesManager.ConvertToString(ResourcesManager.GetData("Dynamic.json", ResourcesType.Themes)) ?? "[]")) },
+            { "NitricAcid", new ThemeInfo(JToken.Parse(ResourcesManager.ConvertToString(ResourcesManager.GetData("NitricAcid.json", ResourcesType.Themes)) ?? "[]")) },
         };
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace Nitrocid.ConsoleBase.Themes
         /// <param name="dry">Whether to dryly apply the theme or not</param>
         public static void ApplyThemeFromResources(string theme, bool dry = false)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Theme: {0}", theme);
+            DebugWriter.WriteDebug(DebugLevel.I, "Theme: {0}", vars: [theme]);
             if (GetInstalledThemes().ContainsKey(theme))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Theme found.");
@@ -174,9 +174,9 @@ namespace Nitrocid.ConsoleBase.Themes
         {
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Theme file name: {0}", ThemeFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Theme file name: {0}", vars: [ThemeFile]);
                 ThemeFile = FilesystemTools.NeutralizePath(ThemeFile, true);
-                DebugWriter.WriteDebug(DebugLevel.I, "Theme file path: {0}", ThemeFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Theme file path: {0}", vars: [ThemeFile]);
 
                 // Populate theme info and use it
                 var ThemeInfo = new ThemeInfo(ThemeFile);
@@ -212,10 +212,10 @@ namespace Nitrocid.ConsoleBase.Themes
                 {
                     KernelColorType type = KernelColorTools.KernelColors.Keys.ElementAt(typeIndex);
                     var themeColor = ThemeInfo.ThemeColors[type];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Kernel color type {0}, setting theme color {1}...", type.ToString(), themeColor.PlainSequence);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Kernel color type {0}, setting theme color {1}...", vars: [type.ToString(), themeColor.PlainSequence]);
                     KernelColorTools.KernelColors[type] = themeColor;
                 }
-                ColorTools.LoadBack(KernelColorTools.GetColor(KernelColorType.Background));
+                KernelColorTools.LoadBackground();
                 if (!dry)
                     Config.CreateConfig();
 

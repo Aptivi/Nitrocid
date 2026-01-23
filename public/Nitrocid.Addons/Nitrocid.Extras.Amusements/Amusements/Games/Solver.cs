@@ -74,7 +74,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             {
                 // Populate the numbers
                 int FirstNumber = RandomDriver.Random(SolverMinimumNumber, SolverMaximumNumber);
-                int OperationIndex = RandomDriver.Random(Operations.Length);
+                int OperationIndex = RandomDriver.RandomIdx(Operations.Length);
                 int SecondNumber = RandomDriver.Random(SolverMinimumNumber, SolverMaximumNumber);
 
                 // Generate the expression

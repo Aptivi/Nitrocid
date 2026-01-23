@@ -19,8 +19,7 @@
 
 using Newtonsoft.Json;
 using Nitrocid.Extras.Notes.Interactive;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -87,12 +86,12 @@ namespace Nitrocid.Extras.Notes.Management
         internal static void SaveNotes()
         {
             // Check if the notes file exists
-            if (!Checking.FileExists(NotesPath))
-                Making.MakeJsonFile(NotesPath, true, true);
+            if (!FilesystemTools.FileExists(NotesPath))
+                FilesystemTools.MakeJsonFile(NotesPath, true, true);
 
             // Now, serialize the array of notes to the JSON file
             string serialized = JsonConvert.SerializeObject(notes.ToArray(), Formatting.Indented);
-            Writing.WriteContentsText(NotesPath, serialized);
+            FilesystemTools.WriteContentsText(NotesPath, serialized);
         }
 
         /// <summary>
@@ -101,11 +100,11 @@ namespace Nitrocid.Extras.Notes.Management
         internal static void LoadNotes()
         {
             // Check if the notes file exists
-            if (!Checking.FileExists(NotesPath))
+            if (!FilesystemTools.FileExists(NotesPath))
                 SaveNotes();
 
             // Now, serialize the array of notes to the JSON file
-            string serialized = Reading.ReadContentsText(NotesPath);
+            string serialized = FilesystemTools.ReadContentsText(NotesPath);
             var notesArray = JsonConvert.DeserializeObject<string[]>(serialized) ?? [];
             notes = [.. notesArray];
         }

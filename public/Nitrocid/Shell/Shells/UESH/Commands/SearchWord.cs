@@ -21,10 +21,11 @@ using System;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
+using Nitrocid.Files;
+using Terminaux.Colors;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -44,13 +45,13 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
             try
             {
-                var Matches = Searching.SearchFileForString(fileName, lookup);
+                var Matches = FilesystemTools.SearchFileForString(fileName, lookup);
                 foreach (string Match in Matches)
                 {
                     var matchColor = KernelColorTools.GetColor(KernelColorType.Success);
                     var normalColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
                     string matchLine = Match;
-                    string toReplaceWith = $"{matchColor.VTSequenceForeground}{lookup}{normalColor.VTSequenceForeground}";
+                    string toReplaceWith = $"{matchColor.VTSequenceForeground()}{lookup}{normalColor.VTSequenceForeground()}";
 
                     // We want to avoid repetitions here
                     if (!matchLine.Contains(toReplaceWith))
@@ -61,7 +62,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", lookup, fileName);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", vars: [lookup, fileName]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Searching {0} for {1} failed.") + " {2}", true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1], ex.Message);
                 return ex.GetHashCode();

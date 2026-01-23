@@ -160,7 +160,8 @@ namespace Nitrocid.Kernel.Threading
         {
             try
             {
-                var resultObj = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasDiagnostics, nameof(GetThreadBacktraces));
+                var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasDiagnostics, "Nitrocid.Extras.Diagnostics.Tools.DiagnosticsTools");
+                var resultObj = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasDiagnostics, nameof(GetThreadBacktraces), addonType);
                 if (resultObj is Dictionary<string, string[]> result)
                     return result;
             }

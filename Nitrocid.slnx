@@ -1,4 +1,10 @@
 <Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
   <Folder Name="/Assets/">
     <File Path="CHANGES" />
     <File Path="CHANGES.TITLE" />
@@ -24,6 +30,9 @@
     <Project Path="private/Nitrocid.Analyzers.Test/Nitrocid.Analyzers.Test.csproj" />
     <Project Path="private/Nitrocid.Tests/Nitrocid.Tests.csproj">
       <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Diagnostics/Nitrocid.Extras.Diagnostics.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Images.Icons/Nitrocid.Extras.Images.Icons.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Images/Nitrocid.Extras.Images.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Mods/Nitrocid.Extras.Mods.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.LanguagePacks/Nitrocid.LanguagePacks.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.ScreensaverPacks/Nitrocid.ScreensaverPacks.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons.Essentials/Nitrocid.SplashPacks/Nitrocid.SplashPacks.csproj" />
@@ -34,6 +43,7 @@
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Caffeine/Nitrocid.Extras.Caffeine.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Calculators/Nitrocid.Extras.Calculators.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Calendar/Nitrocid.Extras.Calendar.csproj" />
+      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Chemistry/Nitrocid.Extras.Chemistry.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.ColorConvert/Nitrocid.Extras.ColorConvert.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Contacts/Nitrocid.Extras.Contacts.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Crc32/Nitrocid.Extras.Crc32.csproj" />
@@ -44,7 +54,6 @@
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.FtpShell/Nitrocid.Extras.FtpShell.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.GitShell/Nitrocid.Extras.GitShell.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.HttpShell/Nitrocid.Extras.HttpShell.csproj" />
-      <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.Images/Nitrocid.Extras.Images.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.JsonShell/Nitrocid.Extras.JsonShell.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.LanguageStudio/Nitrocid.Extras.LanguageStudio.csproj" />
       <BuildDependency Project="public/Nitrocid.Addons/Nitrocid.Extras.MailShell/Nitrocid.Extras.MailShell.csproj" />
@@ -72,11 +81,16 @@
     </Project>
   </Folder>
   <Folder Name="/Public/">
-    <Project Path="public/Nitrocid/Nitrocid.csproj" />
+    <Project Path="public/Nitrocid/Nitrocid.csproj">
+      <BuildDependency Project="private/Nitrocid.BuildTargets/Nitrocid.BuildTargets.csproj" />
+    </Project>
   </Folder>
   <Folder Name="/Public/Addons/" />
   <Folder Name="/Public/Addons/Essentials/">
     <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Diagnostics/Nitrocid.Extras.Diagnostics.csproj" />
+    <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Images.Icons/Nitrocid.Extras.Images.Icons.csproj" />
+    <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Images/Nitrocid.Extras.Images.csproj" />
+    <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.Extras.Mods/Nitrocid.Extras.Mods.csproj" />
     <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.LanguagePacks/Nitrocid.LanguagePacks.csproj" />
     <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.ScreensaverPacks/Nitrocid.ScreensaverPacks.csproj" />
     <Project Path="public/Nitrocid.Addons.Essentials/Nitrocid.SplashPacks/Nitrocid.SplashPacks.csproj" />
@@ -89,6 +103,7 @@
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Caffeine/Nitrocid.Extras.Caffeine.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Calculators/Nitrocid.Extras.Calculators.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Calendar/Nitrocid.Extras.Calendar.csproj" />
+    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Chemistry/Nitrocid.Extras.Chemistry.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.ColorConvert/Nitrocid.Extras.ColorConvert.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Contacts/Nitrocid.Extras.Contacts.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Crc32/Nitrocid.Extras.Crc32.csproj" />
@@ -99,7 +114,6 @@
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.FtpShell/Nitrocid.Extras.FtpShell.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.GitShell/Nitrocid.Extras.GitShell.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.HttpShell/Nitrocid.Extras.HttpShell.csproj" />
-    <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.Images/Nitrocid.Extras.Images.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.JsonShell/Nitrocid.Extras.JsonShell.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.LanguageStudio/Nitrocid.Extras.LanguageStudio.csproj" />
     <Project Path="public/Nitrocid.Addons/Nitrocid.Extras.MailShell/Nitrocid.Extras.MailShell.csproj" />

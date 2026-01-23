@@ -20,13 +20,12 @@
 using System;
 using System.Threading;
 using Nitrocid.Extras.SqlShell.Tools;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
-using Textify.General;
 using Nitrocid.ConsoleBase.Inputs;
 
 namespace Nitrocid.Extras.SqlShell.Sql
@@ -61,7 +60,7 @@ namespace Nitrocid.Extras.SqlShell.Sql
             // Open file if not open
             if (SqlShellCommon.sqliteConnection is null)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
+                DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", vars: [FilePath]);
                 if (!SqlEditTools.SqlEdit_OpenSqlFile(FilePath))
                 {
                     TextWriters.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
@@ -79,7 +78,7 @@ namespace Nitrocid.Extras.SqlShell.Sql
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

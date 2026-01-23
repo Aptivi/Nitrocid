@@ -304,7 +304,7 @@ namespace Nitrocid.Drivers.Input
         {
             SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
             var key = ConsoleWrapper.ReadKey(true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got key! {0} [{1}] {2}", key.Key.ToString(), (int)key.KeyChar, key.Modifiers.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Got key! {0} [{1}] {2}", vars: [key.Key.ToString(), (int)key.KeyChar, key.Modifiers.ToString()]);
             return key;
         }
     }

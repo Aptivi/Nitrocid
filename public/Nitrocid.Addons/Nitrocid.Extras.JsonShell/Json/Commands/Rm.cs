@@ -22,7 +22,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.JsonShell.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 
 namespace Nitrocid.Extras.JsonShell.Json.Commands

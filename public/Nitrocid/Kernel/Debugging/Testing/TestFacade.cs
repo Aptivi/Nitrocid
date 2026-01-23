@@ -21,16 +21,12 @@ namespace Nitrocid.Kernel.Debugging.Testing
 {
     internal abstract class TestFacade
     {
-        internal TestStatus status;
-        public virtual TestStatus TestStatus =>
-            status;
         public virtual string TestName { get; } = "";
         public virtual bool TestInteractive { get; } = true;
         public virtual object? TestExpectedValue { get; }
         public virtual object? TestActualValue { get; set; }
         public virtual TestSection TestSection { get; } = TestSection.Misc;
-        public virtual int TestOptionalParameters { get; }
 
-        public virtual void Run(params string[] args) { }
+        public virtual void Run() { }
     }
 }

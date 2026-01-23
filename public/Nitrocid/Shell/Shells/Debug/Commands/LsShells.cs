@@ -17,12 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 
@@ -39,7 +37,7 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("List of shells"), true);
+            SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("List of shells"), KernelColorTools.GetColor(KernelColorType.ListTitle));
 
             // List all the available shells
             var shellNames = ShellManager.AvailableShells.Keys;

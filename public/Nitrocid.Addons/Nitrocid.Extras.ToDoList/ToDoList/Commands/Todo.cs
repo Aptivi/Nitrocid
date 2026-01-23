@@ -21,11 +21,9 @@ using System;
 using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
 {

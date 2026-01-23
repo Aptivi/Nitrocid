@@ -28,9 +28,8 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net;
 using System.Runtime.Serialization;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files.Folders;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
@@ -39,6 +38,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Network;
 using Nitrocid.Network.Transfer;
 using Nitrocid.Kernel.Configuration;
+using Nitrocid.Files;
 
 namespace Nitrocid.Drivers.Network
 {
@@ -100,7 +100,7 @@ namespace Nitrocid.Drivers.Network
                 ProgressManager.RegisterProgressHandler(builtinHandler);
 
             // Send the GET request to the server for the file
-            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
+            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", vars: [FilesystemTools.CurrentDir]);
             var Response = NetworkTransfer.WClient.GetAsync(FileUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
             Response.EnsureSuccessStatusCode();
 
@@ -200,7 +200,7 @@ namespace Nitrocid.Drivers.Network
                 ProgressManager.RegisterProgressHandler(builtinHandler);
 
             // Send the GET request to the server for the file
-            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
+            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", vars: [FilesystemTools.CurrentDir]);
             var Response = NetworkTransfer.WClient.GetAsync(StringUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
             Response.EnsureSuccessStatusCode();
 
@@ -300,7 +300,7 @@ namespace Nitrocid.Drivers.Network
                 ProgressManager.RegisterProgressHandler(builtinHandler);
 
             // Send the GET request to the server for the file after getting the stream and target file stream
-            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
+            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", vars: [FilesystemTools.CurrentDir]);
             string FilePath = FS.NeutralizePath(FileName);
             var FileStream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
             var Content = new StreamContent(FileStream);
@@ -374,7 +374,7 @@ namespace Nitrocid.Drivers.Network
                 ProgressManager.RegisterProgressHandler(builtinHandler);
 
             // Send the GET request to the server for the file
-            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
+            DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", vars: [FilesystemTools.CurrentDir]);
             var StringContent = new StringContent(Data);
 
             // Upload now
@@ -421,12 +421,12 @@ namespace Nitrocid.Drivers.Network
         public virtual string GetFilenameFromUrl(string Url)
         {
             string FileName = Url.Split('/').Last();
-            DebugWriter.WriteDebug(DebugLevel.I, "Prototype Filename: {0}", FileName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Prototype Filename: {0}", vars: [FileName]);
             if (FileName.Contains('?'))
             {
                 FileName = FileName.Remove(FileName.IndexOf('?'));
             }
-            DebugWriter.WriteDebug(DebugLevel.I, "Finished Filename: {0}", FileName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Finished Filename: {0}", vars: [FileName]);
             return FileName;
         }
 

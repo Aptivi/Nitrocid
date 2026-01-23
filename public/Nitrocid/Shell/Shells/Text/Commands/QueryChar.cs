@@ -24,10 +24,11 @@ using Nitrocid.Files.Editors.TextEdit;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 using System.Linq;
 using Textify.General;
+using Terminaux.Colors;
 
 namespace Nitrocid.Shell.Shells.Text.Commands
 {
@@ -57,7 +58,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                         for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
                             char Character = text[charIndex];
-                            TextWriters.Write($"{(QueriedChars.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
+                            TextWriters.Write($"{(QueriedChars.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground() : "")}{Character}", false, KernelColorType.ListValue);
                         }
                         TextWriterRaw.Write();
                         return 0;
@@ -82,7 +83,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                         for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
                             char Character = text[charIndex];
-                            TextWriters.Write($"{(queried.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
+                            TextWriters.Write($"{(queried.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground() : "")}{Character}", false, KernelColorType.ListValue);
                         }
                         TextWriterRaw.Write();
                     }
@@ -109,7 +110,7 @@ namespace Nitrocid.Shell.Shells.Text.Commands
                             for (int charIndex = 0; charIndex < text.Length; charIndex++)
                             {
                                 char Character = text[charIndex];
-                                TextWriters.Write($"{(QueriedChars.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
+                                TextWriters.Write($"{(QueriedChars.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground() : "")}{Character}", false, KernelColorType.ListValue);
                             }
                             TextWriterRaw.Write();
                         }

@@ -25,7 +25,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
 #endif
 
 namespace Nitrocid.Analyzers.Common

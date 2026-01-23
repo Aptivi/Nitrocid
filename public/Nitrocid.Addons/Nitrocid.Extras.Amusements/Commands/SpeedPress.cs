@@ -20,7 +20,7 @@
 using System;
 using System.Linq;
 using Nitrocid.Extras.Amusements.Amusements.Games;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Textify.General;
 
 namespace Nitrocid.Extras.Amusements.Commands

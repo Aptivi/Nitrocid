@@ -28,7 +28,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Enables the notification system");
         public override bool TestInteractive => false;
         public override object TestExpectedValue => true;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             Login.LoggedIn = true;
             if (!NotificationManager.NotifThread.IsAlive)

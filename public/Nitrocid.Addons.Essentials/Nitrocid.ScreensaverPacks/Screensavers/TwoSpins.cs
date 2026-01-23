@@ -162,7 +162,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Draw a dot
                 spinBuffer.Append(
                     CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1) +
-                    firstGroupDotsColor.VTSequenceBackground +
+                    firstGroupDotsColor.VTSequenceBackground() +
                     " "
                 );
 
@@ -207,7 +207,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Draw a dot
                 spinBuffer.Append(
                     CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1) +
-                    secondGroupDotsColor.VTSequenceBackground +
+                    secondGroupDotsColor.VTSequenceBackground() +
                     " "
                 );
 
@@ -252,21 +252,21 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Clear the printed dots
             var clearBuffer = new StringBuilder();
-            foreach (var (x, y, direction) in lastFirstGroupDots)
+            foreach (var (x, y, _) in lastFirstGroupDots)
             {
                 // Draw a cleared dot
                 clearBuffer.Append(
                     CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1) +
-                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground() +
                     " "
                 );
             }
-            foreach (var (x, y, direction) in lastSecondGroupDots)
+            foreach (var (x, y, _) in lastSecondGroupDots)
             {
                 // Draw a cleared dot
                 clearBuffer.Append(
                     CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1) +
-                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground +
+                    KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground() +
                     " "
                 );
             }

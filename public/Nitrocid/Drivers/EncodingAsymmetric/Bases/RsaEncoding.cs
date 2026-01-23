@@ -17,8 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using System.Security.Cryptography;
@@ -80,17 +79,17 @@ namespace Nitrocid.Drivers.EncodingAsymmetric.Bases
         {
             if (string.IsNullOrEmpty(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
             if (rsa is null)
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("This encoding should be initialized."));
 
             // Get the bytes of the file
-            byte[] file = Reading.ReadAllBytes(path);
+            byte[] file = FilesystemTools.ReadAllBytes(path);
             byte[] encrypted = rsa.Encrypt(file, RSAEncryptionPadding.Pkcs1);
 
             // Write the array of bytes
-            Writing.WriteAllBytes(path, encrypted);
+            FilesystemTools.WriteAllBytes(path, encrypted);
         }
 
         /// <inheritdoc/>
@@ -98,17 +97,17 @@ namespace Nitrocid.Drivers.EncodingAsymmetric.Bases
         {
             if (string.IsNullOrEmpty(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
             if (rsa is null)
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("This encoding should be initialized."));
 
             // Get the bytes of the file
-            byte[] encoded = Reading.ReadAllBytes(path);
+            byte[] encoded = FilesystemTools.ReadAllBytes(path);
             byte[] decrypted = rsa.Decrypt(encoded, RSAEncryptionPadding.Pkcs1);
 
             // Write the array of bytes
-            Writing.WriteAllBytes(path, decrypted);
+            FilesystemTools.WriteAllBytes(path, decrypted);
         }
     }
 }

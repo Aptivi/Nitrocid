@@ -17,15 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Commands;
-using System;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Extras.Stocks.Settings;
 using Nitrocid.Kernel.Configuration;
@@ -55,25 +51,19 @@ namespace Nitrocid.Extras.Stocks
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasStocks);
 
         internal static StocksConfig StocksConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(StocksConfig)) ? (StocksConfig)Config.baseConfigurations[nameof(StocksConfig)] : new StocksConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(StocksConfig)) ? (StocksConfig)Config.baseConfigurations[nameof(StocksConfig)] : Config.GetFallbackKernelConfig<StocksConfig>();
 
         void IAddon.StartAddon()
         {
             var config = new StocksConfig();
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ConfigTools.RegisterBaseSetting(config);
             WidgetTools.AddBaseWidget(new StocksWidget());
         }
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(StocksConfig));
             WidgetTools.RemoveBaseWidget(nameof(StocksWidget));
         }

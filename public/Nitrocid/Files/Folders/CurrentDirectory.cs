@@ -24,12 +24,12 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Events;
 
-namespace Nitrocid.Files.Folders
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Current directory module
     /// </summary>
-    public static class CurrentDirectory
+    public static partial class FilesystemTools
     {
 
         internal static string _CurrentDirectory = PathsManagement.HomePath;
@@ -68,7 +68,7 @@ namespace Nitrocid.Files.Folders
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to set current directory: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to set current directory: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }

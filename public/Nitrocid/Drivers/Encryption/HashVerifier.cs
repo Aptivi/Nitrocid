@@ -21,7 +21,7 @@ using System.IO;
 using FS = Nitrocid.Files.FilesystemTools;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 
 namespace Nitrocid.Drivers.Encryption
 {
@@ -46,17 +46,17 @@ namespace Nitrocid.Drivers.Encryption
 
             FileName = FS.NeutralizePath(FileName);
             HashesFile = FS.NeutralizePath(HashesFile);
-            DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
-            DebugWriter.WriteDebug(DebugLevel.I, "Hashes file name: {0}", HashesFile);
-            if (Checking.FileExists(FileName))
+            DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", vars: [FileName]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Hashes file name: {0}", vars: [HashesFile]);
+            if (FilesystemTools.FileExists(FileName))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", vars: [HashType, HashType.ToString()]);
 
                 // Verify the hash
-                if (Checking.FileExists(HashesFile))
+                if (FilesystemTools.FileExists(HashesFile))
                 {
                     var HashStream = new StreamReader(HashesFile);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", HashStream.BaseStream.Length);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", vars: [HashStream.BaseStream.Length]);
                     while (!HashStream.EndOfStream)
                     {
                         // Check if made from KS, and take it from before-last split space. If not, take it from the beginning
@@ -114,10 +114,10 @@ namespace Nitrocid.Drivers.Encryption
             FileName = FS.NeutralizePath(FileName);
             ExpectedHash = ExpectedHash.ToUpper();
             ActualHash = ActualHash.ToUpper();
-            DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
-            if (Checking.FileExists(FileName))
+            DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", vars: [FileName]);
+            if (FilesystemTools.FileExists(FileName))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", vars: [HashType, HashType.ToString()]);
 
                 // Verify the hash
                 return VerifyHashPlain(HashType, ExpectedHash, ActualHash);
@@ -143,17 +143,17 @@ namespace Nitrocid.Drivers.Encryption
 
             FileName = FS.NeutralizePath(FileName);
             HashesFile = FS.NeutralizePath(HashesFile);
-            DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
-            DebugWriter.WriteDebug(DebugLevel.I, "Hashes file name: {0}", HashesFile);
-            if (Checking.FileExists(FileName))
+            DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", vars: [FileName]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Hashes file name: {0}", vars: [HashesFile]);
+            if (FilesystemTools.FileExists(FileName))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", vars: [HashType, HashType.ToString()]);
 
                 // Verify the hash
-                if (Checking.FileExists(HashesFile))
+                if (FilesystemTools.FileExists(HashesFile))
                 {
                     var HashStream = new StreamReader(HashesFile);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", HashStream.BaseStream.Length);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", vars: [HashStream.BaseStream.Length]);
                     while (!HashStream.EndOfStream)
                     {
                         // Check if made from KS, and take it from before-last split space. If not, take it from the beginning
@@ -210,10 +210,10 @@ namespace Nitrocid.Drivers.Encryption
             string ActualHash;
             FileName = FS.NeutralizePath(FileName);
             ExpectedHash = ExpectedHash.ToUpper();
-            DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", FileName);
-            if (Checking.FileExists(FileName))
+            DebugWriter.WriteDebug(DebugLevel.I, "File name: {0}", vars: [FileName]);
+            if (FilesystemTools.FileExists(FileName))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", vars: [HashType, HashType.ToString()]);
 
                 // Calculate the file hash
                 ActualHash = Encryption.GetEncryptedFile(FileName, HashType).ToUpper();
@@ -239,7 +239,7 @@ namespace Nitrocid.Drivers.Encryption
         {
             ExpectedHash = ExpectedHash.ToUpper();
             ActualHash = ActualHash.ToUpper();
-            DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Hash type: {0} ({1})", vars: [HashType, HashType.ToString()]);
             int ExpectedHashLength = GetExpectedHashLength(HashType);
 
             // Verify the hash
@@ -248,7 +248,7 @@ namespace Nitrocid.Drivers.Encryption
             if (actualLengthValid && expectedLengthValid)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Hashes are consistent.");
-                DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash);
+                DebugWriter.WriteDebug(DebugLevel.I, "Hashes {0} and {1}", vars: [ActualHash, ExpectedHash]);
                 if (ActualHash == ExpectedHash)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Hashes match.");
@@ -264,17 +264,17 @@ namespace Nitrocid.Drivers.Encryption
             {
                 if (actualLengthValid)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "The actual hash {0} ({1}) is malformed. Check the algorithm ({2}). Expected length: {3}", ActualHash, ActualHash.Length, HashType, ExpectedHashLength);
+                    DebugWriter.WriteDebug(DebugLevel.E, "The actual hash {0} ({1}) is malformed. Check the algorithm ({2}). Expected length: {3}", vars: [ActualHash, ActualHash.Length, HashType, ExpectedHashLength]);
                     throw new KernelException(KernelExceptionType.InvalidHash, "The actual hash {0} ({1}) is malformed. Check the algorithm ({2}). Expected length: {3}", ActualHash, ActualHash.Length, HashType, ExpectedHashLength);
                 }
                 else if (expectedLengthValid)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "The expected hash {0} ({1}) is malformed. Check the algorithm ({2}). Expected length: {3}", ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
+                    DebugWriter.WriteDebug(DebugLevel.E, "The expected hash {0} ({1}) is malformed. Check the algorithm ({2}). Expected length: {3}", vars: [ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength]);
                     throw new KernelException(KernelExceptionType.InvalidHash, "The expected hash {0} ({1}) is malformed. Check the algorithm ({2}). Expected length: {3}", ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
                 }
                 else
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Expected {0} ({1}) and actual {2} ({3}) are malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Expected {0} ({1}) and actual {2} ({3}) are malformed. Check the algorithm ({4}). Expected length: {5}", vars: [ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength]);
                     throw new KernelException(KernelExceptionType.InvalidHash, "Expected {0} ({1}) and actual {2} ({3}) are malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength);
                 }
             }

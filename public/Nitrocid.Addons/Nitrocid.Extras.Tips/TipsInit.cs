@@ -20,11 +20,7 @@
 using Nitrocid.Extras.Tips.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Modifications;
-using System;
-using System.Collections.ObjectModel;
-using System.Reflection;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
+using Nitrocid.Kernel.Starting;
 
 namespace Nitrocid.Extras.Tips
 {
@@ -34,13 +30,7 @@ namespace Nitrocid.Extras.Tips
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasTips);
 
         internal static TipsConfig TipsConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(TipsConfig)) ? (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)] : new TipsConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(TipsConfig)) ? (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)] : Config.GetFallbackKernelConfig<TipsConfig>();
 
         void IAddon.FinalizeAddon() =>
             WelcomeMessage.tips = TipsList.tips;

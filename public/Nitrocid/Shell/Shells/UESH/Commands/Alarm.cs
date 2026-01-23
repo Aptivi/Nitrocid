@@ -17,18 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Help;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Help;
+using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Colors;
 using System;
 using Nitrocid.Kernel.Time.Alarm;
-using Nitrocid.Shell.ShellBase.Switches;
-using Terminaux.Inputs.Interactive;
+using Terminaux.Shell.Switches;
 using Nitrocid.Misc.Interactives;
+using Terminaux.Writer.ConsoleWriters;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Users;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -43,79 +45,38 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
+                !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
+                TextWriters.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, parameters.CommandText);
+                return -4;
+            }
+
             bool launchTui = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui");
             if (launchTui)
             {
-                var tui = new AlarmCli();
-                tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Add"), ConsoleKey.A, (_, _, _, _) => tui.Start(), true));
-                tui.Bindings.Add(new InteractiveTuiBinding<string>(Translate.DoTranslation("Remove"), ConsoleKey.Delete, (alarm, _, _, _) => tui.Stop(alarm)));
-                InteractiveTuiTools.OpenInteractiveTui(tui);
+                AlarmCli.OpenAlarmCli();
                 return 0;
             }
             string CommandMode = parameters.ArgumentsList[0].ToLower();
             string name = "";
             string interval = "";
-            TimeSpan span = new();
-
-            // These command modes require arguments to be passed, so re-check here and there.
-            switch (CommandMode)
-            {
-                case "start":
-                    {
-                        if (parameters.ArgumentsList.Length > 2)
-                        {
-                            name = parameters.ArgumentsList[1];
-                            interval = parameters.ArgumentsList[2];
-                            if (AlarmTools.IsAlarmRegistered(name))
-                            {
-                                TextWriters.Write(Translate.DoTranslation("Alarm already exists."), true, KernelColorType.Error);
-                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
-                            }
-                            if (!TimeSpan.TryParse(interval, out span))
-                            {
-                                TextWriters.Write(Translate.DoTranslation("Alarm interval is invalid."), true, KernelColorType.Error);
-                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
-                            }
-                        }
-                        else
-                        {
-                            TextWriters.Write(Translate.DoTranslation("Alarm name and interval is not specified."), true, KernelColorType.Error);
-                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
-                        }
-
-                        break;
-                    }
-                case "stop":
-                    {
-                        if (parameters.ArgumentsList.Length > 1)
-                        {
-                            name = parameters.ArgumentsList[1];
-                            if (!AlarmTools.IsAlarmRegistered(name))
-                            {
-                                TextWriters.Write(Translate.DoTranslation("Alarm doesn't exist."), true, KernelColorType.Error);
-                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
-                            }
-                        }
-                        else
-                        {
-                            TextWriters.Write(Translate.DoTranslation("Alarm name is not specified."), true, KernelColorType.Error);
-                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
-                        }
-
-                        break;
-                    }
-            }
 
             // Now, the actual logic
             switch (CommandMode)
             {
                 case "start":
                     {
+                        name = parameters.ArgumentsList[1];
+                        interval = parameters.ArgumentsList[2];
+                        TimeSpan span = TimeSpan.Parse(interval);
                         AlarmTools.StartAlarm(name, name, (int)span.TotalSeconds);
                         break;
                     }
                 case "stop":
                     {
+                        name = parameters.ArgumentsList[1];
                         AlarmTools.StopAlarm(name);
                         break;
                     }
@@ -123,7 +84,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     {
                         foreach (var alarm in AlarmTools.alarms)
                         {
-                            SeparatorWriterColor.WriteSeparator(alarm.Key, true);
+                            SeparatorWriterColor.WriteSeparatorColor(alarm.Key, KernelColorTools.GetColor(KernelColorType.ListTitle));
                             TextWriters.Write("- " + Translate.DoTranslation("Alarm name:") + " ", false, KernelColorType.ListEntry);
                             TextWriters.Write(alarm.Value.Name, true, KernelColorType.ListValue);
                             TextWriters.Write("- " + Translate.DoTranslation("Alarm description:") + " ", false, KernelColorType.ListEntry);
@@ -145,5 +106,57 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             return 0;
         }
 
+        internal static int CheckArgument(CommandParameters parameters, string commandMode)
+        {
+            // These command modes require arguments to be passed, so re-check here and there.
+            switch (commandMode.ToLower())
+            {
+                case "start":
+                    {
+                        if (parameters.ArgumentsList.Length > 2)
+                        {
+                            string name = parameters.ArgumentsList[1];
+                            string interval = parameters.ArgumentsList[2];
+                            if (AlarmTools.IsAlarmRegistered(name))
+                            {
+                                TextWriters.Write(Translate.DoTranslation("Alarm already exists."), true, KernelColorType.Error);
+                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
+                            }
+                            if (!TimeSpan.TryParse(interval, out _))
+                            {
+                                TextWriters.Write(Translate.DoTranslation("Alarm interval is invalid."), true, KernelColorType.Error);
+                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
+                            }
+                        }
+                        else
+                        {
+                            TextWriters.Write(Translate.DoTranslation("Alarm name and interval is not specified."), true, KernelColorType.Error);
+                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
+                        }
+
+                        break;
+                    }
+                case "stop":
+                    {
+                        if (parameters.ArgumentsList.Length > 1)
+                        {
+                            string name = parameters.ArgumentsList[1];
+                            if (!AlarmTools.IsAlarmRegistered(name))
+                            {
+                                TextWriters.Write(Translate.DoTranslation("Alarm doesn't exist."), true, KernelColorType.Error);
+                                return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
+                            }
+                        }
+                        else
+                        {
+                            TextWriters.Write(Translate.DoTranslation("Alarm name is not specified."), true, KernelColorType.Error);
+                            return KernelExceptionTools.GetErrorCode(KernelExceptionType.Alarm);
+                        }
+
+                        break;
+                    }
+            }
+            return 0;
+        }
     }
 }

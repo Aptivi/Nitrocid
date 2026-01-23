@@ -18,8 +18,8 @@
 //
 
 using Terminaux.Inputs.Styles.Infobox;
-using Nitrocid.Files.Operations;
 using Nitrocid.Languages;
+using Nitrocid.Files;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -27,9 +27,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the folder selector");
         public override TestSection TestSection => TestSection.Files;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string selected = Selection.SelectFolder();
+            string selected = FilesystemTools.SelectFolder();
             InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("You've selected") + $" {selected}");
         }
     }

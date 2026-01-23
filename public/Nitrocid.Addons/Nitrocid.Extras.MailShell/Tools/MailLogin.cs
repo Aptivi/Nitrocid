@@ -34,7 +34,7 @@ using Nitrocid.Files.Paths;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
 using Nitrocid.Kernel.Exceptions;
@@ -106,7 +106,7 @@ namespace Nitrocid.Extras.MailShell.Tools
         public static NetworkConnection? PromptPassword(string Username)
         {
             // Password
-            DebugWriter.WriteDebug(DebugLevel.I, "Username: {0}", Username);
+            DebugWriter.WriteDebug(DebugLevel.I, "Username: {0}", vars: [Username]);
             Authentication.UserName = Username;
             if (!string.IsNullOrWhiteSpace(PassPromptStyle))
             {
@@ -146,7 +146,7 @@ namespace Nitrocid.Extras.MailShell.Tools
                 TextWriters.Write(Translate.DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), false, KernelColorType.Input);
             }
             IMAP_Address = InputTools.ReadLine();
-            DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", IMAP_Address);
+            DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", vars: [IMAP_Address]);
 
             // SMTP server address and port
             if (!string.IsNullOrWhiteSpace(SMTPPromptStyle))
@@ -159,7 +159,7 @@ namespace Nitrocid.Extras.MailShell.Tools
             }
             string SMTP_Address = InputTools.ReadLine();
             SMTP_Port = 587;
-            DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", SMTP_Address);
+            DebugWriter.WriteDebug(DebugLevel.I, "SMTP Server: \"{0}\"", vars: [SMTP_Address]);
 
             // Parse addresses to connect
             return ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port);
@@ -170,19 +170,19 @@ namespace Nitrocid.Extras.MailShell.Tools
             // If the address is <address>:[port]
             if (IMAP_Address.Contains(':'))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", Authentication.UserName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", vars: [Authentication.UserName]);
                 IMAP_Port = Convert.ToInt32(IMAP_Address[(IMAP_Address.IndexOf(":") + 1)..]);
                 IMAP_Address = IMAP_Address.Remove(IMAP_Address.IndexOf(":"));
-                DebugWriter.WriteDebug(DebugLevel.I, "Final address: {0}, Final port: {1}", IMAP_Address, IMAP_Port);
+                DebugWriter.WriteDebug(DebugLevel.I, "Final address: {0}, Final port: {1}", vars: [IMAP_Address, IMAP_Port]);
             }
 
             // If the address is <address>:[port]
             if (SMTP_Address.Contains(':'))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", Authentication.UserName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", vars: [Authentication.UserName]);
                 SMTP_Port = Convert.ToInt32(SMTP_Address[(SMTP_Address.IndexOf(":") + 1)..]);
                 SMTP_Address = SMTP_Address.Remove(SMTP_Address.IndexOf(":"));
-                DebugWriter.WriteDebug(DebugLevel.I, "Final address: {0}, Final port: {1}", SMTP_Address, SMTP_Port);
+                DebugWriter.WriteDebug(DebugLevel.I, "Final address: {0}, Final port: {1}", vars: [SMTP_Address, SMTP_Port]);
             }
 
             // Try to connect
@@ -255,7 +255,7 @@ namespace Nitrocid.Extras.MailShell.Tools
 
                 // IMAP Connection
                 TextWriterColor.Write(Translate.DoTranslation("Connecting to {0}..."), Address);
-                DebugWriter.WriteDebug(DebugLevel.I, "Connecting to IMAP Server {0}:{1} with SSL...", Address, Port);
+                DebugWriter.WriteDebug(DebugLevel.I, "Connecting to IMAP Server {0}:{1} with SSL...", vars: [Address, Port]);
                 IMAP_Client.Connect(Address, Port, MailKit.Security.SecureSocketOptions.SslOnConnect);
                 IMAP_Client.WebAlert += MailHandlers.HandleWebAlert;
 
@@ -266,11 +266,11 @@ namespace Nitrocid.Extras.MailShell.Tools
 
                 // IMAP Authentication
                 TextWriterColor.Write(Translate.DoTranslation("Authenticating..."));
-                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", Authentication.UserName, Address);
+                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", vars: [Authentication.UserName, Address]);
                 IMAP_Client.Authenticate(Authentication);
 
                 // SMTP Authentication
-                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", Authentication.UserName, SmtpAddress);
+                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", vars: [Authentication.UserName, SmtpAddress]);
                 SMTP_Client.Authenticate(Authentication);
                 IMAP_Client.WebAlert -= MailHandlers.HandleWebAlert;
 

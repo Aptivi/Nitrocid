@@ -22,8 +22,6 @@ using System.Collections.Generic;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
@@ -54,7 +52,7 @@ namespace Nitrocid.Users.Login.Motd
         /// </summary>
         public static void InitMotd()
         {
-            if (!Checking.FileExists(PathsManagement.GetKernelPath(KernelPathType.MOTD)))
+            if (!FilesystemTools.FileExists(PathsManagement.GetKernelPath(KernelPathType.MOTD)))
                 SetMotd(Translate.DoTranslation("Welcome to Nitrocid Kernel!"));
         }
 
@@ -68,11 +66,11 @@ namespace Nitrocid.Users.Login.Motd
             {
                 // Get the MOTD file path
                 Config.MainConfig.MotdFilePath = FilesystemTools.NeutralizePath(Config.MainConfig.MotdFilePath);
-                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", Config.MainConfig.MotdFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", vars: [Config.MainConfig.MotdFilePath]);
 
                 // Set the message
                 MotdMessage = Message;
-                Writing.WriteContentsText(Config.MainConfig.MotdFilePath, Message);
+                FilesystemTools.WriteContentsText(Config.MainConfig.MotdFilePath, Message);
             }
             catch (Exception ex)
             {
@@ -90,11 +88,11 @@ namespace Nitrocid.Users.Login.Motd
             {
                 // Get the MAL file path
                 Config.MainConfig.MotdFilePath = FilesystemTools.NeutralizePath(Config.MainConfig.MotdFilePath);
-                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", Config.MainConfig.MotdFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", vars: [Config.MainConfig.MotdFilePath]);
 
                 // Read the message
                 InitMotd();
-                MotdMessage = Reading.ReadContentsText(Config.MainConfig.MotdFilePath);
+                MotdMessage = FilesystemTools.ReadContentsText(Config.MainConfig.MotdFilePath);
             }
             catch (Exception ex)
             {

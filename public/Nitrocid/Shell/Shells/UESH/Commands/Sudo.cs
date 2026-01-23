@@ -23,8 +23,8 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Security.Permissions;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Users;
 using Nitrocid.Users.Login;
 using System;
@@ -66,12 +66,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     UserManagement.CurrentUserInfo = root;
                     UserManagement.LockUser(currentUsername);
                     UserManagement.LockUser("root");
-                    var AltThreads = ShellManager.ShellStack[^1].AltCommandThreads;
-                    if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
-                    {
-                        var CommandThread = new KernelThread($"Sudo Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters?)cmdThreadParams));
-                        ShellManager.ShellStack[^1].AltCommandThreads.Add(CommandThread);
-                    }
+                    ShellManager.AddAlternateThread();
                     ShellManager.GetLine(parameters.ArgumentsText);
                 }
                 else
@@ -80,7 +75,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             catch (Exception ex)
             {
                 failed = true;
-                DebugWriter.WriteDebug(DebugLevel.I, "Executing command {0} as superuser failed: {1}", parameters.ArgumentsText, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Executing command {0} as superuser failed: {1}", vars: [parameters.ArgumentsText, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Failed to execute the command as superuser.") + $" {ex.Message}");
             }
@@ -88,9 +83,9 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             {
                 if (sudoDone)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Sudo is done. Switching to user {0}...", currentUsername);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Sudo is done. Switching to user {0}...", vars: [currentUsername]);
                     UserManagement.CurrentUserInfo = UserManagement.GetUser(currentUsername) ??
-                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't get user info for") + $" {currentUsername}");
+                        throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't get user info for") + $" {currentUsername}");
                     UserManagement.UnlockUser(currentUsername);
                     UserManagement.UnlockUser("root");
                 }

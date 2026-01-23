@@ -20,7 +20,7 @@
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.MailShell.Tools.Directory;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.MailShell.Mail.Commands
 {
@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriters.Write(MailDirectory.MailListDirectories(), false, KernelColorType.NeutralText);
+            TextWriters.Write(MailDirectory.MailRenderListDirectories(), false, KernelColorType.NeutralText);
             return 0;
         }
     }

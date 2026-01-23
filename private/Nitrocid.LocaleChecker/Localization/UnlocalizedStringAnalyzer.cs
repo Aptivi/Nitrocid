@@ -238,7 +238,7 @@ namespace Nitrocid.LocaleChecker.Localization
                     bool localizable = (bool?)themeMetadata["Localizable"] ?? false;
                     if (!string.IsNullOrWhiteSpace(description) && localizable && !localizationList.Contains(description))
                     {
-                        var location = AnalyzerTools.GenerateLocation(themeMetadata["Description"], descriptionOrig, resourceName);
+                        var location = AnalyzerTools.GenerateLocation(themeMetadata["Description"], descriptionOrig, resourceName, false);
                         var diagnostic = Diagnostic.Create(RuleJson, location, description);
                         context.ReportDiagnostic(diagnostic);
                     }
@@ -257,46 +257,60 @@ namespace Nitrocid.LocaleChecker.Localization
                         string knownAddonDisplay = knownAddonDisplayOrig.Replace("\\\"", "\"");
                         if (!string.IsNullOrWhiteSpace(description) && !localizationList.Contains(description))
                         {
-                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["Desc"], descriptionOrig, resourceName);
+                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["Desc"], descriptionOrig, resourceName, false);
                             var diagnostic = Diagnostic.Create(RuleJson, location, description);
                             context.ReportDiagnostic(diagnostic);
                         }
                         if (!string.IsNullOrWhiteSpace(displayAs) && !localizationList.Contains(displayAs))
                         {
-                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["DisplayAs"], displayAsOrig, resourceName);
+                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["DisplayAs"], displayAsOrig, resourceName, false);
                             var diagnostic = Diagnostic.Create(RuleJson, location, displayAs);
                             context.ReportDiagnostic(diagnostic);
                         }
                         if (!string.IsNullOrWhiteSpace(knownAddonDisplay) && !localizationList.Contains(knownAddonDisplay))
                         {
-                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["display"], knownAddonDisplayOrig, resourceName);
+                            var location = AnalyzerTools.GenerateLocation(settingsEntryList["display"], knownAddonDisplayOrig, resourceName, false);
                             var diagnostic = Diagnostic.Create(RuleJson, location, knownAddonDisplay);
                             context.ReportDiagnostic(diagnostic);
+                        }
+
+                        // Helper function to check a key, because a key can be a multivar
+                        void CheckKeys(JArray keys)
+                        {
+                            foreach (var key in keys)
+                            {
+                                string keyNameOrig = (string?)key["Name"] ?? "";
+                                string keyType = (string?)key["Type"] ?? "";
+                                string keyDescOrig = (string?)key["Description"] ?? "";
+                                string keyName = keyNameOrig.Replace("\\\"", "\"");
+                                string keyDesc = keyDescOrig.Replace("\\\"", "\"");
+                                if (!string.IsNullOrWhiteSpace(keyName) && !localizationList.Contains(keyName))
+                                {
+                                    var location = AnalyzerTools.GenerateLocation(key["Name"], keyNameOrig, resourceName, false);
+                                    var diagnostic = Diagnostic.Create(RuleJson, location, keyName);
+                                    context.ReportDiagnostic(diagnostic);
+                                }
+                                if (!string.IsNullOrWhiteSpace(keyDesc) && !localizationList.Contains(keyDesc))
+                                {
+                                    var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, resourceName, false);
+                                    var diagnostic = Diagnostic.Create(RuleJson, location, keyDesc);
+                                    context.ReportDiagnostic(diagnostic);
+                                }
+                                if (!string.IsNullOrWhiteSpace(keyType) && keyType == "SMultivar")
+                                {
+                                    var multiVarKeys = (JArray?)key["Variables"];
+                                    if (multiVarKeys is null || multiVarKeys.Count == 0)
+                                        continue;
+                                    CheckKeys(multiVarKeys);
+                                }
+                            }
                         }
 
                         // Now, check the keys
                         JArray? keys = (JArray?)settingsEntryList["Keys"];
                         if (keys is null || keys.Count == 0)
                             continue;
-                        foreach (var key in keys)
-                        {
-                            string keyNameOrig = (string?)key["Name"] ?? "";
-                            string keyDescOrig = (string?)key["Description"] ?? "";
-                            string keyName = keyNameOrig.Replace("\\\"", "\"");
-                            string keyDesc = keyDescOrig.Replace("\\\"", "\"");
-                            if (!string.IsNullOrWhiteSpace(keyName) && !localizationList.Contains(keyName))
-                            {
-                                var location = AnalyzerTools.GenerateLocation(key["Name"], keyNameOrig, resourceName);
-                                var diagnostic = Diagnostic.Create(RuleJson, location, keyName);
-                                context.ReportDiagnostic(diagnostic);
-                            }
-                            if (!string.IsNullOrWhiteSpace(keyDesc) && !localizationList.Contains(keyDesc))
-                            {
-                                var location = AnalyzerTools.GenerateLocation(key["Description"], keyDescOrig, resourceName);
-                                var diagnostic = Diagnostic.Create(RuleJson, location, keyDesc);
-                                context.ReportDiagnostic(diagnostic);
-                            }
-                        }
+                        CheckKeys(keys);
                     }
                 }
             }

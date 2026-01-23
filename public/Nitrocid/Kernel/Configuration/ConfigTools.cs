@@ -24,8 +24,6 @@ using System.Text.RegularExpressions;
 using Terminaux.Colors;
 using Newtonsoft.Json;
 using System.Linq;
-using Newtonsoft.Json.Schema;
-using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
@@ -36,9 +34,7 @@ using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Events;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Inputs.Styles;
-using Nitrocid.Misc.Reflection.Internal;
 
 namespace Nitrocid.Kernel.Configuration
 {
@@ -73,7 +69,7 @@ namespace Nitrocid.Kernel.Configuration
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to reload config: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to reload config: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -118,7 +114,7 @@ namespace Nitrocid.Kernel.Configuration
                 if (CurrentValue is LanguageInfo lang)
                     CurrentValue = lang.ThreeLetterLanguageName;
 
-                DebugWriter.WriteDebug(DebugLevel.I, "Got current value! {0} [{1}], found under {2}...", CurrentValue, CurrentValue?.GetType().Name, Variable);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got current value! {0} [{1}], found under {2}...", vars: [CurrentValue, CurrentValue?.GetType().Name, Variable]);
             }
             return CurrentValue;
         }
@@ -142,12 +138,12 @@ namespace Nitrocid.Kernel.Configuration
                     {
                         var Setting = keys[SettingIndex];
                         object? CurrentValue = GetValueFromEntry(Setting, configType);
-                        string KeyName = Translate.DoTranslation(Setting.Name) + $" [{CurrentValue}]";
+                        string KeyName = Setting.Name + $" [{CurrentValue}]";
                         if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
                         {
-                            string desc = Translate.DoTranslation(Setting.Description);
+                            string desc = Setting.Description;
                             InputChoiceInfo ici = new($"{SectionIndex + 1}/{SettingIndex + 1}", KeyName, desc);
-                            DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", KeyName, SectionIndex + 1, SettingIndex + 1);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", vars: [KeyName, SectionIndex + 1, SettingIndex + 1]);
                             Results.Add(ici);
                         }
                     }
@@ -155,13 +151,13 @@ namespace Nitrocid.Kernel.Configuration
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to find setting {0}: {1}", Pattern, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to find setting {0}: {1}", vars: [Pattern, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw;
             }
 
             // Return the results
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} results", Results.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} results", vars: [Results.Count]);
             return Results;
         }
 
@@ -245,7 +241,7 @@ namespace Nitrocid.Kernel.Configuration
             for (int keyIdx = 0; keyIdx < keys.Length; keyIdx++)
             {
                 SettingsKey? key = keys[keyIdx];
-                string KeyName = key.Name;
+                string KeyName = key.Name.Original;
                 string KeyVariable = key.Variable;
                 string KeyEnumeration = key.Enumeration;
                 bool KeyEnumerationInternal = key.EnumerationInternal;
@@ -312,7 +308,7 @@ namespace Nitrocid.Kernel.Configuration
             string name = kernelConfig.GetType().Name;
             if (!IsCustomSettingRegistered(name))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} not registered. Registering...", name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} not registered. Registering...", vars: [name]);
                 Config.customConfigurations.Add(name, kernelConfig);
             }
 
@@ -326,7 +322,7 @@ namespace Nitrocid.Kernel.Configuration
 
             // Make a configuration file
             string path = GetPathToCustomSettingsFile(kernelConfig);
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 Config.CreateConfig(kernelConfig);
             Config.ReadConfig(kernelConfig, path);
         }
@@ -343,7 +339,7 @@ namespace Nitrocid.Kernel.Configuration
             // Now, register!
             if (IsCustomSettingRegistered(setting))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Unregistering...", setting);
+                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Unregistering...", vars: [setting]);
                 Config.customConfigurations.Remove(setting);
             }
         }
@@ -379,7 +375,7 @@ namespace Nitrocid.Kernel.Configuration
             // Now, register!
             if (IsCustomSettingRegistered(setting))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Getting path...", setting);
+                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Getting path...", vars: [setting]);
                 var config = Config.GetKernelConfig(setting) ??
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when the kernel config is not specified."));
                 return GetPathToCustomSettingsFile(config);
@@ -402,7 +398,7 @@ namespace Nitrocid.Kernel.Configuration
 
             // Now, do the job!
             string path = FilesystemTools.NeutralizePath($"{setting.GetType().Name}.json", PathsManagement.AppDataPath);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got path {0}...", path);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got path {0}...", vars: [path]);
             return path;
         }
 
@@ -517,7 +513,7 @@ namespace Nitrocid.Kernel.Configuration
             string name = kernelConfig.GetType().Name;
             if (!IsCustomSettingBuiltin(name))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Base settings type {0} not registered. Registering...", name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Base settings type {0} not registered. Registering...", vars: [name]);
                 Config.baseConfigurations.Add(name, kernelConfig);
             }
 
@@ -531,7 +527,7 @@ namespace Nitrocid.Kernel.Configuration
 
             // Make a configuration file
             string path = GetPathToCustomSettingsFile(kernelConfig);
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 Config.CreateConfig(kernelConfig);
             Config.ReadConfig(kernelConfig, path);
         }
@@ -548,7 +544,7 @@ namespace Nitrocid.Kernel.Configuration
             // Now, register!
             if (IsCustomSettingBuiltin(setting))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Base settings type {0} registered. Unregistering...", setting);
+                DebugWriter.WriteDebug(DebugLevel.I, "Base settings type {0} registered. Unregistering...", vars: [setting]);
                 Config.baseConfigurations.Remove(setting);
             }
         }

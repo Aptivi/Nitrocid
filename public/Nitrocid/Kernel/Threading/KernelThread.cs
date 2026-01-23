@@ -118,7 +118,7 @@ namespace Nitrocid.Kernel.Threading
             Name = ThreadName;
             IsBackground = Background;
             isReady = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}, Child: {2}", ThreadName, ThreadId, Child);
+            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}, Child: {2}", vars: [ThreadName, ThreadId, Child]);
             if (Child && ParentThread is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "This parent thread was specified as a child with ParentThread as null. Unsetting Child...");
@@ -158,7 +158,7 @@ namespace Nitrocid.Kernel.Threading
             Name = ThreadName;
             IsBackground = Background;
             isReady = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}, Child: {2}", ThreadName, ThreadId, Child);
+            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}, Child: {2}", vars: [ThreadName, ThreadId, Child]);
             if (Child && ParentThread is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "This parent thread was specified as a child with ParentThread as null. Unsetting Child...");
@@ -180,9 +180,9 @@ namespace Nitrocid.Kernel.Threading
             if (BaseThread.ThreadState.HasFlag(ThreadState.Stopped) || IsAlive)
                 return;
 
-            DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1}", vars: [BaseThread.Name, ThreadId]);
             BaseThread.Start();
-            DebugWriter.WriteDebug(DebugLevel.I, "Starting child threads kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting child threads kernel thread {0} with ID {1}", vars: [BaseThread.Name, ThreadId]);
             StartChildThreads(null);
             DebugWriter.WriteDebug(DebugLevel.I, "Complete.");
         }
@@ -199,9 +199,9 @@ namespace Nitrocid.Kernel.Threading
                 return;
 
             // Start the parent thread
-            DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1} with parameters", BaseThread.Name, ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1} with parameters", vars: [BaseThread.Name, ThreadId]);
             BaseThread.Start(Parameter);
-            DebugWriter.WriteDebug(DebugLevel.I, "Starting child threads kernel thread {0} with ID {1} with parameters", BaseThread.Name, ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting child threads kernel thread {0} with ID {1} with parameters", vars: [BaseThread.Name, ThreadId]);
             StartChildThreads(Parameter);
             DebugWriter.WriteDebug(DebugLevel.I, "Complete.");
         }
@@ -220,21 +220,21 @@ namespace Nitrocid.Kernel.Threading
         {
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", Name, ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", vars: [Name, ThreadId]);
                 isStopping = true;
                 BaseThread.Interrupt();
-                DebugWriter.WriteDebug(DebugLevel.I, "Stopping child threads for kernel thread {0} with ID {1}", Name, ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "Stopping child threads for kernel thread {0} with ID {1}", vars: [Name, ThreadId]);
                 StopChildThreads();
                 if (!Wait(60000))
                     DebugWriter.WriteDebug(DebugLevel.W, "Either the parent thread or the child thread timed out for 60000 ms waiting for it to stop");
                 isReady = false;
-                DebugWriter.WriteDebug(DebugLevel.I, "Finished with regen {0}", regen);
+                DebugWriter.WriteDebug(DebugLevel.I, "Finished with regen {0}", vars: [regen]);
                 if (regen)
                     Regen();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException) && ex.GetType().Name != nameof(ThreadStateException))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Can't stop the kernel thread: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Can't stop the kernel thread: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             isStopping = false;
@@ -250,15 +250,15 @@ namespace Nitrocid.Kernel.Threading
 
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1}", vars: [BaseThread.Name, ThreadId]);
                 BaseThread.Join();
-                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for child threads for kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for child threads for kernel thread {0} with ID {1}", vars: [BaseThread.Name, ThreadId]);
                 WaitForChildThreads();
                 DebugWriter.WriteDebug(DebugLevel.I, "Waited.");
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException) && ex.GetType().Name != nameof(ThreadStateException))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Can't wait for kernel thread: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Can't wait for kernel thread: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -274,10 +274,10 @@ namespace Nitrocid.Kernel.Threading
             try
             {
                 bool SuccessfullyWaited = true;
-                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1} for {2} milliseconds", BaseThread.Name, ThreadId, timeoutMs);
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1} for {2} milliseconds", vars: [BaseThread.Name, ThreadId, timeoutMs]);
                 if (!BaseThread.Join(timeoutMs))
                     SuccessfullyWaited = false;
-                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for child kernel threads for {0} milliseconds", timeoutMs);
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for child kernel threads for {0} milliseconds", vars: [timeoutMs]);
                 if (!WaitForChildThreads(timeoutMs))
                     SuccessfullyWaited = false;
                 DebugWriter.WriteDebug(DebugLevel.I, "Waited.");
@@ -285,7 +285,7 @@ namespace Nitrocid.Kernel.Threading
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException) && ex.GetType().Name != nameof(ThreadStateException))
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Can't wait for kernel thread: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Can't wait for kernel thread: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -297,8 +297,8 @@ namespace Nitrocid.Kernel.Threading
         public void Regen()
         {
             // We can't regen the kernel thread unless Stop() is called first.
-            DebugWriter.WriteDebug(DebugLevel.I, "Ready to regenerate? {0}", !IsReady);
-            if (IsReady)
+            DebugWriter.WriteDebug(DebugLevel.I, "Ready to regenerate? {0}", vars: [!IsReady || BaseThread.ThreadState != ThreadState.Running]);
+            if (IsReady && BaseThread.ThreadState == ThreadState.Running)
                 throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Can't regenerate the kernel thread while the same thread is already running."));
 
             // Remake the thread to avoid illegal state exceptions
@@ -308,7 +308,7 @@ namespace Nitrocid.Kernel.Threading
                 BaseThread = new Thread(ThreadDelegate) { Name = Name, IsBackground = IsBackground };
             else
                 throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Thread can't be regenerated") + $". {Name}");
-            DebugWriter.WriteDebug(DebugLevel.I, "Regenerated a new kernel thread {0} with ID {1} successfully.", Name, ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Regenerated a new kernel thread {0} with ID {1} successfully.", vars: [Name, ThreadId]);
             isReady = true;
         }
 
@@ -326,7 +326,7 @@ namespace Nitrocid.Kernel.Threading
 
             KernelThread target = new(ThreadName, Background, Executor, true, this);
             ChildThreads.Add(target);
-            DebugWriter.WriteDebug(DebugLevel.I, "Added a new child kernel thread {0} with ID {1}", ThreadName, target.ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Added a new child kernel thread {0} with ID {1}", vars: [ThreadName, target.ThreadId]);
             if (IsAlive && !IsStopping)
                 target.Start();
         }
@@ -345,7 +345,7 @@ namespace Nitrocid.Kernel.Threading
 
             KernelThread target = new(ThreadName, Background, Executor, true, this);
             ChildThreads.Add(target);
-            DebugWriter.WriteDebug(DebugLevel.I, "Added a new child kernel thread {0} with ID {1}", ThreadName, target.ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Added a new child kernel thread {0} with ID {1}", vars: [ThreadName, target.ThreadId]);
             if (IsAlive && !IsStopping)
                 target.Start();
         }
@@ -374,7 +374,7 @@ namespace Nitrocid.Kernel.Threading
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", Name, ThreadId, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", vars: [Name, ThreadId, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
             }
@@ -390,7 +390,7 @@ namespace Nitrocid.Kernel.Threading
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", Name, ThreadId, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", vars: [Name, ThreadId, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
             }
@@ -399,10 +399,10 @@ namespace Nitrocid.Kernel.Threading
         private void StartChildThreads(object? Parameter)
         {
             // Start the child threads
-            DebugWriter.WriteDebug(DebugLevel.I, "Starting {0} child threads...", ChildThreads.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting {0} child threads...", vars: [ChildThreads.Count]);
             foreach (var ChildThread in ChildThreads)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, starting the child thread {2} with ID {3} [child parameterized: {4}].", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId, ChildThread.IsParameterized);
+                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, starting the child thread {2} with ID {3} [child parameterized: {4}].", vars: [BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId, ChildThread.IsParameterized]);
                 if (ChildThread.IsParameterized)
                     ChildThread.Start(Parameter);
                 else
@@ -414,10 +414,10 @@ namespace Nitrocid.Kernel.Threading
         {
             // Stop the child threads
             var ActiveChildThreads = ChildThreads.Where((thread) => thread.IsAlive).ToArray();
-            DebugWriter.WriteDebug(DebugLevel.I, "Stopping {0} active child threads...", ActiveChildThreads.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Stopping {0} active child threads...", vars: [ActiveChildThreads.Length]);
             foreach (var ChildThread in ActiveChildThreads)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, stopping the child thread {2} with ID {3}.", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, stopping the child thread {2} with ID {3}.", vars: [BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId]);
                 ChildThread.Stop();
             }
         }
@@ -426,14 +426,14 @@ namespace Nitrocid.Kernel.Threading
         {
             // Stop the child threads
             var ActiveChildThreads = ChildThreads.Where((thread) => thread.IsAlive).ToArray();
-            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for {0} active child threads...", ActiveChildThreads.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for {0} active child threads...", vars: [ActiveChildThreads.Length]);
             foreach (var ChildThread in ActiveChildThreads)
             {
                 // Just to make sure
                 if (!ChildThread.IsAlive)
                     continue;
 
-                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, stopping the child thread {2} with ID {3}.", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, stopping the child thread {2} with ID {3}.", vars: [BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId]);
                 ChildThread.Wait();
             }
         }
@@ -443,14 +443,14 @@ namespace Nitrocid.Kernel.Threading
             // Stop the child threads
             var ActiveChildThreads = ChildThreads.Where((thread) => thread.IsAlive).ToArray();
             bool SuccessfullyWaited = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for {0} active child threads...", ActiveChildThreads.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for {0} active child threads...", vars: [ActiveChildThreads.Length]);
             foreach (var ChildThread in ActiveChildThreads)
             {
                 // Just to make sure
                 if (!ChildThread.IsAlive)
                     continue;
 
-                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, stopping the child thread {2} with ID {3}.", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, stopping the child thread {2} with ID {3}.", vars: [BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId]);
                 if (!ChildThread.Wait(timeoutMs))
                     SuccessfullyWaited = false;
             }

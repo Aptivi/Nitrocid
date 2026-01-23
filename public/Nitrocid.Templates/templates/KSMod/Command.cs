@@ -1,4 +1,4 @@
-﻿using Nitrocid.Shell.ShellBase.Commands;
+﻿using Terminaux.Shell.Commands;
 
 namespace KSMod
 {

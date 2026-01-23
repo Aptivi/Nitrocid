@@ -27,6 +27,12 @@ using Terminaux.Colors;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Misc.Audio;
+using BassBoom.Basolia;
+using BassBoom.Basolia.File;
+using BassBoom.Basolia.Playback;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -37,6 +43,8 @@ namespace Nitrocid.Misc.Screensaver
     {
 
         internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver?)ss));
+        internal readonly static KernelThread ScreensaverAmbienceThread = new("Screensaver ambience thread", false, ScreensaverAmbience);
+
         internal static BaseScreensaver? displayingSaver;
 
         /// <summary>
@@ -48,18 +56,18 @@ namespace Nitrocid.Misc.Screensaver
             if (Screensaver is null)
                 throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Screensaver instance is not specified"));
             bool initialVisible = ConsoleWrapper.CursorVisible;
-            bool initialBack = ColorTools.AllowBackground;
+            bool initialBack = ConsoleColoring.AllowBackground;
             bool initialPalette = ColorTools.GlobalSettings.UseTerminalPalette;
             try
             {
                 // Preparations
                 displayingSaver = Screensaver;
-                ColorTools.AllowBackground = true;
+                ConsoleColoring.AllowBackground = true;
                 ColorTools.GlobalSettings.UseTerminalPalette = false;
                 Screensaver.ScreensaverPreparation();
 
                 // Execute the actual screensaver logic
-                while (!ScreensaverDisplayerThread.IsStopping)
+                while (!ScreensaverDisplayerThread.IsStopping && !ScreensaverManager.bailing)
                 {
                     if (ConsoleWrapper.CursorVisible)
                         ConsoleWrapper.CursorVisible = false;
@@ -78,7 +86,7 @@ namespace Nitrocid.Misc.Screensaver
             {
                 Screensaver.ScreensaverOutro();
                 ScreensaverManager.HandleSaverCancel(initialVisible);
-                ColorTools.AllowBackground = initialBack;
+                ConsoleColoring.AllowBackground = initialBack;
                 ColorTools.GlobalSettings.UseTerminalPalette = initialPalette;
                 KernelColorTools.LoadBackground();
             }
@@ -88,17 +96,70 @@ namespace Nitrocid.Misc.Screensaver
         {
             if (ScreensaverManager.InSaver)
             {
+                ScreensaverManager.bailing = true;
                 ScreensaverDisplayerThread.Stop(false);
+                ScreensaverAmbienceThread.Stop(false);
                 ScreensaverManager.SaverAutoReset.WaitOne();
 
                 // Raise event
                 DebugWriter.WriteDebug(DebugLevel.I, "Screensaver really stopped.");
                 EventsManager.FireEvent(EventType.PostShowScreensaver);
+                ScreensaverManager.bailing = false;
                 ScreensaverManager.inSaver = false;
                 ScreensaverManager.ScrnTimeReached = false;
                 ScreensaverDisplayerThread.Regen();
+                ScreensaverAmbienceThread.Regen();
             }
         }
 
+        internal static void ScreensaverAmbience()
+        {
+            try
+            {
+                var basoliaMedia = new BasoliaMedia();
+                DebugWriter.WriteDebug(DebugLevel.I, $"Screensaver ambience starting with theme {Config.MainConfig.AudioCueThemeName}");
+                
+                // Open the ambient SFX stream
+                var ambientFxType = Config.MainConfig.EnableAmbientSoundFxIntense ? AudioCueType.AmbienceIdle : AudioCueType.Ambience;
+                var cue = AudioCuesTools.GetAudioCue();
+
+                // Repeatedly play it
+                while (!ScreensaverAmbienceThread.IsStopping)
+                {
+                    var ambientStream = cue.GetStream(ambientFxType) ??
+                        throw new KernelException(KernelExceptionType.AudioCue, Translate.DoTranslation("Can't get audio cue required for ambient screensavers."));
+
+                    try
+                    {
+                        FileTools.OpenFrom(basoliaMedia, ambientStream);
+                        DebugWriter.WriteDebug(DebugLevel.I, $"Restarting screensaver ambience {ambientFxType} from {Config.MainConfig.AudioCueThemeName}...");
+                        PlaybackTools.PlayAsync(basoliaMedia);
+                        if (!SpinWait.SpinUntil(() => PlaybackTools.GetState(basoliaMedia) == PlaybackState.Playing, 15000))
+                            throw new KernelException(KernelExceptionType.AudioCue, Translate.DoTranslation("Can't play sound because of timeout."));
+                        while (PlaybackTools.GetState(basoliaMedia) == PlaybackState.Playing && !ScreensaverDisplayerThread.IsStopping) ;
+                        ambientStream.Seek(0, System.IO.SeekOrigin.Begin);
+                        FileTools.CloseFile(basoliaMedia);
+                    }
+                    catch (ThreadInterruptedException)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Screensaver ambience is stopping due to user request...");
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, $"Screensaver ambience is stopping due to failure. {ex.Message}");
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        break;
+                    }
+                }
+                if (PlaybackTools.GetState(basoliaMedia) != PlaybackState.Stopped)
+                    PlaybackTools.Stop(basoliaMedia);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, $"Screensaver ambience is stopping due to failure. {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+        }
     }
 }

@@ -17,19 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Screensaver;
-using Terminaux.Colors;
-using Terminaux.Base;
 using System;
-using Textify.Data.Figlet;
-using Nitrocid.ScreensaverPacks.Animations.Glitch;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Screensaver;
+using Nitrocid.ScreensaverPacks.Animations.Glitch;
+using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Textify.Data.Figlet;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -51,7 +52,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(0, 0, 0));
+            ConsoleColoring.LoadBackDry(new Color(0, 0, 0));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
         }
@@ -79,12 +80,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 switch (step)
                 {
                     // Step 1: Shows all the versions, but with 0.1.0.
                     case 1:
-                        ColorTools.LoadBackDry(black);
+                        ConsoleColoring.LoadBackDry(black);
 
                         // Get the color thresholds
                         double thresholdGR = green.RGB.R / (double)colorSteps;
@@ -105,6 +108,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdGR);
@@ -113,9 +118,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
+                            int figHeight = FigletTools.GetFigletHeight("v0.0.1", font) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(font)
                             {
                                 Text = "v0.0.1",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = black,
                                 Settings = new()
@@ -140,12 +148,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR - thresholdGR);
@@ -154,9 +164,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
+                            int figHeight = FigletTools.GetFigletHeight("v0.0.1", font) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(font)
                             {
                                 Text = "v0.0.1",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = black,
                                 Settings = new()
@@ -181,12 +194,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdRR);
@@ -195,9 +210,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
+                            int figHeight = FigletTools.GetFigletHeight("v0.0.16", font) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(font)
                             {
                                 Text = "v0.0.16",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = black,
                                 Settings = new()
@@ -222,12 +240,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR - thresholdRR);
@@ -236,9 +256,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
+                            int figHeight = FigletTools.GetFigletHeight("v0.0.16", font) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(font)
                             {
                                 Text = "v0.0.16",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = black,
                                 Settings = new()
@@ -263,12 +286,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdPR);
@@ -277,9 +302,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
+                            int figHeight = FigletTools.GetFigletHeight("v0.0.24", font) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(font)
                             {
                                 Text = "v0.0.24",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = black,
                                 Settings = new()
@@ -304,12 +332,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR - thresholdPR);
@@ -318,9 +348,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
+                            int figHeight = FigletTools.GetFigletHeight("v0.0.24", font) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(font)
                             {
                                 Text = "v0.0.24",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = black,
                                 Settings = new()
@@ -345,12 +378,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         for (int currentStep = 1; currentStep <= colorSteps; currentStep++)
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR + thresholdBR);
@@ -359,9 +394,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
+                            int figHeight = FigletTools.GetFigletHeight("v0.1.0", font) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var xText = new AlignedFigletText(font)
                             {
                                 Text = "v0.1.0",
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = black,
                                 Settings = new()
@@ -386,14 +424,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             );
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                     // Step 2: 0.1.0 doesn't fade out, but a glitch shows
                     case 2:
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
-                            ScreensaverManager.Delay(10);
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
+                            ScreensaverManager.Delay(10, true);
                             Glitch.GlitchAt();
                         }
                         break;
@@ -402,52 +445,76 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         int maxFlashes = 200;
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool showGreen = flashes % 2 == 0;
                             if (showGreen)
-                                ColorTools.LoadBackDry(green);
+                                ConsoleColoring.LoadBackDry(green);
                             else
-                                ColorTools.LoadBackDry(white);
-                            ScreensaverManager.Delay(50);
+                                ConsoleColoring.LoadBackDry(white);
+                            ScreensaverManager.Delay(50, true);
                         }
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool showRed = flashes % 2 == 0;
                             if (showRed)
-                                ColorTools.LoadBackDry(red);
+                                ConsoleColoring.LoadBackDry(red);
                             else
-                                ColorTools.LoadBackDry(white);
-                            ScreensaverManager.Delay(50);
+                                ConsoleColoring.LoadBackDry(white);
+                            ScreensaverManager.Delay(50, true);
                         }
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool showPink = flashes % 2 == 0;
                             if (showPink)
-                                ColorTools.LoadBackDry(pink);
+                                ConsoleColoring.LoadBackDry(pink);
                             else
-                                ColorTools.LoadBackDry(white);
-                            ScreensaverManager.Delay(50);
+                                ConsoleColoring.LoadBackDry(white);
+                            ScreensaverManager.Delay(50, true);
                         }
                         for (int flashes = 0; flashes <= maxFlashes; flashes++)
                         {
+                            if (ConsoleResizeHandler.WasResized(false))
+                                break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             bool showBlue = flashes % 2 == 0;
                             if (showBlue)
-                                ColorTools.LoadBackDry(blue);
+                                ConsoleColoring.LoadBackDry(blue);
                             else
-                                ColorTools.LoadBackDry(white);
-                            ScreensaverManager.Delay(50);
+                                ConsoleColoring.LoadBackDry(white);
+                            ScreensaverManager.Delay(50, true);
                         }
                         break;
                     // Step 4: White background for a few seconds
                     case 4:
-                        ColorTools.LoadBackDry(white);
-                        ScreensaverManager.Delay(5000);
+                        ConsoleColoring.LoadBackDry(white);
+                        ScreensaverManager.Delay(5000, true);
                         break;
                     // Step 5: "THE END" shows for a few seconds
                     case 5:
                         {
+                            string theEnd = Translate.DoTranslation("The End").ToUpper();
+                            int figHeight = FigletTools.GetFigletHeight(theEnd, font) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var endText = new AlignedFigletText(font)
                             {
-                                Text = Translate.DoTranslation("The End").ToUpper(),
+                                Text = theEnd,
+                                Top = consoleY,
                                 ForegroundColor = green,
                                 BackgroundColor = white,
                                 Settings = new()
@@ -457,7 +524,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             };
                             TextWriterRaw.WriteRaw(endText.Render());
                         }
-                        ScreensaverManager.Delay(5000);
+                        ScreensaverManager.Delay(5000, true);
                         break;
                     // Step 6: With the figlet text, the background fades out
                     case 6:
@@ -478,6 +545,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Remove the values according to the threshold
                             currentR = (int)Math.Round(currentR - thresholdR);
@@ -490,10 +559,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
                             Color colBG = new(currentBGR, currentBGG, currentBGB);
-                            ColorTools.LoadBackDry(colBG);
+                            ConsoleColoring.LoadBackDry(colBG);
+                            string theEnd = Translate.DoTranslation("The End").ToUpper();
+                            int figHeight = FigletTools.GetFigletHeight(theEnd, font) / 2;
+                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                             var endText = new AlignedFigletText(font)
                             {
-                                Text = Translate.DoTranslation("The End").ToUpper(),
+                                Text = theEnd,
+                                Top = consoleY,
                                 ForegroundColor = col,
                                 BackgroundColor = colBG,
                                 Settings = new()
@@ -504,7 +577,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             TextWriterRaw.WriteRaw(endText.Render());
 
                             // Sleep
-                            ScreensaverManager.Delay(100);
+                            ScreensaverManager.Delay(100, true);
                         }
                         break;
                 }
@@ -512,8 +585,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset
             ConsoleResizeHandler.WasResized();
-            ColorTools.LoadBackDry(black);
+            ConsoleColoring.LoadBackDry(black);
         }
-
     }
 }

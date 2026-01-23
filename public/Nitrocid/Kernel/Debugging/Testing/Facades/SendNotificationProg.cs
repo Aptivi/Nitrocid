@@ -27,7 +27,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     internal class SendNotificationProg : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Sends a progress notification to test the receiver");
-        public override void Run(params string[] args)
+        public override void Run()
         {
             SplashReport._KernelBooted = true;
             var Notif = new Notification(Translate.DoTranslation("Test progress notification"), Translate.DoTranslation("Description is here"), NotificationPriority.Low, NotificationType.Progress);

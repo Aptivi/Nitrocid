@@ -21,10 +21,10 @@ using System;
 using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Operations.Printing;
+using Nitrocid.Files;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -66,7 +66,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     PrintLines = false;
                 if (parameters.SwitchesList.Contains("-plain"))
                     ForcePlain = true;
-                FileContentPrinter.PrintContents(parameters.ArgumentsList[0], PrintLines, ForcePlain);
+                FilesystemTools.PrintContents(parameters.ArgumentsList[0], PrintLines, ForcePlain);
                 return 0;
             }
             catch (Exception ex)

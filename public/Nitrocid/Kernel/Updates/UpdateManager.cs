@@ -24,7 +24,6 @@ using Nitrocid.Kernel.Extensions;
 using Nitrocid.Network.Transfer;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Misc.Reflection.Internal;
 
 #if SPECIFIERREL
@@ -54,7 +53,7 @@ namespace Nitrocid.Kernel.Updates
                 NetworkTransfer.WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi");
 
                 // Populate the following variables with information
-                string UpdateStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/NitrocidKS/releases", false);
+                string UpdateStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/Nitrocid/releases", false);
                 var UpdateToken = JToken.Parse(UpdateStr);
                 var UpdateInstance = new KernelUpdate(UpdateToken, kind);
 
@@ -63,7 +62,7 @@ namespace Nitrocid.Kernel.Updates
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             finally
@@ -89,7 +88,7 @@ namespace Nitrocid.Kernel.Updates
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return null;
@@ -107,7 +106,7 @@ namespace Nitrocid.Kernel.Updates
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return null;
@@ -154,10 +153,13 @@ namespace Nitrocid.Kernel.Updates
         internal static string FetchCurrentChangelogsFromResources()
         {
             // Get the changelogs from resource
-            bool exists = ResourcesManager.DataExists("changes.chg", ResourcesType.Misc, out string? contents);
+            bool exists = ResourcesManager.DataExists("changes.chg", ResourcesType.Misc, out var stream);
             if (!exists)
                 return "";
-            return contents ?? "";
+
+            // Convert the stream to the string and return its contents
+            string contents = ResourcesManager.ConvertToString(stream);
+            return contents;
         }
     }
 }

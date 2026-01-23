@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Extras.Notes.Management;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.Notes.Commands
 {

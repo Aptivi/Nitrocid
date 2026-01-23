@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using System;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Exceptions;
-using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Switches;
+using Nitrocid.Files;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Commands
                 {
                     // Initiate importing process
                     string path = parameters.ArgumentsList[0];
-                    if (Checking.FileExists(path))
+                    if (FilesystemTools.FileExists(path))
                     {
                         // Initiate installation
                         ContactsManager.InstallContacts(path);

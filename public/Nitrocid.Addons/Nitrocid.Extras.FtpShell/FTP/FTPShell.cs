@@ -22,8 +22,8 @@ using System.Threading;
 using Nitrocid.Extras.FtpShell.Tools;
 using Nitrocid.Extras.FtpShell.Tools.Transfer;
 using FluentFTP;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
@@ -72,7 +72,7 @@ namespace Nitrocid.Extras.FtpShell.FTP
 
             // Prepare to print current FTP directory
             FTPShellCommon.FtpCurrentRemoteDir = clientFTP.GetWorkingDirectory();
-            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", FTPShellCommon.FtpCurrentRemoteDir);
+            DebugWriter.WriteDebug(DebugLevel.I, "Working directory: {0}", vars: [FTPShellCommon.FtpCurrentRemoteDir]);
             FTPShellCommon.FtpSite = clientFTP.Host;
             FTPShellCommon.FtpUser = clientFTP.Credentials.UserName;
 
@@ -99,7 +99,7 @@ namespace Nitrocid.Extras.FtpShell.FTP
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

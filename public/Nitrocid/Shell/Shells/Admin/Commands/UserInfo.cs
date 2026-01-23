@@ -17,13 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Users;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.FancyWriters;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands
 {
@@ -53,6 +52,8 @@ namespace Nitrocid.Shell.Shells.Admin.Commands
                 TextWriters.Write(user.FullName, true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Preferred language") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(user.PreferredLanguage ?? "", true, KernelColorType.ListValue);
+                TextWriters.Write(Translate.DoTranslation("Preferred culture") + ": ", false, KernelColorType.ListEntry);
+                TextWriters.Write(user.PreferredCulture ?? "", true, KernelColorType.ListValue);
                 TextWriters.Write(Translate.DoTranslation("Flags") + ": ", false, KernelColorType.ListEntry);
                 TextWriters.Write(string.Join(", ", user.Flags), true, KernelColorType.ListValue);
                 TextWriterRaw.Write();

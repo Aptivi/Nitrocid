@@ -24,6 +24,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -41,7 +42,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.ColorMixBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.ColorMixBackgroundColor));
             ConsoleWrapper.CursorVisible = false;
         }
 
@@ -78,14 +79,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 if (!ConsoleResizeHandler.WasResized(false))
                 {
-                    ColorTools.SetConsoleColorDry(Color.Empty);
-                    ColorTools.SetConsoleColorDry(colorStorage, true);
+                    ConsoleColoring.SetConsoleColorDry(Color.Empty);
+                    ConsoleColoring.SetConsoleColorDry(colorStorage, true);
                     TextWriterRaw.WritePlain(" ", false);
                 }
                 else
                 {
                     DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "We're refilling...");
-                    ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.ColorMixBackgroundColor));
+                    ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.ColorMixBackgroundColor));
                 }
             }
 

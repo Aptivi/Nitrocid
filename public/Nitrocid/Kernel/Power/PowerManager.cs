@@ -25,8 +25,8 @@ using System.IO;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Commands.ProcessExecution;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands.ProcessExecution;
+using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Starting.Environment;
@@ -114,7 +114,7 @@ namespace Nitrocid.Kernel.Power
             // Check to see if the current user is granted power management or not
             PermissionsTools.Demand(PermissionTypes.ManagePower);
 
-            DebugWriter.WriteDebug(DebugLevel.I, "Power management has the argument of {0}", PowerMode);
+            DebugWriter.WriteDebug(DebugLevel.I, "Power management has the argument of {0}", vars: [PowerMode]);
             switch (PowerMode)
             {
                 case PowerMode.Shutdown:
@@ -156,11 +156,11 @@ namespace Nitrocid.Kernel.Power
                         RebootRequested = true;
                         Login.LogoutRequested = true;
                         rebootingToSafeMode = PowerMode == PowerMode.RebootSafe;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", rebootingToSafeMode);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", vars: [rebootingToSafeMode]);
                         rebootingToMaintenanceMode = PowerMode == PowerMode.RebootMaintenance;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Maintenance mode changed to {0}", rebootingToMaintenanceMode);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Maintenance mode changed to {0}", vars: [rebootingToMaintenanceMode]);
                         rebootingToDebugMode = PowerMode == PowerMode.RebootDebug;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Debug mode changed to {0}", rebootingToDebugMode);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Debug mode changed to {0}", vars: [rebootingToDebugMode]);
 
                         // Kill all shells and interrupt any input
                         ShellManager.KillAllShells();
@@ -218,7 +218,6 @@ namespace Nitrocid.Kernel.Power
                     Arguments = string.Join(" ", EnvironmentTools.kernelArguments)
                 },
             };
-            selfProcess.StartInfo = ProcessExecutor.StripEnvironmentVariables(selfProcess.StartInfo);
 
             // Now, go ahead and start.
             selfProcess.Start();

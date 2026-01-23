@@ -43,7 +43,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.MarqueeBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.MarqueeBackgroundColor));
             ScreensaverPackInit.SaversConfig.MarqueeWrite = ScreensaverPackInit.SaversConfig.MarqueeWrite.ReplaceAll([Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString()], " - ");
         }
 
@@ -73,13 +73,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int GreenColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MarqueeMinimumGreenColorLevel, ScreensaverPackInit.SaversConfig.MarqueeMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MarqueeMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.MarqueeMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
-                ColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"));
+                ConsoleColoring.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"));
             }
             else
             {
                 int color = RandomDriver.Random(ScreensaverPackInit.SaversConfig.MarqueeMinimumColorLevel, ScreensaverPackInit.SaversConfig.MarqueeMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [color]);
-                ColorTools.SetConsoleColor(new Color(color));
+                ConsoleColoring.SetConsoleColor(new Color(color));
             }
 
             // If the text is at the right and is longer than the console width, crop it until it's complete.
@@ -88,6 +88,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.MarqueeDelay);
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
                 if (ScreensaverPackInit.SaversConfig.MarqueeUseConsoleAPI)
                     ConsoleWrapper.Clear();
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Current left: {0} | Current left on other end: {1}", vars: [CurrentLeft, CurrentLeftOtherEnd]);
@@ -101,17 +103,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // written variable equals the base text variable. However, if we're on the left, take the substring so that the character which was
                 // shown previously won't be shown again.
                 if (CurrentLeft != 0)
-                {
                     MarqueeWritten = MarqueeWritten[..(CurrentLeftOtherEnd - CurrentLeft)];
-                }
                 else if (CurrentLeft == 0 & Middle)
-                {
                     MarqueeWritten = MarqueeWritten.Substring(CurrentCharacterNum - (CurrentLeftOtherEnd - CurrentLeft), CurrentLeftOtherEnd - CurrentLeft);
-                }
                 else
-                {
                     MarqueeWritten = MarqueeWritten[(ScreensaverPackInit.SaversConfig.MarqueeWrite.Length - (CurrentLeftOtherEnd - CurrentLeft))..];
-                }
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Written result: {0}", vars: [MarqueeWritten]);
                 if (!ScreensaverPackInit.SaversConfig.MarqueeUseConsoleAPI)
                     MarqueeWritten += $"{ConsoleClearing.GetClearLineToRightSequence()}";

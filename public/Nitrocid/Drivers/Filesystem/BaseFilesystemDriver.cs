@@ -32,7 +32,6 @@ using Nitrocid.Kernel;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Operations;
 using Nitrocid.Files.Folders;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
@@ -42,16 +41,16 @@ using Nitrocid.Files.Instances;
 using Nitrocid.Files.LineEndings;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Events;
-using Nitrocid.Files.Attributes;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Misc.Text.Probers.Regexp;
-using Nitrocid.Kernel.Extensions;
 using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Misc.Progress;
 using System.Runtime.Serialization;
 using Terminaux.Colors;
 using Textify.General.Comparers;
+using Nitrocid.Files;
+using Terminaux.Base.Checks;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Drivers.Filesystem
 {
@@ -74,7 +73,7 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void AddAttributeToFile(string FilePath, FileAttributes Attributes)
         {
             FilePath = FS.NeutralizePath(FilePath);
-            DebugWriter.WriteDebug(DebugLevel.I, "Setting file attribute to {0}...", Attributes);
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting file attribute to {0}...", vars: [Attributes]);
             File.SetAttributes(FilePath, Attributes);
 
             // Raise event
@@ -115,18 +114,18 @@ namespace Nitrocid.Drivers.Filesystem
                 var CombinedContents = new List<byte>();
 
                 // Add the input contents
-                    if (!Parsing.IsBinaryFile(Input))
+                    if (!FilesystemTools.IsBinaryFile(Input))
                     throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + Input + ")");
-                CombinedContents.AddRange(Reading.ReadAllBytes(Input));
+                CombinedContents.AddRange(FilesystemTools.ReadAllBytes(Input));
 
                 // Enumerate the target inputs
                 for (int i = 0; i < TargetInputs.Length; i++)
                 {
                     string TargetInput = TargetInputs[i];
-                            if (!Parsing.IsBinaryFile(TargetInput))
+                            if (!FilesystemTools.IsBinaryFile(TargetInput))
                         throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + TargetInput + ")");
                     ProgressManager.ReportProgress((i + 1) / TargetInputs.Length, nameof(CombineBinaryFiles), $"{Input} + {TargetInput}");
-                    CombinedContents.AddRange(Reading.ReadAllBytes(TargetInput));
+                    CombinedContents.AddRange(FilesystemTools.ReadAllBytes(TargetInput));
                 }
 
                 // Return the combined contents
@@ -135,7 +134,7 @@ namespace Nitrocid.Drivers.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", vars: [ex.Message]);
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to combine files."), ex);
             }
         }
@@ -148,18 +147,18 @@ namespace Nitrocid.Drivers.Filesystem
                 var CombinedContents = new List<string>();
 
                 // Add the input contents
-                    if (Parsing.IsBinaryFile(Input))
+                    if (FilesystemTools.IsBinaryFile(Input))
                     throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + Input + ")");
-                CombinedContents.AddRange(Reading.ReadContents(Input));
+                CombinedContents.AddRange(FilesystemTools.ReadContents(Input));
 
                 // Enumerate the target inputs
                 for (int i = 0; i < TargetInputs.Length; i++)
                 {
                     string TargetInput = TargetInputs[i];
-                            if (Parsing.IsBinaryFile(TargetInput))
+                            if (FilesystemTools.IsBinaryFile(TargetInput))
                         throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + TargetInput + ")");
                     ProgressManager.ReportProgress((i + 1) / TargetInputs.Length, nameof(CombineTextFiles), $"{Input} + {TargetInput}");
-                    CombinedContents.AddRange(Reading.ReadContents(TargetInput));
+                    CombinedContents.AddRange(FilesystemTools.ReadContents(TargetInput));
                 }
 
                 // Return the combined contents
@@ -168,28 +167,28 @@ namespace Nitrocid.Drivers.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", vars: [ex.Message]);
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to combine files."), ex);
             }
         }
 
         /// <inheritdoc/>
         public virtual void ConvertLineEndings(string TextFile) =>
-            ConvertLineEndings(TextFile, LineEndingsTools.NewlineStyle);
+            ConvertLineEndings(TextFile, FilesystemTools.NewlineStyle);
 
         /// <inheritdoc/>
         public virtual void ConvertLineEndings(string TextFile, FilesystemNewlineStyle LineEndingStyle)
         {
             TextFile = FS.NeutralizePath(TextFile);
-            if (!Checking.FileExists(TextFile))
+            if (!FilesystemTools.FileExists(TextFile))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File {0} not found."), TextFile);
 
             // Get all the file lines, regardless of the new line style on the target file
-            var FileContents = Reading.ReadAllLinesNoBlock(TextFile);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} lines. Converting newlines in {1} to {2}...", FileContents.Length, TextFile, LineEndingStyle.ToString());
+            var FileContents = FilesystemTools.ReadAllLinesNoBlock(TextFile);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} lines. Converting newlines in {1} to {2}...", vars: [FileContents.Length, TextFile, LineEndingStyle.ToString()]);
 
             // Get the newline string according to the current style
-            string NewLineString = LineEndingsTools.GetLineEndingString(LineEndingStyle);
+            string NewLineString = FilesystemTools.GetLineEndingString(LineEndingStyle);
 
             // Convert the newlines now
             var Result = new StringBuilder();
@@ -201,7 +200,7 @@ namespace Nitrocid.Drivers.Filesystem
             }
 
             // Save the changes
-            Writing.WriteContentsText(TextFile, Result.ToString());
+            FilesystemTools.WriteContentsText(TextFile, Result.ToString());
         }
 
         /// <inheritdoc/>
@@ -211,20 +210,20 @@ namespace Nitrocid.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void CopyDirectory(string Source, string Destination, bool ShowProgress)
         {
-            if (!Checking.FolderExists(Source))
+            if (!FilesystemTools.FolderExists(Source))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found."), Source);
 
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Source);
             var SourceDirectories = SourceDirInfo.GetDirectories();
-            DebugWriter.WriteDebug(DebugLevel.I, "Source directories: {0}", SourceDirectories.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directories: {0}", vars: [SourceDirectories.Length]);
             var SourceFiles = SourceDirInfo.GetFiles();
-            DebugWriter.WriteDebug(DebugLevel.I, "Source files: {0}", SourceFiles.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source files: {0}", vars: [SourceFiles.Length]);
 
             // Make a destination directory if it doesn't exist
-            if (!Checking.FolderExists(Destination))
+            if (!FilesystemTools.FolderExists(Destination))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Destination directory {0} doesn't exist. Creating...", Destination);
+                DebugWriter.WriteDebug(DebugLevel.I, "Destination directory {0} doesn't exist. Creating...", vars: [Destination]);
                 Directory.CreateDirectory(Destination);
             }
 
@@ -233,7 +232,7 @@ namespace Nitrocid.Drivers.Filesystem
             {
                 FileInfo SourceFile = SourceFiles[i];
                 string DestinationFilePath = IOPath.Combine(Destination, SourceFile.Name);
-                DebugWriter.WriteDebug(DebugLevel.I, "Copying file {0} to destination...", DestinationFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Copying file {0} to destination...", vars: [DestinationFilePath]);
                 if (ShowProgress)
                     ProgressManager.RegisterProgressHandler(new(new((perc, message) => TextWriterColor.Write($"{perc}% - {message}")), SourceFile.FullName));
                 ProgressManager.ReportProgress((i + 1) / SourceFiles.Length, SourceFile.FullName, $"-> {DestinationFilePath}");
@@ -245,7 +244,7 @@ namespace Nitrocid.Drivers.Filesystem
             {
                 DirectoryInfo SourceDirectory = SourceDirectories[i];
                 string DestinationDirectoryPath = IOPath.Combine(Destination, SourceDirectory.Name);
-                DebugWriter.WriteDebug(DebugLevel.I, "Calling CopyDirectory() with destination {0}...", DestinationDirectoryPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Calling CopyDirectory() with destination {0}...", vars: [DestinationDirectoryPath]);
                 if (ShowProgress)
                     ProgressManager.RegisterProgressHandler(new(new((perc, message) => TextWriterColor.Write($"{perc}% - {message}")), SourceDirectory.FullName));
                 ProgressManager.ReportProgress((i + 1) / SourceDirectories.Length, SourceDirectory.FullName, $"*  {DestinationDirectoryPath}");
@@ -257,12 +256,12 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void CopyFile(string Source, string Destination)
         {
             Source = FS.NeutralizePath(Source);
-            DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", Source);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", vars: [Source]);
             Destination = FS.NeutralizePath(Destination);
-            DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", Destination);
+            DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", vars: [Destination]);
             string FileName = IOPath.GetFileName(Source);
-            DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", FileName);
-            if (Checking.FileExists(Source) & Checking.FolderExists(Destination))
+            DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", vars: [FileName]);
+            if (FilesystemTools.FileExists(Source) & FilesystemTools.FolderExists(Destination))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a directory");
                 File.Copy(Source, Destination + "/" + FileName, true);
@@ -270,7 +269,7 @@ namespace Nitrocid.Drivers.Filesystem
                 // Raise event
                 EventsManager.FireEvent(EventType.FileCopied, Source, Destination + "/" + FileName);
             }
-            else if (Checking.FileExists(Source))
+            else if (FilesystemTools.FileExists(Source))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a file");
                 File.Copy(Source, Destination, true);
@@ -289,12 +288,12 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void CopyFileOrDir(string Source, string Destination)
         {
             Source = FS.NeutralizePath(Source);
-            DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", Source);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", vars: [Source]);
             Destination = FS.NeutralizePath(Destination);
-            DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", Destination);
+            DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", vars: [Destination]);
             string FileName = IOPath.GetFileName(Source);
-            DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", FileName);
-            if (Checking.FolderExists(Source))
+            DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", vars: [FileName]);
+            if (FilesystemTools.FolderExists(Source))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source and destination are directories");
                 CopyDirectory(Source, Destination);
@@ -302,7 +301,7 @@ namespace Nitrocid.Drivers.Filesystem
                 // Raise event
                 EventsManager.FireEvent(EventType.DirectoryCopied, Source, Destination);
             }
-            else if (Checking.FileExists(Source) & Checking.FolderExists(Destination))
+            else if (FilesystemTools.FileExists(Source) & FilesystemTools.FolderExists(Destination))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a directory");
                 File.Copy(Source, Destination + "/" + FileName, true);
@@ -310,7 +309,7 @@ namespace Nitrocid.Drivers.Filesystem
                 // Raise event
                 EventsManager.FireEvent(EventType.FileCopied, Source, Destination + "/" + FileName);
             }
-            else if (Checking.FileExists(Source))
+            else if (FilesystemTools.FileExists(Source))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a file");
                 File.Copy(Source, Destination, true);
@@ -328,12 +327,12 @@ namespace Nitrocid.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual List<FileSystemEntry> CreateList(string folder, bool Sorted = false, bool Recursive = false)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
+            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", vars: [folder]);
             var FilesystemEntries = new List<FileSystemEntry>();
 
             // List files and folders
             folder = FS.NeutralizePath(folder);
-            if (Checking.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
+            if (FilesystemTools.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
             {
                 IEnumerable<string> enumeration;
                 try
@@ -342,22 +341,22 @@ namespace Nitrocid.Drivers.Filesystem
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to make a list of filesystem entries for directory {0}: {1}", folder, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to make a list of filesystem entries for directory {0}: {1}", vars: [folder, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Failed to make a list of filesystem entries for directory") + " {0}", ex, folder);
                 }
                 foreach (string Entry in enumeration)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", Entry);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", vars: [Entry]);
                     try
                     {
                         var createdEntry = new FileSystemEntry(Entry);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Entry is a {0}. Adding {1} to list...", createdEntry.Type.ToString(), Entry);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Entry is a {0}. Adding {1} to list...", vars: [createdEntry.Type.ToString(), Entry]);
                         FilesystemEntries.Add(createdEntry);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to enumerate {0} for directory {1}: {2}", Entry, folder, ex.Message);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to enumerate {0} for directory {1}: {2}", vars: [Entry, folder, ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
                     }
                 }
@@ -412,7 +411,7 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
         {
             // First, check for dumb console
-            if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
+            if (ConsoleChecker.IsDumb)
             {
                 // Go to dumb mode
                 DisplayInHexDumbMode(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
@@ -424,7 +423,7 @@ namespace Nitrocid.Drivers.Filesystem
             var highlightedColor = HighlightResults ? KernelColorTools.GetColor(KernelColorType.Success) : unhighlightedColor;
 
             // Go ahead...
-            DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", FileByte.LongLength);
+            DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [FileByte.LongLength]);
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
             {
@@ -445,13 +444,13 @@ namespace Nitrocid.Drivers.Filesystem
                 for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber++)
                 {
                     // Write the byte and the contents
-                    DebugWriter.WriteDebug(DebugLevel.I, "Byte write position: {0}", ByteWritePositionX);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Byte char write position: {0}", ByteCharWritePositionX);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Byte number each sixteen: {0}", ByteNumberEachSixteen);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Byte write position: {0}", vars: [ByteWritePositionX]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Byte char write position: {0}", vars: [ByteCharWritePositionX]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Byte number each sixteen: {0}", vars: [ByteNumberEachSixteen]);
                     byte CurrentByte = FileByte[(int)(CurrentByteNumber - 1L)];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", vars: [CurrentByte]);
                     char ProjectedByteChar = Convert.ToChar(CurrentByte);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Projected byte char: {0}", ProjectedByteChar);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Projected byte char: {0}", vars: [ProjectedByteChar]);
                     char RenderedByteChar = '.';
                     if (!char.IsWhiteSpace(ProjectedByteChar) & !char.IsControl(ProjectedByteChar) & !char.IsHighSurrogate(ProjectedByteChar) & !char.IsLowSurrogate(ProjectedByteChar))
                     {
@@ -459,7 +458,7 @@ namespace Nitrocid.Drivers.Filesystem
                         DebugWriter.WriteDebug(DebugLevel.I, "Char is not a whitespace.");
                         RenderedByteChar = ProjectedByteChar;
                     }
-                    DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", vars: [ProjectedByteChar]);
                     TextWriterWhereColor.WriteWhereColor($"{CurrentByte:X2}", ByteWritePositionX + 3 * (ByteNumberEachSixteen - 1), ConsoleWrapper.CursorTop, false, ByteContent == CurrentByte ? highlightedColor : unhighlightedColor);
                     TextWriterWhereColor.WriteWhereColor($"{RenderedByteChar}", ByteCharWritePositionX + (ByteNumberEachSixteen - 1), ConsoleWrapper.CursorTop, false, ByteContent == CurrentByte ? highlightedColor : unhighlightedColor);
 
@@ -496,7 +495,7 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void DisplayInHexDumbMode(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
         {
             // Now, do the job!
-            DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", FileByte.LongLength);
+            DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [FileByte.LongLength]);
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
             {
@@ -527,7 +526,7 @@ namespace Nitrocid.Drivers.Filesystem
             var highlightedColor = HighlightResults ? KernelColorTools.GetColor(KernelColorType.Success) : unhighlightedColor;
 
             // Now, do the job!
-            DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", FileByte.LongLength);
+            DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [FileByte.LongLength]);
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Byte number must start with 1."));
@@ -542,15 +541,15 @@ namespace Nitrocid.Drivers.Filesystem
                 var builder = new StringBuilder();
                 for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
                 {
-                    builder.Append($"{entryColor.VTSequenceForeground}0x{CurrentByteNumber - 1L:X8} ");
+                    builder.Append($"{entryColor.VTSequenceForeground()}0x{CurrentByteNumber - 1L:X8} ");
 
                     // Iterate these number of bytes for the ASCII codes
                     long byteNum;
                     for (byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
                     {
                         byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
-                        DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
-                        builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground}{CurrentByte:X2} ");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", vars: [CurrentByte]);
+                        builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground()}{CurrentByte:X2} ");
                     }
 
                     // Pad the remaining ASCII byte display
@@ -563,9 +562,9 @@ namespace Nitrocid.Drivers.Filesystem
                     for (byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
                     {
                         byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
-                        DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", vars: [CurrentByte]);
                         char ProjectedByteChar = Convert.ToChar(CurrentByte);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Projected byte char: {0}", ProjectedByteChar);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Projected byte char: {0}", vars: [ProjectedByteChar]);
                         char RenderedByteChar = '.';
                         if (!char.IsWhiteSpace(ProjectedByteChar) & !char.IsControl(ProjectedByteChar) & !char.IsHighSurrogate(ProjectedByteChar) & !char.IsLowSurrogate(ProjectedByteChar) & ProjectedByteChar != (char)0xAD)
                         {
@@ -573,8 +572,8 @@ namespace Nitrocid.Drivers.Filesystem
                             DebugWriter.WriteDebug(DebugLevel.I, "Char is not a whitespace.");
                             RenderedByteChar = ProjectedByteChar;
                         }
-                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
-                        builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground}{RenderedByteChar}");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", vars: [ProjectedByteChar]);
+                        builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground()}{RenderedByteChar}");
                     }
                     builder.AppendLine();
                 }
@@ -597,7 +596,7 @@ namespace Nitrocid.Drivers.Filesystem
             var highlightedColorBackground = KernelColorTools.GetColor(KernelColorType.Success);
 
             // Now, do the job!
-            DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", FileByte.LongLength);
+            DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", vars: [FileByte.LongLength]);
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Byte number must start with 1."));
@@ -612,20 +611,20 @@ namespace Nitrocid.Drivers.Filesystem
                 var builder = new StringBuilder();
                 for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
                 {
-                    builder.Append($"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}{entryColor.VTSequenceForeground}0x{CurrentByteNumber - 1L:X8} ");
+                    builder.Append($"{ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true)}{entryColor.VTSequenceForeground()}0x{CurrentByteNumber - 1L:X8} ");
 
                     // Iterate these number of bytes for the ASCII codes
                     long byteNum;
                     for (byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
                     {
                         byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
-                        DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", vars: [CurrentByte]);
                         builder.Append(
-                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground}" +
-                            $"{ColorTools.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
+                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground()}" +
+                            $"{ConsoleColoring.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
                             $"{CurrentByte:X2}" +
-                            $"{highlightedColorBackground.VTSequenceForeground}" +
-                            $"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
+                            $"{highlightedColorBackground.VTSequenceForeground()}" +
+                            $"{ConsoleColoring.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
                             $" "
                         );
                     }
@@ -640,9 +639,9 @@ namespace Nitrocid.Drivers.Filesystem
                     for (byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
                     {
                         byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
-                        DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", vars: [CurrentByte]);
                         char ProjectedByteChar = Convert.ToChar(CurrentByte);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Projected byte char: {0}", ProjectedByteChar);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Projected byte char: {0}", vars: [ProjectedByteChar]);
                         char RenderedByteChar = '.';
                         if (!char.IsWhiteSpace(ProjectedByteChar) & !char.IsControl(ProjectedByteChar) & !char.IsHighSurrogate(ProjectedByteChar) & !char.IsLowSurrogate(ProjectedByteChar))
                         {
@@ -650,10 +649,10 @@ namespace Nitrocid.Drivers.Filesystem
                             DebugWriter.WriteDebug(DebugLevel.I, "Char is not a whitespace.");
                             RenderedByteChar = ProjectedByteChar;
                         }
-                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", vars: [ProjectedByteChar]);
                         builder.Append(
-                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground}" +
-                            $"{ColorTools.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
+                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground()}" +
+                            $"{ConsoleColoring.RenderSetConsoleColor((CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground), true)}" +
                             $"{RenderedByteChar}"
                         );
                     }
@@ -687,7 +686,7 @@ namespace Nitrocid.Drivers.Filesystem
             foreach (string LookupPath in LookupPaths)
             {
                 ResultingPath = FS.NeutralizePath(FilePath, LookupPath);
-                if (Checking.FileExists(ResultingPath))
+                if (FilesystemTools.FileExists(ResultingPath))
                 {
                     Result = ResultingPath;
                     return true;
@@ -731,7 +730,7 @@ namespace Nitrocid.Drivers.Filesystem
                 Files = [.. DirectoryInfo.GetFiles("*", SearchOption.AllDirectories)];
             else
                 Files = [.. DirectoryInfo.GetFiles("*", SearchOption.TopDirectoryOnly)];
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} files to be parsed", Files.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} files to be parsed", vars: [Files.Count]);
 
             // Get all sizes in bytes
             long TotalSize = 0L;
@@ -742,7 +741,7 @@ namespace Nitrocid.Drivers.Filesystem
                 if (DFile.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !DFile.Attributes.HasFlag(FileAttributes.Hidden))
                 {
                     ProgressManager.ReportProgress((i + 1) / Files.Count, nameof(GetAllSizesInFolder) + "Found", $"+ {DFile.FullName} [{DFile.Length.SizeString()}]");
-                    DebugWriter.WriteDebug(DebugLevel.I, "File {0}, Size {1} bytes", DFile.Name, DFile.Length);
+                    DebugWriter.WriteDebug(DebugLevel.I, "File {0}, Size {1} bytes", vars: [DFile.Name, DFile.Length]);
                     TotalSize += DFile.Length;
                 }
             }
@@ -756,9 +755,11 @@ namespace Nitrocid.Drivers.Filesystem
             try
             {
                 Path = FS.NeutralizePath(Path);
-                
+                if (IsFile)
+                    return [Path];
+
                 // Check to see if we're calling from the root path
-                string Pattern = IsFile ? "" : "*";
+                string Pattern = "*";
                 string pathRoot = FS.NeutralizePath(IOPath.GetPathRoot(Path));
                 if (pathRoot == Path)
                 {
@@ -786,7 +787,7 @@ namespace Nitrocid.Drivers.Filesystem
 
                 // Split the path and the pattern
                 string? Parent = FS.NeutralizePath(IOPath.GetDirectoryName(Path) + "/" + IOPath.GetFileName(Path));
-                if (Parent.ContainsAnyOf(Parsing.GetInvalidPathChars().Select(Character => Character.ToString()).ToArray()))
+                if (Parent.ContainsAnyOf(FilesystemTools.GetInvalidPathChars().Select(Character => Character.ToString()).ToArray()))
                 {
                     Parent = IOPath.GetDirectoryName(Path);
                     Pattern = IOPath.GetFileName(Path);
@@ -803,7 +804,7 @@ namespace Nitrocid.Drivers.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", vars: [ex.Message]);
             }
             return Entries;
         }
@@ -814,7 +815,7 @@ namespace Nitrocid.Drivers.Filesystem
             var Entries = Array.Empty<string>();
             try
             {
-                        Parent = FS.NeutralizePath(Parent);
+                Parent = FS.NeutralizePath(Parent);
 
                 // Get the entries
                 if (Directory.Exists(Parent))
@@ -825,13 +826,13 @@ namespace Nitrocid.Drivers.Filesystem
                         AttributesToSkip = Config.MainConfig.HiddenFiles ? FileAttributes.System : FileAttributes.Hidden | FileAttributes.System
                     };
                     Entries = Directory.GetFileSystemEntries(Parent, Pattern, options);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", Entries.Length, Parent, Pattern);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", vars: [Entries.Length, Parent, Pattern]);
                 }
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to combine files: {0}", vars: [ex.Message]);
             }
             return Entries.Select((path) => FS.NeutralizePath(path)).ToArray();
         }
@@ -844,7 +845,7 @@ namespace Nitrocid.Drivers.Filesystem
                 throw new KernelException(KernelExceptionType.RegularExpression, Translate.DoTranslation("Invalid regular expression syntax."));
 
             // Get the entries and match them against the given pattern
-            var AllFileEntries = Listing.GetFilesystemEntries(Parent, "*", Recursive);
+            var AllFileEntries = FilesystemTools.GetFilesystemEntries(Parent, "*", Recursive);
             List<string> entryNames = [];
             foreach (var FileEntry in AllFileEntries)
             {
@@ -891,14 +892,14 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual FilesystemNewlineStyle GetLineEndingFromFile(string TextFile)
         {
             TextFile = FS.NeutralizePath(TextFile);
-            if (!Checking.FileExists(TextFile))
+            if (!FilesystemTools.FileExists(TextFile))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File {0} not found."), TextFile);
 
             // Open the file stream
-            var NewlineStyle = LineEndingsTools.NewlineStyle;
+            var NewlineStyle = FilesystemTools.NewlineStyle;
             var TextFileStream = new FileStream(TextFile, FileMode.Open, FileAccess.Read);
-            int CarriageReturnCode = Convert.ToChar(LineEndingsTools.GetLineEndingString(FilesystemNewlineStyle.CR));
-            int LineFeedCode = Convert.ToChar(LineEndingsTools.GetLineEndingString(FilesystemNewlineStyle.LF));
+            int CarriageReturnCode = Convert.ToChar(FilesystemTools.GetLineEndingString(FilesystemNewlineStyle.CR));
+            int LineFeedCode = Convert.ToChar(FilesystemTools.GetLineEndingString(FilesystemNewlineStyle.LF));
             var CarriageReturnSpotted = false;
             var LineFeedSpotted = false;
             var ExitOnSpotted = false;
@@ -951,7 +952,7 @@ namespace Nitrocid.Drivers.Filesystem
             do
             {
                 string fileNameGenerated = FS.NeutralizePath($"{fileNameWithoutExtension}-{fileNumber}{fileNameExtension}", path);
-                if (!Checking.FileExists(fileNameGenerated))
+                if (!FilesystemTools.FileExists(fileNameGenerated))
                     return fileNameGenerated;
                 fileNumber++;
             }
@@ -1003,12 +1004,12 @@ namespace Nitrocid.Drivers.Filesystem
                 // Try to parse the content as JSON object
                 try
                 {
-                    var ParsedObject = JObject.Parse(Reading.ReadContentsText(Path));
+                    var ParsedObject = JObject.Parse(FilesystemTools.ReadContentsText(Path));
                     return true;
                 }
                 catch
                 {
-                    var ParsedObject = JArray.Parse(Reading.ReadContentsText(Path));
+                    var ParsedObject = JArray.Parse(FilesystemTools.ReadContentsText(Path));
                     return true;
                 }
             }
@@ -1023,11 +1024,15 @@ namespace Nitrocid.Drivers.Filesystem
         {
             try
             {
-                // Use inter-addon communication
-                var result = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasSqlShell, "IsSql", Path);
-                if (result is bool sql)
-                    return sql;
-                return false;
+                // Neutralize path
+                Path = FilesystemTools.NeutralizePath(Path);
+
+                // Try to open an SQL connection
+                byte[] sqlFileBytes = new byte[17];
+                using (FileStream sqlStream = new(Path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    sqlStream.ReadExactly(sqlFileBytes, 0, 16);
+                string result = System.Text.Encoding.ASCII.GetString(sqlFileBytes);
+                return result.Contains("SQLite format");
             }
             catch
             {
@@ -1039,8 +1044,8 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void MakeDirectory(string NewDirectory, bool ThrowIfDirectoryExists = true)
         {
             NewDirectory = FS.NeutralizePath(NewDirectory);
-            DebugWriter.WriteDebug(DebugLevel.I, "New directory: {0} ({1})", NewDirectory, Checking.FolderExists(NewDirectory));
-            if (!Checking.FolderExists(NewDirectory))
+            DebugWriter.WriteDebug(DebugLevel.I, "New directory: {0} ({1})", vars: [NewDirectory, FilesystemTools.FolderExists(NewDirectory)]);
+            if (!FilesystemTools.FolderExists(NewDirectory))
             {
                 Directory.CreateDirectory(NewDirectory);
 
@@ -1057,8 +1062,8 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void MakeFile(string NewFile, bool ThrowIfFileExists = true)
         {
             NewFile = FS.NeutralizePath(NewFile);
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", NewFile, Checking.FileExists(NewFile));
-            if (!Checking.FileExists(NewFile))
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", vars: [NewFile, FilesystemTools.FileExists(NewFile)]);
+            if (!FilesystemTools.FileExists(NewFile))
             {
                 try
                 {
@@ -1086,8 +1091,8 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void MakeJsonFile(string NewFile, bool ThrowIfFileExists = true, bool useArray = false)
         {
             NewFile = FS.NeutralizePath(NewFile);
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", NewFile, Checking.FileExists(NewFile));
-            if (!Checking.FileExists(NewFile))
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", vars: [NewFile, FilesystemTools.FileExists(NewFile)]);
+            if (!FilesystemTools.FileExists(NewFile))
             {
                 try
                 {
@@ -1118,14 +1123,14 @@ namespace Nitrocid.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void MakeSymlink(string linkName, string target)
         {
-            // Neutralize the paths
+                        // Neutralize the paths
             linkName = FS.NeutralizePath(linkName);
             target = FS.NeutralizePath(target);
 
             // Check for path existence
-            if (!Checking.Exists(target))
+            if (!FilesystemTools.Exists(target))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The target file or directory isn't found."));
-            if (Checking.Exists(linkName))
+            if (FilesystemTools.Exists(linkName))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Can't overwrite an existing file or directory with a symbolic link."));
 
             // Now, make a symlink
@@ -1139,20 +1144,20 @@ namespace Nitrocid.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void MoveDirectory(string Source, string Destination, bool ShowProgress)
         {
-            if (!Checking.FolderExists(Source))
+            if (!FilesystemTools.FolderExists(Source))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found."), Source);
 
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Source);
             var SourceDirectories = SourceDirInfo.GetDirectories();
-            DebugWriter.WriteDebug(DebugLevel.I, "Source directories: {0}", SourceDirectories.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directories: {0}", vars: [SourceDirectories.Length]);
             var SourceFiles = SourceDirInfo.GetFiles();
-            DebugWriter.WriteDebug(DebugLevel.I, "Source files: {0}", SourceFiles.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source files: {0}", vars: [SourceFiles.Length]);
 
             // Make a destination directory if it doesn't exist
-            if (!Checking.FolderExists(Destination))
+            if (!FilesystemTools.FolderExists(Destination))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Destination directory {0} doesn't exist. Creating...", Destination);
+                DebugWriter.WriteDebug(DebugLevel.I, "Destination directory {0} doesn't exist. Creating...", vars: [Destination]);
                 Directory.CreateDirectory(Destination);
             }
 
@@ -1161,7 +1166,7 @@ namespace Nitrocid.Drivers.Filesystem
             {
                 FileInfo SourceFile = SourceFiles[i];
                 string DestinationFilePath = IOPath.Combine(Destination, SourceFile.Name);
-                DebugWriter.WriteDebug(DebugLevel.I, "Moving file {0} to destination...", DestinationFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Moving file {0} to destination...", vars: [DestinationFilePath]);
                 if (ShowProgress)
                     ProgressManager.RegisterProgressHandler(new(new((perc, message) => TextWriterColor.Write($"{perc}% - {message}")), SourceFile.FullName));
                 ProgressManager.ReportProgress((i + 1) / SourceFiles.Length, SourceFile.FullName, $"-> {DestinationFilePath}");
@@ -1173,14 +1178,14 @@ namespace Nitrocid.Drivers.Filesystem
             {
                 DirectoryInfo SourceDirectory = SourceDirectories[i];
                 string DestinationDirectoryPath = IOPath.Combine(Destination, SourceDirectory.Name);
-                DebugWriter.WriteDebug(DebugLevel.I, "Calling MoveDirectory() with destination {0}...", DestinationDirectoryPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Calling MoveDirectory() with destination {0}...", vars: [DestinationDirectoryPath]);
                 if (ShowProgress)
                     ProgressManager.RegisterProgressHandler(new(new((perc, message) => TextWriterColor.Write($"{perc}% - {message}")), SourceDirectory.FullName));
                 ProgressManager.ReportProgress((i + 1) / SourceDirectories.Length, SourceDirectory.FullName, $"*  {DestinationDirectoryPath}");
                 MoveDirectory(SourceDirectory.FullName, DestinationDirectoryPath);
 
                 // Source subdirectories are removed after moving
-                Removing.RemoveDirectory(SourceDirectory.FullName);
+                FilesystemTools.RemoveDirectory(SourceDirectory.FullName);
             }
         }
 
@@ -1188,12 +1193,12 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void MoveFile(string Source, string Destination)
         {
             Source = FS.NeutralizePath(Source);
-            DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", Source);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", vars: [Source]);
             Destination = FS.NeutralizePath(Destination);
-            DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", Destination);
+            DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", vars: [Destination]);
             string FileName = IOPath.GetFileName(Source);
-            DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", FileName);
-            if (Checking.FileExists(Source) & Checking.FolderExists(Destination))
+            DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", vars: [FileName]);
+            if (FilesystemTools.FileExists(Source) & FilesystemTools.FolderExists(Destination))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a directory");
                 File.Move(Source, Destination + "/" + FileName);
@@ -1201,7 +1206,7 @@ namespace Nitrocid.Drivers.Filesystem
                 // Raise event
                 EventsManager.FireEvent(EventType.FileMoved, Source, Destination + "/" + FileName);
             }
-            else if (Checking.FileExists(Source))
+            else if (FilesystemTools.FileExists(Source))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a file");
                 File.Move(Source, Destination);
@@ -1220,12 +1225,12 @@ namespace Nitrocid.Drivers.Filesystem
         public virtual void MoveFileOrDir(string Source, string Destination)
         {
             Source = FS.NeutralizePath(Source);
-            DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", Source);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", vars: [Source]);
             Destination = FS.NeutralizePath(Destination);
-            DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", Destination);
+            DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", vars: [Destination]);
             string FileName = IOPath.GetFileName(Source);
-            DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", FileName);
-            if (Checking.FolderExists(Source))
+            DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", vars: [FileName]);
+            if (FilesystemTools.FolderExists(Source))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source and destination are directories");
                 MoveDirectory(Source, Destination);
@@ -1233,7 +1238,7 @@ namespace Nitrocid.Drivers.Filesystem
                 // Raise event
                 EventsManager.FireEvent(EventType.DirectoryMoved, Source, Destination);
             }
-            else if (Checking.FileExists(Source) & Checking.FolderExists(Destination))
+            else if (FilesystemTools.FileExists(Source) & FilesystemTools.FolderExists(Destination))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a directory");
                 File.Move(Source, Destination + "/" + FileName);
@@ -1241,7 +1246,7 @@ namespace Nitrocid.Drivers.Filesystem
                 // Raise event
                 EventsManager.FireEvent(EventType.FileMoved, Source, Destination + "/" + FileName);
             }
-            else if (Checking.FileExists(Source))
+            else if (FilesystemTools.FileExists(Source))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source is a file and destination is a file");
                 File.Move(Source, Destination);
@@ -1271,7 +1276,7 @@ namespace Nitrocid.Drivers.Filesystem
 
             // If interacting with the binary file, display it in hex. Otherwise, display it as if it is text except if forced to view binaries as texts.
             // Read the contents
-            string[] array = Listing.GetFilesystemEntries(filename, true);
+            string[] array = FilesystemTools.GetFilesystemEntries(filename, true);
             for (int i = 0; i < array.Length; i++)
             {
                 string FilePath = array[i];
@@ -1285,27 +1290,27 @@ namespace Nitrocid.Drivers.Filesystem
                     builder.AppendLine(FilePath);
 
                 // Determine the file type
-                if (Parsing.IsBinaryFile(FilePath) && !ForcePlain)
+                if (FilesystemTools.IsBinaryFile(FilePath) && !ForcePlain)
                 {
                     byte[] bytes = ReadAllBytes(FilePath);
                     builder.AppendLine(RenderContentsInHex(1, bytes.LongLength, bytes));
                 }
                 else
                 {
-                    var Contents = Reading.ReadContents(FilePath);
+                    var Contents = FilesystemTools.ReadContents(FilePath);
                     int digits = Contents.Length.GetDigits();
                     if (PrintLineNumbers)
                     {
                         for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
                         {
                             int spaces = digits - (ContentIndex + 1).GetDigits();
-                            builder.Append($"{entryColor.VTSequenceForeground}{new string(' ', spaces)}{ContentIndex + 1}: ");
-                            builder.AppendLine($"{valueColor.VTSequenceForeground}{Contents[ContentIndex]}");
+                            builder.Append($"{entryColor.VTSequenceForeground()}{new string(' ', spaces)}{ContentIndex + 1}: ");
+                            builder.AppendLine($"{valueColor.VTSequenceForeground()}{Contents[ContentIndex]}");
                         }
                     }
                     else
                     {
-                        builder.Append(valueColor.VTSequenceForeground);
+                        builder.Append(valueColor.VTSequenceForeground());
                         for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
                             builder.AppendLine(Contents[ContentIndex]);
                     }
@@ -1343,7 +1348,7 @@ namespace Nitrocid.Drivers.Filesystem
                 // Get all file sizes in a folder
                 var finalDirInfo = DirectoryInfo.BaseEntry as DirectoryInfo ??
                     throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory info is not specified."));
-                long TotalSize = SizeGetter.GetAllSizesInFolder(finalDirInfo);
+                long TotalSize = FilesystemTools.GetAllSizesInFolder(finalDirInfo);
 
                 // Print information
                 if (finalDirInfo.Attributes == FileAttributes.Hidden & Config.MainConfig.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
@@ -1360,7 +1365,7 @@ namespace Nitrocid.Drivers.Filesystem
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, DirectoryInfo.FilePath);
-                DebugWriter.WriteDebug(DebugLevel.I, "Folder doesn't exist. {0}", DirectoryInfo.FilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Folder doesn't exist. {0}", vars: [DirectoryInfo.FilePath]);
             }
         }
 
@@ -1399,7 +1404,7 @@ namespace Nitrocid.Drivers.Filesystem
             else
             {
                 TextWriters.Write(Translate.DoTranslation("File {0} not found"), true, KernelColorType.Error, FileInfo.FilePath);
-                DebugWriter.WriteDebug(DebugLevel.I, "File doesn't exist. {0}", FileInfo.FilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "File doesn't exist. {0}", vars: [FileInfo.FilePath]);
             }
         }
 
@@ -1414,7 +1419,7 @@ namespace Nitrocid.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual byte[] ReadAllBytesNoBlock(string path)
         {
-            // Read all the bytes, bypassing the restrictions.
+                        // Read all the bytes, bypassing the restrictions.
             path = FS.NeutralizePath(path);
             long size = new FileSystemEntry(path).FileSize;
             var AllBytesList = new byte[size];
@@ -1427,7 +1432,7 @@ namespace Nitrocid.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual string[] ReadAllLinesNoBlock(string path)
         {
-            // Read all the lines, bypassing the restrictions.
+                        // Read all the lines, bypassing the restrictions.
             path = FS.NeutralizePath(path);
             var AllLnList = new List<string>();
             var FOpen = new StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite));
@@ -1448,7 +1453,7 @@ namespace Nitrocid.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual string ReadAllTextNoBlock(string path)
         {
-            // Read all the lines, bypassing the restrictions.
+                        // Read all the lines, bypassing the restrictions.
             path = FS.NeutralizePath(path);
             var fileContentBuilder = new StringBuilder();
             var FOpen = new StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite));
@@ -1477,7 +1482,7 @@ namespace Nitrocid.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void WriteAllLinesNoBlock(string path, string[] contents)
         {
-            // Write all the lines, bypassing the restrictions.
+                        // Write all the lines, bypassing the restrictions.
             path = FS.NeutralizePath(path);
             var FOpen = new StreamWriter(File.Open(path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite));
             foreach (var content in contents)
@@ -1496,7 +1501,7 @@ namespace Nitrocid.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void WriteAllTextNoBlock(string path, string contents)
         {
-            // Write all the lines, bypassing the restrictions.
+                        // Write all the lines, bypassing the restrictions.
             path = FS.NeutralizePath(path);
             var FOpen = new StreamWriter(File.Open(path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite));
             FOpen.WriteLine(contents);
@@ -1514,7 +1519,7 @@ namespace Nitrocid.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void WriteAllBytesNoBlock(string path, byte[] contents)
         {
-            // Write all the bytes, bypassing the restrictions.
+                        // Write all the bytes, bypassing the restrictions.
             path = FS.NeutralizePath(path);
             var FOpen = File.Open(path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite);
             FOpen.Write(contents, 0, contents.Length);
@@ -1526,9 +1531,9 @@ namespace Nitrocid.Drivers.Filesystem
         {
             FilePath = FS.NeutralizePath(FilePath);
             var Attrib = File.GetAttributes(FilePath);
-            DebugWriter.WriteDebug(DebugLevel.I, "File attributes: {0}", Attrib);
+            DebugWriter.WriteDebug(DebugLevel.I, "File attributes: {0}", vars: [Attrib]);
             Attrib = Attrib.RemoveAttribute(Attributes);
-            DebugWriter.WriteDebug(DebugLevel.I, "Setting file attribute to {0}...", Attrib);
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting file attribute to {0}...", vars: [Attrib]);
             File.SetAttributes(FilePath, Attrib);
 
             // Raise event
@@ -1542,22 +1547,22 @@ namespace Nitrocid.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void RemoveDirectory(string Target, bool ShowProgress, bool secureRemove = false)
         {
-            if (!Checking.FolderExists(Target))
+            if (!FilesystemTools.FolderExists(Target))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found."), Target);
 
             // Get all source directories and files
             var SourceDirInfo = new DirectoryInfo(Target);
             var SourceDirectories = SourceDirInfo.GetDirectories();
-            DebugWriter.WriteDebug(DebugLevel.I, "Source directories: {0}", SourceDirectories.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source directories: {0}", vars: [SourceDirectories.Length]);
             var SourceFiles = SourceDirInfo.GetFiles();
-            DebugWriter.WriteDebug(DebugLevel.I, "Source files: {0}", SourceFiles.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Source files: {0}", vars: [SourceFiles.Length]);
 
             // Iterate through every file and delete them
             for (int i = 0; i < SourceFiles.Length; i++)
             {
                 FileInfo SourceFile = SourceFiles[i];
                 string DestinationFilePath = IOPath.Combine(Target, SourceFile.Name);
-                DebugWriter.WriteDebug(DebugLevel.I, "Removing file {0}...", DestinationFilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing file {0}...", vars: [DestinationFilePath]);
                 if (ShowProgress)
                     ProgressManager.RegisterProgressHandler(new(new((perc, message) => TextWriterColor.Write($"{perc}% - {message}")), SourceFile.FullName));
                 ProgressManager.ReportProgress((i + 1) / SourceFiles.Length, SourceFile.FullName, $"-> {DestinationFilePath}");
@@ -1569,7 +1574,7 @@ namespace Nitrocid.Drivers.Filesystem
             {
                 DirectoryInfo SourceDirectory = SourceDirectories[i];
                 string DestinationDirectoryPath = IOPath.Combine(Target, SourceDirectory.Name);
-                DebugWriter.WriteDebug(DebugLevel.I, "Calling RemoveDirectory() with destination {0}...", DestinationDirectoryPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Calling RemoveDirectory() with destination {0}...", vars: [DestinationDirectoryPath]);
                 if (ShowProgress)
                     ProgressManager.RegisterProgressHandler(new(new((perc, message) => TextWriterColor.Write($"{perc}% - {message}")), SourceDirectory.FullName));
                 ProgressManager.ReportProgress((i + 1) / SourceDirectories.Length, SourceDirectory.FullName, $"*  {DestinationDirectoryPath}");
@@ -1588,7 +1593,7 @@ namespace Nitrocid.Drivers.Filesystem
             if (secureRemove)
             {
                 // Open the file stream and fill it with zeroes
-                if (!Checking.FileExists(Dir))
+                if (!FilesystemTools.FileExists(Dir))
                     throw new KernelException(KernelExceptionType.Filesystem);
 
                 var target = File.OpenWrite(Dir);
@@ -1605,19 +1610,19 @@ namespace Nitrocid.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void RemoveFileOrDir(string Target, bool secureRemove = false)
         {
-            if (Checking.FileExists(Target))
+            if (FilesystemTools.FileExists(Target))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file. Removing...", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file. Removing...", vars: [Target]);
                 RemoveFile(Target, secureRemove);
             }
-            else if (Checking.FolderExists(Target))
+            else if (FilesystemTools.FolderExists(Target))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder. Removing...", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder. Removing...", vars: [Target]);
                 RemoveDirectory(Target, secureRemove);
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove {0} which is not found.", Target);
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove {0} which is not found.", vars: [Target]);
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Can't remove {0} because it doesn't exist."), Target);
             }
         }
@@ -1647,7 +1652,7 @@ namespace Nitrocid.Drivers.Filesystem
             {
                     FilePath = FS.NeutralizePath(FilePath);
                 var Matches = new List<string>();
-                var Filebyte = Reading.ReadContents(FilePath);
+                var Filebyte = FilesystemTools.ReadContents(FilePath);
                 int MatchNum = 1;
                 int LineNumber = 1;
                 for (int i = 0; i < Filebyte.Length; i++)
@@ -1678,7 +1683,7 @@ namespace Nitrocid.Drivers.Filesystem
             {
                     FilePath = FS.NeutralizePath(FilePath);
                 var Matches = new List<string>();
-                var Filebyte = Reading.ReadContents(FilePath);
+                var Filebyte = FilesystemTools.ReadContents(FilePath);
                 int MatchNum = 1;
                 int LineNumber = 1;
                 for (int i = 0; i < Filebyte.Length; i++)
@@ -1709,7 +1714,7 @@ namespace Nitrocid.Drivers.Filesystem
             {
                     FilePath = FS.NeutralizePath(FilePath);
                 var Matches = new List<(string, MatchCollection)>();
-                var Filebyte = Reading.ReadContents(FilePath);
+                var Filebyte = FilesystemTools.ReadContents(FilePath);
                 for (int i = 0; i < Filebyte.Length; i++)
                 {
                     string Str = Filebyte[i];
@@ -1755,7 +1760,7 @@ namespace Nitrocid.Drivers.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse file name {0}: {1}", Name, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse file name {0}: {1}", vars: [Name, ex.Message]);
             }
             return false;
         }
@@ -1770,7 +1775,7 @@ namespace Nitrocid.Drivers.Filesystem
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse path {0}: {1}", Path, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse path {0}: {1}", vars: [Path, ex.Message]);
             }
             return false;
         }

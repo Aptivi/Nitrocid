@@ -20,13 +20,10 @@
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Languages;
 using System;
 using System.Threading;
-using Nitrocid.Drivers.Console;
-using Terminaux.Base;
 using System.Collections.Generic;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.ConsoleBase.Writers
 {
@@ -35,6 +32,8 @@ namespace Nitrocid.ConsoleBase.Writers
     /// </summary>
     public static class TextWriters
     {
+        internal static object WriteLock = new();
+
         /// <summary>
         /// Outputs a list entry and value into the terminal prompt.
         /// </summary>
@@ -110,31 +109,24 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorType, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {
-                    // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColorDry(colorType, Highlight, false);
-                    KernelColorTools.SetConsoleColorDry(KernelColorType.Background, !Highlight, false);
+                    // Get the colors
+                    var foreground = KernelColorTools.GetColor(colorType);
+                    var background = KernelColorTools.GetColor(KernelColorType.Background);
 
                     // Write the text to console
                     if (Highlight)
-                    {
-                        TextWriterRaw.WritePlain(Text, false, vars);
-                        KernelColorTools.SetConsoleColorDry(colorType);
-                        KernelColorTools.SetConsoleColorDry(KernelColorType.Background, true);
-                        TextWriterRaw.WritePlain("", Line);
-                    }
+                        TextWriterHighlightedColor.WriteColorBack(Text, Line, foreground, background, vars);
                     else
-                    {
-                        TextWriterRaw.WritePlain(Text, Line, vars);
-                    }
+                        TextWriterColor.WriteColorBack(Text, Line, foreground, background, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", vars: [ex.Message]);
                 }
             }
         }
@@ -171,31 +163,24 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {
-                    // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    KernelColorTools.SetConsoleColorDry(colorTypeForeground, Highlight, false);
-                    KernelColorTools.SetConsoleColorDry(colorTypeBackground, !Highlight, false);
+                    // Get the colors
+                    var foreground = KernelColorTools.GetColor(colorTypeForeground);
+                    var background = KernelColorTools.GetColor(colorTypeBackground);
 
                     // Write the text to console
                     if (Highlight)
-                    {
-                        TextWriterRaw.WritePlain(Text, false, vars);
-                        KernelColorTools.SetConsoleColorDry(colorTypeForeground);
-                        KernelColorTools.SetConsoleColorDry(colorTypeBackground, true);
-                        TextWriterRaw.WritePlain("", Line);
-                    }
+                        TextWriterHighlightedColor.WriteColorBack(Text, Line, foreground, background, vars);
                     else
-                    {
-                        TextWriterRaw.WritePlain(Text, Line, vars);
-                    }
+                        TextWriterColor.WriteColorBack(Text, Line, foreground, background, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", vars: [ex.Message]);
                 }
             }
         }
@@ -235,17 +220,21 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, KernelColorType colorType, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {
-                    // Write text in another place. By the way, we check the text for newlines and console width excess
-                    ConsoleWrapper.Write(TextWriterWhereColor.RenderWhereColorBack(msg, Left, Top, Return, RightMargin, KernelColorTools.GetColor(colorType), KernelColorTools.GetColor(KernelColorType.Background), vars));
+                    // Get the colors
+                    var foreground = KernelColorTools.GetColor(colorType);
+                    var background = KernelColorTools.GetColor(KernelColorType.Background);
+
+                    // Write the text to console
+                    TextWriterWhereColor.WriteWhereColorBack(msg, Left, Top, Return, RightMargin, foreground, background, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", vars: [ex.Message]);
                 }
             }
         }
@@ -288,17 +277,21 @@ namespace Nitrocid.ConsoleBase.Writers
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
-            lock (BaseConsoleDriver.WriteLock)
+            lock (WriteLock)
             {
                 try
                 {
-                    // Write text in another place. By the way, we check the text for newlines and console width excess
-                    ConsoleWrapper.Write(TextWriterWhereColor.RenderWhereColorBack(msg, Left, Top, Return, RightMargin, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), vars));
+                    // Get the colors
+                    var foreground = KernelColorTools.GetColor(colorTypeForeground);
+                    var background = KernelColorTools.GetColor(colorTypeBackground);
+
+                    // Write the text to console
+                    TextWriterWhereColor.WriteWhereColorBack(msg, Left, Top, Return, RightMargin, foreground, background, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "There is a serious error when printing text. {0}", vars: [ex.Message]);
                 }
             }
         }

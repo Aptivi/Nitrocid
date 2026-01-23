@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.IO;
 using Renci.SshNet;
 using Renci.SshNet.Common;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
 using Nitrocid.Kernel.Events;
@@ -30,7 +30,6 @@ using Nitrocid.Kernel.Configuration;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel;
 using Textify.General;
@@ -78,7 +77,7 @@ namespace Nitrocid.Extras.Ssh.SSH
         public static ConnectionInfo PromptConnectionInfo(string Address, int Port, string Username)
         {
             // Authentication
-            DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}:{1}, Username: {2}", Address, Port, Username);
+            DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}:{1}, Username: {2}", vars: [Address, Port, Username]);
             var AuthenticationMethods = new List<AuthenticationMethod>();
             int Answer;
             while (true)
@@ -134,7 +133,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                         TextWriters.Write(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
                         PrivateKeyFile = InputTools.ReadLine();
                         PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
-                        if (Checking.FileExists(PrivateKeyFile))
+                        if (FilesystemTools.FileExists(PrivateKeyFile))
                         {
                             // Ask for passphrase
                             TextWriters.Write(Translate.DoTranslation("Enter the passphrase for key {0}: "), false, KernelColorType.Input, PrivateKeyFile);
@@ -152,7 +151,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", ex.Message);
+                                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", vars: [ex.Message]);
                                 TextWriters.Write(Translate.DoTranslation("Error trying to add private key:") + " {0}", true, KernelColorType.Error, ex.Message);
                             }
                         }
@@ -207,7 +206,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                 SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(30d);
                 if (Config.MainConfig.SSHBanner)
                     SSH.ConnectionInfo.AuthenticationBanner += ShowBanner;
-                DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0}...", Address);
+                DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0}...", vars: [Address]);
                 SSH.Connect();
 
                 // Establish connection
@@ -232,9 +231,9 @@ namespace Nitrocid.Extras.Ssh.SSH
         /// </summary>
         private static void ShowBanner(object? sender, AuthenticationBannerEventArgs e)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Banner language: {0}", e.Language);
-            DebugWriter.WriteDebug(DebugLevel.I, "Banner username: {0}", e.Username);
-            DebugWriter.WriteDebug(DebugLevel.I, "Banner length: {0}", e.BannerMessage.Length);
+            DebugWriter.WriteDebug(DebugLevel.I, "Banner language: {0}", vars: [e.Language]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Banner username: {0}", vars: [e.Username]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Banner length: {0}", vars: [e.BannerMessage.Length]);
             DebugWriter.WriteDebug(DebugLevel.I, "Banner:");
             var BannerMessageLines = e.BannerMessage.SplitNewLines();
             foreach (string BannerLine in BannerMessageLines)
@@ -268,8 +267,7 @@ namespace Nitrocid.Extras.Ssh.SSH
             try
             {
                 // Add handler for SSH
-                Console.CancelKeyPress += SSHDisconnect;
-                Console.CancelKeyPress -= CancellationHandlers.CancelCommand;
+                CancellationHandlers.BeginLocalCancelScope(SSHDisconnect);
                 EventsManager.FireEvent(EventType.SSHConnected, SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString());
 
                 // Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
@@ -301,19 +299,18 @@ namespace Nitrocid.Extras.Ssh.SSH
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error on SSH shell in {0}: {1}", SSHClient.ConnectionInfo.Host, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error on SSH shell in {0}: {1}", vars: [SSHClient.ConnectionInfo.Host, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Error on SSH shell") + ": {0}", true, KernelColorType.Error, ex.Message);
             }
             finally
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected);
+                DebugWriter.WriteDebug(DebugLevel.I, "Connected: {0}", vars: [SSHClient.IsConnected]);
                 TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("SSH Disconnected."));
                 DisconnectionRequested = false;
 
                 // Remove handler for SSH
-                Console.CancelKeyPress += CancellationHandlers.CancelCommand;
-                Console.CancelKeyPress -= SSHDisconnect;
+                CancellationHandlers.EndLocalCancelScope(SSHDisconnect);
             }
         }
 
@@ -343,8 +340,7 @@ namespace Nitrocid.Extras.Ssh.SSH
             try
             {
                 // Add handler for SSH
-                Console.CancelKeyPress += SSHDisconnect;
-                Console.CancelKeyPress -= CancellationHandlers.CancelCommand;
+                CancellationHandlers.BeginLocalCancelScope(SSHDisconnect);
                 EventsManager.FireEvent(EventType.SSHConnected, SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString());
 
                 // Shell creation
@@ -380,21 +376,20 @@ namespace Nitrocid.Extras.Ssh.SSH
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute SSH command \"{0}\" to {1}: {2}", Command, SSHClient.ConnectionInfo.Host, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute SSH command \"{0}\" to {1}: {2}", vars: [Command, SSHClient.ConnectionInfo.Host, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Error executing SSH command") + " {0}: {1}", true, KernelColorType.Error, Command, ex.Message);
                 EventsManager.FireEvent(EventType.SSHCommandError, SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command, ex);
             }
             finally
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected);
+                DebugWriter.WriteDebug(DebugLevel.I, "Connected: {0}", vars: [SSHClient.IsConnected]);
                 TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("SSH Disconnected."));
                 DisconnectionRequested = false;
                 EventsManager.FireEvent(EventType.SSHPostExecuteCommand, SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command);
 
                 // Remove handler for SSH
-                Console.CancelKeyPress += CancellationHandlers.CancelCommand;
-                Console.CancelKeyPress -= SSHDisconnect;
+                CancellationHandlers.EndLocalCancelScope(SSHDisconnect);
             }
         }
 

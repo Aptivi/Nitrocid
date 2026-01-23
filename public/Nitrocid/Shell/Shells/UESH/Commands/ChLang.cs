@@ -22,9 +22,14 @@ using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 using Nitrocid.Users;
+using Terminaux.Inputs.Styles.Choice;
+using System.Linq;
+using Terminaux.Inputs.Styles;
+using Nitrocid.Security.Permissions;
+using Nitrocid.Kernel.Debugging;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -41,18 +46,59 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool inferSysLang = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-usesyslang");
-            bool useUser = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-user");
-            string language = inferSysLang ? "eng" : parameters.ArgumentsList[0];
-            if (!LanguageManager.ListAllLanguages().ContainsKey(language))
+            if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
+                !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
             {
-                TextWriters.Write(Translate.DoTranslation("Invalid language") + $" {language}", true, KernelColorType.Error);
-                return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
+                DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", vars: [parameters.CommandText]);
+                TextWriters.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, parameters.CommandText);
+                return -4;
+            }
+
+            bool useUser = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-user");
+            bool useCountry = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-country");
+            string language = "eng";
+            if (useCountry)
+            {
+                // Country selection is entirely different, because a country might contain more than one language
+                var countries = LanguageManager.ListAllCountries();
+                string country = parameters.ArgumentsList[0];
+                if (!countries.TryGetValue(country, out LanguageInfo[]? countryLanguages))
+                {
+                    TextWriters.Write(Translate.DoTranslation("Invalid country") + $" {country}", true, KernelColorType.Error);
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
+                }
+
+                if (countryLanguages.Length > 1)
+                {
+                    var langChoices = countryLanguages.Select((li, idx) => new InputChoiceInfo($"{idx + 1}", $"{li.FullLanguageName} [{li.ThreeLetterLanguageName}]")).ToArray();
+                    string choice = ChoiceStyle.PromptChoice(Translate.DoTranslation("Choose a language for country") + $" {country}", langChoices, new()
+                    {
+                        OutputType = ChoiceOutputType.Modern,
+                        PressEnter = true,
+                    });
+                    if (!int.TryParse(choice, out int langNum) || langNum < 1 || langNum >= langChoices.Length)
+                    {
+                        TextWriters.Write(Translate.DoTranslation("Invalid language selection for") + $" {country}", true, KernelColorType.Error);
+                        return KernelExceptionTools.GetErrorCode(KernelExceptionType.LanguageManagement);
+                    }
+                    language = countryLanguages[langNum - 1].ThreeLetterLanguageName;
+                }
+                else
+                    language = countryLanguages[0].ThreeLetterLanguageName;
+            }
+            else
+            {
+                // Language selection takes only one language
+                language = parameters.ArgumentsList[0];
+                var languages = LanguageManager.ListAllLanguages();
+                if (!languages.ContainsKey(language))
+                {
+                    TextWriters.Write(Translate.DoTranslation("Invalid language") + $" {language}", true, KernelColorType.Error);
+                    return KernelExceptionTools.GetErrorCode(KernelExceptionType.NoSuchLanguage);
+                }
             }
 
             // Change the language
-            if (inferSysLang)
-                language = LanguageManager.InferLanguageFromSystem();
             if (useUser)
             {
                 UserManagement.CurrentUser.PreferredLanguage = language;

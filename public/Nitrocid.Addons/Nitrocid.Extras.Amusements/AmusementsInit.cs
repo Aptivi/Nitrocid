@@ -17,23 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 using Nitrocid.Extras.Amusements.Commands;
 using Nitrocid.Extras.Amusements.Screensavers;
 using Nitrocid.Extras.Amusements.Settings;
 using Nitrocid.Extras.Amusements.Splashes;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
-using System;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Misc.Splash;
-using Nitrocid.Modifications;
 using System.Linq;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Extras.Amusements.Amusements.Games;
@@ -44,14 +40,11 @@ namespace Nitrocid.Extras.Amusements
     {
         private readonly List<CommandInfo> addonCommands =
         [
-            new CommandInfo("backrace", /* Localizable */ "Do you back the wrong horse?",
-                [
-                    new CommandArgumentInfo()
-                ], new BackRaceCommand()),
+            new CommandInfo("backrace", /* Localizable */ "Do you back the wrong horse?", new BackRaceCommand()),
 
             new CommandInfo("hangman", /* Localizable */ "Starts the Hangman game",
                 [
-                    new CommandArgumentInfo(new[] {
+                    new CommandArgumentInfo([
                         new SwitchInfo("hardcore", /* Localizable */ "One wrong letter and you're hung!", new SwitchOptions()
                         {
                             ConflictsWith = ["practice"],
@@ -72,52 +65,28 @@ namespace Nitrocid.Extras.Amusements
                             ConflictsWith = ["common"],
                             AcceptsValues = false
                         }),
-                    })
+                    ])
                 ], new HangmanCommand()),
 
-            new CommandInfo("meteor", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you save it?",
-                [
-                    new CommandArgumentInfo()
-                ], new MeteorCommand()),
+            new CommandInfo("meteor", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you save it?", new MeteorCommand()),
 
-            new CommandInfo("meteordodge", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you dodge them?",
-                [
-                    new CommandArgumentInfo()
-                ], new MeteorDodgeCommand()),
+            new CommandInfo("meteordodge", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you dodge them?", new MeteorDodgeCommand()),
 
-            new CommandInfo("pong", /* Localizable */ "The ping-pong game!",
-                [
-                    new CommandArgumentInfo()
-                ], new PongCommand()),
+            new CommandInfo("pong", /* Localizable */ "The ping-pong game!", new PongCommand()),
 
-            new CommandInfo("quote", /* Localizable */ "Gets a random quote",
-                [
-                    new CommandArgumentInfo()
-                ], new QuoteCommand()),
+            new CommandInfo("quote", /* Localizable */ "Gets a random quote", new QuoteCommand()),
 
-            new CommandInfo("roulette", /* Localizable */ "Russian Roulette",
-                [
-                    new CommandArgumentInfo()
-                ], new RouletteCommand()),
+            new CommandInfo("roulette", /* Localizable */ "Russian Roulette", new RouletteCommand()),
 
-            new CommandInfo("shipduet", /* Localizable */ "Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.",
-                [
-                    new CommandArgumentInfo()
-                ], new ShipDuetCommand()),
+            new CommandInfo("shipduet", /* Localizable */ "Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.", new ShipDuetCommand()),
 
-            new CommandInfo("snaker", /* Localizable */ "The snake game!",
-                [
-                    new CommandArgumentInfo()
-                ], new SnakerCommand()),
+            new CommandInfo("snaker", /* Localizable */ "The snake game!", new SnakerCommand()),
 
-            new CommandInfo("solver", /* Localizable */ "See if you can solve mathematical equations on time",
-                [
-                    new CommandArgumentInfo()
-                ], new SolverCommand()),
+            new CommandInfo("solver", /* Localizable */ "See if you can solve mathematical equations on time", new SolverCommand()),
 
             new CommandInfo("speedpress", /* Localizable */ "See if you can press a key on time",
                 [
-                    new CommandArgumentInfo(new[] {
+                    new CommandArgumentInfo([
                         new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", new SwitchOptions()
                         {
                             ConflictsWith = ["m", "h", "v", "c"],
@@ -143,12 +112,12 @@ namespace Nitrocid.Extras.Amusements
                             ConflictsWith = ["m", "h", "v", "e"],
                             ArgumentsRequired = true
                         })
-                    })
+                    ])
                 ], new SpeedPressCommand()),
 
             new CommandInfo("wordle", /* Localizable */ "The Wordle game simulator",
                 [
-                    new CommandArgumentInfo(new[] {
+                    new CommandArgumentInfo([
                         new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", new SwitchOptions()
                         {
                             AcceptsValues = false
@@ -163,32 +132,23 @@ namespace Nitrocid.Extras.Amusements
                             ConflictsWith = ["common"],
                             AcceptsValues = false
                         }),
-                    })
+                    ])
                 ], new WordleCommand()),
 
-            new CommandInfo("2018", /* Localizable */ "Commemorates the 5-year anniversary of the kernel release",
-                [
-                    new CommandArgumentInfo()
-                ], new AnniversaryCommand()),
+            new CommandInfo("2018", /* Localizable */ "Commemorates the 5-year anniversary of the kernel release", new AnniversaryCommand()),
         ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasAmusements);
 
         internal static AmusementsSaversConfig SaversConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(AmusementsSaversConfig)) ? (AmusementsSaversConfig)Config.baseConfigurations[nameof(AmusementsSaversConfig)] : new AmusementsSaversConfig();
+            ConfigTools.IsCustomSettingBuiltin(nameof(AmusementsSaversConfig)) ? (AmusementsSaversConfig)Config.baseConfigurations[nameof(AmusementsSaversConfig)] : Config.GetFallbackKernelConfig<AmusementsSaversConfig>();
 
         internal static AmusementsSplashesConfig SplashConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(AmusementsSplashesConfig)) ? (AmusementsSplashesConfig)Config.baseConfigurations[nameof(AmusementsSplashesConfig)] : new AmusementsSplashesConfig();
+            ConfigTools.IsCustomSettingBuiltin(nameof(AmusementsSplashesConfig)) ? (AmusementsSplashesConfig)Config.baseConfigurations[nameof(AmusementsSplashesConfig)] : Config.GetFallbackKernelConfig<AmusementsSplashesConfig>();
 
         internal static AmusementsConfig AmusementsConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(AmusementsConfig)) ? (AmusementsConfig)Config.baseConfigurations[nameof(AmusementsConfig)] : new AmusementsConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(AmusementsConfig)) ? (AmusementsConfig)Config.baseConfigurations[nameof(AmusementsConfig)] : Config.GetFallbackKernelConfig<AmusementsConfig>();
 
         private readonly SplashInfo quote = new("Quote", new SplashQuote(), false);
 
@@ -209,7 +169,7 @@ namespace Nitrocid.Extras.Amusements
         void IAddon.StartAddon()
         {
             // Initialize everything
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("meteor", new MeteorDisplay());
             ScreensaverManager.AddonSavers.Add("meteordodge", new MeteorDodgeDisplay());
             ScreensaverManager.AddonSavers.Add("quote", new QuoteDisplay());
@@ -232,7 +192,7 @@ namespace Nitrocid.Extras.Amusements
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("meteor");
             ScreensaverManager.AddonSavers.Remove("meteordodge");
             ScreensaverManager.AddonSavers.Remove("quote");

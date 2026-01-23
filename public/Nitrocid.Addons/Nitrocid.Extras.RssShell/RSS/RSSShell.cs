@@ -20,13 +20,12 @@
 using System;
 using System.Threading;
 using Nettify.Rss.Instance;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
-using Textify.General;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Network.Connections;
 using Nitrocid.Kernel.Exceptions;
@@ -77,7 +76,7 @@ namespace Nitrocid.Extras.RssShell.RSS
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

@@ -18,16 +18,14 @@
 //
 
 using System.IO;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Files;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -46,14 +44,14 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             foreach (string Dir in parameters.ArgumentsList)
             {
                 string DirectoryPath = FilesystemTools.NeutralizePath(Dir);
-                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized directory path: {0} ({1})", DirectoryPath, Checking.FolderExists(DirectoryPath));
-                SeparatorWriterColor.WriteSeparator(Dir, true);
-                if (Checking.FolderExists(DirectoryPath))
+                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized directory path: {0} ({1})", vars: [DirectoryPath, FilesystemTools.FolderExists(DirectoryPath)]);
+                SeparatorWriterColor.WriteSeparatorColor(Dir, KernelColorTools.GetColor(KernelColorType.ListTitle));
+                if (FilesystemTools.FolderExists(DirectoryPath))
                 {
                     var DirInfo = new DirectoryInfo(DirectoryPath);
                     TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), DirInfo.Name);
                     TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), FilesystemTools.NeutralizePath(DirInfo.FullName));
-                    TextWriterColor.Write(Translate.DoTranslation("Size: {0}"), SizeGetter.GetAllSizesInFolder(DirInfo).SizeString());
+                    TextWriterColor.Write(Translate.DoTranslation("Size: {0}"), FilesystemTools.GetAllSizesInFolder(DirInfo).SizeString());
                     TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(DirInfo.CreationTime));
                     TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(DirInfo.LastAccessTime));
                     TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(DirInfo.LastWriteTime));

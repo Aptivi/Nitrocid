@@ -19,8 +19,7 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
@@ -28,8 +27,8 @@ using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Network.Connections;
 using Nitrocid.Network.SpeedDial;
-using Nitrocid.Shell.ShellBase.Aliases;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Aliases;
+using Terminaux.Shell.Commands;
 using Nitrocid.Users;
 using Nitrocid.Users.Login.Motd;
 using System;
@@ -57,15 +56,15 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old user config file and parse it
             string oldMainKernelConfigPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.Configuration);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old kernel config path {0}.", oldMainKernelConfigPath);
-            if (!Checking.FileExists(oldMainKernelConfigPath))
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old kernel config path {0}.", vars: [oldMainKernelConfigPath]);
+            if (!FilesystemTools.FileExists(oldMainKernelConfigPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old kernel config path.");
                 return true;
             }
 
             // Configuration file could be zero bytes, so check it.
-            string contents = Reading.ReadAllTextNoBlock(oldMainKernelConfigPath);
+            string contents = FilesystemTools.ReadAllTextNoBlock(oldMainKernelConfigPath);
             if (contents.Length == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Old kernel config file has zero bytes.");
@@ -91,7 +90,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
                     foreach (var key in keys)
                     {
                         // Parse this key
-                        string keyName = key.Name;
+                        string keyName = key.Name.Original;
                         string keyVar = key.Variable;
                         var keyToken = sectionToken[keyName];
 
@@ -133,15 +132,15 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old user config file and parse it
             string oldMainKernelConfigPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.Configuration);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old kernel config path {0}.", oldMainKernelConfigPath);
-            if (!Checking.FileExists(oldMainKernelConfigPath))
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old kernel config path {0}.", vars: [oldMainKernelConfigPath]);
+            if (!FilesystemTools.FileExists(oldMainKernelConfigPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old kernel config path.");
                 return true;
             }
 
             // Configuration file could be zero bytes, so check it.
-            string contents = Reading.ReadAllTextNoBlock(oldMainKernelConfigPath);
+            string contents = FilesystemTools.ReadAllTextNoBlock(oldMainKernelConfigPath);
             if (contents.Length == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Old kernel config file has zero bytes.");
@@ -178,7 +177,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
                         foreach (var key in keys)
                         {
                             // Parse this key
-                            string keyName = key.Name;
+                            string keyName = key.Name.Original;
                             string keyVar = key.Variable;
                             var keyToken = sectionToken[keyName];
                             if (keyToken is JValue keyValue)
@@ -216,15 +215,15 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old alias file and parse it
             string oldAliasesPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.Aliases);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old alias path {0}.", oldAliasesPath);
-            if (!Checking.FileExists(oldAliasesPath))
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old alias path {0}.", vars: [oldAliasesPath]);
+            if (!FilesystemTools.FileExists(oldAliasesPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old alias path.");
                 return true;
             }
 
             // Aliases file could be zero bytes, so check it.
-            string contents = Reading.ReadAllTextNoBlock(oldAliasesPath);
+            string contents = FilesystemTools.ReadAllTextNoBlock(oldAliasesPath);
             if (contents.Length == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Old alias file has zero bytes.");
@@ -263,15 +262,15 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old user file and parse it
             string oldUsersPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.Users);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old user path {0}.", oldUsersPath);
-            if (!Checking.FileExists(oldUsersPath))
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old user path {0}.", vars: [oldUsersPath]);
+            if (!FilesystemTools.FileExists(oldUsersPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old user path.");
                 return true;
             }
 
             // Users file could be zero bytes, so check it.
-            string contents = Reading.ReadAllTextNoBlock(oldUsersPath);
+            string contents = FilesystemTools.ReadAllTextNoBlock(oldUsersPath);
             if (contents.Length == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Old user file has zero bytes.");
@@ -324,15 +323,15 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old FTP speed dial file and parse it
             string oldFtpSpeedDialPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.FTPSpeedDial);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old FTP speed dial path {0}.", oldFtpSpeedDialPath);
-            if (!Checking.FileExists(oldFtpSpeedDialPath))
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old FTP speed dial path {0}.", vars: [oldFtpSpeedDialPath]);
+            if (!FilesystemTools.FileExists(oldFtpSpeedDialPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old FTP speed dial path.");
                 return true;
             }
 
             // FTP speed dials file could be zero bytes, so check it.
-            string contents = Reading.ReadAllTextNoBlock(oldFtpSpeedDialPath);
+            string contents = FilesystemTools.ReadAllTextNoBlock(oldFtpSpeedDialPath);
             if (contents.Length == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Old FTP speed dial file has zero bytes.");
@@ -374,15 +373,15 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old SFTP speed dial file and parse it
             string oldSftpSpeedDialPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.SFTPSpeedDial);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old SFTP speed dial path {0}.", oldSftpSpeedDialPath);
-            if (!Checking.FileExists(oldSftpSpeedDialPath))
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old SFTP speed dial path {0}.", vars: [oldSftpSpeedDialPath]);
+            if (!FilesystemTools.FileExists(oldSftpSpeedDialPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old SFTP speed dial path.");
                 return true;
             }
 
             // SFTP speed dials file could be zero bytes, so check it.
-            string contents = Reading.ReadAllTextNoBlock(oldSftpSpeedDialPath);
+            string contents = FilesystemTools.ReadAllTextNoBlock(oldSftpSpeedDialPath);
             if (contents.Length == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Old SFTP speed dial file has zero bytes.");
@@ -424,15 +423,15 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old Remote debug device configuration file and parse it
             string oldDebugDevicesPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.DebugDevNames);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old remote debug device configuration path {0}.", oldDebugDevicesPath);
-            if (!Checking.FileExists(oldDebugDevicesPath))
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old remote debug device configuration path {0}.", vars: [oldDebugDevicesPath]);
+            if (!FilesystemTools.FileExists(oldDebugDevicesPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find old remote debug device configuration path.");
                 return true;
             }
 
             // Remote debug device configurations file could be zero bytes, so check it.
-            string contents = Reading.ReadAllTextNoBlock(oldDebugDevicesPath);
+            string contents = FilesystemTools.ReadAllTextNoBlock(oldDebugDevicesPath);
             if (contents.Length == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Old remote debug device configuration file has zero bytes.");
@@ -476,8 +475,8 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old MOTD file and parse it
             string oldMotdPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.MOTD);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old MOTD path {0}.", oldMotdPath);
-            if (!Checking.FileExists(oldMotdPath))
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old MOTD path {0}.", vars: [oldMotdPath]);
+            if (!FilesystemTools.FileExists(oldMotdPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find MOTD configuration path.");
                 return true;
@@ -486,7 +485,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
             // Handle any possible errors here.
             try
             {
-                string contents = Reading.ReadAllTextNoBlock(oldMotdPath);
+                string contents = FilesystemTools.ReadAllTextNoBlock(oldMotdPath);
                 MotdParse.SetMotd(contents);
             }
             catch (Exception ex)
@@ -502,8 +501,8 @@ namespace Nitrocid.Kernel.Configuration.Migration
         {
             // Locate the old MAL file and parse it
             string oldMalPath = ConfigOldPaths.GetOldKernelPath(ConfigOldPathType.MAL);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got old MAL path {0}.", oldMalPath);
-            if (!Checking.FileExists(oldMalPath))
+            DebugWriter.WriteDebug(DebugLevel.I, "Got old MAL path {0}.", vars: [oldMalPath]);
+            if (!FilesystemTools.FileExists(oldMalPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Can't find MAL configuration path.");
                 return true;
@@ -512,7 +511,7 @@ namespace Nitrocid.Kernel.Configuration.Migration
             // Handle any possible errors here.
             try
             {
-                string contents = Reading.ReadAllTextNoBlock(oldMalPath);
+                string contents = FilesystemTools.ReadAllTextNoBlock(oldMalPath);
                 MalParse.SetMal(contents);
             }
             catch (Exception ex)

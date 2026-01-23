@@ -24,12 +24,12 @@ using Nitrocid.Security.Privacy;
 using Nitrocid.Security.Privacy.Consents;
 using System.IO;
 
-namespace Nitrocid.Files.Operations
+namespace Nitrocid.Files
 {
     /// <summary>
     /// File reading module
     /// </summary>
-    public static class Reading
+    public static partial class FilesystemTools
     {
         /// <summary>
         /// Reads the contents of a file and writes it to the array. This is blocking and will put a lock on the file until read.

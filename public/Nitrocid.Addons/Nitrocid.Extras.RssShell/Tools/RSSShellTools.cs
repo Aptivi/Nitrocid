@@ -35,7 +35,13 @@ namespace Nitrocid.Extras.RssShell.Tools
     /// </summary>
     public static class RSSShellTools
     {
-        internal static (string feedTitle, string articleTitle) GetFirstArticle(string url)
+        /// <summary>
+        /// Gets the first article
+        /// </summary>
+        /// <param name="url">RSS feed URL</param>
+        /// <returns>A tuple that contains feed title and article title</returns>
+        /// <exception cref="KernelException"></exception>
+        public static (string feedTitle, string articleTitle) GetFirstArticle(string url)
         {
             try
             {
@@ -49,13 +55,19 @@ namespace Nitrocid.Extras.RssShell.Tools
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news, throwing to the kernel: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news, throwing to the kernel: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.RSSNetwork, ex);
             }
         }
 
-        internal static (string feedTitle, string articleTitle)[] GetArticles(string url)
+        /// <summary>
+        /// Gets the articles
+        /// </summary>
+        /// <param name="url">RSS feed URL</param>
+        /// <returns>A list of tuples that contain feed titles and article titles</returns>
+        /// <exception cref="KernelException"></exception>
+        public static (string feedTitle, string articleTitle)[] GetArticles(string url)
         {
             try
             {
@@ -68,50 +80,9 @@ namespace Nitrocid.Extras.RssShell.Tools
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news, throwing to the kernel: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news, throwing to the kernel: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 throw new KernelException(KernelExceptionType.RSSNetwork, ex);
-            }
-        }
-
-        /// <summary>
-        /// Refreshes the feeds
-        /// </summary>
-        internal static void RefreshFeeds()
-        {
-            try
-            {
-                var articles = RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [];
-                var OldFeedsList = new List<RSSArticle>(articles);
-                List<RSSArticle> NewFeedsList;
-                while (RSSShellCommon.RSSFeedInstance is not null)
-                {
-                    if (RSSShellCommon.RSSFeedInstance is not null)
-                    {
-                        // Refresh the feed
-                        RSSShellCommon.RSSFeedInstance.Refresh();
-
-                        // Check for new feeds
-                        NewFeedsList = articles.Except(OldFeedsList).ToList();
-                        string OldFeedTitle = OldFeedsList.Count == 0 ? "" : OldFeedsList[0].ArticleTitle;
-                        if (NewFeedsList.Count > 0 && NewFeedsList[0].ArticleTitle != OldFeedTitle)
-                        {
-                            // Update the list
-                            DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", articles.Length, OldFeedsList.Count);
-                            OldFeedsList = new List<RSSArticle>(articles);
-                            foreach (RSSArticle NewFeed in NewFeedsList)
-                            {
-                                var FeedNotif = new Notification(NewFeed.ArticleTitle, NewFeed.ArticleDescription, NotificationPriority.Low, NotificationType.Normal);
-                                NotificationManager.NotifySend(FeedNotif);
-                            }
-                        }
-                    }
-                    Thread.Sleep(RSSShellCommon.RSSRefreshInterval);
-                }
-            }
-            catch (ThreadInterruptedException)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Aborting refresher...");
             }
         }
 
@@ -155,5 +126,45 @@ namespace Nitrocid.Extras.RssShell.Tools
             return foundArticles;
         }
 
+        /// <summary>
+        /// Refreshes the feeds
+        /// </summary>
+        internal static void RefreshFeeds()
+        {
+            try
+            {
+                var articles = RSSShellCommon.RSSFeedInstance?.FeedArticles ?? [];
+                var OldFeedsList = new List<RSSArticle>(articles);
+                List<RSSArticle> NewFeedsList;
+                while (RSSShellCommon.RSSFeedInstance is not null)
+                {
+                    if (RSSShellCommon.RSSFeedInstance is not null)
+                    {
+                        // Refresh the feed
+                        RSSShellCommon.RSSFeedInstance.Refresh();
+
+                        // Check for new feeds
+                        NewFeedsList = articles.Except(OldFeedsList).ToList();
+                        string OldFeedTitle = OldFeedsList.Count == 0 ? "" : OldFeedsList[0].ArticleTitle;
+                        if (NewFeedsList.Count > 0 && NewFeedsList[0].ArticleTitle != OldFeedTitle)
+                        {
+                            // Update the list
+                            DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", vars: [articles.Length, OldFeedsList.Count]);
+                            OldFeedsList = new List<RSSArticle>(articles);
+                            foreach (RSSArticle NewFeed in NewFeedsList)
+                            {
+                                var FeedNotif = new Notification(NewFeed.ArticleTitle, NewFeed.ArticleDescription, NotificationPriority.Low, NotificationType.Normal);
+                                NotificationManager.NotifySend(FeedNotif);
+                            }
+                        }
+                    }
+                    Thread.Sleep(RSSShellCommon.RSSRefreshInterval);
+                }
+            }
+            catch (ThreadInterruptedException)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Aborting refresher...");
+            }
+        }
     }
 }

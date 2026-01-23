@@ -19,15 +19,15 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Screensaver;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
+using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters;
 using Terminaux.Colors.Transformation;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -60,15 +60,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             "Equalizer";
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation() =>
-            DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", vars: [ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight]);
-
-        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
-            ConsoleWrapper.Clear();
-
             // Get the bass, mid, and treble percentages for our vertical progress bars to form a fuzzy equalizer
             int presetIndex = RandomDriver.RandomIdx(presets.Count);
             string presetName = presets.ElementAt(presetIndex).Key;
@@ -86,36 +79,36 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             var bassMeter = new SimpleProgress((int)bassHeight, 100)
             {
                 Vertical = true,
-                Height = 6,
+                Height = ConsoleWrapper.WindowHeight - 4,
                 ProgressActiveForegroundColor = ConsoleColors.Red1,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Red1),
             };
-            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(bassMeter, new(oneSixthOfConsoleWidth, 1)));
+            TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(bassMeter, new(oneSixthOfConsoleWidth, 1)));
 
             // Draw the mid bar
             var midMeter = new SimpleProgress((int)midHeight, 100)
             {
                 Vertical = true,
-                Height = 6,
+                Height = ConsoleWrapper.WindowHeight - 4,
                 ProgressActiveForegroundColor = ConsoleColors.Pink1,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Pink1),
             };
-            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(midMeter, new(oneSixthOfConsoleWidth * 3, 1)));
+            TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(midMeter, new(oneSixthOfConsoleWidth * 3, 1)));
 
             // Draw the treble bar
             var trebleMeter = new SimpleProgress((int)trebleHeight, 100)
             {
                 Vertical = true,
-                Height = 6,
+                Height = ConsoleWrapper.WindowHeight - 4,
                 ProgressActiveForegroundColor = ConsoleColors.Blue1,
                 ProgressForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Blue1),
             };
-            TextWriterRaw.WriteRaw(ContainerTools.RenderRenderable(trebleMeter, new(oneSixthOfConsoleWidth * 5, 1)));
+            TextWriterRaw.WriteRaw(RendererTools.RenderRenderable(trebleMeter, new(oneSixthOfConsoleWidth * 5, 1)));
 
             // Write the preset name
             int infoMessageHeight = ConsoleWrapper.WindowHeight - 2;
-            string infoMessage = $"<< {presetName} >>";
-            int infoMessageWidth = ConsoleWrapper.WindowWidth / 2 - infoMessage.Length / 2;
+            string infoMessage = "\x1b[1K" + $"<< {presetName} >>" + "\x1b[K";
+            int infoMessageWidth = ConsoleWrapper.WindowWidth / 2 - ConsoleChar.EstimateCellWidth(infoMessage) / 2;
             TextWriterWhereColor.WriteWhere(infoMessage, infoMessageWidth, infoMessageHeight);
             ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.EqualizerNextScreenDelay);
         }

@@ -20,7 +20,7 @@
 using System.Linq;
 using Nitrocid.Extras.RssShell.Tools;
 using Nettify.Rss.Instance;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;

@@ -23,7 +23,7 @@
           changes!
         -->
         <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
-        <NitrocidModAPIVersionChangeset>526</NitrocidModAPIVersionChangeset>
+        <NitrocidModAPIVersionChangeset>584</NitrocidModAPIVersionChangeset>
 
         <!-- The above two properties are to be installed to the file version -->
         <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
@@ -35,10 +35,9 @@
     <!--
 
       Note for constants: All Nitrocid flags should be defined by defining NitrocidFlags, not DefineConstants. Here's how you
-      define such flags: -p:NitrocidFlags=PACKAGEMANAGERBUILD
+      define such flags: -p:NitrocidFlags=VSDEBUG
 
       Supported constants (NitrocidFlags):
-          - PACKAGEMANAGERBUILD: Indicates that this build is a package manager build suitable for Launchpad PPA
           - VSDEBUG: Enables immediate window debug in the "Output" pane
       
       Supported configurations (build arguments can be passed with -p:CONFIG=VALUE):

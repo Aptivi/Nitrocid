@@ -185,91 +185,91 @@
       GetFileSystemEntries usage code fix
   -->
   <data name="DirectoryGetFileSystemEntriesUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Listing.CreateList()</value>
+    <value>Use FilesystemTools.CreateList()</value>
   </data>
 
   <!--
       GetFileSystemEntries usage code fix
   -->
   <data name="DirectoryGetFileSystemEntriesAltUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Listing.GetFileSystemEntries()</value>
+    <value>Use FilesystemTools.GetFileSystemEntries()</value>
   </data>
 
   <!--
       FileCopy usage code fix
   -->
   <data name="FileCopyUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Copying.CopyFileOrDir()</value>
+    <value>Use FilesystemTools.CopyFileOrDir()</value>
   </data>
 
   <!--
       DirectoryCreateDirectory usage code fix
   -->
   <data name="DirectoryCreateDirectoryUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Making.MakeDirectory()</value>
+    <value>Use FilesystemTools.MakeDirectory()</value>
   </data>
 
   <!--
       FileCreate usage code fix
   -->
   <data name="FileCreateUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Making.MakeFile()</value>
+    <value>Use FilesystemTools.MakeFile()</value>
   </data>
 
   <!--
       FileMove usage code fix
   -->
   <data name="FileMoveUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Moving.MoveFileOrDir()</value>
+    <value>Use FilesystemTools.MoveFileOrDir()</value>
   </data>
 
   <!--
       FileDelete usage code fix
   -->
   <data name="FileDeleteUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Removing.RemoveFile()</value>
+    <value>Use FilesystemTools.RemoveFile()</value>
   </data>
 
   <!--
       DirectoryDelete usage code fix
   -->
   <data name="DirectoryDeleteUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Removing.RemoveDirectory()</value>
+    <value>Use FilesystemTools.RemoveDirectory()</value>
   </data>
 
   <!--
       FileExists usage code fix
   -->
   <data name="FileExistsUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Checking.FileExists()</value>
+    <value>Use FilesystemTools.FileExists()</value>
   </data>
 
   <!--
       DirectoryExists usage code fix
   -->
   <data name="DirectoryExistsUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Checking.FolderExists()</value>
+    <value>Use FilesystemTools.FolderExists()</value>
   </data>
 
   <!--
       PathExists usage code fix
   -->
   <data name="PathExistsUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Checking.Exists()</value>
+    <value>Use FilesystemTools.Exists()</value>
   </data>
 
   <!--
       PathIsPathRooted usage code fix
   -->
   <data name="PathIsPathRootedUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Checking.Rooted()</value>
+    <value>Use FilesystemTools.Rooted()</value>
   </data>
 
   <!--
       PathGetInvalidPathChars usage code fix
   -->
   <data name="PathGetInvalidPathCharsUsageCodeFixTitle" xml:space="preserve">
-    <value>Use Parsing.GetInvalidPathChars()</value>
+    <value>Use FilesystemTools.GetInvalidPathChars()</value>
   </data>
 
   <!--
@@ -395,14 +395,14 @@
       CurrentUICultureGet usage code fix
   -->
   <data name="CurrentUICultureGetUsageCodeFixTitle" xml:space="preserve">
-    <value>Use CultureManager.CurrentCult</value>
+    <value>Use CultureManager.CurrentCulture</value>
   </data>
   
   <!--
       CurrentUICultureGetName usage code fix
   -->
   <data name="CurrentUICultureGetNameUsageCodeFixTitle" xml:space="preserve">
-    <value>Use CultureManager.CurrentCultStr</value>
+    <value>Use CultureManager.CurrentCultureName</value>
   </data>
   
   <!--

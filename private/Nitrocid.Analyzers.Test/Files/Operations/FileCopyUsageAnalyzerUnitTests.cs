@@ -99,7 +99,7 @@ namespace Nitrocid.Analyzers.Test.Files.Operations
                 using System.Threading.Tasks;
                 using System.Diagnostics;
                 using Nitrocid.Files.Paths;
-                using Nitrocid.Files.Operations;
+                using Nitrocid.Files;
 
                 namespace ConsoleApplication1
                 {
@@ -107,7 +107,7 @@ namespace Nitrocid.Analyzers.Test.Files.Operations
                     {   
                         public static void Main()
                         {
-                            Copying.CopyFileOrDir("test.txt", PathsManagement.AppDataPath);
+                            FilesystemTools.CopyFileOrDir("test.txt", PathsManagement.AppDataPath);
                         }
                     }
                 }

@@ -26,20 +26,17 @@ using Nitrocid.Drivers;
 using Nitrocid.Misc.Reflection;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Terminaux.Writer.FancyWriters;
-using Nitrocid.Files.Operations.Printing;
 using Nitrocid.Files.Instances;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Operations.Querying;
 using Textify.General;
 
-namespace Nitrocid.Files.Folders
+namespace Nitrocid.Files
 {
     /// <summary>
     /// File listing module
     /// </summary>
-    public static class Listing
+    public static partial class FilesystemTools
     {
         /// <summary>
         /// Creates a list of files and directories
@@ -85,14 +82,14 @@ namespace Nitrocid.Files.Folders
         /// <param name="Recursive">Whether the list is recursive or not</param>
         public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage, bool Sort, bool Recursive = false)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
+            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", vars: [folder]);
 
             // List files and folders
             folder = FilesystemTools.NeutralizePath(folder);
-            if (Checking.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
+            if (FilesystemTools.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
             {
                 List<FileSystemEntry> enumeration;
-                SeparatorWriterColor.WriteSeparator(folder, true);
+                SeparatorWriterColor.WriteSeparatorColor(folder, KernelColorTools.GetColor(KernelColorType.ListTitle));
 
                 // Try to create a list
                 try
@@ -105,17 +102,17 @@ namespace Nitrocid.Files.Folders
                     long TotalSize = 0L;
                     foreach (FileSystemEntry Entry in enumeration)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", Entry.FilePath);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", vars: [Entry.FilePath]);
                         try
                         {
                             switch (Entry.Type)
                             {
                                 case FileSystemEntryType.File:
                                     TotalSize += ((FileInfo)Entry.BaseEntry).Length;
-                                    FileInfoPrinter.PrintFileInfo(Entry);
+                                    FilesystemTools.PrintFileInfo(Entry);
                                     break;
                                 case FileSystemEntryType.Directory:
-                                    DirectoryInfoPrinter.PrintDirectoryInfo(Entry);
+                                    FilesystemTools.PrintDirectoryInfo(Entry);
                                     break;
                             }
                         }
@@ -143,11 +140,11 @@ namespace Nitrocid.Files.Folders
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
-            else if (Checking.FileExists(folder))
+            else if (FilesystemTools.FileExists(folder))
             {
                 try
                 {
-                    FileInfoPrinter.PrintFileInfo(new FileSystemEntry(folder), ShowFileDetails);
+                    FilesystemTools.PrintFileInfo(new FileSystemEntry(folder), ShowFileDetails);
                 }
                 catch (UnauthorizedAccessException ex)
                 {
@@ -165,7 +162,7 @@ namespace Nitrocid.Files.Folders
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
-                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(folder));
+                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", vars: [FilesystemTools.FolderExists(folder)]);
             }
         }
 
@@ -202,15 +199,15 @@ namespace Nitrocid.Files.Folders
         /// <param name="level">Indentation level</param>
         internal static void ListTree(string folder, bool SuppressUnauthorizedMessage, bool Sort, int level = 0)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
+            DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", vars: [folder]);
 
             // List files and folders
             folder = FilesystemTools.NeutralizePath(folder);
-            if (Checking.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
+            if (FilesystemTools.FolderExists(folder) | folder.ContainsAnyOf(["?", "*"]))
             {
                 List<FileSystemEntry> enumeration;
                 if (level == 0)
-                    SeparatorWriterColor.WriteSeparator(folder, true);
+                    SeparatorWriterColor.WriteSeparatorColor(folder, KernelColorTools.GetColor(KernelColorType.ListTitle));
 
                 // Try to create a list
                 try
@@ -257,7 +254,7 @@ namespace Nitrocid.Files.Folders
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
-            else if (Checking.FileExists(folder))
+            else if (FilesystemTools.FileExists(folder))
             {
                 var entry = new FileSystemEntry(folder);
                 string name = Path.GetFileName(entry.FilePath);
@@ -281,7 +278,7 @@ namespace Nitrocid.Files.Folders
             else
             {
                 TextWriters.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, folder);
-                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(folder));
+                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", vars: [FilesystemTools.FolderExists(folder)]);
             }
         }
 

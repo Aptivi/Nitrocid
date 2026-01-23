@@ -23,10 +23,11 @@ using System.Text.RegularExpressions;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
+using Nitrocid.Files;
+using Terminaux.Colors;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -43,7 +44,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
         {
             try
             {
-                var Matches = Searching.SearchFileForStringRegexpMatches(parameters.ArgumentsList[1], new Regex(parameters.ArgumentsList[0], RegexOptions.IgnoreCase));
+                var Matches = FilesystemTools.SearchFileForStringRegexpMatches(parameters.ArgumentsList[1], new Regex(parameters.ArgumentsList[0], RegexOptions.IgnoreCase));
                 foreach ((string, MatchCollection) matchTuple in Matches)
                 {
                     string matchLine = matchTuple.Item1;
@@ -55,7 +56,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     var normalColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
                     foreach (Match match in matchCollection.Cast<Match>())
                     {
-                        string toReplaceWith = $"{matchColor.VTSequenceForeground}{match.Value}{normalColor.VTSequenceForeground}";
+                        string toReplaceWith = $"{matchColor.VTSequenceForeground()}{match.Value}{normalColor.VTSequenceForeground()}";
 
                         // We want to avoid repetitions here
                         if (!matchLine.Contains(toReplaceWith))
@@ -67,7 +68,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", vars: [parameters.ArgumentsList[0], parameters.ArgumentsList[1]]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Searching {0} for {1} failed.") + " {2}", true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1], ex.Message);
                 return ex.GetHashCode();

@@ -22,7 +22,8 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Base.Extensions;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands
 {
@@ -42,7 +43,8 @@ namespace Nitrocid.Shell.Shells.Debug.Commands
                 TextWriters.Write(Translate.DoTranslation("This command is not supported on Windows."), KernelColorType.Error);
                 return 33;
             }
-            ConsoleTools.PreviewMainBuffer();
+            if (KernelEntry.UseAltBuffer)
+                ConsoleMisc.PreviewMainBuffer();
             return 0;
         }
 

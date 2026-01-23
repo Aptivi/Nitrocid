@@ -27,8 +27,8 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Time.Calendars;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Commands
 {
@@ -159,7 +159,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                     }
                                 case "list":
                                     {
-                                        // User chose to list. No parse needed as we're only listing.
+                                        // User chose to list. No parse needed as we're only FilesystemTools.
                                         EventManager.ListEvents();
                                         return 0;
                                     }
@@ -251,7 +251,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                     }
                                 case "list":
                                     {
-                                        // User chose to list. No parse needed as we're only listing.
+                                        // User chose to list. No parse needed as we're only FilesystemTools.
                                         ReminderManager.ListReminders();
                                         return 0;
                                     }

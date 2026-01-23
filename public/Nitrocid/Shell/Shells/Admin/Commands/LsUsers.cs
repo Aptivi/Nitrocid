@@ -18,10 +18,8 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Users;
-using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Writer.CyclicWriters;
 using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Shell.Shells.Admin.Commands

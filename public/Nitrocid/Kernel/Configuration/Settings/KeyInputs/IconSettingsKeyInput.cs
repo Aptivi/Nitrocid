@@ -18,7 +18,9 @@
 //
 
 using Nitrocid.Kernel.Configuration.Instances;
-using Terminaux.Images.Icons;
+using Nitrocid.Kernel.Extensions;
+using Nitrocid.Languages;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
 {
@@ -26,7 +28,17 @@ namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs
     {
         public object? PromptForSet(SettingsKey key, object? KeyDefaultValue, BaseKernelConfig configType, out bool bail)
         {
-            string icon = IconsSelector.PromptForIcons((string?)KeyDefaultValue ?? "heart-suit");
+            if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasImagesIcons)) is null)
+            {
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("The icons addon needs to be installed before being able to set this value."));
+                bail = true;
+                return KeyDefaultValue;
+            }
+            string defaultValue = (string?)KeyDefaultValue ?? "heart-suit";
+            var type = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasImagesIcons, "Nitrocid.Extras.Images.Icons.Tools.IconsTools");
+            var hasIcon = (bool?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "HasIcon", type, defaultValue) ?? false;
+            defaultValue = hasIcon ? defaultValue : "heart-suit";
+            string icon = (string?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasImagesIcons, "PromptForIcons", type, defaultValue) ?? "heart-suit";
 
             // Bail and return
             bail = true;

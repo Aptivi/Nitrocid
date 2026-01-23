@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -28,62 +28,40 @@ namespace Nitrocid.Misc.Reflection.Internal
 {
     internal static class ResourcesManager
     {
-        private static readonly Dictionary<Assembly, Dictionary<string, string>> assemblies = [];
-
-        internal static bool DataExists(string resource, ResourcesType type, out string? data, Assembly? asm = null)
+        internal static bool DataExists(string resource, ResourcesType type, out Stream? data, Assembly? asm = null)
         {
             asm ??= Assembly.GetExecutingAssembly();
-            data = "";
-            InitializeData(asm);
-            if (!assemblies.TryGetValue(asm, out Dictionary<string, string>? asmResources))
-                return false;
-            return
-                type == ResourcesType.Misc ?
-                asmResources.TryGetValue(resource, out data) :
-                asmResources.TryGetValue($"{type}.{resource}", out data);
+
+            // Get the stream
+            string resourceName = type == ResourcesType.Misc ? resource : $"{type}.{resource}";
+            string resourceFullName = $"{asm.GetName().Name}.Resources.{resourceName}";
+            data = asm.GetManifestResourceStream(resourceFullName);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{asm.FullName ?? "This unknown assembly"} got resource {resource} with type {type} and got {(data is not null ? $"a data stream totalling {data.Length} bytes" : "nothing")}.");
+            return data is not null;
         }
 
-        internal static string? GetData(string resource, ResourcesType type, Assembly? asm = null)
+        internal static Stream? GetData(string resource, ResourcesType type, Assembly? asm = null)
         {
             asm ??= Assembly.GetExecutingAssembly();
-            InitializeData(asm);
-            if (!DataExists(resource, type, out string? data, asm))
-                throw new KernelException(KernelExceptionType.Reflection, $"Resource {resource} not found for type {type} in between {assemblies.Count} assemblies");
+            if (!DataExists(resource, type, out Stream? data, asm))
+                throw new KernelException(KernelExceptionType.Reflection, $"Resource {resource} not found for type {type} in {asm.FullName ?? "this unknown assembly"}");
             return data;
         }
 
         internal static string[] GetResourceNames(Assembly? asm)
         {
             asm ??= Assembly.GetExecutingAssembly();
-            InitializeData(asm);
-            if (!assemblies.TryGetValue(asm, out Dictionary<string, string>? asmResources))
-                return [];
-            return asmResources.Select((kvp) => kvp.Key).ToArray();
+            var resources = asm.GetManifestResourceNames().Select((resource) => resource.RemovePrefix($"{asm.GetName().Name}.Resources.")).ToArray();
+            return resources;
         }
 
-        internal static void InitializeData(Assembly? assembly)
+        internal static string ConvertToString(Stream? contentStream)
         {
-            if (assembly is null)
-                return;
-            if (assemblies.ContainsKey(assembly))
-                return;
-            var resourceFullNames = assembly.GetManifestResourceNames();
-            var asmResources = new Dictionary<string, string>();
-            foreach (string resourceFullName in resourceFullNames)
-            {
-                // Get the stream and parse its contents
-                var contentStream = assembly.GetManifestResourceStream(resourceFullName);
-                if (contentStream is null)
-                    continue;
-                using var contentStreamReader = new StreamReader(contentStream);
-                string content = contentStreamReader.ReadToEnd();
-                string fileName = resourceFullName.RemovePrefix($"{assembly.GetName().Name}.Resources.");
-
-                // Afterwards, add the resulting content to the resources dictionary to cache it
-                asmResources.Add(fileName, content);
-            }
-            if (asmResources.Count > 0)
-                assemblies.TryAdd(assembly, asmResources);
+            if (contentStream is null)
+                return "";
+            using var contentStreamReader = new StreamReader(contentStream);
+            string content = contentStreamReader.ReadToEnd();
+            return content;
         }
     }
 }

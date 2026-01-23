@@ -21,6 +21,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -28,7 +29,7 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the input multiple selection style in the informational box (titled)");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run(params string[] args)
+        public override void Run()
         {
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history
             var choices = new InputChoiceInfo[]
@@ -37,7 +38,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
                 new("jammy", "22.04 (Jammy Jellyfish)", "Ubuntu 22.04 LTS, codenamed Jammy Jellyfish, was released on 21 April 2022, and is a long-term support release, supported for five years, until April 2027."),
                 new("noble", "24.04 (Noble Numbat)", "Ubuntu 24.04 LTS, codenamed Noble Numbat, is planned to be released on April 2024, and is a long-term support release, supported for five years, until April 2029."),
             };
-            var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(nameof(TestInputInfoBoxMultiSelectionTitled), choices, "Which Ubuntu version would you like to run?");
+            var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(choices, "Which Ubuntu version would you like to run?", new InfoBoxSettings()
+            {
+                Title = nameof(TestInputInfoBoxMultiSelectionTitled),
+            });
             TextWriterWhereColor.WriteWhere(string.Join(", ", selections), 0, 0);
         }
     }

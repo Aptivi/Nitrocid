@@ -23,7 +23,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -49,7 +48,7 @@ namespace Nitrocid.Misc.Reflection
             // Add the path to the search path
             if (!AssemblyLookupPaths.Contains(Path))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Adding path {0} to lookup paths...", Path);
+                DebugWriter.WriteDebug(DebugLevel.I, "Adding path {0} to lookup paths...", vars: [Path]);
                 AssemblyLookupPaths.Add(Path);
             }
         }
@@ -65,7 +64,7 @@ namespace Nitrocid.Misc.Reflection
             // Remove the path from the search path
             if (AssemblyLookupPaths.Contains(Path))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Removing path {0} from lookup paths...", Path);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing path {0} from lookup paths...", vars: [Path]);
                 AssemblyLookupPaths.Remove(Path);
             }
         }
@@ -79,7 +78,7 @@ namespace Nitrocid.Misc.Reflection
             Assembly? FinalAssembly = null;
             string? DepAssemblyName = new AssemblyName(args.Name).Name;
             string? ReqAssemblyName = args.RequestingAssembly is not null ? args.RequestingAssembly.GetName().Name : "An unknown assembly";
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} has requested to load {1}.", ReqAssemblyName, args.Name);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} has requested to load {1}.", vars: [ReqAssemblyName, args.Name]);
 
             // Guard against the old version of Nitrocid KS (0.1.0 Milestone X or lower)
             if (DepAssemblyName == "Kernel Simulator")
@@ -93,19 +92,19 @@ namespace Nitrocid.Misc.Reflection
                 try
                 {
                     // Check to see if the dependency file exists
-                    if (!Checking.FileExists(path))
+                    if (!FilesystemTools.FileExists(path))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Assembly {0} doesn't exist...", path);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Assembly {0} doesn't exist...", vars: [path]);
                         return;
                     }
 
                     // Try loading
-                    DebugWriter.WriteDebug(DebugLevel.I, "Loading from {0}...", path);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Loading from {0}...", vars: [path]);
                     FinalAssembly = Assembly.LoadFrom(path);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load {0} from {1}: {2}", args.Name, path, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load {0} from {1}: {2}", vars: [args.Name, path, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
@@ -114,13 +113,13 @@ namespace Nitrocid.Misc.Reflection
             var paths = baseAssemblyLookupPaths.Union(AssemblyLookupPaths).ToArray();
             foreach (string LookupPath in paths)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Lookup Path: {0}", LookupPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Lookup Path: {0}", vars: [LookupPath]);
                 string DepAssemblyFilePath = Path.Combine(LookupPath, DepAssemblyName + ".dll");
                 AssignAsm(DepAssemblyFilePath);
             }
             if (FinalAssembly is null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Using Nitrocid execuable path {0} for lookup", PathsManagement.ExecPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Using Nitrocid execuable path {0} for lookup", vars: [PathsManagement.ExecPath]);
                 string DepAssemblyFilePath = Path.Combine(PathsManagement.ExecPath, DepAssemblyName + ".dll");
                 AssignAsm(DepAssemblyFilePath);
             }

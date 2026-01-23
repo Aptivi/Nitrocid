@@ -26,7 +26,7 @@ using Nitrocid.Extras.FtpShell.FTP;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -37,6 +37,7 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Choice;
 using System.Collections.Generic;
 using Terminaux.Inputs.Styles;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.FtpShell.Tools
 {
@@ -120,7 +121,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                 string FtpHost = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "");
                 FtpHost = indexOfPort < 0 ? FtpHost : FtpHost.Replace(FtpHost[FtpHost.LastIndexOf(":")..], "");
                 string FtpPortString = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(FtpHost + ":", "");
-                DebugWriter.WriteDebug(DebugLevel.W, "Host: {0}, Port: {1}", FtpHost, FtpPortString);
+                DebugWriter.WriteDebug(DebugLevel.W, "Host: {0}, Port: {1}", vars: [FtpHost, FtpPortString]);
                 bool portParsed = int.TryParse(FtpHost == FtpPortString ? "0" : FtpPortString, out int FtpPort);
                 if (!portParsed)
                 {
@@ -169,7 +170,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", vars: [address, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriters.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
                 return null;
@@ -185,7 +186,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
             TextWriterColor.Write(Translate.DoTranslation("Preparing profiles... It could take several minutes..."));
             var profiles = clientFTP.AutoDetect(FtpFirstProfileOnly);
             var profsel = new FtpProfile();
-            DebugWriter.WriteDebug(DebugLevel.I, "Profile count: {0}", profiles.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Profile count: {0}", vars: [profiles.Count]);
             if (profiles.Count > 1)
             {
                 // More than one profile
@@ -231,7 +232,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Profile invalid");
-                                TextWriters.Write(Translate.DoTranslation("Invalid profile selection.") + CharManager.NewLine, true, KernelColorType.Error);
+                                TextWriters.Write(Translate.DoTranslation("Invalid profile FilesystemTools.") + CharManager.NewLine, true, KernelColorType.Error);
                                 DebugWriter.WriteDebugStackTrace(ex);
                             }
                         }
@@ -250,7 +251,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
 
             // Connect
             TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0} with profile {1}..."), clientFTP.Host, profiles.IndexOf(profsel));
-            DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", clientFTP.Host, profiles.IndexOf(profsel));
+            DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", vars: [clientFTP.Host, profiles.IndexOf(profsel)]);
             clientFTP.Connect(profsel);
             var ftpConnection = NetworkConnectionTools.EstablishConnection("FTP connection", clientFTP.Host, NetworkConnectionType.FTP, clientFTP);
 
@@ -289,7 +290,7 @@ namespace Nitrocid.Extras.FtpShell.Tools
                     while (!Answer.Equals("y", StringComparison.OrdinalIgnoreCase) || !Answer.Equals("n", StringComparison.OrdinalIgnoreCase))
                     {
                         TextWriters.Write(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, KernelColorType.Question);
-                        ColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Input));
+                        ConsoleColoring.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Input));
                         Answer = Convert.ToString(Input.ReadKey().KeyChar);
                         TextWriterRaw.Write();
                         DebugWriter.WriteDebug(DebugLevel.I, $"Answer is {Answer}");

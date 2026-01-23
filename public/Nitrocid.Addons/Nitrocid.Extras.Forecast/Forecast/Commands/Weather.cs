@@ -21,15 +21,14 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Linq;
 using Nitrocid.ConsoleBase.Inputs;
 using Nettify.Weather;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Switches;
 using Terminaux.Inputs.Interactive;
 using Nitrocid.Extras.Forecast.Forecast.Interactive;
 using System;
-using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {

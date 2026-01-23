@@ -36,21 +36,18 @@
 //   You should have received a copy of the GNU General Public License
 //   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.BassBoom.Commands;
 using Nitrocid.Extras.BassBoom.Screensavers;
 using Nitrocid.Extras.BassBoom.Settings;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using BassBoom.Basolia;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Modifications;
 using System.Linq;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
@@ -118,20 +115,14 @@ namespace Nitrocid.Extras.BassBoom
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasBassBoom);
 
         internal static BassBoomSaversConfig SaversConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(BassBoomSaversConfig)) ? (BassBoomSaversConfig)Config.baseConfigurations[nameof(BassBoomSaversConfig)] : new BassBoomSaversConfig();
+            ConfigTools.IsCustomSettingBuiltin(nameof(BassBoomSaversConfig)) ? (BassBoomSaversConfig)Config.baseConfigurations[nameof(BassBoomSaversConfig)] : Config.GetFallbackKernelConfig<BassBoomSaversConfig>();
 
         internal static BassBoomConfig BassBoomConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(BassBoomConfig)) ? (BassBoomConfig)Config.baseConfigurations[nameof(BassBoomConfig)] : new BassBoomConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(BassBoomConfig)) ? (BassBoomConfig)Config.baseConfigurations[nameof(BassBoomConfig)] : Config.GetFallbackKernelConfig<BassBoomConfig>();
 
         void IAddon.StartAddon()
         {
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("lyrics", new LyricsDisplay());
 
             // Then, initialize configuration in a way that no mod can play with them
@@ -151,7 +142,7 @@ namespace Nitrocid.Extras.BassBoom
 
         void IAddon.StopAddon()
         {
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ScreensaverManager.AddonSavers.Remove("lyrics");
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));

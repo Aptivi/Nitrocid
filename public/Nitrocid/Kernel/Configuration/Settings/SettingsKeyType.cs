@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using System.Collections.Generic;
 using Terminaux.Colors;
 
@@ -69,7 +69,7 @@ namespace Nitrocid.Kernel.Configuration.Settings
         /// </summary>
         SDouble,
         /// <summary>
-        /// The value is a shell preset defined using <see cref="IPromptPreset"/> in <see cref="PromptPresetManager.CurrentPresets"/>
+        /// The value is a shell preset defined using <see cref="IPromptPreset"/>
         /// </summary>
         SPreset,
         /// <summary>

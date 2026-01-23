@@ -24,7 +24,7 @@ using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 

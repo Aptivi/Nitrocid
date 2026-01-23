@@ -23,7 +23,7 @@ using Terminaux.Colors;
 using Textify.Data.Figlet;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Shell.Shells.Text;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Files;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Shell.Shells.Hex;
@@ -35,15 +35,13 @@ using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Inputs.Styles.Choice;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Prompts;
 using Nitrocid.Users.Login.Handlers;
 using Nitrocid.Files.Paths;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging.RemoteDebug.RemoteChat;
 using Nitrocid.Kernel.Time.Timezones;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Nitrocid.Network.Types.RPC;
 using Nitrocid.Network;
 using Terminaux.Inputs.Styles.Selection;
@@ -52,6 +50,14 @@ using Nitrocid.Users.Login;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Shell.Homepage;
 using Terminaux.Inputs;
+using Nitrocid.Users.Login.Widgets;
+using Nitrocid.Users.Login.Widgets.Implementations;
+using Nitrocid.Kernel.Starting;
+using Terminaux.Inputs.Interactive;
+using Terminaux.Reader;
+using Nitrocid.Misc.Audio;
+using System.Linq;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Kernel.Configuration.Instances
 {
@@ -62,9 +68,16 @@ namespace Nitrocid.Kernel.Configuration.Instances
     {
         /// <inheritdoc/>
         [JsonIgnore]
-        public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.GetSettingsEntries(ResourcesManager.GetData("SettingsEntries.json", ResourcesType.Settings) ??
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain main settings entries.")));
+        public override SettingsEntry[] SettingsEntries
+        {
+            get
+            {
+                var dataStream = ResourcesManager.GetData("SettingsEntries.json", ResourcesType.Settings) ??
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Failed to obtain main settings entries."));
+                string dataString = ResourcesManager.ConvertToString(dataStream);
+                return ConfigTools.GetSettingsEntries(dataString);
+            }
+        }
 
         [JsonIgnore]
         private string defaultFigletFontName = "speed";
@@ -83,10 +96,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
             set => WelcomeMessage.customBanner = value;
         }
         /// <summary>
-        /// When switching languages, change the month names, calendar, etc.
-        /// </summary>
-        public bool LangChangeCulture { get; set; }
-        /// <summary>
         /// Specifies the kernel language.
         /// </summary>
         public string CurrentLanguage
@@ -95,9 +104,9 @@ namespace Nitrocid.Kernel.Configuration.Instances
             set => LanguageManager.SetLangDry(value);
         }
         /// <summary>
-        /// Which variant of the current language is being used to change the month names, calendar, etc.?
+        /// Which culture is being used to change the month names, calendar, etc.?
         /// </summary>
-        public string CurrentCultStr { get; set; } = "en-US";
+        public string CurrentCultureName { get; set; } = "en-US";
         /// <summary>
         /// Shows brief information about the application on boot.
         /// </summary>
@@ -106,10 +115,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// Shows how much time did the kernel take to finish a stage.
         /// </summary>
         public bool ShowStageFinishTimes { get; set; }
-        /// <summary>
-        /// Automatically start the kernel modifications on boot.
-        /// </summary>
-        public bool StartKernelMods { get; set; }
         /// <summary>
         /// Shows the current time, time zone, and date before logging in.
         /// </summary>
@@ -149,7 +154,11 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <summary>
         /// If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.
         /// </summary>
-        public bool ConsoleSupportsTrueColor { get; set; } = true;
+        public bool ConsoleSupportsTrueColor
+        {
+            get => ConsoleColoring.ConsoleSupportsTrueColor;
+            set => ConsoleColoring.ConsoleSupportsTrueColor = value;
+        }
         /// <summary>
         /// Set the language codepage upon switching languages (Windows only)
         /// </summary>
@@ -158,10 +167,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// Development notice acknowledged
         /// </summary>
         public bool DevNoticeConsented { get; set; }
-        /// <summary>
-        /// Allow untrusted mods
-        /// </summary>
-        public bool AllowUntrustedMods { get; set; }
         /// <summary>
         /// Whether to use the operating system time zone or to use the kernel-wide time zone
         /// </summary>
@@ -191,7 +196,7 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public int BootSelectTimeoutSeconds { get; set; } = 10;
         /// <summary>
-        /// The default boot entry selection. This number is zero-based, so the first element is index 0, and so on.
+        /// The default boot entry FilesystemTools. This number is zero-based, so the first element is index 0, and so on.
         /// </summary>
         public int BootSelect { get; set; } = 0;
         /// <summary>
@@ -201,6 +206,30 @@ namespace Nitrocid.Kernel.Configuration.Instances
         {
             get => HomepageTools.isHomepageEnabled;
             set => HomepageTools.isHomepageEnabled = value;
+        }
+        /// <summary>
+        /// Enables "The Nitrocid Homepage" widgets
+        /// </summary>
+        public bool EnableHomepageWidgets
+        {
+            get => HomepageTools.isHomepageWidgetEnabled;
+            set => HomepageTools.isHomepageWidgetEnabled = value;
+        }
+        /// <summary>
+        /// Enables "The Nitrocid Homepage" RSS feed widget
+        /// </summary>
+        public bool EnableHomepageRssFeed
+        {
+            get => HomepageTools.isHomepageRssFeedEnabled;
+            set => HomepageTools.isHomepageRssFeedEnabled = value;
+        }
+        /// <summary>
+        /// Select a widget to be displayed in the widget pane of the homepage
+        /// </summary>
+        public string HomepageWidget
+        {
+            get => HomepageTools.homepageWidgetName;
+            set => HomepageTools.homepageWidgetName = WidgetTools.CheckWidget(value) ? value : nameof(AnalogClock);
         }
         #endregion
 
@@ -238,12 +267,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool AllowBackgroundColor
         {
-            get => KernelColorTools.allowBackground;
-            set
-            {
-                KernelColorTools.allowBackground = value;
-                ColorTools.AllowBackground = KernelColorTools.allowBackground;
-            }
+            get => ConsoleColoring.AllowBackground;
+            set => ConsoleColoring.AllowBackground = value;
         }
         /// <summary>
         /// User Name Shell Color
@@ -627,7 +652,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiBackgroundColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiBackground).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiBackground, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiBackground, color);
+                InteractiveTuiSettings.GlobalSettings.BackgroundColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI foreground color
@@ -635,7 +665,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiForegroundColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiForeground).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiForeground, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiForeground, color);
+                InteractiveTuiSettings.GlobalSettings.ForegroundColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI pane background color
@@ -643,7 +678,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneBackgroundColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiPaneBackground).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiPaneBackground, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneBackground, color);
+                InteractiveTuiSettings.GlobalSettings.PaneBackgroundColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI pane separator color
@@ -651,7 +691,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneSeparatorColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiPaneSeparator, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneSeparator, color);
+                InteractiveTuiSettings.GlobalSettings.PaneSeparatorColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI selected pane separator color
@@ -659,7 +704,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneSelectedSeparatorColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedSeparator, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedSeparator, color);
+                InteractiveTuiSettings.GlobalSettings.PaneSelectedSeparatorColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI selected pane item foreground color
@@ -667,7 +717,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneSelectedItemForeColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedItemFore).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedItemFore, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedItemFore, color);
+                InteractiveTuiSettings.GlobalSettings.PaneSelectedItemForeColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI selected pane item background color
@@ -675,7 +730,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneSelectedItemBackColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedItemBack).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedItemBack, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedItemBack, color);
+                InteractiveTuiSettings.GlobalSettings.PaneSelectedItemBackColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI pane item foreground color
@@ -683,7 +743,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneItemForeColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiPaneItemFore).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiPaneItemFore, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneItemFore, color);
+                InteractiveTuiSettings.GlobalSettings.PaneItemForeColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI pane item background color
@@ -691,7 +756,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiPaneItemBackColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiPaneItemBack).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiPaneItemBack, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiPaneItemBack, color);
+                InteractiveTuiSettings.GlobalSettings.PaneItemBackColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI option background color
@@ -699,7 +769,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiOptionBackgroundColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiOptionBackground).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiOptionBackground, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiOptionBackground, color);
+                InteractiveTuiSettings.GlobalSettings.OptionBackgroundColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI option foreground color
@@ -707,7 +782,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiOptionForegroundColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiOptionForeground).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiOptionForeground, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiOptionForeground, color);
+                InteractiveTuiSettings.GlobalSettings.OptionForegroundColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI option binding name color
@@ -715,7 +795,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiKeyBindingOptionColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiKeyBindingOption, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiKeyBindingOption, color);
+                InteractiveTuiSettings.GlobalSettings.KeyBindingOptionColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI box background color
@@ -723,7 +808,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiBoxBackgroundColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiBoxBackground).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiBoxBackground, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiBoxBackground, color);
+                InteractiveTuiSettings.GlobalSettings.BoxBackgroundColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI box foreground color
@@ -731,7 +821,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiBoxForegroundColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiBoxForeground).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiBoxForeground, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiBoxForeground, color);
+                InteractiveTuiSettings.GlobalSettings.BoxForegroundColor = color;
+            }
         }
         /// <summary>
         /// Disabled option color
@@ -739,7 +834,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string DisabledOptionColor
         {
             get => KernelColorTools.GetColor(KernelColorType.DisabledOption).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.DisabledOption, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.DisabledOption, color);
+                SelectionStyleSettings.GlobalSettings.DisabledOptionColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI builtin key binding background color
@@ -747,7 +847,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiKeyBindingBuiltinBackgroundColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinBackground).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltinBackground, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltinBackground, color);
+                InteractiveTuiSettings.GlobalSettings.KeyBindingBuiltinBackgroundColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI builtin key binding foreground color
@@ -755,7 +860,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiKeyBindingBuiltinForegroundColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltinForeground).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltinForeground, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltinForeground, color);
+                InteractiveTuiSettings.GlobalSettings.KeyBindingBuiltinForegroundColor = color;
+            }
         }
         /// <summary>
         /// Interactive TUI builtin key binding color
@@ -763,7 +873,12 @@ namespace Nitrocid.Kernel.Configuration.Instances
         public string TuiKeyBindingBuiltinColor
         {
             get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingBuiltin).PlainSequence;
-            set => KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltin, new Color(value));
+            set
+            {
+                var color = new Color(value);
+                KernelColorTools.SetColor(KernelColorType.TuiKeyBindingBuiltin, color);
+                InteractiveTuiSettings.GlobalSettings.KeyBindingBuiltinColor = color;
+            }
         }
         #endregion
 
@@ -862,6 +977,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         #endregion
 
         #region Shell
+        private string pathsToLookup = Environment.GetEnvironmentVariable("PATH") ?? "";
+
         /// <summary>
         /// Simplified help command for all the shells
         /// </summary>
@@ -871,15 +988,15 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string CurrentDir
         {
-            get
-            {
-                return CurrentDirectory._CurrentDirectory;
-            }
+            get => FilesystemTools._CurrentDirectory;
             set
             {
                 value = FilesystemTools.NeutralizePath(value);
-                if (Checking.FolderExists(value))
-                    CurrentDirectory._CurrentDirectory = value;
+                if (FilesystemTools.FolderExists(value))
+                {
+                    FilesystemTools._CurrentDirectory = value;
+                    ConsoleFilesystem.CurrentDir = value;
+                }
                 else
                     throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Directory {0} not found"), value);
             }
@@ -887,7 +1004,15 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// <summary>
         /// Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing directory.
         /// </summary>
-        public string PathsToLookup { get; set; } = Environment.GetEnvironmentVariable("PATH") ?? "";
+        public string PathsToLookup
+        {
+            get => pathsToLookup;
+            set
+            {
+                pathsToLookup = value;
+                ConsoleFilesystem.LookupPaths = value;
+            }
+        }
         /// <summary>
         /// Default choice output type
         /// </summary>
@@ -908,40 +1033,40 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public string PromptPreset
         {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.Shell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.Shell, false);
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell("Shell").PresetName;
+            set => PromptPresetManager.SetPreset(value, "Shell", false);
         }
         /// <summary>
         /// Text Edit Prompt Preset
         /// </summary>
         public string TextEditPromptPreset
         {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.TextShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.TextShell, false);
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell("TextShell").PresetName;
+            set => PromptPresetManager.SetPreset(value, "TextShell", false);
         }
         /// <summary>
         /// Hex Edit Prompt Preset
         /// </summary>
         public string HexEditPromptPreset
         {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.HexShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.HexShell, false);
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell("HexShell").PresetName;
+            set => PromptPresetManager.SetPreset(value, "HexShell", false);
         }
         /// <summary>
         /// Admin Shell Prompt Preset
         /// </summary>
         public string AdminShellPromptPreset
         {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.AdminShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.AdminShell, false);
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell("AdminShell").PresetName;
+            set => PromptPresetManager.SetPreset(value, "AdminShell", false);
         }
         /// <summary>
         /// Debug Shell Prompt Preset
         /// </summary>
         public string DebugShellPromptPreset
         {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.DebugShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.DebugShell, false);
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell("DebugShell").PresetName;
+            set => PromptPresetManager.SetPreset(value, "DebugShell", false);
         }
         #endregion
 
@@ -1171,6 +1296,111 @@ namespace Nitrocid.Kernel.Configuration.Instances
         }
         #endregion
 
+        #region Audio
+        private string audioCueThemeName = "the_mirage";
+        private double audioCueVolume = 1.0;
+        private bool enableAudio = true;
+
+        /// <summary>
+        /// Enables the whole audio system for system cues
+        /// </summary>
+        public bool EnableAudio
+        {
+            get => enableAudio;
+            set
+            {
+                enableAudio = value;
+                if (!value)
+                {
+                    EnableKeyboardCues = value;
+                    EnableStartupSounds = value;
+                    EnableShutdownSounds = value;
+                    EnableNavigationSounds = value;
+                    EnableLowPriorityNotificationSounds = value;
+                    EnableMediumPriorityNotificationSounds = value;
+                    EnableHighPriorityNotificationSounds = value;
+                    EnableAmbientSoundFx = value;
+                    EnableAmbientSoundFxIntense = value;
+                }
+            }
+        }
+        /// <summary>
+        /// Whether to play keyboard cues for each keypress or not
+        /// </summary>
+        public bool EnableKeyboardCues
+        {
+            get => InputTools.globalSettings.KeyboardCues;
+            set
+            {
+                TermReader.GlobalReaderSettings.KeyboardCues = value;
+                InputTools.globalSettings.KeyboardCues = value;
+            }
+        }
+        /// <summary>
+        /// Whether to enable startup sounds or not
+        /// </summary>
+        public bool EnableStartupSounds { get; set; } = true;
+        /// <summary>
+        /// Whether to enable shutdown sounds or not
+        /// </summary>
+        public bool EnableShutdownSounds { get; set; } = true;
+        /// <summary>
+        /// Whether to enable navigation sounds or not
+        /// </summary>
+        public bool EnableNavigationSounds { get; set; }
+        /// <summary>
+        /// Whether to enable the notification sound for low-priority alerts or not
+        /// </summary>
+        public bool EnableLowPriorityNotificationSounds { get; set; } = true;
+        /// <summary>
+        /// Whether to enable the notification sound for medium-priority alerts or not
+        /// </summary>
+        public bool EnableMediumPriorityNotificationSounds { get; set; } = true;
+        /// <summary>
+        /// Whether to enable the notification sound for high-priority alerts or not
+        /// </summary>
+        public bool EnableHighPriorityNotificationSounds { get; set; } = true;
+        /// <summary>
+        /// Whether to play ambient screensaver sound effects or not
+        /// </summary>
+        public bool EnableAmbientSoundFx { get; set; }
+        /// <summary>
+        /// Whether to intensify the ambient screensaver sound effects or not
+        /// </summary>
+        public bool EnableAmbientSoundFxIntense { get; set; }
+        /// <summary>
+        /// Audio cue volume
+        /// </summary>
+        public double AudioCueVolume
+        {
+            get => audioCueVolume;
+            set
+            {
+                audioCueVolume = value;
+                TermReader.GlobalReaderSettings.CueVolume = value;
+                InputTools.globalSettings.CueVolume = value;
+            }
+        }
+        /// <summary>
+        /// Audio cue theme name
+        /// </summary>
+        public string AudioCueThemeName
+        {
+            get => audioCueThemeName;
+            set
+            {
+                audioCueThemeName = AudioCuesTools.GetAudioThemeNames().Contains(value) ? value : "the_mirage";
+                var cue = AudioCuesTools.GetAudioCue();
+                TermReader.GlobalReaderSettings.CueWrite = cue.KeyboardCueTypeStream ?? TermReader.GlobalReaderSettings.CueWrite;
+                TermReader.GlobalReaderSettings.CueRubout = cue.KeyboardCueBackspaceStream ?? TermReader.GlobalReaderSettings.CueRubout;
+                TermReader.GlobalReaderSettings.CueEnter = cue.KeyboardCueEnterStream ?? TermReader.GlobalReaderSettings.CueEnter;
+                InputTools.globalSettings.CueWrite = cue.KeyboardCueTypeStream ?? InputTools.globalSettings.CueWrite;
+                InputTools.globalSettings.CueRubout = cue.KeyboardCueBackspaceStream ?? InputTools.globalSettings.CueRubout;
+                InputTools.globalSettings.CueEnter = cue.KeyboardCueEnterStream ?? InputTools.globalSettings.CueEnter;
+            }
+        }
+        #endregion
+
         #region Misc
         /// <summary>
         /// Enables eyecandy on startup
@@ -1205,17 +1435,9 @@ namespace Nitrocid.Kernel.Configuration.Instances
             set => HexEditShellCommon.autoSaveInterval = value < 0 ? 60 : value;
         }
         /// <summary>
-        /// Wraps the list outputs if it seems too long for the current console geometry
-        /// </summary>
-        public bool WrapListOutputs { get; set; }
-        /// <summary>
         /// Covers the notification with the border
         /// </summary>
         public bool DrawBorderNotification { get; set; } = true;
-        /// <summary>
-        /// Write the filenames of the mods that will not run on startup. When you're finished, write "q". Write a minus sign next to the path to remove an existing mod.
-        /// </summary>
-        public string BlacklistedModsString { get; set; } = "";
         /// <summary>
         /// A character that resembles the upper left corner. Be sure to only input one character
         /// </summary>
@@ -1297,10 +1519,6 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool ShowShellCommandsCount { get; set; } = true;
         /// <summary>
-        /// Show the mod commands count on help
-        /// </summary>
-        public bool ShowModCommandsCount { get; set; } = true;
-        /// <summary>
         /// Show the aliases count on help
         /// </summary>
         public bool ShowShellAliasesCount { get; set; } = true;
@@ -1325,14 +1543,8 @@ namespace Nitrocid.Kernel.Configuration.Instances
         /// </summary>
         public bool InputHistoryEnabled
         {
-            get
-            {
-                return InputTools.globalSettings.HistoryEnabled;
-            }
-            set
-            {
-                InputTools.globalSettings.HistoryEnabled = value;
-            }
+            get => InputTools.globalSettings.HistoryEnabled;
+            set => InputTools.globalSettings.HistoryEnabled = value;
         }
         /// <summary>
         /// Enables the scroll bar in selection screens

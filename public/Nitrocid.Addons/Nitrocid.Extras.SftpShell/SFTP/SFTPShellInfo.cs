@@ -18,22 +18,21 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Shell.ShellBase.Switches;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Switches;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.SftpShell.SFTP.Presets;
 using Nitrocid.Extras.SftpShell.SFTP.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
 
 namespace Nitrocid.Extras.SftpShell.SFTP
 {
     /// <summary>
     /// Common SFTP shell class
     /// </summary>
-    internal class SFTPShellInfo : BaseShellInfo, IShellInfo
+    internal class SFTPShellInfo : BaseShellInfo<SFTPShell>, IShellInfo
     {
-
         /// <summary>
         /// SFTP commands
         /// </summary>
@@ -83,10 +82,7 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                     ])
                 ], new DelCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                [
-                    new CommandArgumentInfo()
-                ], new DetachCommand()),
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
 
             new CommandInfo("get", /* Localizable */ "Downloads remote file to local directory using binary or text",
                 [
@@ -98,6 +94,8 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                         })
                     ])
                 ], new GetCommand()),
+
+            new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager", new IfmCommand()),
 
             new CommandInfo("lsl", /* Localizable */ "Lists local directory",
                 [
@@ -170,15 +168,9 @@ namespace Nitrocid.Extras.SftpShell.SFTP
                     ])
                 ], new PutCommand()),
 
-            new CommandInfo("pwdl", /* Localizable */ "Gets current local directory",
-                [
-                    new CommandArgumentInfo()
-                ], new PwdlCommand()),
+            new CommandInfo("pwdl", /* Localizable */ "Gets current local directory", new PwdlCommand()),
 
-            new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory",
-                [
-                    new CommandArgumentInfo()
-                ], new PwdrCommand()),
+            new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory", new PwdrCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
@@ -192,11 +184,8 @@ namespace Nitrocid.Extras.SftpShell.SFTP
             { "PowerLineBG3", new SftpPowerLineBG3Preset() }
         };
 
-        public override BaseShell ShellBase => new SFTPShell();
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "SFTP";
-
     }
 }

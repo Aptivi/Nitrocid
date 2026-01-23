@@ -21,7 +21,6 @@ using System;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors;
@@ -49,10 +48,10 @@ namespace Nitrocid.ScreensaverPacks.Animations.Fader
             // Check the text
             int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
             int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", vars: [Left, Top]);
             if (Settings.FaderWrite.Length + Left >= ConsoleWrapper.WindowWidth)
             {
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Text length of {0} exceeded window width of {1}.", Settings.FaderWrite.Length + Left, ConsoleWrapper.WindowWidth);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Text length of {0} exceeded window width of {1}.", vars: [Settings.FaderWrite.Length + Left, ConsoleWrapper.WindowWidth]);
                 Left -= Settings.FaderWrite.Length + 1;
             }
 
@@ -60,7 +59,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Fader
             double ThresholdRed = RedColorNum / (double)Settings.FaderMaxSteps;
             double ThresholdGreen = GreenColorNum / (double)Settings.FaderMaxSteps;
             double ThresholdBlue = BlueColorNum / (double)Settings.FaderMaxSteps;
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
 
             // Fade in
             int CurrentColorRedIn = 0;
@@ -70,38 +69,38 @@ namespace Nitrocid.ScreensaverPacks.Animations.Fader
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.FaderMaxSteps);
-                ThreadManager.SleepNoBlock(Settings.FaderDelay, System.Threading.Thread.CurrentThread);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", vars: [CurrentStep, Settings.FaderMaxSteps]);
+                ScreensaverManager.Delay(Settings.FaderDelay);
                 CurrentColorRedIn = (int)Math.Round(CurrentColorRedIn + ThresholdRed);
                 CurrentColorGreenIn = (int)Math.Round(CurrentColorGreenIn + ThresholdGreen);
                 CurrentColorBlueIn = (int)Math.Round(CurrentColorBlueIn + ThresholdBlue);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", vars: [CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn]);
                 if (!ConsoleResizeHandler.WasResized(false))
                     TextWriterWhereColor.WriteWhereColorBack(Settings.FaderWrite, Left, Top, true, new Color(CurrentColorRedIn + ";" + CurrentColorGreenIn + ";" + CurrentColorBlueIn), new Color(Settings.FaderBackgroundColor));
             }
 
             // Wait until fade out
-            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", Settings.FaderFadeOutDelay);
-            ThreadManager.SleepNoBlock(Settings.FaderFadeOutDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", vars: [Settings.FaderFadeOutDelay]);
+            ScreensaverManager.Delay(Settings.FaderFadeOutDelay);
 
             // Fade out
             for (int CurrentStep = 1; CurrentStep <= Settings.FaderMaxSteps; CurrentStep++)
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, Settings.FaderMaxSteps);
-                ThreadManager.SleepNoBlock(Settings.FaderDelay, System.Threading.Thread.CurrentThread);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", vars: [CurrentStep, Settings.FaderMaxSteps]);
+                ScreensaverManager.Delay(Settings.FaderDelay);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
-                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+                DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
                 if (!ConsoleResizeHandler.WasResized(false))
                     TextWriterWhereColor.WriteWhereColorBack(Settings.FaderWrite, Left, Top, true, new Color(CurrentColorRedOut + ";" + CurrentColorGreenOut + ";" + CurrentColorBlueOut), new Color(Settings.FaderBackgroundColor));
             }
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(Settings.FaderDelay, System.Threading.Thread.CurrentThread);
+            ScreensaverManager.Delay(Settings.FaderDelay);
         }
 
     }

@@ -24,6 +24,7 @@ using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Nitrocid.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -44,7 +45,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.WipeBackgroundColor));
+            ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.WipeBackgroundColor));
             ConsoleWrapper.CursorVisible = false;
             TimesWiped = 0;
             ToDirection = WipeDirections.Right;
@@ -63,14 +64,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int BlueColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.WipeMinimumBlueColorLevel, ScreensaverPackInit.SaversConfig.WipeMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", vars: [RedColorNum, GreenColorNum, BlueColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
-                    ColorTools.SetConsoleColorDry(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(ScreensaverPackInit.SaversConfig.WipeMinimumColorLevel, ScreensaverPackInit.SaversConfig.WipeMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Got color ({0})", vars: [ColorNum]);
                 if (!ConsoleResizeHandler.WasResized(false))
-                    ColorTools.SetConsoleColorDry(new Color(ColorNum), true);
+                    ConsoleColoring.SetConsoleColorDry(new Color(ColorNum), true);
             }
 
             // Set max height
@@ -87,10 +88,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             for (int Row = 0; Row <= MaxWindowHeight; Row++)
                             {
                                 if (ConsoleResizeHandler.WasResized(false))
                                     break;
+                                if (ScreensaverManager.Bailing)
+                                    return;
 
                                 // Do the actual writing
                                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", vars: [Row]);
@@ -109,10 +115,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
+
                             for (int Row = 0; Row <= MaxWindowHeight; Row++)
                             {
                                 if (ConsoleResizeHandler.WasResized(false))
                                     break;
+                                if (ScreensaverManager.Bailing)
+                                    return;
 
                                 // Do the actual writing
                                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Setting position to {0}", vars: [Column - 1, Row]);
@@ -131,6 +142,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             if (ConsoleResizeHandler.WasResized(false))
                                 break;
+                            if (ScreensaverManager.Bailing)
+                                return;
 
                             // Do the actual writing
                             DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Setting Y position to {0}", vars: [Row]);
@@ -175,7 +188,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             else
             {
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
-                ColorTools.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.WipeBackgroundColor));
+                ConsoleColoring.LoadBackDry(new Color(ScreensaverPackInit.SaversConfig.WipeBackgroundColor));
             }
 
             ConsoleResizeHandler.WasResized();

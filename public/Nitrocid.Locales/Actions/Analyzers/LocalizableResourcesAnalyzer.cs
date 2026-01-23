@@ -24,8 +24,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Terminaux.Colors.Data;
-using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Locales.Actions.Analyzers
 {

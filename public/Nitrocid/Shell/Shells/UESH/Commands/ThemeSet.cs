@@ -17,21 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles.Choice;
-using Terminaux.Inputs.Styles.Selection;
-using Nitrocid.ConsoleBase.Themes;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Files;
-using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Switches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Textify.General;
-using Terminaux.Inputs.Styles;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Themes;
+using Nitrocid.Files;
+using Nitrocid.Languages;
+using Terminaux.Inputs.Styles;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Switches;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -46,7 +46,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string answer = "";
+            int answer = -1;
             string selectedTheme = "";
             string ThemePath = "";
 
@@ -54,7 +54,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             int step = 1;
             string[] categoryNames = Enum.GetNames(typeof(ThemeCategory));
             int categoryIndex = 0;
-            while (answer != "y" && !bail)
+            while (answer != 0 && !bail)
             {
                 // Selected theme null for now
                 bool proceed = false;
@@ -80,11 +80,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 );
                                 themeCategoryChoices.Add(ici);
                             }
-                            categoryIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a category"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]) - 1;
+                            categoryIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a category"), [.. themeCategoryChoices], [.. themeCategoryAltChoices]);
 
-                            // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
-                            // even if that PromptSelection returned the abovementioned value, so bail if index is -2
-                            if (categoryIndex == -2 || categoryIndex >= categoryNames.Length)
+                            // If the color index is -1, exit.
+                            if (categoryIndex == -1 || categoryIndex >= categoryNames.Length)
                             {
                                 KernelColorTools.LoadBackground();
                                 return 3;
@@ -117,11 +116,10 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                                 );
                                 themeChoices.Add(ici);
                             }
-                            int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), [.. themeChoices], [.. themeAltChoices]) - 1;
+                            int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), [.. themeChoices], [.. themeAltChoices]);
 
-                            // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
-                            // even if that PromptSelection returned the abovementioned value, so bail if index is -2
-                            if (colorIndex == -2)
+                            // If the color index is -1, exit.
+                            if (colorIndex == -1)
                             {
                                 KernelColorTools.LoadBackground();
                                 return 3;
@@ -151,7 +149,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 // Load the theme to the instance
                 ThemePath = FilesystemTools.NeutralizePath(selectedTheme);
                 ThemeInfo Theme;
-                if (Checking.FileExists(ThemePath))
+                if (FilesystemTools.FileExists(ThemePath))
                     Theme = new ThemeInfo(ThemePath);
                 else
                     Theme = ThemeTools.GetThemeInfo(selectedTheme, true);
@@ -162,21 +160,16 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
 
                 // Now, preview the theme
                 ThemePreviewTools.PreviewTheme(Theme);
-                TextWriterRaw.Write();
 
-                // Pause until a key is pressed
-                answer = ChoiceStyle.PromptChoice(
-                    TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme?") + "\n{0}: {1}", selectedTheme, Theme.Localizable ? Translate.DoTranslation(Theme.Description) : Theme.Description),
+                // Let the user decide whether to set the theme or not
+                answer = InfoBoxButtonsColor.WriteInfoBoxButtons(
                     [
-                        ("y", Translate.DoTranslation("Yes, set it!")),
-                        ("n", Translate.DoTranslation("No, don't set it."))
+                        new("y", Translate.DoTranslation("Yes")),
+                        new("n", Translate.DoTranslation("No"))
                     ],
-                    new ChoiceStyleSettings()
-                    {
-                        OutputType = ChoiceOutputType.Modern
-                    }
+                    TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme?") + "\n{0}: {1}", selectedTheme, Theme.Localizable ? Translate.DoTranslation(Theme.Description) : Theme.Description)
                 );
-                if (answer == "n" && parameters.ArgumentsList.Length > 0)
+                if (answer == 1 && parameters.ArgumentsList.Length > 0)
                     bail = true;
             }
 
@@ -184,7 +177,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 return 0;
 
             // User answered yes, so set it
-            if (Checking.FileExists(ThemePath))
+            if (FilesystemTools.FileExists(ThemePath))
                 ThemeTools.ApplyThemeFromFile(ThemePath);
             else
                 ThemeTools.ApplyThemeFromResources(selectedTheme);

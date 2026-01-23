@@ -42,7 +42,8 @@ namespace Nitrocid.Network.Types.RSS
             {
                 try
                 {
-                    var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", Config.MainConfig.RssHeadlineUrl);
+                    var addonType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasRssShell, "Nitrocid.Extras.RssShell.Tools.RSSShellTools");
+                    var Feed = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasRssShell, "GetFirstArticle", addonType, Config.MainConfig.RssHeadlineUrl);
                     if (Feed is (string feedTitle, string articleTitle))
                     {
                         TextWriters.Write(Translate.DoTranslation("Latest news from") + " {0}: ", false, KernelColorType.ListEntry, feedTitle);
@@ -51,13 +52,13 @@ namespace Nitrocid.Network.Types.RSS
                 }
                 catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.AddonManagement)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     TextWriters.Write(Translate.DoTranslation("To be able to get the latest news, you must install the RSS Shell Extras addon. You can use the 'getaddons' command to get all the addons!"), true, KernelColorType.Tip);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     TextWriters.Write(Translate.DoTranslation("Failed to get the latest news."), true, KernelColorType.Error);
                 }

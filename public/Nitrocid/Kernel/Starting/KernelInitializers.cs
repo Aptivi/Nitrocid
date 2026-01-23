@@ -19,38 +19,33 @@
 
 using System;
 using System.IO;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Scripting;
+using Terminaux.Shell.Scripting;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.ConsoleBase;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Kernel.Threading;
-using Nitrocid.Shell.ShellBase.Aliases;
+using Terminaux.Shell.Aliases;
 using Nitrocid.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Misc.Reflection;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Folders;
 using Nitrocid.Misc.Splash;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
 using Nitrocid.Security.Privacy;
-using Nitrocid.Modifications;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Time.Alarm;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Files.Extensions;
 using Nitrocid.Kernel.Journaling;
-using Nitrocid.Files.Operations.Querying;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Kernel.Threading.Watchdog;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Terminaux.Base.Checks;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Network.Types.RPC;
@@ -60,19 +55,49 @@ using Terminaux.Base.Extensions;
 using System.Collections.Generic;
 using System.Text;
 using Nitrocid.Kernel.Exceptions;
-using Terminaux.Writer.FancyWriters;
+using Nitrocid.Files;
+using Textify.Tools.Placeholder;
+using Nitrocid.Users;
+using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Timezones;
+using Nitrocid.Shell.Shells.UESH;
+using Nitrocid.Shell.Shells.Text;
+using Nitrocid.Shell.Shells.Hex;
+using Nitrocid.Shell.Shells.Admin;
+using Nitrocid.Shell.Shells.Debug;
+using Nitrocid.Shell.Shells;
+using Terminaux.Colors;
 
 namespace Nitrocid.Kernel.Starting
 {
     internal static class KernelInitializers
     {
+        internal static readonly List<PlaceInfo> placeholders =
+        [
+            new PlaceInfo("user", (_) => UserManagement.CurrentUser.Username),
+            new PlaceInfo("host", (_) => Config.MainConfig.HostName),
+            new PlaceInfo("currentdirectory", (_) => FilesystemTools.CurrentDir),
+            new PlaceInfo("currentdirectoryname", (_) => !string.IsNullOrEmpty(FilesystemTools.CurrentDir) ? new DirectoryInfo(FilesystemTools.CurrentDir).Name : ""),
+            new PlaceInfo("shortdate", (_) => TimeDateRenderers.RenderDate(FormatType.Short)),
+            new PlaceInfo("longdate", (_) => TimeDateRenderers.RenderDate(FormatType.Long)),
+            new PlaceInfo("shorttime", (_) => TimeDateRenderers.RenderTime(FormatType.Short)),
+            new PlaceInfo("longtime", (_) => TimeDateRenderers.RenderTime(FormatType.Long)),
+            new PlaceInfo("date", (_) => TimeDateRenderers.RenderDate()),
+            new PlaceInfo("time", (_) => TimeDateRenderers.RenderTime()),
+            new PlaceInfo("timezone", (_) => TimeZones.GetCurrentZoneInfo().StandardName),
+            new PlaceInfo("summertimezone", (_) => TimeZones.GetCurrentZoneInfo().DaylightName),
+            new PlaceInfo("dollar", (_) => UserManagement.GetUserDollarSign()),
+            new PlaceInfo("randomfile", (_) => FilesystemTools.GetRandomFileName()),
+            new PlaceInfo("randomfolder", (_) => FilesystemTools.GetRandomFolderName()),
+            new PlaceInfo("rid", (_) => KernelPlatform.GetCurrentRid()),
+            new PlaceInfo("uptime", (_) => PowerManager.KernelUptime),
+        ];
+
         internal static void InitializeCritical()
         {
             try
             {
-                // Check for terminal
-                ConsoleChecker.CheckConsole();
-
                 // Initialize crucial things
                 if (!KernelPlatform.IsOnUnix())
                 {
@@ -88,11 +113,11 @@ namespace Nitrocid.Kernel.Starting
                 AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
 
                 // Check to see if we have an appdata folder for KS
-                if (!Checking.FolderExists(PathsManagement.AppDataPath))
-                    Making.MakeDirectory(PathsManagement.AppDataPath, false);
+                if (!FilesystemTools.FolderExists(PathsManagement.AppDataPath))
+                    FilesystemTools.MakeDirectory(PathsManagement.AppDataPath, false);
 
                 // Set the first time run variable
-                if (Listing.GetFilesystemEntries(PathsManagement.AppDataPath).Length == 0)
+                if (FilesystemTools.GetFilesystemEntries(PathsManagement.AppDataPath).Length == 0)
                     KernelEntry.FirstTime = true;
 
                 // Initialize debug
@@ -119,7 +144,7 @@ namespace Nitrocid.Kernel.Starting
             try
             {
                 // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
-                if (!KernelPlatform.IsOnWindows() && ConsoleTools.UseAltBuffer)
+                if (!KernelPlatform.IsOnWindows() && KernelEntry.UseAltBuffer)
                 {
                     ConsoleMisc.ShowAltBuffer();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
@@ -127,6 +152,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // A title
                 ConsoleMisc.SetTitle(KernelReleaseInfo.ConsoleTitle);
+                ShellManager.InitialTitle = KernelReleaseInfo.ConsoleTitle;
 
                 // Initialize pre-boot splash (if enabled)
                 if (KernelEntry.PrebootSplash)
@@ -147,7 +173,27 @@ namespace Nitrocid.Kernel.Starting
                     KernelEntry.SafeMode = true;
 
                 // Initialize journal path
-                JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Journaling)), PathsManagement.GetKernelPath(KernelPathType.Journaling));
+                JournalManager.JournalPath = FilesystemTools.GetNumberedFileName(Path.GetDirectoryName(PathsManagement.GetKernelPath(KernelPathType.Journaling)), PathsManagement.GetKernelPath(KernelPathType.Journaling));
+
+                // Add the main shells
+                SplashReport.ResetProgressReportArea();
+                if (!ShellManager.ShellTypeExists("Shell"))
+                    ShellManager.RegisterShell("Shell", new UESHShellInfo());
+                if (!ShellManager.ShellTypeExists("TextShell"))
+                    ShellManager.RegisterShell("TextShell", new TextShellInfo());
+                if (!ShellManager.ShellTypeExists("HexShell"))
+                    ShellManager.RegisterShell("HexShell", new HexShellInfo());
+                if (!ShellManager.ShellTypeExists("AdminShell"))
+                    ShellManager.RegisterShell("AdminShell", new AdminShellInfo());
+                if (!ShellManager.ShellTypeExists("DebugShell"))
+                    ShellManager.RegisterShell("DebugShell", new DebugShellInfo());
+
+                // Add the placeholders
+                foreach (var placeholder in placeholders)
+                    PlaceParse.RegisterCustomPlaceholder(placeholder.Placeholder, placeholder.PlaceholderAction);
+
+                // Add the shell completions
+                ShellCommon.RegisterCompletions();
 
                 // Initialize custom languages
                 try
@@ -245,23 +291,31 @@ namespace Nitrocid.Kernel.Starting
                 }
 
                 // Initialize important mods
-                if (Config.MainConfig.StartKernelMods)
+                if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods)) is not null)
                 {
-                    try
+                    var modSettingsInstance = Config.baseConfigurations["ModsConfig"];
+                    var modEnableKey = ConfigTools.GetSettingsKey(modSettingsInstance, "StartKernelMods");
+                    bool startMods = (bool)(ConfigTools.GetValueFromEntry(modEnableKey, modSettingsInstance) ?? false);
+                    var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+                    if (startMods)
                     {
-                        if (KernelEntry.TalkativePreboot)
-                            SplashReport.ReportProgress(Translate.DoTranslation("Loading important mods..."));
-                        ModManager.StartMods(ModLoadPriority.Important);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Loaded important mods.");
-                    }
-                    catch (Exception exc)
-                    {
-                        exceptions.Add(exc);
-                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to load important mods");
-                        DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                        DebugWriter.WriteDebugStackTrace(exc);
-                        if (KernelEntry.TalkativePreboot)
-                            SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load important mods") + $": {exc.Message}");
+                        try
+                        {
+                            // Check for kernel mod addon
+                            if (KernelEntry.TalkativePreboot)
+                                SplashReport.ReportProgress(Translate.DoTranslation("Loading important mods..."));
+                            InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "StartMods", modManagerType, ModLoadPriority.Important);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Loaded important mods.");
+                        }
+                        catch (Exception exc)
+                        {
+                            exceptions.Add(exc);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to load important mods");
+                            DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
+                            DebugWriter.WriteDebugStackTrace(exc);
+                            if (KernelEntry.TalkativePreboot)
+                                SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load important mods") + $": {exc.Message}");
+                        }
                     }
                 }
 
@@ -283,7 +337,7 @@ namespace Nitrocid.Kernel.Starting
 
                 // Show first-time color calibration for first-time run
                 if (KernelEntry.FirstTime)
-                    ConsoleTools.ShowColorRampAndSet();
+                    ConsoleColoring.DetermineTrueColorFromUser();
 
                 // Check for errors
                 if (exceptions.Count > 0)
@@ -357,22 +411,6 @@ namespace Nitrocid.Kernel.Starting
 
                 try
                 {
-                    // Initialize aliases
-                    AliasManager.InitAliases();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded aliases.");
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load aliases");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load aliases") + $": {exc.Message}");
-                }
-
-                try
-                {
                     // Initialize speed dial
                     SpeedDialTools.LoadAll();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded speed dial entries.");
@@ -390,7 +428,7 @@ namespace Nitrocid.Kernel.Starting
                 try
                 {
                     // Load system env vars and convert them
-                    UESHVariables.ConvertSystemEnvironmentVariables();
+                    MESHVariables.ConvertSystemEnvironmentVariables();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
                 }
                 catch (Exception exc)
@@ -433,7 +471,7 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load finalize addons") + $": {exc.Message}");
+                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to finalize addons") + $": {exc.Message}");
                 }
 
                 try
@@ -455,22 +493,6 @@ namespace Nitrocid.Kernel.Starting
 
                 try
                 {
-                    // Load shell command histories
-                    ShellManager.LoadHistories();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded shell command histories.");
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to load shell command histories");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    if (KernelEntry.TalkativePreboot)
-                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load shell command histories") + $": {exc.Message}");
-                }
-
-                try
-                {
                     // Load extension handlers
                     ExtensionHandlerTools.LoadAllHandlers();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded extension handlers.");
@@ -483,6 +505,35 @@ namespace Nitrocid.Kernel.Starting
                     DebugWriter.WriteDebugStackTrace(exc);
                     if (KernelEntry.TalkativePreboot)
                         SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load extension handlers") + $": {exc.Message}");
+                }
+
+                // Initialize mods
+                if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods)) is not null)
+                {
+                    var modSettingsInstance = Config.baseConfigurations["ModsConfig"];
+                    var modEnableKey = ConfigTools.GetSettingsKey(modSettingsInstance, "StartKernelMods");
+                    bool startMods = (bool)(ConfigTools.GetValueFromEntry(modEnableKey, modSettingsInstance) ?? false);
+                    var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+                    if (startMods)
+                    {
+                        try
+                        {
+                            // Check for kernel mod addon
+                            if (KernelEntry.TalkativePreboot)
+                                SplashReport.ReportProgress(Translate.DoTranslation("Loading mods..."));
+                            InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "StartMods", modManagerType, ModLoadPriority.Optional);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Loaded mods.");
+                        }
+                        catch (Exception exc)
+                        {
+                            exceptions.Add(exc);
+                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to load mods");
+                            DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
+                            DebugWriter.WriteDebugStackTrace(exc);
+                            if (KernelEntry.TalkativePreboot)
+                                SplashReport.ReportProgressError(Translate.DoTranslation("Failed to load mods") + $": {exc.Message}");
+                        }
+                    }
                 }
 
                 // Check for errors
@@ -529,22 +580,6 @@ namespace Nitrocid.Kernel.Starting
 
                 try
                 {
-                    // Save shell command histories
-                    ShellManager.SaveHistories();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Saved shell command histories.");
-                    SplashReport.ReportProgress(Translate.DoTranslation("Saved shell command histories."));
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to save shell command histories");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to save shell command histories") + $": {exc.Message}");
-                }
-
-                try
-                {
                     // Save privacy consents
                     PrivacyConsentTools.SaveConsents();
                     DebugWriter.WriteDebug(DebugLevel.I, "Saved privacy consents.");
@@ -575,10 +610,11 @@ namespace Nitrocid.Kernel.Starting
 
                 try
                 {
-                    // Reset languages
+                    // Reset languages and cultures
                     SplashManager.BeginSplashOut(context);
                     LanguageManager.SetLangDry(Config.MainConfig.CurrentLanguage);
                     LanguageManager.currentUserLanguage = LanguageManager.Languages[Config.MainConfig.CurrentLanguage];
+                    CultureManager.currentUserCulture = CultureManager.GetCulturesDictionary()[Config.MainConfig.CurrentCultureName];
                     SplashManager.EndSplashOut(context);
                 }
                 catch (Exception exc)
@@ -639,19 +675,23 @@ namespace Nitrocid.Kernel.Starting
                     }
                 }
 
-                try
+                if (AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasMods)) is not null)
                 {
-                    // Stop all mods
-                    ModManager.StopMods();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Mods stopped");
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop mods");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop mods") + $": {exc.Message}");
+                    try
+                    {
+                        // Stop all mods
+                        var modManagerType = InterAddonTools.GetTypeFromAddon(KnownAddons.ExtrasMods, "Nitrocid.Extras.Mods.Modifications.ModManager");
+                        InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasMods, "StopMods", modManagerType);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Mods stopped");
+                    }
+                    catch (Exception exc)
+                    {
+                        exceptions.Add(exc);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop mods");
+                        DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
+                        DebugWriter.WriteDebugStackTrace(exc);
+                        SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop mods") + $": {exc.Message}");
+                    }
                 }
 
                 try
@@ -782,6 +822,27 @@ namespace Nitrocid.Kernel.Starting
                     SplashReport.ReportProgressError(Translate.DoTranslation("Failed to stop all kernel threads") + $": {exc.Message}");
                 }
 
+                // Remove the main shells
+                SplashReport.ResetProgressReportArea();
+                if (!ShellManager.ShellTypeExists("Shell"))
+                    ShellManager.UnregisterShell("Shell");
+                if (!ShellManager.ShellTypeExists("TextShell"))
+                    ShellManager.UnregisterShell("TextShell");
+                if (!ShellManager.ShellTypeExists("HexShell"))
+                    ShellManager.UnregisterShell("HexShell");
+                if (!ShellManager.ShellTypeExists("AdminShell"))
+                    ShellManager.UnregisterShell("AdminShell");
+                if (!ShellManager.ShellTypeExists("DebugShell"))
+                    ShellManager.UnregisterShell("DebugShell");
+
+                // Remove the placeholders
+                foreach (var placeholder in placeholders)
+                    if (PlaceParse.IsPlaceholderRegistered($"<{placeholder.Placeholder}>"))
+                        PlaceParse.UnregisterCustomPlaceholder($"<{placeholder.Placeholder}>");
+
+                // Remove the shell completions
+                ShellCommon.UnregisterCompletions();
+
                 // Check for errors
                 if (exceptions.Count > 0)
                     throw new KernelException(KernelExceptionType.Environment, Translate.DoTranslation("There were errors when trying to reset components."));
@@ -843,7 +904,7 @@ namespace Nitrocid.Kernel.Starting
                 Exception exception = exceptions[i];
 
                 // Write the exception header
-                string exceptionHeader = $"{Translate.DoTranslation("Exception")} {i}/{exceptions.Count}";
+                string exceptionHeader = $"{Translate.DoTranslation("Exception")} {i + 1}/{exceptions.Count}";
                 exceptionsBuilder.AppendLine(exceptionHeader);
                 exceptionsBuilder.AppendLine(new string('=', ConsoleChar.EstimateCellWidth(exceptionHeader)));
 

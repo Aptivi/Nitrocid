@@ -17,25 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.SftpShell.Commands;
 using Nitrocid.Extras.SftpShell.Settings;
 using Nitrocid.Extras.SftpShell.SFTP;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
-using System;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
+using Terminaux.Shell.Shells;
 using System.Linq;
-using Nitrocid.Extras.SftpShell.Tools.Filesystem;
-using Nitrocid.Extras.SftpShell.Tools.Transfer;
-using Nitrocid.Extras.SftpShell.Tools;
-using Nitrocid.Network.Connections;
-using Renci.SshNet;
 
 namespace Nitrocid.Extras.SftpShell
 {
@@ -59,33 +50,14 @@ namespace Nitrocid.Extras.SftpShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSftpShell);
 
         internal static SftpConfig SftpConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(SftpConfig)) ? (SftpConfig)Config.baseConfigurations[nameof(SftpConfig)] : new SftpConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(SFTPFilesystem.SFTPListRemote), new Func<string, List<string>>(SFTPFilesystem.SFTPListRemote) },
-            { nameof(SFTPFilesystem.SFTPListRemote) + "2", new Func<string, bool, List<string>>(SFTPFilesystem.SFTPListRemote) },
-            { nameof(SFTPFilesystem.SFTPDeleteRemote), new Func<string, bool>(SFTPFilesystem.SFTPDeleteRemote) },
-            { nameof(SFTPFilesystem.SFTPChangeRemoteDir), new Func<string, bool>(SFTPFilesystem.SFTPChangeRemoteDir) },
-            { nameof(SFTPFilesystem.SFTPChangeLocalDir), new Func<string, bool>(SFTPFilesystem.SFTPChangeLocalDir) },
-            { nameof(SFTPFilesystem.SFTPGetCanonicalPath), new Func<string, string>(SFTPFilesystem.SFTPGetCanonicalPath) },
-            { nameof(SFTPTransfer.SFTPGetFile), new Func<string, bool>(SFTPTransfer.SFTPGetFile) },
-            { nameof(SFTPTransfer.SFTPUploadFile), new Func<string, bool>(SFTPTransfer.SFTPUploadFile) },
-            { nameof(SFTPTransfer.SFTPDownloadToString), new Func<string, string>(SFTPTransfer.SFTPDownloadToString) },
-            { nameof(SFTPTools.PromptConnectionInfo), new Func<string, int, string, ConnectionInfo>(SFTPTools.PromptConnectionInfo) },
-            { nameof(SFTPTools.SFTPTryToConnect), new Func<string, NetworkConnection?>(SFTPTools.SFTPTryToConnect) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(SftpConfig)) ? (SftpConfig)Config.baseConfigurations[nameof(SftpConfig)] : Config.GetFallbackKernelConfig<SftpConfig>();
 
         void IAddon.FinalizeAddon()
         {
             var config = new SftpConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("SFTPShell", new SFTPShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            ShellManager.RegisterShell("SFTPShell", new SFTPShellInfo());
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -93,8 +65,8 @@ namespace Nitrocid.Extras.SftpShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterAddonShell("SFTPShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            ShellManager.UnregisterShell("SFTPShell");
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(SftpConfig));
         }
     }

@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Files.Editors.TextEdit;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.Text.Commands
 {

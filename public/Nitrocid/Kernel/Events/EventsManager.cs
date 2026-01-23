@@ -54,17 +54,17 @@ namespace Nitrocid.Kernel.Events
             var Events = new Dictionary<string, object?[]?>();
 
             // Enumerate all the fired events
-            DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "Searching events from search term {0}...", SearchTerm);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "Searching events from search term {0}...", vars: [SearchTerm]);
             foreach (string FiredEvent in FiredEvents.Keys)
             {
                 if (FiredEvent.Contains(SearchTerm))
                 {
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "Got event {0} from search term {1}...", FiredEvent, SearchTerm);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "Got event {0} from search term {1}...", vars: [FiredEvent, SearchTerm]);
                     var EventArguments = FiredEvents[FiredEvent];
                     Events.Add(FiredEvent, EventArguments);
                 }
             }
-            DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "{0} events.", Events.Count);
+            DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "{0} events.", vars: [Events.Count]);
             return Events;
         }
 
@@ -97,12 +97,12 @@ namespace Nitrocid.Kernel.Events
             {
                 try
                 {
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "A mod responded to event {0}...", Event);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.I, "A mod responded to event {0}...", vars: [Event]);
                     handler.Invoke(Params);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                    DebugWriter.WriteDebugConditional(Config.MainConfig.EventDebug, DebugLevel.E, "Error in event handler: {0}", vars: [ex.Message]);
                     DebugWriter.WriteDebugStackTraceConditional(Config.MainConfig.EventDebug, ex);
                 }
             }

@@ -23,10 +23,10 @@ using Nitrocid.Languages;
 using Nitrocid.Network.Transfer;
 using Nitrocid.Users.Login.Widgets;
 using System.Text;
-using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Extras.Stocks.Widgets
@@ -50,8 +50,8 @@ namespace Nitrocid.Extras.Stocks.Widgets
             var displayer = new AlignedText()
             {
                 Top = top + (height / 2),
-                LeftMargin = left,
-                RightMargin = ConsoleWrapper.WindowWidth - (left + width),
+                Left = left,
+                Width = width,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle
@@ -65,9 +65,9 @@ namespace Nitrocid.Extras.Stocks.Widgets
             else
             {
                 // Get the stock info
-                string stocksJson = NetworkTransfer.DownloadString($"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={StocksInit.StocksConfig.StocksCompany}&interval=60min&outputsize=full&apikey={StocksInit.StocksConfig.StocksApiKey}", false);
+                string stocksJson = NetworkTransfer.DownloadString($"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={StocksInit.StocksConfig.StocksCompany}&apikey={StocksInit.StocksConfig.StocksApiKey}", false);
                 var stocksToken = JToken.Parse(stocksJson);
-                var stocksIntervalToken = stocksToken["Time Series (60min)"];
+                var stocksIntervalToken = stocksToken["Time Series (Daily)"];
                 if (stocksIntervalToken is null)
                 {
                     displayer.Text = Translate.DoTranslation("No stock data available.");
@@ -75,13 +75,13 @@ namespace Nitrocid.Extras.Stocks.Widgets
                 }
                 else
                 {
-                    string ianaTimeZone = (string?)stocksToken?["Meta Data"]?["6. Time Zone"] ?? "";
+                    string ianaTimeZone = (string?)stocksToken?["Meta Data"]?["5. Time Zone"] ?? "";
                     string? high = (string?)stocksIntervalToken?.First?.First?["2. high"];
                     string? low = (string?)stocksIntervalToken?.First?.First?["3. low"];
                     displayer.Text =
-                        $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))}H: {ColorTools.RenderSetConsoleColor(ConsoleColors.Lime)}{high}" +
-                        $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))} | L: {ColorTools.RenderSetConsoleColor(ConsoleColors.Red)}{low}" +
-                        $"{ColorTools.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))}";
+                        $"{ConsoleColoring.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))}H: {ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Lime)}{high}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))} | L: {ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red)}{low}" +
+                        $"{ConsoleColoring.RenderSetConsoleColor(KernelColorTools.GetColor(KernelColorType.NeutralText))}";
                     display.Append(displayer.Render());
                     if (top + (height / 2) + 1 <= top + height)
                     {

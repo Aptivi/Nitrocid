@@ -20,19 +20,18 @@
 using System.Collections.Generic;
 using Nitrocid.Extras.MailShell.Mail.Presets;
 using Nitrocid.Extras.MailShell.Mail.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
+using Terminaux.Shell.Arguments;
 
 namespace Nitrocid.Extras.MailShell.Mail
 {
     /// <summary>
     /// Common mail shell class
     /// </summary>
-    internal class MailShellInfo : BaseShellInfo, IShellInfo
+    internal class MailShellInfo : BaseShellInfo<MailShell>, IShellInfo
     {
-
         /// <summary>
         /// Mail commands
         /// </summary>
@@ -49,26 +48,20 @@ namespace Nitrocid.Extras.MailShell.Mail
                     ])
                 ], new CdCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                [
-                    new CommandArgumentInfo()
-                ], new DetachCommand()),
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
 
-            new CommandInfo("lsdirs", /* Localizable */ "Lists directories in your mail address",
-                [
-                    new CommandArgumentInfo()
-                ], new LsDirsCommand()),
+            new CommandInfo("lsdirs", /* Localizable */ "Lists directories in your mail address", new LsDirsCommand()),
 
             new CommandInfo("list", /* Localizable */ "Downloads messages and lists them",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(false, "pageNum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Page number"
                         })
-                    })
+                    ])
                 ], new ListCommand()),
 
             new CommandInfo("mkdir", /* Localizable */ "Makes a directory in the current working directory",
@@ -84,8 +77,8 @@ namespace Nitrocid.Extras.MailShell.Mail
 
             new CommandInfo("mv", /* Localizable */ "Moves a message",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "mailId", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
@@ -95,7 +88,7 @@ namespace Nitrocid.Extras.MailShell.Mail
                         {
                             ArgumentDescription = /* Localizable */ "Mail directory name"
                         })
-                    })
+                    ])
                 ], new MvCommand()),
 
             new CommandInfo("mvall", /* Localizable */ "Moves all messages from recipient",
@@ -115,26 +108,26 @@ namespace Nitrocid.Extras.MailShell.Mail
 
             new CommandInfo("read", /* Localizable */ "Opens a message",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Message ID"
                         })
-                    })
+                    ])
                 ], new ReadCommand()),
 
             new CommandInfo("readenc", /* Localizable */ "Opens an encrypted message",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Message ID"
                         })
-                    })
+                    ])
                 ], new ReadEncCommand()),
 
             new CommandInfo("ren", /* Localizable */ "Renames a folder",
@@ -154,14 +147,14 @@ namespace Nitrocid.Extras.MailShell.Mail
 
             new CommandInfo("rm", /* Localizable */ "Removes a message",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Message ID"
                         })
-                    })
+                    ])
                 ], new RmCommand()),
 
             new CommandInfo("rmall", /* Localizable */ "Removes all messages from recipient",
@@ -186,15 +179,11 @@ namespace Nitrocid.Extras.MailShell.Mail
                     ])
                 ], new RmdirCommand()),
 
-            new CommandInfo("send", /* Localizable */ "Sends a message to an address",
-                [
-                    new CommandArgumentInfo()
-                ], new SendCommand()),
+            new CommandInfo("send", /* Localizable */ "Sends a message to an address", new SendCommand()),
 
-            new CommandInfo("sendenc", /* Localizable */ "Sends an encrypted message to an address",
-                [
-                    new CommandArgumentInfo()
-                ], new SendEncCommand()),
+            new CommandInfo("sendenc", /* Localizable */ "Sends an encrypted message to an address", new SendEncCommand()),
+
+            new CommandInfo("tui", /* Localizable */ "Interactive mail management", new TuiCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
@@ -208,11 +197,8 @@ namespace Nitrocid.Extras.MailShell.Mail
             { "PowerLineBG3", new MailPowerLineBG3Preset() }
         };
 
-        public override BaseShell ShellBase => new MailShell();
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "Mail";
-
     }
 }

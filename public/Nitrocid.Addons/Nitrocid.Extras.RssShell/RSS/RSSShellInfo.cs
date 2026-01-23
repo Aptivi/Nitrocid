@@ -18,22 +18,21 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Shell.ShellBase.Switches;
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Switches;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.RssShell.RSS.Presets;
 using Nitrocid.Extras.RssShell.RSS.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Shell.Prompts;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
+using Terminaux.Shell.Prompts;
 
 namespace Nitrocid.Extras.RssShell.RSS
 {
     /// <summary>
     /// Common RSS shell class
     /// </summary>
-    internal class RSSShellInfo : BaseShellInfo, IShellInfo
+    internal class RSSShellInfo : BaseShellInfo<RSSShell>, IShellInfo
     {
-
         /// <summary>
         /// RSS commands
         /// </summary>
@@ -41,51 +40,36 @@ namespace Nitrocid.Extras.RssShell.RSS
         [
             new CommandInfo("articleinfo", /* Localizable */ "Gets the article info",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Feed number"
                         })
-                    })
+                    ])
                 ], new ArticleInfoCommand()),
 
-            new CommandInfo("bookmark", /* Localizable */ "Bookmarks the feed",
-                [
-                    new CommandArgumentInfo()
-                ], new BookmarkCommand()),
+            new CommandInfo("bookmark", /* Localizable */ "Bookmarks the feed", new BookmarkCommand()),
 
-            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
-                [
-                    new CommandArgumentInfo()
-                ], new DetachCommand()),
+            new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting", new DetachCommand()),
 
-            new CommandInfo("feedinfo", /* Localizable */ "Gets the feed info",
-                [
-                    new CommandArgumentInfo()
-                ], new FeedInfoCommand()),
+            new CommandInfo("feedinfo", /* Localizable */ "Gets the feed info", new FeedInfoCommand()),
 
-            new CommandInfo("list", /* Localizable */ "Lists all feeds",
-                [
-                    new CommandArgumentInfo()
-                ], new ListCommand(), CommandFlags.Wrappable),
+            new CommandInfo("list", /* Localizable */ "Lists all feeds", new ListCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("listbookmark", /* Localizable */ "Lists all bookmarked feeds",
-                [
-                    new CommandArgumentInfo()
-                ], new ListBookmarkCommand(), CommandFlags.Wrappable),
+            new CommandInfo("listbookmark", /* Localizable */ "Lists all bookmarked feeds", new ListBookmarkCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("read", /* Localizable */ "Reads a feed in a web browser",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Feed number"
                         })
-                    })
+                    ])
                 ], new ReadCommand()),
 
             new CommandInfo("search", /* Localizable */ "Searches the feed for a phrase in title and/or description",
@@ -128,10 +112,7 @@ namespace Nitrocid.Extras.RssShell.RSS
                     ])
                 ], new SelFeedCommand(), CommandFlags.Wrappable),
 
-            new CommandInfo("unbookmark", /* Localizable */ "Removes the feed bookmark",
-                [
-                    new CommandArgumentInfo()
-                ], new UnbookmarkCommand()),
+            new CommandInfo("unbookmark", /* Localizable */ "Removes the feed bookmark", new UnbookmarkCommand()),
         ];
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
@@ -145,11 +126,8 @@ namespace Nitrocid.Extras.RssShell.RSS
             { "PowerLineBG3", new RSSPowerLineBG3Preset() }
         };
 
-        public override BaseShell ShellBase => new RSSShell();
-
         public override bool AcceptsNetworkConnection => true;
 
         public override string NetworkConnectionType => "RSS";
-
     }
 }

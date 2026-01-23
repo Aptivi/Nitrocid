@@ -17,20 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 using Nitrocid.Extras.RssShell.RSS;
 using Nitrocid.Extras.RssShell.Settings;
-using Nitrocid.Extras.RssShell.Tools;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Shell.ShellBase.Commands;
-using System;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
+using Terminaux.Shell.Shells;
 using System.Linq;
 
 namespace Nitrocid.Extras.RssShell
@@ -58,32 +53,14 @@ namespace Nitrocid.Extras.RssShell
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasRssShell);
 
         internal static RssConfig RssConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(RssConfig)) ? (RssConfig)Config.baseConfigurations[nameof(RssConfig)] : new RssConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions =>
-            new(new Dictionary<string, Delegate>()
-            {
-                { nameof(RSSShellTools.GetFirstArticle), RSSShellTools.GetFirstArticle },
-                { nameof(RSSShellTools.GetArticles), RSSShellTools.GetArticles },
-                { nameof(RSSShellTools.SearchArticles), RSSShellTools.SearchArticles },
-                { nameof(RSSBookmarkManager.AddRSSFeedToBookmark), new Action(RSSBookmarkManager.AddRSSFeedToBookmark) },
-                { nameof(RSSBookmarkManager.AddRSSFeedToBookmark) + "2", new Action<string>(RSSBookmarkManager.AddRSSFeedToBookmark) },
-                { nameof(RSSBookmarkManager.RemoveRSSFeedFromBookmark), new Action(RSSBookmarkManager.RemoveRSSFeedFromBookmark) },
-                { nameof(RSSBookmarkManager.RemoveRSSFeedFromBookmark) + "2", new Action<string>(RSSBookmarkManager.RemoveRSSFeedFromBookmark) },
-                { nameof(RSSBookmarkManager.GetBookmarks), new Func<List<string>>(RSSBookmarkManager.GetBookmarks) },
-                { nameof(RSSBookmarkManager.GetBookmark), new Func<int, string>(RSSBookmarkManager.GetBookmark) },
-            });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(RssConfig)) ? (RssConfig)Config.baseConfigurations[nameof(RssConfig)] : Config.GetFallbackKernelConfig<RssConfig>();
 
         void IAddon.FinalizeAddon()
         {
             var config = new RssConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellManager.RegisterAddonShell("RSSShell", new RSSShellInfo());
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            ShellManager.RegisterShell("RSSShell", new RSSShellInfo());
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
         }
 
         void IAddon.StartAddon()
@@ -91,8 +68,8 @@ namespace Nitrocid.Extras.RssShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterAddonShell("RSSShell");
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            ShellManager.UnregisterShell("RSSShell");
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(RssConfig));
         }
     }

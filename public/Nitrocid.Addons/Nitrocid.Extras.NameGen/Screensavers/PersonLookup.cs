@@ -18,14 +18,18 @@
 //
 
 using System;
-using Textify.Data.NameGen;
-using Nitrocid.Misc.Screensaver;
-using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Time.Renderers;
+using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.Data.NameGen;
+using Textify.General;
 
 namespace Nitrocid.Extras.NameGen.Screensavers
 {
@@ -36,7 +40,8 @@ namespace Nitrocid.Extras.NameGen.Screensavers
     {
 
         /// <inheritdoc/>
-        public override string ScreensaverName { get; set; } = "PersonLookup";
+        public override string ScreensaverName =>
+            "PersonLookup";
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
@@ -44,7 +49,15 @@ namespace Nitrocid.Extras.NameGen.Screensavers
             base.ScreensaverPreparation();
 
             // Populate the names
-            InfoBoxNonModalColor.WriteInfoBoxColor("Welcome to the database! Fetching identities...", ConsoleColors.Green);
+            var welcomeInfoBox = new InfoBox()
+            {
+                Text = "Welcome to the database! Fetching identities...",
+                Settings = new()
+                {
+                    ForegroundColor = ConsoleColors.Lime
+                }
+            };
+            TextWriterRaw.WriteRaw(welcomeInfoBox.Render());
             NameGenerator.PopulateNames();
         }
 
@@ -86,29 +99,30 @@ namespace Nitrocid.Extras.NameGen.Screensavers
                 string LastName = GeneratedName[(GeneratedName.IndexOf(" ") + 1)..];
 
                 // Print all information
-                ConsoleWrapper.Clear();
-                InfoBoxNonModalColor.WriteInfoBoxColor(
-                    "- Name:                  {0}\n" +
-                   $"{new string('=', $"- Name:                  {GeneratedName}".Length)}\n" +
-                    "\n" +
-                    "  - First Name:          {1}\n" +
-                    "  - Last Name / Surname: {2}\n" +
-                    "  - Age:                 {3} years old\n" +
-                    "  - Birth date:          {4}\n",
-
-                    // We don't want to wait for input as we're on the screensaver environment.
-                    ConsoleColors.Green,
-
-                    // Necessary variables to print
-                    [GeneratedName, FirstName, LastName, FinalAge, TimeDateRenderers.Render(Birthdate)]
-                );
+                ThemeColorsTools.LoadBackground();
+                string header = ListEntryWriterColor.RenderListEntry("Name", GeneratedName);
+                var infoBox = new InfoBox()
+                {
+                    Text =
+                        header + "\n" +
+                        new string('=', ConsoleChar.EstimateCellWidth(header)) + "\n\n" +
+                        ListEntryWriterColor.RenderListEntry("First Name", FirstName) + "\n" +
+                        ListEntryWriterColor.RenderListEntry("Last Name / Surname", LastName) + "\n" +
+                        ListEntryWriterColor.RenderListEntry("Age", "{0} years old".FormatString(FinalAge)) + "\n" +
+                        ListEntryWriterColor.RenderListEntry("Birth date", TimeDateRenderers.Render(Birthdate)),
+                    Settings = new InfoBoxSettings()
+                    {
+                        ForegroundColor = ConsoleColors.Lime
+                    }
+                };
+                TextWriterRaw.WriteRaw(infoBox.Render());
 
                 // Lookup delay
-                ThreadManager.SleepNoBlock(NameGenInit.SaversConfig.PersonLookupDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ScreensaverManager.Delay(NameGenInit.SaversConfig.PersonLookupDelay);
             }
 
             // Wait until we run the lookup again
-            ThreadManager.SleepNoBlock(NameGenInit.SaversConfig.PersonLookupLookedUpDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(NameGenInit.SaversConfig.PersonLookupLookedUpDelay);
         }
 
     }

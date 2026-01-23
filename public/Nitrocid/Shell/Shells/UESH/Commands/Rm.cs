@@ -18,9 +18,8 @@
 //
 
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
 using Nitrocid.Security.Permissions;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {
@@ -39,7 +38,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             foreach (string Path in parameters.ArgumentsList)
             {
                 string NeutPath = FilesystemTools.NeutralizePath(Path);
-                Removing.RemoveFileOrDir(NeutPath);
+                FilesystemTools.RemoveFileOrDir(NeutPath);
             }
             return 0;
         }

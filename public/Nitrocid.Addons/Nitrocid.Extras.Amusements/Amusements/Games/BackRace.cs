@@ -32,10 +32,13 @@ using Terminaux.Colors.Data;
 using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Inputs;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Colors.Transformation;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -94,14 +97,13 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         Left = boxLeft,
                         Top = height,
-                        InteriorWidth = boxWidth,
-                        InteriorHeight = 1,
+                        Width = boxWidth,
+                        Height = 1,
                         Color = finalColor
                     };
                     var progress = new SimpleProgress(horse.HorseProgress, 100)
                     {
-                        LeftMargin = 5,
-                        RightMargin = 5,
+                        Width = ConsoleWrapper.WindowWidth - 10,
                         ProgressActiveForegroundColor = finalColor,
                         ProgressForegroundColor = TransformationTools.GetDarkBackground(finalColor),
                     };
@@ -109,7 +111,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         TextWriterWhereColor.RenderWhereColor(Translate.DoTranslation("Horse") + $" {horse.HorseNumber}", 1, height - 1, finalColor) +
                         border.Render() +
                         TextWriterWhereColor.RenderWhereColor("🐎", 2, height + 1, finalColor) +
-                        ContainerTools.RenderRenderable(progress, new(progressLeft, height + 1))
+                        RendererTools.RenderRenderable(progress, new(progressLeft, height + 1))
                     );
                 }
 
@@ -134,7 +136,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         .ToArray();
                     List<string> positions = [];
                     for (int i = 0; i < horsesSorted.Length; i++)
-                        positions.Add($"{ColorTools.RenderSetConsoleColor(color)}#{i + 1}: {ColorTools.RenderSetConsoleColor(horsesSorted[i].HorseColor)}{Translate.DoTranslation("Horse")} {horsesSorted[i].HorseNumber}{ColorTools.RenderSetConsoleColor(color)}");
+                        positions.Add($"{ConsoleColoring.RenderSetConsoleColor(color)}#{i + 1}: {ConsoleColoring.RenderSetConsoleColor(horsesSorted[i].HorseColor)}{Translate.DoTranslation("Horse")} {horsesSorted[i].HorseNumber}{ConsoleColoring.RenderSetConsoleColor(color)}");
                     alignedText.Text = string.Join(" | ", positions);
                 }
                 builder.Append(
@@ -177,7 +179,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // If the user chose the same horse that won, congratulate the user.
                     if (selected == winner)
                     {
-                        InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Your horse won the race!"), KernelColorTools.GetColor(KernelColorType.Success));
+                        InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Your horse won the race!"), new InfoBoxSettings()
+                        {
+                            ForegroundColor = KernelColorTools.GetColor(KernelColorType.Success),
+                        });
                         ConsoleWrapper.Clear();
                         ResetAll();
                     }

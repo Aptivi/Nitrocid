@@ -28,10 +28,9 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Power;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Screensaver;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Terminaux.Base;
 using Nitrocid.Users.Login.Motd;
-using Terminaux.Writer.CyclicWriters;
 
 namespace Nitrocid.Users.Login.Handlers
 {
@@ -54,7 +53,7 @@ namespace Nitrocid.Users.Login.Handlers
             }
 
             // Show MOTD once
-            DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, Config.MainConfig.ShowMOTD);
+            DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", vars: [ShowMOTDOnceFlag, Config.MainConfig.ShowMOTD]);
             if (ShowMOTDOnceFlag && Config.MainConfig.ShowMOTD)
             {
                 // This is not going to happen when the modern logon is enabled.

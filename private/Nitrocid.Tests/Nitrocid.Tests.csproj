@@ -61,7 +61,7 @@
 
   <ItemGroup>
     <PackageReference Include="Shouldly" Version="4.3.0" />
-    <PackageReference Include="Terminaux" Version="6.1.35" />
+    <PackageReference Include="Terminaux" Version="8.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,6 +74,18 @@
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Copy SourceFiles="..\..\public\Nitrocid.Addons\Nitrocid.ThemePacks\Resources\Themes\Hacker.json" DestinationFolder="TestData"></Copy>
   </Target>
+  
+  <!--
+      WARNING: Make sure that you put new addons into the project dependencies of N.Tests in the solution itself!
+      Otherwise, N.Tests will fail to load some addons!
+      
+      For new addons, follow these steps in VS:
+      
+        1. Right click on solution -> Project Dependencies
+        2. Projects: Nitrocid.Tests
+        3. Place a checkbox next to new addon
+        4. Click OK and build
+  -->
   <ItemGroup>
     <AddonsFolders Include="..\..\public\Nitrocid\KSBuild\$(TargetFramework)\Addons\**\*.*" />
     <AddonsEssentialsFolders Include="..\..\public\Nitrocid\KSBuild\$(TargetFramework)\Addons.Essentials\**\*.*" />

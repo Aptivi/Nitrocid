@@ -17,16 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
+using Terminaux.Shell.Arguments;
 using Nitrocid.Extras.Calculators.Commands;
-using Nitrocid.Shell.ShellBase.Commands;
-using System;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
+using Terminaux.Shell.Shells;
 using System.Linq;
 
 namespace Nitrocid.Extras.Calculators
@@ -48,8 +44,8 @@ namespace Nitrocid.Extras.Calculators
 
             new CommandInfo("imaginary", /* Localizable */ "Show information about the imaginary number formula specified by a specified real and imaginary number",
                 [
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
                         {
                             IsNumeric = true,
@@ -60,24 +56,18 @@ namespace Nitrocid.Extras.Calculators
                             IsNumeric = true,
                             ArgumentDescription = /* Localizable */ "Imaginary number"
                         }),
-                    })
+                    ])
                 ], new ImaginaryCommand()),
         ];
 
         string IAddon.AddonName =>
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalculators);
 
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => null;
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
-
         void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
 
         void IAddon.StopAddon() =>
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
 
         void IAddon.FinalizeAddon()
         { }

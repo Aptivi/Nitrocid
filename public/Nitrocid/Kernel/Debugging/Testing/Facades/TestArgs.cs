@@ -17,11 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Shells;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Shells;
 using Nitrocid.ConsoleBase.Writers;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
@@ -30,11 +28,10 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests arguments");
         public override TestSection TestSection => TestSection.Shell;
-        public override int TestOptionalParameters => 1;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string command = args.Length > 0 ? args[0] : "help shutdown";
-            string[] ListArgsOnly = ArgumentsParser.ParseShellCommandArguments(command, ShellType.Shell).total[0].ArgumentsList;
+            string command = "help shutdown";
+            string[] ListArgsOnly = ArgumentsParser.ParseShellCommandArguments(command, "Shell").total[0].ArgumentsList;
             TextWriters.WriteList(ListArgsOnly);
         }
     }

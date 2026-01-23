@@ -27,12 +27,13 @@ using FluentFTP;
 using FluentFTP.Helpers;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.FtpShell.FTP;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
 {
@@ -48,7 +49,8 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
         /// <param name="Path">Path to folder</param>
         /// <returns>The list if successful; null if unsuccessful</returns>
         /// <exception cref="InvalidOperationException"></exception>
-        public static List<string> FTPListRemote(string Path) => FTPListRemote(Path, FTPShellCommon.FtpShowDetailsInList);
+        public static List<string> FTPListRemote(string Path) =>
+            FTPListRemote(Path, FTPShellCommon.FtpShowDetailsInList);
 
         /// <summary>
         /// Lists remote folders and files
@@ -98,7 +100,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
                                 EntryBuilder.Append(": ");
                                 FileSize = instance.GetFileSize(finalDirListFTP.FullName);
                                 ModDate = instance.GetModifiedTime(finalDirListFTP.FullName);
-                                EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground +
+                                EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground() +
                                     $"{FileSize.SizeString()} | {Translate.DoTranslation("Modified on")} {ModDate}");
                             }
                         }
@@ -126,27 +128,27 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool FTPDeleteRemote(string Target)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", Target);
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleting {0}...", vars: [Target]);
 
             // Delete a file or folder
             var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
                 throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
             if (instance.FileExists(Target))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file.", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a file.", vars: [Target]);
                 instance.DeleteFile(Target);
             }
             else if (instance.DirectoryExists(Target))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder.", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} is a folder.", vars: [Target]);
                 instance.DeleteDirectory(Target);
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", Target);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not found.", vars: [Target]);
                 throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("{0} is not found in the server."), Target);
             }
-            DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", Target);
+            DebugWriter.WriteDebug(DebugLevel.I, "Deleted {0}", vars: [Target]);
             return true;
         }
 
@@ -193,10 +195,10 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
             if (!string.IsNullOrEmpty(Directory))
             {
                 string targetDir;
-                targetDir = $"{FTPShellCommon.FtpCurrentDirectory}/{Directory}";
+                targetDir = FilesystemTools.NeutralizePath(Directory, FTPShellCommon.FtpCurrentDirectory);
 
                 // Check if folder exists
-                if (Checking.FolderExists(targetDir))
+                if (FilesystemTools.FolderExists(targetDir))
                 {
                     // Parse written directory
                     var parser = new DirectoryInfo(targetDir);
@@ -229,14 +231,14 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
 
             // Begin the moving process
             string SourceFile = Source.Split('/').Last();
-            DebugWriter.WriteDebug(DebugLevel.I, "Moving from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
+            DebugWriter.WriteDebug(DebugLevel.I, "Moving from {0} to {1} with the source file of {2}...", vars: [Source, Target, SourceFile]);
             if (instance.DirectoryExists(Source))
                 Success = instance.MoveDirectory(Source, Target);
             else if (instance.FileExists(Source) & instance.DirectoryExists(Target))
                 Success = instance.MoveFile(Source, Target + SourceFile);
             else if (instance.FileExists(Source))
                 Success = instance.MoveFile(Source, Target);
-            DebugWriter.WriteDebug(DebugLevel.I, "Moved. Result: {0}", Success);
+            DebugWriter.WriteDebug(DebugLevel.I, "Moved. Result: {0}", vars: [Success]);
             return Success;
         }
 
@@ -256,7 +258,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
 
             // Begin the copying process
             string SourceFile = Source.Split('/').Last();
-            DebugWriter.WriteDebug(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile);
+            DebugWriter.WriteDebug(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", vars: [Source, Target, SourceFile]);
             if (instance.DirectoryExists(Source))
             {
                 instance.DownloadDirectory(PathsManagement.TempPath + "/FTPTransfer", Source);
@@ -286,7 +288,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
                 {
                     if (FileResult.IsFailed)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Transfer for {0} failed: {1}", FileResult.Name, FileResult.Exception.Message);
+                        DebugWriter.WriteDebug(DebugLevel.E, "Transfer for {0} failed: {1}", vars: [FileResult.Name, FileResult.Exception.Message]);
                         DebugWriter.WriteDebugStackTrace(FileResult.Exception);
                         Success = false;
                     }
@@ -300,7 +302,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
                     Success = false;
                 }
             }
-            DebugWriter.WriteDebug(DebugLevel.I, "Copied. Result: {0}", Success);
+            DebugWriter.WriteDebug(DebugLevel.I, "Copied. Result: {0}", vars: [Success]);
             return Success;
         }
 
@@ -321,7 +323,7 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error setting permissions ({0}) to file {1}: {2}", Chmod, Target, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error setting permissions ({0}) to file {1}: {2}", vars: [Chmod, Target, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
@@ -348,5 +350,54 @@ namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if an FTP file or directory exists
+        /// </summary>
+        /// <param name="name">Path to file or directory</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool FTPExists(string name) =>
+            FTPFileExists(name) || FTPDirectoryExists(name);
+
+        /// <summary>
+        /// Checks to see if an FTP file exists
+        /// </summary>
+        /// <param name="name">Path to file</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool FTPFileExists(string name)
+        {
+            try
+            {
+                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                return instance.FileExists(name);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error getting file state {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks to see if an FTP directory exists
+        /// </summary>
+        /// <param name="name">Path to file</param>
+        /// <returns>True if found; False otherwise</returns>
+        public static bool FTPDirectoryExists(string name)
+        {
+            try
+            {
+                var instance = (FtpClient?)FTPShellCommon.ClientFTP?.ConnectionInstance ??
+                    throw new KernelException(KernelExceptionType.FTPShell, Translate.DoTranslation("There is no FTP client yet."));
+                return instance.DirectoryExists(name);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Error getting file state {0}: {1}", vars: [name, ex.Message]);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return false;
+        }
     }
 }

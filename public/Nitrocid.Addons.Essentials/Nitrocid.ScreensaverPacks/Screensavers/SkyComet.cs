@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -45,7 +46,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Get random stars
             UpdateStars();
-            ColorTools.LoadBackDry(new Color(0, 0, 0));
+            ConsoleColoring.LoadBackDry(new Color(0, 0, 0));
         }
 
         /// <inheritdoc/>
@@ -80,6 +81,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     int currentPosX = launchX - j;
                     int currentPosY = (int)(launchY - (thresholdY * j));
@@ -87,6 +90,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         break;
                     coveredPositions.Add((currentPosX, currentPosY));
                     TextWriterWhereColor.WriteWhereColorBack(starChar, currentPosX, currentPosY, ConsoleColors.LightSkyBlue1, new Color(0, 0, 0));
+                    ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SkyCometDelay);
                 }
 
                 // Finally, fade out
@@ -101,6 +105,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Fade out to black by getting its threshold
                     RefreshStars();
@@ -112,6 +118,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     // Actually print things out
                     foreach (var pos in coveredPositions)
                         TextWriterWhereColor.WriteWhereColorBack(starChar, pos.Item1, pos.Item2, result, new Color(0, 0, 0));
+                    ScreensaverManager.Delay(ScreensaverPackInit.SaversConfig.SkyCometDelay);
                 }
             }
 
@@ -152,6 +159,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
 
                 // Get the position and write it
                 int left = star.left;

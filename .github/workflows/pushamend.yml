@@ -53,8 +53,8 @@ jobs:
           
       - name: Download original source
         run: |
-          wget --output-document=../nitrocid-25_3.0.25.526-0.1.0.67.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/nitrocid/+sourcefiles/nitrocid-25/3.0.25.526-0.1.0.67/nitrocid-25_3.0.25.526-0.1.0.67.orig.tar.xz
-          tar xf ../nitrocid-25_3.0.25.526-0.1.0.67.orig.tar.xz .
+          wget --output-document=../nitrocid-25_3.0.25.584-0.1.0.67.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/nitrocid/+sourcefiles/nitrocid-25/3.0.25.584-0.1.0.67/nitrocid-25_3.0.25.584-0.1.0.67.orig.tar.xz
+          tar xf ../nitrocid-25_3.0.25.584-0.1.0.67.orig.tar.xz .
           mv .github ..
 
       - name: Build source package

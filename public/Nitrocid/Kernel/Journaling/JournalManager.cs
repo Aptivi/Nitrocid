@@ -20,8 +20,7 @@
 using Newtonsoft.Json;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Files.Paths;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
@@ -67,13 +66,13 @@ namespace Nitrocid.Kernel.Journaling
             lock (journalLock)
             {
                 // If we don't have the target journal file, create it
-                if (!Checking.FileExists(JournalPath))
+                if (!FilesystemTools.FileExists(JournalPath))
                     SaveJournals();
-                DebugWriter.WriteDebug(DebugLevel.I, "Opening journal {0}...", JournalPath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Opening journal {0}...", vars: [JournalPath]);
 
                 // Make a new journal entry and store everything in it
                 Message = TextTools.FormatString(Message, Vars);
-                DebugWriter.WriteDebug(DebugLevel.I, "Journal message {0}, status {1}.", Message, Status.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Journal message {0}, status {1}.", vars: [Message, Status.ToString()]);
                 var JournalEntry = new JournalEntry()
                 {
                     date = TimeDateRenderers.RenderDate(FormatType.Short),
@@ -120,11 +119,11 @@ namespace Nitrocid.Kernel.Journaling
 
             // Now, formulate a valid journal path and check it for existence
             string journalPath = PathsManagement.JournalingPath.Insert(PathsManagement.JournalingPath.Length - 5, $"-{sessionNum}");
-            if (!Checking.FileExists(journalPath))
+            if (!FilesystemTools.FileExists(journalPath))
                 throw new KernelException(KernelExceptionType.Journaling, Translate.DoTranslation("Journal file '{0}' doesn't exist."), journalPath);
 
             // Assuming that the file exists (guarded by the above check), deserialize the contents
-            string entriesValue = Reading.ReadContentsText(journalPath);
+            string entriesValue = FilesystemTools.ReadContentsText(journalPath);
             JournalEntry[] entries = JsonConvert.DeserializeObject<JournalEntry[]>(entriesValue) ??
                 throw new KernelException(KernelExceptionType.Journaling, Translate.DoTranslation("Can't get journal entries"));
 
@@ -170,7 +169,7 @@ namespace Nitrocid.Kernel.Journaling
         /// Saves the journals
         /// </summary>
         public static void SaveJournals() =>
-            Writing.WriteContentsText(JournalPath, JsonConvert.SerializeObject(journalEntries, Formatting.Indented));
+            FilesystemTools.WriteContentsText(JournalPath, JsonConvert.SerializeObject(journalEntries, Formatting.Indented));
 
     }
 }

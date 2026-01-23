@@ -29,10 +29,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Checks to see if the translatable string exists in the KS resources");
         public override TestSection TestSection => TestSection.Languages;
-        public override int TestOptionalParameters => 1;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string Text = args.Length > 0 ? args[0] : "";
+            string Text = "";
             if (string.IsNullOrEmpty(Text))
                 Text = InputTools.ReadLine(Translate.DoTranslation("Write a translatable string to check:") + " ");
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;

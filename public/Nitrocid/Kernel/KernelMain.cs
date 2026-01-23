@@ -25,7 +25,6 @@ using Textify.Versioning;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.ConsoleBase;
 using Nitrocid.Arguments;
-using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Starting;
@@ -33,13 +32,13 @@ using Nitrocid.Kernel.Starting.Environment;
 using Nitrocid.Users.Windows;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Arguments.Help;
 using Nitrocid.Kernel.Power;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Writer.ConsoleWriters;
 using Aptivestigate.CrashHandler;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Kernel
 {
@@ -93,27 +92,8 @@ namespace Nitrocid.Kernel
                 // Run unhandled crash handler
                 CrashTools.InstallCrashHandler();
 
-                // Show help prior to starting the kernel if help is passed
-                if (ArgumentParse.IsArgumentPassed(Args, "help"))
-                {
-                    // Kernel arguments
-                    TextWriters.Write(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
-                    ArgumentHelpPrint.ShowArgsHelp();
-                    PowerManager.hardShutdown = true;
-                    PowerManager.KernelShutdown = true;
-                }
-                else if (ArgumentParse.IsArgumentPassed(Args, "version"))
-                {
-                    TextWriterRaw.WritePlain(VersionFullStr);
-                    PowerManager.hardShutdown = true;
-                    PowerManager.KernelShutdown = true;
-                }
-                else if (ArgumentParse.IsArgumentPassed(Args, "apiversion"))
-                {
-                    TextWriterRaw.WritePlain($"{ApiVersion}");
-                    PowerManager.hardShutdown = true;
-                    PowerManager.KernelShutdown = true;
-                }
+                // Show help / version prior to starting the kernel if help / version is passed
+                ArgumentParse.ParseArguments(Args, KernelArguments.outArgs);
 
                 // This is a kernel entry point
                 EnvironmentTools.kernelArguments = Args;
@@ -167,23 +147,29 @@ namespace Nitrocid.Kernel
 
                 // If "No APM" is enabled, simply print the text
                 if (Config.MainConfig.SimulateNoAPM)
-                    InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("It's now safe to turn off your computer."), KernelColorTools.GetColor(KernelColorType.Success));
+                    InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("It's now safe to turn off your computer."), new InfoBoxSettings()
+                    {
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.Success),
+                    });
             }
             catch (Exception ex)
             {
-                InfoBoxModalColor.WriteInfoBoxModalColor(Translate.DoTranslation("Nitrocid KS has detected a problem and it has been shut down.") + $" {ex.Message}", KernelColorTools.GetColor(KernelColorType.Error));
+                InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Nitrocid KS has detected a problem and it has been shut down.") + $" {ex.Message}", new InfoBoxSettings()
+                {
+                    ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
+                });
             }
             finally
             {
                 // Load main buffer
-                if (!KernelPlatform.IsOnWindows() && ConsoleTools.UseAltBuffer && ConsoleMisc.IsOnAltBuffer && !PowerManager.hardShutdown)
+                if (!KernelPlatform.IsOnWindows() && KernelEntry.UseAltBuffer && ConsoleMisc.IsOnAltBuffer && !PowerManager.hardShutdown)
                     ConsoleMisc.ShowMainBuffer();
 
                 // Reset colors and clear the console
                 if (!PowerManager.hardShutdown)
                     ConsoleClearing.ResetAll();
                 else
-                    ConsoleTools.ResetColors();
+                    KernelColorTools.ResetColors();
 
                 // Reset cursor state
                 ConsoleWrapper.CursorVisible = true;

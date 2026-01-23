@@ -18,7 +18,7 @@
 //
 
 using System.Collections.Generic;
-using Nitrocid.Files.Operations;
+using Nitrocid.Files;
 using Nitrocid.Languages;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
@@ -107,7 +107,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 string language = translatedLine.Key;
                 List<string> localizations = translatedLine.Value;
                 string languagePath = $"{pathToTranslations}/{language}.txt";
-                Writing.WriteContents(languagePath, [.. localizations]);
+                FilesystemTools.WriteContents(languagePath, [.. localizations]);
             }
             InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Done! Please use the Nitrocid.Locales application with appropriate arguments to finalize the languages. You can use this path:") + $" {pathToTranslations}");
         }

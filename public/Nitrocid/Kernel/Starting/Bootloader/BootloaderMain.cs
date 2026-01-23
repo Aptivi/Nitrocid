@@ -52,7 +52,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader
             catch (Exception ex)
             {
                 // Failure in the bootloader
-                DebugWriter.WriteDebug(DebugLevel.E, "Bootloader has failed: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Bootloader has failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("GRILO has experienced an internal error") + ": {0}", ex.Message);
                 TextWriterColor.Write(Translate.DoTranslation("Press any key to exit."));
@@ -105,7 +105,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader
                 ConsoleKeyInfo cki;
                 if (timeout > 0 && BootloaderState.WaitingForFirstBootKey)
                 {
-                    var result = Input.ReadKeyTimeout(true, TimeSpan.FromSeconds(Config.MainConfig.BootSelectTimeoutSeconds));
+                    var result = Input.ReadKeyTimeout(TimeSpan.FromSeconds(Config.MainConfig.BootSelectTimeoutSeconds));
                     if (!result.provided)
                         cki = new('\x0A', ConsoleKey.Enter, false, false, false);
                     else
@@ -114,7 +114,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader
                 else
                     cki = Input.ReadKey();
                 BootloaderState.waitingForFirstBootKey = false;
-                DebugWriter.WriteDebug(DebugLevel.I, "Key pressed: {0}", cki.Key.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Key pressed: {0}", vars: [cki.Key.ToString()]);
                 switch (cki.Key)
                 {
                     case ConsoleKey.UpArrow:
@@ -125,7 +125,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader
                         if (chosenBootEntry < 0)
                         {
                             chosenBootEntry = bootApps.Count - 1;
-                            DebugWriter.WriteDebug(DebugLevel.I, "We're at the beginning! Chosen boot entry is now {0}", chosenBootEntry);
+                            DebugWriter.WriteDebug(DebugLevel.I, "We're at the beginning! Chosen boot entry is now {0}", vars: [chosenBootEntry]);
                         }
                         break;
                     case ConsoleKey.DownArrow:
@@ -136,7 +136,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader
                         if (chosenBootEntry > bootApps.Count - 1)
                         {
                             chosenBootEntry = 0;
-                            DebugWriter.WriteDebug(DebugLevel.I, "We're at the ending! Chosen boot entry is now {0}", chosenBootEntry);
+                            DebugWriter.WriteDebug(DebugLevel.I, "We're at the ending! Chosen boot entry is now {0}", vars: [chosenBootEntry]);
                         }
                         break;
                     case ConsoleKey.Home:
@@ -216,7 +216,7 @@ namespace Nitrocid.Kernel.Starting.Bootloader
             {
                 string chosenBootName = BootManager.GetBootAppNameByIndex(chosenBootEntry);
                 var chosenBootApp = BootManager.GetBootApp(chosenBootName);
-                DebugWriter.WriteDebug(DebugLevel.I, "Boot name {0} at index {1}", chosenBootName, chosenBootEntry);
+                DebugWriter.WriteDebug(DebugLevel.I, "Boot name {0} at index {1}", vars: [chosenBootName, chosenBootEntry]);
 
                 // Check the environment
                 if (chosenBootApp == EnvironmentTools.mainEnvironment)
@@ -232,8 +232,8 @@ namespace Nitrocid.Kernel.Starting.Bootloader
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Unknown boot failure: {0}", ex.Message);
-                DebugWriter.WriteDebug(DebugLevel.E, "Stack trace:\n{0}", ex.StackTrace);
+                DebugWriter.WriteDebug(DebugLevel.E, "Unknown boot failure: {0}", vars: [ex.Message]);
+                DebugWriter.WriteDebug(DebugLevel.E, "Stack trace:\n{0}", vars: [ex.StackTrace]);
             }
         }
     }

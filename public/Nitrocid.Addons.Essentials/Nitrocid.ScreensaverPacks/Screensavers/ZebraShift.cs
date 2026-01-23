@@ -101,7 +101,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var color = useOther ? finalSecondColor : finalFirstColor;
 
                 // Fill the line vertically
-                zebraBuffer.Append(color.VTSequenceBackground);
+                zebraBuffer.Append(color.VTSequenceBackground());
                 for (int y = 0; y < height; y++)
                 {
                     zebraBuffer.Append(

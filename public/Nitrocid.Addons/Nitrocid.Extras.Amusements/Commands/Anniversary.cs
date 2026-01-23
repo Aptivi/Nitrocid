@@ -21,7 +21,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Presentation;
 using Terminaux.Inputs.Presentation.Elements;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 
@@ -71,7 +71,7 @@ namespace Nitrocid.Extras.Amusements.Commands
                                 [
                                     Translate.DoTranslation("This version now refines the kernel to the point that it no longer behaves like the old versions.") + " " +
                                     Translate.DoTranslation("Because the new groundbreaking features got released, we decided to name this kernel...") + " \n\n" +
-                                    new Color(ConsoleColors.Green3Alt).VTSequenceForeground + "Nitrocid KS 0.1.0!\n\n" + KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                                    new Color(ConsoleColors.Green3Alt).VTSequenceForeground() + "Nitrocid KS 0.1.0!\n\n" + KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground() +
                                     "< " + Translate.DoTranslation("Happy 5-year anniversary!") + " >\n\n" +
                                     "-- Aptivi"
                                 ]

@@ -111,7 +111,7 @@ namespace Nitrocid.Locales.Serializer
             string fileName = target.LanguageName;
             string outputFolder =
                 !copyToResources ? $"{pathToTranslations}/Output" :
-                fileName != "eng" ? Path.GetFullPath("../../../Nitrocid.Addons/Nitrocid.LanguagePacks/Resources/Languages") :
+                fileName != "eng" ? Path.GetFullPath("../../../Nitrocid.Addons.Essentials/Nitrocid.LanguagePacks/Resources/Languages") :
                 Path.GetFullPath("../../Resources/Languages");
 
             // Check to see if the output folder exists
@@ -137,7 +137,7 @@ namespace Nitrocid.Locales.Serializer
             string fileName = target.LanguageName;
             string outputFolder =
                 !copyToResources ? $"{pathToTranslations}/Output" :
-                fileName != "eng" ? Path.GetFullPath("../../../Nitrocid.Addons/Nitrocid.LanguagePacks/Resources/Languages") :
+                fileName != "eng" ? Path.GetFullPath("../../../Nitrocid.Addons.Essentials/Nitrocid.LanguagePacks/Resources/Languages") :
                 Path.GetFullPath("../../Resources/Languages");
 
             // Check to see if the metadata file exists

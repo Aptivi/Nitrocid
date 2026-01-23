@@ -23,7 +23,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Extras.SqlShell.Tools;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
 using Textify.General;
 using Nitrocid.ConsoleBase.Inputs;

@@ -17,8 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using System.Collections.Generic;
@@ -182,11 +181,11 @@ namespace Nitrocid.Drivers.Encoding
         {
             if (string.IsNullOrEmpty(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
 
             // Get the bytes of the file
-            byte[] file = Reading.ReadAllBytes(path);
+            byte[] file = FilesystemTools.ReadAllBytes(path);
             byte[] encrypted;
             using Aes aesEncryptor = Aes.Create();
 
@@ -205,7 +204,7 @@ namespace Nitrocid.Drivers.Encoding
 
             // Write the array of bytes
             string encodedPath = path + ".encoded";
-            Writing.WriteAllBytes(encodedPath, encrypted);
+            FilesystemTools.WriteAllBytes(encodedPath, encrypted);
         }
 
         /// <inheritdoc/>
@@ -213,11 +212,11 @@ namespace Nitrocid.Drivers.Encoding
         {
             if (string.IsNullOrEmpty(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
 
             // Get the bytes of the file
-            byte[] encoded = Reading.ReadAllBytes(path);
+            byte[] encoded = FilesystemTools.ReadAllBytes(path);
             byte[] decrypted = new byte[encoded.Length];
             using Aes aesDecryptor = Aes.Create();
 
@@ -244,7 +243,7 @@ namespace Nitrocid.Drivers.Encoding
 
             // Write the array of bytes
             string decodedPath = path.RemoveSuffix(".encoded");
-            Writing.WriteAllBytes(decodedPath, decrypted.SkipLast(diffIdx).ToArray());
+            FilesystemTools.WriteAllBytes(decodedPath, decrypted.SkipLast(diffIdx).ToArray());
         }
     }
 }

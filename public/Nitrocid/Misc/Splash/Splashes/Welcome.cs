@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-extern alias TextifyDep;
-
 using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Sequences;
@@ -35,28 +33,35 @@ using Terminaux.Colors.Data;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Textify.General;
+using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using TextifyDep::Textify.General;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Colors.Transformation;
 
 namespace Nitrocid.Misc.Splash.Splashes
 {
     class SplashWelcome : BaseSplash, ISplash
     {
-
         private bool cleared = false;
         private int dotStep = 0;
         private int currMs = 0;
+        private ProgressBarNoText progress = new(0, 100);
 
         // Standalone splash information
         public override string SplashName => "Welcome";
-
-        public override bool SplashDisplaysProgress => true;
 
         // Actual logic
         public override string Opening(SplashContext context)
         {
             var builder = new StringBuilder();
+            progress.Position = 0;
+            progress.Indeterminate = !Config.SplashConfig.WelcomeShowProgress;
+            progress.Width = ConsoleWrapper.WindowWidth - 6;
+            progress.ProgressForegroundColor = TransformationTools.GetDarkBackground(KernelColorTools.GetColor(KernelColorType.Progress));
+            progress.ProgressActiveForegroundColor = KernelColorTools.GetColor(KernelColorType.Progress);
+            progress.ProgressBackgroundColor = ConsoleColoring.CurrentBackgroundColor;
             if (ConsoleResizeHandler.WasResized(true))
                 cleared = false;
             if (!cleared)
@@ -87,9 +92,12 @@ namespace Nitrocid.Misc.Splash.Splashes
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-            int consoleY = (ConsoleWrapper.WindowHeight / 2) + FigletTools.GetFigletHeight(text, figFont);
+            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+            int bottomTextY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
             var figText = new AlignedFigletText(figFont)
             {
+                Top = consoleY,
                 Text = text,
                 ForegroundColor = col,
                 Settings = new()
@@ -101,7 +109,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             {
                 Text = bottomText,
                 ForegroundColor = col,
-                Top = consoleY - 1,
+                Top = bottomTextY,
                 OneLine = true,
                 Settings = new()
                 {
@@ -120,37 +128,42 @@ namespace Nitrocid.Misc.Splash.Splashes
             var builder = new StringBuilder();
             try
             {
-                bool noAppend = true;
-                currMs++;
-                if (currMs >= 10)
+                // Check to see if we need progress or dots
+                if (!Config.SplashConfig.WelcomeShowProgress)
                 {
-                    noAppend = false;
-                    currMs = 0;
-                }
-                Color firstColor = KernelColorTools.GetColor(KernelColorType.Background).Brightness == ColorBrightness.Light ? new(ConsoleColors.Black) : new(ConsoleColors.White);
-                Color secondColor = KernelColorTools.GetColor(KernelColorType.Success);
-                DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
-                Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;
-                Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;
-                Color thirdDotColor = dotStep >= 3 ? secondColor : firstColor;
-                Color fourthDotColor = dotStep >= 4 ? secondColor : firstColor;
-                Color fifthDotColor = dotStep >= 5 ? secondColor : firstColor;
+                    Color firstColor = KernelColorTools.GetColor(KernelColorType.Background).Brightness == ColorBrightness.Light ? new(ConsoleColors.Black) : new(ConsoleColors.White);
+                    Color secondColor = KernelColorTools.GetColor(KernelColorType.Success);
+                    Color firstDotColor = dotStep >= 1 ? secondColor : firstColor;
+                    Color secondDotColor = dotStep >= 2 ? secondColor : firstColor;
+                    Color thirdDotColor = dotStep >= 3 ? secondColor : firstColor;
+                    Color fourthDotColor = dotStep >= 4 ? secondColor : firstColor;
+                    Color fifthDotColor = dotStep >= 5 ? secondColor : firstColor;
 
-                // Write the three dots
-                string dots =
-                    $"{firstDotColor.VTSequenceForeground}* " +
-                    $"{secondDotColor.VTSequenceForeground}* " +
-                    $"{thirdDotColor.VTSequenceForeground}* " +
-                    $"{fourthDotColor.VTSequenceForeground}* " +
-                    $"{fifthDotColor.VTSequenceForeground}*";
-                int dotsPosX = ConsoleWrapper.WindowWidth / 2 - VtSequenceTools.FilterVTSequences(dots).Length / 2;
-                int dotsPosY = ConsoleWrapper.WindowHeight - 2;
-                builder.Append(TextWriterWhereColor.RenderWhere(dots, dotsPosX, dotsPosY));
-                if (!noAppend)
-                {
-                    dotStep++;
-                    if (dotStep > 5)
-                        dotStep = 0;
+                    // Append a millisecond to the counter
+                    bool noAppend = true;
+                    currMs++;
+                    if (currMs >= 10)
+                    {
+                        noAppend = false;
+                        currMs = 0;
+                    }
+
+                    // Write the three dots
+                    string dots =
+                        $"{firstDotColor.VTSequenceForeground()}* " +
+                        $"{secondDotColor.VTSequenceForeground()}* " +
+                        $"{thirdDotColor.VTSequenceForeground()}* " +
+                        $"{fourthDotColor.VTSequenceForeground()}* " +
+                        $"{fifthDotColor.VTSequenceForeground()}*";
+                    int dotsPosX = ConsoleWrapper.WindowWidth / 2 - VtSequenceTools.FilterVTSequences(dots).Length / 2;
+                    int dotsPosY = ConsoleWrapper.WindowHeight - 2;
+                    builder.Append(TextWriterWhereColor.RenderWhere(dots, dotsPosX, dotsPosY));
+                    if (!noAppend)
+                    {
+                        dotStep++;
+                        if (dotStep > 5)
+                            dotStep = 0;
+                    }
                 }
             }
             catch (ThreadInterruptedException)
@@ -166,6 +179,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             currMs = 0;
             dotStep = 0;
             cleared = false;
+            progress.Width = ConsoleWrapper.WindowWidth - 6;
             builder.Append(
                 base.Opening(context)
             );
@@ -186,9 +200,12 @@ namespace Nitrocid.Misc.Splash.Splashes
                  Translate.DoTranslation("Goodbye!"))
                 .ToUpper();
             var figFont = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
-            int consoleY = (ConsoleWrapper.WindowHeight / 2) + FigletTools.GetFigletHeight(text, figFont);
+            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+            int bottomTextY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
             var figText = new AlignedFigletText(figFont)
             {
+                Top = consoleY,
                 Text = text,
                 ForegroundColor = col,
                 Settings = new()
@@ -200,7 +217,7 @@ namespace Nitrocid.Misc.Splash.Splashes
             {
                 Text = KernelReleaseInfo.ConsoleTitle,
                 ForegroundColor = col,
-                Top = consoleY - 1,
+                Top = bottomTextY,
                 OneLine = true,
                 Settings = new()
                 {
@@ -252,10 +269,21 @@ namespace Nitrocid.Misc.Splash.Splashes
                 }
             };
             builder.Append(
-                col.VTSequenceForeground +
+                col.VTSequenceForeground() +
                 TextWriterWhereColor.RenderWhere(ConsoleClearing.GetClearLineToRightSequence(), 0, consoleY - 2, true) +
                 report.Render()
             );
+
+            if (Config.SplashConfig.WelcomeShowProgress)
+            {
+                int posX = 2;
+                int posY = ConsoleWrapper.WindowHeight - 2;
+                progress.Position = Progress;
+                progress.Width = ConsoleWrapper.WindowWidth - 6;
+                builder.Append(
+                    RendererTools.RenderRenderable(progress, new(posX, posY))
+                );
+            }
             return builder.ToString();
         }
 

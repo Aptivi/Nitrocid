@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using Nitrocid.Users.Login;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Arguments;
@@ -29,11 +29,10 @@ using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Terminaux.Inputs.Styles.Infobox;
 using Nitrocid.Users.Login.Handlers;
-using Nitrocid.Misc.Text.Probers.Placeholder;
+using Textify.Tools.Placeholder;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Power;
-using Nitrocid.ConsoleBase.Writers.MiscWriters;
 using Terminaux.Base.Checks;
 using Nitrocid.Users.Login.Motd;
 using Nitrocid.Kernel.Configuration;
@@ -41,6 +40,9 @@ using Nitrocid.Kernel.Threading;
 using Nitrocid.Network.Types.RSS;
 using Nitrocid.Shell.Homepage;
 using Terminaux.Base;
+using Nitrocid.Misc.Audio;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Shell.Arguments.Base;
 
 namespace Nitrocid.Kernel
 {
@@ -53,6 +55,7 @@ namespace Nitrocid.Kernel
         internal static bool QuietKernel;
         internal static bool TalkativePreboot;
         internal static bool PrebootSplash = true;
+        internal static bool UseAltBuffer = true;
         internal static bool enteredBase = false;
 
         internal static void EntryPoint(string[]? args)
@@ -61,7 +64,7 @@ namespace Nitrocid.Kernel
             KernelInitializers.InitializeCritical();
 
             // Check for kernel command-line arguments
-            ArgumentParse.ParseArguments(args);
+            ArgumentParse.ParseArguments(args, KernelArguments.AvailableCMDLineArgs);
 
             // Some command-line arguments may request kernel shutdown
             if (PowerManager.KernelShutdown)
@@ -84,6 +87,10 @@ namespace Nitrocid.Kernel
             for (int i = 1; i <= KernelStageTools.Stages.Count + 1; i++)
                 KernelStageTools.RunKernelStage(i);
 
+            // Play the startup sound
+            if (Config.MainConfig.EnableStartupSounds)
+                AudioCuesTools.PlayAudioCue(AudioCueType.Startup);
+
             // Show the closing screen
             SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);
             SplashManager.CloseSplash(SplashContext.StartingUp);
@@ -101,9 +108,12 @@ namespace Nitrocid.Kernel
             // Show the license infobox
             if (Config.MainConfig.ShowLicenseInfoBox && Config.MainConfig.EnableSplash)
             {
-                InfoBoxNonModalColor.WriteInfoBoxColor(
-                    Translate.DoTranslation("License information"),
-                    WelcomeMessage.GetLicenseString(), KernelColorTools.GetColor(KernelColorType.License)
+                InfoBoxNonModalColor.WriteInfoBox(
+                    WelcomeMessage.GetLicenseString(), new InfoBoxSettings()
+                    {
+                        Title = Translate.DoTranslation("License information"),
+                        ForegroundColor = KernelColorTools.GetColor(KernelColorType.License),
+                    }
                 );
                 ConsoleWrapper.CursorVisible = false;
                 ThreadManager.SleepUntilInput(15000);
@@ -124,6 +134,13 @@ namespace Nitrocid.Kernel
                 SplashManager.OpenSplash(SplashContext.ShuttingDown);
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash for reboot or shutdown.");
             ShellManager.PurgeShells();
+
+            // Play the shutdown sound
+            if (Config.MainConfig.EnableShutdownSounds)
+            {
+                SplashReport.ReportProgress(Translate.DoTranslation("Playing shutdown sound..."));
+                AudioCuesTools.PlayAudioCue(AudioCueType.Shutdown, false);
+            }
         }
 
         /// <summary>
@@ -161,7 +178,7 @@ namespace Nitrocid.Kernel
                     HomepageTools.OpenHomepage();
                     if (Login.LogoutRequested)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Login.LogoutRequested);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", vars: [Login.LogoutRequested]);
                         break;
                     }
 
@@ -194,7 +211,7 @@ namespace Nitrocid.Kernel
                     KernelReleaseInfo.NotifyReleaseSupportWindow();
 
                     // Start the shell
-                    ShellManager.StartShellInternal(ShellType.Shell);
+                    ShellManager.StartShell("Shell");
                 }
                 Login.LoggedIn = false;
                 Login.LogoutRequested = false;

@@ -25,7 +25,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Extras.JsonShell.Json;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -47,18 +46,18 @@ namespace Nitrocid.Extras.JsonShell.Tools
         {
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", vars: [File]);
                 JsonShellCommon.FileStream = new FileStream(File, FileMode.Open);
                 var JsonFileReader = new StreamReader(JsonShellCommon.FileStream);
-                string JsonFileContents = Reading.ReadToEndAndSeek(ref JsonFileReader);
+                string JsonFileContents = FilesystemTools.ReadToEndAndSeek(ref JsonFileReader);
                 JsonShellCommon.FileToken = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
                 JsonShellCommon.FileTokenOrig = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
-                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, JsonShellCommon.FileStream.Length, JsonShellCommon.FileStream.Position);
+                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", vars: [File, JsonShellCommon.FileStream.Length, JsonShellCommon.FileStream.Position]);
                 return true;
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Open file {0} failed: {1}", File, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Open file {0} failed: {1}", vars: [File, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -82,7 +81,7 @@ namespace Nitrocid.Extras.JsonShell.Tools
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Closing file failed: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Closing file failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -109,7 +108,7 @@ namespace Nitrocid.Extras.JsonShell.Tools
                 JsonShellCommon.FileStream.SetLength(0L);
                 DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
                 var FileLinesByte = Encoding.Default.GetBytes(JsonConvert.SerializeObject(JsonShellCommon.FileToken, Formatting));
-                DebugWriter.WriteDebug(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length);
+                DebugWriter.WriteDebug(DebugLevel.I, "Converted lines to bytes. Length: {0}", vars: [FileLinesByte.Length]);
                 JsonShellCommon.FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
                 JsonShellCommon.FileStream.Flush();
                 DebugWriter.WriteDebug(DebugLevel.I, "File is saved.");
@@ -121,7 +120,7 @@ namespace Nitrocid.Extras.JsonShell.Tools
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Saving file failed: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Saving file failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }

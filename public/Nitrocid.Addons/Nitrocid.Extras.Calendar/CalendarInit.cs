@@ -17,26 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Shell.ShellBase.Arguments;
-using Nitrocid.Shell.ShellBase.Switches;
+using Terminaux.Shell.Arguments;
+using Terminaux.Shell.Switches;
 using Nitrocid.Extras.Calendar.Calendar.Commands;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Settings;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;
-using Nitrocid.Shell.ShellBase.Commands;
-using System;
+using Terminaux.Shell.Commands;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Reflection;
 using Nitrocid.Kernel.Extensions;
-using Nitrocid.Shell.ShellBase.Shells;
-using Nitrocid.Modifications;
+using Terminaux.Shell.Shells;
 using System.Linq;
 using Nitrocid.Extras.Calendar.Calendar;
-using Nitrocid.Kernel.Time.Calendars;
-using EventInfo = Nitrocid.Extras.Calendar.Calendar.Events.EventInfo;
 using Nitrocid.Shell.Homepage;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Extras.Calendar.Calendar.Screensavers;
@@ -106,8 +100,8 @@ namespace Nitrocid.Extras.Calendar
                             AcceptsValues = false
                         }),
                     ]),
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["event"],
@@ -126,7 +120,7 @@ namespace Nitrocid.Extras.Calendar
                         {
                             ArgumentDescription = /* Localizable */ "Display name"
                         })
-                    }),
+                    ]),
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
@@ -145,8 +139,8 @@ namespace Nitrocid.Extras.Calendar
                             ArgumentDescription = /* Localizable */ "Event ID"
                         })
                     ]),
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["event"],
@@ -157,9 +151,9 @@ namespace Nitrocid.Extras.Calendar
                             ExactWording = ["list"],
                             ArgumentDescription = /* Localizable */ "Lists all events"
                         })
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["event"],
@@ -170,9 +164,9 @@ namespace Nitrocid.Extras.Calendar
                             ExactWording = ["saveall"],
                             ArgumentDescription = /* Localizable */ "Saves all the events"
                         })
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["reminder"],
@@ -190,7 +184,7 @@ namespace Nitrocid.Extras.Calendar
                         {
                             ArgumentDescription = /* Localizable */ "Display name"
                         })
-                    }),
+                    ]),
                     new CommandArgumentInfo(
                     [
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
@@ -209,8 +203,8 @@ namespace Nitrocid.Extras.Calendar
                             ArgumentDescription = /* Localizable */ "Reminder ID"
                         })
                     ]),
-                    new CommandArgumentInfo(new[]
-                    {
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["reminder"],
@@ -221,9 +215,9 @@ namespace Nitrocid.Extras.Calendar
                             ExactWording = ["list"],
                             ArgumentDescription = /* Localizable */ "Lists all reminders"
                         })
-                    }),
-                    new CommandArgumentInfo(new[]
-                    {
+                    ]),
+                    new CommandArgumentInfo(
+                    [
                         new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
                         {
                             ExactWording = ["reminder"],
@@ -234,7 +228,7 @@ namespace Nitrocid.Extras.Calendar
                             ExactWording = ["saveall"],
                             ArgumentDescription = /* Localizable */ "Saves all reminders"
                         })
-                    }),
+                    ]),
                 ], new CalendarCommand()),
         ];
 
@@ -242,36 +236,7 @@ namespace Nitrocid.Extras.Calendar
             InterAddonTranslations.GetAddonName(KnownAddons.ExtrasCalendar);
 
         internal static CalendarConfig CalendarConfig =>
-            ConfigTools.IsCustomSettingBuiltin(nameof(CalendarConfig)) ? (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)] : new CalendarConfig();
-
-        ReadOnlyDictionary<string, Delegate>? IAddon.PubliclyAvailableFunctions => new(new Dictionary<string, Delegate>()
-        {
-            { nameof(CalendarPrint.PrintCalendar), new Action(CalendarPrint.PrintCalendar) },
-            { nameof(CalendarPrint.PrintCalendar) + "2", new Action<CalendarTypes>(CalendarPrint.PrintCalendar) },
-            { nameof(CalendarPrint.PrintCalendar) + "3", new Action<int, int, CalendarTypes>(CalendarPrint.PrintCalendar) },
-            { nameof(EventManager.AddEvent), new Action<DateTime, string>(EventManager.AddEvent) },
-            { nameof(EventManager.RemoveEvent), new Action<DateTime, int>(EventManager.RemoveEvent) },
-            { nameof(EventManager.ListEvents), new Action(EventManager.ListEvents) },
-            { nameof(EventManager.LoadEvents), new Action(EventManager.LoadEvents) },
-            { nameof(EventManager.LoadEvent), new Func<string, EventInfo?>(EventManager.LoadEvent) },
-            { nameof(EventManager.SaveEvents), new Action(EventManager.SaveEvents) },
-            { nameof(EventManager.SaveEvents) + "2", new Action<string, bool>(EventManager.SaveEvents) },
-            { nameof(EventManager.SaveEvent), new Action<EventInfo>(EventManager.SaveEvent) },
-            { nameof(EventManager.SaveEvent) + "2", new Action<EventInfo, string>(EventManager.SaveEvent) },
-            { nameof(ReminderManager.AddReminder), new Action<DateTime, string>(ReminderManager.AddReminder) },
-            { nameof(ReminderManager.RemoveReminder), new Action<DateTime, int>(ReminderManager.RemoveReminder) },
-            { nameof(ReminderManager.ListReminders), new Action(ReminderManager.ListReminders) },
-            { nameof(ReminderManager.LoadReminders), new Action(ReminderManager.LoadReminders) },
-            { nameof(ReminderManager.LoadReminder), new Func<string, ReminderInfo?>(ReminderManager.LoadReminder) },
-            { nameof(ReminderManager.SaveReminders), new Action(ReminderManager.SaveReminders) },
-            { nameof(ReminderManager.SaveReminders) + "2", new Action<string, bool>(ReminderManager.SaveReminders) },
-            { nameof(ReminderManager.SaveReminder), new Action<ReminderInfo>(ReminderManager.SaveReminder) },
-            { nameof(ReminderManager.SaveReminder) + "2", new Action<ReminderInfo, string>(ReminderManager.SaveReminder) },
-        });
-
-        ReadOnlyDictionary<string, PropertyInfo>? IAddon.PubliclyAvailableProperties => null;
-
-        ReadOnlyDictionary<string, FieldInfo>? IAddon.PubliclyAvailableFields => null;
+            ConfigTools.IsCustomSettingBuiltin(nameof(CalendarConfig)) ? (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)] : Config.GetFallbackKernelConfig<CalendarConfig>();
 
         void IAddon.FinalizeAddon()
         {
@@ -292,7 +257,7 @@ namespace Nitrocid.Extras.Calendar
         {
             var config = new CalendarConfig();
             ConfigTools.RegisterBaseSetting(config);
-            CommandManager.RegisterAddonCommands(ShellType.Shell, [.. addonCommands]);
+            CommandManager.RegisterCustomCommands("Shell", [.. addonCommands]);
             ScreensaverManager.AddonSavers.Add("calendar", new CalendarDisplay());
         }
 
@@ -300,7 +265,7 @@ namespace Nitrocid.Extras.Calendar
         {
             ReminderManager.Reminders.Clear();
             EventManager.CalendarEvents.Clear();
-            CommandManager.UnregisterAddonCommands(ShellType.Shell, [.. addonCommands.Select((ci) => ci.Command)]);
+            CommandManager.UnregisterCustomCommands("Shell", [.. addonCommands.Select((ci) => ci.Command)]);
             ConfigTools.UnregisterBaseSetting(nameof(CalendarConfig));
             HomepageTools.UnregisterBuiltinAction("Calendar");
             ScreensaverManager.AddonSavers.Remove("calendar");

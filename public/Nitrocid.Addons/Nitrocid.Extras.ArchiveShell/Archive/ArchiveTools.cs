@@ -23,8 +23,6 @@ using System.IO;
 using System.Linq;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell;
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -55,22 +53,22 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
             foreach (IArchiveEntry ArchiveEntry in archiveEntries)
             {
                 string key = ArchiveEntry.Key ?? "";
-                DebugWriter.WriteDebug(DebugLevel.I, "Parsing entry {0}...", key);
+                DebugWriter.WriteDebug(DebugLevel.I, "Parsing entry {0}...", vars: [key]);
                 if (Target is not null)
                 {
                     if (key.StartsWith(Target))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Entry {0} found in target {1}. Adding...", key, Target);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Entry {0} found in target {1}. Adding...", vars: [key, Target]);
                         Entries.Add(ArchiveEntry);
                     }
                 }
                 else if (Target is null)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Adding entry {0}...", key);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding entry {0}...", vars: [key]);
                     Entries.Add(ArchiveEntry);
                 }
             }
-            DebugWriter.WriteDebug(DebugLevel.I, "Entries: {0}", Entries.Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Entries: {0}", vars: [Entries.Count]);
             return Entries;
         }
 
@@ -95,7 +93,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
             string AbsoluteTarget = ArchiveShellCommon.CurrentArchiveDirectory + "/" + Target;
             if (AbsoluteTarget.StartsWith("/"))
                 AbsoluteTarget = AbsoluteTarget[1..];
-            DebugWriter.WriteDebug(DebugLevel.I, "Target: {0}, AbsoluteTarget: {1}", Target, AbsoluteTarget);
+            DebugWriter.WriteDebug(DebugLevel.I, "Target: {0}, AbsoluteTarget: {1}", vars: [Target, AbsoluteTarget]);
 
             // Define local destination while getting an entry from target
             string LocalDestination = Where + "/";
@@ -103,20 +101,20 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
             string localDirDestination = Path.GetDirectoryName(ArchiveEntry.Key) ?? "";
             if (FullTargetPath)
                 LocalDestination += ArchiveEntry.Key;
-            DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", LocalDestination);
+            DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", vars: [LocalDestination]);
 
             // Try to extract file
             Directory.CreateDirectory(LocalDestination);
-            if (!Checking.FolderExists(LocalDestination + "/" + localDirDestination))
+            if (!FilesystemTools.FolderExists(LocalDestination + "/" + localDirDestination))
                 Directory.CreateDirectory(LocalDestination + "/" + localDirDestination);
-            Making.MakeFile(LocalDestination + ArchiveEntry.Key);
+            FilesystemTools.MakeFile(LocalDestination + ArchiveEntry.Key);
             ArchiveShellCommon.FileStream.Seek(0L, SeekOrigin.Begin);
             var ArchiveReader = ReaderFactory.Open(ArchiveShellCommon.FileStream);
             while (ArchiveReader.MoveToNextEntry())
             {
                 if (ArchiveReader.Entry.Key == ArchiveEntry.Key & !ArchiveReader.Entry.IsDirectory)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Extract started. {0}...", LocalDestination + ArchiveEntry.Key);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Extract started. {0}...", vars: [LocalDestination + ArchiveEntry.Key]);
                     ArchiveReader.WriteEntryToFile(LocalDestination + ArchiveEntry.Key);
                 }
             }
@@ -145,7 +143,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
             string ArchiveTarget = ArchiveShellCommon.CurrentArchiveDirectory + "/" + Target;
             if (ArchiveTarget.StartsWith("/"))
                 ArchiveTarget = ArchiveTarget[1..];
-            DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}, ArchiveTarget: {1}", Where, ArchiveTarget);
+            DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}, ArchiveTarget: {1}", vars: [Where, ArchiveTarget]);
 
             // Select compression type
             CompressionType compression = CompressionType.None;
@@ -158,7 +156,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
 
             // Define local destination while getting an entry from target
             Target = FilesystemTools.NeutralizePath(Target, Where);
-            DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", Target);
+            DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", vars: [Target]);
             ((IWritableArchive)ArchiveShellCommon.Archive).AddEntry(ArchiveTarget, Target);
             ((IWritableArchive)ArchiveShellCommon.Archive).SaveTo(ArchiveShellCommon.FileStream, new WriterOptions(compression));
             return true;
@@ -184,62 +182,62 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
                 var CADBackSteps = 0;
 
                 // Add back steps if target is ".."
-                DebugWriter.WriteDebug(DebugLevel.I, "Target length: {0}", TargetSplit.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Target length: {0}", vars: [TargetSplit.Count]);
                 for (int i = 0; i <= TargetSplit.Count - 1; i++)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Target part {0}: {1}", i, TargetSplit[i]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Target part {0}: {1}", vars: [i, TargetSplit[i]]);
                     if (TargetSplit[i] == "..")
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Target is going back. Adding step...");
                         CADBackSteps += 1;
                         TargetSplit[i] = "";
-                        DebugWriter.WriteDebug(DebugLevel.I, "Steps: {0}", CADBackSteps);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Steps: {0}", vars: [CADBackSteps]);
                     }
                 }
 
                 // Remove empty strings
                 TargetSplit.RemoveAll(string.IsNullOrEmpty);
-                DebugWriter.WriteDebug(DebugLevel.I, "Target length: {0}", TargetSplit.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Target length: {0}", vars: [TargetSplit.Count]);
 
                 // Remove every last entry that goes back
-                DebugWriter.WriteDebug(DebugLevel.I, "Old CADSplit length: {0}", CADSplit.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "Old CADSplit length: {0}", vars: [CADSplit.Count]);
                 for (int Steps = CADBackSteps; Steps >= 1; Steps -= 1)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Current step: {0}", Steps);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removing index {0} from CADSplit...", CADSplit.Count - Steps);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Current step: {0}", vars: [Steps]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removing index {0} from CADSplit...", vars: [CADSplit.Count - Steps]);
                     CADSplit.RemoveAt(CADSplit.Count - Steps);
-                    DebugWriter.WriteDebug(DebugLevel.I, "New CADSplit length: {0}", CADSplit.Count);
+                    DebugWriter.WriteDebug(DebugLevel.I, "New CADSplit length: {0}", vars: [CADSplit.Count]);
                 }
 
                 // Set current archive directory and target
                 ArchiveShellCommon.CurrentArchiveDirectory = string.Join("/", CADSplit);
-                DebugWriter.WriteDebug(DebugLevel.I, "Setting CAD to {0}...", ArchiveShellCommon.CurrentArchiveDirectory ?? "");
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting CAD to {0}...", vars: [ArchiveShellCommon.CurrentArchiveDirectory ?? ""]);
                 Target = string.Join("/", TargetSplit);
-                DebugWriter.WriteDebug(DebugLevel.I, "Setting target to {0}...", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting target to {0}...", vars: [Target]);
             }
 
             // Prepare the target
             Target = ArchiveShellCommon.CurrentArchiveDirectory + "/" + Target;
             if (Target.StartsWith("/"))
                 Target = Target[1..];
-            DebugWriter.WriteDebug(DebugLevel.I, "Setting target to {0}...", Target);
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting target to {0}...", vars: [Target]);
 
             // Enumerate entries
             foreach (IArchiveEntry Entry in ListArchiveEntries(Target))
             {
                 string key = Entry.Key ?? "";
-                DebugWriter.WriteDebug(DebugLevel.I, "Entry: {0}", key);
+                DebugWriter.WriteDebug(DebugLevel.I, "Entry: {0}", vars: [key]);
                 if (key.StartsWith(Target))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "{0} found ({1}). Changing...", Target, key);
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} found ({1}). Changing...", vars: [Target, key]);
                     ArchiveShellCommon.CurrentArchiveDirectory = key[..^1];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Setting CAD to {0}...", ArchiveShellCommon.CurrentArchiveDirectory ?? "");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Setting CAD to {0}...", vars: [ArchiveShellCommon.CurrentArchiveDirectory ?? ""]);
                     return true;
                 }
             }
 
             // Assume that we didn't find anything.
-            DebugWriter.WriteDebug(DebugLevel.E, "{0} not found.", Target);
+            DebugWriter.WriteDebug(DebugLevel.E, "{0} not found.", vars: [Target]);
             return false;
         }
 
@@ -252,15 +250,15 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
             if (string.IsNullOrWhiteSpace(Target))
                 Target = ArchiveShellCommon.CurrentArchiveDirectory ??
                     throw new KernelException(KernelExceptionType.Archive, Translate.DoTranslation("Can't determine current archive directory."));
-            if (Checking.FolderExists(FilesystemTools.NeutralizePath(Target, ArchiveShellCommon.CurrentDirectory)))
+            if (FilesystemTools.FolderExists(FilesystemTools.NeutralizePath(Target, ArchiveShellCommon.CurrentDirectory)))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} found. Changing...", Target);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} found. Changing...", vars: [Target]);
                 ArchiveShellCommon.CurrentDirectory = Target;
                 return true;
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} not found.", Target);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} not found.", vars: [Target]);
                 return false;
             }
         }

@@ -21,9 +21,9 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.BassBoom.Animations.Lyrics;
-using Nitrocid.Files.Operations.Querying;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
+using Nitrocid.Files;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
             string pathToLyrics = parameters.ArgumentsList[0];
 
             // If there is no lyric file, bail.
-            if (string.IsNullOrWhiteSpace(pathToLyrics) || !Checking.FileExists(pathToLyrics))
+            if (string.IsNullOrWhiteSpace(pathToLyrics) || !FilesystemTools.FileExists(pathToLyrics))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Make sure to specify the path to an LRC file."));
                 return 27;

@@ -17,8 +17,6 @@ endif
 
 .PHONY: all install lite
 
-# General use
-
 all:
 	$(MAKE) all-online BUILDARGS="$(BUILDARGS)"
 

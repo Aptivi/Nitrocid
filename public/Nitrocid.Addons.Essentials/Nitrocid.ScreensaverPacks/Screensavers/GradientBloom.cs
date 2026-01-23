@@ -110,6 +110,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Add the values according to the threshold
                     currentR -= thresholdR;
@@ -118,7 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Now, make a color
                     Color col = new((int)currentR, (int)currentG, (int)currentB);
-                    buffered.Append(col.VTSequenceBackground);
+                    buffered.Append(col.VTSequenceBackground());
                     for (int height = 0; height < ConsoleWrapper.WindowHeight; height++)
                         buffered.Append($"{CsiSequences.GenerateCsiCursorPosition(currentStepGradient, height + 1)} ");
                 }

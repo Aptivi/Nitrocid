@@ -17,8 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Files.Operations;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
@@ -81,15 +80,15 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
         {
             if (string.IsNullOrEmpty(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
 
             // Get the bytes of the file
-            string file = Reading.ReadContentsText(path);
+            string file = FilesystemTools.ReadContentsText(path);
             byte[] encrypted = GetEncodedString(file);
 
             // Write the array of bytes
-            Writing.WriteAllBytes(path, encrypted);
+            FilesystemTools.WriteAllBytes(path, encrypted);
         }
 
         /// <inheritdoc/>
@@ -97,16 +96,16 @@ namespace Nitrocid.Drivers.EncodingAsymmetric
         {
             if (string.IsNullOrEmpty(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
-            if (!Checking.FileExists(path))
+            if (!FilesystemTools.FileExists(path))
                 throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
 
             // Get the bytes of the file
-            byte[] encoded = Reading.ReadAllBytes(path);
+            byte[] encoded = FilesystemTools.ReadAllBytes(path);
             string decryptedStr = GetDecodedString(encoded);
             byte[] decrypted = TextEncoding.Default.GetBytes(decryptedStr);
 
             // Write the array of bytes
-            Writing.WriteAllBytes(path, decrypted);
+            FilesystemTools.WriteAllBytes(path, decrypted);
         }
 
         /// <inheritdoc/>

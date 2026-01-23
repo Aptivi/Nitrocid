@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.FancyWriters;
 using Nitrocid.Languages;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {
@@ -26,10 +26,9 @@ namespace Nitrocid.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Print a separator to console with formatting");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override int TestOptionalParameters => 1;
-        public override void Run(params string[] args)
+        public override void Run()
         {
-            string rendered = args.Length > 0 ? args[0] : "Hi, {0}!";
+            string rendered = "Hi, {0}!";
             SeparatorWriterColor.WriteSeparator(rendered, true, "Nitrocid KS");
         }
     }

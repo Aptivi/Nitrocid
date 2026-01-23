@@ -22,12 +22,12 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Nitrocid.Drivers;
 
-namespace Nitrocid.Files.Operations.Querying
+namespace Nitrocid.Files
 {
     /// <summary>
     /// File searching module
     /// </summary>
-    public static class Searching
+    public static partial class FilesystemTools
     {
 
         /// <summary>

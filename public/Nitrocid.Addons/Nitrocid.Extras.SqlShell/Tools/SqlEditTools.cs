@@ -19,8 +19,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using Microsoft.Data.Sqlite;
 using Nitrocid.Extras.SqlShell.Sql;
 using Nitrocid.Files;
@@ -43,32 +41,18 @@ namespace Nitrocid.Extras.SqlShell.Tools
         {
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", vars: [File]);
                 SqlShellCommon.sqliteConnection = new SqliteConnection($"Data Source={File}");
                 SqlShellCommon.sqliteConnection.Open();
                 SqlShellCommon.sqliteDatabasePath = File;
-                return SqlEdit_CheckSqlFile(File);
+                return FilesystemTools.IsSql(File);
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Open file {0} failed: {1}", File, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Open file {0} failed: {1}", vars: [File, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
-        }
-
-        /// <summary>
-        /// Checks the SQL file
-        /// </summary>
-        /// <param name="File">File to check</param>
-        /// <returns>True if the signature is found; False if not found.</returns>
-        public static bool SqlEdit_CheckSqlFile(string File)
-        {
-            byte[] sqlFileBytes = new byte[17];
-            using (FileStream sqlStream = new(File, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                sqlStream.ReadExactly(sqlFileBytes, 0, 16);
-            string result = Encoding.ASCII.GetString(sqlFileBytes);
-            return result.Contains("SQLite format");
         }
 
         /// <summary>
@@ -87,7 +71,7 @@ namespace Nitrocid.Extras.SqlShell.Tools
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Closing file failed: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Closing file failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -104,7 +88,7 @@ namespace Nitrocid.Extras.SqlShell.Tools
         {
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to execute query {0}...", query);
+                DebugWriter.WriteDebug(DebugLevel.I, "Trying to execute query {0}...", vars: [query]);
                 List<string> replyList = [];
                 using var sqlCommand = new SqliteCommand(query, SqlShellCommon.sqliteConnection);
 
@@ -127,7 +111,7 @@ namespace Nitrocid.Extras.SqlShell.Tools
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "SQL command failed: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "SQL command failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }

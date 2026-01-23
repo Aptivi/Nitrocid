@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using Nitrocid.Drivers.RNG;
-using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations;
 using Terminaux.Base;
@@ -69,7 +68,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD
 
             // Reset resize sync
             ConsoleResizeHandler.WasResized();
-            ThreadManager.SleepNoBlock(Settings.BSODDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(Settings.BSODDelay);
         }
 
     }

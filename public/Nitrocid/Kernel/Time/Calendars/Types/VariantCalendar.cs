@@ -33,6 +33,6 @@ namespace Nitrocid.Kernel.Time.Calendars.Types
 
         /// <inheritdoc/>
         public override CultureInfo Culture =>
-            CultureManager.CurrentCult;
+            CultureManager.CurrentCulture;
     }
 }

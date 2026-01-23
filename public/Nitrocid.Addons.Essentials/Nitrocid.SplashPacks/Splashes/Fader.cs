@@ -80,10 +80,10 @@ namespace Nitrocid.SplashPacks.Splashes
                 int BlueColorNum = _currentColor.RGB.B;
 
                 // Check the text
-                DebugWriter.WriteDebug(DebugLevel.I, "Selected left and top: {0}, {1}", _left, _top);
+                DebugWriter.WriteDebug(DebugLevel.I, "Selected left and top: {0}, {1}", vars: [_left, _top]);
                 if (_faderWrite.Length + _left >= ConsoleWrapper.WindowWidth)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Text length of {0} exceeded window width of {1}.", _faderWrite.Length + _left, ConsoleWrapper.WindowWidth);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Text length of {0} exceeded window width of {1}.", vars: [_faderWrite.Length + _left, ConsoleWrapper.WindowWidth]);
                     _left -= _faderWrite.Length + 1;
                 }
 
@@ -91,7 +91,7 @@ namespace Nitrocid.SplashPacks.Splashes
                 double ThresholdRed = RedColorNum / (double)_faderMaxSteps;
                 double ThresholdGreen = GreenColorNum / (double)_faderMaxSteps;
                 double ThresholdBlue = BlueColorNum / (double)_faderMaxSteps;
-                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+                DebugWriter.WriteDebug(DebugLevel.I, "Color threshold (R;G;B: {0})", vars: [ThresholdRed, ThresholdGreen, ThresholdBlue]);
 
                 // Fade in or out
                 if (_isFadingOut)
@@ -100,15 +100,15 @@ namespace Nitrocid.SplashPacks.Splashes
                     int CurrentColorRedOut = RedColorNum;
                     int CurrentColorGreenOut = GreenColorNum;
                     int CurrentColorBlueOut = BlueColorNum;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", _currentStep, _faderMaxSteps);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", vars: [_currentStep, _faderMaxSteps]);
                     ThreadManager.SleepNoBlock(_faderDelay);
                     CurrentColorRedOut = (int)Math.Round(CurrentColorRedOut - ThresholdRed * _currentStep);
                     CurrentColorGreenOut = (int)Math.Round(CurrentColorGreenOut - ThresholdGreen * _currentStep);
                     CurrentColorBlueOut = (int)Math.Round(CurrentColorBlueOut - ThresholdBlue * _currentStep);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", vars: [CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut]);
                     var color = new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}");
                     builder.Append(
-                        color.VTSequenceForeground +
+                        color.VTSequenceForeground() +
                         TextWriterWhereColor.RenderWhere(_faderWrite, _left, _top, true)
                     );
                     _currentStep++;
@@ -124,15 +124,15 @@ namespace Nitrocid.SplashPacks.Splashes
                     int CurrentColorRedIn = 0;
                     int CurrentColorGreenIn = 0;
                     int CurrentColorBlueIn = 0;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", _currentStep, _faderMaxSteps);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Step {0}/{1}", vars: [_currentStep, _faderMaxSteps]);
                     ThreadManager.SleepNoBlock(_faderDelay);
                     CurrentColorRedIn = (int)Math.Round((CurrentColorRedIn + ThresholdRed) * _currentStep);
                     CurrentColorGreenIn = (int)Math.Round((CurrentColorGreenIn + ThresholdGreen) * _currentStep);
                     CurrentColorBlueIn = (int)Math.Round((CurrentColorBlueIn + ThresholdBlue) * _currentStep);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", vars: [CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn]);
                     var color = new Color($"{CurrentColorRedIn};{CurrentColorGreenIn};{CurrentColorBlueIn}");
                     builder.Append(
-                        color.VTSequenceForeground +
+                        color.VTSequenceForeground() +
                         TextWriterWhereColor.RenderWhere(_faderWrite, _left, _top, true)
                     );
                     _currentStep++;

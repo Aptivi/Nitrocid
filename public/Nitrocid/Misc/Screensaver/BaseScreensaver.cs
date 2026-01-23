@@ -17,13 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs.Styles.Infobox;
+using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
-using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Nitrocid.ConsoleBase.Colors;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -36,22 +39,31 @@ namespace Nitrocid.Misc.Screensaver
         /// <summary>
         /// Screensaver name
         /// </summary>
-        public virtual string ScreensaverName { get; set; } = "BaseScreensaver";
+        public virtual string ScreensaverName =>
+            "BaseScreensaver";
         /// <summary>
         /// Whether the screensaver contains flashing images
         /// </summary>
-        public virtual bool ScreensaverContainsFlashingImages { get; set; } = false;
+        public virtual bool ScreensaverContainsFlashingImages =>
+            false;
 
         /// <summary>
         /// Shows the seizure warning before the preparation
         /// </summary>
         public virtual void ScreensaverSeizureWarning()
         {
-            KernelColorTools.LoadBackground();
-            InfoBoxNonModalColor.WriteInfoBoxColorBack(
-                Translate.DoTranslation("Photosensitive seizure warning") + CharManager.NewLine + CharManager.NewLine +
-                Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. It's recommended to seek a medical specialist for more information about such seizure before continuing. If you want to get rid of this warning, you can turn this off from the screensaver settings."),
-                ConsoleColors.White, ConsoleColors.Red);
+            ThemeColorsTools.LoadBackground();
+            var infoBox = new InfoBox()
+            {
+                Text = Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. It's recommended to seek a medical specialist for more information about such seizure before continuing. If you want to get rid of this warning, you can turn this off from the screensaver settings."),
+                Settings = new InfoBoxSettings()
+                {
+                    Title = Translate.DoTranslation("Photosensitive seizure warning"),
+                    ForegroundColor = ConsoleColors.White,
+                    BackgroundColor = ConsoleColors.Red
+                }
+            };
+            TextWriterRaw.WriteRaw(infoBox.Render());
             ConsoleWrapper.CursorVisible = false;
             ThreadManager.SleepUntilInput(10000);
         }
@@ -69,7 +81,7 @@ namespace Nitrocid.Misc.Screensaver
         /// Screensaver logic
         /// </summary>
         public virtual void ScreensaverLogic() =>
-            ThreadManager.SleepNoBlock(10L, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ScreensaverManager.Delay(10);
 
         /// <summary>
         /// Screensaver outro

@@ -17,9 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Kernel.Debugging.Trace;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
+using System.IO;
+using System.Runtime.CompilerServices;
 using Textify.General;
 
 namespace Nitrocid.Kernel.Debugging
@@ -33,40 +34,18 @@ namespace Nitrocid.Kernel.Debugging
         /// Asserts and checks to see if the condition is satisfied
         /// </summary>
         /// <param name="condition">Condition</param>
-        public static void Assert(bool condition) =>
-            Assert(condition, "");
-
-        /// <summary>
-        /// Asserts and checks to see if the condition is satisfied
-        /// </summary>
-        /// <param name="condition">Condition</param>
         /// <param name="message">A message to clarify why the assert failed</param>
-        public static void Assert(bool condition, string message)
-        {
-            if (!condition)
-            {
-                var trace = new DebugStackFrame();
-                var exc = new KernelException(KernelExceptionType.AssertionFailure, $"condition is false. {message}");
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Condition is false!");
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
-                KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
-                throw exc;
-            }
-        }
-
-        /// <summary>
-        /// Asserts and checks to see if the condition is satisfied
-        /// </summary>
-        /// <param name="condition">Condition</param>
-        /// <param name="message">A message to clarify why the assert failed</param>
+        /// <param name="memberName">Member name. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
+        /// <param name="memberLine">Member line number. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
+        /// <param name="memberPath">Member path. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
         /// <param name="vars">Variables to format the message with</param>
-        public static void Assert(bool condition, string message, params object[] vars)
+        public static void Assert(bool condition, string message, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
         {
             if (!condition)
             {
-                message = TextTools.FormatString(message, vars);
-                Assert(condition, message);
+                if (vars is not null)
+                    message = TextTools.FormatString(message, vars);
+                AssertFailInternal(message, "Condition is false!", memberName, memberLine, memberPath);
             }
         }
 
@@ -74,122 +53,56 @@ namespace Nitrocid.Kernel.Debugging
         /// Asserts and checks to see if the condition is not satisfied
         /// </summary>
         /// <param name="condition">Condition</param>
-        public static void AssertNot(bool condition) =>
-            AssertNot(condition, "");
-
-        /// <summary>
-        /// Asserts and checks to see if the condition is not satisfied
-        /// </summary>
-        /// <param name="condition">Condition</param>
         /// <param name="message">A message to clarify why the assert failed</param>
-        public static void AssertNot(bool condition, string message)
+        /// <param name="memberName">Member name. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
+        /// <param name="memberLine">Member line number. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
+        /// <param name="memberPath">Member path. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
+        /// <param name="vars">Variables to format the message with</param>
+        public static void AssertNot(bool condition, string message, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
         {
             if (condition)
             {
-                var trace = new DebugStackFrame();
-                var exc = new KernelException(KernelExceptionType.AssertionFailure, $"condition is true. {message}");
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Condition is true!");
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
-                KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
-                throw exc;
+                if (vars is not null)
+                    message = TextTools.FormatString(message, vars);
+                AssertFailInternal(message, "Condition is true!", memberName, memberLine, memberPath);
             }
         }
 
         /// <summary>
-        /// Asserts and checks to see if the condition is not satisfied
+        /// Asserts and checks to see if the value is null
         /// </summary>
-        /// <param name="condition">Condition</param>
+        /// <param name="value">Condition</param>
         /// <param name="message">A message to clarify why the assert failed</param>
+        /// <param name="memberName">Member name. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
+        /// <param name="memberLine">Member line number. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
+        /// <param name="memberPath">Member path. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
         /// <param name="vars">Variables to format the message with</param>
-        public static void AssertNot(bool condition, string message, params object[] vars)
-        {
-            if (!condition)
-            {
-                message = TextTools.FormatString(message, vars);
-                AssertNot(condition, message);
-            }
-        }
-
-        /// <summary>
-        /// Asserts and checks to see if the value is null
-        /// </summary>
-        /// <param name="value">Condition</param>
-        public static void AssertNull<T>(T value) =>
-            AssertNull(value, "");
-
-        /// <summary>
-        /// Asserts and checks to see if the value is null
-        /// </summary>
-        /// <param name="value">Condition</param>
-        /// <param name="message">A message to clarify why the assert failed</param>
-        public static void AssertNull<T>(T value, string message)
+        public static void AssertNull<T>(T value, string message, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
         {
             if (value is null)
             {
-                var trace = new DebugStackFrame();
-                var exc = new KernelException(KernelExceptionType.AssertionFailure, $"value is null. {message}");
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Value is null!");
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
-                KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
-                throw exc;
+                if (vars is not null)
+                    message = TextTools.FormatString(message, vars);
+                AssertFailInternal(message, "Value is null!", memberName, memberLine, memberPath);
             }
         }
 
         /// <summary>
-        /// Asserts and checks to see if the value is null
+        /// Asserts and checks to see if the value is not null
         /// </summary>
         /// <param name="value">Condition</param>
         /// <param name="message">A message to clarify why the assert failed</param>
+        /// <param name="memberName">Member name. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
+        /// <param name="memberLine">Member line number. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
+        /// <param name="memberPath">Member path. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
         /// <param name="vars">Variables to format the message with</param>
-        public static void AssertNull<T>(T value, string message, params object[] vars)
-        {
-            if (value is null)
-            {
-                message = TextTools.FormatString(message, vars);
-                AssertNull(value, message);
-            }
-        }
-
-        /// <summary>
-        /// Asserts and checks to see if the value is not null
-        /// </summary>
-        /// <param name="value">Condition</param>
-        public static void AssertNotNull<T>(T value) =>
-            AssertNotNull(value, "");
-
-        /// <summary>
-        /// Asserts and checks to see if the value is not null
-        /// </summary>
-        /// <param name="value">Condition</param>
-        /// <param name="message">A message to clarify why the assert failed</param>
-        public static void AssertNotNull<T>(T value, string message)
+        public static void AssertNotNull<T>(T value, string message, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
         {
             if (value is not null)
             {
-                var trace = new DebugStackFrame();
-                var exc = new KernelException(KernelExceptionType.AssertionFailure, $"value is not null. {message}");
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Value is not null!");
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
-                DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
-                KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
-                throw exc;
-            }
-        }
-
-        /// <summary>
-        /// Asserts and checks to see if the value is not null
-        /// </summary>
-        /// <param name="value">Condition</param>
-        /// <param name="message">A message to clarify why the assert failed</param>
-        /// <param name="vars">Variables to format the message with</param>
-        public static void AssertNotNull<T>(T value, string message, params object[] vars)
-        {
-            if (value is not null)
-            {
-                message = TextTools.FormatString(message, vars);
-                AssertNotNull(value, message);
+                if (vars is not null)
+                    message = TextTools.FormatString(message, vars);
+                AssertFailInternal(message, "Value is not null!", memberName, memberLine, memberPath);
             }
         }
 
@@ -197,26 +110,26 @@ namespace Nitrocid.Kernel.Debugging
         /// Triggers assertion failure
         /// </summary>
         /// <param name="message">A message to clarify why the assert failed</param>
-        public static void AssertFail(string message)
+        /// <param name="memberName">Member name. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
+        /// <param name="memberLine">Member line number. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
+        /// <param name="memberPath">Member path. Do not set unless you know what you're doing. Usually, using <c>vars: [...]</c> directly before the <paramref name="memberName"/> parameter is enough.</param>
+        /// <param name="vars">Variables to format the message with</param>
+        public static void AssertFail(string message, [CallerMemberName] string memberName = "", [CallerLineNumber] int memberLine = 0, [CallerFilePath] string memberPath = "", object?[]? vars = null)
         {
-            var trace = new DebugStackFrame();
-            var exc = new KernelException(KernelExceptionType.AssertionFailure, $"undetermined failure. {message}");
-            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Undetermined failure!");
-            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", trace.RoutineName, trace.RoutineFileName, trace.RoutineLineNumber);
-            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
+            if (vars is not null)
+                message = TextTools.FormatString(message, vars);
+            AssertFailInternal(message, "Undetermined failure!", memberName, memberLine, memberPath);
+        }
+
+        private static void AssertFailInternal(string message, string reason, string memberName = "", int memberLine = 0, string memberPath = "")
+        {
+            string fileName = Path.GetFileName(memberPath);
+            var exc = new KernelException(KernelExceptionType.AssertionFailure, $"{reason} {message}");
+            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! {0}", vars: [reason]);
+            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Failure at {0} routine in {1}:{2}", vars: [memberName, fileName, memberLine]);
+            DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", vars: [message]);
             KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
             throw exc;
-        }
-
-        /// <summary>
-        /// Triggers assertion failure
-        /// </summary>
-        /// <param name="message">A message to clarify why the assert failed</param>
-        /// <param name="vars">Variables to format the message with</param>
-        public static void AssertFail(string message, params object[] vars)
-        {
-            message = TextTools.FormatString(message, vars);
-            AssertFail(message);
         }
     }
 }

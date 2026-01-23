@@ -114,10 +114,12 @@ Không xóa được nhật ký gỡ lỗi: {0}
 Thay đổi thư mục không thành công: {0}
 Chỉ định địa chỉ
 Múi giờ được chỉ định không chính xác.
+Lựa chọn hồ sơ không hợp lệ.
 Đang cố gắng kết nối tới {0} bằng hồ sơ {1}...
 Không được phép phân tích cú pháp mod ở chế độ an toàn.
 Đường dẫn không phải là tệp hoặc thư mục.
 Tạo một bản sao khác của một tệp ở thư mục hoặc tên khác.
+Di chuyển một tập tin đến một thư mục khác
 Trận đấu {0} ({1}): {2}
 Trận đấu {0}: {1}
 Thời gian sử dụng: {0} mili giây
@@ -618,6 +620,7 @@ Bật gỡ lỗi bảo vệ màn hình
 Cho phép gỡ lỗi cho trình bảo vệ màn hình. Xin lưu ý rằng nó có thể nhanh chóng điền vào nhật ký gỡ lỗi và làm chậm trình bảo vệ màn hình một chút, tùy thuộc vào trình bảo vệ màn hình được sử dụng. Chỉ hoạt động nếu gỡ lỗi hạt nhân được bật cho mục đích chẩn đoán.
 Trang hướng dẫn {0} không hợp lệ.
 Hãy cân nhắc việc điền vào trang hướng dẫn này.
+Hướng dẫn sử dụng mod
 Các đối số hạt nhân có sẵn:
 Lỗi không thể phục hồi trong lập luận:
 Mã hóa chuỗi bằng SHA512
@@ -1612,6 +1615,7 @@ Là một thư mục
 Đã được chọn
 Kích thước tập tin
 Đường dẫn tập tin
+Đã chọn '{0}'. Nhấn ESC để thoát và xác nhận lựa chọn.
 Không thể mở thư mục hoặc chọn tệp
 Nhập đường dẫn hoặc đường dẫn đầy đủ đến thư mục cục bộ.
 Nhấn phím SPACE để biết thêm thông tin
@@ -3218,6 +3222,7 @@ Lệnh này có các đối số bên dưới để thay đổi cách thức ho�
 Mô tả đối số không xác định
 Liệt kê tất cả các tham số hàm có sẵn từ một hàm
 Quản lý báo thức của bạn
+Quản lý báo thức của bạn trong TUI tương tác
 Khởi động lại một phiên bản kernel từ xa
 Hạt nhân trong phiên bản từ xa sẽ bị tắt
 Sử dụng kiểu cài đặt cũ
@@ -3390,7 +3395,9 @@ Bạn muốn sử dụng trình điều khiển mã hóa bất đối xứng nà
 Kiểu bộ nạp khởi động
 Chọn kiểu bộ nạp khởi động phù hợp với sở thích của bạn.
 Thời gian chờ lựa chọn mặc định của bộ nạp khởi động
+Thời gian chờ tính bằng giây để khởi động đến lựa chọn mặc định.
 Lựa chọn mặc định của bộ nạp khởi động
+Lựa chọn mục khởi động mặc định. Số này bắt đầu từ số không, do đó phần tử đầu tiên là chỉ mục 0, v.v.
 Kích hoạt 'Trang chủ Nitrocid'
 Cho phép 'Trang chủ Nitrocid' cho phép bạn xem nhanh những gì đang diễn ra.
 Màu nền phím tắt tích hợp TUI tương tác
@@ -3703,7 +3710,26 @@ Mang lại nỗi nhớ với chủ đề này!
 Thiết bị đầu cuối của bạn bao gồm các tấm ván gỗ
 Lấy cảm hứng từ các mẫu hoa quả khác nhau của Trung Quốc
 Phần bổ sung - CRC32C (Castagnoli)
+In phiên bản hạt nhân
+In phiên bản API
 Không thể xóa các tập tin gỡ lỗi
+Cấu hình kernel sẽ không hoạt động bình thường. Tham khảo trình gỡ lỗi kernel để biết thêm thông tin.
+Không thể kiểm tra các biến cấu hình khi không có cấu hình hạt nhân cơ sở nào được chỉ định.
+Không thể kiểm tra các biến cấu hình khi không có khóa nào được chỉ định.
+Đang cố gắng đăng ký cài đặt tùy chỉnh với nội dung không hợp lệ. Tham khảo trình gỡ lỗi kernel để biết thêm thông tin.
+Đang cố gắng đăng ký một thiết lập cơ sở với nội dung không hợp lệ. Tham khảo trình gỡ lỗi hạt nhân để biết thêm thông tin
+Không lấy được mục cài đặt chào mừng.
+Cần phải cài đặt tiện ích bổ sung biểu tượng trước khi có thể thiết lập giá trị này.
+Chọn một mục nhập cho
+Đặt lại tất cả
+Đặt lại mục nhập
+Kiểu đối số được chỉ định không hợp lệ
+Một hoặc nhiều mục cấu hình có biến hoặc liệt kê không hợp lệ và cần được sửa. Tham khảo trình gỡ lỗi hạt nhân để biết thêm thông tin.
+Không có nền văn hóa nào có tên này.
+Đã xảy ra lỗi khi xử lý hành động tín hiệu âm thanh của bạn.
+Không thể trả về kiểu lớp không tồn tại từ cụm addon
+Lớp này không phải là lớp bổ sung
+Đang phát âm thanh tắt máy...
 Chúng tôi sẽ không còn hỗ trợ phiên bản Nitrocid KS này sau ngày này
 Hãy đảm bảo rằng bạn sớm nâng cấp lên phiên bản được hỗ trợ nếu bạn muốn tiếp tục nhận được hỗ trợ.
 Phiên bản Nitrocid KS này không còn được hỗ trợ.
@@ -3720,9 +3746,12 @@ Không tải được bí danh
 Không tải được mục quay số nhanh
 Không tải được biến môi trường
 Không tải được trình nghe báo động
+Không thể hoàn tất tiện ích bổ sung
 Không tải được MOTD và MAL
 Không tải được lịch sử lệnh shell
 Không tải được trình xử lý mở rộng
+Đang tải bản mod...
+Không tải được bản mod
 Đã xảy ra lỗi khi cố gắng khởi tạo các thành phần tùy chọn.
 Không thể thiết lập lại các biến chung
 Không lưu được lịch sử lệnh shell
@@ -3744,12 +3773,26 @@ Không dừng được tất cả các luồng hạt nhân
 Đã xảy ra lỗi khi cố gắng thiết lập lại các thành phần.
 Ngoại lệ
 Tham khảo nhật ký gỡ lỗi hạt nhân để biết thêm thông tin.
+Không có loại tín hiệu âm thanh nào như vậy.
+Không thể lấy được cài đặt dự phòng
+Không thể thiết lập lại tất cả các mục cài đặt cho
+Không thể thiết lập lại mục cài đặt này cho
+Không tìm thấy biến trên bất kỳ mô-đun nào.
+Không thể nhận được tín hiệu âm thanh cần thiết cho màn hình bảo vệ xung quanh.
+Kết nối mạng có thể chưa được thiết lập đúng cách do lỗi.
+Không thể đệm lệnh không được thiết lập là có thể gói lại.
 Mô tả công tắc không xác định
 Đường dẫn đến một quá trình
 Các đối số để truyền cho một quá trình
 Lệnh hiển thị mục trợ giúp
+Chuyển lệnh đầu ra sang lệnh khác dưới dạng tham số
+Lệnh nguồn để chuyển đầu ra của nó đến lệnh đích như tham số cuối cùng
 Lệnh mục tiêu để thực thi khi xây dựng đối số dựa trên đầu ra của lệnh nguồn
+Có nên truyền đầu ra của lệnh nguồn dưới dạng một đối số được trích dẫn hay không được trích dẫn
 Lệnh để gói đầu ra của nó
+Không thực hiện được lệnh nguồn.
+Thực hiện lệnh mục tiêu không thành công. Nội dung có thể chưa được điền đúng. Lệnh đã được thực hiện
+Đường ống bị vỡ.
 Đối số để hiển thị mục trợ giúp
 Số phiên bắt đầu từ số không
 Tên người dùng để truy vấn
@@ -3757,14 +3800,25 @@ Loại quyền cấp hoặc từ chối
 Sai để phủ nhận, đúng để chấp nhận
 Tên hiển thị mới hoặc 'xóa' để xóa tên hiển thị
 ID ngôn ngữ gồm ba chữ cái hoặc 'xóa' để xóa ngôn ngữ ưa thích
+Thay đổi văn hóa người dùng ưa thích
+ID văn hóa hoặc 'xóa' để xóa văn hóa ưa thích
+Văn hóa người dùng ưa thích được đặt thành {0}. Bạn có thể muốn đăng nhập lại.
+Văn hóa không hợp lệ
+Văn hóa ưa thích
 GUID phiên không hợp lệ
 Không có GUID phiên nào như vậy
+Loại không xác định
+Tham số không xác định
+Danh sách các loại cho
+Dễ dàng lấy thông tin nhật ký gỡ lỗi bằng cách sử dụng GUID phiên
 Phiên GUID để tìm
 Số ngoại lệ
 Tên trường để truy vấn
 Tên thuộc tính để truy vấn
 Tên bổ sung để truy vấn
+Tên loại tĩnh công khai từ addon
 Tên hàm từ loại tĩnh công khai để truy vấn
+Liệt kê tất cả các loại có sẵn từ tiện ích bổ sung được chỉ định
 Tên Splash để truy vấn
 Số byte từ 0 đến 255
 Số vị trí byte
@@ -3786,6 +3840,10 @@ Một từ hoặc cụm từ cần được thay thế
 Một từ hoặc cụm từ để thay thế bằng
 Số dòng (có thể là số ít hoặc bắt đầu phạm vi) hoặc 'tất cả' để thay thế trong tất cả các dòng
 Một biểu thức chính quy để khớp với các cụm từ cần được thay thế
+Quốc gia không hợp lệ
+Chọn ngôn ngữ cho quốc gia
+Lựa chọn ngôn ngữ không hợp lệ cho
+Đúng
 Tên nhóm mới để thêm
 Tên người dùng mới để thêm
 Mật khẩu mới để sử dụng
@@ -3812,8 +3870,12 @@ Tên mới để đổi tên tất cả các tập tin được tìm thấy thà
 Đường dẫn đến tập tin
 Hoặc thêm vào hoặc loại bỏ
 Tên thuộc tính
+Thay đổi văn hóa
+ID văn hóa để thay đổi
+Thay đổi văn hóa người dùng thay vì văn hóa hệ thống
 Tên máy chủ mới để thay đổi
 ID ngôn ngữ
+Thay đổi ngôn ngữ bằng cách sử dụng quốc gia (bạn có thể được nhắc chọn ngôn ngữ)
 Tin nhắn mới để sử dụng
 Trả lời để chia tách bằng dấu gạch chéo
 Câu hỏi in ra màn hình
@@ -3889,6 +3951,7 @@ Hoặc là tên trình bảo vệ màn hình hoặc 'ngẫu nhiên'
 Biểu thức chính quy để tìm kiếm
 Tệp mục tiêu
 Từ hoặc cụm từ để tìm kiếm
+Mở cài đặt màn hình bổ sung
 Giá trị để thiết lập
 Tên biến cấu hình
 Tên người thực hiện
@@ -3914,6 +3977,7 @@ Tệp băm hoặc băm mong đợi
 Tệp để kiểm tra
 Tên tệp ZIP để tạo
 Đường dẫn để nén
+Cần phải cài đặt tiện ích bổ sung biểu tượng trước khi có thể hiển thị biểu tượng cảm xúc này.
 Ghi chú nội dung cần thêm
 Ghi chú số
 Đường dẫn đến thư mục có kho lưu trữ Git
@@ -3953,6 +4017,8 @@ Liệt kê tất cả các lời nhắc
 Lưu tất cả lời nhắc
 Hoặc là đường dẫn đến tệp liên hệ vCard hoặc biểu diễn MeCard
 Số điện thoại liên lạc
+Biên tập...
+Nhập tên mới cho liên hệ này
 Vĩ độ sử dụng
 Kinh độ để sử dụng
 Khóa API Weather.com
@@ -3961,6 +4027,7 @@ Khóa API OpenWeatherMap
 Có nên thêm, xóa, đánh dấu là đã hoàn thành hoặc bỏ đánh dấu là đã hoàn thành trên một nhiệm vụ không?
 Có nên liệt kê, lưu hoặc tải tất cả các tác vụ không
 Bộ đếm thời gian Pomodoro
+Pomodoro
 Bộ đếm thời gian Pomodoro đã sẵn sàng
 Số bộ đếm thời gian Pomodoro {0} trong bốn lần lặp lại
 Nghỉ giải lao ngắn
@@ -4011,6 +4078,7 @@ Tạo một thư mục từ xa
 Đường dẫn đến tệp cục bộ
 Số lượng quyền theo chmod
 Chỉ định loại chuyển giao là ASCII hay Nhị phân
+Liên kết tượng trưng đến: {0}
 Phím tiêu đề
 Giá trị tiêu đề
 Yêu cầu HTTP
@@ -4018,12 +4086,39 @@ Tệp để tải lên
 Chuỗi để tải lên
 Chuỗi tác nhân người dùng
 Địa chỉ email để đăng nhập
+Tạo thư mục
+Di chuyển...
+Di chuyển tất cả...
+Đổi tên thư mục
+Xóa thư mục
+Xóa tin nhắn
+Xóa tất cả...
+Không thể mở thư mục hoặc tin nhắn
+Viết tên thư mục mới.
+Đang tạo thư mục...
+Không thể tạo thư mục
+Chọn thư mục mới để di chuyển tin nhắn này tới.
+Tin nhắn đang di chuyển...
+Không thể di chuyển tin nhắn
+Chọn một thư mục mới để di chuyển tất cả thư của cùng một người gửi đến.
+Di chuyển tin nhắn theo người gửi {0}...
+Không thể di chuyển tất cả tin nhắn của cùng một người gửi
+Viết tên thư mục mới để đổi tên {0} thành.
+Đang đổi tên thư mục...
+Không thể đổi tên thư mục
+Đang xóa thư mục...
+Không thể xóa thư mục
+Đang xóa tin nhắn...
+Không thể xóa tin nhắn
+Đang xóa tin nhắn theo người gửi {0}...
+Không thể xóa tất cả tin nhắn của cùng một người gửi
 Tên thư mục thư
 Số trang
 ID tin nhắn
 Tên người gửi
 Tên thư mục thư cũ
 Tên thư mục thư mới
+Quản lý thư tương tác
 Máy chủ SFTP để kết nối tới
 Liên kết nguồn cấp RSS
 Số lượng thức ăn
@@ -4044,13 +4139,132 @@ Tên bến tàu
 Máy chủ SSH để kết nối tới
 Tên người dùng để xác thực với
 Lệnh thực hiện từ xa
+In thông tin về chất hóa học ra bảng điều khiển.
+Có thể là tên, ký hiệu hoặc số nguyên tử của một chất
+In thông tin về tất cả các chất hóa học vào bảng điều khiển.
+Không có chất nào có số nguyên tử
+Không có chất nào có ký hiệu hoặc tên gọi
+Số nguyên tử
+Khối lượng nguyên tử
+Biểu tượng
+Bản tóm tắt
+Giai đoạn
+Vị trí trong bảng tuần hoàn
+Vị trí trong tọa độ
+Người khám phá
+Được đặt tên bởi
+Cấu hình electron
+Bắt đầu mod (chọn)
+Bắt đầu mod (đầu vào)
+Dừng mod
+Tải lại bản mod
+Cài đặt mod (chọn)
+Cài đặt mod (đầu vào)
+Gỡ cài đặt mod
+Bắt đầu tất cả
+Dừng tất cả
+Tải lại tất cả
+Không thể trả về kiểu lớp không tồn tại từ mod assembly
+Không tìm thấy hàm '{0}' trong mod '{1}'.
+Không tìm thấy thuộc tính '{0}' trong mod '{1}'.
+Không tìm thấy trường '{0}' trong mod '{1}'.
+Lớp này không phải là lớp mod
+Ngôn ngữ
+Điểm vào
+Nhập đường dẫn đến bản mod mà bạn muốn bắt đầu
+Không thể khởi động mod
+Nhập đường dẫn đến bản mod mà bạn muốn cài đặt
+Không cài được mod
+Không thể bắt đầu hoặc dừng bản mod này!
+Có nên bắt đầu, dừng, lấy thông tin, tải lại, cài đặt hoặc gỡ cài đặt bản mod không?
+Tên mod hoặc tên file
+Có nên liệt kê, tải lại, dừng, bắt đầu hay quản lý tương tác tất cả các bản mod không
+Tên mod
+Thiết lập văn hóa và ngôn ngữ
+Điều này cho phép bạn cấu hình văn hóa và ngôn ngữ
+Cài đặt thời gian và ngày tháng
+Điều này cho phép bạn cấu hình thời gian và ngày tháng
+Cài đặt bộ nạp khởi động
+Điều này cho phép bạn cấu hình bộ nạp khởi động
+Trang chủ Nitrocid
+Điều này cho phép bạn cấu hình Trang chủ Nitrocid
+Cài đặt cập nhật hạt nhân
+Điều này cho phép bạn cấu hình các bản cập nhật hạt nhân
+Cài đặt lỗi hạt nhân
+Điều này cho phép bạn cấu hình lỗi hạt nhân
+Thiết lập năng lượng hạt nhân
+Điều này cho phép bạn cấu hình cơ chế năng lượng hạt nhân
+Các lược đồ màu hạt nhân
+Điều này cho phép bạn thiết lập nhiều lược đồ màu hạt nhân
+Cài đặt trình xử lý đăng nhập hiện đại
+Điều này cho phép bạn cấu hình trình xử lý đăng nhập hiện đại
+Hệ thống trợ giúp
+Điều này cho phép bạn cấu hình hệ thống trợ giúp shell
+Shell cài đặt trước
+Điều này cho phép bạn cấu hình các cài đặt trước của shell
+Cài đặt gỡ lỗi từ xa
+Điều này cho phép bạn cấu hình trình gỡ lỗi từ xa
 Sự chậm trễ thống nhất
 Nếu đúng, cho phép trì hoãn ghi thống nhất cho tất cả trình bảo vệ màn hình. Nếu không, nó sử dụng các giá trị trì hoãn được cấu hình riêng cho trình bảo vệ màn hình.
+Phần này liệt kê tất cả các cài đặt âm thanh.
+Cài đặt âm thanh
+Bật hỗ trợ âm thanh
+Cho phép toàn bộ hệ thống âm thanh cho các tín hiệu hệ thống
+Bật tín hiệu bàn phím
+Có nên chơi tín hiệu bàn phím cho mỗi lần nhấn phím hay không
+Bật âm thanh khởi động
+Có nên phát âm thanh khởi động hay không
+Bật âm thanh tắt máy
+Có nên phát âm thanh tắt máy hay không
+Bật âm thanh điều hướng
+Có nên phát âm thanh điều hướng cho mỗi lần nhấn phím hay không
+Bật âm thanh thông báo có mức độ ưu tiên thấp
+Có nên phát âm thanh thông báo cho các cảnh báo có mức độ ưu tiên thấp hay không
+Bật âm thanh thông báo có mức độ ưu tiên trung bình
+Có nên phát âm thanh thông báo cho các cảnh báo có mức độ ưu tiên trung bình hay không
+Bật âm thanh thông báo ưu tiên cao
+Có nên phát âm thanh thông báo cho các cảnh báo có mức độ ưu tiên cao hay không
+Bật hiệu ứng âm thanh bảo vệ màn hình xung quanh
+Có nên phát hiệu ứng âm thanh bảo vệ màn hình xung quanh hay không
+Tăng cường hiệu ứng âm thanh bảo vệ màn hình xung quanh
+Có nên tăng cường hiệu ứng âm thanh bảo vệ màn hình xung quanh hay không
+Âm lượng tín hiệu âm thanh
+Chỉ định mức độ to mà bạn muốn tín hiệu âm thanh phát ra
+Chủ đề âm thanh
+Bạn muốn sử dụng chủ đề âm thanh nào cho tín hiệu âm thanh?
+Cài đặt trình soạn thảo văn bản
+Điều này cho phép bạn cấu hình trình soạn thảo văn bản
+Cài đặt trình soạn thảo Hex
+Điều này cho phép bạn cấu hình trình soạn thảo hex
+Cài đặt tiêu đề RSS
+Điều này cho phép bạn cấu hình tiêu đề RSS
+Cài đặt chuột
+Điều này cho phép bạn cấu hình chuột
+Cài đặt gỡ lỗi
+Điều này cho phép bạn cấu hình quy trình gỡ lỗi
+Thẩm mỹ
+Điều này cho phép bạn cấu hình tính thẩm mỹ của hạt nhân
+Hiển thị một từ Chào mừng lớn được viết ở giữa bảng điều khiển; tương tự như tấm thảm chào mừng
+Hiển thị tiến trình
+Hiển thị tiến trình hay không
+Điều này cho phép bạn cấu hình màu sắc
+Phần này cho phép bạn cấu hình Solver.
+Phần này cho phép bạn cấu hình SpeedPress.
+Phần này cho phép bạn cấu hình Meteor và ShipDuet.
+Phần này cho phép bạn cấu hình cách thức hoạt động của hệ thống sửa đổi hạt nhân.
 Phần này cho phép bạn cấu hình cách ứng dụng hẹn giờ hoạt động.
 Phần này cho phép bạn cấu hình cách ứng dụng hẹn giờ pomodoro hoạt động.
 Bật Figlet cho bộ đếm thời gian pomodoro
 Nếu được bật, sẽ sử dụng figlet cho bộ đếm thời gian pomodoro. Xin lưu ý rằng cần có màn hình điều khiển lớn để hiển thị thời gian chính xác khi bật Figlet.
 Phông chữ Figlet cho bộ đếm thời gian pomodoro
+Cài đặt dốc giờ
+Điều này cho phép bạn cấu hình thời gian tăng dần
+Cài đặt dốc phút
+Điều này cho phép bạn cấu hình độ dốc phút
+Cài đặt dốc giây
+Điều này cho phép bạn cấu hình đoạn dốc giây
+Cài đặt dốc
+Điều này cho phép bạn cấu hình các đường dốc
 Hiển thị văn bản bên dưới một dòng trên nền đỏ u ám.
 Các ký tự ngẫu nhiên xuất hiện ngẫu nhiên trên màn hình.
 Ngày và giờ đơn giản ở giữa màn hình và thay đổi màu sắc dựa trên thời gian hiện tại.
@@ -4064,7 +4278,64 @@ Khối di chuyển theo hình sóng với thước kẻ màu xanh lá cây theo 
 Hiển thị cho bạn một ký tự ngẫu nhiên trong văn bản figlet có màu.
 Hiển thị cho bạn một từ đang được chọn giống như máy đánh bạc ở sòng bạc.
 Hiển thị cho bạn một văn bản figlet nhiều màu xen kẽ giữa hai màu neon: xanh lơ và đỏ tươi.
+Thiết lập văn hóa
+Điều này cho phép bạn cấu hình văn hóa được sử dụng bởi trình bảo vệ màn hình lịch
+Thiết lập ram đầu tiên
+Điều này cho phép bạn cấu hình đoạn đường dốc đầu tiên
+Cài đặt ram thứ hai
+Điều này cho phép bạn cấu hình đoạn đường dốc thứ hai
+Cài đặt ram thứ ba
+Điều này cho phép bạn cấu hình đoạn đường dốc thứ ba
+Các bảng màu từ Alma Linux, một sản phẩm phụ của hệ điều hành Linux, Red Hat
+Các lược đồ màu từ hệ điều hành Linux, Arch Linux
+Các bảng màu từ EndeavourOS, một sản phẩm phụ của hệ điều hành Linux, Arch Linux
+Các chương trình màu từ Fedora, một sản phẩm phụ của hệ điều hành Linux, Red Hat
+Các lược đồ màu từ hệ điều hành Linux, Gentoo
+Màu sắc hoa văn đục đẽo tạo thành một mandala đầy màu sắc
+Các bảng màu từ Kubuntu, một phiên bản phụ của hệ điều hành Linux phổ biến, Ubuntu
+Các bảng màu từ Linux Mint, một phiên bản phụ không chính thức của hệ điều hành Linux phổ biến, Ubuntu
+Các bảng màu từ Lubuntu, một phiên bản phụ của hệ điều hành Linux phổ biến, Ubuntu
+Các bảng màu từ Manjaro, một sản phẩm phụ của hệ điều hành Linux, Arch Linux
+Các lược đồ màu từ hệ điều hành Linux, openSUSE
+Các lược đồ màu từ hệ điều hành Linux, Red Hat
+Sắc đỏ với màu sắc nhấn mạnh năng động cho văn bản đáng chú ý
+Các chương trình màu từ Rocky Linux, một nhánh của hệ điều hành Linux, Red Hat
+Các lược đồ màu từ hệ điều hành Linux, Slackware
+Các bảng màu từ Xubuntu, một phiên bản phụ của hệ điều hành Linux phổ biến, Ubuntu
+Các bảng màu từ Zorin OS, một phiên bản phụ không chính thức của hệ điều hành Linux phổ biến, Ubuntu
+Phần bổ sung - Hóa học
+Phần bổ sung - Mod
+Phần bổ sung - Biểu tượng
 Nền văn hóa nào đang được sử dụng để thay đổi tên tháng, lịch, v.v.?
+Bật tiện ích 'Trang chủ Nitrocid'
+Bật tiện ích 'Trang chủ Nitrocid' ở bên phải màn hình.
+Bật nguồn cấp RSS 'Trang chủ Nitrocid'
+Bật tiện ích nguồn cấp RSS 'Trang chủ Nitrocid' ở bên phải màn hình.
+Tiện ích 'Trang chủ Nitrocid'
+Chọn tiện ích sẽ được hiển thị trong 'Trang chủ Nitrocid'.
+Cài đặt đường viền thông báo
+Điều này cho phép bạn định cấu hình đường viền thông báo
+Cài đặt đường viền chung
+Điều này cho phép bạn định cấu hình đường viền chung
+Cài đặt giao diện
+Điều này cho phép bạn định cấu hình giao diện dốc giờ
+Điều này cho phép bạn định cấu hình màu dốc giờ
+Điều này cho phép bạn định cấu hình giao diện dốc phút
+Điều này cho phép bạn định cấu hình màu dốc phút
+Điều này cho phép bạn định cấu hình giao diện dốc giây
+Điều này cho phép bạn định cấu hình màu dốc giây
+Cài đặt màu vị trí bắt đầu
+Điều này cho phép bạn định cấu hình màu vị trí bắt đầu
+Cài đặt màu vị trí kết thúc
+Điều này cho phép bạn định cấu hình màu vị trí kết thúc
+Cài đặt thanh dốc
+Điều này cho phép bạn định cấu hình thanh dốc
+Điều này cho phép bạn định cấu hình giao diện dốc
+Điều này cho phép bạn định cấu hình màu dốc
+Cài đặt bắt đầu dốc
+Điều này cho phép bạn định cấu hình màu dốc bắt đầu
+Cài đặt kết thúc dốc
+Điều này cho phép bạn định cấu hình màu dốc kết thúc
 Mức màu nền tối đa
 Mức màu nền tối đa. Giá trị tối thiểu được chấp nhận là 0 và giá trị tối đa được chấp nhận là 255.
 Mức màu đường tối đa
@@ -4073,6 +4344,7 @@ Mức màu văn bản tối đa
 Mức màu văn bản tối đa. Giá trị chấp nhận tối thiểu là 0 và giá trị chấp nhận tối đa là 255.
 Sử dụng văn hóa hệ thống
 Trình bảo vệ màn hình có sử dụng văn hóa do cài đặt hạt nhân chính hay cài đặt trình bảo vệ màn hình này đặt không.
+Điều này cho phép bạn định cấu hình giao diện ram đầu tiên
 Văn bản thông tin cho lần đầu tiên
 Viết cách hiển thị văn bản thông tin của bạn cho giờ hiện tại. {0} cho giờ hiện tại trong số 24 giờ đầu tiên.
 Ký tự góc trên bên trái cho thanh đầu tiên
@@ -4083,6 +4355,7 @@ Ký tự khung trên cho thanh đầu tiên
 Ký tự khung dưới cho thanh đầu tiên
 Ký tự khung trái cho thanh đầu tiên
 Ký tự khung phải cho thanh đầu tiên
+Điều này cho phép bạn cấu hình màu dốc đầu tiên
 Màu của Thanh đầu tiên
 Mức màu đỏ tối thiểu cho thanh đầu tiên
 Mức màu xanh lá cây tối thiểu cho thanh đầu tiên
@@ -4092,6 +4365,7 @@ Mức màu đỏ tối đa cho thanh đầu tiên
 Mức màu xanh lá cây tối đa cho thanh đầu tiên
 Mức màu xanh lam tối đa cho thanh đầu tiên
 Mức màu tối đa cho thanh đầu tiên
+Điều này cho phép bạn cấu hình giao diện dốc thứ hai
 Văn bản thông tin cho giây
 Viết cách văn bản thông tin của bạn cho phút hiện tại hiển thị. {0} cho phút hiện tại trong 60 giây.
 Ký tự góc trên bên trái cho thanh thứ hai
@@ -4102,6 +4376,7 @@ Ký tự khung trên cho thanh thứ hai
 Ký tự khung dưới cho thanh thứ hai
 Ký tự khung trái cho thanh thứ hai
 Ký tự khung phải cho thanh thứ hai
+Điều này cho phép bạn định cấu hình màu dốc thứ hai
 Màu của Thanh thứ hai
 Mức màu đỏ tối thiểu cho thanh thứ hai
 Mức màu xanh lá cây tối thiểu cho thanh thứ hai
@@ -4111,6 +4386,7 @@ Mức màu đỏ tối đa cho thanh thứ hai
 Mức màu xanh lá cây tối đa cho thanh thứ hai
 Mức màu xanh lam tối đa cho thanh thứ hai
 Mức màu tối đa cho thanh thứ hai
+Điều này cho phép bạn định cấu hình giao diện dốc thứ ba
 Ký tự góc trên bên trái cho thanh thứ ba
 Ký tự góc trên bên phải cho thanh thứ ba
 Ký tự góc dưới bên trái cho thanh thứ ba
@@ -4120,6 +4396,7 @@ Ký tự khung dưới cho thanh thứ ba
 Ký tự khung trái cho thanh thứ ba
 Ký tự khung phải cho thanh thứ ba bar
 Văn bản thông tin cho thứ ba
+Viết cách văn bản thông tin của bạn cho thứ hai hiện tại hiển thị. {0} cho thứ hai hiện tại trong số 60 thứ ba.
 Điều này cho phép bạn định cấu hình màu dốc thứ ba
 Màu của thanh thứ ba
 Mức màu đỏ tối thiểu cho thứ ba
@@ -4132,61 +4409,6 @@ Mức màu xanh lam tối đa cho thứ ba
 Mức màu tối đa cho thứ ba
 Tiến trình sẽ chọn màu ngẫu nhiên nếu được bật. Nếu không, hãy sử dụng màu từ cấu hình.
 Nếu bật tính năng tuần hoàn màu, có bao nhiêu tích tắc trước khi thay đổi màu trong Tiến trình? 1 tích tắc = 0,5 thứ ba
-Xong! Vui lòng sử dụng ứng dụng Nitrocid.Locales với các đối số phù hợp để hoàn thiện ngôn ngữ. Bạn có thể sử dụng đường dẫn này:
-Cấu hình hạt nhân sẽ không hoạt động bình thường. Các khóa không hợp lệ
-Đang cố gắng đăng ký một thiết lập tùy chỉnh với nội dung không hợp lệ. Các khóa không hợp lệ
-Đang cố gắng đăng ký một thiết lập cơ sở với nội dung không hợp lệ. Các khóa không hợp lệ
-Thêm một mod vào danh sách đen
-Xóa một mod khỏi danh sách đen
-Các mục cấu hình này có các biến hoặc phép liệt kê không hợp lệ và cần được sửa:
-Bắt đầu tất cả các mod
-In một dấu phân cách vào bảng điều khiển có màu
-In một dấu phân cách vào bảng điều khiển có định dạng và màu
-Tải lại tất cả các mod
-Thống kê
-Hiển thị số liệu thống kê thử nghiệm hiện tại
-Kiểm tra tất cả
-Kiểm tra tất cả các mặt tiền
-Quay lại phần lựa chọn
-Chọn một mặt tiền thử nghiệm để chạy
-Kiểm tra này chứa các tham số tùy chọn. Nhập giá trị của tham số để thêm vào các tham số thử nghiệm.
-Số lượng tham số
-Có!
-Thử lại
-Kiểm tra có chạy như mong đợi không?
-Kiểm tra không thành công. Giá trị mong đợi là {0}, nhưng giá trị thực tế là {1}.
-Kiểm tra không thành công ngoài mong đợi.
-Kiểm tra thành công:
-Kiểm tra không thành công:
-Kiểm tra cần chạy:
-Không thể lấy danh sách hàm
-Không thể lấy danh sách thuộc tính
-Không thể lấy danh sách trường
-Dựa trên cài đặt ngôn ngữ trên hệ thống của bạn, ngôn ngữ phù hợp là
-Không tải được tiện ích bổ sung hoàn thiện
-Sửa đổi hạt nhân
-Đã chọn '{0}'. Nhấn ESC để thoát và xác nhận lựa chọn.
-Không tìm thấy biến {0} trên bất kỳ mô-đun nào.
-Kiểu phương thức không được xác định trong danh sách kiểu Nitrocid cơ sở.
-Không thể thực thi thuộc tính tùy chỉnh với mod không tồn tại
-Không thể thực thi trường tùy chỉnh với mod không tồn tại
-Dễ dàng lấy thông tin nhật ký gỡ lỗi bằng số phiên
-Có, hãy đặt!
-Không, đừng đặt.
-Sử dụng cài đặt ngôn ngữ hệ thống để cố gắng suy ra ngôn ngữ từ
-Không có thông tin thuộc tính nào cho
-Pomodoro Timer
-Lựa chọn hồ sơ không hợp lệ.
-Thay đổi Văn hóa khi Chuyển đổi Ngôn ngữ
-Khi chuyển đổi ngôn ngữ, hãy thay đổi tên tháng, lịch, v.v.
-Biến thể nào của ngôn ngữ hiện tại đang được sử dụng để thay đổi tên tháng, lịch, v.v.?
-Thời gian chờ tính bằng giây để khởi động đến lựa chọn mặc định.
-Lựa chọn mục khởi động mặc định. Số này bắt đầu từ số không, vì vậy phần tử đầu tiên là chỉ mục 0, v.v.
-Phần này liệt kê các cài đặt trước của shell.
-Cài đặt trước của shell
-Gói đầu ra danh sách
-Gói đầu ra danh sách nếu có vẻ quá dài đối với hình dạng bảng điều khiển hiện tại.
-Phần này cho phép bạn định cấu hình cách thức hoạt động của các trò giải trí.
 Ngày sản xuất không hợp lệ
 Thời hạn sử dụng không hợp lệ
 Ngày hết hạn không hợp lệ
@@ -4200,21 +4422,14 @@ Lấy thông tin hết hạn sản phẩm
 Ngày sản xuất (xem ở mặt bên hoặc mặt dưới của sản phẩm)
 Ngày hết hạn hoặc khoảng thời gian (được ghi rõ ràng ở cùng một chỗ hoặc khoảng thời gian, chẳng hạn như 6 tháng hoặc 1 năm)
 Sản phẩm mục tiêu có ghi rõ ngày hết hạn không
-Cài đặt bảo vệ màn hình...
-Điều này cho phép bạn cấu hình văn hóa được sử dụng bởi trình bảo vệ màn hình lịch
 Chọn một phiên bản cấu hình để chuyển sang.
+Không thể chọn cấu hình
 Chọn cấu hình
 Nhắc bạn chọn một phiên bản cấu hình
-Không thể kiểm tra các biến cấu hình khi không chỉ định cấu hình hạt nhân cơ sở.
-Cấu hình hạt nhân sẽ không hoạt động bình thường. Tham khảo trình gỡ lỗi hạt nhân để biết thêm thông tin.
-Không thể kiểm tra các biến cấu hình khi không chỉ định khóa.
-Đang cố gắng đăng ký một thiết lập tùy chỉnh với nội dung không hợp lệ. Tham khảo trình gỡ lỗi hạt nhân để biết thêm thông tin.
-Đang cố gắng đăng ký một thiết lập cơ sở với nội dung không hợp lệ. Tham khảo trình gỡ lỗi hạt nhân để biết thêm thông tin
-Chọn một mục nhập cho
-Không thể chọn cấu hình
-Một hoặc nhiều mục nhập cấu hình có các biến hoặc liệt kê không hợp lệ và cần được sửa. Tham khảo trình gỡ lỗi hạt nhân để biết thêm thông tin.
+Cài đặt trình bảo vệ màn hình...
 Tên mục nhập cài đặt không được để trống
 Mô tả mục nhập cài đặt không được để trống
 Mục nhập cài đặt không được để trống danh sách khóa cài đặt
 Tên khóa cài đặt không được để trống
 Khóa cài đặt không được giữ loại khóa không hợp lệ
+Các phím có sẵn

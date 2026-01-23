@@ -22,7 +22,7 @@ using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Nitrocid.Network;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 using System;
 using System.Net;
 
@@ -53,7 +53,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get host name from target device {0}: {1}", address, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get host name from target device {0}: {1}", vars: [address, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
 

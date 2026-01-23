@@ -23,11 +23,10 @@ using System.Threading;
 using System;
 using Nitrocid.Extras.MailShell.Tools;
 using Nitrocid.Extras.MailShell.Tools.Transfer;
-using Nitrocid.Shell.ShellBase.Commands;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Commands;
+using Terminaux.Shell.Shells;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Network.SpeedDial;
 using Nitrocid.Network.Connections;
@@ -85,7 +84,7 @@ namespace Nitrocid.Extras.MailShell.Mail
                 }
                 catch (ThreadInterruptedException)
                 {
-                    CancellationHandlers.CancelRequested = false;
+                    CancellationHandlers.DismissRequest();
                     Bail = true;
                 }
                 catch (Exception ex)

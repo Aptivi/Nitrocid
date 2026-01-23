@@ -73,7 +73,7 @@ namespace Nitrocid.ConsoleBase.Themes
                 var type = colors.Keys.ElementAt(key);
                 var color = colors.Values.ElementAt(key);
                 choices.Add(
-                    new(type.ToString(), $"[{color.PlainSequence}]{color.VTSequenceForeground} Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+                    new(type.ToString(), $"[{color.PlainSequence}]{color.VTSequenceForeground()} Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
                 );
             }
 
@@ -87,10 +87,10 @@ namespace Nitrocid.ConsoleBase.Themes
             while (true)
             {
                 int prev = SelectionStyle.PromptSelection((theme is not null ? $"{theme.Name}: {theme.Description}\n\n" : "") + Translate.DoTranslation("Here's how your theme will look like:"), [.. choices], [.. altChoices], true);
-                if (prev == choices.Count + 1)
+                if (prev == choices.Count)
                     break;
                 else
-                    ColorSelector.OpenColorSelector(colors.Values.ElementAt(prev - 1), readOnly: true);
+                    ColorSelector.OpenColorSelector(colors.Values.ElementAt(prev), readOnly: true);
             }
         }
     }

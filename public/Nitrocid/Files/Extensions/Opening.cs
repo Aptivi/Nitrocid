@@ -19,20 +19,20 @@
 
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Files.Operations.Querying;
+using Nitrocid.Files.Extensions;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Extensions;
 using Nitrocid.Languages;
-using Nitrocid.Shell.ShellBase.Shells;
+using Terminaux.Shell.Shells;
 using System.IO;
 
-namespace Nitrocid.Files.Extensions
+namespace Nitrocid.Files
 {
     /// <summary>
     /// Routines related to opening the files
     /// </summary>
-    public static class Opening
+    public static partial class FilesystemTools
     {
         /// <summary>
         /// Opens the editor deterministically
@@ -44,68 +44,66 @@ namespace Nitrocid.Files.Extensions
         /// <param name="forceSql">Forces SQL shell</param>
         public static void OpenEditor(string path, bool forceText = false, bool forceJson = false, bool forceHex = false, bool forceSql = false)
         {
-            bool fileExists = Checking.FileExists(path);
+            bool fileExists = FilesystemTools.FileExists(path);
 
             // Check the addons
             bool hasJsonShell = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasJsonShell)) is not null;
             bool hasSqlShell = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSqlShell)) is not null;
 
             // Check to see if the file exists
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", path, fileExists);
-            DebugWriter.WriteDebug(DebugLevel.I, "Force text: {0}", forceText);
-            DebugWriter.WriteDebug(DebugLevel.I, "Force JSON: {0}", forceJson);
-            DebugWriter.WriteDebug(DebugLevel.I, "Force Hex: {0}", forceHex);
-            DebugWriter.WriteDebug(DebugLevel.I, "Force SQL: {0}", forceSql);
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", vars: [path, fileExists]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Force text: {0}", vars: [forceText]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Force JSON: {0}", vars: [forceJson]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Force Hex: {0}", vars: [forceHex]);
+            DebugWriter.WriteDebug(DebugLevel.I, "Force SQL: {0}", vars: [forceSql]);
             if (!fileExists)
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File doesn't exist."));
 
-            // First, forced types
-            if (forceText)
-                ShellManager.StartShell(ShellType.TextShell, path);
-            else if (forceHex)
-                ShellManager.StartShell(ShellType.HexShell, path);
-            else if (forceJson)
+            // This variable chooses opening mode, with forced types first
+            OpeningMode mode =
+                forceText ? OpeningMode.Text :
+                forceHex ? OpeningMode.Binary :
+                forceJson ? OpeningMode.Json :
+                forceSql ? OpeningMode.Sql :
+                OpeningMode.None;
+
+            // If none, assume type from file contents
+            if (mode == OpeningMode.None)
             {
-                if (!hasJsonShell)
-                {
-                    TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
-                    ShellManager.StartShell(ShellType.TextShell, path);
-                }
+                if (IsBinaryFile(path))
+                    mode = IsSql(path) ? OpeningMode.Sql : OpeningMode.Binary;
                 else
-                    ShellManager.StartShell("JsonShell", path);
-            }
-            else if (forceSql)
-            {
-                if (!hasSqlShell)
-                {
-                    TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the SQL shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
-                    ShellManager.StartShell(ShellType.HexShell, path);
-                }
-                else
-                    ShellManager.StartShell("SqlShell", path);
+                    mode = IsJson(path) ? OpeningMode.Json : OpeningMode.Text;
             }
 
-            // Exit if forced types
-            if (forceText || forceJson || forceHex || forceSql)
-                return;
-
-            // Determine the type
-            if (hasSqlShell && Parsing.IsSql(path))
-                ShellManager.StartShell("SqlShell", path);
-            else if (Parsing.IsBinaryFile(path))
-                ShellManager.StartShell(ShellType.HexShell, path);
-            else if (Parsing.IsJson(path))
+            // Now, select how we open the file
+            switch (mode)
             {
-                if (!hasJsonShell)
-                {
-                    TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
-                    ShellManager.StartShell(ShellType.TextShell, path);
-                }
-                else
-                    ShellManager.StartShell("JsonShell", path);
+                case OpeningMode.Text:
+                    ShellManager.StartShell("TextShell", path);
+                    break;
+                case OpeningMode.Binary:
+                    ShellManager.StartShell("HexShell", path);
+                    break;
+                case OpeningMode.Json:
+                    if (!hasJsonShell)
+                    {
+                        TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                        ShellManager.StartShell("TextShell", path);
+                    }
+                    else
+                        ShellManager.StartShell("JsonShell", path);
+                    break;
+                case OpeningMode.Sql:
+                    if (!hasSqlShell)
+                    {
+                        TextWriters.Write(Translate.DoTranslation("It looks like that you don't have the SQL shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                        ShellManager.StartShell("HexShell", path);
+                    }
+                    else
+                        ShellManager.StartShell("SqlShell", path);
+                    break;
             }
-            else
-                ShellManager.StartShell(ShellType.TextShell, path);
         }
 
         /// <summary>
@@ -116,12 +114,12 @@ namespace Nitrocid.Files.Extensions
         public static void OpenDeterministically(string file)
         {
             // Check the file for existence
-            bool fileExists = Checking.FileExists(file);
+            bool fileExists = FilesystemTools.FileExists(file);
             if (!fileExists)
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File doesn't exist."));
 
             // Now, check to see if the file is a text or a binary file
-            if (Parsing.IsBinaryFile(file))
+            if (FilesystemTools.IsBinaryFile(file))
             {
                 // This file is a binary file.
                 string extension = Path.GetExtension(file);
@@ -137,5 +135,14 @@ namespace Nitrocid.Files.Extensions
                 OpenEditor(file);
             }
         }
+    }
+
+    internal enum OpeningMode
+    {
+        None,
+        Binary,
+        Sql,
+        Text,
+        Json,
     }
 }

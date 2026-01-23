@@ -27,7 +27,7 @@ using Nitrocid.Kernel.Starting.Bootloader.Apps;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Languages;
 using Textify.General;
-using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
 
 namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
 {
@@ -53,8 +53,8 @@ namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles
             {
                 Left = 2,
                 Top = 4,
-                InteriorWidth = ConsoleWrapper.WindowWidth - 6,
-                InteriorHeight = ConsoleWrapper.WindowHeight - 15,
+                Width = ConsoleWrapper.WindowWidth - 6,
+                Height = ConsoleWrapper.WindowHeight - 15,
                 Color = boxBorderColor,
             };
             builder.Append(border.Render());

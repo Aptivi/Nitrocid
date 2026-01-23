@@ -38,10 +38,10 @@ namespace Nitrocid.ConsoleBase
             lock (_lock)
             {
                 if (Input.EnableMouse)
-                    DebugWriter.WriteDebug(DebugLevel.W, "Pointer handler is already listening while {0} is called...", nameof(StartHandler));
+                    DebugWriter.WriteDebug(DebugLevel.W, "Pointer handler is already listening while {0} is called...", vars: [nameof(StartHandler)]);
                 else if (!enableHandler)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Pointer handler is not enabled while {0} is called...", nameof(StopHandler));
+                    DebugWriter.WriteDebug(DebugLevel.W, "Pointer handler is not enabled while {0} is called...", vars: [nameof(StopHandler)]);
                     if (Input.EnableMouse)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Stopping the pointer handler anyway...");
@@ -64,10 +64,10 @@ namespace Nitrocid.ConsoleBase
             lock (_lock)
             {
                 if (!Input.EnableMouse)
-                    DebugWriter.WriteDebug(DebugLevel.W, "Pointer handler is not listening while {0} is called...", nameof(StopHandler));
+                    DebugWriter.WriteDebug(DebugLevel.W, "Pointer handler is not listening while {0} is called...", vars: [nameof(StopHandler)]);
                 else if (!enableHandler)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Pointer handler is not enabled while {0} is called...", nameof(StopHandler));
+                    DebugWriter.WriteDebug(DebugLevel.W, "Pointer handler is not enabled while {0} is called...", vars: [nameof(StopHandler)]);
                     if (Input.EnableMouse)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Stopping the pointer handler anyway...");

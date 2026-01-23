@@ -18,8 +18,7 @@
 //
 
 using Nitrocid.Files;
-using Nitrocid.Files.Operations;
-using Nitrocid.Shell.ShellBase.Commands;
+using Terminaux.Shell.Commands;
 
 namespace Nitrocid.Extras.FtpShell.FTP.Commands
 {
@@ -35,7 +34,7 @@ namespace Nitrocid.Extras.FtpShell.FTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string targetDir = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0], FTPShellCommon.FtpCurrentDirectory);
-            Making.MakeDirectory(targetDir);
+            FilesystemTools.MakeDirectory(targetDir);
             return 0;
         }
     }

@@ -26,8 +26,8 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Textify.General;
 using Nitrocid.Kernel.Configuration;
-using Nitrocid.Files.Operations.Querying;
-using Nitrocid.Files.Operations;
+using Nitrocid.Files;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -65,7 +65,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.LinotypoTextColor));
+            ConsoleColoring.SetConsoleColor(new Color(ScreensaverPackInit.SaversConfig.LinotypoTextColor));
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
             CurrentColumn = 1;
@@ -107,11 +107,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Linotypo can also deal with files written on the field that is used for storing text, so check to see if the path exists.
             DebugWriter.WriteDebug(DebugLevel.I, "Checking \"{0}\" to see if it's a file path", vars: [ScreensaverPackInit.SaversConfig.LinotypoWrite]);
-            if (Parsing.TryParsePath(ScreensaverPackInit.SaversConfig.LinotypoWrite) && Checking.FileExists(ScreensaverPackInit.SaversConfig.LinotypoWrite))
+            if (FilesystemTools.TryParsePath(ScreensaverPackInit.SaversConfig.LinotypoWrite) && FilesystemTools.FileExists(ScreensaverPackInit.SaversConfig.LinotypoWrite))
             {
                 // File found! Now, write the contents of it to the local variable that stores the actual written text.
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", vars: [ScreensaverPackInit.SaversConfig.LinotypoWrite]);
-                LinotypeWrite = Reading.ReadContentsText(ScreensaverPackInit.SaversConfig.LinotypoWrite);
+                LinotypeWrite = FilesystemTools.ReadContentsText(ScreensaverPackInit.SaversConfig.LinotypoWrite);
             }
 
             // For each line, write four spaces, and extra two spaces if paragraph starts.
@@ -120,6 +120,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 if (ConsoleResizeHandler.WasResized(false))
                     break;
+                if (ScreensaverManager.Bailing)
+                    return;
+
                 DebugWriter.WriteDebugConditional(Config.MainConfig.ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", vars: [Paragraph]);
 
                 // Sometimes, a paragraph could consist of nothing, but prints its new line, so honor this by checking to see if we need to
@@ -153,6 +156,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     string IncompleteSentence = IncompleteSentences[IncompleteSentenceIndex];
                     if (ConsoleResizeHandler.WasResized(false))
                         break;
+                    if (ScreensaverManager.Bailing)
+                        return;
 
                     // Check if we need to indent a sentence
                     if (!NewLineDone)
@@ -181,6 +186,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     {
                         if (ConsoleResizeHandler.WasResized(false))
                             break;
+                        if (ScreensaverManager.Bailing)
+                            return;
 
                         // Sometimes, typing error can be made in the last line and the line is repeated on the first line in the different
                         // column, but it ruins the overall beautiful look of the paragraphs, considering how it is split in columns. We
