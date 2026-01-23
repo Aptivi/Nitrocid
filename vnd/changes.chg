@@ -145,28 +145,19 @@ is configured on your system.
 even if it is listed in the kernel configuration, all strings default back to
 English.)
 
-Mods and addons improvements
-----------------------------
+Addons improvements
+-------------------
 
-We have improved how mods and addons load by separating the important mods
-and addons in their separate folder from the optional mods and addons in their
-separate folder. This was done in an attempt to improve performance when
-starting up Nitrocid. Now, the startup time takes far less than what the old
-separation method did: it loaded all assemblies and checked their importance.
+We have improved how addons load by separating the important addons in their
+separate folder from the optional addons in their separate folder. This was
+done in an attempt to improve performance when starting up Nitrocid. Now, the
+startup time takes far less than what the old separation method did: it loaded
+all assemblies and checked their importance.
 
-From now on, mods can be found in two directories:
-
-  - [Windows] %LOCALAPPDATA%\KS\KSMods
-    [Linux]   ~/config/ks/KSMods
-  - [Windows] %LOCALAPPDATA%\KS\KSModsEssentials
-    [Linux]   ~/config/ks/KSModsEssentials
-
-Not only did the mods get affected by this change, but the addons have also
-seen this change, which means that only the essential addons have been loaded
-before the main kernel configuration is read. Essential addons can be found in
-the Addons.Essentials folder in the application directory, while optional
-addons, which get loaded after loading the main kernel configuration, can be
-found in the Addons folder in the application directory.
+Essential addons can be found in the Addons.Essentials folder in the
+application directory, while optional addons, which get loaded after loading
+the main kernel configuration, can be found in the Addons folder in the
+application directory.
 
 Chatbot AI
 ----------
