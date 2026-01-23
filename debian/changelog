@@ -1,12 +1,7 @@
 nitrocid-28 (4.0.28.53-0.2.0.0-1) noble; urgency=medium
 
-  * General improvements and bug fixes
-
- -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Wed, 21 Jan 2026 15:41:50 +0300
-
-nitrocid-28 (4.0.28.47-0.2.0.0-1) noble; urgency=medium
-
-  * General improvements and bug fixes
+  * New generation of Nitrocid! It contains a huge amount of changes!
+  * Consult changes.chg in the Git repo for more info.
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Tue, 23 Dec 2025 13:37:19 +0300
 
