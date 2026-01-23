@@ -4,3 +4,6 @@
 [submodule "DocGen/theme"]
 	path = DocGen/theme
 	url = https://github.com/Aptivi/docfx-apt.git
+[submodule "assets/quotes"]
+	path = assets/quotes
+	url = https://github.com/quotable-io/data
