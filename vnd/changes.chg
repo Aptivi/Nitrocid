@@ -1,7 +1,269 @@
-Nitrocid KS changes
-===================
+Nitrocid changes
+================
 
 Released February 12th, 2026; version 0.2.0.0 (mod API 4.0.28.53); codename
-TBD
+Attractive, Bold, Powerful
 
-TBD
+Since the release of Nitrocid v0.1.0 back on February 2024, we have been
+constantly working on newer versions, including version 0.1.1 that introduced
+The Nitrocid Homepage, which provided a hub that included a list of apps to
+run, as well as the analog clock widget that showed nicely on the console, and
+version 0.1.2 that introduced various new features, such as rounded corners in
+all borders to align with the recent design trends, editable widgets in The
+Nitrocid Homepage, and more interactive textual user interfaces, complete with
+improvements that were made to both the kernel and its dependencies, and
+Terminaux was one of them.
+
+As of today, we are introducing you to a completely new version of Nitrocid as
+we are progressing further towards the future of both Aptivi, Nitrocid, and
+our projects. It has been a year since we were working on this new generation
+of the mod API, and we're finally excited to introduce you to this version of
+Nitrocid.
+
+However, before guiding you to what's new in this version of Nitrocid, we have
+some of the greatest news ever! Events that happened since January 2026 have
+proven to be significant, and we are very excited to present you the biggest
+milestone that happened today!
+
+  - The brand new Aptivi branding!
+    Since 2022, we have settled on a name that suited our visionary aspect
+    into the future of technology, and Aptivi as a whole means "adaptation."
+    This sets out an important message that technology evolves quickly, and
+    that adaptation is needed to ensure continuity. The triangle in the logo
+    holds a message that we are always looking forward for the better future
+    when it comes to tech, which is why we gave it "Prism of the Tech Future."
+    Now, we gave the Aptivi branding a more unique identity while making it
+    bolder and stronger, by introducing new shades of purple that pop, while
+    adapting to AMOLED requirements to save battery life for devices that use
+    this display technology on their screen panels. Not only we have changed
+    the branding and the logo, but we've also changed pretty much everything
+    from the website to the API documentation and everything else. This gives
+    a new look and feel, while preserving our message.
+
+    The official branding kits are now available to download from our official
+    Aptivi website directly instead of via Google Drive or any other cloud
+    storage. This gives you instant access to these assets, knowing that those
+    kits fall under the branding guidelines, which you can see by visiting
+    this link: https://aptivi.github.io/branding/guidelines.
+
+  - Celebrating the 8th year anniversary of Nitrocid
+    Although we are 10 days early into celebrating the 8th year release
+    anniversary of Nitrocid, which started with a very minimal kernel and
+    shell simulator, we are very excited to announce that, this February 22nd,
+    marks the 8th year anniversary of the release of the first version of
+    Nitrocid, which is 0.0.1. From a very small kernel simulator that only
+    works on Windows using the legacy .NET Framework to a beautiful, modern
+    textual operating system simulator that provides a huge amount of commands
+    and features, as well as screensavers and themes, all written with cross-
+    platform support in mind and with the new .NET 10.0 release. We have also
+    reached more than 8,000 commits, marking a long history of Nitrocid that
+    went through maintenance, additions, and releases for eight years.
+
+  - Revival of ancient Nitrocid documentation
+    As part of the archival project for old documentation, we have finally
+    revived the wiki source of the Nitrocid documentation that contained the
+    full list of commits that were made from the release of 0.0.7 in 2019 to
+    0.0.23 in 2022, prior to the last alpha version series, which is 0.0.24.
+    Our official GitBook documentation for the project now includes all
+    versions of Nitrocid that provided documentation from 0.0.6 to 0.0.23,
+    alongside versions 0.0.24 and higher. This is done for preservation and
+    archival purposes.
+
+  - Nitrocid 0.1.0 Service Pack 6
+    This service pack of the base version of the whole v0.1.x series has
+    introduced features that existed in 0.1.2 to this version of the series as
+    0.1.2 officially goes end of life. This service pack includes all changes
+    that have been made to the 0.1.2 branch, plus some of the additional
+    stability changes to make Nitrocid faster and more stable. There are three
+    service packs left, with two planned for this year. This release is now
+    available on the official release channels (GitHub, Launchpad PPA, Arch
+    Linux AUR, and Chocolatey).
+
+  - Nitrocid 0.1.2 became EOL
+    As announced earlier this day, we've officially ended all support for
+    Nitrocid 0.1.2 in preparation for this massive release. This end of
+    support timeline was overdue, but it was delayed due to shifts in
+    development of the version that we'll be talking about here.
+
+Now, we're going to add the most significant event to the huge milestone, and
+that is...
+
+-----------------------------| Nitrocid 0.2.0! |------------------------------
+
+Nitrocid 0.2.0 introduces you to a whole new set of changes and features that
+increase your productivity as you explore through the simulated operating
+system with the introduction of the whole new look and feel, build system and
+localization improvements, and other sets of improvements.
+
+The whole new look and feel
+---------------------------
+
+We have redesigned the whole kernel from the very first screen that you see
+right to The Nitrocid Homepage. The next time you start up Nitrocid, you'll
+see those changes by yourself. From the modern look and feel to the futuristic
+Figlet font that we have chosen. Not only that, but we've also changed the
+log-in screen and the homepage screen to make them more consistent for better
+transitioning from the splash screen to the homepage.
+
+This was made possible with both changes to Nitrocid alone and changes made to
+Terminaux, which resulted in two consecutive releases, which are version 7.0
+to introduce many new features, such as radio button support for selection and
+infoboxes and localization, and version 8.0, which brought back hidden
+commands, as well as the keyboard cues. Changes that were made to Terminaux
+have led to deduplication of the code by removing what was moved from Nitrocid
+to Terminaux to make maintenance simpler.
+
+Build system improvements
+-------------------------
+
+Since the release of the tech preview, we have improved the build system by
+introducing build scripts to make building our projects frictionless. By
+providing vendor scripts that the project authors make, and centralizing them
+to a "vnd" directory, we are making the task of executing a set of complicated
+tasks for build and other stages simpler and predictable.
+
+Complete with support for command-line arguments for build systems, you can
+pass arguments to the vendor scripts to make them behave differently,
+depending on the requirements.
+
+Localization improvements
+-------------------------
+
+All our libraries have now earned localization support due to LocaleStation,
+but our plan fell short due to the large amount of code that was generated for
+all locales, and this slowed down Nitrocid's performance during development of
+0.2.0. However, using a new library, ResourceLab, and a combination of our
+internal tools, we've managed to use a built-in .NET feature to store all the
+strings that our libraries and applications use, called the .resx files.
+
+As a result, localization has now become more reliable than never before,
+because we have used localization IDs to translate different strings across
+different applications and libraries, according to the current UI culture that
+is configured on your system.
+
+(Please note that when you select a language that is not supported by Nitrocid
+even if it is listed in the kernel configuration, all strings default back to
+English.)
+
+Mods and addons improvements
+----------------------------
+
+We have improved how mods and addons load by separating the important mods
+and addons in their separate folder from the optional mods and addons in their
+separate folder. This was done in an attempt to improve performance when
+starting up Nitrocid. Now, the startup time takes far less than what the old
+separation method did: it loaded all assemblies and checked their importance.
+
+From now on, mods can be found in two directories:
+
+  - [Windows] %LOCALAPPDATA%\KS\KSMods
+    [Linux]   ~/config/ks/KSMods
+  - [Windows] %LOCALAPPDATA%\KS\KSModsEssentials
+    [Linux]   ~/config/ks/KSModsEssentials
+
+Not only did the mods get affected by this change, but the addons have also
+seen this change, which means that only the essential addons have been loaded
+before the main kernel configuration is read. Essential addons can be found in
+the Addons.Essentials folder in the application directory, while optional
+addons, which get loaded after loading the main kernel configuration, can be
+found in the Addons folder in the application directory.
+
+Chatbot AI
+----------
+
+As artificial intelligence (AI) gets more and more attention towards companies
+and other tech-related outlets, such as consumer computers, everyday
+applications, and other technologies, we have included the Chatbot AI as an
+optional addon for Nitrocid 0.2.0, which uses the OpenAI API to provide you
+with ChatGPT models and other models, such as GPT-5.1 and 5.0.
+
+This works like a conversation box that messenger applications use, except it
+uses Terminaux's shell feature to provide conversation-style chatting with the
+AI chatbot.
+
+Please note that Chatbot AI requires that you are connected to the internet,
+and that most of ChatGPT's models require a subscription. We are not
+affiliated with OpenAI, and we aren't responsible for the misuse, so use the
+chatbot responsibly.
+
+2FA for Nitrocid users
+----------------------
+
+Two-factor authentication enhances your account's security by ensuring that
+only you can access your account, even if an attacker used your password to
+sign in to your account. Using authenticator applications like Google
+Authenticator and Authy, two-factor authentication is possible by entering a
+six-digit code to the code field to verify your identity.
+
+Nitrocid makes this possible by implementing the two-factor authentication
+system that supports the majority of authenticator applications, complete with
+QR code support for authentication via your phone or your external device.
+Even if your user account is protected by the password, there is another layer
+of authentication that you'll need to complete before being able to sign in to
+your account. This way, it makes sure that no attacker will be able to sign in
+to your account using just the password.
+
+Nitrocid.Rkm
+------------
+
+With the addition of new RPC commands, such as Version, VersionCode,
+ApiVersion, and ApiVersionCode, we've made querying the version of Nitrocid
+running on a remote computer that's running the RPC service. As a reminder,
+the service is configured with UDP as the protocol and port 12345 as the
+default port for the RPC feature.
+
+Now, Nitrocid.Rkm makes remote controlling a remote Nitrocid instance within
+your local area network (LAN) easier than never before. This is a command-line
+interface application that allows you to remotely control a remote Nitrocid
+instance, such as shutting it down, pinging it, and querying its version. You
+can also test your connectivity to the remote Nitrocid instance.
+
+To get started, you can use `ks-rkm-28 [arguments]` command on Nitrocid PPA
+installations, or you can use `dotnet path/to/Nitrocid.Rkm.dll [arguments]` as
+another method. The following switches change how Nitrocid.Rkm connects to the
+Nitrocid RPC host:
+
+  --verbose: Enables verbose logging and extra messages
+  --help: Lists switches
+  --host: Specifies the host name or IP address to connect to
+  --port: Specifies the port number to connect to the host with
+  --command: A single RPC command that you can pass to the host
+
+By default, Nitrocid.Rkm runs on the default IP address, which is the loopback
+interface address 127.0.0.1 (also known as localhost), and the default kernel
+RPC port.
+
+When --command is not specified, it defaults to the test command. This
+acknowledgement message is always sent, regardless of the command, to verify
+that Nitrocid.Rkm is connected to the correct Nitrocid host. One of the
+following commands can be specified:
+
+  - shutdown
+  - reboot
+  - rebootsafe
+  - rebootmaintenance
+  - rebootdebug
+  - savescr
+  - exec
+  - ping
+  - version
+  - versioncode
+  - apiversion
+  - apiversioncode
+
+Other changes
+-------------
+
+We have made some other changes made to Nitrocid, such as improvements to all
+existing Nitrocid screensavers and the screensaver displayer, improvements to
+the configuration verification stage, and all kinds of other changes that will
+surprise you.
+
+As for the legacy settings app, which used selection style, we've removed it
+entirely as that was part of our plan to make the simulated kernel look more
+consistent. It lacked features that made the newer settings app, which got
+enhancements like switching configuration instances and a more natural flow
+for SMultivar settings entries, easier to use.
+
+Why not explore the massive amount of changes that were made to this Nitrocid
+version? Try it out today to explore them!

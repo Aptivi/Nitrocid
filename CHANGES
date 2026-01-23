@@ -1,17 +1,25 @@
-TBD
+> “Knowledge is of no value unless you put it into practice.”
+> - Anton Chekhov
 
-### Changes
+> “The simplest things are often the truest.”
+> - Richard Bach
 
-This release contains a variety of changes, including, but not limited to:
+> “Be not afraid of greatness: some are born great, some achieve greatness, and some have greatness thrust upon them.”
+> - William Shakespeare
 
-- `[*]` Populate condensed changelogs from both TP and RC changelogs
+Two years since the release of Nitrocid v0.1.0, many improvements and additions were made. We are proud to announce that the next major version of Nitrocid is on the way!
 
-Legend:
+**The biggest milestone is here!**
 
-- Changes highlighted with a `*` at the end indicate that they're backported for 0.1.0 and 0.1.2.
-- Changes highlighted with a `+` at the end indicate that they're backported for 0.1.2.
+## Nitrocid v0.2.0!
 
-Review the commit history if you want to get a deep insight about the changes.
+![17690969310717999040070268486823](https://github.com/user-attachments/assets/8fc0546a-0736-48af-99e7-e60ce150b2aa)
+
+Since v0.1.0, we've been adding new features to the simulated kernel, while providing better experience to all our users! Nitrocid 0.2.0 adds even more features, such as customizable login and home screens, while adding commands and screensavers!
+
+Also, a new, attractive, bold design has been applied to match our current vision and to align with our recent branding changes!
+
+Get started by visiting this blog article [here](https://officialaptivi.wordpress.com/?p=21839)!
 
 ### Feedback?
 
