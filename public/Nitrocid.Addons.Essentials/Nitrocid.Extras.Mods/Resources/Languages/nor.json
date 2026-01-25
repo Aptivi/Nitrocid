@@ -417,6 +417,10 @@
     {
       "loc": "NKS_MODS_MANTUI_HELP01_BODY",
       "text": "Manualsider kan komme sammen med modsene dine, i tilfelle de gir deg ytterligere hjelp, alt på ett sted. Du kan bruke dette interaktive TUI-et for å se manualsidene mer interaktivt."
+    },
+    {
+      "loc": "NKS_MODS_CANTSTOP",
+      "text": "Kan ikke stoppe mod {0}"
     }
   ]
 }

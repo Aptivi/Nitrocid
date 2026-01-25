@@ -438,6 +438,10 @@
     {
       "loc": "NKS_MODS_MANTUI_HELP01_BODY",
       "text": "Las páginas del manual pueden venir incluidas con tus mods, por si te ofrecen ayuda adicional, todo en un solo lugar. Puedes usar esta UI interactiva para ver las páginas del manual de forma más interactiva."
+    },
+    {
+      "loc": "NKS_MODS_CANTSTOP",
+      "text": "No se puede detener el mod {0}"
     }
   ]
 }

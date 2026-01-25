@@ -423,5 +423,8 @@
   <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
     <value>Các trang hướng dẫn có thể được tích hợp sẵn với mod của bạn, trong trường hợp chúng cung cấp thêm trợ giúp, tất cả đều ở một nơi. Bạn có thể sử dụng TUI tương tác này để xem các trang hướng dẫn một cách tương tác hơn.</value>
   </data>
+  <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
+    <value>Không thể dừng mod {0}</value>
+  </data>
 
 </root>

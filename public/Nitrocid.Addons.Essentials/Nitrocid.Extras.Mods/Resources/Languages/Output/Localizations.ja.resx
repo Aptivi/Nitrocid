@@ -423,5 +423,8 @@
   <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
     <value>MOD には、追加のヘルプが必要な場合に備えて、マニュアルページがバンドルされている場合があります。このインタラクティブ TUI を使用すると、マニュアルページをよりインタラクティブに表示できます。</value>
   </data>
+  <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
+    <value>モジュール {0} を停止できません</value>
+  </data>
 
 </root>

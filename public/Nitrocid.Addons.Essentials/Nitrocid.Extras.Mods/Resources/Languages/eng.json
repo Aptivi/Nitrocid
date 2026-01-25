@@ -519,6 +519,10 @@
     {
       "loc": "NKS_MODS_MANTUI_HELP01_BODY",
       "text": "Manual pages may come bundled with your mods, in case they give you additional help, all in one place. You can use this interactive TUI to view the manual pages more interactively."
+    },
+    {
+      "loc": "NKS_MODS_CANTSTOP",
+      "text": "Can't stop mod {0}"
     }
   ]
 }

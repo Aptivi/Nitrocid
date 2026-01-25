@@ -414,6 +414,10 @@
     {
       "loc": "NKS_MODS_MANTUI_HELP01_BODY",
       "text": "Kılavuz sayfaları, ek yardım sağlamaları durumunda modlarınızla birlikte tek bir yerde gelebilir. Kılavuz sayfalarını daha etkileşimli bir şekilde görüntülemek için bu etkileşimli TUI'yi kullanabilirsiniz."
+    },
+    {
+      "loc": "NKS_MODS_CANTSTOP",
+      "text": "Mod {0} durdurulamıyor."
     }
   ]
 }

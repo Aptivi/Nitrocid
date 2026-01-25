@@ -419,6 +419,10 @@
     {
       "loc": "NKS_MODS_MANTUI_HELP01_BODY",
       "text": "Handleidingen kunnen bij je mods worden geleverd, voor extra hulp, allemaal op één plek. Je kunt deze interactieve TUI gebruiken om de handleidingen interactiever te bekijken."
+    },
+    {
+      "loc": "NKS_MODS_CANTSTOP",
+      "text": "Kan mod {0} niet stoppen"
     }
   ]
 }

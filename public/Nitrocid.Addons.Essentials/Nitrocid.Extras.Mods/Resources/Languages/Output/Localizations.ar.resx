@@ -423,5 +423,8 @@
   <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
     <value>قد تأتي صفحات الدليل مرفقة مع تعديلاتك، في حال كانت توفر لك مساعدة إضافية، كل ذلك في مكان واحد. يمكنك استخدام هذه الواجهة التفاعلية لعرض صفحات الدليل بشكل أكثر تفاعلية.</value>
   </data>
+  <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
+    <value>لا يمكن إيقاف التعديل {0}</value>
+  </data>
 
 </root>

@@ -423,5 +423,8 @@
   <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
     <value>Halaman manual mungkin disertakan dengan mod anda, sekiranya ia memberi anda bantuan tambahan, semuanya di satu tempat. Anda boleh menggunakan TUI interaktif ini untuk melihat halaman manual secara lebih interaktif.</value>
   </data>
+  <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
+    <value>Tidak boleh menghentikan mod {0}</value>
+  </data>
 
 </root>
