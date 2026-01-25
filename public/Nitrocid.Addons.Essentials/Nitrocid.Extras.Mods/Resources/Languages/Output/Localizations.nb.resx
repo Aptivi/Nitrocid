@@ -423,5 +423,8 @@
   <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
     <value>Manualsider kan komme sammen med modsene dine, i tilfelle de gir deg ytterligere hjelp, alt på ett sted. Du kan bruke dette interaktive TUI-et for å se manualsidene mer interaktivt.</value>
   </data>
+  <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
+    <value>Kan ikke stoppe mod {0}</value>
+  </data>
 
 </root>

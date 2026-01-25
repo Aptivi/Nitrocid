@@ -423,5 +423,8 @@
   <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
     <value>Paginae manuales cum modificationibus tuis coniungi possunt, si forte tibi auxilium additum praebent, omnia in uno loco. Hac interfacie interactiva uti potes ad paginas manuales interactive inspiciendas.</value>
   </data>
+  <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
+    <value>Modulationem {0} sistere non possum.</value>
+  </data>
 
 </root>

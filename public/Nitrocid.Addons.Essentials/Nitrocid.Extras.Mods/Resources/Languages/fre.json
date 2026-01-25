@@ -459,6 +459,10 @@
     {
       "loc": "NKS_MODS_MANTUI_HELP01_BODY",
       "text": "Les pages de manuel peuvent être incluses avec vos mods et vous fournir une aide supplémentaire, regroupée au même endroit. Cette interface en ligne de commande interactive vous permet de consulter ces pages de manuel de manière plus interactive."
+    },
+    {
+      "loc": "NKS_MODS_CANTSTOP",
+      "text": "Impossible d'arrêter le mod {0}"
     }
   ]
 }

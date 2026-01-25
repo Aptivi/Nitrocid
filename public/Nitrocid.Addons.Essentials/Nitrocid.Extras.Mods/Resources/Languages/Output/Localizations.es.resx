@@ -423,5 +423,8 @@
   <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
     <value>Las páginas del manual pueden venir incluidas con tus mods, por si te ofrecen ayuda adicional, todo en un solo lugar. Puedes usar esta UI interactiva para ver las páginas del manual de forma más interactiva.</value>
   </data>
+  <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
+    <value>No se puede detener el mod {0}</value>
+  </data>
 
 </root>

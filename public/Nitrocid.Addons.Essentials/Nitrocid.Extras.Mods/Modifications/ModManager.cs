@@ -19,23 +19,25 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Diagnostics;
+using System.Runtime.Loader;
+using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Files;
-using Nitrocid.Base.Misc.Reflection;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Files.Paths;
-using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
+using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Extras.Mods.Modifications.ManPages;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 
 namespace Nitrocid.Extras.Mods.Modifications
 {
@@ -149,20 +151,41 @@ namespace Nitrocid.Extras.Mods.Modifications
                 if (TargetMod.ModFileName != ModFilename)
                     continue;
 
-                // Stop the associated mod
-                DebugWriter.WriteDebug(DebugLevel.I, "Found mod to be stopped. Stopping...");
-                Script.StopMod();
-                if (!string.IsNullOrWhiteSpace(TargetMod.ModName) & !string.IsNullOrWhiteSpace(Script.Version))
-                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODSTOPPED2"), TargetMod.ModName, Script.Version);
+                try
+                {
+                    // Stop the associated mod
+                    DebugWriter.WriteDebug(DebugLevel.I, "Found mod to be stopped. Stopping...");
+                    using (var context = TargetMod.alc.EnterContextualReflection())
+                    {
+                        Script.StopMod();
+                    }
+                    if (!string.IsNullOrWhiteSpace(TargetMod.ModName) & !string.IsNullOrWhiteSpace(TargetMod.ModVersion))
+                        SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODSTOPPED2"), TargetMod.ModName, TargetMod.ModVersion);
 
-                // Remove the mod from the list
-                SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODSTOPPED1"), TargetMod.ModName);
-                Mods.Remove(TargetModKey);
+                    // Remove the mod dependency from the lookup
+                    string ModDepPath = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(ModFilename) + "-" + FileVersionInfo.GetVersionInfo(ModPath + ModFilename).FileVersion + "/";
+                    AssemblyLookup.baseAssemblyLookupPaths.Remove(ModDepPath);
 
-                // Remove the mod dependency from the lookup
-                string ModDepPath = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(ModFilename) + "-" + FileVersionInfo.GetVersionInfo(ModPath + ModFilename).FileVersion + "/";
-                AssemblyLookup.baseAssemblyLookupPaths.Remove(ModDepPath);
+                    // Remove the mod from the list
+                    SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODSTOPPED1"), TargetMod.ModName);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Can't stop mod {0}!", vars: [PathToMod]);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_CANTSTOP"), ModFilename);
+                }
+                finally
+                {
+                    Mods.Remove(TargetModKey);
+                    TargetMod.alc.Unload();
+                }
             }
+
+            // Unload all mod assemblies
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
         }
 
         /// <summary>
@@ -272,6 +295,8 @@ namespace Nitrocid.Extras.Mods.Modifications
                 StopMod(Path.GetFileName(TargetModPath));
             }
 
+            var parseModContext = new AssemblyLoadContext(ModPath, true);
+            bool unloadOnFail = true;
             try
             {
                 // First, parse the mod file
@@ -280,7 +305,8 @@ namespace Nitrocid.Extras.Mods.Modifications
                     // Mod is a dynamic DLL
                     try
                     {
-                        Script = ModParser.GetModInstance(Assembly.LoadFrom(ModPath));
+                        var asm = parseModContext.LoadFromAssemblyPath(ModPath);
+                        Script = ModParser.GetModInstance(asm);
                         if (Script is null)
                             throw new KernelException(KernelExceptionType.ModInstall, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_NOMODSCRIPT"));
                     }
@@ -299,8 +325,15 @@ namespace Nitrocid.Extras.Mods.Modifications
                         throw;
                     }
                 }
+                else
+                    throw new KernelException(KernelExceptionType.InvalidMod, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_INVALIDMODFILE"));
 
                 // Then, install the file.
+                parseModContext.Unload();
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
+                unloadOnFail = false;
                 File.Copy(ModPath, TargetModPath, true);
 
                 // Check for the manual pages
@@ -327,6 +360,16 @@ namespace Nitrocid.Extras.Mods.Modifications
                 DebugWriter.WriteDebug(DebugLevel.E, "Installation failed for {0}: {1}", vars: [ModPath, ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_MODS_MODINSTALLFAILED") + " {0}: {1}", true, ThemeColorType.Error, ModPath, ex.Message);
+            }
+            finally
+            {
+                if (unloadOnFail)
+                {
+                    parseModContext.Unload();
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                    GC.Collect();
+                }
             }
         }
 

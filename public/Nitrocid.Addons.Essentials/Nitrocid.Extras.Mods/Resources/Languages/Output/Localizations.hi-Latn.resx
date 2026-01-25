@@ -423,5 +423,8 @@
   <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
     <value>mainyual pej aapake mod ke saath aa sakate hain, agar ve aapako aur madad dete hain, to sab ek hee jagah par. aap is intaraiktiv tui ka istemaal karake mainual pej ko zyaada intaraiktiv tareeke se dekh sakate hain.</value>
   </data>
+  <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
+    <value>mod {0} ko roka nahin ja sakata</value>
+  </data>
 
 </root>

@@ -414,6 +414,10 @@
     {
       "loc": "NKS_MODS_MANTUI_HELP01_BODY",
       "text": "Féadfaidh leathanaigh láimhe teacht le do mhodhanna, ar eagla go dtugann siad cabhair bhreise duit, ar fad in aon áit amháin. Is féidir leat an TUI idirghníomhach seo a úsáid chun na leathanaigh láimhe a fheiceáil ar bhealach níos idirghníomhaí."
+    },
+    {
+      "loc": "NKS_MODS_CANTSTOP",
+      "text": "Ní féidir stop a chur le mod {0}"
     }
   ]
 }

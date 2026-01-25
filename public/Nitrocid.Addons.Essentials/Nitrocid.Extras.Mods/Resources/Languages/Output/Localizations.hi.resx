@@ -423,5 +423,8 @@
   <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
     <value>मैन्युअल पेज आपके मॉड के साथ आ सकते हैं, अगर वे आपको और मदद देते हैं, तो सब एक ही जगह पर। आप इस इंटरैक्टिव TUI का इस्तेमाल करके मैनुअल पेज को ज़्यादा इंटरैक्टिव तरीके से देख सकते हैं।</value>
   </data>
+  <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
+    <value>मॉड {0} को रोका नहीं जा सकता</value>
+  </data>
 
 </root>

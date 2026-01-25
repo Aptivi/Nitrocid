@@ -423,5 +423,8 @@
   <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
     <value>Kılavuz sayfaları, ek yardım sağlamaları durumunda modlarınızla birlikte tek bir yerde gelebilir. Kılavuz sayfalarını daha etkileşimli bir şekilde görüntülemek için bu etkileşimli TUI&apos;yi kullanabilirsiniz.</value>
   </data>
+  <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
+    <value>Mod {0} durdurulamıyor.</value>
+  </data>
 
 </root>

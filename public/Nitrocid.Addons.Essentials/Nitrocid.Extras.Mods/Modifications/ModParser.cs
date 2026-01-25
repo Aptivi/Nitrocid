@@ -22,19 +22,20 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using Textify.Versioning;
-using Nitrocid.Base.Kernel.Debugging;
+using System.Runtime.Loader;
 using Nitrocid.Base.Files;
+using Nitrocid.Base.Files.Paths;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Events;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Extensions;
+using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Files.Paths;
-using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Security.Signing;
-using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Extras.Mods.Modifications.Dependencies;
-using Nitrocid.Base.Kernel;
+using Textify.Versioning;
 
 namespace Nitrocid.Extras.Mods.Modifications
 {
@@ -70,11 +71,15 @@ namespace Nitrocid.Extras.Mods.Modifications
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             if (Path.HasExtension(modFile) && Path.GetExtension(modFile) == ".dll")
             {
+                var alc = new AssemblyLoadContext(ModPath, true);
+                bool failed = false;
+
                 // Mod is a dynamic DLL
                 try
                 {
                     // Check for signing
-                    bool signed = AssemblySigning.IsStronglySigned(ModPath + modFile);
+                    string pathToMod = ModPath + modFile;
+                    bool signed = AssemblySigning.IsStronglySigned(pathToMod);
                     if (!signed)
                     {
                         if (ModsInit.ModsConfig.AllowUntrustedMods)
@@ -84,13 +89,13 @@ namespace Nitrocid.Extras.Mods.Modifications
                     }
 
                     // Check to see if the DLL is actually a mod
-                    var modAsm = Assembly.LoadFrom(ModPath + modFile);
+                    var modAsm = alc.LoadFromAssemblyPath(pathToMod);
                     var script = GetModInstance(modAsm) ??
                         throw new KernelException(KernelExceptionType.InvalidMod, LanguageTools.GetLocalized("NKS_MODS_EXCEPTION_INVALIDMODFILE"));
 
                     // Finalize the mod
                     if (script.LoadPriority == priority)
-                        FinalizeMods(script, modFile);
+                        FinalizeMods(script, modFile, alc);
                     else
                         DebugWriter.WriteDebug(DebugLevel.W, "Skipping dynamic mod {0} because priority [{1}] doesn't match required priority [{2}]", vars: [modFile, priority, script.LoadPriority]);
                 }
@@ -108,6 +113,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                         SplashReport.ReportProgressError(LoaderException.Message);
                     }
                     SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSUPGRADE"));
+                    failed = true;
                 }
                 catch (TargetInvocationException ex)
                 {
@@ -122,12 +128,21 @@ namespace Nitrocid.Extras.Mods.Modifications
                         inner = inner.InnerException;
                     }
                     SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSUPGRADE"));
+                    failed = true;
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODCANTLOAD") + ex.Message);
+                    failed = true;
+                }
+                if (failed)
+                {
+                    alc.Unload();
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                    GC.Collect();
                 }
             }
             else
@@ -137,12 +152,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             }
         }
 
-        /// <summary>
-        /// Configures the mod so it can be used
-        /// </summary>
-        /// <param name="script">Instance of script</param>
-        /// <param name="modFile">Mod file name with extension. It should end with .dll</param>
-        public static void FinalizeMods(IMod script, string modFile)
+        internal static void FinalizeMods(IMod script, string modFile, AssemblyLoadContext alc)
         {
             ModInfo ModInstance;
 
@@ -151,6 +161,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             {
                 string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
                 string modFilePath = FilesystemTools.NeutralizePath(modFile, ModPath);
+                bool failed = false;
                 EventsManager.FireEvent(EventType.ModParsed, modFile);
                 try
                 {
@@ -163,13 +174,15 @@ namespace Nitrocid.Extras.Mods.Modifications
                     {
                         if (KernelReleaseInfo.ApiVersion != script.MinimumSupportedApiVersion)
                         {
+                            failed = true;
                             DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", vars: [modFile, script.MinimumSupportedApiVersion.ToString(), KernelReleaseInfo.ApiVersion.ToString()]);
-                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSAPIEXACT"), modFile, script.MinimumSupportedApiVersion.ToString(), KernelReleaseInfo.ApiVersion.ToString());
-                            return;
+                            throw new KernelException(KernelExceptionType.InvalidMod, LanguageTools.GetLocalized("NKS_MODS_MODNEEDSAPIEXACT"), modFile, script.MinimumSupportedApiVersion.ToString(), KernelReleaseInfo.ApiVersion.ToString());
                         }
                     }
                     catch
                     {
+                        if (failed)
+                            throw;
                         DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that has undeterminable minimum API version.", vars: [modFile]);
                         SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_MODHASNOAPIVERSION"), modFile);
                     }
@@ -179,18 +192,18 @@ namespace Nitrocid.Extras.Mods.Modifications
                     if (string.IsNullOrWhiteSpace(ModName))
                     {
                         // Mod has no name!
+                        failed = true;
                         DebugWriter.WriteDebug(DebugLevel.E, "No name for {0}", vars: [modFile]);
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEDSNAME"), modFile);
-                        return;
+                        throw new KernelException(KernelExceptionType.InvalidMod, LanguageTools.GetLocalized("NKS_MODS_MODNEDSNAME"), modFile);
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Mod name: {0}", vars: [ModName]);
 
                     // See if the mod has version
                     if (string.IsNullOrWhiteSpace(script.Version))
                     {
+                        failed = true;
                         DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = \"\" | {0}.Name = {1}", vars: [modFile, script.Name]);
-                        SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODNEEDSVERSION"), modFile);
-                        return;
+                        throw new KernelException(KernelExceptionType.InvalidMod, LanguageTools.GetLocalized("NKS_MODS_MODNEEDSVERSION"), modFile);
                     }
                     else
                     {
@@ -203,22 +216,25 @@ namespace Nitrocid.Extras.Mods.Modifications
                         }
                         catch (Exception ex)
                         {
+                            failed = true;
                             DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse mod version {0}: {1}", vars: [script.Version, ex.Message]);
                             DebugWriter.WriteDebugStackTrace(ex);
-                            SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_MODVERSIONINVALID") + ": {1}\n{2}", modFile, script.Version, ex.Message);
-                            return;
+                            throw new KernelException(KernelExceptionType.InvalidMod, LanguageTools.GetLocalized("NKS_MODS_MODVERSIONINVALID") + ": {1}\n{2}", modFile, script.Version, ex.Message);
                         }
                     }
 
                     // Prepare the mod and part instances
                     queued.Add(modFilePath);
-                    ModInstance = new ModInfo(ModName, modFile, modFilePath, script, script.Version);
+                    ModInstance = new ModInfo(ModName, modFile, modFilePath, script, script.Version, alc);
 
                     // Satisfy the dependencies
                     ModDependencySatisfier.SatisfyDependencies(ModInstance);
 
                     // Start the mod
-                    script.StartMod();
+                    using (var context = alc.EnterContextualReflection())
+                    {
+                        script.StartMod();
+                    }
                     DebugWriter.WriteDebug(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Version: {1}", vars: [script.Name, script.Version]);
 
                     // Now, add the part
@@ -235,10 +251,18 @@ namespace Nitrocid.Extras.Mods.Modifications
                     DebugWriter.WriteDebug(DebugLevel.E, "Finalization failed for {0}: {1}", vars: [modFile, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_MODS_CANTFINALIZE"), modFile, ex.Message);
+                    failed = true;
                 }
                 finally
                 {
                     queued.Remove(modFilePath);
+                    if (failed)
+                    {
+                        alc.Unload();
+                        GC.Collect();
+                        GC.WaitForPendingFinalizers();
+                        GC.Collect();
+                    }
                 }
             }
             else

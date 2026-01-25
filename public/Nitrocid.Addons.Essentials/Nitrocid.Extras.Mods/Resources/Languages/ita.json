@@ -416,6 +416,10 @@
     {
       "loc": "NKS_MODS_MANTUI_HELP01_BODY",
       "text": "Le pagine di manuale potrebbero essere incluse con le mod, nel caso in cui forniscano ulteriore supporto, il tutto in un unico posto. È possibile utilizzare questa interfaccia utente interattiva per visualizzare le pagine di manuale in modo più interattivo."
+    },
+    {
+      "loc": "NKS_MODS_CANTSTOP",
+      "text": "Impossibile interrompere la mod {0}"
     }
   ]
 }

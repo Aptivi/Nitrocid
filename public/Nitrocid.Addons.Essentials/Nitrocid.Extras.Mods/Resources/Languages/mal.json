@@ -416,6 +416,10 @@
     {
       "loc": "NKS_MODS_MANTUI_HELP01_BODY",
       "text": "Halaman manual mungkin disertakan dengan mod anda, sekiranya ia memberi anda bantuan tambahan, semuanya di satu tempat. Anda boleh menggunakan TUI interaktif ini untuk melihat halaman manual secara lebih interaktif."
+    },
+    {
+      "loc": "NKS_MODS_CANTSTOP",
+      "text": "Tidak boleh menghentikan mod {0}"
     }
   ]
 }

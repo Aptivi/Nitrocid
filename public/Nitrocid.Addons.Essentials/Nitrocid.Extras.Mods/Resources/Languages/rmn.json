@@ -414,6 +414,10 @@
     {
       "loc": "NKS_MODS_MANTUI_HELP01_BODY",
       "text": "Paginile de manual pot fi incluse în pachetul modurilor, în cazul în care acestea vă oferă ajutor suplimentar, toate într-un singur loc. Puteți utiliza această interfață interactivă pentru a vizualiza paginile de manual într-un mod mai interactiv."
+    },
+    {
+      "loc": "NKS_MODS_CANTSTOP",
+      "text": "Nu se poate opri modulul {0}"
     }
   ]
 }

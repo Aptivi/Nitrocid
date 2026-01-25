@@ -423,5 +423,8 @@
   <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
     <value>Féadfaidh leathanaigh láimhe teacht le do mhodhanna, ar eagla go dtugann siad cabhair bhreise duit, ar fad in aon áit amháin. Is féidir leat an TUI idirghníomhach seo a úsáid chun na leathanaigh láimhe a fheiceáil ar bhealach níos idirghníomhaí.</value>
   </data>
+  <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
+    <value>Ní féidir stop a chur le mod {0}</value>
+  </data>
 
 </root>

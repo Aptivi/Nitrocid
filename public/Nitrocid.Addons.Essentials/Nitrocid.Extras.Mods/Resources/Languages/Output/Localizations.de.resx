@@ -423,5 +423,8 @@
   <data name="NKS_MODS_MANTUI_HELP01_BODY" xml:space="preserve">
     <value>Handbuchseiten sind möglicherweise in Ihren Mods enthalten und bieten Ihnen zusätzliche Hilfestellungen an einem Ort. Mit dieser interaktiven Benutzeroberfläche können Sie die Handbuchseiten interaktiver anzeigen.</value>
   </data>
+  <data name="NKS_MODS_CANTSTOP" xml:space="preserve">
+    <value>Das Modul {0} kann nicht gestoppt werden.</value>
+  </data>
 
 </root>

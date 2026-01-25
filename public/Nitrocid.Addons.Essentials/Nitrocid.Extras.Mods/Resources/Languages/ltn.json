@@ -413,6 +413,10 @@
     {
       "loc": "NKS_MODS_MANTUI_HELP01_BODY",
       "text": "Paginae manuales cum modificationibus tuis coniungi possunt, si forte tibi auxilium additum praebent, omnia in uno loco. Hac interfacie interactiva uti potes ad paginas manuales interactive inspiciendas."
+    },
+    {
+      "loc": "NKS_MODS_CANTSTOP",
+      "text": "Modulationem {0} sistere non possum."
     }
   ]
 }
