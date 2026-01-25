@@ -19,12 +19,15 @@
 
 #if NKS_EXTENSIONS
 using System.Diagnostics;
+using System.Runtime.Loader;
 
 namespace Nitrocid.Base.Kernel.Extensions
 {
     [DebuggerDisplay("Addon name = {AddonName}")]
     internal class AddonInfo
     {
+        internal AssemblyLoadContext alc;
+
         internal string AddonName =>
             Addon is not null ? Addon.AddonName : "";
 
@@ -33,9 +36,10 @@ namespace Nitrocid.Base.Kernel.Extensions
 
         internal IAddon Addon { get; }
 
-        internal AddonInfo(IAddon addon)
+        internal AddonInfo(IAddon addon, AssemblyLoadContext alc)
         {
             Addon = addon;
+            this.alc = alc;
         }
     }
 }

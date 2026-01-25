@@ -18,6 +18,13 @@
 //
 
 #if NKS_EXTENSIONS
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Loader;
+using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Debugging;
@@ -26,12 +33,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Security.Signing;
-using Nitrocid.Base.Files;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
+using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 
 namespace Nitrocid.Base.Kernel.Extensions
 {
@@ -39,7 +41,6 @@ namespace Nitrocid.Base.Kernel.Extensions
     {
         internal static readonly List<string> probedAddons = [];
         private static readonly List<AddonInfo> addons = [];
-        private static readonly Dictionary<string, IAddon> addonInstances = [];
         private const string windowsSuffix = ".Windows";
 
         internal static List<AddonInfo> ListAddons() =>
@@ -141,30 +142,29 @@ namespace Nitrocid.Base.Kernel.Extensions
                     return;
                 }
                 SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING") + " {0}...", asmName.Name ?? LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_INITIALIZING_UNKNOWN"));
-                bool exists = addonInstances.ContainsKey(addonPath);
                 DebugWriter.WriteDebug(DebugLevel.I, $"[{current}/{length}] Initializing kernel addon {Path.GetFileName(addon)}...");
                 probedAddons.Add(addonPath);
                 AssemblyLookup.baseAssemblyLookupPaths.Add(addon);
                 IAddon addonInstance;
-                if (!exists)
-                {
-                    var asm = Assembly.LoadFrom(addonPath);
-                    addonInstance = GetAddonInstance(asm) ??
-                        throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_ADDONINVALID") + $" {addonPath}");
-                    addonInstances.Add(addonPath, addonInstance);
-                }
-                else
-                    addonInstance = addonInstances[addonPath];
+
+                // Try to load the addon assembly
+                var alc = new AssemblyLoadContext(addon, true);
+                var asm = alc.LoadFromAssemblyPath(addonPath);
+                addonInstance = GetAddonInstance(asm) ??
+                    throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_ADDONINVALID") + $" {addonPath}");
 
                 // Call the start function
                 try
                 {
                     SplashReport.ReportProgress($"[{current}/{length}] " + LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_STARTING") + " {0}...", addonInstance.AddonTranslatedName);
-                    addonInstance.StartAddon();
+                    using (var context = alc.EnterContextualReflection())
+                    {
+                        addonInstance.StartAddon();
+                    }
                     DebugWriter.WriteDebug(DebugLevel.I, "Started!");
 
                     // Add the addon
-                    AddonInfo info = new(addonInstance);
+                    AddonInfo info = new(addonInstance, alc);
                     if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
                         addons.Add(info);
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
@@ -212,19 +212,32 @@ namespace Nitrocid.Base.Kernel.Extensions
             Dictionary<string, string> errors = [];
             for (int addonIdx = addons.Count - 1; addonIdx >= 0; addonIdx--)
             {
-                var addonInstance = addons[addonIdx].Addon;
+                var addonInfo = addons[addonIdx];
+                var addonInstance = addonInfo.Addon;
+                var alc = addonInfo.alc;
                 try
                 {
+                    using var context = alc.EnterContextualReflection();
                     addonInstance.StopAddon();
-                    addons.RemoveAt(addonIdx);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop addon {0}. {1}", vars: [addonInstance.AddonName, ex.Message]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop addon {0}. {1}", vars: [addonInfo.AddonName, ex.Message]);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    errors.Add(addonInstance.AddonName, ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message);
+                    errors.Add(addonInfo.AddonName, ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message);
+                }
+                finally
+                {
+                    // Unload the assembly on garbage collection
+                    alc.Unload();
+                    addons.RemoveAt(addonIdx);
                 }
             }
+
+            // Unload all addon assemblies
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
             if (errors.Count != 0)
                 throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED") + $"\n  - {string.Join("\n  - ", errors.Select((kvp) => $"{kvp.Key}: {kvp.Value}"))}");
         }
