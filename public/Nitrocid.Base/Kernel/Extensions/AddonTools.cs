@@ -192,6 +192,7 @@ namespace Nitrocid.Base.Kernel.Extensions
             {
                 try
                 {
+                    using var context = addonInfo.alc.EnterContextualReflection();
                     DebugWriter.WriteDebug(DebugLevel.I, "Finalizing addon {0}...", vars: [addonInfo.AddonName]);
                     addonInfo.Addon.FinalizeAddon();
                     DebugWriter.WriteDebug(DebugLevel.I, "Finalized addon {0}!", vars: [addonInfo.AddonName]);
