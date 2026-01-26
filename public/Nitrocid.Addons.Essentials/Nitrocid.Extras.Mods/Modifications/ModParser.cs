@@ -71,7 +71,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
             if (Path.HasExtension(modFile) && Path.GetExtension(modFile) == ".dll")
             {
-                var alc = new AssemblyLoadContext(ModPath, true);
+                var alc = new ExtensionLoadContext(ModPath + modFile);
                 bool failed = false;
 
                 // Mod is a dynamic DLL
@@ -152,7 +152,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             }
         }
 
-        internal static void FinalizeMods(IMod script, string modFile, AssemblyLoadContext alc)
+        internal static void FinalizeMods(IMod script, string modFile, ExtensionLoadContext alc)
         {
             ModInfo ModInstance;
 

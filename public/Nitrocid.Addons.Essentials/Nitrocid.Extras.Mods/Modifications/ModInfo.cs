@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.Mods.Modifications
     [DebuggerDisplay("Mod name = {ModName}")]
     public class ModInfo
     {
-        internal AssemblyLoadContext alc;
+        internal ExtensionLoadContext alc;
 
         /// <summary>
         /// The mod name. If no name is specified, or if it only consists of whitespaces (space), the file name is taken.
@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// <summary>
         /// Creates new mod info instance
         /// </summary>
-        internal ModInfo(string ModName, string ModFileName, string ModFilePath, IMod ModScript, string ModVersion, AssemblyLoadContext alc)
+        internal ModInfo(string ModName, string ModFileName, string ModFilePath, IMod ModScript, string ModVersion, ExtensionLoadContext alc)
         {
             // Validate values. Check to see if the name is null. If so, it will take the mod file name.
             if (string.IsNullOrWhiteSpace(ModName))

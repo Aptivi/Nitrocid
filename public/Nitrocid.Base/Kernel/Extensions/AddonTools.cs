@@ -148,7 +148,7 @@ namespace Nitrocid.Base.Kernel.Extensions
                 IAddon addonInstance;
 
                 // Try to load the addon assembly
-                var alc = new AssemblyLoadContext(addon, true);
+                var alc = new ExtensionLoadContext(addonPath);
                 var asm = alc.LoadFromAssemblyPath(addonPath);
                 addonInstance = GetAddonInstance(asm) ??
                     throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_ADDONINVALID") + $" {addonPath}");

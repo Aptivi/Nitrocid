@@ -295,7 +295,7 @@ namespace Nitrocid.Extras.Mods.Modifications
                 StopMod(Path.GetFileName(TargetModPath));
             }
 
-            var parseModContext = new AssemblyLoadContext(ModPath, true);
+            var parseModContext = new ExtensionLoadContext(ModPath);
             bool unloadOnFail = true;
             try
             {
