@@ -178,14 +178,14 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
                 if (SelectionEnumInternal)
                 {
                     // Apparently, we need to have a full assembly name for getting types.
-                    SelectionEnumType = Type.GetType($"{KernelReleaseInfo.rootNameSpace}.Base.{enumeration}, {typeof(Config).Assembly.FullName}") ??
+                    SelectionEnumType = ReflectionCommon.GetType($"{KernelReleaseInfo.rootNameSpace}.Base.{enumeration}, {typeof(Config).Assembly.FullName}") ??
                         throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTION_EXCEPTION_NOTYPEFROM") + $" {enumeration}");
                     SelectFrom = SelectionEnumType.GetEnumNames();
                     Selections = SelectionEnumType.GetEnumValues();
                 }
                 else
                 {
-                    SelectionEnumType = Type.GetType(enumeration + ", " + SelectionEnumAssembly) ??
+                    SelectionEnumType = ReflectionCommon.GetType(enumeration + ", " + SelectionEnumAssembly) ??
                         throw new KernelException(KernelExceptionType.Config, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_SELECTION_EXCEPTION_NOTYPEFROM") + $" {enumeration}");
                     SelectFrom = SelectionEnumType.GetEnumNames();
                     Selections = SelectionEnumType.GetEnumValues();
@@ -194,7 +194,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
             else
             {
                 var arguments = SettingsAppTools.ParseParameters(key);
-                var type = Type.GetType(key.SelectionFunctionType);
+                var type = ReflectionCommon.GetType(key.SelectionFunctionType);
                 var listObj =
                     type is not null ?
                     MethodManager.InvokeMethodStatic(ListFunctionName, type, args: arguments) :

@@ -1,9 +1,9 @@
-nitrocid-28 (4.0.28.53-0.2.0.0-1) noble; urgency=medium
+nitrocid-28 (4.0.28.54-0.2.0.0-1) noble; urgency=medium
 
   * New generation of Nitrocid! It contains a huge amount of changes!
   * Consult changes.chg in the Git repo for more info.
 
- -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Tue, 23 Dec 2025 13:37:19 +0300
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 26 Jan 2026 15:19:09 +0300
 
 nitrocid-28 (4.0.28.44-0.2.0.0~rc-1) noble; urgency=medium
 

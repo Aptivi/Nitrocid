@@ -266,7 +266,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
                 SettingsFunctionArgs? arg = key.SelectionFunctionArgs[i];
 
                 // Try to get the type
-                Type type = Type.GetType(arg.ArgType) ??
+                Type type = ReflectionCommon.GetType(arg.ArgType) ??
                     throw new KernelException(KernelExceptionType.Reflection, LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_EXCEPTION_ARGTYPE") + $": {arg.ArgType}");
 
                 // Use this type to convert the string value to that type

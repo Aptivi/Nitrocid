@@ -306,7 +306,7 @@ namespace Nitrocid.Base.Kernel.Configuration
                     }
 
                     // Try to get the type
-                    bool Result = Type.GetType(fullType) is not null;
+                    bool Result = ReflectionCommon.GetType(fullType) is not null;
                     DebugWriter.WriteDebug(DebugLevel.I, "[Key: {0}/{1}] Result: {2}.", vars: [keyIdx + 1, keys.Length, Result]);
                     DebugWriter.WriteDebugConditional(!Result, DebugLevel.E, "[Key: {0}/{1}] Enum {2} is not found!", vars: [keyIdx + 1, keys.Length, KeyVariable, KeyFound]);
                     string fullEnumKeyVarName = $"{config.GetType().Name}-{config.Name}-{KeyVariable}-{fullType}";

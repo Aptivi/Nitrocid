@@ -23,6 +23,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 using Nitrocid.Base.Kernel;
+using System.Runtime.Loader;
 
 namespace Nitrocid.Base.Misc.Reflection
 {
@@ -51,6 +52,27 @@ namespace Nitrocid.Base.Misc.Reflection
                 asmName = null;
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Gets the type, respecting assembly load contexts
+        /// </summary>
+        /// <param name="typeName">Type name (either fully qualified or partially qualified)</param>
+        /// <returns>Resulting type</returns>
+        public static Type? GetType(string typeName)
+        {
+            foreach (var context in AssemblyLoadContext.All)
+            {
+                var assemblies = context.Assemblies;
+                foreach (var asm in assemblies)
+                {
+                    string typeShortName = typeName.Contains(',') ? typeName.Split(',')[0].Trim() : typeName;
+                    var type = asm.GetType(typeShortName);
+                    if (type != null)
+                        return type;
+                }
+            }
+            return Type.GetType(typeName);
         }
     }
 }

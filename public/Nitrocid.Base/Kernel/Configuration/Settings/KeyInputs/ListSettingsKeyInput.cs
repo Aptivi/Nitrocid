@@ -42,7 +42,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
 
             // Write the prompt
             var arguments = SettingsAppTools.ParseParameters(key);
-            var type = Type.GetType(key.SelectionFunctionType);
+            var type = ReflectionCommon.GetType(key.SelectionFunctionType);
             var TargetEnum =
                 type is not null ?
                 (IEnumerable<object>?)MethodManager.InvokeMethodStatic(key.SelectionFunctionName, type, args: arguments) :
@@ -148,7 +148,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings.KeyInputs
             string? FinalDelimiter;
             string ListJoinString = key.Delimiter;
             string ListJoinStringVariable = key.DelimiterVariable;
-            var type = Type.GetType(key.DelimiterVariableType);
+            var type = ReflectionCommon.GetType(key.DelimiterVariableType);
             DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the List type. Adding answers to the list...");
 
             // Get the delimiter
