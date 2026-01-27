@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.Loader;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
@@ -66,6 +67,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// </summary>
         /// <param name="modFile">Mod file name with extension. It should end with .dll</param>
         /// <param name="priority">Specifies the mod load priority</param>
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public static void ParseMod(string modFile, ModLoadPriority priority = ModLoadPriority.Optional)
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
@@ -152,6 +154,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             }
         }
 
+        [MethodImpl(MethodImplOptions.NoInlining)]
         internal static void FinalizeMods(IMod script, string modFile, ExtensionLoadContext alc)
         {
             ModInfo ModInstance;

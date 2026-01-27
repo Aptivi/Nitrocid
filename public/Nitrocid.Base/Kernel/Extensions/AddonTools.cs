@@ -23,6 +23,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.Loader;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Instances;
@@ -55,6 +56,7 @@ namespace Nitrocid.Base.Kernel.Extensions
         internal static string[] GetAddons() =>
             addons.Select((ai) => ai.AddonName).ToArray();
 
+        [MethodImpl(MethodImplOptions.NoInlining)]
         internal static void ProcessAddons(ModLoadPriority type)
         {
             var addonFolder = type == ModLoadPriority.Important ? PathsManagement.AddonsEssentialsPath : PathsManagement.AddonsPath;
@@ -71,6 +73,7 @@ namespace Nitrocid.Base.Kernel.Extensions
             probedAddons.Clear();
         }
 
+        [MethodImpl(MethodImplOptions.NoInlining)]
         internal static void ProcessAddon(string addon, int current = 1, int length = 1)
         {
             try
@@ -185,6 +188,7 @@ namespace Nitrocid.Base.Kernel.Extensions
             }
         }
 
+        [MethodImpl(MethodImplOptions.NoInlining)]
         internal static void FinalizeAddons()
         {
             Dictionary<string, string> errors = [];
@@ -208,6 +212,7 @@ namespace Nitrocid.Base.Kernel.Extensions
                 throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_FINALIZEFAILED") + $"\n  - {string.Join("\n  - ", errors.Select((kvp) => $"{kvp.Key}: {kvp.Value}"))}");
         }
 
+        [MethodImpl(MethodImplOptions.NoInlining)]
         internal static void UnloadAddons()
         {
             Dictionary<string, string> errors = [];

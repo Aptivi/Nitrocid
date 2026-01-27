@@ -23,6 +23,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.Loader;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
@@ -67,6 +68,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// </summary>
         /// <param name="ModFilename">Mod filename found in KSMods</param>
         /// <param name="priority">Specifies the mod load priority</param>
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public static void StartMod(string ModFilename, ModLoadPriority priority = ModLoadPriority.Optional)
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
@@ -111,6 +113,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// Stops a specified mod
         /// </summary>
         /// <param name="ModFilename">Mod filename found in KSMods</param>
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public static void StopMod(string ModFilename)
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);
@@ -191,6 +194,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// <summary>
         /// Reloads all mods
         /// </summary>
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public static void ReloadMods()
         {
             // Stop all mods
@@ -206,6 +210,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// Reloads a specified mod
         /// </summary>
         /// <param name="ModFilename">Mod filename found in KSMods</param>
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public static void ReloadMod(string ModFilename)
         {
             StopMod(ModFilename);
@@ -280,6 +285,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// Installs the mod DLL or single code file to the mod directory
         /// </summary>
         /// <param name="ModPath">Target mod path</param>
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public static void InstallMod(string ModPath)
         {
             string TargetModPath = FilesystemTools.NeutralizePath(Path.GetFileName(ModPath), PathsManagement.GetKernelPath(KernelPathType.Mods));
@@ -377,6 +383,7 @@ namespace Nitrocid.Extras.Mods.Modifications
         /// Uninstalls the mod from the mod directory
         /// </summary>
         /// <param name="ModPath">Target mod path found in KSMods</param>
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public static void UninstallMod(string ModPath)
         {
             string TargetModPath = FilesystemTools.NeutralizePath(ModPath, PathsManagement.GetKernelPath(KernelPathType.Mods), true);
@@ -450,6 +457,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             return null;
         }
 
+        [MethodImpl(MethodImplOptions.NoInlining)]
         internal static void Manage(bool start, ModLoadPriority priority = ModLoadPriority.Optional)
         {
             string ModPath = PathsManagement.GetKernelPath(KernelPathType.Mods);

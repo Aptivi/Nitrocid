@@ -25,6 +25,21 @@ namespace Nitrocid.Base.Kernel.Extensions
 {
     internal class ExtensionLoadContext : AssemblyLoadContext
     {
+        // WARNING: It looks like that we have unloadability issues with addons that use Newtonsoft.Json that can't unload once
+        // Newtonsoft.Json gets loaded, because Newtonsoft.Json caches properties and other objects in a way that causes
+        // unloadability issues if we used JsonConvert. This makes load contexts useless in this regard when it comes to
+        // unloading, which is screwed up.
+        //
+        // We can't fix this issue in late cycles of the development of 0.2.0 unless Newtonsoft.Json and other libraries that
+        // cache their objects finally get fixed with a new update, as it involves a huge migration and careful studying of
+        // possible breaking changes. Nitrocid's ThemePacks doesn't use serialization to parse the JSON files for themes for
+        // Terminaux to process, which makes the matter worse.
+        //
+        // More information:
+        //   - https://github.com/dotnet/runtime/issues/13283
+        //   - https://github.com/JamesNK/Newtonsoft.Json/issues/2414
+        //   - https://github.com/godotengine/godot-proposals/issues/11819
+        //   - https://github.com/godotengine/godot/issues/78513
         private readonly AssemblyDependencyResolver resolver;
         private readonly AssemblyDependencyResolver baseResolver;
 
