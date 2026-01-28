@@ -39,6 +39,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Progress;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Text.Probers.Regexp;
+using Serilog.Sinks.File;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Themes.Colors;
@@ -1802,8 +1803,9 @@ namespace Nitrocid.Base.Drivers.Filesystem
                 chunkSize = 104857600;
 
             // Check to see if this file needs splitting
-            var fileStream = File.OpenRead(inputFile);
-            if (fileStream.Length <= chunkSize)
+            using var fileStream = File.OpenRead(inputFile);
+            long fileSize = fileStream.Length;
+            if (fileSize <= chunkSize)
                 // There is no need to make file chunks
                 return [];
 
@@ -1813,8 +1815,10 @@ namespace Nitrocid.Base.Drivers.Filesystem
             var chunkStream = File.Create(pathToChunk);
             List<string> chunksMade = [pathToChunk];
             int processedChunks = 0;
-            int chunkByte;
-            while ((chunkByte = fileStream.ReadByte()) != -1)
+            long chunkPosition = 0;
+            int chunkBufferSize = (int)Math.Min(chunkSize, Array.MaxLength);
+            byte[] chunkBuffer = new byte[chunkBufferSize];
+            while (chunkPosition < fileSize)
             {
                 // Check to see if we need to create another chunk
                 if (chunkStream.Length >= chunkSize)
@@ -1828,8 +1832,21 @@ namespace Nitrocid.Base.Drivers.Filesystem
                     chunksMade.Add(pathToChunk);
                 }
 
-                // Write this byte to the chunk
-                chunkStream.WriteByte((byte)chunkByte);
+                // Get remaining chunk size
+                long remainingChunk = Math.Min(chunkSize, fileSize - chunkPosition);
+                while (remainingChunk > 0)
+                {
+                    // Read the bytes from source file
+                    int readSize = (int)Math.Min(remainingChunk, chunkBuffer.Length);
+                    int bytesRead = fileStream.Read(chunkBuffer, 0, readSize);
+                    if (bytesRead == 0)
+                        break;
+
+                    // Write the bytes to the chunk file
+                    chunkStream.Write(chunkBuffer, 0, bytesRead);
+                    remainingChunk -= bytesRead;
+                    chunkPosition += bytesRead;
+                }
             }
 
             // Flush the last chunk written
@@ -1859,11 +1876,26 @@ namespace Nitrocid.Base.Drivers.Filesystem
             {
                 // Open the chunk file and create the input file
                 using var chunkFile = File.OpenRead(chunk);
+                long chunkSize = chunkFile.Length;
 
-                // Write the chunk bytes
-                int byteRead;
-                while ((byteRead = chunkFile.ReadByte()) != -1)
-                    fileStream.WriteByte((byte)byteRead);
+                // Get the chunk buffer before the read operation
+                int chunkBufferSize = (int)Math.Min(chunkSize, Array.MaxLength);
+                byte[] chunkBuffer = new byte[chunkBufferSize];
+
+                // Write the chunk bytes in buffered blocks
+                long remainingChunk = chunkSize;
+                while (remainingChunk > 0)
+                {
+                    // Read the bytes from source chunk file
+                    int readSize = (int)Math.Min(remainingChunk, chunkBuffer.Length);
+                    int bytesRead = chunkFile.Read(chunkBuffer, 0, readSize);
+                    if (bytesRead == 0)
+                        break;
+
+                    // Write the bytes to the chunk file
+                    fileStream.Write(chunkBuffer, 0, bytesRead);
+                    remainingChunk -= bytesRead;
+                }
             }
             fileStream.Flush();
             fileStream.Close();
