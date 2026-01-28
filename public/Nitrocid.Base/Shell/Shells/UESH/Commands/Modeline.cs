@@ -124,7 +124,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             if (modelineOneLine)
             {
                 modelineBuilder.Append(
-                    $"Modeline  \"1280x1024\"  {dotClock} {horizontalPixels} {horizontalTiming1} {horizontalTiming2} {horizontalTiming3} {verticalPixels} {verticalTiming1} {verticalTiming2} {verticalTiming3} +hsync +vsync");
+                    $"Modeline  \"{horizontalPixels}x{verticalPixels}\"  {dotClock} {horizontalPixels} {horizontalTiming1} {horizontalTiming2} {horizontalTiming3} {verticalPixels} {verticalTiming1} {verticalTiming2} {verticalTiming3} +hsync +vsync");
             }
             else
             {
@@ -132,12 +132,12 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     $"""
                     # {horizontalPixels}x{verticalPixels} @ {verticalFreq}Hz, {horizontalFreqKilohertz} kHz hsync
                     #
-                    # Horiz. sync and blank: {horizontalSyncUs} microseconds, {horizontalBlankUs} microseconds
-                    # Vert. sync and blank: {verticalSyncUs} microseconds, {verticalBlankUs} microseconds
+                    # Horizontal sync and blank: {horizontalSyncUs} microseconds, {horizontalBlankUs} microseconds
+                    # Vertical   sync and blank: {verticalSyncUs} microseconds, {verticalBlankUs} microseconds
                     #
                     # Porch ratios
-                    #   - Horiz.: F {horizontalFrontPorchRatio}, S {horizontalSyncRatio}, B {horizontalBackPorchRatio}
-                    #   - Vert.: F {verticalFrontPorchRatio}, S {verticalSyncRatio}, B {verticalBackPorchRatio}
+                    #   - Horizontal: F {horizontalFrontPorchRatio}, S {horizontalSyncRatio}, B {horizontalBackPorchRatio}
+                    #   - Vertical:   F {verticalFrontPorchRatio}, S {verticalSyncRatio}, B {verticalBackPorchRatio}
                     #
                     # Bases: H {horizontalBase}, V {verticalBase}
 
