@@ -17,55 +17,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "밀리 초 :"
+      "text": "밀리 초"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "초 :"
+      "text": "초"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "의사록:"
+      "text": "의사록"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "시간:"
+      "text": "시간"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "요일 :"
+      "text": "요일"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "개월 :"
+      "text": "개월"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "년:"
+      "text": "년"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "일 :"
+      "text": "일"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "요일 :"
+      "text": "요일"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "바이너리 :"
+      "text": "바이너리"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "현지 시각:"
+      "text": "현지 시각"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "세계시 :"
+      "text": "세계시"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "유닉스 시간 :"
+      "text": "유닉스 시간"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -77,11 +77,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "데이트:"
+      "text": "데이트"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "시각:"
+      "text": "시각"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

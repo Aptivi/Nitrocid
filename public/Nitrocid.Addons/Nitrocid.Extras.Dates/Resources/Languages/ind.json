@@ -16,55 +16,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "mileesekand:"
+      "text": "mileesekand"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "sekand:"
+      "text": "sekand"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "minat:"
+      "text": "minat"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "ghante:"
+      "text": "ghante"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "din:"
+      "text": "din"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "maheene:"
+      "text": "maheene"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "saal:"
+      "text": "saal"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "varsh ka din:"
+      "text": "varsh ka din"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "saptaah ke din:"
+      "text": "saptaah ke din"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "bainaree:"
+      "text": "bainaree"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "sthaaneey samay:"
+      "text": "sthaaneey samay"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "saarvabhaumik samay:"
+      "text": "saarvabhaumik samay"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "yooniks samay:"
+      "text": "yooniks samay"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -76,11 +76,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "taareekh:"
+      "text": "taareekh"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "samay:"
+      "text": "samay"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

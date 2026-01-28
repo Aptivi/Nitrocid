@@ -17,55 +17,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "Milisecunde:"
+      "text": "Milisecunde"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "secunde:"
+      "text": "secunde"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "Minute:"
+      "text": "Minute"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "Ore:"
+      "text": "Ore"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "Zile:"
+      "text": "Zile"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "Luni:"
+      "text": "Luni"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "An:"
+      "text": "An"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "Ziua anului:"
+      "text": "Ziua anului"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "Zi a săptămânii:"
+      "text": "Zi a săptămânii"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "Binar:"
+      "text": "Binar"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "Ora locala:"
+      "text": "Ora locala"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "Timp universal:"
+      "text": "Timp universal"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Ora Unix:"
+      "text": "Ora Unix"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -77,11 +77,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "Data:"
+      "text": "Data"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "Timp:"
+      "text": "Timp"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

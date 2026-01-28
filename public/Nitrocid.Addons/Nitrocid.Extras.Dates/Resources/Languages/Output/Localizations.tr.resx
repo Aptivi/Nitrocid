@@ -124,43 +124,43 @@
     <value>Tarih ve saat bilgilerini alır</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>Milisaniyeler:</value>
+    <value>Milisaniyeler</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>Saniye:</value>
+    <value>Saniye</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>Tutanaklar:</value>
+    <value>Tutanaklar</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>Saat:</value>
+    <value>Saat</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>Günler:</value>
+    <value>Günler</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>Aylar:</value>
+    <value>Aylar</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>Yıl:</value>
+    <value>Yıl</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>Yılın Günü:</value>
+    <value>Yılın Günü</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>Haftanın Günü:</value>
+    <value>Haftanın Günü</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>İkili:</value>
+    <value>İkili</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>Yerel Saat:</value>
+    <value>Yerel Saat</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>Evrensel Zaman:</value>
+    <value>Evrensel Zaman</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>Unix Zamanı:</value>
+    <value>Unix Zamanı</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>Tarih bilgisi için ayrıştırma başarısız oldu</value>
@@ -169,10 +169,10 @@
     <value>Formatın doğru olduğundan emin olun.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>Tarih:</value>
+    <value>Tarih</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>Zaman:</value>
+    <value>Zaman</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>Basit bir kronometre</value>

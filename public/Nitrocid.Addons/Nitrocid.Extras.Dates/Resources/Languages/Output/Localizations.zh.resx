@@ -124,43 +124,43 @@
     <value>獲取日期和時間信息</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>毫秒：</value>
+    <value>毫秒</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>秒：</value>
+    <value>秒</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>分鐘：</value>
+    <value>分鐘</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>小時：</value>
+    <value>小時</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>天：</value>
+    <value>天</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>月份：</value>
+    <value>月份</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>年：</value>
+    <value>年</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>一年中的一天：</value>
+    <value>一年中的一天</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>星期幾：</value>
+    <value>星期幾</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>二進制：</value>
+    <value>二進制</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>當地時間：</value>
+    <value>當地時間</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>世界時間：</value>
+    <value>世界時間</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>Unix時間：</value>
+    <value>Unix時間</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>無法解析日期信息</value>
@@ -169,10 +169,10 @@
     <value>確保格式正確。</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>日期：</value>
+    <value>日期</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>時間：</value>
+    <value>時間</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>一個簡單的秒錶</value>
@@ -214,7 +214,7 @@
     <value>獲取當前日期和時間信息</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HEADER" xml:space="preserve">
-    <value>資訊:</value>
+    <value>資訊</value>
   </data>
   <data name="NKS_DATES_STOPWATCH_STATUS_READY" xml:space="preserve">
     <value>秒錶準備好了。</value>

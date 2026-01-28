@@ -24,55 +24,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "毫秒："
+      "text": "毫秒"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "秒："
+      "text": "秒"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "分钟："
+      "text": "分钟"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "小时："
+      "text": "小时"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "天："
+      "text": "天"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "月份："
+      "text": "月份"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "年："
+      "text": "年"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "一年中的一天："
+      "text": "一年中的一天"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "星期几："
+      "text": "星期几"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "二进制："
+      "text": "二进制"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "当地时间："
+      "text": "当地时间"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "世界时间："
+      "text": "世界时间"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Unix时间："
+      "text": "Unix时间"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -84,11 +84,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "日期："
+      "text": "日期"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "时间："
+      "text": "时间"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",
@@ -144,7 +144,7 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HEADER",
-      "text": "信息："
+      "text": "信息"
     },
     {
       "loc": "NKS_DATES_STOPWATCH_STATUS_READY",

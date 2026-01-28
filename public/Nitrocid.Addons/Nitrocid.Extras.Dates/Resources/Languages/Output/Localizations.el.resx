@@ -124,43 +124,43 @@
     <value>Λαμβάνει πληροφορίες ημερομηνίας και ώρας</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>Χιλιοστά του δευτερολέπτου:</value>
+    <value>Χιλιοστά του δευτερολέπτου</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>Δευτερόλεπτα:</value>
+    <value>Δευτερόλεπτα</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>Λεπτά:</value>
+    <value>Λεπτά</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>Ωρες:</value>
+    <value>Ωρες</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>Ημέρες:</value>
+    <value>Ημέρες</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>Μήνες:</value>
+    <value>Μήνες</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>Ετος:</value>
+    <value>Ετος</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>Ημέρα του έτους:</value>
+    <value>Ημέρα του έτους</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>Μερα της ΕΒΔΟΜΑΔΑΣ:</value>
+    <value>Μερα της ΕΒΔΟΜΑΔΑΣ</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>Δυάδικος:</value>
+    <value>Δυάδικος</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>Τοπική ώρα:</value>
+    <value>Τοπική ώρα</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>Universal Time:</value>
+    <value>Universal Time</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>Unix Time:</value>
+    <value>Unix Time</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>Αποτυχία ανάλυσης πληροφοριών ημερομηνίας για</value>
@@ -169,10 +169,10 @@
     <value>Βεβαιωθείτε ότι η μορφή είναι σωστή.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>Ημερομηνία:</value>
+    <value>Ημερομηνία</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>Χρόνος:</value>
+    <value>Χρόνος</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>Ένα απλό χρονόμετρο</value>

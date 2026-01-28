@@ -16,55 +16,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "Milidetik:"
+      "text": "Milidetik"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "Detik:"
+      "text": "Detik"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "Risalah:"
+      "text": "Risalah"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "Jam:"
+      "text": "Jam"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "Hari:"
+      "text": "Hari"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "Bulan:"
+      "text": "Bulan"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "Tahun:"
+      "text": "Tahun"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "Hari dalam Setahun:"
+      "text": "Hari dalam Setahun"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "Hari dalam Seminggu:"
+      "text": "Hari dalam Seminggu"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "Biner:"
+      "text": "Biner"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "Waktu setempat:"
+      "text": "Waktu setempat"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "Waktu Universal:"
+      "text": "Waktu Universal"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Waktu Unix:"
+      "text": "Waktu Unix"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -76,11 +76,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "Tanggal:"
+      "text": "Tanggal"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "Waktu:"
+      "text": "Waktu"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

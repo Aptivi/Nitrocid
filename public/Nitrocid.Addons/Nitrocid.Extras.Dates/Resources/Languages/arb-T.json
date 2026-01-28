@@ -42,55 +42,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "ميلي ثانية:"
+      "text": "ميلي ثانية"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "ثواني:"
+      "text": "ثواني"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "الدقائق:"
+      "text": "الدقائق"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "ساعات:"
+      "text": "ساعات"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "أيام:"
+      "text": "أيام"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "شهور:"
+      "text": "شهور"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "سنة:"
+      "text": "سنة"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "يوم من السنة:"
+      "text": "يوم من السنة"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "يوم من الأسبوع:"
+      "text": "يوم من الأسبوع"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "الثنائية:"
+      "text": "الثنائية"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "الوقت المحلي:"
+      "text": "الوقت المحلي"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "التوقيت العالمي:"
+      "text": "التوقيت العالمي"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "وقت يونكس:"
+      "text": "وقت يونكس"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -102,11 +102,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "تاريخ:"
+      "text": "تاريخ"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "زمن:"
+      "text": "زمن"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

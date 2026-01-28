@@ -16,55 +16,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "मिलीसेकंड:"
+      "text": "मिलीसेकंड"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "सेकंड:"
+      "text": "सेकंड"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "मिनट:"
+      "text": "मिनट"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "घंटे:"
+      "text": "घंटे"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "दिन:"
+      "text": "दिन"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "महीने:"
+      "text": "महीने"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "साल:"
+      "text": "साल"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "वर्ष का दिन:"
+      "text": "वर्ष का दिन"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "सप्ताह के दिन:"
+      "text": "सप्ताह के दिन"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "बाइनरी:"
+      "text": "बाइनरी"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "स्थानीय समय:"
+      "text": "स्थानीय समय"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "सार्वभौमिक समय:"
+      "text": "सार्वभौमिक समय"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "यूनिक्स समय:"
+      "text": "यूनिक्स समय"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -76,11 +76,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "तारीख:"
+      "text": "तारीख"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "समय:"
+      "text": "समय"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

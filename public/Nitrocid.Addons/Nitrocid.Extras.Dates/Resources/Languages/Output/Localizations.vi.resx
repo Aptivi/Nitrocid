@@ -124,43 +124,43 @@
     <value>Nhận thông tin ngày và giờ</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>Mili giây:</value>
+    <value>Mili giây</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>Giây:</value>
+    <value>Giây</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>Phút:</value>
+    <value>Phút</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>Giờ:</value>
+    <value>Giờ</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>Ngày:</value>
+    <value>Ngày</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>Tháng:</value>
+    <value>Tháng</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>Năm:</value>
+    <value>Năm</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>Ngày trong năm:</value>
+    <value>Ngày trong năm</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>Ngày trong tuần:</value>
+    <value>Ngày trong tuần</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>Nhị phân:</value>
+    <value>Nhị phân</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>Giờ địa phương:</value>
+    <value>Giờ địa phương</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>Giờ quốc tế:</value>
+    <value>Giờ quốc tế</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>Giờ Unix:</value>
+    <value>Giờ Unix</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>Không phân tích được thông tin ngày tháng</value>
@@ -169,10 +169,10 @@
     <value>Đảm bảo định dạng là đúng.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>Ngày:</value>
+    <value>Ngày</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>Thời gian:</value>
+    <value>Thời gian</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>Một chiếc đồng hồ bấm giờ đơn giản</value>

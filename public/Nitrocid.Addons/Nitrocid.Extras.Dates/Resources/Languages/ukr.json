@@ -16,55 +16,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "мілісекунди:"
+      "text": "мілісекунди"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "Секунди:"
+      "text": "Секунди"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "Хвилини:"
+      "text": "Хвилини"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "Час роботи:"
+      "text": "Час роботи"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "днів:"
+      "text": "днів"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "Місяці:"
+      "text": "Місяці"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "рік:"
+      "text": "рік"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "День року:"
+      "text": "День року"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "День тижня:"
+      "text": "День тижня"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "двійковий:"
+      "text": "двійковий"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "Місцевий час:"
+      "text": "Місцевий час"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "Всесвітній час:"
+      "text": "Всесвітній час"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Час Unix:"
+      "text": "Час Unix"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -76,11 +76,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "Дата:"
+      "text": "Дата"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "час:"
+      "text": "час"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

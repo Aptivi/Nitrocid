@@ -124,43 +124,43 @@
     <value>dinaank aur samay kee jaanakaaree praapt karata hai</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>mileesekand:</value>
+    <value>mileesekand</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>sekand:</value>
+    <value>sekand</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>minat:</value>
+    <value>minat</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>ghante:</value>
+    <value>ghante</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>din:</value>
+    <value>din</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>maheene:</value>
+    <value>maheene</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>saal:</value>
+    <value>saal</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>varsh ka din:</value>
+    <value>varsh ka din</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>saptaah ke din:</value>
+    <value>saptaah ke din</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>bainaree:</value>
+    <value>bainaree</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>sthaaneey samay:</value>
+    <value>sthaaneey samay</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>saarvabhaumik samay:</value>
+    <value>saarvabhaumik samay</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>yooniks samay:</value>
+    <value>yooniks samay</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>dinaank jaanakaaree paars karane mein viphal</value>
@@ -169,10 +169,10 @@
     <value>sunishchit karen ki praaroop sahee hai.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>taareekh:</value>
+    <value>taareekh</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>samay:</value>
+    <value>samay</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>ek saadhaaran stopavoch</value>
