@@ -124,43 +124,43 @@
     <value>Obține informații despre dată și oră</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>Milisecunde:</value>
+    <value>Milisecunde</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>secunde:</value>
+    <value>secunde</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>Minute:</value>
+    <value>Minute</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>Ore:</value>
+    <value>Ore</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>Zile:</value>
+    <value>Zile</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>Luni:</value>
+    <value>Luni</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>An:</value>
+    <value>An</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>Ziua anului:</value>
+    <value>Ziua anului</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>Zi a săptămânii:</value>
+    <value>Zi a săptămânii</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>Binar:</value>
+    <value>Binar</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>Ora locala:</value>
+    <value>Ora locala</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>Timp universal:</value>
+    <value>Timp universal</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>Ora Unix:</value>
+    <value>Ora Unix</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>Nu s-au putut analiza informațiile despre dată pentru</value>
@@ -169,10 +169,10 @@
     <value>Asigurați-vă că formatul este corect.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>Data:</value>
+    <value>Data</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>Timp:</value>
+    <value>Timp</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>Un simplu cronometru</value>

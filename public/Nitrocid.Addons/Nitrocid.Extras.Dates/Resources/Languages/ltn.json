@@ -16,31 +16,31 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "Milliseconds:"
+      "text": "Milliseconds"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "Secundi:"
+      "text": "Secundi"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "Minuta:"
+      "text": "Minuta"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "Horae:"
+      "text": "Horae"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "Dies:"
+      "text": "Dies"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "Menses:"
+      "text": "Menses"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "Annus:"
+      "text": "Annus"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
@@ -48,23 +48,23 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "Dies Hebdomadae:"
+      "text": "Dies Hebdomadae"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "Binarii:"
+      "text": "Binarii"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "Locus Time:"
+      "text": "Locus Time"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "Universale tempus:"
+      "text": "Universale tempus"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Unix Tempus:"
+      "text": "Unix Tempus"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -76,11 +76,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "Date:"
+      "text": "Date"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "Tempus:"
+      "text": "Tempus"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

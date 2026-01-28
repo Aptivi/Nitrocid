@@ -124,43 +124,43 @@
     <value>Accipit diem et tempus informationes</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>Milliseconds:</value>
+    <value>Milliseconds</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>Secundi:</value>
+    <value>Secundi</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>Minuta:</value>
+    <value>Minuta</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>Horae:</value>
+    <value>Horae</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>Dies:</value>
+    <value>Dies</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>Menses:</value>
+    <value>Menses</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>Annus:</value>
+    <value>Annus</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
     <value>Nonas Annus;</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>Dies Hebdomadae:</value>
+    <value>Dies Hebdomadae</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>Binarii:</value>
+    <value>Binarii</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>Locus Time:</value>
+    <value>Locus Time</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>Universale tempus:</value>
+    <value>Universale tempus</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>Unix Tempus:</value>
+    <value>Unix Tempus</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>Deficio ad parse date notitia for</value>
@@ -169,10 +169,10 @@
     <value>Ut forma sit recta.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>Date:</value>
+    <value>Date</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>Tempus:</value>
+    <value>Tempus</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>Innocens stopwatch</value>

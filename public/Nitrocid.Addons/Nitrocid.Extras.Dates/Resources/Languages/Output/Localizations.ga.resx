@@ -124,43 +124,43 @@
     <value>Faigheann sé an t-eolas dáta agus am</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>Milleasoicindí:</value>
+    <value>Milleasoicindí</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>Soicind:</value>
+    <value>Soicind</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>Nóiméad:</value>
+    <value>Nóiméad</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>Uaireanta:</value>
+    <value>Uaireanta</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>Laethanta:</value>
+    <value>Laethanta</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>Míonna:</value>
+    <value>Míonna</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>Bliain:</value>
+    <value>Bliain</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>Lá na Bliana:</value>
+    <value>Lá na Bliana</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>Lá na Seachtaine:</value>
+    <value>Lá na Seachtaine</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>Dénártha:</value>
+    <value>Dénártha</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>Am Áitiúil:</value>
+    <value>Am Áitiúil</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>Am Uilíoch:</value>
+    <value>Am Uilíoch</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>Am Unix:</value>
+    <value>Am Unix</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>Theip ar fhaisnéis dáta a pharsáil le haghaidh</value>
@@ -169,10 +169,10 @@
     <value>Cinntigh go bhfuil an fhormáid cheart.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>Dáta:</value>
+    <value>Dáta</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>Am:</value>
+    <value>Am</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>Stopuaireadóir simplí</value>

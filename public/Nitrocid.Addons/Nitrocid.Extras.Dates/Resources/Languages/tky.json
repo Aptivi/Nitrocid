@@ -17,55 +17,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "Milisaniyeler:"
+      "text": "Milisaniyeler"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "Saniye:"
+      "text": "Saniye"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "Tutanaklar:"
+      "text": "Tutanaklar"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "Saat:"
+      "text": "Saat"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "Günler:"
+      "text": "Günler"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "Aylar:"
+      "text": "Aylar"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "Yıl:"
+      "text": "Yıl"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "Yılın Günü:"
+      "text": "Yılın Günü"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "Haftanın Günü:"
+      "text": "Haftanın Günü"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "İkili:"
+      "text": "İkili"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "Yerel Saat:"
+      "text": "Yerel Saat"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "Evrensel Zaman:"
+      "text": "Evrensel Zaman"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Unix Zamanı:"
+      "text": "Unix Zamanı"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -77,11 +77,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "Tarih:"
+      "text": "Tarih"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "Zaman:"
+      "text": "Zaman"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

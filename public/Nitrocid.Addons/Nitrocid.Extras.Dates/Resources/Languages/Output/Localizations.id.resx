@@ -124,43 +124,43 @@
     <value>Mendapatkan informasi tanggal dan waktu</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>Milidetik:</value>
+    <value>Milidetik</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>Detik:</value>
+    <value>Detik</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>Risalah:</value>
+    <value>Risalah</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>Jam:</value>
+    <value>Jam</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>Hari:</value>
+    <value>Hari</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>Bulan:</value>
+    <value>Bulan</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>Tahun:</value>
+    <value>Tahun</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>Hari dalam Setahun:</value>
+    <value>Hari dalam Setahun</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>Hari dalam Seminggu:</value>
+    <value>Hari dalam Seminggu</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>Biner:</value>
+    <value>Biner</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>Waktu setempat:</value>
+    <value>Waktu setempat</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>Waktu Universal:</value>
+    <value>Waktu Universal</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>Waktu Unix:</value>
+    <value>Waktu Unix</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>Gagal mengurai informasi tanggal untuk</value>
@@ -169,10 +169,10 @@
     <value>Pastikan formatnya benar.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>Tanggal:</value>
+    <value>Tanggal</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>Waktu:</value>
+    <value>Waktu</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>Stopwatch sederhana</value>

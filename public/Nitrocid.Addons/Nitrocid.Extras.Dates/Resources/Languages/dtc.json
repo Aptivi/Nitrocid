@@ -22,55 +22,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "milliseconden:"
+      "text": "milliseconden"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "seconden:"
+      "text": "seconden"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "Minuten:"
+      "text": "Minuten"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "Uren:"
+      "text": "Uren"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "dagen:"
+      "text": "dagen"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "Maanden:"
+      "text": "Maanden"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "Jaar:"
+      "text": "Jaar"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "Dag van het jaar:"
+      "text": "Dag van het jaar"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "Dag van de week:"
+      "text": "Dag van de week"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "Binair:"
+      "text": "Binair"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "Lokale tijd:"
+      "text": "Lokale tijd"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "Universele tijd:"
+      "text": "Universele tijd"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Unix-tijd:"
+      "text": "Unix-tijd"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -82,11 +82,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "Datum:"
+      "text": "Datum"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "Tijd:"
+      "text": "Tijd"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

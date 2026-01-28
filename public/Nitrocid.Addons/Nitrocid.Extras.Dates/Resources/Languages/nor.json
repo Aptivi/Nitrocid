@@ -20,55 +20,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "Millisekunder:"
+      "text": "Millisekunder"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "sekunder:"
+      "text": "sekunder"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "Minutter:"
+      "text": "Minutter"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "Åpningstider:"
+      "text": "Åpningstider"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "Dager:"
+      "text": "Dager"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "Måneder:"
+      "text": "Måneder"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "År:"
+      "text": "År"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "Dag i året:"
+      "text": "Dag i året"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "Ukedag:"
+      "text": "Ukedag"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "Binær:"
+      "text": "Binær"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "Lokal tid:"
+      "text": "Lokal tid"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "Universell tid:"
+      "text": "Universell tid"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Unix-tid:"
+      "text": "Unix-tid"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -80,11 +80,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "Dato:"
+      "text": "Dato"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "Tid:"
+      "text": "Tid"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

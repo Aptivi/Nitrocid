@@ -19,55 +19,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "milisaat:"
+      "text": "milisaat"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "Saat:"
+      "text": "Saat"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "minit:"
+      "text": "minit"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "Jam:"
+      "text": "Jam"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "Hari:"
+      "text": "Hari"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "bulan:"
+      "text": "bulan"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "tahun:"
+      "text": "tahun"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "Hari dalam Tahun:"
+      "text": "Hari dalam Tahun"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "Hari dalam Minggu:"
+      "text": "Hari dalam Minggu"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "binari:"
+      "text": "binari"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "Waktu Tempatan:"
+      "text": "Waktu Tempatan"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "Masa Sejagat:"
+      "text": "Masa Sejagat"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Masa Unix:"
+      "text": "Masa Unix"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -79,11 +79,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "Tarikh:"
+      "text": "Tarikh"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "Masa:"
+      "text": "Masa"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

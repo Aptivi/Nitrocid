@@ -25,55 +25,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "Millisekunden:"
+      "text": "Millisekunden"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "Sekunden:"
+      "text": "Sekunden"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "Protokoll:"
+      "text": "Protokoll"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "Std:"
+      "text": "Std"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "Tage:"
+      "text": "Tage"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "Monate:"
+      "text": "Monate"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "Jahr:"
+      "text": "Jahr"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "Tag des Jahres:"
+      "text": "Tag des Jahres"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "Wochentag:"
+      "text": "Wochentag"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "Binär:"
+      "text": "Binär"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "Ortszeit:"
+      "text": "Ortszeit"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "Weltzeit:"
+      "text": "Weltzeit"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Unix-Zeit:"
+      "text": "Unix-Zeit"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -85,11 +85,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "Datum:"
+      "text": "Datum"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "Zeit:"
+      "text": "Zeit"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

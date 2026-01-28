@@ -124,43 +124,43 @@
     <value>يحصل على معلومات التاريخ والوقت</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>ميلي ثانية:</value>
+    <value>ميلي ثانية</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>ثواني:</value>
+    <value>ثواني</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>الدقائق:</value>
+    <value>الدقائق</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>ساعات:</value>
+    <value>ساعات</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>أيام:</value>
+    <value>أيام</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>شهور:</value>
+    <value>شهور</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>سنة:</value>
+    <value>سنة</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>يوم من السنة:</value>
+    <value>يوم من السنة</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>يوم من الأسبوع:</value>
+    <value>يوم من الأسبوع</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>الثنائية:</value>
+    <value>الثنائية</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>الوقت المحلي:</value>
+    <value>الوقت المحلي</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>التوقيت العالمي:</value>
+    <value>التوقيت العالمي</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>وقت يونكس:</value>
+    <value>وقت يونكس</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>فشل تحليل معلومات التاريخ لـ</value>
@@ -169,10 +169,10 @@
     <value>تأكد من صحة التنسيق.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>تاريخ:</value>
+    <value>تاريخ</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>زمن:</value>
+    <value>زمن</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>ساعة توقيت بسيطة</value>

@@ -124,43 +124,43 @@
     <value>Får informasjon om dato og klokkeslett</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>Millisekunder:</value>
+    <value>Millisekunder</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>sekunder:</value>
+    <value>sekunder</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>Minutter:</value>
+    <value>Minutter</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>Åpningstider:</value>
+    <value>Åpningstider</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>Dager:</value>
+    <value>Dager</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>Måneder:</value>
+    <value>Måneder</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>År:</value>
+    <value>År</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>Dag i året:</value>
+    <value>Dag i året</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>Ukedag:</value>
+    <value>Ukedag</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>Binær:</value>
+    <value>Binær</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>Lokal tid:</value>
+    <value>Lokal tid</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>Universell tid:</value>
+    <value>Universell tid</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>Unix-tid:</value>
+    <value>Unix-tid</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>Kunne ikke analysere datoinformasjon for</value>
@@ -169,10 +169,10 @@
     <value>Sørg for at formatet er riktig.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>Dato:</value>
+    <value>Dato</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>Tid:</value>
+    <value>Tid</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>En enkel stoppeklokke</value>

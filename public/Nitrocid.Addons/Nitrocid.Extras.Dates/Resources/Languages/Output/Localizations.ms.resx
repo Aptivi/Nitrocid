@@ -124,43 +124,43 @@
     <value>Mendapat maklumat tarikh dan masa</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>milisaat:</value>
+    <value>milisaat</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>Saat:</value>
+    <value>Saat</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>minit:</value>
+    <value>minit</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>Jam:</value>
+    <value>Jam</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>Hari:</value>
+    <value>Hari</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>bulan:</value>
+    <value>bulan</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>tahun:</value>
+    <value>tahun</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>Hari dalam Tahun:</value>
+    <value>Hari dalam Tahun</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>Hari dalam Minggu:</value>
+    <value>Hari dalam Minggu</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>binari:</value>
+    <value>binari</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>Waktu Tempatan:</value>
+    <value>Waktu Tempatan</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>Masa Sejagat:</value>
+    <value>Masa Sejagat</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>Masa Unix:</value>
+    <value>Masa Unix</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>Gagal menghuraikan maklumat tarikh untuk</value>
@@ -169,10 +169,10 @@
     <value>Pastikan formatnya betul.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>Tarikh:</value>
+    <value>Tarikh</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>Masa:</value>
+    <value>Masa</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>Jam randik yang mudah</value>

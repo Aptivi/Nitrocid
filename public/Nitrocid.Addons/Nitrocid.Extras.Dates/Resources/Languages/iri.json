@@ -17,55 +17,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "Milleasoicindí:"
+      "text": "Milleasoicindí"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "Soicind:"
+      "text": "Soicind"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "Nóiméad:"
+      "text": "Nóiméad"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "Uaireanta:"
+      "text": "Uaireanta"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "Laethanta:"
+      "text": "Laethanta"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "Míonna:"
+      "text": "Míonna"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "Bliain:"
+      "text": "Bliain"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "Lá na Bliana:"
+      "text": "Lá na Bliana"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "Lá na Seachtaine:"
+      "text": "Lá na Seachtaine"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "Dénártha:"
+      "text": "Dénártha"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "Am Áitiúil:"
+      "text": "Am Áitiúil"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "Am Uilíoch:"
+      "text": "Am Uilíoch"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Am Unix:"
+      "text": "Am Unix"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -77,11 +77,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "Dáta:"
+      "text": "Dáta"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "Am:"
+      "text": "Am"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

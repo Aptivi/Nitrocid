@@ -124,43 +124,43 @@
     <value>Ruft Datums- und Uhrzeitinformationen ab</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>Millisekunden:</value>
+    <value>Millisekunden</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>Sekunden:</value>
+    <value>Sekunden</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>Protokoll:</value>
+    <value>Protokoll</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>Std:</value>
+    <value>Std</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>Tage:</value>
+    <value>Tage</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>Monate:</value>
+    <value>Monate</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>Jahr:</value>
+    <value>Jahr</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>Tag des Jahres:</value>
+    <value>Tag des Jahres</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>Wochentag:</value>
+    <value>Wochentag</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>Binär:</value>
+    <value>Binär</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>Ortszeit:</value>
+    <value>Ortszeit</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>Weltzeit:</value>
+    <value>Weltzeit</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>Unix-Zeit:</value>
+    <value>Unix-Zeit</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>Fehler beim Parsen der Datumsinformationen für</value>
@@ -169,10 +169,10 @@
     <value>Stellen Sie sicher, dass das Format korrekt ist.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>Datum:</value>
+    <value>Datum</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>Zeit:</value>
+    <value>Zeit</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>Eine einfache Stoppuhr</value>

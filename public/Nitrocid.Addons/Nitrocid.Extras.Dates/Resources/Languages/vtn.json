@@ -16,55 +16,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "Mili giây:"
+      "text": "Mili giây"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "Giây:"
+      "text": "Giây"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "Phút:"
+      "text": "Phút"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "Giờ:"
+      "text": "Giờ"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "Ngày:"
+      "text": "Ngày"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "Tháng:"
+      "text": "Tháng"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "Năm:"
+      "text": "Năm"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "Ngày trong năm:"
+      "text": "Ngày trong năm"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "Ngày trong tuần:"
+      "text": "Ngày trong tuần"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "Nhị phân:"
+      "text": "Nhị phân"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "Giờ địa phương:"
+      "text": "Giờ địa phương"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "Giờ quốc tế:"
+      "text": "Giờ quốc tế"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Giờ Unix:"
+      "text": "Giờ Unix"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -76,11 +76,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "Ngày:"
+      "text": "Ngày"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "Thời gian:"
+      "text": "Thời gian"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",

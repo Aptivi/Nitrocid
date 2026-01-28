@@ -124,43 +124,43 @@
     <value>दिनांक और समय की जानकारी प्राप्त करता है</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>मिलीसेकंड:</value>
+    <value>मिलीसेकंड</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>सेकंड:</value>
+    <value>सेकंड</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>मिनट:</value>
+    <value>मिनट</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>घंटे:</value>
+    <value>घंटे</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>दिन:</value>
+    <value>दिन</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>महीने:</value>
+    <value>महीने</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>साल:</value>
+    <value>साल</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>वर्ष का दिन:</value>
+    <value>वर्ष का दिन</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>सप्ताह के दिन:</value>
+    <value>सप्ताह के दिन</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>बाइनरी:</value>
+    <value>बाइनरी</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>स्थानीय समय:</value>
+    <value>स्थानीय समय</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>सार्वभौमिक समय:</value>
+    <value>सार्वभौमिक समय</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>यूनिक्स समय:</value>
+    <value>यूनिक्स समय</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>दिनांक जानकारी पार्स करने में विफल</value>
@@ -169,10 +169,10 @@
     <value>सुनिश्चित करें कि प्रारूप सही है।</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>तारीख:</value>
+    <value>तारीख</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>समय:</value>
+    <value>समय</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>एक साधारण स्टॉपवॉच</value>

@@ -124,43 +124,43 @@
     <value>Ottiene le informazioni su data e ora</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MS" xml:space="preserve">
-    <value>Millisecondi:</value>
+    <value>Millisecondi</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_SECONDS" xml:space="preserve">
-    <value>Secondi:</value>
+    <value>Secondi</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MINUTES" xml:space="preserve">
-    <value>Minuti:</value>
+    <value>Minuti</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_HOURS" xml:space="preserve">
-    <value>Ore:</value>
+    <value>Ore</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYS" xml:space="preserve">
-    <value>Giorni:</value>
+    <value>Giorni</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_MONTHS" xml:space="preserve">
-    <value>Mesi:</value>
+    <value>Mesi</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_YEARS" xml:space="preserve">
-    <value>Anno:</value>
+    <value>Anno</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFYEAR" xml:space="preserve">
-    <value>Giorno dell&apos;anno:</value>
+    <value>Giorno dell&apos;anno</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DAYOFWEEK" xml:space="preserve">
-    <value>Giorno della settimana:</value>
+    <value>Giorno della settimana</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_BINARY" xml:space="preserve">
-    <value>Binario:</value>
+    <value>Binario</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_LOCALTIME" xml:space="preserve">
-    <value>Ora locale:</value>
+    <value>Ora locale</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIVERSALTIME" xml:space="preserve">
-    <value>Tempo universale:</value>
+    <value>Tempo universale</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_UNIXTIME" xml:space="preserve">
-    <value>Tempo Unix:</value>
+    <value>Tempo Unix</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1" xml:space="preserve">
     <value>Impossibile analizzare le informazioni sulla data per</value>
@@ -169,10 +169,10 @@
     <value>Assicurati che il formato sia corretto.</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_DATE" xml:space="preserve">
-    <value>Data:</value>
+    <value>Data</value>
   </data>
   <data name="NKS_DATES_TIMEINFO_TIME" xml:space="preserve">
-    <value>Tempo:</value>
+    <value>Tempo</value>
   </data>
   <data name="NKS_DATES_COMMAND_STOPWATCH_DESC" xml:space="preserve">
     <value>Un semplice cronometro</value>

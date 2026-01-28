@@ -17,55 +17,55 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MS",
-      "text": "Χιλιοστά του δευτερολέπτου:"
+      "text": "Χιλιοστά του δευτερολέπτου"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_SECONDS",
-      "text": "Δευτερόλεπτα:"
+      "text": "Δευτερόλεπτα"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MINUTES",
-      "text": "Λεπτά:"
+      "text": "Λεπτά"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_HOURS",
-      "text": "Ωρες:"
+      "text": "Ωρες"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYS",
-      "text": "Ημέρες:"
+      "text": "Ημέρες"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_MONTHS",
-      "text": "Μήνες:"
+      "text": "Μήνες"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_YEARS",
-      "text": "Ετος:"
+      "text": "Ετος"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFYEAR",
-      "text": "Ημέρα του έτους:"
+      "text": "Ημέρα του έτους"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DAYOFWEEK",
-      "text": "Μερα της ΕΒΔΟΜΑΔΑΣ:"
+      "text": "Μερα της ΕΒΔΟΜΑΔΑΣ"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_BINARY",
-      "text": "Δυάδικος:"
+      "text": "Δυάδικος"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_LOCALTIME",
-      "text": "Τοπική ώρα:"
+      "text": "Τοπική ώρα"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIVERSALTIME",
-      "text": "Universal Time:"
+      "text": "Universal Time"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_UNIXTIME",
-      "text": "Unix Time:"
+      "text": "Unix Time"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATEINFOCANTPARSE1",
@@ -77,11 +77,11 @@
     },
     {
       "loc": "NKS_DATES_TIMEINFO_DATE",
-      "text": "Ημερομηνία:"
+      "text": "Ημερομηνία"
     },
     {
       "loc": "NKS_DATES_TIMEINFO_TIME",
-      "text": "Χρόνος:"
+      "text": "Χρόνος"
     },
     {
       "loc": "NKS_DATES_COMMAND_STOPWATCH_DESC",
