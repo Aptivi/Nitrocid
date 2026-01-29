@@ -222,7 +222,7 @@ namespace Nitrocid.Base.Shell.Homepage
                         else if (isWithinAbout)
                         {
                             if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
-                                OpenAboutBox();
+                                OpenAboutBox(homeScreen);
                         }
                         else if (isWithinOptions)
                         {
@@ -362,7 +362,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                     homeScreen.RequireRefresh();
                                 }
                                 else if (buttonHighlight == 3)
-                                    OpenAboutBox();
+                                    OpenAboutBox(homeScreen);
                                 else
                                 {
                                     ScreenTools.StopCyclicScreen();
@@ -564,7 +564,7 @@ namespace Nitrocid.Base.Shell.Homepage
             choiceActionsAddons.Remove(actionName);
         }
 
-        private static void OpenAboutBox()
+        private static void OpenAboutBox(Screen screen)
         {
             InfoBoxModalColor.WriteInfoBoxModal(
                 LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT_DESC") + "\n\n" +
@@ -575,6 +575,7 @@ namespace Nitrocid.Base.Shell.Homepage
                     Title = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUTNITROCID"),
                 }
             );
+            screen.RequireRefresh();
         }
 
         internal static List<WidgetRenderInfo[]> GetHomepagePages()
