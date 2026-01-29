@@ -15,6 +15,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.Amusements.Amusements.Games.Invaders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.Amusements.Amusements.Games.Invaders.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.Amusements.Amusements.Games.Invaders",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Amusements.Amusements.Games.Invaders.yml\" sourcestartlinenumber=\"1\">Invaders shooter game module</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Extras.Amusements.Amusements.Games.MeteorShooter.yml",
       "output": {
         ".html": {
@@ -99,31 +113,17 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Amusements.Localized.LocalStrings.yml",
+      "source_relative_path": "api/Nitrocid.Extras.Amusements.Screensavers.BdayCardDisplay.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Nitrocid.Extras.Amusements.Localized.LocalStrings.html"
+          "relative_path": "api/Nitrocid.Extras.Amusements.Screensavers.BdayCardDisplay.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Nitrocid.Extras.Amusements.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Amusements.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Amusements.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Amusements.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Amusements.Localized",
-      "Summary": null
+      "Title": "Nitrocid.Extras.Amusements.Screensavers.BdayCardDisplay",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Amusements.Screensavers.BdayCardDisplay.yml\" sourcestartlinenumber=\"1\">Display code for BdayCard</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -152,6 +152,20 @@
       "IsMRef": true,
       "Title": "Nitrocid.Extras.Amusements.Screensavers.MeteorDodgeDisplay",
       "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Amusements.Screensavers.MeteorDodgeDisplay.yml\" sourcestartlinenumber=\"1\">Display code for Meteor (dodge mode)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.Amusements.Screensavers.PersonLookupDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.Amusements.Screensavers.PersonLookupDisplay.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.Amusements.Screensavers.PersonLookupDisplay",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Amusements.Screensavers.PersonLookupDisplay.yml\" sourcestartlinenumber=\"1\">Display code for PersonLookup</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -194,6 +208,62 @@
       "IsMRef": true,
       "Title": "Nitrocid.Extras.Amusements.Screensavers.SnakerDisplay",
       "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Amusements.Screensavers.SnakerDisplay.yml\" sourcestartlinenumber=\"1\">Display code for Snaker</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardGender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardGender.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardGender",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardGender.yml\" sourcestartlinenumber=\"1\">Birthday card gender</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardNameType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardNameType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardNameType",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardNameType.yml\" sourcestartlinenumber=\"1\">Birthday card naming type</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardTextType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardTextType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardTextType",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Amusements.Screensavers.Utilities.BdayCardTextType.yml\" sourcestartlinenumber=\"1\">Birthday card text type</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.Amusements.Screensavers.Utilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.Amusements.Screensavers.Utilities.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.Amusements.Screensavers.Utilities",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -309,34 +379,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.BassBoom.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.BassBoom.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.BassBoom.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.BassBoom.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.BassBoom.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.BassBoom.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.BassBoom.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Extras.BassBoom.Screensavers.LyricsDisplay.yml",
       "output": {
         ".html": {
@@ -403,90 +445,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Nitrocid.Extras.BassBoom.Settings",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.BeepSynth.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.BeepSynth.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.BeepSynth.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.BeepSynth.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.BeepSynth.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.BeepSynth.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.BeepSynth.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Caffeine.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Caffeine.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Caffeine.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Caffeine.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Caffeine.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Caffeine.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Caffeine.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Calculators.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Calculators.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Calculators.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Calculators.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Calculators.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Calculators.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Calculators.Localized",
       "Summary": null
     },
     {
@@ -645,34 +603,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Calendar.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Calendar.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Calendar.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Calendar.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Calendar.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Calendar.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Calendar.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Extras.Calendar.Settings.CalendarConfig.yml",
       "output": {
         ".html": {
@@ -701,58 +631,184 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Localized.LocalStrings.yml",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Settings.ChatbotAIConfig.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Localized.LocalStrings.html"
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Settings.ChatbotAIConfig.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Nitrocid.Extras.ChatbotAI.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
+      "Title": "Nitrocid.Extras.ChatbotAI.Settings.ChatbotAIConfig",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Settings.ChatbotAIConfig.yml\" sourcestartlinenumber=\"1\">Configuration instance for Chatbot AI</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Localized.yml",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Settings.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Localized.html"
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Settings.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Nitrocid.Extras.ChatbotAI.Localized",
+      "Title": "Nitrocid.Extras.ChatbotAI.Settings",
       "Summary": null
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Chemistry.Localized.LocalStrings.yml",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.ChatbotShell.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Nitrocid.Extras.Chemistry.Localized.LocalStrings.html"
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.ChatbotShell.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Nitrocid.Extras.Chemistry.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Chemistry.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.ChatbotShell",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.ChatbotShell.yml\" sourcestartlinenumber=\"1\">The chatbot shell</p>\n"
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Chemistry.Localized.yml",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.ChatbotShellCommon.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Nitrocid.Extras.Chemistry.Localized.html"
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.ChatbotShellCommon.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Nitrocid.Extras.Chemistry.Localized",
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.ChatbotShellCommon",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.ChatbotShellCommon.yml\" sourcestartlinenumber=\"1\">Common chatbot shell class</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotDefaultPreset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotDefaultPreset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotDefaultPreset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotDefaultPreset.yml\" sourcestartlinenumber=\"1\">Default preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine1Preset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine1Preset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine1Preset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine1Preset.yml\" sourcestartlinenumber=\"1\">PowerLine 1 preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine2Preset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine2Preset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine2Preset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine2Preset.yml\" sourcestartlinenumber=\"1\">PowerLine 2 preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine3Preset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine3Preset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine3Preset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLine3Preset.yml\" sourcestartlinenumber=\"1\">PowerLine 3 preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG1Preset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG1Preset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG1Preset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG1Preset.yml\" sourcestartlinenumber=\"1\">PowerLine BG 1 preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG2Preset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG2Preset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG2Preset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG2Preset.yml\" sourcestartlinenumber=\"1\">PowerLine BG 2 preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG3Preset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG3Preset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG3Preset",
+      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ChatbotAI.Shell.Presets.ChatbotPowerLineBG3Preset.yml\" sourcestartlinenumber=\"1\">PowerLine BG 3 preset</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.Presets.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell.Presets",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nitrocid.Extras.ChatbotAI.Shell.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Nitrocid.Extras.ChatbotAI.Shell",
       "Summary": null
     },
     {
@@ -781,34 +837,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Nitrocid.Extras.Chemistry.Screensavers",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.ColorConvert.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.ColorConvert.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.ColorConvert.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ColorConvert.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.ColorConvert.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.ColorConvert.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.ColorConvert.Localized",
       "Summary": null
     },
     {
@@ -897,34 +925,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Contacts.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Contacts.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Contacts.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Contacts.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Contacts.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Contacts.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Contacts.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Extras.Contacts.Settings.ContactsConfig.yml",
       "output": {
         ".html": {
@@ -949,34 +949,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Nitrocid.Extras.Contacts.Settings",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Dates.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Dates.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Dates.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Dates.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Dates.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Dates.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Dates.Localized",
       "Summary": null
     },
     {
@@ -1093,34 +1065,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Dictionary.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Dictionary.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Dictionary.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Dictionary.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Dictionary.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Dictionary.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Dictionary.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Extras.Docking.Dock.DockTools.yml",
       "output": {
         ".html": {
@@ -1145,34 +1089,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Nitrocid.Extras.Docking.Dock",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Docking.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Docking.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Docking.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Docking.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Docking.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Docking.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Docking.Localized",
       "Summary": null
     },
     {
@@ -1229,34 +1145,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Nitrocid.Extras.Forecast.Forecast",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Forecast.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Forecast.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Forecast.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Forecast.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Forecast.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Forecast.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Forecast.Localized",
       "Summary": null
     },
     {
@@ -1415,146 +1303,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Hashes.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Hashes.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Hashes.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Hashes.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Hashes.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Hashes.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Hashes.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.LanguageStudio.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.LanguageStudio.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.LanguageStudio.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.LanguageStudio.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.LanguageStudio.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.LanguageStudio.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.LanguageStudio.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.NameGen.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.NameGen.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.NameGen.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.NameGen.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.NameGen.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.NameGen.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.NameGen.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.NameGen.Screensavers.PersonLookupDisplay.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.NameGen.Screensavers.PersonLookupDisplay.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.NameGen.Screensavers.PersonLookupDisplay",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.NameGen.Screensavers.PersonLookupDisplay.yml\" sourcestartlinenumber=\"1\">Display code for PersonLookup</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.NameGen.Screensavers.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.NameGen.Screensavers.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.NameGen.Screensavers",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.NameGen.Settings.NameGenSaversConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.NameGen.Settings.NameGenSaversConfig.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.NameGen.Settings.NameGenSaversConfig",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.NameGen.Settings.NameGenSaversConfig.yml\" sourcestartlinenumber=\"1\">Screensaver kernel configuration instance</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.NameGen.Settings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.NameGen.Settings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.NameGen.Settings",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Extras.Notes.Interactive.NoteViewerCli.yml",
       "output": {
         ".html": {
@@ -1579,90 +1327,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Nitrocid.Extras.Notes.Interactive",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Notes.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Notes.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Notes.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Notes.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Notes.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Notes.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Notes.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Pastebin.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Pastebin.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Pastebin.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Pastebin.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Pastebin.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Pastebin.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Pastebin.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Ssh.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Ssh.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Ssh.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Ssh.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Ssh.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Ssh.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Ssh.Localized",
       "Summary": null
     },
     {
@@ -1765,34 +1429,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Stocks.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Stocks.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Stocks.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Stocks.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Stocks.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Stocks.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Stocks.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Extras.Stocks.Settings.StocksConfig.yml",
       "output": {
         ".html": {
@@ -1821,62 +1457,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.ThemeStudio.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.ThemeStudio.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.ThemeStudio.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ThemeStudio.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.ThemeStudio.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.ThemeStudio.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.ThemeStudio.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Tips.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Tips.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Tips.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.Tips.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.Tips.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.Tips.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.Tips.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.Extras.Tips.Settings.TipsConfig.yml",
       "output": {
         ".html": {
@@ -1901,34 +1481,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Nitrocid.Extras.Tips.Settings",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.ToDoList.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.ToDoList.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.ToDoList.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.ToDoList.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.ToDoList.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.ToDoList.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.ToDoList.Localized",
       "Summary": null
     },
     {
@@ -2003,34 +1555,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.UnitConv.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.UnitConv.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.UnitConv.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Extras.UnitConv.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Extras.UnitConv.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Extras.UnitConv.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Extras.UnitConv.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Nitrocid.KernelMain.yml",
       "output": {
         ".html": {
@@ -2042,62 +1566,6 @@
       "IsMRef": true,
       "Title": "Nitrocid.KernelMain",
       "Summary": "<p sourcefile=\"api/Nitrocid.KernelMain.yml\" sourcestartlinenumber=\"1\">Kernel main class</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.Localized",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ShellPacks.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ShellPacks.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ShellPacks.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ShellPacks.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ShellPacks.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ShellPacks.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ShellPacks.Localized",
-      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -3875,34 +3343,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Nitrocid.ShellPacks.Tools",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ThemePacks.Localized.LocalStrings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ThemePacks.Localized.LocalStrings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ThemePacks.Localized.LocalStrings",
-      "Summary": "<p sourcefile=\"api/Nitrocid.ThemePacks.Localized.LocalStrings.yml\" sourcestartlinenumber=\"1\">Localized string tools</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Nitrocid.ThemePacks.Localized.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Nitrocid.ThemePacks.Localized.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Nitrocid.ThemePacks.Localized",
       "Summary": null
     },
     {
