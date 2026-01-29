@@ -261,7 +261,6 @@ namespace Nitrocid.Extras.Dates.Timers
                             if (!double.TryParse(UnparsedInterval, out TimerInterval))
                             {
                                 // Not numeric.
-                                timerScreen.RequireRefresh();
                                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER"), new InfoBoxSettings()
                                 {
                                     ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
@@ -269,7 +268,6 @@ namespace Nitrocid.Extras.Dates.Timers
                                 TimerInterval = 60000 * 25;
                             }
                         }
-                        timerScreen.RequireRefresh();
                         break;
                     case ConsoleKey.B:
                         // User requested to specify the break timeout in milliseconds
@@ -285,7 +283,6 @@ namespace Nitrocid.Extras.Dates.Timers
                             if (!double.TryParse(UnparsedInterval, out breakTimerInterval))
                             {
                                 // Not numeric.
-                                timerScreen.RequireRefresh();
                                 InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER"), new InfoBoxSettings()
                                 {
                                     ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
@@ -293,7 +290,6 @@ namespace Nitrocid.Extras.Dates.Timers
                                 breakTimerInterval = 60000 * 5;
                             }
                         }
-                        timerScreen.RequireRefresh();
                         break;
                     case ConsoleKey.Escape:
                         // Stop the timer

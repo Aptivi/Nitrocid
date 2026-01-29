@@ -146,7 +146,6 @@ namespace Nitrocid.Base.Users.Login.Handlers.Logins
                                 PowerManager.PowerManage(PowerMode.Reboot);
                             proceed = answer == 2;
                             exiting = answer >= 0;
-                            loginScreen.RequireRefresh();
                         }
                         else if (key.Key == ConsoleKey.LeftArrow || key.Key == ConsoleKey.RightArrow)
                         {

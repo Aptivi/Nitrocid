@@ -230,14 +230,12 @@ namespace Nitrocid.Extras.Dates.Timers
                         if (!double.TryParse(UnparsedInterval, out TimerInterval))
                         {
                             // Not numeric.
-                            timerScreen.RequireRefresh();
                             InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_DATES_TIMERS_TIMEOUTNEEDSNUMBER"), new InfoBoxSettings()
                             {
                                 ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Error)
                             });
                             TimerInterval = 60000d;
                         }
-                        timerScreen.RequireRefresh();
                         break;
                     case ConsoleKey.Escape:
                         // Stop the timer

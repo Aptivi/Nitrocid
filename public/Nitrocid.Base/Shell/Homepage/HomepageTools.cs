@@ -222,7 +222,7 @@ namespace Nitrocid.Base.Shell.Homepage
                         else if (isWithinAbout)
                         {
                             if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
-                                OpenAboutBox(homeScreen);
+                                OpenAboutBox();
                         }
                         else if (isWithinOptions)
                         {
@@ -362,7 +362,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                     homeScreen.RequireRefresh();
                                 }
                                 else if (buttonHighlight == 3)
-                                    OpenAboutBox(homeScreen);
+                                    OpenAboutBox();
                                 else
                                 {
                                     ScreenTools.StopCyclicScreen();
@@ -404,7 +404,6 @@ namespace Nitrocid.Base.Shell.Homepage
                                     exiting = true;
                                     Login.LogoutRequested = true;
                                 }
-                                homeScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.S:
                                 exiting = true;
@@ -417,7 +416,6 @@ namespace Nitrocid.Base.Shell.Homepage
                                         ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiBoxForeground),
                                         BackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiBoxBackground),
                                     });
-                                homeScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.P:
                                 AudioCuesTools.PlayThemeMusic();
@@ -564,7 +562,7 @@ namespace Nitrocid.Base.Shell.Homepage
             choiceActionsAddons.Remove(actionName);
         }
 
-        private static void OpenAboutBox(Screen screen)
+        private static void OpenAboutBox()
         {
             InfoBoxModalColor.WriteInfoBoxModal(
                 LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUT_DESC") + "\n\n" +
@@ -575,7 +573,6 @@ namespace Nitrocid.Base.Shell.Homepage
                     Title = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_ABOUTNITROCID"),
                 }
             );
-            screen.RequireRefresh();
         }
 
         internal static List<WidgetRenderInfo[]> GetHomepagePages()
