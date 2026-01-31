@@ -698,7 +698,6 @@ namespace Nitrocid.Kernel.Starting
                 {
                     // Stop all addons and their registered components
                     AddonTools.UnloadAddons();
-                    ScreensaverManager.AddonSavers.Clear();
                     DebugWriter.WriteDebug(DebugLevel.I, "Addons and their registered components stopped");
                     SplashReport.ReportProgress(Translate.DoTranslation("Extra kernel functions and their registered components stopped."));
                 }
