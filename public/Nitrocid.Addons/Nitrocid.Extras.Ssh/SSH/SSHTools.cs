@@ -20,25 +20,27 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
+using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Files;
+using Nitrocid.Kernel;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Events;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Network.Connections;
 using Renci.SshNet;
 using Renci.SshNet.Common;
-using Terminaux.Shell.Commands;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Files;
-using Nitrocid.Kernel.Events;
-using Nitrocid.Kernel.Configuration;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
-using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Kernel;
-using Textify.General;
 using Terminaux.Base;
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.Network.Connections;
+using Terminaux.Base.Extensions;
+using Terminaux.Base.Extensions.Data;
 using Terminaux.Inputs;
-using System.Reflection;
-using Nitrocid.Kernel.Exceptions;
+using Terminaux.Shell.Commands;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Extras.Ssh.SSH
 {
@@ -272,6 +274,7 @@ namespace Nitrocid.Extras.Ssh.SSH
 
                 // Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
                 DebugWriter.WriteDebug(DebugLevel.I, "Opening shell...");
+                ConsoleMisc.SetEncoding(ConsoleEncoding.Default);
                 var SSHS = SSHClient.CreateShell(
                     Console.OpenStandardInput(),
                     Console.OpenStandardOutput(),
@@ -279,7 +282,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                     KernelPlatform.IsOnUnix() ? KernelPlatform.GetTerminalType() : "vt100",
                     (uint)ConsoleWrapper.WindowWidth,
                     (uint)ConsoleWrapper.WindowHeight,
-                    (uint)Console.BufferWidth,
+                    (uint)ConsoleWrapper.BufferWidth,
                     (uint)ConsoleWrapper.BufferHeight,
                     new Dictionary<TerminalModes, uint>()
                 );
@@ -308,6 +311,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                 DebugWriter.WriteDebug(DebugLevel.I, "Connected: {0}", vars: [SSHClient.IsConnected]);
                 TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("SSH Disconnected."));
                 DisconnectionRequested = false;
+                ConsoleMisc.SetEncoding(ConsoleEncoding.UTF16);
 
                 // Remove handler for SSH
                 CancellationHandlers.EndLocalCancelScope(SSHDisconnect);
