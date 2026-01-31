@@ -224,7 +224,10 @@ namespace Nitrocid.Extras.Amusements
             ScreensaverManager.AddonSavers.Add("snaker", new SnakerDisplay());
             ScreensaverManager.AddonSavers.Add("personlookup", new PersonLookupDisplay());
             ScreensaverManager.AddonSavers.Add("bdaycard", new BdayCardDisplay());
-            SplashManager.builtinSplashes.Add(quote);
+            lock (SplashManager.builtinSplashes)
+            {
+                SplashManager.builtinSplashes.Add(quote);
+            }
 
             // Initialize configuration in a way that no mod can play with them
             var saversConfig = new AmusementsSaversConfig();
@@ -250,7 +253,10 @@ namespace Nitrocid.Extras.Amusements
             ScreensaverManager.AddonSavers.Remove("snaker");
             ScreensaverManager.AddonSavers.Remove("personlookup");
             ScreensaverManager.AddonSavers.Remove("bdaycard");
-            SplashManager.builtinSplashes.Remove(quote);
+            lock (SplashManager.builtinSplashes)
+            {
+                SplashManager.builtinSplashes.Remove(quote);
+            }
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSplashesConfig));
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsConfig));
