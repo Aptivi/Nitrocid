@@ -387,7 +387,11 @@ namespace Nitrocid.Shell.Homepage
                 while (!exiting)
                 {
                     if (hold)
+                    {
+                        ScreenTools.SetCurrent(homeScreen);
+                        ScreenTools.SetCurrentCyclic(homeScreen);
                         ScreenTools.StartCyclicScreen();
+                    }
                     ScreenTools.Render();
 
                     // Render and wait for input for a second
