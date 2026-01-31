@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
         internal static (string content, string author) GetRandomQuote()
         {
             // Get a quote string from the resources
-            var quotesResource = ResourcesManager.GetData("quotes.json", ResourcesType.Misc);
+            var quotesResource = ResourcesManager.GetData("quotes.json", ResourcesType.Misc, typeof(RandomQuotes).Assembly);
             if (quotesResource is null)
                 return ("", "");
             string quotesString = ResourcesManager.ConvertToString(quotesResource);
