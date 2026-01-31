@@ -143,6 +143,7 @@ namespace Nitrocid.Extras.Mods.Modifications
             // Iterate through all the mods
             SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_MODS_STOPPINGMODS"), ModFilename);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is being stopped.", vars: [ModFilename]);
+            Dictionary<string, WeakReference> weaks = [];
             for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
             {
                 var TargetMod = Mods.Values.ElementAt(ScriptIndex);
@@ -154,8 +155,11 @@ namespace Nitrocid.Extras.Mods.Modifications
                 if (TargetMod.ModFileName != ModFilename)
                     continue;
 
+                var weak = new WeakReference(TargetMod.alc);
                 try
                 {
+                    weaks.Add($"{TargetMod.ModName} [{ScriptIndex + 1}]", weak);
+
                     // Stop the associated mod
                     DebugWriter.WriteDebug(DebugLevel.I, "Found mod to be stopped. Stopping...");
                     using (var context = TargetMod.alc.EnterContextualReflection())
@@ -189,6 +193,15 @@ namespace Nitrocid.Extras.Mods.Modifications
             GC.Collect();
             GC.WaitForPendingFinalizers();
             GC.Collect();
+
+            // Track weaks
+            foreach (var weak in weaks)
+            {
+                if (weak.Value.IsAlive)
+                    DebugWriter.WriteDebug(DebugLevel.W, "Weak reference for mod {0} did not end, file handle stuck.", vars: [weak.Key]);
+                else
+                    DebugWriter.WriteDebug(DebugLevel.I, "Stopped mod {0}", vars: [weak.Key]);
+            }
         }
 
         /// <summary>
