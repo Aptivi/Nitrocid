@@ -218,9 +218,6 @@ namespace Nitrocid.Kernel.Starting.Bootloader
                 var chosenBootApp = BootManager.GetBootApp(chosenBootName);
                 DebugWriter.WriteDebug(DebugLevel.I, "Boot name {0} at index {1}", vars: [chosenBootName, chosenBootEntry]);
 
-                // Check the environment
-                if (chosenBootApp == EnvironmentTools.mainEnvironment)
-
                 // Render the booting message
                 postBootloaderBuffer.AddDynamicText(() => BootStyleManager.RenderBootingMessage(chosenBootName));
                 ScreenTools.Render();
