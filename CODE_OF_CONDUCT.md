@@ -1,3 +1,3 @@
 # Code of Conduct
 
-You can read our code of conduct [here](https://aptivi.gitbook.io/aptivi/guidelines/code-of-conduct).
+You can read our code of conduct [here](https://aptivi.gitbook.io/aptivi/guidelines/contribution-guidelines).
