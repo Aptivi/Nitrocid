@@ -48,34 +48,54 @@ namespace Nitrocid.Extras.TimeInfo.Commands
             DateTime DateTimeInfo = TimeDateTools.KernelDateTime;
             if (getNow || DateTime.TryParse(parameters.ArgumentsList[0], out DateTimeInfo))
             {
-                TextWriterColor.Write("-- " + Translate.DoTranslation("Information for") + " {0} --" + CharManager.NewLine, TimeDateRenderers.Render(DateTimeInfo));
-                TextWriterColor.Write(Translate.DoTranslation("Milliseconds:") + " {0}", DateTimeInfo.Millisecond);
-                TextWriterColor.Write(Translate.DoTranslation("Seconds:") + " {0}", DateTimeInfo.Second);
-                TextWriterColor.Write(Translate.DoTranslation("Minutes:") + " {0}", DateTimeInfo.Minute);
-                TextWriterColor.Write(Translate.DoTranslation("Hours:") + " {0}", DateTimeInfo.Hour);
-                TextWriterColor.Write(Translate.DoTranslation("Days:") + " {0}", DateTimeInfo.Day);
-                TextWriterColor.Write(Translate.DoTranslation("Months:") + " {0}", DateTimeInfo.Month);
-                TextWriterColor.Write(Translate.DoTranslation("Year:") + " {0}" + CharManager.NewLine, DateTimeInfo.Year);
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Information for") + " {0}", true, TimeDateRenderers.Render(DateTimeInfo));
+                TextWriters.Write(Translate.DoTranslation("Milliseconds:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Millisecond);
+                TextWriters.Write(Translate.DoTranslation("Seconds:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Second);
+                TextWriters.Write(Translate.DoTranslation("Minutes:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Minute);
+                TextWriters.Write(Translate.DoTranslation("Hours:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Hour);
+                TextWriters.Write(Translate.DoTranslation("Days:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Day);
+                TextWriters.Write(Translate.DoTranslation("Months:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Month);
+                TextWriters.Write(Translate.DoTranslation("Year:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.Year);
+                TextWriterRaw.Write();
 
                 // Whole date and time
-                TextWriterColor.Write(Translate.DoTranslation("Date:") + " {0}", TimeDateRenderers.RenderDate(DateTimeInfo));
-                TextWriterColor.Write(Translate.DoTranslation("Time:") + " {0}" + CharManager.NewLine, TimeDateRenderers.RenderTime(DateTimeInfo));
+                TextWriters.Write(Translate.DoTranslation("Date:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.RenderDate(DateTimeInfo));
+                TextWriters.Write(Translate.DoTranslation("Time:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.RenderTime(DateTimeInfo));
+                TextWriterRaw.Write();
 
                 // Some more info
-                TextWriterColor.Write(Translate.DoTranslation("Day of Year:") + " {0}", DateTimeInfo.DayOfYear);
-                TextWriterColor.Write(Translate.DoTranslation("Day of Week:") + " {0}" + CharManager.NewLine, DateTimeInfo.DayOfWeek.ToString());
+                TextWriters.Write(Translate.DoTranslation("Day of Year:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.DayOfYear);
+                TextWriters.Write(Translate.DoTranslation("Day of Week:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.DayOfWeek.ToString());
+                TextWriterRaw.Write();
 
                 // Conversions
-                TextWriterColor.Write(Translate.DoTranslation("Binary:") + " {0}", DateTimeInfo.ToBinary());
-                TextWriterColor.Write(Translate.DoTranslation("Local Time:") + " {0}", TimeDateRenderers.Render(DateTimeInfo.ToLocalTime()));
-                TextWriterColor.Write(Translate.DoTranslation("Universal Time:") + " {0}", TimeDateRenderers.Render(DateTimeInfo.ToUniversalTime()));
-                TextWriterColor.Write(Translate.DoTranslation("Unix Time:") + " {0}" + CharManager.NewLine, TimeDateConverters.DateToUnix(DateTimeInfo));
+                TextWriters.Write(Translate.DoTranslation("Binary:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, DateTimeInfo.ToBinary());
+                TextWriters.Write(Translate.DoTranslation("Local Time:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.Render(DateTimeInfo.ToLocalTime()));
+                TextWriters.Write(Translate.DoTranslation("Universal Time:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.Render(DateTimeInfo.ToUniversalTime()));
+                TextWriters.Write(Translate.DoTranslation("Unix Time:") + " ", false, KernelColorType.ListEntry);
+                TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateConverters.DateToUnix(DateTimeInfo));
+                TextWriterRaw.Write();
 
                 // For the calendars
                 foreach (var calendar in Enum.GetNames(typeof(CalendarTypes)))
                 {
                     var calendarInstance = CalendarTools.GetCalendar(calendar);
-                    TextWriterColor.Write("{0}: {1}", calendar, TimeDateRenderers.Render(DateTimeInfo, calendarInstance));
+                    TextWriters.Write("{0}: ", false, KernelColorType.ListEntry, calendar);
+                    TextWriters.Write("{0}", KernelColorType.ListValue, TimeDateRenderers.Render(DateTimeInfo, calendarInstance));
                 }
                 return 0;
             }
