@@ -19,8 +19,9 @@
 
 using System.Text;
 using Newtonsoft.Json.Linq;
+using Nitrocid.Drivers.RNG;
 using Nitrocid.Languages;
-using Nitrocid.Network.Transfer;
+using Nitrocid.Misc.Reflection.Internal;
 using Terminaux.Base.Extensions;
 using Textify.General;
 
@@ -30,15 +31,17 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
     {
         internal static (string content, string author) GetRandomQuote()
         {
-            // Get a quote string from the API. We'll need to ignore certificate errors since quotable.io didn't renew the license since September 2024.
-            string quoteString = NetworkTransfer.httpClientIgnoreCertErrors.GetStringAsync("https://api.quotable.io/quotes/random").Result;
-            if (string.IsNullOrEmpty(quoteString))
+            // Get a quote string from the resources
+            var quotesResource = ResourcesManager.GetData("quotes.json", ResourcesType.Misc);
+            if (quotesResource is null)
                 return ("", "");
+            string quotesString = ResourcesManager.ConvertToString(quotesResource);
+            var quotesArray = JArray.Parse(quotesString);
 
             // Now, get the content and the author
-            var quoteToken = JToken.Parse(quoteString);
-            string? content = (string?)quoteToken[0]?["content"] ?? Translate.DoTranslation("Unknown quote.");
-            string? author = (string?)quoteToken[0]?["author"] ?? Translate.DoTranslation("Unknown author.");
+            var quoteToken = quotesArray[RandomDriver.RandomIdx(quotesArray.Count)];
+            string? content = (string?)quoteToken["content"] ?? Translate.DoTranslation("Unknown quote.");
+            string? author = (string?)quoteToken["author"] ?? Translate.DoTranslation("Unknown author.");
             return (content, author);
         }
 
