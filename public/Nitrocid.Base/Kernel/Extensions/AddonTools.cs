@@ -216,13 +216,16 @@ namespace Nitrocid.Base.Kernel.Extensions
         internal static void UnloadAddons()
         {
             Dictionary<string, string> errors = [];
+            Dictionary<string, WeakReference> weaks = [];
             for (int addonIdx = addons.Count - 1; addonIdx >= 0; addonIdx--)
             {
                 var addonInfo = addons[addonIdx];
                 var addonInstance = addonInfo.Addon;
                 var alc = addonInfo.alc;
+                var weak = new WeakReference(alc, true);
                 try
                 {
+                    weaks.Add($"{addonInfo.AddonName} [{addonIdx + 1}]", weak);
                     using var context = alc.EnterContextualReflection();
                     addonInstance.StopAddon();
                 }
@@ -244,6 +247,17 @@ namespace Nitrocid.Base.Kernel.Extensions
             GC.Collect();
             GC.WaitForPendingFinalizers();
             GC.Collect();
+
+            // Track weaks
+            foreach (var weak in weaks)
+            {
+                if (weak.Value.IsAlive)
+                    DebugWriter.WriteDebug(DebugLevel.W, "Weak reference for addon {0} did not end, file handle stuck.", vars: [weak.Key]);
+                else
+                    DebugWriter.WriteDebug(DebugLevel.I, "Stopped addon {0}", vars: [weak.Key]);
+            }
+
+            // Check for failure
             if (errors.Count != 0)
                 throw new KernelException(KernelExceptionType.AddonManagement, LanguageTools.GetLocalized("NKS_KERNEL_EXTENSIONS_ADDONS_EXCEPTION_STOPFAILED") + $"\n  - {string.Join("\n  - ", errors.Select((kvp) => $"{kvp.Key}: {kvp.Value}"))}");
         }
