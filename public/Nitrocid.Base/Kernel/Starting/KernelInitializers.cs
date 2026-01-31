@@ -68,6 +68,7 @@ using Nitrocid.Base.Network.Types.RPC;
 using Nitrocid.Base.Shell.Shells;
 using Terminaux.Themes;
 using Nitrocid.Base.Misc.Reflection.Internal;
+using System.Globalization;
 
 #if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;
@@ -590,24 +591,6 @@ namespace Nitrocid.Base.Kernel.Starting
 
                 try
                 {
-                    // Reset languages and cultures
-                    SplashManager.BeginSplashOut(context);
-                    LanguageManager.SetLangDry(Config.MainConfig.CurrentLanguage);
-                    LanguageManager.currentUserLanguage = LanguageManager.Languages[Config.MainConfig.CurrentLanguage];
-                    CultureManager.currentUserCulture = CultureManager.GetCulturesDictionary()[Config.MainConfig.CurrentCultureName];
-                    SplashManager.EndSplashOut(context);
-                }
-                catch (Exception exc)
-                {
-                    exceptions.Add(exc);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to reset languages");
-                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
-                    DebugWriter.WriteDebugStackTrace(exc);
-                    SplashReport.ReportProgressError(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_RESET_LANGS") + $": {exc.Message}");
-                }
-
-                try
-                {
                     // Save extension handlers
                     ExtensionHandlerTools.SaveAllHandlers();
                     DebugWriter.WriteDebug(DebugLevel.I, "Extension handlers saved");
@@ -853,6 +836,21 @@ namespace Nitrocid.Base.Kernel.Starting
                 SplashReport.ReportProgress(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_GOODBYE"));
                 SplashManager.CloseSplash(context);
                 SplashManager.customSplashes.Clear();
+
+                try
+                {
+                    // Reset languages and cultures
+                    LanguageManager.SetLangDry(CultureInfo.CurrentUICulture.Name);
+                    LanguageManager.currentUserLanguage = LanguageManager.Languages[CultureInfo.CurrentUICulture.Name];
+                    CultureManager.currentUserCulture = CultureManager.GetCulturesDictionary()[CultureInfo.CurrentUICulture.Name];
+                }
+                catch (Exception exc)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to reset languages");
+                    DebugWriter.WriteDebug(DebugLevel.E, exc.Message);
+                    DebugWriter.WriteDebugStackTrace(exc);
+                    TextWriterColor.Write(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_FAILED_RESET_LANGS") + $": {exc.Message}");
+                }
 
                 // Clear remaining lists
                 SplashReport.logBuffer.Clear();

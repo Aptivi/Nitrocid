@@ -63,15 +63,12 @@ namespace Nitrocid.SplashPacks
         {
             LanguageTools.AddCustomAction(AddonName, new("Nitrocid.SplashPacks.Resources.Languages.Output.Localizations", typeof(SplashPackInit).Assembly));
 
-            // Close the splash first
-            SplashManager.BeginSplashOut();
-
             // First, initialize splashes
-            foreach (var splash in Splashes)
-                SplashManager.builtinSplashes.Add(splash);
-
-            // Open the splash
-            SplashManager.EndSplashOut();
+            lock (SplashManager.builtinSplashes)
+            {
+                foreach (var splash in Splashes)
+                    SplashManager.builtinSplashes.Add(splash);
+            }
 
             // Then, initialize configuration in a way that no mod can play with them
             var splashesConfig = new ExtraSplashesConfig();
@@ -82,15 +79,12 @@ namespace Nitrocid.SplashPacks
         {
             LanguageTools.RemoveCustomAction(AddonName);
 
-            // Close the splash first
-            SplashManager.BeginSplashOut();
-
             // First, unload splashes
-            foreach (var splash in Splashes)
-                SplashManager.builtinSplashes.Remove(splash);
-
-            // Open the splash
-            SplashManager.EndSplashOut();
+            lock (SplashManager.builtinSplashes)
+            {
+                foreach (var splash in Splashes)
+                    SplashManager.builtinSplashes.Remove(splash);
+            }
 
             // Then, unload the configuration
             ConfigTools.UnregisterBaseSetting(nameof(ExtraSplashesConfig));

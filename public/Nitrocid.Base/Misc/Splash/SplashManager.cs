@@ -71,10 +71,16 @@ namespace Nitrocid.Base.Misc.Splash
         /// <summary>
         /// All the installed splashes either normal or custom
         /// </summary>
-        public static SplashInfo[] Splashes =>
-            builtinSplashes
-                .Union(customSplashes)
-                .ToArray();
+        public static SplashInfo[] Splashes
+        {
+            get
+            {
+                lock (builtinSplashes)
+                {
+                    return [.. builtinSplashes.Union(customSplashes)];
+                }
+            }
+        }
 
         /// <summary>
         /// Gets the current splash context
