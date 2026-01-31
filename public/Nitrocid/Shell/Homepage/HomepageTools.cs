@@ -567,7 +567,6 @@ namespace Nitrocid.Shell.Homepage
                                         BackgroundColor = KernelColorTools.GetColor(KernelColorType.TuiBoxBackground),
                                         Title = Translate.DoTranslation("Available keys"),
                                     });
-                                homeScreen.RequireRefresh();
                                 break;
                         }
                     }

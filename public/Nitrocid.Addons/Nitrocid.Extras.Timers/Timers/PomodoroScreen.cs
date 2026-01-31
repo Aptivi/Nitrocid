@@ -260,7 +260,6 @@ namespace Nitrocid.Extras.Timers.Timers
                             if (!double.TryParse(UnparsedInterval, out TimerInterval))
                             {
                                 // Not numeric.
-                                timerScreen.RequireRefresh();
                                 InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Indicated timeout is not numeric."), new InfoBoxSettings()
                                 {
                                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
@@ -268,7 +267,6 @@ namespace Nitrocid.Extras.Timers.Timers
                                 TimerInterval = 60000 * 25;
                             }
                         }
-                        timerScreen.RequireRefresh();
                         break;
                     case ConsoleKey.B:
                         // User requested to specify the break timeout in milliseconds
@@ -284,7 +282,6 @@ namespace Nitrocid.Extras.Timers.Timers
                             if (!double.TryParse(UnparsedInterval, out breakTimerInterval))
                             {
                                 // Not numeric.
-                                timerScreen.RequireRefresh();
                                 InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Indicated timeout is not numeric."), new InfoBoxSettings()
                                 {
                                     ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
@@ -292,7 +289,6 @@ namespace Nitrocid.Extras.Timers.Timers
                                 breakTimerInterval = 60000 * 5;
                             }
                         }
-                        timerScreen.RequireRefresh();
                         break;
                     case ConsoleKey.Escape:
                         // Stop the timer

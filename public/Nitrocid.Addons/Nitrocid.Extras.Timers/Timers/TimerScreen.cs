@@ -229,14 +229,12 @@ namespace Nitrocid.Extras.Timers.Timers
                         if (!double.TryParse(UnparsedInterval, out TimerInterval))
                         {
                             // Not numeric.
-                            timerScreen.RequireRefresh();
                             InfoBoxModalColor.WriteInfoBoxModal(Translate.DoTranslation("Indicated timeout is not numeric."), new InfoBoxSettings()
                             {
                                 ForegroundColor = KernelColorTools.GetColor(KernelColorType.Error),
                             });
                             TimerInterval = 60000d;
                         }
-                        timerScreen.RequireRefresh();
                         break;
                     case ConsoleKey.Escape:
                         // Stop the timer
