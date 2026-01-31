@@ -225,7 +225,7 @@ namespace Nitrocid.Shell.Shells.UESH
                     new CommandArgumentInfo(true)
                 ], new CDirCommand()),
 
-            new CommandInfo("changes", /* Localizable */ "What's new in this version of Nitrocid?", new ChangesCommand()),
+            new CommandInfo("changes", /* Localizable */ "What's new in this version of Nitrocid?", new ChangesCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("chattr", /* Localizable */ "Changes attribute of a file",
                 [
