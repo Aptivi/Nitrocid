@@ -303,7 +303,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH
                     new CommandArgumentInfo(true)
                 ], new CDirCommand()),
 
-            new CommandInfo("changes", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHANGES_DESC", new ChangesCommand()),
+            new CommandInfo("changes", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHANGES_DESC", new ChangesCommand(), CommandFlags.Wrappable),
 
             new CommandInfo("chattr", /* Localizable */ "NKS_SHELL_SHELLS_UESH_COMMAND_CHATTR_DESC",
                 [
