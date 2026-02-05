@@ -17,24 +17,26 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Textify.Data.Figlet;
-using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using System;
-using Terminaux.Colors;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Misc.Screensaver;
-using Terminaux.Writer.ConsoleWriters;
+using System.Collections.Generic;
 using Nitrocid.Base.Drivers.RNG;
-using Nitrocid.Base.Kernel.Time.Renderers;
-using Nitrocid.Base.Kernel.Time;
-using Nitrocid.Base.Languages;
-using Terminaux.Base;
 using Nitrocid.Base.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Writer.CyclicWriters.Simple;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Time;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.ScreensaverPacks.Animations.Glitch;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
+using Terminaux.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Textify.Data.Figlet;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -74,6 +76,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             Color selectedColor = Color.Empty;
             string year = "2018";
             var font = FigletTools.GetFigletFont(Config.MainConfig.DefaultFigletFontName);
+
+            // Glitch function
+            Dictionary<Coordinate, string> glitches = [];
+            void UpdateGlitch()
+            {
+                Coordinate glitchCoords = new(RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth), RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight));
+                glitches[glitchCoords] = Glitch.GlitchAt(glitchCoords.X, glitchCoords.Y);
+            }
+            void WriteGlitches()
+            {
+                foreach (var glitch in glitches)
+                    TextWriterRaw.WriteRaw(glitch.Value);
+            }
 
             // Start stepping
             for (step = 1; step <= maxSteps; step++)
@@ -388,7 +403,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 return;
 
                             ScreensaverManager.Delay(10, true);
-                            Glitch.GlitchAt();
+                            UpdateGlitch();
+                            WriteGlitches();
                         }
                         break;
                     // Step 6: Flash red and pink for a few seconds
@@ -552,7 +568,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                     if (ScreensaverManager.Bailing)
                                         return;
 
-                                    Glitch.GlitchAt();
+                                    UpdateGlitch();
+                                    WriteGlitches();
                                     ScreensaverManager.Delay(10, true);
                                 }
                                 break;

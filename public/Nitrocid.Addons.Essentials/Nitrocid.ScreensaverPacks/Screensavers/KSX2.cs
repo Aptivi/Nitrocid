@@ -18,23 +18,25 @@
 //
 
 using System;
-using Textify.Data.Figlet;
-using Nitrocid.ScreensaverPacks.Animations.Glitch;
-using Terminaux.Colors;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Misc.Screensaver;
-using Terminaux.Writer.ConsoleWriters;
+using System.Collections.Generic;
 using Nitrocid.Base.Drivers.RNG;
-using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Time;
+using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Writer.CyclicWriters.Simple;
-using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
+using Terminaux.Colors;
+using Terminaux.Colors.Data;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Textify.Data.Figlet;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -72,6 +74,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             Color green = new(0, 255, 0);
             Color black = new(0, 0, 0);
             Color white = new(255, 255, 255);
+
+            // Glitch function
+            Dictionary<Coordinate, string> glitches = [];
+            void UpdateGlitch()
+            {
+                Coordinate glitchCoords = new(RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth), RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight));
+                glitches[glitchCoords] = Glitch.GlitchAt(glitchCoords.X, glitchCoords.Y);
+            }
+            void WriteGlitches()
+            {
+                foreach (var glitch in glitches)
+                    TextWriterRaw.WriteRaw(glitch.Value);
+            }
 
             // Start stepping
             for (step = 1; step <= maxSteps; step++)
@@ -179,7 +194,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 return;
 
                             ScreensaverManager.Delay(10, true);
-                            Glitch.GlitchAt();
+                            UpdateGlitch();
+                            WriteGlitches();
                         }
                         break;
                     // Step 4: Show three selectors adjusting to 0.0.16.0
@@ -270,7 +286,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 return;
 
                             ScreensaverManager.Delay(10, true);
-                            Glitch.GlitchAt();
+                            UpdateGlitch();
+                            WriteGlitches();
                         }
                         break;
                     // Step 7: Show a 30-second day selection screen trying to adjust itelf to April 30, 2021 while still glitching in the background
@@ -301,7 +318,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Show it as a normal font
                             string renderedLong = $"     {TimeDateRenderers.RenderDate(selectedDate, FormatType.Long)}     ";
                             TextWriterWhereColor.WriteWhereColorBack(renderedLong, ConsoleWrapper.WindowWidth / 2 - renderedLong.Length / 2, s7consoleY + 5, darkRed, black);
-                            Glitch.GlitchAt();
+                            UpdateGlitch();
+                            WriteGlitches();
                         }
 
                         // Print the target date
@@ -321,7 +339,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 return;
 
                             ScreensaverManager.Delay(10, true);
-                            Glitch.GlitchAt();
+                            UpdateGlitch();
+                            WriteGlitches();
                         }
                         break;
                     // Step 8: Cover part of the screen with the "X"

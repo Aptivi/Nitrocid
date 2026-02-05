@@ -17,20 +17,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Misc.Screensaver;
-using Terminaux.Colors;
-using Terminaux.Base;
 using System;
-using Textify.Data.Figlet;
-using Nitrocid.ScreensaverPacks.Animations.Glitch;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Time.Renderers;
+using System.Collections.Generic;
+using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Configuration;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Time.Renderers;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Screensaver;
+using Nitrocid.ScreensaverPacks.Animations.Glitch;
+using Terminaux.Base;
+using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
+using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Base.Extensions;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Textify.Data.Figlet;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -73,6 +76,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int currentG = 0;
             int currentB = 0;
             int height = ConsoleWrapper.WindowHeight - 2;
+
+            // Glitch function
+            Dictionary<Coordinate, string> glitches = [];
+            void UpdateGlitch()
+            {
+                Coordinate glitchCoords = new(RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth), RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight));
+                glitches[glitchCoords] = Glitch.GlitchAt(glitchCoords.X, glitchCoords.Y);
+            }
+            void WriteGlitches()
+            {
+                foreach (var glitch in glitches)
+                    TextWriterRaw.WriteRaw(glitch.Value);
+            }
 
             // Start stepping
             for (step = 1; step <= maxSteps; step++)
@@ -436,7 +452,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 return;
 
                             ScreensaverManager.Delay(10, true);
-                            Glitch.GlitchAt();
+                            UpdateGlitch();
+                            WriteGlitches();
                         }
                         break;
                     // Step 3: Flickering colors between white and each version's color

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
@@ -36,7 +37,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
                 }
 
                 // Glitch!
-                Glitch.Glitch.GlitchAt();
+                string glitch = Glitch.Glitch.GlitchAt();
+                ConsoleWrapper.Write(glitch);
                 times++;
             }
         }
