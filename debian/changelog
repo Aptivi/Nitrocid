@@ -1,6 +1,9 @@
 nitrocid-25 (3.0.25.584-0.1.0.67-1) noble; urgency=medium
 
-  * General improvements and bug fixes
+  * Integrated all features from 0.1.2
+  * Fixed homepage crash when exiting from some apps
+  * Fixed SSH encoding issues
+  * General improvements
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Fri, 23 Jan 2026 17:27:59 +0300
 

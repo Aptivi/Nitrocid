@@ -1,10 +1,13 @@
-We've released this version to update ImageMagick contained within Terminaux!
+This is the sixth service pack release of Nitrocid 0.1.0 that integrates all features from 0.1.2 as we sunset it!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated Terminaux
+- `[+]` Integrated all features from 0.1.2
+- `[*]` Fixed homepage crash when exiting from some apps
+- `[*]` Fixed SSH encoding issues
+- `[*]` General improvements
 
 Review the commit history if you want to get a deep insight about the changes.
 
