@@ -19,6 +19,8 @@
 
 using System;
 using System.Collections;
+using System.Diagnostics.Metrics;
+using System.Text;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
@@ -55,7 +57,8 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
                     int CoverY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
 
                     // Glitch!
-                    GlitchAt(CoverX, CoverY);
+                    string glitch = GlitchAt(CoverX, CoverY);
+                    ConsoleWrapper.Write(glitch);
 
                     // Add to covered position
                     if (!CoveredBlocks.Contains(CoverX.ToString() + ", " + CoverY.ToString()))
@@ -77,15 +80,16 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
         /// <summary>
         /// Glitch at specified position
         /// </summary>
-        public static void GlitchAt() =>
+        public static string GlitchAt() =>
             GlitchAt(RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth), RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight));
 
         /// <summary>
         /// Glitch at specified position
         /// </summary>
-        public static void GlitchAt(int CoverX, int CoverY)
+        public static string GlitchAt(int CoverX, int CoverY)
         {
-            ConsoleWrapper.SetCursorPosition(CoverX, CoverY);
+            var stringBuilder = new StringBuilder();
+            stringBuilder.Append(ConsolePositioning.RenderChangePosition(CoverX, CoverY));
 
             // Select random glitch type
             GlitchType GlitchType = (GlitchType)Convert.ToInt32(Enum.Parse(typeof(GlitchType), RandomDriver.Random(4).ToString()));
@@ -157,48 +161,49 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
                 case GlitchType.RandomLetter:
                     {
                         if (ColorLetter)
-                            ConsoleColoring.SetConsoleColorDry(ColorLetterInstance);
+                            stringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(ColorLetterInstance));
                         else
-                            ConsoleColoring.SetConsoleColorDry(new Color(ConsoleColors.White));
-                        ConsoleWrapper.Write(Letter);
+                            stringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.White)));
+                        stringBuilder.Append(Letter);
                         break;
                     }
                 case GlitchType.RandomSymbol:
                     {
                         if (ColorLetter)
-                            ConsoleColoring.SetConsoleColorDry(ColorLetterInstance);
+                            stringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(ColorLetterInstance));
                         else
-                            ConsoleColoring.SetConsoleColorDry(new Color(ConsoleColors.White));
-                        ConsoleWrapper.Write(Symbol);
+                            stringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.White)));
+                        stringBuilder.Append(Symbol);
                         break;
                     }
                 case GlitchType.RedGreenBlueColor:
                     {
-                        ConsoleColoring.SetConsoleColorDry(ColorBlockInstance, true);
-                        ConsoleWrapper.Write(" ");
+                        stringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(ColorBlockInstance, true));
+                        stringBuilder.Append(' ');
                         break;
                     }
                 case GlitchType.RedGreenBlueColorWithRandomLetter:
                     {
                         if (ColorLetter)
-                            ConsoleColoring.SetConsoleColorDry(ColorLetterInstance);
+                            stringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(ColorLetterInstance));
                         else
-                            ConsoleColoring.SetConsoleColorDry(new Color(ConsoleColors.White));
-                        ConsoleColoring.SetConsoleColorDry(ColorBlockInstance, true);
-                        ConsoleWrapper.Write(Letter);
+                            stringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.White)));
+                        stringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(ColorBlockInstance, true));
+                        stringBuilder.Append(Letter);
                         break;
                     }
                 case GlitchType.RedGreenBlueColorWithRandomSymbol:
                     {
                         if (ColorLetter)
-                            ConsoleColoring.SetConsoleColorDry(ColorLetterInstance);
+                            stringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(ColorLetterInstance));
                         else
-                            ConsoleColoring.SetConsoleColorDry(new Color(ConsoleColors.White));
-                        ConsoleColoring.SetConsoleColorDry(ColorBlockInstance, true);
-                        ConsoleWrapper.Write(Symbol);
+                            stringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.White)));
+                        stringBuilder.Append(ConsoleColoring.RenderSetConsoleColor(ColorBlockInstance, true));
+                        stringBuilder.Append(Symbol);
                         break;
                     }
             }
+            return stringBuilder.ToString();
         }
 
     }
