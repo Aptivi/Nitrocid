@@ -27,9 +27,14 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using SharpCompress.Archives;
+using SharpCompress.Archives.GZip;
+using SharpCompress.Archives.Tar;
+using SharpCompress.Archives.Zip;
 using SharpCompress.Common;
 using SharpCompress.Readers;
-using SharpCompress.Writers;
+using SharpCompress.Writers.GZip;
+using SharpCompress.Writers.Tar;
+using SharpCompress.Writers.Zip;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive
 {
@@ -109,7 +114,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
                 Directory.CreateDirectory(LocalDestination + "/" + localDirDestination);
             FilesystemTools.MakeFile(LocalDestination + ArchiveEntry.Key);
             ArchiveShellCommon.FileStream.Seek(0L, SeekOrigin.Begin);
-            var ArchiveReader = ReaderFactory.Open(ArchiveShellCommon.FileStream);
+            var ArchiveReader = ReaderFactory.OpenReader(ArchiveShellCommon.FileStream);
             while (ArchiveReader.MoveToNextEntry())
             {
                 if (ArchiveReader.Entry.Key == ArchiveEntry.Key & !ArchiveReader.Entry.IsDirectory)
@@ -158,7 +163,12 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
             Target = FilesystemTools.NeutralizePath(Target, Where);
             DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", vars: [Target]);
             ((IWritableArchive)ArchiveShellCommon.Archive).AddEntry(ArchiveTarget, Target);
-            ((IWritableArchive)ArchiveShellCommon.Archive).SaveTo(ArchiveShellCommon.FileStream, new WriterOptions(compression));
+            if (ArchiveShellCommon.Archive is ZipArchive zipArchive)
+                zipArchive.SaveTo(ArchiveShellCommon.FileStream, new ZipWriterOptions(compression));
+            if (ArchiveShellCommon.Archive is TarArchive tarArchive)
+                tarArchive.SaveTo(ArchiveShellCommon.FileStream, new TarWriterOptions(compression));
+            if (ArchiveShellCommon.Archive is GZipArchive gzipArchive)
+                gzipArchive.SaveTo(ArchiveShellCommon.FileStream, new GZipWriterOptions(compression));
             return true;
         }
 
