@@ -16,7 +16,7 @@
 
 *A simulator for our future-planned kernel, Nitrocid Kernel!*
 
-**WARNING: Nitrocid KS 0.1.2 has become end of life as of February 12th.**
+**WARNING: Nitrocid KS 0.1.2 has become end of life as of February 12th. Please upgrade to 0.2.0 or 0.1.0 SP6 if you want to continue receiving official support.**
 
 <br>
 <br>
