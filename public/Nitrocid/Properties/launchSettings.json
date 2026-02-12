@@ -1,5 +1,8 @@
 {
   "profiles": {
+    "Nitrocid KS": {
+      "commandName": "Project"
+    },
     "Nitrocid KS - Debug": {
       "commandName": "Project",
       "commandLineArgs": "--debug"
@@ -7,9 +10,6 @@
     "Nitrocid KS - Reset": {
       "commandName": "Project",
       "commandLineArgs": "--reset"
-    },
-    "Nitrocid KS": {
-      "commandName": "Project"
     },
     "Nitrocid KS - Test Interactive": {
       "commandName": "Project",
