@@ -65,7 +65,7 @@
 
     <!-- KS SourceLink -->
     <ItemGroup>
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.102" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.103" PrivateAssets="all" />
     </ItemGroup>
     <PropertyGroup>
         <RepositoryUrl>https://github.com/Aptivi/Nitrocid.git</RepositoryUrl>
