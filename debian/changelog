@@ -1,3 +1,9 @@
+nitrocid-25 (3.0.25.584-0.1.0.68-1) noble; urgency=medium
+
+  * General improvements and bug fixes
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 12 Feb 2026 20:47:20 +0300
+
 nitrocid-25 (3.0.25.584-0.1.0.67-1) noble; urgency=medium
 
   * Integrated all features from 0.1.2
