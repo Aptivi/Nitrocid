@@ -53,8 +53,8 @@
       <Aliases>global,TextifyDep</Aliases>
     </PackageReference>
     <PackageReference Include="Textify.Offline.Data" Version="2.13.5" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Nettify" Version="1.7.2" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.2" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Nettify" Version="1.7.3" PrivateAssets="contentfiles;analyzers;build;runtime" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.3" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 

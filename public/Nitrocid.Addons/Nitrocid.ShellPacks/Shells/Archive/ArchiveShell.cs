@@ -74,25 +74,25 @@ namespace Nitrocid.ShellPacks.Shells.Archive
 
             // Open file if not open
             ArchiveShellCommon.FileStream ??= new FileStream(ArchiveFile, FileMode.Open);
-            ArchiveType type = ReaderFactory.Open(ArchiveShellCommon.FileStream).ArchiveType;
+            ArchiveType type = ReaderFactory.OpenReader(ArchiveShellCommon.FileStream).ArchiveType;
 
             // Select archive type and open it
             switch (type)
             {
                 case ArchiveType.Rar:
-                    ArchiveShellCommon.Archive ??= RarArchive.Open(ArchiveShellCommon.FileStream);
+                    ArchiveShellCommon.Archive ??= RarArchive.OpenArchive(ArchiveShellCommon.FileStream);
                     break;
                 case ArchiveType.Zip:
-                    ArchiveShellCommon.Archive ??= ZipArchive.Open(ArchiveShellCommon.FileStream);
+                    ArchiveShellCommon.Archive ??= ZipArchive.OpenArchive(ArchiveShellCommon.FileStream);
                     break;
                 case ArchiveType.GZip:
-                    ArchiveShellCommon.Archive ??= GZipArchive.Open(ArchiveShellCommon.FileStream);
+                    ArchiveShellCommon.Archive ??= GZipArchive.OpenArchive(ArchiveShellCommon.FileStream);
                     break;
                 case ArchiveType.SevenZip:
-                    ArchiveShellCommon.Archive ??= SevenZipArchive.Open(ArchiveShellCommon.FileStream);
+                    ArchiveShellCommon.Archive ??= SevenZipArchive.OpenArchive(ArchiveShellCommon.FileStream);
                     break;
                 case ArchiveType.Tar:
-                    ArchiveShellCommon.Archive ??= TarArchive.Open(ArchiveShellCommon.FileStream);
+                    ArchiveShellCommon.Archive ??= TarArchive.OpenArchive(ArchiveShellCommon.FileStream);
                     break;
                 default:
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED") + $" {type}", true, ThemeColorType.Error);

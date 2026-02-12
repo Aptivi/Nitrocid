@@ -12,13 +12,13 @@
     <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Analyzer.Testing" Version="[1.1.2]" />
     <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.CodeFix.Testing" Version="[1.1.2]" />
     <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.CodeRefactoring.Testing" Version="[1.1.2]" />
-    <PackageReference Include="NuGet.Frameworks" Version="7.0.1" />
-    <PackageReference Include="NuGet.Protocol" Version="7.0.1" />
-    <PackageReference Include="NuGet.Versioning" Version="7.0.1" />
-    <PackageReference Include="NuGet.Configuration" Version="7.0.1" />
-    <PackageReference Include="NuGet.Common" Version="7.0.1" />
-    <PackageReference Include="NuGet.Packaging" Version="7.0.1" />
-    <PackageReference Include="NuGet.Resolver" Version="7.0.1" />
+    <PackageReference Include="NuGet.Frameworks" Version="[7.0.1]" />
+    <PackageReference Include="NuGet.Protocol" Version="[7.0.1]" />
+    <PackageReference Include="NuGet.Versioning" Version="[7.0.1]" />
+    <PackageReference Include="NuGet.Configuration" Version="[7.0.1]" />
+    <PackageReference Include="NuGet.Common" Version="[7.0.1]" />
+    <PackageReference Include="NuGet.Packaging" Version="[7.0.1]" />
+    <PackageReference Include="NuGet.Resolver" Version="[7.0.1]" />
   </ItemGroup>
 
   <ItemGroup>
