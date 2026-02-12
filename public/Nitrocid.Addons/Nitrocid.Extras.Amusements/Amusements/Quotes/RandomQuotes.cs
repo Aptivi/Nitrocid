@@ -18,6 +18,7 @@
 //
 
 using System.Text;
+using Nettify.Quotes;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Languages;
@@ -29,26 +30,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Quotes
 {
     internal static class RandomQuotes
     {
-        internal static (string content, string author) GetRandomQuote()
-        {
-            // Get a quote string from the resources
-            var quotesResource = ResourcesManager.GetData("quotes.json", ResourcesType.Misc);
-            if (quotesResource is null)
-                return ("", "");
-            string quotesString = ResourcesManager.ConvertToString(quotesResource);
-            var quotesArray = JArray.Parse(quotesString);
-
-            // Now, get the content and the author
-            var quoteToken = quotesArray[RandomDriver.RandomIdx(quotesArray.Count)];
-            string? content = (string?)quoteToken["content"] ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN");
-            string? author = (string?)quoteToken["author"] ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN");
-            return (content, author);
-        }
-
         internal static string RenderQuote()
         {
             // Get a random quote
-            (string content, string author) = GetRandomQuote();
+            var quote = QuoteTools.GetRandomQuote();
+            string content = quote?.Content ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_QUOTEUNKNOWN");
+            string author = quote?.Author ?? LanguageTools.GetLocalized("NKS_AMUSEMENTS_QUOTE_AUTHORUNKNOWN");
 
             // Specify how to render the quote
             StringBuilder elegantQuote = new();

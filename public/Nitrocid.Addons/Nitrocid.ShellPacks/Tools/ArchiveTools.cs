@@ -165,7 +165,6 @@ namespace Nitrocid.ShellPacks.Tools
             Target = FilesystemTools.NeutralizePath(Target, Where);
             DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", vars: [Target]);
             ((IWritableArchive)ArchiveShellCommon.Archive).AddEntry(ArchiveTarget, Target);
-            ((IWritableArchive<ZipWriterOptions>)ArchiveShellCommon.Archive).SaveTo(ArchiveShellCommon.FileStream, new ZipWriterOptions(compression));
             if (ArchiveShellCommon.Archive is ZipArchive zipArchive)
                 zipArchive.SaveTo(ArchiveShellCommon.FileStream, new ZipWriterOptions(compression));
             if (ArchiveShellCommon.Archive is TarArchive tarArchive)

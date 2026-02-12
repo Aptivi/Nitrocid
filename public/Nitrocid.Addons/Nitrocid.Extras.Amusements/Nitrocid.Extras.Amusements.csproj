@@ -8,11 +8,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\*" />
-
-    <!-- TODO: Remove this embedded resource when Nettify gets an update that adds quotes. -->
-    <EmbeddedResource Include="../../../assets/quotes/data/quotes.json">
-      <LogicalName>Nitrocid.Extras.Amusements.Resources.quotes.json</LogicalName>
-    </EmbeddedResource>
   </ItemGroup>
   
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
