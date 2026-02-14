@@ -63,8 +63,8 @@ jobs:
         run: |
           mv debian ..
           mv .github ..
-          tar cfv ../nitrocid-28_4.0.28.56-0.2.0.1.orig.tar .
-          xz ../nitrocid-28_4.0.28.56-0.2.0.1.orig.tar
+          tar cfv ../nitrocid-28_4.0.28.56-0.2.0.2.orig.tar .
+          xz ../nitrocid-28_4.0.28.56-0.2.0.2.orig.tar
           mv ../debian .
 
       - name: Build source package
