@@ -51,8 +51,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     foreach (var entry in config.SettingsEntries)
                     {
                         SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Entry name") + $": {entry.Name}", KernelColorTools.GetColor(KernelColorType.ListTitle));
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Displaying as"), entry.DisplayAs, indent: 1);
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Description"), entry.Desc, indent: 1);
+                        TextWriters.WriteListEntry(Translate.DoTranslation("Displaying as"), Translate.DoTranslation(entry.DisplayAs), indent: 1);
+                        TextWriters.WriteListEntry(Translate.DoTranslation("Description"), Translate.DoTranslation(entry.Desc), indent: 1);
                         TextWriters.WriteListEntry(Translate.DoTranslation("Keys count"), $"{entry.Keys.Length}", indent: 1);
                     }
                 }

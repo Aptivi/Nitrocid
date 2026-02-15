@@ -18,11 +18,12 @@
 //
 
 using System.Linq;
-using Nitrocid.Kernel.Configuration;
-using Terminaux.Shell.Commands;
-using Nitrocid.ConsoleBase.Writers;
-using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
+using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
@@ -50,8 +51,8 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
                     foreach (var key in entry.Keys)
                     {
                         var value = ConfigTools.GetValueFromEntry(key, config);
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Key name"), key.Name, indent: 1);
-                        TextWriters.WriteListEntry(Translate.DoTranslation("Key description"), key.Description, indent: 1);
+                        SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Key name") + $" [{Translate.DoTranslation(key.Name)}]", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
+                        TextWriters.WriteListEntry(Translate.DoTranslation("Key description"), Translate.DoTranslation(key.Description), indent: 1);
                         TextWriters.WriteListEntry(Translate.DoTranslation("Key type"), $"{key.Type}", indent: 1);
                         TextWriters.WriteListEntry(Translate.DoTranslation("Key variable"), $"{key.Variable} [{value}]", indent: 1);
                     }
