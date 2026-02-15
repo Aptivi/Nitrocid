@@ -348,7 +348,22 @@ namespace Nitrocid.Base.Misc.Notifications
                             SpinWait.SpinUntil(() => sent, 5000);
                             Screen.GlobalOverlayPart = null;
                             if (ScreenTools.IsOnScreen && !ScreensaverManager.InSaver)
+                            {
+                                bool useSimplified = Config.MainConfig.NotifyDisplayAsAsterisk && NewNotification.Type == NotificationType.Normal;
+                                int notifLeftAgnostic = ConsoleWrapper.WindowWidth - 42;
+                                int notifTopAgnostic = 0;
+                                int notifLeft = useSimplified ? ConsoleWrapper.WindowWidth - 1 : notifLeftAgnostic + 3;
+                                int notifWidth = ConsoleWrapper.WindowWidth + 1 - notifLeft;
+                                var eraser = new Eraser()
+                                {
+                                    Left = notifLeft - 1,
+                                    Top = notifTopAgnostic,
+                                    Width = notifWidth,
+                                    Height = 5,
+                                };
+                                TextWriterRaw.WriteRaw(eraser.Render());
                                 ScreenTools.Render();
+                            }
                         }
                     }
                 }
