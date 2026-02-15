@@ -208,9 +208,10 @@ namespace Nitrocid.Base.Kernel.Power
         internal static void ElevateSelf()
         {
             DebugCheck.Assert(KernelPlatform.IsOnWindows(), "tried to call this on non-Windows platforms");
+            string parentDirectory = Directory.GetParent(Assembly.GetExecutingAssembly().Location)?.FullName ?? "";
             var selfProcess = new Process
             {
-                StartInfo = new(Path.ChangeExtension(Assembly.GetExecutingAssembly().Location, ".exe"))
+                StartInfo = new(parentDirectory + "/Nitrocid.exe")
                 {
                     UseShellExecute = true,
                     Verb = "runas",
