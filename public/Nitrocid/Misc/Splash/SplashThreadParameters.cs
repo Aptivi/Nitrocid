@@ -22,17 +22,22 @@ namespace Nitrocid.Misc.Splash
     internal class SplashThreadParameters
     {
         internal string splashName;
+        internal string splashNameWatch;
         internal SplashContext splashContext;
 
         public string SplashName =>
             splashName;
 
+        public string SplashNameWatch =>
+            splashNameWatch;
+
         public SplashContext SplashContext =>
             splashContext;
 
-        internal SplashThreadParameters(string splashName, SplashContext splashContext)
+        internal SplashThreadParameters(string splashName, string splashNameWatch, SplashContext splashContext)
         {
             this.splashName = splashName;
+            this.splashNameWatch = splashNameWatch;
             this.splashContext = splashContext;
         }
     }
