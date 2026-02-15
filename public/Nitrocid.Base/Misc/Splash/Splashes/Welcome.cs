@@ -249,10 +249,9 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             Color col = ThemeColorsTools.GetColor(colorType);
 
             // Get infobox position info
-            int height = ConsoleWrapper.WindowHeight - 4;
             int width = ConsoleWrapper.WindowWidth - 8;
             int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
-            int posY = ConsoleWrapper.WindowHeight / 2 + height / 2 - 3;
+            int posY = ConsoleWrapper.WindowHeight - 5;
 
             // Write the progress report
             int interiorPosX = posX + 4;
