@@ -122,7 +122,6 @@ namespace Nitrocid.Users.Login
                         // Cancel shutdown and reboot attempts
                         PowerManager.RebootRequested = false;
                         PowerManager.KernelShutdown = false;
-                        TextWriters.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
                     }
                     else if (!PermissionsTools.IsPermissionGranted(user, PermissionTypes.ManagePower) && (PowerManager.RebootRequested || PowerManager.KernelShutdown))
                     {
@@ -155,13 +154,20 @@ namespace Nitrocid.Users.Login
         /// Prompts user for password
         /// </summary>
         /// <param name="usernamerequested">A username that is about to be logged in</param>
-        public static bool ShowPasswordPrompt(string usernamerequested)
+        public static bool ShowPasswordPrompt(string usernamerequested) =>
+            ShowPasswordPrompt(usernamerequested, LoginHandlerTools.CurrentHandlerName);
+
+        /// <summary>
+        /// Prompts user for password
+        /// </summary>
+        /// <param name="usernamerequested">A username that is about to be logged in</param>
+        /// <param name="handlerName">Name of the logon handler</param>
+        internal static bool ShowPasswordPrompt(string usernamerequested, string handlerName)
         {
             // Prompts user to enter a user's password
             while (!PowerManager.RebootRequested && !PowerManager.KernelShutdown)
             {
                 // Sanity check...
-                string handlerName = LoginHandlerTools.CurrentHandlerName;
                 var handler = LoginHandlerTools.GetHandler(handlerName) ??
                     throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("The login handler is not found!") + $" {handlerName}");
 
@@ -180,7 +186,6 @@ namespace Nitrocid.Users.Login
                         return true;
                     else
                     {
-                        TextWriters.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
                         if (!KernelEntry.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)

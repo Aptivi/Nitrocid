@@ -59,7 +59,7 @@ namespace Nitrocid.Shell.Shells.UESH.Commands
             bool failed = false;
             try
             {
-                if (Login.ShowPasswordPrompt(currentUsername))
+                if (Login.ShowPasswordPrompt(currentUsername, "classic"))
                 {
                     sudoDone = true;
                     DebugWriter.WriteDebug(DebugLevel.I, "Switching to root user...");
