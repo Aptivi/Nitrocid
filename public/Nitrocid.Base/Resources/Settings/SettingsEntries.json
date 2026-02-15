@@ -539,7 +539,7 @@
         ]
     },
     {
-        "Name": "NKS_USERS_LOGIN_MODERNLOGON_LOGIN",
+        "Name": "Login",
         "Desc": "NKS_SETTINGS_KERNEL_LOGIN_DESC",
         "DisplayAs": "NKS_SETTINGS_KERNEL_LOGIN_DISPLAYAS",
         "Keys": [
@@ -626,7 +626,7 @@
         ]
     },
     {
-        "Name": "NKS_SHELL_HOMEPAGE_KEYBINDING_SHELL",
+        "Name": "Shell",
         "Desc": "NKS_SETTINGS_KERNEL_SHELL_DESC",
         "DisplayAs": "NKS_SETTINGS_KERNEL_SHELL_DISPLAYAS",
         "Keys": [
@@ -967,7 +967,7 @@
         ]
     },
     {
-        "Name": "NKS_SETTINGS_KERNEL_SCREENSAVER_SCREENSAVER_NAME",
+        "Name": "Screensaver",
         "Desc": "NKS_SETTINGS_KERNEL_SCREENSAVER_DESC",
         "DisplayAs": "NKS_SETTINGS_KERNEL_SCREENSAVER_DISPLAYAS",
         "Keys": [

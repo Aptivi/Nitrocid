@@ -49,7 +49,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     foreach (var key in entry.Keys)
                     {
                         var value = ConfigTools.GetValueFromEntry(key, config);
-                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYNAME"), LanguageTools.GetLocalized(key.Name), indent: 1);
+                        SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYNAME") + $" [{LanguageTools.GetLocalized(key.Name)}]", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
                         ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYDESC"), LanguageTools.GetLocalized(key.Description), indent: 1);
                         ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP"), LanguageTools.GetLocalized(key.Tip), indent: 1);
                         ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTYPE"), $"{key.Type}", indent: 1);

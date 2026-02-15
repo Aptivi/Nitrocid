@@ -49,8 +49,8 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
                     foreach (var entry in config.SettingsEntries)
                     {
                         SeparatorWriterColor.WriteSeparatorColor(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_NAME") + $": {entry.Name}", ThemeColorsTools.GetColor(ThemeColorType.ListTitle));
-                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DISPLAY"), entry.DisplayAs, indent: 1);
-                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"), entry.Desc, indent: 1);
+                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DISPLAY"), LanguageTools.GetLocalized(entry.DisplayAs), indent: 1);
+                        ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_DESC"), LanguageTools.GetLocalized(entry.Desc), indent: 1);
                         ListEntryWriterColor.WriteListEntry(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_LSCONFIGS_KEYS"), $"{entry.Keys.Length}", indent: 1);
                     }
                 }
