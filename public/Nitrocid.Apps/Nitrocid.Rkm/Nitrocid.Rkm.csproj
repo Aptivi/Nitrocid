@@ -14,14 +14,14 @@
 
   <!-- KS.Rkm Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Aptivestigate.Serilog" Version="1.3.2" PrivateAssets="all" />
+    <PackageReference Include="Aptivestigate.Serilog" Version="1.3.2.1" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS.Rkm Dependencies Information End -->
 
   <!-- KS.Rkm Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="8.1.1.1" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
-    <PackageReference Include="Terminaux.Images" Version="8.1.1.1" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux" Version="8.1.1.3" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Terminaux.Images" Version="8.1.1.3" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
   </ItemGroup>
   <!-- KS.Rkm Non-private Dependencies Information End -->
 
