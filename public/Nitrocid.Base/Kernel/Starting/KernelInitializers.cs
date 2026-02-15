@@ -314,7 +314,11 @@ namespace Nitrocid.Base.Kernel.Starting
 
                 // Show first-time color calibration for first-time run
                 if (KernelEntry.FirstTime)
+                {
+                    SplashManager.BeginSplashOut(SplashContext.StartingUp);
                     ConsoleColoring.DetermineTrueColorFromUser();
+                    SplashManager.EndSplashOut(SplashContext.StartingUp);
+                }
 
                 // Check for errors
                 if (exceptions.Count > 0)
