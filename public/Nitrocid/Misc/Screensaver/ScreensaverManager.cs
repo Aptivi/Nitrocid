@@ -198,14 +198,10 @@ namespace Nitrocid.Misc.Screensaver
                         CustomSavers.TryGetValue(saver, out BaseScreensaver? customBase) ? customBase :
                         Screensavers[saver];
 
-                    // Show the seizure warning if required
-                    if (BaseSaver.ScreensaverContainsFlashingImages && !noSeizureWarning && !randomProvided)
-                        BaseSaver.ScreensaverSeizureWarning();
-
                     // Start the screensaver thread
                     inSaver = true;
                     ScrnTimeReached = true;
-                    ScreensaverDisplayer.ScreensaverDisplayerThread.Start(BaseSaver);
+                    ScreensaverDisplayer.ScreensaverDisplayerThread.Start(new object[] { BaseSaver, BaseSaver.ScreensaverContainsFlashingImages && !noSeizureWarning && !randomProvided });
 
                     // Play the ambience sound if needed
                     if (Config.MainConfig.EnableAmbientSoundFx)

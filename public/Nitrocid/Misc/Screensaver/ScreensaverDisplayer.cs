@@ -42,7 +42,7 @@ namespace Nitrocid.Misc.Screensaver
     internal static class ScreensaverDisplayer
     {
 
-        internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver?)ss));
+        internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (objArray) => DisplayScreensaver((object[]?)objArray ?? []));
         internal readonly static KernelThread ScreensaverAmbienceThread = new("Screensaver ambience thread", false, ScreensaverAmbience);
 
         internal static BaseScreensaver? displayingSaver;
@@ -50,16 +50,32 @@ namespace Nitrocid.Misc.Screensaver
         /// <summary>
         /// Displays the screensaver from the screensaver base
         /// </summary>
-        /// <param name="Screensaver">Screensaver base containing information about the screensaver</param>
-        internal static void DisplayScreensaver(BaseScreensaver? Screensaver)
+        /// <param name="threadParams">
+        /// Thread parameters: <br></br><br></br>
+        /// - Screensaver base containing information about the screensaver<br></br>
+        /// - Boolean variable that describes whether to show the seizure warning
+        /// </param>
+        internal static void DisplayScreensaver(object[] threadParams)
         {
-            if (Screensaver is null)
+            if (threadParams.Length == 0)
                 throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Screensaver instance is not specified"));
+            BaseScreensaver? Screensaver = (BaseScreensaver?)threadParams[0] ??
+                throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Screensaver instance is not specified"));
+            bool displaySeizureWarning = (bool?)threadParams[1] ?? false;
             bool initialVisible = ConsoleWrapper.CursorVisible;
             bool initialBack = ConsoleColoring.AllowBackground;
             bool initialPalette = ColorTools.GlobalSettings.UseTerminalPalette;
             try
             {
+                // Show the seizure warning if required
+                if (displaySeizureWarning)
+                {
+                    Screensaver.ScreensaverSeizureWarning();
+                    bool result = SpinWait.SpinUntil(() => ScreensaverDisplayerThread.IsStopping || ScreensaverManager.bailing, new TimeSpan(0, 0, 10));
+                    if (result)
+                        return;
+                }
+
                 // Preparations
                 displayingSaver = Screensaver;
                 ConsoleColoring.AllowBackground = true;
@@ -88,6 +104,7 @@ namespace Nitrocid.Misc.Screensaver
                 ScreensaverManager.HandleSaverCancel(initialVisible);
                 ConsoleColoring.AllowBackground = initialBack;
                 ColorTools.GlobalSettings.UseTerminalPalette = initialPalette;
+                displayingSaver = null;
                 KernelColorTools.LoadBackground();
             }
         }

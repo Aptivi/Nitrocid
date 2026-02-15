@@ -64,8 +64,6 @@ namespace Nitrocid.Misc.Screensaver
                 }
             };
             TextWriterRaw.WriteRaw(infoBox.Render());
-            ConsoleWrapper.CursorVisible = false;
-            ThreadManager.SleepUntilInput(10000);
         }
 
         /// <summary>
