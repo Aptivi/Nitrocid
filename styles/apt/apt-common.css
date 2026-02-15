@@ -1,0 +1,83 @@
+﻿.translucency-rule-black {
+    backdrop-filter: var(--apt-styling-blur-strength);
+    -webkit-backdrop-filter: var(--apt-styling-blur-strength);
+    background-color: var(--apt-accent-back-transparent) !important;
+}
+
+.translucency-rule {
+    backdrop-filter: var(--apt-styling-blur-strength);
+    -webkit-backdrop-filter: var(--apt-styling-blur-strength);
+    background-color: var(--apt-accent-shade-4-shadow) !important;
+}
+
+.bordered,
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td,
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th,
+.table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border: solid;
+    border-color: var(--apt-accent-1);
+    border-width: var(--apt-styling-border-width);
+}
+
+.bordered-radius {
+    border-radius: var(--apt-styling-border-radius);
+}
+
+.sub {
+    font-style: oblique;
+    font-size: smaller;
+    color: var(--apt-accent-sub);
+}
+
+.tooltip-apt {
+    font-family: var(--apt-font-style-sans);
+    font-size: var(--apt-styling-common-font-size-smaller);
+    border: solid;
+    border-color: var(--apt-accent-1);
+    border-width: var(--apt-styling-border-width);
+    border-radius: var(--apt-styling-border-radius);
+    --bs-tooltip-bg: var(--apt-accent-shade-3);
+    --bs-tooltip-color: var(--apt-accent-2);
+    --bs-tooltip-max-width: 700px;
+    --bs-tooltip-border-radius: var(--apt-styling-border-radius);
+    --bs-tooltip-arrow-width: 0px;
+    --bs-tooltip-arrow-height: 0px;
+}
+
+.background-primary {
+    background: var(--apt-accent-back);
+}
+
+.background-alternative {
+    background: var(--apt-accent-back-alternative);
+}
+
+.background-gradient {
+    background: var(--apt-accent-back-gradient);
+}
+
+.icon-square {
+    width: 100%;
+    max-width: min(15rem, 80vw);
+    height: auto;
+    font-size: 8rem;
+    border-radius: var(--apt-styling-border-radius);
+    background-color: var(--apt-accent-back) !important;
+    color: var(--apt-accent-1) !important;
+}
+
+.general-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.col {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.btn {
+    max-width: 100%;
+}

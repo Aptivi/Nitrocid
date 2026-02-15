@@ -1,0 +1,42 @@
+﻿::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+    background-color: var(--apt-accent-back);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--apt-accent-1);
+    border-radius: 10px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--apt-accent-shade-1);
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+        background-color: var(--apt-accent-shade-1);
+    }
+
+.loading-progress {
+    display: block;
+}
+
+.loading-progress-text {
+    text-align: center;
+}
+
+    .loading-progress-text:after {
+        content: var(--blazor-load-percentage-text, "0%");
+    }
+
+#blazor-error-ui {
+    color: var(--apt-accent-2);
+    background-color: var(--apt-accent-shade-4);
+    bottom: 0;
+    box-shadow: var(--apt-styling-unified-box-shadow);
+    display: none;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
