@@ -164,21 +164,21 @@ namespace Nitrocid.Base.Misc.Splash
         /// Opens the splash screen
         /// </summary>
         public static void OpenSplash() =>
-            OpenSplash(CurrentSplash, currentContext);
+            OpenSplash(CurrentSplash, currentContext, Config.MainConfig.SplashName);
 
         /// <summary>
         /// Opens the splash screen
         /// </summary>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void OpenSplash(SplashContext context) =>
-            OpenSplash(CurrentSplash, context);
+            OpenSplash(CurrentSplash, context, Config.MainConfig.SplashName);
 
         /// <summary>
         /// Opens the splash screen
         /// </summary>
         /// <param name="splashName">Splash name</param>
         public static void OpenSplash(string splashName) =>
-            OpenSplash(GetSplashFromName(splashName).EntryPoint, currentContext);
+            OpenSplash(GetSplashFromName(splashName).EntryPoint, currentContext, splashName);
 
         /// <summary>
         /// Opens the splash screen
@@ -186,21 +186,24 @@ namespace Nitrocid.Base.Misc.Splash
         /// <param name="splashName">Splash name</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void OpenSplash(string splashName, SplashContext context) =>
-            OpenSplash(GetSplashFromName(splashName).EntryPoint, context);
+            OpenSplash(GetSplashFromName(splashName).EntryPoint, context, splashName);
 
         /// <summary>
         /// Opens the splash screen
         /// </summary>
         /// <param name="splash">Splash interface to use</param>
         public static void OpenSplash(ISplash splash) =>
-            OpenSplash(splash, currentContext);
+            OpenSplash(splash, currentContext, "");
 
         /// <summary>
         /// Opens the splash screen
         /// </summary>
         /// <param name="splash">Splash interface to use</param>
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
-        public static void OpenSplash(ISplash splash, SplashContext context)
+        public static void OpenSplash(ISplash splash, SplashContext context) =>
+            OpenSplash(splash, context, "");
+
+        internal static void OpenSplash(ISplash splash, SplashContext context, string nameWatch)
         {
             if (Config.MainConfig.EnableSplash && !KernelPlatform.IsOnTestHost())
             {
@@ -232,7 +235,7 @@ namespace Nitrocid.Base.Misc.Splash
 
                 // Render the display
                 SplashThread.Stop();
-                SplashThread.Start(new SplashThreadParameters(splash.SplashName, context));
+                SplashThread.Start(new SplashThreadParameters(splash.SplashName, nameWatch, context));
 
                 // Inform the kernel that the splash has started
                 SplashReport._InSplash = true;
@@ -470,6 +473,21 @@ namespace Nitrocid.Base.Misc.Splash
                 {
                     ScreenTools.Render();
                     Thread.Sleep(20);
+
+                    // Check to see if the splash is the same or not
+                    if (!string.IsNullOrEmpty(threadParameters.SplashNameWatch) && splash.SplashName != GetSplashFromName(threadParameters.SplashNameWatch).SplashName)
+                    {
+                        // Change the display part to hold new splash
+                        splash = GetSplashFromName(threadParameters.SplashNameWatch).EntryPoint;
+                        splashScreen.RemoveBufferedParts();
+                        var openingPart = new ScreenPart();
+                        openingPart.AddDynamicText(() => splash.Opening(threadParameters.SplashContext));
+                        splashScreen.AddBufferedPart("Opening splash", openingPart);
+                        displayPart.Clear();
+                        displayPart.AddDynamicText(() => splash.Display(threadParameters.SplashContext));
+                        splashScreen.AddBufferedPart("Display", displayPart);
+                        splashScreen.RequireRefresh();
+                    }
                 }
             }
             catch (ThreadInterruptedException)
