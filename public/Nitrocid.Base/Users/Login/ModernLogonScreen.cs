@@ -138,7 +138,7 @@ namespace Nitrocid.Base.Users.Login
                 // Print notifications area
                 int notificationsY = ConsoleWrapper.WindowHeight / 2 - figHeight - 4;
                 var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
-                builder.Append(notificationsWidget.Render(posX - 1, notificationsY, interiorWidth, 1));
+                builder.Append(notificationsWidget.Render(interiorPosX, notificationsY, interiorWidth, 1));
 
                 // Print the instructions if we're not in screen curtain mode
                 if (!curtainMode)
