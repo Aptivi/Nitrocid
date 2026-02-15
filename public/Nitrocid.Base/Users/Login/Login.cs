@@ -125,7 +125,6 @@ namespace Nitrocid.Base.Users.Login
                         // Cancel shutdown and reboot attempts
                         PowerManager.RebootRequested = false;
                         PowerManager.KernelShutdown = false;
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, ThemeColorType.Error);
                     }
                     else if (!PermissionsTools.IsPermissionGranted(user, PermissionTypes.ManagePower) && (PowerManager.RebootRequested || PowerManager.KernelShutdown))
                     {
@@ -220,13 +219,20 @@ namespace Nitrocid.Base.Users.Login
         /// Prompts user for password
         /// </summary>
         /// <param name="usernamerequested">A username that is about to be logged in</param>
-        public static bool ShowPasswordPrompt(string usernamerequested)
+        public static bool ShowPasswordPrompt(string usernamerequested) =>
+            ShowPasswordPrompt(usernamerequested, LoginHandlerTools.CurrentHandlerName);
+
+        /// <summary>
+        /// Prompts user for password
+        /// </summary>
+        /// <param name="usernamerequested">A username that is about to be logged in</param>
+        /// <param name="handlerName">Name of the logon handler</param>
+        internal static bool ShowPasswordPrompt(string usernamerequested, string handlerName)
         {
             // Prompts user to enter a user's password
             while (!PowerManager.RebootRequested && !PowerManager.KernelShutdown)
             {
                 // Sanity check...
-                string handlerName = LoginHandlerTools.CurrentHandlerName;
                 var handler = LoginHandlerTools.GetHandler(handlerName) ??
                     throw new KernelException(KernelExceptionType.LoginHandler, LanguageTools.GetLocalized("NKS_USERS_LOGIN_EXCEPTION_NOHANDLER") + $" {handlerName}");
 
@@ -245,7 +251,6 @@ namespace Nitrocid.Base.Users.Login
                         return true;
                     else
                     {
-                        TextWriterColor.Write(LanguageTools.GetLocalized("NKS_USERS_LOGIN_WRONGPASSWORD"), true, ThemeColorType.Error);
                         if (!KernelEntry.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)
