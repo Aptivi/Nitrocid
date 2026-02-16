@@ -105,10 +105,10 @@ namespace Nitrocid.Extras.BassBoom.Commands
                     TextWriters.Write(Translate.DoTranslation("Press 'q' to stop playing."), KernelColorType.Tip);
                     while (PlaybackTools.GetState(media) == PlaybackState.Playing)
                     {
-                        if (ConsoleWrapper.KeyAvailable)
+                        InputEventInfo eventInfo = Input.ReadPointerOrKeyNoBlock();
+                        if (eventInfo.EventType == InputEventType.Keyboard)
                         {
-                            var key = Input.ReadKey();
-                            if (key.Key == ConsoleKey.Q)
+                            if (eventInfo.ConsoleKeyInfo is ConsoleKeyInfo cki && cki.Key == ConsoleKey.Q)
                                 PlaybackTools.Stop(media);
                         }
                     }

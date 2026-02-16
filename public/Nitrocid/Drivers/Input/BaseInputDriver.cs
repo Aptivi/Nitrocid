@@ -17,17 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using In = Nitrocid.ConsoleBase.Inputs.InputTools;
 using System;
-using Terminaux.Reader;
 using System.Runtime.Serialization;
 using System.Threading;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Misc.Screensaver;
-using Nitrocid.Languages;
-using Nitrocid.Kernel.Exceptions;
-using Terminaux.Base;
 using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
+using Nitrocid.Languages;
+using Nitrocid.Misc.Screensaver;
+using Terminaux.Base;
+using Terminaux.Inputs;
+using Terminaux.Reader;
+using Terminaux.Writer.ConsoleWriters;
+using In = Nitrocid.ConsoleBase.Inputs.InputTools;
 
 namespace Nitrocid.Drivers.Input
 {
@@ -275,13 +277,21 @@ namespace Nitrocid.Drivers.Input
         /// <param name="Timeout">Timeout</param>
         public virtual ConsoleKeyInfo ReadKeyTimeoutUnsafe(bool Intercept, TimeSpan Timeout)
         {
-            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, Timeout);
-            if (!ConsoleWrapper.KeyAvailable)
+            InputEventInfo? input = null;
+            bool result = SpinWait.SpinUntil(() =>
+            {
+                input = Terminaux.Inputs.Input.ReadPointerOrKeyNoBlock(InputEventType.Keyboard);
+                return input.EventType == InputEventType.Keyboard;
+            }, Timeout);
+            if (!result)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Timeout trying to read key.");
                 throw new KernelException(KernelExceptionType.ConsoleReadTimeout, Translate.DoTranslation("User didn't provide any input in a timely fashion."));
             }
-            return ConsoleWrapper.ReadKey(Intercept);
+            var keyInfo = input?.ConsoleKeyInfo ?? new();
+            if (!Intercept)
+                TextWriterColor.Write(keyInfo.KeyChar.ToString());
+            return keyInfo;
         }
 
         /// <summary>
@@ -302,8 +312,7 @@ namespace Nitrocid.Drivers.Input
         /// </summary>
         public virtual ConsoleKeyInfo DetectKeypressUnsafe()
         {
-            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
-            var key = ConsoleWrapper.ReadKey(true);
+            var key = Terminaux.Inputs.Input.ReadKey();
             DebugWriter.WriteDebug(DebugLevel.I, "Got key! {0} [{1}] {2}", vars: [key.Key.ToString(), (int)key.KeyChar, key.Modifiers.ToString()]);
             return key;
         }

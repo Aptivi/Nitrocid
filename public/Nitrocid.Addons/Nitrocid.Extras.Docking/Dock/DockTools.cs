@@ -86,11 +86,17 @@ namespace Nitrocid.Extras.Docking.Dock
                 ScreensaverManager.PreventLock();
                 KernelColorTools.LoadBackground();
                 TextWriterRaw.WriteRaw(dockInstance.Initialize());
-                while (!ConsoleWrapper.KeyAvailable)
+                while (true)
                 {
                     ConsoleWrapper.CursorVisible = false;
                     TextWriterRaw.WriteRaw(dockInstance.Render());
-                    SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, 1000);
+                    bool result = SpinWait.SpinUntil(() =>
+                    {
+                        var key = Input.ReadPointerOrKeyNoBlock();
+                        return key.EventType == InputEventType.Mouse || key.EventType == InputEventType.Keyboard;
+                    }, 1000);
+                    if (result)
+                        break;
                 }
                 TextWriterRaw.WriteRaw(dockInstance.Cleanup());
                 Input.ReadKey();

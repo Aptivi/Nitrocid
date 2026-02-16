@@ -17,16 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.ConsoleBase.Inputs;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using Nitrocid.ConsoleBase.Inputs;
+using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Extensions;
 using Terminaux.Base;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Kernel.Threading
 {
@@ -68,12 +69,8 @@ namespace Nitrocid.Kernel.Threading
         /// <summary>
         /// Sleeps until a key is input.
         /// </summary>
-        public static void SleepUntilInput()
-        {
-            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
-            if (ConsoleWrapper.KeyAvailable)
-                InputTools.DetectKeypressUnsafe();
-        }
+        public static void SleepUntilInput() =>
+            Input.ReadPointerOrKey();
 
         /// <summary>
         /// Sleeps until either the time specified, or a key is input.
@@ -81,9 +78,11 @@ namespace Nitrocid.Kernel.Threading
         /// <param name="Time">Time in milliseconds</param>
         public static bool SleepUntilInput(long Time)
         {
-            bool result = SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, (int)Time);
-            if (result)
-                InputTools.DetectKeypressUnsafe();
+            bool result = SpinWait.SpinUntil(() =>
+            {
+                var key = Input.ReadPointerOrKeyNoBlock();
+                return key.EventType == InputEventType.Mouse || key.EventType == InputEventType.Keyboard;
+            }, (int)Time);
             return result;
         }
 

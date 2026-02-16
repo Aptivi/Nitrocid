@@ -224,8 +224,9 @@ namespace Nitrocid.Extras.Timers.Timers
                 if (running)
                 {
                     // Wait for a keypress
-                    if (ConsoleWrapper.KeyAvailable)
-                        KeysKeypress = Input.ReadKey().Key;
+                    InputEventInfo eventInfo = Input.ReadPointerOrKeyNoBlock();
+                    if (eventInfo.EventType == InputEventType.Keyboard && eventInfo.ConsoleKeyInfo is ConsoleKeyInfo keypress)
+                        KeysKeypress = keypress.Key;
                 }
                 else
                 {
