@@ -162,7 +162,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             try
             {
                 string from = item.From.ToString();
-                string subject = item.Subject;
+                string subject = item.Subject ?? "";
                 return $"[{from}] {subject}";
             }
             catch (Exception ex)
@@ -177,7 +177,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
             try
             {
                 string from = item.From.ToString();
-                string subject = item.Subject;
+                string subject = item.Subject ?? "";
                 int replyOccurences = 0;
                 while (subject.StartsWithNoCase("Re: "))
                     replyOccurences++;
@@ -228,7 +228,7 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
 
                     // Prepare subject
                     messageBuilder.AppendLine();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", vars: [currentEntry.Subject.Length, currentEntry.Subject]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", vars: [currentEntry.Subject?.Length, currentEntry.Subject]);
                     messageBuilder.Append($"- {currentEntry.Subject}");
 
                     // Write a sign after the subject if attachments are found
@@ -441,8 +441,8 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                     var addresses = secondPaneListing[messageIdx].From;
                     foreach (var address in addresses)
                     {
-                        InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Moving messages by sender {0}..."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor }, address.Name);
-                        MailManager.MailMoveAllBySender(address.Name, firstPaneListing[directoryIdx].Name);
+                        InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Moving messages by sender {0}..."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor }, address.Name ?? "");
+                        MailManager.MailMoveAllBySender(address.Name ?? "", firstPaneListing[directoryIdx].Name);
                     }
                     refreshFirstPaneListing = true;
                     refreshSecondPaneListing = true;
@@ -540,8 +540,8 @@ namespace Nitrocid.Extras.MailShell.Mail.Interactive
                     var addresses = secondPaneListing[msgIdx].From;
                     foreach (var address in addresses)
                     {
-                        InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Removing messages by sender {0}..."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor }, address.Name);
-                        MailManager.MailRemoveAllBySender(address.Name);
+                        InfoBoxNonModalColor.WriteInfoBox(Translate.DoTranslation("Removing messages by sender {0}..."), new InfoBoxSettings() { ForegroundColor = Settings.BoxForegroundColor, BackgroundColor = Settings.BoxBackgroundColor }, address.Name ?? "");
+                        MailManager.MailRemoveAllBySender(address.Name ?? "");
                     }
                     InteractiveTuiTools.SelectionMovement(this, SecondPaneCurrentSelection - 1);
                     refreshFirstPaneListing = true;

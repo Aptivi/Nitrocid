@@ -114,7 +114,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
 
                 // Prepare subject
                 TextWriterRaw.Write();
-                DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", vars: [Msg.Subject.Length, Msg.Subject]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", vars: [Msg.Subject?.Length, Msg.Subject]);
                 TextWriters.Write($"- {Msg.Subject}", false, KernelColorType.ListEntry);
 
                 // Write a sign after the subject if attachments are found
@@ -175,7 +175,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 }
                 else
                 {
-                    TextWriters.Write(Msg.GetTextBody(MailShellCommon.TextFormat), true, KernelColorType.ListValue);
+                    TextWriters.Write(Msg.GetTextBody(MailShellCommon.TextFormat) ?? "", true, KernelColorType.ListValue);
                 }
                 TextWriterRaw.Write();
 
@@ -262,7 +262,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 DebugWriter.WriteDebug(DebugLevel.I, "Decrypting...");
                 EncryptedDict.Add("Body", encrypted.Decrypt(new PGPContext()));
             }
-            else
+            else if (Text.Body is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Trying to decrypt plain text. Returning body...");
                 EncryptedDict.Add("Body", Text.Body);
