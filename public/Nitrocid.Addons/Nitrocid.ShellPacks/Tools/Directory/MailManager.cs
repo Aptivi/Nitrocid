@@ -89,8 +89,8 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                             Msg = client.Inbox.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress);
                         }
                         MsgFrom = Msg.From.ToString();
-                        MsgSubject = Msg.Subject;
-                        MsgPreview = Msg.GetTextBody(MimeKit.Text.TextFormat.Text).Truncate(200);
+                        MsgSubject = Msg.Subject ?? "";
+                        MsgPreview = Msg.GetTextBody(MimeKit.Text.TextFormat.Text)?.Truncate(200) ?? "";
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "From {0}: {1}", vars: [MsgFrom, MsgSubject]);
 

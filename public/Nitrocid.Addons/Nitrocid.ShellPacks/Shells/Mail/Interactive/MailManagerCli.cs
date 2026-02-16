@@ -188,7 +188,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
             try
             {
                 string from = item.From.ToString();
-                string subject = item.Subject;
+                string subject = item.Subject ?? "";
                 return $"[{from}] {subject}";
             }
             catch (Exception ex)
@@ -203,7 +203,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
             try
             {
                 string from = item.From.ToString();
-                string subject = item.Subject;
+                string subject = item.Subject ?? "";
                 int replyOccurences = 0;
                 while (subject.StartsWithNoCase("Re: "))
                     replyOccurences++;
@@ -254,7 +254,7 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
 
                     // Prepare subject
                     messageBuilder.AppendLine();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", vars: [currentEntry.Subject.Length, currentEntry.Subject]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", vars: [currentEntry.Subject?.Length, currentEntry.Subject]);
                     messageBuilder.Append($"- {currentEntry.Subject}");
 
                     // Write a sign after the subject if attachments are found
@@ -467,8 +467,8 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                     var addresses = secondPaneListing[messageIdx].From;
                     foreach (var address in addresses)
                     {
-                        InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER"), Settings.InfoBoxSettings, address.Name);
-                        MailManager.MailMoveAllBySender(address.Name, firstPaneListing[directoryIdx].Name);
+                        InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_MOVINGMESSAGEBYSENDER"), Settings.InfoBoxSettings, address.Name ?? "");
+                        MailManager.MailMoveAllBySender(address.Name ?? "", firstPaneListing[directoryIdx].Name);
                     }
                     refreshFirstPaneListing = true;
                     refreshSecondPaneListing = true;
@@ -566,8 +566,8 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                     var addresses = secondPaneListing[msgIdx].From;
                     foreach (var address in addresses)
                     {
-                        InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER"), Settings.InfoBoxSettings, address.Name);
-                        MailManager.MailRemoveAllBySender(address.Name);
+                        InfoBoxNonModalColor.WriteInfoBox(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_TUI_REMOVINGMESSAGEBYSENDER"), Settings.InfoBoxSettings, address.Name ?? "");
+                        MailManager.MailRemoveAllBySender(address.Name ?? "");
                     }
                     InteractiveTuiTools.SelectionMovement(this, SecondPaneCurrentSelection - 1);
                     refreshFirstPaneListing = true;
