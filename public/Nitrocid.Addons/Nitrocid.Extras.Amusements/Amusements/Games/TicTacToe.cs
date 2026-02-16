@@ -88,13 +88,13 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             var firstStroke = new Line()
                             {
                                 StartPos = new(spotX + 1, spotY),
-                                EndPos = new(spotX + 1 + boxWidth - 2, spotY + 1 + boxHeight - 2),
+                                EndPos = new(spotX + 1 + boxWidth - 1, spotY + 1 + boxHeight - 2),
                                 DoubleWidth = false,
                                 Color = ConsoleColors.Red,
                             };
                             var secondStroke = new Line()
                             {
-                                StartPos = new(spotX + 1 + boxWidth - 2, spotY),
+                                StartPos = new(spotX + 1 + boxWidth - 1, spotY),
                                 EndPos = new(spotX + 1, spotY + 1 + boxHeight - 2),
                                 DoubleWidth = false,
                                 Color = ConsoleColors.Red,
@@ -105,75 +105,76 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         else if (gridTurn == 2)
                         {
                             // It's an O
-                            var arcStroke = new Arc(boxHeight - 1, spotX + 3, spotY, ConsoleColors.Lime)
+                            int height = boxHeight - 1 < (boxWidth - 1) / 2 ? boxHeight - 1 : (boxWidth - 1) / 2;
+                            var arcStroke = new Arc(height, spotX + 1, spotY, ConsoleColors.Lime)
                             {
                                 AngleStart = 360,
                                 AngleEnd = 360,
-                                OuterRadius = (boxHeight - 1) / 2,
-                                InnerRadius = (boxHeight - 1) / 2 - 4,
+                                OuterRadius = height / 2,
+                                InnerRadius = height / 2 - 1,
                             };
                             gameBuffer.Append(arcStroke.Render());
                         }
                     }
                 }
                 {
-                    int spotX = panelPosX + 1;
+                    int spotX = panelPosX;
                     int spotY = panelPosY + 1;
                     int boxWidth = secondBoxPosX - panelPosX;
                     int boxHeight = secondBoxPosY - panelPosY;
                     PrintXO(spotX, spotY, boxWidth, boxHeight, 0, 0);
                 }
                 {
-                    int spotX = secondBoxPosX + 2;
+                    int spotX = secondBoxPosX + 1;
                     int spotY = panelPosY + 1;
                     int boxWidth = secondBoxPosX - panelPosX - 1;
                     int boxHeight = secondBoxPosY - panelPosY;
                     PrintXO(spotX, spotY, boxWidth, boxHeight, 1, 0);
                 }
                 {
-                    int spotX = thirdBoxPosX + 2;
+                    int spotX = thirdBoxPosX + 1;
                     int spotY = panelPosY + 1;
                     int boxWidth = secondBoxPosX - panelPosX - 1;
                     int boxHeight = secondBoxPosY - panelPosY;
                     PrintXO(spotX, spotY, boxWidth, boxHeight, 2, 0);
                 }
                 {
-                    int spotX = panelPosX + 1;
+                    int spotX = panelPosX;
                     int spotY = secondBoxPosY + 2;
                     int boxWidth = thirdBoxPosX - secondBoxPosX;
                     int boxHeight = thirdBoxPosY - secondBoxPosY - 1;
                     PrintXO(spotX, spotY, boxWidth, boxHeight, 0, 1);
                 }
                 {
-                    int spotX = secondBoxPosX + 2;
+                    int spotX = secondBoxPosX + 1;
                     int spotY = secondBoxPosY + 2;
                     int boxWidth = thirdBoxPosX - secondBoxPosX - 1;
                     int boxHeight = thirdBoxPosY - secondBoxPosY - 1;
                     PrintXO(spotX, spotY, boxWidth, boxHeight, 1, 1);
                 }
                 {
-                    int spotX = thirdBoxPosX + 2;
+                    int spotX = thirdBoxPosX + 1;
                     int spotY = secondBoxPosY + 2;
                     int boxWidth = thirdBoxPosX - secondBoxPosX - 1;
                     int boxHeight = thirdBoxPosY - secondBoxPosY - 1;
                     PrintXO(spotX, spotY, boxWidth, boxHeight, 2, 1);
                 }
                 {
-                    int spotX = panelPosX + 1;
+                    int spotX = panelPosX;
                     int spotY = thirdBoxPosY + 2;
                     int boxWidth = panelPosX + width - thirdBoxPosX;
                     int boxHeight = height - thirdBoxPosY;
                     PrintXO(spotX, spotY, boxWidth, boxHeight, 0, 2);
                 }
                 {
-                    int spotX = secondBoxPosX + 2;
+                    int spotX = secondBoxPosX + 1;
                     int spotY = thirdBoxPosY + 2;
                     int boxWidth = panelPosX + width - thirdBoxPosX - 1;
                     int boxHeight = height - thirdBoxPosY;
                     PrintXO(spotX, spotY, boxWidth, boxHeight, 1, 2);
                 }
                 {
-                    int spotX = thirdBoxPosX + 2;
+                    int spotX = thirdBoxPosX + 1;
                     int spotY = thirdBoxPosY + 2;
                     int boxWidth = panelPosX + width - thirdBoxPosX - 1;
                     int boxHeight = height - thirdBoxPosY;
