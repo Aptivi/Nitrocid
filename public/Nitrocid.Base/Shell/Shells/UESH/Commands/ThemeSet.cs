@@ -170,7 +170,10 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             }
 
             if (bail)
+            {
+                ThemeColorsTools.LoadBackground();
                 return 0;
+            }
 
             // User answered yes, so set it
             if (FilesystemTools.FileExists(ThemePath))
