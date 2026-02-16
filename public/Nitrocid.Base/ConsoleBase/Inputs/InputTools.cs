@@ -19,13 +19,16 @@
 
 using System;
 using System.Threading;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Misc.Screensaver;
-using Terminaux.Base;
-using Terminaux.Reader;
+using System.Timers;
 using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Screensaver;
+using Terminaux.Base;
+using Terminaux.Inputs;
+using Terminaux.Reader;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.ConsoleBase.Inputs
 {
@@ -260,13 +263,21 @@ namespace Nitrocid.Base.ConsoleBase.Inputs
         /// <param name="Timeout">Timeout</param>
         public static ConsoleKeyInfo ReadKeyTimeoutUnsafe(bool Intercept, TimeSpan Timeout)
         {
-            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, Timeout);
-            if (!ConsoleWrapper.KeyAvailable)
+            InputEventInfo? input = null;
+            bool result = SpinWait.SpinUntil(() =>
+            {
+                input = Input.ReadPointerOrKeyNoBlock(InputEventType.Keyboard);
+                return input.EventType == InputEventType.Keyboard;
+            }, Timeout);
+            if (!result)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Timeout trying to read key.");
                 throw new KernelException(KernelExceptionType.ConsoleReadTimeout, LanguageTools.GetLocalized("NKS_DRIVERS_INPUT_BASE_EXCEPTION_INPUTTIMEOUT"));
             }
-            return ConsoleWrapper.ReadKey(Intercept);
+            var keyInfo = input?.ConsoleKeyInfo ?? new();
+            if (!Intercept)
+                TextWriterColor.Write(keyInfo.KeyChar.ToString());
+            return keyInfo;
         }
 
         /// <summary>
@@ -287,8 +298,7 @@ namespace Nitrocid.Base.ConsoleBase.Inputs
         /// </summary>
         public static ConsoleKeyInfo DetectKeypressUnsafe()
         {
-            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
-            var key = ConsoleWrapper.ReadKey(true);
+            var key = Input.ReadKey();
             DebugWriter.WriteDebug(DebugLevel.I, "Got key! {0} [{1}] {2}", vars: [key.Key.ToString(), (int)key.KeyChar, key.Modifiers.ToString()]);
             return key;
         }

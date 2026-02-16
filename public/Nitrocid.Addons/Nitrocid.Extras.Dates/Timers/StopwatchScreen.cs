@@ -21,21 +21,22 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-using Terminaux.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
-using Nitrocid.Base.Languages;
-using Terminaux.Base.Buffered;
-using Terminaux.Base;
-using Terminaux.Base.Extensions;
+using System.Threading;
 using Nitrocid.Base.Drivers.RNG;
-using Terminaux.Inputs;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Inputs.Styles.Infobox;
+using Nitrocid.Base.Languages;
+using Terminaux.Base;
+using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.CyclicWriters.Simple;
-using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
 
 namespace Nitrocid.Extras.Dates.Timers
 {
@@ -197,8 +198,9 @@ namespace Nitrocid.Extras.Dates.Timers
                 if (running)
                 {
                     // Wait for a keypress
-                    if (ConsoleWrapper.KeyAvailable)
-                        KeysKeypress = Input.ReadKey();
+                    InputEventInfo eventInfo = Input.ReadPointerOrKeyNoBlock();
+                    if (eventInfo.EventType == InputEventType.Keyboard && eventInfo.ConsoleKeyInfo is ConsoleKeyInfo keypress)
+                        KeysKeypress = keypress;
                 }
                 else
                 {

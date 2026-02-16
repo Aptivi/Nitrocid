@@ -279,9 +279,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 else
                 {
                     // User pressed the arrow button to move the snake
-                    if (ConsoleWrapper.KeyAvailable)
+                    InputEventInfo eventInfo = Input.ReadPointerOrKeyNoBlock();
+                    if (eventInfo.EventType == InputEventType.Keyboard && eventInfo.ConsoleKeyInfo is ConsoleKeyInfo cki)
                     {
-                        var Pressed = Input.ReadKey().Key;
+                        var Pressed = cki.Key;
                         switch (Pressed)
                         {
                             case ConsoleKey.DownArrow:

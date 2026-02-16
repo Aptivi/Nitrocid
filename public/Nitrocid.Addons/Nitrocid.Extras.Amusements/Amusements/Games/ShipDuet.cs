@@ -99,14 +99,13 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             if (!simulation)
             {
                 // Player mode
-                ConsoleKeyInfo Keypress;
                 while (!GameEnded)
                 {
-                    if (ConsoleWrapper.KeyAvailable)
+                    InputEventInfo eventInfo = Input.ReadPointerOrKeyNoBlock();
+                    if (eventInfo.EventType == InputEventType.Keyboard && eventInfo.ConsoleKeyInfo is ConsoleKeyInfo keypress)
                     {
                         // Read the key and handle it
-                        Keypress = Input.ReadKey();
-                        HandleKeypress(Keypress.Key);
+                        HandleKeypress(keypress.Key);
                     }
                 }
             }

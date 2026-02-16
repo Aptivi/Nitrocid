@@ -19,25 +19,26 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading;
 using System.Timers;
-using Timer = System.Timers.Timer;
-using Textify.Data.Figlet;
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Themes.Colors;
+using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
-using Terminaux.Base.Buffered;
-using System.Text;
-using Terminaux.Colors;
 using Terminaux.Base;
-using Nitrocid.Base.Drivers.RNG;
-using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base.Buffered;
+using Terminaux.Colors;
 using Terminaux.Inputs;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.CyclicWriters.Renderer;
-using Terminaux.Writer.CyclicWriters.Simple;
+using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Sequences.Builder.Types;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters.Simple;
+using Textify.Data.Figlet;
+using Timer = System.Timers.Timer;
 
 namespace Nitrocid.Extras.Dates.Timers
 {
@@ -196,8 +197,9 @@ namespace Nitrocid.Extras.Dates.Timers
                 if (running)
                 {
                     // Wait for a keypress
-                    if (ConsoleWrapper.KeyAvailable)
-                        KeysKeypress = Input.ReadKey().Key;
+                    InputEventInfo eventInfo = Input.ReadPointerOrKeyNoBlock();
+                    if (eventInfo.EventType == InputEventType.Keyboard && eventInfo.ConsoleKeyInfo is ConsoleKeyInfo keypress)
+                        KeysKeypress = keypress.Key;
                 }
                 else
                 {

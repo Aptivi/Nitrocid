@@ -230,14 +230,19 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             double factor = 1.0;
             while (!Dead && !bailing)
             {
-                // Delay
-                SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, (int)(100 * factor));
+                // Wait for a keypress
+                InputEventInfo? eventInfo = null;
+                bool result = SpinWait.SpinUntil(() =>
+                {
+                    eventInfo = Input.ReadPointerOrKeyNoBlock();
+                    return eventInfo.EventType == InputEventType.Mouse || eventInfo.EventType == InputEventType.Keyboard;
+                }, (int)(100 * factor));
                 ScreenTools.Render();
 
                 // Move the ball according to the mode
-                if (ConsoleWrapper.KeyAvailable)
+                if (result && eventInfo?.ConsoleKeyInfo is ConsoleKeyInfo cki)
                 {
-                    var Pressed = Input.ReadKey().Key;
+                    var Pressed = cki.Key;
                     switch (Pressed)
                     {
                         case ConsoleKey.DownArrow:

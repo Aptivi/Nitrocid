@@ -17,22 +17,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Inputs.Styles.Infobox;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading;
+using System.Timers;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Misc.Widgets.Implementations;
 using Terminaux.Base;
-using System.Threading;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Docking.Dock
 {
@@ -86,11 +87,17 @@ namespace Nitrocid.Extras.Docking.Dock
                 ScreensaverManager.PreventLock();
                 ThemeColorsTools.LoadBackground();
                 TextWriterRaw.WriteRaw(dockInstance.Initialize());
-                while (!ConsoleWrapper.KeyAvailable)
+                while (true)
                 {
                     ConsoleWrapper.CursorVisible = false;
                     TextWriterRaw.WriteRaw(dockInstance.Render());
-                    SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, 1000);
+                    bool result = SpinWait.SpinUntil(() =>
+                    {
+                        var key = Input.ReadPointerOrKeyNoBlock();
+                        return key.EventType == InputEventType.Mouse || key.EventType == InputEventType.Keyboard;
+                    }, 1000);
+                    if (result)
+                        break;
                 }
                 TextWriterRaw.WriteRaw(dockInstance.Cleanup());
                 Input.ReadKey();

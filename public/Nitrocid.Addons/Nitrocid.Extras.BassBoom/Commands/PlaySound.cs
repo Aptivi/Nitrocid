@@ -105,10 +105,10 @@ namespace Nitrocid.Extras.BassBoom.Commands
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_STOPPLAYING"), ThemeColorType.Tip);
                     while (PlaybackTools.GetState(media) == PlaybackState.Playing)
                     {
-                        if (ConsoleWrapper.KeyAvailable)
+                        InputEventInfo eventInfo = Input.ReadPointerOrKeyNoBlock();
+                        if (eventInfo.EventType == InputEventType.Keyboard)
                         {
-                            var key = Input.ReadKey();
-                            if (key.Key == ConsoleKey.Q)
+                            if (eventInfo.ConsoleKeyInfo is ConsoleKeyInfo cki && cki.Key == ConsoleKey.Q)
                                 PlaybackTools.Stop(media);
                         }
                     }
