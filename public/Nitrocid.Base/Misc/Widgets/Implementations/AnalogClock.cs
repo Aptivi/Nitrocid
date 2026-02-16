@@ -102,12 +102,13 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
             clear = true;
 
             // Write date and time
-            var timeDate = new AlignedText()
+            var timeDate = new BoundedText()
             {
                 Text = rendered,
                 Top = posY,
                 Left = left,
                 Width = width,
+                Height = 1,
                 ForegroundColor = timeColor,
                 BackgroundColor = backgroundColor,
                 Settings = new()
@@ -121,6 +122,7 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
             // Now, draw the bezel
             int bezelTop = top + 1;
             int bezelHeight = height - 4 - (height % 2 == 0 ? 1 : 0);
+            bezelHeight = bezelHeight < (width - 1) / 2 ? bezelHeight : (width - 1) / 2;
             int bezelWidth = bezelHeight * 2;
             int bezelLeft = width / 2 - bezelHeight + left + 1;
             (int x, int y) radius = (bezelLeft + bezelWidth / 2, bezelTop + bezelHeight / 2);
