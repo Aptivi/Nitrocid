@@ -1,6 +1,10 @@
 nitrocid-28 (4.0.28.56-0.2.0.2-1) noble; urgency=medium
 
-  * General improvements and bug fixes
+  * Fixed crashes when running winelevate
+  * Fixed input not being recognized in some TUI apps on Linux
+  * Fixed hardware listing errors on Linux
+  * Fixed various appearance issues
+  * General improvements
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sat, 14 Feb 2026 16:44:52 +0300
 

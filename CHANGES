@@ -1,9 +1,13 @@
-This is the release of an urgent fix intended to sort out Nettify.
+This is a quick hotfix release to fix whatever bugs we have spotted during the final testing rounds.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
+- `[*]` Fixed crashes when running winelevate
+- `[*]` Fixed input not being recognized in some TUI apps on Linux
+- `[*]` Fixed hardware listing errors on Linux
+- `[*]` Fixed various appearance issues
 - `[*]` General improvements
 
 Review the commit history if you want to get a deep insight about the changes.
