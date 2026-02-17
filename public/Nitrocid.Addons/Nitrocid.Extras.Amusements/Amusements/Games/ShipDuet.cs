@@ -19,20 +19,21 @@
 
 using System;
 using System.Collections.Generic;
-using System.Threading;
-using Terminaux.Colors;
 using System.Text;
-using Terminaux.Writer.ConsoleWriters;
+using System.Threading;
+using Nitrocid.Drivers.RNG;
+using Nitrocid.Kernel.Configuration;
+using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Languages;
-using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
-using Nitrocid.Kernel.Debugging;
-using Nitrocid.Kernel.Configuration;
-using Terminaux.Inputs;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
+using Terminaux.Colors;
+using Terminaux.Colors.Data;
+using Terminaux.Inputs;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -48,6 +49,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         internal static int shipDuetSpeed = 10;
         private static bool player1Won = false;
         private static bool player2Won = false;
+        private static Size windowDimensions = new(0, 0);
         private static int SpaceshipHeightPlayer1 = 0;
         private readonly static int MaxBulletsPlayer1 = 10;
         private readonly static List<(int, int)> BulletsPlayer1 = [];
@@ -86,7 +88,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             player2Won = false;
 
             // Make the spaceship height in the center
-            SpaceshipHeightPlayer1 = SpaceshipHeightPlayer2 = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
+            windowDimensions = new(ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
+            SpaceshipHeightPlayer1 = SpaceshipHeightPlayer2 = (int)Math.Round(windowDimensions.Height / 2d);
 
             // Start the draw thread
             ShipDuetDrawThread.Stop();
@@ -101,6 +104,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Player mode
                 while (!GameEnded)
                 {
+                    windowDimensions = new(ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
                     InputEventInfo eventInfo = Input.ReadPointerOrKeyNoBlock();
                     if (eventInfo.EventType == InputEventType.Keyboard && eventInfo.ConsoleKeyInfo is ConsoleKeyInfo keypress)
                     {
@@ -153,7 +157,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         SpaceshipHeightPlayer1 -= 1;
                     break;
                 case ConsoleKey.DownArrow:
-                    if (SpaceshipHeightPlayer1 < ConsoleWrapper.WindowHeight - 1)
+                    if (SpaceshipHeightPlayer1 < windowDimensions.Height - 1)
                         SpaceshipHeightPlayer1 += 1;
                     break;
                 case ConsoleKey.Enter:
@@ -165,12 +169,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         SpaceshipHeightPlayer2 -= 1;
                     break;
                 case ConsoleKey.S:
-                    if (SpaceshipHeightPlayer2 < ConsoleWrapper.WindowHeight - 1)
+                    if (SpaceshipHeightPlayer2 < windowDimensions.Height - 1)
                         SpaceshipHeightPlayer2 += 1;
                     break;
                 case ConsoleKey.Spacebar:
                     if (BulletsPlayer2.Count < MaxBulletsPlayer2)
-                        BulletsPlayer2.Add((ConsoleWrapper.WindowWidth - 2, SpaceshipHeightPlayer2));
+                        BulletsPlayer2.Add((windowDimensions.Width - 2, SpaceshipHeightPlayer2));
                     break;
                 case ConsoleKey.Escape:
                     GameEnded = true;
@@ -189,17 +193,19 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     var buffer = new StringBuilder();
 
                     // Clear only the relevant parts
-                    for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
+                    for (int y = 0; y < windowDimensions.Height; y++)
                     {
                         if (y != SpaceshipHeightPlayer1)
                             buffer.Append(
                                 ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
-                                TextWriterWhereColor.RenderWhere(" ", 0, y)
+                                ConsolePositioning.RenderChangePosition(0, y) +
+                                " "
                             );
                         if (y != SpaceshipHeightPlayer2)
                             buffer.Append(
                                 ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
-                                TextWriterWhereColor.RenderWhere(" ", ConsoleWrapper.WindowWidth - 1, y)
+                                ConsolePositioning.RenderChangePosition(windowDimensions.Width - 1, y) +
+                                " "
                             );
                     }
 
@@ -208,7 +214,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         buffer.Append(
                             ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
-                            TextWriterWhereColor.RenderWhere(" ", BulletsPlayer1[Bullet].Item1, BulletsPlayer1[Bullet].Item2)
+                            ConsolePositioning.RenderChangePosition(BulletsPlayer1[Bullet].Item1, BulletsPlayer1[Bullet].Item2) +
+                            " "
                         );
                         int BulletX = BulletsPlayer1[Bullet].Item1 + 1;
                         int BulletY = BulletsPlayer1[Bullet].Item2;
@@ -220,7 +227,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         buffer.Append(
                             ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
-                            TextWriterWhereColor.RenderWhere(" ", BulletsPlayer2[Bullet].Item1, BulletsPlayer2[Bullet].Item2)
+                            ConsolePositioning.RenderChangePosition(BulletsPlayer2[Bullet].Item1, BulletsPlayer2[Bullet].Item2) +
+                            " "
                         );
                         int BulletX = BulletsPlayer2[Bullet].Item1 - 1;
                         int BulletY = BulletsPlayer2[Bullet].Item2;
@@ -232,7 +240,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         buffer.Append(
                             ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
-                            TextWriterWhereColor.RenderWhere(" ", Stars[Star].Item1, Stars[Star].Item2)
+                            ConsolePositioning.RenderChangePosition(Stars[Star].Item1, Stars[Star].Item2) +
+                            " "
                         );
                         int StarX = Stars[Star].Item1 - 1;
                         int StarY = Stars[Star].Item2;
@@ -243,7 +252,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int BulletIndex = BulletsPlayer1.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
                     {
                         var Bullet = BulletsPlayer1[BulletIndex];
-                        if (Bullet.Item1 >= ConsoleWrapper.WindowWidth)
+                        if (Bullet.Item1 >= windowDimensions.Width)
                         {
                             // The bullet went beyond. Remove it.
                             BulletsPlayer1.RemoveAt(BulletIndex);
@@ -274,8 +283,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     bool StarShowGuaranteed = RandomDriver.RandomChance(10);
                     if (StarShowGuaranteed)
                     {
-                        int StarX = ConsoleWrapper.WindowWidth - 1;
-                        int StarY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
+                        int StarX = windowDimensions.Width - 1;
+                        int StarY = RandomDriver.RandomIdx(windowDimensions.Height);
                         Stars.Add((StarX, StarY));
                     }
 
@@ -298,9 +307,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         int StarX = Star.Item1;
                         int StarY = Star.Item2;
                         buffer.Append(
-                            new Color(ConsoleColors.White).VTSequenceForeground() +
+                            ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.White)) +
                             ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
-                            TextWriterWhereColor.RenderWhere(Convert.ToString(StarSymbol), StarX, StarY, false)
+                            ConsolePositioning.RenderChangePosition(StarX, StarY) +
+                            Convert.ToString(StarSymbol)
                         );
                     }
 
@@ -308,7 +318,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int BulletIndex = BulletsPlayer1.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
                     {
                         var Bullet = BulletsPlayer1[BulletIndex];
-                        if (Bullet.Item1 == ConsoleWrapper.WindowWidth - 1 & Bullet.Item2 == SpaceshipHeightPlayer2)
+                        if (Bullet.Item1 == windowDimensions.Width - 1 & Bullet.Item2 == SpaceshipHeightPlayer2)
                         {
                             // The spaceship crashed! Game ended and Player 1 won.
                             GameEnded = true;
@@ -341,7 +351,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Game is over with an unexpected error.
                 try
                 {
-                    TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
+                    TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Unexpected error") + ": {0}", 0, windowDimensions.Height - 1, false, ConsoleColors.Red, vars: ex.Message);
                     ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
                 }
                 catch
@@ -362,9 +372,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     try
                     {
                         if (player1Won && player2Won || !player1Won && !player2Won)
-                            TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("It's a draw."), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                            TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("It's a draw."), 0, windowDimensions.Height - 1, false, ConsoleColors.Red);
                         else if (player1Won || player2Won)
-                            TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Player {0} wins!"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: player1Won ? 1 : 2);
+                            TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Player {0} wins!"), 0, windowDimensions.Height - 1, false, ConsoleColors.Red, vars: player1Won ? 1 : 2);
                         ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
                     }
                     catch
@@ -384,8 +394,17 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             char SpaceshipSymbolP1 = ShipDuetUsePowerLine ? PowerLineSpaceshipP1 : '>';
             char SpaceshipSymbolP2 = ShipDuetUsePowerLine ? PowerLineSpaceshipP2 : '<';
             builder.Append(
-                TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(SpaceshipSymbolP1), 0, SpaceshipHeightPlayer1, false, ConsoleColors.Green, ConsoleColors.Black) +
-                TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(SpaceshipSymbolP2), ConsoleWrapper.WindowWidth - 1, SpaceshipHeightPlayer2, false, ConsoleColors.DarkGreen, ConsoleColors.Black)
+                // Player 1
+                ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Green) +
+                ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Black, true) +
+                ConsolePositioning.RenderChangePosition(0, SpaceshipHeightPlayer1) +
+                Convert.ToString(SpaceshipSymbolP1) +
+
+                // Player 2
+                ConsoleColoring.RenderSetConsoleColor(ConsoleColors.DarkGreen) +
+                ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Black, true) +
+                ConsolePositioning.RenderChangePosition(windowDimensions.Width - 1, SpaceshipHeightPlayer2) +
+                Convert.ToString(SpaceshipSymbolP2)
             );
             return builder.ToString();
         }
@@ -393,7 +412,11 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         private static string DrawBullet(int BulletX, int BulletY)
         {
             char BulletSymbol = '-';
-            return TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Aqua, ConsoleColors.Black);
+            return
+                ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Aqua) +
+                ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Black, true) +
+                ConsolePositioning.RenderChangePosition(BulletX, BulletY) +
+                Convert.ToString(BulletSymbol);
         }
 
     }
