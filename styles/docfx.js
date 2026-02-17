@@ -52,7 +52,7 @@ $(function () {
   // Styling for tables in conceptual documents using Bootstrap.
   // See http://getbootstrap.com/css/#tables
   function renderTables() {
-    $('table').addClass('table table-bordered table-striped').wrap('<div class=\"table-responsive\"></div>');
+    $('table').addClass('table table-bordered').wrap('<div></div>');
   }
 
   // Styling for alerts.

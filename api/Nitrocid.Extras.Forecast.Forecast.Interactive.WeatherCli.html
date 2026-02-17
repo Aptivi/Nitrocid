@@ -21,13 +21,15 @@
     
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
-      <header class="apt-head">
+      <header class="apt-head translucency-rule-black">
 
         <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
+          <div class="container-header">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -49,14 +51,6 @@
             </div>
           </div>
         </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
-        </div>
       </header>
       <div class="container body-content">
 
@@ -152,14 +146,17 @@
       <span class="xref">BaseInteractiveTui&lt;(double, double), (double, double)&gt;.AcceptsEmptyData</span>
     </div>
     <div>
+      <span class="xref">BaseInteractiveTui&lt;(double, double), (double, double)&gt;.HelpPages</span>
+    </div>
+    <div>
       <span class="xref">BaseInteractiveTui&lt;(double, double), (double, double)&gt;.PrimaryDataSource</span>
     </div>
     <div>
       <span class="xref">BaseInteractiveTui&lt;(double, double), (double, double)&gt;.SecondaryDataSource</span>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Nitrocid.html">Nitrocid</a>.<a class="xref" href="Nitrocid.Extras.html">Extras</a>.<a class="xref" href="Nitrocid.Extras.Forecast.html">Forecast</a>.<a class="xref" href="Nitrocid.Extras.Forecast.Forecast.html">Forecast</a>.<a class="xref" href="Nitrocid.Extras.Forecast.Forecast.Interactive.html">Interactive</a></h6>
-  <h6><strong>Assembly</strong>: Nitrocid.Extras.Forecast.dll</h6>
+  <h6>Namespace: <a class="xref" href="Nitrocid.html">Nitrocid</a>.<a class="xref" href="Nitrocid.Extras.html">Extras</a>.<a class="xref" href="Nitrocid.Extras.Forecast.html">Forecast</a>.<a class="xref" href="Nitrocid.Extras.Forecast.Forecast.html">Forecast</a>.<a class="xref" href="Nitrocid.Extras.Forecast.Forecast.Interactive.html">Interactive</a></h6>
+  <h6>Assembly: Nitrocid.Extras.Forecast.dll</h6>
   <h5 id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class WeatherCli : BaseInteractiveTui&lt;(double, double)&gt;, IInteractiveTui&lt;(double, double)&gt;, IInteractiveTui&lt;(double, double), (double, double)&gt;</code></pre>
@@ -171,7 +168,7 @@
     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_AcceptsEmptyData.md&amp;value=---%0Auid%3A%20Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.AcceptsEmptyData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L43">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L69">View Source</a>
   </span>
   <a id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_AcceptsEmptyData_" data-uid="Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.AcceptsEmptyData*"></a>
   <h4 id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_AcceptsEmptyData" data-uid="Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.AcceptsEmptyData">AcceptsEmptyData</h4>
@@ -183,7 +180,7 @@
     <pre><code class="lang-csharp hljs">public override bool AcceptsEmptyData { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -201,10 +198,43 @@
   <div><span class="xref">Terminaux.Inputs.Interactive.BaseInteractiveTui&lt;(double, double), (double, double)&gt;.AcceptsEmptyData</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_HelpPages.md&amp;value=---%0Auid%3A%20Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.HelpPages%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L40">View Source</a>
+  </span>
+  <a id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_HelpPages_" data-uid="Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.HelpPages*"></a>
+  <h4 id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_HelpPages" data-uid="Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.HelpPages">HelpPages</h4>
+  <div class="markdown level1 summary"><p>A list of help pages</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override InteractiveTuiHelpPage[] HelpPages { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">InteractiveTuiHelpPage</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Terminaux.Inputs.Interactive.BaseInteractiveTui&lt;(double, double), (double, double)&gt;.HelpPages</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_PrimaryDataSource.md&amp;value=---%0Auid%3A%20Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.PrimaryDataSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L39">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L65">View Source</a>
   </span>
   <a id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_PrimaryDataSource_" data-uid="Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.PrimaryDataSource*"></a>
   <h4 id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_PrimaryDataSource" data-uid="Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.PrimaryDataSource">PrimaryDataSource</h4>
@@ -216,7 +246,7 @@
     <pre><code class="lang-csharp hljs">public override IEnumerable&lt;(double, double)&gt; PrimaryDataSource { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -239,7 +269,7 @@
     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_GetEntryFromItem_System_ValueTuple_System_Double_System_Double__.md&amp;value=---%0Auid%3A%20Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.GetEntryFromItem(System.ValueTuple%7BSystem.Double%2CSystem.Double%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L117">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L143">View Source</a>
   </span>
   <a id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_GetEntryFromItem_" data-uid="Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.GetEntryFromItem*"></a>
   <h4 id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_GetEntryFromItem_System_ValueTuple_System_Double_System_Double__" data-uid="Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.GetEntryFromItem(System.ValueTuple{System.Double,System.Double})">GetEntryFromItem((double, double))</h4>
@@ -251,7 +281,7 @@
     <pre><code class="lang-csharp hljs">public override string GetEntryFromItem((double, double) item)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -269,7 +299,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -290,7 +320,7 @@
     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_GetInfoFromItem_System_ValueTuple_System_Double_System_Double__.md&amp;value=---%0Auid%3A%20Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.GetInfoFromItem(System.ValueTuple%7BSystem.Double%2CSystem.Double%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L47">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L73">View Source</a>
   </span>
   <a id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_GetInfoFromItem_" data-uid="Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.GetInfoFromItem*"></a>
   <h4 id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_GetInfoFromItem_System_ValueTuple_System_Double_System_Double__" data-uid="Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.GetInfoFromItem(System.ValueTuple{System.Double,System.Double})">GetInfoFromItem((double, double))</h4>
@@ -302,7 +332,7 @@
     <pre><code class="lang-csharp hljs">public override string GetInfoFromItem((double, double) item)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -320,7 +350,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -342,7 +372,7 @@
     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_GetStatusFromItem_System_ValueTuple_System_Double_System_Double__.md&amp;value=---%0Auid%3A%20Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.GetStatusFromItem(System.ValueTuple%7BSystem.Double%2CSystem.Double%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L109">View Source</a>
+    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L135">View Source</a>
   </span>
   <a id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_GetStatusFromItem_" data-uid="Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.GetStatusFromItem*"></a>
   <h4 id="Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli_GetStatusFromItem_System_ValueTuple_System_Double_System_Double__" data-uid="Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli.GetStatusFromItem(System.ValueTuple{System.Double,System.Double})">GetStatusFromItem((double, double))</h4>
@@ -354,7 +384,7 @@
     <pre><code class="lang-csharp hljs">public override string GetStatusFromItem((double, double) item)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -372,7 +402,7 @@
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Type</th>
@@ -407,7 +437,7 @@
                     <a href="https://github.com/Aptivi/Nitrocid/new/main/apiSpec/new?filename=Nitrocid_Extras_Forecast_Forecast_Interactive_WeatherCli.md&amp;value=---%0Auid%3A%20Nitrocid.Extras.Forecast.Forecast.Interactive.WeatherCli%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L34" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Nitrocid/blob/main/public/Nitrocid.Addons/Nitrocid.Extras.Forecast/Forecast/Interactive/WeatherCli.cs/#L35" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
@@ -419,19 +449,6 @@
           </div>
         </div>
       </div>
-
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      
-      <span>Generated by <strong>DocFX</strong></span>
-          </div>
-        </div>
-      </footer>
     </div>
 
     <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
