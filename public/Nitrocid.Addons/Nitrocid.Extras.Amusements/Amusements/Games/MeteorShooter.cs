@@ -19,20 +19,21 @@
 
 using System;
 using System.Collections.Generic;
-using System.Threading;
-using Terminaux.Colors;
 using System.Text;
-using Terminaux.Writer.ConsoleWriters;
+using System.Threading;
+using Nitrocid.Base.Drivers.RNG;
+using Nitrocid.Base.Kernel.Configuration;
+using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
-using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Configuration;
-using Terminaux.Inputs;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
+using Terminaux.Colors;
+using Terminaux.Colors.Data;
+using Terminaux.Inputs;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -47,6 +48,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         internal static bool GameExiting = false;
         internal static int meteorSpeed = 10;
         private static int SpaceshipHeight = 0;
+        private static Size windowDimensions = new(0, 0);
         private static int score = 0;
         private readonly static int MaxBullets = 10;
         private readonly static List<(int, int)> Bullets = [];
@@ -86,7 +88,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             score = 0;
 
             // Make the spaceship height in the center
-            SpaceshipHeight = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
+            windowDimensions = new(ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
+            SpaceshipHeight = (int)Math.Round(windowDimensions.Height / 2d);
 
             // Start the draw thread
             MeteorDrawThread.Stop();
@@ -101,6 +104,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Player mode
                 while (!GameEnded)
                 {
+                    windowDimensions = new(ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
                     InputEventInfo eventInfo = Input.ReadPointerOrKeyNoBlock();
                     if (eventInfo.EventType == InputEventType.Keyboard && eventInfo.ConsoleKeyInfo is ConsoleKeyInfo keypress)
                     {
@@ -145,7 +149,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         SpaceshipHeight -= 1;
                     break;
                 case ConsoleKey.DownArrow:
-                    if (SpaceshipHeight < ConsoleWrapper.WindowHeight - 1)
+                    if (SpaceshipHeight < windowDimensions.Height - 1)
                         SpaceshipHeight += 1;
                     break;
                 case ConsoleKey.Spacebar:
@@ -173,26 +177,29 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     var buffer = new StringBuilder();
 
                     // Clear only the relevant parts
-                    for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
+                    for (int y = 0; y < windowDimensions.Height; y++)
                     {
                         if (y != SpaceshipHeight)
                             buffer.Append(
                                 ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true) +
-                                TextWriterWhereColor.RenderWhere(" ", 0, y)
+                                ConsolePositioning.RenderChangePosition(0, y) +
+                                " "
                             );
                     }
 
                     // Show the score
                     buffer.Append(
                         new Color(ConsoleColors.Green).VTSequenceForeground() +
-                        TextWriterWhereColor.RenderWhere($"{score}", ConsoleWrapper.WindowWidth - $"{score}".Length, 0)
+                        ConsolePositioning.RenderChangePosition(windowDimensions.Width - $"{score}".Length, 0) +
+                        $"{score}"
                     );
 
                     // Move the meteors left
                     for (int Meteor = 0; Meteor <= Meteors.Count - 1; Meteor++)
                     {
                         buffer.Append(ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true));
-                        buffer.Append(TextWriterWhereColor.RenderWhere(" ", Meteors[Meteor].Item1, Meteors[Meteor].Item2));
+                        buffer.Append(ConsolePositioning.RenderChangePosition(Meteors[Meteor].Item1, Meteors[Meteor].Item2));
+                        buffer.Append(' ');
                         int MeteorX = Meteors[Meteor].Item1 - 1;
                         int MeteorY = Meteors[Meteor].Item2;
                         Meteors[Meteor] = (MeteorX, MeteorY);
@@ -202,7 +209,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int Bullet = 0; Bullet <= Bullets.Count - 1; Bullet++)
                     {
                         buffer.Append(ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true));
-                        buffer.Append(TextWriterWhereColor.RenderWhere(" ", Bullets[Bullet].Item1, Bullets[Bullet].Item2));
+                        buffer.Append(ConsolePositioning.RenderChangePosition(Bullets[Bullet].Item1, Bullets[Bullet].Item2));
+                        buffer.Append(' ');
                         int BulletX = Bullets[Bullet].Item1 + 1;
                         int BulletY = Bullets[Bullet].Item2;
                         Bullets[Bullet] = (BulletX, BulletY);
@@ -212,7 +220,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     for (int BulletIndex = Bullets.Count - 1; BulletIndex >= 0; BulletIndex -= 1)
                     {
                         var Bullet = Bullets[BulletIndex];
-                        if (Bullet.Item1 >= ConsoleWrapper.WindowWidth)
+                        if (Bullet.Item1 >= windowDimensions.Width)
                         {
                             // The bullet went beyond. Remove it.
                             Bullets.RemoveAt(BulletIndex);
@@ -235,8 +243,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     bool MeteorShowGuaranteed = RandomDriver.RandomDouble() < MeteorShowProbability;
                     if (MeteorShowGuaranteed & Meteors.Count < MaxMeteors)
                     {
-                        int MeteorX = ConsoleWrapper.WindowWidth - 1;
-                        int MeteorY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight - 1);
+                        int MeteorX = windowDimensions.Width - 1;
+                        int MeteorY = RandomDriver.RandomIdx(windowDimensions.Height - 1);
                         Meteors.Add((MeteorX, MeteorY));
 
                         // If on dodge mode, increase score for every draw
@@ -279,8 +287,10 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             {
                                 // The meteor crashed! Remove both the bullet and the meteor
                                 buffer.Append(ConsoleColoring.RenderSetConsoleColor(new Color(ConsoleColors.Black), true));
-                                buffer.Append(TextWriterWhereColor.RenderWhere(" ", Meteor.Item1, Meteor.Item2));
-                                buffer.Append(TextWriterWhereColor.RenderWhere(" ", Bullet.Item1, Bullet.Item2));
+                                buffer.Append(ConsolePositioning.RenderChangePosition(Meteor.Item1, Meteor.Item2));
+                                buffer.Append(' ');
+                                buffer.Append(ConsolePositioning.RenderChangePosition(Bullet.Item1, Bullet.Item2));
+                                buffer.Append(' ');
                                 Bullets.RemoveAt(BulletIndex);
                                 Meteors.RemoveAt(MeteorIndex);
                                 score++;
@@ -303,7 +313,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 // Game is over with an unexpected error.
                 try
                 {
-                    TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
+                    TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_UNEXPECTEDERROR") + ": {0}", 0, windowDimensions.Height - 1, false, ConsoleColors.Red, vars: ex.Message);
                     ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
                 }
                 catch
@@ -323,7 +333,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 {
                     try
                     {
-                        TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_GAMEOVER"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                        TextWriterWhereColor.WriteWhereColor(LanguageTools.GetLocalized("NKS_AMUSEMENTS_COMMON_GAMEOVER"), 0, windowDimensions.Height - 1, false, ConsoleColors.Red);
                         ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
                     }
                     catch
@@ -339,19 +349,31 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         {
             char PowerLineSpaceship = Convert.ToChar(0xE0B0);
             char SpaceshipSymbol = MeteorUsePowerLine ? PowerLineSpaceship : '>';
-            return TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(SpaceshipSymbol), 0, SpaceshipHeight, false, ConsoleColors.Green, ConsoleColors.Black);
+            return
+                ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Green) +
+                ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Black, true) +
+                ConsolePositioning.RenderChangePosition(0, SpaceshipHeight) +
+                Convert.ToString(SpaceshipSymbol);
         }
 
         private static string DrawMeteor(int MeteorX, int MeteorY)
         {
             char MeteorSymbol = '*';
-            return TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(MeteorSymbol), MeteorX, MeteorY, false, ConsoleColors.Red, ConsoleColors.Black);
+            return
+                ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Red) +
+                ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Black, true) +
+                ConsolePositioning.RenderChangePosition(MeteorX, MeteorY) +
+                Convert.ToString(MeteorSymbol);
         }
 
         private static string DrawBullet(int BulletX, int BulletY)
         {
             char BulletSymbol = '-';
-            return TextWriterWhereColor.RenderWhereColorBack(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Aqua, ConsoleColors.Black);
+            return
+                ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Aqua) +
+                ConsoleColoring.RenderSetConsoleColor(ConsoleColors.Black, true) +
+                ConsolePositioning.RenderChangePosition(BulletX, BulletY) +
+                Convert.ToString(BulletSymbol);
         }
 
     }
