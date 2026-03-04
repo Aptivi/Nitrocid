@@ -1,14 +1,10 @@
-This is a quick hotfix release to fix whatever bugs we have spotted during the final testing rounds.
+We've updated Nitrocid to fix security vulnerabilities related to ImageMagick.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed crashes when running winelevate
-- `[*]` Fixed input not being recognized in some TUI apps on Linux
-- `[*]` Fixed hardware listing errors on Linux
-- `[*]` Fixed various appearance issues
-- `[*]` General improvements
+- `[*]` Fixed ImageMagick security vulnerabilities
 
 Review the commit history if you want to get a deep insight about the changes.
 
