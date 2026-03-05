@@ -7,8 +7,8 @@ class VersionInfo():
         # Nitrocid version
         self.old_version = old_version
         self.new_version = new_version
-        self.old_version_split = '.'.split(self.old_version)
-        self.new_version_split = '.'.split(self.new_version)
+        self.old_version_split = self.old_version.split('.')
+        self.new_version_split = self.new_version.split('.')
         self.old_major = \
             f'{self.old_version_split[0]}.' \
             f'{self.old_version_split[1]}.' \
@@ -21,8 +21,8 @@ class VersionInfo():
         # Nitrocid mod API version
         self.old_api_version = api_versions[0]
         self.new_api_version = api_versions[1]
-        self.old_api_version_split = '.'.split(self.old_api_version)
-        self.new_api_version_split = '.'.split(self.new_api_version)
+        self.old_api_version_split = self.old_api_version.split('.')
+        self.new_api_version_split = self.new_api_version.split('.')
         self.old_api_version_tmpl = self.old_api_version.replace('.', ', ')
         self.new_api_version_tmpl = self.new_api_version.replace('.', ', ')
         self.old_api_package = self.old_api_version_split[2]
@@ -166,7 +166,8 @@ def vnd_increment(old_version, new_version, api_versions):
     
     # Add a Debian changelog entry
     debian_changes_file = f"{solution}/debian/changelog"
-    debian_changes_time = time.strftime("%a, %d %b %Y %H:%M:%S %z")
+    debian_changes_time = time.strftime("%a, %d %b %Y %H:%M:%S") + ' ' + \
+        time.now(datetime.timezone.utc).astimezone().strftime("%z")
     debian_changes_entry = f"""nitrocid-{version.new_api_package} ({version.new_api_version}-{version.new_version}-1) noble; urgency=medium
 
   * Please populate changelogs here
@@ -174,7 +175,7 @@ def vnd_increment(old_version, new_version, api_versions):
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  {debian_changes_time}
 """
     with open(debian_changes_file, 'r') as debian_changes_stream:
-        debian_changes_entry = debian_changes_entry + "\n\n" + \
+        debian_changes_entry = debian_changes_entry + "\n" + \
             debian_changes_stream.read()
     with open(debian_changes_file, 'w') as debian_changes_stream:
         debian_changes_stream.write(debian_changes_entry)
