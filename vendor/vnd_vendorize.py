@@ -3,7 +3,7 @@ import shutil
 import subprocess
 
 
-def vnd_pushbin(extra_args):
+def vnd_vendorize(extra_args):
     solution = os.path.dirname(os.path.abspath(__file__ + '/../'))
 
     # Restore NuGet packages
