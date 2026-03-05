@@ -23,9 +23,5 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '10.0.x'
-      - name: Solution Compilation (Windows)
-        if: matrix.runs-on == 'windows-latest'
-        run: ./tools/build.cmd Debug -p:ContinuousIntegrationBuild=true -p:NKSLITE=true
-      - name: Solution Compilation (Unix)
-        if: matrix.runs-on != 'windows-latest'
-        run: make dbg-ci BUILDARGS="-p:NKSLITE=true"
+      - name: Solution Compilation
+        run: python tools/adt.py build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true -p:NKSLITE=true"
