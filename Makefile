@@ -38,7 +38,7 @@ clean:
 	python tools/adt.py clean
 
 all-offline:
-	$(MAKE) invoke-build-offline BUILDARGS="-p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true $(BUILDARGS)"
+	$(MAKE) invoke-build-offline ENVIRONMENT=Release BUILDARGS="-p:NitrocidFlags=PACKAGEMANAGERBUILD -p:ContinuousIntegrationBuild=true $(BUILDARGS)"
 
 init-offline:
 	$(MAKE) invoke-init-offline
