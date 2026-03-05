@@ -34,8 +34,8 @@ def vnd_pushbin(extra_args):
     
 
 def get_files(directory):
-    files = [f for f in os.scandir(directory)]
-    for f in list(files):
+    files = []
+    for f in os.scandir(directory):
         if f.is_file():
             files.append(f)
         else:
