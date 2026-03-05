@@ -24,9 +24,6 @@ def vnd_packbin(extra_args):
     
     # Make a zip archive file path
     exec_dir = solution + '/public/Nitrocid/KSBuild/net10.0/'
-    addons_dir = solution + '/public/Nitrocid/KSBuild/net10.0/Addons/'
-    essentials_addons_dir = solution + '/public/Nitrocid/KSBuild/net10.0/' \
-        'Addons.Essentials/'
     analyzers_dir = solution + '/public/Nitrocid/KSAnalyzer/netstandard2.0/'
     mod_analyzer_dir = solution + '/public/Nitrocid/KSAnalyzer/net10.0/'
     artifacts_dir = solution + '/artifacts'
@@ -43,7 +40,6 @@ def vnd_packbin(extra_args):
     # Generate the files
     zip_path = shutil.make_archive(exec_zip_path, 'zip', exec_dir)
     print(f"Written to {zip_path}")
-    zip_path = shutil.make_archive(addons_zip_path, 'zip', addons_dir)
     zip_path = shutil.make_archive(analyzers_zip_path, 'zip', analyzers_dir)
     print(f"Written to {zip_path}")
     zip_path = shutil.make_archive(mod_analyzer_zip_path, 'zip', mod_analyzer_dir)
@@ -66,21 +62,26 @@ def vnd_packbin(extra_args):
                                            exec_zip.read(zip_info.filename))
     print(f"Written to {exec_lite_zip_path}")
 
-    # Add the essential addons to the zip file
-    with zipfile.ZipFile(addons_zip_path + '.zip', 'a') as addons_zip:
-        for walk_tuple in os.walk(essentials_addons_dir):
-            # Get the files
-            root = walk_tuple[0]
-            files = walk_tuple[2]
-            for file in files:
-                # Find the essential addons files and write them
-                file_path = os.path.join(root, file)
-                arcname = os.path.relpath(file_path, essentials_addons_dir)
-                addons_zip.write(file_path, arcname)
+    # Add the addons to the zip file
+    with zipfile.ZipFile(addons_zip_path + '.zip', 'w') as addons_zip:
+        addon_types = {"Addons", "Addons.Essentials"}
+        for addon_type in addon_types:
+            addons_dir = solution + '/public/Nitrocid/KSBuild/net10.0/' + \
+                addon_type
+            for walk_tuple in os.walk(addons_dir):
+                # Get the files
+                root = walk_tuple[0]
+                files = walk_tuple[2]
+                for file in files:
+                    # Find the essential addons files and write them
+                    file_path = os.path.join(root, file)
+                    arcname = addon_type + '/' + \
+                        os.path.relpath(file_path, addons_dir)
+                    addons_zip.write(file_path, arcname)
     print(f"Written to {addons_zip_path}.zip")
 
     # Copy the changes.chg file
     source_changes_chg = solution + '/changes.chg'
-    target_changes_chg = solution + f'/vendor/{version}-changes.chg'
+    target_changes_chg = solution + f'/artifacts/{version}-changes.chg'
     shutil.copy(source_changes_chg, target_changes_chg)
     print(f"Written to {target_changes_chg}")
