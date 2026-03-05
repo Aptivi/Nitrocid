@@ -18,6 +18,10 @@ def vnd_vendorize(extra_args):
     if result.returncode != 0:
         raise Exception("NuGet restore failed: %i" % (result.returncode))
 
+    # Make a dependencies directory
+    if not os.path.isdir(deps_dir):
+        os.mkdir(deps_dir)
+
     # Get NuGet package files from the packages directory
     copy_nupkgs(nuget_packages_dir, deps_dir)
     shutil.rmtree(nuget_packages_dir)
@@ -51,8 +55,8 @@ def copy_nupkgs(nuget_packages_dir, deps_dir):
 
 
 def get_files(directory):
-    files = [f for f in os.scandir(directory)]
-    for f in list(files):
+    files = []
+    for f in os.scandir(directory):
         if f.is_file():
             files.append(f)
         else:
