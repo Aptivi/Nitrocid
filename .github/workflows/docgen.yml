@@ -15,6 +15,9 @@ permissions:
 
 jobs:
   build:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     name: "Make API Reference"
     runs-on: ubuntu-latest
     steps:
