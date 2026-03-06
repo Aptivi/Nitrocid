@@ -7,7 +7,7 @@
                         "public/Nitrocid/Nitrocid.csproj",
                         "public/Nitrocid.Base/Nitrocid.Base.csproj",
                         "public/Nitrocid.Core/Nitrocid.Core.csproj",
-                        "public/Nitrocid.Addons/**/*.csproj"
+                        "public/Nitrocid.Addons/**/*.csproj",
                         "public/Nitrocid.Addons.Essentials/**/*.csproj"
                     ],
                     "src": ".."
