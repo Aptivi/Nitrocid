@@ -1,3 +1,9 @@
+nitrocid-28 (4.0.28.56-0.2.0.4-1ppa1) noble; urgency=medium
+
+  * Fixed build failure
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sun, 08 Mar 2026 14:30:47 +0300
+
 nitrocid-28 (4.0.28.56-0.2.0.4-1) noble; urgency=medium
 
   * Fixed MailKit security vulnerability
