@@ -2,7 +2,7 @@ Source: nitrocid-25
 Section: misc
 Priority: optional
 Maintainer: Aptivi CEO <ceo@aptivi.anonaddy.com>
-Build-Depends: debhelper-compat (= 12), dotnet-sdk-10.0 (>= 10.0.100), tzdata (>= 2021a), libjack0 (>= 1:0.125.0-3), libportaudio2 (>= 19.6.0), libopenal1 (>= 1:1.19.1), libsdl2-2.0-0 (>= 2.0.9), libpulse0 (>= 12.2), libaudio2 (>= 1.9.4)
+Build-Depends: debhelper-compat (= 12), dotnet-sdk-10.0 (>= 10.0.100), tzdata (>= 2021a), libjack0 (>= 1:0.125.0-3), libportaudio2 (>= 19.6.0), libopenal1 (>= 1:1.19.1), libsdl2-2.0-0 (>= 2.0.9), libpulse0 (>= 12.2), libaudio2 (>= 1.9.4), python3 (>= 3.10.0), python-is-python3 (>= 3.9.0)
 Standards-Version: 4.4.0
 Homepage: https://aptivi.gitbook.io/nitrocid-manual
 Vcs-Browser: https://github.com/Aptivi/Nitrocid
