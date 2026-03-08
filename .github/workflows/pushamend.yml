@@ -53,7 +53,7 @@ jobs:
         
       - name: Download original source
         run: |
-          wget --output-document=../nitrocid-28_4.0.28.56-0.2.0.4.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/nitrocid/+sourcefiles/nitrocid-28/4.0.28.56-0.2.0.4/nitrocid-28_4.0.28.56-0.2.0.4.orig.tar.xz
+          wget --output-document=../nitrocid-28_4.0.28.56-0.2.0.4.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/nitrocid/+sourcefiles/nitrocid-28/4.0.28.56-0.2.0.4-1/nitrocid-28_4.0.28.56-0.2.0.4.orig.tar.xz
           tar xf ../nitrocid-28_4.0.28.56-0.2.0.4.orig.tar.xz .
           mv .github ..
 
