@@ -1,6 +1,6 @@
 nitrocid-25 (3.0.25.585-0.1.0.71-1) noble; urgency=medium
 
-  * Please populate changelogs here
+  * Fixed MailKit security vulnerability
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sun, 08 Mar 2026 12:33:08 +0300
 
