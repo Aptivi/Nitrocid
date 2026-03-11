@@ -50,6 +50,7 @@ jobs:
           sudo NEEDRESTART_SUSPEND=1 apt update
           sudo NEEDRESTART_SUSPEND=1 apt install devscripts debhelper-compat dput build-essential equivs
           sudo NEEDRESTART_SUSPEND=1 mk-build-deps -i
+          rm *.deb
         
       - name: Download original source
         run: |
