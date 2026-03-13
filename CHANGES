@@ -1,10 +1,10 @@
-We've updated Nitrocid to fix security vulnerabilities related to MailKit.
+We've updated Nitrocid to fix security vulnerabilities related to ImageMagick.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed MailKit security vulnerabilities
+- `[*]` Fixed ImageMagick security vulnerabilities
 
 Review the commit history if you want to get a deep insight about the changes.
 
