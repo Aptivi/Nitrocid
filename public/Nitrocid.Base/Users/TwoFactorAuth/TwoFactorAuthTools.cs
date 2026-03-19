@@ -27,6 +27,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Text.Probers.Regexp;
 using OtpNet;
 using QRCoder;
+using Terminaux.Writer.CyclicWriters.Simple;
 using Textify.General;
 
 namespace Nitrocid.Base.Users.TwoFactorAuth
