@@ -1,8 +1,9 @@
-nitrocid-25 (3.0.25.585-0.1.0.73-1) noble; urgency=medium
+nitrocid-25 (3.0.25.586-0.1.0.73-1) noble; urgency=medium
 
-  * Please populate changelogs here
+  * Updated Terminaux
+  * Utilized Colorimetry
 
- -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Fri, 13 Mar 2026 14:55:58 +0300
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 19 Mar 2026 14:53:10 +0300
 
 nitrocid-25 (3.0.25.585-0.1.0.72-1) noble; urgency=medium
 

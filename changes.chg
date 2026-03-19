@@ -1,8 +1,19 @@
 Nitrocid KS changes
 ===================
 
-Released March 11th, 2024; version 0.1.0.73 (mod API 3.0.25.585); codename
+Released March 11th, 2024; version 0.1.0.73 (mod API 3.0.25.586); codename
 Magic Bloom
+
+=============================================================================
+
+0.2.0.73 - Colorimetry Update (March 19th, 2026)
+================================================
+
+Breaking changes have been introduced with Terminaux 8.2, which utilizes
+Colorimetry for color-related operations.
+
+In order to update your mods, you'll need to follow Nitrocid's documentation
+to get more info.
 
 =============================================================================
 

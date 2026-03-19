@@ -1,10 +1,11 @@
-We've updated Nitrocid to fix security vulnerabilities related to ImageMagick.
+We've updated Nitrocid to update Terminaux with breaking changes, with support for Colorimetry!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed ImageMagick security vulnerabilities
+- `[*]` Updated Terminaux
+- `[*]` Utilized Colorimetry
 
 Review the commit history if you want to get a deep insight about the changes.
 
