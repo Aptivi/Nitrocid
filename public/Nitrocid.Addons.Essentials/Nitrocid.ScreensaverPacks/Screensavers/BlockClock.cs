@@ -21,7 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Misc.Screensaver;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Time;
 using Textify.Data.Figlet;

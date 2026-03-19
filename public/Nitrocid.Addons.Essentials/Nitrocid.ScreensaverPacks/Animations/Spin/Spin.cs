@@ -18,10 +18,10 @@
 //
 
 using System.Text;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Nitrocid.Base.Misc.Screensaver;
 
 namespace Nitrocid.ScreensaverPacks.Animations.Spin

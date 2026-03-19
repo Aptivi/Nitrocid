@@ -19,10 +19,10 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Misc.Screensaver;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Time;
-using Terminaux.Colors.Transformation;
+using Colorimetry.Transformation;
 using Nitrocid.Base.Misc.Widgets.Implementations;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.Base.Drivers.RNG;

@@ -20,7 +20,7 @@
 using System;
 using System.Threading;
 using Terminaux.Base;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Themes.Colors;
 using BassBoom.Basolia;
 using BassBoom.Basolia.File;

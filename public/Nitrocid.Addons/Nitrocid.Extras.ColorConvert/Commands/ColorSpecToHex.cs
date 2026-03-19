@@ -20,7 +20,7 @@
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {

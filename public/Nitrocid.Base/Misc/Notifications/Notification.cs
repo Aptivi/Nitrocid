@@ -20,7 +20,7 @@
 using Newtonsoft.Json;
 using Terminaux.Themes.Colors;
 using System;
-using Terminaux.Colors;
+using Colorimetry;
 using Textify.General.Structures;
 
 namespace Nitrocid.Base.Misc.Notifications

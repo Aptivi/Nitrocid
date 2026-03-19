@@ -22,7 +22,7 @@ using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

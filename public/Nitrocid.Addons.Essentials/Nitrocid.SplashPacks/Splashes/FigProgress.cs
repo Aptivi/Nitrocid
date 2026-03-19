@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors;
+using Colorimetry;
 using Textify.Data.Figlet;
 using System;
 using System.Text;
@@ -35,7 +35,7 @@ using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 using Terminaux.Writer.CyclicWriters.Simple;
 using Terminaux.Writer.CyclicWriters.Graphical;
-using Terminaux.Colors.Transformation;
+using Colorimetry.Transformation;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

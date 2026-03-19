@@ -20,7 +20,7 @@
 using System;
 using System.Threading;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Base.Buffered;

@@ -20,7 +20,7 @@
 using System.Text;
 using Terminaux.Themes.Colors;
 using Terminaux.Shell.Prompts;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.ChatbotAI.Shell.Presets

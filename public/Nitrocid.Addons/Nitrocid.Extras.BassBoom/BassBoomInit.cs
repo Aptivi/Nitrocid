@@ -29,8 +29,8 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Misc.Screensaver;
 using System.Linq;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 using Nitrocid.Core.Languages;
 
 namespace Nitrocid.Extras.BassBoom

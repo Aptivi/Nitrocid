@@ -19,7 +19,7 @@
 
 using System;
 using Textify.Data.Figlet;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Drivers.RNG;

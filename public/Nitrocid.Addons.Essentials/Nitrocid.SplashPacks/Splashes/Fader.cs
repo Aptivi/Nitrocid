@@ -25,8 +25,9 @@ using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Misc.Splash;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

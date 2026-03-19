@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.ConsoleBase.Inputs;
 

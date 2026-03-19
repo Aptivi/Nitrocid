@@ -22,7 +22,7 @@ using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Extras.Amusements.Amusements.Quotes;
 using Nitrocid.Base.Misc.Screensaver;
 using System.Linq;
-using Terminaux.Colors;
+using Colorimetry;
 using Textify.General;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;

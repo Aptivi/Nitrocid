@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Base.Kernel.Configuration.Instances;
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.ScreensaverPacks.Settings
 {

@@ -18,7 +18,7 @@
 //
 
 using System;
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.Extras.Dates.Timers
 {

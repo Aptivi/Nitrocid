@@ -24,9 +24,10 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.Amusements.Amusements.Quotes;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Splash;
-using Terminaux.Colors;
+using Colorimetry;
 using Textify.General;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Amusements.Splashes
 {

@@ -24,7 +24,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Terminaux.Colors;
+using Colorimetry;
 using Textify.Data.Words;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;

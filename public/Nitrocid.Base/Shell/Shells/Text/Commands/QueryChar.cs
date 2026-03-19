@@ -27,7 +27,8 @@ using Nitrocid.Base.Files.Editors.TextEdit;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
-using Terminaux.Colors;
+using Colorimetry;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Base.Shell.Shells.Text.Commands
 {

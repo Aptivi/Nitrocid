@@ -23,7 +23,7 @@ using System.Linq;
 using Textify.Data.Figlet;
 using Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations;
 using Nitrocid.ScreensaverPacks.Animations.Glitch;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Misc.Screensaver;

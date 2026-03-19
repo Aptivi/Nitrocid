@@ -21,7 +21,7 @@ using System.IO;
 using System.Text;
 using Terminaux.Themes.Colors;
 using Terminaux.Shell.Prompts;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Base.Files.Editors.HexEdit;
 using Terminaux.Base.Extensions;
 

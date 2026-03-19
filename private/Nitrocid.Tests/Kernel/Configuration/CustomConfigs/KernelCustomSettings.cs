@@ -20,7 +20,7 @@
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Nitrocid.Base.Kernel.Configuration.Settings;
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.Tests.Kernel.Configuration.CustomConfigs
 {

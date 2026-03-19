@@ -27,7 +27,7 @@ using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;

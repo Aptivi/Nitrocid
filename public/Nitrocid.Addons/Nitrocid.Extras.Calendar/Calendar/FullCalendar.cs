@@ -23,7 +23,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using StdCalendar = System.Globalization.Calendar;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;

@@ -18,12 +18,12 @@
 //
 
 using System;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Drivers.RNG;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Base.Extensions;
 

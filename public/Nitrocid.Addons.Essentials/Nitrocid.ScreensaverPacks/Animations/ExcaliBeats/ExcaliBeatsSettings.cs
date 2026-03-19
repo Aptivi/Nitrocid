@@ -19,7 +19,7 @@
 
 using Nitrocid.Base.Kernel;
 using System.Runtime.Versioning;
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
 {

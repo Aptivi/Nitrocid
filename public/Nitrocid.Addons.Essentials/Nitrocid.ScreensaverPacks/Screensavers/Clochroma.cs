@@ -20,10 +20,10 @@
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Misc.Screensaver;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Time;
-using Terminaux.Colors.Transformation;
+using Colorimetry.Transformation;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

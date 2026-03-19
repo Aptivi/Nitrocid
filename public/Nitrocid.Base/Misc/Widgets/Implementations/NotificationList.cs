@@ -19,7 +19,7 @@
 
 using System.Text;
 using Nitrocid.Base.Misc.Notifications;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters.Graphical;
 

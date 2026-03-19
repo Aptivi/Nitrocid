@@ -22,8 +22,8 @@ using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Base.Extensions;
 

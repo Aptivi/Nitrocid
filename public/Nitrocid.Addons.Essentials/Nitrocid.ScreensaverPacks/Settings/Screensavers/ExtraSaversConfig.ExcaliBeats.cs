@@ -20,7 +20,7 @@
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using System.Runtime.Versioning;
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.ScreensaverPacks.Settings
 {

@@ -20,8 +20,8 @@
 using Terminaux.Themes.Colors;
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Kernel.Configuration.Instances;

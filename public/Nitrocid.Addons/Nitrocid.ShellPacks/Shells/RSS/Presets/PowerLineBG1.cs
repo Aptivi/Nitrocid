@@ -20,10 +20,11 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Themes.Colors;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Presets
 {

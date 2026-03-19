@@ -19,7 +19,7 @@
 
 using Terminaux.Shell.Prompts;
 using System.Collections.Generic;
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.Base.Kernel.Configuration.Settings
 {

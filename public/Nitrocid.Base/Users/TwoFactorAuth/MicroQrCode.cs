@@ -20,7 +20,7 @@
 using System.Text;
 using QRCoder;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.CyclicWriters;
 

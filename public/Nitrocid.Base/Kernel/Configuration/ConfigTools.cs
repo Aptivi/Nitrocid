@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Terminaux.Colors;
+using Colorimetry;
 using Newtonsoft.Json;
 using System.Linq;
 using Nitrocid.Base.Files;

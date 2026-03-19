@@ -21,7 +21,7 @@ using Nitrocid.Base.Misc.Notifications;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Collections.Generic;
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.Tests.Misc.Notifications
 {

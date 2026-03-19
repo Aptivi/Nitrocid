@@ -27,7 +27,7 @@ using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Misc.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

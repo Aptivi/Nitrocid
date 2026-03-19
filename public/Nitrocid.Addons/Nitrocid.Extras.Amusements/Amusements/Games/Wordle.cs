@@ -20,12 +20,12 @@
 using System.Collections.Generic;
 using System;
 using System.Threading;
-using Terminaux.Colors;
+using Colorimetry;
 using Textify.Data.Words;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Languages;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Graphical;
 

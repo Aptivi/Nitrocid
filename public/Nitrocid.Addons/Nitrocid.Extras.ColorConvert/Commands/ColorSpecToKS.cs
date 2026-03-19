@@ -23,7 +23,7 @@ using Nitrocid.Extras.ColorConvert.Tools;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
-using Terminaux.Colors.Models;
+using Colorimetry.Models;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {

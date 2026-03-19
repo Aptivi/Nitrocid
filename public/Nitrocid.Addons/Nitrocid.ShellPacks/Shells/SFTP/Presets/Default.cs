@@ -21,7 +21,7 @@ using System.Text;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Prompts;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ShellPacks.Shells.SFTP.Presets

@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Themes;
 using Nitrocid.Base.Misc.Screensaver;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

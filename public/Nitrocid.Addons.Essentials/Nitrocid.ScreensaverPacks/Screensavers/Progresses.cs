@@ -18,7 +18,7 @@
 //
 
 using System;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;

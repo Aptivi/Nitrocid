@@ -22,11 +22,12 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Misc.Screensaver;
 using System;
 using System.Text;
-using Terminaux.Colors;
-using Terminaux.Colors.Models.Conversion;
+using Colorimetry;
+using Colorimetry.Models.Conversion;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
 using Nitrocid.Base.Kernel.Configuration;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

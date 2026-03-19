@@ -20,13 +20,13 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Base;
-using Terminaux.Colors.Transformation.Contrast;
+using Colorimetry.Transformation.Contrast;
 using Terminaux.Base.Buffered;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;

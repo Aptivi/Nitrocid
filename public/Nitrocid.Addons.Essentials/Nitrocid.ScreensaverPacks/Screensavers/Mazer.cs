@@ -22,10 +22,10 @@ using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Screensaver;
-using Terminaux.Colors;
+using Colorimetry;
 using Textify.General;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

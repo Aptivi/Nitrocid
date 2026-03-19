@@ -20,7 +20,7 @@
 using System;
 using Nitrocid.Base.Languages;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Base.Buffered;

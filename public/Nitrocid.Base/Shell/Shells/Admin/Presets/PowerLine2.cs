@@ -19,11 +19,12 @@
 
 using System.Text;
 using System.Collections.Generic;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Shell.Prompts;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.Languages;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Base.Shell.Shells.Admin.Presets
 {
