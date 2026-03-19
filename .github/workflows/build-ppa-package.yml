@@ -27,6 +27,7 @@ jobs:
           sudo NEEDRESTART_SUSPEND=1 apt update
           sudo NEEDRESTART_SUSPEND=1 apt install devscripts debhelper-compat dput build-essential equivs
           sudo NEEDRESTART_SUSPEND=1 mk-build-deps -i
+          rm *build-deps*
           
       - name: Initialize offline package
         run: |
@@ -47,10 +48,11 @@ jobs:
           cp ../*.deb .
         
       - name: Upload package to artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Nitrocid-KS-Debian-Package
           path: "*.deb"
+          archive: false
 
       - name: Try to install and execute
         run: |

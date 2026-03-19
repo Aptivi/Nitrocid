@@ -27,12 +27,13 @@ jobs:
         run: python tools/adt.py build -b "-p:Configuration=Release -p:ContinuousIntegrationBuild=true"
       - name: Testing
         run: dotnet test --no-build --configuration Release
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: success() || failure()
         with:
           name: unit-test-log-${{ matrix.runs-on }}
           path: "private/Nitrocid.Tests/KSTest/net10.0/UnitTestDebug.log"
-      - uses: actions/upload-artifact@v4
+          archive: false
+      - uses: actions/upload-artifact@v7
         if: success() || failure()
         with:
           name: unit-test-log-ms-${{ matrix.runs-on }}
