@@ -7,9 +7,9 @@
   </Configurations>
   <Folder Name="/Assets/">
     <File Path="CHANGES" />
+    <File Path="changes.chg" />
     <File Path="CHANGES.TITLE" />
     <File Path="Directory.Build.props" />
-    <File Path="vnd/changes.chg" />
   </Folder>
   <Folder Name="/Private/" />
   <Folder Name="/Private/Benchmarks/">

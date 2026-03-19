@@ -4,6 +4,19 @@ Nitrocid changes
 Released February 12th, 2026; version 0.2.0.2 (mod API 4.0.28.57); codename
 Attractive, Bold, Powerful
 
+=============================================================================
+
+0.2.0.6 - Colorimetry Update (March 19th, 2026)
+===============================================
+
+Breaking changes have been introduced with Terminaux 8.2, which utilizes
+Colorimetry for color-related operations.
+
+In order to update your mods, you'll need to follow Nitrocid's documentation
+to get more info.
+
+=============================================================================
+
 Since the release of Nitrocid v0.1.0 back on February 2024, we have been
 constantly working on newer versions, including version 0.1.1 that introduced
 The Nitrocid Homepage, which provided a hub that included a list of apps to
