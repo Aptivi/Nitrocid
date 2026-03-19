@@ -50,11 +50,18 @@ jobs:
           debuild --no-lintian -us -uc
           cp ../*.deb .
         
-      - name: Upload package to artifacts
+      - name: Upload package to artifacts (full)
         uses: actions/upload-artifact@v7
         with:
           name: Nitrocid-KS-Debian-Package
-          path: "*.deb"
+          path: "nitrocid-28_*.deb"
+          archive: false
+        
+      - name: Upload package to artifacts (lite)
+        uses: actions/upload-artifact@v7
+        with:
+          name: Nitrocid-KS-Lite-Debian-Package
+          path: "nitrocid-28-lite_*.deb"
           archive: false
 
       - name: Try to install and execute
