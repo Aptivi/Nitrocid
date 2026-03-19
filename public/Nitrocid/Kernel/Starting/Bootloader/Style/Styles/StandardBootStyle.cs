@@ -28,7 +28,7 @@ using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Writer.ConsoleWriters;
 using TextifyDep::Textify.General;
 

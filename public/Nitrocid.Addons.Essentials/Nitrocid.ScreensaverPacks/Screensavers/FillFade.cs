@@ -25,7 +25,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base.Extensions;

@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Misc.Screensaver;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.ConsoleWriters;

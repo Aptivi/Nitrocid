@@ -23,7 +23,7 @@ using Nitrocid.Extras.Amusements.Amusements.Quotes;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 

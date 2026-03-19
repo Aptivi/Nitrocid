@@ -46,7 +46,7 @@ using Textify.General;
 using Terminaux.Base;
 using Nitrocid.Misc.Progress;
 using System.Runtime.Serialization;
-using Terminaux.Colors;
+using Colorimetry;
 using Textify.General.Comparers;
 using Nitrocid.Files;
 using Terminaux.Base.Checks;

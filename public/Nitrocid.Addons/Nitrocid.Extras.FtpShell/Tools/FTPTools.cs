@@ -30,7 +30,7 @@ using Textify.Tools.Placeholder;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.ConsoleBase.Inputs;
 using Nitrocid.Network.Connections;
 using Terminaux.Inputs;

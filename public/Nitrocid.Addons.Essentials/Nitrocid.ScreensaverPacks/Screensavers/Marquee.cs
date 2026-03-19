@@ -23,7 +23,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 using Textify.General;
 using Nitrocid.Kernel.Configuration;
 

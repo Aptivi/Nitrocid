@@ -19,7 +19,7 @@
 
 using System;
 using System.Text;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;

@@ -20,7 +20,7 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Kernel;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Users;

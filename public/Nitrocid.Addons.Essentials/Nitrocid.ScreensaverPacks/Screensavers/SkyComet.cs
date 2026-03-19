@@ -22,9 +22,9 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
 using System;
 using System.Collections.Generic;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

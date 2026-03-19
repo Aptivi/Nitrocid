@@ -21,7 +21,7 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using System;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.ConsoleWriters;

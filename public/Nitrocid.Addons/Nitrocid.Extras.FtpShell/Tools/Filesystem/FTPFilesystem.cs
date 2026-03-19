@@ -33,7 +33,8 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Reflection;
-using Terminaux.Colors;
+using Colorimetry;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.FtpShell.Tools.Filesystem
 {

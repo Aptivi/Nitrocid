@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BeatFader
 {

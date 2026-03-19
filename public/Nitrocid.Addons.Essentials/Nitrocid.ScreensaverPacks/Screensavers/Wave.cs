@@ -26,7 +26,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

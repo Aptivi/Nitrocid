@@ -19,7 +19,7 @@
 
 using System;
 using System.Threading;
-using Terminaux.Colors;
+using Colorimetry;
 using System.Text;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Splash;
@@ -28,7 +28,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Misc.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors.Transformation;
+using Colorimetry.Transformation;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Textify.General;
 using Terminaux.Writer.CyclicWriters.Simple;

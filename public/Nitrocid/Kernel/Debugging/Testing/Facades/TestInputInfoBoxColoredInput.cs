@@ -20,7 +20,7 @@
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Languages;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades

@@ -29,7 +29,7 @@ using Nitrocid.Misc.Text.Probers.Regexp;
 using Textify.General;
 using VisualCard.Parts.Implementations;
 using Terminaux.Images;
-using Terminaux.Colors;
+using Colorimetry;
 using System.IO;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Colors;

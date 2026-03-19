@@ -19,8 +19,8 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations

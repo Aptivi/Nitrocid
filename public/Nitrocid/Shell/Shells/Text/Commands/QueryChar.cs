@@ -28,7 +28,8 @@ using Terminaux.Shell.Commands;
 using System;
 using System.Linq;
 using Textify.General;
-using Terminaux.Colors;
+using Colorimetry;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Shell.Shells.Text.Commands
 {

@@ -18,7 +18,7 @@
 //
 
 using System.Threading;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Sequences;
 using System.Text;
 using Nitrocid.Kernel.Debugging;
@@ -26,8 +26,9 @@ using Nitrocid.Misc.Splash;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Colors.Data;
-using Terminaux.Colors.Transformation.Contrast;
+using Colorimetry.Data;
+using Colorimetry.Transformation.Contrast;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

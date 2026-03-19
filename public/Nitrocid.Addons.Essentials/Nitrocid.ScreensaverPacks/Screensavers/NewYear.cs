@@ -19,14 +19,14 @@
 
 using System;
 using Textify.Data.Figlet;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Languages;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors;
+using Colorimetry;
 using System;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers.RNG;

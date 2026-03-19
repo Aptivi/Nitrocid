@@ -25,7 +25,7 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.StandaloneAnalyzer.Analyzers
@@ -109,7 +109,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         TextWriterColor.WriteColor("Additionally, the suggested fix will add the following using statements:", true, ConsoleColors.Yellow);
                         TextWriterColor.WriteColor($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
                     }
-                    if (compilation?.Usings.Any(u => u.Name?.ToString() == "Terminaux.Colors") == false)
+                    if (compilation?.Usings.Any(u => u.Name?.ToString() == "Colorimetry") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
                             SyntaxFactory.IdentifierName("Terminaux"),

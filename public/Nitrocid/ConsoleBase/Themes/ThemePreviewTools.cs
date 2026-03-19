@@ -19,13 +19,14 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Languages;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Inputs.Styles.Selection;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Inputs.Styles;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ConsoleBase.Themes
 {

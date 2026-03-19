@@ -20,10 +20,10 @@
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Misc.Screensaver;
 using System.Text;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Extensions;
 

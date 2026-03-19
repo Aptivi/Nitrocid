@@ -24,7 +24,7 @@ using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Misc.Splash;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters.Graphical;
 

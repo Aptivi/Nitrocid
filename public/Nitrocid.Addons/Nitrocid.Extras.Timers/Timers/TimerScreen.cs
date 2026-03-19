@@ -29,7 +29,7 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
 using Terminaux.Base.Buffered;
 using System.Text;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Sequences.Builder.Types;

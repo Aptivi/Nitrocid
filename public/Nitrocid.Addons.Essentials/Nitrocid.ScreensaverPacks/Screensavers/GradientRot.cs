@@ -25,8 +25,8 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

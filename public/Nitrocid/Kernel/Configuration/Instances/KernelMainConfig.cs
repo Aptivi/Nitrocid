@@ -19,7 +19,7 @@
 
 using Newtonsoft.Json;
 using System;
-using Terminaux.Colors;
+using Colorimetry;
 using Textify.Data.Figlet;
 using Nitrocid.Kernel.Configuration.Settings;
 using Nitrocid.Shell.Shells.Text;

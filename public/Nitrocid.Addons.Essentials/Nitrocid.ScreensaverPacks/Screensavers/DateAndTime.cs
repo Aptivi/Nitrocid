@@ -21,7 +21,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Misc.Screensaver;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

@@ -21,7 +21,7 @@ using Microsoft.Build.Locator;
 using Microsoft.CodeAnalysis.MSBuild;
 using System;
 using System.IO;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 

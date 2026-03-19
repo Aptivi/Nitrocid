@@ -23,8 +23,8 @@ using Nitrocid.Misc.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 using Terminaux.Inputs.Styles;
 
 namespace Nitrocid.Kernel.Configuration.Settings.KeyInputs

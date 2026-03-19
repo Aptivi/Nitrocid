@@ -18,12 +18,12 @@
 //
 
 using System;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 
 namespace Nitrocid.Kernel.Debugging.Testing.Facades
 {

@@ -23,7 +23,7 @@ using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Themes.Colors;

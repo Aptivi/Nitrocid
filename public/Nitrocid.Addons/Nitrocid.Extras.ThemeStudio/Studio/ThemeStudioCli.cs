@@ -24,7 +24,7 @@ using Nitrocid.Files;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;

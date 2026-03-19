@@ -19,7 +19,7 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using System;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 

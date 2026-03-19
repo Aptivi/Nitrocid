@@ -20,7 +20,7 @@
 using System;
 using System.Text;
 using Textify.Data.Figlet;
-using Terminaux.Colors;
+using Colorimetry;
 using Textify.Data.Words;
 using Nitrocid.Drivers;
 using Nitrocid.Misc.Screensaver;
@@ -29,7 +29,7 @@ using Nitrocid.Languages;
 using Nitrocid.Drivers.Encryption;
 using Nitrocid.Drivers.RNG;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 

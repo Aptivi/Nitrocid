@@ -22,8 +22,9 @@ using Terminaux.Inputs.Presentation;
 using Terminaux.Inputs.Presentation.Elements;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.Amusements.Commands
 {

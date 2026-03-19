@@ -23,7 +23,7 @@ using Nitrocid.Kernel.Configuration.Instances;
 using Nitrocid.Misc.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 
 namespace Nitrocid.Tests.Misc.Reflection
 {

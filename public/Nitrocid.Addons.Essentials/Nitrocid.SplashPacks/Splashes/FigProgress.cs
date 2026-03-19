@@ -18,7 +18,7 @@
 //
 
 using System.Threading;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Sequences;
 using Textify.Data.Figlet;
 using System;
@@ -30,9 +30,9 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Languages;
 using Nitrocid.Kernel;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Colors.Transformation.Contrast;
+using Colorimetry.Transformation.Contrast;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer;

@@ -23,7 +23,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Screensaver;
 using Nitrocid.Kernel.Configuration;
 using Terminaux.Base;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ScreensaverPacks.Animations.FaderBack

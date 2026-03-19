@@ -23,7 +23,7 @@ using System.Threading;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Debugging;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Sequences.Builder.Types;
 
 namespace Nitrocid.Misc.Splash

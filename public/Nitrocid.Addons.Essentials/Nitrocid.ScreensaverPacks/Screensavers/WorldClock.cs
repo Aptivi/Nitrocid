@@ -19,7 +19,7 @@
 
 using System;
 using Textify.Data.Figlet;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Misc.Screensaver;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Time.Timezones;

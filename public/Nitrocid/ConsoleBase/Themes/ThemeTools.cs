@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Terminaux.Colors;
+using Colorimetry;
 using Newtonsoft.Json.Linq;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Debugging;

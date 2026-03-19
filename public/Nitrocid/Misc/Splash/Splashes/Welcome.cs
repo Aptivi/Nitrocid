@@ -18,7 +18,7 @@
 //
 
 using System.Threading;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Sequences;
 using Textify.Data.Figlet;
 using System;
@@ -29,16 +29,16 @@ using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.ConsoleBase.Colors;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Nitrocid.Kernel.Configuration;
-using Terminaux.Colors.Transformation.Contrast;
+using Colorimetry.Transformation.Contrast;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Textify.General;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters.Simple;
-using Terminaux.Colors.Transformation;
+using Colorimetry.Transformation;
 
 namespace Nitrocid.Misc.Splash.Splashes
 {

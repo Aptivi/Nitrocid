@@ -27,7 +27,8 @@ using Nitrocid.Misc.Reflection;
 using Terminaux.Shell.Commands;
 using System;
 using Textify.General;
-using Terminaux.Colors;
+using Colorimetry;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Shell.Shells.Text.Commands
 {

@@ -21,7 +21,7 @@ using System;
 using System.IO;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Locales.Serializer;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 
 namespace Nitrocid.Locales.Actions
 {

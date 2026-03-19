@@ -23,8 +23,8 @@ using Nitrocid.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Kernel.Extensions;
 using System;
-using Terminaux.Colors.Data;
-using Terminaux.Colors;
+using Colorimetry.Data;
+using Colorimetry;
 using Nitrocid.ConsoleBase.Colors;
 
 namespace Nitrocid.Shell.Shells.Debug.Commands

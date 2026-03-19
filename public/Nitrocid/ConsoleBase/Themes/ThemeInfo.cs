@@ -27,7 +27,7 @@ using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Kernel.Time;
 using Nitrocid.Kernel.Time.Calendars;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.Kernel.Exceptions;

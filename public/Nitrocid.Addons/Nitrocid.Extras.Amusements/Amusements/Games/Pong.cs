@@ -19,7 +19,7 @@
 
 using System;
 using System.Threading;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Kernel.Debugging;
 using Nitrocid.Drivers.RNG;
 using Nitrocid.Kernel.Configuration;
@@ -29,7 +29,7 @@ using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

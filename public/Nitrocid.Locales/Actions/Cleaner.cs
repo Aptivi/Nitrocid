@@ -28,7 +28,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Terminaux.Colors.Data;
+using Colorimetry.Data;
 using Terminaux.Writer.ConsoleWriters;
 using static Nitrocid.Locales.Serializer.VisualStudioInstanceSelector;
 

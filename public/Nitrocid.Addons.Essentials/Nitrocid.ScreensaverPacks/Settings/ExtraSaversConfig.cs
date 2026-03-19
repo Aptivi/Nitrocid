@@ -29,8 +29,8 @@ using Nitrocid.Misc.Reflection.Internal;
 using Nitrocid.ScreensaverPacks.Screensavers;
 using System;
 using System.Runtime.Versioning;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 using Textify.Data.Figlet;
 
 namespace Nitrocid.ScreensaverPacks.Settings

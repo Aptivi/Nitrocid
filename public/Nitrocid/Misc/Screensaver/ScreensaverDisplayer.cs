@@ -23,7 +23,7 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Kernel.Threading;
 using Nitrocid.Kernel.Events;
 using Terminaux.Base;
-using Terminaux.Colors;
+using Colorimetry;
 using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;

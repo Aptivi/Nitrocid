@@ -21,7 +21,7 @@ using System.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Extras.MailShell.Tools;
 using Terminaux.Shell.Prompts;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.MailShell.Mail.Presets

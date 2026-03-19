@@ -24,7 +24,7 @@ using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Kernel.Starting.Bootloader.Style.Styles

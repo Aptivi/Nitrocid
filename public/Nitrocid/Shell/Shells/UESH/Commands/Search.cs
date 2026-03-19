@@ -27,7 +27,8 @@ using Nitrocid.Kernel.Debugging;
 using Nitrocid.Languages;
 using Terminaux.Shell.Commands;
 using Nitrocid.Files;
-using Terminaux.Colors;
+using Colorimetry;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Shell.Shells.UESH.Commands
 {

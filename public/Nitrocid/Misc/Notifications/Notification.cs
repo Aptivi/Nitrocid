@@ -20,7 +20,7 @@
 using Newtonsoft.Json;
 using Nitrocid.ConsoleBase.Colors;
 using System;
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.Misc.Notifications
 {

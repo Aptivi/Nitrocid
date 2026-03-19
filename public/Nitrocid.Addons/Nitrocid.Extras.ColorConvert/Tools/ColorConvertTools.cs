@@ -18,9 +18,9 @@
 //
 
 using System;
-using Terminaux.Colors;
-using Terminaux.Colors.Models;
-using Terminaux.Colors.Models.Conversion;
+using Colorimetry;
+using Colorimetry.Models;
+using Colorimetry.Models.Conversion;
 
 namespace Nitrocid.Extras.ColorConvert.Tools
 {

@@ -22,8 +22,8 @@ using System.Collections.Generic;
 using Nitrocid.ConsoleBase.Themes;
 using Nitrocid.Kernel.Debugging;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
+using Colorimetry;
+using Colorimetry.Data;
 
 namespace Nitrocid.ConsoleBase.Colors
 {

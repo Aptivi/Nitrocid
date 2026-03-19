@@ -22,7 +22,7 @@ extern alias TextifyDep;
 using System;
 using System.Linq;
 using System.Text;
-using Terminaux.Colors;
+using Colorimetry;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Nitrocid.Kernel.Starting.Bootloader.Apps;

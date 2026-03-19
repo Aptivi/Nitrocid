@@ -67,7 +67,7 @@ using Nitrocid.Shell.Shells.Hex;
 using Nitrocid.Shell.Shells.Admin;
 using Nitrocid.Shell.Shells.Debug;
 using Nitrocid.Shell.Shells;
-using Terminaux.Colors;
+using Colorimetry;
 
 namespace Nitrocid.Kernel.Starting
 {
