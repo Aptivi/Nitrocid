@@ -135,6 +135,18 @@ def vnd_increment(old_version, new_version, api_versions):
         with open(workflow, 'w') as workflow_stream:
             workflow_stream.writelines(workflow_lines)
     
+    # Replace the versions in the Debian control file
+    controls = {
+        f"{solution}/debian/control",
+    }
+    for control in controls:
+        control_lines = []
+        with open(control) as control_stream:
+            control_lines = control_stream.readlines()
+        control_lines = process_misc_lines(control_lines, version)
+        with open(control, 'w') as control_stream:
+            control_stream.writelines(control_lines)
+    
     # Replace the versions in the WiX installer files
     installer_wxs = {
         f"{solution}/public/Nitrocid.Installers/Nitrocid.Installer/Package.wxs",
