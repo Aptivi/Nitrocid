@@ -54,12 +54,12 @@ jobs:
         
       - name: Download original source
         run: |
-          wget --output-document=../nitrocid-28_4.0.28.57-0.2.0.7.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/nitrocid/+sourcefiles/nitrocid-28/4.0.28.57-0.2.0.7-1/nitrocid-28_4.0.28.57-0.2.0.7.orig.tar.xz
-          tar xf ../nitrocid-28_4.0.28.57-0.2.0.7.orig.tar.xz .
+          wget --output-document=../nitrocid-29_4.1.29.0-0.2.1.0.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/nitrocid/+sourcefiles/nitrocid-29/4.1.29.0-0.2.1.0-1/nitrocid-29_4.1.29.0-0.2.1.0.orig.tar.xz
+          tar xf ../nitrocid-29_4.1.29.0-0.2.1.0.orig.tar.xz .
           mv .github ..
 
       - name: Build source package
         run: debuild -S
         
       - name: Push to Launchpad
-        run: dput apt-ppa ../nitrocid-28_*_source.changes
+        run: dput apt-ppa ../nitrocid-29_*_source.changes

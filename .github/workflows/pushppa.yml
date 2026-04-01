@@ -63,12 +63,12 @@ jobs:
         run: |
           mv debian ..
           mv .github ..
-          tar cfv ../nitrocid-28_4.0.28.57-0.2.0.7.orig.tar .
-          xz ../nitrocid-28_4.0.28.57-0.2.0.7.orig.tar
+          tar cfv ../nitrocid-29_4.1.29.0-0.2.1.0.orig.tar .
+          xz ../nitrocid-29_4.1.29.0-0.2.1.0.orig.tar
           mv ../debian .
 
       - name: Build source package
         run: debuild -S -sa
         
       - name: Push to Launchpad
-        run: dput apt-ppa ../nitrocid-28_*_source.changes
+        run: dput apt-ppa ../nitrocid-29_*_source.changes

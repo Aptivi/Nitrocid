@@ -41,8 +41,8 @@ jobs:
         run: |
           mv debian ..
           mv .github ..
-          tar cfv ../nitrocid-28_4.0.28.57-0.2.0.7.orig.tar .
-          xz ../nitrocid-28_4.0.28.57-0.2.0.7.orig.tar
+          tar cfv ../nitrocid-29_4.1.29.0-0.2.1.0.orig.tar .
+          xz ../nitrocid-29_4.1.29.0-0.2.1.0.orig.tar
           mv ../debian .
 
       - name: Build package
@@ -54,18 +54,18 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: Nitrocid-KS-Debian-Package
-          path: "nitrocid-28_*.deb"
+          path: "nitrocid-29_*.deb"
           archive: false
         
       - name: Upload package to artifacts (lite)
         uses: actions/upload-artifact@v7
         with:
           name: Nitrocid-KS-Lite-Debian-Package
-          path: "nitrocid-28-lite_*.deb"
+          path: "nitrocid-29-lite_*.deb"
           archive: false
 
       - name: Try to install and execute
         run: |
-          sudo apt install ./nitrocid-28_*.deb
-          ks-28 --version
-          ks-28 --apiversion
+          sudo apt install ./nitrocid-29_*.deb
+          ks-29 --version
+          ks-29 --apiversion

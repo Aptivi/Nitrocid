@@ -106,20 +106,19 @@ def vnd_increment(old_version, new_version, api_versions):
         changes_chg_stream.writelines(changes_chg_lines)
     
     # Replace the versions in the Arch Linux packaging files
-    arch_rel_file = f"{solution}/PKGBUILD-REL"
-    arch_rel_lite_file = f"{solution}/PKGBUILD-REL-LITE"
-    arch_rel_lines = []
-    arch_rel_lite_lines = []
-    with open(arch_rel_file) as arch_rel_stream:
-        arch_rel_lines = arch_rel_stream.readlines()
-    with open(arch_rel_lite_file) as arch_rel_lite_stream:
-        arch_rel_lite_lines = arch_rel_lite_stream.readlines()
-    arch_rel_lines = process_arch_lines(arch_rel_lines, version)
-    arch_rel_lite_lines = process_arch_lines(arch_rel_lite_lines, version)
-    with open(arch_rel_file, 'w') as arch_rel_stream:
-        arch_rel_stream.writelines(arch_rel_lines)
-    with open(arch_rel_lite_file, 'w') as arch_rel_lite_stream:
-        arch_rel_lite_stream.writelines(arch_rel_lite_lines)
+    arch_rels = {
+        f"{solution}/PKGBUILD-REL",
+        f"{solution}/PKGBUILD-REL-LITE",
+        f"{solution}/PKGBUILD-VCS",
+        f"{solution}/PKGBUILD-VCS-LITE",
+    }
+    for arch_rel in arch_rels:
+        arch_rel_lines = []
+        with open(arch_rel) as arch_rel_stream:
+            arch_rel_lines = arch_rel_stream.readlines()
+        arch_rel_lines = process_arch_lines(arch_rel_lines, version)
+        with open(arch_rel, 'w') as arch_rel_stream:
+            arch_rel_stream.writelines(arch_rel_lines)
     
     # Replace the versions in the GitHub Actions workflows
     workflows = {
@@ -242,10 +241,13 @@ def process_wxs_lines(lines, version: VersionInfo):
 def process_misc_lines(lines, version: VersionInfo):
     nitrocid_old_api_pkg = f'nitrocid-{version.old_api_package}'
     nitrocid_new_api_pkg = f'nitrocid-{version.new_api_package}'
+    nitrocid_old_api_exec = f'ks-{version.old_api_package}'
+    nitrocid_new_api_exec = f'ks-{version.new_api_package}'
     for num in range(0, len(lines)):
         is_oldver = version.old_version in lines[num]
         is_oldapiver = version.old_api_version in lines[num]
         is_package = nitrocid_old_api_pkg in lines[num]
+        is_exec = nitrocid_old_api_exec in lines[num]
         if is_oldver:
             lines[num] = \
                 lines[num].replace(version.old_version,
@@ -258,4 +260,8 @@ def process_misc_lines(lines, version: VersionInfo):
             lines[num] = \
                 lines[num].replace(nitrocid_old_api_pkg,
                                    nitrocid_new_api_pkg)
+        if is_exec:
+            lines[num] = \
+                lines[num].replace(nitrocid_old_api_exec,
+                                   nitrocid_new_api_exec)
     return lines
