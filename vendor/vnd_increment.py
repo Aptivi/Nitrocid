@@ -138,6 +138,7 @@ def vnd_increment(old_version, new_version, api_versions):
     # Replace the versions in the Debian control file
     controls = {
         f"{solution}/debian/control",
+        f"{solution}/debian/rules",
     }
     for control in controls:
         control_lines = []
