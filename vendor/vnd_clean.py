@@ -7,7 +7,7 @@ def vnd_clean(extra_args):
     solution = os.path.dirname(os.path.abspath(__file__ + '/../'))
     outputs = {"bin", "api", "artifacts", "obj", "tmp",
                "KSBuild", "KSAnalyzer", "KSTest",
-               "nitrocid-28", "nitrocid-28-lite", "docs"}
+               "nitrocid-29", "nitrocid-29-lite", "docs"}
     directories = get_dirs(solution)
     final_directories = [d.path for d in directories
                          if d.name in outputs]

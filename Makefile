@@ -1,4 +1,4 @@
-MODAPI = 28
+MODAPI = 29
 ROOT_DIR := $(shell dirname "$(realpath $(lastword $(MAKEFILE_LIST)))")
 
 OUTPUT = "$(ROOT_DIR)/public/Nitrocid/KSBuild/net10.0"
