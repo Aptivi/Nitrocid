@@ -21,13 +21,13 @@ jobs:
     name: "Make API Reference"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         name: Fetching the source
         with:
           submodules: 'true'
           ref: ${{ github.ref }}
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: '10.0.x'
       - name: Setup DocFX
@@ -37,8 +37,8 @@ jobs:
           make rel-ci
           make doc
       - name: Saving changes to gh-pages
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: 'docs'
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
