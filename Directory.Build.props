@@ -74,7 +74,7 @@
 
     <!-- KS SourceLink -->
     <ItemGroup>
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.201" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.202" PrivateAssets="all" />
     </ItemGroup>
     <Target Name="EnsureCommitShaInclusion" BeforeTargets="GenerateNuspec" Condition="'$(Configuration)' == 'Debug' And '$(SourceRevisionId)' != '' And '$(ContinuousIntegrationBuild)' == 'true'">
         <ReadLinesFromFile File="$(RootPath)/private/Nitrocid.BuildTargets/obj/.dtp">

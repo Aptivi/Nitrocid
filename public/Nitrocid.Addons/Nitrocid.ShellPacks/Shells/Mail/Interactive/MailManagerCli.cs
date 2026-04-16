@@ -37,6 +37,7 @@ using MimeKit.Cryptography;
 using Terminaux.Inputs.Styles;
 using MimeKit.Text;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Nitrocid.Base.Kernel.Exceptions;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
 {
@@ -133,7 +134,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                                         Msg = Dir.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress);
                                     }
                                     else
-                                        Msg = client.Inbox.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress);
+                                        // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED -> "Failed to obtain specified mail message"
+                                        Msg = client.Inbox?.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress) ??
+                                            throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED"));
                                     secondPaneListing.Add(Msg);
                                 }
                             }

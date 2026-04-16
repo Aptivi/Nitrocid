@@ -86,7 +86,9 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                         }
                         else
                         {
-                            Msg = client.Inbox.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress);
+                            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED -> "Failed to obtain specified mail message"
+                            Msg = client.Inbox?.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress) ??
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED"));
                         }
                         MsgFrom = Msg.From.ToString();
                         MsgSubject = Msg.Subject ?? "";
@@ -152,11 +154,14 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                 else
                 {
                     // Remove message
-                    client.Inbox.Open(FolderAccess.ReadWrite);
+                    // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED -> "Failed to obtain inbox"
+                    var inbox = client.Inbox ??
+                        throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
+                    inbox.Open(FolderAccess.ReadWrite);
                     DebugWriter.WriteDebug(DebugLevel.I, "Removing {0}...", vars: [MsgNumber]);
-                    client.Inbox.Store(messages.ElementAtOrDefault(Message), new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
+                    inbox.Store(messages.ElementAtOrDefault(Message), new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
                     DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
-                    client.Inbox.Expunge();
+                    inbox.Expunge();
                 }
             }
             return true;
@@ -189,7 +194,9 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                         }
                         else
                         {
-                            Msg = client.Inbox.GetMessage(MessageId, default, MailShellCommon.Progress);
+                            var inbox = client.Inbox ??
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
+                            Msg = inbox.GetMessage(MessageId, default, MailShellCommon.Progress);
                         }
                         SteppedMsgNumber += 1;
 
@@ -212,11 +219,13 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                                 else
                                 {
                                     // Remove message
-                                    client.Inbox.Open(FolderAccess.ReadWrite);
+                                    var inbox = client.Inbox ??
+                                        throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
+                                    inbox.Open(FolderAccess.ReadWrite);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Removing {0}...", vars: [Sender]);
-                                    client.Inbox.Store(MessageId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
+                                    inbox.Store(MessageId, new StoreFlagsRequest(StoreAction.Add, MessageFlags.Deleted));
                                     DebugWriter.WriteDebug(DebugLevel.I, "Removed.");
-                                    client.Inbox.Expunge();
+                                    inbox.Expunge();
                                     DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber]);
                                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX"), DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);
                                 }
@@ -275,8 +284,10 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                     // Move message
                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
                     DebugWriter.WriteDebug(DebugLevel.I, "Moving {0}...", vars: [MsgNumber]);
-                    client.Inbox.Open(FolderAccess.ReadWrite);
-                    client.Inbox.MoveTo(messages.ElementAtOrDefault(Message), TargetF);
+                    var inbox = client.Inbox ??
+                        throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
+                    inbox.Open(FolderAccess.ReadWrite);
+                    inbox.MoveTo(messages.ElementAtOrDefault(Message), TargetF);
                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
                 }
             }
@@ -311,7 +322,9 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                         }
                         else
                         {
-                            Msg = client.Inbox.GetMessage(MessageId, default, MailShellCommon.Progress);
+                            var inbox = client.Inbox ??
+                                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
+                            Msg = inbox.GetMessage(MessageId, default, MailShellCommon.Progress);
                         }
                         SteppedMsgNumber += 1;
 
@@ -335,8 +348,10 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                                     // Remove message
                                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Moving {0}...", vars: [Sender]);
-                                    client.Inbox.Open(FolderAccess.ReadWrite);
-                                    client.Inbox.MoveTo(MessageId, TargetF);
+                                    var inbox = client.Inbox ??
+                                        throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
+                                    inbox.Open(FolderAccess.ReadWrite);
+                                    inbox.MoveTo(MessageId, TargetF);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Moved.");
                                     DebugWriter.WriteDebug(DebugLevel.I, "Message {0} from {1} moved. {2} messages remaining to parse.", vars: [DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber]);
                                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_MVALL_DELETEDINBOX"), DeletedMsgNumber, Sender, messages.Count() - SteppedMsgNumber);

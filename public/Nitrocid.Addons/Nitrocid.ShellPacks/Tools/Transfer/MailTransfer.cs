@@ -30,14 +30,15 @@ using MailKit.Search;
 using MimeKit;
 using MimeKit.Cryptography;
 using MimeKit.Text;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Tools.PGP;
 using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
-using Nitrocid.ShellPacks.Tools.Directory;
 using Nitrocid.ShellPacks.Shells.Mail;
+using Nitrocid.ShellPacks.Tools.Directory;
+using Nitrocid.ShellPacks.Tools.PGP;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.ShellPacks.Tools.Transfer
 {
@@ -85,7 +86,9 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
                 }
                 else
                 {
-                    Msg = client.Inbox.GetMessage(finalMessages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
+                    var inbox = client.Inbox ??
+                        throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
+                    Msg = inbox.GetMessage(finalMessages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
                 }
 
                 // Prepare view
@@ -412,11 +415,13 @@ namespace Nitrocid.ShellPacks.Tools.Transfer
             {
                 lock (client.SyncRoot)
                 {
-                    if (string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) | MailShellCommon.IMAP_CurrentDirectory == "Inbox")
+                    if (string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) || MailShellCommon.IMAP_CurrentDirectory == "Inbox")
                     {
-                        client.Inbox.Open(FolderAccess.ReadWrite);
+                        var inbox = client.Inbox ??
+                            throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
+                        inbox.Open(FolderAccess.ReadWrite);
                         DebugWriter.WriteDebug(DebugLevel.I, "Opened inbox");
-                        MailShellCommon.IMAP_Messages = client.Inbox.Search(SearchQuery.All).Reverse();
+                        MailShellCommon.IMAP_Messages = inbox.Search(SearchQuery.All).Reverse();
                         DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [MailShellCommon.IMAP_Messages.LongCount()]);
                     }
                     else
