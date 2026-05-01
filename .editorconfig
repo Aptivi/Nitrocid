@@ -17,6 +17,14 @@ charset = utf-8
 [*.sh]
 end_of_line = lf
 
+[CHANGES]
+end_of_line = crlf
+insert_final_newline = false
+
+[CHANGES.TITLE]
+end_of_line = crlf
+insert_final_newline = false
+
 [*.resx]
 end_of_line = crlf
 insert_final_newline = true
