@@ -36,6 +36,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Inputs;
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {
@@ -139,7 +140,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             {
                 TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
                 TextWriterWhereColor.WriteWhere($"{i}...", ConsoleWrapper.WindowWidth / 2 - $"{i}...".Length / 2, infoHeight, ThemeColorType.NeutralText);
-                if (ThreadManager.SleepUntilInput(1000))
+                if (Input.ReadPointerOrKeyUntil(new(0, 0, 1)).provided)
                 {
                     bail = true;
                     break;
@@ -159,7 +160,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 
                 while (sw.Elapsed < ts.LineSpan)
                 {
-                    if (ThreadManager.SleepUntilInput(10))
+                    if (Input.ReadPointerOrKeyUntil(new(0, 0, 0, 0, 10)).provided)
                     {
                         bail = true;
                         break;

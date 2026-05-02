@@ -70,26 +70,6 @@ namespace Nitrocid.Base.Kernel.Threading
         }
 
         /// <summary>
-        /// Sleeps until a key is input.
-        /// </summary>
-        public static void SleepUntilInput() =>
-            Input.ReadPointerOrKey();
-
-        /// <summary>
-        /// Sleeps until either the time specified, or a key is input.
-        /// </summary>
-        /// <param name="Time">Time in milliseconds</param>
-        public static bool SleepUntilInput(long Time)
-        {
-            bool result = SpinWait.SpinUntil(() =>
-            {
-                var key = Input.ReadPointerOrKeyNoBlock();
-                return key.EventType == InputEventType.Mouse || key.EventType == InputEventType.Keyboard;
-            }, (int)Time);
-            return result;
-        }
-
-        /// <summary>
         /// Sleeps until either the time specified, or the current thread is no longer alive.
         /// </summary>
         /// <param name="Time">Time in milliseconds</param>
