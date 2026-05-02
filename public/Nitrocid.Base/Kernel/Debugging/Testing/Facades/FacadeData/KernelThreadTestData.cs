@@ -23,7 +23,7 @@ using System.Threading;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades.FacadeData
 {
-    internal static class KernelThreadTestData
+    internal static class ThreadInstanceTestData
     {
         /// <summary>
         /// Write hello to console

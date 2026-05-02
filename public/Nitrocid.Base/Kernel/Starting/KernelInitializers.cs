@@ -49,7 +49,7 @@ using Nitrocid.Base.Users;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
 using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Users.Login.Motd;
@@ -779,7 +779,8 @@ namespace Nitrocid.Base.Kernel.Starting
                 try
                 {
                     // Clear all active threads as we're rebooting
-                    ThreadManager.StopAllThreads();
+                    foreach (ThreadInstance kernelThread in ThreadManager.ThreadInstances)
+                        kernelThread.Stop();
                 }
                 catch (Exception exc)
                 {

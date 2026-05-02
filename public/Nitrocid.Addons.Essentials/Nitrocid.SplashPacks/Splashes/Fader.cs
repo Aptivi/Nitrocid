@@ -23,11 +23,11 @@ using System.Threading;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Misc.Splash;
 using Colorimetry;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Threadify.Manager;
 
 namespace Nitrocid.SplashPacks.Splashes
 {

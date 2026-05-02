@@ -27,12 +27,12 @@ using Terminaux.Shell.Commands;
 using Terminaux.Shell.Shells;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Network.SpeedDial;
 using Nitrocid.Base.Network.Connections;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
 using Nitrocid.Base.ConsoleBase.Inputs;
+using Threadify.Manager;
 
 namespace Nitrocid.ShellPacks.Shells.Mail
 {
@@ -60,10 +60,10 @@ namespace Nitrocid.ShellPacks.Shells.Mail
             MailShellCommon.Client = connection;
 
             // Send ping to keep the connection alive
-            var IMAP_NoOp = new KernelThread("IMAP Keep Connection", false, MailPingers.IMAPKeepConnection);
+            var IMAP_NoOp = new ThreadInstance("IMAP Keep Connection", false, MailPingers.IMAPKeepConnection);
             IMAP_NoOp.Start();
             DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about IMAPKeepConnection()");
-            var SMTP_NoOp = new KernelThread("SMTP Keep Connection", false, MailPingers.SMTPKeepConnection);
+            var SMTP_NoOp = new ThreadInstance("SMTP Keep Connection", false, MailPingers.SMTPKeepConnection);
             SMTP_NoOp.Start();
             DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about SMTPKeepConnection()");
 

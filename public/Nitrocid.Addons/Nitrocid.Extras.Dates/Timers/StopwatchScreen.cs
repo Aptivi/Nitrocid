@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-using System.Threading;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Languages;
 using Terminaux.Base;

@@ -30,7 +30,7 @@ using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel;
 using Terminaux.Base.Extensions;
@@ -45,7 +45,7 @@ namespace Nitrocid.Base.Misc.Splash
 
         internal static Screen splashScreen = new();
         internal static SplashContext currentContext = SplashContext.StartingUp;
-        internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splashParams) => SplashThreadHandler((SplashThreadParameters?)splashParams));
+        internal static ThreadInstance SplashThread = new("Kernel Splash Thread", false, (splashParams) => SplashThreadHandler((SplashThreadParameters?)splashParams));
         internal static SplashInfo fallbackSplash = new("Welcome", new SplashWelcome());
         internal static SplashInfo blankSplash = new("Blank", new SplashBlank(), false);
         internal readonly static List<SplashInfo> builtinSplashes =

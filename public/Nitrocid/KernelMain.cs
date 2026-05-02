@@ -24,8 +24,6 @@ using System.Threading;
 using Aptivestigate.CrashHandler;
 using Nitrocid.Core.Environment;
 using Nitrocid.Core.Languages;
-using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 

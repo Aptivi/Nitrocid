@@ -24,7 +24,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Runtime.Loader;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Instances;
 using Nitrocid.Base.Files.Paths;
@@ -34,7 +33,6 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Security.Signing;
-using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 
 namespace Nitrocid.Base.Kernel.Extensions
 {

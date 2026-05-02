@@ -24,7 +24,6 @@ using System.Threading;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
@@ -34,6 +33,7 @@ using Colorimetry;
 using Colorimetry.Data;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
     public static class MeteorShooter
     {
 
-        internal readonly static KernelThread MeteorDrawThread = new("Meteor Shooter Draw Thread", true, (dodge) => DrawGame((bool?)dodge ?? true));
+        internal readonly static ThreadInstance MeteorDrawThread = new("Meteor Shooter Draw Thread", true, (dodge) => DrawGame((bool?)dodge ?? true));
         internal static bool GameEnded = false;
         internal static bool GameExiting = false;
         internal static int meteorSpeed = 10;

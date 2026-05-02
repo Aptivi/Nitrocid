@@ -21,8 +21,8 @@ using System;
 using System.Net.Http;
 using Nettify.Rss.Instance;
 using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Network.Connections;
+using Threadify.Manager;
 
 namespace Nitrocid.ShellPacks.Shells.RSS
 {
@@ -36,7 +36,7 @@ namespace Nitrocid.ShellPacks.Shells.RSS
         internal static RSSFeed? feedInstance;
         internal static int fetchTimeout = 60000;
         internal static int refreshInterval = 60000;
-        internal static KernelThread RSSRefresher = new("RSS Feed Refresher", false, RSSShellTools.RefreshFeeds);
+        internal static ThreadInstance RSSRefresher = new("RSS Feed Refresher", false, RSSShellTools.RefreshFeeds);
         internal static HttpClient RSSRefresherClient = new() { Timeout = TimeSpan.FromMilliseconds(ShellsInit.ShellsConfig.RSSFetchTimeout) };
         internal static string rssFeedLink = "";
 

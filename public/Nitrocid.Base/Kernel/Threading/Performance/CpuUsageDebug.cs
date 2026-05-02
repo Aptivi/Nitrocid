@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Kernel.Threading.Performance
 {
@@ -34,7 +35,7 @@ namespace Nitrocid.Base.Kernel.Threading.Performance
         internal static int usageIntervalUpdatePeriod = 1000;
         private static DateTime previousDate = TimeDateTools.KernelDateTimeUtc;
         private static TimeSpan previousProcessorTime = Process.GetCurrentProcess().TotalProcessorTime;
-        private static readonly KernelThread usageUpdateThread = new("CPU Usage Update Thread", true, HandleCpuUsagePrint);
+        private static readonly ThreadInstance usageUpdateThread = new("CPU Usage Update Thread", true, HandleCpuUsagePrint);
 
         internal static void RunCpuUsageDebugger()
         {

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using System.IO;
 using System.Net.Sockets;
 
@@ -55,12 +55,12 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         /// </summary>
         public string ClientName =>
             DeviceInfo.Name;
-        internal KernelThread ClientThread { get; private set; }
+        internal ThreadInstance ClientThread { get; private set; }
 
         /// <summary>
         /// Makes a new instance of a remote debug device
         /// </summary>
-        internal RemoteDebugDevice(Socket ClientSocket, NetworkStream ClientStream, KernelThread ClientThread, RemoteDebugDeviceInfo deviceInfo)
+        internal RemoteDebugDevice(Socket ClientSocket, NetworkStream ClientStream, ThreadInstance ClientThread, RemoteDebugDeviceInfo deviceInfo)
         {
             this.ClientSocket = ClientSocket;
             this.ClientStream = ClientStream;

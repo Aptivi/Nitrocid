@@ -19,7 +19,7 @@
 
 using System.IO;
 using Nitrocid.Base.Files.Editors.HexEdit;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Shell.Shells.Hex
 {
@@ -32,6 +32,6 @@ namespace Nitrocid.Base.Shell.Shells.Hex
         internal static byte[]? FileBytesOrig;
         internal static FileStream? FileStream;
         internal static byte[]? FileBytes;
-        internal static KernelThread AutoSave = new("Hex Edit Autosave Thread", false, HexEditTools.HandleAutoSaveBinaryFile);
+        internal static ThreadInstance AutoSave = new("Hex Edit Autosave Thread", false, HexEditTools.HandleAutoSaveBinaryFile);
     }
 }

@@ -29,7 +29,7 @@ using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug.Command;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Events;
@@ -49,7 +49,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
         internal static List<RemoteDebugDevice> DebugDevices = [];
         internal static Socket? RDebugClient;
         internal static TcpListener? DebugTCP;
-        internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger) { isCritical = true };
+        internal static ThreadInstance RDebugThread = new("Remote Debug Thread", true, StartRDebugger);
         internal static int debugPort = 3014;
         internal readonly static SemVer? RDebugVersion = SemVer.ParseWithRev("0.9.1.0");
         private static readonly AutoResetEvent RDebugBailer = new(false);
@@ -150,7 +150,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug
                             continue;
 
                         // Get the remaining properties
-                        var RDebugThread = new KernelThread($"Remote Debug Listener Thread for {RDebugIP}", false, Listen);
+                        var RDebugThread = new ThreadInstance($"Remote Debug Listener Thread for {RDebugIP}", false, Listen);
                         RDebugInstance = new RemoteDebugDevice(RDebugClient, RDebugStream, RDebugThread, deviceInfo);
                         RDebugSWriter = RDebugInstance.ClientStreamWriter;
 

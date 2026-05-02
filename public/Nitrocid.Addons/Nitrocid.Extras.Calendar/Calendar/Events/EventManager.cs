@@ -30,10 +30,10 @@ using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Power;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Kernel.Time;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
+using Threadify.Manager;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Events
 {
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
     {
 
         internal static object EventManagerLock = new();
-        internal static KernelThread EventThread = new("Event Thread", false, EventListen);
+        internal static ThreadInstance EventThread = new("Event Thread", false, EventListen);
         internal static List<EventInfo> CalendarEvents = [];
         internal static readonly EventInfo[] baseEvents =
         [

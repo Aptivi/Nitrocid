@@ -28,7 +28,6 @@ using Terminaux.Shell.Commands;
 using System;
 using System.IO;
 using System.Threading;
-using Terminaux.Base;
 using Terminaux.Inputs;
 using BassBoom.Basolia;
 

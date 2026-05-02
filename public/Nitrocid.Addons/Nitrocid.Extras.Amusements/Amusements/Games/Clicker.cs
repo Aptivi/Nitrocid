@@ -28,8 +28,8 @@ using System.Text;
 using Nitrocid.Base.Drivers.RNG;
 using Terminaux.Writer.CyclicWriters.Graphical.Rulers;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Kernel.Debugging;
+using Threadify.Manager;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             int incrementSpeed = 1000;
             var clickerScreen = new Screen();
             var clickerScreenPart = new ScreenPart();
-            var incrementerThread = new KernelThread("Clicker incrementation thread", true, () =>
+            var incrementerThread = new ThreadInstance("Clicker incrementation thread", true, () =>
             {
                 try
                 {

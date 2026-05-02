@@ -22,10 +22,10 @@ using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.BeepSynth.Tools;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Languages;
 using Terminaux.Shell.Commands;
 using Terminaux.Base;
+using Threadify.Manager;
 
 namespace Nitrocid.Extras.BeepSynth.Commands
 {

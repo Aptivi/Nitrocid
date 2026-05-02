@@ -22,7 +22,7 @@ using System.Threading;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
 
@@ -37,7 +37,7 @@ namespace Nitrocid.Base.Network.Types.RPC
         internal static int rpcPort = 12345;
         internal static UdpClient? RPCListen;
         internal static UdpClient rpcStandaloneClient = new();
-        internal static KernelThread RPCThread = new("RPC Thread", true, RPCCommands.ReceiveCommand) { isCritical = true };
+        internal static ThreadInstance RPCThread = new("RPC Thread", true, RPCCommands.ReceiveCommand);
 
         /// <summary>
         /// Whether the RPC started

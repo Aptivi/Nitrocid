@@ -23,7 +23,6 @@ using System.Threading;
 using Colorimetry;
 using System.Text;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Drivers.RNG;
 using Terminaux.Base;
@@ -33,6 +32,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Base.Extensions;
+using Threadify.Manager;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -42,7 +42,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
     public static class Invaders
     {
 
-        internal readonly static KernelThread InvadersDrawThread = new("Invaders Shooter Draw Thread", true, (dodge) => DrawGame());
+        internal readonly static ThreadInstance InvadersDrawThread = new("Invaders Shooter Draw Thread", true, (dodge) => DrawGame());
         internal static bool GameEnded = false;
         internal static bool GameExiting = false;
         internal static int invadersSpeed = 10;

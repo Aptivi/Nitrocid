@@ -18,7 +18,6 @@
 //
 
 using System.Diagnostics;
-using System.Runtime.Loader;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Extensions;
 using Nitrocid.Base.Languages;

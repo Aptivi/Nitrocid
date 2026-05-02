@@ -19,7 +19,6 @@
 
 using System;
 using System.Threading;
-using System.Timers;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;

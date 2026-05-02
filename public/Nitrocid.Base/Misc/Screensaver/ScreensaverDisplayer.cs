@@ -28,12 +28,11 @@ using BassBoom.Basolia.Playback;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Misc.Audio;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Events;
 using Terminaux.Base.Extensions;
-using Terminaux.Inputs;
 
 namespace Nitrocid.Base.Misc.Screensaver
 {
@@ -43,8 +42,8 @@ namespace Nitrocid.Base.Misc.Screensaver
     internal static class ScreensaverDisplayer
     {
 
-        internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (objArray) => DisplayScreensaver((object[]?)objArray ?? []));
-        internal readonly static KernelThread ScreensaverAmbienceThread = new("Screensaver ambience thread", false, ScreensaverAmbience);
+        internal readonly static ThreadInstance ScreensaverDisplayerThread = new("Screensaver display thread", false, (objArray) => DisplayScreensaver((object[]?)objArray ?? []));
+        internal readonly static ThreadInstance ScreensaverAmbienceThread = new("Screensaver ambience thread", false, ScreensaverAmbience);
 
         internal static BaseScreensaver? displayingSaver;
 

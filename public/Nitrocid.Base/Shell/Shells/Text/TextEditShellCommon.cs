@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Nitrocid.Base.Files.Editors.TextEdit;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Shell.Shells.Text
 {
@@ -34,7 +34,7 @@ namespace Nitrocid.Base.Shell.Shells.Text
         internal static FileStream? fileStream;
         internal static int autoSaveInterval = 60;
         internal static List<string> FileLinesOrig = [];
-        internal static KernelThread AutoSave = new("Text Edit Autosave Thread", false, TextEditTools.HandleAutoSaveTextFile);
+        internal static ThreadInstance AutoSave = new("Text Edit Autosave Thread", false, TextEditTools.HandleAutoSaveTextFile);
 
         /// <summary>
         /// File lines for text editor

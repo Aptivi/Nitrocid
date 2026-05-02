@@ -19,7 +19,7 @@
 
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Power;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
 using System;
@@ -31,7 +31,7 @@ namespace Nitrocid.Base.Kernel.Time.Alarm
     internal static class AlarmListener
     {
         internal static bool hasRemovedAlarm = false;
-        private static readonly KernelThread alarmThread = new("Alarm Listener Thread", true, HandleAlarms);
+        private static readonly ThreadInstance alarmThread = new("Alarm Listener Thread", true, HandleAlarms);
 
         internal static void StartListener()
         {

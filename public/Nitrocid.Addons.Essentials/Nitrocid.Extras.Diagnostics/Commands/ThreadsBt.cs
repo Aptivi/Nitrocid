@@ -17,15 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.Base.Kernel;
-using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Threading;
-using Nitrocid.Base.Languages;
-using Terminaux.Shell.Commands;
 using System;
 using System.Collections.Generic;
+using Nitrocid.Base.Kernel;
+using Nitrocid.Base.Kernel.Exceptions;
+using Nitrocid.Base.Kernel.Threading.Watchdog;
+using Nitrocid.Base.Languages;
+using Terminaux.Shell.Commands;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.Diagnostics.Commands
 {
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             }
 
             // Print the list
-            Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();
+            Dictionary<string, string[]> result = ThreadBacktraces.GetThreadBacktraces();
             foreach (var trace in result)
             {
                 string threadAddress = trace.Key;
@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
             }
 
             // Print the list in a dumb-friendly way
-            Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();
+            Dictionary<string, string[]> result = ThreadBacktraces.GetThreadBacktraces();
             foreach (var trace in result)
             {
                 string threadAddress = trace.Key;

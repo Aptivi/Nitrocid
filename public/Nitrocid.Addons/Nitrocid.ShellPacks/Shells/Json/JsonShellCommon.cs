@@ -20,7 +20,7 @@
 using System.IO;
 using Newtonsoft.Json.Linq;
 using Nitrocid.ShellPacks.Tools;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 
 namespace Nitrocid.ShellPacks.Shells.Json
 {
@@ -32,7 +32,7 @@ namespace Nitrocid.ShellPacks.Shells.Json
 
         internal static JToken FileTokenOrig = JToken.Parse("{}");
         internal static FileStream? FileStream;
-        internal static KernelThread AutoSave = new("JSON Shell Autosave Thread", false, JsonTools.HandleAutoSaveJsonFile);
+        internal static ThreadInstance AutoSave = new("JSON Shell Autosave Thread", false, JsonTools.HandleAutoSaveJsonFile);
         internal static int autoSaveInterval = 60;
 
         /// <summary>

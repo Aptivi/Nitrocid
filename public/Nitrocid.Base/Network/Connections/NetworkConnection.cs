@@ -18,7 +18,7 @@
 //
 
 using Nitrocid.Base.Kernel.Exceptions;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Languages;
 using System;
 
@@ -62,10 +62,10 @@ namespace Nitrocid.Base.Network.Connections
                 LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_INVALIDINVOCATION")) :
             ConnectionThread?.IsAlive ?? false;
 
-        internal KernelThread? ConnectionThread { get; }
+        internal ThreadInstance? ConnectionThread { get; }
         internal object? ConnectionInstance { get; }
 
-        internal NetworkConnection(string connectionName, Uri connectionUri, string connectionType, KernelThread? connectionThread, object? connectionInstance, string connectionOriginalUrl)
+        internal NetworkConnection(string connectionName, Uri connectionUri, string connectionType, ThreadInstance? connectionThread, object? connectionInstance, string connectionOriginalUrl)
         {
             ConnectionName = connectionName;
             ConnectionUri = connectionUri;

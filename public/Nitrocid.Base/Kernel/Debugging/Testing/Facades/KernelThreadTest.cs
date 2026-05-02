@@ -18,19 +18,19 @@
 //
 
 using Nitrocid.Base.Kernel.Debugging.Testing.Facades.FacadeData;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Languages;
 using System.Threading;
 
 namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
 {
-    internal class KernelThreadTest : TestFacade
+    internal class ThreadInstanceTest : TestFacade
     {
         public override string TestName => LanguageTools.GetLocalized("NKS_KERNEL_DEBUGGING_TESTFACADES_KERNELTHREADTEST_DESC");
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
-            KernelThread thread = new("Test thread", true, KernelThreadTestData.WriteHello);
+            ThreadInstance thread = new("Test thread", true, ThreadInstanceTestData.WriteHello);
             thread.Start();
             Thread.Sleep(3000);
             thread.Stop();

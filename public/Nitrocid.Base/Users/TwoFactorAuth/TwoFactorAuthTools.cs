@@ -18,17 +18,13 @@
 //
 
 using System;
-using System.Text;
 using Nitrocid.Base.Drivers;
 using Nitrocid.Base.Drivers.Encoding;
 using Nitrocid.Base.Drivers.Encryption;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Misc.Text.Probers.Regexp;
 using OtpNet;
-using QRCoder;
 using Terminaux.Writer.CyclicWriters.Simple;
-using Textify.General;
 
 namespace Nitrocid.Base.Users.TwoFactorAuth
 {

@@ -40,7 +40,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Misc.Audio;
 using Nitrocid.Base.Misc.Screensaver;
 using Nitrocid.Base.Files.Paths;
@@ -65,7 +65,7 @@ namespace Nitrocid.Base.Misc.Notifications
         internal static char notifyLeftFrameChar = '│';
         internal static char notifyRightFrameChar = '│';
         internal static bool dnd;
-        internal static KernelThread NotifThread = new("Notification Thread", false, NotifListen) { isCritical = true };
+        internal static ThreadInstance NotifThread = new("Notification Thread", false, NotifListen);
         private static bool sent = false;
         private static bool dismissing;
         private static readonly List<Notification> notifRecents = [];

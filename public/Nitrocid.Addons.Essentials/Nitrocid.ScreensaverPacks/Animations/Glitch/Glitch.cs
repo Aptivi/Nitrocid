@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections;
-using System.Diagnostics.Metrics;
 using System.Text;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Misc.Screensaver;

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Network;
 using Nitrocid.Base.Network.Connections;
 using Nitrocid.Tests.Network.Connections;
@@ -25,6 +24,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Collections.Generic;
 using System.Threading;
+using Threadify.Manager;
 
 namespace Nitrocid.Tests.Network
 {
@@ -74,7 +74,7 @@ namespace Nitrocid.Tests.Network
         [TestMethod]
         [DynamicData(nameof(Connections), DynamicDataDisplayNameDeclaringType = typeof(NetworkActionTests))]
         [Description("Action")]
-        public void TestEstablishConnectionInstance(string name, string url, NetworkConnectionType type, KernelThread connectionClient)
+        public void TestEstablishConnectionInstance(string name, string url, NetworkConnectionType type, ThreadInstance connectionClient)
         {
             var connection = NetworkConnectionTools.EstablishConnection(name, url, type, connectionClient);
             connection.ShouldNotBeNull();

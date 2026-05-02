@@ -29,7 +29,7 @@ using Terminaux.Themes.Colors;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Renderers;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Events;
@@ -48,7 +48,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug.RemoteChat
         internal static List<RemoteDebugDevice> DebugChatDevices = [];
         internal static Socket? RDebugChatClient;
         internal static TcpListener? DebugChatTCP;
-        internal static KernelThread RDebugChatThread = new("Remote Debug Chat Thread", true, StartRDebugger) { isCritical = true };
+        internal static ThreadInstance RDebugChatThread = new("Remote Debug Chat Thread", true, StartRDebugger);
         internal static int debugChatPort = 3015;
         private static readonly AutoResetEvent RDebugChatBailer = new(false);
 
@@ -115,7 +115,7 @@ namespace Nitrocid.Base.Kernel.Debugging.RemoteDebug.RemoteChat
                             continue;
 
                         // Get the remaining properties
-                        var RDebugThread = new KernelThread($"Remote Debug Listener Thread for {RDebugIP}", false, Listen);
+                        var RDebugThread = new ThreadInstance($"Remote Debug Listener Thread for {RDebugIP}", false, Listen);
                         RDebugInstance = new RemoteDebugDevice(RDebugClient, RDebugStream, RDebugThread, deviceInfo);
                         RDebugSWriter = RDebugInstance.ClientStreamWriter;
 

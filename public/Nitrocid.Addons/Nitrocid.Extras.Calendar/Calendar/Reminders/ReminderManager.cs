@@ -29,10 +29,10 @@ using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Power;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
+using Threadify.Manager;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Reminders
 {
@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// </summary>
         public static NotificationPriority CurrentReminderImportance { get; set; } = NotificationPriority.Low;
         internal static List<ReminderInfo> Reminders = [];
-        internal static KernelThread ReminderThread = new("Reminder Thread", false, ReminderListen);
+        internal static ThreadInstance ReminderThread = new("Reminder Thread", false, ReminderListen);
         internal static object ReminderManagerLock = new();
 
         /// <summary>

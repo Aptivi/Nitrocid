@@ -24,7 +24,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Runtime.Loader;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel;
@@ -38,7 +37,6 @@ using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Extras.Mods.Modifications.ManPages;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.CyclicWriters.Graphical.Shapes;
 
 namespace Nitrocid.Extras.Mods.Modifications
 {

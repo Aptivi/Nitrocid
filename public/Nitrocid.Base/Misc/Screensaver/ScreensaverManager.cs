@@ -37,7 +37,7 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users;
 using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Kernel.Exceptions;
@@ -71,7 +71,7 @@ namespace Nitrocid.Base.Misc.Screensaver
         internal static bool noLock;
         internal static bool bailing;
         internal static AutoResetEvent SaverAutoReset = new(false);
-        internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout) { isCritical = true };
+        internal static ThreadInstance Timeout = new("Screensaver timeout thread", false, HandleTimeout);
 
         /// <summary>
         /// Whether the kernel is on the screensaver mode

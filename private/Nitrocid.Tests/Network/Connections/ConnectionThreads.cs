@@ -17,21 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Nitrocid.Base.Kernel.Threading;
 using System;
 using System.Threading;
+using Threadify.Manager;
 
 namespace Nitrocid.Tests.Network.Connections
 {
     internal static class ConnectionThreads
     {
-        internal static KernelThread ftpThread = new("FTP thread", true, HandleConnection);
-        internal static KernelThread httpThread = new("HTTP thread", true, HandleConnection);
-        internal static KernelThread mailThread = new("Mail thread", true, HandleConnection);
-        internal static KernelThread rssThread = new("RSS thread", true, HandleConnection);
-        internal static KernelThread sftpThread = new("SFTP thread", true, HandleConnection);
-        internal static KernelThread sshThread = new("SSH thread", true, HandleConnection);
-        internal static KernelThread restThread = new("REST thread", true, HandleConnection);
+        internal static ThreadInstance ftpThread = new("FTP thread", true, HandleConnection);
+        internal static ThreadInstance httpThread = new("HTTP thread", true, HandleConnection);
+        internal static ThreadInstance mailThread = new("Mail thread", true, HandleConnection);
+        internal static ThreadInstance rssThread = new("RSS thread", true, HandleConnection);
+        internal static ThreadInstance sftpThread = new("SFTP thread", true, HandleConnection);
+        internal static ThreadInstance sshThread = new("SSH thread", true, HandleConnection);
+        internal static ThreadInstance restThread = new("REST thread", true, HandleConnection);
 
         internal static void HandleConnection()
         {

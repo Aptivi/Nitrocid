@@ -37,11 +37,12 @@ using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel.Journaling;
 using Nitrocid.Base.Kernel.Power;
+using Nitrocid.Base.Kernel.Threading.Watchdog;
 
 namespace Nitrocid.Base.Kernel.Exceptions
 {
@@ -345,7 +346,7 @@ namespace Nitrocid.Base.Kernel.Exceptions
                 WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_KERNELTHREADS"));
                 try
                 {
-                    var threads = ThreadManager.KernelThreads;
+                    var threads = ThreadManager.ThreadInstances;
                     foreach (var thread in threads)
                     {
                         dumpBuilder.AppendLine($"[{thread.ThreadId}] {thread.Name}:");
@@ -386,7 +387,7 @@ namespace Nitrocid.Base.Kernel.Exceptions
                 WriteHeader(dumpBuilder, LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_BACKTRACES"));
                 try
                 {
-                    Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();
+                    Dictionary<string, string[]> result = ThreadBacktraces.GetThreadBacktraces();
                     if (result.Count == 0)
                     {
                         dumpBuilder.AppendLine(LanguageTools.GetLocalized("NKS_KERNEL_PANIC_DUMP_BACKTRACES_EMPTY"));

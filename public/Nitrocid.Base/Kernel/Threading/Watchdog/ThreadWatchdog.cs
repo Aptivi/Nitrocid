@@ -21,16 +21,28 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Power;
 using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Kernel.Threading.Watchdog
 {
     internal static class ThreadWatchdog
     {
-        private static readonly KernelThread watchdogThread = new("Kernel thread watchdog thread", true, Watch) { isCritical = true };
+        private static readonly ThreadInstance watchdogThread = new("Kernel thread watchdog thread", true, Watch);
+        private static readonly string[] criticalThreads =
+        [
+            "Kernel thread watchdog thread",
+            "Notification Thread",
+            "Remote Debug Chat Thread",
+            "Remote Debug Thread",
+            "Screensaver timeout thread",
+            "RPC Thread"
+        ];
         private static readonly string[] whitelistedThreads =
         [
             "Notification Thread",
@@ -46,8 +58,11 @@ namespace Nitrocid.Base.Kernel.Threading.Watchdog
                 watchdogThread.Start();
         }
 
-        internal static KernelThread[] GetCriticalThreads() =>
-            ThreadManager.KernelThreads.Where((thread) => thread.IsCritical).ToArray();
+        internal static bool IsCritical(this ThreadInstance thread) =>
+            criticalThreads.Contains(thread.Name);
+
+        internal static ThreadInstance[] GetCriticalThreads() =>
+            ThreadManager.ThreadInstances.Where((thread) => thread.IsCritical()).ToArray();
 
         internal static void EnsureAllCriticalThreadsStarted()
         {
@@ -56,7 +71,12 @@ namespace Nitrocid.Base.Kernel.Threading.Watchdog
             // Check to see if all the critical threads have started
             var unstartedCriticals = threads.Where((thread) => !thread.IsAlive && !whitelistedThreads.Contains(thread.Name)).ToArray();
             if (unstartedCriticals.Length > 0)
-                KernelPanic.KernelError(KernelErrorLevel.U, true, 5, LanguageTools.GetLocalized("NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART") + " [{1}]", null, unstartedCriticals.Length, string.Join(", ", unstartedCriticals.Select((thread) => $"{thread.Name} [{thread.BaseThread.ThreadState}]")));
+                KernelPanic.KernelError(KernelErrorLevel.U, true, 5, LanguageTools.GetLocalized("NKS_KERNEL_THREADING_WATCHDOG_CRITICALSNOSTART") + " [{1}]", null, unstartedCriticals.Length, string.Join(", ", unstartedCriticals.Select((thread) =>
+                {
+                    var baseThreadField = thread.GetType().GetField("baseThread", BindingFlags.NonPublic | BindingFlags.Instance);
+                    var baseThreadValue = (Thread?)baseThreadField?.GetValue(thread);
+                    return $"{thread.Name} [{(baseThreadValue is not null ? baseThreadValue.ThreadState : "???")}]";
+                })));
         }
 
         private static void Watch()
@@ -67,11 +87,17 @@ namespace Nitrocid.Base.Kernel.Threading.Watchdog
                 {
                     // Get the list of threads and supervise them
                     var threads = GetCriticalThreads();
-                    var deadThreads = new List<KernelThread>();
+                    var deadThreads = new List<ThreadInstance>();
                     foreach (var thread in threads)
                     {
+                        // Use reflection to get base thread
+                        var baseThreadField = thread.GetType().GetField("baseThread", BindingFlags.NonPublic | BindingFlags.Instance);
+                        var baseThreadValue = (Thread?)baseThreadField?.GetValue(thread);
+                        if (baseThreadValue is null)
+                            continue;
+
                         // Don't check threads that haven't started yet. Watchdog can run at early boot.
-                        if (thread.BaseThread.ThreadState.HasFlag(ThreadState.Unstarted))
+                        if (baseThreadValue.ThreadState.HasFlag(ThreadState.Unstarted))
                             continue;
 
                         // Now, check the thread states
@@ -84,7 +110,7 @@ namespace Nitrocid.Base.Kernel.Threading.Watchdog
                         KernelPanic.KernelError(KernelErrorLevel.U, true, 5, LanguageTools.GetLocalized("NKS_KERNEL_THREADING_WATCHDOG_DEADTHREADS") + " [{1}]", null, deadThreads.Count, string.Join(", ", deadThreads.Select((thread) => thread.Name)));
 
                     // Sleep to avoid CPU usage.
-                    Thread.Sleep(100);
+                    Thread.Sleep(1000);
                 }
             }
             catch (ThreadInterruptedException ex)

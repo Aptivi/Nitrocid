@@ -24,7 +24,8 @@ using Terminaux.Inputs.Interactive;
 using Textify.General;
 using System;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
+using Nitrocid.Base.Kernel.Threading.Watchdog;
 
 namespace Nitrocid.Base.Misc.Interactives
 {
@@ -62,7 +63,7 @@ namespace Nitrocid.Base.Misc.Interactives
         {
             get
             {
-                IEnumerable threads = osThreadMode ? ThreadManager.OperatingSystemThreads : ThreadManager.KernelThreads;
+                IEnumerable threads = osThreadMode ? ThreadManager.OperatingSystemThreads : ThreadManager.ThreadInstances;
                 List<(int, object)> result = [];
                 if (threads is ProcessThreadCollection osThreads)
                 {
@@ -74,24 +75,24 @@ namespace Nitrocid.Base.Misc.Interactives
                 else
                 {
                     int nestLevel = 0;
-                    if (threads is not List<KernelThread> managedThreads)
+                    if (threads is not List<ThreadInstance> managedThreads)
                         return [];
                     foreach (var thread in managedThreads)
                     {
-                        void HandleChildThreads(KernelThread thread)
+                        void HandleChildThreads(ThreadInstance thread, int childThreadCount)
                         {
                             nestLevel++;
-                            var childThreads = thread.ChildThreads;
-                            foreach (var childThread in childThreads)
+                            for (int i = 0; i < childThreadCount; i++)
                             {
+                                var childThread = thread.GetChild(i);
                                 result.Add((nestLevel, childThread));
-                                HandleChildThreads(childThread);
+                                HandleChildThreads(childThread, childThread.ChildThreadCount);
                             }
                             nestLevel--;
                         }
 
                         result.Add((nestLevel, thread));
-                        HandleChildThreads(thread);
+                        HandleChildThreads(thread, thread.ChildThreadCount);
                     }
                 }
                 return result;
@@ -127,11 +128,11 @@ namespace Nitrocid.Base.Misc.Interactives
             }
             else
             {
-                KernelThread selectedThread = (KernelThread)item.Item2;
+                ThreadInstance selectedThread = (ThreadInstance)item.Item2;
                 string finalRenderedTaskName = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELTASKNAME") + $": {selectedThread.Name}";
                 string finalRenderedTaskAlive = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELALIVE") + $": {selectedThread.IsAlive}";
                 string finalRenderedTaskBackground = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELBG") + $": {selectedThread.IsBackground}";
-                string finalRenderedTaskCritical = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELCRITICAL") + $": {selectedThread.IsCritical}";
+                string finalRenderedTaskCritical = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELCRITICAL") + $": {selectedThread.IsCritical()}";
                 string finalRenderedTaskReady = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELREADY") + $": {selectedThread.IsReady}";
                 return
                     finalRenderedTaskName + CharManager.NewLine +
@@ -157,7 +158,7 @@ namespace Nitrocid.Base.Misc.Interactives
             }
             else
             {
-                KernelThread thread = (KernelThread)item.Item2;
+                ThreadInstance thread = (ThreadInstance)item.Item2;
                 if (string.IsNullOrEmpty(taskStatus))
                     status = $"{thread.Name}";
                 else
@@ -177,7 +178,7 @@ namespace Nitrocid.Base.Misc.Interactives
             }
             else
             {
-                KernelThread thread = (KernelThread)item.Item2;
+                ThreadInstance thread = (ThreadInstance)item.Item2;
                 return $"{new string(' ', item.Item1 * 2)}{thread.Name}";
             }
         }
@@ -187,8 +188,8 @@ namespace Nitrocid.Base.Misc.Interactives
             if (!osThreadMode)
             {
                 (int, object) item = ((int, object))id;
-                KernelThread thread = (KernelThread)item.Item2;
-                if (!thread.IsCritical && thread.IsAlive)
+                ThreadInstance thread = (ThreadInstance)item.Item2;
+                if (!thread.IsCritical() && thread.IsAlive)
                     thread.Stop();
                 else if (!thread.IsAlive)
                     taskStatus = LanguageTools.GetLocalized("NKS_MISC_INTERACTIVES_TASKMANTUI_TASKALREADYKILLED");

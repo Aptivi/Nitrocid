@@ -23,7 +23,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Runtime.Loader;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Files.Paths;
 using Nitrocid.Base.Kernel;

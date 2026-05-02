@@ -28,7 +28,7 @@ using Terminaux.Base;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Security.Permissions;
 using Nitrocid.Base.Kernel.Events;
@@ -52,7 +52,7 @@ namespace Nitrocid.Base.Kernel.Power
         internal static bool rebootingToDebugMode;
         internal static bool rebootingToMaintenanceMode;
         internal static Stopwatch Uptime = new();
-        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (arg) => PowerManage((PowerMode?)arg ?? PowerMode.Shutdown));
+        internal static ThreadInstance RPCPowerListener = new("RPC Power Listener Thread", true, (arg) => PowerManage((PowerMode?)arg ?? PowerMode.Shutdown));
 
         internal static bool RebootingToSafeMode
         {

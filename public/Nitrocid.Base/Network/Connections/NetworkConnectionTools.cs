@@ -27,7 +27,7 @@ using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Styles;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Network.SpeedDial;
@@ -109,7 +109,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, string url, NetworkConnectionType connectionType, KernelThread connectionThread) =>
+        public static NetworkConnection EstablishConnection(string name, string url, NetworkConnectionType connectionType, ThreadInstance connectionThread) =>
             EstablishConnection(name, url, connectionType.ToString(), connectionThread);
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, Uri uri, NetworkConnectionType connectionType, KernelThread connectionThread) =>
+        public static NetworkConnection EstablishConnection(string name, Uri uri, NetworkConnectionType connectionType, ThreadInstance connectionThread) =>
             EstablishConnection(name, uri, connectionType.ToString(), connectionThread);
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, string url, string connectionType, KernelThread connectionThread)
+        public static NetworkConnection EstablishConnection(string name, string url, string connectionType, ThreadInstance connectionThread)
         {
             if (!networkTypes.Contains(connectionType))
                 throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));
@@ -155,7 +155,7 @@ namespace Nitrocid.Base.Network.Connections
         /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, Uri uri, string connectionType, KernelThread connectionThread)
+        public static NetworkConnection EstablishConnection(string name, Uri uri, string connectionType, ThreadInstance connectionThread)
         {
             if (!networkTypes.Contains(connectionType))
                 throw new KernelException(KernelExceptionType.NetworkConnection, LanguageTools.GetLocalized("NKS_NETWORK_CONNECTION_EXCEPTION_NOTYPE"));

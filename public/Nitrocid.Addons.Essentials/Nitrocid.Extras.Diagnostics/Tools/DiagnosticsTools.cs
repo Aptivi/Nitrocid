@@ -18,11 +18,11 @@
 //
 
 using Microsoft.Diagnostics.Runtime;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Threadify.Manager;
 
 namespace Nitrocid.Extras.Diagnostics.Tools
 {
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.Diagnostics.Tools
             var runtime = runtimeInfo.CreateRuntime();
             foreach (var t in runtime.Threads)
             {
-                var matchingThreads = ThreadManager.KernelThreads.Where((thread) => thread.ThreadId == t.ManagedThreadId).ToArray();
+                var matchingThreads = ThreadManager.ThreadInstances.Where((thread) => thread.ThreadId == t.ManagedThreadId).ToArray();
                 string threadName = matchingThreads.Length > 0 ? matchingThreads[0].Name : LanguageTools.GetLocalized("NKS_DIAG_NOTNKSTHREAD");
                 string[] trace = t.EnumerateStackTrace(true).Select(f =>
                 {

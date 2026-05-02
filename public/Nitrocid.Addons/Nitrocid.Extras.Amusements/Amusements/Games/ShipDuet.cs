@@ -19,13 +19,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Metrics;
 using System.Text;
 using System.Threading;
 using Nitrocid.Base.Drivers.RNG;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Threading;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Screensaver;
 using Terminaux.Base;
@@ -35,6 +33,7 @@ using Colorimetry;
 using Colorimetry.Data;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
+using Threadify.Manager;
 
 namespace Nitrocid.Extras.Amusements.Amusements.Games
 {
@@ -44,7 +43,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
     public static class ShipDuetShooter
     {
 
-        internal readonly static KernelThread ShipDuetDrawThread = new("ShipDuet Shooter Draw Thread", true, DrawGame);
+        internal readonly static ThreadInstance ShipDuetDrawThread = new("ShipDuet Shooter Draw Thread", true, DrawGame);
         internal static bool GameEnded = false;
         internal static bool GameExiting = false;
         internal static int shipDuetSpeed = 10;

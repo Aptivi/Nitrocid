@@ -20,11 +20,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading;
 using BassBoom.Basolia.Independent;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
-using Nitrocid.Base.Kernel.Threading;
+using Threadify.Manager;
 
 namespace Nitrocid.Base.Misc.Audio
 {
@@ -35,7 +34,7 @@ namespace Nitrocid.Base.Misc.Audio
     {
         private static readonly Dictionary<string, AudioCueContainer> cueThemes = PopulateCues();
         private static bool isThemeMusicPlaying = false;
-        private static readonly KernelThread themeMusicThread = new("Theme Music Thread", true, HandleThemeMusic);
+        private static readonly ThreadInstance themeMusicThread = new("Theme Music Thread", true, HandleThemeMusic);
 
         /// <summary>
         /// Gets the audio theme names
@@ -155,7 +154,7 @@ namespace Nitrocid.Base.Misc.Audio
         {
             if (!isThemeMusicPlaying)
             {
-                if (themeMusicThread.BaseThread.ThreadState == ThreadState.Stopped)
+                if (!themeMusicThread.IsAlive)
                     themeMusicThread.Regen();
                 themeMusicThread.Start();
             }

@@ -22,7 +22,6 @@ using Colorimetry.Data;
 using Terminaux.Themes.Colors;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Nitrocid.Base.Languages;
-using Nitrocid.Base.Kernel.Threading;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Base.Misc.Screensaver
