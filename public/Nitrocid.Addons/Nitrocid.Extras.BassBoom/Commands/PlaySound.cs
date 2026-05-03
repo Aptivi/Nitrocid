@@ -17,9 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using BassBoom.Basolia.File;
-using BassBoom.Basolia.Format;
-using BassBoom.Basolia.Playback;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Files;
@@ -29,7 +26,8 @@ using System;
 using System.IO;
 using System.Threading;
 using Terminaux.Inputs;
-using BassBoom.Basolia;
+using BassBoom.Basolia.Media;
+using BassBoom.Basolia.Media.Playback;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
@@ -54,7 +52,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
             }
             try
             {
-                FileTools.OpenFile(media, path);
+                media.OpenFile(path);
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_OPENEDSOUNDFILE"), ThemeColorType.Success);
             }
             catch (Exception ex)
@@ -62,17 +60,17 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_CANTOPENSOUNDFILE") + $" {ex.Message}", ThemeColorType.Error);
                 return ex.HResult;
             }
-            if (FileTools.IsOpened(media))
+            if (media.IsOpened())
             {
                 try
                 {
                     // They must be done before playing
-                    int total = AudioInfoTools.GetDuration(media, true);
-                    AudioInfoTools.GetId3Metadata(media, out var managedV1, out var managedV2);
+                    int total = media.GetDuration(true);
+                    media.GetId3Metadata(out var managedV1, out var managedV2);
 
                     // Play now!
-                    PlaybackTools.PlayAsync(media);
-                    if (!SpinWait.SpinUntil(() => PlaybackTools.GetState(media) == PlaybackState.Playing, 15000))
+                    media.PlayAsync();
+                    if (!SpinWait.SpinUntil(() => media.GetState() == PlaybackState.Playing, 15000))
                     {
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_TIMEOUT"), ThemeColorType.Error);
                         return 30;
@@ -91,7 +89,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                         !string.IsNullOrEmpty(managedV2.Genre) ? managedV2.Genre :
                         managedV1.GenreIndex >= 0 ? $"{managedV1.Genre} [{managedV1.GenreIndex}]" :
                         LanguageTools.GetLocalized("NKS_BASSBOOM_UNKNOWNGENRE");
-                    var totalSpan = AudioInfoTools.GetDurationSpanFromSamples(media, total);
+                    var totalSpan = media.GetDurationSpanFromSamples(total);
                     string duration = totalSpan.ToString();
 
                     // Write the entries
@@ -102,13 +100,13 @@ namespace Nitrocid.Extras.BassBoom.Commands
 
                     // Wait until the song stops or the user bails
                     TextWriterColor.Write(LanguageTools.GetLocalized("NKS_BASSBOOM_STOPPLAYING"), ThemeColorType.Tip);
-                    while (PlaybackTools.GetState(media) == PlaybackState.Playing)
+                    while (media.GetState() == PlaybackState.Playing)
                     {
                         InputEventInfo eventInfo = Input.ReadPointerOrKeyNoBlock();
                         if (eventInfo.EventType == InputEventType.Keyboard)
                         {
                             if (eventInfo.ConsoleKeyInfo is ConsoleKeyInfo cki && cki.Key == ConsoleKey.Q)
-                                PlaybackTools.Stop(media);
+                                media.Stop();
                         }
                     }
                 }
@@ -119,7 +117,7 @@ namespace Nitrocid.Extras.BassBoom.Commands
                 }
                 finally
                 {
-                    FileTools.CloseFile(media);
+                    media.CloseFile();
                 }
             }
             return 0;

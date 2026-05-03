@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using BassBoom.Basolia.Independent;
+using BassBoom.Basolia.Media.Independent;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Threadify.Manager;

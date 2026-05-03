@@ -20,7 +20,7 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
-using BassBoom.Basolia.Lyrics;
+using BassBoom.Basolia.Media.Lyrics;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Exceptions;

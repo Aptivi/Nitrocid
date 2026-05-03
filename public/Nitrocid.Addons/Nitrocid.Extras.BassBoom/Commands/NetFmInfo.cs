@@ -21,7 +21,7 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Base.Languages;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Themes.Colors;
-using BassBoom.Basolia.Radio;
+using BassBoom.Basolia.Media.Radio;
 
 namespace Nitrocid.Extras.BassBoom.Commands
 {
