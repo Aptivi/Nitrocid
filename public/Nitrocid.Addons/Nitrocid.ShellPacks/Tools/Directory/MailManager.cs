@@ -336,6 +336,7 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                                 {
                                     var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
                                     var TargetF = MailDirectory.OpenFolder(TargetFolder);
+
                                     // Remove message
                                     DebugWriter.WriteDebug(DebugLevel.I, "Opened {0}. Moving {1}...", vars: [MailShellCommon.IMAP_CurrentDirectory, Sender]);
                                     Dir.MoveTo(MessageId, TargetF);
