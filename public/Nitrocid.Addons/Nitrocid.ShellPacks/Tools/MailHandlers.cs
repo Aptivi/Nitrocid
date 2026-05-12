@@ -21,14 +21,15 @@ using System;
 using System.Linq;
 using MailKit;
 using MailKit.Net.Imap;
-using Terminaux.Themes.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
-using Textify.General;
-using SpecProbe.Software.Platform;
 using Nitrocid.ShellPacks.Shells.Mail;
+using SpecProbe.Software.Platform;
+using Terminaux.Themes.Colors;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.ShellPacks.Tools
 {
@@ -41,12 +42,24 @@ namespace Nitrocid.ShellPacks.Tools
         /// <summary>
         /// Initializes the CountChanged handlers. Currently, it only supports inbox.
         /// </summary>
-        public static void InitializeHandlers() => ((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).Inbox.CountChanged += OnCountChanged;
+        public static void InitializeHandlers()
+        {
+            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
+            var inbox = client.Inbox ??
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
+            inbox.CountChanged += OnCountChanged;
+        }
 
         /// <summary>
         /// Releases the CountChanged handlers. Currently, it only supports inbox.
         /// </summary>
-        public static void ReleaseHandlers() => ((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).Inbox.CountChanged -= OnCountChanged;
+        public static void ReleaseHandlers()
+        {
+            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
+            var inbox = client.Inbox ??
+                throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
+            inbox.CountChanged -= OnCountChanged;
+        }
 
         /// <summary>
         /// Handles WebAlert sent by Gmail

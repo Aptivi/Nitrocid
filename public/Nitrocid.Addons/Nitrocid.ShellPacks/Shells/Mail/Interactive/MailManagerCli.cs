@@ -20,23 +20,24 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
+using MailKit;
+using MailKit.Net.Imap;
+using MimeKit;
+using MimeKit.Cryptography;
+using MimeKit.Text;
 using Nitrocid.Base.Kernel.Debugging;
+using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time.Renderers;
 using Nitrocid.Base.Languages;
-using Terminaux.Inputs.Interactive;
-using Terminaux.Inputs.Styles.Infobox;
-using Textify.General;
-using MailKit;
-using MimeKit;
 using Nitrocid.ShellPacks.Tools.Directory;
 using Nitrocid.ShellPacks.Tools.Transfer;
-using System.Linq;
-using MailKit.Net.Imap;
-using MimeKit.Cryptography;
+using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles;
-using MimeKit.Text;
+using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Textify.General;
 
 namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
 {
@@ -133,7 +134,9 @@ namespace Nitrocid.ShellPacks.Shells.Mail.Interactive
                                         Msg = Dir.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress);
                                     }
                                     else
-                                        Msg = client.Inbox.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress);
+                                        // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED -> "Failed to obtain specified mail message"
+                                        Msg = client.Inbox?.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress) ??
+                                            throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED"));
                                     secondPaneListing.Add(Msg);
                                 }
                             }
