@@ -32,13 +32,14 @@ using MimeKit.Cryptography;
 using MimeKit.Text;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Extras.MailShell.Tools.Directory;
 using Nitrocid.Extras.MailShell.Tools.PGP;
 using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Kernel.Time.Renderers;
 using Nitrocid.Languages;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.MailShell.Tools.Transfer
 {
@@ -86,7 +87,9 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
                 }
                 else
                 {
-                    Msg = client.Inbox.GetMessage(finalMessages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
+                    var inbox = client.Inbox ??
+                        throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+                    Msg = inbox.GetMessage(finalMessages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
                 }
 
                 // Prepare view
@@ -415,11 +418,13 @@ namespace Nitrocid.Extras.MailShell.Tools.Transfer
             {
                 lock (client.SyncRoot)
                 {
-                    if (string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) | MailShellCommon.IMAP_CurrentDirectory == "Inbox")
+                    if (string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) || MailShellCommon.IMAP_CurrentDirectory == "Inbox")
                     {
-                        client.Inbox.Open(FolderAccess.ReadWrite);
+                        var inbox = client.Inbox ??
+                            throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+                        inbox.Open(FolderAccess.ReadWrite);
                         DebugWriter.WriteDebug(DebugLevel.I, "Opened inbox");
-                        MailShellCommon.IMAP_Messages = client.Inbox.Search(SearchQuery.All).Reverse();
+                        MailShellCommon.IMAP_Messages = inbox.Search(SearchQuery.All).Reverse();
                         DebugWriter.WriteDebug(DebugLevel.I, "Messages count: {0} messages", vars: [MailShellCommon.IMAP_Messages.LongCount()]);
                     }
                     else

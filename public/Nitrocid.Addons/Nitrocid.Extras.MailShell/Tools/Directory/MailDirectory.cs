@@ -98,7 +98,7 @@ namespace Nitrocid.Extras.MailShell.Tools.Directory
                 lock (((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).SyncRoot)
                 {
                     MailFolder = OpenFolder(Directory);
-                    MailFolder.Rename(MailFolder.ParentFolder, NewName);
+                    MailFolder.Rename(MailFolder.ParentFolder ?? MailFolder, NewName);
                 }
             }
             catch (Exception ex)

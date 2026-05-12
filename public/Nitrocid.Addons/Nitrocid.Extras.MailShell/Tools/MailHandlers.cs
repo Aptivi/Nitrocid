@@ -23,13 +23,14 @@ using MailKit;
 using MailKit.Net.Imap;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
-using Terminaux.Writer.ConsoleWriters;
 using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Kernel.Debugging;
+using Nitrocid.Kernel.Exceptions;
 using Nitrocid.Languages;
 using Nitrocid.Misc.Notifications;
-using Textify.General;
 using SpecProbe.Software.Platform;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Nitrocid.Extras.MailShell.Tools
 {
@@ -42,12 +43,24 @@ namespace Nitrocid.Extras.MailShell.Tools
         /// <summary>
         /// Initializes the CountChanged handlers. Currently, it only supports inbox.
         /// </summary>
-        public static void InitializeHandlers() => ((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).Inbox.CountChanged += OnCountChanged;
+        public static void InitializeHandlers()
+        {
+            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
+            var inbox = client.Inbox ??
+                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+            inbox.CountChanged += OnCountChanged;
+        }
 
         /// <summary>
         /// Releases the CountChanged handlers. Currently, it only supports inbox.
         /// </summary>
-        public static void ReleaseHandlers() => ((ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0]).Inbox.CountChanged -= OnCountChanged;
+        public static void ReleaseHandlers()
+        {
+            var client = (ImapClient)((object[]?)MailShellCommon.Client?.ConnectionInstance ?? [])[0];
+            var inbox = client.Inbox ??
+                throw new KernelException(KernelExceptionType.Mail, Translate.DoTranslation("Failed to obtain inbox"));
+            inbox.CountChanged -= OnCountChanged;
+        }
 
         /// <summary>
         /// Handles WebAlert sent by Gmail
