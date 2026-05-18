@@ -9,10 +9,25 @@ Attractive, Bold, Powerful
 0.2.0.8 - Service Pack 1 (May 18th, 2026)
 =========================================
 
-This service pack is a rather small release for 0.1.0.x that brings some
+This service pack is a rather small release for 0.2.0.x that brings some
 improvements, bug fixes, and support for FreeBSD systems.
 
-TBD
+FreeBSD support
+---------------
+
+We have finally added support for FreeBSD systems to Nitrocid the same way we
+added support for Linux and macOS. Starting from this release, you can now
+run Nitrocid KS more comfortably without any issues on FreeBSD systems. This
+was realized by automated builds that are audited from time to time to make
+sure that things run smoothly. We have tested this support on FreeBSD 15.0,
+which means that if you are running this version of FreeBSD, you can
+confidently run Nitrocid there.
+
+SpecProbe, Magico, BassBoom, and Terminaux have all earned support for
+FreeBSD after a successful experiment. This made our list of supported
+operating systems for our projects bigger. FreeBSD support is determined by
+our official support schedule as you can see in our main GitBook instance at
+https://aptivi.gitbook.io/aptivi/csharp-libraries/support-periods.
 
 =============================================================================
 
