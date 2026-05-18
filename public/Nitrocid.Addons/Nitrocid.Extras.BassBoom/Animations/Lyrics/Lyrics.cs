@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using BassBoom.Basolia.Lyrics;
+using BassBoom.Basolia.Media.Lyrics;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.Drivers.RNG;

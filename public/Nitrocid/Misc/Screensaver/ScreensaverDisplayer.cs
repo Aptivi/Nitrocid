@@ -29,10 +29,9 @@ using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Colors;
 using Nitrocid.Kernel.Configuration;
 using Nitrocid.Misc.Audio;
-using BassBoom.Basolia;
-using BassBoom.Basolia.File;
-using BassBoom.Basolia.Playback;
 using Terminaux.Base.Extensions;
+using BassBoom.Basolia.Media;
+using BassBoom.Basolia.Media.Playback;
 
 namespace Nitrocid.Misc.Screensaver
 {
@@ -148,14 +147,14 @@ namespace Nitrocid.Misc.Screensaver
 
                     try
                     {
-                        FileTools.OpenFrom(basoliaMedia, ambientStream);
+                        basoliaMedia.OpenFrom(ambientStream);
                         DebugWriter.WriteDebug(DebugLevel.I, $"Restarting screensaver ambience {ambientFxType} from {Config.MainConfig.AudioCueThemeName}...");
-                        PlaybackTools.PlayAsync(basoliaMedia);
-                        if (!SpinWait.SpinUntil(() => PlaybackTools.GetState(basoliaMedia) == PlaybackState.Playing, 15000))
+                        basoliaMedia.PlayAsync();
+                        if (!SpinWait.SpinUntil(() => basoliaMedia.GetState() == PlaybackState.Playing, 15000))
                             throw new KernelException(KernelExceptionType.AudioCue, Translate.DoTranslation("Can't play sound because of timeout."));
-                        while (PlaybackTools.GetState(basoliaMedia) == PlaybackState.Playing && !ScreensaverDisplayerThread.IsStopping) ;
+                        while (basoliaMedia.GetState() == PlaybackState.Playing && !ScreensaverDisplayerThread.IsStopping) ;
                         ambientStream.Seek(0, System.IO.SeekOrigin.Begin);
-                        FileTools.CloseFile(basoliaMedia);
+                        basoliaMedia.CloseFile();
                     }
                     catch (ThreadInterruptedException)
                     {
@@ -169,8 +168,8 @@ namespace Nitrocid.Misc.Screensaver
                         break;
                     }
                 }
-                if (PlaybackTools.GetState(basoliaMedia) != PlaybackState.Stopped)
-                    PlaybackTools.Stop(basoliaMedia);
+                if (basoliaMedia.GetState() != PlaybackState.Stopped)
+                    basoliaMedia.Stop();
             }
             catch (Exception ex)
             {

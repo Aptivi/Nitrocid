@@ -18,19 +18,20 @@
 //
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
-using Nitrocid.Extras.Calendar.Calendar.Reminders;
-using Nitrocid.Extras.Calendar.Calendar.Events;
-using Nitrocid.Kernel.Time.Calendars;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using System.Linq;
 using Nitrocid.ConsoleBase.Colors;
-using Nitrocid.Kernel.Time;
-using Nitrocid.Kernel.Time.Converters;
 using Nitrocid.ConsoleBase.Writers;
+using Nitrocid.Extras.Calendar.Calendar.Events;
+using Nitrocid.Extras.Calendar.Calendar.Reminders;
+using Nitrocid.Kernel.Time;
+using Nitrocid.Kernel.Time.Calendars;
+using Nitrocid.Kernel.Time.Converters;
 using Terminaux.Base;
-using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Graphical;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -61,14 +62,13 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var CalendarDays = calendarInstance.Culture.DateTimeFormat.DayNames;
             var CalendarMonths = calendarInstance.Culture.DateTimeFormat.MonthNames;
             var CalendarWeek = calendarInstance.Culture.DateTimeFormat.FirstDayOfWeek;
-            var CalendarData = new string[7, CalendarDays.Length];
+            var CalendarData = new TableCellOptions[7, CalendarDays.Length];
             var maxDate = calendarInstance.Calendar.GetDaysInMonth(Year, Month);
             var selectedDate = new DateTime(Year, Month, TimeDateTools.KernelDateTime.Day > maxDate ? 1 : TimeDateTools.KernelDateTime.Day);
             var (year, month, _, _) = TimeDateConverters.GetDateFromCalendar(selectedDate, calendar);
             var DateTo = new DateTime(year, month, calendarInstance.Calendar.GetDaysInMonth(year, month));
             int CurrentWeek = 1;
             string CalendarTitle = CalendarMonths[month - 1] + " " + year;
-            var CalendarCellOptions = new List<CellOptions>();
 
             // Re-arrange the days according to the first day of week
             Dictionary<DayOfWeek, int> mappedDays = [];
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 dayOfWeek++;
                 if (dayOfWeek > 6)
                     dayOfWeek = 0;
-                CalendarData[0, i] = $"{day}";
+                CalendarData[0, i] = new($"{day}");
             }
 
             // Populate the calendar data
@@ -98,29 +98,22 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 bool EventMarked = false;
                 bool IsWeekend = currentDay > 5;
                 bool IsToday = CurrentDate == TimeDateTools.KernelDateTime.Date;
+                CalendarData[CurrentWeekIndex + 1, currentDay - 1] = new($"{CurrentDay}");
 
                 // Dim out the weekends
                 if (IsWeekend)
                 {
-                    var WeekendOptions = new CellOptions(currentDay, CurrentWeek)
-                    {
-                        ColoredCell = true,
-                        CellColor = KernelColorTools.GetColor(KernelColorType.WeekendDay),
-                        CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background)
-                    };
-                    CalendarCellOptions.Add(WeekendOptions);
+                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].ColoredCell = true;
+                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellColor = KernelColorTools.GetColor(KernelColorType.WeekendDay);
+                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background);
                 }
 
                 // Highlight today
                 if (IsToday)
                 {
-                    var TodayOptions = new CellOptions(currentDay, CurrentWeek)
-                    {
-                        ColoredCell = true,
-                        CellColor = KernelColorTools.GetColor(KernelColorType.TodayDay),
-                        CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background)
-                    };
-                    CalendarCellOptions.Add(TodayOptions);
+                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].ColoredCell = true;
+                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellColor = KernelColorTools.GetColor(KernelColorType.TodayDay);
+                    CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background);
                 }
 
                 // Know where and how to put the day number
@@ -147,20 +140,16 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
                          (!EventInstance.IsYearly && CurrentDate == nDate)) && !EventMarked)
                     {
-                        var EventCell = new CellOptions(currentDay, CurrentWeek)
-                        {
-                            ColoredCell = true,
-                            CellColor = KernelColorTools.GetColor(KernelColorType.EventDay),
-                            CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background)
-                        };
-                        CalendarCellOptions.Add(EventCell);
+                        CalendarData[CurrentWeekIndex + 1, currentDay - 1].ColoredCell = true;
+                        CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellColor = KernelColorTools.GetColor(KernelColorType.EventDay);
+                        CalendarData[CurrentWeekIndex + 1, currentDay - 1].CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background);
                         EventMarked = true;
                     }
                 }
                 string markStart = ReminderMarked && EventMarked ? "[" : ReminderMarked ? "(" : EventMarked ? "<" : " ";
                 string markEnd = ReminderMarked && EventMarked ? "]" : ReminderMarked ? ")" : EventMarked ? ">" : " ";
                 CurrentDayMark = $"{markStart}{CurrentDay}{markEnd}";
-                CalendarData[CurrentWeekIndex + 1, currentDay - 1] = CurrentDayMark;
+                CalendarData[CurrentWeekIndex + 1, currentDay - 1].Value = CurrentDayMark;
             }
 
             var calendarTable = new Table()
@@ -171,7 +160,6 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 Width = ConsoleWrapper.WindowWidth - 4,
                 Height = ConsoleWrapper.WindowHeight - 4,
                 Header = true,
-                Settings = CalendarCellOptions,
             };
             TextWriterRaw.WriteRaw(calendarTable.Render());
         }

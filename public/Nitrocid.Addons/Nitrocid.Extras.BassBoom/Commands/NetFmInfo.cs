@@ -22,7 +22,7 @@ using Terminaux.Shell.Switches;
 using Nitrocid.Languages;
 using Nitrocid.ConsoleBase.Writers;
 using Nitrocid.ConsoleBase.Colors;
-using BassBoom.Basolia.Radio;
+using BassBoom.Basolia.Media.Radio;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.Extras.BassBoom.Commands
