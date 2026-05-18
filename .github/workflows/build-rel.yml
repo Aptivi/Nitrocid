@@ -2,11 +2,9 @@ name: Build Project (Release)
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main", "v0.1.0.x-saas", "v0.2.0.x-saas", "v0.2.1.x-saas" ]
   pull_request:
-    branches:
-      - main
+    branches: [ "main", "v0.1.0.x-saas", "v0.2.0.x-saas", "v0.2.1.x-saas" ]
     
 jobs:
   build:
