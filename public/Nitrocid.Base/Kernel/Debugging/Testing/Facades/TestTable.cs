@@ -34,17 +34,19 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            var Rows = new string[,]
+            var Rows = new TableCellOptions[,]
             {
-                { "Ubuntu Version", "Release Date", "Support End", "ESM Support End" },
-                { "12.04 (Precise Pangolin)", TimeDateRenderers.Render(new DateTime(2012, 4, 26)), TimeDateRenderers.Render(new DateTime(2017, 4, 28)), TimeDateRenderers.Render(new DateTime(2019, 4, 28)) },
-                { "14.04 (Trusty Tahr)", TimeDateRenderers.Render(new DateTime(2014, 4, 17)), TimeDateRenderers.Render(new DateTime(2019, 4, 25)), TimeDateRenderers.Render(new DateTime(2024, 4, 25)) },
-                { "16.04 (Xenial Xerus)", TimeDateRenderers.Render(new DateTime(2016, 4, 21)), TimeDateRenderers.Render(new DateTime(2021, 4, 30)), TimeDateRenderers.Render(new DateTime(2026, 4, 30)) },
-                { "18.04 (Bionic Beaver)", TimeDateRenderers.Render(new DateTime(2018, 4, 26)), TimeDateRenderers.Render(new DateTime(2023, 4, 30)), TimeDateRenderers.Render(new DateTime(2028, 4, 30)) },
-                { "20.04 (Focal Fossa)", TimeDateRenderers.Render(new DateTime(2020, 4, 23)), TimeDateRenderers.Render(new DateTime(2025, 4, 25)), TimeDateRenderers.Render(new DateTime(2030, 4, 25)) },
-                { "22.04 (Jammy Jellyfish)", TimeDateRenderers.Render(new DateTime(2022, 4, 21)), TimeDateRenderers.Render(new DateTime(2027, 4, 21)), TimeDateRenderers.Render(new DateTime(2032, 4, 21)) },
-                { "24.04 (Noble Numbat)", TimeDateRenderers.Render(new DateTime(2024, 4, 18)), TimeDateRenderers.Render(new DateTime(2029, 4, 18)), TimeDateRenderers.Render(new DateTime(2034, 4, 18)) },
+                { new("Ubuntu Version"), new("Release Date"), new("Support End"), new("ESM Support End") },
+                { new("12.04 (Precise Pangolin)"), new(TimeDateRenderers.Render(new DateTime(2012, 4, 26))), new(TimeDateRenderers.Render(new DateTime(2017, 4, 28))), new(TimeDateRenderers.Render(new DateTime(2019, 4, 28))) },
+                { new("14.04 (Trusty Tahr)"), new(TimeDateRenderers.Render(new DateTime(2014, 4, 17))), new(TimeDateRenderers.Render(new DateTime(2019, 4, 25))), new(TimeDateRenderers.Render(new DateTime(2024, 4, 25))) },
+                { new("16.04 (Xenial Xerus)"), new(TimeDateRenderers.Render(new DateTime(2016, 4, 21))), new(TimeDateRenderers.Render(new DateTime(2021, 4, 30))), new(TimeDateRenderers.Render(new DateTime(2026, 4, 30))) },
+                { new("18.04 (Bionic Beaver)"), new(TimeDateRenderers.Render(new DateTime(2018, 4, 26))), new(TimeDateRenderers.Render(new DateTime(2023, 4, 30))), new(TimeDateRenderers.Render(new DateTime(2028, 4, 30))) },
+                { new("20.04 (Focal Fossa)"), new(TimeDateRenderers.Render(new DateTime(2020, 4, 23))), new(TimeDateRenderers.Render(new DateTime(2025, 4, 25))), new(TimeDateRenderers.Render(new DateTime(2030, 4, 25))) },
+                { new("22.04 (Jammy Jellyfish)"), new(TimeDateRenderers.Render(new DateTime(2022, 4, 26))), new(TimeDateRenderers.Render(new DateTime(2027, 4, 25))), new(TimeDateRenderers.Render(new DateTime(2032, 4, 25))) }
             };
+            Rows[1, 1].CellColor = ConsoleColors.Red;
+            Rows[1, 1].CellBackgroundColor = ConsoleColors.DarkRed;
+            Rows[1, 1].ColoredCell = true;
             var table = new Table()
             {
                 Rows = Rows,
@@ -53,15 +55,6 @@ namespace Nitrocid.Base.Kernel.Debugging.Testing.Facades
                 Width = ConsoleWrapper.WindowWidth - 7,
                 Height = ConsoleWrapper.WindowHeight - 5,
                 Header = true,
-                Settings =
-                [
-                    new CellOptions(2, 2)
-                    {
-                        CellColor = ConsoleColors.Red,
-                        CellBackgroundColor = ConsoleColors.DarkRed,
-                        ColoredCell = true
-                    }
-                ],
             };
             TextWriterRaw.WriteRaw(table.Render());
         }

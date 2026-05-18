@@ -22,9 +22,6 @@ using System.Threading;
 using Terminaux.Base;
 using Colorimetry;
 using Terminaux.Themes.Colors;
-using BassBoom.Basolia;
-using BassBoom.Basolia.File;
-using BassBoom.Basolia.Playback;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Languages;
@@ -34,6 +31,8 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Events;
 using Terminaux.Base.Extensions;
 using Terminaux.Inputs;
+using BassBoom.Basolia.Media;
+using BassBoom.Basolia.Media.Playback;
 
 namespace Nitrocid.Base.Misc.Screensaver
 {
@@ -150,14 +149,14 @@ namespace Nitrocid.Base.Misc.Screensaver
 
                     try
                     {
-                        FileTools.OpenFrom(basoliaMedia, ambientStream);
+                        basoliaMedia.OpenFrom(ambientStream);
                         DebugWriter.WriteDebug(DebugLevel.I, $"Restarting screensaver ambience {ambientFxType} from {Config.MainConfig.AudioCueThemeName}...");
-                        PlaybackTools.PlayAsync(basoliaMedia);
-                        if (!SpinWait.SpinUntil(() => PlaybackTools.GetState(basoliaMedia) == PlaybackState.Playing, 15000))
+                        basoliaMedia.PlayAsync();
+                        if (!SpinWait.SpinUntil(() => basoliaMedia.GetState() == PlaybackState.Playing, 15000))
                             throw new KernelException(KernelExceptionType.AudioCue, LanguageTools.GetLocalized("NKS_MISC_SCREENSAVER_AMBIENT_EXCEPTION_SOUNDPLAYTIMEOUT"));
-                        while (PlaybackTools.GetState(basoliaMedia) == PlaybackState.Playing && !ScreensaverDisplayerThread.IsStopping) ;
+                        while (basoliaMedia.GetState() == PlaybackState.Playing && !ScreensaverDisplayerThread.IsStopping) ;
                         ambientStream.Seek(0, System.IO.SeekOrigin.Begin);
-                        FileTools.CloseFile(basoliaMedia);
+                        basoliaMedia.CloseFile();
                     }
                     catch (ThreadInterruptedException)
                     {
@@ -171,8 +170,8 @@ namespace Nitrocid.Base.Misc.Screensaver
                         break;
                     }
                 }
-                if (PlaybackTools.GetState(basoliaMedia) != PlaybackState.Stopped)
-                    PlaybackTools.Stop(basoliaMedia);
+                if (basoliaMedia.GetState() != PlaybackState.Stopped)
+                    basoliaMedia.Stop();
             }
             catch (Exception ex)
             {

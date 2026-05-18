@@ -20,7 +20,6 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
-using BassBoom.Basolia.Lyrics;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Files;
 using Nitrocid.Base.Kernel.Exceptions;
@@ -36,6 +35,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using BassBoom.Basolia.Media.Lyrics;
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {
