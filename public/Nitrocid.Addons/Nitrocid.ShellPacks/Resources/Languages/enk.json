@@ -2696,6 +2696,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "Outgoing server socket type"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "Inbox obtain failed"
     }
   ]
 }

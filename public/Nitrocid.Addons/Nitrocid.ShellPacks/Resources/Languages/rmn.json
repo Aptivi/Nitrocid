@@ -2698,6 +2698,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "Tip socket server de ieșire"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "Obținerea inbox-ului a eșuat"
     }
   ]
 }

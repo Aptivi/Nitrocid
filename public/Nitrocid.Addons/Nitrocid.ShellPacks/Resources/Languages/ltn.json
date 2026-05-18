@@ -2697,6 +2697,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "Genus socci servi egressi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "Acquisitio arcae epistularis defecit"
     }
   ]
 }

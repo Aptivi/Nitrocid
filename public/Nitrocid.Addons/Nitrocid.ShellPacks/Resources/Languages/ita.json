@@ -2700,6 +2700,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "Tipo di socket del server in uscita"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "Ricezione della posta in arrivo non riuscita"
     }
   ]
 }

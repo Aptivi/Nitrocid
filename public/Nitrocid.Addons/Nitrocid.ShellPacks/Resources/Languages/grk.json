@@ -2698,6 +2698,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "Τύπος υποδοχής εξερχόμενου διακομιστή"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "Η λήψη των εισερχομένων απέτυχε"
     }
   ]
 }

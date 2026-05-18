@@ -2136,5 +2136,8 @@
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE" xml:space="preserve">
     <value>Type socket van de uitgaande server</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
+    <value>Inbox ophalen mislukt</value>
+  </data>
 
 </root>

@@ -2136,5 +2136,8 @@
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE" xml:space="preserve">
     <value>Tipo do socket do servidor de saída</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
+    <value>Falha ao obter a caixa de entrada</value>
+  </data>
 
 </root>

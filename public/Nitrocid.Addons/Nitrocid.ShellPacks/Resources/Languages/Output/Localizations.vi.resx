@@ -2136,5 +2136,8 @@
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE" xml:space="preserve">
     <value>Loại socket máy chủ đi</value>
   </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
+    <value>Lỗi khi lấy hộp thư đến</value>
+  </data>
 
 </root>

@@ -2697,6 +2697,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "Тип сокета вихідного сервера"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "Не вдалося отримати повідомлення про вхідні повідомлення"
     }
   ]
 }
