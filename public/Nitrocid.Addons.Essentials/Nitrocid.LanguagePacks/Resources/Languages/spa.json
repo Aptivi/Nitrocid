@@ -4436,6 +4436,7 @@
     "La entrada de configuración puede no tener una lista de claves de configuración vacía.",
     "El nombre de la clave de configuración puede estar vacío.",
     "La clave de configuración puede no contener un tipo de clave no válido.",
-    "Claves disponibles"
+    "Claves disponibles",
+    "Error al obtener la bandeja de entrada"
   ]
 }

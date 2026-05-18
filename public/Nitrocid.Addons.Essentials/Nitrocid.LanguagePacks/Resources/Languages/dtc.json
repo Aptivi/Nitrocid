@@ -4436,6 +4436,7 @@
     "Het instellingenitem mag geen lege lijst met instellingensleutels bevatten",
     "De naam van de instellingensleutel mag niet leeg zijn",
     "De instellingensleutel mag geen ongeldig sleuteltype bevatten",
-    "Beschikbare sleutels"
+    "Beschikbare sleutels",
+    "Inbox ophalen mislukt"
   ]
 }

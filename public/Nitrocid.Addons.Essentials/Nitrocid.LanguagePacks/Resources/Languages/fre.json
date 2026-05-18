@@ -4436,6 +4436,7 @@
     "La liste des touches de paramètres peut être remplie.",
     "Le nom de la touche de paramètres peut être rempli.",
     "La touche de paramètres peut contenir un type de touche non valide.",
-    "Clés disponibles"
+    "Clés disponibles",
+    "Échec de la récupération de la boîte de réception"
   ]
 }

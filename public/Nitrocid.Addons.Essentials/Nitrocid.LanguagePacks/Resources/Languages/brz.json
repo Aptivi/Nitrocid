@@ -4436,6 +4436,7 @@
     "A entrada de configurações não pode ter uma lista de chaves de configurações vazia.",
     "O nome da chave de configurações não pode estar vazio.",
     "A chave de configurações não pode conter um tipo de chave inválido.",
-    "Chaves disponíveis"
+    "Chaves disponíveis",
+    "Falha ao obter a caixa de entrada"
   ]
 }

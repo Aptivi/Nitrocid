@@ -4436,6 +4436,7 @@
     "Innstillingsoppføringen har kanskje ikke tom innstillingsnøkkelliste",
     "Innstillingsnøkkelnavnet er kanskje ikke tomt",
     "Innstillingsnøkkel inneholder kanskje ikke ugyldig nøkkeltype",
-    "Tilgjengelige nøkler"
+    "Tilgjengelige nøkler",
+    "Henting av innboks mislyktes"
   ]
 }
