@@ -1,11 +1,10 @@
-This is a small service pack for Nitrocid to bring FreeBSD support, along with improvements that were made between the last release of Nitrocid and this one.
+Since the release of Service Pack 1, we've made this security update to fix security bugs related to ImageMagick discovered recently.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added FreeBSD support
-- `[*]` General improvements and bug fixes
+- `[*]` Updated ImageMagick
 
 Review the commit history if you want to get a deep insight about the changes.
 
