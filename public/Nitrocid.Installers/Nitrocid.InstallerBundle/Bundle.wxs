@@ -5,8 +5,12 @@
       <bal:WixInternalUIBootstrapperApplication />
     </BootstrapperApplication>
 
+    <Variable Name="NitrocidLite" Type="string" Value="0" bal:Overridable="yes" />
+
     <Chain>
-      <MsiPackage SourceFile="Nitrocid.Installer.msi" />
+      <MsiPackage SourceFile="Nitrocid.Installer.msi">
+        <MsiProperty Name="NOADDONS" Value="[NitrocidLite]" />
+      </MsiPackage>
     </Chain>
   </Bundle>
 </Wix>
