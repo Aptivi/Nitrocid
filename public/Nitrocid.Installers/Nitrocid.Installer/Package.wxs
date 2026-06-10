@@ -4,17 +4,28 @@
     <Package Name="Nitrocid 0.1.0" Manufacturer="Aptivi" Version="0.1.0.77" UpgradeCode="b44c5027-1ced-41bb-b28f-a2f0af758fc6" Scope="perMachine">
         <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
 
-        <Feature Id="Main">
-            <ComponentGroupRef Id="FullComponent" />
+        <Feature Id="Main" Title="Nitrocid" Level="1">
+            <Feature Id="Core" Title="Nitrocid Core" Level="1" AllowAbsent="false" TypicalDefault="install">
+                <ComponentGroupRef Id="FullComponent" />
+                <ComponentRef Id="DesktopIcon" />
+            </Feature>
+            <Feature Id="Extras" Title="Nitrocid Extras" Level="1" TypicalDefault="install">
+                <ComponentGroupRef Id="ExtrasComponent" />
+                <Level Value="0" Condition="NOADDONS = &quot;1&quot;" />
+            </Feature>
+        </Feature>
+        <Feature Id="AddStartMenu" Title="Add to Start Menu" Level="1" TypicalDefault="install">
             <ComponentRef Id="ApplicationProgramsFolder" />
+        </Feature>
+        <Feature Id="AddDesktopIcon" Title="Add to Desktop" Level="1" TypicalDefault="install">
             <ComponentRef Id="DesktopIcon" />
         </Feature>
 
-        <Icon Id="icon.ico" SourceFile="..\..\OfficialAppIcon-NitrocidKS.ico"/>
+        <Icon Id="icon.ico" SourceFile="..\..\Nitrocid\OfficialAppIcon-NitrocidKS.ico"/>
         <Property Id="ARPPRODUCTICON" Value="icon.ico" />
 
         <ui:WixUI
-            Id="WixUI_InstallDir"
+            Id="WixUI_FeatureTree"
             InstallDirectory="INSTALLFOLDER"
             />
 

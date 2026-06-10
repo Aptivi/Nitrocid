@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+      <ComponentGroup Id="FullComponent" Directory="INSTALLFOLDER">
+          <Files Include="!(bindpath.KSBuild)\**">
+              <Exclude Files="!(bindpath.KSBuild)\Addons\**" />
+              <Exclude Files="!(bindpath.KSBuild)\Addons.Essentials\**" />
+          </Files>
+      </ComponentGroup>
+
+      <ComponentGroup Id="ExtrasComponent" Directory="INSTALLFOLDER">
+          <Files Include="!(bindpath.KSBuild)\Addons\**" Subdirectory="Addons" />
+          <Files Include="!(bindpath.KSBuild)\Addons.Essentials\**" Subdirectory="Addons.Essentials" />
+      </ComponentGroup>
+  </Fragment>
+</Wix>
