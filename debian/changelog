@@ -1,6 +1,7 @@
 nitrocid-28 (4.0.28.59-0.2.0.10-1) noble; urgency=medium
 
-  * Please populate changelogs here
+  * Improved the Windows installer modularity
+  * General improvements and bug fixes
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Thu, 11 Jun 2026 12:11:18 +0300
 
