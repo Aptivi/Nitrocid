@@ -74,7 +74,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 
             // Open file if not open
             ArchiveShellCommon.FileStream ??= new FileStream(ArchiveFile, FileMode.Open);
-            ArchiveType type = ReaderFactory.OpenReader(ArchiveShellCommon.FileStream).ArchiveType;
+            ArchiveType type = ReaderFactory.OpenReader(ArchiveShellCommon.FileStream).Type;
 
             // Select archive type and open it
             switch (type)
