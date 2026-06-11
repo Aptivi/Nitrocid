@@ -33,6 +33,8 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
     {
         (string feedTitle, string articleTitle)[]? articles = null;
 
+        public bool ShowFeedTitle { get; set; } = true;
+
         public override string Cleanup(int left, int top, int width, int height)
         {
             articles = null;
@@ -69,9 +71,9 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Widgets
                     var headlines = new StringBuilder();
                     foreach (var article in articles)
                     {
-                        string feedTitle = article.feedTitle;
+                        string feedTitle = ShowFeedTitle ? $"{article.feedTitle}: " : "";
                         string articleTitle = article.articleTitle;
-                        string finalFeedEntry = $"{feedTitle}: {articleTitle}";
+                        string finalFeedEntry = $"{feedTitle}{articleTitle}";
                         finalFeedEntry = finalFeedEntry.Truncate(width - 1);
                         headlines.AppendLine(finalFeedEntry);
                     }

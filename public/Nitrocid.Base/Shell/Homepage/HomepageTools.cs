@@ -699,6 +699,8 @@ namespace Nitrocid.Base.Shell.Homepage
                         else
                         {
                             needsWrapping = false;
+                            var feedTitleProp = feedWidget.GetType().GetProperty("ShowFeedTitle");
+                            feedTitleProp?.SetValue(feedWidget, false);
                             rssSequence = feedWidget.Render(rssFeedLeft, rssFeedTop, widgetWidth, 3);
                         }
                     }
