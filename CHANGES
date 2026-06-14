@@ -1,11 +1,10 @@
-We have introduced this small update of Nitrocid to introduce you to a modular Windows installer.
+We have introduced this small update of Nitrocid to fix localization issues related to mail shell.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Improved the Windows installer modularity
-- `[*]` General improvements and bug fixes
+- `[*]` Fixed missing localization for mail shell
 
 Review the commit history if you want to get a deep insight about the changes.
 
