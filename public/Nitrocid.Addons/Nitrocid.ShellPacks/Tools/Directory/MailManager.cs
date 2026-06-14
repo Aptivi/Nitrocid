@@ -154,7 +154,6 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                 else
                 {
                     // Remove message
-                    // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED -> "Failed to obtain inbox"
                     var inbox = client.Inbox ??
                         throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED"));
                     inbox.Open(FolderAccess.ReadWrite);
