@@ -4437,6 +4437,7 @@
     "Der Name des Einstellungsschlüssels darf nicht leer sein.",
     "Der Einstellungsschlüssel darf keinen ungültigen Schlüsseltyp enthalten.",
     "Verfügbare Schlüssel",
-    "Abruf des Posteingangs fehlgeschlagen"
+    "Abruf des Posteingangs fehlgeschlagen",
+    "Die angegebene E-Mail-Nachricht konnte nicht abgerufen werden."
   ]
 }

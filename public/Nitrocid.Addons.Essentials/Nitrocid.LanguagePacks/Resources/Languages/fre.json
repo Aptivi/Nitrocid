@@ -4437,6 +4437,7 @@
     "Le nom de la touche de paramètres peut être rempli.",
     "La touche de paramètres peut contenir un type de touche non valide.",
     "Clés disponibles",
-    "Échec de la récupération de la boîte de réception"
+    "Échec de la récupération de la boîte de réception",
+    "Impossible d'obtenir le message électronique spécifié"
   ]
 }

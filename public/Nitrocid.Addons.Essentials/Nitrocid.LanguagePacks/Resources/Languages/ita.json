@@ -4437,6 +4437,7 @@
     "Il nome della chiave Impostazioni non può essere vuoto",
     "La chiave Impostazioni non può contenere un tipo di chiave non valido",
     "Chiavi disponibili",
-    "Ricezione della posta in arrivo non riuscita"
+    "Ricezione della posta in arrivo non riuscita",
+    "Impossibile ottenere il messaggio di posta specificato"
   ]
 }

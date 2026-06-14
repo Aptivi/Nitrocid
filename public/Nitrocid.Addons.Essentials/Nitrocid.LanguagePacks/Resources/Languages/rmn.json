@@ -4437,6 +4437,7 @@
     "Numele cheii de setări poate să nu fie gol",
     "Este posibil ca cheia de setări să nu dețină un tip de cheie nevalid",
     "Chei disponibile",
-    "Obținerea inbox-ului a eșuat"
+    "Obținerea inbox-ului a eșuat",
+    "Nu s-a putut obține mesajul de e-mail specificat"
   ]
 }

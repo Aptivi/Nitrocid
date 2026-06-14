@@ -4437,6 +4437,7 @@
     "O nome da chave de configuração não pode estar vazio",
     "A chave de definições pode não conter um tipo de chave inválido",
     "Chaves disponíveis",
-    "Falha ao obter a caixa de entrada"
+    "Falha ao obter a caixa de entrada",
+    "Não foi possível obter a mensagem de correio eletrónico especificada."
   ]
 }

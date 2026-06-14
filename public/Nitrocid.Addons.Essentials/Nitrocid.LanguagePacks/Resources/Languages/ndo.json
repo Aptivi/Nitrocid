@@ -4437,6 +4437,7 @@
     "Nama kunci pengaturan tidak boleh kosong",
     "Kunci pengaturan tidak boleh berisi jenis kunci yang tidak valid",
     "Kunci yang tersedia",
-    "Gagal mendapatkan kotak masuk"
+    "Gagal mendapatkan kotak masuk",
+    "Gagal mendapatkan pesan email yang ditentukan"
   ]
 }

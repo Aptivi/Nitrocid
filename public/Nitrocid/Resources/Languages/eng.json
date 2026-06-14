@@ -4437,6 +4437,7 @@
     "Settings key name may not be empty",
     "Settings key may not hold invalid key type",
     "Available keys",
-    "Inbox obtain failed"
+    "Failed to obtain inbox",
+    "Failed to obtain specified mail message"
   ]
 }
