@@ -1,124 +1,65 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
-    <value>Ім&apos;я користувача для {0}:</value>
+  </resheader>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
+    <value>Ім'я користувача для {0}:</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD" xml:space="preserve">
     <value>Пароль для {0}:</value>
@@ -133,13 +74,13 @@
     <value>Локальний каталог {0} не існує.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR" xml:space="preserve">
-    <value>Введіть локальний каталог. &quot;..&quot; щоб повернутися.</value>
+    <value>Введіть локальний каталог. ".." щоб повернутися.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND" xml:space="preserve">
     <value>Каталог {0} не знайдено.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR" xml:space="preserve">
-    <value>Введіть віддалений каталог. &quot;..&quot; щоб повернутися</value>
+    <value>Введіть віддалений каталог. ".." щоб повернутися</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_FS_LOCALDIR" xml:space="preserve">
     <value>Локальний каталог: {0}</value>
@@ -202,7 +143,7 @@
     <value>Спроба підключитися до {0} за допомогою профілю {1}...</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NAME" xml:space="preserve">
-    <value>Ім&apos;я: {0}</value>
+    <value>Ім'я: {0}</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COMMAND_SUMFILE_DESC" xml:space="preserve">
     <value>Обчислює суми файлів.</value>
@@ -223,7 +164,7 @@
     <value>Обчислює суму файлів у вказаному каталозі.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_ADDRESSPROMPT" xml:space="preserve">
-    <value>Введіть ім&apos;я користувача або адресу електронної пошти:</value>
+    <value>Введіть ім'я користувача або адресу електронної пошти:</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_PASSWORDPROMPT" xml:space="preserve">
     <value>Введіть пароль:</value>
@@ -301,7 +242,7 @@
     <value>Введіть тему:</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT" xml:space="preserve">
-    <value>Введіть своє повідомлення нижче. Напишіть &quot;EOF&quot; для підтвердження.</value>
+    <value>Введіть своє повідомлення нижче. Напишіть "EOF" для підтвердження.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_SENDING" xml:space="preserve">
     <value>Надсилання повідомлення...</value>
@@ -322,7 +263,7 @@
     <value>Повідомлення {0} від {1} видалено з {2}. Для аналізу залишилося {3} повідомлень.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_RMALL_DELETEDINBOX" xml:space="preserve">
-    <value>Повідомлення {0} від {1} видалено з папки &quot;Вхідні&quot;. Для аналізу залишилося {2} повідомлень.</value>
+    <value>Повідомлення {0} від {1} видалено з папки "Вхідні". Для аналізу залишилося {2} повідомлень.</value>
   </data>
   <data name="NKS_SHELLPACKS_FILESHELLS_OPENFAILED" xml:space="preserve">
     <value>Не вдалося відкрити файл. Вихід із оболонки...</value>
@@ -334,7 +275,7 @@
     <value>Відповідь має бути числовим.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPUSERNAME_NAME" xml:space="preserve">
-    <value>Ім&apos;я користувача журналу FTP</value>
+    <value>Ім'я користувача журналу FTP</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_NAME" xml:space="preserve">
     <value>Зареєструвати IP-адресу FTP</value>
@@ -415,13 +356,13 @@
     <value>Вибирайте перший профіль тільки при підключенні.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_TITLE" xml:space="preserve">
-    <value>{0} нових повідомлень надійшло до папки &quot;Вхідні&quot;.</value>
+    <value>{0} нових повідомлень надійшло до папки "Вхідні".</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC" xml:space="preserve">
     <value>Щоб побачити їх, відкрийте «пошту».</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME" xml:space="preserve">
-    <value>Повне ім&apos;я: {0}</value>
+    <value>Повне ім'я: {0}</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_CREATIONTIME" xml:space="preserve">
     <value>Час створення: {0}</value>
@@ -817,10 +758,10 @@
     <value>пошти передано...</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_HOSTNAME" xml:space="preserve">
-    <value>Ім&apos;я хоста</value>
+    <value>Ім'я хоста</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_USERNAME" xml:space="preserve">
-    <value>Ім&apos;я користувача</value>
+    <value>Ім'я користувача</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_CONNECT_LISTPROFILE_DATATYPE" xml:space="preserve">
     <value>Тип даних</value>
@@ -886,7 +827,7 @@
     <value>Перевірте повторні спроби передачі FTP</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPCONNECTIONTIMEOUT_NAME" xml:space="preserve">
-    <value>Тайм-аут з&apos;єднання FTP</value>
+    <value>Тайм-аут з'єднання FTP</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_FTPDATACONNECTIONTIMEOUT_NAME" xml:space="preserve">
     <value>Тайм-аут підключення даних FTP</value>
@@ -916,7 +857,7 @@
     <value>Показує відомості про файл у списку</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Пригнічує дратівливі повідомлення &quot;дозвіл заборонено&quot;.</value>
+    <value>Пригнічує дратівливі повідомлення "дозвіл заборонено".</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC" xml:space="preserve">
     <value>Вказує, що цільовий шлях є абсолютним</value>
@@ -997,7 +938,7 @@
     <value>Введіть шлях або повний шлях до папки призначення, до якої потрібно перемістити вибраний файл.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_NEWFILENAMEPROMPT" xml:space="preserve">
-    <value>Введіть нове ім&apos;я файлу.</value>
+    <value>Введіть нове ім'я файлу.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FILENAMEINVALID" xml:space="preserve">
     <value>Переконайтеся, що ви написали правильну назву файлу.</value>
@@ -1228,7 +1169,7 @@
     <value>Показати всі значення</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_RM_DESC" xml:space="preserve">
-    <value>Видаляє цільовий об&apos;єкт</value>
+    <value>Видаляє цільовий об'єкт</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SAVE_SWITCH_B_DESC" xml:space="preserve">
     <value>Прикрашений JSON</value>
@@ -1246,19 +1187,19 @@
     <value>Маркер у файлі JSON не знайдено.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN" xml:space="preserve">
-    <value>Батьківський маркер не знайдено. Переконайтеся, що ви правильно написали шлях &quot;{0}&quot;.</value>
+    <value>Батьківський маркер не знайдено. Переконайтеся, що ви правильно написали шлях "{0}".</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
-    <value>Указаний тип &quot;{0}&quot; недійсний.</value>
+    <value>Указаний тип "{0}" недійсний.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED" xml:space="preserve">
-    <value>Неможливо додати новий елемент із назвою властивості з типом батьківського маркера &quot;{0}&quot;.</value>
+    <value>Неможливо додати новий елемент із назвою властивості з типом батьківського маркера "{0}".</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED" xml:space="preserve">
-    <value>Неможливо додати новий елемент із назвою властивості &quot;{0}&quot; із типом батьківського маркера &quot;{1}&quot;.</value>
+    <value>Неможливо додати новий елемент із назвою властивості "{0}" із типом батьківського маркера "{1}".</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT" xml:space="preserve">
-    <value>Назва властивості &quot;{0}&quot; у батьківському &quot;{1}&quot;, тип &quot;{2}&quot;, не існує</value>
+    <value>Назва властивості "{0}" у батьківському "{1}", тип "{2}", не існує</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC" xml:space="preserve">
     <value>Шукає у каналі фразу в заголовку та/або описі</value>
@@ -1288,7 +1229,7 @@
     <value>Пригнічує «неавторизовані» повідомлення</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT" xml:space="preserve">
-    <value>Введіть розташування закритого ключа для {0}. Напишіть &quot;q&quot;, щоб завершити додавання ключів:</value>
+    <value>Введіть розташування закритого ключа для {0}. Напишіть "q", щоб завершити додавання ключів:</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTING" xml:space="preserve">
     <value>Спроба підключитися до {0}...</value>
@@ -1813,7 +1754,7 @@
     <value>Ваш e-mail</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_COMMAND_SETID_ARGUMENT_USERNAME_DESC" xml:space="preserve">
-    <value>Ваше ім&apos;я користувача</value>
+    <value>Ваше ім'я користувача</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_COMMAND_STAGE_ARGUMENT_UNSTAGED_DESC" xml:space="preserve">
     <value>Шлях до файлу без етапів</value>
@@ -1993,7 +1934,7 @@
     <value>ID повідомлення</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMAND_ARGUMENT_SENDERNAME_DESC" xml:space="preserve">
-    <value>Ім&apos;я відправника</value>
+    <value>Ім'я відправника</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMAND_REN_ARGUMENT_OLDFOLDERNAME_DESC" xml:space="preserve">
     <value>Стара назва поштового каталогу</value>
@@ -2035,7 +1976,7 @@
     <value>Назва властивості JSON</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC" xml:space="preserve">
-    <value>Шлях об&apos;єкта</value>
+    <value>Шлях об'єкта</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>Значення JSON</value>
@@ -2095,13 +2036,13 @@
     <value>Отримує інформацію про інтернет-провайдера</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_ARGUMENT_ADDRESSORHOST_DESC" xml:space="preserve">
-    <value>Адреса електронної пошти або ім&apos;я хоста</value>
+    <value>Адреса електронної пошти або ім'я хоста</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC" xml:space="preserve">
-    <value>Використовувати ім&apos;я хоста замість адреси</value>
+    <value>Використовувати ім'я хоста замість адреси</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME" xml:space="preserve">
-    <value>Відображуване ім&apos;я інтернет-провайдера</value>
+    <value>Відображуване ім'я інтернет-провайдера</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME" xml:space="preserve">
     <value>Коротка назва інтернет-провайдера</value>
@@ -2113,7 +2054,7 @@
     <value>Домінуючий домен інтернет-провайдера</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME" xml:space="preserve">
-    <value>Ім&apos;я хоста вхідного сервера</value>
+    <value>Ім'я хоста вхідного сервера</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_PORT" xml:space="preserve">
     <value>Порт вхідного сервера</value>
@@ -2125,7 +2066,7 @@
     <value>Тип сокета вхідного сервера</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_HOSTNAME" xml:space="preserve">
-    <value>Ім&apos;я хоста вихідного сервера</value>
+    <value>Ім'я хоста вихідного сервера</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_PORT" xml:space="preserve">
     <value>Порт вихідного сервера</value>
@@ -2139,5 +2080,7 @@
   <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
     <value>Не вдалося отримати повідомлення про вхідні повідомлення</value>
   </data>
-
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED" xml:space="preserve">
+    <value>Не вдалося отримати вказане поштове повідомлення</value>
+  </data>
 </root>

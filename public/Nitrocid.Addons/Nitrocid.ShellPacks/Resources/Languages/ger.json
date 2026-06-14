@@ -2710,6 +2710,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Abruf des Posteingangs fehlgeschlagen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Die angegebene E-Mail-Nachricht konnte nicht abgerufen werden."
     }
   ]
 }

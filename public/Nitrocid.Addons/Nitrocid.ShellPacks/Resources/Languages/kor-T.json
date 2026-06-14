@@ -2702,6 +2702,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "받은 편지함 가져오기 실패"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "지정된 메일 메시지를 가져오는 데 실패했습니다."
     }
   ]
 }

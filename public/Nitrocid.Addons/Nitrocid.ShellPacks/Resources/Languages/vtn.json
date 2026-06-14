@@ -2701,6 +2701,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Lỗi khi lấy hộp thư đến"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Không thể tải được thư mục đã chỉ định."
     }
   ]
 }

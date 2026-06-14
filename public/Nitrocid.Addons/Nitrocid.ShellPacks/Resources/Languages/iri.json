@@ -2702,6 +2702,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Theip ar fháil an bhosca isteach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Theip ar an teachtaireacht ríomhphoist shonraithe a fháil"
     }
   ]
 }

@@ -2704,6 +2704,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Ricezione della posta in arrivo non riuscita"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Impossibile ottenere il messaggio di posta specificato"
     }
   ]
 }

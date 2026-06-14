@@ -2702,6 +2702,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Obținerea inbox-ului a eșuat"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Nu s-a putut obține mesajul de e-mail specificat"
     }
   ]
 }

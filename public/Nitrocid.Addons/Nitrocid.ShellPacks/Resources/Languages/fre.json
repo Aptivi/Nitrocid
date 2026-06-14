@@ -2747,6 +2747,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Échec de la récupération de la boîte de réception"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Impossible d'obtenir le message électronique spécifié"
     }
   ]
 }

@@ -2701,6 +2701,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "इनबॉक्स प्राप्त करना विफल रहा"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "बताया गया मेल मैसेज नहीं मिला"
     }
   ]
 }

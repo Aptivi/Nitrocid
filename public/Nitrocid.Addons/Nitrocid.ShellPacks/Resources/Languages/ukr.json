@@ -2701,6 +2701,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Не вдалося отримати повідомлення про вхідні повідомлення"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Не вдалося отримати вказане поштове повідомлення"
     }
   ]
 }

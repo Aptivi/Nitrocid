@@ -2705,6 +2705,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Henting av innboks mislyktes"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Klarte ikke å hente den angitte e-postmeldingen"
     }
   ]
 }

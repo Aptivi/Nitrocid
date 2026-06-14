@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
+  </resheader>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
     <value>Nome utente per {0}:</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD" xml:space="preserve">
@@ -133,13 +74,13 @@
     <value>La directory locale {0} non esiste.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR" xml:space="preserve">
-    <value>Inserisci una directory locale &quot;..&quot; tornare indietro.</value>
+    <value>Inserisci una directory locale ".." tornare indietro.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND" xml:space="preserve">
     <value>Directory {0} non trovata.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR" xml:space="preserve">
-    <value>Inserisci una directory remota &quot;..&quot; tornare indietro</value>
+    <value>Inserisci una directory remota ".." tornare indietro</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_FS_LOCALDIR" xml:space="preserve">
     <value>Directory locale: {0}</value>
@@ -286,22 +227,22 @@
     <value>Risposta non valida Per favore riprova.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_IMAPSERVERPROMPT" xml:space="preserve">
-    <value>Immettere l&apos;indirizzo e la porta del server IMAP (&lt;indirizzo&gt; o &lt;indirizzo&gt;: [porta]):</value>
+    <value>Immettere l'indirizzo e la porta del server IMAP (&lt;indirizzo&gt; o &lt;indirizzo&gt;: [porta]):</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SMTPSERVERPROMPT" xml:space="preserve">
-    <value>Immettere l&apos;indirizzo e la porta del server SMTP (&lt;indirizzo&gt; o &lt;indirizzo&gt;: [porta]):</value>
+    <value>Immettere l'indirizzo e la porta del server SMTP (&lt;indirizzo&gt; o &lt;indirizzo&gt;: [porta]):</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMAND_SEND_DESC" xml:space="preserve">
     <value>Invia un messaggio a un indirizzo</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_TARGETPROMPT" xml:space="preserve">
-    <value>Inserisci l&apos;indirizzo e-mail del destinatario:</value>
+    <value>Inserisci l'indirizzo e-mail del destinatario:</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_SUBJECTPROMPT" xml:space="preserve">
-    <value>Inserisci l&apos;oggetto:</value>
+    <value>Inserisci l'oggetto:</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT" xml:space="preserve">
-    <value>Inserisci il tuo messaggio qui sotto. Scrivi &quot;EOF&quot; per confermare.</value>
+    <value>Inserisci il tuo messaggio qui sotto. Scrivi "EOF" per confermare.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_SENDING" xml:space="preserve">
     <value>Invio messaggio in corso ...</value>
@@ -310,7 +251,7 @@
     <value>Messaggio inviato.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_INVALIDMAIL" xml:space="preserve">
-    <value>Indirizzo email non valido. Assicurati di aver scritto correttamente l&apos;indirizzo e che corrisponda al formato dell&apos;esempio mostrato:</value>
+    <value>Indirizzo email non valido. Assicurati di aver scritto correttamente l'indirizzo e che corrisponda al formato dell'esempio mostrato:</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMAND_RM_DESC" xml:space="preserve">
     <value>Rimuove un messaggio</value>
@@ -328,7 +269,7 @@
     <value>Impossibile aprire il file. Uscita dalla shell ...</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_INVALIDOPTION" xml:space="preserve">
-    <value>L&apos;opzione specificata {0} non è valida.</value>
+    <value>L'opzione specificata {0} non è valida.</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_OPTIONNUMERIC" xml:space="preserve">
     <value>La risposta deve essere numerica.</value>
@@ -364,7 +305,7 @@
     <value>Impossibile rimuovere tutta la posta inviata da {0}.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_ERRORSENDING" xml:space="preserve">
-    <value>Errore durante l&apos;invio del messaggio.</value>
+    <value>Errore durante l'invio del messaggio.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_MOVING" xml:space="preserve">
     <value>Spostamento di {0} in {1} ...</value>
@@ -409,7 +350,7 @@
     <value>Se registrare o meno il nome utente FTP.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_LOGFTPIPADDRESS_DESC" xml:space="preserve">
-    <value>Se registrare o meno l&apos;indirizzo IP FTP.</value>
+    <value>Se registrare o meno l'indirizzo IP FTP.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_ONLYFIRSTPROFILE_DESC" xml:space="preserve">
     <value>Scegli il primo profilo solo durante la connessione.</value>
@@ -418,7 +359,7 @@
     <value>{0} nuovi messaggi sono arrivati nella Posta in arrivo.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC" xml:space="preserve">
-    <value>Apri &quot;mail&quot; per vederli.</value>
+    <value>Apri "mail" per vederli.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME" xml:space="preserve">
     <value>Nome completo: {0}</value>
@@ -427,7 +368,7 @@
     <value>Ora di creazione: {0}</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTACCESSTIME" xml:space="preserve">
-    <value>Ora dell&apos;ultimo accesso: {0}</value>
+    <value>Ora dell'ultimo accesso: {0}</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_LASTWRITETIME" xml:space="preserve">
     <value>Ora ultima scrittura: {0}</value>
@@ -451,7 +392,7 @@
     <value>Apre un messaggio crittografato</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_PGP_KEYPASSWORD" xml:space="preserve">
-    <value>Scrivi la password per l&apos;ID chiave {0}</value>
+    <value>Scrivi la password per l'ID chiave {0}</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMAND_SENDENC_DESC" xml:space="preserve">
     <value>Invia un messaggio crittografato a un indirizzo</value>
@@ -478,25 +419,25 @@
     <value>Rinomina una cartella</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_NAME" xml:space="preserve">
-    <value>Mostra l&apos;anteprima del messaggio di posta</value>
+    <value>Mostra l'anteprima del messaggio di posta</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SETTINGS_MAILPREVIEW_DESC" xml:space="preserve">
-    <value>Quando si elencano i messaggi di posta, mostra l&apos;anteprima del corpo.</value>
+    <value>Quando si elencano i messaggi di posta, mostra l'anteprima del corpo.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC" xml:space="preserve">
-    <value>Se il salvataggio automatico è abilitato, il file di testo verrà salvato per ogni &quot;n&quot; secondi.</value>
+    <value>Se il salvataggio automatico è abilitato, il file di testo verrà salvato per ogni "n" secondi.</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC" xml:space="preserve">
     <value>Consente di utilizzare un server FTP SSH</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_LIST_DESC" xml:space="preserve">
-    <value>Elenca tutti i file all&apos;interno dell&apos;archivio</value>
+    <value>Elenca tutti i file all'interno dell'archivio</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_DESC" xml:space="preserve">
     <value>Estrae un file in una directory specificata o in una directory corrente</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_CHADIR_DESC" xml:space="preserve">
-    <value>Cambia la directory dell&apos;archivio</value>
+    <value>Cambia la directory dell'archivio</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_LOCALDIRNOTFOUND" xml:space="preserve">
     <value>La directory {0} non esiste</value>
@@ -517,7 +458,7 @@
     <value>File chiave privata</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_PASSWORD" xml:space="preserve">
-    <value>Parola d&apos;ordine</value>
+    <value>Parola d'ordine</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_KEYPASSPHRASE" xml:space="preserve">
     <value>Inserisci la passphrase per la chiave {0}:</value>
@@ -562,10 +503,10 @@
     <value>Legge un feed in un browser web</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_COMMAND_ARTICLEINFO_DESC" xml:space="preserve">
-    <value>Ottiene le informazioni sull&apos;articolo</value>
+    <value>Ottiene le informazioni sull'articolo</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_ARTICLENUMOUTOFRANGE" xml:space="preserve">
-    <value>Il numero dell&apos;articolo non può essere più grande degli articoli disponibili.</value>
+    <value>Il numero dell'articolo non può essere più grande degli articoli disponibili.</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_TITLE" xml:space="preserve">
     <value>Titolo:</value>
@@ -586,7 +527,7 @@
     <value>Numero di articoli:</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_READ_NOLINK" xml:space="preserve">
-    <value>L&apos;articolo non ha un link!</value>
+    <value>L'articolo non ha un link!</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_WEBALERT_OPENING" xml:space="preserve">
     <value>Apertura URL... Assicurati di seguire i passaggi mostrati sullo schermo.</value>
@@ -619,7 +560,7 @@
     <value>Minimizza il file JSON</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_JSONTOOLS_EXCEPTION_STREAMNOTOPEN" xml:space="preserve">
-    <value>L&apos;editor JSON non ha ancora aperto un flusso di file.</value>
+    <value>L'editor JSON non ha ancora aperto un flusso di file.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_EXITNOSAVE_DESC" xml:space="preserve">
     <value>Esce dalla shell JSON senza salvare le modifiche</value>
@@ -637,7 +578,7 @@
     <value>Scrivi come vuoi che sia richiesta la password. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_NAME" xml:space="preserve">
-    <value>Mostra i dettagli del file nell&apos;elenco FTP</value>
+    <value>Mostra i dettagli del file nell'elenco FTP</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
     <value>Stile di richiesta nome utente per FTP</value>
@@ -661,7 +602,7 @@
     <value>Accetta sempre certificati FTP non validi</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_FILEDETAILS_DESC" xml:space="preserve">
-    <value>Mostra i dettagli del file FTP durante l&apos;elenco delle directory remote.</value>
+    <value>Mostra i dettagli del file FTP durante l'elenco delle directory remote.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC" xml:space="preserve">
     <value>Utilizza il primo profilo FTP per connettersi a FTP.</value>
@@ -673,7 +614,7 @@
     <value>Tenta di convalidare i certificati FTP. Non è consigliabile spegnerlo.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_DESC" xml:space="preserve">
-    <value>Mostra il messaggio FTP del giorno all&apos;accesso.</value>
+    <value>Mostra il messaggio FTP del giorno all'accesso.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC" xml:space="preserve">
     <value>Accetta sempre certificati FTP non validi. Non è consigliabile accenderlo in quanto potrebbe comportare rischi per la sicurezza.</value>
@@ -718,7 +659,7 @@
     <value>Scrivi come vuoi che sia il prompt del tuo server SMTP. Lascia vuoto per usare lo stile predefinito. I segnaposto vengono analizzati.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SETTINGS_AUTODETECT_DESC" xml:space="preserve">
-    <value>Rileva automaticamente il server di posta in base all&apos;indirizzo fornito.</value>
+    <value>Rileva automaticamente il server di posta in base all'indirizzo fornito.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SETTINGS_DEBUG_DESC" xml:space="preserve">
     <value>Abilita il debug del server di posta.</value>
@@ -754,7 +695,7 @@
     <value>Quanti millisecondi per aggiornare il feed RSS?</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_NAME" xml:space="preserve">
-    <value>Mostra i dettagli del file nell&apos;elenco SFTP</value>
+    <value>Mostra i dettagli del file nell'elenco SFTP</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
     <value>Stile di richiesta nome utente per SFTP</value>
@@ -763,7 +704,7 @@
     <value>Aggiungi nuove connessioni alla composizione rapida SFTP</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_SETTINGS_FILEDETAILS_DESC" xml:space="preserve">
-    <value>Mostra i dettagli del file SFTP durante l&apos;elenco delle directory remote.</value>
+    <value>Mostra i dettagli del file SFTP durante l'elenco delle directory remote.</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_SETTINGS_NEWCONNECTIONS_DESC" xml:space="preserve">
     <value>Se abilitato, aggiunge una nuova connessione alla composizione rapida SFTP.</value>
@@ -799,7 +740,7 @@
     <value>Tipo di dati di caricamento del server:</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEFILENEEDED_HASH" xml:space="preserve">
-    <value>Immettere un file remoto di cui eseguire l&apos;hashing.</value>
+    <value>Immettere un file remoto di cui eseguire l'hashing.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_EXCEPTION_REMOTEDIRECTORYNEEDED" xml:space="preserve">
     <value>Immettere una directory remota.</value>
@@ -808,7 +749,7 @@
     <value>Hashing ricorsivo per FTP</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_RECHASHING_DESC" xml:space="preserve">
-    <value>Se eseguire l&apos;hashing ricorsivo di una directory. Tieni presente che non tutti i server FTP lo supportano.</value>
+    <value>Se eseguire l'hashing ricorsivo di una directory. Tieni presente che non tutti i server FTP lo supportano.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COMMAND_EXECUTE_DESC" xml:space="preserve">
     <value>Esegue un comando del server FTP</value>
@@ -835,7 +776,7 @@
     <value>Protocolli</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESS_NAME" xml:space="preserve">
-    <value>Mostra l&apos;avanzamento del trasferimento della posta</value>
+    <value>Mostra l'avanzamento del trasferimento della posta</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TRANSFERPROGRESSSTYLE_NAME" xml:space="preserve">
     <value>Avanzamento del trasferimento della posta</value>
@@ -871,7 +812,7 @@
     <value>Ottenere {0}...</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_PACK_DESC" xml:space="preserve">
-    <value>Impacchetta un file locale nell&apos;archivio</value>
+    <value>Impacchetta un file locale nell'archivio</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_PACK" xml:space="preserve">
     <value>Non posso imballare nulla.</value>
@@ -913,10 +854,10 @@
     <value>Seleziona la formattazione JSON predefinita (abbellita o ridotta) per il salvataggio della shell JSON.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SHOWDETAILS_DESC" xml:space="preserve">
-    <value>Mostra i dettagli del file nell&apos;elenco</value>
+    <value>Mostra i dettagli del file nell'elenco</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Sopprime i fastidiosi messaggi di &quot;autorizzazione negata&quot;.</value>
+    <value>Sopprime i fastidiosi messaggi di "autorizzazione negata".</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC" xml:space="preserve">
     <value>Indica che il percorso di destinazione è assoluto</value>
@@ -1009,7 +950,7 @@
     <value>Immettere un nuovo nome di directory.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FOLDERFOUND" xml:space="preserve">
-    <value>La cartella esiste già. Il nome non deve essere occupato da un&apos;altra cartella.</value>
+    <value>La cartella esiste già. Il nome non deve essere occupato da un'altra cartella.</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOREV" xml:space="preserve">
     <value>Nessuna revisione.</value>
@@ -1018,7 +959,7 @@
     <value>La connessione non è stata ancora stabilita.</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_SERVERADDRESSPROMPT" xml:space="preserve">
-    <value>Inserisci l&apos;indirizzo del server:</value>
+    <value>Inserisci l'indirizzo del server:</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COMMAND_IFM_DESC" xml:space="preserve">
     <value>File manager host del sistema interattivo</value>
@@ -1042,19 +983,19 @@
     <value>La posta POP3 ritorna dalla versione 0.0.20.0, ma al momento non prevediamo di rilasciarla in questa versione. Aspetta la prossima versione.</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_FEEDURLPROMPT" xml:space="preserve">
-    <value>Inserisci l&apos;URL del feed RSS</value>
+    <value>Inserisci l'URL del feed RSS</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE" xml:space="preserve">
-    <value>Errore durante il tentativo di analizzare l&apos;indirizzo. Assicurati di aver scritto l&apos;indirizzo correttamente.</value>
+    <value>Errore durante il tentativo di analizzare l'indirizzo. Assicurati di aver scritto l'indirizzo correttamente.</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_RSS_SWITCH_TUI_DESC" xml:space="preserve">
-    <value>Apre un&apos;interfaccia utente utente interattiva del lettore di feed RSS</value>
+    <value>Apre un'interfaccia utente utente interattiva del lettore di feed RSS</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NEEDSTARGET_EXTRACT" xml:space="preserve">
     <value>Impossibile estrarre nulla.</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_INVALIDTYPE_PACK" xml:space="preserve">
-    <value>L&apos;archivio non è scrivibile perché il tipo lo è</value>
+    <value>L'archivio non è scrivibile perché il tipo lo è</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_COMMAND_CAT_DESC" xml:space="preserve">
     <value>Legge il contenuto di un file remoto sulla console</value>
@@ -1075,7 +1016,7 @@
     <value>Impossibile aprire il repository. Uscita dalla shell...</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_COMMAND_BLAME_DESC" xml:space="preserve">
-    <value>Recupera l&apos;elenco delle modifiche in un file riga per riga</value>
+    <value>Recupera l'elenco delle modifiche in un file riga per riga</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_COMMAND_CHECKOUT_DESC" xml:space="preserve">
     <value>Controlla una filiale</value>
@@ -1150,7 +1091,7 @@
     <value>Mette in scena tutti i cambiamenti</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_COMMAND_STATUS_DESC" xml:space="preserve">
-    <value>Stato dell&apos;archivio</value>
+    <value>Stato dell'archivio</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_COMMAND_UNSTAGE_DESC" xml:space="preserve">
     <value>Annulla la messa in scena di un cambiamento</value>
@@ -1159,13 +1100,13 @@
     <value>Annulla tutte le modifiche</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_ADDHEADER_DESC" xml:space="preserve">
-    <value>Aggiunge un&apos;intestazione con la chiave e il valore a tutte le richieste imminenti</value>
+    <value>Aggiunge un'intestazione con la chiave e il valore a tutte le richieste imminenti</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_CURRAGENT_DESC" xml:space="preserve">
-    <value>Ottiene l&apos;agente utente corrente</value>
+    <value>Ottiene l'agente utente corrente</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_EDITHEADER_DESC" xml:space="preserve">
-    <value>Modifica una chiave nell&apos;intestazione di tutte le richieste imminenti</value>
+    <value>Modifica una chiave nell'intestazione di tutte le richieste imminenti</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_LSHEADER_DESC" xml:space="preserve">
     <value>Elenca le intestazioni della richiesta</value>
@@ -1183,19 +1124,19 @@
     <value>Invia la stringa al server HTTP utilizzando la richiesta specificata</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_RMHEADER_" xml:space="preserve">
-    <value>Rimuove una chiave sull&apos;intestazione a tutte le richieste imminenti</value>
+    <value>Rimuove una chiave sull'intestazione a tutte le richieste imminenti</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_DESC" xml:space="preserve">
     <value>Imposta un agente utente</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADEREXISTS" xml:space="preserve">
-    <value>Aggiunta di un&apos;intestazione già esistente.</value>
+    <value>Aggiunta di un'intestazione già esistente.</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_REMOVE" xml:space="preserve">
-    <value>Rimozione dell&apos;intestazione che non esiste.</value>
+    <value>Rimozione dell'intestazione che non esiste.</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_EXCEPTION_HEADERNOTEXISTS_EDIT" xml:space="preserve">
-    <value>Modifica dell&apos;intestazione che non esiste.</value>
+    <value>Modifica dell'intestazione che non esiste.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_ADD_DESC" xml:space="preserve">
     <value>Aggiunge un nuovo array, oggetto o proprietà</value>
@@ -1240,25 +1181,25 @@
     <value>Imposta un valore su una matrice, un oggetto o una proprietà esistente</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_TUI_DESC" xml:space="preserve">
-    <value>Apre il file JSON nell&apos;editor interattivo</value>
+    <value>Apre il file JSON nell'editor interattivo</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOTOKEN" xml:space="preserve">
-    <value>Impossibile trovare il token all&apos;interno del file JSON.</value>
+    <value>Impossibile trovare il token all'interno del file JSON.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN" xml:space="preserve">
-    <value>Il token principale non è stato trovato. Assicurati di aver scritto correttamente il percorso &apos;{0}&apos;.</value>
+    <value>Il token principale non è stato trovato. Assicurati di aver scritto correttamente il percorso '{0}'.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
-    <value>Il tipo specificato &apos;{0}&apos; non è valido.</value>
+    <value>Il tipo specificato '{0}' non è valido.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED" xml:space="preserve">
-    <value>Impossibile aggiungere un nuovo elemento con il nome della proprietà con il tipo di token principale &quot;{0}&quot;.</value>
+    <value>Impossibile aggiungere un nuovo elemento con il nome della proprietà con il tipo di token principale "{0}".</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED" xml:space="preserve">
-    <value>Impossibile aggiungere un nuovo elemento con il nome della proprietà &apos;{0}&apos; con il tipo di token principale &apos;{1}&apos;.</value>
+    <value>Impossibile aggiungere un nuovo elemento con il nome della proprietà '{0}' con il tipo di token principale '{1}'.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT" xml:space="preserve">
-    <value>Il nome della proprietà &apos;{0}&apos; all&apos;interno dell&apos;elemento principale &apos;{1}&apos;, tipo &apos;{2}&apos;, non esiste</value>
+    <value>Il nome della proprietà '{0}' all'interno dell'elemento principale '{1}', tipo '{2}', non esiste</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC" xml:space="preserve">
     <value>Cerca nel feed una frase nel titolo e/o nella descrizione</value>
@@ -1276,7 +1217,7 @@
     <value>Ricerca con distinzione tra maiuscole e minuscole</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL" xml:space="preserve">
-    <value>Impossibile analizzare l&apos;URL del feed:</value>
+    <value>Impossibile analizzare l'URL del feed:</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_FEEDNODESC" xml:space="preserve">
     <value>Nessuna descrizione</value>
@@ -1285,10 +1226,10 @@
     <value>Mostra i dettagli dei file e delle cartelle</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Sopprime i messaggi &quot;non autorizzati&quot;.</value>
+    <value>Sopprime i messaggi "non autorizzati".</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT" xml:space="preserve">
-    <value>Inserisci la posizione della chiave privata per {0}. Scrivi &quot;q&quot; per completare l&apos;aggiunta delle chiavi:</value>
+    <value>Inserisci la posizione della chiave privata per {0}. Scrivi "q" per completare l'aggiunta delle chiavi:</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTING" xml:space="preserve">
     <value>Tentativo di connessione a {0}...</value>
@@ -1300,7 +1241,7 @@
     <value>Informazioni sulla banca dati</value>
   </data>
   <data name="NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC" xml:space="preserve">
-    <value>Apre il file SQL nell&apos;interfaccia utente interattiva dell&apos;editor esadecimale</value>
+    <value>Apre il file SQL nell'interfaccia utente interattiva dell'editor esadecimale</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED" xml:space="preserve">
     <value>Questo tipo di archivio non è supportato.</value>
@@ -1492,7 +1433,7 @@
     <value>Nessun file mancante.</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES" xml:space="preserve">
-    <value>Non viene apportata alcuna modifica all&apos;unstage.</value>
+    <value>Non viene apportata alcuna modifica all'unstage.</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS" xml:space="preserve">
     <value>File non messo in scena {0} con successo!</value>
@@ -1513,7 +1454,7 @@
     <value>La shell JSON non è riuscita ad aggiungere un elemento.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_PROPERTY_FOUND" xml:space="preserve">
-    <value>L&apos;immobile si trova in</value>
+    <value>L'immobile si trova in</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_PROPERTY_NOTFOUND" xml:space="preserve">
     <value>La proprietà non è stata trovata</value>
@@ -1564,7 +1505,7 @@
     <value>Percorso della proprietà</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_JSONINFO_PROPERTY_VALUE" xml:space="preserve">
-    <value>Costo dell&apos;immobile</value>
+    <value>Costo dell'immobile</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_REMOVEITEMFAILED" xml:space="preserve">
     <value>La shell JSON non è riuscita a rimuovere un elemento.</value>
@@ -1579,19 +1520,19 @@
     <value>Allegati:</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE" xml:space="preserve">
-    <value>Questa connessione contiene un&apos;istanza di feed RSS non valida.</value>
+    <value>Questa connessione contiene un'istanza di feed RSS non valida.</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_READERCLI_UNKNOWNTITLE" xml:space="preserve">
-    <value>Titolo dell&apos;articolo sconosciuto</value>
+    <value>Titolo dell'articolo sconosciuto</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_READERCLI_NOCONTENTS" xml:space="preserve">
-    <value>Sfortunatamente, questo articolo non ha alcun contenuto. Puoi ancora seguire l&apos;articolo su</value>
+    <value>Sfortunatamente, questo articolo non ha alcun contenuto. Puoi ancora seguire l'articolo su</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_READERCLI_NOLINK" xml:space="preserve">
     <value>Questo articolo non ha un collegamento.</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HOSTBROWSEROPENFAILED" xml:space="preserve">
-    <value>Impossibile aprire il browser host al collegamento all&apos;articolo.</value>
+    <value>Impossibile aprire il browser host al collegamento all'articolo.</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_LSREMOTE_MODIFIED" xml:space="preserve">
     <value>Modificata:</value>
@@ -1642,13 +1583,13 @@
     <value>Preimpostazione del prompt della shell JSON</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_NAME" xml:space="preserve">
-    <value>Abilita il salvataggio automatico dell&apos;editor JSON</value>
+    <value>Abilita il salvataggio automatico dell'editor JSON</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVE_DESC" xml:space="preserve">
-    <value>Attiva o disattiva la funzionalità di salvataggio automatico dell&apos;editor JSON.</value>
+    <value>Attiva o disattiva la funzionalità di salvataggio automatico dell'editor JSON.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_SETTINGS_AUTOSAVEINTERVAL_NAME" xml:space="preserve">
-    <value>Intervallo di salvataggio automatico dell&apos;editor JSON</value>
+    <value>Intervallo di salvataggio automatico dell'editor JSON</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SETTINGS_ENTRYDESC" xml:space="preserve">
     <value>Questa sezione ti consente di configurare il funzionamento della shell di posta.</value>
@@ -1723,13 +1664,13 @@
     <value>Impossibile ottenere le voci di archivio</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_NOTLOADED" xml:space="preserve">
-    <value>L&apos;archivio non è ancora stato caricato.</value>
+    <value>L'archivio non è ancora stato caricato.</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_ARCHIVEDIRUNDETERMINABLE" xml:space="preserve">
     <value>Impossibile determinare la directory di archivio corrente.</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_LASTSHELLTYPEMISMATCH" xml:space="preserve">
-    <value>L&apos;ultimo guscio non è questo guscio da cui staccarsi.</value>
+    <value>L'ultimo guscio non è questo guscio da cui staccarsi.</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_EXCEPTION_NOCLIENT" xml:space="preserve">
     <value>Il client non è popolato.</value>
@@ -1756,10 +1697,10 @@
     <value>Aggiornare</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_ARTICLEINFO_NOARTICLE" xml:space="preserve">
-    <value>Non c&apos;è nessun articolo.</value>
+    <value>Non c'è nessun articolo.</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_FEEDINFO_NOFEED" xml:space="preserve">
-    <value>Non c&apos;è alimentazione.</value>
+    <value>Non c'è alimentazione.</value>
   </data>
   <data name="NKS_SHELLPACKS_SQL_DBINFO_NOCONNECTION" xml:space="preserve">
     <value>Impossibile ottenere la connessione</value>
@@ -1828,10 +1769,10 @@
     <value>Elenco locale</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_ARGUMENT_ARCHIVEDIRECTORY_DESC" xml:space="preserve">
-    <value>Directory all&apos;interno dell&apos;archivio</value>
+    <value>Directory all'interno dell'archivio</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_ENTRY_DESC" xml:space="preserve">
-    <value>File nell&apos;archivio</value>
+    <value>File nell'archivio</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_GET_ARGUMENT_WHERE_DESC" xml:space="preserve">
     <value>Directory locale in cui estrarre</value>
@@ -1888,7 +1829,7 @@
     <value>Tasto intestazione</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_VALUE_DESC" xml:space="preserve">
-    <value>Valore dell&apos;intestazione</value>
+    <value>Valore dell'intestazione</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_ARGUMENT_REQUEST_DESC" xml:space="preserve">
     <value>Richiesta HTTP</value>
@@ -1900,10 +1841,10 @@
     <value>Stringa da caricare</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_COMMAND_SETAGENT_ARGUMENT_UA_DESC" xml:space="preserve">
-    <value>Stringa dell&apos;agente utente</value>
+    <value>Stringa dell'agente utente</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_MAIL_ARGUMENT_ADDRESS_DESC" xml:space="preserve">
-    <value>Indirizzo e-mail per effettuare l&apos;accesso</value>
+    <value>Indirizzo e-mail per effettuare l'accesso</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_TUI_KEYBINDING_CREATEFOLDER" xml:space="preserve">
     <value>Crea cartella</value>
@@ -2035,7 +1976,7 @@
     <value>Nome proprietà JSON</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_RM_ARGUMENT_OBJECTPATH_DESC" xml:space="preserve">
-    <value>Percorso dell&apos;oggetto</value>
+    <value>Percorso dell'oggetto</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_COMMAND_SET_ARGUMENT_JSONVALUE_DESC" xml:space="preserve">
     <value>Valore JSON</value>
@@ -2047,7 +1988,7 @@
     <value>Gestione dei server FTP e SFTP in una TUI interattiva</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
-    <value>I server FTP e SFTP possono essere gestiti tramite l&apos;interfaccia a riga di comando o tramite la TUI interattiva creata per entrambi i protocolli server. Il set di TUI fornisce due interfacce utente separate: la TUI di gestione FTP e la TUI di gestione SFTP. Le TUI sono a doppio pannello, il che significa che è possibile lavorare con entrambe le directory contemporaneamente, proprio come in Total Commander. È inoltre possibile eseguire operazioni sui file, come download, upload, copia, spostamento, eliminazione e così via.</value>
+    <value>I server FTP e SFTP possono essere gestiti tramite l'interfaccia a riga di comando o tramite la TUI interattiva creata per entrambi i protocolli server. Il set di TUI fornisce due interfacce utente separate: la TUI di gestione FTP e la TUI di gestione SFTP. Le TUI sono a doppio pannello, il che significa che è possibile lavorare con entrambe le directory contemporaneamente, proprio come in Total Commander. È inoltre possibile eseguire operazioni sui file, come download, upload, copia, spostamento, eliminazione e così via.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
     <value>Gestione dei messaggi di posta elettronica</value>
@@ -2065,16 +2006,16 @@
     <value>Rilevamento automatico dei server di posta</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_BODY" xml:space="preserve">
-    <value>In genere, il sistema di posta rileva automaticamente i server di posta che verranno utilizzati in base all&apos;indirizzo email utilizzato al momento dell&apos;accesso al proprio account. Utilizzando Thunderbird Autoconfig come backend del modulo di configurazione, il server di posta verrà determinato automaticamente.</value>
+    <value>In genere, il sistema di posta rileva automaticamente i server di posta che verranno utilizzati in base all'indirizzo email utilizzato al momento dell'accesso al proprio account. Utilizzando Thunderbird Autoconfig come backend del modulo di configurazione, il server di posta verrà determinato automaticamente.</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_TITLE" xml:space="preserve">
     <value>Lettura dei feed RSS</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_DESC" xml:space="preserve">
-    <value>I tuoi feed RSS in un&apos;unica schermata</value>
+    <value>I tuoi feed RSS in un'unica schermata</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
-    <value>Leggere i feed RSS in questa interfaccia utente interattiva è diventato più semplice! Puoi selezionare un feed RSS e leggere l&apos;articolo direttamente nel riquadro di destra.</value>
+    <value>Leggere i feed RSS in questa interfaccia utente interattiva è diventato più semplice! Puoi selezionare un feed RSS e leggere l'articolo direttamente nel riquadro di destra.</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
     <value>Da</value>
@@ -2098,19 +2039,19 @@
     <value>Indirizzo e-mail o nome host</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_ISPINFO_SWITCH_HOST_DESC" xml:space="preserve">
-    <value>Utilizza il nome host anziché l&apos;indirizzo</value>
+    <value>Utilizza il nome host anziché l'indirizzo</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYNAME" xml:space="preserve">
-    <value>Nome visualizzato dell&apos;ISP</value>
+    <value>Nome visualizzato dell'ISP</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DISPLAYSHORTNAME" xml:space="preserve">
-    <value>Nome abbreviato dell&apos;ISP</value>
+    <value>Nome abbreviato dell'ISP</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMAIN" xml:space="preserve">
-    <value>Dominio dell&apos;ISP</value>
+    <value>Dominio dell'ISP</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_DOMINATINGDOMAIN" xml:space="preserve">
-    <value>Dominio dominante dell&apos;ISP</value>
+    <value>Dominio dominante dell'ISP</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_INCOMING_HOSTNAME" xml:space="preserve">
     <value>Nome host del server in entrata</value>
@@ -2139,5 +2080,7 @@
   <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
     <value>Ricezione della posta in arrivo non riuscita</value>
   </data>
-
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED" xml:space="preserve">
+    <value>Impossibile ottenere il messaggio di posta specificato</value>
+  </data>
 </root>

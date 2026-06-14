@@ -86,7 +86,6 @@ namespace Nitrocid.ShellPacks.Tools.Directory
                         }
                         else
                         {
-                            // TODO: NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED -> "Failed to obtain specified mail message"
                             Msg = client.Inbox?.GetMessage(messages.ElementAtOrDefault(i), default, MailShellCommon.Progress) ??
                                 throw new KernelException(KernelExceptionType.Mail, LanguageTools.GetLocalized("NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED"));
                         }

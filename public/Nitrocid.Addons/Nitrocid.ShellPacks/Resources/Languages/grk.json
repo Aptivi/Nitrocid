@@ -2702,6 +2702,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Η λήψη των εισερχομένων απέτυχε"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Αποτυχία λήψης του συγκεκριμένου μηνύματος ηλεκτρονικού ταχυδρομείου"
     }
   ]
 }

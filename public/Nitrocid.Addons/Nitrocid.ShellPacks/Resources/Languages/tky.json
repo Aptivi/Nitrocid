@@ -2702,6 +2702,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Gelen kutusuna erişim başarısız oldu."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Belirtilen e-posta mesajı alınamadı."
     }
   ]
 }

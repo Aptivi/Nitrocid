@@ -2707,6 +2707,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Inbox ophalen mislukt"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Het ophalen van het opgegeven e-mailbericht is mislukt."
     }
   ]
 }

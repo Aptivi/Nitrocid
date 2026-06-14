@@ -1,145 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
+  </resheader>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
     <value>{0} için kullanıcı adı:</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD" xml:space="preserve">
     <value>{0} için şifre:</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_CONNECTEDTO" xml:space="preserve">
-    <value>{0}&apos;a bağlandı</value>
+    <value>{0}'a bağlandı</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_ERRORCONNECTING" xml:space="preserve">
-    <value>{0}&apos;a bağlanmaya çalışırken hata oluştu: {1}</value>
+    <value>{0}'a bağlanmaya çalışırken hata oluştu: {1}</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_LOCALDIRNOTFOUND" xml:space="preserve">
     <value>Yerel dizin {0} mevcut değil.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR" xml:space="preserve">
-    <value>Yerel bir dizine girin. Geri dönmek için &quot;...&quot;</value>
+    <value>Yerel bir dizine girin. Geri dönmek için "..."</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND" xml:space="preserve">
     <value>{0} dizini bulunamadı.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR" xml:space="preserve">
-    <value>Uzak bir dizine girin. Geri dönmek için &quot;...&quot;</value>
+    <value>Uzak bir dizine girin. Geri dönmek için "..."</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_FS_LOCALDIR" xml:space="preserve">
     <value>Yerel dizin: {0}</value>
@@ -217,7 +158,7 @@
     <value>Boyut: {0}</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_NOPROFILESORTIMEOUT" xml:space="preserve">
-    <value>{0}&apos;a bağlanmaya çalışırken hata: Bağlantı zaman aşımı veya bağlantı kaybı</value>
+    <value>{0}'a bağlanmaya çalışırken hata: Bağlantı zaman aşımı veya bağlantı kaybı</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COMMAND_SUMFILES_DESC" xml:space="preserve">
     <value>Belirtilen dizindeki dosyaların toplamını hesaplar.</value>
@@ -229,10 +170,10 @@
     <value>Şifreyi girin:</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_CONNECTIONFAILED" xml:space="preserve">
-    <value>{0}&apos;a bağlanırken hata oluştu: {1}</value>
+    <value>{0}'a bağlanırken hata oluştu: {1}</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_CONNECTING" xml:space="preserve">
-    <value>{0}&apos;a bağlanılıyor...</value>
+    <value>{0}'a bağlanılıyor...</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_AUTHENTICATING" xml:space="preserve">
     <value>Kimlik doğrulanıyor...</value>
@@ -253,13 +194,13 @@
     <value>Mesaj numarası sayısal bir değer değildir.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_FROM" xml:space="preserve">
-    <value>- {0}&apos;dan</value>
+    <value>- {0}'dan</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_TO" xml:space="preserve">
-    <value>- {0}&apos;a</value>
+    <value>- {0}'a</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_MESSAGEVIEW_WHEN" xml:space="preserve">
-    <value>- {1} adresinde {0}&apos;da gönderildi</value>
+    <value>- {1} adresinde {0}'da gönderildi</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_MESSAGENUMNOTFOUND" xml:space="preserve">
     <value>Belirtilen mesaj bulunamadı.</value>
@@ -301,7 +242,7 @@
     <value>Konuyu giriniz:</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT" xml:space="preserve">
-    <value>Mesajınızı aşağıya girin. Onaylamak için &quot;EOF&quot; yazın.</value>
+    <value>Mesajınızı aşağıya girin. Onaylamak için "EOF" yazın.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_SENDING" xml:space="preserve">
     <value>Mesaj gönderiliyor...</value>
@@ -367,7 +308,7 @@
     <value>Mesaj gönderilirken hata oluştu.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_MOVING" xml:space="preserve">
-    <value>{0} {1}&apos;e taşınıyor...</value>
+    <value>{0} {1}'e taşınıyor...</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_MOVED" xml:space="preserve">
     <value>Başarıyla taşındı</value>
@@ -376,10 +317,10 @@
     <value>Dosyayı veya dizini başka bir dosyaya veya dizine taşır. Bunu dosyaları yeniden adlandırmak için de kullanabilirsiniz.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_MOVEFAILED" xml:space="preserve">
-    <value>{0}&apos;ı {1}&apos;e taşıma başarısız oldu.</value>
+    <value>{0}'ı {1}'e taşıma başarısız oldu.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COPYING" xml:space="preserve">
-    <value>{0} {1}&apos;e kopyalanıyor...</value>
+    <value>{0} {1}'e kopyalanıyor...</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COPIED" xml:space="preserve">
     <value>Başarıyla kopyalandı</value>
@@ -388,7 +329,7 @@
     <value>Dosyayı veya dizini başka bir dosyaya veya dizine kopyalar.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COPYFAILED" xml:space="preserve">
-    <value>{0}&apos;ı {1}&apos;e kopyalayamadı.</value>
+    <value>{0}'ı {1}'e kopyalayamadı.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMAND_MV_DESC" xml:space="preserve">
     <value>Bir mesajı taşır</value>
@@ -418,7 +359,7 @@
     <value>Gelen kutunuza {0} yeni mesaj ulaştı.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC" xml:space="preserve">
-    <value>Bunları görmek için &quot;posta&quot;yı açın.</value>
+    <value>Bunları görmek için "posta"yı açın.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME" xml:space="preserve">
     <value>Tam adı: {0}</value>
@@ -445,7 +386,7 @@
     <value>Dosya boyutu: {0}</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_PATHSFORATTACHMENT" xml:space="preserve">
-    <value>Ekler için dosya yollarını girin. Onaylamak için boş bir yolda ENTER&apos;a basın.</value>
+    <value>Ekler için dosya yollarını girin. Onaylamak için boş bir yolda ENTER'a basın.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_COMMAND_READENC_DESC" xml:space="preserve">
     <value>Şifrelenmiş bir mesajı açar</value>
@@ -484,7 +425,7 @@
     <value>E-posta mesajlarını listelerken gövde önizlemesini göster.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC" xml:space="preserve">
-    <value>Otomatik kaydetme etkinleştirilirse, metin dosyası her &quot;n&quot; saniyede bir kaydedilecektir.</value>
+    <value>Otomatik kaydetme etkinleştirilirse, metin dosyası her "n" saniyede bir kaydedilecektir.</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC" xml:space="preserve">
     <value>Bir SSH FTP sunucusu kullanmanıza olanak tanır</value>
@@ -655,7 +596,7 @@
     <value>Güvenli FTP sertifikalarını doğrulamayı deneyin</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_SHOWFTPMOTD_NAME" xml:space="preserve">
-    <value>Bağlantıda FTP MOTD&apos;yi göster</value>
+    <value>Bağlantıda FTP MOTD'yi göster</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_NAME" xml:space="preserve">
     <value>Geçersiz FTP sertifikalarını her zaman kabul et</value>
@@ -664,7 +605,7 @@
     <value>Uzak dizinleri listelerken FTP dosya ayrıntılarını gösterir.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_FIRSTPROFILE_DESC" xml:space="preserve">
-    <value>FTP&apos;ye bağlanmak için ilk FTP profilini kullanır.</value>
+    <value>FTP'ye bağlanmak için ilk FTP profilini kullanır.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_NEWCONNECTIONS_DESC" xml:space="preserve">
     <value>Etkinleştirildiğinde FTP hızlı aramasına yeni bir bağlantı ekler.</value>
@@ -730,10 +671,10 @@
     <value>GPG parola isteminizin nasıl olmasını istediğinizi yazın. Varsayılan stili kullanmak için boş bırakın. Yer tutucular ayrıştırılır.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDIMAPPING_DESC" xml:space="preserve">
-    <value>IMAP ping&apos;inin gönderilmesi kaç milisaniye sürer?</value>
+    <value>IMAP ping'inin gönderilmesi kaç milisaniye sürer?</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SETTINGS_SENDSMTPPING_DESC" xml:space="preserve">
-    <value>SMTP ping&apos;inin gönderilmesi kaç milisaniye sürer?</value>
+    <value>SMTP ping'inin gönderilmesi kaç milisaniye sürer?</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SETTINGS_TEXTFORMAT_DESC" xml:space="preserve">
     <value>E-posta metninin nasıl gösterileceğini kontrol eder.</value>
@@ -916,7 +857,7 @@
     <value>Listedeki dosya ayrıntılarını gösterir</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Rahatsız edici &quot;izin reddedildi&quot; mesajlarını bastırır</value>
+    <value>Rahatsız edici "izin reddedildi" mesajlarını bastırır</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC" xml:space="preserve">
     <value>Hedef yolunun mutlak olduğunu gösterir</value>
@@ -1039,10 +980,10 @@
     <value>POP3 posta istemcisini açar</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_POPMAIL_RETURNING" xml:space="preserve">
-    <value>POP3 postası 0.0.20.0&apos;dan dönüyor, ancak şu anda bu sürümde yayınlamayı planlamıyoruz. Bir sonraki sürümü bekleyin.</value>
+    <value>POP3 postası 0.0.20.0'dan dönüyor, ancak şu anda bu sürümde yayınlamayı planlamıyoruz. Bir sonraki sürümü bekleyin.</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_FEEDURLPROMPT" xml:space="preserve">
-    <value>RSS besleme URL&apos;sini girin</value>
+    <value>RSS besleme URL'sini girin</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE" xml:space="preserve">
     <value>Adresi ayrıştırmaya çalışırken hata oluştu. Adresi doğru yazdığınızdan emin olun.</value>
@@ -1084,7 +1025,7 @@
     <value>Bir taahhütte bulunur</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_COMMAND_DESCRIBE_DESC" xml:space="preserve">
-    <value>Bir commit&apos;i tanımlar</value>
+    <value>Bir commit'i tanımlar</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_COMMAND_DIFF_DESC" xml:space="preserve">
     <value>Mevcut commit ile yerel dosyalar arasındaki farkı gösterir</value>
@@ -1111,7 +1052,7 @@
     <value>Tüm şubeleri listeler</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_COMMAND_LSCOMMITS_DESC" xml:space="preserve">
-    <value>Tüm commit&apos;leri listeler</value>
+    <value>Tüm commit'leri listeler</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_COMMAND_LSREMOTES_DESC" xml:space="preserve">
     <value>Tüm uzaktan kumandaları listeler</value>
@@ -1120,7 +1061,7 @@
     <value>Tüm etiketleri listeler</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_COMMAND_MAKETAG_DESC" xml:space="preserve">
-    <value>HEAD&apos;den bir etiket oluşturur</value>
+    <value>HEAD'den bir etiket oluşturur</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_COMMAND_PULL_DESC" xml:space="preserve">
     <value>Sunucudaki tüm güncellemeleri çeker</value>
@@ -1246,19 +1187,19 @@
     <value>JSON dosyasındaki token bulunamadı.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN" xml:space="preserve">
-    <value>Üst belirteç bulunamadı. &apos;{0}&apos; yolunu doğru yazdığınızdan emin olun.</value>
+    <value>Üst belirteç bulunamadı. '{0}' yolunu doğru yazdığınızdan emin olun.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
-    <value>Belirtilen &apos;{0}&apos; türü geçersiz.</value>
+    <value>Belirtilen '{0}' türü geçersiz.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED" xml:space="preserve">
-    <value>&apos;{0}&apos; üst belirteç türüyle özellik adına sahip yeni bir öğe eklenemiyor.</value>
+    <value>'{0}' üst belirteç türüyle özellik adına sahip yeni bir öğe eklenemiyor.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED" xml:space="preserve">
-    <value>Üst belirteç türü &apos;{1}&apos; olan &apos;{0}&apos; özellik adına sahip yeni bir öğe eklenemez.</value>
+    <value>Üst belirteç türü '{1}' olan '{0}' özellik adına sahip yeni bir öğe eklenemez.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT" xml:space="preserve">
-    <value>Üst öğe &apos;{1}&apos; içindeki &apos;{0}&apos; özellik adı, &apos;{2}&apos; türü mevcut değil</value>
+    <value>Üst öğe '{1}' içindeki '{0}' özellik adı, '{2}' türü mevcut değil</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC" xml:space="preserve">
     <value>Başlıkta ve/veya açıklamada bir ifade için beslemeyi arar</value>
@@ -1276,7 +1217,7 @@
     <value>Büyük/küçük harfe duyarlı arama</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_EXCEPTION_INVALIDFEEDURL" xml:space="preserve">
-    <value>Besleme URL&apos;si ayrıştırılamadı:</value>
+    <value>Besleme URL'si ayrıştırılamadı:</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_FEEDNODESC" xml:space="preserve">
     <value>Açıklama yok</value>
@@ -1285,10 +1226,10 @@
     <value>Dosya ve klasörlerin ayrıntılarını gösterir</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>&quot;Yetkisiz&quot; mesajları bastırır</value>
+    <value>"Yetkisiz" mesajları bastırır</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT" xml:space="preserve">
-    <value>{0} için özel anahtarın konumunu girin. Anahtar eklemeyi bitirmek için &quot;q&quot; yazın:</value>
+    <value>{0} için özel anahtarın konumunu girin. Anahtar eklemeyi bitirmek için "q" yazın:</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTING" xml:space="preserve">
     <value>{0} adresine bağlanmaya çalışılıyor...</value>
@@ -1300,7 +1241,7 @@
     <value>Veritabanı bilgisi</value>
   </data>
   <data name="NKS_SHELLPACKS_SQL_COMMAND_TUI_DESC" xml:space="preserve">
-    <value>SQL dosyasını etkileşimli hex düzenleyici TUI&apos;de açar</value>
+    <value>SQL dosyasını etkileşimli hex düzenleyici TUI'de açar</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_EXCEPTION_TYPENOTSUPPORTED" xml:space="preserve">
     <value>Bu arşiv türü desteklenmiyor.</value>
@@ -1339,7 +1280,7 @@
     <value>İlk taahhüt</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_SHA" xml:space="preserve">
-    <value>SHA&apos;yı taahhüt et</value>
+    <value>SHA'yı taahhüt et</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_BLAMESTATUS_COMMIT_MESSAGE" xml:space="preserve">
     <value>Mesajı gönder</value>
@@ -1402,7 +1343,7 @@
     <value>Sığ klon</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_INFO_PATHTODOTGIT" xml:space="preserve">
-    <value>.git&apos;e giden yol</value>
+    <value>.git'e giden yol</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_INFO_PATHTOWORKINGDIR" xml:space="preserve">
     <value>Çalışma dizinine giden yol</value>
@@ -1492,7 +1433,7 @@
     <value>Eksik dosya yok.</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_UNSTAGE_NOCHANGES" xml:space="preserve">
-    <value>Unstage&apos;de herhangi bir değişiklik yapılmadı.</value>
+    <value>Unstage'de herhangi bir değişiklik yapılmadı.</value>
   </data>
   <data name="NKS_SHELLPACKS_GIT_UNSTAGE_SUCCESS" xml:space="preserve">
     <value>{0} dosyası başarıyla sahneden çıkarıldı!</value>
@@ -1507,7 +1448,7 @@
     <value>Dize {0} adresine gönderiliyor...</value>
   </data>
   <data name="NKS_SHELLPACKS_HTTP_PUT_PUTTING_STRING" xml:space="preserve">
-    <value>Dize {0}&apos;a yükleniyor...</value>
+    <value>Dize {0}'a yükleniyor...</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_ADD_ITEM_FAILURE" xml:space="preserve">
     <value>JSON kabuğu bir öğeyi eklemeyi başaramadı.</value>
@@ -1876,7 +1817,7 @@
     <value>Yerel dosyaya giden yol</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COMMAND_PERM_ARGUMENT_PERMNUMBER_DESC" xml:space="preserve">
-    <value>Chmod&apos;a göre izin numaraları</value>
+    <value>Chmod'a göre izin numaraları</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COMMAND_TYPE_ARGUMENT_TYPE_DESC" xml:space="preserve">
     <value>Aktarım türünün ASCII mi yoksa İkili mi olduğunu belirtir</value>
@@ -2044,10 +1985,10 @@
     <value>FTP ve SFTP Sunucularını Yönetme</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_DESC" xml:space="preserve">
-    <value>FTP ve SFTP Sunucularınızı Etkileşimli Bir TUI&apos;de Yönetme</value>
+    <value>FTP ve SFTP Sunucularınızı Etkileşimli Bir TUI'de Yönetme</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
-    <value>FTP ve SFTP sunucuları, komut satırı arayüzü veya her iki sunucu protokolü için oluşturulmuş etkileşimli TUI ile yönetilebilir. TUI seti iki ayrı kullanıcı arayüzü sunar: FTP yönetimi TUI ve SFTP yönetimi TUI. TUI&apos;ler çift panellidir, yani Total Commander gibi iki dizinle aynı anda çalışabilirsiniz. Ayrıca indirme, yükleme, kopyalama, taşıma, silme vb. dosya işlemlerini de gerçekleştirebilirsiniz.</value>
+    <value>FTP ve SFTP sunucuları, komut satırı arayüzü veya her iki sunucu protokolü için oluşturulmuş etkileşimli TUI ile yönetilebilir. TUI seti iki ayrı kullanıcı arayüzü sunar: FTP yönetimi TUI ve SFTP yönetimi TUI. TUI'ler çift panellidir, yani Total Commander gibi iki dizinle aynı anda çalışabilirsiniz. Ayrıca indirme, yükleme, kopyalama, taşıma, silme vb. dosya işlemlerini de gerçekleştirebilirsiniz.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
     <value>E-posta Mesajlarını Yönetme</value>
@@ -2056,7 +1997,7 @@
     <value>Mail TUI, e-posta mesajlarınızı yönetir</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_BODY" xml:space="preserve">
-    <value>E-posta mesajlarınızla daha verimli çalışmak için, bu etkileşimli TUI&apos;yi kullanarak mesajlarınızı basit bir metinsel kullanıcı arayüzüyle daha verimli bir şekilde okuyabilirsiniz. İlk panelde dizinler, ikinci panelde ise mesajlar listelenir. ENTER tuşuna basarak bir mesajı açtığınızda, bir bilgi kutusunda bir metin mesajı alırsınız.</value>
+    <value>E-posta mesajlarınızla daha verimli çalışmak için, bu etkileşimli TUI'yi kullanarak mesajlarınızı basit bir metinsel kullanıcı arayüzüyle daha verimli bir şekilde okuyabilirsiniz. İlk panelde dizinler, ikinci panelde ise mesajlar listelenir. ENTER tuşuna basarak bir mesajı açtığınızda, bir bilgi kutusunda bir metin mesajı alırsınız.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_TUI_HELP02_TITLE" xml:space="preserve">
     <value>Otomatik posta algılama</value>
@@ -2074,7 +2015,7 @@
     <value>RSS beslemeleriniz tek ekranda</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_READERCLI_HELP01_BODY" xml:space="preserve">
-    <value>Bu etkileşimli TUI&apos;de RSS beslemelerini okumak artık daha kolay! Bir RSS beslemesi seçebilir ve makaleyi doğrudan sağ bölmeden okuyabilirsiniz.</value>
+    <value>Bu etkileşimli TUI'de RSS beslemelerini okumak artık daha kolay! Bir RSS beslemesi seçebilir ve makaleyi doğrudan sağ bölmeden okuyabilirsiniz.</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_RSSFEED_FROM" xml:space="preserve">
     <value>İtibaren</value>
@@ -2139,5 +2080,7 @@
   <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
     <value>Gelen kutusuna erişim başarısız oldu.</value>
   </data>
-
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED" xml:space="preserve">
+    <value>Belirtilen e-posta mesajı alınamadı.</value>
+  </data>
 </root>

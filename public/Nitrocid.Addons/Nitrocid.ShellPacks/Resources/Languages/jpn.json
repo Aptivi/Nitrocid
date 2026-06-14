@@ -2701,6 +2701,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "受信トレイの取得に失敗しました"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "指定されたメールメッセージの取得に失敗しました"
     }
   ]
 }

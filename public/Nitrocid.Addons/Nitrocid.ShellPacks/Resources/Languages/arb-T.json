@@ -2727,6 +2727,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "فشل الحصول على صندوق الوارد"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "فشل في الحصول على رسالة البريد الإلكتروني المحددة"
     }
   ]
 }

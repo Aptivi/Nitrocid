@@ -2700,6 +2700,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Falha ao obter a caixa de entrada"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Não foi possível obter a mensagem de e-mail especificada."
     }
   ]
 }

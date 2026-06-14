@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
+  </resheader>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
     <value>Gebruikersnaam voor {0}:</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD" xml:space="preserve">
@@ -133,13 +74,13 @@
     <value>Lokale directory {0} bestaat niet.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR" xml:space="preserve">
-    <value>Voer een lokale map in. &quot;..&quot; terug gaan.</value>
+    <value>Voer een lokale map in. ".." terug gaan.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND" xml:space="preserve">
     <value>Directory {0} niet gevonden.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR" xml:space="preserve">
-    <value>Voer een externe map in. &quot;..&quot; terug gaan</value>
+    <value>Voer een externe map in. ".." terug gaan</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_FS_LOCALDIR" xml:space="preserve">
     <value>Lokale map: {0}</value>
@@ -301,7 +242,7 @@
     <value>Voer het onderwerp in:</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT" xml:space="preserve">
-    <value>Vul hieronder uw bericht in. Schrijf &quot;EOF&quot; om te bevestigen.</value>
+    <value>Vul hieronder uw bericht in. Schrijf "EOF" om te bevestigen.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_SENDING" xml:space="preserve">
     <value>Bericht versturen...</value>
@@ -418,7 +359,7 @@
     <value>{0} nieuwe berichten zijn binnengekomen in de inbox.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC" xml:space="preserve">
-    <value>Open &quot;mail&quot; om ze te zien.</value>
+    <value>Open "mail" om ze te zien.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME" xml:space="preserve">
     <value>Volledige naam: {0}</value>
@@ -484,7 +425,7 @@
     <value>Geef bij het weergeven van e-mailberichten een voorbeeld van het hoofdgedeelte weer.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC" xml:space="preserve">
-    <value>Als autosave is ingeschakeld, wordt het tekstbestand elke &quot;n&quot; seconden bewaard.</value>
+    <value>Als autosave is ingeschakeld, wordt het tekstbestand elke "n" seconden bewaard.</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC" xml:space="preserve">
     <value>Hiermee kunt u een SSH FTP-server gebruiken</value>
@@ -676,7 +617,7 @@
     <value>Toont het FTP-bericht van de dag bij het inloggen.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_SETTINGS_ACCEPTINVALIDCERTS_DESC" xml:space="preserve">
-    <value>Accepteer altijd ongeldige FTP-certificaten. Het wordt niet aanbevolen om het in te schakelen, omdat dit beveiligingsrisico&apos;s kan opleveren.</value>
+    <value>Accepteer altijd ongeldige FTP-certificaten. Het wordt niet aanbevolen om het in te schakelen, omdat dit beveiligingsrisico's kan opleveren.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SETTINGS_USERNAMEPROMPT_NAME" xml:space="preserve">
     <value>Stijl voor gebruikersnaam prompt voor e-mail</value>
@@ -916,7 +857,7 @@
     <value>Toont de bestandsdetails in de lijst</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Onderdrukt de vervelende &quot;toestemming geweigerd&quot;-berichten</value>
+    <value>Onderdrukt de vervelende "toestemming geweigerd"-berichten</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC" xml:space="preserve">
     <value>Geeft aan dat het doelpad absoluut is</value>
@@ -1246,19 +1187,19 @@
     <value>Het token in het JSON-bestand is niet gevonden.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN" xml:space="preserve">
-    <value>Het bovenliggende token is niet gevonden. Zorg ervoor dat u het pad &apos;{0}&apos; correct heeft geschreven.</value>
+    <value>Het bovenliggende token is niet gevonden. Zorg ervoor dat u het pad '{0}' correct heeft geschreven.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
-    <value>Het opgegeven type &apos;{0}&apos; is ongeldig.</value>
+    <value>Het opgegeven type '{0}' is ongeldig.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED" xml:space="preserve">
-    <value>Kan geen nieuw item toevoegen met de eigenschapsnaam met het bovenliggende tokentype &apos;{0}&apos;.</value>
+    <value>Kan geen nieuw item toevoegen met de eigenschapsnaam met het bovenliggende tokentype '{0}'.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED" xml:space="preserve">
-    <value>Kan geen nieuw item met de eigenschapsnaam &apos;{0}&apos; toevoegen met het bovenliggende tokentype &apos;{1}&apos;.</value>
+    <value>Kan geen nieuw item met de eigenschapsnaam '{0}' toevoegen met het bovenliggende tokentype '{1}'.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT" xml:space="preserve">
-    <value>Eigenschapsnaam &apos;{0}&apos; binnen bovenliggend element &apos;{1}&apos;, type &apos;{2}&apos;, bestaat niet</value>
+    <value>Eigenschapsnaam '{0}' binnen bovenliggend element '{1}', type '{2}', bestaat niet</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC" xml:space="preserve">
     <value>Zoekt in de feed naar een woordgroep in de titel en/of beschrijving</value>
@@ -1285,10 +1226,10 @@
     <value>Toont de details van de bestanden en mappen</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Onderdrukt de &quot;ongeautoriseerde&quot; berichten</value>
+    <value>Onderdrukt de "ongeautoriseerde" berichten</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT" xml:space="preserve">
-    <value>Voer de locatie van de privésleutel voor {0} in. Schrijf &quot;q&quot; om het toevoegen van sleutels te voltooien:</value>
+    <value>Voer de locatie van de privésleutel voor {0} in. Schrijf "q" om het toevoegen van sleutels te voltooien:</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTING" xml:space="preserve">
     <value>Probeert verbinding te maken met {0}...</value>
@@ -2047,7 +1988,7 @@
     <value>Uw FTP- en SFTP-servers beheren in een interactieve TUI</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_HELP01_BODY" xml:space="preserve">
-    <value>FTP- en SFTP-servers kunnen worden beheerd via de opdrachtregelinterface of via de interactieve TUI die voor beide serverprotocollen is ontwikkeld. De TUI-set biedt twee afzonderlijke gebruikersinterfaces: een TUI voor FTP-beheer en een TUI voor SFTP-beheer. De TUI&apos;s hebben een dubbel venster, wat betekent dat u met beide mappen tegelijk kunt werken, net als Total Commander. U kunt ook bestandsbewerkingen uitvoeren, zoals downloaden, uploaden, kopiëren, verplaatsen, verwijderen, enzovoort.</value>
+    <value>FTP- en SFTP-servers kunnen worden beheerd via de opdrachtregelinterface of via de interactieve TUI die voor beide serverprotocollen is ontwikkeld. De TUI-set biedt twee afzonderlijke gebruikersinterfaces: een TUI voor FTP-beheer en een TUI voor SFTP-beheer. De TUI's hebben een dubbel venster, wat betekent dat u met beide mappen tegelijk kunt werken, net als Total Commander. U kunt ook bestandsbewerkingen uitvoeren, zoals downloaden, uploaden, kopiëren, verplaatsen, verwijderen, enzovoort.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_TUI_HELP01_TITLE" xml:space="preserve">
     <value>E-mailberichten beheren</value>
@@ -2139,5 +2080,7 @@
   <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
     <value>Inbox ophalen mislukt</value>
   </data>
-
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED" xml:space="preserve">
+    <value>Het ophalen van het opgegeven e-mailbericht is mislukt.</value>
+  </data>
 </root>

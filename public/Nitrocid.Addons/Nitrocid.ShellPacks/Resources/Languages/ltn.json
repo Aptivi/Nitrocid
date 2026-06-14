@@ -2701,6 +2701,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Acquisitio arcae epistularis defecit"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Nuntius electronicus specificatus obtineri non potuit."
     }
   ]
 }

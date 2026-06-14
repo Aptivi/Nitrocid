@@ -2704,6 +2704,10 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
       "text": "Gagal mendapatkan peti masuk"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Gagal mendapatkan mesej mel yang dinyatakan"
     }
   ]
 }
