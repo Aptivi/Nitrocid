@@ -1,3 +1,9 @@
+nitrocid-25 (3.0.25.589-0.1.0.78-1) noble; urgency=medium
+
+  * Please populate changelogs here
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sun, 14 Jun 2026 20:17:23 +0300
+
 nitrocid-25 (3.0.25.588-0.1.0.77-1) noble; urgency=medium
 
   * Improved the Windows installer modularity
