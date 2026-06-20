@@ -26,7 +26,7 @@ jobs:
       - name: Solution Compilation
         run: python tools/adt.py build -b "-p:Configuration=Debug -p:ContinuousIntegrationBuild=true"
       - name: Testing
-        run: dotnet test --no-build --configuration Debug
+        run: python tools/adt.py test -t="--no-build --configuration Debug"
       - uses: actions/upload-artifact@v7
         if: success() || failure()
         with:
