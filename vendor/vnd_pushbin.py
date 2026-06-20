@@ -24,7 +24,7 @@ def vnd_pushbin(extra_args):
     source = parsed.source
     for binary_file in binary_files:
         print(f'\nPushing NuGet package: {binary_file}')
-        command = f'dotnet nuget push {binary_file} ' + \
+        command = f'dotnet nuget push \"{binary_file}\" ' + \
                   f'--api-key "{api_key}" ' + \
                   f'--source "{source}" ' + \
                   '--skip-duplicate'

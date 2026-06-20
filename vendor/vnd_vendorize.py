@@ -12,7 +12,7 @@ def vnd_vendorize(extra_args):
     nuget_packages_dir = solution + '/nuget'
     extra_packages_dir = home_dir + '/.nuget/packages'
     print(f'Restoring NuGet packages to {nuget_packages_dir}...')
-    restore_command = f'dotnet restore "{solution}/Nitrocid.slnx" ' +\
+    restore_command = f'dotnet restore \"{solution}/Nitrocid.slnx\" ' +\
                       f'--packages "{nuget_packages_dir}"'
     result = subprocess.run(restore_command, shell=True)
     if result.returncode != 0:
