@@ -1,3 +1,9 @@
+nitrocid-25 (3.0.25.589-0.1.0.79-1) noble; urgency=medium
+
+  * Please populate changelogs here
+
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 22 Jun 2026 14:42:59 +0300
+
 nitrocid-25 (3.0.25.589-0.1.0.78-1) noble; urgency=medium
 
   * Fixed missing localization for mail shell

@@ -37,8 +37,8 @@ jobs:
         run: |
           mv debian ..
           mv .github ..
-          tar cfv ../nitrocid-25_3.0.25.589-0.1.0.78.orig.tar .
-          xz ../nitrocid-25_3.0.25.589-0.1.0.78.orig.tar
+          tar cfv ../nitrocid-25_3.0.25.589-0.1.0.79.orig.tar .
+          xz ../nitrocid-25_3.0.25.589-0.1.0.79.orig.tar
           mv ../debian .
 
       - name: Build package
