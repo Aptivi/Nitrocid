@@ -79,7 +79,7 @@ namespace Nitrocid.Base.Users.Login
                 string text = LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME");
                 var figFont = FigletTools.GetFigletFont("thin");
                 int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
+                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight - 1;
                 var nameText = new AlignedFigletText(figFont)
                 {
                     Left = interiorPosX,
@@ -99,7 +99,7 @@ namespace Nitrocid.Base.Users.Login
                 // Print the time and date
                 string timeStr = TimeDateRenderers.RenderTime();
                 string dateStr = TimeDateRenderers.RenderDate();
-                int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight - 1;
+                int consoleInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight;
                 var dateText = new AlignedText()
                 {
                     Left = interiorPosX,
@@ -119,7 +119,7 @@ namespace Nitrocid.Base.Users.Login
                 for (int i = 0; i < motdStrs.Length && i < 2; i++)
                 {
                     string motdStr = motdStrs[i];
-                    int consoleMotdInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 1 + i;
+                    int consoleMotdInfoY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2 + i;
                     var motdText = new AlignedText()
                     {
                         Left = interiorPosX,
@@ -136,7 +136,7 @@ namespace Nitrocid.Base.Users.Login
                 }
 
                 // Print notifications area
-                int notificationsY = ConsoleWrapper.WindowHeight / 2 - figHeight - 4;
+                int notificationsY = ConsoleWrapper.WindowHeight / 2 - figHeight - 3;
                 var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
                 builder.Append(notificationsWidget.Render(interiorPosX, notificationsY, interiorWidth, 1));
 
@@ -144,7 +144,7 @@ namespace Nitrocid.Base.Users.Login
                 if (!curtainMode)
                 {
                     string instStr = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_PRESSKEY");
-                    int consoleInstY = ConsoleWrapper.WindowHeight - 4;
+                    int consoleInstY = ConsoleWrapper.WindowHeight - 3;
                     var instText = new AlignedText()
                     {
                         Left = interiorPosX,

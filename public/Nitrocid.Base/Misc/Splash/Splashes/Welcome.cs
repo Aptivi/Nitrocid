@@ -56,9 +56,9 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
          *   :    |                                                          |
          *   1    |                        ModeText                          | (neutral color)
          *   4    |                                                          |
-         *   :    |  ProgressReport                                          | (progress report color)
-         *   :    |  ------------------------------------------------- 100%  | (progress theme color)
          *   :    |                                                          |
+         *   :    | ProgressReport                                           | (progress report color)
+         *   :    | --------------------------------------------------- 100% | (progress theme color)
          *   :    +----------------------------------------------------------+
          *   :
          *   :------------------------------- 60 -------------------------------
@@ -123,7 +123,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             string text = "Nitrocid";
             var figFont = FigletTools.GetFigletFont("thin");
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight - 1;
             var nameText = new AlignedFigletText(figFont)
             {
                 Left = interiorPosX,
@@ -141,7 +141,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             builder.Append(nameText.Render());
 
             // Write the mode text
-            int modePosY = ConsoleWrapper.WindowHeight / 2 + figHeight - 1;
+            int modePosY = ConsoleWrapper.WindowHeight / 2 + figHeight;
             var modeTextRenderer = new AlignedText()
             {
                 Left = interiorPosX,
@@ -200,7 +200,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
                 LanguageTools.GetLocalized("NKS_KERNEL_STARTING_GOODBYE");
             var figFont = FigletTools.GetFigletFont("thin");
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight - 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight - 1;
             var figText = new AlignedFigletText(figFont)
             {
                 Top = consoleY,
@@ -214,7 +214,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             builder.Append(figText.Render());
 
             // Print the welcome message
-            int welcomeMessagePosY = ConsoleWrapper.WindowHeight / 2 + figHeight - 1;
+            int welcomeMessagePosY = ConsoleWrapper.WindowHeight / 2 + figHeight;
             var welcomeMessageTextRenderer = new AlignedText()
             {
                 Top = welcomeMessagePosY,
@@ -251,23 +251,23 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             // Get infobox position info
             int width = ConsoleWrapper.WindowWidth - 8;
             int posX = ConsoleWrapper.WindowWidth / 2 - width / 2 - 1;
-            int posY = ConsoleWrapper.WindowHeight - 5;
+            int posY = ConsoleWrapper.WindowHeight - 4;
 
             // Write the progress report
-            int interiorPosX = posX + 4;
+            int interiorPosX = posX + 3;
             int progressReportPosY = posY;
             var modeTextEraser = new Eraser()
             {
                 Left = posX + 1,
                 Top = progressReportPosY,
-                Width = width - 2,
+                Width = width,
                 Height = 1,
             };
             var modeTextRenderer = new AlignedText()
             {
                 Left = interiorPosX,
                 Top = progressReportPosY,
-                Width = width - 2,
+                Width = width,
                 UseColors = true,
                 OneLine = true,
                 Text = ProgressReport.FormatString(Vars),
@@ -281,7 +281,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             // Write the progress bar
             int progressBarPosY = posY + 1;
             progress.Position = Progress;
-            progress.Width = width - 6;
+            progress.Width = width - 4;
             builder.Append(
                 RendererTools.RenderRenderable(progress, new(interiorPosX, progressBarPosY))
             );
