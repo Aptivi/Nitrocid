@@ -1,10 +1,10 @@
-We have introduced this small update of Nitrocid to fix localization issues related to mail shell.
+We have introduced this emergency update to fix a serious bug.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed missing localization for mail shell
+- `[*]` Fixed console resize listener not restarting on kernel restart
 
 Review the commit history if you want to get a deep insight about the changes.
 
