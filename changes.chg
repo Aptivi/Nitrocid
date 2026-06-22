@@ -1,10 +1,14 @@
 Nitrocid changes
 ================
 
-Released Quarter 3, 2026; version 0.2.1.0 (mod API 4.1.29.2); codename
-TBD
+Released June 27th, 2026; version 0.2.1.0 (TP) (mod API 4.1.29.3); codename
+Performance Matters
 
-TBD
+You are now testing the technical preview of the upcoming version of Nitrocid,
+version 0.2.1.0. The final release will be distributed in the fourth quarter of
+this year.
+
+One notable feature can be found here:
 
 FreeBSD support
 ---------------
