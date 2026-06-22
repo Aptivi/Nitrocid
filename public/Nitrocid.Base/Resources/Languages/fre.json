@@ -3497,18 +3497,6 @@
       "text": "Fonctionnement en mode maintenance. Sauter une étape..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Impossible de régénérer le thread du noyau alors que le même thread est déjà en cours d'exécution."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "L’action de démarrage du thread enfant ne peut pas être nulle."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Le thread de noyau {0} a échoué."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Pas d'information."
     },
@@ -6473,10 +6461,6 @@
       "text": "Environnements multiples"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Le numéro d’index du thread enfant n’est pas valide."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Nom de l'alarme"
     },
@@ -7247,10 +7231,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Le débogage à distance n'a pas pu démarrer pour des raisons inconnues."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Le fil ne peut pas être régénéré"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

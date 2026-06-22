@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
+  </resheader>
+  <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
     <value>Введіть пароль адміністратора для обслуговування.</value>
   </data>
   <data name="NKS_KERNEL_ENTRY_EXCEPTION_KERNELERROR" xml:space="preserve">
@@ -154,7 +95,7 @@
     <value>Помилка {0}: {1}</value>
   </data>
   <data name="NKS_USERS_LOGIN_USERNAMEPROMPT" xml:space="preserve">
-    <value>Ім&apos;я користувача:</value>
+    <value>Ім'я користувача:</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHPWD_NOSPACES" xml:space="preserve">
     <value>Пробіли не допускаються.</value>
@@ -169,7 +110,7 @@
     <value>Неправильний пароль.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_ADDERROR" xml:space="preserve">
-    <value>Помилка при спробі додати ім&apos;я користувача.</value>
+    <value>Помилка при спробі додати ім'я користувача.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_ADDUSER_CREATEPROGRESS" xml:space="preserve">
     <value>usrmgr: Створення імені користувача {0}...</value>
@@ -187,7 +128,7 @@
     <value>Користувача {0} видалено.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_REMOVEERROR" xml:space="preserve">
-    <value>Помилка при спробі видалити ім&apos;я користувача.</value>
+    <value>Помилка при спробі видалити ім'я користувача.</value>
   </data>
   <data name="NKS_MISC_SCREENSAVER_NOTFOUND" xml:space="preserve">
     <value>Запитана заставка {0} не знайдена.</value>
@@ -205,7 +146,7 @@
     <value>Каталог {0} не знайдено</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHHOSTNAME_BLANKHOSTNAME" xml:space="preserve">
-    <value>Порожнє ім&apos;я хоста.</value>
+    <value>Порожнє ім'я хоста.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHHOSTNAME_PROGRESS" xml:space="preserve">
     <value>Зміна з: {0} на {1}...</value>
@@ -223,10 +164,10 @@
     <value>Паролі не збігаються.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHUSRNAME_SUCCESS" xml:space="preserve">
-    <value>Ім&apos;я користувача змінено на {0}!</value>
+    <value>Ім'я користувача змінено на {0}!</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_NEWNAMEALREADYEXISTS" xml:space="preserve">
-    <value>Нове ім&apos;я, яке ви ввели, уже знайдено.</value>
+    <value>Нове ім'я, яке ви ввели, уже знайдено.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_VERIFY_NOTFOUND" xml:space="preserve">
     <value>{0} не знайдено.</value>
@@ -319,7 +260,7 @@
     <value>Помилка завантаження під час спроби {0}: {1}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GET_NEEDSFTP" xml:space="preserve">
-    <value>Будь ласка, використовуйте &quot;ftp&quot;, якщо ви збираєтеся завантажувати файли з FTP-сервера.</value>
+    <value>Будь ласка, використовуйте "ftp", якщо ви збираєтеся завантажувати файли з FTP-сервера.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC" xml:space="preserve">
     <value>Завантажує файл у поточний робочий каталог</value>
@@ -355,7 +296,7 @@
     <value>Шлях не є ні файлом, ні каталогом.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COPY_DESC" xml:space="preserve">
-    <value>Створює іншу копію файлу в іншому каталозі або під іншим ім&apos;ям.</value>
+    <value>Створює іншу копію файлу в іншому каталозі або під іншим ім'ям.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MOVE_DESC" xml:space="preserve">
     <value>Переміщує файл в інший каталог</value>
@@ -370,7 +311,7 @@
     <value>Витрачений час: {0} мілісекунд</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_ENTRYNAME" xml:space="preserve">
-    <value>Ім&apos;я: {0}</value>
+    <value>Ім'я: {0}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SUMFILE_DESC" xml:space="preserve">
     <value>Обчислює суми файлів.</value>
@@ -478,7 +419,7 @@
     <value>&gt;&gt; Ваша адреса: {0}.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_NAME" xml:space="preserve">
-    <value>&gt;&gt; Ваше ім&apos;я {0}.</value>
+    <value>&gt;&gt; Ваше ім'я {0}.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_TRACE_INVALIDINDEX" xml:space="preserve">
     <value>Індекс {0} недійсний. Існує {1} трасування стека. Індекс базується на нулі, тому спробуйте відняти його на 1.</value>
@@ -490,7 +431,7 @@
     <value>Показує останню трасу стека за винятком</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_COMMAND_USERNAME_DESC" xml:space="preserve">
-    <value>Показує поточне ім&apos;я користувача в сеансі</value>
+    <value>Показує поточне ім'я користувача в сеансі</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_UNBLOCKDBGDEV_DESC" xml:space="preserve">
     <value>Розблокуйте пристрій налагодження за IP-адресою</value>
@@ -553,7 +494,7 @@
     <value>Напишіть порт віддаленого налагоджувача. Він має бути числовим і не повинен уже використовуватися. Інакше віддалений налагоджувач не зможе відкрити порт.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC" xml:space="preserve">
-    <value>Напишіть, скільки разів команда &quot;get&quot; повинна повторювати невдалі завантаження. Воно має бути числовим.</value>
+    <value>Напишіть, скільки разів команда "get" повинна повторювати невдалі завантаження. Воно має бути числовим.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE" xml:space="preserve">
     <value>Відповідь може бути не негативною.</value>
@@ -565,7 +506,7 @@
     <value>Додає користувачів</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHHOSTNAME_DESC" xml:space="preserve">
-    <value>Змінює ім&apos;я хоста</value>
+    <value>Змінює ім'я хоста</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHMAL_DESC" xml:space="preserve">
     <value>Змінює MAL, MOTD після входу</value>
@@ -574,7 +515,7 @@
     <value>Зміни MOTD, повідомлення дня</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_DESC" xml:space="preserve">
-    <value>Змінює ім&apos;я користувача</value>
+    <value>Змінює ім'я користувача</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PERM_DESC" xml:space="preserve">
     <value>Керуйте дозволами для користувачів</value>
@@ -604,7 +545,7 @@
     <value>Не вдалося змінити пароль імені користувача: {0}</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED" xml:space="preserve">
-    <value>Не вдається знайти файл, який відповідає рядку &quot;{0}&quot;: {1}</value>
+    <value>Не вдається знайти файл, який відповідає рядку "{0}": {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC" xml:space="preserve">
     <value>Під час кожного запуску він перевіряє наявність оновлень.</value>
@@ -658,7 +599,7 @@
     <value>Не вдається отримати інформацію про неіснуючий файл.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_INFO_FULLNAME" xml:space="preserve">
-    <value>Повне ім&apos;я: {0}</value>
+    <value>Повне ім'я: {0}</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_INFO_CREATIONTIME" xml:space="preserve">
     <value>Час створення: {0}</value>
@@ -703,7 +644,7 @@
     <value>Файл є архівним. Використовується для резервного копіювання.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR" xml:space="preserve">
-    <value>Атрибут &quot;{0}&quot; недійсний.</value>
+    <value>Атрибут "{0}" недійсний.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS" xml:space="preserve">
     <value>Атрибут успішно додано.</value>
@@ -739,7 +680,7 @@
     <value>Завантаження з {0}...</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME" xml:space="preserve">
-    <value>Показувати індикатор прогресу під час завантаження або завантаження за допомогою команди &quot;get&quot; або &quot;put&quot;.</value>
+    <value>Показувати індикатор прогресу під час завантаження або завантаження за допомогою команди "get" або "put".</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC" xml:space="preserve">
     <value>Якщо істина, «get» або «put» показує панель прогресу під час завантаження або завантаження.</value>
@@ -757,13 +698,13 @@
     <value>Завантаження завершено.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_NEEDSFTP" xml:space="preserve">
-    <value>Будь ласка, використовуйте &quot;ftp&quot;, якщо ви збираєтеся завантажувати файли на сервер FTP.</value>
+    <value>Будь ласка, використовуйте "ftp", якщо ви збираєтеся завантажувати файли на сервер FTP.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_FAILED" xml:space="preserve">
     <value>Помилка завантаження під час спроби {0}: {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC" xml:space="preserve">
-    <value>Напишіть, скільки разів команда &quot;put&quot; повинна повторити спробу невдалого завантаження. Воно має бути числовим.</value>
+    <value>Напишіть, скільки разів команда "put" повинна повторити спробу невдалого завантаження. Воно має бути числовим.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR" xml:space="preserve">
     <value>Адреса не може бути пустою.</value>
@@ -835,7 +776,7 @@
     <value>Скільки мілісекунд чекати перед наступним записом?</value>
   </data>
   <data name="NKS_SHELL_BASE_HELP_NOHELP" xml:space="preserve">
-    <value>Немає допомоги для команди &quot;{0}&quot;.</value>
+    <value>Немає допомоги для команди "{0}".</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_DESC" xml:space="preserve">
     <value>Друкує інформацію про обладнання</value>
@@ -1354,7 +1295,7 @@
     <value>Розмір диска:</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_TOTALMEMORY" xml:space="preserve">
-    <value>Загальна пам&apos;ять:</value>
+    <value>Загальна пам'ять:</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_GFXCARD" xml:space="preserve">
     <value>Відеокарта:</value>
@@ -1372,13 +1313,13 @@
     <value>Додає нові рядки в кінці файлу</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT" xml:space="preserve">
-    <value>Введіть текст, який потрібно додати в кінець файлу. Коли ви закінчите, напишіть &quot;EOF&quot; в окремому рядку.</value>
+    <value>Введіть текст, який потрібно додати в кінець файлу. Коли ви закінчите, напишіть "EOF" в окремому рядку.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME" xml:space="preserve">
-    <value>Ім&apos;я хоста</value>
+    <value>Ім'я хоста</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT" xml:space="preserve">
-    <value>Ім&apos;я користувача</value>
+    <value>Ім'я користувача</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_NAME" xml:space="preserve">
     <value>Друкувати номери рядків у вмісті файлу</value>
@@ -1525,7 +1466,7 @@
     <value>Показує відомості про файл у списку</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Пригнічує дратівливі повідомлення &quot;дозвіл заборонено&quot;.</value>
+    <value>Пригнічує дратівливі повідомлення "дозвіл заборонено".</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC" xml:space="preserve">
     <value>Показує всі часові пояси</value>
@@ -1651,7 +1592,7 @@
     <value>Шістнадцятковий редактор ще не відкрив потік файлів.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT" xml:space="preserve">
-    <value>Введіть байт в окремому рядку, який потрібно додати в кінець файлу. Коли ви закінчите, напишіть &quot;EOF&quot; в окремому рядку.</value>
+    <value>Введіть байт в окремому рядку, який потрібно додати в кінець файлу. Коли ви закінчите, напишіть "EOF" в окремому рядку.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE" xml:space="preserve">
     <value>Недійсний байт.</value>
@@ -1792,16 +1733,16 @@
     <value>Створіть свого першого користувача</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE2_TEXT1" xml:space="preserve">
-    <value>Ми допоможемо вам створити власне ім&apos;я користувача. Виберіть будь-яке ім&apos;я. Це може бути ваш псевдонім або ваше коротке ім’я, за умови, що ваше ім’я користувача не містить пробілів і спеціальних символів і воно ще не існує. Зареєстровано такі імена користувачів:</value>
+    <value>Ми допоможемо вам створити власне ім'я користувача. Виберіть будь-яке ім'я. Це може бути ваш псевдонім або ваше коротке ім’я, за умови, що ваше ім’я користувача не містить пробілів і спеціальних символів і воно ще не існує. Зареєстровано такі імена користувачів:</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_USERNAMEPROMPT" xml:space="preserve">
-    <value>Введіть ім&apos;я користувача</value>
+    <value>Введіть ім'я користувача</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PASSWORDPROMPT" xml:space="preserve">
     <value>Введіть пароль</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_USERCREATIONFAILED" xml:space="preserve">
-    <value>Не вдалося створити ім&apos;я користувача. Будь ласка, переконайтеся, що ваше ім&apos;я користувача не містить пробілів і спеціальних символів.</value>
+    <value>Не вдалося створити ім'я користувача. Будь ласка, переконайтеся, що ваше ім'я користувача не містить пробілів і спеціальних символів.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TITLE" xml:space="preserve">
     <value>Автоматичні оновлення</value>
@@ -1840,10 +1781,10 @@
     <value>Спроба додати незашифрований пароль до списку користувачів.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_CANNOTVALIDATE_ADD" xml:space="preserve">
-    <value>Не вдається додати ім&apos;я користувача. Переконайтеся, що ім&apos;я користувача не існує.</value>
+    <value>Не вдається додати ім'я користувача. Переконайтеся, що ім'я користувача не існує.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_CANNOTVALIDATE_DELETE" xml:space="preserve">
-    <value>Не вдається видалити ім&apos;я користувача. Переконайтеся, що ім&apos;я користувача існує.</value>
+    <value>Не вдається видалити ім'я користувача. Переконайтеся, що ім'я користувача існує.</value>
   </data>
   <data name="NKS_ARGUMENTS_DEBUG_WAITING" xml:space="preserve">
     <value>Ядро чекає на відладчик...</value>
@@ -1882,7 +1823,7 @@
     <value>Файл не існує.</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_COMBINETEXT" xml:space="preserve">
-    <value>Для об&apos;єднання текстових файлів скористайтеся відповідною функцією.</value>
+    <value>Для об'єднання текстових файлів скористайтеся відповідною функцією.</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_COMBINEBINARY" xml:space="preserve">
     <value>Щоб об’єднати двійкові файли, скористайтеся відповідною функцією.</value>
@@ -1951,10 +1892,10 @@
     <value>Розміри кешу:</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_TOTALUSABLEMEMORY" xml:space="preserve">
-    <value>Загальна кількість використовуваної пам&apos;яті:</value>
+    <value>Загальна кількість використовуваної пам'яті:</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_TOTALRESERVEDMEMORY" xml:space="preserve">
-    <value>Зарезервована пам&apos;ять:</value>
+    <value>Зарезервована пам'ять:</value>
   </data>
   <data name="NKS_DRIVERS_HARDWARE_BASE_DISKNUM" xml:space="preserve">
     <value>Номер диска:</value>
@@ -1990,7 +1931,7 @@
     <value>Розширення не вказано.</value>
   </data>
   <data name="NKS_FILES_EXTENSIONS_EXCEPTION_NOIMPLEMENTER" xml:space="preserve">
-    <value>Ім&apos;я виконавця не вказано.</value>
+    <value>Ім'я виконавця не вказано.</value>
   </data>
   <data name="NKS_FILES_EXTENSIONS_EXCEPTION_HANDLERNOTREGGED" xml:space="preserve">
     <value>Обробник розширення не зареєстровано.</value>
@@ -2581,16 +2522,16 @@
     <value>Неможливо виконати спеціальну функцію з неіснуючим аддоном</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
-    <value>Не вдається знайти функцію &quot;{0}&quot; у надбудові &quot;{1}&quot;.</value>
+    <value>Не вдається знайти функцію "{0}" у надбудові "{1}".</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
-    <value>Не вдається знайти властивість &quot;{0}&quot; у надбудові &quot;{1}&quot;.</value>
+    <value>Не вдається знайти властивість "{0}" у надбудові "{1}".</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
-    <value>Не вдається знайти поле &quot;{0}&quot; у надбудові &quot;{1}&quot;.</value>
+    <value>Не вдається знайти поле "{0}" у надбудові "{1}".</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE" xml:space="preserve">
-    <value>Немає такого типу надбудови &quot;{0}&quot;</value>
+    <value>Немає такого типу надбудови "{0}"</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_PROBEFAILED_CPU" xml:space="preserve">
     <value>Не вдалося перевірити одне або кілька ядер ЦП. Все одно відображення інформації...</value>
@@ -2605,13 +2546,13 @@
     <value>Не вдалося перевірити один або кілька жорстких дисків. Все одно відображення інформації...</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_NEEDSELEVATION" xml:space="preserve">
-    <value>Апаратне забезпечення не аналізуватиметься через недостатні привілеї. Використовуйте &quot;winelevate&quot;, щоб перезапустити Nitrocid у підвищеному режимі.</value>
+    <value>Апаратне забезпечення не аналізуватиметься через недостатні привілеї. Використовуйте "winelevate", щоб перезапустити Nitrocid у підвищеному режимі.</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_FAILED" xml:space="preserve">
     <value>Сталася помилка під час перевірки апаратного забезпечення: {0}</value>
   </data>
   <data name="NKS_KERNEL_JOURNALING_EXCEPTION_FILENOTFOUND" xml:space="preserve">
-    <value>Файл журналу &quot;{0}&quot; не існує.</value>
+    <value>Файл журналу "{0}" не існує.</value>
   </data>
   <data name="NKS_KERNEL_POWER_INVOKING" xml:space="preserve">
     <value>Викликано віддалене керування живленням:</value>
@@ -2700,15 +2641,6 @@
   <data name="NKS_KERNEL_STARTING_SKIPSTAGE_MAINTENANCE" xml:space="preserve">
     <value>Працює в режимі обслуговування. Пропуск етапу...</value>
   </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING" xml:space="preserve">
-    <value>Неможливо відновити потік ядра, коли той самий потік уже запущено.</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM" xml:space="preserve">
-    <value>Дія запуску дочірнього потоку не може бути нульовою.</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_FAILED" xml:space="preserve">
-    <value>Помилка потоку ядра {0}.</value>
-  </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOINFO" xml:space="preserve">
     <value>Немає інформації.</value>
   </data>
@@ -2767,7 +2699,7 @@
     <value>Введіть шлях або повний шлях до папки призначення, до якої потрібно перемістити вибраний файл.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NEWFILENAMEPROMPT" xml:space="preserve">
-    <value>Введіть нове ім&apos;я файлу.</value>
+    <value>Введіть нове ім'я файлу.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_INVALIDFILENAME" xml:space="preserve">
     <value>Переконайтеся, що ви написали правильну назву файлу.</value>
@@ -2803,7 +2735,7 @@
     <value>Вибране</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_FILENAME" xml:space="preserve">
-    <value>Ім&apos;я файлу</value>
+    <value>Ім'я файлу</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_ISDIRECTORY" xml:space="preserve">
     <value>Це каталог</value>
@@ -2818,7 +2750,7 @@
     <value>Шлях до файлу</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS" xml:space="preserve">
-    <value>Вибрано &quot;{0}&quot;. Натисніть ESC, щоб вийти та підтвердити FilesystemTools.</value>
+    <value>Вибрано "{0}". Натисніть ESC, щоб вийти та підтвердити FilesystemTools.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTFAILED" xml:space="preserve">
     <value>Не вдається відкрити папку чи вибрати файл</value>
@@ -2830,10 +2762,10 @@
     <value>Щоб дізнатися більше, натисніть ПРОБІЛ</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>Вибрано &quot;{0}&quot;. Натисніть ESC, щоб вийти та підтвердити вибір.</value>
+    <value>Вибрано "{0}". Натисніть ESC, щоб вийти та підтвердити вибір.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_UNSELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>Скасовано вибір &quot;{0}&quot;. Натисніть ESC, щоб вийти та підтвердити вибір.</value>
+    <value>Скасовано вибір "{0}". Натисніть ESC, щоб вийти та підтвердити вибір.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOSELECTIONS" xml:space="preserve">
     <value>Немає вибраних файлів.</value>
@@ -2872,7 +2804,7 @@
     <value>Рівень пріоритету</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TASKMANTUI_OSTASKMEMADDRESS" xml:space="preserve">
-    <value>Адреса пам&apos;яті завдання</value>
+    <value>Адреса пам'яті завдання</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TASKMANTUI_KERNELTASKNAME" xml:space="preserve">
     <value>Назва завдання</value>
@@ -2905,7 +2837,7 @@
     <value>час</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TZTUI_DISPLAY" xml:space="preserve">
-    <value>Відображуване ім&apos;я</value>
+    <value>Відображуване ім'я</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TZTUI_STDNAME" xml:space="preserve">
     <value>Стандартна назва</value>
@@ -2926,10 +2858,10 @@
     <value>Цей метод не існує.</value>
   </data>
   <data name="NKS_MISC_REFLECTION_EXCEPTION_METHODSTATIC" xml:space="preserve">
-    <value>Цей метод є статичним. Використовуйте необ&apos;єктне перевантаження.</value>
+    <value>Цей метод є статичним. Використовуйте необ'єктне перевантаження.</value>
   </data>
   <data name="NKS_MISC_REFLECTION_EXCEPTION_METHODNONSTATIC" xml:space="preserve">
-    <value>Цей спосіб не є статичним. Використовуйте перевантаження об&apos;єкта.</value>
+    <value>Цей спосіб не є статичним. Використовуйте перевантаження об'єкта.</value>
   </data>
   <data name="NKS_MISC_SCREENSAVER_PSWARNING_TITLE" xml:space="preserve">
     <value>Світлочутливе попередження про судоми</value>
@@ -3070,7 +3002,7 @@
     <value>Обробник входу не знайдено!</value>
   </data>
   <data name="NKS_USERS_LOGIN_USERNOTFOUND" xml:space="preserve">
-    <value>Неправильне ім&apos;я користувача або ім&apos;я користувача не знайдено.</value>
+    <value>Неправильне ім'я користувача або ім'я користувача не знайдено.</value>
   </data>
   <data name="NKS_USERS_LOGIN_HANDLERCRASH" xml:space="preserve">
     <value>Збій обробника входу!</value>
@@ -3121,7 +3053,7 @@
     <value>Порада: чи знаєте ви?</value>
   </data>
   <data name="NKS_SHELL_HOMEPAGE_KEYBINDING_KEYBINDINGS" xml:space="preserve">
-    <value>Прив&apos;язки клавіш</value>
+    <value>Прив'язки клавіш</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_ALARMTUI_KEYBINDING_REMOVE" xml:space="preserve">
     <value>видалити</value>
@@ -3169,7 +3101,7 @@
     <value>&gt;&gt; Віддалене налагодження: версія</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_FIRSTTIME" xml:space="preserve">
-    <value>&gt;&gt; Ласкаво просимо! Ви вперше входите в систему віддаленого налагодження. Для реєстрації використовуйте &quot;/register &lt;name&gt;&quot;.</value>
+    <value>&gt;&gt; Ласкаво просимо! Ви вперше входите в систему віддаленого налагодження. Для реєстрації використовуйте "/register &lt;name&gt;".</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICENOTFOUND_BLOCK" xml:space="preserve">
     <value>Не знайдено пристрій для блокування.</value>
@@ -3262,7 +3194,7 @@
     <value>Останні новини від</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>Щоб мати можливість отримувати останні новини, ви повинні встановити аддон RSS Shell Extras. Ви можете скористатися командою &apos;getaddons&apos;, щоб отримати всі додатки!</value>
+    <value>Щоб мати можливість отримувати останні новини, ви повинні встановити аддон RSS Shell Extras. Ви можете скористатися командою 'getaddons', щоб отримати всі додатки!</value>
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Команда не знайдена.</value>
@@ -3496,7 +3428,7 @@
     <value>Отримує ключ і вектор ініціалізації для симетричного кодування</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_HOST_DESC" xml:space="preserve">
-    <value>Отримує поточне ім&apos;я хоста</value>
+    <value>Отримує поточне ім'я хоста</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_IFM_DESC" xml:space="preserve">
     <value>Менеджер файлів хоста інтерактивної системи</value>
@@ -3664,7 +3596,7 @@
     <value>Показує версію ядра</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_WHOAMI_DESC" xml:space="preserve">
-    <value>Отримує поточне ім&apos;я користувача</value>
+    <value>Отримує поточне ім'я користувача</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_WRAPTEXT_DESC" xml:space="preserve">
     <value>Переносить текстовий файл</value>
@@ -3727,7 +3659,7 @@
     <value>Напишіть будь-який текст для використання. Пам’ятайте, дотримуйтеся опису вибраного варіанту.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_COMMAND_REGISTER_DESC" xml:space="preserve">
-    <value>Реєструє ваше ім&apos;я на вашому віддаленому пристрої налагодження</value>
+    <value>Реєструє ваше ім'я на вашому віддаленому пристрої налагодження</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_COMMAND_EXIT_DESC" xml:space="preserve">
     <value>Відключається від віддаленого налагоджувача</value>
@@ -3742,7 +3674,7 @@
     <value>&gt;&gt; Віддалений чат: версія</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CHAT_WELCOME" xml:space="preserve">
-    <value>&gt;&gt; Ласкаво просимо! Ви вперше входите в віддалений чат. У віддаленому налагоджувачі використовуйте &quot;/register &lt;name&gt;&quot; для реєстрації. Ви не можете говорити, поки не зареєструєтесь.</value>
+    <value>&gt;&gt; Ласкаво просимо! Ви вперше входите в віддалений чат. У віддаленому налагоджувачі використовуйте "/register &lt;name&gt;" для реєстрації. Ви не можете говорити, поки не зареєструєтесь.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_BENCHMARKSLEEPONE_DESC" xml:space="preserve">
     <value>Скільки мілісекунд насправді знадобилося, щоб спати лише на одну мілісекунду?</value>
@@ -4099,7 +4031,7 @@
     <value>Драйвери для</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_DRIVERMAN_NAME" xml:space="preserve">
-    <value>Ім&apos;я водія</value>
+    <value>Ім'я водія</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_DRIVERMAN_TYPENAME" xml:space="preserve">
     <value>Назва типу драйвера</value>
@@ -4210,7 +4142,7 @@
     <value>Конфігураційні змінні для</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_LSCONNECTIONS_LISTING" xml:space="preserve">
-    <value>З&apos;єднання за типом</value>
+    <value>З'єднання за типом</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_LSCONNECTIONS_INSTANCE" xml:space="preserve">
     <value>Екземпляр</value>
@@ -4303,16 +4235,16 @@
     <value>Налаштування обладнання</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP" xml:space="preserve">
-    <value>Використовуйте &quot;hwinfo&quot; для отримання додаткової інформації про обладнання.</value>
+    <value>Використовуйте "hwinfo" для отримання додаткової інформації про обладнання.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE" xml:space="preserve">
     <value>Налаштування користувача</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_USERNAME" xml:space="preserve">
-    <value>Поточне ім&apos;я користувача:</value>
+    <value>Поточне ім'я користувача:</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_HOSTNAME" xml:space="preserve">
-    <value>Поточне ім&apos;я хоста:</value>
+    <value>Поточне ім'я хоста:</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_LISTING" xml:space="preserve">
     <value>Доступні імена користувачів:</value>
@@ -4714,7 +4646,7 @@
     <value>Параметри файлової системи</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC" xml:space="preserve">
-    <value>Змушує команду &quot;cat&quot; друкувати номери рядків файлу.</value>
+    <value>Змушує команду "cat" друкувати номери рядків файлу.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_DESC" xml:space="preserve">
     <value>У цьому розділі наведено параметри мережі, як-от оболонка FTP, налаштування команд, пов’язаних із мережею, і параметри віддаленого налагодження.</value>
@@ -4879,7 +4811,7 @@
     <value>Виберіть свою мову.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT_DESC" xml:space="preserve">
-    <value>Введіть своє нове ім&apos;я користувача. Вам слід ввести нове ім’я користувача, яке ще не існує.</value>
+    <value>Введіть своє нове ім'я користувача. Вам слід ввести нове ім’я користувача, яке ще не існує.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PASSWORD_PROMPT_DESC" xml:space="preserve">
     <value>Введіть свій пароль користувача. Ви повинні вибрати надійний пароль для підвищення безпеки.</value>
@@ -4931,9 +4863,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_STAGE7_DESC" xml:space="preserve">
     <value>Кілька середовищ</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID" xml:space="preserve">
-    <value>Номер індексу дочірнього потоку недійсний.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME" xml:space="preserve">
     <value>Назва будильника</value>
@@ -5188,22 +5117,22 @@
     <value>Використовуйте клавіші ↑ та ↓, щоб вибрати, який запис буде виділено.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING2" xml:space="preserve">
-    <value>Натисніть enter, щоб завантажити вибрану ОС, `e&apos;, щоб редагувати команди</value>
+    <value>Натисніть enter, щоб завантажити вибрану ОС, `e', щоб редагувати команди</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING3" xml:space="preserve">
-    <value>перед завантаженням або `c&apos; для командного рядка.</value>
+    <value>перед завантаженням або `c' для командного рядка.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_TIMEOUT" xml:space="preserve">
     <value>Виділений запис буде виконано автоматично через {0} с.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING1" xml:space="preserve">
-    <value>Натисніть enter, щоб завантажити вибрану ОС, `e&apos;, щоб змінити</value>
+    <value>Натисніть enter, щоб завантажити вибрану ОС, `e', щоб змінити</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING2" xml:space="preserve">
-    <value>команд перед завантаженням або `c&apos; для командного рядка.</value>
+    <value>команд перед завантаженням або `c' для командного рядка.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING1" xml:space="preserve">
-    <value>Завантаження &quot;{0}&quot;</value>
+    <value>Завантаження "{0}"</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING2" xml:space="preserve">
     <value>Тип файлової системи</value>
@@ -5509,13 +5438,10 @@
     <value>(Використовуйте клавіші зі стрілками, щоб виділити свій вибір, а потім натисніть ENTER.)</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_TITLE" xml:space="preserve">
-    <value>GNU GRUB версія 0.97 (638 КБ нижня / 1046784 КБ верхня пам&apos;ять)</value>
+    <value>GNU GRUB версія 0.97 (638 КБ нижня / 1046784 КБ верхня пам'ять)</value>
   </data>
   <data name="NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN" xml:space="preserve">
     <value>Не вдалося запустити віддалене налагодження з невідомих причин.</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN" xml:space="preserve">
-    <value>Потік не можна відновити</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT" xml:space="preserve">
     <value>Метадані MIME (розширені)</value>
@@ -5602,7 +5528,7 @@
     <value>Copyright (C) 2018-2026 Aptivi - Усі права захищено</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_DESC" xml:space="preserve">
-    <value>Змінює повне ім&apos;я користувача (відображуване ім&apos;я)</value>
+    <value>Змінює повне ім'я користувача (відображуване ім'я)</value>
   </data>
   <data name="NKS_SHELL_SHELLS_DEBUG_COMMAND_SHOWMAINBUFFER_DESC" xml:space="preserve">
     <value>Показує головний буфер, який був на екрані перед запуском Nitrocid KS (тільки для систем Unix)</value>
@@ -5854,7 +5780,7 @@
     <value>Номер сесії починаючи з нуля</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_USER_DESC" xml:space="preserve">
-    <value>Ім&apos;я користувача для запиту</value>
+    <value>Ім'я користувача для запиту</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFLAG_ARGUMENT_TYPE_DESC" xml:space="preserve">
     <value>Тип дозволу, який можна надати або заборонити</value>
@@ -5995,7 +5921,7 @@
     <value>Нова назва групи для додавання</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_USERNAME_DESC" xml:space="preserve">
-    <value>Нове ім&apos;я користувача для додавання</value>
+    <value>Нове ім'я користувача для додавання</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSER_ARGUMENT_PASSWORD_DESC" xml:space="preserve">
     <value>Новий пароль для використання</value>
@@ -6004,7 +5930,7 @@
     <value>Підтвердьте новий пароль</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSERTOGROUP_ARGUMENT_USERNAME_DESC" xml:space="preserve">
-    <value>Ім&apos;я користувача для додавання до групи</value>
+    <value>Ім'я користувача для додавання до групи</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ADDUSERTOGROUP_ARGUMENT_GROUP_DESC" xml:space="preserve">
     <value>Назва групи, до якої потрібно додати користувача</value>
@@ -6073,16 +5999,16 @@
     <value>Нове повідомлення для використання</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_USERNAME_DESC" xml:space="preserve">
-    <value>Ім&apos;я користувача для зміни пароля</value>
+    <value>Ім'я користувача для зміни пароля</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHPWD_ARGUMENT_CURRPASSWORD_DESC" xml:space="preserve">
     <value>Поточний пароль користувача</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_OLDNAME_DESC" xml:space="preserve">
-    <value>Старе ім&apos;я користувача для зміни</value>
+    <value>Старе ім'я користувача для зміни</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_CHUSRNAME_ARGUMENT_NEWNAME_DESC" xml:space="preserve">
-    <value>Нове ім&apos;я користувача для використання</value>
+    <value>Нове ім'я користувача для використання</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_COMBINESTR_ARGUMENT_FIRSTINPUT_DESC" xml:space="preserve">
     <value>Перший вхідний текстовий файл</value>
@@ -6184,22 +6110,22 @@
     <value>Назва каталогу для створення</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MKFILE_ARGUMENT_FILE_DESC" xml:space="preserve">
-    <value>Ім&apos;я файлу для створення</value>
+    <value>Ім'я файлу для створення</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MOVE_ARGUMENT_SOURCE_DESC" xml:space="preserve">
-    <value>Каталог або ім&apos;я для переходу</value>
+    <value>Каталог або ім'я для переходу</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_MOVE_ARGUMENT_TARGET_DESC" xml:space="preserve">
-    <value>Каталог або ім&apos;я для переходу</value>
+    <value>Каталог або ім'я для переходу</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PARTINFO_ARGUMENT_PARTNUM_DESC" xml:space="preserve">
     <value>Номер розділу</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PATHFIND_ARGUMENT_FILENAME_DESC" xml:space="preserve">
-    <value>Ім&apos;я файлу для пошуку</value>
+    <value>Ім'я файлу для пошуку</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_USERNAME_DESC" xml:space="preserve">
-    <value>Ім&apos;я користувача</value>
+    <value>Ім'я користувача</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PERM_ARGUMENT_MODE_DESC" xml:space="preserve">
     <value>Або дозволити, або скасувати</value>
@@ -6211,10 +6137,10 @@
     <value>Назва групи</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PING_ARGUMENT_FIRSTHOST_DESC" xml:space="preserve">
-    <value>Перша IP-адреса або ім&apos;я хоста</value>
+    <value>Перша IP-адреса або ім'я хоста</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PING_ARGUMENT_SECONDHOST_DESC" xml:space="preserve">
-    <value>Друга IP-адреса або ім&apos;я хоста тощо...</value>
+    <value>Друга IP-адреса або ім'я хоста тощо...</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PUT_ARGUMENT_FILE_DESC" xml:space="preserve">
     <value>Шлях до файлу для завантаження</value>
@@ -6235,19 +6161,19 @@
     <value>Цільовий каталог або файл</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_ARGUMENT_TARGET_DESC" xml:space="preserve">
-    <value>Ім&apos;я користувача для видалення</value>
+    <value>Ім'я користувача для видалення</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_RMGROUP_ARGUMENT_TARGET_DESC" xml:space="preserve">
     <value>Назва групи для видалення</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_RMUSERFROMGROUP_ARGUMENT_USERNAME_DESC" xml:space="preserve">
-    <value>Ім&apos;я користувача для видалення з групи</value>
+    <value>Ім'я користувача для видалення з групи</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_RMUSERFROMGROUP_ARGUMENT_GROUPNAME_DESC" xml:space="preserve">
     <value>Назва групи, з якої потрібно видалити користувача</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC" xml:space="preserve">
-    <value>Або назва заставки, або &quot;випадкова&quot;</value>
+    <value>Або назва заставки, або "випадкова"</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_REGEXP_DESC" xml:space="preserve">
     <value>Регулярний вираз для пошуку</value>
@@ -6262,10 +6188,10 @@
     <value>Відкриває налаштування заставки аддона</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETCONFIGVALUE_ARGUMENT_VARIABLE_DESC" xml:space="preserve">
-    <value>Ім&apos;я змінної конфігурації</value>
+    <value>Ім'я змінної конфігурації</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SETEXTHANDLER_ARGUMENT_IMPLEMENTER_DESC" xml:space="preserve">
-    <value>Ім&apos;я реалізатора</value>
+    <value>Ім'я реалізатора</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_ARGUMENT_TIMEZONE_DESC" xml:space="preserve">
     <value>Назва часового поясу</value>
@@ -6820,7 +6746,7 @@
     <value>Статус реєстрації</value>
   </data>
   <data name="NKS_USERS_USERNOTPROVIDED" xml:space="preserve">
-    <value>Ім&apos;я користувача не вказано.</value>
+    <value>Ім'я користувача не вказано.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC" xml:space="preserve">
     <value>Керування двофакторною автентифікацією для користувачів</value>
@@ -6829,7 +6755,7 @@
     <value>Додає вимогу для користувача</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_USERNAME_DESC" xml:space="preserve">
-    <value>Ім&apos;я користувача для обробки операцій 2FA</value>
+    <value>Ім'я користувача для обробки операцій 2FA</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_DELETE_DESC" xml:space="preserve">
     <value>Видаляє вимогу для користувача</value>
@@ -6946,7 +6872,7 @@
     <value>Використання TUI диспетчера завдань для перегляду потоків операційної системи</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_TASKMANUI_HELP02_BODY" xml:space="preserve">
-    <value>Для кожного керованого потоку (тобто керованого Nitrocid та його менеджером потоків) TUI менеджера завдань показує всі потоки операційної системи, пов&apos;язані з керованим потоком, і вони не завжди мають зв&apos;язок &quot;один-до-одного&quot;, оскільки керований потік може містити більше одного потоку операційної системи. На відміну від керованих потоків, їх не можна завершити.</value>
+    <value>Для кожного керованого потоку (тобто керованого Nitrocid та його менеджером потоків) TUI менеджера завдань показує всі потоки операційної системи, пов'язані з керованим потоком, і вони не завжди мають зв'язок "один-до-одного", оскільки керований потік може містити більше одного потоку операційної системи. На відміну від керованих потоків, їх не можна завершити.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_TUI_HELP01_TITLE" xml:space="preserve">
     <value>Керування налаштуваннями ядра</value>
@@ -7066,7 +6992,7 @@
     <value>Ігнорувати помилки сертифіката</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC" xml:space="preserve">
-    <value>Якщо ввімкнено, помилки сертифіката ігноруватимуться під час встановлення з&apos;єднання. В іншому випадку перевіряє сертифікат сервера. Зазвичай це не повинно бути ввімкнено, якщо ви не впевнені, що довіряєте серверу.</value>
+    <value>Якщо ввімкнено, помилки сертифіката ігноруватимуться під час встановлення з'єднання. В іншому випадку перевіряє сертифікат сервера. Зазвичай це не повинно бути ввімкнено, якщо ви не впевнені, що довіряєте серверу.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP" xml:space="preserve">
     <value>Ключова підказка</value>
@@ -7084,7 +7010,7 @@
     <value>Групує фрагменти в один файл</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_FILE_DESC" xml:space="preserve">
-    <value>Розділяє ім&apos;я файлу для групування в файл</value>
+    <value>Розділяє ім'я файлу для групування в файл</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GROUPFILE_ARGUMENT_OUTPUTDIR_DESC" xml:space="preserve">
     <value>Каталог для зберігання згрупованого файлу</value>
@@ -7182,5 +7108,4 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>Ви використовуєте бета-версію ядра. Ви можете зіткнутися з помилками, нестабільністю або навіть втратою даних. Ми рекомендуємо використовувати стабільну версію, якщо це можливо.</value>
   </data>
-
 </root>

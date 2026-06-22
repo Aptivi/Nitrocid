@@ -2705,6 +2705,14 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "出站服务器套接字类型"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "未能获取指定的邮件"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "获取收件箱失败"
     }
   ]
 }

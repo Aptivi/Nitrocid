@@ -3451,18 +3451,6 @@
       "text": "Berjalan dalam mode pemeliharaan. Melewati tahap..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Tidak dapat membuat ulang utas kernel saat utas yang sama sudah berjalan."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "Tindakan awal thread anak tidak dapat bernilai null."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Utas kernel {0} gagal."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Tidak ada informasi."
     },
@@ -6427,10 +6415,6 @@
       "text": "Beberapa lingkungan"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Nomor indeks utas anak tidak valid."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Nama alarm"
     },
@@ -7201,10 +7185,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Debug jarak jauh gagal dimulai karena alasan yang tidak diketahui."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Thread tidak dapat dibuat ulang"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

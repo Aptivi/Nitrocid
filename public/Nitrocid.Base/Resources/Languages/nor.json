@@ -3455,18 +3455,6 @@
       "text": "Kjører i vedlikeholdsmodus. Hopp over scenen..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Kan ikke gjenskape kjernetråden mens den samme tråden allerede kjører."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "Starthandlingen for undertråd kan ikke være null."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Kjernetråd {0} mislyktes."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Ingen info."
     },
@@ -6431,10 +6419,6 @@
       "text": "Flere miljøer"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Undertrådens indeksnummer er ugyldig."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Alarmnavn"
     },
@@ -7205,10 +7189,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Ekstern feilsøking kunne ikke starte av ukjente årsaker."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Tråden kan ikke regenereres"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

@@ -2703,6 +2703,14 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "Type socket van de uitgaande server"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Het ophalen van het opgegeven e-mailbericht is mislukt."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "Inbox ophalen mislukt"
     }
   ]
 }

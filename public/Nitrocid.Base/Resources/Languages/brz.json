@@ -3450,18 +3450,6 @@
       "text": "Executando em modo de manutenção. Ignorando estágio..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Não é possível regenerar o thread do kernel enquanto o mesmo thread já estiver em execução."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "A ação de início do thread filho não pode ser nula."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "O thread do kernel {0} falhou."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Nenhuma informação."
     },
@@ -6426,10 +6414,6 @@
       "text": "Múltiplos ambientes"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "O número do índice do thread filho é inválido."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Nome do alarme"
     },
@@ -7200,10 +7184,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "A depuração remota falhou ao iniciar por razões desconhecidas."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "O tópico não pode ser regenerado"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

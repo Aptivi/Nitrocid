@@ -3457,18 +3457,6 @@
       "text": "Draait in onderhoudsmodus. Fase overslaan..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Kan de kernelthread niet opnieuw genereren terwijl dezelfde thread al actief is."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "Startactie voor onderliggende threads mag niet null zijn."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Kernelthread {0} is mislukt."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Geen informatie."
     },
@@ -6433,10 +6421,6 @@
       "text": "Meerdere omgevingen"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Indexnummer van onderliggende thread is ongeldig."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Alarmnaam"
     },
@@ -7207,10 +7191,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Het starten van de externe foutopsporing is om onbekende redenen mislukt."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Thread kan niet opnieuw worden gegenereerd"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

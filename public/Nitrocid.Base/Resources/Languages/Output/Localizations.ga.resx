@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
+  </resheader>
+  <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
     <value>Cuir isteach an pasfhocal admin le haghaidh cothabhála.</value>
   </data>
   <data name="NKS_KERNEL_ENTRY_EXCEPTION_KERNELERROR" xml:space="preserve">
@@ -226,7 +167,7 @@
     <value>Athraíodh an t-ainm úsáideora go {0}!</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_NEWNAMEALREADYEXISTS" xml:space="preserve">
-    <value>Tá an t-ainm nua a d&apos;iontráil tú le fáil cheana féin.</value>
+    <value>Tá an t-ainm nua a d'iontráil tú le fáil cheana féin.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_VERIFY_NOTFOUND" xml:space="preserve">
     <value>Ní bhfuarthas {0}.</value>
@@ -319,7 +260,7 @@
     <value>Theip ar an íoslódáil in iarracht {0}: {1}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GET_NEEDSFTP" xml:space="preserve">
-    <value>Bain úsáid as &quot;ftp&quot; le do thoil má tá tú chun comhaid a íoslódáil ón bhfreastalaí FTP.</value>
+    <value>Bain úsáid as "ftp" le do thoil má tá tú chun comhaid a íoslódáil ón bhfreastalaí FTP.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC" xml:space="preserve">
     <value>Íoslódáil an comhad chuig an eolaire oibre reatha</value>
@@ -400,7 +341,7 @@
     <value>Díbhe fógra</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_DISMISSNOTIF_SUCCESS" xml:space="preserve">
-    <value>D&apos;éirigh leis an bhfógra a dhíbhe.</value>
+    <value>D'éirigh leis an bhfógra a dhíbhe.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_REXEC_DESC" xml:space="preserve">
     <value>Feidhmíonn sé ordú go cianda ríomhaire</value>
@@ -553,7 +494,7 @@
     <value>Scríobh port dífhabhtóra cianda. Caithfidh sé a bheith uimhriúil, agus ní féidir é a úsáid cheana féin. Seachas sin, ní theipeann ar dhífhabhtóir cianda an calafort a oscailt.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC" xml:space="preserve">
-    <value>Scríobh cé mhéad uair ba cheart don ordú &quot;faigh&quot; íoslódálacha teipthe a thriail arís. Caithfidh sé a bheith uimhriúil.</value>
+    <value>Scríobh cé mhéad uair ba cheart don ordú "faigh" íoslódálacha teipthe a thriail arís. Caithfidh sé a bheith uimhriúil.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE" xml:space="preserve">
     <value>Seans nach bhfuil an freagra diúltach.</value>
@@ -577,7 +518,7 @@
     <value>Athraítear ainm úsáideora</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PERM_DESC" xml:space="preserve">
-    <value>Bainistigh ceadanna d&apos;úsáideoirí</value>
+    <value>Bainistigh ceadanna d'úsáideoirí</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_RMUSER_DESC" xml:space="preserve">
     <value>Baintear úsáideoir den liosta</value>
@@ -604,7 +545,7 @@
     <value>Níorbh fhéidir pasfhocal an ainm úsáideora a athrú: {0}</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED" xml:space="preserve">
-    <value>Ní féidir comhad a aimsiú a mheaitseálann an teaghrán &quot;{0}&quot;: {1}</value>
+    <value>Ní féidir comhad a aimsiú a mheaitseálann an teaghrán "{0}": {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC" xml:space="preserve">
     <value>Gach tosaithe, seiceálfaidh sé le haghaidh nuashonruithe.</value>
@@ -703,10 +644,10 @@
     <value>Is cartlann é an comhad. Úsáidte le haghaidh cúltacaí.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR" xml:space="preserve">
-    <value>Tá tréithe &quot;{0}&quot; neamhbhailí.</value>
+    <value>Tá tréithe "{0}" neamhbhailí.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS" xml:space="preserve">
-    <value>D&apos;éirigh leis an tréith a chur leis.</value>
+    <value>D'éirigh leis an tréith a chur leis.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_REMOVESUCCESS" xml:space="preserve">
     <value>Baineadh an tréith go rathúil.</value>
@@ -739,10 +680,10 @@
     <value>Á íoslódáil ó {0}...</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME" xml:space="preserve">
-    <value>Taispeáin barra dul chun cinn agus tú ag íoslódáil nó ag uaslódáil ó ordú &quot;faigh&quot; nó &quot;cuir&quot;.</value>
+    <value>Taispeáin barra dul chun cinn agus tú ag íoslódáil nó ag uaslódáil ó ordú "faigh" nó "cuir".</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC" xml:space="preserve">
-    <value>Más fíor, déanann sé &quot;a fháil&quot; nó &quot;cuir&quot; an barra dul chun cinn a thaispeáint agus é á íoslódáil nó á uaslódáil.</value>
+    <value>Más fíor, déanann sé "a fháil" nó "cuir" an barra dul chun cinn a thaispeáint agus é á íoslódáil nó á uaslódáil.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PUT_DESC" xml:space="preserve">
     <value>Uaslódálann sé comhad chuig suíomh Gréasáin sonraithe</value>
@@ -757,13 +698,13 @@
     <value>Críochnaíodh an t-uaslódáil.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_NEEDSFTP" xml:space="preserve">
-    <value>Úsáid &quot;ftp&quot; le do thoil má tá tú chun comhaid a uaslódáil chuig an bhfreastalaí FTP.</value>
+    <value>Úsáid "ftp" le do thoil má tá tú chun comhaid a uaslódáil chuig an bhfreastalaí FTP.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_FAILED" xml:space="preserve">
     <value>Theip ar an uaslódáil in iarracht {0}: {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC" xml:space="preserve">
-    <value>Scríobh cé mhéad uair ba cheart don ordú &quot;cuir&quot; uaslódálacha teipthe a thriail arís. Caithfidh sé a bheith uimhriúil.</value>
+    <value>Scríobh cé mhéad uair ba cheart don ordú "cuir" uaslódálacha teipthe a thriail arís. Caithfidh sé a bheith uimhriúil.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR" xml:space="preserve">
     <value>Seans nach bhfuil an seoladh folamh.</value>
@@ -772,7 +713,7 @@
     <value>Theip ar ping {0}: {1}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PING_SUCCESS" xml:space="preserve">
-    <value>D&apos;éirigh le Ping {0} ms.</value>
+    <value>D'éirigh le Ping {0} ms.</value>
   </data>
   <data name="NKS_FILES_EDITORS_TEXTEDITOR_EXCEPTION_LINENUMEXCEEDSLASTNUM" xml:space="preserve">
     <value>Ní fhéadfaidh an uimhir líne sonraithe a bheith níos mó ná an uimhir líne comhaid dheireanach.</value>
@@ -811,7 +752,7 @@
     <value>Cuireann sé an ghné uathshábháil an eagarthóra téacs ar siúl nó as.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC" xml:space="preserve">
-    <value>Má tá sábháil uathoibríoch cumasaithe, déanfar an comhad téacs a shábháil ar feadh gach &quot;n&quot; soicind.</value>
+    <value>Má tá sábháil uathoibríoch cumasaithe, déanfar an comhad téacs a shábháil ar feadh gach "n" soicind.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_NAME" xml:space="preserve">
     <value>Cumasaigh eagarthóir téacs go huathoibríoch</value>
@@ -835,7 +776,7 @@
     <value>Cé mhéad milleasoicind atá le fanacht roimh an gcéad cheann eile a scríobh?</value>
   </data>
   <data name="NKS_SHELL_BASE_HELP_NOHELP" xml:space="preserve">
-    <value>Níl aon chabhair don ordú &quot;{0}&quot;.</value>
+    <value>Níl aon chabhair don ordú "{0}".</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_DESC" xml:space="preserve">
     <value>Priontaí faisnéis crua-earraí</value>
@@ -1372,7 +1313,7 @@
     <value>Cuireann sé na línte nua ag deireadh an chomhaid</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT" xml:space="preserve">
-    <value>Cuir isteach an téacs is mian leat a chur i gceangal le deireadh an chomhaid. Nuair a bheidh tú críochnaithe, scríobh &quot;EOF&quot; ar a líne féin.</value>
+    <value>Cuir isteach an téacs is mian leat a chur i gceangal le deireadh an chomhaid. Nuair a bheidh tú críochnaithe, scríobh "EOF" ar a líne féin.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME" xml:space="preserve">
     <value>Ainm Óstach</value>
@@ -1525,7 +1466,7 @@
     <value>Taispeánann sé sonraí an chomhaid sa liosta</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Sochtann sé na teachtaireachtaí annoying &quot;cead diúltaithe&quot;.</value>
+    <value>Sochtann sé na teachtaireachtaí annoying "cead diúltaithe".</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC" xml:space="preserve">
     <value>Taispeánann sé na criosanna ama go léir</value>
@@ -1651,7 +1592,7 @@
     <value>Níl sruth comhaid oscailte ag an eagarthóir heicsidheachúlach fós.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT" xml:space="preserve">
-    <value>Cuir isteach beart ar a líne féin a theastaíonn uait a chur i gceangal le deireadh an chomhaid. Nuair a bheidh tú críochnaithe, scríobh &quot;EOF&quot; ar a líne féin.</value>
+    <value>Cuir isteach beart ar a líne féin a theastaíonn uait a chur i gceangal le deireadh an chomhaid. Nuair a bheidh tú críochnaithe, scríobh "EOF" ar a líne féin.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE" xml:space="preserve">
     <value>Ní beart bailí.</value>
@@ -1666,7 +1607,7 @@
     <value>Níl an beart uimhriúil.</value>
   </data>
   <data name="NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_STARTBYTENUMTOOLARGE" xml:space="preserve">
-    <value>B&apos;fhéidir nach mbeidh an uimhir beart tosaithe sonraithe níos mó ná méid an chomhaid.</value>
+    <value>B'fhéidir nach mbeidh an uimhir beart tosaithe sonraithe níos mó ná méid an chomhaid.</value>
   </data>
   <data name="NKS_FILES_EDITORS_HEXEDITOR_EXCEPTION_ENDBYTENUMTOOLARGE" xml:space="preserve">
     <value>Ní fhéadfaidh an uimhir bhearta deiridh sonraithe a bheith níos mó ná méid an chomhaid.</value>
@@ -1774,7 +1715,7 @@
     <value>Tá comhad nó fillteán {0} fós faoi ghlas fiú tar éis fanacht ar feadh {1} soicind.</value>
   </data>
   <data name="NKS_KERNEL_LICENSEINFO" xml:space="preserve">
-    <value>Rith &apos;ceadúnas&apos; chun an t-eolas ceadúnais a fheiceáil.</value>
+    <value>Rith 'ceadúnas' chun an t-eolas ceadúnais a fheiceáil.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE" xml:space="preserve">
     <value>Eithne chéad rith</value>
@@ -1816,7 +1757,7 @@
     <value>Chomh maith le nuashonruithe a sheiceáil go huathoibríoch, is féidir le Nitrocid KS an comhad nuashonraithe a íoslódáil go huathoibríoch.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
-    <value>Is féidir leat seiceáil i gcónaí le haghaidh nuashonruithe eithne ag baint úsáide as an ordú &quot;nuashonraigh&quot;.</value>
+    <value>Is féidir leat seiceáil i gcónaí le haghaidh nuashonruithe eithne ag baint úsáide as an ordú "nuashonraigh".</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>Faigh Tosaigh!</value>
@@ -1831,7 +1772,7 @@
     <value>Gabhaimid ár leithscéal as do mhíchaoithiúlacht, ach tá an taithí lasmuigh den bhosca tuairteála. Má tá tú cinnte gur locht é seo ar an taithí, cuir in iúl dúinn an timpiste le logaí dífhabhtaithe.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_CRASH2" xml:space="preserve">
-    <value>Brúigh eochair ar bith chun an bhlaosc a thosú ar aon nós, ach tabhair faoi deara go mb&apos;fhéidir go mbeidh ort d&apos;úsáideoir nua a chruthú de láimh.</value>
+    <value>Brúigh eochair ar bith chun an bhlaosc a thosú ar aon nós, ach tabhair faoi deara go mb'fhéidir go mbeidh ort d'úsáideoir nua a chruthú de láimh.</value>
   </data>
   <data name="NKS_USERS_EXCEPTION_USERLOCKED" xml:space="preserve">
     <value>Ag iarraidh an cuntas reatha a mhodhnú agus é faoi ghlas</value>
@@ -1996,10 +1937,10 @@
     <value>Níl an láimhseálaí le haghaidh síneadh cláraithe.</value>
   </data>
   <data name="NKS_FILES_OPEN_NEEDSJSONSHELLADDON" xml:space="preserve">
-    <value>Tá an chuma ar an scéal nach bhfuil an breiseán JSON shell suiteáilte agat. D&apos;fhonn gnéithe breise a thairgeann sé a fháil, suiteáil an pacáiste addons.</value>
+    <value>Tá an chuma ar an scéal nach bhfuil an breiseán JSON shell suiteáilte agat. D'fhonn gnéithe breise a thairgeann sé a fháil, suiteáil an pacáiste addons.</value>
   </data>
   <data name="NKS_FILES_OPEN_NEEDSSQLSHELLADDON" xml:space="preserve">
-    <value>Tá an chuma ar an scéal nach bhfuil an breiseán bhlaosc SQL suiteáilte agat. D&apos;fhonn gnéithe breise a thairgeann sé a fháil, suiteáil an pacáiste addons.</value>
+    <value>Tá an chuma ar an scéal nach bhfuil an breiseán bhlaosc SQL suiteáilte agat. D'fhonn gnéithe breise a thairgeann sé a fháil, suiteáil an pacáiste addons.</value>
   </data>
   <data name="NKS_FILES_OPEN_EXCEPTION_NOHANDLER" xml:space="preserve">
     <value>Níl aon láimhseálaí chun an síneadh seo a láimhseáil.</value>
@@ -2110,7 +2051,7 @@
     <value>Tá an ailias sonraithe ann cheana féin. Bí cinnte go roghnaíonn tú ailias eile.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_ALIASINVALIDOPERATION" xml:space="preserve">
-    <value>Tháinig an córas ailias ar oibríocht neamhbhailí ag iarraidh d&apos;iarratas a phróiseáil.</value>
+    <value>Tháinig an córas ailias ar oibríocht neamhbhailí ag iarraidh d'iarratas a phróiseáil.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_ALIASNOSUCHALIAS" xml:space="preserve">
     <value>Níl an ailias sonraithe aimsithe.</value>
@@ -2260,7 +2201,7 @@
     <value>Braitheadh teip dearbhaithe san eithne! Is dócha gur fabht é seo sa mhodúl eithne ba chóir a shocrú ar ár deireadh.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORKOFFLINE" xml:space="preserve">
-    <value>Ní mór do do líonra a bheith ar líne sula mbeidh tú in ann oibríochtaí a bhaineann le líonrú a dhéanamh. Ceangail d&apos;oiriúntóir líonra agus bain triail eile as.</value>
+    <value>Ní mór do do líonra a bheith ar líne sula mbeidh tú in ann oibríochtaí a bhaineann le líonrú a dhéanamh. Ceangail d'oiriúntóir líonra agus bain triail eile as.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_NOSUCHUSER" xml:space="preserve">
     <value>Níl an t-úsáideoir ann. Seiceáil le cinntiú go bhfuil an t-úsáideoir scríofa i gceart agat.</value>
@@ -2302,7 +2243,7 @@
     <value>Tá oibríocht eagarthóireachta téacs neamhbhailí á déanamh.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>Nuair a rinne an eithne iarracht an mod sonraithe a luchtú, d&apos;iarr sé &quot;Eithne Insamhlóir&quot; a luchtú. Ós rud é go bhfuil an príomhfheidhmchlár athainmnithe go Nitrocid KS, ní féidir an mod seo a rith go sábháilte. Molaimid duit an mod a uasghrádú.</value>
+    <value>Nuair a rinne an eithne iarracht an mod sonraithe a luchtú, d'iarr sé "Eithne Insamhlóir" a luchtú. Ós rud é go bhfuil an príomhfheidhmchlár athainmnithe go Nitrocid KS, ní féidir an mod seo a rith go sábháilte. Molaimid duit an mod a uasghrádú.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>Tharla earráid le bainisteoir teagmhálaithe agus iarracht á déanamh an oibríocht iarrtha a dhéanamh. Cinntigh go bhfuil an comhad teagmhála san fhillteán ceart agus gur comhad teagmhála vCard 2.1, 3.0 nó 4.0 bailí é.</value>
@@ -2314,7 +2255,7 @@
     <value>Níl an grúpa ann. Déan cinnte go bhfuil ainm an ghrúpa scríofa agat i gceart.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CUSTOMSETTINGS" xml:space="preserve">
-    <value>Tharla earráid i mbainisteoir na socruithe saincheaptha d&apos;úsáideoirí.</value>
+    <value>Tharla earráid i mbainisteoir na socruithe saincheaptha d'úsáideoirí.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_NETWORKCONNECTION" xml:space="preserve">
     <value>Tharla earráid i mbainisteoir an naisc líonra.</value>
@@ -2374,13 +2315,13 @@
     <value>Theip ar an mbainisteoir splanc an oibríocht iarrtha a dhéanamh. Seiceáil an splancainm agus bain triail eile as.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_TEXT" xml:space="preserve">
-    <value>Theip ar uirlisí téacs d&apos;iarratas a phróiseáil.</value>
+    <value>Theip ar uirlisí téacs d'iarratas a phróiseáil.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_INVALIDPLACEHOLDERACTION" xml:space="preserve">
     <value>Gníomh neamhbhailí ionadsealbhóra. Féach ar an doiciméadú eithne le haghaidh tuilleadh eolais.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_DRIVERHANDLER" xml:space="preserve">
-    <value>Theip ar láimhseálaí an tiománaí an gníomh seo a dhéanamh toisc go mb&apos;fhéidir gur sholáthair tú na paraiméadair mícheart. Má tá tú cinnte go bhfuil siad sonraithe i gceart, déan cinnte go bhfuil ainm agus cineál ceart an tiománaí curtha ar fáil agat.</value>
+    <value>Theip ar láimhseálaí an tiománaí an gníomh seo a dhéanamh toisc go mb'fhéidir gur sholáthair tú na paraiméadair mícheart. Má tá tú cinnte go bhfuil siad sonraithe i gceart, déan cinnte go bhfuil ainm agus cineál ceart an tiománaí curtha ar fáil agat.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_PROGRESSHANDLER" xml:space="preserve">
     <value>Theip ar an láimhseálaí dul chun cinn an oibríocht iarrtha a dhéanamh.</value>
@@ -2401,7 +2342,7 @@
     <value>Tharla earráid agus iarracht á déanamh oibríocht a dhéanamh do bhainistiú an tiománaí eithne.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_INTRO" xml:space="preserve">
-    <value>Tá earráid san eithne, ceann de na breiseáin eithne, ceann de do mods, nó ceann de na comhpháirteanna eithne. Má rinne an gnáthamh iarracht d&apos;ionchur a phróiseáil, cinntigh go bhfuil na paraiméadair go léir scríofa i gceart agat.</value>
+    <value>Tá earráid san eithne, ceann de na breiseáin eithne, ceann de do mods, nó ceann de na comhpháirteanna eithne. Má rinne an gnáthamh iarracht d'ionchur a phróiseáil, cinntigh go bhfuil na paraiméadair go léir scríofa i gceart agat.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_FINALEXCEPTION_EXCEPTIONINFO" xml:space="preserve">
     <value>Faisnéis eisceachta</value>
@@ -2581,16 +2522,16 @@
     <value>Ní féidir feidhm shaincheaptha a rith leis an mbreiseán nach bhfuil ann</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
-    <value>Ní féidir feidhm &apos;{0}&apos; a aimsiú san addon &apos;{1}&apos;.</value>
+    <value>Ní féidir feidhm '{0}' a aimsiú san addon '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
-    <value>Ní féidir an t-airí &apos;{0}&apos; a aimsiú san addon &apos;{1}&apos;.</value>
+    <value>Ní féidir an t-airí '{0}' a aimsiú san addon '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
-    <value>Ní féidir an réimse &apos;{0}&apos; a aimsiú san addon &apos;{1}&apos;.</value>
+    <value>Ní féidir an réimse '{0}' a aimsiú san addon '{1}'.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE" xml:space="preserve">
-    <value>Níl a leithéid de bhreiseán ann &apos;{0}&apos;</value>
+    <value>Níl a leithéid de bhreiseán ann '{0}'</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_PROBEFAILED_CPU" xml:space="preserve">
     <value>Theip ar cheann amháin nó níos mó de na croíleacáin LAP a iniúchadh. Ag taispeáint eolais ar aon nós...</value>
@@ -2605,13 +2546,13 @@
     <value>Theip ar cheann amháin nó níos mó de na tiomántáin chrua a iniúchadh. Ag taispeáint eolais ar aon nós...</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_NEEDSELEVATION" xml:space="preserve">
-    <value>Ní dhéanfar crua-earraí a pharsáil mar gheall ar phribhléidí neamhleor. Úsáid &quot;winelevate&quot; chun Nitrocid a atosú i mód ardaithe.</value>
+    <value>Ní dhéanfar crua-earraí a pharsáil mar gheall ar phribhléidí neamhleor. Úsáid "winelevate" chun Nitrocid a atosú i mód ardaithe.</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_FAILED" xml:space="preserve">
     <value>Tharla earráid agus crua-earraí á bhfíorú: {0}</value>
   </data>
   <data name="NKS_KERNEL_JOURNALING_EXCEPTION_FILENOTFOUND" xml:space="preserve">
-    <value>Níl comhad dialainne &apos;{0}&apos; ann.</value>
+    <value>Níl comhad dialainne '{0}' ann.</value>
   </data>
   <data name="NKS_KERNEL_POWER_INVOKING" xml:space="preserve">
     <value>Iarradh ar bhainistíocht cianchumhachta:</value>
@@ -2699,15 +2640,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_SKIPSTAGE_MAINTENANCE" xml:space="preserve">
     <value>Ag rith i mód cothabhála. Céim scipeála...</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING" xml:space="preserve">
-    <value>Ní féidir an snáithe eithne a athghiniúint agus an snáithe céanna ar siúl cheana féin.</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM" xml:space="preserve">
-    <value>Ní féidir gníomh tosaithe snáithe an linbh a bheith ar neamhní.</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_FAILED" xml:space="preserve">
-    <value>Theip ar snáithe eithne {0}.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOINFO" xml:space="preserve">
     <value>Gan eolas.</value>
@@ -2833,7 +2765,7 @@
     <value>Roghnaíodh ‘{0}’. Brúigh ESC chun na roghanna a fhágáil agus a dhearbhú.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_UNSELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>Díroghnaíodh &apos;{0}&apos;. Brúigh ESC chun na roghanna a fhágáil agus a dhearbhú.</value>
+    <value>Díroghnaíodh '{0}'. Brúigh ESC chun na roghanna a fhágáil agus a dhearbhú.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOSELECTIONS" xml:space="preserve">
     <value>Níl aon chomhaid roghnaithe.</value>
@@ -3169,7 +3101,7 @@
     <value>&gt;&gt; Cianda Debug: leagan</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_FIRSTTIME" xml:space="preserve">
-    <value>&gt;&gt; Fáilte! Seo é an chéad uair a bheidh tú ag dul isteach sa chiandhíofhabhtú. Úsáid &quot;/register &lt;name&gt;&quot; chun clárú.</value>
+    <value>&gt;&gt; Fáilte! Seo é an chéad uair a bheidh tú ag dul isteach sa chiandhíofhabhtú. Úsáid "/register &lt;name&gt;" chun clárú.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICENOTFOUND_BLOCK" xml:space="preserve">
     <value>Níor aimsíodh an gléas le bac.</value>
@@ -3244,7 +3176,7 @@
     <value>Crios ama gan aimsiú.</value>
   </data>
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
-    <value>Níl an pacáiste faisnéise crios ama suiteáilte fós ar do chóras Linux. Suiteáil &apos;tzdata&apos; ag baint úsáide as bainisteoir pacáiste do dháileadh.</value>
+    <value>Níl an pacáiste faisnéise crios ama suiteáilte fós ar do chóras Linux. Suiteáil 'tzdata' ag baint úsáide as bainisteoir pacáiste do dháileadh.</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>Ag lódáil</value>
@@ -3262,7 +3194,7 @@
     <value>Nuacht is déanaí ó</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>Chun an nuacht is déanaí a fháil, ní mór duit an breiseán RSS Shell Extras a shuiteáil. Is féidir leat an t-ordú &apos;getaddons&apos; a úsáid chun na breiseáin go léir a fháil!</value>
+    <value>Chun an nuacht is déanaí a fháil, ní mór duit an breiseán RSS Shell Extras a shuiteáil. Is féidir leat an t-ordú 'getaddons' a úsáid chun na breiseáin go léir a fháil!</value>
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>Níor aimsíodh an t-ordú.</value>
@@ -3742,7 +3674,7 @@
     <value>&gt;&gt; Comhrá cianda: leagan</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CHAT_WELCOME" xml:space="preserve">
-    <value>&gt;&gt; Fáilte! Seo é an chéad uair duit dul isteach i gcianchomhrá. Sa chiandhífhabhtóir, úsáid &quot;/register &lt;name&gt;&quot; chun clárú. Ní féidir leat labhairt go dtí go gcláróidh tú.</value>
+    <value>&gt;&gt; Fáilte! Seo é an chéad uair duit dul isteach i gcianchomhrá. Sa chiandhífhabhtóir, úsáid "/register &lt;name&gt;" chun clárú. Ní féidir leat labhairt go dtí go gcláróidh tú.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_BENCHMARKSLEEPONE_DESC" xml:space="preserve">
     <value>Cé mhéad milleasoicind a thóg sé i ndáiríre chun codladh ar feadh milleasoicind amháin?</value>
@@ -4303,7 +4235,7 @@
     <value>Socruithe crua-earraí</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP" xml:space="preserve">
-    <value>Úsáid &quot;hwinfo&quot; chun faisnéis leathnaithe a fháil faoi chrua-earraí.</value>
+    <value>Úsáid "hwinfo" chun faisnéis leathnaithe a fháil faoi chrua-earraí.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE" xml:space="preserve">
     <value>Socruithe úsáideora</value>
@@ -4348,7 +4280,7 @@
     <value>Do sheisiún Nitrocid á ardú...</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_WINELEVATE_UNAVAILABLE" xml:space="preserve">
-    <value>Níl an t-ordú seo ar fáil do d&apos;ardán.</value>
+    <value>Níl an t-ordú seo ar fáil do d'ardán.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_WRAPTEXT_COLUMNNUMINVALID" xml:space="preserve">
     <value>Líon neamhbhailí colún.</value>
@@ -4714,7 +4646,7 @@
     <value>Socruithe córais comhaid</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC" xml:space="preserve">
-    <value>Déanann an t-ordú &quot;cat&quot; uimhreacha líne an chomhaid a phriontáil.</value>
+    <value>Déanann an t-ordú "cat" uimhreacha líne an chomhaid a phriontáil.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_DESC" xml:space="preserve">
     <value>Liostaíonn an chuid seo na socruithe líonra, amhail an bhlaosc FTP, na socruithe ordaithe a bhaineann leis an líonra, agus na socruithe dífhabhtaithe cianda.</value>
@@ -4756,7 +4688,7 @@
     <value>Admháil an rabhadh urghabhála fóta-íogair</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_SCREENSAVER_WARNINGACK_DESC" xml:space="preserve">
-    <value>Mura bhfuil tú fóta-íogair do na beochan tapa a thaispeánann cuid de na spárálaíscáileáin duit, is féidir leat an rabhadh seo a dhíchumasú tríd an rogha seo a chumasú. Tabhair faoi deara nach bhfuilimid freagrach as na fo-iarmhairtí a d&apos;fhéadfadh teacht ó bheochan dá leithéid. Lorg speisialtóir leighis gairmiúil le haghaidh tuilleadh eolais.</value>
+    <value>Mura bhfuil tú fóta-íogair do na beochan tapa a thaispeánann cuid de na spárálaíscáileáin duit, is féidir leat an rabhadh seo a dhíchumasú tríd an rogha seo a chumasú. Tabhair faoi deara nach bhfuilimid freagrach as na fo-iarmhairtí a d'fhéadfadh teacht ó bheochan dá leithéid. Lorg speisialtóir leighis gairmiúil le haghaidh tuilleadh eolais.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_DESC" xml:space="preserve">
     <value>Tagann socruithe nach n-oireann ina gcodanna cuí i dtír anseo.</value>
@@ -4879,7 +4811,7 @@
     <value>Roghnaigh do theanga.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_USERNAME_PROMPT_DESC" xml:space="preserve">
-    <value>Cuir isteach d&apos;ainm úsáideora nua. Ba cheart duit ainm úsáideora nua a chur isteach nach bhfuil ann cheana.</value>
+    <value>Cuir isteach d'ainm úsáideora nua. Ba cheart duit ainm úsáideora nua a chur isteach nach bhfuil ann cheana.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PASSWORD_PROMPT_DESC" xml:space="preserve">
     <value>Cuir isteach do phasfhocal úsáideora. Ba cheart duit pasfhocal láidir a roghnú le haghaidh slándála méadaithe.</value>
@@ -4894,7 +4826,7 @@
     <value>Níl, go raibh maith agat.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_UNKNOWN" xml:space="preserve">
-    <value>Tharla earráid anaithnid eithne, b&apos;fhéidir toisc nár sonraíodh an cineál eisceachta eithne nó go raibh rud éigin mícheart.</value>
+    <value>Tharla earráid anaithnid eithne, b'fhéidir toisc nár sonraíodh an cineál eisceachta eithne nó go raibh rud éigin mícheart.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_HOSTNAME" xml:space="preserve">
     <value>Thuairiscigh líonrú na heithne earráid don chomhpháirt óstainm.</value>
@@ -4931,9 +4863,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_STAGE7_DESC" xml:space="preserve">
     <value>Timpeallachtaí iolracha</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID" xml:space="preserve">
-    <value>Tá uimhir innéacs snáithe linbh neamhbhailí.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME" xml:space="preserve">
     <value>Ainm aláraim</value>
@@ -5035,7 +4964,7 @@
     <value>Déan iniúchadh ar na logaí dífhabhtaithe chun tuilleadh eolais a fháil faoin earráid.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_UNUSUALENV" xml:space="preserve">
-    <value>Tá tú ag rith Nitrocid KS ar thimpeallacht neamhghnách. Cinntigh gur thosaigh tú ar an eithne go díreach. Má tá tú cinnte go bhfuil tú tosaithe ar an eithne ar an ngnáthbhealach, b&apos;fhéidir gurb é an fáth go bhfuil tú ag rith leagan de Nitrocid KS nach dtacaítear leis.</value>
+    <value>Tá tú ag rith Nitrocid KS ar thimpeallacht neamhghnách. Cinntigh gur thosaigh tú ar an eithne go díreach. Má tá tú cinnte go bhfuil tú tosaithe ar an eithne ar an ngnáthbhealach, b'fhéidir gurb é an fáth go bhfuil tú ag rith leagan de Nitrocid KS nach dtacaítear leis.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_ERROR" xml:space="preserve">
     <value>Tharla earráid inmheánach do GRILO</value>
@@ -5077,10 +5006,10 @@
     <value>Liostaíonn sé gach paraiméadair feidhme atá ar fáil ó fheidhm</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_DESC" xml:space="preserve">
-    <value>Bainistigh d&apos;aláraim</value>
+    <value>Bainistigh d'aláraim</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_ALARM_SWITCH_TUI_DESC" xml:space="preserve">
-    <value>Bainistigh d&apos;aláraim i TUI idirghníomhach</value>
+    <value>Bainistigh d'aláraim i TUI idirghníomhach</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_RREBOOT_DESC" xml:space="preserve">
     <value>Atosaíonn sé ásc cianda eithne</value>
@@ -5188,22 +5117,22 @@
     <value>Úsáid na heochracha ↑ agus ↓ chun an iontráil atá aibhsithe a roghnú.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING2" xml:space="preserve">
-    <value>Brúigh Enter chun an OS roghnaithe a thosú, `e&apos; chun na horduithe a chur in eagar</value>
+    <value>Brúigh Enter chun an OS roghnaithe a thosú, `e' chun na horduithe a chur in eagar</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING3" xml:space="preserve">
-    <value>roimh booting nó `c&apos; le haghaidh líne ordaithe.</value>
+    <value>roimh booting nó `c' le haghaidh líne ordaithe.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_TIMEOUT" xml:space="preserve">
     <value>Déanfar an iontráil aibhsithe a rith go huathoibríoch i {0}anna.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING1" xml:space="preserve">
-    <value>Brúigh Enter chun an OS roghnaithe a thosú, `e&apos; chun an</value>
+    <value>Brúigh Enter chun an OS roghnaithe a thosú, `e' chun an</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING2" xml:space="preserve">
-    <value>orduithe roimh tosaithe nó `c&apos; le haghaidh líne ordaithe.</value>
+    <value>orduithe roimh tosaithe nó `c' le haghaidh líne ordaithe.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING1" xml:space="preserve">
-    <value>&apos;{0}&apos; á tosaithe</value>
+    <value>'{0}' á tosaithe</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING2" xml:space="preserve">
     <value>Tá cineál córas comhaid</value>
@@ -5257,10 +5186,10 @@
     <value>Roghnú iontrála tosaithe réamhshocraithe. Tá an uimhir seo bunaithe ar nialas, mar sin is é an chéad eilimint innéacs 0, agus mar sin de.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_NAME" xml:space="preserve">
-    <value>Cumasaigh &apos;An Leathanach Baile Nitrocid&apos;</value>
+    <value>Cumasaigh 'An Leathanach Baile Nitrocid'</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC" xml:space="preserve">
-    <value>Cumasaíonn &apos;The Nitrocid Homepage&apos; a ligeann duit a fheiceáil go sracfhéachaint ar cad atá ag tarlú.</value>
+    <value>Cumasaíonn 'The Nitrocid Homepage' a ligeann duit a fheiceáil go sracfhéachaint ar cad atá ag tarlú.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGBGCOLOR_NAME" xml:space="preserve">
     <value>TUI Idirghníomhach tógtha i ndath cúlra ceangailteach eochair</value>
@@ -5494,7 +5423,7 @@
     <value>Tharla earráid shloinne rialta agus an téacs á phróiseáil. Seiceáil do chomhréir slonn rialta agus bain triail eile as. Má tharla an t-am istigh, cinntigh nach ndéanann tú an iomarca arís (ná bíodh santach).</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_HOMEPAGE" xml:space="preserve">
-    <value>Tharla earráid sna huirlisí leathanach baile agus tú ag iarraidh d&apos;iarratas a phróiseáil. Cinntigh le do thoil go bhfuil na sonraí riachtanacha go léir curtha isteach agat i gceart.</value>
+    <value>Tharla earráid sna huirlisí leathanach baile agus tú ag iarraidh d'iarratas a phróiseáil. Cinntigh le do thoil go bhfuil na sonraí riachtanacha go léir curtha isteach agat i gceart.</value>
   </data>
   <data name="NKS_KERNEL_PANIC_NOTIFY_UNKNOWN" xml:space="preserve">
     <value>Ar an drochuair, ní fios an teip dheireanach, mar sin níl a fhios againn go díreach cad a chuaigh mícheart. D’fhéadfadh sé a bheith cabhrach, áfach, má tá tú tar éis dul i gcomhairle leis na logaí dífhabhtaithe eithne.</value>
@@ -5513,9 +5442,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN" xml:space="preserve">
     <value>Theip ar thús an dífhabhtaithe cianda ar chúiseanna anaithnide.</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN" xml:space="preserve">
-    <value>Ní féidir an snáithe a athghiniúint</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT" xml:space="preserve">
     <value>meiteashonraí MIME (sínte)</value>
@@ -5863,16 +5789,16 @@
     <value>Bréagach a shéanadh, fíor a dheonú</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_ARGUMENT_NEWNAME_DESC" xml:space="preserve">
-    <value>Ainm taispeána nua, nó &apos;soiléir&apos; chun an t-ainm taispeána a scriosadh</value>
+    <value>Ainm taispeána nua, nó 'soiléir' chun an t-ainm taispeána a scriosadh</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_ARGUMENT_LANGID_DESC" xml:space="preserve">
-    <value>Aitheantas teanga trí litir, nó &apos;soiléir&apos; chun an rogha teanga a ghlanadh</value>
+    <value>Aitheantas teanga trí litir, nó 'soiléir' chun an rogha teanga a ghlanadh</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_DESC" xml:space="preserve">
     <value>Athraítear cultúr na n-úsáideoirí roghnaithe</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_ARGUMENT_CULTUREID_DESC" xml:space="preserve">
-    <value>Aitheantas Cultúir, nó &apos;soiléir&apos; chun an cultúr roghnaithe a ghlanadh</value>
+    <value>Aitheantas Cultúir, nó 'soiléir' chun an cultúr roghnaithe a ghlanadh</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS" xml:space="preserve">
     <value>An cultúr úsáideora is fearr leat socraithe go dtí {0}. Seans gur mhaith leat logáil isteach arís.</value>
@@ -5968,7 +5894,7 @@
     <value>Carachtar le ceistiú</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>Uimhir líne (uathach nó tús an raoin), nó &apos;gach ceann&apos; chun carachtar i ngach líne a cheistiú</value>
+    <value>Uimhir líne (uathach nó tús an raoin), nó 'gach ceann' chun carachtar i ngach líne a cheistiú</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_ARGUMENT_WORD_DESC" xml:space="preserve">
     <value>Focal nó frása le fiosrú</value>
@@ -6247,7 +6173,7 @@
     <value>Ainm an ghrúpa chun an t-úsáideoir a bhaint de</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC" xml:space="preserve">
-    <value>Ainm an spárálaíscáileáin nó &apos;randamach&apos;</value>
+    <value>Ainm an spárálaíscáileáin nó 'randamach'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_REGEXP_DESC" xml:space="preserve">
     <value>Slonn rialta le cuardach</value>
@@ -6517,16 +6443,16 @@
     <value>Cén cultúr atá á úsáid chun ainmneacha na míosa, an fhéilire, srl. a athrú?</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
-    <value>Cumasaigh fotha RSS &apos;The Nitrocid Homepage&apos;</value>
+    <value>Cumasaigh fotha RSS 'The Nitrocid Homepage'</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_DESC" xml:space="preserve">
-    <value>Cumasaíonn sé giuirléid fotha RSS &apos;The Nitrocid Homepage&apos; ar thaobh na láimhe deise den scáileán.</value>
+    <value>Cumasaíonn sé giuirléid fotha RSS 'The Nitrocid Homepage' ar thaobh na láimhe deise den scáileán.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_NAME" xml:space="preserve">
-    <value>Giuirléid &apos;An Leathanach Baile Nitrocid&apos;</value>
+    <value>Giuirléid 'An Leathanach Baile Nitrocid'</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_DESC" xml:space="preserve">
-    <value>Roghnaíonn sé giuirléid a thaispeánfar ar &apos;The Nitrocid Homepage&apos;.</value>
+    <value>Roghnaíonn sé giuirléid a thaispeánfar ar 'The Nitrocid Homepage'.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_NAME" xml:space="preserve">
     <value>Socruithe teorann fógra</value>
@@ -6742,13 +6668,13 @@
     <value>Cén tiománaí ionchódaithe neamhshiméadrach ar mhaith leat a úsáid?</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CHATBOTAI" xml:space="preserve">
-    <value>Tharla earráid le Chatbot AI. Cinntigh go bhfuil nasc Idirlín agat, go bhfuil d&apos;eochair API bailí, agus nach sáraíonn tú do chuóta API.</value>
+    <value>Tharla earráid le Chatbot AI. Cinntigh go bhfuil nasc Idirlín agat, go bhfuil d'eochair API bailí, agus nach sáraíonn tú do chuóta API.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_SWITCH_RANDOM_DESC" xml:space="preserve">
     <value>Roghnaíonn sé spárálaíscáileáin randamach</value>
   </data>
   <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
-    <value>Chun tús a chur leis, scríobh &apos;cabhair&apos; agus brúigh ENTER.</value>
+    <value>Chun tús a chur leis, scríobh 'cabhair' agus brúigh ENTER.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
     <value>Toirt leid fuaime don léitheoir</value>
@@ -6763,7 +6689,7 @@
     <value>Carachtar a chuireann an focal faire ionchuir i bhfolach. Fág bán é le haghaidh níos mó slándála.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
-    <value>Chun dul chuig an mblaosc, brúigh an eochair S má tá tú ar an leathanach baile. Ina dhiaidh sin, is féidir leat &apos;cabhair&apos; a scríobh agus brúigh ENTER chun tús a chur leis!</value>
+    <value>Chun dul chuig an mblaosc, brúigh an eochair S má tá tú ar an leathanach baile. Ina dhiaidh sin, is féidir leat 'cabhair' a scríobh agus brúigh ENTER chun tús a chur leis!</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
     <value>Bhí eochracha dúblacha i do shocruithe. Déan seiceáil dhúbailte ar an athróg lena chinntiú nach bhfuil sí ann níos mó ná uair amháin.</value>
@@ -6823,7 +6749,7 @@
     <value>Níor soláthraíodh ainm úsáideora.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_DESC" xml:space="preserve">
-    <value>Bainistíocht fíordheimhnithe dhá fhachtóir d&apos;úsáideoirí</value>
+    <value>Bainistíocht fíordheimhnithe dhá fhachtóir d'úsáideoirí</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_2FA_ARGUMENT_ADD_DESC" xml:space="preserve">
     <value>Cuireann sé riachtanas leis don úsáideoir</value>
@@ -7063,10 +6989,10 @@
     <value>Ní hionann an luach ionchais agus an luach iarbhír.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_NAME" xml:space="preserve">
-    <value>Déan neamhaird d&apos;earráidí teastais</value>
+    <value>Déan neamhaird d'earráidí teastais</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_IGNORECERTERRORS_DESC" xml:space="preserve">
-    <value>Má chumasaítear é, déanfar neamhaird d&apos;earráidí teastais agus nasc á dhéanamh. Seachas sin, fíoraíonn sé teastas an fhreastalaí. De ghnáth, níor cheart é seo a chumasú mura bhfuil tú cinnte go bhfuil muinín agat as an bhfreastalaí.</value>
+    <value>Má chumasaítear é, déanfar neamhaird d'earráidí teastais agus nasc á dhéanamh. Seachas sin, fíoraíonn sé teastas an fhreastalaí. De ghnáth, níor cheart é seo a chumasú mura bhfuil tú cinnte go bhfuil muinín agat as an bhfreastalaí.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GETCONFIGVALUE_KEYTIP" xml:space="preserve">
     <value>Leid Eochair</value>
@@ -7182,5 +7108,4 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>Tá leagan béite an eithne á rith agat. D’fhéadfadh fabhtanna, éagobhsaíochtaí, nó fiú cailliúint sonraí teacht ort. Molaimid an leagan cobhsaí a úsáid, más féidir.</value>
   </data>
-
 </root>

@@ -3477,18 +3477,6 @@
       "text": "يعمل في وضع الصيانة. مرحلة التخطي..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "لا يمكن إعادة إنشاء مؤشر ترابط kernel أثناء تشغيل نفس مؤشر الترابط بالفعل."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "لا يمكن أن يكون إجراء بدء سلسلة الرسائل الفرعية فارغًا."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "فشل مؤشر ترابط Kernel {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "لا توجد معلومات."
     },
@@ -6453,10 +6441,6 @@
       "text": "بيئات متعددة"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "رقم فهرس مؤشر الترابط الفرعي غير صالح."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "اسم التنبيه"
     },
@@ -7227,10 +7211,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "فشل بدء التصحيح عن بعد لأسباب غير معروفة."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "لا يمكن تجديد الخيط"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

@@ -3451,18 +3451,6 @@
       "text": "Працює в режимі обслуговування. Пропуск етапу..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Неможливо відновити потік ядра, коли той самий потік уже запущено."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "Дія запуску дочірнього потоку не може бути нульовою."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Помилка потоку ядра {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Немає інформації."
     },
@@ -6427,10 +6415,6 @@
       "text": "Кілька середовищ"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Номер індексу дочірнього потоку недійсний."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Назва будильника"
     },
@@ -7201,10 +7185,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Не вдалося запустити віддалене налагодження з невідомих причин."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Потік не можна відновити"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

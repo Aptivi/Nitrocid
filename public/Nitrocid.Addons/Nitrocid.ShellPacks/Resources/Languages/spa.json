@@ -2722,6 +2722,14 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "Tipo de socket del servidor saliente"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "No se pudo obtener el mensaje de correo electrónico especificado."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "Error al obtener la bandeja de entrada"
     }
   ]
 }

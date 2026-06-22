@@ -3454,18 +3454,6 @@
       "text": "Funzionante in modalità manutenzione. Saltare la fase..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Impossibile rigenerare il thread del kernel mentre lo stesso thread è già in esecuzione."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "L'azione di avvio del thread figlio non può essere nulla."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Thread del kernel {0} non riuscito."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Nessuna informazione."
     },
@@ -6430,10 +6418,6 @@
       "text": "Ambienti multipli"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Il numero di indice del thread figlio non è valido."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Nome dell'allarme"
     },
@@ -7204,10 +7188,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Il debug remoto non è riuscito ad avviarsi per motivi sconosciuti."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Il thread non può essere rigenerato"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

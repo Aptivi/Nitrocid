@@ -2697,6 +2697,14 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "Loại socket máy chủ đi"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Không thể tải được thư mục đã chỉ định."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "Lỗi khi lấy hộp thư đến"
     }
   ]
 }

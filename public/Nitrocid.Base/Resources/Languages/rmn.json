@@ -3452,18 +3452,6 @@
       "text": "Rulează în modul de întreținere. Sari peste etapa..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Nu se poate regenera firul de nucleu în timp ce același fir rulează deja."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "Acțiunea de pornire a firului secundar nu poate fi nulă."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Firul de kernel {0} a eșuat."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Nicio informație."
     },
@@ -6428,10 +6416,6 @@
       "text": "Medii multiple"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Numărul de index al firului secundar este nevalid."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Numele alarmei"
     },
@@ -7202,10 +7186,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Depanarea de la distanță nu a pornit din motive necunoscute."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Firul nu poate fi regenerat"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

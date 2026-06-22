@@ -3459,18 +3459,6 @@
       "text": "在维护模式下运行。跳过阶段..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "当同一线程已在运行时，无法重新生成内核线程。"
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "子线程启动操作不能为空。"
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "内核线程 {0} 失败。"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "没有信息。"
     },
@@ -6435,10 +6423,6 @@
       "text": "多种环境"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "子线程索引号无效。"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "报警名称"
     },
@@ -7209,10 +7193,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "由于未知原因，远程调试启动失败。"
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "线程无法再生"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

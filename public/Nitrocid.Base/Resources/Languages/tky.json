@@ -3452,18 +3452,6 @@
       "text": "Bakım modunda çalışıyor. Aşama atlanıyor..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Aynı iş parçacığı zaten çalışırken çekirdek iş parçacığını yeniden oluşturamazsınız."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "Alt iş parçacığı başlatma eylemi boş olamaz."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Çekirdek iş parçacığı {0} başarısız oldu."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Bilgi yok."
     },
@@ -6428,10 +6416,6 @@
       "text": "Çoklu ortamlar"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Alt iş parçacığı dizin numarası geçersiz."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Alarm adı"
     },
@@ -7202,10 +7186,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Uzaktan hata ayıklama bilinmeyen nedenlerden dolayı başlatılamadı."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Konu yeniden oluşturulamıyor"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
+  </resheader>
+  <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
     <value>유지 관리를 위해 관리자 비밀번호를 입력하십시오.</value>
   </data>
   <data name="NKS_KERNEL_ENTRY_EXCEPTION_KERNELERROR" xml:space="preserve">
@@ -319,7 +260,7 @@
     <value>{0} 시도에서 다운로드에 실패했습니다 : {1}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GET_NEEDSFTP" xml:space="preserve">
-    <value>FTP 서버에서 파일을 다운로드하려면 &quot;ftp&quot;를 사용하십시오.</value>
+    <value>FTP 서버에서 파일을 다운로드하려면 "ftp"를 사용하십시오.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC" xml:space="preserve">
     <value>현재 작업 디렉토리에 파일을 다운로드</value>
@@ -553,7 +494,7 @@
     <value>원격 디버거 포트를 작성하십시오. 숫자 여야하며 이미 사용되어서는 안됩니다. 그렇지 않으면 원격 디버거가 포트를 열지 못합니다.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC" xml:space="preserve">
-    <value>&quot;&quot;get &quot;&quot;명령이 실패한 다운로드를 재 시도해야하는 횟수를 기록합니다. 숫자 여야합니다.</value>
+    <value>""get ""명령이 실패한 다운로드를 재 시도해야하는 횟수를 기록합니다. 숫자 여야합니다.</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE" xml:space="preserve">
     <value>대답은 부정적이지 않을 수 있습니다.</value>
@@ -604,7 +545,7 @@
     <value>사용자 이름의 비밀번호 변경 실패 : {0}</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED" xml:space="preserve">
-    <value>&quot;{0}&quot;문자열과 일치하는 파일을 찾을 수 없습니다. {1}</value>
+    <value>"{0}"문자열과 일치하는 파일을 찾을 수 없습니다. {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC" xml:space="preserve">
     <value>시작할 때마다 업데이트를 확인합니다.</value>
@@ -703,7 +644,7 @@
     <value>파일은 아카이브입니다. 백업에 사용됩니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR" xml:space="preserve">
-    <value>&quot;{0}&quot;속성이 잘못되었습니다.</value>
+    <value>"{0}"속성이 잘못되었습니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS" xml:space="preserve">
     <value>속성이 성공적으로 추가되었습니다.</value>
@@ -739,10 +680,10 @@
     <value>{0}에서 다운로드 중 ...</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME" xml:space="preserve">
-    <value>&quot;get&quot;또는 &quot;put&quot;명령에서 다운로드 또는 업로드하는 동안 진행률 표시 줄 표시</value>
+    <value>"get"또는 "put"명령에서 다운로드 또는 업로드하는 동안 진행률 표시 줄 표시</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC" xml:space="preserve">
-    <value>true이면 다운로드 또는 업로드 중에 진행률 표시 줄을 &quot;get&quot;또는 &quot;put&quot;에 표시합니다.</value>
+    <value>true이면 다운로드 또는 업로드 중에 진행률 표시 줄을 "get"또는 "put"에 표시합니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PUT_DESC" xml:space="preserve">
     <value>지정된 웹 사이트에 파일을 업로드합니다.</value>
@@ -757,13 +698,13 @@
     <value>업로드가 완료되었습니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_NEEDSFTP" xml:space="preserve">
-    <value>FTP 서버에 파일을 업로드하려면 &quot;ftp&quot;를 사용하십시오.</value>
+    <value>FTP 서버에 파일을 업로드하려면 "ftp"를 사용하십시오.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_FAILED" xml:space="preserve">
     <value>{0} 시도에서 업로드 실패 : {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC" xml:space="preserve">
-    <value>&quot;put&quot;명령이 실패한 업로드를 재 시도해야하는 횟수를 작성하십시오. 숫자 여야합니다.</value>
+    <value>"put"명령이 실패한 업로드를 재 시도해야하는 횟수를 작성하십시오. 숫자 여야합니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR" xml:space="preserve">
     <value>주소는 비워 둘 수 없습니다.</value>
@@ -811,7 +752,7 @@
     <value>텍스트 편집기 자동 저장 기능을 켜거나 끕니다.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC" xml:space="preserve">
-    <value>자동 저장이 활성화 된 경우 텍스트 파일은 &quot;n&quot;초마다 저장됩니다.</value>
+    <value>자동 저장이 활성화 된 경우 텍스트 파일은 "n"초마다 저장됩니다.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_NAME" xml:space="preserve">
     <value>텍스트 편집기 자동 저장 사용</value>
@@ -835,7 +776,7 @@
     <value>다음 쓰기를하기 전에 몇 밀리 초를 기다려야합니까?</value>
   </data>
   <data name="NKS_SHELL_BASE_HELP_NOHELP" xml:space="preserve">
-    <value>&quot;{0}&quot;명령에 대한 도움말이 없습니다.</value>
+    <value>"{0}"명령에 대한 도움말이 없습니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_DESC" xml:space="preserve">
     <value>하드웨어 정보를 인쇄합니다.</value>
@@ -1372,7 +1313,7 @@
     <value>파일 끝에 새 줄을 추가합니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT" xml:space="preserve">
-    <value>파일 끝에 추가할 텍스트를 입력합니다. 완료되면 한 줄에 &quot;EOF&quot;를 작성합니다.</value>
+    <value>파일 끝에 추가할 텍스트를 입력합니다. 완료되면 한 줄에 "EOF"를 작성합니다.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME" xml:space="preserve">
     <value>호스트 이름</value>
@@ -1525,7 +1466,7 @@
     <value>목록의 파일 세부 정보를 표시합니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>성가신 &quot;권한 거부&quot; 메시지 억제</value>
+    <value>성가신 "권한 거부" 메시지 억제</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC" xml:space="preserve">
     <value>모든 시간대 표시</value>
@@ -1651,7 +1592,7 @@
     <value>16진수 편집기는 아직 파일 스트림을 열지 않았습니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT" xml:space="preserve">
-    <value>파일 끝에 추가할 바이트를 한 줄에 입력합니다. 완료되면 한 줄에 &quot;EOF&quot;를 작성합니다.</value>
+    <value>파일 끝에 추가할 바이트를 한 줄에 입력합니다. 완료되면 한 줄에 "EOF"를 작성합니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE" xml:space="preserve">
     <value>유효한 바이트가 아닙니다.</value>
@@ -1774,7 +1715,7 @@
     <value>{1}초를 기다린 후에도 파일 또는 폴더 {0}이(가) 여전히 잠겨 있습니다.</value>
   </data>
   <data name="NKS_KERNEL_LICENSEINFO" xml:space="preserve">
-    <value>라이선스 정보를 보려면 &apos;license&apos;를 실행하세요.</value>
+    <value>라이선스 정보를 보려면 'license'를 실행하세요.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE" xml:space="preserve">
     <value>커널 첫 실행</value>
@@ -1816,7 +1757,7 @@
     <value>Nitrocid KS는 업데이트를 자동으로 확인하는 것 외에도 업데이트 파일을 자동으로 다운로드할 수도 있습니다.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
-    <value>&quot;update&quot; 명령을 사용하면 언제든지 커널 업데이트를 확인할 수 있습니다.</value>
+    <value>"update" 명령을 사용하면 언제든지 커널 업데이트를 확인할 수 있습니다.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>시작하다!</value>
@@ -2302,7 +2243,7 @@
     <value>잘못된 텍스트 편집기 작업이 수행되고 있습니다.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>커널이 지정된 모드를 로드하려고 시도했을 때 &quot;커널 시뮬레이터&quot; 로드를 요청했습니다. 기본 애플리케이션의 이름이 Nitrocid KS로 변경되었으므로 이 모드를 안전하게 실행할 수 없습니다. 모드를 업그레이드하는 것이 좋습니다.</value>
+    <value>커널이 지정된 모드를 로드하려고 시도했을 때 "커널 시뮬레이터" 로드를 요청했습니다. 기본 애플리케이션의 이름이 Nitrocid KS로 변경되었으므로 이 모드를 안전하게 실행할 수 없습니다. 모드를 업그레이드하는 것이 좋습니다.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>요청한 작업을 수행하려고 할 때 연락처 관리자 오류가 발생했습니다. 연락처 파일이 올바른 폴더에 있는지, 유효한 vCard 2.1, 3.0 또는 4.0 연락처 파일인지 확인하세요.</value>
@@ -2581,16 +2522,16 @@
     <value>존재하지 않는 애드온으로 사용자 정의 기능을 실행할 수 없습니다</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
-    <value>애드온 &apos;{1}&apos;에서 &apos;{0}&apos; 함수를 찾을 수 없습니다.</value>
+    <value>애드온 '{1}'에서 '{0}' 함수를 찾을 수 없습니다.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
-    <value>애드온 &apos;{1}&apos;에서 &apos;{0}&apos; 속성을 찾을 수 없습니다.</value>
+    <value>애드온 '{1}'에서 '{0}' 속성을 찾을 수 없습니다.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
-    <value>애드온 &apos;{1}&apos;에서 &apos;{0}&apos; 필드를 찾을 수 없습니다.</value>
+    <value>애드온 '{1}'에서 '{0}' 필드를 찾을 수 없습니다.</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE" xml:space="preserve">
-    <value>해당 애드온 유형 &apos;{0}&apos;이(가) 없습니다.</value>
+    <value>해당 애드온 유형 '{0}'이(가) 없습니다.</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_PROBEFAILED_CPU" xml:space="preserve">
     <value>하나 이상의 CPU 코어를 프로브하지 못했습니다. 어쨌든 정보를 표시하는 중...</value>
@@ -2605,13 +2546,13 @@
     <value>하나 이상의 하드 드라이브를 조사하지 못했습니다. 어쨌든 정보를 표시하는 중...</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_NEEDSELEVATION" xml:space="preserve">
-    <value>권한이 부족하여 하드웨어가 구문 분석되지 않습니다. 관리자 모드에서 Nitrocid를 다시 시작하려면 &quot;winelevate&quot;를 사용하세요.</value>
+    <value>권한이 부족하여 하드웨어가 구문 분석되지 않습니다. 관리자 모드에서 Nitrocid를 다시 시작하려면 "winelevate"를 사용하세요.</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_FAILED" xml:space="preserve">
     <value>하드웨어를 조사하는 동안 오류가 발생했습니다: {0}</value>
   </data>
   <data name="NKS_KERNEL_JOURNALING_EXCEPTION_FILENOTFOUND" xml:space="preserve">
-    <value>저널 파일 &apos;{0}&apos;이(가) 존재하지 않습니다.</value>
+    <value>저널 파일 '{0}'이(가) 존재하지 않습니다.</value>
   </data>
   <data name="NKS_KERNEL_POWER_INVOKING" xml:space="preserve">
     <value>원격 전원 관리 호출:</value>
@@ -2699,15 +2640,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_SKIPSTAGE_MAINTENANCE" xml:space="preserve">
     <value>유지 관리 모드에서 실행 중입니다. 스테이지 건너뛰기...</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING" xml:space="preserve">
-    <value>동일한 스레드가 이미 실행 중인 동안에는 커널 스레드를 다시 생성할 수 없습니다.</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM" xml:space="preserve">
-    <value>하위 스레드 시작 작업은 null일 수 없습니다.</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_FAILED" xml:space="preserve">
-    <value>커널 스레드 {0}이(가) 실패했습니다.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOINFO" xml:space="preserve">
     <value>정보가 없습니다.</value>
@@ -2818,7 +2750,7 @@
     <value>파일 경로</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS" xml:space="preserve">
-    <value>&apos;{0}&apos;을(를) 선택했습니다. 종료하고 선택을 확인하려면 ESC를 누르십시오.</value>
+    <value>'{0}'을(를) 선택했습니다. 종료하고 선택을 확인하려면 ESC를 누르십시오.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTFAILED" xml:space="preserve">
     <value>폴더를 열거나 파일을 선택할 수 없습니다</value>
@@ -2830,10 +2762,10 @@
     <value>자세한 내용을 보려면 SPACE를 누르세요.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>&apos;{0}&apos;을(를) 선택했습니다. 종료하고 선택 사항을 확인하려면 ESC를 누르십시오.</value>
+    <value>'{0}'을(를) 선택했습니다. 종료하고 선택 사항을 확인하려면 ESC를 누르십시오.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_UNSELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>&apos;{0}&apos;을(를) 선택 취소했습니다. 종료하고 선택 사항을 확인하려면 ESC를 누르십시오.</value>
+    <value>'{0}'을(를) 선택 취소했습니다. 종료하고 선택 사항을 확인하려면 ESC를 누르십시오.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOSELECTIONS" xml:space="preserve">
     <value>선택한 파일이 없습니다.</value>
@@ -3169,7 +3101,7 @@
     <value>&gt;&gt; 원격 디버그: 버전</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_FIRSTTIME" xml:space="preserve">
-    <value>&gt;&gt; 환영합니다! 원격 디버그를 처음 입력하는 경우입니다. 등록하려면 &quot;/register &lt;이름&gt;&quot;을 사용하세요.</value>
+    <value>&gt;&gt; 환영합니다! 원격 디버그를 처음 입력하는 경우입니다. 등록하려면 "/register &lt;이름&gt;"을 사용하세요.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICENOTFOUND_BLOCK" xml:space="preserve">
     <value>차단할 장치를 찾을 수 없습니다.</value>
@@ -3244,7 +3176,7 @@
     <value>시간대를 찾을 수 없습니다.</value>
   </data>
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
-    <value>시간대 정보 패키지가 Linux 시스템에 아직 설치되지 않았습니다. 배포판의 패키지 관리자를 사용하여 &apos;tzdata&apos;를 설치하십시오.</value>
+    <value>시간대 정보 패키지가 Linux 시스템에 아직 설치되지 않았습니다. 배포판의 패키지 관리자를 사용하여 'tzdata'를 설치하십시오.</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>로드 중</value>
@@ -3262,7 +3194,7 @@
     <value>최신 뉴스</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>최신 뉴스를 얻으려면 RSS Shell Extras 애드온을 설치해야 합니다. 모든 애드온을 얻으려면 &apos;getaddons&apos; 명령을 사용할 수 있습니다!</value>
+    <value>최신 뉴스를 얻으려면 RSS Shell Extras 애드온을 설치해야 합니다. 모든 애드온을 얻으려면 'getaddons' 명령을 사용할 수 있습니다!</value>
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>명령어를 찾을수 없음.</value>
@@ -3742,7 +3674,7 @@
     <value>&gt;&gt; 원격 채팅: 버전</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CHAT_WELCOME" xml:space="preserve">
-    <value>&gt;&gt; 환영합니다! 원격 채팅에 처음 들어왔습니다. 원격 디버거에서는 &quot;/register &lt;이름&gt;&quot;을 사용하여 등록합니다. 등록하기 전까지는 통화할 수 없습니다.</value>
+    <value>&gt;&gt; 환영합니다! 원격 채팅에 처음 들어왔습니다. 원격 디버거에서는 "/register &lt;이름&gt;"을 사용하여 등록합니다. 등록하기 전까지는 통화할 수 없습니다.</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_BENCHMARKSLEEPONE_DESC" xml:space="preserve">
     <value>단 1밀리초 동안 잠들기까지 실제로 몇 밀리초가 걸렸습니까?</value>
@@ -4303,7 +4235,7 @@
     <value>하드웨어 설정</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP" xml:space="preserve">
-    <value>하드웨어에 대한 자세한 정보를 보려면 &quot;hwinfo&quot;를 사용하십시오.</value>
+    <value>하드웨어에 대한 자세한 정보를 보려면 "hwinfo"를 사용하십시오.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE" xml:space="preserve">
     <value>사용자 설정</value>
@@ -4714,7 +4646,7 @@
     <value>파일 시스템 설정</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC" xml:space="preserve">
-    <value>&quot;cat&quot; 명령이 파일의 줄 번호를 인쇄하도록 합니다.</value>
+    <value>"cat" 명령이 파일의 줄 번호를 인쇄하도록 합니다.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_DESC" xml:space="preserve">
     <value>이 섹션에는 FTP 셸, 네트워크 관련 명령 설정 및 원격 디버그 설정과 같은 네트워크 설정이 나열되어 있습니다.</value>
@@ -4931,9 +4863,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_STAGE7_DESC" xml:space="preserve">
     <value>다양한 환경</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID" xml:space="preserve">
-    <value>하위 스레드 색인 번호가 잘못되었습니다.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME" xml:space="preserve">
     <value>알람 이름</value>
@@ -5188,22 +5117,22 @@
     <value>↑ 및 ↓ 키를 사용하여 강조 표시된 항목을 선택합니다.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING2" xml:space="preserve">
-    <value>선택한 OS를 부팅하려면 Enter 키를 누르고, 명령을 편집하려면 &apos;e&apos; 키를 누르세요.</value>
+    <value>선택한 OS를 부팅하려면 Enter 키를 누르고, 명령을 편집하려면 'e' 키를 누르세요.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING3" xml:space="preserve">
-    <value>부팅하기 전 또는 명령줄의 경우 &apos;c&apos;입니다.</value>
+    <value>부팅하기 전 또는 명령줄의 경우 'c'입니다.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_TIMEOUT" xml:space="preserve">
     <value>강조표시된 항목은 {0}초 후에 자동으로 실행됩니다.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING1" xml:space="preserve">
-    <value>선택한 OS를 부팅하려면 Enter를 누르고, 편집하려면 `e&apos;를 누르세요.</value>
+    <value>선택한 OS를 부팅하려면 Enter를 누르고, 편집하려면 `e'를 누르세요.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING2" xml:space="preserve">
-    <value>부팅하기 전의 명령 또는 명령줄의 경우 `c&apos;입니다.</value>
+    <value>부팅하기 전의 명령 또는 명령줄의 경우 `c'입니다.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING1" xml:space="preserve">
-    <value>&apos;{0}&apos; 부팅 중</value>
+    <value>'{0}' 부팅 중</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING2" xml:space="preserve">
     <value>파일 시스템 유형은 다음과 같습니다.</value>
@@ -5257,10 +5186,10 @@
     <value>기본 부팅 항목 선택. 이 숫자는 0부터 시작하므로 첫 번째 요소는 인덱스 0입니다.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_NAME" xml:space="preserve">
-    <value>&apos;Nitrocid 홈페이지&apos; 활성화</value>
+    <value>'Nitrocid 홈페이지' 활성화</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC" xml:space="preserve">
-    <value>무슨 일이 일어나고 있는지 한눈에 볼 수 있는 &apos;나이트로시드 홈페이지&apos;를 활성화합니다.</value>
+    <value>무슨 일이 일어나고 있는지 한눈에 볼 수 있는 '나이트로시드 홈페이지'를 활성화합니다.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGBGCOLOR_NAME" xml:space="preserve">
     <value>대화형 TUI 내장 키 바인딩 배경색</value>
@@ -5513,9 +5442,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN" xml:space="preserve">
     <value>알 수 없는 이유로 원격 디버그를 시작하지 못했습니다.</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN" xml:space="preserve">
-    <value>스레드를 재생성할 수 없습니다.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT" xml:space="preserve">
     <value>MIME 메타데이터(확장됨)</value>
@@ -5863,16 +5789,16 @@
     <value>거부하는 것은 거짓이고, 허락하는 것은 진실이다</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_ARGUMENT_NEWNAME_DESC" xml:space="preserve">
-    <value>새로운 표시 이름 또는 &apos;지우기&apos;를 눌러 표시 이름을 지웁니다.</value>
+    <value>새로운 표시 이름 또는 '지우기'를 눌러 표시 이름을 지웁니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_ARGUMENT_LANGID_DESC" xml:space="preserve">
-    <value>3자리 언어 ID 또는 &apos;clear&apos;를 사용하여 선호하는 언어를 지웁니다.</value>
+    <value>3자리 언어 ID 또는 'clear'를 사용하여 선호하는 언어를 지웁니다.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_DESC" xml:space="preserve">
     <value>선호하는 사용자 문화를 변경합니다</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_ARGUMENT_CULTUREID_DESC" xml:space="preserve">
-    <value>문화 ID 또는 선호하는 문화를 지우는 &apos;clear&apos;</value>
+    <value>문화 ID 또는 선호하는 문화를 지우는 'clear'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS" xml:space="preserve">
     <value>기본 사용자 문화가 {0}으로 설정되었습니다. 다시 로그인해야 할 수도 있습니다.</value>
@@ -5968,7 +5894,7 @@
     <value>질의할 문자</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>줄 번호(단수 또는 범위 시작) 또는 모든 줄의 문자를 쿼리하려면 &apos;모두&apos;를 사용하세요.</value>
+    <value>줄 번호(단수 또는 범위 시작) 또는 모든 줄의 문자를 쿼리하려면 '모두'를 사용하세요.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_ARGUMENT_WORD_DESC" xml:space="preserve">
     <value>질의할 단어나 구문</value>
@@ -5983,7 +5909,7 @@
     <value>바꿀 단어나 구문</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>줄 번호(단수 또는 범위 시작) 또는 모든 줄을 바꾸려면 &apos;all&apos;을 선택하세요.</value>
+    <value>줄 번호(단수 또는 범위 시작) 또는 모든 줄을 바꾸려면 'all'을 선택하세요.</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_ARGUMENT_REGEX_DESC" xml:space="preserve">
     <value>교체될 구문과 일치하는 정규 표현식</value>
@@ -6247,7 +6173,7 @@
     <value>사용자를 제거할 그룹 이름</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC" xml:space="preserve">
-    <value>스크린세이버 이름 또는 &apos;무작위&apos;</value>
+    <value>스크린세이버 이름 또는 '무작위'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_REGEXP_DESC" xml:space="preserve">
     <value>검색을 위한 정규 표현식</value>
@@ -6517,16 +6443,16 @@
     <value>어떤 문화권을 사용하여 월 이름, 달력 등을 변경하고 있습니까?</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
-    <value>&apos;The Nitrocid Homepage&apos; RSS 피드 활성화</value>
+    <value>'The Nitrocid Homepage' RSS 피드 활성화</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_DESC" xml:space="preserve">
-    <value>화면 오른쪽에 &apos;The Nitrocid Homepage&apos; RSS 피드 위젯을 활성화합니다.</value>
+    <value>화면 오른쪽에 'The Nitrocid Homepage' RSS 피드 위젯을 활성화합니다.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_NAME" xml:space="preserve">
-    <value>&apos;The Nitrocid Homepage&apos; 위젯</value>
+    <value>'The Nitrocid Homepage' 위젯</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_DESC" xml:space="preserve">
-    <value>&apos;The Nitrocid Homepage&apos;에 표시될 위젯을 선택합니다.</value>
+    <value>'The Nitrocid Homepage'에 표시될 위젯을 선택합니다.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_NAME" xml:space="preserve">
     <value>알림 테두리 설정</value>
@@ -6748,7 +6674,7 @@
     <value>무작위 스크린세이버를 선택합니다</value>
   </data>
   <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
-    <value>시작하려면 &apos;help&apos;를 입력하고 Enter 키를 누르세요.</value>
+    <value>시작하려면 'help'를 입력하고 Enter 키를 누르세요.</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
     <value>독자를 위한 오디오 신호 볼륨</value>
@@ -6763,7 +6689,7 @@
     <value>입력된 비밀번호를 가리는 문자입니다. 보안 강화를 위해 비워 두십시오.</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
-    <value>홈페이지에 있을 때 셸로 이동하려면 S 키를 누르세요. 그런 다음 &apos;help&apos;를 입력하고 Enter 키를 눌러 시작할 수 있습니다!</value>
+    <value>홈페이지에 있을 때 셸로 이동하려면 S 키를 누르세요. 그런 다음 'help'를 입력하고 Enter 키를 눌러 시작할 수 있습니다!</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
     <value>설정 인스턴스에 중복된 키가 있습니다. 변수가 중복 존재하지 않는지 다시 한번 확인해 주세요.</value>
@@ -7182,5 +7108,4 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>베타 버전의 커널을 실행 중입니다. 버그, 불안정성 또는 데이터 손실이 발생할 수 있습니다. 가능하면 안정 버전을 사용하는 것이 좋습니다.</value>
   </data>
-
 </root>

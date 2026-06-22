@@ -3451,18 +3451,6 @@
       "text": "रखरखाव मोड में चल रहा है. मंच छोड़ना..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "कर्नेल थ्रेड को पुन: उत्पन्न नहीं किया जा सकता जबकि वही थ्रेड पहले से ही चल रहा है।"
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "चाइल्ड थ्रेड प्रारंभ क्रिया शून्य नहीं हो सकती."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "कर्नेल थ्रेड {0} विफल रहा."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "कोई सूचना नहीं।"
     },
@@ -6427,10 +6415,6 @@
       "text": "एकाधिक वातावरण"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "चाइल्ड थ्रेड इंडेक्स संख्या अमान्य है."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "अलार्म का नाम"
     },
@@ -7201,10 +7185,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "अज्ञात कारणों से दूरस्थ डिबग प्रारंभ करने में विफल रहा।"
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "थ्रेड को पुनः उत्पन्न नहीं किया जा सकता"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

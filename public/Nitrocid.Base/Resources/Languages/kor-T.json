@@ -3452,18 +3452,6 @@
       "text": "유지 관리 모드에서 실행 중입니다. 스테이지 건너뛰기..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "동일한 스레드가 이미 실행 중인 동안에는 커널 스레드를 다시 생성할 수 없습니다."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "하위 스레드 시작 작업은 null일 수 없습니다."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "커널 스레드 {0}이(가) 실패했습니다."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "정보가 없습니다."
     },
@@ -6428,10 +6416,6 @@
       "text": "다양한 환경"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "하위 스레드 색인 번호가 잘못되었습니다."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "알람 이름"
     },
@@ -7202,10 +7186,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "알 수 없는 이유로 원격 디버그를 시작하지 못했습니다."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "스레드를 재생성할 수 없습니다."
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

@@ -3476,18 +3476,6 @@
       "text": "Ejecutando en modo de mantenimiento. Saltando etapa..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "No se puede regenerar el hilo del kernel mientras el mismo hilo ya se está ejecutando."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "La acción de inicio del subproceso secundario no puede ser nula."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Error del subproceso del núcleo {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Sin información."
     },
@@ -6452,10 +6440,6 @@
       "text": "Múltiples entornos"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "El número de índice del hilo secundario no es válido."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Nombre de la alarma"
     },
@@ -7226,10 +7210,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "La depuración remota no pudo iniciarse por razones desconocidas."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "El hilo no se puede regenerar"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

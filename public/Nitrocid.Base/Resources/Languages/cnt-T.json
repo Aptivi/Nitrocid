@@ -3454,18 +3454,6 @@
       "text": "在維護模式下運作。跳過階段..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "當同一執行緒已在運行時，無法重新產生內核執行緒。"
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "子執行緒啟動操作不能為空。"
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "內核線程 {0} 失敗。"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "沒有資訊。"
     },
@@ -6430,10 +6418,6 @@
       "text": "多種環境"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "子線程索引號碼無效。"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "警報名稱"
     },
@@ -7204,10 +7188,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "由於未知原因，遠端調試無法啟動。"
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "線程無法重新生成"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

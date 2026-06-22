@@ -3451,18 +3451,6 @@
       "text": "Đang chạy ở chế độ bảo trì. Bỏ qua giai đoạn..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Không thể tạo lại luồng hạt nhân trong khi luồng đó đang chạy."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "Hành động bắt đầu luồng con không thể để giá trị null."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Luồng hạt nhân {0} đã thất bại."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Không có thông tin."
     },
@@ -6427,10 +6415,6 @@
       "text": "Nhiều môi trường"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Số chỉ mục luồng con không hợp lệ."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Tên báo động"
     },
@@ -7201,10 +7185,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Không thể khởi động gỡ lỗi từ xa vì lý do chưa rõ."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Không thể tạo lại chủ đề"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

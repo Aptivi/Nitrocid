@@ -2701,6 +2701,14 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "Sockettype for utgående server"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Klarte ikke å hente den angitte e-postmeldingen"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "Henting av innboks mislyktes"
     }
   ]
 }

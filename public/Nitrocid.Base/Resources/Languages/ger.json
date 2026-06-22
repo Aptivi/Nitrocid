@@ -3460,18 +3460,6 @@
       "text": "Läuft im Wartungsmodus. Stufe überspringen..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Der Kernel-Thread kann nicht neu generiert werden, während derselbe Thread bereits ausgeführt wird."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "Die Startaktion des untergeordneten Threads darf nicht null sein."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Kernel-Thread {0} ist fehlgeschlagen."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Keine Informationen."
     },
@@ -6436,10 +6424,6 @@
       "text": "Mehrere Umgebungen"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Die Indexnummer des untergeordneten Threads ist ungültig."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Alarmname"
     },
@@ -7210,10 +7194,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Der Remote-Debug konnte aus unbekannten Gründen nicht gestartet werden."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Thread kann nicht regeneriert werden"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

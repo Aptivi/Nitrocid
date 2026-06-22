@@ -2698,6 +2698,14 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "Cineál soicéad an fhreastalaí amach"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Theip ar an teachtaireacht ríomhphoist shonraithe a fháil"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "Theip ar fháil an bhosca isteach"
     }
   ]
 }

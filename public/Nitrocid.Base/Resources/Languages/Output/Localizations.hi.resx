@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
+  </resheader>
+  <data name="NKS_USERS_LOGIN_ADMINPASSWORDMAINTENANCE" xml:space="preserve">
     <value>रखरखाव के लिए व्यवस्थापक पासवर्ड दर्ज करें।</value>
   </data>
   <data name="NKS_KERNEL_ENTRY_EXCEPTION_KERNELERROR" xml:space="preserve">
@@ -319,7 +260,7 @@
     <value>डाउनलोड करने में विफल {0}: {1}</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_GET_NEEDSFTP" xml:space="preserve">
-    <value>यदि आप FTP सर्वर से फाइल डाउनलोड करने जा रहे हैं तो कृपया &quot;ftp&quot; का उपयोग करें।</value>
+    <value>यदि आप FTP सर्वर से फाइल डाउनलोड करने जा रहे हैं तो कृपया "ftp" का उपयोग करें।</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_GET_DESC" xml:space="preserve">
     <value>वर्तमान कार्यशील निर्देशिका के लिए एक फ़ाइल डाउनलोड करता है</value>
@@ -553,7 +494,7 @@
     <value>एक दूरस्थ डीबगर पोर्ट लिखें। यह संख्यात्मक होना चाहिए, और पहले से ही उपयोग नहीं किया जाना चाहिए। अन्यथा, दूरस्थ डीबगर पोर्ट को खोलने में विफल हो जाएगा।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_RETRYTIMES_DESC" xml:space="preserve">
-    <value>लिखें कि कितनी बार &quot;&quot; प्राप्त &quot;&quot; कमांड को विफल डाउनलोड पुनः प्राप्त करना चाहिए। यह न्यूमेरिक होना चाहिए।</value>
+    <value>लिखें कि कितनी बार "" प्राप्त "" कमांड को विफल डाउनलोड पुनः प्राप्त करना चाहिए। यह न्यूमेरिक होना चाहिए।</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_SETTINGS_APP_NUMBERPOSITIVE" xml:space="preserve">
     <value>उत्तर नकारात्मक नहीं हो सकता है।</value>
@@ -604,7 +545,7 @@
     <value>उपयोगकर्ता नाम का पासवर्ड बदलने में विफल: {0}</value>
   </data>
   <data name="NKS_DRIVERS_FILESYSTEM_BASE_EXCEPTION_FINDFILEFORMATCHFAILED" xml:space="preserve">
-    <value>&quot;{0}&quot; से मिलान करने के लिए फ़ाइल खोजने में असमर्थ: {1}</value>
+    <value>"{0}" से मिलान करने के लिए फ़ाइल खोजने में असमर्थ: {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_KERNELUPDATE_CHECKUPDATES_DESC" xml:space="preserve">
     <value>प्रत्येक स्टार्टअप, यह अपडेट के लिए जाँच करेगा।</value>
@@ -703,7 +644,7 @@
     <value>फ़ाइल एक संग्रह है। बैकअप के लिए उपयोग किया जाता है।</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_INVALIDATTR" xml:space="preserve">
-    <value>विशेषता &quot;{0}&quot; अमान्य है।</value>
+    <value>विशेषता "{0}" अमान्य है।</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_CHATTR_ADDSUCCESS" xml:space="preserve">
     <value>विशेषता को सफलतापूर्वक जोड़ा गया है।</value>
@@ -739,10 +680,10 @@
     <value>{0} से डाउनलोड हो रहा है ...</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_NAME" xml:space="preserve">
-    <value>&quot;प्राप्त&quot; या &quot;पुट&quot; कमांड से डाउनलोड या अपलोड करते समय प्रगति बार दिखाएं</value>
+    <value>"प्राप्त" या "पुट" कमांड से डाउनलोड या अपलोड करते समय प्रगति बार दिखाएं</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_PROGBARTRANSFER_DESC" xml:space="preserve">
-    <value>यदि सही है, तो यह डाउनलोड या अपलोड करते समय प्रगति बार को &quot;प्राप्त&quot; या &quot;पुट&quot; दिखाता है।</value>
+    <value>यदि सही है, तो यह डाउनलोड या अपलोड करते समय प्रगति बार को "प्राप्त" या "पुट" दिखाता है।</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_PUT_DESC" xml:space="preserve">
     <value>निर्दिष्ट वेबसाइट पर एक फ़ाइल अपलोड करता है</value>
@@ -757,13 +698,13 @@
     <value>अपलोड पूरा हो गया है।</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_NEEDSFTP" xml:space="preserve">
-    <value>यदि आप FTP सर्वर पर फाइल अपलोड करने जा रहे हैं, तो कृपया &quot;ftp&quot; का उपयोग करें।</value>
+    <value>यदि आप FTP सर्वर पर फाइल अपलोड करने जा रहे हैं, तो कृपया "ftp" का उपयोग करें।</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PUT_FAILED" xml:space="preserve">
     <value>अपलोड करने में विफल {0}: {1}</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_UPRETRYTIMES_DESC" xml:space="preserve">
-    <value>कितनी बार &quot;पुट&quot; कमांड को विफल अपलोड को फिर से लिखना चाहिए। यह न्यूमेरिक होना चाहिए।</value>
+    <value>कितनी बार "पुट" कमांड को विफल अपलोड को फिर से लिखना चाहिए। यह न्यूमेरिक होना चाहिए।</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_PING_NEEDSADDR" xml:space="preserve">
     <value>पता खाली नहीं हो सकता।</value>
@@ -811,7 +752,7 @@
     <value>पाठ संपादक ऑटोसैव सुविधा को चालू या बंद करता है।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVEINTERVAL_DESC" xml:space="preserve">
-    <value>यदि ऑटोसैव सक्षम है, तो पाठ फ़ाइल प्रत्येक &quot;n&quot; सेकंड के लिए सहेजी जाएगी।</value>
+    <value>यदि ऑटोसैव सक्षम है, तो पाठ फ़ाइल प्रत्येक "n" सेकंड के लिए सहेजी जाएगी।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_TEXTEDITOR_AUTOSAVE_NAME" xml:space="preserve">
     <value>पाठ संपादक ऑटोसैव सक्षम करें</value>
@@ -835,7 +776,7 @@
     <value>अगला लेखन करने से पहले कितने मिलीसेकंड तक प्रतीक्षा करनी होगी?</value>
   </data>
   <data name="NKS_SHELL_BASE_HELP_NOHELP" xml:space="preserve">
-    <value>&quot;{0}&quot; कमांड के लिए कोई सहायता नहीं।</value>
+    <value>"{0}" कमांड के लिए कोई सहायता नहीं।</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_HWINFO_DESC" xml:space="preserve">
     <value>हार्डवेयर जानकारी प्रिंट करता है</value>
@@ -1372,7 +1313,7 @@
     <value>फ़ाइल के अंत में नई लाइनें जोड़ता है</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_ADDLINES_LINEPROMPT" xml:space="preserve">
-    <value>वह टेक्स्ट दर्ज करें जिसे आप फ़ाइल के अंत में जोड़ना चाहते हैं। जब आपका काम हो जाए, तो उसकी अपनी लाइन पर &quot;EOF&quot; लिखें।</value>
+    <value>वह टेक्स्ट दर्ज करें जिसे आप फ़ाइल के अंत में जोड़ना चाहते हैं। जब आपका काम हो जाए, तो उसकी अपनी लाइन पर "EOF" लिखें।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_LOGIN_HOSTNAME_NAME" xml:space="preserve">
     <value>होस्ट का नाम</value>
@@ -1525,7 +1466,7 @@
     <value>सूची में फ़ाइल विवरण दिखाता है</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_LIST_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>कष्टप्रद &quot;अनुमति अस्वीकृत&quot; संदेशों को दबाता है</value>
+    <value>कष्टप्रद "अनुमति अस्वीकृत" संदेशों को दबाता है</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SHOWTDZONE_SWITCH_ALL_DESC" xml:space="preserve">
     <value>सभी समय क्षेत्र दिखाता है</value>
@@ -1651,7 +1592,7 @@
     <value>हेक्स संपादक ने अभी तक कोई फ़ाइल स्ट्रीम नहीं खोली है।</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_PROMPT" xml:space="preserve">
-    <value>अपनी लाइन पर एक बाइट दर्ज करें जिसे आप फ़ाइल के अंत में जोड़ना चाहते हैं। जब आपका काम हो जाए, तो उसकी अपनी लाइन पर &quot;EOF&quot; लिखें।</value>
+    <value>अपनी लाइन पर एक बाइट दर्ज करें जिसे आप फ़ाइल के अंत में जोड़ना चाहते हैं। जब आपका काम हो जाए, तो उसकी अपनी लाइन पर "EOF" लिखें।</value>
   </data>
   <data name="NKS_SHELL_SHELLS_HEX_ADDBYTES_INVALIDBYTE" xml:space="preserve">
     <value>मान्य बाइट नहीं है।</value>
@@ -1774,7 +1715,7 @@
     <value>फ़ाइल या फ़ोल्डर {0} {1} सेकंड तक प्रतीक्षा करने के बाद भी लॉक है।</value>
   </data>
   <data name="NKS_KERNEL_LICENSEINFO" xml:space="preserve">
-    <value>लाइसेंस की जानकारी देखने के लिए &apos;लाइसेंस&apos; चलाएँ।</value>
+    <value>लाइसेंस की जानकारी देखने के लिए 'लाइसेंस' चलाएँ।</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_TITLE" xml:space="preserve">
     <value>कर्नेल प्रथम-रन</value>
@@ -1816,7 +1757,7 @@
     <value>अपडेट के लिए स्वचालित रूप से जाँच करने के अलावा, नाइट्रोसिड केएस स्वचालित रूप से अपडेट फ़ाइल भी डाउनलोड कर सकता है।</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE3_TEXT3" xml:space="preserve">
-    <value>आप हमेशा &quot;अपडेट&quot; कमांड का उपयोग करके कर्नेल अपडेट की जांच कर सकते हैं।</value>
+    <value>आप हमेशा "अपडेट" कमांड का उपयोग करके कर्नेल अपडेट की जांच कर सकते हैं।</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TITLE" xml:space="preserve">
     <value>शुरू हो जाओ!</value>
@@ -2302,7 +2243,7 @@
     <value>एक अमान्य पाठ संपादक कार्रवाई निष्पादित की जा रही है.</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_OLDMODDETECTED" xml:space="preserve">
-    <value>जब कर्नेल ने निर्दिष्ट मॉड को लोड करने का प्रयास किया, तो उसने &quot;कर्नेल सिम्युलेटर&quot; लोड करने का अनुरोध किया। चूंकि मुख्य एप्लिकेशन का नाम बदलकर नाइट्रोसिड केएस कर दिया गया है, इसलिए इस मॉड को सुरक्षित रूप से नहीं चलाया जा सकता है। हम आपको मॉड को अपग्रेड करने की सलाह देते हैं।</value>
+    <value>जब कर्नेल ने निर्दिष्ट मॉड को लोड करने का प्रयास किया, तो उसने "कर्नेल सिम्युलेटर" लोड करने का अनुरोध किया। चूंकि मुख्य एप्लिकेशन का नाम बदलकर नाइट्रोसिड केएस कर दिया गया है, इसलिए इस मॉड को सुरक्षित रूप से नहीं चलाया जा सकता है। हम आपको मॉड को अपग्रेड करने की सलाह देते हैं।</value>
   </data>
   <data name="NKS_KERNEL_EXCEPTIONS_MESSAGE_CONTACTS" xml:space="preserve">
     <value>अनुरोधित कार्रवाई करने का प्रयास करते समय एक संपर्क प्रबंधक त्रुटि उत्पन्न हुई। सुनिश्चित करें कि संपर्क फ़ाइल सही फ़ोल्डर में मौजूद है और यह एक वैध vCard 2.1, 3.0, या 4.0 संपर्क फ़ाइल है।</value>
@@ -2581,16 +2522,16 @@
     <value>गैर-मौजूद ऐडऑन के साथ कस्टम फ़ंक्शन निष्पादित नहीं किया जा सकता</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FUNCTIONNOTFOUND" xml:space="preserve">
-    <value>ऐडऑन &apos;{1}&apos; में फ़ंक्शन &apos;{0}&apos; नहीं मिल सका।</value>
+    <value>ऐडऑन '{1}' में फ़ंक्शन '{0}' नहीं मिल सका।</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_PROPERTYNOTFOUND" xml:space="preserve">
-    <value>ऐडऑन &apos;{1}&apos; में संपत्ति &apos;{0}&apos; नहीं मिल सकी।</value>
+    <value>ऐडऑन '{1}' में संपत्ति '{0}' नहीं मिल सकी।</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_FIELDNOTFOUND" xml:space="preserve">
-    <value>ऐडऑन &apos;{1}&apos; में फ़ील्ड &apos;{0}&apos; नहीं मिल सका।</value>
+    <value>ऐडऑन '{1}' में फ़ील्ड '{0}' नहीं मिल सका।</value>
   </data>
   <data name="NKS_KERNEL_EXTENSIONS_INTERADDON_EXCEPTION_NOADDONTYPE" xml:space="preserve">
-    <value>ऐसा कोई ऐडऑन प्रकार &apos;{0}&apos; नहीं</value>
+    <value>ऐसा कोई ऐडऑन प्रकार '{0}' नहीं</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_PROBEFAILED_CPU" xml:space="preserve">
     <value>एक या अधिक सीपीयू कोर जांच करने में विफल रहे। फिर भी जानकारी दिखा रहा हूँ...</value>
@@ -2605,13 +2546,13 @@
     <value>एक या अधिक हार्ड ड्राइव जांच में विफल रहे। फिर भी जानकारी दिखा रहा हूँ...</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_NEEDSELEVATION" xml:space="preserve">
-    <value>अपर्याप्त विशेषाधिकारों के कारण हार्डवेयर को पार्स नहीं किया जाएगा। एलिवेटेड मोड में नाइट्रोसिड को पुनः आरंभ करने के लिए &quot;वाइनलेवेट&quot; का उपयोग करें।</value>
+    <value>अपर्याप्त विशेषाधिकारों के कारण हार्डवेयर को पार्स नहीं किया जाएगा। एलिवेटेड मोड में नाइट्रोसिड को पुनः आरंभ करने के लिए "वाइनलेवेट" का उपयोग करें।</value>
   </data>
   <data name="NKS_KERNEL_HARDWARE_FAILED" xml:space="preserve">
     <value>हार्डवेयर की जांच करते समय एक त्रुटि हुई: {0}</value>
   </data>
   <data name="NKS_KERNEL_JOURNALING_EXCEPTION_FILENOTFOUND" xml:space="preserve">
-    <value>जर्नल फ़ाइल &apos;{0}&apos; मौजूद नहीं है.</value>
+    <value>जर्नल फ़ाइल '{0}' मौजूद नहीं है.</value>
   </data>
   <data name="NKS_KERNEL_POWER_INVOKING" xml:space="preserve">
     <value>रिमोट पावर प्रबंधन लागू:</value>
@@ -2699,15 +2640,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_SKIPSTAGE_MAINTENANCE" xml:space="preserve">
     <value>रखरखाव मोड में चल रहा है. मंच छोड़ना...</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING" xml:space="preserve">
-    <value>कर्नेल थ्रेड को पुन: उत्पन्न नहीं किया जा सकता जबकि वही थ्रेड पहले से ही चल रहा है।</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM" xml:space="preserve">
-    <value>चाइल्ड थ्रेड प्रारंभ क्रिया शून्य नहीं हो सकती.</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_FAILED" xml:space="preserve">
-    <value>कर्नेल थ्रेड {0} विफल रहा.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOINFO" xml:space="preserve">
     <value>कोई सूचना नहीं।</value>
@@ -2818,7 +2750,7 @@
     <value>दस्तावेज पथ</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS" xml:space="preserve">
-    <value>&apos;{0}&apos; चयनित. बाहर निकलने और चयन की पुष्टि करने के लिए ESC दबाएँ।</value>
+    <value>'{0}' चयनित. बाहर निकलने और चयन की पुष्टि करने के लिए ESC दबाएँ।</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTFAILED" xml:space="preserve">
     <value>फ़ोल्डर नहीं खोल सकते या फ़ाइल का चयन नहीं कर सकते</value>
@@ -2830,10 +2762,10 @@
     <value>अधिक जानकारी के लिए SPACE दबाएँ</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_SELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>&apos;{0}&apos; चयनित. बाहर निकलने और चयन की पुष्टि करने के लिए ESC दबाएँ।</value>
+    <value>'{0}' चयनित. बाहर निकलने और चयन की पुष्टि करने के लिए ESC दबाएँ।</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_UNSELECTSUCCESS_MULTI" xml:space="preserve">
-    <value>&apos;{0}&apos; को अचयनित किया गया. बाहर निकलने और चयन की पुष्टि करने के लिए ESC दबाएँ।</value>
+    <value>'{0}' को अचयनित किया गया. बाहर निकलने और चयन की पुष्टि करने के लिए ESC दबाएँ।</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_NOSELECTIONS" xml:space="preserve">
     <value>कोई चयनित फ़ाइल नहीं.</value>
@@ -3169,7 +3101,7 @@
     <value>&gt;&gt; रिमोट डिबग: संस्करण</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_FIRSTTIME" xml:space="preserve">
-    <value>&gt;&gt; स्वागत है! यह आपका पहली बार दूरस्थ डिबग में प्रवेश है। पंजीकरण करने के लिए &quot;/register &lt;name&gt;&quot; का उपयोग करें।</value>
+    <value>&gt;&gt; स्वागत है! यह आपका पहली बार दूरस्थ डिबग में प्रवेश है। पंजीकरण करने के लिए "/register &lt;name&gt;" का उपयोग करें।</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_EXCEPTION_DEVICENOTFOUND_BLOCK" xml:space="preserve">
     <value>ब्लॉक करने के लिए डिवाइस नहीं मिला.</value>
@@ -3244,7 +3176,7 @@
     <value>समय क्षेत्र नहीं मिला.</value>
   </data>
   <data name="NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA" xml:space="preserve">
-    <value>आपके लिनक्स सिस्टम पर समय क्षेत्र सूचना पैकेज अभी तक स्थापित नहीं है। अपने वितरण के पैकेज प्रबंधक का उपयोग करके &apos;tzdata&apos; स्थापित करें।</value>
+    <value>आपके लिनक्स सिस्टम पर समय क्षेत्र सूचना पैकेज अभी तक स्थापित नहीं है। अपने वितरण के पैकेज प्रबंधक का उपयोग करके 'tzdata' स्थापित करें।</value>
   </data>
   <data name="NKS_MISC_SPLASHES_WELCOME_LOADING" xml:space="preserve">
     <value>लोड हो रहा है</value>
@@ -3262,7 +3194,7 @@
     <value>नवीनतम समाचार से</value>
   </data>
   <data name="NKS_NETWORK_TYPES_RSS_LATESTNEWS_NEEDSADDON" xml:space="preserve">
-    <value>नवीनतम समाचार प्राप्त करने में सक्षम होने के लिए, आपको RSS शेल एक्स्ट्राज़ ऐडऑन इंस्टॉल करना होगा। आप सभी ऐडऑन प्राप्त करने के लिए &apos;गेटएडऑन&apos; कमांड का उपयोग कर सकते हैं!</value>
+    <value>नवीनतम समाचार प्राप्त करने में सक्षम होने के लिए, आपको RSS शेल एक्स्ट्राज़ ऐडऑन इंस्टॉल करना होगा। आप सभी ऐडऑन प्राप्त करने के लिए 'गेटएडऑन' कमांड का उपयोग कर सकते हैं!</value>
   </data>
   <data name="NKS_SHELL_BASE_COMMANDS_EXCEPTION_NOTFOUND" xml:space="preserve">
     <value>यह कमांड नहीं मिला।</value>
@@ -3742,7 +3674,7 @@
     <value>&gt;&gt; रिमोट चैट: संस्करण</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_REMOTEDEBUG_CHAT_WELCOME" xml:space="preserve">
-    <value>&gt;&gt; स्वागत है! आप पहली बार दूरस्थ चैट में प्रवेश कर रहे हैं। रिमोट डिबगर में, रजिस्टर करने के लिए &quot;/register &lt;नाम&gt;&quot; का उपयोग करें। जब तक आप रजिस्टर नहीं हो जाते तब तक आप बात नहीं कर सकते।</value>
+    <value>&gt;&gt; स्वागत है! आप पहली बार दूरस्थ चैट में प्रवेश कर रहे हैं। रिमोट डिबगर में, रजिस्टर करने के लिए "/register &lt;नाम&gt;" का उपयोग करें। जब तक आप रजिस्टर नहीं हो जाते तब तक आप बात नहीं कर सकते।</value>
   </data>
   <data name="NKS_KERNEL_DEBUGGING_TESTFACADES_BENCHMARKSLEEPONE_DESC" xml:space="preserve">
     <value>केवल एक मिलीसेकंड सोने में वास्तव में कितने मिलीसेकंड लगे?</value>
@@ -4303,7 +4235,7 @@
     <value>हार्डवेयर सेटिंग्स</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_HW_TIP" xml:space="preserve">
-    <value>हार्डवेयर के बारे में विस्तृत जानकारी के लिए &quot;hwinfo&quot; का उपयोग करें।</value>
+    <value>हार्डवेयर के बारे में विस्तृत जानकारी के लिए "hwinfo" का उपयोग करें।</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_SYSINFO_USER_TITLE" xml:space="preserve">
     <value>उपयोगकर्ता सेटिंग</value>
@@ -4714,7 +4646,7 @@
     <value>फ़ाइल सिस्टम सेटिंग्स</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_FILESYSTEM_PRINTLINENUMS_DESC" xml:space="preserve">
-    <value>&quot;कैट&quot; कमांड फ़ाइल की लाइन संख्याओं को प्रिंट करता है।</value>
+    <value>"कैट" कमांड फ़ाइल की लाइन संख्याओं को प्रिंट करता है।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_NETWORK_DESC" xml:space="preserve">
     <value>यह अनुभाग नेटवर्क सेटिंग्स को सूचीबद्ध करता है, जैसे एफ़टीपी शेल, नेटवर्क-संबंधित कमांड सेटिंग्स और रिमोट डिबग सेटिंग्स।</value>
@@ -4931,9 +4863,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_STAGE7_DESC" xml:space="preserve">
     <value>एकाधिक वातावरण</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID" xml:space="preserve">
-    <value>चाइल्ड थ्रेड इंडेक्स संख्या अमान्य है.</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME" xml:space="preserve">
     <value>अलार्म का नाम</value>
@@ -5188,22 +5117,22 @@
     <value>कौन सी प्रविष्टि हाइलाइट की जाए यह चुनने के लिए ↑ और ↓ कुंजियों का उपयोग करें।</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING2" xml:space="preserve">
-    <value>चयनित OS को बूट करने के लिए एंटर दबाएँ, कमांड संपादित करने के लिए `e&apos; दबाएँ</value>
+    <value>चयनित OS को बूट करने के लिए एंटर दबाएँ, कमांड संपादित करने के लिए `e' दबाएँ</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_KEYBINDING3" xml:space="preserve">
-    <value>बूट करने से पहले या कमांड लाइन के लिए `c&apos;.</value>
+    <value>बूट करने से पहले या कमांड लाइन के लिए `c'.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUB_TIMEOUT" xml:space="preserve">
     <value>हाइलाइट की गई प्रविष्टि {0}s में स्वचालित रूप से निष्पादित हो जाएगी.</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING1" xml:space="preserve">
-    <value>चयनित OS को बूट करने के लिए एंटर दबाएँ, संपादन के लिए &apos;e&apos; दबाएँ</value>
+    <value>चयनित OS को बूट करने के लिए एंटर दबाएँ, संपादन के लिए 'e' दबाएँ</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_KEYBINDING2" xml:space="preserve">
-    <value>बूट करने से पहले कमांड या कमांड लाइन के लिए &apos;c&apos;।</value>
+    <value>बूट करने से पहले कमांड या कमांड लाइन के लिए 'c'।</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING1" xml:space="preserve">
-    <value>बूटिंग &apos;{0}&apos;</value>
+    <value>बूटिंग '{0}'</value>
   </data>
   <data name="NKS_KERNEL_STARTING_BOOTLOADER_GRUBLEGACY_BOOTING2" xml:space="preserve">
     <value>फ़ाइल सिस्टम प्रकार है</value>
@@ -5257,10 +5186,10 @@
     <value>डिफ़ॉल्ट बूट प्रविष्टि चयन। यह संख्या शून्य-आधारित है, इसलिए पहला तत्व इंडेक्स 0 है, और इसी तरह आगे भी।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_NAME" xml:space="preserve">
-    <value>&apos;नाइट्रोसिड होमपेज&apos; सक्षम करें</value>
+    <value>'नाइट्रोसिड होमपेज' सक्षम करें</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLE_DESC" xml:space="preserve">
-    <value>&apos;नाइट्रोसिड होमपेज&apos; को सक्षम करता है जो आपको एक नज़र में यह देखने की अनुमति देता है कि क्या हो रहा है।</value>
+    <value>'नाइट्रोसिड होमपेज' को सक्षम करता है जो आपको एक नज़र में यह देखने की अनुमति देता है कि क्या हो रहा है।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_COLORS_SCHEME_TUIBUILTINKEYBINDINGBGCOLOR_NAME" xml:space="preserve">
     <value>इंटरैक्टिव TUI अंतर्निहित कुंजी बाइंडिंग पृष्ठभूमि रंग</value>
@@ -5513,9 +5442,6 @@
   </data>
   <data name="NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN" xml:space="preserve">
     <value>अज्ञात कारणों से दूरस्थ डिबग प्रारंभ करने में विफल रहा।</value>
-  </data>
-  <data name="NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN" xml:space="preserve">
-    <value>थ्रेड को पुनः उत्पन्न नहीं किया जा सकता</value>
   </data>
   <data name="NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT" xml:space="preserve">
     <value>MIME मेटाडेटा (विस्तारित)</value>
@@ -5863,16 +5789,16 @@
     <value>इनकार करना झूठ है, देना सच्चा है</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERFULLNAME_ARGUMENT_NEWNAME_DESC" xml:space="preserve">
-    <value>नया प्रदर्शन नाम, या प्रदर्शन नाम मिटाने के लिए &apos;साफ़ करें&apos;</value>
+    <value>नया प्रदर्शन नाम, या प्रदर्शन नाम मिटाने के लिए 'साफ़ करें'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERLANG_ARGUMENT_LANGID_DESC" xml:space="preserve">
-    <value>तीन-अक्षर वाली भाषा आईडी, या पसंदीदा भाषा साफ़ करने के लिए &apos;साफ़ करें&apos;</value>
+    <value>तीन-अक्षर वाली भाषा आईडी, या पसंदीदा भाषा साफ़ करने के लिए 'साफ़ करें'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_DESC" xml:space="preserve">
     <value>पसंदीदा उपयोगकर्ता संस्कृति में परिवर्तन</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_COMMAND_USERCULTURE_ARGUMENT_CULTUREID_DESC" xml:space="preserve">
-    <value>संस्कृति आईडी, या पसंदीदा संस्कृति को साफ़ करने के लिए &apos;साफ़&apos;</value>
+    <value>संस्कृति आईडी, या पसंदीदा संस्कृति को साफ़ करने के लिए 'साफ़'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_ADMIN_USERCULTURE_SUCCESS" xml:space="preserve">
     <value>पसंदीदा उपयोगकर्ता संस्कृति {0} पर सेट है। हो सकता है कि आप फिर से लॉग इन करना चाहें।</value>
@@ -5968,7 +5894,7 @@
     <value>प्रश्न करने के लिए एक चरित्र</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYCHAR_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>पंक्ति संख्या (या तो एकवचन या श्रेणी का आरंभ), या सभी पंक्तियों में किसी वर्ण की जानकारी के लिए &apos;सभी&apos;</value>
+    <value>पंक्ति संख्या (या तो एकवचन या श्रेणी का आरंभ), या सभी पंक्तियों में किसी वर्ण की जानकारी के लिए 'सभी'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_QUERYWORD_ARGUMENT_WORD_DESC" xml:space="preserve">
     <value>प्रश्न के लिए कोई शब्द या वाक्यांश</value>
@@ -5983,7 +5909,7 @@
     <value>प्रतिस्थापित करने के लिए कोई शब्द या वाक्यांश</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEINLINE_ARGUMENT_LINENUM_DESC" xml:space="preserve">
-    <value>पंक्ति संख्या (या तो एकवचन या श्रेणी का आरंभ), या सभी पंक्तियों में प्रतिस्थापित करने के लिए &apos;सभी&apos;</value>
+    <value>पंक्ति संख्या (या तो एकवचन या श्रेणी का आरंभ), या सभी पंक्तियों में प्रतिस्थापित करने के लिए 'सभी'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_TEXT_COMMAND_REPLACEREGEX_ARGUMENT_REGEX_DESC" xml:space="preserve">
     <value>प्रतिस्थापित किए जाने वाले वाक्यांशों से मिलान करने के लिए एक नियमित अभिव्यक्ति</value>
@@ -6247,7 +6173,7 @@
     <value>उपयोगकर्ता को निकालने के लिए समूह का नाम</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SAVESCREEN_ARGUMENT_SAVERNAME_DESC" xml:space="preserve">
-    <value>या तो स्क्रीनसेवर नाम या &apos;यादृच्छिक&apos;</value>
+    <value>या तो स्क्रीनसेवर नाम या 'यादृच्छिक'</value>
   </data>
   <data name="NKS_SHELL_SHELLS_UESH_COMMAND_SEARCH_ARGUMENT_REGEXP_DESC" xml:space="preserve">
     <value>खोज करने के लिए नियमित अभिव्यक्ति</value>
@@ -6517,16 +6443,16 @@
     <value>महीनों के नाम, कैलेंडर इत्यादि बदलने के लिए किस संस्कृति का उपयोग किया जा रहा है?</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_NAME" xml:space="preserve">
-    <value>&apos;द नाइट्रोसिड होमपेज&apos; RSS फ़ीड सक्षम करें</value>
+    <value>'द नाइट्रोसिड होमपेज' RSS फ़ीड सक्षम करें</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_ENABLEFEED_DESC" xml:space="preserve">
-    <value>&apos;द नाइट्रोसिड होमपेज&apos; RSS फ़ीड विजेट स्क्रीन के दाईं ओर सक्षम करता है।</value>
+    <value>'द नाइट्रोसिड होमपेज' RSS फ़ीड विजेट स्क्रीन के दाईं ओर सक्षम करता है।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_NAME" xml:space="preserve">
-    <value>&apos;द नाइट्रोसिड होमपेज&apos; विजेट</value>
+    <value>'द नाइट्रोसिड होमपेज' विजेट</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_GENERAL_HOMEPAGE_WIDGET_DESC" xml:space="preserve">
-    <value>&apos;द नाइट्रोसिड होमपेज&apos; में प्रदर्शित होने वाले विजेट का चयन करता है।</value>
+    <value>'द नाइट्रोसिड होमपेज' में प्रदर्शित होने वाले विजेट का चयन करता है।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_MISC_AESTHETICS_NOTIFICATIONBORDER_NAME" xml:space="preserve">
     <value>अधिसूचना बॉर्डर सेटिंग</value>
@@ -6748,7 +6674,7 @@
     <value>एक यादृच्छिक स्क्रीनसेवर का चयन करता है</value>
   </data>
   <data name="NKS_KERNEL_SHELLTIP" xml:space="preserve">
-    <value>शुरू करने के लिए, &apos;help&apos; लिखें और ENTER दबाएं।</value>
+    <value>शुरू करने के लिए, 'help' लिखें और ENTER दबाएं।</value>
   </data>
   <data name="NKS_SETTINGS_KERNEL_AUDIO_CUEVOLUMEREADER_NAME" xml:space="preserve">
     <value>रीडर के लिए ऑडियो संकेत वॉल्यूम</value>
@@ -6763,7 +6689,7 @@
     <value>एक ऐसा कैरेक्टर जो इनपुट पासवर्ड को छुपाता है। अधिक सुरक्षा के लिए इसे खाली छोड़ दें।</value>
   </data>
   <data name="NKS_KERNEL_FIRSTRUN_PRESENTATION_PAGE4_TEXT3" xml:space="preserve">
-    <value>होमपेज पर रहते हुए शेल खोलने के लिए S कुंजी दबाएं। इसके बाद, &apos;help&apos; लिखकर एंटर दबाकर शुरुआत करें!</value>
+    <value>होमपेज पर रहते हुए शेल खोलने के लिए S कुंजी दबाएं। इसके बाद, 'help' लिखकर एंटर दबाकर शुरुआत करें!</value>
   </data>
   <data name="NKS_KERNEL_CONFIGURATION_EXCEPTION_DUPLICATESETTINGSKEYS" xml:space="preserve">
     <value>आपकी सेटिंग्स इंस्टेंस में डुप्लिकेट कुंजियाँ मौजूद हैं। कृपया वेरिएबल की दोबारा जाँच करें ताकि यह सुनिश्चित हो सके कि यह एक से अधिक बार मौजूद न हो।</value>
@@ -7182,5 +7108,4 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>आप कर्नेल का बीटा संस्करण चला रहे हैं। आपको बग, अस्थिरता या डेटा हानि का सामना करना पड़ सकता है। यदि संभव हो, तो हम स्थिर संस्करण का उपयोग करने की सलाह देते हैं।</value>
   </data>
-
 </root>

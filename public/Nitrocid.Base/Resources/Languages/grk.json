@@ -3452,18 +3452,6 @@
       "text": "Λειτουργία σε λειτουργία συντήρησης. Παράκαμψη σταδίου..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Δεν είναι δυνατή η αναγέννηση του νήματος του πυρήνα ενώ εκτελείται ήδη το ίδιο νήμα."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "Η ενέργεια έναρξης θυγατρικού νήματος δεν μπορεί να είναι μηδενική."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Το νήμα του πυρήνα {0} απέτυχε."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Καμία πληροφορία."
     },
@@ -6428,10 +6416,6 @@
       "text": "Πολλαπλά περιβάλλοντα"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Ο αριθμός ευρετηρίου θυγατρικού νήματος δεν είναι έγκυρος."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Όνομα συναγερμού"
     },
@@ -7202,10 +7186,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Ο απομακρυσμένος εντοπισμός σφαλμάτων απέτυχε να ξεκινήσει για άγνωστους λόγους."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Το νήμα δεν μπορεί να αναδημιουργηθεί"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

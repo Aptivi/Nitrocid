@@ -3452,18 +3452,6 @@
       "text": "Ag rith i mód cothabhála. Céim scipeála..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Ní féidir an snáithe eithne a athghiniúint agus an snáithe céanna ar siúl cheana féin."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "Ní féidir gníomh tosaithe snáithe an linbh a bheith ar neamhní."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Theip ar snáithe eithne {0}."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Gan eolas."
     },
@@ -6428,10 +6416,6 @@
       "text": "Timpeallachtaí iolracha"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Tá uimhir innéacs snáithe linbh neamhbhailí."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Ainm aláraim"
     },
@@ -7202,10 +7186,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Theip ar thús an dífhabhtaithe cianda ar chúiseanna anaithnide."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Ní féidir an snáithe a athghiniúint"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

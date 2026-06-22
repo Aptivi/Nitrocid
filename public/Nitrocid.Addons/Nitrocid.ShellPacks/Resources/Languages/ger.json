@@ -2706,6 +2706,14 @@
     {
       "loc": "NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE",
       "text": "Sockettyp des ausgehenden Servers"
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED",
+      "text": "Die angegebene E-Mail-Nachricht konnte nicht abgerufen werden."
+    },
+    {
+      "loc": "NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED",
+      "text": "Abruf des Posteingangs fehlgeschlagen"
     }
   ]
 }

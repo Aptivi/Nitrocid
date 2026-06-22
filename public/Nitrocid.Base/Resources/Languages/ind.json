@@ -3451,18 +3451,6 @@
       "text": "rakharakhaav mod mein chal raha hai. stej ko chhod raha hoon..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "jabaki vahee thred pahale se chal raha hai, karnel thred ko phir se janaret nahin kiya ja sakata."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "chaild thred staart ekshan shoony nahin ho sakata."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "karnel thred {0} viphal hua."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "koee jaanakaaree nahin."
     },
@@ -6427,10 +6415,6 @@
       "text": "kaee vaataavaran"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "chaild thred indeks nambar amaany hai."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "alaarm naam"
     },
@@ -7201,10 +7185,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "agyaat kaaranon se doorasth dibag praarambh karane mein viphal raha."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "thred ko phir se janaret nahin kiya ja sakata"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

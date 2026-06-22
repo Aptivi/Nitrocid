@@ -1,123 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-    <!-- 
-    Microsoft ResX Schema 
-
-    Version 2.0
-
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-
-    Example:
-
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-        <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-            <xsd:element name="metadata">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-                </xsd:sequence>
-                <xsd:attribute name="name" use="required" type="xsd:string" />
-                <xsd:attribute name="type" type="xsd:string" />
-                <xsd:attribute name="mimetype" type="xsd:string" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="assembly">
-            <xsd:complexType>
-                <xsd:attribute name="alias" type="xsd:string" />
-                <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="data">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-                <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-                <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-                <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-            </xsd:element>
-            <xsd:element name="resheader">
-            <xsd:complexType>
-                <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                </xsd:sequence>
-                <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-            </xsd:element>
-        </xsd:choice>
-        </xsd:complexType>
-    </xsd:element>
-    </xsd:schema>
-    <resheader name="resmimetype">
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:schema id="root">
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xs:element name="root" ns1:IsDataSet="true">
+      <xs:complexType>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element name="metadata">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+              <xs:attribute name="name" use="required" type="xs:string" />
+              <xs:attribute name="type" type="xs:string" />
+              <xs:attribute name="mimetype" type="xs:string" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assembly">
+            <xs:complexType>
+              <xs:attribute name="alias" type="xs:string" />
+              <xs:attribute name="name" type="xs:string" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="data">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+                <xs:element name="comment" type="xs:string" minOccurs="0" ns1:Ordinal="2" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" ns1:Ordinal="1" />
+              <xs:attribute name="type" type="xs:string" ns1:Ordinal="3" />
+              <xs:attribute name="mimetype" type="xs:string" ns1:Ordinal="4" />
+              <xs:attribute ref="xml:space" />
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="resheader">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="value" type="xs:string" minOccurs="0" ns1:Ordinal="1" />
+              </xs:sequence>
+              <xs:attribute name="name" type="xs:string" use="required" />
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
-    </resheader>
-    <resheader name="version">
+  </resheader>
+  <resheader name="version">
     <value>2.0</value>
-    </resheader>
-    <resheader name="reader">
+  </resheader>
+  <resheader name="reader">
     <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <resheader name="writer">
+  </resheader>
+  <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-      <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
+  </resheader>
+  <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTUSERNAME" xml:space="preserve">
     <value>Tên người dùng cho {0}:</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_PROMPTPASSWORD" xml:space="preserve">
@@ -133,13 +74,13 @@
     <value>Thư mục cục bộ {0} không tồn tại.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSLOCALDIR" xml:space="preserve">
-    <value>Nhập thư mục cục bộ. &quot;..&quot; để quay lại.</value>
+    <value>Nhập thư mục cục bộ. ".." để quay lại.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_REMOTEDIRNOTFOUND" xml:space="preserve">
     <value>Không tìm thấy thư mục {0}.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FS_NEEDSREMOTEDIR" xml:space="preserve">
-    <value>Nhập thư mục từ xa. &quot;..&quot; để quay lại</value>
+    <value>Nhập thư mục từ xa. ".." để quay lại</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_FS_LOCALDIR" xml:space="preserve">
     <value>Thư mục cục bộ: {0}</value>
@@ -301,7 +242,7 @@
     <value>Nhập chủ đề:</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_BODYPROMPT" xml:space="preserve">
-    <value>Nhập tin nhắn của bạn bên dưới. Viết &quot;EOF&quot; để xác nhận.</value>
+    <value>Nhập tin nhắn của bạn bên dưới. Viết "EOF" để xác nhận.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_SEND_SENDING" xml:space="preserve">
     <value>Đang gửi tin nhắn...</value>
@@ -418,7 +359,7 @@
     <value>{0} tin nhắn mới đã đến hộp thư đến.</value>
   </data>
   <data name="NKS_SHELLPACKS_MAIL_NEWMESSAGES_NOTIFICATION_DESC" xml:space="preserve">
-    <value>Mở &quot;mail&quot; để xem chúng.</value>
+    <value>Mở "mail" để xem chúng.</value>
   </data>
   <data name="NKS_SHELLPACKS_FTPSFTP_FMCLI_FSENTRY_FULLNAME" xml:space="preserve">
     <value>Họ và tên đầy đủ: {0}</value>
@@ -484,7 +425,7 @@
     <value>Khi liệt kê các thư, hãy hiển thị phần xem trước nội dung.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_SETTINGS_SAVEEACH_DESC" xml:space="preserve">
-    <value>Nếu bật tính năng lưu tự động, tệp văn bản sẽ được lưu sau mỗi &quot;n&quot; giây.</value>
+    <value>Nếu bật tính năng lưu tự động, tệp văn bản sẽ được lưu sau mỗi "n" giây.</value>
   </data>
   <data name="NKS_SHELLPACKS_COMMON_COMMAND_SFTP_DESC" xml:space="preserve">
     <value>Cho phép bạn sử dụng máy chủ SSH FTP</value>
@@ -916,7 +857,7 @@
     <value>Hiển thị chi tiết tệp trong danh sách</value>
   </data>
   <data name="NKS_SHELLPACKS_FTP_COMMAND_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Ngăn chặn các thông báo &quot;quyền bị từ chối&quot; gây phiền nhiễu</value>
+    <value>Ngăn chặn các thông báo "quyền bị từ chối" gây phiền nhiễu</value>
   </data>
   <data name="NKS_SHELLPACKS_ARCHIVE_COMMAND_SWITCH_ABSOLUTE_DESC" xml:space="preserve">
     <value>Chỉ ra rằng đường dẫn đích là tuyệt đối</value>
@@ -1246,19 +1187,19 @@
     <value>Không tìm thấy mã thông báo bên trong tệp JSON.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPARENTTOKEN" xml:space="preserve">
-    <value>Không tìm thấy mã thông báo gốc. Hãy đảm bảo rằng bạn đã viết đúng đường dẫn &apos;{0}&apos;.</value>
+    <value>Không tìm thấy mã thông báo gốc. Hãy đảm bảo rằng bạn đã viết đúng đường dẫn '{0}'.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_INVALIDTYPE" xml:space="preserve">
-    <value>Kiểu &apos;{0}&apos; được chỉ định không hợp lệ.</value>
+    <value>Kiểu '{0}' được chỉ định không hợp lệ.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_UNNAMED" xml:space="preserve">
-    <value>Không thể thêm mục mới có tên thuộc tính với loại mã thông báo gốc là &apos;{0}&apos;.</value>
+    <value>Không thể thêm mục mới có tên thuộc tính với loại mã thông báo gốc là '{0}'.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NEWITEMADDFAILED_NAMED" xml:space="preserve">
-    <value>Không thể thêm mục mới có tên thuộc tính &apos;{0}&apos; với loại mã thông báo gốc là &apos;{1}&apos;.</value>
+    <value>Không thể thêm mục mới có tên thuộc tính '{0}' với loại mã thông báo gốc là '{1}'.</value>
   </data>
   <data name="NKS_SHELLPACKS_JSON_EXCEPTION_NOPROPWITHINPARENT" xml:space="preserve">
-    <value>Tên thuộc tính &apos;{0}&apos; trong phần tử cha &apos;{1}&apos;, loại &apos;{2}&apos;, không tồn tại</value>
+    <value>Tên thuộc tính '{0}' trong phần tử cha '{1}', loại '{2}', không tồn tại</value>
   </data>
   <data name="NKS_SHELLPACKS_RSS_COMMAND_SEARCH_DESC" xml:space="preserve">
     <value>Tìm kiếm nguồn cấp dữ liệu cho một cụm từ trong tiêu đề và/hoặc mô tả</value>
@@ -1285,10 +1226,10 @@
     <value>Hiển thị chi tiết các tập tin và thư mục</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_COMMAND_LSL_SWITCH_SUPPRESSMESSAGES_DESC" xml:space="preserve">
-    <value>Ngăn chặn các tin nhắn &quot;không được phép&quot;</value>
+    <value>Ngăn chặn các tin nhắn "không được phép"</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTIONINFO_AUTHMETHOD_LOCATIONSPROMPT" xml:space="preserve">
-    <value>Nhập vị trí của khóa riêng cho {0}. Viết &quot;q&quot; để hoàn tất việc thêm khóa:</value>
+    <value>Nhập vị trí của khóa riêng cho {0}. Viết "q" để hoàn tất việc thêm khóa:</value>
   </data>
   <data name="NKS_SHELLPACKS_SFTP_CONNECTING" xml:space="preserve">
     <value>Đang cố gắng kết nối tới {0}...</value>
@@ -2136,5 +2077,10 @@
   <data name="NKS_SHELLPACKS_MAIL_COMMON_ISPINFO_OUTGOING_SOCKETTYPE" xml:space="preserve">
     <value>Loại socket máy chủ đi</value>
   </data>
-
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_OBTAINFAILED" xml:space="preserve">
+    <value>Không thể tải được thư mục đã chỉ định.</value>
+  </data>
+  <data name="NKS_SHELLPACKS_MAIL_EXCEPTION_INBOXOBTAINFAILED" xml:space="preserve">
+    <value>Lỗi khi lấy hộp thư đến</value>
+  </data>
 </root>

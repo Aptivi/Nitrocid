@@ -3451,18 +3451,6 @@
       "text": "メンテナンスモードで実行中です。ステージを飛ばして…"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "同じスレッドがすでに実行されている間は、カーネル スレッドを再生成できません。"
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "子スレッドの開始アクションを null にすることはできません。"
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "カーネル スレッド {0} が失敗しました。"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "情報がありません。"
     },
@@ -6427,10 +6415,6 @@
       "text": "複数の環境"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "子スレッドのインデックス番号が無効です。"
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "アラーム名"
     },
@@ -7201,10 +7185,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "不明な理由により、リモート デバッグを開始できませんでした。"
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "スレッドを再生成できません"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",

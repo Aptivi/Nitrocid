@@ -3454,18 +3454,6 @@
       "text": "Berjalan dalam mod penyelenggaraan. Melangkau peringkat..."
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_REGENRUNNING",
-      "text": "Tidak dapat menjana semula benang kernel semasa benang yang sama sedang berjalan."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_ACTIONCANNOTBENUMM",
-      "text": "Tindakan permulaan urutan kanak-kanak tidak boleh batal."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_FAILED",
-      "text": "Benang kernel {0} gagal."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_NOINFO",
       "text": "Tiada maklumat."
     },
@@ -6430,10 +6418,6 @@
       "text": "Pelbagai persekitaran"
     },
     {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CHILDIDXNOTVALID",
-      "text": "Nombor indeks urutan anak tidak sah."
-    },
-    {
       "loc": "NKS_MISC_INTERACTIVES_ALARMTUI_ALARMNAME",
       "text": "Nama penggera"
     },
@@ -7204,10 +7188,6 @@
     {
       "loc": "NKS_KERNEL_STARTING_STAGE1_RDEBUGFAILEDUNKNOWN",
       "text": "Nyahpepijat jauh gagal dimulakan atas sebab yang tidak diketahui."
-    },
-    {
-      "loc": "NKS_KERNEL_THREADING_EXCEPTION_CANNOTREGEN",
-      "text": "Benang tidak boleh dijana semula"
     },
     {
       "loc": "NKS_MISC_INTERACTIVES_FMTUI_MIMEMETADATAEXT",
