@@ -32,16 +32,13 @@ namespace Nitrocid.Base.ConsoleBase
     /// </summary>
     internal static class ConsoleResizeHandler
     {
-        internal static bool inited = false;
-
         internal static void StartHandler()
         {
             // Handle window change
-            if (inited)
+            if (ConsoleResizeListener.IsListening)
                 return;
             ConsoleResizeListener.RunEssentialHandler = false;
             ConsoleResizeListener.StartResizeListener(HandleResize);
-            inited = true;
         }
 
         internal static void HandleResize(int oldX, int oldY, int newX, int newY)
