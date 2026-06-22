@@ -1,6 +1,6 @@
 nitrocid-25 (3.0.25.589-0.1.0.79-1) noble; urgency=medium
 
-  * Please populate changelogs here
+  * Fixed console resize listener not restarting on kernel restart
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 22 Jun 2026 14:42:59 +0300
 
