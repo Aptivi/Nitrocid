@@ -30,6 +30,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using Nitrocid.Base.Kernel.Exceptions;
+using SpecProbe.Software.Platform;
 
 #if SPECIFIERREL
 using Nitrocid.Base.Kernel.Updates;
@@ -169,7 +170,7 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
                 $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_KERNELVERSION")}: {KernelReleaseInfo.VersionFullStr}\n" +
                 $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_KERNELAPI")}: {KernelReleaseInfo.ApiVersion}\n" +
                 $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTID")}: {KernelPlatform.GetCurrentRid()}\n" +
-                $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID")}: {KernelPlatform.GetCurrentGenericRid()}"
+                $"{LanguageTools.GetLocalized("NKS_KERNEL_CONFIGURATION_SETTINGS_APP_HOSTGENERICID")}: {PlatformHelper.GetCurrentGenericRid()}"
             );
         }
 
@@ -207,15 +208,15 @@ namespace Nitrocid.Base.Kernel.Configuration.Settings
                 switch (platform.ToLower())
                 {
                     case "windows":
-                        if (KernelPlatform.IsOnWindows())
+                        if (PlatformHelper.IsOnWindows())
                             platformUnsupported = true;
                         break;
                     case "unix":
-                        if (KernelPlatform.IsOnUnix())
+                        if (PlatformHelper.IsOnUnix())
                             platformUnsupported = true;
                         break;
                     case "macos":
-                        if (KernelPlatform.IsOnMacOS())
+                        if (PlatformHelper.IsOnMacOS())
                             platformUnsupported = true;
                         break;
                 }

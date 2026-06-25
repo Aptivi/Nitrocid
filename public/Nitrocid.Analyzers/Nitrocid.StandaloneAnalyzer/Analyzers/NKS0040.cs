@@ -76,7 +76,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                                 var idName = name.Identifier.Text;
                                 if (idName == nameof(OSPlatform.Linux) && location is not null)
                                 {
-                                    AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Linux) instead of KernelPlatform.IsOnUnix()");
+                                    AnalyzerTools.PrintFromLocation(location, document, GetType(), "Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Linux) instead of PlatformHelper.IsOnUnix()");
                                     found = true;
                                 }
                             }
@@ -98,8 +98,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                 if (syntaxNode is not MemberAccessExpressionSyntax exp)
                     continue;
 
-                // We need to have a syntax that calls KernelPlatform.IsOnUnix
-                var classSyntax = SyntaxFactory.IdentifierName("KernelPlatform");
+                // We need to have a syntax that calls PlatformHelper.IsOnUnix
+                var classSyntax = SyntaxFactory.IdentifierName("PlatformHelper");
                 var methodSyntax = SyntaxFactory.IdentifierName("IsOnUnix");
                 var maesSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var argsSyntax = SyntaxFactory.ArgumentList();
@@ -119,11 +119,11 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Kernel") == false)
+                if (compilation?.Usings.Any(u => u.Name?.ToString() == "SpecProbe.Software.Platform") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName(AnalysisTools.firstRootNameSpace), SyntaxFactory.IdentifierName("Base")),
-                        SyntaxFactory.IdentifierName("Kernel"));
+                        SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName("SpecProbe"), SyntaxFactory.IdentifierName("Software")),
+                        SyntaxFactory.IdentifierName("Platform"));
                     var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
                     TextWriterColor.WriteColor("Additionally, the suggested fix will add the following using statement:", true, ConsoleColors.Yellow);
                     TextWriterColor.WriteColor($"  + {directive.ToFullString()}", true, ConsoleColors.Green);

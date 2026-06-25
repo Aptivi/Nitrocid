@@ -18,22 +18,22 @@
 //
 
 extern alias TextifyDep;
-
 using Nitrocid.Base.Kernel.Configuration;
-using Nitrocid.Base.Users.Groups;
-using Nitrocid.Base.Languages;
-using Nitrocid.Base.Users;
 using Nitrocid.Base.Kernel.Debugging.RemoteDebug;
-using Nitrocid.Base.Misc.Splash;
-using Nitrocid.Base.Misc.Notifications;
-using Nitrocid.Base.Kernel.Starting.Bootloader;
-using Nitrocid.Base.Kernel.Power;
-using Nitrocid.Base.Kernel.Updates;
 using Nitrocid.Base.Kernel.Hardware;
-using Nitrocid.Base.Kernel.Threading.Watchdog;
+using Nitrocid.Base.Kernel.Power;
+using Nitrocid.Base.Kernel.Starting.Bootloader;
 using Nitrocid.Base.Kernel.Starting.Bootloader.Apps;
+using Nitrocid.Base.Kernel.Threading.Watchdog;
+using Nitrocid.Base.Kernel.Updates;
+using Nitrocid.Base.Languages;
+using Nitrocid.Base.Misc.Notifications;
+using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Network.Types.RPC;
+using Nitrocid.Base.Users;
+using Nitrocid.Base.Users.Groups;
 using Nitrocid.Core.Environment;
+using SpecProbe.Software.Platform;
 
 #if SPECIFIERREL
 using Nitrocid.Base.Files.Paths;

@@ -35,6 +35,7 @@ using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Journaling;
 using Nitrocid.Base.Network.Types.RPC;
 using Nitrocid.Core.Environment;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Kernel.Power
 {
@@ -207,7 +208,7 @@ namespace Nitrocid.Base.Kernel.Power
 
         internal static void ElevateSelf()
         {
-            DebugCheck.Assert(KernelPlatform.IsOnWindows(), "tried to call this on non-Windows platforms");
+            DebugCheck.Assert(PlatformHelper.IsOnWindows(), "tried to call this on non-Windows platforms");
             string parentDirectory = Directory.GetParent(Assembly.GetExecutingAssembly().Location)?.FullName ?? "";
             var selfProcess = new Process
             {

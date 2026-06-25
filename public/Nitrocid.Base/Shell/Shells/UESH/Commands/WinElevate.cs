@@ -23,6 +23,7 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Users.Windows;
 using Nitrocid.Base.Kernel.Power;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -37,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (KernelPlatform.IsOnWindows())
+            if (PlatformHelper.IsOnWindows())
             {
                 bool isAdmin = WindowsUserTools.IsAdministrator();
                 if (isAdmin)

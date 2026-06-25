@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Kernel.Power
 {
@@ -37,7 +38,7 @@ namespace Nitrocid.Base.Kernel.Power
             signalHandlers.Add(PosixSignalRegistration.Create(PosixSignal.SIGTERM, SigQuit));
 
             // Works on Linux only
-            if (KernelPlatform.IsOnUnix())
+            if (PlatformHelper.IsOnUnix())
             {
                 signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR1, SigReboot));
                 signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR2, SigReboot));

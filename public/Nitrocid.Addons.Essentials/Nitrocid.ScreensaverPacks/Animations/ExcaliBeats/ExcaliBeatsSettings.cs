@@ -20,6 +20,7 @@
 using Nitrocid.Base.Kernel;
 using System.Runtime.Versioning;
 using Colorimetry;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
 {
@@ -99,7 +100,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
             [UnsupportedOSPlatform("windows")]
             set
             {
-                if (KernelPlatform.IsOnUnix())
+                if (PlatformHelper.IsOnUnix())
                     _ExcaliBeatsTranceMode = value;
                 else
                     _ExcaliBeatsTranceMode = false;

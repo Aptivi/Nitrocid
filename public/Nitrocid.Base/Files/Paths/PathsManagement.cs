@@ -24,6 +24,7 @@ using System.Linq;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Files.Paths
 {
@@ -77,7 +78,7 @@ namespace Nitrocid.Base.Files.Paths
                 string? dirName = Path.GetDirectoryName(typeof(PathsManagement).Assembly.Location);
                 if (dirName is null)
                     return "";
-                return KernelPlatform.IsOnUnix() ? dirName : dirName.Replace(@"\", "/");
+                return PlatformHelper.IsOnUnix() ? dirName : dirName.Replace(@"\", "/");
             }
         }
 
@@ -88,7 +89,7 @@ namespace Nitrocid.Base.Files.Paths
         {
             get
             {
-                if (KernelPlatform.IsOnUnix())
+                if (PlatformHelper.IsOnUnix())
                     return Environment.GetEnvironmentVariable("HOME") ?? "";
                 else
                     return (Environment.GetEnvironmentVariable("USERPROFILE") ?? "").Replace(@"\", "/");
@@ -104,7 +105,7 @@ namespace Nitrocid.Base.Files.Paths
             {
                 if (!isTest)
                 {
-                    if (KernelPlatform.IsOnUnix())
+                    if (PlatformHelper.IsOnUnix())
                         return Environment.GetEnvironmentVariable("HOME") + "/.config/ks";
                     else
                         return (Environment.GetEnvironmentVariable("LOCALAPPDATA") + "/KS").Replace("\\", "/");
@@ -121,7 +122,7 @@ namespace Nitrocid.Base.Files.Paths
         {
             get
             {
-                if (KernelPlatform.IsOnUnix())
+                if (PlatformHelper.IsOnUnix())
                     return "/tmp";
                 else
                     return (Environment.GetEnvironmentVariable("TEMP") ?? "").Replace(@"\", "/");

@@ -23,6 +23,7 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Threading.Watchdog;
 using Nitrocid.Base.Languages;
+using SpecProbe.Software.Platform;
 using Terminaux.Shell.Commands;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -41,7 +42,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we're running on Windows 8.1 or later
-            if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
+            if (PlatformHelper.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DIAG_W8LOWER"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);
@@ -62,7 +63,7 @@ namespace Nitrocid.Extras.Diagnostics.Commands
         public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we're running on Windows 8.1 or later
-            if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
+            if (PlatformHelper.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_DIAG_W8LOWER"), true, ThemeColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.Debug);

@@ -42,6 +42,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Nitrocid.Base.Misc.Widgets;
 using Nitrocid.ShellPacks.Shells.RSS.Widgets;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.ShellPacks
 {
@@ -250,7 +251,7 @@ namespace Nitrocid.ShellPacks
             if (!gitNativeLibIsSet)
             {
                 gitNativeLibIsSet = true;
-                GlobalSettings.NativeLibraryPath = PathsManagement.AddonsPath + "/ShellPacks/runtimes/" + KernelPlatform.GetCurrentGenericRid() + "/native/";
+                GlobalSettings.NativeLibraryPath = PathsManagement.AddonsPath + "/ShellPacks/runtimes/" + PlatformHelper.GetCurrentGenericRid() + "/native/";
             }
         }
 

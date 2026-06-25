@@ -33,6 +33,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Splash;
 using Nitrocid.Base.Security.Signing;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Kernel.Extensions
 {
@@ -78,9 +79,9 @@ namespace Nitrocid.Base.Kernel.Extensions
             {
                 // First, check the platform
                 string windowsAddonPath = addon + windowsSuffix;
-                if (KernelPlatform.IsOnWindows() && FilesystemTools.FolderExists(windowsAddonPath))
+                if (PlatformHelper.IsOnWindows() && FilesystemTools.FolderExists(windowsAddonPath))
                     addon = windowsAddonPath;
-                if (addon.EndsWith(windowsSuffix) && !KernelPlatform.IsOnWindows())
+                if (addon.EndsWith(windowsSuffix) && !PlatformHelper.IsOnWindows())
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because it's built for Windows...", vars: [addon]);
                     return;

@@ -24,6 +24,7 @@ using System;
 using System.IO;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Files;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Tests.Files
 {
@@ -164,7 +165,7 @@ namespace Nitrocid.Tests.Files
         [Description("Querying")]
         public void TestTryParsePathUnix(string Path, bool expected)
         {
-            if (KernelPlatform.IsOnUnix())
+            if (PlatformHelper.IsOnUnix())
             {
                 bool actual = FilesystemTools.TryParsePath(Path);
                 actual.ShouldBe(expected);
@@ -180,7 +181,7 @@ namespace Nitrocid.Tests.Files
         [Description("Querying")]
         public void TestTryParsePathWindows(string Path, bool expected)
         {
-            if (KernelPlatform.IsOnWindows())
+            if (PlatformHelper.IsOnWindows())
             {
                 bool actual = FilesystemTools.TryParsePath(Path);
                 actual.ShouldBe(expected);

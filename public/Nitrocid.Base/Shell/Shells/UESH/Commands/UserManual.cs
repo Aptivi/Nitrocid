@@ -23,6 +23,7 @@ using Terminaux.Shell.Commands;
 using Textify.General;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -36,14 +37,14 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
         {
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_MAINLINK"));
             TextWriterColor.Write(
-                KernelPlatform.IsOnUnix() ?
+                PlatformHelper.IsOnUnix() ?
                 $"    {CharManager.GetEsc()}]8;;https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/{CharManager.GetEsc()}\\Manual page{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
                 "    https://aptivi.gitbook.io/aptivi/nitrocid-ks-manual/",
                 true, ThemeColorType.Tip
             );
             TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_UESH_USERMANUAL_APILINK"));
             TextWriterColor.Write(
-                KernelPlatform.IsOnUnix() ?
+                PlatformHelper.IsOnUnix() ?
                 $"    {CharManager.GetEsc()}]8;;https://aptivi.github.io/Nitrocid{CharManager.GetEsc()}\\API documentation{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
                 "    https://aptivi.github.io/Nitrocid",
                 true, ThemeColorType.Tip);

@@ -69,6 +69,7 @@ using Nitrocid.Base.Shell.Shells;
 using Terminaux.Themes;
 using Nitrocid.Base.Misc.Reflection.Internal;
 using System.Globalization;
+using SpecProbe.Software.Platform;
 
 #if NKS_EXTENSIONS
 using Nitrocid.Base.Kernel.Extensions;
@@ -104,7 +105,7 @@ namespace Nitrocid.Base.Kernel.Starting
             try
             {
                 // Initialize crucial things
-                if (!KernelPlatform.IsOnUnix())
+                if (!PlatformHelper.IsOnUnix())
                 {
                     // Initialize the VT sequences
                     if (!ConsoleMisc.InitializeSequences())
@@ -148,7 +149,7 @@ namespace Nitrocid.Base.Kernel.Starting
             try
             {
                 // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
-                if (!KernelPlatform.IsOnWindows() && KernelEntry.UseAltBuffer)
+                if (!PlatformHelper.IsOnWindows() && KernelEntry.UseAltBuffer)
                 {
                     ConsoleMisc.ShowAltBuffer();
                     DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");

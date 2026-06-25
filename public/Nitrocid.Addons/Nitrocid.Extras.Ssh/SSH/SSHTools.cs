@@ -40,6 +40,7 @@ using System.Reflection;
 using Nitrocid.Base.Kernel.Exceptions;
 using Terminaux.Base.Extensions;
 using Terminaux.Base.Extensions.Data;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Extras.Ssh.SSH
 {
@@ -278,7 +279,7 @@ namespace Nitrocid.Extras.Ssh.SSH
                     Console.OpenStandardInput(),
                     Console.OpenStandardOutput(),
                     Console.OpenStandardError(),
-                    KernelPlatform.IsOnUnix() ? KernelPlatform.GetTerminalType() : "vt100",
+                    PlatformHelper.IsOnUnix() ? PlatformHelper.GetTerminalType() : "vt100",
                     (uint)ConsoleWrapper.WindowWidth,
                     (uint)ConsoleWrapper.WindowHeight,
                     (uint)ConsoleWrapper.BufferWidth,

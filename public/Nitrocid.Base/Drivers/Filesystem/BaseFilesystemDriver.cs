@@ -39,6 +39,7 @@ using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Progress;
 using Nitrocid.Base.Misc.Reflection;
 using Nitrocid.Base.Misc.Text.Probers.Regexp;
+using SpecProbe.Software.Platform;
 using Terminaux.Base.Extensions;
 using Terminaux.Themes.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -796,7 +797,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
         {
             var FinalInvalidPathChars = IOPath.GetInvalidPathChars();
             var WindowsInvalidPathChars = new[] { '"', '<', '>' };
-            if (KernelPlatform.IsOnWindows())
+            if (PlatformHelper.IsOnWindows())
             {
                 // It's weird of .NET 6.0 to not consider the above three Windows invalid directory chars to be invalid,
                 // so make them invalid as in .NET Framework.
@@ -811,7 +812,7 @@ namespace Nitrocid.Base.Drivers.Filesystem
         {
             var FinalInvalidFileChars = IOPath.GetInvalidFileNameChars();
             var WindowsInvalidFileChars = new[] { '*', '?' };
-            if (KernelPlatform.IsOnUnix())
+            if (PlatformHelper.IsOnUnix())
             {
                 // If running on Linux, ensure that the wildcard characters, '*' and '?', is not valid.
                 Array.Resize(ref FinalInvalidFileChars, 4);

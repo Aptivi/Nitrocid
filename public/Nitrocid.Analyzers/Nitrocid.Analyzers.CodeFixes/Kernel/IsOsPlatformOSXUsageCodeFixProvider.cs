@@ -68,8 +68,8 @@ namespace Nitrocid.Analyzers.Kernel
                 // Get the method
                 var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
 
-                // We need to have a syntax that calls KernelPlatform.IsOnMacOS
-                var classSyntax = SyntaxFactory.IdentifierName("KernelPlatform");
+                // We need to have a syntax that calls PlatformHelper.IsOnMacOS
+                var classSyntax = SyntaxFactory.IdentifierName("PlatformHelper");
                 var methodSyntax = SyntaxFactory.IdentifierName("IsOnMacOS");
                 var maesSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                 var argsSyntax = SyntaxFactory.ArgumentList();
@@ -88,11 +88,11 @@ namespace Nitrocid.Analyzers.Kernel
                 // Check the imports
                 if (finalNode is not CompilationUnitSyntax compilation)
                     return document.Project.Solution;
-                if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Kernel") == false)
+                if (compilation.Usings.Any(u => u.Name?.ToString() == "SpecProbe.Software.Platform") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName(AnalysisTools.firstRootNameSpace), SyntaxFactory.IdentifierName("Base")),
-                        SyntaxFactory.IdentifierName("Kernel"));
+                        SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName("SpecProbe"), SyntaxFactory.IdentifierName("Software")),
+                        SyntaxFactory.IdentifierName("Platform"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
                 }

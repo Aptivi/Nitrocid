@@ -43,6 +43,7 @@ using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Events;
 using Nitrocid.Base.Kernel.Power;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Misc.Screensaver
 {

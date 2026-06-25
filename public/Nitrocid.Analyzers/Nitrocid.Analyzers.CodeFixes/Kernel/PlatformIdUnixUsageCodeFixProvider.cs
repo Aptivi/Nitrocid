@@ -63,8 +63,8 @@ namespace Nitrocid.Analyzers.Kernel
 
         private async Task<Solution> UseTextToolsFormatStringAsync(Document document, BinaryExpressionSyntax typeDecl, CancellationToken cancellationToken)
         {
-            // We need to have a syntax that calls KernelPlatform.IsOnUnix
-            var classSyntax = SyntaxFactory.IdentifierName("KernelPlatform");
+            // We need to have a syntax that calls PlatformHelper.IsOnUnix
+            var classSyntax = SyntaxFactory.IdentifierName("PlatformHelper");
             var methodSyntax = SyntaxFactory.IdentifierName("IsOnUnix");
             var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
             var valuesSyntax = SyntaxFactory.ArgumentList().AddArguments();
@@ -79,12 +79,12 @@ namespace Nitrocid.Analyzers.Kernel
 
             // Check the imports
             if (finalNode is not CompilationUnitSyntax compilation)
-                    return document.Project.Solution;
-            if (compilation.Usings.Any(u => u.Name?.ToString() == $"{AnalysisTools.rootNameSpace}.Kernel") == false)
+                return document.Project.Solution;
+            if (compilation.Usings.Any(u => u.Name?.ToString() == "SpecProbe.Software.Platform") == false)
             {
                 var name = SyntaxFactory.QualifiedName(
-                    SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName(AnalysisTools.firstRootNameSpace), SyntaxFactory.IdentifierName("Base")),
-                    SyntaxFactory.IdentifierName("Kernel"));
+                    SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName("SpecProbe"), SyntaxFactory.IdentifierName("Software")),
+                    SyntaxFactory.IdentifierName("Platform"));
                 compilation = compilation
                     .AddUsings(SyntaxFactory.UsingDirective(name));
             }

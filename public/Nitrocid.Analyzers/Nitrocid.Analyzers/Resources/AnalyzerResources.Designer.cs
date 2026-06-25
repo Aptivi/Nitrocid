@@ -655,7 +655,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to KernelPlatform.IsOnUnix() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Linux)..
+        ///   Looks up a localized string similar to PlatformHelper.IsOnUnix() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Linux)..
         /// </summary>
         internal static string IsOsPlatformLinuxUsageAnalyzerDescription {
             get {
@@ -664,7 +664,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Linux) instead of KernelPlatform.IsOnUnix().
+        ///   Looks up a localized string similar to Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Linux) instead of PlatformHelper.IsOnUnix().
         /// </summary>
         internal static string IsOsPlatformLinuxUsageAnalyzerMessageFormat {
             get {
@@ -673,7 +673,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use KernelPlatform.IsOnUnix() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Linux).
+        ///   Looks up a localized string similar to Use PlatformHelper.IsOnUnix() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Linux).
         /// </summary>
         internal static string IsOsPlatformLinuxUsageAnalyzerTitle {
             get {
@@ -682,7 +682,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to KernelPlatform.IsOnMacOS() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.OSX)..
+        ///   Looks up a localized string similar to PlatformHelper.IsOnMacOS() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.OSX)..
         /// </summary>
         internal static string IsOsPlatformOSXUsageAnalyzerDescription {
             get {
@@ -691,7 +691,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.OSX) instead of KernelPlatform.IsOnMacOS().
+        ///   Looks up a localized string similar to Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.OSX) instead of PlatformHelper.IsOnMacOS().
         /// </summary>
         internal static string IsOsPlatformOSXUsageAnalyzerMessageFormat {
             get {
@@ -700,7 +700,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use KernelPlatform.IsOnMacOS() instead of RuntimeInformation.IsOSPlatform(OSPlatform.OSX).
+        ///   Looks up a localized string similar to Use PlatformHelper.IsOnMacOS() instead of RuntimeInformation.IsOSPlatform(OSPlatform.OSX).
         /// </summary>
         internal static string IsOsPlatformOSXUsageAnalyzerTitle {
             get {
@@ -709,7 +709,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to KernelPlatform.IsOnWindows() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Windows)..
+        ///   Looks up a localized string similar to PlatformHelper.IsOnWindows() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Windows)..
         /// </summary>
         internal static string IsOsPlatformWindowsUsageAnalyzerDescription {
             get {
@@ -718,7 +718,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Windows) instead of KernelPlatform.IsOnWindows().
+        ///   Looks up a localized string similar to Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Windows) instead of PlatformHelper.IsOnWindows().
         /// </summary>
         internal static string IsOsPlatformWindowsUsageAnalyzerMessageFormat {
             get {
@@ -727,7 +727,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use KernelPlatform.IsOnWindows() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Windows).
+        ///   Looks up a localized string similar to Use PlatformHelper.IsOnWindows() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Windows).
         /// </summary>
         internal static string IsOsPlatformWindowsUsageAnalyzerTitle {
             get {
@@ -1168,7 +1168,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to KernelPlatform.IsOnUnix() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Unix..
+        ///   Looks up a localized string similar to PlatformHelper.IsOnUnix() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Unix..
         /// </summary>
         internal static string PlatformIdUnixUsageAnalyzerDescription {
             get {
@@ -1177,7 +1177,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses Environment.OSVersion.Platform == PlatformID.Unix instead of KernelPlatform.IsOnUnix().
+        ///   Looks up a localized string similar to Caller uses Environment.OSVersion.Platform == PlatformID.Unix instead of PlatformHelper.IsOnUnix().
         /// </summary>
         internal static string PlatformIdUnixUsageAnalyzerMessageFormat {
             get {
@@ -1186,7 +1186,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use KernelPlatform.IsOnUnix() instead of Environment.OSVersion.Platform == PlatformID.Unix.
+        ///   Looks up a localized string similar to Use PlatformHelper.IsOnUnix() instead of Environment.OSVersion.Platform == PlatformID.Unix.
         /// </summary>
         internal static string PlatformIdUnixUsageAnalyzerTitle {
             get {
@@ -1195,7 +1195,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to KernelPlatform.IsOnWindows() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Win32NT..
+        ///   Looks up a localized string similar to PlatformHelper.IsOnWindows() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Win32NT..
         /// </summary>
         internal static string PlatformIdWin32NtUsageAnalyzerDescription {
             get {
@@ -1204,7 +1204,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Caller uses Environment.OSVersion.Platform == PlatformID.Win32NT instead of KernelPlatform.IsOnWindows().
+        ///   Looks up a localized string similar to Caller uses Environment.OSVersion.Platform == PlatformID.Win32NT instead of PlatformHelper.IsOnWindows().
         /// </summary>
         internal static string PlatformIdWin32NtUsageAnalyzerMessageFormat {
             get {
@@ -1213,7 +1213,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use KernelPlatform.IsOnWindows() instead of Environment.OSVersion.Platform == PlatformID.Win32NT.
+        ///   Looks up a localized string similar to Use PlatformHelper.IsOnWindows() instead of Environment.OSVersion.Platform == PlatformID.Win32NT.
         /// </summary>
         internal static string PlatformIdWin32NtUsageAnalyzerTitle {
             get {

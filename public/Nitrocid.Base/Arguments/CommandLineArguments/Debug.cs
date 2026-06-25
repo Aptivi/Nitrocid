@@ -21,6 +21,7 @@ using Terminaux.Shell.Arguments.Base;
 using System;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Kernel;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Arguments.CommandLineArguments
 {
@@ -38,7 +39,7 @@ namespace Nitrocid.Base.Arguments.CommandLineArguments
                 "OS: {2}",
                 vars: [KernelReleaseInfo.VersionFullStr, KernelReleaseInfo.ApiVersion.ToString(), Environment.OSVersion.ToString()]
             );
-            if (KernelPlatform.IsOnUnixMusl())
+            if (PlatformHelper.IsOnUnixMusl())
                 DebugWriter.WriteDebug(DebugLevel.I, "Running on musl");
         }
     }

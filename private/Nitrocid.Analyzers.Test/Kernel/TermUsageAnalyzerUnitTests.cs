@@ -98,7 +98,7 @@ namespace Nitrocid.Analyzers.Test.Kernel
                 using System.Threading.Tasks;
                 using System.Diagnostics;
                 using System.Runtime.InteropServices;
-                using Nitrocid.Base.Kernel;
+                using SpecProbe.Software.Platform;
 
                 namespace ConsoleApplication1
                 {
@@ -106,7 +106,7 @@ namespace Nitrocid.Analyzers.Test.Kernel
                     {   
                         public static void Main()
                         {
-                            var value = KernelPlatform.GetTerminalType();
+                            var value = PlatformHelper.GetTerminalType();
                         }
                     }
                 }

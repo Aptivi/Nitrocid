@@ -34,6 +34,7 @@ using Nitrocid.Base.Users.Login;
 using Nitrocid.Base.Users.Login.Handlers;
 using Nitrocid.Base.Users.Login.Motd;
 using Nitrocid.Base.Users.Windows;
+using SpecProbe.Software.Platform;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
@@ -187,7 +188,7 @@ namespace Nitrocid.Base.Kernel
                     });
 
                 // Load main buffer
-                if (!KernelPlatform.IsOnWindows() && UseAltBuffer && ConsoleMisc.IsOnAltBuffer && !PowerManager.hardShutdown)
+                if (!PlatformHelper.IsOnWindows() && UseAltBuffer && ConsoleMisc.IsOnAltBuffer && !PowerManager.hardShutdown)
                     ConsoleMisc.ShowMainBuffer();
 
                 // Reset colors and clear the console
@@ -200,7 +201,7 @@ namespace Nitrocid.Base.Kernel
                 ConsoleWrapper.CursorVisible = true;
 
                 // Check to see if we're restarting Nitrocid with elevated permissions
-                if (PowerManager.elevating && KernelPlatform.IsOnWindows() && !WindowsUserTools.IsAdministrator())
+                if (PowerManager.elevating && PlatformHelper.IsOnWindows() && !WindowsUserTools.IsAdministrator())
                     PowerManager.ElevateSelf();
             }
         }

@@ -56,6 +56,7 @@ namespace Nitrocid.Analyzers.Test
             test.ReferenceAssemblies = References.NetRef;
             test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net10.0/Colorimetry.dll"));
             test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net10.0/Nitrocid.Base.dll"));
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net10.0/SpecProbe.Software.dll"));
             test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net10.0/Terminaux.dll"));
             test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net10.0/Textify.dll"));
             await test.RunAsync(CancellationToken.None);
@@ -82,6 +83,7 @@ namespace Nitrocid.Analyzers.Test
             test.ReferenceAssemblies = References.NetRef;
             test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net10.0/Colorimetry.dll"));
             test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net10.0/Nitrocid.Base.dll"));
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net10.0/SpecProbe.Software.dll"));
             test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net10.0/Terminaux.dll"));
             test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../public/Nitrocid/KSBuild/net10.0/Textify.dll"));
             await test.RunAsync(CancellationToken.None);

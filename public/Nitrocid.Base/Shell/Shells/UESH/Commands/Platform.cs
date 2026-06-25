@@ -22,6 +22,7 @@ using System.Runtime.InteropServices;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Shell.Shells.UESH.Commands
 {
@@ -46,9 +47,9 @@ namespace Nitrocid.Base.Shell.Shells.UESH.Commands
             if (ShowName)
             {
                 string platform =
-                    KernelPlatform.IsOnWindows() ? "Windows" :
-                    KernelPlatform.IsOnUnix() ? "Unix" :
-                    KernelPlatform.IsOnMacOS() ? "macOS" :
+                    PlatformHelper.IsOnWindows() ? "Windows" :
+                    PlatformHelper.IsOnUnix() ? "Unix" :
+                    PlatformHelper.IsOnMacOS() ? "macOS" :
                     "Unknown";
                 TextWriterColor.Write(platform);
                 variableValue = platform;

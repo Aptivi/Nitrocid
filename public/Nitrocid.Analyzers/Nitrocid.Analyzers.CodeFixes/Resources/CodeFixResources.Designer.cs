@@ -259,7 +259,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use KernelPlatform.IsOnUnix().
+        ///   Looks up a localized string similar to Use PlatformHelper.IsOnUnix().
         /// </summary>
         internal static string IsOsPlatformLinuxUsageCodeFixTitle {
             get {
@@ -268,7 +268,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use KernelPlatform.IsOnMacOs().
+        ///   Looks up a localized string similar to Use PlatformHelper.IsOnMacOs().
         /// </summary>
         internal static string IsOsPlatformOSXUsageCodeFixTitle {
             get {
@@ -277,7 +277,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use KernelPlatform.IsOnWindows().
+        ///   Looks up a localized string similar to Use PlatformHelper.IsOnWindows().
         /// </summary>
         internal static string IsOsPlatformWindowsUsageCodeFixTitle {
             get {
@@ -475,7 +475,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use KernelPlatform.IsOnUnix().
+        ///   Looks up a localized string similar to Use PlatformHelper.IsOnUnix().
         /// </summary>
         internal static string PlatformIdUnixUsageCodeFixTitle {
             get {
@@ -484,7 +484,7 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use KernelPlatform.IsOnWindows().
+        ///   Looks up a localized string similar to Use PlatformHelper.IsOnWindows().
         /// </summary>
         internal static string PlatformIdWin32NtUsageCodeFixTitle {
             get {

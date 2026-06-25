@@ -27,6 +27,7 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Network.Transfer;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Network
 {
@@ -46,7 +47,7 @@ namespace Nitrocid.Base.Network
         /// unavailable.
         /// </summary>
         public static bool NetworkAvailable =>
-            KernelPlatform.IsOnAndroid() ?
+            PlatformHelper.IsOnAndroid() ?
             IsInternetAvailableNoNetworkCheck() :
             NetworkInterface.GetIsNetworkAvailable();
 

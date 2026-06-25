@@ -23,6 +23,7 @@ using Terminaux.Shell.Commands;
 using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Languages;
 using Terminaux.Base.Extensions;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 {
@@ -37,7 +38,7 @@ namespace Nitrocid.Base.Shell.Shells.Debug.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (KernelPlatform.IsOnWindows())
+            if (PlatformHelper.IsOnWindows())
             {
                 TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELL_SHELLS_DEBUG_SHOWMAINBUFFER_WINDOWS"), ThemeColorType.Error);
                 return 33;

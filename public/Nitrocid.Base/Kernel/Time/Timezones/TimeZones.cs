@@ -25,6 +25,7 @@ using Nitrocid.Base.Kernel.Debugging;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Kernel.Time.Converters;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Kernel.Time.Timezones
 {
@@ -132,7 +133,7 @@ namespace Nitrocid.Base.Kernel.Time.Timezones
         internal static void CheckZoneInfoDirectory()
         {
             // Check to see if tzdata is installed (only on Unix)
-            if (KernelPlatform.IsOnUnix() && !FilesystemTools.FolderExists("/usr/share/zoneinfo"))
+            if (PlatformHelper.IsOnUnix() && !FilesystemTools.FolderExists("/usr/share/zoneinfo"))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "System is on Unix but /usr/share/zoneinfo is not installed!");
                 throw new KernelException(KernelExceptionType.TimeDate, LanguageTools.GetLocalized("NKS_KERNEL_TIME_TIMEZONES_EXCEPTION_NEEDSTZDATA"));

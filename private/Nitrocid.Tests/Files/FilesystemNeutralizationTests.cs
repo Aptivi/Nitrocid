@@ -22,6 +22,7 @@ using Nitrocid.Base.Kernel.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Nitrocid.Base.Kernel;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Tests.Files
 {
@@ -51,7 +52,7 @@ namespace Nitrocid.Tests.Files
         [Description("Neutralization")]
         public void TestNeutralizePathsCustom()
         {
-            if (KernelPlatform.IsOnUnix())
+            if (PlatformHelper.IsOnUnix())
             {
                 string TestPath = "sources.list";
                 string TargetPath = "/etc/apt";

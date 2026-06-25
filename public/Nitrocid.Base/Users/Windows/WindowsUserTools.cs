@@ -18,6 +18,7 @@
 //
 
 using Nitrocid.Base.Kernel;
+using SpecProbe.Software.Platform;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 
@@ -33,7 +34,7 @@ namespace Nitrocid.Base.Users.Windows
         /// </summary>
         public static bool IsAdministrator()
         {
-            if (KernelPlatform.IsOnWindows() ||
+            if (PlatformHelper.IsOnWindows() ||
 
                 // This is a trick to avoid compiler warnings, since IsOnWindows() above doesn't seem to avoid compiler warnings.
                 RuntimeInformation.IsOSPlatform(OSPlatform.Windows))

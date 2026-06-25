@@ -21,6 +21,7 @@ using Nitrocid.Base.Kernel;
 using Nitrocid.Base.Kernel.Configuration.Instances;
 using System.Runtime.Versioning;
 using Colorimetry;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.ScreensaverPacks.Settings
 {
@@ -99,7 +100,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
             [UnsupportedOSPlatform("windows")]
             set
             {
-                if (KernelPlatform.IsOnUnix())
+                if (PlatformHelper.IsOnUnix())
                     excaliBeatsTranceMode = value;
                 else
                     excaliBeatsTranceMode = false;

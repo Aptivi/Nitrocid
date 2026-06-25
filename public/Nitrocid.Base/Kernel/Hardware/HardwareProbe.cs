@@ -26,6 +26,7 @@ using Nitrocid.Base.Drivers.HardwareProber;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Users.Windows;
 using Nitrocid.Base.Kernel.Events;
+using SpecProbe.Software.Platform;
 
 namespace Nitrocid.Base.Kernel.Hardware
 {
@@ -48,7 +49,7 @@ namespace Nitrocid.Base.Kernel.Hardware
             EventsManager.FireEvent(EventType.HardwareProbing);
             try
             {
-                if (!KernelPlatform.IsOnWindows() || KernelPlatform.IsOnWindows() && WindowsUserTools.IsAdministrator())
+                if (!PlatformHelper.IsOnWindows() || PlatformHelper.IsOnWindows() && WindowsUserTools.IsAdministrator())
                 {
                     processors = HardwareProberDriver.ProbeProcessor();
                     pcMemory = HardwareProberDriver.ProbePcMemory();

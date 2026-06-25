@@ -512,65 +512,65 @@
       PlatformIdWin32Nt usage analyzer
   -->
   <data name="PlatformIdWin32NtUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use KernelPlatform.IsOnWindows() instead of Environment.OSVersion.Platform == PlatformID.Win32NT</value>
+    <value>Use PlatformHelper.IsOnWindows() instead of Environment.OSVersion.Platform == PlatformID.Win32NT</value>
   </data>
   <data name="PlatformIdWin32NtUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses Environment.OSVersion.Platform == PlatformID.Win32NT instead of KernelPlatform.IsOnWindows()</value>
+    <value>Caller uses Environment.OSVersion.Platform == PlatformID.Win32NT instead of PlatformHelper.IsOnWindows()</value>
   </data>
   <data name="PlatformIdWin32NtUsageAnalyzerDescription" xml:space="preserve">
-    <value>KernelPlatform.IsOnWindows() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Win32NT.</value>
+    <value>PlatformHelper.IsOnWindows() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Win32NT.</value>
   </data>
 
   <!--
       PlatformIdUnix usage analyzer
   -->
   <data name="PlatformIdUnixUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use KernelPlatform.IsOnUnix() instead of Environment.OSVersion.Platform == PlatformID.Unix</value>
+    <value>Use PlatformHelper.IsOnUnix() instead of Environment.OSVersion.Platform == PlatformID.Unix</value>
   </data>
   <data name="PlatformIdUnixUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses Environment.OSVersion.Platform == PlatformID.Unix instead of KernelPlatform.IsOnUnix()</value>
+    <value>Caller uses Environment.OSVersion.Platform == PlatformID.Unix instead of PlatformHelper.IsOnUnix()</value>
   </data>
   <data name="PlatformIdUnixUsageAnalyzerDescription" xml:space="preserve">
-    <value>KernelPlatform.IsOnUnix() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Unix.</value>
+    <value>PlatformHelper.IsOnUnix() is more readable and less verbose than Environment.OSVersion.Platform == PlatformID.Unix.</value>
   </data>
 
   <!--
       IsOsPlatformWindows usage analyzer
   -->
   <data name="IsOsPlatformWindowsUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use KernelPlatform.IsOnWindows() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Windows)</value>
+    <value>Use PlatformHelper.IsOnWindows() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Windows)</value>
   </data>
   <data name="IsOsPlatformWindowsUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Windows) instead of KernelPlatform.IsOnWindows()</value>
+    <value>Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Windows) instead of PlatformHelper.IsOnWindows()</value>
   </data>
   <data name="IsOsPlatformWindowsUsageAnalyzerDescription" xml:space="preserve">
-    <value>KernelPlatform.IsOnWindows() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Windows).</value>
+    <value>PlatformHelper.IsOnWindows() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Windows).</value>
   </data>
 
   <!--
       IsOsPlatformLinux usage analyzer
   -->
   <data name="IsOsPlatformLinuxUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use KernelPlatform.IsOnUnix() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Linux)</value>
+    <value>Use PlatformHelper.IsOnUnix() instead of RuntimeInformation.IsOSPlatform(OSPlatform.Linux)</value>
   </data>
   <data name="IsOsPlatformLinuxUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Linux) instead of KernelPlatform.IsOnUnix()</value>
+    <value>Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.Linux) instead of PlatformHelper.IsOnUnix()</value>
   </data>
   <data name="IsOsPlatformLinuxUsageAnalyzerDescription" xml:space="preserve">
-    <value>KernelPlatform.IsOnUnix() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Linux).</value>
+    <value>PlatformHelper.IsOnUnix() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.Linux).</value>
   </data>
 
   <!--
       IsOsPlatformOSX usage analyzer
   -->
   <data name="IsOsPlatformOSXUsageAnalyzerTitle" xml:space="preserve">
-    <value>Use KernelPlatform.IsOnMacOS() instead of RuntimeInformation.IsOSPlatform(OSPlatform.OSX)</value>
+    <value>Use PlatformHelper.IsOnMacOS() instead of RuntimeInformation.IsOSPlatform(OSPlatform.OSX)</value>
   </data>
   <data name="IsOsPlatformOSXUsageAnalyzerMessageFormat" xml:space="preserve">
-    <value>Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.OSX) instead of KernelPlatform.IsOnMacOS()</value>
+    <value>Caller uses RuntimeInformation.IsOSPlatform(OSPlatform.OSX) instead of PlatformHelper.IsOnMacOS()</value>
   </data>
   <data name="IsOsPlatformOSXUsageAnalyzerDescription" xml:space="preserve">
-    <value>KernelPlatform.IsOnMacOS() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.OSX).</value>
+    <value>PlatformHelper.IsOnMacOS() is more readable and less verbose than RuntimeInformation.IsOSPlatform(OSPlatform.OSX).</value>
   </data>
 
   <!--
