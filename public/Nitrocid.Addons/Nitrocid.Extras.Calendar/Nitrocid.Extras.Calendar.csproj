@@ -4,10 +4,15 @@
   <PropertyGroup>
     <Description>Nitrocid KS Extras - Calendar</Description>
     <AssemblyTitle>Nitrocid KS Extras - Calendar</AssemblyTitle>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="VisualCard.Calendar" Version="4.1.2.5" />
   </ItemGroup>
 
   <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
