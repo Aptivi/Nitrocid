@@ -51,6 +51,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
+using Nitrocid.Base.Kernel.Extensions;
 
 namespace Nitrocid.Base.Shell.Homepage
 {
@@ -126,8 +127,10 @@ namespace Nitrocid.Base.Shell.Homepage
                     WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
                     WidgetTools.GetWidget(nameof(AnalogClock));
                 var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
-                BaseWidget? feedWidget = WidgetTools.CheckWidget("RssFeeds") ? WidgetTools.GetWidget("RssFeeds") : null;
-                homeScreenBuffer.AddDynamicText(() => RenderHomepagePage(homeScreen.RefreshWasDone, pageNumber, canvases, choices, choiceIdx, buttonHighlight, widget, notificationsWidget, feedWidget));
+                bool feedAddonInstalled = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.AddonShellPacks)) is not null;
+                string feedErrorMessage = "";
+                (string feedTitle, string articleTitle)[]? articles = null;
+                homeScreenBuffer.AddDynamicText(() => RenderHomepagePage(homeScreen.RefreshWasDone, pageNumber, canvases, choices, choiceIdx, buttonHighlight, widget, notificationsWidget, feedAddonInstalled, ref articles, ref feedErrorMessage));
                 homeScreen.AddBufferedPart("The Nitrocid Homepage", homeScreenBuffer);
 
                 // Helper function
@@ -598,7 +601,7 @@ namespace Nitrocid.Base.Shell.Homepage
             return homepagePages;
         }
 
-        private static string RenderHomepagePage(bool refreshWasDone, int pageNumber, List<WidgetRenderInfo[]> canvases, (InputChoiceInfo, Action)[] choices, int choiceIdx, int buttonHighlight, BaseWidget widget, BaseWidget notificationsWidget, BaseWidget? feedWidget)
+        private static string RenderHomepagePage(bool refreshWasDone, int pageNumber, List<WidgetRenderInfo[]> canvases, (InputChoiceInfo, Action)[] choices, int choiceIdx, int buttonHighlight, BaseWidget widget, BaseWidget notificationsWidget, bool feedAddonInstalled, ref (string feedTitle, string articleTitle)[]? articles, ref string feedErrorMessage)
         {
             int actualScreenNum = pageNumber - 2;
             var builder = new StringBuilder();
@@ -689,40 +692,54 @@ namespace Nitrocid.Base.Shell.Homepage
                     int rssFeedLeft = widgetLeft + 1;
                     int rssFeedTop = rssTop + 1;
                     string rssSequence = "";
-                    bool needsWrapping = true;
                     try
                     {
                         if (!Config.MainConfig.ShowHeadlineOnLogin)
                             rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
-                        else if (feedWidget is null)
+                        else if (!feedAddonInstalled)
                             rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
                         else
                         {
-                            needsWrapping = false;
-                            var feedTitleProp = feedWidget.GetType().GetProperty("ShowFeedTitle");
-                            feedTitleProp?.SetValue(feedWidget, false);
-                            rssSequence = feedWidget.Render(rssFeedLeft, rssFeedTop, widgetWidth, 3);
+                            articles ??= ((string feedTitle, string articleTitle)[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "GetArticles", "Nitrocid.ShellPacks.Tools.RSSShellTools", Config.MainConfig.RssHeadlineUrl) ?? [];
+                            if (articles is not null && articles.Length > 0)
+                            {
+                                var headlines = new StringBuilder();
+                                foreach (var (feedTitle, articleTitle) in articles)
+                                {
+                                    string finalFeedEntry = $"{articleTitle}";
+                                    finalFeedEntry = finalFeedEntry.Truncate(widgetWidth);
+                                    headlines.AppendLine(finalFeedEntry);
+                                }
+                                rssSequence = headlines.ToString();
+                            }
+                            else
+                            {
+                                if (string.IsNullOrEmpty(feedErrorMessage))
+                                    feedErrorMessage = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NOARTICLES");
+                            }
                         }
                     }
                     catch (Exception ex)
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", vars: [ex.Message]);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        rssSequence = LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED");
+                        feedErrorMessage = LanguageTools.GetLocalized("NKS_NETWORK_TYPES_RSS_FETCHFAILED");
+                    }
+                    if (!string.IsNullOrEmpty(feedErrorMessage))
+                    {
+                        rssSequence = feedErrorMessage;
+                        articles = [];
                     }
 
                     // Render the RSS feed sequence or an error message
-                    if (needsWrapping)
+                    rssSequence = new BoundedText()
                     {
-                        rssSequence = new BoundedText()
-                        {
-                            Left = rssFeedLeft,
-                            Top = rssFeedTop,
-                            Width = widgetWidth,
-                            Height = 3,
-                            Text = rssSequence,
-                        }.Render();
-                    }
+                        Left = rssFeedLeft,
+                        Top = rssFeedTop,
+                        Width = widgetWidth,
+                        Height = 3,
+                        Text = rssSequence,
+                    }.Render();
                     builder.Append(rssSequence);
                 }
 
