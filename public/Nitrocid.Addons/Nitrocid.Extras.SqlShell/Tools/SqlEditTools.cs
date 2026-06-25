@@ -82,9 +82,10 @@ namespace Nitrocid.Extras.SqlShell.Tools
         /// </summary>
         /// <param name="query">An SQL query</param>
         /// <param name="replies">Replies array to be filled</param>
+        /// <param name="error">Error during query (null if there are no errors)</param>
         /// <param name="parameters">SQL query parameters</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool SqlEdit_SqlCommand(string query, ref string[] replies, params SqliteParameter[] parameters)
+        public static bool SqlEdit_SqlCommand(string query, ref string[] replies, out Exception? error, params SqliteParameter[] parameters)
         {
             try
             {
@@ -107,12 +108,14 @@ namespace Nitrocid.Extras.SqlShell.Tools
                     }
                 }
                 replies = [.. replyList];
+                error = null;
                 return true;
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "SQL command failed: {0}", vars: [ex.Message]);
                 DebugWriter.WriteDebugStackTrace(ex);
+                error = ex;
                 return false;
             }
         }

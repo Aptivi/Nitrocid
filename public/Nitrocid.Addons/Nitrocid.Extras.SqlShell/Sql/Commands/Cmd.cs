@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
 
             // Now, get a group of replies and print them
             string[] replies = [];
-            if (SqlEditTools.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, [.. sqlParameters]))
+            if (SqlEditTools.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, out var error, [.. sqlParameters]))
             {
                 TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDSUCCESS"), true, KernelColorType.Success);
                 foreach (string reply in replies)
@@ -63,7 +63,9 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
             }
             else
             {
-                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDFAILURE"), true, KernelColorType.Error);
+                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDFAILURE"), true, KernelColorType.Error);
+                if (error is not null)
+                    TextWriterColor.Write(error.Message, true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.SqlEditor);
             }
         }
