@@ -7108,4 +7108,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>Utilizați versiunea beta a kernelului. Este posibil să întâmpinați erori, instabilități sau chiar pierderi de date. Vă recomandăm să utilizați versiunea stabilă, dacă este posibil.</value>
   </data>
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>Fără hrană.</value>
+  </data>
 </root>

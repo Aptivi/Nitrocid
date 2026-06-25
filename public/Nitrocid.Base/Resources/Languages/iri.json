@@ -9406,6 +9406,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
       "text": "Tá leagan béite an eithne á rith agat. D’fhéadfadh fabhtanna, éagobhsaíochtaí, nó fiú cailliúint sonraí teacht ort. Molaimid an leagan cobhsaí a úsáid, más féidir."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
+      "text": "Gan beatha."
     }
   ]
 }

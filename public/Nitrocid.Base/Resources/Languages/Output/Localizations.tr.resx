@@ -7108,4 +7108,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>Çekirdeğin beta sürümünü kullanıyorsunuz. Hatalarla, dengesizliklerle ve hatta veri kayıplarıyla karşılaşabilirsiniz. Mümkünse kararlı sürümü kullanmanızı öneririz.</value>
   </data>
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>Besleme yok.</value>
+  </data>
 </root>

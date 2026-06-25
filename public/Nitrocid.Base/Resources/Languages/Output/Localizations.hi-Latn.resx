@@ -7108,4 +7108,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>aap karnel ka beeta sanskaran chala rahe hain. aapako bag, asthirata ya deta haani ka saamana karana pad sakata hai. yadi sambhav ho, to ham sthir sanskaran ka upayog karane kee salaah dete hain.</value>
   </data>
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>koee feed nahin।</value>
+  </data>
 </root>

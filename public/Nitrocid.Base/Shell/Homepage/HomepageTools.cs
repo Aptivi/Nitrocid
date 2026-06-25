@@ -127,7 +127,12 @@ namespace Nitrocid.Base.Shell.Homepage
                     WidgetTools.GetWidget(Config.MainConfig.HomepageWidget) :
                     WidgetTools.GetWidget(nameof(AnalogClock));
                 var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
-                bool feedAddonInstalled = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.AddonShellPacks)) is not null;
+                bool feedAddonInstalled =
+#if NKS_EXTENSIONS
+                    AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.AddonShellPacks)) is not null;
+#else
+                    false;
+#endif
                 string feedErrorMessage = "";
                 (string feedTitle, string articleTitle)[]? articles = null;
                 homeScreenBuffer.AddDynamicText(() => RenderHomepagePage(homeScreen.RefreshWasDone, pageNumber, canvases, choices, choiceIdx, buttonHighlight, widget, notificationsWidget, feedAddonInstalled, ref articles, ref feedErrorMessage));
@@ -696,7 +701,9 @@ namespace Nitrocid.Base.Shell.Homepage
                     {
                         if (!Config.MainConfig.ShowHeadlineOnLogin)
                             rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
-                        else if (!feedAddonInstalled)
+                        else 
+#if NKS_EXTENSIONS
+                        if (!feedAddonInstalled)
                             rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
                         else
                         {
@@ -718,6 +725,9 @@ namespace Nitrocid.Base.Shell.Homepage
                                     feedErrorMessage = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NOARTICLES");
                             }
                         }
+#else
+                            rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
+#endif
                     }
                     catch (Exception ex)
                     {

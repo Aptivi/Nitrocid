@@ -9405,6 +9405,10 @@
     {
       "loc": "NKS_KERNEL_STARTING_BETAMESSAGE",
       "text": "Bạn đang chạy phiên bản beta của kernel. Bạn có thể gặp lỗi, sự không ổn định hoặc thậm chí mất dữ liệu. Chúng tôi khuyên bạn nên sử dụng phiên bản ổn định, nếu có thể."
+    },
+    {
+      "loc": "NKS_SHELL_HOMEPAGE_NOARTICLES",
+      "text": "Không có nguồn cấp dữ liệu."
     }
   ]
 }

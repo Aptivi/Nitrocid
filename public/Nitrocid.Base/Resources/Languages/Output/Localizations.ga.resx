@@ -7108,4 +7108,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>Tá leagan béite an eithne á rith agat. D’fhéadfadh fabhtanna, éagobhsaíochtaí, nó fiú cailliúint sonraí teacht ort. Molaimid an leagan cobhsaí a úsáid, más féidir.</value>
   </data>
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>Gan beatha.</value>
+  </data>
 </root>

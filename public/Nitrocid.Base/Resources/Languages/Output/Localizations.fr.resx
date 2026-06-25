@@ -7108,4 +7108,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>Vous utilisez la version bêta du noyau. Vous pourriez rencontrer des bugs, des instabilités, voire des pertes de données. Nous vous recommandons d'utiliser la version stable, si possible.</value>
   </data>
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>Pas de nourriture.</value>
+  </data>
 </root>

@@ -7108,4 +7108,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>Anda menjalankan versi beta kernel. Anda mungkin menghadapi pepijat, ketidakstabilan, atau kehilangan data. Kami mengesyorkan menggunakan versi stabil, jika boleh.</value>
   </data>
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>Tiada suapan.</value>
+  </data>
 </root>

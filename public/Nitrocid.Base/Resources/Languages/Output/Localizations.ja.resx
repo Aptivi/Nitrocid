@@ -7108,4 +7108,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>現在実行中のカーネルはベータ版です。バグ、不安定性、さらにはデータ損失が発生する可能性があります。可能であれば、安定版のご使用をお勧めします。</value>
   </data>
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>餌はありません。</value>
+  </data>
 </root>

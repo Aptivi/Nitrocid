@@ -7108,4 +7108,7 @@
   <data name="NKS_KERNEL_STARTING_BETAMESSAGE" xml:space="preserve">
     <value>You're running the beta version of the kernel. You may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.</value>
   </data>
+  <data name="NKS_SHELL_HOMEPAGE_NOARTICLES" xml:space="preserve">
+    <value>No feed.</value>
+  </data>
 </root>
