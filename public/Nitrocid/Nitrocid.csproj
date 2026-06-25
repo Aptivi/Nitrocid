@@ -41,7 +41,8 @@
     <PackageReference Include="Textify.Offline.Data" Version="2.14.0.1" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Nettify" Version="1.7.4" PrivateAssets="contentfiles;analyzers;build;runtime" />
     <PackageReference Include="Threadify" Version="1.0.0" PrivateAssets="contentfiles;analyzers;build;runtime" />
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.9" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="10.0.9" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.3" PrivateAssets="contentfiles;analyzers;build;runtime;native" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
