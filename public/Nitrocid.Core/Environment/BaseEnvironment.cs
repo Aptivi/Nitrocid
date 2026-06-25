@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Nitrocid.Core.Environment.Internal;
 using Nitrocid.Core.Languages;
 using System;
 using System.IO;
@@ -49,10 +50,7 @@ namespace Nitrocid.Core.Environment
         {
             get
             {
-                string typeName = baseAsm?.FullName ?? "";
-                string asmName = baseAsm?.GetName().Name ?? "";
-                var entryPointMethod = Type.GetType($"{asmName}.Kernel.KernelEntry, {typeName}")?.GetMethod("EntryPoint", BindingFlags.NonPublic | BindingFlags.Static) ??
-                    throw new Exception(LanguageTools.GetLocalized("NKS_KERNEL_STARTING_ENVIRONMENT_EXCEPTION_MISSINGENTRYPOINT"));
+                var entryPointMethod = KernelEnvironment.GetEntryPoint(baseAsm);
                 return new(() => entryPointMethod.Invoke(null, [Arguments]));
             }
         }
@@ -62,9 +60,7 @@ namespace Nitrocid.Core.Environment
         {
             get
             {
-                string typeName = baseAsm?.FullName ?? "";
-                string asmName = baseAsm?.GetName().Name ?? "";
-                var exitPointMethod = Type.GetType($"{asmName}.Kernel.KernelEntry, {typeName}")?.GetMethod("ExitPoint", BindingFlags.NonPublic | BindingFlags.Static);
+                var exitPointMethod = KernelEnvironment.GetExitPoint(baseAsm);
                 return new(() => exitPointMethod?.Invoke(null, null));
             }
         }
