@@ -210,11 +210,18 @@ namespace Nitrocid.Base.Shell.Homepage
                         // Notifications
                         int notificationsEndY = widgetTop + widgetHeight + 3;
 
+                        // RSS feed
+                        int rssHeight = 3;
+                        int rssFeedTop = widgetTop + widgetHeight + 3;
+                        int rssFeedEndX = widgetLeft + widgetWidth + 1 + ConsoleWrapper.WindowWidth % 2;
+                        int rssFeedEndY = rssFeedTop + rssHeight + 1;
+
                         // Check the ranges
                         bool isWithinSettings = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX, settingsButtonStartPosY), (settingsButtonEndPosX, settingsButtonEndPosY));
                         bool isWithinAbout = PointerTools.PointerWithinRange(context, (aboutButtonStartPosX, aboutButtonStartPosY), (aboutButtonEndPosX, aboutButtonEndPosY));
                         bool isWithinOptions = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, widgetTop + 1), (optionsEndX, optionsEndY));
                         bool isWithinNotifications = PointerTools.PointerWithinRange(context, (settingsButtonStartPosX + 1, notificationsEndY), (optionsEndX, notificationsEndY));
+                        bool isWithinRSS = PointerTools.PointerWithinRange(context, (widgetLeft, rssFeedTop), (rssFeedEndX, rssFeedEndY));
 
                         // If the mouse pointer is within the settings, check for left release
                         if (isWithinSettings)
@@ -276,6 +283,28 @@ namespace Nitrocid.Base.Shell.Homepage
                                 hold = true;
                                 NotificationsCli.OpenNotificationsCli();
                                 homeScreen.RequireRefresh();
+                            }
+                        }
+                        else if (isWithinRSS)
+                        {
+                            if (context.ButtonPress == PointerButtonPress.Released && context.Button == PointerButton.Left)
+                            {
+                                if (Config.MainConfig.EnableHomepageRssFeed)
+                                {
+                                    ScreenTools.StopCyclicScreen();
+                                    hold = true;
+#if NKS_EXTENSIONS
+                                    if (!feedAddonInstalled)
+                                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON"));
+                                    else if (!Config.MainConfig.ShowHeadlineOnLogin)
+                                        InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES"));
+                                    else
+                                        InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "OpenFeedTui", "Nitrocid.ShellPacks.Tools.RSSShellTools", Config.MainConfig.RssHeadlineUrl);
+#else
+                                    InfoBoxModalColor.WriteInfoBoxModal(LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON"));
+#endif
+                                    homeScreen.RequireRefresh();
+                                }
                             }
                         }
                         if (context.ButtonPress == PointerButtonPress.Moved)
@@ -699,12 +728,11 @@ namespace Nitrocid.Base.Shell.Homepage
                     string rssSequence = "";
                     try
                     {
-                        if (!Config.MainConfig.ShowHeadlineOnLogin)
-                            rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
-                        else 
 #if NKS_EXTENSIONS
                         if (!feedAddonInstalled)
                             rssSequence = LanguageTools.GetLocalized("NKS_USERS_LOGIN_MODERNLOGON_RSSFEED_NEEDSADDON");
+                        else if (!Config.MainConfig.ShowHeadlineOnLogin)
+                            rssSequence = LanguageTools.GetLocalized("NKS_SHELL_HOMEPAGE_NEEDSHEADLINES");
                         else
                         {
                             articles ??= ((string feedTitle, string articleTitle)[]?)InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.AddonShellPacks, "GetArticles", "Nitrocid.ShellPacks.Tools.RSSShellTools", Config.MainConfig.RssHeadlineUrl) ?? [];

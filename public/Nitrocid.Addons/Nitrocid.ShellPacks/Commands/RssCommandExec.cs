@@ -19,9 +19,7 @@
 
 using Nettify.Rss.Instance;
 using Terminaux.Themes.Colors;
-using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.ConsoleWriters;
-using Nitrocid.ShellPacks.Shells.RSS.Interactive;
 using Nitrocid.Base.Kernel.Configuration;
 using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
@@ -29,6 +27,7 @@ using Terminaux.Shell.Commands;
 using System;
 using Nitrocid.Base.ConsoleBase.Inputs;
 using Nitrocid.Base.Network.Connections;
+using Nitrocid.ShellPacks.Tools;
 
 namespace Nitrocid.ShellPacks.Commands
 {
@@ -39,12 +38,12 @@ namespace Nitrocid.ShellPacks.Commands
         {
             if (parameters.ContainsSwitch("-tui"))
             {
-                var tui = new RssReaderCli();
-                tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO"), ConsoleKey.F1, (article, _, _, _) => tui.ShowArticleInfo(article)));
-                tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE"), ConsoleKey.F2, (article, _, _, _) => tui.OpenArticleLink(article)));
-                tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH"), ConsoleKey.F3, (article, _, _, _) => tui.RefreshFeed()));
+                RSSFeed? feed = null;
                 if (parameters.ArgumentsList.Length > 0)
-                    tui.rssConnection = EstablishRssConnection(parameters.ArgumentsList[0]);
+                {
+                    var connection = EstablishRssConnection(parameters.ArgumentsList[0]);
+                    feed = GetFeed(connection);
+                }
                 else
                 {
                     string address = InputTools.ReadLine(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_FEEDURLPROMPT") + ": ", Config.MainConfig.RssHeadlineUrl);
@@ -53,12 +52,10 @@ namespace Nitrocid.ShellPacks.Commands
                         TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_ADDRESSUNPARSABLE"), ThemeColorType.Error);
                         return KernelExceptionTools.GetErrorCode(KernelExceptionType.RSSNetwork);
                     }
-                    tui.rssConnection = EstablishRssConnection(address);
+                    var connection = EstablishRssConnection(address);
+                    feed = GetFeed(connection);
                 }
-                var client = (RSSFeed?)tui.rssConnection?.ConnectionInstance ??
-                    throw new KernelException(KernelExceptionType.RSSShell, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
-                client.Refresh();
-                InteractiveTuiTools.OpenInteractiveTui(tui);
+                RSSShellTools.OpenFeedTui(feed);
             }
             else
                 NetworkConnectionTools.OpenConnectionForShell("RSSShell", EstablishRssConnection, (_, connection) =>
@@ -73,5 +70,11 @@ namespace Nitrocid.ShellPacks.Commands
             return NetworkConnectionTools.EstablishConnection("RSS connection", address, NetworkConnectionType.RSS, new RSSFeed(address, RSSFeedType.Infer));
         }
 
+        private RSSFeed GetFeed(NetworkConnection connection)
+        {
+            if (connection is null || connection.ConnectionInstance is not RSSFeed feed)
+                throw new KernelException(KernelExceptionType.RSSNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE"));
+            return feed;
+        }
     }
 }

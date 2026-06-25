@@ -37,16 +37,17 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
     /// </summary>
     public class RssReaderCli : BaseInteractiveTui<RSSArticle>, IInteractiveTui<RSSArticle>
     {
-        internal NetworkConnection? rssConnection;
+        private RSSFeed? feed;
 
-        private RSSFeed Feed
+        internal RSSFeed Feed
         {
             get
             {
-                if (rssConnection is null || rssConnection.ConnectionInstance is not RSSFeed feed)
-                    throw new KernelException(KernelExceptionType.RSSNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE"));
+                if (feed is null)
+                    throw new KernelException(KernelExceptionType.RSSNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_COMMON_EXCEPTION_NOTCONNECTED_1"));
                 return feed;
             }
+            set => feed = value;
         }
 
         /// <inheritdoc/>

@@ -27,6 +27,8 @@ using Nitrocid.Base.Kernel.Exceptions;
 using Nitrocid.Base.Languages;
 using Nitrocid.Base.Misc.Notifications;
 using Nitrocid.ShellPacks.Shells.RSS;
+using Nitrocid.ShellPacks.Shells.RSS.Interactive;
+using Terminaux.Inputs.Interactive;
 
 namespace Nitrocid.ShellPacks.Tools
 {
@@ -124,6 +126,42 @@ namespace Nitrocid.ShellPacks.Tools
             }
 
             return foundArticles;
+        }
+
+        /// <summary>
+        /// Opens the RSS feed interactive TUI
+        /// </summary>
+        /// <param name="feedAddress">RSS feed URL</param>
+        /// <exception cref="KernelException"></exception>
+        public static void OpenFeedTui(string feedAddress)
+        {
+            var feed = new RSSFeed(feedAddress, RSSFeedType.Infer);
+            OpenFeedTui(feed);
+        }
+
+        /// <summary>
+        /// Opens the RSS feed interactive TUI
+        /// </summary>
+        /// <param name="feedClass"></param>
+        /// <exception cref="KernelException"></exception>
+        public static void OpenFeedTui(RSSFeed? feedClass)
+        {
+            // Check the feed class
+            if (feedClass is null)
+                throw new KernelException(KernelExceptionType.RSSNetwork, LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_READERCLI_EXCEPTION_INVALIDINSTANCE"));
+
+            // Initialize the RSS reader TUI
+            var tui = new RssReaderCli();
+            tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_FTPSFTP_FMCLI_KEYBINDING_INFO"), ConsoleKey.F1, (article, _, _, _) => tui.ShowArticleInfo(article)));
+            tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_READMORE"), ConsoleKey.F2, (article, _, _, _) => tui.OpenArticleLink(article)));
+            tui.Bindings.Add(new InteractiveTuiBinding<RSSArticle>(LanguageTools.GetLocalized("NKS_SHELLPACKS_RSS_TUI_KEYBINDING_REFRESH"), ConsoleKey.F3, (article, _, _, _) => tui.RefreshFeed()));
+
+            // Set the feed and refresh it
+            tui.Feed = feedClass;
+            tui.Feed.Refresh();
+
+            // Open the TUI
+            InteractiveTuiTools.OpenInteractiveTui(tui);
         }
 
         /// <summary>
