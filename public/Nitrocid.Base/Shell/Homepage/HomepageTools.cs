@@ -453,6 +453,7 @@ namespace Nitrocid.Base.Shell.Homepage
                                         ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiBoxForeground),
                                         BackgroundColor = ThemeColorsTools.GetColor(ThemeColorType.TuiBoxBackground),
                                     });
+                                homeScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.P:
                                 AudioCuesTools.PlayThemeMusic();
@@ -641,7 +642,7 @@ namespace Nitrocid.Base.Shell.Homepage
             var builder = new StringBuilder();
 
             // Clear the console
-            if (ConsoleResizeHandler.WasResized() || (ScreenTools.CurrentScreen?.RefreshWasDone ?? false))
+            if (ConsoleResizeHandler.WasResized() || refreshWasDone)
                 builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
 
             if (actualScreenNum < 0)
