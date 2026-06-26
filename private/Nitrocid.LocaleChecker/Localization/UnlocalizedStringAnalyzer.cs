@@ -105,6 +105,9 @@ namespace Nitrocid.LocaleChecker.Localization
             new("DBG_NLOC", "Debug Diagnostic for localization", "DEBUG: {0} = {1}", Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, customTags: ["CompilationEnd"]);
         private readonly Dictionary<string, List<Location?>> assemblyLocs = [];
 
+        // State lock
+        private readonly object stateLock = new();
+
         // Supported diagnostics
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics =>
             ImmutableArray.Create(Rule, RuleComment, RuleJson, RuleExtraJson, RuleExtraJsonSummary, RuleDisabled, RuleDisabledComment, assemblyLocsDbg);
@@ -118,7 +121,7 @@ namespace Nitrocid.LocaleChecker.Localization
 
         private void PopulateLocalizations(CompilationStartAnalysisContext context)
         {
-            lock (localizationList)
+            lock (stateLock)
             {
                 localizationList.Clear();
                 assemblyLocs.Clear();
@@ -150,7 +153,7 @@ namespace Nitrocid.LocaleChecker.Localization
                 // Now, add all localizations to a separate array
                 string finalKey = langName + " - " + finalLangStream;
 
-                lock (localizationList)
+                lock (stateLock)
                 {
                     if (!localizationList.ContainsKey(finalKey))
                         localizationList.Add(finalKey, ([], []));
@@ -643,7 +646,7 @@ namespace Nitrocid.LocaleChecker.Localization
                 if (locLocalization == assemblyLoc)
                 {
                     var locLocation = AnalyzerTools.GenerateLocation(locLocalizationObj, locLocalization, localization.Substring(localization.LastIndexOf(" ")));
-                    lock (assemblyLocs)
+                    lock (stateLock)
                     {
                         if (assemblyLocs.ContainsKey(assemblyLoc))
                             assemblyLocs[assemblyLoc].Add(locLocation);
