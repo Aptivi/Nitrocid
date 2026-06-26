@@ -63,9 +63,9 @@ namespace Nitrocid.Extras.SqlShell.Sql.Commands
             }
             else
             {
-                TextWriterColor.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDFAILURE"), true, KernelColorType.Error);
+                TextWriters.Write(LanguageTools.GetLocalized("NKS_SHELLPACKS_SQL_COMMANDFAILURE"), true, KernelColorType.Error);
                 if (error is not null)
-                    TextWriterColor.Write(error.Message, true, KernelColorType.Error);
+                    TextWriters.Write(error.Message, true, KernelColorType.Error);
                 return KernelExceptionTools.GetErrorCode(KernelExceptionType.SqlEditor);
             }
         }

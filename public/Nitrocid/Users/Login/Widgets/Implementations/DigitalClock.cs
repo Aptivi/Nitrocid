@@ -26,19 +26,26 @@ using Colorimetry;
 using Terminaux.Writer.CyclicWriters.Graphical;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.Data.Figlet;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Users.Login.Widgets.Implementations
 {
     internal class DigitalClock : BaseWidget, IWidget
     {
-        private Color clockColor = Color.Empty;
+        internal Color clockColor = Color.Empty;
+        internal Color? backgroundColor;
+        private bool colorInitialized = false;
 
         public override string Cleanup(int left, int top, int width, int height) =>
             "";
 
         public override string Initialize(int left, int top, int width, int height)
         {
-            clockColor = ChangeDateAndTimeColor();
+            if (!colorInitialized)
+            {
+                clockColor = ChangeDateAndTimeColor();
+                colorInitialized = true;
+            }
             return "";
         }
 
@@ -55,6 +62,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
             {
                 Text = timeStr,
                 ForegroundColor = clockColor,
+                BackgroundColor = backgroundColor ?? ConsoleColoring.CurrentBackgroundColor,
                 Top = consoleY,
                 Settings = new()
                 {
@@ -72,6 +80,7 @@ namespace Nitrocid.Users.Login.Widgets.Implementations
                 {
                     Text = dateStr,
                     ForegroundColor = clockColor,
+                    BackgroundColor = backgroundColor ?? ConsoleColoring.CurrentBackgroundColor,
                     Top = consoleInfoY,
                     OneLine = true,
                     Left = left,
