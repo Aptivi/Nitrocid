@@ -30,6 +30,7 @@ using Textify.General;
 using Nitrocid.Network.Connections;
 using Nitrocid.ConsoleBase.Colors;
 using SpecProbe.Software.Platform;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.Extras.RssShell.RSS.Interactive
 {
@@ -74,8 +75,9 @@ namespace Nitrocid.Extras.RssShell.RSS.Interactive
 
             // Render them to the second pane
             return
-                finalRenderedArticleTitle + CharManager.NewLine +
-                new string('-', finalRenderedArticleTitle.Length) + CharManager.NewLine + CharManager.NewLine +
+                ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Intense) +
+                finalRenderedArticleTitle + CharManager.NewLine + CharManager.NewLine +
+                ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Default) +
                 finalRenderedArticleBody;
             ;
         }
