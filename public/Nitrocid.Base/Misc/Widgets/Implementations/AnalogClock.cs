@@ -38,10 +38,10 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
         internal Color bezelColor = Color.Empty;
         internal Color handsColor = Color.Empty;
         internal Color secondsHandColor = Color.Empty;
-        internal Color backgroundColor = Color.Empty;
+        internal Color? backgroundColor;
         internal bool showSecondsHand = false;
         private bool clear = false;
-        private string lastRendered = "";
+        private bool colorInitialized = false;
         private Coordinate lastCenter = new(0, 0);
         private Coordinate lastHours = new(0, 0);
         private Coordinate lastMinutes = new(0, 0);
@@ -52,11 +52,14 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
 
         public override string Initialize(int left, int top, int width, int height)
         {
-            timeColor = ChangeAnalogClockColor();
-            bezelColor = ChangeAnalogClockColor();
-            handsColor = ChangeAnalogClockColor();
-            secondsHandColor = ChangeAnalogClockColor();
-            backgroundColor = ConsoleColoring.CurrentBackgroundColor;
+            if (!colorInitialized)
+            {
+                timeColor = ChangeAnalogClockColor();
+                bezelColor = ChangeAnalogClockColor();
+                handsColor = ChangeAnalogClockColor();
+                secondsHandColor = ChangeAnalogClockColor();
+                colorInitialized = true;
+            }
             showSecondsHand = Config.WidgetConfig.AnalogShowSecondsHand;
             lastCenter = new(0, 0);
             lastHours = new(0, 0);
@@ -89,7 +92,7 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
                     Left = left,
                     Width = width,
                     ForegroundColor = timeColor,
-                    BackgroundColor = backgroundColor,
+                    BackgroundColor = backgroundColor ?? ConsoleColoring.CurrentBackgroundColor,
                 };
                 builder.Append(timeDateClear.Render());
 
@@ -110,14 +113,13 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
                 Width = width,
                 Height = 1,
                 ForegroundColor = timeColor,
-                BackgroundColor = backgroundColor,
+                BackgroundColor = backgroundColor ?? ConsoleColoring.CurrentBackgroundColor,
                 Settings = new()
                 {
                     Alignment = TextAlignment.Middle
                 },
             };
             builder.Append(timeDate.Render());
-            lastRendered = rendered;
 
             // Now, draw the bezel
             int bezelTop = top + 1;
@@ -185,7 +187,7 @@ namespace Nitrocid.Base.Misc.Widgets.Implementations
         }
 
         private Line GetLineFrom(Coordinate startPos, Coordinate endPos) =>
-            GetLineFrom((startPos.X, startPos.Y), (endPos.X, endPos.Y), backgroundColor);
+            GetLineFrom((startPos.X, startPos.Y), (endPos.X, endPos.Y), backgroundColor ?? ConsoleColoring.CurrentBackgroundColor);
 
         private Line GetLineFrom((int x, int y) startPos, (int x, int y) endPos, Color color)
         {
