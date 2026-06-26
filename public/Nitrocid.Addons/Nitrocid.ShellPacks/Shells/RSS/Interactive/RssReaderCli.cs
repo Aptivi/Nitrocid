@@ -29,6 +29,7 @@ using System.Text;
 using Textify.General;
 using Nitrocid.Base.Network.Connections;
 using SpecProbe.Software.Platform;
+using Terminaux.Base.Extensions;
 
 namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
 {
@@ -88,8 +89,9 @@ namespace Nitrocid.ShellPacks.Shells.RSS.Interactive
 
             // Render them to the second pane
             return
-                finalRenderedArticleTitle + CharManager.NewLine +
-                new string('-', finalRenderedArticleTitle.Length) + CharManager.NewLine + CharManager.NewLine +
+                ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Intense) +
+                finalRenderedArticleTitle + CharManager.NewLine + CharManager.NewLine +
+                ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Default) +
                 finalRenderedArticleBody;
             ;
         }
