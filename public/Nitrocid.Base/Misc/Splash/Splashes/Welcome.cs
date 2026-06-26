@@ -117,9 +117,8 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             builder.Append(border.Render());
 
             // Write the program name
-            int interiorPosX = posX + 3;
-            int interiorWidth = width - 6;
-            progress.Width = interiorWidth;
+            int interiorPosX = posX + 2;
+            progress.Width = width - 4;
             string text = "Nitrocid";
             var figFont = FigletTools.GetFigletFont("thin");
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
@@ -128,7 +127,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             {
                 Left = interiorPosX,
                 Top = consoleY,
-                Width = interiorWidth,
+                Width = width,
                 UseColors = true,
                 ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Banner),
                 OneLine = true,
@@ -146,7 +145,7 @@ namespace Nitrocid.Base.Misc.Splash.Splashes
             {
                 Left = interiorPosX,
                 Top = modePosY,
-                Width = interiorWidth,
+                Width = width,
                 UseColors = true,
                 OneLine = true,
                 Text = modeText,

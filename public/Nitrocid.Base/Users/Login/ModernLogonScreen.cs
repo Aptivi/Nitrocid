@@ -74,8 +74,7 @@ namespace Nitrocid.Base.Users.Login
                 builder.Append(border.Render());
 
                 // Welcome the user
-                int interiorPosX = posX + 3;
-                int interiorWidth = width - 6;
+                int interiorPosX = posX + 2;
                 string text = LanguageTools.GetLocalized("NKS_MISC_SPLASHES_WELCOME");
                 var figFont = FigletTools.GetFigletFont("thin");
                 int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
@@ -84,7 +83,7 @@ namespace Nitrocid.Base.Users.Login
                 {
                     Left = interiorPosX,
                     Top = consoleY,
-                    Width = interiorWidth,
+                    Width = width,
                     UseColors = true,
                     ForegroundColor = ThemeColorsTools.GetColor(ThemeColorType.Banner),
                     OneLine = true,
@@ -104,7 +103,7 @@ namespace Nitrocid.Base.Users.Login
                 {
                     Left = interiorPosX,
                     Top = consoleInfoY,
-                    Width = interiorWidth,
+                    Width = width,
                     Text = $"{dateStr} {timeStr}",
                     OneLine = true,
                     Settings = new()
@@ -124,7 +123,7 @@ namespace Nitrocid.Base.Users.Login
                     {
                         Left = interiorPosX,
                         Top = consoleMotdInfoY,
-                        Width = interiorWidth,
+                        Width = width,
                         Text = motdStr,
                         OneLine = true,
                         Settings = new()
@@ -138,7 +137,7 @@ namespace Nitrocid.Base.Users.Login
                 // Print notifications area
                 int notificationsY = ConsoleWrapper.WindowHeight / 2 - figHeight - 3;
                 var notificationsWidget = WidgetTools.GetWidget(nameof(NotificationIcons));
-                builder.Append(notificationsWidget.Render(interiorPosX, notificationsY, interiorWidth, 1));
+                builder.Append(notificationsWidget.Render(interiorPosX, notificationsY, width, 1));
 
                 // Print the instructions if we're not in screen curtain mode
                 if (!curtainMode)
@@ -149,7 +148,7 @@ namespace Nitrocid.Base.Users.Login
                     {
                         Left = interiorPosX,
                         Top = consoleInstY,
-                        Width = interiorWidth,
+                        Width = width,
                         Text = instStr,
                         OneLine = true,
                     };
