@@ -1,5 +1,10 @@
 nitrocid-29 (4.1.29.6-0.2.1.0~beta-1) noble; urgency=medium
 
-  * Please populate changelogs here
+  * Added FreeBSD support
+  * Refactored thread management code
+  * Made the Windows installer more modular
+  * Updated Terminaux to v8.5
+  * Updated SQL and Cryptography's XML libraries to fix security issues
+  * General improvements and bug fixes
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Mon, 22 Jun 2026 12:39:24 +0300

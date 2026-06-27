@@ -6,7 +6,12 @@ We can't provide an exact ETA for the final release, but contributions, feedback
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` TBD
+- `[+]` Added FreeBSD support
+- `[*]` Refactored thread management code
+- `[*]` Made the Windows installer more modular
+- `[*]` Updated Terminaux to v8.5
+- `[*]` Updated SQL and Cryptography's XML libraries to fix security issues
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
