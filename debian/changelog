@@ -1,6 +1,6 @@
 nitrocid-25 (3.0.25.589-0.1.0.80-1) noble; urgency=medium
 
-  * Please populate changelogs here
+  * Updated SQL and Cryptography's XML libraries to fix security issues
 
  -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Sat, 27 Jun 2026 12:02:00 +0300
 

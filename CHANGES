@@ -1,10 +1,10 @@
-We have introduced this emergency update to fix a serious bug.
+We have introduced this update to fix security problems related to several libraries.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed console resize listener not restarting on kernel restart
+- `[*]` Updated SQL and Cryptography's XML libraries to fix security issues
 
 Review the commit history if you want to get a deep insight about the changes.
 
